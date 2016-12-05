@@ -15,3 +15,4 @@
 
 * https://developer.apple.com/reference/avfoundation/avcapturesession
 * https://developer.apple.com/reference/avfoundation/AVCaptureVideoPreviewLayer
+* https://github.com/aleene/FoodViewer
