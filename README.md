@@ -7,7 +7,7 @@
 - [ ] Product search
 - [ ] Product list
 - [ ] Product detail
-- [ ] on device Product cache
+- [ ] On-device Product cache
 - [ ] Image upload
 - [ ] Internationalised user interface
 
