@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="565" y="468"/>
         </scene>
-        <!--Products-->
+        <!--Products View Controller-->
         <scene sceneID="3Zb-Ch-jlf">
             <objects>
                 <viewController id="bZh-Zu-n2X" customClass="ProductsViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,24 +41,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoA-HK-cUi">
-                                <rect key="frame" x="145" y="28" width="85" height="30"/>
+                                <rect key="frame" x="145" y="72" width="85" height="30"/>
                                 <state key="normal" title="Take picture"/>
                                 <connections>
                                     <action selector="didPressTakePictureButton:" destination="bZh-Zu-n2X" eventType="touchUpInside" id="rid-NY-CpU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehx-ia-dmL">
+                                <rect key="frame" x="139" y="136" width="96" height="30"/>
+                                <state key="normal" title="Scan Barcode"/>
+                                <connections>
+                                    <segue destination="wct-o1-jnl" kind="show" id="4Va-Ab-SI8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NoA-HK-cUi" firstAttribute="centerX" secondItem="ONd-H7-BPp" secondAttribute="centerX" id="72L-9U-fWf"/>
+                            <constraint firstItem="ehx-ia-dmL" firstAttribute="top" secondItem="NoA-HK-cUi" secondAttribute="bottom" constant="34" id="Ur5-oZ-uXA"/>
+                            <constraint firstItem="ehx-ia-dmL" firstAttribute="centerX" secondItem="ONd-H7-BPp" secondAttribute="centerX" id="W9C-ph-u7o"/>
                             <constraint firstItem="NoA-HK-cUi" firstAttribute="top" secondItem="8mE-xX-LXB" secondAttribute="bottom" constant="8" id="kV3-F4-dmW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Products" id="BCc-14-VvY"/>
+                    <navigationItem key="navigationItem" id="ZhX-nX-ieM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ZW-uY-QwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="-187"/>
+            <point key="canvasLocation" x="1503.2" y="-187.55622188905548"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="LxR-S0-zjC">
+            <objects>
+                <viewController id="wct-o1-jnl" customClass="ScannerViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Yu-h9-Tbq"/>
+                        <viewControllerLayoutGuide type="bottom" id="gkG-zT-jMI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bvw-tJ-Jcg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iw1-jt-nJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2490" y="-192"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wPq-85-qPt">
@@ -70,13 +97,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="bZh-Zu-n2X" kind="relationship" relationship="viewControllers" id="OCt-YH-CwU"/>
+                        <segue destination="4Vv-4J-qzl" kind="relationship" relationship="viewControllers" id="OCt-YH-CwU"/>
                         <segue destination="iR2-nq-dIN" kind="relationship" relationship="viewControllers" id="dQA-Ec-qdf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxi-KM-qIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-385" y="141"/>
+        </scene>
+        <!--Products-->
+        <scene sceneID="le0-vn-zuj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Vv-4J-qzl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Products" id="BCc-14-VvY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Fc-tA-BZ4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bZh-Zu-n2X" kind="relationship" relationship="rootViewController" id="aCU-Pk-UYF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W3y-On-GIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="-187.55622188905548"/>
         </scene>
     </scenes>
 </document>

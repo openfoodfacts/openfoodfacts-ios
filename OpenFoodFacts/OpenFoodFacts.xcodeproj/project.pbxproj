@@ -15,6 +15,7 @@
 		95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265281E96D6F0004212EC /* CameraViewController.swift */; };
 		95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */; };
 		95C2652F1E9A7246004212EC /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2652E1E9A7246004212EC /* ProductsViewController.swift */; };
+		95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		95C265281E96D6F0004212EC /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		95C2652E1E9A7246004212EC /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				95C2652E1E9A7246004212EC /* ProductsViewController.swift */,
 				95C265281E96D6F0004212EC /* CameraViewController.swift */,
+				95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				95C2652F1E9A7246004212EC /* ProductsViewController.swift in Sources */,
 				95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
+				95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,20 +10,7 @@ import UIKit
 import MobileCoreServices
 
 class ProductsViewController: UIViewController {
-    
     lazy var cameraController = CameraViewController() as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     @IBAction func didPressTakePictureButton(_ sender: UIButton) {
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
