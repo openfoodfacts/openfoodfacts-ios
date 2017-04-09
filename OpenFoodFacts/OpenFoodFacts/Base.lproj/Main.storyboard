@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="1Lq-as-HPP">
+            <objects>
+                <viewController id="iR2-nq-dIN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DA9-iw-nGW"/>
+                        <viewControllerLayoutGuide type="bottom" id="poL-Ci-5ET"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oef-fM-3I8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="d55-2c-shN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7C-5j-ToW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="468"/>
+        </scene>
+        <!--Scanner-->
+        <scene sceneID="3Zb-Ch-jlf">
+            <objects>
+                <viewController id="bZh-Zu-n2X" customClass="ScannerViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8mE-xX-LXB"/>
+                        <viewControllerLayoutGuide type="bottom" id="80P-lP-tQg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ONd-H7-BPp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Scanner" id="BCc-14-VvY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ZW-uY-QwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="-187"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wPq-85-qPt">
+            <objects>
+                <tabBarController id="Vnh-CA-Eam" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="WI7-Nb-fzv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bZh-Zu-n2X" kind="relationship" relationship="viewControllers" id="OCt-YH-CwU"/>
+                        <segue destination="iR2-nq-dIN" kind="relationship" relationship="viewControllers" id="dQA-Ec-qdf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxi-KM-qIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-385" y="141"/>
+        </scene>
+    </scenes>
+</document>
