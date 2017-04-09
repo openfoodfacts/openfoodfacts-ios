@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="565" y="468"/>
         </scene>
-        <!--Scanner-->
+        <!--Products-->
         <scene sceneID="3Zb-Ch-jlf">
             <objects>
-                <viewController id="bZh-Zu-n2X" customClass="ScannerViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bZh-Zu-n2X" customClass="ProductsViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8mE-xX-LXB"/>
                         <viewControllerLayoutGuide type="bottom" id="80P-lP-tQg"/>
@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scanner" id="BCc-14-VvY"/>
+                    <tabBarItem key="tabBarItem" title="Products" id="BCc-14-VvY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ZW-uY-QwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

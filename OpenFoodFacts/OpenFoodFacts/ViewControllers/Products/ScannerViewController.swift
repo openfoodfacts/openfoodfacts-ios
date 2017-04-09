@@ -10,8 +10,9 @@ import UIKit
 import MobileCoreServices
 
 class ScannerViewController: UINavigationController {
-    
-    override func viewDidLoad() {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
             print("No camera available... What to do?")
             return
