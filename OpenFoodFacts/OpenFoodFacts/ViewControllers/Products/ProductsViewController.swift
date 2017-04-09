@@ -7,29 +7,41 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class ProductsViewController: UIViewController {
-
+    
+    lazy var cameraController = CameraViewController() as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func didPressTakePictureButton(_ sender: UIButton) {
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            print("No camera available... What to do?")
+            return
+        }
+        
+        let desiredType = String(kUTTypeImage)
+        
+        if UIImagePickerController.availableMediaTypes(for: .camera)?.index(of: desiredType) == nil {
+            print("Can't capture")
+            return
+        }
+        
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.mediaTypes = [desiredType]
+        picker.delegate = cameraController
+        self.present(picker, animated: true, completion: nil)
     }
-    */
-
 }

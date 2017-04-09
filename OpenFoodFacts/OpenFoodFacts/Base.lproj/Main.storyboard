@@ -39,7 +39,20 @@
                     <view key="view" contentMode="scaleToFill" id="ONd-H7-BPp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoA-HK-cUi">
+                                <rect key="frame" x="145" y="28" width="85" height="30"/>
+                                <state key="normal" title="Take picture"/>
+                                <connections>
+                                    <action selector="didPressTakePictureButton:" destination="bZh-Zu-n2X" eventType="touchUpInside" id="rid-NY-CpU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NoA-HK-cUi" firstAttribute="centerX" secondItem="ONd-H7-BPp" secondAttribute="centerX" id="72L-9U-fWf"/>
+                            <constraint firstItem="NoA-HK-cUi" firstAttribute="top" secondItem="8mE-xX-LXB" secondAttribute="bottom" constant="8" id="kV3-F4-dmW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Products" id="BCc-14-VvY"/>
                 </viewController>
