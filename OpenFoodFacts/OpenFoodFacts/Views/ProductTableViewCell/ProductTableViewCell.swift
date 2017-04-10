@@ -15,15 +15,10 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var brand: UILabel!
     @IBOutlet weak var quantity: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configure(withProduct product: Product) {
+        // TODO photo.image = product.photo
+        name.text = product.name
+        brand.text = product.brand
+        quantity.text = product.quantity
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
 }

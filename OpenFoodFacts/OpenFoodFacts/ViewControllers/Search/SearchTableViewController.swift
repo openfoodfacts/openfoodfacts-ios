@@ -13,6 +13,10 @@ class SearchTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchController: UISearchBar!
     
+    var products = [Product(name: "Coca Cola Light", brand: "Coca Cola", quantity: "33 ml"),
+                    Product(name: "Fanta", brand: "Fanta", quantity: "33 ml"),
+                    Product(name: "7UP", brand: "Coca Cola", quantity: "33 ml")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,14 +54,13 @@ extension SearchTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return products.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell
         
-        // Configure the cell...
+        cell.configure(withProduct: products[indexPath.row])
         
         return cell
     }
