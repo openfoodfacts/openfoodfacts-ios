@@ -97,6 +97,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="EH8-XH-tDE" kind="relationship" relationship="viewControllers" id="36n-lc-F7m"/>
                         <segue destination="4Vv-4J-qzl" kind="relationship" relationship="viewControllers" id="OCt-YH-CwU"/>
                         <segue destination="iR2-nq-dIN" kind="relationship" relationship="viewControllers" id="dQA-Ec-qdf"/>
                     </connections>
@@ -104,6 +105,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxi-KM-qIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-385" y="141"/>
+        </scene>
+        <!--Search Table View Controller-->
+        <scene sceneID="By1-kC-bxg">
+            <objects>
+                <viewController id="EH8-XH-tDE" customClass="SearchTableViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oah-mb-hss"/>
+                        <viewControllerLayoutGuide type="bottom" id="GgD-v0-IUX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TaQ-pb-Qwu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4GX-xs-yHh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="590"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="nZo-I4-5bl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="EH8-XH-tDE" id="bOD-jV-YTl"/>
+                                    </connections>
+                                </searchBar>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GgD-v0-IUX" firstAttribute="top" secondItem="4GX-xs-yHh" secondAttribute="bottom" id="Gbp-y9-6lq"/>
+                            <constraint firstAttribute="trailing" secondItem="4GX-xs-yHh" secondAttribute="trailing" id="KvH-Fq-wA3"/>
+                            <constraint firstItem="4GX-xs-yHh" firstAttribute="leading" secondItem="TaQ-pb-Qwu" secondAttribute="leading" id="XNl-Q8-rdl"/>
+                            <constraint firstItem="4GX-xs-yHh" firstAttribute="top" secondItem="Oah-mb-hss" secondAttribute="bottom" constant="8" id="eMu-PP-qXX"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="JfP-fF-0qy"/>
+                    <connections>
+                        <outlet property="searchController" destination="nZo-I4-5bl" id="obO-Gg-ZNO"/>
+                        <outlet property="searchDisplayController" destination="REC-np-dWE" id="wnW-zb-3Sr"/>
+                        <outlet property="tableView" destination="4GX-xs-yHh" id="VZk-tk-pwC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xG-Ez-Toq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="REC-np-dWE">
+                    <connections>
+                        <outlet property="delegate" destination="EH8-XH-tDE" id="nm4-W3-SGS"/>
+                        <outlet property="searchBar" destination="nZo-I4-5bl" id="GbO-TB-WEN"/>
+                        <outlet property="searchContentsController" destination="EH8-XH-tDE" id="I7T-cd-m7d"/>
+                        <outlet property="searchResultsDataSource" destination="EH8-XH-tDE" id="TfT-mh-KFx"/>
+                        <outlet property="searchResultsDelegate" destination="EH8-XH-tDE" id="HtK-3u-fO2"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="564" y="-898.2008995502249"/>
         </scene>
         <!--Products-->
         <scene sceneID="le0-vn-zuj">
