@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreGraphics
 
 class SearchTableViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    var searchController: UISearchController!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    fileprivate var searchController: UISearchController!
+    fileprivate var emptyTableView: UIView!
     
     var products = [Product(name: "Coca Cola Light", brand: "Coca Cola", quantity: "33 ml"),
                     Product(name: "Coca Cola", brand: "Coca Cola", quantity: "33 ml"),
@@ -21,6 +23,8 @@ class SearchTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emptyTableView = Bundle.main.loadNibNamed("EmptyProductsView", owner: self, options: nil)!.first as! UIView
         
         configureTableView()
         configureSearchController()
@@ -43,7 +47,19 @@ class SearchTableViewController: UIViewController {
 extension SearchTableViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if filteredProducts.isEmpty {
+            tableView.backgroundView = emptyTableView
+            tableView.separatorStyle = .none
+            tableView.isScrollEnabled = false
+            
+            return 0
+        } else {
+            tableView.backgroundView = nil
+            tableView.separatorStyle = .singleLine
+            tableView.isScrollEnabled = true
+            
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -11,6 +11,10 @@
 - [ ] Image upload
 - [ ] Internationalised user interface
 
+## Demo
+
+![Demo gif](https://github.com/openfoodfacts/openfoodfacts-ios/blob/master/gif/demo.gif)
+
 ## Pointers
 
 * https://developer.apple.com/reference/avfoundation/avcapturesession
