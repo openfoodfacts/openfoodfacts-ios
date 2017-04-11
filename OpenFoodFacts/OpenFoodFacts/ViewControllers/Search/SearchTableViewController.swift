@@ -34,6 +34,7 @@ class SearchTableViewController: UIViewController {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for a product by name or barcode"
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
@@ -46,18 +47,13 @@ extension SearchTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.isActive && searchController.searchBar.text != "" {
-            return filteredProducts.count
-        }
-        
-        return products.count
+        return filteredProducts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell
         
-        let product = searchController.isActive && searchController.searchBar.text != "" ? filteredProducts[indexPath.row] : products[indexPath.row]
-        cell.configure(withProduct: product)
+        cell.configure(withProduct: filteredProducts[indexPath.row])
         
         return cell
     }
@@ -71,13 +67,26 @@ extension SearchTableViewController: UITableViewDelegate {
 }
 
 extension SearchTableViewController: UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
         if let query = searchController.searchBar.text, !query.isEmpty {
-            filteredProducts = products.filter { product in return product.name.contains(query) }
-        } else {
-            
+            filteredProducts = products.filter { product in return product.name.lowercased().contains(query.lowercased()) }
+        }
+        else {
+            filteredProducts.removeAll()
         }
         
         tableView.reloadData()
+    }
+}
+
+extension SearchTableViewController: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
     }
 }
