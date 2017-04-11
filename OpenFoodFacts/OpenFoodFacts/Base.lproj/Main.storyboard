@@ -121,15 +121,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4GX-xs-yHh">
                                 <rect key="frame" x="0.0" y="28" width="375" height="590"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="nZo-I4-5bl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="EH8-XH-tDE" id="bOD-jV-YTl"/>
-                                    </connections>
-                                </searchBar>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="EH8-XH-tDE" id="yG9-WZ-dmQ"/>
+                                    <outlet property="delegate" destination="EH8-XH-tDE" id="TR5-l9-JCA"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,21 +138,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="JfP-fF-0qy"/>
                     <connections>
-                        <outlet property="searchController" destination="nZo-I4-5bl" id="obO-Gg-ZNO"/>
-                        <outlet property="searchDisplayController" destination="REC-np-dWE" id="wnW-zb-3Sr"/>
                         <outlet property="tableView" destination="4GX-xs-yHh" id="VZk-tk-pwC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xG-Ez-Toq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="REC-np-dWE">
-                    <connections>
-                        <outlet property="delegate" destination="EH8-XH-tDE" id="nm4-W3-SGS"/>
-                        <outlet property="searchBar" destination="nZo-I4-5bl" id="GbO-TB-WEN"/>
-                        <outlet property="searchContentsController" destination="EH8-XH-tDE" id="I7T-cd-m7d"/>
-                        <outlet property="searchResultsDataSource" destination="EH8-XH-tDE" id="TfT-mh-KFx"/>
-                        <outlet property="searchResultsDelegate" destination="EH8-XH-tDE" id="HtK-3u-fO2"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="564" y="-898.2008995502249"/>
         </scene>
