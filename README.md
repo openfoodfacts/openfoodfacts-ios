@@ -13,7 +13,7 @@
 
 ## Demo
 
-![Demo gif](https://github.com/openfoodfacts/openfoodfacts-ios/blob/master/gif/demo.gif)
+<img src="https://github.com/openfoodfacts/openfoodfacts-ios/blob/master/gif/demo.gif" width="300">
 
 ## Pointers
 
