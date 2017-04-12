@@ -9,8 +9,14 @@
 import UIKit
 
 struct Product {
-    // TODO let photo: UIImage
+    var photo: UIImage?
     let name: String
     let brand: String
     let quantity: String
+    
+    init(name: String, brand: String, quantity: String) {
+        self.name = name
+        self.brand = brand
+        self.quantity = quantity
+    }
 }

@@ -86,6 +86,9 @@ extension SearchTableViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         if let query = searchController.searchBar.text, !query.isEmpty {
+            
+            ProductDataSource().getProducts(byName: query)
+            
             filteredProducts = products.filter { product in return product.name.lowercased().contains(query.lowercased()) }
         }
         else {
