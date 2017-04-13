@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import ObjectMapper
 
-struct Product {
+class Product: Mappable {
     var photo: UIImage?
-    let name: String
-    let brand: String
-    let quantity: String
+    var name: String?
+    var brand: String?
+    var quantity: String?
     
-    init(name: String, brand: String, quantity: String) {
-        self.name = name
-        self.brand = brand
-        self.quantity = quantity
+    required init?(map: Map){
+        
+    }
+    
+    func mapping(map: Map) {
+        name <- map[OFFJson.ProductNameKey]
+        brand <- map[OFFJson.BrandsKey]
+        quantity <- map[OFFJson.QuantityKey]
     }
 }

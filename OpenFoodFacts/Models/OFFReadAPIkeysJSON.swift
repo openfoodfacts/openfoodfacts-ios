@@ -10,7 +10,7 @@ import Foundation
 
 // JSON keys
 
-fileprivate struct OFFJson {
+struct OFFJson {
     static let StatusKey = "status"
     static let StatusVerboseKey = "status_verbose"
     static let ProductKey = "product"

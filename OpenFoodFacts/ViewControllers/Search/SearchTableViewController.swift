@@ -15,11 +15,7 @@ class SearchTableViewController: UIViewController {
     fileprivate var searchController: UISearchController!
     fileprivate var emptyTableView: UIView!
     
-    var products = [Product(name: "Coca Cola Light", brand: "Coca Cola", quantity: "33 ml"),
-                    Product(name: "Coca Cola", brand: "Coca Cola", quantity: "33 ml"),
-                    Product(name: "Fanta", brand: "Fanta", quantity: "33 ml"),
-                    Product(name: "7UP", brand: "Coca Cola", quantity: "33 ml")]
-    var filteredProducts = [Product]()
+    var products = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +43,7 @@ class SearchTableViewController: UIViewController {
 extension SearchTableViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if filteredProducts.isEmpty {
+        if products.isEmpty {
             tableView.backgroundView = emptyTableView
             tableView.separatorStyle = .none
             tableView.isScrollEnabled = false
@@ -63,13 +59,13 @@ extension SearchTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredProducts.count
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell
         
-        cell.configure(withProduct: filteredProducts[indexPath.row])
+        cell.configure(withProduct: products[indexPath.row])
         
         return cell
     }
@@ -87,15 +83,11 @@ extension SearchTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let query = searchController.searchBar.text, !query.isEmpty {
             
-            ProductDataSource().getProducts(byName: query)
-            
-            filteredProducts = products.filter { product in return product.name.lowercased().contains(query.lowercased()) }
+            ProductDataSource().getProducts(byName: query) { products in
+                self.products = products
+                self.tableView.reloadData()
+            }
         }
-        else {
-            filteredProducts.removeAll()
-        }
-        
-        tableView.reloadData()
     }
 }
 

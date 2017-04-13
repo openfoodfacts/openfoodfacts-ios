@@ -17,6 +17,10 @@
 		95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265281E96D6F0004212EC /* CameraViewController.swift */; };
 		95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */; };
 		95C2652F1E9A7246004212EC /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2652E1E9A7246004212EC /* ProductsViewController.swift */; };
+		95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */; };
+		95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C368091E9ECC0C008BB582 /* ObjectMapper.framework */; };
+		95C368111E9FD95F008BB582 /* ProductsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C368101E9FD95F008BB582 /* ProductsResponse.swift */; };
+		95C368131E9FDCD1008BB582 /* OFFReadAPIkeysJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C368121E9FDCD1008BB582 /* OFFReadAPIkeysJSON.swift */; };
 		95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */; };
 		95D6A75D1E9C08520017B423 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */; };
 		95D6A75E1E9C08520017B423 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */; };
@@ -39,6 +43,11 @@
 		95C265281E96D6F0004212EC /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		95C2652E1E9A7246004212EC /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		95C368091E9ECC0C008BB582 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		95C3680B1E9FCA79008BB582 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
+		95C368101E9FD95F008BB582 /* ProductsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsResponse.swift; sourceTree = "<group>"; };
+		95C368121E9FDCD1008BB582 /* OFFReadAPIkeysJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFFReadAPIkeysJSON.swift; sourceTree = "<group>"; };
 		95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
@@ -52,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */,
+				95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */,
 				95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */,
 				95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */,
 				953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */,
@@ -105,6 +116,9 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */,
+				95C3680B1E9FCA79008BB582 /* SwiftyJSON.framework */,
+				95C368091E9ECC0C008BB582 /* ObjectMapper.framework */,
 				953C2BE31E9EC22200FD99D4 /* Alamofire.framework */,
 				9527E7861E9EBDD200833F04 /* Alamofire.framework */,
 				95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */,
@@ -161,7 +175,9 @@
 		95D6A7621E9C18F00017B423 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95C368121E9FDCD1008BB582 /* OFFReadAPIkeysJSON.swift */,
 				95D6A7631E9C18FD0017B423 /* Product.swift */,
+				95C368101E9FD95F008BB582 /* ProductsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +269,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
 			);
 			outputPaths = (
 			);
@@ -271,9 +288,11 @@
 				95D6A7611E9C0B410017B423 /* SearchTableViewController.swift in Sources */,
 				95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */,
 				95D6A75D1E9C08520017B423 /* ProductTableViewCell.swift in Sources */,
+				95C368131E9FDCD1008BB582 /* OFFReadAPIkeysJSON.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
 				95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */,
 				9527E78A1E9EBDEC00833F04 /* ProductDataSource.swift in Sources */,
+				95C368111E9FD95F008BB582 /* ProductsResponse.swift in Sources */,
 				95D6A7641E9C18FD0017B423 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
