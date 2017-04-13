@@ -10,16 +10,18 @@ import Foundation
 import ObjectMapper
 
 class ProductsResponse: Mappable {
+    var query: String?
     var count: Int?
-    var products: [Product]?
     var page: String?
+    var products: [Product]?
     
     required init?(map: Map) {
-    
+        
     }
     
     func mapping(map: Map) {
-        count <- map["count"]
-        products <- map["products"]
+        count <- map[OFFJson.CountKey]
+        page <- map[OFFJson.PageKey]
+        products <- map[OFFJson.ProductsKey]
     }
 }

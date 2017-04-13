@@ -11,6 +11,9 @@ import Foundation
 // JSON keys
 
 struct OFFJson {
+    static let CountKey = "count"
+    static let PageKey = "page"
+    static let ProductsKey = "products"
     static let StatusKey = "status"
     static let StatusVerboseKey = "status_verbose"
     static let ProductKey = "product"

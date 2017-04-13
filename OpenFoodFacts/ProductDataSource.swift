@@ -14,10 +14,10 @@ class ProductDataSource {
     
     let endpoint = "https://ssl-api.openfoodfacts.org"
     
-    func getProducts(byName name: String, completion: @escaping ([Product]) -> Void) {
+    func getProducts(byName name: String, page: Int, completion: @escaping (ProductsResponse) -> Void) {
         
         print("Getting products for: \(name)")
-        let url = endpoint + "/cgi/search.pl?search_terms=\(encodeStringAsParameter(name))&search_simple=1&action=process&json=1"
+        let url = endpoint + "/cgi/search.pl?search_terms=\(encodeStringAsParameter(name))&search_simple=1&action=process&json=1&page=\(page)"
         
         print("URL: \(url)")
         
@@ -25,8 +25,8 @@ class ProductDataSource {
             
             switch response.result {
             case .success(let productResponse):
-                print("Got \(productResponse.count!) products ")
-                completion(productResponse.products!)
+                print("Got \(productResponse.count ?? 0) products ")
+                completion(productResponse)
             case .failure(let error):
                 print(error)
             }

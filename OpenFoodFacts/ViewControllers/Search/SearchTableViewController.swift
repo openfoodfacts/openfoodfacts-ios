@@ -9,13 +9,15 @@
 import UIKit
 import CoreGraphics
 
+// MARK: - UIViewController
+
 class SearchTableViewController: UIViewController {
     
     @IBOutlet fileprivate weak var tableView: UITableView!
     fileprivate var searchController: UISearchController!
     fileprivate var emptyTableView: UIView!
-    
-    var products = [Product]()
+    fileprivate var lastQuery: String?
+    fileprivate var productsResponse: ProductsResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,41 +37,56 @@ class SearchTableViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search for a product by name or barcode"
+        searchController.searchBar.delegate = self
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
 }
 
+// MARK: - UITableViewDataSource
+
 extension SearchTableViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if products.isEmpty {
-            tableView.backgroundView = emptyTableView
-            tableView.separatorStyle = .none
-            tableView.isScrollEnabled = false
-            
-            return 0
-        } else {
+        if let response = productsResponse, let products = response.products, !products.isEmpty {
             tableView.backgroundView = nil
             tableView.separatorStyle = .singleLine
             tableView.isScrollEnabled = true
             
             return 1
+        } else {
+            tableView.backgroundView = emptyTableView
+            tableView.separatorStyle = .none
+            tableView.isScrollEnabled = false
+            
+            return 0
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        if let response = productsResponse, let products = response.products {
+            return products.count
+        }
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell
         
-        cell.configure(withProduct: products[indexPath.row])
+        if let response = productsResponse, let products = response.products {
+            cell.configure(withProduct: products[indexPath.row])
+            
+            if products.count == indexPath.row + 1, let pageString = response.page, let page = Int(pageString), let count = response.count, products.count < count {
+                getProducts(page: page + 1)
+            }
+        }
         
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension SearchTableViewController: UITableViewDelegate {
     
@@ -78,18 +95,18 @@ extension SearchTableViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UISearchResultsUpdating
+
 extension SearchTableViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         if let query = searchController.searchBar.text, !query.isEmpty {
-            
-            ProductDataSource().getProducts(byName: query) { products in
-                self.products = products
-                self.tableView.reloadData()
-            }
+            getProducts(page: 1, withQuery: query)
         }
     }
 }
+
+// MARK: - UISearchBarDelegate
 
 extension SearchTableViewController: UISearchBarDelegate {
     
@@ -99,5 +116,30 @@ extension SearchTableViewController: UISearchBarDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        productsResponse = nil
+        tableView.reloadData()
+    }
+}
+
+// MARK: - API calls
+
+extension SearchTableViewController {
+    
+    func getProducts(page: Int, withQuery query: String? = nil) {
+        if let query = query ?? productsResponse?.query {
+            ProductDataSource().getProducts(byName: query, page: page) { response in
+                if self.productsResponse == nil || self.productsResponse?.query != query {
+                    self.productsResponse = response
+                    self.productsResponse!.query = query
+                } else if self.productsResponse?.query == query, let newProducts = response.products {
+                    self.productsResponse!.products!.append(contentsOf: newProducts)
+                }
+                
+                self.tableView.reloadData()
+            }
+        }
     }
 }
