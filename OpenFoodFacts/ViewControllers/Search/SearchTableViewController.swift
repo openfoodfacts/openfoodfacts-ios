@@ -78,7 +78,7 @@ extension SearchTableViewController: UITableViewDataSource {
             cell.configure(withProduct: products[indexPath.row])
             
             if products.count == indexPath.row + 1, let pageString = response.page, let page = Int(pageString), let count = response.count, products.count < count {
-                getProducts(page: page + 1)
+                getProducts(fromService: ProductService(), page: page + 1)
             }
         }
         
@@ -101,7 +101,7 @@ extension SearchTableViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         if let query = searchController.searchBar.text, !query.isEmpty {
-            getProducts(page: 1, withQuery: query)
+            getProducts(fromService: ProductService() ,page: 1, withQuery: query)
         }
     }
 }
@@ -124,13 +124,13 @@ extension SearchTableViewController: UISearchBarDelegate {
     }
 }
 
-// MARK: - API calls
+// MARK: - Data source
 
 extension SearchTableViewController {
     
-    func getProducts(page: Int, withQuery query: String? = nil) {
+    func getProducts(fromService service: ProductService, page: Int, withQuery query: String? = nil) {
         if let query = query ?? productsResponse?.query {
-            ProductDataSource().getProducts(byName: query, page: page) { response in
+            service.getProducts(byName: query, page: page) { response in
                 if self.productsResponse == nil || self.productsResponse?.query != query {
                     self.productsResponse = response
                     self.productsResponse!.query = query
