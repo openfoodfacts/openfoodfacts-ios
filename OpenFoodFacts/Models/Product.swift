@@ -10,10 +10,11 @@ import UIKit
 import ObjectMapper
 
 class Product: Mappable {
-    var photo: UIImage?
     var name: String?
     var brand: String?
     var quantity: String?
+    var imageUrl: String?
+    var frontImageUrl: String?
     
     required init?(map: Map){
         
@@ -23,5 +24,7 @@ class Product: Mappable {
         name <- map[OFFJson.ProductNameKey]
         brand <- map[OFFJson.BrandsKey]
         quantity <- map[OFFJson.QuantityKey]
+        frontImageUrl <- map[OFFJson.ImageFrontUrlKey]
+        imageUrl <- map[OFFJson.ImageUrlKey]
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductTableViewCell: UITableViewCell {
     
@@ -16,9 +17,14 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var quantity: UILabel!
     
     func configure(withProduct product: Product) {
-        // TODO photo.image = product.photo
         name.text = product.name
         brand.text = product.brand
         quantity.text = product.quantity
+        
+        if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
+            // TODO Placeholder image or loading
+            photo.kf.indicatorType = .activity
+            photo.kf.setImage(with: url)
+        }
     }
 }
