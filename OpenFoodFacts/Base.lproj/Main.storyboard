@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,7 +98,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="EH8-XH-tDE" kind="relationship" relationship="viewControllers" id="36n-lc-F7m"/>
+                        <segue destination="SMQ-pD-tsL" kind="relationship" relationship="viewControllers" id="36n-lc-F7m"/>
                         <segue destination="4Vv-4J-qzl" kind="relationship" relationship="viewControllers" id="OCt-YH-CwU"/>
                         <segue destination="iR2-nq-dIN" kind="relationship" relationship="viewControllers" id="dQA-Ec-qdf"/>
                     </connections>
@@ -119,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4GX-xs-yHh">
-                                <rect key="frame" x="0.0" y="28" width="375" height="590"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <sections/>
                                 <connections>
@@ -132,18 +133,27 @@
                         <constraints>
                             <constraint firstItem="GgD-v0-IUX" firstAttribute="top" secondItem="4GX-xs-yHh" secondAttribute="bottom" id="Gbp-y9-6lq"/>
                             <constraint firstAttribute="trailing" secondItem="4GX-xs-yHh" secondAttribute="trailing" id="KvH-Fq-wA3"/>
+                            <constraint firstAttribute="topMargin" secondItem="4GX-xs-yHh" secondAttribute="top" id="NUz-Jx-w35"/>
                             <constraint firstItem="4GX-xs-yHh" firstAttribute="leading" secondItem="TaQ-pb-Qwu" secondAttribute="leading" id="XNl-Q8-rdl"/>
-                            <constraint firstItem="4GX-xs-yHh" firstAttribute="top" secondItem="Oah-mb-hss" secondAttribute="bottom" constant="8" id="eMu-PP-qXX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="JfP-fF-0qy"/>
+                    <navigationItem key="navigationItem" id="ZvS-Tf-UPn"/>
                     <connections>
                         <outlet property="tableView" destination="4GX-xs-yHh" id="VZk-tk-pwC"/>
+                        <segue destination="ad3-8a-IiG" kind="show" identifier="ShowProductDetail" id="Rsh-Ig-Fdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xG-Ez-Toq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="-898.2008995502249"/>
+            <point key="canvasLocation" x="1503.2" y="-898.2008995502249"/>
+        </scene>
+        <!--Product-->
+        <scene sceneID="LQf-d8-csw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Product" id="ad3-8a-IiG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UpW-Kj-48S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2328" y="-895"/>
         </scene>
         <!--Products-->
         <scene sceneID="le0-vn-zuj">
@@ -163,6 +173,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3y-On-GIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="564" y="-187.55622188905548"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gxl-ow-VZe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SMQ-pD-tsL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="JfP-fF-0qy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="awO-9x-u8z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EH8-XH-tDE" kind="relationship" relationship="rootViewController" id="ntg-JJ-UHV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1E8-aC-MVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="-898.2008995502249"/>
         </scene>
     </scenes>
 </document>

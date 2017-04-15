@@ -93,6 +93,12 @@ extension SearchTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let products = productsResponse?.products {
+            navigationController?.pushViewController(productDetails(product: products[indexPath.row]), animated: true)
+        }
+    }
 }
 
 // MARK: - UISearchResultsUpdating
@@ -141,5 +147,15 @@ extension SearchTableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+}
+
+// MARK: - Private functions
+private extension SearchTableViewController {
+    func productDetails(product: Product) -> ProductDetailViewController {
+        let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
+        let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
+        productDetailVC.product = product
+        return productDetailVC
     }
 }
