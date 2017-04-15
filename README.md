@@ -12,8 +12,9 @@
 - [ ] Internationalised user interface
 
 ## Demo
-
-<img src="https://github.com/openfoodfacts/openfoodfacts-ios/blob/master/gif/demo.gif" width="300">
+<details> <summary>GIF demo</summary>
+  <img src="https://github.com/openfoodfacts/openfoodfacts-ios/blob/master/gif/demo.gif" width="300">
+</details>
 
 ## Pointers
 
