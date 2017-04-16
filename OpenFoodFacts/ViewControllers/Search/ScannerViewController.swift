@@ -61,14 +61,23 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             return
         }
         
-        let metadataObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-        
-        if supportedBarcodes.contains(metadataObject.type) {
-            let code = metadataObject.stringValue!
+        if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
+            if (lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode)) {
+                lastCodeScanned = barcode
+                getProduct(fromService: ProductService(), barcode: barcode)
+            }
+        }
+    }
+    
+    func getProduct(fromService service: ProductService, barcode: String) {
+        service.getProduct(byBarcode: barcode) { response in
             
-            if (lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != code)) {
-                print("Barcode scanned: \(code)")
-                lastCodeScanned = code
+            if let product = response {
+                let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
+                let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
+                productDetailVC.product = product
+                
+                self.navigationController?.pushViewController(productDetailVC, animated: true)
             }
         }
     }

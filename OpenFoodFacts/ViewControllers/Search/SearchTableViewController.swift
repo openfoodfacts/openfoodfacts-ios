@@ -19,16 +19,6 @@ class SearchTableViewController: UIViewController {
     fileprivate var lastQuery: String?
     fileprivate var productsResponse: ProductsResponse?
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +26,7 @@ class SearchTableViewController: UIViewController {
         
         configureTableView()
         configureSearchController()
+        configureNavigationBar()
     }
     
     fileprivate func configureTableView() {
@@ -48,8 +39,13 @@ class SearchTableViewController: UIViewController {
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search for a product by name or barcode"
         searchController.searchBar.delegate = self
+        searchController.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    fileprivate func configureNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "barcode"), style: .plain, target: self, action: #selector(scanBarcode))
     }
 }
 
@@ -167,5 +163,14 @@ private extension SearchTableViewController {
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
         productDetailVC.product = product
         return productDetailVC
+    }
+}
+
+// MARK: - Scanning
+
+extension SearchTableViewController {
+    
+    func scanBarcode() {
+        navigationController?.pushViewController(ScannerViewController(), animated: true)
     }
 }

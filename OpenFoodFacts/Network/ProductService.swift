@@ -11,9 +11,9 @@ import Alamofire
 import AlamofireObjectMapper
 
 protocol ProductApi {
-    associatedtype Data
+    func getProducts(byName name: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void)
     
-    func getProducts(byName name: String, page: Int, onSuccess: @escaping (Data) -> Void)
+    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product?) -> Void)
 }
 
 struct ProductService: ProductApi {
@@ -31,6 +31,22 @@ struct ProductService: ProductApi {
             case .success(let productResponse):
                 print("Got \(productResponse.count ?? 0) products ")
                 onSuccess(productResponse)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product?) -> Void) {
+        let url = endpoint + "/api/v0/product/\(barcode).json"
+        
+        print("URL: \(url)")
+        
+        Alamofire.request(url).responseObject(keyPath: "product") { (response: DataResponse<Product>) in
+            switch response.result {
+            case .success(let product):
+                print("Got product")
+                onSuccess(product)
             case .failure(let error):
                 print(error)
             }
