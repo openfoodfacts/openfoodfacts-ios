@@ -70,15 +70,12 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func getProduct(fromService service: ProductService, barcode: String) {
-        service.getProduct(byBarcode: barcode) { response in
+        service.getProduct(byBarcode: barcode) { product in
+            let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
+            let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
+            productDetailVC.product = product
             
-            if let product = response {
-                let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
-                let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
-                productDetailVC.product = product
-                
-                self.navigationController?.pushViewController(productDetailVC, animated: true)
-            }
+            self.navigationController?.pushViewController(productDetailVC, animated: true)
         }
     }
 }

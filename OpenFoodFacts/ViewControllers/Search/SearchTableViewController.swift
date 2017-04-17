@@ -102,7 +102,7 @@ extension SearchTableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let products = productsResponse?.products {
-            navigationController?.pushViewController(productDetails(product: products[indexPath.row]), animated: true)
+            showProductDetails(product: products[indexPath.row])
         }
     }
 }
@@ -141,16 +141,25 @@ extension SearchTableViewController: UISearchBarDelegate {
 extension SearchTableViewController {
     
     func getProducts(fromService service: ProductService, page: Int, withQuery query: String? = nil) {
+        // Either we have a query from the user's input or we need need to fetch the next page for the same query
         if let query = query ?? productsResponse?.query {
-            service.getProducts(byName: query, page: page) { response in
-                if self.productsResponse == nil || self.productsResponse?.query != query {
-                    self.productsResponse = response
-                    self.productsResponse!.query = query
-                } else if self.productsResponse?.query == query, let newProducts = response.products {
-                    self.productsResponse!.products!.append(contentsOf: newProducts)
+            
+            if query.isNumber() { // TODO Should validate so only the API is called when the input is a valid barcode
+                service.getProduct(byBarcode: query) { product in
+                    self.showProductDetails(product: product)
                 }
-                
-                self.tableView.reloadData()
+            } else {
+                service.getProducts(byName: query, page: page) { response in
+                    // TODO If this query returns only a product, should it go directly to detail view instead of the tableview?
+                    if self.productsResponse == nil || self.productsResponse?.query != query { // Got new response
+                        self.productsResponse = response
+                        self.productsResponse!.query = query
+                    } else if self.productsResponse?.query == query, let newProducts = response.products { // Append new projects to existing response
+                        self.productsResponse!.products!.append(contentsOf: newProducts)
+                    }
+                    
+                    self.tableView.reloadData()
+                }
             }
         }
     }
@@ -158,6 +167,10 @@ extension SearchTableViewController {
 
 // MARK: - Private functions
 private extension SearchTableViewController {
+    func showProductDetails(product: Product) {
+        navigationController?.pushViewController(productDetails(product: product), animated: true)
+    }
+    
     func productDetails(product: Product) -> ProductDetailViewController {
         let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController

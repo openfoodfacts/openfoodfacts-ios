@@ -26,15 +26,16 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         var vcs = [UIViewController]()
         
-        if let summary = UIStoryboard(name: String(describing: ProductSummaryViewController.self), bundle: nil).instantiateInitialViewController() {
+        if let summary = UIStoryboard(name: String(describing: ProductSummaryViewController.self), bundle: nil).instantiateInitialViewController() as? ProductSummaryViewController {
+            summary.product = product
             vcs.append(summary)
         }
         
-        if let ingredients = UIStoryboard(name: String(describing: ProductIngredientsViewController.self), bundle: nil).instantiateInitialViewController() {
+        if let ingredients = UIStoryboard(name: String(describing: ProductIngredientsViewController.self), bundle: nil).instantiateInitialViewController() as? ProductIngredientsViewController {
             vcs.append(ingredients)
         }
         
-        if let nutrition = UIStoryboard(name: String(describing: ProductNutritionViewController.self), bundle: nil).instantiateInitialViewController() {
+        if let nutrition = UIStoryboard(name: String(describing: ProductNutritionViewController.self), bundle: nil).instantiateInitialViewController() as? ProductNutritionViewController {
             vcs.append(nutrition)
         }
         

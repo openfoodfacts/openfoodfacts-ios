@@ -13,7 +13,7 @@ import AlamofireObjectMapper
 protocol ProductApi {
     func getProducts(byName name: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void)
     
-    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product?) -> Void)
+    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product) -> Void)
 }
 
 struct ProductService: ProductApi {
@@ -37,7 +37,7 @@ struct ProductService: ProductApi {
         }
     }
     
-    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product?) -> Void) {
+    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product) -> Void) {
         let url = endpoint + "/api/v0/product/\(barcode).json"
         
         print("URL: \(url)")

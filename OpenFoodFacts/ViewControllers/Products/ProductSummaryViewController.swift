@@ -11,6 +11,8 @@ import XLPagerTabStrip
 
 class ProductSummaryViewController: UIViewController, IndicatorInfoProvider {
     
+    var product: Product!
+    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Summary")
     }
