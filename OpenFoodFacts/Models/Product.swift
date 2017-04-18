@@ -15,6 +15,8 @@ class Product: Mappable {
     var quantity: String?
     var imageUrl: String?
     var frontImageUrl: String?
+    var barcode: String?
+    var packaging: String?
     
     required init?(map: Map){
         
@@ -26,5 +28,7 @@ class Product: Mappable {
         quantity <- map[OFFJson.QuantityKey]
         frontImageUrl <- map[OFFJson.ImageFrontUrlKey]
         imageUrl <- map[OFFJson.ImageUrlKey]
+        barcode <- map[OFFJson.CodeKey]
+        packaging <- map[OFFJson.PackagingKey]
     }
 }
