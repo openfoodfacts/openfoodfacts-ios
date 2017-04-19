@@ -198,7 +198,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
 			<key>path</key>
-			<string>ProductSummaryViewController.swift</string>
+			<string>ProductSummaryTableViewController.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -267,6 +267,8 @@
 			<key>children</key>
 			<array>
 				<string>957094D21EA2B20800268236</string>
+				<string>95CB99C61EA8014A00CBDDF9</string>
+				<string>95CB99C71EA8014A00CBDDF9</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -490,6 +492,7 @@
 				<string>957094CA1EA26C8800268236</string>
 				<string>957094B51EA16C4B00268236</string>
 				<string>95C368111E9FD95F008BB582</string>
+				<string>95CB99C81EA8014A00CBDDF9</string>
 				<string>957094AF1EA124E800268236</string>
 				<string>95D6A7641E9C18FD0017B423</string>
 				<string>95CB99A71EA55BF900CBDDF9</string>
@@ -527,6 +530,7 @@
 			<key>files</key>
 			<array>
 				<string>95D6A7691E9D54AF0017B423</string>
+				<string>95CB99C91EA8014A00CBDDF9</string>
 				<string>957094D61EA2B47000268236</string>
 				<string>957094DB1EA3CFFB00268236</string>
 				<string>95C2651C1E96D55B004212EC</string>
@@ -1238,8 +1242,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Extensions</string>
 			<key>path</key>
 			<string>Extensions</string>
 			<key>sourceTree</key>
@@ -1262,6 +1264,46 @@
 		<dict>
 			<key>fileRef</key>
 			<string>95CB99A61EA55BF900CBDDF9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>95CB99C61EA8014A00CBDDF9</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SummaryHeaderTableViewCell.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>95CB99C71EA8014A00CBDDF9</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>SummaryHeaderTableViewCell.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>95CB99C81EA8014A00CBDDF9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>95CB99C61EA8014A00CBDDF9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>95CB99C91EA8014A00CBDDF9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>95CB99C71EA8014A00CBDDF9</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>

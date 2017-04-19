@@ -11,12 +11,13 @@ import ObjectMapper
 
 class Product: Mappable {
     var name: String?
-    var brand: String?
+    var brands: String?
     var quantity: String?
     var imageUrl: String?
     var frontImageUrl: String?
     var barcode: String?
     var packaging: String?
+    var categories: String?
     
     required init?(map: Map){
         
@@ -24,11 +25,12 @@ class Product: Mappable {
     
     func mapping(map: Map) {
         name <- map[OFFJson.ProductNameKey]
-        brand <- map[OFFJson.BrandsKey]
+        brands <- map[OFFJson.BrandsKey]
         quantity <- map[OFFJson.QuantityKey]
         frontImageUrl <- map[OFFJson.ImageFrontUrlKey]
         imageUrl <- map[OFFJson.ImageUrlKey]
         barcode <- map[OFFJson.CodeKey]
         packaging <- map[OFFJson.PackagingKey]
+        categories <- map[OFFJson.CategoriesKey]
     }
 }
