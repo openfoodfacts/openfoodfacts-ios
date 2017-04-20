@@ -31,6 +31,9 @@ class SearchTableViewController: UIViewController {
     
     fileprivate func configureTableView() {
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ProductTableViewCell.self))
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
     }
     
     fileprivate func configureSearchController() {
@@ -95,10 +98,6 @@ extension SearchTableViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension SearchTableViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let products = productsResponse?.products {

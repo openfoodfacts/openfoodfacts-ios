@@ -18,6 +18,7 @@ class Product: Mappable {
     var barcode: String?
     var packaging: String?
     var categories: String?
+    var nutriscore: String?
     
     required init?(map: Map){
         
@@ -32,5 +33,6 @@ class Product: Mappable {
         barcode <- map[OFFJson.CodeKey]
         packaging <- map[OFFJson.PackagingKey]
         categories <- map[OFFJson.CategoriesKey]
+        nutriscore <- map[OFFJson.NutritionGradesKey]
     }
 }

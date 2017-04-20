@@ -26,7 +26,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         var vcs = [UIViewController]()
         
-        if let summary = UIStoryboard(name: String(describing: ProductSummaryViewController.self), bundle: nil).instantiateInitialViewController() as? ProductSummaryViewController {
+        if let summary = UIStoryboard(name: String(describing: ProductSummaryTableViewController.self), bundle: nil).instantiateInitialViewController() as? ProductSummaryTableViewController {
             summary.product = product
             vcs.append(summary)
         }

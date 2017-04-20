@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SummaryHeaderTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var nutriscore: UILabel!
+    @IBOutlet weak var productName: UILabel!
+    
+    func configure(withProduct product: Product) {
+        if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
+            // TODO Placeholder image or loading
+            productImage.kf.indicatorType = .activity
+            productImage.kf.setImage(with: url)
+        }
+        
+        if let nutriscore = product.nutriscore {
+            self.nutriscore.text = nutriscore.uppercased()
+        }
+        
+        if let name = product.name {
+            productName.text = name
+        }
+    }
 }
