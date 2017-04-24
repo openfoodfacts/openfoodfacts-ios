@@ -11,11 +11,18 @@ import XLPagerTabStrip
 
 class ProductSummaryTableViewController: UIViewController, IndicatorInfoProvider {
     
-    var product: Product!
+    var product: Product! {
+        didSet {
+            calculateInfoRows()
+        }
+    }
+    
+    fileprivate var infoRows = [(ProductInfo)]()
     
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate         let headerCell = String(describing: SummaryHeaderTableViewCell.self)
+    fileprivate let headerCell = String(describing: SummaryHeaderTableViewCell.self)
+    fileprivate let rowCell = String(describing: SummaryRowTableViewCell.self)
     
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -24,27 +31,26 @@ class ProductSummaryTableViewController: UIViewController, IndicatorInfoProvider
     
     override func viewDidLoad() {
         configureTableView()
-        
-        
-        //        if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
-        //            // TODO Placeholder image or loading
-        //            photo.kf.indicatorType = .activity
-        //            photo.kf.setImage(with: url)
-        //        }
-        //
-        //        name.text = product.name
-        //        barcode.text = product.barcode
-        //        quantity.text = product.quantity
-        //        packaging.text = product.packaging?.replacingOccurrences(of: ",", with: ", ")
-        //        brands.text = product.brands
-        //        categories.text = product.categories
     }
     
     func configureTableView() {
         tableView.register(UINib(nibName: headerCell, bundle: nil), forCellReuseIdentifier: headerCell)
+        tableView.register(UINib(nibName: rowCell, bundle: nil), forCellReuseIdentifier: rowCell)
+    }
+    
+    func calculateInfoRows() {
+        // Reset
+        infoRows.removeAll()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 188
+        // Rows of info are displayed in the order they are declared here
+        checkProductPropertyExists(property: product.barcode, propertyName: .barcode)
+        checkProductPropertyExists(property: product.quantity, propertyName: .quantity)
+    }
+    
+    func checkProductPropertyExists(property: String?, propertyName: ProductInfoKey) {
+        if let property = property {
+            infoRows.append(ProductInfo(label: propertyName, value: property))
+        }
     }
 }
 
@@ -55,27 +61,47 @@ extension ProductSummaryTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
+        if section == 0 {
             return 1
         } else {
-            return 0 // TODO how can I know how many rows? It depends on the number of non-nil properties in the product object
+            return infoRows.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 1 {
-            return createHeaderCell(row: indexPath.row)
+        if indexPath.section == 0 {
+            return createHeaderCell()
         }
         else {
-            return UITableViewCell() // TODO
+            return createRow(row: indexPath.row)
         }
     }
     
-    func createHeaderCell(row: Int) -> SummaryHeaderTableViewCell {
+    func createHeaderCell() -> SummaryHeaderTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: headerCell) as! SummaryHeaderTableViewCell
         
         cell.configure(withProduct: product)
         
         return cell
+    }
+    
+    func createRow(row: Int) -> SummaryRowTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: rowCell) as! SummaryRowTableViewCell
+        
+        let productInfo = infoRows[row]
+        
+        cell.configure(withProductInfo: productInfo)
+        
+        return cell
+    }
+}
+
+extension ProductSummaryTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 100
+        } else {
+            return 44
+        }
     }
 }
