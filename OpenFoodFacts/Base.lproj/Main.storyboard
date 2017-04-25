@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -92,35 +91,18 @@
         <scene sceneID="By1-kC-bxg">
             <objects>
                 <viewController id="EH8-XH-tDE" customClass="SearchTableViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Oah-mb-hss"/>
-                        <viewControllerLayoutGuide type="bottom" id="GgD-v0-IUX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TaQ-pb-Qwu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f20-7Y-y1Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4GX-xs-yHh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="EH8-XH-tDE" id="yG9-WZ-dmQ"/>
-                                    <outlet property="delegate" destination="EH8-XH-tDE" id="TR5-l9-JCA"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="GgD-v0-IUX" firstAttribute="top" secondItem="4GX-xs-yHh" secondAttribute="bottom" id="Gbp-y9-6lq"/>
-                            <constraint firstAttribute="trailing" secondItem="4GX-xs-yHh" secondAttribute="trailing" id="KvH-Fq-wA3"/>
-                            <constraint firstAttribute="topMargin" secondItem="4GX-xs-yHh" secondAttribute="top" id="NUz-Jx-w35"/>
-                            <constraint firstItem="4GX-xs-yHh" firstAttribute="leading" secondItem="TaQ-pb-Qwu" secondAttribute="leading" id="XNl-Q8-rdl"/>
-                        </constraints>
-                    </view>
+                        <connections>
+                            <outlet property="dataSource" destination="EH8-XH-tDE" id="teo-Mk-yvP"/>
+                            <outlet property="delegate" destination="EH8-XH-tDE" id="1Uh-MU-l9x"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" id="ZvS-Tf-UPn"/>
                     <connections>
-                        <outlet property="tableView" destination="4GX-xs-yHh" id="VZk-tk-pwC"/>
+                        <outlet property="tableView" destination="f20-7Y-y1Q" id="iHN-uf-pHH"/>
                         <segue destination="ad3-8a-IiG" kind="show" identifier="ShowProductDetail" id="Rsh-Ig-Fdp"/>
                     </connections>
                 </viewController>
