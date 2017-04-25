@@ -32,8 +32,7 @@ class SearchTableViewController: UIViewController {
     fileprivate func configureTableView() {
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ProductTableViewCell.self))
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = 100
     }
     
     fileprivate func configureSearchController() {
