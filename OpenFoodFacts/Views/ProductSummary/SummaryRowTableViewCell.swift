@@ -12,9 +12,11 @@ class SummaryRowTableViewCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
     
+    fileprivate let textSize: CGFloat = 17
+    
     func configure(withProductInfo productInfo: ProductInfo) {
-        let bold = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15)]
-        let regular = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.systemFont(ofSize: 15)]
+        let bold = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.boldSystemFont(ofSize: textSize)]
+        let regular = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.systemFont(ofSize: textSize)]
         
         let label = NSAttributedString(string: productInfo.label.rawValue + ": ", attributes: bold)
         let value = NSAttributedString(string: productInfo.value, attributes: regular)

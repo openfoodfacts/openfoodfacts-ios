@@ -45,10 +45,19 @@ class ProductSummaryTableViewController: UIViewController, IndicatorInfoProvider
         // Rows of info are displayed in the order they are declared here
         checkProductPropertyExists(property: product.barcode, propertyName: .barcode)
         checkProductPropertyExists(property: product.quantity, propertyName: .quantity)
+        checkProductPropertyExists(property: product.packaging, propertyName: .packaging)
+        checkProductPropertyExists(property: product.brands, propertyName: .brands)
+        checkProductPropertyExists(property: product.manufacturingPlaces, propertyName: .manufacturingPlaces)
+        checkProductPropertyExists(property: product.origins, propertyName: .origins)
+        checkProductPropertyExists(property: product.categories, propertyName: .categories)
+        checkProductPropertyExists(property: product.labels, propertyName: .labels)
+        checkProductPropertyExists(property: product.citiesTags, propertyName: .citiesTags)
+        checkProductPropertyExists(property: product.stores, propertyName: .stores)
+        checkProductPropertyExists(property: product.countries, propertyName: .countries)
     }
     
     func checkProductPropertyExists(property: String?, propertyName: ProductInfoKey) {
-        if let property = property {
+        if let property = property, !property.isEmpty {
             infoRows.append(ProductInfo(label: propertyName, value: property))
         }
     }
