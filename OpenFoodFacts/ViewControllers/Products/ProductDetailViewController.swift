@@ -16,11 +16,22 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isTranslucent = false
         buttonBarView.register(UINib(nibName: "ButtonBarView", bundle: nil), forCellWithReuseIdentifier: "Cell")
         buttonBarView.backgroundColor = .white
         settings.style.selectedBarBackgroundColor = .white
         buttonBarView.selectedBar.backgroundColor = self.view.tintColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
