@@ -18,7 +18,7 @@ class SummaryRowTableViewCell: UITableViewCell {
         let bold = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.boldSystemFont(ofSize: textSize)]
         let regular = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.systemFont(ofSize: textSize)]
         
-        let label = NSAttributedString(string: productInfo.label.rawValue + ": ", attributes: bold)
+        let label = NSAttributedString(string: productInfo.label.localizedString + ": ", attributes: bold)
         let value = NSAttributedString(string: productInfo.value, attributes: regular)
         
         let combination = NSMutableAttributedString()

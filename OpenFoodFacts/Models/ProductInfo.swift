@@ -8,18 +8,51 @@
 
 import Foundation
 
-enum ProductInfoKey: String {
-    case barcode = "Barcode"
-    case quantity = "Quantity"
-    case packaging = "Packaging"
-    case brands = "Brands"
-    case manufacturingPlaces = "Manufacturing or processing places"
-    case origins = "Origin of ingredients"
-    case categories = "Categories"
-    case labels = "Labels, certifications, awards"
-    case citiesTags = "City, state and country where purchased"
-    case stores = "Stores"
-    case countries = "Countries where sold"
+struct LocalizedString: ExpressibleByStringLiteral, Equatable {
+    
+    let v: String
+    
+    init(key: String) {
+        self.v = NSLocalizedString(key, comment: "")
+    }
+    init(localized: String) {
+        self.v = localized
+    }
+    init(stringLiteral value:String) {
+        self.init(key: value)
+    }
+    init(extendedGraphemeClusterLiteral value: String) {
+        self.init(key: value)
+    }
+    init(unicodeScalarLiteral value: String) {
+        self.init(key: value)
+    }
+}
+
+func ==(lhs:LocalizedString, rhs:LocalizedString) -> Bool {
+    return lhs.v == rhs.v
+}
+
+enum ProductInfoKey: LocalizedString {
+    case barcode = "barcode"
+    case quantity = "quantity"
+    case packaging = "packaging"
+    case brands = "brands"
+    case manufacturingPlaces = "manufacturingPlaces"
+    case origins = "origins"
+    case categories = "categories"
+    case labels = "labels"
+    case citiesTags = "citiesTags"
+    case stores = "stores"
+    case countries = "countries"
+    
+    var localizedString: String {
+        return self.rawValue.v
+    }
+    
+    init?(localizedString: String) {
+        self.init(rawValue: LocalizedString(localized: localizedString))
+    }
 }
 
 struct ProductInfo {
