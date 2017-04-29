@@ -34,17 +34,17 @@ func ==(lhs:LocalizedString, rhs:LocalizedString) -> Bool {
 }
 
 enum ProductInfoKey: LocalizedString {
-    case barcode = "barcode"
-    case quantity = "quantity"
-    case packaging = "packaging"
-    case brands = "brands"
-    case manufacturingPlaces = "manufacturingPlaces"
-    case origins = "origins"
-    case categories = "categories"
-    case labels = "labels"
-    case citiesTags = "citiesTags"
-    case stores = "stores"
-    case countries = "countries"
+    case barcode = "product-detail.summary.barcode"
+    case quantity = "product-detail.summary.quantity"
+    case packaging = "product-detail.summary.packaging"
+    case brands = "product-detail.summary.brands"
+    case manufacturingPlaces = "product-detail.summary.manufacturingPlaces"
+    case origins = "product-detail.summary.origins"
+    case categories = "product-detail.summary.categories"
+    case labels = "product-detail.summary.labels"
+    case citiesTags = "product-detail.summary.citiesTags"
+    case stores = "product-detail.summary.stores"
+    case countries = "product-detail.summary.countries"
     
     var localizedString: String {
         return self.rawValue.v

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
 		953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
 		953F0E391EAB8CBC006C60F6 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E381EAB8CBC006C60F6 /* ProductInfo.swift */; };
 		955ED9B71EB2901100BB80BA /* EmptyProductsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */; };
@@ -54,12 +55,13 @@
 		95193BD91EB293B300333733 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		95193BDB1EB293BB00333733 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SummaryHeaderTableViewCell.strings; sourceTree = "<group>"; };
 		95193BDD1EB293C800333733 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EmptyProductsView.strings; sourceTree = "<group>"; };
+		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		951FB09E1EB2989A005CAE33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9527E7861E9EBDD200833F04 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		953F0E381EAB8CBC006C60F6 /* ProductInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
 		955ED9B81EB2901100BB80BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyProductsView.xib; sourceTree = "<group>"; };
 		955ED9BD1EB290F900BB80BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
-		955ED9C11EB2911D00BB80BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		956B958E1EB28BD1007C0345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SummaryHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		956B95921EB28C8A007C0345 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		957094AE1EA124E800268236 /* ProductService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
@@ -204,10 +206,11 @@
 				95D6A7591E9C080A0017B423 /* Views */,
 				95C265111E96D55B004212EC /* AppDelegate.swift */,
 				95C265181E96D55B004212EC /* Assets.xcassets */,
-				955ED9C21EB2911D00BB80BA /* Info.plist */,
+				951FB0991EB29852005CAE33 /* Info.plist */,
 				95C2651A1E96D55B004212EC /* LaunchScreen.storyboard */,
 				95C265151E96D55B004212EC /* Main.storyboard */,
 				956B95921EB28C8A007C0345 /* Localizable.strings */,
+				951FB09F1EB2989A005CAE33 /* InfoPlist.strings */,
 			);
 			path = OpenFoodFacts;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				955ED9B71EB2901100BB80BA /* EmptyProductsView.xib in Resources */,
+				951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */,
 				956B958D1EB28BD1007C0345 /* SummaryHeaderTableViewCell.xib in Resources */,
 				957094D61EA2B47000268236 /* ProductIngredientsViewController.storyboard in Resources */,
 				956B95931EB28C8A007C0345 /* Localizable.strings in Resources */,
@@ -440,6 +444,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		951FB09F1EB2989A005CAE33 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				951FB09E1EB2989A005CAE33 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -456,14 +468,6 @@
 				95193BD91EB293B300333733 /* en */,
 			);
 			name = Settings.storyboard;
-			sourceTree = "<group>";
-		};
-		955ED9C21EB2911D00BB80BA /* Info.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				955ED9C11EB2911D00BB80BA /* Base */,
-			);
-			name = Info.plist;
 			sourceTree = "<group>";
 		};
 		956B958F1EB28BD1007C0345 /* SummaryHeaderTableViewCell.xib */ = {

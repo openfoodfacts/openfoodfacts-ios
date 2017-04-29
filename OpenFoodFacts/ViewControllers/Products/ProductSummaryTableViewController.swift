@@ -26,7 +26,7 @@ class ProductSummaryTableViewController: UIViewController, IndicatorInfoProvider
     
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: NSLocalizedString("summary", comment: "Product detail, summary"))
+        return IndicatorInfo(title: NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary"))
     }
     
     override func viewDidLoad() {

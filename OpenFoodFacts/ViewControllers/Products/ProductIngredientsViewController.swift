@@ -12,6 +12,6 @@ import XLPagerTabStrip
 class ProductIngredientsViewController: UIViewController, IndicatorInfoProvider {
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: NSLocalizedString("ingredients", comment: "Product details, ingredients"))
+        return IndicatorInfo(title: NSLocalizedString("product-detail.page-title.ingredients", comment: "Product details, ingredients"))
     }
 }

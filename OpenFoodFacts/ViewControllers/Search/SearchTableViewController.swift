@@ -39,7 +39,7 @@ class SearchTableViewController: UIViewController {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = NSLocalizedString("productSearchPlaceholder", comment: "Placeholder for the product search bar")
+        searchController.searchBar.placeholder = NSLocalizedString("product-search.search-placeholder", comment: "Placeholder for the product search bar")
         searchController.searchBar.delegate = self
         searchController.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
