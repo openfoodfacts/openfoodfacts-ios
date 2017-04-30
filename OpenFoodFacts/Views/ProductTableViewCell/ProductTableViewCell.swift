@@ -18,7 +18,7 @@ class ProductTableViewCell: UITableViewCell {
     
     func configure(withProduct product: Product) {
         name.text = product.name
-        brand.text = product.brands
+        brand.text = !product.brands.isEmpty ? product.brands[0] : ""
         quantity.text = product.quantity
         
         if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {

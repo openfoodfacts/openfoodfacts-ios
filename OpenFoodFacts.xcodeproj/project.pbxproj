@@ -27,6 +27,7 @@
 		957094D91EA2B4B100268236 /* ProductNutritionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957094D81EA2B4B100268236 /* ProductNutritionViewController.storyboard */; };
 		95719CE21EAB854400287674 /* SummaryRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95719CE01EAB854400287674 /* SummaryRowTableViewCell.swift */; };
 		95719CE31EAB854400287674 /* SummaryRowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95719CE11EAB854400287674 /* SummaryRowTableViewCell.xib */; };
+		95781ADB1EB4E522003E3256 /* ArrayTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781ADA1EB4E521003E3256 /* ArrayTransform.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		957094D81EA2B4B100268236 /* ProductNutritionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductNutritionViewController.storyboard; sourceTree = "<group>"; };
 		95719CE01EAB854400287674 /* SummaryRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryRowTableViewCell.swift; sourceTree = "<group>"; };
 		95719CE11EAB854400287674 /* SummaryRowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryRowTableViewCell.xib; sourceTree = "<group>"; };
+		95781ADA1EB4E521003E3256 /* ArrayTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTransform.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265161E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				95D6A7631E9C18FD0017B423 /* Product.swift */,
 				95C368101E9FD95F008BB582 /* ProductsResponse.swift */,
 				953F0E381EAB8CBC006C60F6 /* ProductInfo.swift */,
+				95781ADA1EB4E521003E3256 /* ArrayTransform.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
 				95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */,
 				957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */,
+				95781ADB1EB4E522003E3256 /* ArrayTransform.swift in Sources */,
 				957094B51EA16C4B00268236 /* ProductDetailViewController.swift in Sources */,
 				95C368111E9FD95F008BB582 /* ProductsResponse.swift in Sources */,
 				95CB99C81EA8014A00CBDDF9 /* SummaryHeaderTableViewCell.swift in Sources */,

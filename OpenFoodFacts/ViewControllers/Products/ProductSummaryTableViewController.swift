@@ -45,15 +45,15 @@ class ProductSummaryTableViewController: UIViewController, IndicatorInfoProvider
         // Rows of info are displayed in the order they are declared here
         checkProductPropertyExists(property: product.barcode, propertyName: .barcode)
         checkProductPropertyExists(property: product.quantity, propertyName: .quantity)
-        checkProductPropertyExists(property: product.packaging, propertyName: .packaging)
-        checkProductPropertyExists(property: product.brands, propertyName: .brands)
+        checkProductPropertyExists(property: product.packaging.joined(separator: ", "), propertyName: .packaging)
+        checkProductPropertyExists(property: product.brands.joined(separator: ", "), propertyName: .brands)
         checkProductPropertyExists(property: product.manufacturingPlaces, propertyName: .manufacturingPlaces)
         checkProductPropertyExists(property: product.origins, propertyName: .origins)
-        checkProductPropertyExists(property: product.categories, propertyName: .categories)
-        checkProductPropertyExists(property: product.labels, propertyName: .labels)
+        checkProductPropertyExists(property: product.categories.joined(separator: ", "), propertyName: .categories)
+        checkProductPropertyExists(property: product.labels.joined(separator: ", "), propertyName: .labels)
         checkProductPropertyExists(property: product.citiesTags, propertyName: .citiesTags)
-        checkProductPropertyExists(property: product.stores, propertyName: .stores)
-        checkProductPropertyExists(property: product.countries, propertyName: .countries)
+        checkProductPropertyExists(property: product.stores.joined(separator: ", "), propertyName: .stores)
+        checkProductPropertyExists(property: product.countries.joined(separator: ", "), propertyName: .countries)
     }
     
     func checkProductPropertyExists(property: String?, propertyName: ProductInfoKey) {

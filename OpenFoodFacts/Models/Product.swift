@@ -11,20 +11,20 @@ import ObjectMapper
 
 struct Product: Mappable {
     var name: String?
-    var brands: String?
+    var brands = [String]()
     var quantity: String?
     var imageUrl: String?
     var frontImageUrl: String?
     var barcode: String?
-    var packaging: String?
-    var categories: String?
+    var packaging = [String]()
+    var categories = [String]()
     var nutriscore: String?
     var manufacturingPlaces: String?
     var origins: String?
-    var labels: String?
+    var labels = [String]()
     var citiesTags: String?
-    var stores: String?
-    var countries: String?
+    var stores = [String]()
+    var countries = [String]()
     
     init?(map: Map){
         
@@ -32,19 +32,19 @@ struct Product: Mappable {
     
     mutating func mapping(map: Map) {
         name <- map[OFFJson.ProductNameKey]
-        brands <- map[OFFJson.BrandsKey]
+        brands <- (map[OFFJson.BrandsKey], ArrayTransform())
         quantity <- map[OFFJson.QuantityKey]
         frontImageUrl <- map[OFFJson.ImageFrontUrlKey]
         imageUrl <- map[OFFJson.ImageUrlKey]
         barcode <- map[OFFJson.CodeKey]
-        packaging <- map[OFFJson.PackagingKey]
-        categories <- map[OFFJson.CategoriesKey]
+        packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
+        categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
         nutriscore <- map[OFFJson.NutritionGradesKey]
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
         origins <- map[OFFJson.OriginsKey]
-        labels <- map[OFFJson.LabelsKey]
+        labels <- (map[OFFJson.LabelsKey], ArrayTransform())
         citiesTags <- map[OFFJson.CitiesTagsKey]
-        stores <- map[OFFJson.StoresKey]
-        countries <- map[OFFJson.CountriesKey]
+        stores <- (map[OFFJson.StoresKey], ArrayTransform())
+        countries <- (map[OFFJson.CountriesKey], ArrayTransform())
     }
 }
