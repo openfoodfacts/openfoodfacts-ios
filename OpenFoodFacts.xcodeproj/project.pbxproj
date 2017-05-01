@@ -23,11 +23,12 @@
 		957094C81EA26C5B00268236 /* ProductIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957094C71EA26C5B00268236 /* ProductIngredientsViewController.swift */; };
 		957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957094C91EA26C8800268236 /* ProductNutritionViewController.swift */; };
 		957094D31EA2B20800268236 /* ProductSummaryTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957094D21EA2B20800268236 /* ProductSummaryTableViewController.storyboard */; };
-		957094D61EA2B47000268236 /* ProductIngredientsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957094D51EA2B47000268236 /* ProductIngredientsViewController.storyboard */; };
 		957094D91EA2B4B100268236 /* ProductNutritionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957094D81EA2B4B100268236 /* ProductNutritionViewController.storyboard */; };
 		95719CE21EAB854400287674 /* SummaryRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95719CE01EAB854400287674 /* SummaryRowTableViewCell.swift */; };
 		95719CE31EAB854400287674 /* SummaryRowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95719CE11EAB854400287674 /* SummaryRowTableViewCell.xib */; };
 		95781ADB1EB4E522003E3256 /* ArrayTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781ADA1EB4E521003E3256 /* ArrayTransform.swift */; };
+		95781AE21EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781AE01EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.swift */; };
+		95781AE31EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781AE11EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.xib */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -73,11 +74,12 @@
 		957094C71EA26C5B00268236 /* ProductIngredientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductIngredientsViewController.swift; sourceTree = "<group>"; };
 		957094C91EA26C8800268236 /* ProductNutritionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNutritionViewController.swift; sourceTree = "<group>"; };
 		957094D21EA2B20800268236 /* ProductSummaryTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductSummaryTableViewController.storyboard; sourceTree = "<group>"; };
-		957094D51EA2B47000268236 /* ProductIngredientsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductIngredientsViewController.storyboard; sourceTree = "<group>"; };
 		957094D81EA2B4B100268236 /* ProductNutritionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductNutritionViewController.storyboard; sourceTree = "<group>"; };
 		95719CE01EAB854400287674 /* SummaryRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryRowTableViewCell.swift; sourceTree = "<group>"; };
 		95719CE11EAB854400287674 /* SummaryRowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryRowTableViewCell.xib; sourceTree = "<group>"; };
 		95781ADA1EB4E521003E3256 /* ArrayTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTransform.swift; sourceTree = "<group>"; };
+		95781AE01EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductIngredientHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		95781AE11EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductIngredientHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265161E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,7 +161,8 @@
 		957094D41EA2B46300268236 /* ProductIngredients */ = {
 			isa = PBXGroup;
 			children = (
-				957094D51EA2B47000268236 /* ProductIngredientsViewController.storyboard */,
+				95781AE01EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.swift */,
+				95781AE11EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.xib */,
 			);
 			path = ProductIngredients;
 			sourceTree = "<group>";
@@ -378,11 +381,11 @@
 			files = (
 				955ED9B71EB2901100BB80BA /* EmptyProductsView.xib in Resources */,
 				951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */,
-				957094D61EA2B47000268236 /* ProductIngredientsViewController.storyboard in Resources */,
 				956B95931EB28C8A007C0345 /* Localizable.strings in Resources */,
 				955ED9BC1EB290F900BB80BA /* Settings.storyboard in Resources */,
 				95C2651C1E96D55B004212EC /* LaunchScreen.storyboard in Resources */,
 				957094BE1EA2625A00268236 /* ProductDetailViewController.storyboard in Resources */,
+				95781AE31EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.xib in Resources */,
 				95D6A75E1E9C08520017B423 /* ProductTableViewCell.xib in Resources */,
 				95C523581EB4DDA100955039 /* SummaryHeaderTableViewCell.xib in Resources */,
 				95719CE31EAB854400287674 /* SummaryRowTableViewCell.xib in Resources */,
@@ -433,6 +436,7 @@
 				957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */,
 				95781ADB1EB4E522003E3256 /* ArrayTransform.swift in Sources */,
 				957094B51EA16C4B00268236 /* ProductDetailViewController.swift in Sources */,
+				95781AE21EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.swift in Sources */,
 				95C368111E9FD95F008BB582 /* ProductsResponse.swift in Sources */,
 				95CB99C81EA8014A00CBDDF9 /* SummaryHeaderTableViewCell.swift in Sources */,
 				957094AF1EA124E800268236 /* ProductService.swift in Sources */,

@@ -42,9 +42,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
             vcs.append(summary)
         }
         
-        if let ingredients = UIStoryboard(name: String(describing: ProductIngredientsViewController.self), bundle: nil).instantiateInitialViewController() as? ProductIngredientsViewController {
-            vcs.append(ingredients)
-        }
+        vcs.append(ProductIngredientsViewController(product: product))
         
         if let nutrition = UIStoryboard(name: String(describing: ProductNutritionViewController.self), bundle: nil).instantiateInitialViewController() as? ProductNutritionViewController {
             vcs.append(nutrition)
