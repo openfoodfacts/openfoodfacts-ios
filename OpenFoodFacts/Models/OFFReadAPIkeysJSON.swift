@@ -241,7 +241,7 @@ struct OFFJson {
     static let ImageIngredientsThumbUrlKey = "image_ingredients_thumb_url"
     static let IngredientsFromPalmOilNKey = "ingredients_from_palm_oil_n"
     static let ImageUrlKey = "image_url"
-    static let IngredientsKey = "ingredients" // TBD
+    static let IngredientsKey = "ingredients_text"
     static let IngredientsElementTextKey = "text"
     static let IngredientsElementRankKey = "rank"
     static let IngredientsElementIdKey = "id"

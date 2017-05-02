@@ -8,32 +8,8 @@
 
 import Foundation
 
-struct LocalizedString: ExpressibleByStringLiteral, Equatable {
-    
-    let v: String
-    
-    init(key: String) {
-        self.v = NSLocalizedString(key, comment: "")
-    }
-    init(localized: String) {
-        self.v = localized
-    }
-    init(stringLiteral value:String) {
-        self.init(key: value)
-    }
-    init(extendedGraphemeClusterLiteral value: String) {
-        self.init(key: value)
-    }
-    init(unicodeScalarLiteral value: String) {
-        self.init(key: value)
-    }
-}
-
-func ==(lhs:LocalizedString, rhs:LocalizedString) -> Bool {
-    return lhs.v == rhs.v
-}
-
-enum ProductInfoKey: LocalizedString {
+enum InfoRowKey: LocalizedString {
+    // Summary
     case barcode = "product-detail.summary.barcode"
     case quantity = "product-detail.summary.quantity"
     case packaging = "product-detail.summary.packaging"
@@ -46,6 +22,10 @@ enum ProductInfoKey: LocalizedString {
     case stores = "product-detail.summary.stores"
     case countries = "product-detail.summary.countries"
     
+    // Ingredients
+    case ingredientsList = "product-detail.ingredients.ingredients-list"
+    
+    
     var localizedString: String {
         return self.rawValue.v
     }
@@ -55,7 +35,7 @@ enum ProductInfoKey: LocalizedString {
     }
 }
 
-struct ProductInfo {
-    let label: ProductInfoKey
+struct InfoRow {
+    let label: InfoRowKey
     let value: String
 }

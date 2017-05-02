@@ -17,7 +17,7 @@ class ProductSummaryTableViewController: UIViewController, IndicatorInfoProvider
         }
     }
     
-    fileprivate var infoRows = [(ProductInfo)]()
+    fileprivate var infoRows = [InfoRow]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -56,9 +56,9 @@ class ProductSummaryTableViewController: UIViewController, IndicatorInfoProvider
         checkProductPropertyExists(property: product.countries.joined(separator: ", "), propertyName: .countries)
     }
     
-    func checkProductPropertyExists(property: String?, propertyName: ProductInfoKey) {
+    func checkProductPropertyExists(property: String?, propertyName: InfoRowKey) {
         if let property = property, !property.isEmpty {
-            infoRows.append(ProductInfo(label: propertyName, value: property))
+            infoRows.append(InfoRow(label: propertyName, value: property))
         }
     }
 }
@@ -89,7 +89,7 @@ extension ProductSummaryTableViewController: UITableViewDataSource {
     func createHeaderCell() -> SummaryHeaderTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: headerCell) as! SummaryHeaderTableViewCell
         
-        cell.configure(withProduct: product)
+        cell.configure(with: product)
         
         return cell
     }
@@ -97,9 +97,9 @@ extension ProductSummaryTableViewController: UITableViewDataSource {
     func createRow(row: Int) -> SummaryRowTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: rowCell) as! SummaryRowTableViewCell
         
-        let productInfo = infoRows[row]
+        let infoRow = infoRows[row]
         
-        cell.configure(withProductInfo: productInfo)
+        cell.configure(with: infoRow)
         
         return cell
     }

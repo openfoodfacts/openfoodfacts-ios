@@ -26,6 +26,7 @@ struct Product: Mappable {
     var stores = [String]()
     var countries = [String]()
     var ingredientsImageUrl: String?
+    var ingredientsList: String?
     
     init?(map: Map){
         
@@ -48,5 +49,6 @@ struct Product: Mappable {
         stores <- (map[OFFJson.StoresKey], ArrayTransform())
         countries <- (map[OFFJson.CountriesKey], ArrayTransform())
         ingredientsImageUrl <- map[OFFJson.ImageIngredientsUrlKey]
+        ingredientsList <- map[OFFJson.IngredientsKey]
     }
 }

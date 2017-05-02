@@ -15,7 +15,7 @@ class SummaryHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var nutriscore: UILabel!
     @IBOutlet weak var productName: UILabel!
     
-    func configure(withProduct product: Product) {
+    func configure(with product: Product) {
         if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
             // TODO Placeholder image or loading
             productImage.kf.indicatorType = .activity

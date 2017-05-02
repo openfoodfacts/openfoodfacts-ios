@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
 		953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
-		953F0E391EAB8CBC006C60F6 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E381EAB8CBC006C60F6 /* ProductInfo.swift */; };
+		953F0E391EAB8CBC006C60F6 /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953F0E381EAB8CBC006C60F6 /* InfoRow.swift */; };
 		955ED9B71EB2901100BB80BA /* EmptyProductsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */; };
 		955ED9BC1EB290F900BB80BA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9BE1EB290F900BB80BA /* Settings.storyboard */; };
 		956B95931EB28C8A007C0345 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 956B95921EB28C8A007C0345 /* Localizable.strings */; };
@@ -29,6 +29,9 @@
 		95781ADB1EB4E522003E3256 /* ArrayTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781ADA1EB4E521003E3256 /* ArrayTransform.swift */; };
 		95781AE21EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781AE01EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.swift */; };
 		95781AE31EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781AE11EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.xib */; };
+		95781B061EB92054003E3256 /* ProductIngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B041EB92054003E3256 /* ProductIngredientsTableViewCell.swift */; };
+		95781B071EB92054003E3256 /* ProductIngredientsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B051EB92054003E3256 /* ProductIngredientsTableViewCell.xib */; };
+		95781B091EB92722003E3256 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B081EB92722003E3256 /* LocalizedString.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -60,7 +63,7 @@
 		951FB09E1EB2989A005CAE33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9527E7861E9EBDD200833F04 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		953F0E381EAB8CBC006C60F6 /* ProductInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
+		953F0E381EAB8CBC006C60F6 /* InfoRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
 		955ED9B81EB2901100BB80BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyProductsView.xib; sourceTree = "<group>"; };
 		955ED9BD1EB290F900BB80BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		956B95921EB28C8A007C0345 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -80,6 +83,9 @@
 		95781ADA1EB4E521003E3256 /* ArrayTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTransform.swift; sourceTree = "<group>"; };
 		95781AE01EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductIngredientHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		95781AE11EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductIngredientHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		95781B041EB92054003E3256 /* ProductIngredientsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductIngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		95781B051EB92054003E3256 /* ProductIngredientsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductIngredientsTableViewCell.xib; sourceTree = "<group>"; };
+		95781B081EB92722003E3256 /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265161E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,6 +169,8 @@
 			children = (
 				95781AE01EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.swift */,
 				95781AE11EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.xib */,
+				95781B041EB92054003E3256 /* ProductIngredientsTableViewCell.swift */,
+				95781B051EB92054003E3256 /* ProductIngredientsTableViewCell.xib */,
 			);
 			path = ProductIngredients;
 			sourceTree = "<group>";
@@ -304,8 +312,9 @@
 				95C368121E9FDCD1008BB582 /* OFFReadAPIkeysJSON.swift */,
 				95D6A7631E9C18FD0017B423 /* Product.swift */,
 				95C368101E9FD95F008BB582 /* ProductsResponse.swift */,
-				953F0E381EAB8CBC006C60F6 /* ProductInfo.swift */,
+				953F0E381EAB8CBC006C60F6 /* InfoRow.swift */,
 				95781ADA1EB4E521003E3256 /* ArrayTransform.swift */,
+				95781B081EB92722003E3256 /* LocalizedString.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,6 +392,7 @@
 				951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */,
 				956B95931EB28C8A007C0345 /* Localizable.strings in Resources */,
 				955ED9BC1EB290F900BB80BA /* Settings.storyboard in Resources */,
+				95781B071EB92054003E3256 /* ProductIngredientsTableViewCell.xib in Resources */,
 				95C2651C1E96D55B004212EC /* LaunchScreen.storyboard in Resources */,
 				957094BE1EA2625A00268236 /* ProductDetailViewController.storyboard in Resources */,
 				95781AE31EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.xib in Resources */,
@@ -427,8 +437,9 @@
 			files = (
 				95C2652F1E9A7246004212EC /* ProductsViewController.swift in Sources */,
 				95D6A7611E9C0B410017B423 /* SearchTableViewController.swift in Sources */,
+				95781B091EB92722003E3256 /* LocalizedString.swift in Sources */,
 				95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */,
-				953F0E391EAB8CBC006C60F6 /* ProductInfo.swift in Sources */,
+				953F0E391EAB8CBC006C60F6 /* InfoRow.swift in Sources */,
 				95D6A75D1E9C08520017B423 /* ProductTableViewCell.swift in Sources */,
 				95C368131E9FDCD1008BB582 /* OFFReadAPIkeysJSON.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
@@ -436,6 +447,7 @@
 				957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */,
 				95781ADB1EB4E522003E3256 /* ArrayTransform.swift in Sources */,
 				957094B51EA16C4B00268236 /* ProductDetailViewController.swift in Sources */,
+				95781B061EB92054003E3256 /* ProductIngredientsTableViewCell.swift in Sources */,
 				95781AE21EB73C0B003E3256 /* ProductIngredientHeaderTableViewCell.swift in Sources */,
 				95C368111E9FD95F008BB582 /* ProductsResponse.swift in Sources */,
 				95CB99C81EA8014A00CBDDF9 /* SummaryHeaderTableViewCell.swift in Sources */,
