@@ -236,6 +236,7 @@ struct OFFJson {
     static let LabelsPrevHierarchyKey = "labels_prev_hierarchy"
     static let ExpirationDateKey = "expiration_date"
     static let StatesHierarchyKey = "states_hierarchy"
+    static let AllergensKey = "allergens"
     static let AllergensTagsKey = "allergens_tags"
     static let IngredientsThatMayBeFromPalmOilNKey = "ingredients_that_may_be_from_palm_oil_n"
     static let ImageIngredientsThumbUrlKey = "image_ingredients_thumb_url"

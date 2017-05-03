@@ -14,7 +14,7 @@ enum InfoRowKey: LocalizedString {
     case quantity = "product-detail.summary.quantity"
     case packaging = "product-detail.summary.packaging"
     case brands = "product-detail.summary.brands"
-    case manufacturingPlaces = "product-detail.summary.manufacturingPlaces"
+    case manufacturingPlaces = "product-detail.summary.manufacturing-places"
     case origins = "product-detail.summary.origins"
     case categories = "product-detail.summary.categories"
     case labels = "product-detail.summary.labels"
@@ -24,7 +24,11 @@ enum InfoRowKey: LocalizedString {
     
     // Ingredients
     case ingredientsList = "product-detail.ingredients.ingredients-list"
-    
+    case allergens = "product-detail.ingredients.allergens-list"
+    case traces = "product-detail.ingredients.traces-list"
+    case additives = "product-detail.ingredients.additives-list"
+    case palmOilIngredients = "product-detail.ingredients.palm-oil-ingredients"
+    case possiblePalmOilIngredients = "product-detail.ingredients.possible-palm-oil-ingredients"
     
     var localizedString: String {
         return self.rawValue.v

@@ -27,6 +27,11 @@ struct Product: Mappable {
     var countries = [String]()
     var ingredientsImageUrl: String?
     var ingredientsList: String?
+    var allergens: String?
+    var traces: String?
+    var additives: [Tag]?
+    var palmOilIngredients = [String]()
+    var possiblePalmOilIngredients = [String]()
     
     init?(map: Map){
         
@@ -50,5 +55,10 @@ struct Product: Mappable {
         countries <- (map[OFFJson.CountriesKey], ArrayTransform())
         ingredientsImageUrl <- map[OFFJson.ImageIngredientsUrlKey]
         ingredientsList <- map[OFFJson.IngredientsKey]
+        allergens <- map[OFFJson.AllergensTagsKey]
+        traces <- map[OFFJson.TracesKey]
+        additives <- (map[OFFJson.AdditivesTagsKey], TagTransform())
+        palmOilIngredients <- map[OFFJson.IngredientsFromPalmOilTagsKey]
+        possiblePalmOilIngredients <- map[OFFJson.IngredientsThatMayBeFromPalmOilTagsKey]
     }
 }

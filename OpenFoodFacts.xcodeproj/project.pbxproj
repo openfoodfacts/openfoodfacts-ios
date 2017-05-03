@@ -32,6 +32,7 @@
 		95781B061EB92054003E3256 /* ProductIngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B041EB92054003E3256 /* ProductIngredientsTableViewCell.swift */; };
 		95781B071EB92054003E3256 /* ProductIngredientsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B051EB92054003E3256 /* ProductIngredientsTableViewCell.xib */; };
 		95781B091EB92722003E3256 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B081EB92722003E3256 /* LocalizedString.swift */; };
+		95781B0B1EBA68F3003E3256 /* TagTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B0A1EBA68F2003E3256 /* TagTransform.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		95781B041EB92054003E3256 /* ProductIngredientsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductIngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		95781B051EB92054003E3256 /* ProductIngredientsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductIngredientsTableViewCell.xib; sourceTree = "<group>"; };
 		95781B081EB92722003E3256 /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		95781B0A1EBA68F2003E3256 /* TagTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTransform.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265161E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				953F0E381EAB8CBC006C60F6 /* InfoRow.swift */,
 				95781ADA1EB4E521003E3256 /* ArrayTransform.swift */,
 				95781B081EB92722003E3256 /* LocalizedString.swift */,
+				95781B0A1EBA68F2003E3256 /* TagTransform.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				95719CE21EAB854400287674 /* SummaryRowTableViewCell.swift in Sources */,
 				95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */,
 				957094C61EA26BFF00268236 /* ProductSummaryTableViewController.swift in Sources */,
+				95781B0B1EBA68F3003E3256 /* TagTransform.swift in Sources */,
 				957094C81EA26C5B00268236 /* ProductIngredientsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

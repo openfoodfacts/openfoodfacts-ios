@@ -34,14 +34,14 @@ class ProductIngredientsViewController: UIViewController, IndicatorInfoProvider 
         tableView.frame = view.bounds
         tableView.dataSource = self
         tableView.delegate = self
-        view.addSubview(tableView)
+        view = tableView
         
         configureTableView()
     }
     
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 70
+        tableView.estimatedRowHeight = 44
         tableView.allowsSelection = false
         
         tableView.register(UINib(nibName: headerCell, bundle: nil), forCellReuseIdentifier: headerCell)
@@ -58,6 +58,11 @@ class ProductIngredientsViewController: UIViewController, IndicatorInfoProvider 
         
         // Rows of info are displayed in the order they are declared here
         checkProductPropertyExists(property: product.ingredientsList, propertyName: .ingredientsList)
+        checkProductPropertyExists(property: product.allergens, propertyName: .allergens)
+        checkProductPropertyExists(property: product.traces, propertyName: .traces)
+        checkProductPropertyExists(property: product.additives?.map({ $0.value.uppercased() }).joined(separator: ", "), propertyName: .additives)
+        checkProductPropertyExists(property: product.palmOilIngredients.joined(separator: ", "), propertyName: .palmOilIngredients)
+        checkProductPropertyExists(property: product.possiblePalmOilIngredients.joined(separator: ", "), propertyName: .possiblePalmOilIngredients)
     }
     
     func checkProductPropertyExists(property: String?, propertyName: InfoRowKey) {
