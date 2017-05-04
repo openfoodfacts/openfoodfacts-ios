@@ -54,7 +54,7 @@ struct ProductService: ProductApi {
     }
     
     fileprivate func encodeParameters(_ parameters: String) -> String {
-        if let encodedParameters = parameters.lowercased().addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
+        if let encodedParameters = parameters.lowercased().addingPercentEncoding(withAllowedCharacters: .alphanumerics) {
             return encodedParameters
         } else {
             print("Could not add percentage encoding to: \(parameters)")
