@@ -19,6 +19,11 @@ class SearchTableViewController: UIViewController {
     fileprivate var lastQuery: String?
     fileprivate var productsResponse: ProductsResponse?
     
+    /* When the user searches a product by barcode and it's found, the product's detail view is loaded.
+     If the user loads taps the back button, after presenting the search view the app goes back to the product's detail view again.
+     This boolean breaks that loop. */
+    fileprivate var wasSearchbarEdited = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -109,9 +114,14 @@ extension SearchTableViewController: UITableViewDelegate {
 
 extension SearchTableViewController: UISearchResultsUpdating {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        wasSearchbarEdited = true
+    }
+    
     func updateSearchResults(for searchController: UISearchController) {
-        if let query = searchController.searchBar.text, !query.isEmpty {
+        if let query = searchController.searchBar.text, !query.isEmpty, wasSearchbarEdited {
             getProducts(fromService: ProductService() ,page: 1, withQuery: query)
+            wasSearchbarEdited = false
         }
     }
 }
@@ -145,6 +155,7 @@ extension SearchTableViewController {
             if query.isNumber() { // TODO Should validate so only the API is called when the input is a valid barcode
                 service.getProduct(byBarcode: query) { product in
                     self.showProductDetails(product: product)
+                    
                 }
             } else {
                 service.getProducts(byName: query, page: page) { response in
