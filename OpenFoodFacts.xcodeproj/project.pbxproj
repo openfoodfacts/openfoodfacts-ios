@@ -56,10 +56,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		95193BD51EB293AC00333733 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		95193BD71EB293AF00333733 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		95193BD91EB293B300333733 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
-		95193BDD1EB293C800333733 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EmptyProductsView.strings; sourceTree = "<group>"; };
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		951FB09E1EB2989A005CAE33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9527E7861E9EBDD200833F04 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -88,6 +84,10 @@
 		95781B051EB92054003E3256 /* ProductIngredientsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductIngredientsTableViewCell.xib; sourceTree = "<group>"; };
 		95781B081EB92722003E3256 /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		95781B0A1EBA68F2003E3256 /* TagTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTransform.swift; sourceTree = "<group>"; };
+		95781B0F1EBBCF3E003E3256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		95781B101EBBCF5C003E3256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		95781B111EBBCF82003E3256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
+		95781B121EBBCFBA003E3256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EmptyProductsView.strings; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265161E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,20 +138,16 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		957094C01EA269B600268236 /* ProductButtonBar */ = {
+		957094D01EA2B1CA00268236 /* ProductDetailViews */ = {
 			isa = PBXGroup;
 			children = (
+				957094D41EA2B46300268236 /* ProductIngredients */,
+				957094D71EA2B4A400268236 /* ProductNutrition */,
+				957094D11EA2B1D400268236 /* ProductSummary */,
 				957094C31EA26A1D00268236 /* ButtonBarView.xib */,
-			);
-			path = ProductButtonBar;
-			sourceTree = "<group>";
-		};
-		957094D01EA2B1CA00268236 /* ProductDetailViewController */ = {
-			isa = PBXGroup;
-			children = (
 				957094BD1EA2625A00268236 /* ProductDetailViewController.storyboard */,
 			);
-			path = ProductDetailViewController;
+			path = ProductDetailViews;
 			sourceTree = "<group>";
 		};
 		957094D11EA2B1D400268236 /* ProductSummary */ = {
@@ -193,6 +189,16 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		95781B0E1EBBCDC7003E3256 /* ProductSearch */ = {
+			isa = PBXGroup;
+			children = (
+				955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */,
+				95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */,
+				95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */,
+			);
+			path = ProductSearch;
+			sourceTree = "<group>";
+		};
 		95C265051E96D55B004212EC = {
 			isa = PBXGroup;
 			children = (
@@ -221,10 +227,10 @@
 				95C265111E96D55B004212EC /* AppDelegate.swift */,
 				95C265181E96D55B004212EC /* Assets.xcassets */,
 				951FB0991EB29852005CAE33 /* Info.plist */,
-				95C2651A1E96D55B004212EC /* LaunchScreen.storyboard */,
-				95C265151E96D55B004212EC /* Main.storyboard */,
-				956B95921EB28C8A007C0345 /* Localizable.strings */,
 				951FB09F1EB2989A005CAE33 /* InfoPlist.strings */,
+				95C2651A1E96D55B004212EC /* LaunchScreen.storyboard */,
+				956B95921EB28C8A007C0345 /* Localizable.strings */,
+				95C265151E96D55B004212EC /* Main.storyboard */,
 			);
 			path = OpenFoodFacts;
 			sourceTree = "<group>";
@@ -278,25 +284,11 @@
 		95D6A7591E9C080A0017B423 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				95D6A7671E9D54890017B423 /* EmptyProductsView */,
-				957094C01EA269B600268236 /* ProductButtonBar */,
-				957094D01EA2B1CA00268236 /* ProductDetailViewController */,
-				957094D41EA2B46300268236 /* ProductIngredients */,
-				957094D71EA2B4A400268236 /* ProductNutrition */,
-				957094D11EA2B1D400268236 /* ProductSummary */,
-				95D6A75A1E9C081B0017B423 /* ProductTableViewCell */,
+				95781B0E1EBBCDC7003E3256 /* ProductSearch */,
+				957094D01EA2B1CA00268236 /* ProductDetailViews */,
 				957094DC1EA3D00500268236 /* Settings */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		95D6A75A1E9C081B0017B423 /* ProductTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */,
-				95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */,
-			);
-			path = ProductTableViewCell;
 			sourceTree = "<group>";
 		};
 		95D6A75F1E9C0B2F0017B423 /* Search */ = {
@@ -311,23 +303,15 @@
 		95D6A7621E9C18F00017B423 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95781ADA1EB4E521003E3256 /* ArrayTransform.swift */,
+				953F0E381EAB8CBC006C60F6 /* InfoRow.swift */,
+				95781B081EB92722003E3256 /* LocalizedString.swift */,
 				95C368121E9FDCD1008BB582 /* OFFReadAPIkeysJSON.swift */,
 				95D6A7631E9C18FD0017B423 /* Product.swift */,
 				95C368101E9FD95F008BB582 /* ProductsResponse.swift */,
-				953F0E381EAB8CBC006C60F6 /* InfoRow.swift */,
-				95781ADA1EB4E521003E3256 /* ArrayTransform.swift */,
-				95781B081EB92722003E3256 /* LocalizedString.swift */,
 				95781B0A1EBA68F2003E3256 /* TagTransform.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		95D6A7671E9D54890017B423 /* EmptyProductsView */ = {
-			isa = PBXGroup;
-			children = (
-				955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */,
-			);
-			path = EmptyProductsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,31 +457,34 @@
 				951FB09E1EB2989A005CAE33 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 		955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				955ED9B81EB2901100BB80BA /* Base */,
-				95193BDD1EB293C800333733 /* en */,
+				95781B121EBBCFBA003E3256 /* en */,
 			);
 			name = EmptyProductsView.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 		955ED9BE1EB290F900BB80BA /* Settings.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				955ED9BD1EB290F900BB80BA /* Base */,
-				95193BD91EB293B300333733 /* en */,
+				95781B111EBBCF82003E3256 /* en */,
 			);
 			name = Settings.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		95C265151E96D55B004212EC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				95C265161E96D55B004212EC /* Base */,
-				95193BD51EB293AC00333733 /* en */,
+				95781B0F1EBBCF3E003E3256 /* en */,
 			);
 			name = Main.storyboard;
 			path = .;
@@ -507,7 +494,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				95C2651B1E96D55B004212EC /* Base */,
-				95193BD71EB293AF00333733 /* en */,
+				95781B101EBBCF5C003E3256 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
