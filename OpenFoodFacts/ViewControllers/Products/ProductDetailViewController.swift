@@ -37,8 +37,32 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         var vcs = [UIViewController]()
         
-        vcs.append(ProductSummaryTableViewController(product: product))
-        vcs.append(ProductIngredientsViewController(product: product))
+        let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
+        let ingredientsTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
+        
+        let summaryInfoRows: [(String?, InfoRowKey)] = [(product.barcode, .barcode),
+                                                        (product.quantity, .quantity),
+                                                        (product.packaging.joined(separator: ", "), .packaging),
+                                                        (product.brands.joined(separator: ", "), .brands),
+                                                        (product.manufacturingPlaces, .manufacturingPlaces),
+                                                        (product.origins, .origins),
+                                                        (product.categories.joined(separator: ", "), .categories),
+                                                        (product.labels.joined(separator: ", "), .labels),
+                                                        (product.citiesTags, .citiesTags),
+                                                        (product.stores.joined(separator: ", "), .stores),
+                                                        (product.countries.joined(separator: ", "), .countries)]
+        let ingredientsInfoRows: [(String?, InfoRowKey)] = [(product.ingredientsList, .ingredientsList),
+                                                            (product.allergens, .allergens),
+                                                            (product.traces, .traces),
+                                                            (product.additives?.map({ $0.value.uppercased() }).joined(separator: ", "), .additives),
+                                                            (product.palmOilIngredients.joined(separator: ", "), .palmOilIngredients),
+                                                            (product.possiblePalmOilIngredients.joined(separator: ", "), .possiblePalmOilIngredients)]
+        
+        let summaryVC = ProductDetailPageViewController<SummaryHeaderTableViewCell, SummaryRowTableViewCell>(product: product, localizedTitle: summaryTitle, infoRowList: summaryInfoRows)
+        let ingredientsVC = ProductDetailPageViewController<SummaryHeaderTableViewCell, SummaryRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRowList: ingredientsInfoRows)
+        
+        vcs.append(summaryVC)
+        vcs.append(ingredientsVC)
         
         if let nutrition = UIStoryboard(name: String(describing: ProductNutritionViewController.self), bundle: nil).instantiateInitialViewController() as? ProductNutritionViewController {
             vcs.append(nutrition)

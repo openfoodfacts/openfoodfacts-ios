@@ -9,13 +9,13 @@
 import UIKit
 import Kingfisher
 
-class SummaryHeaderTableViewCell: UITableViewCell {
+class SummaryHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var nutriscore: UILabel!
     @IBOutlet weak var productName: UILabel!
     
-    func configure(with product: Product) {
+    override func configure(with product: Product) {
         if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
             // TODO Placeholder image or loading
             productImage.kf.indicatorType = .activity

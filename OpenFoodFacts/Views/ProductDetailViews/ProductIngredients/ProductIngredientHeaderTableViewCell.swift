@@ -9,11 +9,11 @@
 import UIKit
 import Kingfisher
 
-class ProductIngredientHeaderTableViewCell: UITableViewCell {
+class ProductIngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     
     @IBOutlet weak var ingredients: UIImageView!
     
-    func configure(with product: Product) {
+    override func configure(with product: Product) {
         if let imageUrl = product.ingredientsImageUrl, let url = URL(string: imageUrl) {
             ingredients.kf.indicatorType = .activity
             ingredients.kf.setImage(with: url)

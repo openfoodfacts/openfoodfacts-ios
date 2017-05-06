@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SummaryRowTableViewCell: UITableViewCell {
+class SummaryRowTableViewCell: ConfigurableUITableViewCell<InfoRow> {
     
     @IBOutlet weak var label: UILabel!
     
     fileprivate let textSize: CGFloat = 17
     
-    func configure(with infoRow: InfoRow) {
+    override func configure(with infoRow: InfoRow) {
         let bold = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.boldSystemFont(ofSize: textSize)]
         let regular = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.systemFont(ofSize: textSize)]
         
