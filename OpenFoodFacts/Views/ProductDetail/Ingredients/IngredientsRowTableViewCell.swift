@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductIngredientsTableViewCell: ConfigurableUITableViewCell<InfoRow> {
+class IngredientsRowTableViewCell: ConfigurableUITableViewCell<InfoRow> {
     
     @IBOutlet weak var label: UILabel!
     fileprivate let textSize: CGFloat = 17

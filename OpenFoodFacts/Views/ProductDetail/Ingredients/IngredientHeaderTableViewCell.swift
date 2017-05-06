@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class ProductIngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
+class IngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     
     @IBOutlet weak var ingredients: UIImageView!
     
