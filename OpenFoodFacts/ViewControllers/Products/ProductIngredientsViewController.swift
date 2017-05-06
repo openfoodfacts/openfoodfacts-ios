@@ -15,9 +15,6 @@ class ProductIngredientsViewController: UIViewController, IndicatorInfoProvider 
     var product: Product!
     fileprivate var infoRows = [InfoRow]()
     
-    fileprivate let headerCell = String(describing: ProductIngredientHeaderTableViewCell.self)
-    fileprivate let rowCell = String(describing: ProductIngredientsTableViewCell.self)
-    
     init(product: Product) {
         super.init(nibName: nil, bundle: nil)
         
@@ -44,8 +41,8 @@ class ProductIngredientsViewController: UIViewController, IndicatorInfoProvider 
         tableView.estimatedRowHeight = 44
         tableView.allowsSelection = false
         
-        tableView.register(UINib(nibName: headerCell, bundle: nil), forCellReuseIdentifier: headerCell)
-        tableView.register(UINib(nibName: rowCell, bundle: nil), forCellReuseIdentifier: rowCell)
+        tableView.register(UINib(nibName: ProductIngredientHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ProductIngredientHeaderTableViewCell.identifier)
+        tableView.register(UINib(nibName: ProductIngredientsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ProductIngredientsTableViewCell.identifier)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -96,7 +93,7 @@ extension ProductIngredientsViewController: UITableViewDataSource {
     }
     
     func createHeaderCell() -> ProductIngredientHeaderTableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: headerCell) as! ProductIngredientHeaderTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductIngredientHeaderTableViewCell.identifier) as! ProductIngredientHeaderTableViewCell
         
         cell.configure(with: product)
         
@@ -104,7 +101,7 @@ extension ProductIngredientsViewController: UITableViewDataSource {
     }
     
     func createRow(row: Int) -> ProductIngredientsTableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: rowCell) as! ProductIngredientsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductIngredientsTableViewCell.identifier) as! ProductIngredientsTableViewCell
         
         cell.configure(with: infoRows[row])
         

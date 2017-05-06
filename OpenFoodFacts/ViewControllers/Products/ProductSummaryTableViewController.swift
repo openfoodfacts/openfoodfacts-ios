@@ -21,10 +21,6 @@ class ProductSummaryTableViewController: UIViewController, IndicatorInfoProvider
     
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate let headerCell = String(describing: SummaryHeaderTableViewCell.self)
-    fileprivate let rowCell = String(describing: SummaryRowTableViewCell.self)
-    
-    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary"))
     }
@@ -34,8 +30,8 @@ class ProductSummaryTableViewController: UIViewController, IndicatorInfoProvider
     }
     
     func configureTableView() {
-        tableView.register(UINib(nibName: headerCell, bundle: nil), forCellReuseIdentifier: headerCell)
-        tableView.register(UINib(nibName: rowCell, bundle: nil), forCellReuseIdentifier: rowCell)
+        tableView.register(UINib(nibName: SummaryHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SummaryHeaderTableViewCell.identifier)
+        tableView.register(UINib(nibName: SummaryRowTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SummaryRowTableViewCell.identifier)
     }
     
     func calculateInfoRows() {
@@ -87,7 +83,7 @@ extension ProductSummaryTableViewController: UITableViewDataSource {
     }
     
     func createHeaderCell() -> SummaryHeaderTableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: headerCell) as! SummaryHeaderTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SummaryHeaderTableViewCell.identifier) as! SummaryHeaderTableViewCell
         
         cell.configure(with: product)
         
@@ -95,7 +91,7 @@ extension ProductSummaryTableViewController: UITableViewDataSource {
     }
     
     func createRow(row: Int) -> SummaryRowTableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: rowCell) as! SummaryRowTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SummaryRowTableViewCell.identifier) as! SummaryRowTableViewCell
         
         let infoRow = infoRows[row]
         

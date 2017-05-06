@@ -33,6 +33,7 @@
 		95781B071EB92054003E3256 /* ProductIngredientsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B051EB92054003E3256 /* ProductIngredientsTableViewCell.xib */; };
 		95781B091EB92722003E3256 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B081EB92722003E3256 /* LocalizedString.swift */; };
 		95781B0B1EBA68F3003E3256 /* TagTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B0A1EBA68F2003E3256 /* TagTransform.swift */; };
+		95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B131EBE4E5C003E3256 /* UITableViewCell.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 		95781B101EBBCF5C003E3256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		95781B111EBBCF82003E3256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		95781B121EBBCFBA003E3256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EmptyProductsView.strings; sourceTree = "<group>"; };
+		95781B131EBE4E5C003E3256 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265161E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				95CB99A61EA55BF900CBDDF9 /* String.swift */,
+				95781B131EBE4E5C003E3256 /* UITableViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				95C368131E9FDCD1008BB582 /* OFFReadAPIkeysJSON.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
 				95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */,
+				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
 				957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */,
 				95781ADB1EB4E522003E3256 /* ArrayTransform.swift in Sources */,
 				957094B51EA16C4B00268236 /* ProductDetailViewController.swift in Sources */,
