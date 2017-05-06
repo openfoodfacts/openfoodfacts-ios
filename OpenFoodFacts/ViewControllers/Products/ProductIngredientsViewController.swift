@@ -11,8 +11,8 @@ import XLPagerTabStrip
 
 class ProductIngredientsViewController: UIViewController, IndicatorInfoProvider {
     
-    lazy var tableView = UITableView()
-    var product: Product!
+    fileprivate lazy var tableView = UITableView()
+    fileprivate var product: Product!
     fileprivate var infoRows = [InfoRow]()
     
     init(product: Product) {
@@ -26,13 +26,14 @@ class ProductIngredientsViewController: UIViewController, IndicatorInfoProvider 
         super.init(coder: aDecoder)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.frame = view.bounds
+    override func loadView() {
         tableView.dataSource = self
         tableView.delegate = self
         view = tableView
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         configureTableView()
     }
     

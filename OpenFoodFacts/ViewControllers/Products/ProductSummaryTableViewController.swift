@@ -11,21 +11,35 @@ import XLPagerTabStrip
 
 class ProductSummaryTableViewController: UIViewController, IndicatorInfoProvider {
     
-    var product: Product! {
+    fileprivate lazy var tableView = UITableView()
+    fileprivate var product: Product! {
         didSet {
             calculateInfoRows()
         }
     }
-    
     fileprivate var infoRows = [InfoRow]()
     
-    @IBOutlet weak var tableView: UITableView!
+    init(product: Product) {
+        self.product = product
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func loadView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        view = tableView
+    }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary"))
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         configureTableView()
     }
     

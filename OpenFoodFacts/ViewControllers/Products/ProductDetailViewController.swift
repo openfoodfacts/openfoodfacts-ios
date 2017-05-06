@@ -37,11 +37,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         var vcs = [UIViewController]()
         
-        if let summary = UIStoryboard(name: String(describing: ProductSummaryTableViewController.self), bundle: nil).instantiateInitialViewController() as? ProductSummaryTableViewController {
-            summary.product = product
-            vcs.append(summary)
-        }
-        
+        vcs.append(ProductSummaryTableViewController(product: product))
         vcs.append(ProductIngredientsViewController(product: product))
         
         if let nutrition = UIStoryboard(name: String(describing: ProductNutritionViewController.self), bundle: nil).instantiateInitialViewController() as? ProductNutritionViewController {
