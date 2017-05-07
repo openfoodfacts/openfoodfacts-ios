@@ -39,6 +39,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         
         let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
         let ingredientsTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
+        let nutritionTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
         
         let summaryInfoRows: [(String?, InfoRowKey)] = [(product.barcode, .barcode),
                                                         (product.quantity, .quantity),
@@ -57,16 +58,15 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
                                                             (product.additives?.map({ $0.value.uppercased() }).joined(separator: ", "), .additives),
                                                             (product.palmOilIngredients.joined(separator: ", "), .palmOilIngredients),
                                                             (product.possiblePalmOilIngredients.joined(separator: ", "), .possiblePalmOilIngredients)]
+        let nutritionInfoRows: [(String?, InfoRowKey)] = [(product.servingSize, .servingSize)]
         
         let summaryVC = ProductDetailPageViewController<SummaryHeaderTableViewCell, SummaryRowTableViewCell>(product: product, localizedTitle: summaryTitle, infoRowList: summaryInfoRows)
-        let ingredientsVC = ProductDetailPageViewController<SummaryHeaderTableViewCell, SummaryRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRowList: ingredientsInfoRows)
+        let ingredientsVC = ProductDetailPageViewController<IngredientHeaderTableViewCell, IngredientsRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRowList: ingredientsInfoRows)
+        let nutritionVC = ProductDetailPageViewController<NutritionHeaderTableViewCell, NutritionRowTableViewCell> (product: product, localizedTitle: nutritionTitle, infoRowList: nutritionInfoRows)
         
         vcs.append(summaryVC)
         vcs.append(ingredientsVC)
-        
-        if let nutrition = UIStoryboard(name: String(describing: ProductNutritionViewController.self), bundle: nil).instantiateInitialViewController() as? ProductNutritionViewController {
-            vcs.append(nutrition)
-        }
+        vcs.append(nutritionVC)
         
         return vcs
     }

@@ -30,6 +30,9 @@ enum InfoRowKey: LocalizedString {
     case palmOilIngredients = "product-detail.ingredients.palm-oil-ingredients"
     case possiblePalmOilIngredients = "product-detail.ingredients.possible-palm-oil-ingredients"
     
+    // Nutrition
+    case servingSize = "product-detail.nutrition.serving-size"
+    
     var localizedString: String {
         return self.rawValue.v
     }

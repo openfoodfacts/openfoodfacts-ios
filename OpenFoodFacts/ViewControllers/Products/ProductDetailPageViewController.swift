@@ -36,8 +36,12 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.register(UINib(nibName: H.identifier, bundle: nil), forCellReuseIdentifier: H.identifier)
         tableView.register(UINib(nibName: R.identifier, bundle: nil), forCellReuseIdentifier: R.identifier)
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.allowsSelection = false
     }
     
     fileprivate func calculateInfoRows(_ infoRowList: [(String?, InfoRowKey)]) {

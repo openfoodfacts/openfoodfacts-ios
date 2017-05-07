@@ -32,6 +32,7 @@ struct Product: Mappable {
     var additives: [Tag]?
     var palmOilIngredients = [String]()
     var possiblePalmOilIngredients = [String]()
+    var servingSize: String?
     
     init?(map: Map){
         
@@ -60,5 +61,6 @@ struct Product: Mappable {
         additives <- (map[OFFJson.AdditivesTagsKey], TagTransform())
         palmOilIngredients <- map[OFFJson.IngredientsFromPalmOilTagsKey]
         possiblePalmOilIngredients <- map[OFFJson.IngredientsThatMayBeFromPalmOilTagsKey]
+        servingSize <- map[OFFJson.ServingSizeKey]
     }
 }
