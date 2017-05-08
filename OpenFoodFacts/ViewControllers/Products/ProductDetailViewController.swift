@@ -60,9 +60,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
                                                             (product.possiblePalmOilIngredients.joined(separator: ", "), .possiblePalmOilIngredients)]
         let nutritionInfoRows: [(String?, InfoRowKey)] = [(product.servingSize, .servingSize)]
         
-        let summaryVC = ProductDetailPageViewController<SummaryHeaderTableViewCell, SummaryRowTableViewCell>(product: product, localizedTitle: summaryTitle, infoRowList: summaryInfoRows)
-        let ingredientsVC = ProductDetailPageViewController<IngredientHeaderTableViewCell, IngredientsRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRowList: ingredientsInfoRows)
-        let nutritionVC = ProductDetailPageViewController<NutritionHeaderTableViewCell, NutritionRowTableViewCell> (product: product, localizedTitle: nutritionTitle, infoRowList: nutritionInfoRows)
+        let summaryVC = ProductDetailPageViewController<SummaryHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: summaryTitle, infoRowList: summaryInfoRows)
+        let ingredientsVC = ProductDetailPageViewController<IngredientHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRowList: ingredientsInfoRows)
+        let nutritionVC = ProductDetailPageViewController<NutritionHeaderTableViewCell, InfoRowTableViewCell> (product: product, localizedTitle: nutritionTitle, infoRowList: nutritionInfoRows)
         
         vcs.append(summaryVC)
         vcs.append(ingredientsVC)

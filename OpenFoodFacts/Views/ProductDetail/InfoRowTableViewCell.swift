@@ -1,18 +1,18 @@
 //
-//  NutritionRowTableViewCell.swift
+//  ProductIngredientsTableViewCell.swift
 //  OpenFoodFacts
 //
-//  Created by Andrés Pizá Bückmann on 07/05/2017.
+//  Created by Andrés Pizá Bückmann on 02/05/2017.
 //  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
 //
 
 import UIKit
 
-class NutritionRowTableViewCell: ConfigurableUITableViewCell<InfoRow> {
-
+class InfoRowTableViewCell: ConfigurableUITableViewCell<InfoRow> {
+    
     @IBOutlet weak var label: UILabel!
     fileprivate let textSize: CGFloat = 17
-    
+
     override func configure(with infoRow: InfoRow) {
         let bold = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.boldSystemFont(ofSize: textSize)]
         let regular = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.systemFont(ofSize: textSize)]
