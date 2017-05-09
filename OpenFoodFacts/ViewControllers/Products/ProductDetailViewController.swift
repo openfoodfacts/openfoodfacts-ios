@@ -62,7 +62,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         
         let summaryVC = ProductDetailPageViewController<SummaryHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: summaryTitle, infoRowList: summaryInfoRows)
         let ingredientsVC = ProductDetailPageViewController<IngredientHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRowList: ingredientsInfoRows)
-        let nutritionVC = ProductDetailPageViewController<NutritionHeaderTableViewCell, InfoRowTableViewCell> (product: product, localizedTitle: nutritionTitle, infoRowList: nutritionInfoRows)
+        let nutritionVC = ProductNutritionViewController(product: product, localizedTitle: nutritionTitle, infoRowList: nutritionInfoRows)
         
         vcs.append(summaryVC)
         vcs.append(ingredientsVC)
