@@ -167,15 +167,19 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="fatImageLevel" destination="RUb-VL-AIh" id="OdU-2j-Dl4"/>
+                <outlet property="fatLabel" destination="8GM-mb-sdq" id="8JK-mH-SXN"/>
                 <outlet property="fatLabelLevel" destination="oeC-CV-phd" id="1OH-ue-Aj2"/>
                 <outlet property="fatValue" destination="dOF-ME-LYP" id="320-Um-q9D"/>
                 <outlet property="saltImageLevel" destination="IbN-M6-o0k" id="TG3-BV-32w"/>
+                <outlet property="saltLabel" destination="4FI-eQ-td9" id="Tov-DX-Sz8"/>
                 <outlet property="saltLabelLevel" destination="dFh-Xg-dF3" id="icE-sf-9Mf"/>
                 <outlet property="saltValue" destination="Qmb-cQ-Enx" id="xIo-Dk-09T"/>
                 <outlet property="saturatedFatImageLevel" destination="Egk-QL-xFh" id="FXg-EH-6RU"/>
+                <outlet property="saturatedFatLabel" destination="oj5-IF-qJC" id="Ef0-fs-eln"/>
                 <outlet property="saturatedFatLabelLevel" destination="WRv-XJ-h7D" id="x4D-SR-azk"/>
                 <outlet property="saturatedFatValue" destination="mQJ-DZ-7mU" id="EbS-bI-FmZ"/>
                 <outlet property="sugarsImageLevel" destination="OOk-fq-SCI" id="A6X-4T-ehh"/>
+                <outlet property="sugarsLabel" destination="EE3-nf-LQq" id="0eF-S2-o2X"/>
                 <outlet property="sugarsLabelLevel" destination="Ntf-cA-Z1o" id="FTl-jt-1Uk"/>
                 <outlet property="sugarsValue" destination="6Yu-Ef-PjJ" id="udo-9g-UTg"/>
             </connections>
