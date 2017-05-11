@@ -16,7 +16,7 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
     var infoRows = [InfoRow]()
     var localizedTitle = ""
     
-    init(product: Product, localizedTitle: String, infoRowList: [(String?, InfoRowKey)]) {
+    init(product: Product, localizedTitle: String, infoRowList: [(Any?, InfoRowKey)]) {
         super.init(nibName: nil, bundle: nil)
         
         self.product = product
@@ -44,10 +44,16 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
         tableView.allowsSelection = false
     }
     
-    fileprivate func calculateInfoRows(_ infoRowList: [(String?, InfoRowKey)]) {
+    fileprivate func calculateInfoRows(_ infoRowList: [(Any?, InfoRowKey)]) {
         for (property, label) in infoRowList {
-            if let property = property, !property.isEmpty {
-                infoRows.append(InfoRow(label: label, value: property))
+            var value: String?
+            if let doubleProperty = property as? Double {
+                value = String(doubleProperty)
+            } else if let stringProperty = property as? String {
+                value = stringProperty
+            }
+            if let value = value, !value.isEmpty {
+                infoRows.append(InfoRow(label: label, value: value))
             }
         }
     }

@@ -30,6 +30,8 @@ struct Nutriments: Mappable {
     var saltServing: String?
     var saltUnit: String?
     var saltValue: String?
+    var carbonFootprint: Double?
+    var carbonFootprintUnit: String?
     
     init?(map: Map) {
         
@@ -56,5 +58,7 @@ struct Nutriments: Mappable {
         saltServing <- map[OFFJson.SaltServingKey]
         saltUnit <- map[OFFJson.SaltUnitKey]
         saltValue <- map[OFFJson.SaltValueKey]
+        carbonFootprint <- (map[OFFJson.CarbonFootprint100gKey], DoubleTransform())
+        carbonFootprintUnit <- map[OFFJson.CarbonFootprintUnitKey]
     }
 }

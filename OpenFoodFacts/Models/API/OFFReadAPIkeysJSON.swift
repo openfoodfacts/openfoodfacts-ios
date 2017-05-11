@@ -163,7 +163,8 @@ struct OFFJson {
     static let TaurineKey = "taurine"
     static let PhKey = "ph"
     static let CacaoKey = "cocoa"
-    
+    static let CarbonFootprint100gKey = "carbon-footprint_100g"
+    static let CarbonFootprintUnitKey = "carbon-footprint_unit"
     //static let CarbohydratesUnitKey = "carbohydrates_unit"
     //static let FatUnitKey = "fat_unit"
     static let NutritionScoreFr100gKey = "nutrition-score-fr_100g"

@@ -41,24 +41,30 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         let ingredientsTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
         let nutritionTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
         
-        let summaryInfoRows: [(String?, InfoRowKey)] = [(product.barcode, .barcode),
-                                                        (product.quantity, .quantity),
-                                                        (product.packaging.joined(separator: ", "), .packaging),
-                                                        (product.brands.joined(separator: ", "), .brands),
-                                                        (product.manufacturingPlaces, .manufacturingPlaces),
-                                                        (product.origins, .origins),
-                                                        (product.categories.joined(separator: ", "), .categories),
-                                                        (product.labels.joined(separator: ", "), .labels),
-                                                        (product.citiesTags, .citiesTags),
-                                                        (product.stores.joined(separator: ", "), .stores),
-                                                        (product.countries.joined(separator: ", "), .countries)]
-        let ingredientsInfoRows: [(String?, InfoRowKey)] = [(product.ingredientsList, .ingredientsList),
-                                                            (product.allergens, .allergens),
-                                                            (product.traces, .traces),
-                                                            (product.additives?.map({ $0.value.uppercased() }).joined(separator: ", "), .additives),
-                                                            (product.palmOilIngredients.joined(separator: ", "), .palmOilIngredients),
-                                                            (product.possiblePalmOilIngredients.joined(separator: ", "), .possiblePalmOilIngredients)]
-        let nutritionInfoRows: [(String?, InfoRowKey)] = [(product.servingSize, .servingSize)]
+        let summaryInfoRows: [(Any?, InfoRowKey)] = [(product.barcode, .barcode),
+                                                     (product.quantity, .quantity),
+                                                     (product.packaging.joined(separator: ", "), .packaging),
+                                                     (product.brands.joined(separator: ", "), .brands),
+                                                     (product.manufacturingPlaces, .manufacturingPlaces),
+                                                     (product.origins, .origins),
+                                                     (product.categories.joined(separator: ", "), .categories),
+                                                     (product.labels.joined(separator: ", "), .labels),
+                                                     (product.citiesTags, .citiesTags),
+                                                     (product.stores.joined(separator: ", "), .stores),
+                                                     (product.countries.joined(separator: ", "), .countries)]
+        let ingredientsInfoRows: [(Any?, InfoRowKey)] = [(product.ingredientsList, .ingredientsList),
+                                                         (product.allergens, .allergens),
+                                                         (product.traces, .traces),
+                                                         (product.additives?.map({ $0.value.uppercased() }).joined(separator: ", "), .additives),
+                                                         (product.palmOilIngredients.joined(separator: ", "), .palmOilIngredients),
+                                                         (product.possiblePalmOilIngredients.joined(separator: ", "), .possiblePalmOilIngredients)]
+        
+        // Nutrition info rows
+        var nutritionInfoRows: [(Any?, InfoRowKey)] = [(product.servingSize, .servingSize)]
+        
+        if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
+            nutritionInfoRows.append(((String(carbonFootprint) + " " + unit), .carbonFootprint))
+        }
         
         let summaryVC = ProductDetailPageViewController<SummaryHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: summaryTitle, infoRowList: summaryInfoRows)
         let ingredientsVC = ProductDetailPageViewController<IngredientHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRowList: ingredientsInfoRows)

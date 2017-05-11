@@ -32,6 +32,7 @@ enum InfoRowKey: LocalizedString {
     
     // Nutrition
     case servingSize = "product-detail.nutrition.serving-size"
+    case carbonFootprint = "product-detail.nutrition.carbon-footprint"
     
     var localizedString: String {
         return self.rawValue.v
