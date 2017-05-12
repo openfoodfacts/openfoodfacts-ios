@@ -75,9 +75,9 @@ class NutritionLevelsTableViewCell: UITableViewCell {
     fileprivate func getLevelLocalized(level: NutritionLevel) -> String {
         switch level {
         case .Low:
-            return NSLocalizedString("nutrition-level.high", comment: "Nutrition Level, high")
+            return NSLocalizedString("nutrition-level.low", comment: "Nutrition Level, low")
         case .Moderate:
-            return NSLocalizedString("nutrition-level.high", comment: "Nutrition Level, high")
+            return NSLocalizedString("nutrition-level.moderate", comment: "Nutrition Level, moderate")
         case .High:
             return NSLocalizedString("nutrition-level.high", comment: "Nutrition Level, high")
         }
