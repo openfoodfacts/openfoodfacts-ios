@@ -36,8 +36,8 @@ class NutritionLevelsTableViewCell: UITableViewCell {
             fatImageLevel.image = getImageLevel(level: fatLevel)
             fatLabelLevel.text = getLevelLocalized(level: fatLevel)
         }
-        fatLabel.text = NSLocalizedString("nutrition.fat", comment: "Nutrition, fat")
-        if let value = product.nutriments?.fat100g, let unit = product.nutriments?.fatUnit {
+        fatLabel.text = NSLocalizedString("nutrition.fats", comment: "Nutrition, fat")
+        if let fat = product.nutriments?.fats.fat, let value = fat.per100g, let unit = fat.unit {
             fatValue.text = "\(value.twoDecimalRounded) \(unit)"
         }
         
@@ -46,8 +46,8 @@ class NutritionLevelsTableViewCell: UITableViewCell {
             saturatedFatImageLevel.image = getImageLevel(level: saturatedFatLevel)
             saturatedFatLabelLevel.text = getLevelLocalized(level: saturatedFatLevel)
         }
-        saturatedFatLabel.text = NSLocalizedString("nutrition.saturatedFat", comment: "Nutrition, saturated fat")
-        if let value = product.nutriments?.saturatedFat100g, let unit = product.nutriments?.saturatedFatUnit {
+        saturatedFatLabel.text = NSLocalizedString("nutrition.fats.saturated-fat", comment: "Nutrition, saturated fat")
+        if let saturatedFat = product.nutriments?.fats.saturatedFat, let value = saturatedFat.per100g, let unit = saturatedFat.unit {
             saturatedFatValue.text = "\(value.twoDecimalRounded) \(unit)"
         }
         
@@ -56,8 +56,8 @@ class NutritionLevelsTableViewCell: UITableViewCell {
             sugarsImageLevel.image = getImageLevel(level: sugarsLevel)
             sugarsLabelLevel.text = getLevelLocalized(level: sugarsLevel)
         }
-        sugarsLabel.text = NSLocalizedString("nutrition.sugars", comment: "Nutrition, sugars")
-        if let value = product.nutriments?.sugars100g, let unit = product.nutriments?.sugarsUnit {
+        sugarsLabel.text = NSLocalizedString("nutrition.carbohydrate.sugars", comment: "Nutrition, sugars")
+        if let sugars = product.nutriments?.carbohydrates.sugars, let value = sugars.per100g, let unit = sugars.unit {
             sugarsValue.text = "\(value.twoDecimalRounded) \(unit)"
         }
         
@@ -67,7 +67,7 @@ class NutritionLevelsTableViewCell: UITableViewCell {
             saltLabelLevel.text = getLevelLocalized(level: saltLevel)
         }
         saltLabel.text = NSLocalizedString("nutrition.salt", comment: "Nutrition, salt")
-        if let value = product.nutriments?.salt100g, let unit = product.nutriments?.saltUnit {
+        if let salt = product.nutriments?.salt, let value = salt.per100g, let unit = salt.unit {
             saltValue.text = "\(value.twoDecimalRounded) \(unit)"
         }
     }

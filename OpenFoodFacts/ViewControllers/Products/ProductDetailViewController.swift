@@ -37,9 +37,16 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         var vcs = [UIViewController]()
         
+        vcs.append(getSummaryVC())
+        vcs.append(getIngredientsVC())
+        vcs.append(getNutritionVC())
+        vcs.append(getNutritionTableVC())
+        
+        return vcs
+    }
+    
+    fileprivate func getSummaryVC() -> UIViewController {
         let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
-        let ingredientsTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
-        let nutritionTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
         
         let summaryInfoRows: [(Any?, InfoRowKey)] = [(product.barcode, .barcode),
                                                      (product.quantity, .quantity),
@@ -52,6 +59,14 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
                                                      (product.citiesTags, .citiesTags),
                                                      (product.stores.joined(separator: ", "), .stores),
                                                      (product.countries.joined(separator: ", "), .countries)]
+        
+        
+        return ProductDetailPageViewController<SummaryHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: summaryTitle, infoRowList: summaryInfoRows)
+    }
+    
+    fileprivate func getIngredientsVC() -> UIViewController {
+        let ingredientsTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
+        
         let ingredientsInfoRows: [(Any?, InfoRowKey)] = [(product.ingredientsList, .ingredientsList),
                                                          (product.allergens, .allergens),
                                                          (product.traces, .traces),
@@ -59,21 +74,29 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
                                                          (product.palmOilIngredients.joined(separator: ", "), .palmOilIngredients),
                                                          (product.possiblePalmOilIngredients.joined(separator: ", "), .possiblePalmOilIngredients)]
         
-        // Nutrition info rows
+        return ProductDetailPageViewController<IngredientHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRowList: ingredientsInfoRows)
+    }
+    
+    fileprivate func getNutritionVC() -> UIViewController {
+        let nutritionTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
+        
         var nutritionInfoRows: [(Any?, InfoRowKey)] = [(product.servingSize, .servingSize)]
         
         if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
             nutritionInfoRows.append(((String(carbonFootprint) + " " + unit), .carbonFootprint))
         }
         
-        let summaryVC = ProductDetailPageViewController<SummaryHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: summaryTitle, infoRowList: summaryInfoRows)
-        let ingredientsVC = ProductDetailPageViewController<IngredientHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRowList: ingredientsInfoRows)
-        let nutritionVC = ProductNutritionViewController(product: product, localizedTitle: nutritionTitle, infoRowList: nutritionInfoRows)
+        return ProductNutritionViewController(product: product, localizedTitle: nutritionTitle, infoRowList: nutritionInfoRows)
+    }
+    
+    fileprivate func getNutritionTableVC() -> UIViewController {
+        let nutritionTableTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
         
-        vcs.append(summaryVC)
-        vcs.append(ingredientsVC)
-        vcs.append(nutritionVC)
+        let nutritionTableInfoRows: [(Any?, InfoRowKey)] = [
+            // TODO Build InfoRows here, for this and the other VCs
+            ([String(product.nutriments!.energy!.per100g!), product.nutriments!.energy!.perServing!], .energy)
+        ]
         
-        return vcs
+        return ProductDetailPageViewController<NutritionTableHeaderTableViewCell, NutritionTableRowTableViewCell>(product: product, localizedTitle: nutritionTableTitle, infoRowList: nutritionTableInfoRows)
     }
 }

@@ -35,6 +35,7 @@ struct Product: Mappable {
     var servingSize: String?
     var nutritionLevels: NutritionLevels?
     var nutriments: Nutriments?
+    var nutritionTableImage: String?
     
     init?(map: Map){
         
@@ -66,5 +67,6 @@ struct Product: Mappable {
         servingSize <- map[OFFJson.ServingSizeKey]
         nutritionLevels <- map[OFFJson.NutrientLevelsKey]
         nutriments <- map[OFFJson.NutrimentsKey]
+        nutritionTableImage <- map[OFFJson.ImageNutritionUrlKey]
     }
 }

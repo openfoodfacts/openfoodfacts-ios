@@ -46,14 +46,16 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
     
     fileprivate func calculateInfoRows(_ infoRowList: [(Any?, InfoRowKey)]) {
         for (property, label) in infoRowList {
-            var value: String?
+            var values = [String]()
             if let doubleProperty = property as? Double {
-                value = String(doubleProperty)
+                values.append(String(doubleProperty))
             } else if let stringProperty = property as? String {
-                value = stringProperty
+                values.append(stringProperty)
+            } else if let array = property as? [String] {
+                values.append(contentsOf: array)
             }
-            if let value = value, !value.isEmpty {
-                infoRows.append(InfoRow(label: label, value: value))
+            if !values.isEmpty {
+                infoRows.append(InfoRow(label: label, value: values[0], secondaryValue: values.count > 1 ? values[1] : nil))
             }
         }
     }
