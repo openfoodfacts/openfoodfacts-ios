@@ -11,21 +11,20 @@ import XLPagerTabStrip
 
 // H = Header, R = Row
 class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R: ConfigurableUITableViewCell<InfoRow>>: UIViewController, UITableViewDelegate, UITableViewDataSource, IndicatorInfoProvider {
-    lazy var tableView = UITableView()
-    var product: Product!
-    var infoRows = [InfoRow]()
-    var localizedTitle = ""
+    internal lazy var tableView = UITableView()
+    internal let product: Product
+    internal let infoRows: [InfoRow]
+    internal let localizedTitle: String
     
-    init(product: Product, localizedTitle: String, infoRowList: [(Any?, InfoRowKey)]) {
-        super.init(nibName: nil, bundle: nil)
-        
+    init(product: Product, localizedTitle: String, infoRows: [InfoRow]) {
         self.product = product
-        calculateInfoRows(infoRowList)
+        self.infoRows = infoRows
         self.localizedTitle = localizedTitle
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) is not supported")
     }
     
     override func loadView() {
@@ -42,22 +41,6 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
-    }
-    
-    fileprivate func calculateInfoRows(_ infoRowList: [(Any?, InfoRowKey)]) {
-        for (property, label) in infoRowList {
-            var values = [String]()
-            if let doubleProperty = property as? Double {
-                values.append(String(doubleProperty))
-            } else if let stringProperty = property as? String {
-                values.append(stringProperty)
-            } else if let array = property as? [String] {
-                values.append(contentsOf: array)
-            }
-            if !values.isEmpty {
-                infoRows.append(InfoRow(label: label, value: values[0], secondaryValue: values.count > 1 ? values[1] : nil))
-            }
-        }
     }
     
     // MARK: - Table view delegate

@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class ArrayTransform: TransformType {
-    public typealias Object = [String]
+    public typealias Object = [String]?
     public typealias JSON = String
     
     public func transformFromJSON(_ value: Any?) -> Object? {
@@ -23,7 +23,7 @@ public class ArrayTransform: TransformType {
     
     public func transformToJSON(_ value: Object?) -> JSON? {
         if let value = value {
-            return value.joined(separator: ",")
+            return value?.joined(separator: ",")
         }
         
         return nil

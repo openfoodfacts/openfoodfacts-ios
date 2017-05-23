@@ -111,5 +111,19 @@ struct InfoRow {
     let label: InfoRowKey
     let value: String
     var secondaryValue: String?
-    let highlight = false
+    let highlight: Bool
+    
+    init(label: InfoRowKey, value: String) {
+        self.label = label
+        self.value = value
+        self.secondaryValue = nil
+        self.highlight = false
+    }
+    
+    init(label: InfoRowKey, value: String, secondaryValue: String?, highlight: Bool = false) {
+        self.label = label
+        self.value = value
+        self.secondaryValue = secondaryValue
+        self.highlight = highlight
+    }
 }

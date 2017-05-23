@@ -21,10 +21,9 @@ lane :beta do
 
   # build your iOS app
   gym(
-    scheme: "OpenFoodFacts",
-    export_method: "app-store"
+    scheme: "OpenFoodFacts"
   )
 
   # upload to Testflight
-  pilot(skip_waiting_for_build_processing: true)
+  pilot(skip_waiting_for_build_processing: false)
 end

@@ -11,27 +11,27 @@ import ObjectMapper
 
 struct Product: Mappable {
     var name: String?
-    var brands = [String]()
+    var brands: [String]?
     var quantity: String?
     var imageUrl: String?
     var frontImageUrl: String?
     var barcode: String?
-    var packaging = [String]()
-    var categories = [String]()
+    var packaging: [String]?
+    var categories: [String]?
     var nutriscore: String?
     var manufacturingPlaces: String?
     var origins: String?
-    var labels = [String]()
+    var labels: [String]?
     var citiesTags: String?
-    var stores = [String]()
-    var countries = [String]()
+    var stores: [String]?
+    var countries: [String]?
     var ingredientsImageUrl: String?
     var ingredientsList: String?
     var allergens: String?
     var traces: String?
     var additives: [Tag]?
-    var palmOilIngredients = [String]()
-    var possiblePalmOilIngredients = [String]()
+    var palmOilIngredients: [String]?
+    var possiblePalmOilIngredients: [String]?
     var servingSize: String?
     var nutritionLevels: NutritionLevels?
     var nutriments: Nutriments?
