@@ -715,8 +715,9 @@
 				DEVELOPMENT_TEAM = JVHN2X67GT;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.OpenFoodFacts;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -729,8 +730,9 @@
 				DEVELOPMENT_TEAM = JVHN2X67GT;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.OpenFoodFacts;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
