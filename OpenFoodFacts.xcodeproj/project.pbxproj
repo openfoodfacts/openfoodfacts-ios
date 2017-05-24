@@ -56,6 +56,8 @@
 		95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */; };
 		95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C368091E9ECC0C008BB582 /* ObjectMapper.framework */; };
 		95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB99A61EA55BF900CBDDF9 /* String.swift */; };
+		95CE24E11ED5509300EF3D79 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24DF1ED5509300EF3D79 /* Fabric.framework */; };
+		95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24E01ED5509300EF3D79 /* Crashlytics.framework */; };
 		95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */; };
 		95D6A75D1E9C08520017B423 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */; };
 		95D6A75E1E9C08520017B423 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */; };
@@ -76,7 +78,6 @@
 /* Begin PBXFileReference section */
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		951FB09E1EB2989A005CAE33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9527E7861E9EBDD200833F04 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		955ED9B81EB2901100BB80BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyProductsView.xib; sourceTree = "<group>"; };
@@ -128,9 +129,10 @@
 		95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		95C2652E1E9A7246004212EC /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		95C368091E9ECC0C008BB582 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		95C3680B1E9FCA79008BB582 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
 		95CB99A61EA55BF900CBDDF9 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		95CE24DF1ED5509300EF3D79 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		95CE24E01ED5509300EF3D79 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
@@ -154,8 +156,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */,
+				95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */,
 				957094B11EA163CF00268236 /* Kingfisher.framework in Frameworks */,
 				95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */,
+				95CE24E11ED5509300EF3D79 /* Fabric.framework in Frameworks */,
 				95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */,
 				95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */,
 				95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */,
@@ -309,13 +313,13 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95CE24DF1ED5509300EF3D79 /* Fabric.framework */,
+				95CE24E01ED5509300EF3D79 /* Crashlytics.framework */,
 				957094B91EA24DFC00268236 /* XLPagerTabStrip.framework */,
 				957094B01EA163CF00268236 /* Kingfisher.framework */,
 				95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */,
-				95C3680B1E9FCA79008BB582 /* SwiftyJSON.framework */,
 				95C368091E9ECC0C008BB582 /* ObjectMapper.framework */,
 				953C2BE31E9EC22200FD99D4 /* Alamofire.framework */,
-				9527E7861E9EBDD200833F04 /* Alamofire.framework */,
 				95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */,
 				95C265241E96D5C2004212EC /* AVFoundation.framework */,
 			);
@@ -419,6 +423,7 @@
 				95C2650B1E96D55B004212EC /* Frameworks */,
 				95C2650C1E96D55B004212EC /* Resources */,
 				95C368081E9EC999008BB582 /* ShellScript */,
+				95CE24DE1ED5508500EF3D79 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -510,6 +515,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		95CE24DE1ED5508500EF3D79 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 2a83bde9cbf98b48f34f2f27fdb7baa31cf9b5f8 8edbf06d5de27983cb0bf34ca9e266b949a15616bfd9e7a3f6ee013b97cc3d46";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -712,9 +730,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JVHN2X67GT;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -729,9 +750,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JVHN2X67GT;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
