@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreGraphics
+import Fabric
+import Crashlytics
 
 // MARK: - UIViewController
 
@@ -151,8 +153,10 @@ extension SearchTableViewController {
     func getProducts(fromService service: ProductService, page: Int, withQuery query: String? = nil) {
         // Either we have a query from the user's input or we need need to fetch the next page for the same query
         if let query = query ?? productsResponse?.query {
+            var searchType = "product_name"
             
             if query.isNumber() { // TODO Should validate so only the API is called when the input is a valid barcode
+                searchType = "product_barcode"
                 service.getProduct(byBarcode: query) { product in
                     self.showProductDetails(product: product)
                     
@@ -170,6 +174,8 @@ extension SearchTableViewController {
                     self.tableView.reloadData()
                 }
             }
+            
+            Answers.logSearch(withQuery: query, customAttributes: ["file": String(describing: SearchTableViewController.self), "search_type": searchType])
         }
     }
 }

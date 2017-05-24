@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import Crashlytics
 
 class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     
@@ -24,6 +25,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
         
         navigationController?.navigationBar.isTranslucent = false
     }
