@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
+import Crashlytics
 
 protocol ProductApi {
     func getProducts(byName name: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void)
@@ -24,6 +25,9 @@ struct ProductService: ProductApi {
         print("Getting products for: \(name)")
         let url = endpoint + "/cgi/search.pl?search_terms=\(encodeParameters(name))&search_simple=1&action=process&json=1&page=\(page)"
         
+        Crashlytics.sharedInstance().setObjectValue("by_product", forKey: "product_search_type")
+        Crashlytics.sharedInstance().setObjectValue(name, forKey: "product_search_name")
+        Crashlytics.sharedInstance().setObjectValue(page, forKey: "product_search_page")
         print("URL: \(url)")
         
         Alamofire.request(url).responseObject { (response: DataResponse<ProductsResponse>) in
@@ -33,6 +37,7 @@ struct ProductService: ProductApi {
                 onSuccess(productResponse)
             case .failure(let error):
                 print(error)
+                Crashlytics.sharedInstance().recordError(error)
             }
         }
     }
@@ -40,6 +45,8 @@ struct ProductService: ProductApi {
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product) -> Void) {
         let url = endpoint + "/api/v0/product/\(barcode).json"
         
+        Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
+        Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
         print("URL: \(url)")
         
         Alamofire.request(url).responseObject(keyPath: "product") { (response: DataResponse<Product>) in
@@ -49,6 +56,7 @@ struct ProductService: ProductApi {
                 onSuccess(product)
             case .failure(let error):
                 print(error)
+                Crashlytics.sharedInstance().recordError(error)
             }
         }
     }

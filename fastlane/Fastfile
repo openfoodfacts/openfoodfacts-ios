@@ -25,5 +25,5 @@ lane :beta do
   )
 
   # upload to Testflight
-  pilot(skip_waiting_for_build_processing: false)
+  pilot(skip_waiting_for_build_processing: true)
 end
