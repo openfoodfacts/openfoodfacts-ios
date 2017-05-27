@@ -138,7 +138,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         var nutritionTableInfoRows = [InfoRow]()
         
         if let nutriments = product.nutriments, let energy = nutriments.energy, let per100g = energy.per100g, let perServing = energy.perServing {
-            nutritionTableInfoRows.append(InfoRow(label: .energy, value: String(per100g.twoDecimalRounded), secondaryValue: perServing, highlight: false))
+            nutritionTableInfoRows.append(InfoRow(label: .energy, value: String(per100g.twoDecimalRounded), secondaryValue: String(perServing.twoDecimalRounded), highlight: false))
         }
         
         return ProductDetailPageViewController<NutritionTableHeaderTableViewCell, NutritionTableRowTableViewCell>(product: product, localizedTitle: nutritionTableTitle, infoRows: nutritionTableInfoRows)

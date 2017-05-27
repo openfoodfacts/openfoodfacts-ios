@@ -30,6 +30,8 @@ class NutritionLevelsTableViewCell: UITableViewCell {
     @IBOutlet weak var saltLabel: UILabel!
     @IBOutlet weak var saltLabelLevel: UILabel!
     
+    // TODO Using g as default, because sometimes the API does not return the _unit field and previously I was if letting the unit too, so sometimes it wasn't entering a 0-valued nutrition level and setting the UILabels. Can the unit be different to 'g', maybe for US or UK? Is it a product specific thing or by country/language/locale?
+    
     func configure(with product: Product) {
         // Fat
         if let fatLevel = product.nutritionLevels?.fat {
@@ -37,8 +39,8 @@ class NutritionLevelsTableViewCell: UITableViewCell {
             fatLabelLevel.text = getLevelLocalized(level: fatLevel)
         }
         fatLabel.text = NSLocalizedString("nutrition.fats", comment: "Nutrition, fat")
-        if let fat = product.nutriments?.fats.fat, let value = fat.per100g, let unit = fat.unit {
-            fatValue.text = "\(value.twoDecimalRounded) \(unit)"
+        if let fat = product.nutriments?.fats.fat, let value = fat.per100g {
+            fatValue.text = "\(value.twoDecimalRounded) \(fat.unit ?? "g")"
         }
         
         // Saturated Fat
@@ -47,8 +49,8 @@ class NutritionLevelsTableViewCell: UITableViewCell {
             saturatedFatLabelLevel.text = getLevelLocalized(level: saturatedFatLevel)
         }
         saturatedFatLabel.text = NSLocalizedString("nutrition.fats.saturated-fat", comment: "Nutrition, saturated fat")
-        if let saturatedFat = product.nutriments?.fats.saturatedFat, let value = saturatedFat.per100g, let unit = saturatedFat.unit {
-            saturatedFatValue.text = "\(value.twoDecimalRounded) \(unit)"
+        if let saturatedFat = product.nutriments?.fats.saturatedFat, let value = saturatedFat.per100g {
+            saturatedFatValue.text = "\(value.twoDecimalRounded) \(saturatedFat.unit ?? "g")"
         }
         
         // Sugars
@@ -57,8 +59,8 @@ class NutritionLevelsTableViewCell: UITableViewCell {
             sugarsLabelLevel.text = getLevelLocalized(level: sugarsLevel)
         }
         sugarsLabel.text = NSLocalizedString("nutrition.carbohydrate.sugars", comment: "Nutrition, sugars")
-        if let sugars = product.nutriments?.carbohydrates.sugars, let value = sugars.per100g, let unit = sugars.unit {
-            sugarsValue.text = "\(value.twoDecimalRounded) \(unit)"
+        if let sugars = product.nutriments?.carbohydrates.sugars, let value = sugars.per100g {
+            sugarsValue.text = "\(value.twoDecimalRounded) \(sugars.unit ?? "g")"
         }
         
         // Salt
@@ -67,8 +69,8 @@ class NutritionLevelsTableViewCell: UITableViewCell {
             saltLabelLevel.text = getLevelLocalized(level: saltLevel)
         }
         saltLabel.text = NSLocalizedString("nutrition.salt", comment: "Nutrition, salt")
-        if let salt = product.nutriments?.salt, let value = salt.per100g, let unit = salt.unit {
-            saltValue.text = "\(value.twoDecimalRounded) \(unit)"
+        if let salt = product.nutriments?.salt, let value = salt.per100g {
+            saltValue.text = "\(value.twoDecimalRounded) \(salt.unit ?? "g")"
         }
     }
     

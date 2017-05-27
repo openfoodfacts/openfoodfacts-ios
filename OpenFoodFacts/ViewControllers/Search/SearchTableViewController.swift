@@ -170,6 +170,7 @@ extension SearchTableViewController {
 
 // MARK: - Private functions
 private extension SearchTableViewController {
+    
     func showProductDetails(product: Product) {
         navigationController?.pushViewController(productDetails(product: product), animated: true)
     }

@@ -10,11 +10,11 @@ import Foundation
 import ObjectMapper
 
 struct NutrimentItem {
-    var total: String?
+    var total: Double?
     var per100g: Double?
-    var perServing: String?
+    var perServing: Double?
     var unit: String?
-    var value: String?
+    var value: Double?
     
     // Json keys
     let nameKey: String
@@ -32,11 +32,11 @@ struct NutrimentItem {
         self.unitKey = "\(nameKey)_unit"
         self.valueKey = "\(nameKey)_value"
         
-        self.total <- map[nameKey]
+        self.total <- (map[nameKey], DoubleTransform())
         self.per100g <- (map[per100gKey], DoubleTransform())
-        self.perServing <- map[servingKey]
+        self.perServing <- (map[servingKey], DoubleTransform())
         self.unit <- map[unitKey]
-        self.value <- map[valueKey]
+        self.value <- (map[valueKey], DoubleTransform())
         
         self.localized = localized
     }
