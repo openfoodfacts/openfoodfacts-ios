@@ -153,29 +153,17 @@ extension SearchTableViewController {
     func getProducts(fromService service: ProductService, page: Int, withQuery query: String? = nil) {
         // Either we have a query from the user's input or we need need to fetch the next page for the same query
         if let query = query ?? productsResponse?.query {
-            var searchType = "product_name"
-            
-            if query.isNumber() { // TODO Should validate so only the API is called when the input is a valid barcode
-                searchType = "product_barcode"
-                service.getProduct(byBarcode: query) { product in
-                    self.showProductDetails(product: product)
-                    
+            service.getProducts(for: query, page: page) { response in
+                // TODO If this query returns only a product, should it go directly to detail view instead of the tableview?
+                if self.productsResponse == nil || self.productsResponse?.query != query { // Got new response
+                    self.productsResponse = response
+                    self.productsResponse!.query = query
+                } else if self.productsResponse?.query == query, let newProducts = response.products { // Append new projects to existing response
+                    self.productsResponse!.products!.append(contentsOf: newProducts)
                 }
-            } else {
-                service.getProducts(byName: query, page: page) { response in
-                    // TODO If this query returns only a product, should it go directly to detail view instead of the tableview?
-                    if self.productsResponse == nil || self.productsResponse?.query != query { // Got new response
-                        self.productsResponse = response
-                        self.productsResponse!.query = query
-                    } else if self.productsResponse?.query == query, let newProducts = response.products { // Append new projects to existing response
-                        self.productsResponse!.products!.append(contentsOf: newProducts)
-                    }
-                    
-                    self.tableView.reloadData()
-                }
+                
+                self.tableView.reloadData()
             }
-            
-            Answers.logSearch(withQuery: query, customAttributes: ["file": String(describing: SearchTableViewController.self), "search_type": searchType])
         }
     }
 }
