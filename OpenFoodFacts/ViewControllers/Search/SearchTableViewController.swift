@@ -24,7 +24,7 @@ class SearchTableViewController: UIViewController {
     /* When the user searches a product by barcode and it's found, the product's detail view is loaded.
      If the user loads taps the back button, after presenting the search view the app goes back to the product's detail view again.
      This boolean breaks that loop. */
-    fileprivate var wasSearchbarEdited = false
+    fileprivate var wasSearchBarEdited = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,13 +117,13 @@ extension SearchTableViewController: UITableViewDelegate {
 extension SearchTableViewController: UISearchResultsUpdating {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        wasSearchbarEdited = true
+        wasSearchBarEdited = true
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        if let query = searchController.searchBar.text, !query.isEmpty, wasSearchbarEdited {
+        if let query = searchController.searchBar.text, !query.isEmpty, wasSearchBarEdited {
             getProducts(fromService: ProductService() ,page: 1, withQuery: query)
-            wasSearchbarEdited = false
+            wasSearchBarEdited = false
         }
     }
 }
