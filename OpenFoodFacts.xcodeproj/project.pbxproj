@@ -67,7 +67,7 @@
 		95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */; };
 		95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */; };
 		95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C881EDB6CDD00D99115 /* UIImage.swift */; };
-		95F14C8B1EDCADD600D99115 /* NormalizingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C8A1EDCADD600D99115 /* NormalizingProcessor.swift */; };
+		95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */; };
 		95F14CB21EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14CB01EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift */; };
 		95F14CB31EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F14CB11EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -139,7 +139,7 @@
 		95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nutriments.swift; path = Nutriments/Nutriments.swift; sourceTree = "<group>"; };
 		95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionLevels.swift; path = Nutriments/NutritionLevels.swift; sourceTree = "<group>"; };
 		95F14C881EDB6CDD00D99115 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		95F14C8A1EDCADD600D99115 /* NormalizingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalizingProcessor.swift; sourceTree = "<group>"; };
+		95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingProcessor.swift; sourceTree = "<group>"; };
 		95F14CB01EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionTableHeaderTableViewCell.swift; path = NutritionTable/NutritionTableHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		95F14CB11EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NutritionTableHeaderTableViewCell.xib; path = NutritionTable/NutritionTableHeaderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -348,7 +348,7 @@
 				95781B131EBE4E5C003E3256 /* UITableViewCell.swift */,
 				95781B9A1EC26B24003E3256 /* Double.swift */,
 				95F14C881EDB6CDD00D99115 /* UIImage.swift */,
-				95F14C8A1EDCADD600D99115 /* NormalizingProcessor.swift */,
+				95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -529,7 +529,7 @@
 			files = (
 				95781BC01EC3A898003E3256 /* InfoRow.swift in Sources */,
 				95781BBD1EC3A898003E3256 /* OFFWriteAPI.swift in Sources */,
-				95F14C8B1EDCADD600D99115 /* NormalizingProcessor.swift in Sources */,
+				95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */,
 				95781B8E1EC106CB003E3256 /* InfoRowTableViewCell.swift in Sources */,
 				95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */,
 				95781BC61EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift in Sources */,

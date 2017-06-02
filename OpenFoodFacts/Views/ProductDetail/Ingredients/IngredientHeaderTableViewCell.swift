@@ -16,7 +16,15 @@ class IngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     override func configure(with product: Product, completionHandler: (() -> Void)?) {
         if let imageUrl = product.ingredientsImageUrl, let url = URL(string: imageUrl) {
             ingredients.kf.indicatorType = .activity
-            ingredients.kf.setImage(with: url)
+            ingredients.kf.setImage(with: url, options: [.processor(RotatingProcessor())]) {
+                (image, error, cacheType, imageUrl) in
+                DispatchQueue.main.async {
+                    self.setNeedsLayout()
+                    if let completionHandler = completionHandler {
+                        completionHandler()
+                    }
+                }
+            }
         }
     }
 }
