@@ -9,7 +9,7 @@
 import UIKit
 
 class ConfigurableUITableViewCell<T>: UITableViewCell {
-    func configure(with: T) {
+    func configure(with: T, completionHandler: (() -> Void)? = nil) {
         // Do nothing, expect implementation in subclasses
     }
 }

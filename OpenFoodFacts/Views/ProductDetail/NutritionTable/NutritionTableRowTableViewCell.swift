@@ -14,9 +14,16 @@ class NutritionTableRowTableViewCell: ConfigurableUITableViewCell<InfoRow> {
     @IBOutlet weak var valuePer100g: UILabel!
     @IBOutlet weak var valuePerServing: UILabel!
     
-    override func configure(with infoRow: InfoRow) {
-        rowLabel.text = infoRow.label.localizedString
-        valuePer100g.text = infoRow.value
-        valuePerServing.text = infoRow.secondaryValue
+    fileprivate let fontSize: CGFloat = 17
+    
+    override func configure(with infoRow: InfoRow, completionHandler: (() -> Void)?) {
+        let attributes = [NSFontAttributeName: infoRow.highlight ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)]
+        
+        rowLabel.attributedText = NSAttributedString(string: infoRow.label.localizedString, attributes: attributes)
+        valuePer100g.attributedText = NSAttributedString(string: infoRow.value, attributes: attributes)
+        
+        if let perServing = infoRow.secondaryValue {
+            valuePerServing.attributedText = NSAttributedString(string: perServing, attributes: attributes)
+        }
     }
 }

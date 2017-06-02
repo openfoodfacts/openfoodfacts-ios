@@ -13,7 +13,7 @@ class IngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     
     @IBOutlet weak var ingredients: UIImageView!
     
-    override func configure(with product: Product) {
+    override func configure(with product: Product, completionHandler: (() -> Void)?) {
         if let imageUrl = product.ingredientsImageUrl, let url = URL(string: imageUrl) {
             ingredients.kf.indicatorType = .activity
             ingredients.kf.setImage(with: url)

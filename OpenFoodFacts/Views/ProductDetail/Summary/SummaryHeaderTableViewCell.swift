@@ -15,7 +15,7 @@ class SummaryHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     @IBOutlet weak var nutriscore: UILabel!
     @IBOutlet weak var productName: UILabel!
     
-    override func configure(with product: Product) {
+    override func configure(with product: Product, completionHandler: (() -> Void)?) {
         if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
             // TODO Placeholder image or loading
             productImage.kf.indicatorType = .activity

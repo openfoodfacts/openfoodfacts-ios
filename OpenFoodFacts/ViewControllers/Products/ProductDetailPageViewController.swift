@@ -79,7 +79,11 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
     func createHeaderCell() -> H {
         let cell = tableView.dequeueReusableCell(withIdentifier: H.identifier) as! H
         
-        cell.configure(with: product)
+        cell.configure(with: product) {
+            // Trigger row height recalculation due to async loaded images in dynamic height rows
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
         
         return cell
     }

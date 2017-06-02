@@ -12,4 +12,8 @@ extension Double {
     var twoDecimalRounded: Double {
         return (self * 100).rounded() / 100
     }
+    
+    var asTwoDecimalRoundedString: String {
+        return String(describing: twoDecimalRounded)
+    }
 }

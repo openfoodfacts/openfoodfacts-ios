@@ -15,6 +15,7 @@ struct NutrimentItem {
     var perServing: Double?
     var unit: String?
     var value: Double?
+    var isMainItem: Bool // Whether this item is the main item in a group, used to hightlight. Like Fat in the Fats group.
     
     // Json keys
     let nameKey: String
@@ -25,7 +26,14 @@ struct NutrimentItem {
     
     let localized: InfoRowKey
     
-    init(nameKey: String, map: Map, localized: InfoRowKey) {
+    var asInfoRow: InfoRow? {
+        guard let per100g = self.per100g else { return nil }
+        guard let perServing = self.perServing else { return nil }
+        guard let unit = self.unit else { return nil }
+        return InfoRow(label: localized, value: "\(per100g.asTwoDecimalRoundedString) \(unit)",secondaryValue: "\(perServing.asTwoDecimalRoundedString) \(unit)", highlight: isMainItem)
+    }
+    
+    init(nameKey: String, map: Map, localized: InfoRowKey, isMainItem mainItem: Bool = false) {
         self.nameKey = nameKey
         self.per100gKey = "\(nameKey)_100g"
         self.servingKey = "\(nameKey)_serving"
@@ -37,6 +45,7 @@ struct NutrimentItem {
         self.perServing <- (map[servingKey], DoubleTransform())
         self.unit <- map[unitKey]
         self.value <- (map[valueKey], DoubleTransform())
+        self.isMainItem = mainItem
         
         self.localized = localized
     }

@@ -14,12 +14,22 @@ class NutritionTableHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     @IBOutlet weak var nutritionTableImage: UIImageView!
     @IBOutlet weak var servingSizeLabel: UILabel!
     
-    override func configure(with product: Product) {
-        if let imageUrl = product.ingredientsImageUrl, let url = URL(string: imageUrl) {
+    override func configure(with product: Product, completionHandler: (() -> Void)?) {
+        if let imageUrl = product.nutritionTableImage, let url = URL(string: imageUrl) {
             nutritionTableImage.kf.indicatorType = .activity
-            nutritionTableImage.kf.setImage(with: url)
+            nutritionTableImage.kf.setImage(with: url, options: [.processor(RotatingProcessor())]) {
+                (image, error, cacheType, imageUrl) in
+                DispatchQueue.main.async {
+                    self.setNeedsLayout()
+                    if let completionHandler = completionHandler {
+                        completionHandler()
+                    }
+                }
+            }
         }
         
-        servingSizeLabel.text = product.servingSize
+        if let servingSize = product.servingSize {
+            servingSizeLabel.text = "\(NSLocalizedString("product-detail.nutrition-table.for-serving", comment: "")): \(servingSize)"
+        }
     }
 }

@@ -13,7 +13,7 @@ class InfoRowTableViewCell: ConfigurableUITableViewCell<InfoRow> {
     @IBOutlet weak var label: UILabel!
     fileprivate let textSize: CGFloat = 17
 
-    override func configure(with infoRow: InfoRow) {
+    override func configure(with infoRow: InfoRow, completionHandler: (() -> Void)?) {
         let bold = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.boldSystemFont(ofSize: textSize)]
         let regular = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.systemFont(ofSize: textSize)]
         

@@ -134,11 +134,59 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     
     fileprivate func getNutritionTableVC() -> UIViewController {
         let nutritionTableTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
-        
         var nutritionTableInfoRows = [InfoRow]()
         
-        if let nutriments = product.nutriments, let energy = nutriments.energy, let per100g = energy.per100g, let perServing = energy.perServing {
-            nutritionTableInfoRows.append(InfoRow(label: .energy, value: String(per100g.twoDecimalRounded), secondaryValue: String(perServing.twoDecimalRounded), highlight: false))
+        nutritionTableInfoRows.append(InfoRow(label: .nutritionalTableHeader, value: NSLocalizedString("product-detail.nutrition-table.for-100g", comment: ""), secondaryValue: NSLocalizedString("product-detail.nutrition-table.for-serving", comment: "")))
+        
+        if let energy = product.nutriments?.energy, let infoRow = energy.asInfoRow {
+            nutritionTableInfoRows.append(infoRow)
+        }
+        if let fats = product.nutriments?.fats {
+            for item in fats {
+                if let infoRow = item.asInfoRow {
+                    nutritionTableInfoRows.append(infoRow)
+                }
+            }
+        }
+        if let carbohydrates = product.nutriments?.carbohydrates {
+            for item in carbohydrates {
+                if let infoRow = item.asInfoRow {
+                    nutritionTableInfoRows.append(infoRow)
+                }
+            }
+        }
+        if let fiber = product.nutriments?.fiber, let infoRow = fiber.asInfoRow {
+            nutritionTableInfoRows.append(infoRow)
+        }
+        if let proteins = product.nutriments?.proteins {
+            for item in proteins {
+                if let infoRow = item.asInfoRow {
+                    nutritionTableInfoRows.append(infoRow)
+                }
+            }
+        }
+        if let salt = product.nutriments?.salt, let infoRow = salt.asInfoRow {
+            nutritionTableInfoRows.append(infoRow)
+        }
+        if let sodium = product.nutriments?.sodium, let infoRow = sodium.asInfoRow {
+            nutritionTableInfoRows.append(infoRow)
+        }
+        if let alcohol = product.nutriments?.alcohol, let infoRow = alcohol.asInfoRow {
+            nutritionTableInfoRows.append(infoRow)
+        }
+        if let vitamins = product.nutriments?.vitamins {
+            for item in vitamins {
+                if let infoRow = item.asInfoRow {
+                    nutritionTableInfoRows.append(infoRow)
+                }
+            }
+        }
+        if let minerals = product.nutriments?.minerals {
+            for item in minerals {
+                if let infoRow = item.asInfoRow {
+                    nutritionTableInfoRows.append(infoRow)
+                }
+            }
         }
         
         return ProductDetailPageViewController<NutritionTableHeaderTableViewCell, NutritionTableRowTableViewCell>(product: product, localizedTitle: nutritionTableTitle, infoRows: nutritionTableInfoRows)
