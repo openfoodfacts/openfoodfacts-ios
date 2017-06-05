@@ -12,8 +12,13 @@ import Kingfisher
 class SummaryHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     
     @IBOutlet weak var productImage: UIImageView!
-    @IBOutlet weak var nutriscore: UILabel!
+    @IBOutlet weak var nutriscore: NutriScoreView! {
+        didSet {
+            nutriscore?.currentScore = nil
+        }
+    }
     @IBOutlet weak var productName: UILabel!
+    
     
     override func configure(with product: Product, completionHandler: (() -> Void)?) {
         if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
@@ -22,8 +27,9 @@ class SummaryHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
             productImage.kf.setImage(with: url)
         }
         
-        if let nutriscore = product.nutriscore {
-            self.nutriscore.text = nutriscore.uppercased()
+        
+        if let nutriscore = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscore.uppercased()) {
+            self.nutriscore.currentScore = score
         }
         
         if let name = product.name {
