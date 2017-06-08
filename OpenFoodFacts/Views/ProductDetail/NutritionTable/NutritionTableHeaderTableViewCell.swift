@@ -26,10 +26,18 @@ class NutritionTableHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
                     }
                 }
             }
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
+            nutritionTableImage.addGestureRecognizer(tap)
+            nutritionTableImage.isUserInteractionEnabled = true
         }
         
         if let servingSize = product.servingSize {
             servingSizeLabel.text = "\(NSLocalizedString("product-detail.nutrition-table.for-serving", comment: "")): \(servingSize)"
         }
+    }
+    
+    func didTapProductImage(_ sender: UITapGestureRecognizer) {
+        delegate?.didTap(image: nutritionTableImage.image, sender: self)
     }
 }

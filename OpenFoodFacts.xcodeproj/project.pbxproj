@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
+		9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525708B1EE9BC91002FC40D /* CellImageTapable.swift */; };
+		9525708E1EE9BE6D002FC40D /* Agrume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9525708D1EE9BE6D002FC40D /* Agrume.framework */; };
 		953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953664F41ECA212100D6D398 /* NutrimentItem.swift */; };
 		953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
 		955ED9B71EB2901100BB80BA /* EmptyProductsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */; };
@@ -75,6 +77,8 @@
 /* Begin PBXFileReference section */
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		951FB09E1EB2989A005CAE33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9525708B1EE9BC91002FC40D /* CellImageTapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellImageTapable.swift; path = Protocols/CellImageTapable.swift; sourceTree = "<group>"; };
+		9525708D1EE9BE6D002FC40D /* Agrume.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Agrume.framework; path = Carthage/Build/iOS/Agrume.framework; sourceTree = "<group>"; };
 		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		955ED9B81EB2901100BB80BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyProductsView.xib; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9525708E1EE9BE6D002FC40D /* Agrume.framework in Frameworks */,
 				957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */,
 				95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */,
 				957094B11EA163CF00268236 /* Kingfisher.framework in Frameworks */,
@@ -164,6 +169,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9525708A1EE9BC43002FC40D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9525708B1EE9BC91002FC40D /* CellImageTapable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		9527E7881E9EBDDC00833F04 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +301,7 @@
 		95C265101E96D55B004212EC /* OpenFoodFacts */ = {
 			isa = PBXGroup;
 			children = (
+				9525708A1EE9BC43002FC40D /* Protocols */,
 				95CB99A51EA55BEF00CBDDF9 /* Extensions */,
 				95D6A7621E9C18F00017B423 /* Models */,
 				9527E7881E9EBDDC00833F04 /* Network */,
@@ -307,6 +321,7 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9525708D1EE9BE6D002FC40D /* Agrume.framework */,
 				95CE24DF1ED5509300EF3D79 /* Fabric.framework */,
 				95CE24E01ED5509300EF3D79 /* Crashlytics.framework */,
 				957094B91EA24DFC00268236 /* XLPagerTabStrip.framework */,
@@ -500,6 +515,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Agrume.framework",
 			);
 			outputPaths = (
 			);
@@ -548,6 +564,7 @@
 				95D6A75D1E9C08520017B423 /* ProductTableViewCell.swift in Sources */,
 				95781B561EBE89D1003E3256 /* IngredientHeaderTableViewCell.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
+				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
 				95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */,
 				95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */,
 				95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */,

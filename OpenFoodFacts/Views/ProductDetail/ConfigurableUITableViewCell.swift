@@ -9,6 +9,8 @@
 import UIKit
 
 class ConfigurableUITableViewCell<T>: UITableViewCell {
+    weak var delegate: CellImageTapable?
+    
     func configure(with: T, completionHandler: (() -> Void)? = nil) {
         // Do nothing, expect implementation in subclasses
     }

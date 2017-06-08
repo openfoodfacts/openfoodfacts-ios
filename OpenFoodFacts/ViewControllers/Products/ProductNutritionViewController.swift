@@ -9,6 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
+/// Product Detail Page subclass
 class ProductNutritionViewController: ProductDetailPageViewController<NutritionHeaderTableViewCell, InfoRowTableViewCell> {
     
     override func viewDidLoad() {

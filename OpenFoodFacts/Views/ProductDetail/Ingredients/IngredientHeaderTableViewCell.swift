@@ -25,6 +25,14 @@ class IngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
                     }
                 }
             }
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
+            ingredients.addGestureRecognizer(tap)
+            ingredients.isUserInteractionEnabled = true
         }
+    }
+    
+    func didTapProductImage(_ sender: UITapGestureRecognizer) {
+        delegate?.didTap(image: ingredients.image, sender: self)
     }
 }

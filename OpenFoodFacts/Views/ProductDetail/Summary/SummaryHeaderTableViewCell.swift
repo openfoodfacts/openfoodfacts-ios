@@ -19,14 +19,16 @@ class SummaryHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     }
     @IBOutlet weak var productName: UILabel!
     
-    
     override func configure(with product: Product, completionHandler: (() -> Void)?) {
         if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
             // TODO Placeholder image or loading
             productImage.kf.indicatorType = .activity
             productImage.kf.setImage(with: url)
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
+            productImage.addGestureRecognizer(tap)
+            productImage.isUserInteractionEnabled = true
         }
-        
         
         if let nutriscore = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscore.uppercased()) {
             self.nutriscore.currentScore = score
@@ -35,5 +37,9 @@ class SummaryHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
         if let name = product.name {
             productName.text = name
         }
+    }
+    
+    func didTapProductImage(_ sender: UITapGestureRecognizer) {
+        delegate?.didTap(image: productImage.image, sender: self)
     }
 }
