@@ -9,68 +9,32 @@
 import UIKit
 
 class NutritionLevelsTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var fatImageLevel: UIImageView!
-    @IBOutlet weak var fatValue: UILabel!
-    @IBOutlet weak var fatLabel: UILabel!
-    @IBOutlet weak var fatLabelLevel: UILabel!
-    
-    @IBOutlet weak var saturatedFatImageLevel: UIImageView!
-    @IBOutlet weak var saturatedFatValue: UILabel!
-    @IBOutlet weak var saturatedFatLabel: UILabel!
-    @IBOutlet weak var saturatedFatLabelLevel: UILabel!
-    
-    @IBOutlet weak var sugarsImageLevel: UIImageView!
-    @IBOutlet weak var sugarsValue: UILabel!
-    @IBOutlet weak var sugarsLabel: UILabel!
-    @IBOutlet weak var sugarsLabelLevel: UILabel!
-    
-    @IBOutlet weak var saltImageLevel: UIImageView!
-    @IBOutlet weak var saltValue: UILabel!
-    @IBOutlet weak var saltLabel: UILabel!
-    @IBOutlet weak var saltLabelLevel: UILabel!
+    @IBOutlet weak var stackView: UIStackView!
     
     // TODO Using g as default, because sometimes the API does not return the _unit field and previously I was if letting the unit too, so sometimes it wasn't entering a 0-valued nutrition level and setting the UILabels. Can the unit be different to 'g', maybe for US or UK? Is it a product specific thing or by country/language/locale?
     
     func configure(with product: Product) {
-        // Fat
-        if let fatLevel = product.nutritionLevels?.fat {
-            fatImageLevel.image = getImageLevel(level: fatLevel)
-            fatLabelLevel.text = getLevelLocalized(level: fatLevel)
-        }
-        fatLabel.text = NSLocalizedString("nutrition.fats", comment: "Nutrition, fat")
-        if let fat = product.nutriments?.fats[0], let value = fat.per100g {
-            fatValue.text = "\(value.twoDecimalRounded) \(fat.unit ?? "g")"
-        }
+        stackView.removeAllViews()
         
-        // Saturated Fat
-        if let saturatedFatLevel = product.nutritionLevels?.saturatedFat {
-            saturatedFatImageLevel.image = getImageLevel(level: saturatedFatLevel)
-            saturatedFatLabelLevel.text = getLevelLocalized(level: saturatedFatLevel)
+        if let levelView = createLevelView(level: product.nutritionLevels?.fat,
+                                           item: product.nutriments?.fats[0],
+                                           localizedLabel: NSLocalizedString("nutrition.fats", comment: "Nutrition, fat")) {
+            stackView.addArrangedSubview(levelView)
         }
-        saturatedFatLabel.text = NSLocalizedString("nutrition.fats.saturated-fat", comment: "Nutrition, saturated fat")
-        if let saturatedFat = product.nutriments?.fats[1], let value = saturatedFat.per100g {
-            saturatedFatValue.text = "\(value.twoDecimalRounded) \(saturatedFat.unit ?? "g")"
+        if let levelView = createLevelView(level: product.nutritionLevels?.saturatedFat,
+                                           item: product.nutriments?.fats[1],
+                                           localizedLabel: NSLocalizedString("nutrition.fats.saturated-fat", comment: "Nutrition, saturated fat")) {
+            stackView.addArrangedSubview(levelView)
         }
-        
-        // Sugars
-        if let sugarsLevel = product.nutritionLevels?.sugars {
-            sugarsImageLevel.image = getImageLevel(level: sugarsLevel)
-            sugarsLabelLevel.text = getLevelLocalized(level: sugarsLevel)
+        if let levelView = createLevelView(level: product.nutritionLevels?.sugars,
+                                           item: product.nutriments?.carbohydrates[1],
+                                           localizedLabel: NSLocalizedString("nutrition.carbohydrate.sugars", comment: "Nutrition, sugars")) {
+            stackView.addArrangedSubview(levelView)
         }
-        sugarsLabel.text = NSLocalizedString("nutrition.carbohydrate.sugars", comment: "Nutrition, sugars")
-        if let sugars = product.nutriments?.carbohydrates[1], let value = sugars.per100g {
-            sugarsValue.text = "\(value.twoDecimalRounded) \(sugars.unit ?? "g")"
-        }
-        
-        // Salt
-        if let saltLevel = product.nutritionLevels?.salt {
-            saltImageLevel.image = getImageLevel(level: saltLevel)
-            saltLabelLevel.text = getLevelLocalized(level: saltLevel)
-        }
-        saltLabel.text = NSLocalizedString("nutrition.salt", comment: "Nutrition, salt")
-        if let salt = product.nutriments?.salt, let value = salt.per100g {
-            saltValue.text = "\(value.twoDecimalRounded) \(salt.unit ?? "g")"
+        if let levelView = createLevelView(level: product.nutritionLevels?.salt,
+                                           item: product.nutriments?.salt,
+                                           localizedLabel: NSLocalizedString("nutrition.salt", comment: "Nutrition, salt")) {
+            stackView.addArrangedSubview(levelView)
         }
     }
     
@@ -85,7 +49,22 @@ class NutritionLevelsTableViewCell: UITableViewCell {
         }
     }
     
-    func getImageLevel(level: NutritionLevel) -> UIImage? {
+    fileprivate func getImageLevel(level: NutritionLevel) -> UIImage? {
         return UIImage(named: "nutritionLevel\(level.rawValue.capitalized)")
+    }
+    
+    fileprivate func createLevelView(level: NutritionLevel?, item: NutrimentItem?, localizedLabel: String) -> NutritionLevelView? {
+        guard let level = level else { return nil }
+        guard let item = item else { return nil }
+        guard let value = item.per100g else { return nil }
+        guard let levelView = Bundle.main.loadNibNamed(String(describing: NutritionLevelView.self), owner: NutritionLevelView(), options: nil)?.first as? NutritionLevelView else { return nil }
+        
+        levelView.configure(
+            image: getImageLevel(level: level),
+            value: "\(value.twoDecimalRounded) \(item.unit ?? "g")",
+            label: localizedLabel,
+            level: getLevelLocalized(level: level))
+        
+        return levelView
     }
 }

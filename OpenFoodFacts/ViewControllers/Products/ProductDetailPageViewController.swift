@@ -31,6 +31,8 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
     override func loadView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.alwaysBounceVertical = false // prevent scroll when table view fits in screen
+        tableView.tableFooterView = UIView(frame: CGRect.zero) // Hide empty rows
         view = tableView
     }
     
