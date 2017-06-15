@@ -14,7 +14,7 @@ protocol CellImageTapable: class {
     /// Image tap action handler
     ///
     /// - Parameters:
-    ///   - image: Image that was tapped
+    ///   - imageView: Image view that was tapped
     ///   - sender: Object that displays the image
-    func didTap(image: UIImage?, sender: UITableViewCell)
+    func didTap(imageView: UIImageView?, sender: UITableViewCell)
 }

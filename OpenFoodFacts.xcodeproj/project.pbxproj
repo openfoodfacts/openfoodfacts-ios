@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
 		9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525708B1EE9BC91002FC40D /* CellImageTapable.swift */; };
-		9525708E1EE9BE6D002FC40D /* Agrume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9525708D1EE9BE6D002FC40D /* Agrume.framework */; };
 		953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953664F41ECA212100D6D398 /* NutrimentItem.swift */; };
 		953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
+		9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9543129C1EEC57A1009F0621 /* ImageViewer.framework */; };
 		955ED9B71EB2901100BB80BA /* EmptyProductsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */; };
 		955ED9BC1EB290F900BB80BA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9BE1EB290F900BB80BA /* Settings.storyboard */; };
 		956B95931EB28C8A007C0345 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 956B95921EB28C8A007C0345 /* Localizable.strings */; };
@@ -84,6 +84,7 @@
 		9525708D1EE9BE6D002FC40D /* Agrume.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Agrume.framework; path = Carthage/Build/iOS/Agrume.framework; sourceTree = "<group>"; };
 		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		9543129C1EEC57A1009F0621 /* ImageViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageViewer.framework; path = Carthage/Build/iOS/ImageViewer.framework; sourceTree = "<group>"; };
 		955ED9B81EB2901100BB80BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyProductsView.xib; sourceTree = "<group>"; };
 		955ED9BD1EB290F900BB80BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		956B95921EB28C8A007C0345 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -159,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9525708E1EE9BE6D002FC40D /* Agrume.framework in Frameworks */,
+				9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */,
 				957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */,
 				95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */,
 				957094B11EA163CF00268236 /* Kingfisher.framework in Frameworks */,
@@ -329,6 +330,7 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9543129C1EEC57A1009F0621 /* ImageViewer.framework */,
 				9525708D1EE9BE6D002FC40D /* Agrume.framework */,
 				95CE24DF1ED5509300EF3D79 /* Fabric.framework */,
 				95CE24E01ED5509300EF3D79 /* Crashlytics.framework */,
@@ -525,7 +527,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Agrume.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ImageViewer.framework",
 			);
 			outputPaths = (
 			);
@@ -747,7 +749,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JVHN2X67GT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -768,7 +770,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = JVHN2X67GT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

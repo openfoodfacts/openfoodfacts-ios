@@ -8,7 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
-import Agrume
+import ImageViewer
 
 /// Generic Product Detail page view controller. H is the header or main row, R is one of the rows with information.
 class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R: ConfigurableUITableViewCell<InfoRow>>: UIViewController, UITableViewDelegate, UITableViewDataSource, IndicatorInfoProvider {
@@ -110,10 +110,9 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
 }
 
 extension ProductDetailPageViewController: CellImageTapable {
-    func didTap(image: UIImage?, sender: UITableViewCell) {
-        if let image = image {
-            let agrume = Agrume(image: image, backgroundColor: .black)
-            agrume.showFrom(self)
+    func didTap(imageView: UIImageView?, sender: UITableViewCell) {
+        if let imageView = imageView {
+            ImageViewer.show(imageView, presentingVC: self)
         }
     }
 }

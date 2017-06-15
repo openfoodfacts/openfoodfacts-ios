@@ -33,6 +33,6 @@ class IngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     }
     
     func didTapProductImage(_ sender: UITapGestureRecognizer) {
-        delegate?.didTap(image: ingredients.image, sender: self)
+        delegate?.didTap(imageView: ingredients, sender: self)
     }
 }
