@@ -53,37 +53,37 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         
         var summaryInfoRows = [InfoRow]()
         
-        if let barcode = product.barcode {
+        if let barcode = product.barcode, !barcode.isEmpty {
             summaryInfoRows.append(InfoRow(label: .barcode, value: barcode))
         }
-        if let quantity = product.quantity {
+        if let quantity = product.quantity, !quantity.isEmpty {
             summaryInfoRows.append(InfoRow(label: .quantity, value: quantity))
         }
-        if let array = product.packaging {
+        if let array = product.packaging, !array.isEmpty {
             summaryInfoRows.append(InfoRow(label: .packaging, value: array.joined(separator: ", ")))
         }
-        if let array = product.brands {
+        if let array = product.brands, !array.isEmpty {
             summaryInfoRows.append(InfoRow(label: .brands, value: array.joined(separator: ", ")))
         }
-        if let manufacturingPlaces = product.manufacturingPlaces {
+        if let manufacturingPlaces = product.manufacturingPlaces, !manufacturingPlaces.isEmpty {
             summaryInfoRows.append(InfoRow(label: .manufacturingPlaces, value: manufacturingPlaces))
         }
-        if let origins = product.origins {
+        if let origins = product.origins, !origins.isEmpty {
             summaryInfoRows.append(InfoRow(label: .origins, value: origins))
         }
-        if let array = product.categories {
+        if let array = product.categories, !array.isEmpty {
             summaryInfoRows.append(InfoRow(label: .categories, value: array.joined(separator: ", ")))
         }
-        if let array = product.labels {
+        if let array = product.labels, !array.isEmpty {
             summaryInfoRows.append(InfoRow(label: .labels, value: array.joined(separator: ", ")))
         }
-        if let citiesTags = product.citiesTags {
+        if let citiesTags = product.citiesTags, !citiesTags.isEmpty {
             summaryInfoRows.append(InfoRow(label: .citiesTags, value: citiesTags))
         }
-        if let array = product.stores {
+        if let array = product.stores, !array.isEmpty {
             summaryInfoRows.append(InfoRow(label: .stores, value: array.joined(separator: ", ")))
         }
-        if let array = product.countries {
+        if let array = product.countries, !array.isEmpty {
             summaryInfoRows.append(InfoRow(label: .countries, value: array.joined(separator: ", ")))
         }
         
@@ -95,13 +95,13 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         
         var ingredientsInfoRows = [InfoRow]()
         
-        if let ingredientsList = product.ingredientsList {
+        if let ingredientsList = product.ingredientsList, !ingredientsList.isEmpty {
             ingredientsInfoRows.append(InfoRow(label: .ingredientsList, value: ingredientsList))
         }
-        if let allergens = product.allergens {
+        if let allergens = product.allergens, !allergens.isEmpty {
             ingredientsInfoRows.append(InfoRow(label: .allergens, value: allergens))
         }
-        if let traces = product.traces {
+        if let traces = product.traces, !traces.isEmpty {
             ingredientsInfoRows.append(InfoRow(label: .traces, value: traces))
         }
         if let additives = product.additives?.map({ $0.value.uppercased() }).joined(separator: ", ") {
@@ -122,7 +122,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         
         var nutritionInfoRows = [InfoRow]()
         
-        if let servingSize = product.servingSize {
+        if let servingSize = product.servingSize, !servingSize.isEmpty {
             nutritionInfoRows.append(InfoRow(label: .servingSize, value: servingSize))
         }
         if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
