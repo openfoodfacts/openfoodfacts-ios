@@ -14,4 +14,12 @@ class ConfigurableUITableViewCell<T>: UITableViewCell {
     func configure(with: T, completionHandler: (() -> Void)? = nil) {
         // Do nothing, expect implementation in subclasses
     }
+    
+    /// Check if the cell has enough information to be displayed
+    ///
+    /// - Parameter _: Object with the information to display
+    /// - Returns: true when the object has enough information to display the cell
+    class func hasMinimumInformation(_: T) -> Bool {
+        return true
+    }
 }

@@ -11,7 +11,7 @@ import XLPagerTabStrip
 import ImageViewer
 
 /// Generic Product Detail page view controller. H is the header or main row, R is one of the rows with information.
-class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R: ConfigurableUITableViewCell<InfoRow>>: UIViewController, UITableViewDelegate, UITableViewDataSource, IndicatorInfoProvider {
+class ProductDetailPageViewController<Header: ConfigurableUITableViewCell<Product>, Row: ConfigurableUITableViewCell<InfoRow>>: UIViewController, UITableViewDelegate, UITableViewDataSource, IndicatorInfoProvider {
     internal lazy var tableView = UITableView()
     internal let product: Product
     internal let infoRows: [InfoRow]
@@ -39,8 +39,8 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: H.identifier, bundle: nil), forCellReuseIdentifier: H.identifier)
-        tableView.register(UINib(nibName: R.identifier, bundle: nil), forCellReuseIdentifier: R.identifier)
+        tableView.register(UINib(nibName: Header.identifier, bundle: nil), forCellReuseIdentifier: Header.identifier)
+        tableView.register(UINib(nibName: Row.identifier, bundle: nil), forCellReuseIdentifier: Row.identifier)
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
@@ -64,7 +64,7 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            return Header.hasMinimumInformation(product) ? 1 : 0
         } else {
             return infoRows.count
         }
@@ -79,8 +79,8 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
         }
     }
     
-    func createHeaderCell() -> H {
-        let cell = tableView.dequeueReusableCell(withIdentifier: H.identifier) as! H
+    func createHeaderCell() -> Header {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Header.identifier) as! Header
         
         cell.configure(with: product) {
             // Trigger row height recalculation due to async loaded images in dynamic height rows
@@ -92,8 +92,8 @@ class ProductDetailPageViewController<H: ConfigurableUITableViewCell<Product>, R
         return cell
     }
     
-    func createRow(row: Int) -> R {
-        let cell = tableView.dequeueReusableCell(withIdentifier: R.identifier) as! R
+    func createRow(row: Int) -> Row {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Row.identifier) as! Row
         
         let infoRow = infoRows[row]
         

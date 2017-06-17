@@ -35,4 +35,12 @@ class IngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     func didTapProductImage(_ sender: UITapGestureRecognizer) {
         delegate?.didTap(imageView: ingredients, sender: self)
     }
+    
+    override class func hasMinimumInformation(_ product: Product) -> Bool {
+        if let url = product.ingredientsImageUrl, !url.isEmpty {
+            return true
+        } else {
+            return false
+        }
+    }
 }
