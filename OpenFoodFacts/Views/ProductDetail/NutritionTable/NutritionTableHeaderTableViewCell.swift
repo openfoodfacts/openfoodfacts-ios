@@ -15,15 +15,19 @@ class NutritionTableHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     @IBOutlet weak var servingSizeLabel: UILabel!
     
     override func configure(with product: Product, completionHandler: (() -> Void)?) {
+        self.imageHeightConstraint?.constant = 30
+        
         if let imageUrl = product.nutritionTableImage, let url = URL(string: imageUrl) {
             nutritionTableImage.kf.indicatorType = .activity
             nutritionTableImage.kf.setImage(with: url, options: [.processor(RotatingProcessor())]) {
                 (image, error, cacheType, imageUrl) in
-                DispatchQueue.main.async {
-                    self.setNeedsLayout()
-                    if let completionHandler = completionHandler {
-                        completionHandler()
-                    }
+                if let image = image {
+                    self.imageHeightConstraint?.constant = min(image.size.height, 130)
+                }
+                
+                // When the image is not cached in memory, call completion handler so the cell is reloaded and resized properly
+                if cacheType != .memory, let completionHandler = completionHandler {
+                    completionHandler()
                 }
             }
             

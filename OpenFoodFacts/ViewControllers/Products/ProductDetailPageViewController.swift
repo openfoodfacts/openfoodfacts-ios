@@ -50,7 +50,7 @@ class ProductDetailPageViewController<Header: ConfigurableUITableViewCell<Produc
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 100
+            return 150
         } else {
             return 44
         }

@@ -10,6 +10,7 @@ import UIKit
 
 class ConfigurableUITableViewCell<T>: UITableViewCell {
     weak var delegate: CellImageTapable?
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint?
     
     func configure(with: T, completionHandler: (() -> Void)? = nil) {
         // Do nothing, expect implementation in subclasses

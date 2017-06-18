@@ -18,11 +18,10 @@ class IngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
             ingredients.kf.indicatorType = .activity
             ingredients.kf.setImage(with: url, options: [.processor(RotatingProcessor())]) {
                 (image, error, cacheType, imageUrl) in
-                DispatchQueue.main.async {
-                    self.setNeedsLayout()
-                    if let completionHandler = completionHandler {
-                        completionHandler()
-                    }
+                
+                // When the image is not cached in memory, call completion handler so the cell is reloaded and resized properly
+                if cacheType != .memory, let completionHandler = completionHandler {
+                    completionHandler()
                 }
             }
             
