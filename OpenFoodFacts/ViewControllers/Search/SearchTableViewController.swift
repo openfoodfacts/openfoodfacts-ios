@@ -18,8 +18,8 @@ class SearchTableViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
     fileprivate var searchController: UISearchController!
     fileprivate var emptyTableView: UIView!
-    fileprivate var lastQuery: String?
     fileprivate var productsResponse: ProductsResponse?
+    fileprivate var queryRequestWorkItem: DispatchWorkItem?
     
     /* When the user searches a product by barcode and it's found, the product's detail view is loaded.
      If the user loads taps the back button, after presenting the search view the app goes back to the product's detail view again.
@@ -121,8 +121,15 @@ extension SearchTableViewController: UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
+        queryRequestWorkItem?.cancel()
+        
         if let query = searchController.searchBar.text, !query.isEmpty, wasSearchBarEdited {
-            getProducts(fromService: ProductService() ,page: 1, withQuery: query)
+            let request = DispatchWorkItem { [weak self] in
+                self?.getProducts(fromService: ProductService() ,page: 1, withQuery: query)
+            }
+            
+            queryRequestWorkItem = request
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250), execute: request)
             wasSearchBarEdited = false
         }
     }
