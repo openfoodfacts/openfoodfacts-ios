@@ -104,7 +104,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         if let traces = product.traces, !traces.isEmpty {
             ingredientsInfoRows.append(InfoRow(label: .traces, value: traces))
         }
-        if let additives = product.additives?.map({ $0.value.uppercased() }).joined(separator: ", ") {
+        if let additives = product.additives?.map({ $0.value.uppercased() }).joined(separator: ", "), !additives.isEmpty {
             ingredientsInfoRows.append(InfoRow(label: .additives, value: additives))
         }
         if let array = product.palmOilIngredients, !array.isEmpty {
