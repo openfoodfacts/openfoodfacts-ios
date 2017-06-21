@@ -20,6 +20,7 @@ class SearchTableViewController: UIViewController {
     fileprivate var emptyTableView: UIView!
     fileprivate var productsResponse: ProductsResponse?
     fileprivate var queryRequestWorkItem: DispatchWorkItem?
+    fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
     
     /* When the user searches a product by barcode and it's found, the product's detail view is loaded.
      If the user loads taps the back button, after presenting the search view the app goes back to the product's detail view again.
@@ -34,6 +35,7 @@ class SearchTableViewController: UIViewController {
         configureTableView()
         configureSearchController()
         configureNavigationBar()
+        configureGestureRecognizers()
     }
     
     fileprivate func configureTableView() {
@@ -56,6 +58,11 @@ class SearchTableViewController: UIViewController {
     fileprivate func configureNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "barcode"), style: .plain, target: self, action: #selector(scanBarcode))
     }
+    
+    fileprivate func configureGestureRecognizers() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapTableViewBackground(_:)))
+        self.tapGestureRecognizer = tap
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -73,6 +80,10 @@ extension SearchTableViewController: UITableViewDataSource {
             tableView.backgroundView = emptyTableView
             tableView.separatorStyle = .none
             tableView.isScrollEnabled = false
+            
+            if let tap = tapGestureRecognizer {
+                tableView.backgroundView?.addGestureRecognizer(tap)
+            }
             
             return 0
         }
@@ -178,6 +189,22 @@ extension SearchTableViewController {
                 }
                 
                 self.tableView.reloadData()
+            }
+        }
+    }
+}
+
+// MARK: - Gesture recognizers
+
+extension SearchTableViewController {
+    func didTapTableViewBackground(_ sender: UITapGestureRecognizer) {
+        
+        // When the search bar has no text and the user taps the background view of the table view,
+        // ask the search bar to resign focus so it goes back to it's begining state and the keyboard gets dismissed
+        
+        if productsResponse == nil && searchController.isActive {
+            if let text = searchController.searchBar.text, text.isEmpty {
+                searchController.searchBar.resignFirstResponder()
             }
         }
     }
