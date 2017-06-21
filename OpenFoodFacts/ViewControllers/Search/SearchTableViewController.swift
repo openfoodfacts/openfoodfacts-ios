@@ -116,10 +116,6 @@ extension SearchTableViewController: UITableViewDelegate {
 
 extension SearchTableViewController: UISearchResultsUpdating {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        wasSearchBarEdited = true
-    }
-    
     func updateSearchResults(for searchController: UISearchController) {
         queryRequestWorkItem?.cancel()
         
@@ -147,7 +143,19 @@ extension SearchTableViewController: UISearchBarDelegate {
         searchBar.setShowsCancelButton(false, animated: true)
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        wasSearchBarEdited = true
+        
+        if searchText.isEmpty { // x button was tapped or text was deleted
+            clearResults()
+        }
+    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        clearResults()
+    }
+    
+    fileprivate func clearResults() {
         productsResponse = nil
         tableView.reloadData()
     }
