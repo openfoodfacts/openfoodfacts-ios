@@ -46,5 +46,7 @@ class ProductTableViewCell: UITableViewCell {
         quantityLabel.isHidden = false
         brandLabel.isHidden = false
         separatorLabel.isHidden = false
+        photo.kf.cancelDownloadTask()
+        photo.image = nil
     }
 }
