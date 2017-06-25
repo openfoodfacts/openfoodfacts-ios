@@ -9,10 +9,8 @@
 import UIKit
 
 
-// @IBDesignable
-
-class NutriScoreView: UIView {
-
+@IBDesignable class NutriScoreView: UIView {
+    
     private struct Constant {
         static let CornerRadius = CGFloat(30.0)
         static let BorderWidth = CGFloat(6.0)
@@ -29,7 +27,7 @@ class NutriScoreView: UIView {
             return self.frame.size.width / Constant.StandardWidth
         }
     }
-
+    
     @IBOutlet var view: UIView!
     
     @IBOutlet weak var AView: UIView!
@@ -69,7 +67,7 @@ class NutriScoreView: UIView {
             BSuperView?.layer.borderColor = Constant.BorderColor
         }
     }
-
+    
     @IBOutlet weak var BSelectedLabel: UILabel!
     
     @IBOutlet weak var CSuperView: UIView! {
@@ -78,7 +76,7 @@ class NutriScoreView: UIView {
             CSuperView?.layer.borderColor = Constant.BorderColor
         }
     }
-
+    
     @IBOutlet weak var CSelectedLabel: UILabel!
     
     @IBOutlet weak var DSuperView: UIView! {
@@ -87,7 +85,7 @@ class NutriScoreView: UIView {
             DSuperView?.layer.borderColor = Constant.BorderColor
         }
     }
-
+    
     @IBOutlet weak var DSelectedLabel: UILabel!
     
     @IBOutlet weak var ESuperView: UIView! {
@@ -126,18 +124,18 @@ class NutriScoreView: UIView {
         CLabel.font = UIFont.boldSystemFont(ofSize: scale * Constant.StandardFontSize)
         DLabel.font = UIFont.boldSystemFont(ofSize: scale * Constant.StandardFontSize)
         ELabel.font = UIFont.boldSystemFont(ofSize: scale * Constant.StandardFontSize)
-
+        
         AView?.layer.cornerRadius = scale * Constant.EdgeRadius
         EView?.layer.cornerRadius = scale * Constant.EdgeRadius
-
+        
         ASuperView?.layer.cornerRadius = scale * Constant.CornerRadius
         ASuperView?.layer.borderWidth = scale * Constant.BorderWidth
         ASelectedLabel.font = UIFont.boldSystemFont(ofSize: scale * Constant.SelectedFontSize)
-
+        
         BSuperView?.layer.cornerRadius = scale * Constant.CornerRadius
         BSuperView?.layer.borderWidth = scale * Constant.BorderWidth
         BSelectedLabel.font = UIFont.boldSystemFont(ofSize: scale * Constant.SelectedFontSize)
-
+        
         CSuperView?.layer.cornerRadius = scale * Constant.CornerRadius
         CSuperView?.layer.borderWidth = scale * Constant.BorderWidth
         CSelectedLabel.font = UIFont.boldSystemFont(ofSize: scale * Constant.SelectedFontSize)
@@ -151,9 +149,9 @@ class NutriScoreView: UIView {
         ESelectedLabel.font = UIFont.boldSystemFont(ofSize: scale * Constant.SelectedFontSize)
         
     }
-
+    
     //
-    // http://stackoverflow.com/questions/30335089/reuse-a-uiview-xib-in-storyboard/30335090#30335090
+    // https://stackoverflow.com/questions/39816898/be-able-to-load-xib-from-both-storyboard-and-viewcontroller
     //
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -172,23 +170,20 @@ class NutriScoreView: UIView {
         view.frame = bounds
         
         // Make the view stretch with containing view
-        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         // Adding custom subview on top of our view (over any custom drawing > see note below)
         addSubview(view)
     }
     
-    func loadViewFromNib() -> UIView! {
-        if let view = Bundle.main.loadNibNamed("NutriScoreView", owner: self, options: nil)  {
-            return view.first as! UIView
-        } else {
-            // xib not loaded, or it's top view is of the wrong type
-            return nil
-        }
+    func loadViewFromNib() -> UIView {
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: "NutriScoreView", bundle: bundle)
+        return nib.instantiate(withOwner: self, options: nil)[0] as! UIView
     }
     
-    override func draw(_ rect: CGRect) {
+    override func layoutSubviews() {
+        super.layoutSubviews()
         setupViews()
     }
-    
 }
