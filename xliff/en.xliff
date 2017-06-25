@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="OpenFoodFacts/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+    </header>
+    <body/>
+  </file>
+  <file original="OpenFoodFacts/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+    </header>
+    <body>
+      <trans-unit id="BCc-14-VvY.title">
+        <source>Products</source>
+      </trans-unit>
+      <trans-unit id="Eh6-Oa-ZfG.title">
+        <source>Item</source>
+        <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "Eh6-Oa-ZfG";</note>
+      </trans-unit>
+      <trans-unit id="NoA-HK-cUi.normalTitle">
+        <source>Take a picture</source>
+      </trans-unit>
+      <trans-unit id="ehx-ia-dmL.normalTitle">
+        <source>Scan a barcode</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFacts/Info.plist" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName">
+        <source>Open Nutrition</source>
+      </trans-unit>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+      <trans-unit id="NSCameraUsageDescription">
+        <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
+      </trans-unit>
+      <trans-unit id="NSPhotoLibraryUsageDescription">
+        <source>Take and upload pictures of products</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFacts/Localizable.strings" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+    </header>
+    <body>
+      <trans-unit id="nutrition-level.high">
+        <source>nutrition-level.high</source>
+        <note>Nutrition Level, high</note>
+      </trans-unit>
+      <trans-unit id="nutrition-level.low">
+        <source>nutrition-level.low</source>
+        <note>Nutrition Level, low</note>
+      </trans-unit>
+      <trans-unit id="nutrition-level.moderate">
+        <source>nutrition-level.moderate</source>
+        <note>Nutrition Level, moderate</note>
+      </trans-unit>
+      <trans-unit id="nutrition.carbohydrate.sugars">
+        <source>nutrition.carbohydrate.sugars</source>
+        <note>Nutrition, sugars</note>
+      </trans-unit>
+      <trans-unit id="nutrition.fats">
+        <source>nutrition.fats</source>
+        <note>Nutrition, fat</note>
+      </trans-unit>
+      <trans-unit id="nutrition.fats.saturated-fat">
+        <source>nutrition.fats.saturated-fat</source>
+        <note>Nutrition, saturated fat</note>
+      </trans-unit>
+      <trans-unit id="nutrition.salt">
+        <source>nutrition.salt</source>
+        <note>Nutrition, salt</note>
+      </trans-unit>
+      <trans-unit id="product-detail.nutrition-table.for-100g">
+        <source>product-detail.nutrition-table.for-100g</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-detail.nutrition-table.for-serving">
+        <source>product-detail.nutrition-table.for-serving</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.ingredients">
+        <source>product-detail.page-title.ingredients</source>
+        <note>Product detail, ingredients</note>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition">
+        <source>product-detail.page-title.nutrition</source>
+        <note>Product detail, nutrition</note>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition-table">
+        <source>product-detail.page-title.nutrition-table</source>
+        <note>Product detail, nutrition table</note>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.summary">
+        <source>product-detail.page-title.summary</source>
+        <note>Product detail, summary</note>
+      </trans-unit>
+      <trans-unit id="product-search.search-placeholder">
+        <source>product-search.search-placeholder</source>
+        <note>Placeholder for the product search bar</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFacts/Views/ProductSearch/Base.lproj/EmptyProductsView.xib" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+    </header>
+    <body>
+      <trans-unit id="ElV-MH-zPQ.text">
+        <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
+        <note>Class = "UILabel"; text = "off-description"; ObjectID = "ElV-MH-zPQ";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFacts/Views/Settings/Base.lproj/Settings.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+    </header>
+    <body>
+      <trans-unit id="3Vi-oE-IJx.text">
+        <source>Credits</source>
+        <note>Class = "UILabel"; text = "Credits"; ObjectID = "3Vi-oE-IJx";</note>
+      </trans-unit>
+      <trans-unit id="c7X-Xf-g2w.title">
+        <source>About</source>
+        <note>Class = "UIViewController"; title = "About"; ObjectID = "c7X-Xf-g2w";</note>
+      </trans-unit>
+      <trans-unit id="c8k-0p-YOJ.text">
+        <source>Barcode scan button icon and Settings icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</source>
+        <note>Class = "UILabel"; text = "Barcode scan button icon and Settings icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)"; ObjectID = "c8k-0p-YOJ";</note>
+      </trans-unit>
+      <trans-unit id="sO1-VI-YDa.text">
+        <source>About</source>
+        <note>Class = "UILabel"; text = "About"; ObjectID = "sO1-VI-YDa";</note>
+      </trans-unit>
+      <trans-unit id="tnR-0p-cA3.title">
+        <source>Settings</source>
+        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "tnR-0p-cA3";</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
