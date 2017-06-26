@@ -14,7 +14,7 @@ public class ArrayTransform: TransformType {
     public typealias JSON = String
     
     public func transformFromJSON(_ value: Any?) -> Object? {
-        if let value = value as? String {
+        if let value = value as? String, !value.isEmpty {
             return value.components(separatedBy: ",")
         }
         
