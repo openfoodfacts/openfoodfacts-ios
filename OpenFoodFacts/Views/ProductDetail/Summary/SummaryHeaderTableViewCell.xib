@@ -22,19 +22,33 @@
                         <rect key="frame" x="10" y="10" width="300" height="167.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IR9-1E-IOI">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="133.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wPX-N8-77A">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="133.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="133.5" id="PxI-qH-4ar"/>
                                         </constraints>
                                     </imageView>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jJB-N3-Rdf">
+                                        <rect key="frame" x="150" y="0.0" width="0.0" height="133.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-add-button" translatesAutoresizingMaskIntoConstraints="NO" id="f7q-PV-XuW">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="113"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Take a picture of the front" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cz5-f1-CyV">
+                                                <rect key="frame" x="0.0" y="113" width="0.0" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81h-m3-oPV">
-                                        <rect key="frame" x="150" y="0.0" width="150" height="0.0"/>
+                                        <rect key="frame" x="150" y="0.0" width="150" height="133.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnG-73-JJs" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-31" width="150" height="61"/>
+                                                <rect key="frame" x="0.0" y="36" width="150" height="61"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="bnG-73-JJs" secondAttribute="height" multiplier="310:126" id="CG1-RJ-unU"/>
@@ -51,7 +65,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEW-Xk-bj4">
-                                <rect key="frame" x="0.0" y="10" width="300" height="157.5"/>
+                                <rect key="frame" x="0.0" y="143.5" width="300" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -73,8 +87,12 @@
                 <outlet property="nutriscore" destination="bnG-73-JJs" id="VUq-tZ-Unt"/>
                 <outlet property="productImage" destination="wPX-N8-77A" id="YWQ-vI-K1o"/>
                 <outlet property="productName" destination="LEW-Xk-bj4" id="UZK-Wr-Vb5"/>
+                <outlet property="takePictureStackView" destination="jJB-N3-Rdf" id="lPe-sh-MCm"/>
             </connections>
             <point key="canvasLocation" x="34" y="126"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="image-add-button" width="130" height="130"/>
+    </resources>
 </document>
