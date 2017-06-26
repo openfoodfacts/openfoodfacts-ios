@@ -30,8 +30,6 @@
 		95781B621EBF2264003E3256 /* NutritionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B601EBF2264003E3256 /* NutritionHeaderTableViewCell.swift */; };
 		95781B631EBF2264003E3256 /* NutritionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B611EBF2264003E3256 /* NutritionHeaderTableViewCell.xib */; };
 		95781B651EBF2292003E3256 /* ProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95781B641EBF2292003E3256 /* ProductDetailViewController.storyboard */; };
-		95781B681EBF23B0003E3256 /* NutriScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B661EBF23B0003E3256 /* NutriScoreView.swift */; };
-		95781B691EBF23B0003E3256 /* NutriScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B671EBF23B0003E3256 /* NutriScoreView.xib */; };
 		95781B8E1EC106CB003E3256 /* InfoRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B8C1EC106CB003E3256 /* InfoRowTableViewCell.swift */; };
 		95781B8F1EC106CB003E3256 /* InfoRowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B8D1EC106CB003E3256 /* InfoRowTableViewCell.xib */; };
 		95781B941EC23F18003E3256 /* NutritionLevelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B921EC23F18003E3256 /* NutritionLevelsTableViewCell.swift */; };
@@ -64,6 +62,8 @@
 		95D6A75D1E9C08520017B423 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */; };
 		95D6A75E1E9C08520017B423 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */; };
 		95D6A7611E9C0B410017B423 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A7601E9C0B410017B423 /* SearchTableViewController.swift */; };
+		95DFD7CB1F01A213007FDB69 /* NutriScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DFD7C91F01A213007FDB69 /* NutriScoreView.swift */; };
+		95DFD7CC1F01A213007FDB69 /* NutriScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95DFD7CA1F01A213007FDB69 /* NutriScoreView.xib */; };
 		95E16B2B1EE9D8B100331B2B /* NutritionLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E16B2A1EE9D8B100331B2B /* NutritionLevelView.swift */; };
 		95E16B2D1EE9D8BE00331B2B /* NutritionLevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E16B2C1EE9D8BE00331B2B /* NutritionLevelView.xib */; };
 		95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E16B2E1EE9E20A00331B2B /* UIStackView.swift */; };
@@ -107,8 +107,6 @@
 		95781B601EBF2264003E3256 /* NutritionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		95781B611EBF2264003E3256 /* NutritionHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		95781B641EBF2292003E3256 /* ProductDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductDetailViewController.storyboard; sourceTree = "<group>"; };
-		95781B661EBF23B0003E3256 /* NutriScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutriScoreView.swift; sourceTree = "<group>"; };
-		95781B671EBF23B0003E3256 /* NutriScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutriScoreView.xib; sourceTree = "<group>"; };
 		95781B8C1EC106CB003E3256 /* InfoRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoRowTableViewCell.swift; sourceTree = "<group>"; };
 		95781B8D1EC106CB003E3256 /* InfoRowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoRowTableViewCell.xib; sourceTree = "<group>"; };
 		95781B921EC23F18003E3256 /* NutritionLevelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionLevelsTableViewCell.swift; sourceTree = "<group>"; };
@@ -142,6 +140,8 @@
 		95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		95D6A7601E9C0B410017B423 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		95DFD7C91F01A213007FDB69 /* NutriScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutriScoreView.swift; sourceTree = "<group>"; };
+		95DFD7CA1F01A213007FDB69 /* NutriScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutriScoreView.xib; sourceTree = "<group>"; };
 		95E16B2A1EE9D8B100331B2B /* NutritionLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionLevelView.swift; sourceTree = "<group>"; };
 		95E16B2C1EE9D8BE00331B2B /* NutritionLevelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionLevelView.xib; sourceTree = "<group>"; };
 		95E16B2E1EE9E20A00331B2B /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
@@ -218,6 +218,8 @@
 				95781B8C1EC106CB003E3256 /* InfoRowTableViewCell.swift */,
 				95781B8D1EC106CB003E3256 /* InfoRowTableViewCell.xib */,
 				95781BC51EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift */,
+				95DFD7C91F01A213007FDB69 /* NutriScoreView.swift */,
+				95DFD7CA1F01A213007FDB69 /* NutriScoreView.xib */,
 				95E9F0371EC6470700BA20B0 /* NutritionTable */,
 				95781B481EBE89D1003E3256 /* Ingredients */,
 				95781B4D1EBE89D1003E3256 /* Nutrition */,
@@ -240,8 +242,6 @@
 			children = (
 				95781B601EBF2264003E3256 /* NutritionHeaderTableViewCell.swift */,
 				95781B611EBF2264003E3256 /* NutritionHeaderTableViewCell.xib */,
-				95781B661EBF23B0003E3256 /* NutriScoreView.swift */,
-				95781B671EBF23B0003E3256 /* NutriScoreView.xib */,
 				95781B921EC23F18003E3256 /* NutritionLevelsTableViewCell.swift */,
 				95781BA81EC3A079003E3256 /* NutritionLevelsTableViewCell.xib */,
 				95E16B2A1EE9D8B100331B2B /* NutritionLevelView.swift */,
@@ -492,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95781B651EBF2292003E3256 /* ProductDetailViewController.storyboard in Resources */,
+				95DFD7CC1F01A213007FDB69 /* NutriScoreView.xib in Resources */,
 				955ED9B71EB2901100BB80BA /* EmptyProductsView.xib in Resources */,
 				951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */,
 				956B95931EB28C8A007C0345 /* Localizable.strings in Resources */,
@@ -507,7 +508,6 @@
 				95F14CB31EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.xib in Resources */,
 				95D6A75E1E9C08520017B423 /* ProductTableViewCell.xib in Resources */,
 				95781B571EBE89D1003E3256 /* IngredientHeaderTableViewCell.xib in Resources */,
-				95781B691EBF23B0003E3256 /* NutriScoreView.xib in Resources */,
 				95C265191E96D55B004212EC /* Assets.xcassets in Resources */,
 				95C265171E96D55B004212EC /* Main.storyboard in Resources */,
 			);
@@ -562,7 +562,6 @@
 				95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */,
 				95781BC61EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift in Sources */,
 				95781B5C1EBE89D1003E3256 /* SummaryHeaderTableViewCell.swift in Sources */,
-				95781B681EBF23B0003E3256 /* NutriScoreView.swift in Sources */,
 				95C2652F1E9A7246004212EC /* ProductsViewController.swift in Sources */,
 				95D6A7611E9C0B410017B423 /* SearchTableViewController.swift in Sources */,
 				95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */,
@@ -571,6 +570,7 @@
 				95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */,
 				95781BBC1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift in Sources */,
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
+				95DFD7CB1F01A213007FDB69 /* NutriScoreView.swift in Sources */,
 				95E9F0401EC64F6600BA20B0 /* NutritionTableRowTableViewCell.swift in Sources */,
 				95781B941EC23F18003E3256 /* NutritionLevelsTableViewCell.swift in Sources */,
 				95D6A75D1E9C08520017B423 /* ProductTableViewCell.swift in Sources */,
