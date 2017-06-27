@@ -12,6 +12,7 @@ import Kingfisher
 class IngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     
     @IBOutlet weak var ingredients: UIImageView!
+    @IBOutlet weak var callToActionView: PictureCallToActionView!
     
     override func configure(with product: Product, completionHandler: (() -> Void)?) {
         if let imageUrl = product.ingredientsImageUrl, let url = URL(string: imageUrl) {
@@ -28,6 +29,10 @@ class IngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             ingredients.addGestureRecognizer(tap)
             ingredients.isUserInteractionEnabled = true
+        } else {
+            ingredients.isHidden = true
+            callToActionView.isHidden = false
+            callToActionView.textLabel.text = NSLocalizedString("call-to-action.ingredients", comment: "")
         }
     }
     
@@ -35,11 +40,8 @@ class IngredientHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
         delegate?.didTap(imageView: ingredients, sender: self)
     }
     
-    override class func hasMinimumInformation(_ product: Product) -> Bool {
-        if let url = product.ingredientsImageUrl, !url.isEmpty {
-            return true
-        } else {
-            return false
-        }
+    override func prepareForReuse() {
+        ingredients.isHidden = false
+        callToActionView.isHidden = true
     }
 }
