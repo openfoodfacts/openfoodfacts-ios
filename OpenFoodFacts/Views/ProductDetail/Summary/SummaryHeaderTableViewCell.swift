@@ -12,7 +12,7 @@ import Kingfisher
 class SummaryHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     
     @IBOutlet weak var productImage: UIImageView!
-    @IBOutlet weak var takePictureStackView: UIStackView!
+    @IBOutlet weak var callToActionView: PictureCallToActionView!
     @IBOutlet weak var nutriscore: NutriScoreView! {
         didSet {
             nutriscore?.currentScore = nil
@@ -30,7 +30,8 @@ class SummaryHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
             productImage.isUserInteractionEnabled = true
         } else {
             productImage.isHidden = true
-            takePictureStackView.isHidden = false
+            callToActionView.textLabel.text = NSLocalizedString("call-to-action.summary", comment: "")
+            callToActionView.isHidden = false
         }
         
         if let nutriscoreValue = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue.uppercased()) {
@@ -52,7 +53,7 @@ class SummaryHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
     
     override func prepareForReuse() {
         productImage.isHidden = false
-        takePictureStackView.isHidden = true
+        callToActionView.isHidden = true
         nutriscore.superview?.isHidden = false
         productName.isHidden = false
     }
