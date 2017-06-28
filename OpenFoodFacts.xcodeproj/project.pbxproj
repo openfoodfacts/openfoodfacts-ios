@@ -1,1510 +1,827 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>9527E7861E9EBDD200833F04</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Alamofire.framework</string>
-			<key>path</key>
-			<string>../Carthage/Build/iOS/Alamofire.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9527E7881E9EBDDC00833F04</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>957094AE1EA124E800268236</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Network</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>953C2BE31E9EC22200FD99D4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Alamofire.framework</string>
-			<key>path</key>
-			<string>Carthage/Build/iOS/Alamofire.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>953C2BE41E9EC22200FD99D4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>953C2BE31E9EC22200FD99D4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094AE1EA124E800268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ProductService.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094AF1EA124E800268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094AE1EA124E800268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094B01EA163CF00268236</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Kingfisher.framework</string>
-			<key>path</key>
-			<string>Carthage/Build/iOS/Kingfisher.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094B11EA163CF00268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094B01EA163CF00268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094B31EA16C4B00268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ProductDetailViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094B51EA16C4B00268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094B31EA16C4B00268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094B91EA24DFC00268236</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XLPagerTabStrip.framework</string>
-			<key>path</key>
-			<string>Carthage/Build/iOS/XLPagerTabStrip.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094BA1EA24DFC00268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094B91EA24DFC00268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094BD1EA2625A00268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>ProductDetailViewController.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094BE1EA2625A00268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094BD1EA2625A00268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094C01EA269B600268236</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>957094C31EA26A1D00268236</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>ProductButtonBar</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094C31EA26A1D00268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>ButtonBarView.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094C41EA26A1D00268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094C31EA26A1D00268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094C51EA26BFF00268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ProductSummaryTableViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094C61EA26BFF00268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094C51EA26BFF00268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094C71EA26C5B00268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ProductIngredientsViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094C81EA26C5B00268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094C71EA26C5B00268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094C91EA26C8800268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ProductNutritionViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094CA1EA26C8800268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094C91EA26C8800268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094D01EA2B1CA00268236</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>957094BD1EA2625A00268236</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>ProductDetailViewController</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094D11EA2B1D400268236</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>957094D21EA2B20800268236</string>
-				<string>95CB99C61EA8014A00CBDDF9</string>
-				<string>95CB99C71EA8014A00CBDDF9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>ProductSummary</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094D21EA2B20800268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>ProductSummaryTableViewController.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094D31EA2B20800268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094D21EA2B20800268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094D41EA2B46300268236</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>957094D51EA2B47000268236</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>ProductIngredients</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094D51EA2B47000268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>ProductIngredientsViewController.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094D61EA2B47000268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094D51EA2B47000268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094D71EA2B4A400268236</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>957094D81EA2B4B100268236</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>ProductNutrition</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094D81EA2B4B100268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>ProductNutritionViewController.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094D91EA2B4B100268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094D81EA2B4B100268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094DA1EA3CFFB00268236</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>Settings.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>957094DB1EA3CFFB00268236</key>
-		<dict>
-			<key>fileRef</key>
-			<string>957094DA1EA3CFFB00268236</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>957094DC1EA3D00500268236</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>957094DA1EA3CFFB00268236</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Settings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C265051E96D55B004212EC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95C265231E96D5C2004212EC</string>
-				<string>95C265101E96D55B004212EC</string>
-				<string>95C2650F1E96D55B004212EC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C265061E96D55B004212EC</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0830</string>
-				<key>LastUpgradeCheck</key>
-				<string>0830</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Andr&#233;s Piz&#225; B&#252;ckmann</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>95C2650D1E96D55B004212EC</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>8.3</string>
-						<key>DevelopmentTeam</key>
-						<string>JVHN2X67GT</string>
-						<key>ProvisioningStyle</key>
-						<string>Automatic</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>95C265091E96D55B004212EC</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>95C265051E96D55B004212EC</string>
-			<key>productRefGroup</key>
-			<string>95C2650F1E96D55B004212EC</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>95C2650D1E96D55B004212EC</string>
-			</array>
-		</dict>
-		<key>95C265091E96D55B004212EC</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>95C2651E1E96D55B004212EC</string>
-				<string>95C2651F1E96D55B004212EC</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>95C2650A1E96D55B004212EC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>95C2652F1E9A7246004212EC</string>
-				<string>95D6A7611E9C0B410017B423</string>
-				<string>95C265291E96D6F0004212EC</string>
-				<string>95D6A75D1E9C08520017B423</string>
-				<string>95C368131E9FDCD1008BB582</string>
-				<string>95C265121E96D55B004212EC</string>
-				<string>95D6A7561E9A8CA20017B423</string>
-				<string>957094CA1EA26C8800268236</string>
-				<string>957094B51EA16C4B00268236</string>
-				<string>95C368111E9FD95F008BB582</string>
-				<string>95CB99C81EA8014A00CBDDF9</string>
-				<string>957094AF1EA124E800268236</string>
-				<string>95D6A7641E9C18FD0017B423</string>
-				<string>95CB99A71EA55BF900CBDDF9</string>
-				<string>957094C61EA26BFF00268236</string>
-				<string>957094C81EA26C5B00268236</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>95C2650B1E96D55B004212EC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>957094BA1EA24DFC00268236</string>
-				<string>957094B11EA163CF00268236</string>
-				<string>95C3680E1E9FD356008BB582</string>
-				<string>95C3680F1E9FD35B008BB582</string>
-				<string>95C2652D1E96DE6D004212EC</string>
-				<string>95C265251E96D5C2004212EC</string>
-				<string>953C2BE41E9EC22200FD99D4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>95C2650C1E96D55B004212EC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>95D6A7691E9D54AF0017B423</string>
-				<string>95CB99C91EA8014A00CBDDF9</string>
-				<string>957094D61EA2B47000268236</string>
-				<string>957094DB1EA3CFFB00268236</string>
-				<string>95C2651C1E96D55B004212EC</string>
-				<string>957094BE1EA2625A00268236</string>
-				<string>95D6A75E1E9C08520017B423</string>
-				<string>957094D31EA2B20800268236</string>
-				<string>95C265191E96D55B004212EC</string>
-				<string>957094C41EA26A1D00268236</string>
-				<string>957094D91EA2B4B100268236</string>
-				<string>95C265171E96D55B004212EC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>95C2650D1E96D55B004212EC</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>95C265201E96D55B004212EC</string>
-			<key>buildPhases</key>
-			<array>
-				<string>95C2650A1E96D55B004212EC</string>
-				<string>95C2650B1E96D55B004212EC</string>
-				<string>95C2650C1E96D55B004212EC</string>
-				<string>95C368081E9EC999008BB582</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>OpenFoodFacts</string>
-			<key>productName</key>
-			<string>OpenFoodFacts</string>
-			<key>productReference</key>
-			<string>95C2650E1E96D55B004212EC</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>95C2650E1E96D55B004212EC</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>OpenFoodFacts.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>95C2650F1E96D55B004212EC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95C2650E1E96D55B004212EC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C265101E96D55B004212EC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95CB99A51EA55BEF00CBDDF9</string>
-				<string>95D6A7621E9C18F00017B423</string>
-				<string>9527E7881E9EBDDC00833F04</string>
-				<string>95C2652A1E96D6FA004212EC</string>
-				<string>95D6A7591E9C080A0017B423</string>
-				<string>95C265111E96D55B004212EC</string>
-				<string>95C265181E96D55B004212EC</string>
-				<string>95C2651D1E96D55B004212EC</string>
-				<string>95C2651A1E96D55B004212EC</string>
-				<string>95C265151E96D55B004212EC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>OpenFoodFacts</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C265111E96D55B004212EC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C265121E96D55B004212EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C265111E96D55B004212EC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C265151E96D55B004212EC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95C265161E96D55B004212EC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>path</key>
-			<string>.</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C265161E96D55B004212EC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C265171E96D55B004212EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C265151E96D55B004212EC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C265181E96D55B004212EC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C265191E96D55B004212EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C265181E96D55B004212EC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C2651A1E96D55B004212EC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95C2651B1E96D55B004212EC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>path</key>
-			<string>.</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C2651B1E96D55B004212EC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C2651C1E96D55B004212EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C2651A1E96D55B004212EC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C2651D1E96D55B004212EC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C2651E1E96D55B004212EC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_ACTIVE_COMPILATION_CONDITIONS</key>
-				<string>DEBUG</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>95C2651F1E96D55B004212EC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Owholemodule</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>95C265201E96D55B004212EC</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>95C265211E96D55B004212EC</string>
-				<string>95C265221E96D55B004212EC</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>95C265211E96D55B004212EC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>DEVELOPMENT_TEAM</key>
-				<string>JVHN2X67GT</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<string>$(PROJECT_DIR)/Carthage/Build/iOS</string>
-				<key>INFOPLIST_FILE</key>
-				<string>OpenFoodFacts/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.openfoodfacts.OpenFoodFacts</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>95C265221E96D55B004212EC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>DEVELOPMENT_TEAM</key>
-				<string>JVHN2X67GT</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<string>$(PROJECT_DIR)/Carthage/Build/iOS</string>
-				<key>INFOPLIST_FILE</key>
-				<string>OpenFoodFacts/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.openfoodfacts.OpenFoodFacts</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>95C265231E96D5C2004212EC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>957094B91EA24DFC00268236</string>
-				<string>957094B01EA163CF00268236</string>
-				<string>95C3680D1E9FD356008BB582</string>
-				<string>95C3680B1E9FCA79008BB582</string>
-				<string>95C368091E9ECC0C008BB582</string>
-				<string>953C2BE31E9EC22200FD99D4</string>
-				<string>9527E7861E9EBDD200833F04</string>
-				<string>95C2652C1E96DE6D004212EC</string>
-				<string>95C265241E96D5C2004212EC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C265241E96D5C2004212EC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>AVFoundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/AVFoundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>95C265251E96D5C2004212EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C265241E96D5C2004212EC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C265281E96D6F0004212EC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>CameraViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C265291E96D6F0004212EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C265281E96D6F0004212EC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C2652A1E96D6FA004212EC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95C2652B1E96D705004212EC</string>
-				<string>95D6A75F1E9C0B2F0017B423</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>ViewControllers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C2652B1E96D705004212EC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95C265281E96D6F0004212EC</string>
-				<string>957094B31EA16C4B00268236</string>
-				<string>957094C71EA26C5B00268236</string>
-				<string>957094C91EA26C8800268236</string>
-				<string>957094C51EA26BFF00268236</string>
-				<string>95C2652E1E9A7246004212EC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C2652C1E96DE6D004212EC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>MobileCoreServices.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/MobileCoreServices.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>95C2652D1E96DE6D004212EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C2652C1E96DE6D004212EC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C2652E1E9A7246004212EC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ProductsViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C2652F1E9A7246004212EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C2652E1E9A7246004212EC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C368081E9EC999008BB582</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array>
-				<string>$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework</string>
-				<string>$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework</string>
-				<string>$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework</string>
-				<string>$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework</string>
-				<string>$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework</string>
-			</array>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>/usr/local/bin/carthage copy-frameworks</string>
-		</dict>
-		<key>95C368091E9ECC0C008BB582</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>ObjectMapper.framework</string>
-			<key>path</key>
-			<string>Carthage/Build/iOS/ObjectMapper.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C3680B1E9FCA79008BB582</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SwiftyJSON.framework</string>
-			<key>path</key>
-			<string>Carthage/Build/iOS/SwiftyJSON.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C3680D1E9FD356008BB582</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>AlamofireObjectMapper.framework</string>
-			<key>path</key>
-			<string>Carthage/Build/iOS/AlamofireObjectMapper.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C3680E1E9FD356008BB582</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C3680D1E9FD356008BB582</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C3680F1E9FD35B008BB582</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C368091E9ECC0C008BB582</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C368101E9FD95F008BB582</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ProductsResponse.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C368111E9FD95F008BB582</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C368101E9FD95F008BB582</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95C368121E9FDCD1008BB582</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>OFFReadAPIkeysJSON.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95C368131E9FDCD1008BB582</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95C368121E9FDCD1008BB582</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95CB99A51EA55BEF00CBDDF9</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95CB99A61EA55BF900CBDDF9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Extensions</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95CB99A61EA55BF900CBDDF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>String.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95CB99A71EA55BF900CBDDF9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95CB99A61EA55BF900CBDDF9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95CB99C61EA8014A00CBDDF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>SummaryHeaderTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95CB99C71EA8014A00CBDDF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>SummaryHeaderTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95CB99C81EA8014A00CBDDF9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95CB99C61EA8014A00CBDDF9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95CB99C91EA8014A00CBDDF9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95CB99C71EA8014A00CBDDF9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95D6A7551E9A8CA20017B423</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ScannerViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A7561E9A8CA20017B423</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95D6A7551E9A8CA20017B423</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95D6A7591E9C080A0017B423</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95D6A7671E9D54890017B423</string>
-				<string>957094C01EA269B600268236</string>
-				<string>957094D01EA2B1CA00268236</string>
-				<string>957094D41EA2B46300268236</string>
-				<string>957094D71EA2B4A400268236</string>
-				<string>957094D11EA2B1D400268236</string>
-				<string>95D6A75A1E9C081B0017B423</string>
-				<string>957094DC1EA3D00500268236</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Views</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A75A1E9C081B0017B423</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95D6A75B1E9C08520017B423</string>
-				<string>95D6A75C1E9C08520017B423</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>ProductTableViewCell</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A75B1E9C08520017B423</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ProductTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A75C1E9C08520017B423</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>ProductTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A75D1E9C08520017B423</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95D6A75B1E9C08520017B423</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95D6A75E1E9C08520017B423</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95D6A75C1E9C08520017B423</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95D6A75F1E9C0B2F0017B423</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95D6A7551E9A8CA20017B423</string>
-				<string>95D6A7601E9C0B410017B423</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Search</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A7601E9C0B410017B423</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>SearchTableViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A7611E9C0B410017B423</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95D6A7601E9C0B410017B423</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95D6A7621E9C18F00017B423</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95C368121E9FDCD1008BB582</string>
-				<string>95D6A7631E9C18FD0017B423</string>
-				<string>95C368101E9FD95F008BB582</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Models</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A7631E9C18FD0017B423</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Product.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A7641E9C18FD0017B423</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95D6A7631E9C18FD0017B423</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95D6A7671E9D54890017B423</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95D6A7681E9D54AF0017B423</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>EmptyProductsView</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A7681E9D54AF0017B423</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>EmptyProductsView.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D6A7691E9D54AF0017B423</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95D6A7681E9D54AF0017B423</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>95C265061E96D55B004212EC</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
+		9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525708B1EE9BC91002FC40D /* CellImageTapable.swift */; };
+		953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953664F41ECA212100D6D398 /* NutrimentItem.swift */; };
+		953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
+		9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9543129C1EEC57A1009F0621 /* ImageViewer.framework */; };
+		955ED9B71EB2901100BB80BA /* EmptyProductsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */; };
+		955ED9BC1EB290F900BB80BA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9BE1EB290F900BB80BA /* Settings.storyboard */; };
+		957094AF1EA124E800268236 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957094AE1EA124E800268236 /* ProductService.swift */; };
+		957094B11EA163CF00268236 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957094B01EA163CF00268236 /* Kingfisher.framework */; };
+		957094B51EA16C4B00268236 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957094B31EA16C4B00268236 /* ProductDetailViewController.swift */; };
+		957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957094B91EA24DFC00268236 /* XLPagerTabStrip.framework */; };
+		957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957094C91EA26C8800268236 /* ProductNutritionViewController.swift */; };
+		95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B131EBE4E5C003E3256 /* UITableViewCell.swift */; };
+		95781B431EBE861F003E3256 /* ProductDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B421EBE861F003E3256 /* ProductDetailPageViewController.swift */; };
+		95781B551EBE89D1003E3256 /* ButtonBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B471EBE89D1003E3256 /* ButtonBarView.xib */; };
+		95781B561EBE89D1003E3256 /* IngredientHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B491EBE89D1003E3256 /* IngredientHeaderTableViewCell.swift */; };
+		95781B571EBE89D1003E3256 /* IngredientHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B4A1EBE89D1003E3256 /* IngredientHeaderTableViewCell.xib */; };
+		95781B5C1EBE89D1003E3256 /* SummaryHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B511EBE89D1003E3256 /* SummaryHeaderTableViewCell.swift */; };
+		95781B5D1EBE89D1003E3256 /* SummaryHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B521EBE89D1003E3256 /* SummaryHeaderTableViewCell.xib */; };
+		95781B621EBF2264003E3256 /* NutritionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B601EBF2264003E3256 /* NutritionHeaderTableViewCell.swift */; };
+		95781B631EBF2264003E3256 /* NutritionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B611EBF2264003E3256 /* NutritionHeaderTableViewCell.xib */; };
+		95781B651EBF2292003E3256 /* ProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95781B641EBF2292003E3256 /* ProductDetailViewController.storyboard */; };
+		95781B8E1EC106CB003E3256 /* InfoRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B8C1EC106CB003E3256 /* InfoRowTableViewCell.swift */; };
+		95781B8F1EC106CB003E3256 /* InfoRowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B8D1EC106CB003E3256 /* InfoRowTableViewCell.xib */; };
+		95781B941EC23F18003E3256 /* NutritionLevelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B921EC23F18003E3256 /* NutritionLevelsTableViewCell.swift */; };
+		95781B9B1EC26B24003E3256 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B9A1EC26B24003E3256 /* Double.swift */; };
+		95781BA91EC3A079003E3256 /* NutritionLevelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781BA81EC3A079003E3256 /* NutritionLevelsTableViewCell.xib */; };
+		95781BBC1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BAF1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift */; };
+		95781BBD1EC3A898003E3256 /* OFFWriteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */; };
+		95781BBE1EC3A898003E3256 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB11EC3A898003E3256 /* Product.swift */; };
+		95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB21EC3A898003E3256 /* ProductsResponse.swift */; };
+		95781BC01EC3A898003E3256 /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB41EC3A898003E3256 /* InfoRow.swift */; };
+		95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB51EC3A898003E3256 /* LocalizedString.swift */; };
+		95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB71EC3A898003E3256 /* ArrayTransform.swift */; };
+		95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB81EC3A898003E3256 /* DoubleTransform.swift */; };
+		95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB91EC3A898003E3256 /* TagTransform.swift */; };
+		95781BC61EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BC51EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift */; };
+		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
+		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
+		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
+		95C2651C1E96D55B004212EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C2651A1E96D55B004212EC /* LaunchScreen.storyboard */; };
+		95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C265241E96D5C2004212EC /* AVFoundation.framework */; };
+		95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265281E96D6F0004212EC /* CameraViewController.swift */; };
+		95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */; };
+		95C2652F1E9A7246004212EC /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2652E1E9A7246004212EC /* ProductsViewController.swift */; };
+		95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */; };
+		95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C368091E9ECC0C008BB582 /* ObjectMapper.framework */; };
+		95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB99A61EA55BF900CBDDF9 /* String.swift */; };
+		95CE24E11ED5509300EF3D79 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24DF1ED5509300EF3D79 /* Fabric.framework */; };
+		95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24E01ED5509300EF3D79 /* Crashlytics.framework */; };
+		95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */; };
+		95D6A75D1E9C08520017B423 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */; };
+		95D6A75E1E9C08520017B423 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */; };
+		95D6A7611E9C0B410017B423 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A7601E9C0B410017B423 /* SearchTableViewController.swift */; };
+		95DFD7CB1F01A213007FDB69 /* NutriScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DFD7C91F01A213007FDB69 /* NutriScoreView.swift */; };
+		95DFD7CC1F01A213007FDB69 /* NutriScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95DFD7CA1F01A213007FDB69 /* NutriScoreView.xib */; };
+		95DFD7CD1F01A45C007FDB69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DFD7CF1F01A45C007FDB69 /* Localizable.strings */; };
+		95DFD7D21F01A513007FDB69 /* PictureCallToActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DFD7D11F01A513007FDB69 /* PictureCallToActionView.swift */; };
+		95DFD7D41F01A526007FDB69 /* PictureCallToActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95DFD7D31F01A526007FDB69 /* PictureCallToActionView.xib */; };
+		95E16B2B1EE9D8B100331B2B /* NutritionLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E16B2A1EE9D8B100331B2B /* NutritionLevelView.swift */; };
+		95E16B2D1EE9D8BE00331B2B /* NutritionLevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E16B2C1EE9D8BE00331B2B /* NutritionLevelView.xib */; };
+		95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E16B2E1EE9E20A00331B2B /* UIStackView.swift */; };
+		95E9F0401EC64F6600BA20B0 /* NutritionTableRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9F03E1EC64F6600BA20B0 /* NutritionTableRowTableViewCell.swift */; };
+		95E9F0411EC64F6600BA20B0 /* NutritionTableRowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E9F03F1EC64F6600BA20B0 /* NutritionTableRowTableViewCell.xib */; };
+		95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */; };
+		95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */; };
+		95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C881EDB6CDD00D99115 /* UIImage.swift */; };
+		95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */; };
+		95F14CB21EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14CB01EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift */; };
+		95F14CB31EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F14CB11EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		951FB09E1EB2989A005CAE33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9525708B1EE9BC91002FC40D /* CellImageTapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellImageTapable.swift; path = Protocols/CellImageTapable.swift; sourceTree = "<group>"; };
+		9525708D1EE9BE6D002FC40D /* Agrume.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Agrume.framework; path = Carthage/Build/iOS/Agrume.framework; sourceTree = "<group>"; };
+		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
+		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		9543129C1EEC57A1009F0621 /* ImageViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageViewer.framework; path = Carthage/Build/iOS/ImageViewer.framework; sourceTree = "<group>"; };
+		955ED9B81EB2901100BB80BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyProductsView.xib; sourceTree = "<group>"; };
+		957094AE1EA124E800268236 /* ProductService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		957094B01EA163CF00268236 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		957094B31EA16C4B00268236 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		957094B91EA24DFC00268236 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
+		957094C91EA26C8800268236 /* ProductNutritionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNutritionViewController.swift; sourceTree = "<group>"; };
+		95781B0F1EBBCF3E003E3256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		95781B101EBBCF5C003E3256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		95781B121EBBCFBA003E3256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EmptyProductsView.strings; sourceTree = "<group>"; };
+		95781B131EBE4E5C003E3256 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		95781B421EBE861F003E3256 /* ProductDetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailPageViewController.swift; sourceTree = "<group>"; };
+		95781B471EBE89D1003E3256 /* ButtonBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonBarView.xib; sourceTree = "<group>"; };
+		95781B491EBE89D1003E3256 /* IngredientHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		95781B4A1EBE89D1003E3256 /* IngredientHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		95781B511EBE89D1003E3256 /* SummaryHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		95781B521EBE89D1003E3256 /* SummaryHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		95781B601EBF2264003E3256 /* NutritionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		95781B611EBF2264003E3256 /* NutritionHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		95781B641EBF2292003E3256 /* ProductDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductDetailViewController.storyboard; sourceTree = "<group>"; };
+		95781B8C1EC106CB003E3256 /* InfoRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoRowTableViewCell.swift; sourceTree = "<group>"; };
+		95781B8D1EC106CB003E3256 /* InfoRowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoRowTableViewCell.xib; sourceTree = "<group>"; };
+		95781B921EC23F18003E3256 /* NutritionLevelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionLevelsTableViewCell.swift; sourceTree = "<group>"; };
+		95781B9A1EC26B24003E3256 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		95781BA81EC3A079003E3256 /* NutritionLevelsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionLevelsTableViewCell.xib; sourceTree = "<group>"; };
+		95781BAF1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFFReadAPIkeysJSON.swift; sourceTree = "<group>"; };
+		95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFFWriteAPI.swift; sourceTree = "<group>"; };
+		95781BB11EC3A898003E3256 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		95781BB21EC3A898003E3256 /* ProductsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsResponse.swift; sourceTree = "<group>"; };
+		95781BB41EC3A898003E3256 /* InfoRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
+		95781BB51EC3A898003E3256 /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		95781BB71EC3A898003E3256 /* ArrayTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTransform.swift; sourceTree = "<group>"; };
+		95781BB81EC3A898003E3256 /* DoubleTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTransform.swift; sourceTree = "<group>"; };
+		95781BB91EC3A898003E3256 /* TagTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTransform.swift; sourceTree = "<group>"; };
+		95781BC51EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableUITableViewCell.swift; sourceTree = "<group>"; };
+		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		95C265161E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		95C265181E96D55B004212EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95C2651B1E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		95C265241E96D5C2004212EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		95C265281E96D6F0004212EC /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		95C2652E1E9A7246004212EC /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		95C368091E9ECC0C008BB582 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
+		95CB99A61EA55BF900CBDDF9 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		95CE24DF1ED5509300EF3D79 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		95CE24E01ED5509300EF3D79 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		95D6A7601E9C0B410017B423 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		95DFD7C91F01A213007FDB69 /* NutriScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutriScoreView.swift; sourceTree = "<group>"; };
+		95DFD7CA1F01A213007FDB69 /* NutriScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutriScoreView.xib; sourceTree = "<group>"; };
+		95DFD7D01F01A468007FDB69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		95DFD7D11F01A513007FDB69 /* PictureCallToActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCallToActionView.swift; sourceTree = "<group>"; };
+		95DFD7D31F01A526007FDB69 /* PictureCallToActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureCallToActionView.xib; sourceTree = "<group>"; };
+		95DFD7D81F0225D1007FDB69 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		95E16B2A1EE9D8B100331B2B /* NutritionLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionLevelView.swift; sourceTree = "<group>"; };
+		95E16B2C1EE9D8BE00331B2B /* NutritionLevelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionLevelView.xib; sourceTree = "<group>"; };
+		95E16B2E1EE9E20A00331B2B /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		95E9F03E1EC64F6600BA20B0 /* NutritionTableRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionTableRowTableViewCell.swift; path = NutritionTable/NutritionTableRowTableViewCell.swift; sourceTree = "<group>"; };
+		95E9F03F1EC64F6600BA20B0 /* NutritionTableRowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NutritionTableRowTableViewCell.xib; path = NutritionTable/NutritionTableRowTableViewCell.xib; sourceTree = "<group>"; };
+		95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nutriments.swift; path = Nutriments/Nutriments.swift; sourceTree = "<group>"; };
+		95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionLevels.swift; path = Nutriments/NutritionLevels.swift; sourceTree = "<group>"; };
+		95F14C881EDB6CDD00D99115 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingProcessor.swift; sourceTree = "<group>"; };
+		95F14CB01EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionTableHeaderTableViewCell.swift; path = NutritionTable/NutritionTableHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		95F14CB11EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NutritionTableHeaderTableViewCell.xib; path = NutritionTable/NutritionTableHeaderTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95C2650B1E96D55B004212EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */,
+				957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */,
+				95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */,
+				957094B11EA163CF00268236 /* Kingfisher.framework in Frameworks */,
+				95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */,
+				95CE24E11ED5509300EF3D79 /* Fabric.framework in Frameworks */,
+				95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */,
+				95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */,
+				95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */,
+				953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9525708A1EE9BC43002FC40D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9525708B1EE9BC91002FC40D /* CellImageTapable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9527E7881E9EBDDC00833F04 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				957094AE1EA124E800268236 /* ProductService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		957094DC1EA3D00500268236 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				955ED9BE1EB290F900BB80BA /* Settings.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		95781B0E1EBBCDC7003E3256 /* ProductSearch */ = {
+			isa = PBXGroup;
+			children = (
+				955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */,
+				95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */,
+				95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */,
+			);
+			path = ProductSearch;
+			sourceTree = "<group>";
+		};
+		95781B461EBE89D1003E3256 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				95781B471EBE89D1003E3256 /* ButtonBarView.xib */,
+				95781B641EBF2292003E3256 /* ProductDetailViewController.storyboard */,
+				95781B8C1EC106CB003E3256 /* InfoRowTableViewCell.swift */,
+				95781B8D1EC106CB003E3256 /* InfoRowTableViewCell.xib */,
+				95781BC51EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift */,
+				95DFD7C91F01A213007FDB69 /* NutriScoreView.swift */,
+				95DFD7CA1F01A213007FDB69 /* NutriScoreView.xib */,
+				95DFD7D11F01A513007FDB69 /* PictureCallToActionView.swift */,
+				95DFD7D31F01A526007FDB69 /* PictureCallToActionView.xib */,
+				95E9F0371EC6470700BA20B0 /* NutritionTable */,
+				95781B481EBE89D1003E3256 /* Ingredients */,
+				95781B4D1EBE89D1003E3256 /* Nutrition */,
+				95781B501EBE89D1003E3256 /* Summary */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		95781B481EBE89D1003E3256 /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				95781B491EBE89D1003E3256 /* IngredientHeaderTableViewCell.swift */,
+				95781B4A1EBE89D1003E3256 /* IngredientHeaderTableViewCell.xib */,
+			);
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
+		95781B4D1EBE89D1003E3256 /* Nutrition */ = {
+			isa = PBXGroup;
+			children = (
+				95781B601EBF2264003E3256 /* NutritionHeaderTableViewCell.swift */,
+				95781B611EBF2264003E3256 /* NutritionHeaderTableViewCell.xib */,
+				95781B921EC23F18003E3256 /* NutritionLevelsTableViewCell.swift */,
+				95781BA81EC3A079003E3256 /* NutritionLevelsTableViewCell.xib */,
+				95E16B2A1EE9D8B100331B2B /* NutritionLevelView.swift */,
+				95E16B2C1EE9D8BE00331B2B /* NutritionLevelView.xib */,
+			);
+			path = Nutrition;
+			sourceTree = "<group>";
+		};
+		95781B501EBE89D1003E3256 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				95781B511EBE89D1003E3256 /* SummaryHeaderTableViewCell.swift */,
+				95781B521EBE89D1003E3256 /* SummaryHeaderTableViewCell.xib */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		95781BAC1EC3A898003E3256 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				95E9F0421EC8D7AB00BA20B0 /* Nutriments */,
+				95781BAF1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift */,
+				95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */,
+				95781BB11EC3A898003E3256 /* Product.swift */,
+				95781BB21EC3A898003E3256 /* ProductsResponse.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		95781BB31EC3A898003E3256 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				95781BB41EC3A898003E3256 /* InfoRow.swift */,
+				95781BB51EC3A898003E3256 /* LocalizedString.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		95781BB61EC3A898003E3256 /* Transforms */ = {
+			isa = PBXGroup;
+			children = (
+				95781BB71EC3A898003E3256 /* ArrayTransform.swift */,
+				95781BB81EC3A898003E3256 /* DoubleTransform.swift */,
+				95781BB91EC3A898003E3256 /* TagTransform.swift */,
+			);
+			path = Transforms;
+			sourceTree = "<group>";
+		};
+		95C265051E96D55B004212EC = {
+			isa = PBXGroup;
+			children = (
+				95C265231E96D5C2004212EC /* Frameworks */,
+				95C265101E96D55B004212EC /* OpenFoodFacts */,
+				95C2650F1E96D55B004212EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95C2650F1E96D55B004212EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95C2650E1E96D55B004212EC /* OpenFoodFacts.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95C265101E96D55B004212EC /* OpenFoodFacts */ = {
+			isa = PBXGroup;
+			children = (
+				9525708A1EE9BC43002FC40D /* Protocols */,
+				95CB99A51EA55BEF00CBDDF9 /* Extensions */,
+				95D6A7621E9C18F00017B423 /* Models */,
+				9527E7881E9EBDDC00833F04 /* Network */,
+				95C2652A1E96D6FA004212EC /* ViewControllers */,
+				95D6A7591E9C080A0017B423 /* Views */,
+				95C265111E96D55B004212EC /* AppDelegate.swift */,
+				95C265181E96D55B004212EC /* Assets.xcassets */,
+				951FB0991EB29852005CAE33 /* Info.plist */,
+				951FB09F1EB2989A005CAE33 /* InfoPlist.strings */,
+				95C2651A1E96D55B004212EC /* LaunchScreen.storyboard */,
+				95DFD7CF1F01A45C007FDB69 /* Localizable.strings */,
+				95C265151E96D55B004212EC /* Main.storyboard */,
+			);
+			path = OpenFoodFacts;
+			sourceTree = "<group>";
+		};
+		95C265231E96D5C2004212EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9543129C1EEC57A1009F0621 /* ImageViewer.framework */,
+				9525708D1EE9BE6D002FC40D /* Agrume.framework */,
+				95CE24DF1ED5509300EF3D79 /* Fabric.framework */,
+				95CE24E01ED5509300EF3D79 /* Crashlytics.framework */,
+				957094B91EA24DFC00268236 /* XLPagerTabStrip.framework */,
+				957094B01EA163CF00268236 /* Kingfisher.framework */,
+				95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */,
+				95C368091E9ECC0C008BB582 /* ObjectMapper.framework */,
+				953C2BE31E9EC22200FD99D4 /* Alamofire.framework */,
+				95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */,
+				95C265241E96D5C2004212EC /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95C2652A1E96D6FA004212EC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				95C2652B1E96D705004212EC /* Products */,
+				95D6A75F1E9C0B2F0017B423 /* Search */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		95C2652B1E96D705004212EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				957094B31EA16C4B00268236 /* ProductDetailViewController.swift */,
+				95781B421EBE861F003E3256 /* ProductDetailPageViewController.swift */,
+				957094C91EA26C8800268236 /* ProductNutritionViewController.swift */,
+				95C2652E1E9A7246004212EC /* ProductsViewController.swift */,
+				95C265281E96D6F0004212EC /* CameraViewController.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		95CB99A51EA55BEF00CBDDF9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95CB99A61EA55BF900CBDDF9 /* String.swift */,
+				95781B131EBE4E5C003E3256 /* UITableViewCell.swift */,
+				95781B9A1EC26B24003E3256 /* Double.swift */,
+				95F14C881EDB6CDD00D99115 /* UIImage.swift */,
+				95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */,
+				95E16B2E1EE9E20A00331B2B /* UIStackView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95D6A7591E9C080A0017B423 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95781B461EBE89D1003E3256 /* ProductDetail */,
+				95781B0E1EBBCDC7003E3256 /* ProductSearch */,
+				957094DC1EA3D00500268236 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		95D6A75F1E9C0B2F0017B423 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */,
+				95D6A7601E9C0B410017B423 /* SearchTableViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		95D6A7621E9C18F00017B423 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95781BAC1EC3A898003E3256 /* API */,
+				95781BB31EC3A898003E3256 /* Common */,
+				95781BB61EC3A898003E3256 /* Transforms */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95E9F0371EC6470700BA20B0 /* NutritionTable */ = {
+			isa = PBXGroup;
+			children = (
+				95F14CB01EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift */,
+				95F14CB11EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.xib */,
+				95E9F03E1EC64F6600BA20B0 /* NutritionTableRowTableViewCell.swift */,
+				95E9F03F1EC64F6600BA20B0 /* NutritionTableRowTableViewCell.xib */,
+			);
+			name = NutritionTable;
+			sourceTree = "<group>";
+		};
+		95E9F0421EC8D7AB00BA20B0 /* Nutriments */ = {
+			isa = PBXGroup;
+			children = (
+				95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */,
+				95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */,
+				953664F41ECA212100D6D398 /* NutrimentItem.swift */,
+			);
+			name = Nutriments;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95C2650D1E96D55B004212EC /* OpenFoodFacts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95C265201E96D55B004212EC /* Build configuration list for PBXNativeTarget "OpenFoodFacts" */;
+			buildPhases = (
+				95C2650A1E96D55B004212EC /* Sources */,
+				95C2650B1E96D55B004212EC /* Frameworks */,
+				95C2650C1E96D55B004212EC /* Resources */,
+				95C368081E9EC999008BB582 /* ShellScript */,
+				95CE24DE1ED5508500EF3D79 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenFoodFacts;
+			productName = OpenFoodFacts;
+			productReference = 95C2650E1E96D55B004212EC /* OpenFoodFacts.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95C265061E96D55B004212EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Andrés Pizá Bückmann";
+				TargetAttributes = {
+					95C2650D1E96D55B004212EC = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = JVHN2X67GT;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 95C265091E96D55B004212EC /* Build configuration list for PBXProject "OpenFoodFacts" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95C265051E96D55B004212EC;
+			productRefGroup = 95C2650F1E96D55B004212EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95C2650D1E96D55B004212EC /* OpenFoodFacts */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95C2650C1E96D55B004212EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95781B651EBF2292003E3256 /* ProductDetailViewController.storyboard in Resources */,
+				95DFD7CC1F01A213007FDB69 /* NutriScoreView.xib in Resources */,
+				955ED9B71EB2901100BB80BA /* EmptyProductsView.xib in Resources */,
+				951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */,
+				95DFD7CD1F01A45C007FDB69 /* Localizable.strings in Resources */,
+				95DFD7D41F01A526007FDB69 /* PictureCallToActionView.xib in Resources */,
+				955ED9BC1EB290F900BB80BA /* Settings.storyboard in Resources */,
+				95781B8F1EC106CB003E3256 /* InfoRowTableViewCell.xib in Resources */,
+				95781B5D1EBE89D1003E3256 /* SummaryHeaderTableViewCell.xib in Resources */,
+				95781B631EBF2264003E3256 /* NutritionHeaderTableViewCell.xib in Resources */,
+				95781BA91EC3A079003E3256 /* NutritionLevelsTableViewCell.xib in Resources */,
+				95C2651C1E96D55B004212EC /* LaunchScreen.storyboard in Resources */,
+				95E16B2D1EE9D8BE00331B2B /* NutritionLevelView.xib in Resources */,
+				95781B551EBE89D1003E3256 /* ButtonBarView.xib in Resources */,
+				95E9F0411EC64F6600BA20B0 /* NutritionTableRowTableViewCell.xib in Resources */,
+				95F14CB31EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.xib in Resources */,
+				95D6A75E1E9C08520017B423 /* ProductTableViewCell.xib in Resources */,
+				95781B571EBE89D1003E3256 /* IngredientHeaderTableViewCell.xib in Resources */,
+				95C265191E96D55B004212EC /* Assets.xcassets in Resources */,
+				95C265171E96D55B004212EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		95C368081E9EC999008BB582 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ImageViewer.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		95CE24DE1ED5508500EF3D79 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 2a83bde9cbf98b48f34f2f27fdb7baa31cf9b5f8 8edbf06d5de27983cb0bf34ca9e266b949a15616bfd9e7a3f6ee013b97cc3d46";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95C2650A1E96D55B004212EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95781BC01EC3A898003E3256 /* InfoRow.swift in Sources */,
+				95781BBD1EC3A898003E3256 /* OFFWriteAPI.swift in Sources */,
+				95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */,
+				95781B8E1EC106CB003E3256 /* InfoRowTableViewCell.swift in Sources */,
+				95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */,
+				95781BC61EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift in Sources */,
+				95781B5C1EBE89D1003E3256 /* SummaryHeaderTableViewCell.swift in Sources */,
+				95C2652F1E9A7246004212EC /* ProductsViewController.swift in Sources */,
+				95D6A7611E9C0B410017B423 /* SearchTableViewController.swift in Sources */,
+				95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */,
+				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
+				95781B431EBE861F003E3256 /* ProductDetailPageViewController.swift in Sources */,
+				95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */,
+				95781BBC1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift in Sources */,
+				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
+				95DFD7CB1F01A213007FDB69 /* NutriScoreView.swift in Sources */,
+				95E9F0401EC64F6600BA20B0 /* NutritionTableRowTableViewCell.swift in Sources */,
+				95781B941EC23F18003E3256 /* NutritionLevelsTableViewCell.swift in Sources */,
+				95D6A75D1E9C08520017B423 /* ProductTableViewCell.swift in Sources */,
+				95781B561EBE89D1003E3256 /* IngredientHeaderTableViewCell.swift in Sources */,
+				95DFD7D21F01A513007FDB69 /* PictureCallToActionView.swift in Sources */,
+				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
+				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
+				95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */,
+				95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */,
+				95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */,
+				95F14CB21EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift in Sources */,
+				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
+				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
+				957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */,
+				957094B51EA16C4B00268236 /* ProductDetailViewController.swift in Sources */,
+				957094AF1EA124E800268236 /* ProductService.swift in Sources */,
+				95781B621EBF2264003E3256 /* NutritionHeaderTableViewCell.swift in Sources */,
+				95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */,
+				95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */,
+				95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */,
+				95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */,
+				95E16B2B1EE9D8B100331B2B /* NutritionLevelView.swift in Sources */,
+				95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */,
+				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		951FB09F1EB2989A005CAE33 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				951FB09E1EB2989A005CAE33 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = .;
+			sourceTree = "<group>";
+		};
+		955ED9B91EB2901100BB80BA /* EmptyProductsView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				955ED9B81EB2901100BB80BA /* Base */,
+				95781B121EBBCFBA003E3256 /* en */,
+			);
+			name = EmptyProductsView.xib;
+			path = .;
+			sourceTree = "<group>";
+		};
+		955ED9BE1EB290F900BB80BA /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95DFD7D81F0225D1007FDB69 /* en */,
+			);
+			name = Settings.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+		95C265151E96D55B004212EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95C265161E96D55B004212EC /* Base */,
+				95781B0F1EBBCF3E003E3256 /* en */,
+			);
+			name = Main.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+		95C2651A1E96D55B004212EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95C2651B1E96D55B004212EC /* Base */,
+				95781B101EBBCF5C003E3256 /* en */,
+			);
+			name = LaunchScreen.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+		95DFD7CF1F01A45C007FDB69 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95DFD7D01F01A468007FDB69 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		95C2651E1E96D55B004212EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		95C2651F1E96D55B004212EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95C265211E96D55B004212EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 6;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = JVHN2X67GT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		95C265221E96D55B004212EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = JVHN2X67GT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95C265091E96D55B004212EC /* Build configuration list for PBXProject "OpenFoodFacts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95C2651E1E96D55B004212EC /* Debug */,
+				95C2651F1E96D55B004212EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95C265201E96D55B004212EC /* Build configuration list for PBXNativeTarget "OpenFoodFacts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95C265211E96D55B004212EC /* Debug */,
+				95C265221E96D55B004212EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95C265061E96D55B004212EC /* Project object */;
+}
