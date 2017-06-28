@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreGraphics
+import Fabric
+import Crashlytics
 
 // MARK: - UIViewController
 
@@ -16,8 +18,14 @@ class SearchTableViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
     fileprivate var searchController: UISearchController!
     fileprivate var emptyTableView: UIView!
-    fileprivate var lastQuery: String?
     fileprivate var productsResponse: ProductsResponse?
+    fileprivate var queryRequestWorkItem: DispatchWorkItem?
+    fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
+    
+    /* When the user searches a product by barcode and it's found, the product's detail view is loaded.
+     If the user loads taps the back button, after presenting the search view the app goes back to the product's detail view again.
+     This boolean breaks that loop. */
+    fileprivate var wasSearchBarEdited = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,20 +35,20 @@ class SearchTableViewController: UIViewController {
         configureTableView()
         configureSearchController()
         configureNavigationBar()
+        configureGestureRecognizers()
     }
     
     fileprivate func configureTableView() {
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ProductTableViewCell.self))
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = 100
     }
     
     fileprivate func configureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search for a product by name or barcode"
+        searchController.searchBar.placeholder = NSLocalizedString("product-search.search-placeholder", comment: "Placeholder for the product search bar")
         searchController.searchBar.delegate = self
         searchController.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
@@ -49,6 +57,11 @@ class SearchTableViewController: UIViewController {
     
     fileprivate func configureNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "barcode"), style: .plain, target: self, action: #selector(scanBarcode))
+    }
+    
+    fileprivate func configureGestureRecognizers() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapTableViewBackground(_:)))
+        self.tapGestureRecognizer = tap
     }
 }
 
@@ -67,6 +80,10 @@ extension SearchTableViewController: UITableViewDataSource {
             tableView.backgroundView = emptyTableView
             tableView.separatorStyle = .none
             tableView.isScrollEnabled = false
+            
+            if let tap = tapGestureRecognizer {
+                tableView.backgroundView?.addGestureRecognizer(tap)
+            }
             
             return 0
         }
@@ -111,8 +128,16 @@ extension SearchTableViewController: UITableViewDelegate {
 extension SearchTableViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        if let query = searchController.searchBar.text, !query.isEmpty {
-            getProducts(fromService: ProductService() ,page: 1, withQuery: query)
+        queryRequestWorkItem?.cancel()
+        
+        if let query = searchController.searchBar.text, !query.isEmpty, wasSearchBarEdited {
+            let request = DispatchWorkItem { [weak self] in
+                self?.getProducts(fromService: ProductService() ,page: 1, withQuery: query)
+            }
+            
+            queryRequestWorkItem = request
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250), execute: request)
+            wasSearchBarEdited = false
         }
     }
 }
@@ -129,7 +154,19 @@ extension SearchTableViewController: UISearchBarDelegate {
         searchBar.setShowsCancelButton(false, animated: true)
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        wasSearchBarEdited = true
+        
+        if searchText.isEmpty { // x button was tapped or text was deleted
+            clearResults()
+        }
+    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        clearResults()
+    }
+    
+    fileprivate func clearResults() {
         productsResponse = nil
         tableView.reloadData()
     }
@@ -142,23 +179,32 @@ extension SearchTableViewController {
     func getProducts(fromService service: ProductService, page: Int, withQuery query: String? = nil) {
         // Either we have a query from the user's input or we need need to fetch the next page for the same query
         if let query = query ?? productsResponse?.query {
-            
-            if query.isNumber() { // TODO Should validate so only the API is called when the input is a valid barcode
-                service.getProduct(byBarcode: query) { product in
-                    self.showProductDetails(product: product)
+            service.getProducts(for: query, page: page) { response in
+                // TODO If this query returns only a product, should it go directly to detail view instead of the tableview?
+                if self.productsResponse == nil || self.productsResponse?.query != query { // Got new response
+                    self.productsResponse = response
+                    self.productsResponse!.query = query
+                } else if self.productsResponse?.query == query, let newProducts = response.products { // Append new projects to existing response
+                    self.productsResponse!.products!.append(contentsOf: newProducts)
                 }
-            } else {
-                service.getProducts(byName: query, page: page) { response in
-                    // TODO If this query returns only a product, should it go directly to detail view instead of the tableview?
-                    if self.productsResponse == nil || self.productsResponse?.query != query { // Got new response
-                        self.productsResponse = response
-                        self.productsResponse!.query = query
-                    } else if self.productsResponse?.query == query, let newProducts = response.products { // Append new projects to existing response
-                        self.productsResponse!.products!.append(contentsOf: newProducts)
-                    }
-                    
-                    self.tableView.reloadData()
-                }
+                
+                self.tableView.reloadData()
+            }
+        }
+    }
+}
+
+// MARK: - Gesture recognizers
+
+extension SearchTableViewController {
+    func didTapTableViewBackground(_ sender: UITapGestureRecognizer) {
+        
+        // When the search bar has no text and the user taps the background view of the table view,
+        // ask the search bar to resign focus so it goes back to it's begining state and the keyboard gets dismissed
+        
+        if productsResponse == nil && searchController.isActive {
+            if let text = searchController.searchBar.text, text.isEmpty {
+                searchController.searchBar.resignFirstResponder()
             }
         }
     }
@@ -166,6 +212,7 @@ extension SearchTableViewController {
 
 // MARK: - Private functions
 private extension SearchTableViewController {
+    
     func showProductDetails(product: Product) {
         navigationController?.pushViewController(productDetails(product: product), animated: true)
     }

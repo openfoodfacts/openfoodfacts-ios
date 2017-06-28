@@ -3,18 +3,13 @@
 
 ## Features
 
-- [ ] Barcode scanning
-- [ ] Product search
-- [ ] Product list
-- [ ] Product detail
+- [x] Barcode scanning
+- [x] Product search
+- [x] Product list
+- [x] Product detail
 - [ ] On-device Product cache
 - [ ] Image upload
 - [ ] Internationalised user interface
-
-## Demo
-<details> <summary>GIF demo</summary>
-  <img src="https://github.com/openfoodfacts/openfoodfacts-ios/blob/master/gif/demo.gif" width="300">
-</details>
 
 ## Pointers
 

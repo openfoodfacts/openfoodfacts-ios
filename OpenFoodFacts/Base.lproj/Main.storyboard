@@ -1,74 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Products View Controller-->
-        <scene sceneID="3Zb-Ch-jlf">
-            <objects>
-                <viewController id="bZh-Zu-n2X" customClass="ProductsViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8mE-xX-LXB"/>
-                        <viewControllerLayoutGuide type="bottom" id="80P-lP-tQg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ONd-H7-BPp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoA-HK-cUi">
-                                <rect key="frame" x="145" y="72" width="85" height="30"/>
-                                <state key="normal" title="Take picture"/>
-                                <connections>
-                                    <action selector="didPressTakePictureButton:" destination="bZh-Zu-n2X" eventType="touchUpInside" id="rid-NY-CpU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehx-ia-dmL">
-                                <rect key="frame" x="139" y="136" width="96" height="30"/>
-                                <state key="normal" title="Scan Barcode"/>
-                                <connections>
-                                    <segue destination="wct-o1-jnl" kind="show" id="4Va-Ab-SI8"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NoA-HK-cUi" firstAttribute="centerX" secondItem="ONd-H7-BPp" secondAttribute="centerX" id="72L-9U-fWf"/>
-                            <constraint firstItem="ehx-ia-dmL" firstAttribute="top" secondItem="NoA-HK-cUi" secondAttribute="bottom" constant="34" id="Ur5-oZ-uXA"/>
-                            <constraint firstItem="ehx-ia-dmL" firstAttribute="centerX" secondItem="ONd-H7-BPp" secondAttribute="centerX" id="W9C-ph-u7o"/>
-                            <constraint firstItem="NoA-HK-cUi" firstAttribute="top" secondItem="8mE-xX-LXB" secondAttribute="bottom" constant="8" id="kV3-F4-dmW"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="ZhX-nX-ieM"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ZW-uY-QwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1503.2" y="-187.55622188905548"/>
-        </scene>
-        <!--Scanner View Controller-->
-        <scene sceneID="LxR-S0-zjC">
-            <objects>
-                <viewController id="wct-o1-jnl" customClass="ScannerViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1Yu-h9-Tbq"/>
-                        <viewControllerLayoutGuide type="bottom" id="gkG-zT-jMI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bvw-tJ-Jcg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iw1-jt-nJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2490" y="-192"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wPq-85-qPt">
             <objects>
@@ -80,7 +19,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="SMQ-pD-tsL" kind="relationship" relationship="viewControllers" id="36n-lc-F7m"/>
-                        <segue destination="4Vv-4J-qzl" kind="relationship" relationship="viewControllers" id="OCt-YH-CwU"/>
                         <segue destination="rNt-He-NC7" kind="relationship" relationship="viewControllers" id="Ozt-Fe-CYK"/>
                     </connections>
                 </tabBarController>
@@ -92,35 +30,18 @@
         <scene sceneID="By1-kC-bxg">
             <objects>
                 <viewController id="EH8-XH-tDE" customClass="SearchTableViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Oah-mb-hss"/>
-                        <viewControllerLayoutGuide type="bottom" id="GgD-v0-IUX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TaQ-pb-Qwu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f20-7Y-y1Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4GX-xs-yHh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="EH8-XH-tDE" id="yG9-WZ-dmQ"/>
-                                    <outlet property="delegate" destination="EH8-XH-tDE" id="TR5-l9-JCA"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="GgD-v0-IUX" firstAttribute="top" secondItem="4GX-xs-yHh" secondAttribute="bottom" id="Gbp-y9-6lq"/>
-                            <constraint firstAttribute="trailing" secondItem="4GX-xs-yHh" secondAttribute="trailing" id="KvH-Fq-wA3"/>
-                            <constraint firstAttribute="topMargin" secondItem="4GX-xs-yHh" secondAttribute="top" id="NUz-Jx-w35"/>
-                            <constraint firstItem="4GX-xs-yHh" firstAttribute="leading" secondItem="TaQ-pb-Qwu" secondAttribute="leading" id="XNl-Q8-rdl"/>
-                        </constraints>
-                    </view>
+                        <connections>
+                            <outlet property="dataSource" destination="EH8-XH-tDE" id="teo-Mk-yvP"/>
+                            <outlet property="delegate" destination="EH8-XH-tDE" id="1Uh-MU-l9x"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" id="ZvS-Tf-UPn"/>
                     <connections>
-                        <outlet property="tableView" destination="4GX-xs-yHh" id="VZk-tk-pwC"/>
+                        <outlet property="tableView" destination="f20-7Y-y1Q" id="iHN-uf-pHH"/>
                         <segue destination="ad3-8a-IiG" kind="show" identifier="ShowProductDetail" id="Rsh-Ig-Fdp"/>
                     </connections>
                 </viewController>
@@ -135,25 +56,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UpW-Kj-48S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2328" y="-895"/>
-        </scene>
-        <!--Products-->
-        <scene sceneID="le0-vn-zuj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Vv-4J-qzl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Products" id="BCc-14-VvY"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Fc-tA-BZ4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bZh-Zu-n2X" kind="relationship" relationship="rootViewController" id="aCU-Pk-UYF"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W3y-On-GIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="564" y="-187.55622188905548"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gxl-ow-VZe">
