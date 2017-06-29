@@ -15,14 +15,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OpenFoodFactsLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pDX-By-EZf">
-                    <rect key="frame" x="38" y="110" width="300" height="200"/>
+                    <rect key="frame" x="38" y="115" width="300" height="209"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="8uX-5g-cGi"/>
+                        <constraint firstAttribute="height" constant="209" id="8uX-5g-cGi"/>
                         <constraint firstAttribute="width" constant="300" id="ZC1-Kh-cJE"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElV-MH-zPQ">
-                    <rect key="frame" x="38" y="330" width="300" height="101.5"/>
+                    <rect key="frame" x="38" y="344" width="300" height="101.5"/>
                     <string key="text">Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</string>
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                     <nil key="textColor"/>
@@ -33,7 +33,7 @@
             <constraints>
                 <constraint firstItem="ElV-MH-zPQ" firstAttribute="top" secondItem="pDX-By-EZf" secondAttribute="bottom" constant="20" id="1xr-i1-W2b"/>
                 <constraint firstItem="ElV-MH-zPQ" firstAttribute="width" secondItem="pDX-By-EZf" secondAttribute="width" id="39e-sB-413"/>
-                <constraint firstItem="pDX-By-EZf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="110" id="AZg-43-7GW"/>
+                <constraint firstItem="pDX-By-EZf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="115" id="AZg-43-7GW"/>
                 <constraint firstItem="pDX-By-EZf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HqW-3f-Wdh"/>
                 <constraint firstItem="ElV-MH-zPQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qLx-Nn-gsX"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ElV-MH-zPQ" secondAttribute="bottom" constant="20" id="xco-4L-6hp"/>
@@ -44,6 +44,6 @@
         </view>
     </objects>
     <resources>
-        <image name="OpenFoodFactsLogo" width="369" height="302"/>
+        <image name="OpenFoodFactsLogo" width="300" height="209"/>
     </resources>
 </document>
