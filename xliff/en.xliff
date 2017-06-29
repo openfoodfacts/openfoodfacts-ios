@@ -59,6 +59,34 @@
       </trans-unit>
     </body>
   </file>
+  <file original="OpenFoodFacts/Views/Settings/Base.lproj/Settings.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+    </header>
+    <body>
+      <trans-unit id="3Vi-oE-IJx.text">
+        <source>Credits</source>
+        <note>Class = "UILabel"; text = "Credits"; ObjectID = "3Vi-oE-IJx";</note>
+      </trans-unit>
+      <trans-unit id="c7X-Xf-g2w.title">
+        <source>About</source>
+        <note>Class = "UIViewController"; title = "About"; ObjectID = "c7X-Xf-g2w";</note>
+      </trans-unit>
+      <trans-unit id="c8k-0p-YOJ.text">
+        <source>Barcode scan button icon and Settings icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+Take picture icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</source>
+        <note>Class = "UILabel"; text = "Barcode scan button icon and Settings icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\nTake picture icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)"; ObjectID = "c8k-0p-YOJ";</note>
+      </trans-unit>
+      <trans-unit id="sO1-VI-YDa.text">
+        <source>About</source>
+        <note>Class = "UILabel"; text = "About"; ObjectID = "sO1-VI-YDa";</note>
+      </trans-unit>
+      <trans-unit id="tnR-0p-cA3.title">
+        <source>Settings</source>
+        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "tnR-0p-cA3";</note>
+      </trans-unit>
+    </body>
+  </file>
   <file original="OpenFoodFacts/en.lproj/Localizable.strings" source-language="en" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
@@ -66,6 +94,7 @@
     <body>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition table</source>

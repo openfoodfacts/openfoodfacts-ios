@@ -121,6 +121,8 @@
 		95781BB81EC3A898003E3256 /* DoubleTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTransform.swift; sourceTree = "<group>"; };
 		95781BB91EC3A898003E3256 /* TagTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTransform.swift; sourceTree = "<group>"; };
 		95781BC51EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableUITableViewCell.swift; sourceTree = "<group>"; };
+		95A7E0641F0581B6004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		95A7E0651F0581BA004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265161E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,7 +146,6 @@
 		95DFD7D01F01A468007FDB69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95DFD7D11F01A513007FDB69 /* PictureCallToActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCallToActionView.swift; sourceTree = "<group>"; };
 		95DFD7D31F01A526007FDB69 /* PictureCallToActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureCallToActionView.xib; sourceTree = "<group>"; };
-		95DFD7D81F0225D1007FDB69 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		95E16B2A1EE9D8B100331B2B /* NutritionLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionLevelView.swift; sourceTree = "<group>"; };
 		95E16B2C1EE9D8BE00331B2B /* NutritionLevelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionLevelView.xib; sourceTree = "<group>"; };
 		95E16B2E1EE9E20A00331B2B /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
@@ -629,7 +630,8 @@
 		955ED9BE1EB290F900BB80BA /* Settings.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				95DFD7D81F0225D1007FDB69 /* en */,
+				95A7E0641F0581B6004D7B60 /* Base */,
+				95A7E0651F0581BA004D7B60 /* en */,
 			);
 			name = Settings.storyboard;
 			path = .;
