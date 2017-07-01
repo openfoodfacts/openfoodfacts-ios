@@ -44,6 +44,10 @@
 		95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB81EC3A898003E3256 /* DoubleTransform.swift */; };
 		95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB91EC3A898003E3256 /* TagTransform.swift */; };
 		95781BC61EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BC51EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift */; };
+		95A7E0711F06EE60004D7B60 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7E0701F06EE60004D7B60 /* StateView.swift */; };
+		95A7E0731F06EE8F004D7B60 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7E0721F06EE8F004D7B60 /* LoadingView.swift */; };
+		95A7E07B1F07D4B9004D7B60 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7E0791F07D4B9004D7B60 /* SearchTableViewController.swift */; };
+		95A7E07C1F07D4B9004D7B60 /* SearchTableViewControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7E07A1F07D4B9004D7B60 /* SearchTableViewControllerState.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -60,7 +64,6 @@
 		95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */; };
 		95D6A75D1E9C08520017B423 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */; };
 		95D6A75E1E9C08520017B423 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */; };
-		95D6A7611E9C0B410017B423 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A7601E9C0B410017B423 /* SearchTableViewController.swift */; };
 		95DFD7CB1F01A213007FDB69 /* NutriScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DFD7C91F01A213007FDB69 /* NutriScoreView.swift */; };
 		95DFD7CC1F01A213007FDB69 /* NutriScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95DFD7CA1F01A213007FDB69 /* NutriScoreView.xib */; };
 		95DFD7CD1F01A45C007FDB69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DFD7CF1F01A45C007FDB69 /* Localizable.strings */; };
@@ -126,6 +129,10 @@
 		95A7E06B1F0590E7004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		95A7E06C1F0590E7004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95A7E06D1F0590E7004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		95A7E0701F06EE60004D7B60 /* StateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StateView.swift; path = StateViews/StateView.swift; sourceTree = "<group>"; };
+		95A7E0721F06EE8F004D7B60 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = StateViews/LoadingView.swift; sourceTree = "<group>"; };
+		95A7E0791F07D4B9004D7B60 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = SearchTableViewController/SearchTableViewController.swift; sourceTree = "<group>"; };
+		95A7E07A1F07D4B9004D7B60 /* SearchTableViewControllerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewControllerState.swift; path = SearchTableViewController/SearchTableViewControllerState.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265161E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,7 +150,6 @@
 		95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
-		95D6A7601E9C0B410017B423 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		95DFD7C91F01A213007FDB69 /* NutriScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutriScoreView.swift; sourceTree = "<group>"; };
 		95DFD7CA1F01A213007FDB69 /* NutriScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutriScoreView.xib; sourceTree = "<group>"; };
 		95DFD7D11F01A513007FDB69 /* PictureCallToActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCallToActionView.swift; sourceTree = "<group>"; };
@@ -298,6 +304,24 @@
 			path = Transforms;
 			sourceTree = "<group>";
 		};
+		95A7E06E1F06EE3E004D7B60 /* StateViews */ = {
+			isa = PBXGroup;
+			children = (
+				95A7E0701F06EE60004D7B60 /* StateView.swift */,
+				95A7E0721F06EE8F004D7B60 /* LoadingView.swift */,
+			);
+			name = StateViews;
+			sourceTree = "<group>";
+		};
+		95A7E0781F07D4A4004D7B60 /* SearchTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				95A7E0791F07D4B9004D7B60 /* SearchTableViewController.swift */,
+				95A7E07A1F07D4B9004D7B60 /* SearchTableViewControllerState.swift */,
+			);
+			name = SearchTableViewController;
+			sourceTree = "<group>";
+		};
 		95C265051E96D55B004212EC = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +414,7 @@
 		95D6A7591E9C080A0017B423 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				95A7E06E1F06EE3E004D7B60 /* StateViews */,
 				95781B461EBE89D1003E3256 /* ProductDetail */,
 				95781B0E1EBBCDC7003E3256 /* ProductSearch */,
 				957094DC1EA3D00500268236 /* Settings */,
@@ -401,7 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				95D6A7551E9A8CA20017B423 /* ScannerViewController.swift */,
-				95D6A7601E9C0B410017B423 /* SearchTableViewController.swift */,
+				95A7E0781F07D4A4004D7B60 /* SearchTableViewController */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -569,10 +594,11 @@
 				95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */,
 				95781B8E1EC106CB003E3256 /* InfoRowTableViewCell.swift in Sources */,
 				95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */,
+				95A7E0731F06EE8F004D7B60 /* LoadingView.swift in Sources */,
 				95781BC61EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift in Sources */,
+				95A7E0711F06EE60004D7B60 /* StateView.swift in Sources */,
 				95781B5C1EBE89D1003E3256 /* SummaryHeaderTableViewCell.swift in Sources */,
 				95C2652F1E9A7246004212EC /* ProductsViewController.swift in Sources */,
-				95D6A7611E9C0B410017B423 /* SearchTableViewController.swift in Sources */,
 				95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */,
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
 				95781B431EBE861F003E3256 /* ProductDetailPageViewController.swift in Sources */,
@@ -592,8 +618,10 @@
 				95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */,
 				95F14CB21EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift in Sources */,
 				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
+				95A7E07C1F07D4B9004D7B60 /* SearchTableViewControllerState.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
 				957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */,
+				95A7E07B1F07D4B9004D7B60 /* SearchTableViewController.swift in Sources */,
 				957094B51EA16C4B00268236 /* ProductDetailViewController.swift in Sources */,
 				957094AF1EA124E800268236 /* ProductService.swift in Sources */,
 				95781B621EBF2264003E3256 /* NutritionHeaderTableViewCell.swift in Sources */,
