@@ -127,12 +127,7 @@
 		95A7E0641F0581B6004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A7E0671F058F5D004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		95A7E0681F0590E7004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EmptyProductsView.strings; sourceTree = "<group>"; };
 		95A7E0691F0590E7004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
-		95A7E06A1F0590E7004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		95A7E06B1F0590E7004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		95A7E06C1F0590E7004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		95A7E06D1F0590E7004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A7E0791F07D4B9004D7B60 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = SearchTableViewController/SearchTableViewController.swift; sourceTree = "<group>"; };
 		95A7E07A1F07D4B9004D7B60 /* SearchTableViewControllerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewControllerState.swift; path = SearchTableViewController/SearchTableViewControllerState.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -646,7 +641,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				95A7E0671F058F5D004D7B60 /* Base */,
-				95A7E06C1F0590E7004D7B60 /* en */,
 			);
 			name = InfoPlist.strings;
 			path = .;
@@ -656,7 +650,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				955ED9B81EB2901100BB80BA /* Base */,
-				95A7E0681F0590E7004D7B60 /* en */,
 			);
 			name = EmptyProductsView.xib;
 			path = .;
@@ -676,7 +669,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				95C265161E96D55B004212EC /* Base */,
-				95A7E06B1F0590E7004D7B60 /* en */,
 			);
 			name = Main.storyboard;
 			path = .;
@@ -686,7 +678,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				95C2651B1E96D55B004212EC /* Base */,
-				95A7E06A1F0590E7004D7B60 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
@@ -696,7 +687,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				95A7E0661F058F57004D7B60 /* Base */,
-				95A7E06D1F0590E7004D7B60 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
