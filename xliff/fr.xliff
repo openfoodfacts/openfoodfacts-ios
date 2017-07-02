@@ -11,22 +11,10 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
     </header>
     <body>
-      <trans-unit id="BCc-14-VvY.title">
-        <source>Products</source>
-        <target xml:lang="fr" state="translated">Produits</target>
-      </trans-unit>
       <trans-unit id="Eh6-Oa-ZfG.title">
         <source>Item</source>
         <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "Eh6-Oa-ZfG";</note>
-        <target xml:lang="fr" state="needs-translation">Item</target>
-      </trans-unit>
-      <trans-unit id="NoA-HK-cUi.normalTitle">
-        <source>Take a picture</source>
-        <target xml:lang="fr" state="translated">Prendre une photo</target>
-      </trans-unit>
-      <trans-unit id="ehx-ia-dmL.normalTitle">
-        <source>Scan a barcode</source>
-        <target xml:lang="fr" state="needs-translation">Scan a barcode</target>
+        <target xml:lang="fr" state="translated">Article</target>
       </trans-unit>
     </body>
   </file>
@@ -37,23 +25,23 @@
     <body>
       <trans-unit id="CFBundleDisplayName">
         <source>Open Nutrition</source>
-        <target xml:lang="fr" state="needs-translation">Open Nutrition</target>
+        <target xml:lang="fr" state="translated">Open Nutrition</target>
       </trans-unit>
       <trans-unit id="CFBundleName">
         <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="fr" state="needs-translation">$(PRODUCT_NAME)</target>
+        <target xml:lang="fr" state="translated">$(PRODUCT_NAME)</target>
       </trans-unit>
       <trans-unit id="CFBundleShortVersionString">
         <source>1.0</source>
-        <target xml:lang="fr" state="needs-translation">1.0</target>
+        <target xml:lang="fr" state="translated">1.0</target>
       </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
-        <target xml:lang="fr" state="needs-translation">Use your camera to scan barcodes and take pictures of products to add to the database</target>
+        <target xml:lang="fr" state="translated">Utilisez votre appareil photo pour numériser des codes barres et prendre des photos de produits à ajouter à la base de données</target>
       </trans-unit>
       <trans-unit id="NSPhotoLibraryUsageDescription">
         <source>Take and upload pictures of products</source>
-        <target xml:lang="fr" state="needs-translation">Take and upload pictures of products</target>
+        <target xml:lang="fr" state="translated">Prenez et envoyez des photos de produits</target>
       </trans-unit>
     </body>
   </file>
@@ -62,13 +50,40 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
     </header>
     <body>
-      <trans-unit id="ElV-MH-zPQ.text" approved="yes">
+      <trans-unit id="ElV-MH-zPQ.text">
         <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
-        <note>Class = "UILabel"; text = "off-description"; ObjectID = "ElV-MH-zPQ";</note>
-        <target xml:lang="fr">Open Food Facts est une base de données ouverte de produits alimentaires contenant ingrédients, allergènes, informations nutritionnelles et toute information qui se trouve sur les étiquettes.</target>
+        <note>Class = "UILabel"; text = "Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels."; ObjectID = "ElV-MH-zPQ";</note>
+        <target xml:lang="fr" state="translated">Open Food Facts est une base de données ouverte de produits alimentaires contenant ingrédients, allergènes, informations nutritionnelles et toute information qui se trouve sur les étiquettes.</target>
         <alt-trans>
           <target xml:lang="fr">Open Food Facts est une base de données ouverte de produits alimentaires contenant les ingrédients, les allergènes, les informations nutritionnelles et toutes les bribes d'informations que nous pouvons trouver sur les étiquettes des produits.</target>
         </alt-trans>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFacts/Views/Settings/Base.lproj/Settings.storyboard" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+    </header>
+    <body>
+      <trans-unit id="3Vi-oE-IJx.text">
+        <source>Credits</source>
+        <note>Class = "UILabel"; text = "Credits"; ObjectID = "3Vi-oE-IJx";</note>
+        <target xml:lang="fr" state="translated">Remerciements</target>
+      </trans-unit>
+      <trans-unit id="c7X-Xf-g2w.title" approved="yes">
+        <source>About</source>
+        <note>Class = "UIViewController"; title = "About"; ObjectID = "c7X-Xf-g2w";</note>
+        <target xml:lang="fr">À propos</target>
+      </trans-unit>
+      <trans-unit id="sO1-VI-YDa.text" approved="yes">
+        <source>About</source>
+        <note>Class = "UILabel"; text = "About"; ObjectID = "sO1-VI-YDa";</note>
+        <target xml:lang="fr">À propos</target>
+      </trans-unit>
+      <trans-unit id="tnR-0p-cA3.title" approved="yes">
+        <source>Settings</source>
+        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "tnR-0p-cA3";</note>
+        <target xml:lang="fr">Paramètres</target>
       </trans-unit>
     </body>
   </file>
@@ -79,6 +94,7 @@
     <body>
       <trans-unit id="call-to-action.ingredients" approved="yes">
         <source>Take a picture of the ingredients</source>
+        <note>No comment provided by engineer.</note>
         <target xml:lang="fr">Prendre une photo des ingrédients</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition" approved="yes">
@@ -149,7 +165,7 @@
       <trans-unit id="nutrition.fats">
         <source>Fats</source>
         <note>Nutrition, fat</note>
-        <target xml:lang="fr" state="needs-translation">Fats</target>
+        <target xml:lang="fr" state="translated">Matières grasses</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.cholesterol">
         <source>Cholesterol</source>
@@ -178,7 +194,7 @@
       <trans-unit id="nutrition.fats.saturated-fat">
         <source>Saturated fat</source>
         <note>Nutrition, saturated fat</note>
-        <target xml:lang="fr" state="needs-translation">Saturated fat</target>
+        <target xml:lang="fr" state="translated">Graisses saturées</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.trans-fat">
         <source>Trans fat</source>
@@ -342,7 +358,7 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins.beta-carotene">
         <source>Beta carotene</source>
-        <target xml:lang="fr" state="needs-translation">Beta carotene</target>
+        <target xml:lang="fr" state="translated">Bêta-carotène</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.biotin">
         <source>Biotin</source>
@@ -354,15 +370,15 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins.d">
         <source>Vitamin D</source>
-        <target xml:lang="fr" state="needs-translation">Vitamin D</target>
+        <target xml:lang="fr" state="translated">Vitamine D</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.e">
         <source>Vitamin E</source>
-        <target xml:lang="fr" state="needs-translation">Vitamin E</target>
+        <target xml:lang="fr" state="translated">Vitamine E</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.k">
         <source>Vitamin K</source>
-        <target xml:lang="fr" state="needs-translation">Vitamin K</target>
+        <target xml:lang="fr" state="translated">Vitamine K</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.pantothenic-acid">
         <source>Pantothenic acid</source>
@@ -372,25 +388,25 @@
         <source>Vitamin PP</source>
         <target xml:lang="fr">Vitamine PP</target>
       </trans-unit>
-      <trans-unit id="product-detail.ingredients.additives-list">
+      <trans-unit id="product-detail.ingredients.additives-list" approved="yes">
         <source>Additives</source>
-        <target xml:lang="fr" state="needs-translation">Additives</target>
+        <target xml:lang="fr">Additifs</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.allergens-list">
         <source>Substances or products causing allergies or intolerances</source>
         <target xml:lang="fr" state="translated">Substances ou produits provoquant des allergies ou intolérances</target>
       </trans-unit>
-      <trans-unit id="product-detail.ingredients.ingredients-list">
+      <trans-unit id="product-detail.ingredients.ingredients-list" approved="yes">
         <source>List of ingredients</source>
-        <target xml:lang="fr" state="needs-translation">List of ingredients</target>
+        <target xml:lang="fr">Liste des ingrédients</target>
       </trans-unit>
-      <trans-unit id="product-detail.ingredients.palm-oil-ingredients">
+      <trans-unit id="product-detail.ingredients.palm-oil-ingredients" approved="yes">
         <source>Ingredients from palm oil</source>
-        <target xml:lang="fr" state="needs-translation">Ingredients from palm oil</target>
+        <target xml:lang="fr">Ingrédients issus de l'huile de palme</target>
       </trans-unit>
-      <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients">
+      <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients" approved="yes">
         <source>Ingredients that may be from palm oil</source>
-        <target xml:lang="fr" state="needs-translation">Ingredients that may be from palm oil</target>
+        <target xml:lang="fr">Ingrédients pouvant être issus de l'huile de palme</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.traces-list">
         <source>Traces</source>
@@ -410,9 +426,9 @@
         <source>Nutrition facts</source>
         <target xml:lang="fr" state="translated">Informations nutritionnelles</target>
       </trans-unit>
-      <trans-unit id="product-detail.nutrition.carbon-footprint">
+      <trans-unit id="product-detail.nutrition.carbon-footprint" approved="yes">
         <source>Carbon footprint / CO2 emissions</source>
-        <target xml:lang="fr" state="needs-translation">Carbon footprint / CO2 emissions</target>
+        <target xml:lang="fr">Empreinte carbone / émissions de CO2</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.serving-size">
         <source>Serving size</source>
@@ -428,10 +444,10 @@
         <note>Product detail, nutrition</note>
         <target xml:lang="fr">Nutrition</target>
       </trans-unit>
-      <trans-unit id="product-detail.page-title.nutrition-table">
+      <trans-unit id="product-detail.page-title.nutrition-table" approved="yes">
         <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="fr" state="needs-translation">Nutrition table</target>
+        <target xml:lang="fr">Tableau nutritionnel</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary" approved="yes">
         <source>Summary</source>
@@ -482,10 +498,10 @@
         <source>Stores</source>
         <target xml:lang="fr" state="translated">Magasins</target>
       </trans-unit>
-      <trans-unit id="product-search.search-placeholder">
+      <trans-unit id="product-search.search-placeholder" approved="yes">
         <source>Search for a product by name or barcode</source>
         <note>Placeholder for the product search bar</note>
-        <target xml:lang="fr" state="needs-translation">Search for a product by name or barcode</target>
+        <target xml:lang="fr">Rechercher un produit par nom ou par code-barres</target>
       </trans-unit>
     </body>
   </file>

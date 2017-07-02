@@ -11,22 +11,10 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
     </header>
     <body>
-      <trans-unit id="BCc-14-VvY.title">
-        <source>Products</source>
-        <target xml:lang="ja" state="translated">製品</target>
-      </trans-unit>
       <trans-unit id="Eh6-Oa-ZfG.title">
         <source>Item</source>
         <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "Eh6-Oa-ZfG";</note>
-        <target xml:lang="ja" state="needs-translation">Item</target>
-      </trans-unit>
-      <trans-unit id="NoA-HK-cUi.normalTitle">
-        <source>Take a picture</source>
-        <target xml:lang="ja" state="translated">写真を撮ります</target>
-      </trans-unit>
-      <trans-unit id="ehx-ia-dmL.normalTitle">
-        <source>Scan a barcode</source>
-        <target xml:lang="ja" state="needs-translation">Scan a barcode</target>
+        <target xml:lang="ja" state="translated">アイテム</target>
       </trans-unit>
     </body>
   </file>
@@ -37,23 +25,23 @@
     <body>
       <trans-unit id="CFBundleDisplayName">
         <source>Open Nutrition</source>
-        <target xml:lang="ja" state="needs-translation">Open Nutrition</target>
+        <target xml:lang="ja" state="translated">オープン栄養素</target>
       </trans-unit>
       <trans-unit id="CFBundleName">
         <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="ja" state="needs-translation">$(PRODUCT_NAME)</target>
+        <target xml:lang="ja" state="translated">$(PRODUCT_NAME)</target>
       </trans-unit>
       <trans-unit id="CFBundleShortVersionString">
         <source>1.0</source>
-        <target xml:lang="ja" state="needs-translation">1.0</target>
+        <target xml:lang="ja" state="translated">1.0</target>
       </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
-        <target xml:lang="ja" state="needs-translation">Use your camera to scan barcodes and take pictures of products to add to the database</target>
+        <target xml:lang="ja" state="translated">お使いのカメラを使ってバーコードをスキャンしたり、製品の写真を撮ってデータベースに追加します</target>
       </trans-unit>
       <trans-unit id="NSPhotoLibraryUsageDescription">
         <source>Take and upload pictures of products</source>
-        <target xml:lang="ja" state="needs-translation">Take and upload pictures of products</target>
+        <target xml:lang="ja" state="translated">製品の写真を撮ってアップロードします</target>
       </trans-unit>
     </body>
   </file>
@@ -64,8 +52,35 @@
     <body>
       <trans-unit id="ElV-MH-zPQ.text">
         <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
-        <note>Class = "UILabel"; text = "off-description"; ObjectID = "ElV-MH-zPQ";</note>
+        <note>Class = "UILabel"; text = "Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels."; ObjectID = "ElV-MH-zPQ";</note>
         <target xml:lang="ja" state="translated">Open Food Facts は、食品の原材料、アレルゲン、栄養成分表、および製品ラベルで見ることができるすべての情報のオープンデータベースです。</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFacts/Views/Settings/Base.lproj/Settings.storyboard" source-language="en" datatype="plaintext" target-language="ja">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+    </header>
+    <body>
+      <trans-unit id="3Vi-oE-IJx.text">
+        <source>Credits</source>
+        <note>Class = "UILabel"; text = "Credits"; ObjectID = "3Vi-oE-IJx";</note>
+        <target xml:lang="ja" state="translated">クレジット</target>
+      </trans-unit>
+      <trans-unit id="c7X-Xf-g2w.title">
+        <source>About</source>
+        <note>Class = "UIViewController"; title = "About"; ObjectID = "c7X-Xf-g2w";</note>
+        <target xml:lang="ja" state="translated">アプリについて</target>
+      </trans-unit>
+      <trans-unit id="sO1-VI-YDa.text">
+        <source>About</source>
+        <note>Class = "UILabel"; text = "About"; ObjectID = "sO1-VI-YDa";</note>
+        <target xml:lang="ja" state="translated">アプリについて</target>
+      </trans-unit>
+      <trans-unit id="tnR-0p-cA3.title">
+        <source>Settings</source>
+        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "tnR-0p-cA3";</note>
+        <target xml:lang="ja" state="translated">設定</target>
       </trans-unit>
     </body>
   </file>
@@ -76,6 +91,7 @@
     <body>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
+        <note>No comment provided by engineer.</note>
         <target xml:lang="ja" state="translated">原材料の写真を撮ります</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
@@ -146,7 +162,7 @@
       <trans-unit id="nutrition.fats">
         <source>Fats</source>
         <note>Nutrition, fat</note>
-        <target xml:lang="ja" state="needs-translation">Fats</target>
+        <target xml:lang="ja" state="translated">脂肪</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.cholesterol">
         <source>Cholesterol</source>
@@ -175,7 +191,7 @@
       <trans-unit id="nutrition.fats.saturated-fat">
         <source>Saturated fat</source>
         <note>Nutrition, saturated fat</note>
-        <target xml:lang="ja" state="needs-translation">Saturated fat</target>
+        <target xml:lang="ja" state="translated">飽和脂肪酸</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.trans-fat">
         <source>Trans fat</source>
@@ -339,7 +355,7 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins.beta-carotene">
         <source>Beta carotene</source>
-        <target xml:lang="ja" state="needs-translation">Beta carotene</target>
+        <target xml:lang="ja" state="translated">ベータカロチン</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.biotin">
         <source>Biotin</source>
@@ -351,15 +367,15 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins.d">
         <source>Vitamin D</source>
-        <target xml:lang="ja" state="needs-translation">Vitamin D</target>
+        <target xml:lang="ja" state="translated">ビタミン D</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.e">
         <source>Vitamin E</source>
-        <target xml:lang="ja" state="needs-translation">Vitamin E</target>
+        <target xml:lang="ja" state="translated">ビタミン E</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.k">
         <source>Vitamin K</source>
-        <target xml:lang="ja" state="needs-translation">Vitamin K</target>
+        <target xml:lang="ja" state="translated">ビタミン K</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.pantothenic-acid">
         <source>Pantothenic acid</source>
@@ -371,7 +387,7 @@
       </trans-unit>
       <trans-unit id="product-detail.ingredients.additives-list">
         <source>Additives</source>
-        <target xml:lang="ja" state="needs-translation">Additives</target>
+        <target xml:lang="ja" state="translated">添加物</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.allergens-list">
         <source>Substances or products causing allergies or intolerances</source>
@@ -379,15 +395,15 @@
       </trans-unit>
       <trans-unit id="product-detail.ingredients.ingredients-list">
         <source>List of ingredients</source>
-        <target xml:lang="ja" state="needs-translation">List of ingredients</target>
+        <target xml:lang="ja" state="translated">原材料の一覧</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.palm-oil-ingredients">
         <source>Ingredients from palm oil</source>
-        <target xml:lang="ja" state="needs-translation">Ingredients from palm oil</target>
+        <target xml:lang="ja" state="translated">パーム油由来の原材料</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients">
         <source>Ingredients that may be from palm oil</source>
-        <target xml:lang="ja" state="needs-translation">Ingredients that may be from palm oil</target>
+        <target xml:lang="ja" state="translated">パーム油由来の可能性がある原材料</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.traces-list">
         <source>Traces</source>
@@ -409,7 +425,7 @@
       </trans-unit>
       <trans-unit id="product-detail.nutrition.carbon-footprint">
         <source>Carbon footprint / CO2 emissions</source>
-        <target xml:lang="ja" state="needs-translation">Carbon footprint / CO2 emissions</target>
+        <target xml:lang="ja" state="translated">カーボンフットプリント / CO2 排出量</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.serving-size">
         <source>Serving size</source>
@@ -428,7 +444,7 @@
       <trans-unit id="product-detail.page-title.nutrition-table">
         <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="ja" state="needs-translation">Nutrition table</target>
+        <target xml:lang="ja" state="translated">栄養成分表</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
         <source>Summary</source>
@@ -482,7 +498,7 @@
       <trans-unit id="product-search.search-placeholder">
         <source>Search for a product by name or barcode</source>
         <note>Placeholder for the product search bar</note>
-        <target xml:lang="ja" state="needs-translation">Search for a product by name or barcode</target>
+        <target xml:lang="ja" state="translated">名前またはバーコードで製品を検索</target>
       </trans-unit>
     </body>
   </file>

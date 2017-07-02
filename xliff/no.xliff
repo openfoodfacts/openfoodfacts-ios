@@ -11,22 +11,10 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
     </header>
     <body>
-      <trans-unit id="BCc-14-VvY.title">
-        <source>Products</source>
-        <target xml:lang="no" state="needs-translation">Products</target>
-      </trans-unit>
       <trans-unit id="Eh6-Oa-ZfG.title">
         <source>Item</source>
         <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "Eh6-Oa-ZfG";</note>
         <target xml:lang="no" state="needs-translation">Item</target>
-      </trans-unit>
-      <trans-unit id="NoA-HK-cUi.normalTitle">
-        <source>Take a picture</source>
-        <target xml:lang="no" state="needs-translation">Take a picture</target>
-      </trans-unit>
-      <trans-unit id="ehx-ia-dmL.normalTitle">
-        <source>Scan a barcode</source>
-        <target xml:lang="no" state="needs-translation">Scan a barcode</target>
       </trans-unit>
     </body>
   </file>
@@ -64,8 +52,35 @@
     <body>
       <trans-unit id="ElV-MH-zPQ.text">
         <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
-        <note>Class = "UILabel"; text = "off-description"; ObjectID = "ElV-MH-zPQ";</note>
+        <note>Class = "UILabel"; text = "Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels."; ObjectID = "ElV-MH-zPQ";</note>
         <target xml:lang="no" state="needs-translation">Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFacts/Views/Settings/Base.lproj/Settings.storyboard" source-language="en" datatype="plaintext" target-language="no">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+    </header>
+    <body>
+      <trans-unit id="3Vi-oE-IJx.text">
+        <source>Credits</source>
+        <note>Class = "UILabel"; text = "Credits"; ObjectID = "3Vi-oE-IJx";</note>
+        <target xml:lang="no" state="needs-translation">Credits</target>
+      </trans-unit>
+      <trans-unit id="c7X-Xf-g2w.title">
+        <source>About</source>
+        <note>Class = "UIViewController"; title = "About"; ObjectID = "c7X-Xf-g2w";</note>
+        <target xml:lang="no" state="needs-translation">About</target>
+      </trans-unit>
+      <trans-unit id="sO1-VI-YDa.text">
+        <source>About</source>
+        <note>Class = "UILabel"; text = "About"; ObjectID = "sO1-VI-YDa";</note>
+        <target xml:lang="no" state="needs-translation">About</target>
+      </trans-unit>
+      <trans-unit id="tnR-0p-cA3.title">
+        <source>Settings</source>
+        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "tnR-0p-cA3";</note>
+        <target xml:lang="no" state="needs-translation">Settings</target>
       </trans-unit>
     </body>
   </file>
@@ -76,6 +91,7 @@
     <body>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
+        <note>No comment provided by engineer.</note>
         <target xml:lang="no" state="needs-translation">Take a picture of the ingredients</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
