@@ -32,7 +32,7 @@ class SearchTableViewController: UIViewController {
     }
     
     // Background views
-    fileprivate lazy var initialView = Bundle.main.loadNibNamed("EmptyProductsView", owner: self, options: nil)!.first as! UIView
+    fileprivate lazy var initialView = Bundle.main.loadNibNamed("InitialView", owner: self, options: nil)!.first as! UIView
     fileprivate lazy var loadingView: UIView = LoadingView(frame: self.view.bounds)
     fileprivate lazy var emptyView: UIView = EmptyView(frame: self.view.bounds)
     fileprivate lazy var errorView: UIView = UIView(frame: self.view.bounds)
