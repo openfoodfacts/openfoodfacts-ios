@@ -10,13 +10,12 @@ import Foundation
 import ObjectMapper
 
 class ProductsResponse: Mappable {
-    var query: String?
-    var count: Int?
-    var page: String?
-    var products: [Product]?
+    var query = ""
+    var count = 0
+    var page = "0"
+    var products = [Product]()
     
     required init?(map: Map) {
-        
     }
     
     func mapping(map: Map) {

@@ -14,13 +14,28 @@ import Crashlytics
 // MARK: - UIViewController
 
 class SearchTableViewController: UIViewController {
-    
     @IBOutlet fileprivate weak var tableView: UITableView!
     fileprivate var searchController: UISearchController!
-    fileprivate var emptyTableView: UIView!
-    fileprivate var productsResponse: ProductsResponse?
     fileprivate var queryRequestWorkItem: DispatchWorkItem?
     fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
+    fileprivate var state = State.initial {
+        didSet {
+            switch state {
+            case .initial: tableView.backgroundView = initialView
+            case .loading: tableView.backgroundView = loadingView
+            case .empty: tableView.backgroundView = emptyView
+            case .content(_): tableView.backgroundView = nil
+            case .error: tableView.backgroundView = errorView
+            }
+            self.tableView.reloadData()
+        }
+    }
+    
+    // Background views
+    fileprivate lazy var initialView = Bundle.main.loadNibNamed("EmptyProductsView", owner: self, options: nil)!.first as! UIView
+    fileprivate lazy var loadingView: UIView = LoadingView(frame: self.view.bounds)
+    fileprivate lazy var emptyView: UIView = EmptyView(frame: self.view.bounds)
+    fileprivate lazy var errorView: UIView = UIView(frame: self.view.bounds)
     
     /* When the user searches a product by barcode and it's found, the product's detail view is loaded.
      If the user loads taps the back button, after presenting the search view the app goes back to the product's detail view again.
@@ -30,8 +45,6 @@ class SearchTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emptyTableView = Bundle.main.loadNibNamed("EmptyProductsView", owner: self, options: nil)!.first as! UIView
-        
         configureTableView()
         configureSearchController()
         configureNavigationBar()
@@ -39,6 +52,7 @@ class SearchTableViewController: UIViewController {
     }
     
     fileprivate func configureTableView() {
+        tableView.backgroundView = initialView // State.initial background view
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ProductTableViewCell.self))
         
         tableView.rowHeight = 100
@@ -70,14 +84,13 @@ class SearchTableViewController: UIViewController {
 extension SearchTableViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if let response = productsResponse, let products = response.products, !products.isEmpty {
-            tableView.backgroundView = nil
+        switch state {
+        case .content(_):
             tableView.separatorStyle = .singleLine
             tableView.isScrollEnabled = true
             
             return 1
-        } else {
-            tableView.backgroundView = emptyTableView
+        default:
             tableView.separatorStyle = .none
             tableView.isScrollEnabled = false
             
@@ -90,22 +103,17 @@ extension SearchTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let response = productsResponse, let products = response.products {
-            return products.count
-        }
-        
-        return 0
+        guard case let .content(response) = state else { return 0 }
+        return response.products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell
         
-        if let response = productsResponse, let products = response.products {
-            cell.configure(withProduct: products[indexPath.row])
-            
-            if products.count == indexPath.row + 1, let pageString = response.page, let page = Int(pageString), let count = response.count, products.count < count {
-                getProducts(fromService: ProductService(), page: page + 1)
-            }
+        guard case let .content(response) = state else { return cell }
+        cell.configure(withProduct: response.products[indexPath.row])
+        if response.products.count == indexPath.row + 5, let page = Int(response.page), response.products.count < response.count {
+            getProducts(fromService: ProductService(), page: page + 1, withQuery: response.query)
         }
         
         return cell
@@ -115,26 +123,22 @@ extension SearchTableViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension SearchTableViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let products = productsResponse?.products {
-            showProductDetails(product: products[indexPath.row])
-        }
+        guard case let .content(response) = state else { return }
+        showProductDetails(product: response.products[indexPath.row])
     }
 }
 
 // MARK: - UISearchResultsUpdating
 
 extension SearchTableViewController: UISearchResultsUpdating {
-    
     func updateSearchResults(for searchController: UISearchController) {
         queryRequestWorkItem?.cancel()
-        
         if let query = searchController.searchBar.text, !query.isEmpty, wasSearchBarEdited {
+            state = .loading
             let request = DispatchWorkItem { [weak self] in
-                self?.getProducts(fromService: ProductService() ,page: 1, withQuery: query)
+                self?.getProducts(fromService: ProductService(), page: 1, withQuery: query)
             }
-            
             queryRequestWorkItem = request
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250), execute: request)
             wasSearchBarEdited = false
@@ -145,7 +149,6 @@ extension SearchTableViewController: UISearchResultsUpdating {
 // MARK: - UISearchBarDelegate
 
 extension SearchTableViewController: UISearchBarDelegate {
-    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
     }
@@ -156,7 +159,6 @@ extension SearchTableViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         wasSearchBarEdited = true
-        
         if searchText.isEmpty { // x button was tapped or text was deleted
             clearResults()
         }
@@ -167,30 +169,30 @@ extension SearchTableViewController: UISearchBarDelegate {
     }
     
     fileprivate func clearResults() {
-        productsResponse = nil
-        tableView.reloadData()
+        state = .initial
     }
 }
 
 // MARK: - Data source
 
 extension SearchTableViewController {
-    
-    func getProducts(fromService service: ProductService, page: Int, withQuery query: String? = nil) {
-        // Either we have a query from the user's input or we need need to fetch the next page for the same query
-        if let query = query ?? productsResponse?.query {
-            service.getProducts(for: query, page: page) { response in
-                // TODO If this query returns only a product, should it go directly to detail view instead of the tableview?
-                if self.productsResponse == nil || self.productsResponse?.query != query { // Got new response
-                    self.productsResponse = response
-                    self.productsResponse!.query = query
-                } else if self.productsResponse?.query == query, let newProducts = response.products { // Append new projects to existing response
-                    self.productsResponse!.products!.append(contentsOf: newProducts)
+    func getProducts(fromService service: ProductService, page: Int, withQuery query: String) {
+        service.getProducts(for: query, page: page, onSuccess: { response in
+            // TODO If this query returns only a product, should it go directly to detail view instead of the tableview?
+            switch self.state {
+            case .content(let oldResponse): // Append new products to existing response
+                oldResponse.products.append(contentsOf: response.products)
+                self.state = .content(oldResponse)
+            default: // Got new response
+                if response.count == 0 {
+                    self.state = .empty
+                } else {
+                    self.state = .content(response)
                 }
-                
-                self.tableView.reloadData()
             }
-        }
+        }, onError: { error in
+            self.state = .error(error)
+        })
     }
 }
 
@@ -198,13 +200,16 @@ extension SearchTableViewController {
 
 extension SearchTableViewController {
     func didTapTableViewBackground(_ sender: UITapGestureRecognizer) {
-        
         // When the search bar has no text and the user taps the background view of the table view,
         // ask the search bar to resign focus so it goes back to it's begining state and the keyboard gets dismissed
-        
-        if productsResponse == nil && searchController.isActive {
-            if let text = searchController.searchBar.text, text.isEmpty {
-                searchController.searchBar.resignFirstResponder()
+        if searchController.isActive {
+            switch state {
+            case .content(_):
+                return
+            default:
+                if let text = searchController.searchBar.text, text.isEmpty {
+                    searchController.searchBar.resignFirstResponder()
+                }
             }
         }
     }
@@ -212,7 +217,6 @@ extension SearchTableViewController {
 
 // MARK: - Private functions
 private extension SearchTableViewController {
-    
     func showProductDetails(product: Product) {
         navigationController?.pushViewController(productDetails(product: product), animated: true)
     }
@@ -228,7 +232,6 @@ private extension SearchTableViewController {
 // MARK: - Scanning
 
 extension SearchTableViewController {
-    
     func scanBarcode() {
         navigationController?.pushViewController(ScannerViewController(), animated: true)
     }

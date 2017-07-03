@@ -12,16 +12,15 @@ import AlamofireObjectMapper
 import Crashlytics
 
 protocol ProductApi {
-    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void)
+    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
     
-    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product) -> Void)
+    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product) -> Void, onError: @escaping (Error) -> Void)
 }
 
 struct ProductService: ProductApi {
-    
     fileprivate let endpoint = "https://ssl-api.openfoodfacts.org"
     
-    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void) {
+    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         var query = query
         var url = endpoint
         var searchType = "by_product"
@@ -43,16 +42,17 @@ struct ProductService: ProductApi {
         Alamofire.request(url).responseObject { (response: DataResponse<ProductsResponse>) in
             switch response.result {
             case .success(let productResponse):
-                print("Got \(productResponse.count ?? 0) products ")
+                print("Got \(productResponse.count) products ")
+                productResponse.query = query
                 onSuccess(productResponse)
             case .failure(let error):
-                print(error)
+                onError(error)
                 Crashlytics.sharedInstance().recordError(error)
             }
         }
     }
     
-    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product) -> Void) {
+    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product) -> Void, onError: @escaping (Error) -> Void) {
         let url = endpoint + "/api/v0/product/\(barcode).json"
         
         Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
@@ -64,7 +64,7 @@ struct ProductService: ProductApi {
             case .success(let product):
                 onSuccess(product)
             case .failure(let error):
-                print(error)
+                onError(error)
                 Crashlytics.sharedInstance().recordError(error)
             }
         }
