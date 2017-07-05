@@ -85,9 +85,9 @@
 
 /* Begin PBXFileReference section */
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		952397421F094C2E00CADFEA /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = "State views/LoadingView.swift"; sourceTree = "<group>"; };
-		952397431F094C2E00CADFEA /* StateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StateView.swift; path = "State views/StateView.swift"; sourceTree = "<group>"; };
-		952397461F094C5100CADFEA /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyView.swift; path = "State views/EmptyView.swift"; sourceTree = "<group>"; };
+		952397421F094C2E00CADFEA /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = StateViews/LoadingView.swift; sourceTree = "<group>"; };
+		952397431F094C2E00CADFEA /* StateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StateView.swift; path = StateViews/StateView.swift; sourceTree = "<group>"; };
+		952397461F094C5100CADFEA /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyView.swift; path = StateViews/EmptyView.swift; sourceTree = "<group>"; };
 		9525708B1EE9BC91002FC40D /* CellImageTapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellImageTapable.swift; path = Protocols/CellImageTapable.swift; sourceTree = "<group>"; };
 		9525708D1EE9BE6D002FC40D /* Agrume.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Agrume.framework; path = Carthage/Build/iOS/Agrume.framework; sourceTree = "<group>"; };
 		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
@@ -959,7 +959,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		952397411F094BFE00CADFEA /* State views */ = {
+		952397411F094BFE00CADFEA /* StateViews */ = {
 			isa = PBXGroup;
 			children = (
 				952397421F094C2E00CADFEA /* LoadingView.swift */,
@@ -967,7 +967,7 @@
 				952397461F094C5100CADFEA /* EmptyView.swift */,
 				95818A9B1F095E3E00CBD139 /* InitialView.xib */,
 			);
-			name = "State views";
+			name = StateViews;
 			sourceTree = "<group>";
 		};
 		9525708A1EE9BC43002FC40D /* Protocols */ = {
@@ -997,7 +997,7 @@
 		95781B0E1EBBCDC7003E3256 /* ProductSearch */ = {
 			isa = PBXGroup;
 			children = (
-				952397411F094BFE00CADFEA /* State views */,
+				952397411F094BFE00CADFEA /* StateViews */,
 				95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */,
 				95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */,
 			);
@@ -1823,7 +1823,7 @@
 				95818DD41F0AE05E00CBD139 /* zu */,
 			);
 			name = InitialView.xib;
-			path = "State views";
+			path = "StateViews";
 			sourceTree = "<group>";
 		};
 		95C265151E96D55B004212EC /* Main.storyboard */ = {
