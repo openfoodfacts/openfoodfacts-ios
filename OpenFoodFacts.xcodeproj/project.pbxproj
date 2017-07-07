@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95189E4B1F0ED28E007A5A4F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95189E4A1F0ED28E007A5A4F /* ErrorView.swift */; };
 		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
 		952397441F094C2E00CADFEA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952397421F094C2E00CADFEA /* LoadingView.swift */; };
 		952397451F094C2E00CADFEA /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952397431F094C2E00CADFEA /* StateView.swift */; };
@@ -84,6 +85,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95189E4A1F0ED28E007A5A4F /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorView.swift; path = StateViews/ErrorView.swift; sourceTree = "<group>"; };
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		952397421F094C2E00CADFEA /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = StateViews/LoadingView.swift; sourceTree = "<group>"; };
 		952397431F094C2E00CADFEA /* StateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StateView.swift; path = StateViews/StateView.swift; sourceTree = "<group>"; };
@@ -966,6 +968,7 @@
 				952397431F094C2E00CADFEA /* StateView.swift */,
 				952397461F094C5100CADFEA /* EmptyView.swift */,
 				95818A9B1F095E3E00CBD139 /* InitialView.xib */,
+				95189E4A1F0ED28E007A5A4F /* ErrorView.swift */,
 			);
 			name = StateViews;
 			sourceTree = "<group>";
@@ -1386,6 +1389,7 @@
 				95D6A7561E9A8CA20017B423 /* ScannerViewController.swift in Sources */,
 				952397441F094C2E00CADFEA /* LoadingView.swift in Sources */,
 				952397471F094C5100CADFEA /* EmptyView.swift in Sources */,
+				95189E4B1F0ED28E007A5A4F /* ErrorView.swift in Sources */,
 				95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */,
 				95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */,
 				95F14CB21EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift in Sources */,
@@ -1823,7 +1827,7 @@
 				95818DD41F0AE05E00CBD139 /* zu */,
 			);
 			name = InitialView.xib;
-			path = "StateViews";
+			path = StateViews;
 			sourceTree = "<group>";
 		};
 		95C265151E96D55B004212EC /* Main.storyboard */ = {
