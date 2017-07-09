@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Crashlytics
 
 class ScannerViewController: UIViewController {
     let supportedBarcodes = [AVMetadataObjectTypeUPCECode,
@@ -42,15 +43,39 @@ class ScannerViewController: UIViewController {
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             captureMetadataOutput.metadataObjectTypes = supportedBarcodes
             
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-            videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-            videoPreviewLayer?.frame = view.layer.bounds
-            view.layer.addSublayer(videoPreviewLayer!)
+            if let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession) {
+                videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+                videoPreviewLayer.frame = view.layer.bounds
+                self.videoPreviewLayer = videoPreviewLayer
+                view.layer.addSublayer(videoPreviewLayer)
+            }
             
             captureSession?.startRunning()
         } catch {
-            print(error)
+            Crashlytics.sharedInstance().recordError(error)
             return
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { context in
+            self.videoPreviewLayer?.connection.videoOrientation = self.transformOrientation()
+            self.videoPreviewLayer?.frame = self.view.bounds
+        }, completion: nil)
+    }
+    
+    fileprivate func transformOrientation() -> AVCaptureVideoOrientation {
+        switch UIDevice.current.orientation {
+        case .landscapeLeft:
+            return .landscapeRight
+        case .landscapeRight:
+            return .landscapeLeft
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+        case .portrait:
+            fallthrough
+        default:
+            return .portrait
         }
     }
 }
