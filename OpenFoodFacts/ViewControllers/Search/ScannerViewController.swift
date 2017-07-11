@@ -22,14 +22,42 @@ class ScannerViewController: UIViewController {
                              AVMetadataObjectTypeITF14Code,
                              AVMetadataObjectTypeInterleaved2of5Code]
     
-    var captureSession: AVCaptureSession?
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    fileprivate var captureSession: AVCaptureSession?
+    fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    fileprivate lazy var flashButton = FlashButton()
     
-    var lastCodeScanned: String?
+    fileprivate var lastCodeScanned: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureVideoView()
+        configureFlashView()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { context in
+            self.videoPreviewLayer?.connection.videoOrientation = self.transformOrientation()
+            self.videoPreviewLayer?.frame = self.view.bounds
+        }, completion: nil)
+    }
+    
+    fileprivate func transformOrientation() -> AVCaptureVideoOrientation {
+        switch UIDevice.current.orientation {
+        case .landscapeLeft:
+            return .landscapeRight
+        case .landscapeRight:
+            return .landscapeLeft
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+        case .portrait:
+            fallthrough
+        default:
+            return .portrait
+        }
+    }
+    
+    fileprivate func configureVideoView() {
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do {
@@ -57,25 +85,16 @@ class ScannerViewController: UIViewController {
         }
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: { context in
-            self.videoPreviewLayer?.connection.videoOrientation = self.transformOrientation()
-            self.videoPreviewLayer?.frame = self.view.bounds
-        }, completion: nil)
-    }
-    
-    fileprivate func transformOrientation() -> AVCaptureVideoOrientation {
-        switch UIDevice.current.orientation {
-        case .landscapeLeft:
-            return .landscapeRight
-        case .landscapeRight:
-            return .landscapeLeft
-        case .portraitUpsideDown:
-            return .portraitUpsideDown
-        case .portrait:
-            fallthrough
-        default:
-            return .portrait
+    fileprivate func configureFlashView() {
+        if AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo).hasTorch {
+            flashButton.translatesAutoresizingMaskIntoConstraints = false
+            flashButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapFlashButton(_:))))
+            self.view.addSubview(flashButton)
+            
+            let bottomConstraint = NSLayoutConstraint(item: self.bottomLayoutGuide, attribute: .top, relatedBy: .equal, toItem: flashButton, attribute: .bottom, multiplier: 1, constant: 15)
+            let leftConstraint = NSLayoutConstraint(item: flashButton, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 15)
+            
+            self.view.addConstraints([bottomConstraint, leftConstraint])
         }
     }
 }
@@ -102,7 +121,32 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             
             self.navigationController?.pushViewController(productDetailVC, animated: true)
         }, onError: { error in
-            // TODO Show error
+            Crashlytics.sharedInstance().recordError(error)
         })
+    }
+}
+
+// MARK: - Gesture recognizers
+extension ScannerViewController {
+    func didTapFlashButton(_ gesture: UITapGestureRecognizer) {
+        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else { return }
+        do {
+            try device.lockForConfiguration()
+            switch flashButton.state {
+            case .on:
+                flashButton.state = .off
+                device.torchMode = .off
+            case .off:
+                flashButton.state = .on
+                do {
+                    try device.setTorchModeOnWithLevel(1.0)
+                } catch {
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+            }
+            device.unlockForConfiguration()
+        } catch {
+            Crashlytics.sharedInstance().recordError(error)
+        }
     }
 }

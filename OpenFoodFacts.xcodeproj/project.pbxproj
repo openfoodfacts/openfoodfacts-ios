@@ -48,6 +48,7 @@
 		95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB91EC3A898003E3256 /* TagTransform.swift */; };
 		95781BC61EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BC51EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift */; };
 		95818A991F095E3E00CBD139 /* InitialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95818A9B1F095E3E00CBD139 /* InitialView.xib */; };
+		959661D61F127F090017BA88 /* FlashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959661D51F127F090017BA88 /* FlashButton.swift */; };
 		95A7E07B1F07D4B9004D7B60 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7E0791F07D4B9004D7B60 /* SearchTableViewController.swift */; };
 		95A7E07C1F07D4B9004D7B60 /* SearchTableViewControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7E07A1F07D4B9004D7B60 /* SearchTableViewControllerState.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
@@ -906,6 +907,7 @@
 		95818DD71F0AE05F00CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Settings.strings; sourceTree = "<group>"; };
 		95818DD81F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95818DD91F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		959661D51F127F090017BA88 /* FlashButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashButton.swift; sourceTree = "<group>"; };
 		95A7E0641F0581B6004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A7E0671F058F5D004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -1009,6 +1011,7 @@
 				952397411F094BFE00CADFEA /* StateViews */,
 				95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */,
 				95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */,
+				959661D51F127F090017BA88 /* FlashButton.swift */,
 			);
 			path = ProductSearch;
 			sourceTree = "<group>";
@@ -1400,6 +1403,7 @@
 				95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */,
 				95F14CB21EE0A1BB00D99115 /* NutritionTableHeaderTableViewCell.swift in Sources */,
 				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
+				959661D61F127F090017BA88 /* FlashButton.swift in Sources */,
 				95A7E07C1F07D4B9004D7B60 /* SearchTableViewControllerState.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
 				957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */,
