@@ -87,12 +87,6 @@
 
 /* Begin PBXFileReference section */
 		95189E4A1F0ED28E007A5A4F /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorView.swift; path = StateViews/ErrorView.swift; sourceTree = "<group>"; };
-		9518A0781F1028BA007A5A4F /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "Localization/en-GB.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		9518A0791F1028BB007A5A4F /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "Localization/en-GB.lproj/Main.strings"; sourceTree = "<group>"; };
-		9518A07A1F1028BB007A5A4F /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "Localization/en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		9518A07B1F1028BC007A5A4F /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "Localization/en-GB.lproj/Settings.strings"; sourceTree = "<group>"; };
-		9518A07C1F1028BC007A5A4F /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "Localization/en-GB.lproj/InitialView.strings"; sourceTree = "<group>"; };
-		9518A07D1F1028BC007A5A4F /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "Localization/en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		952397421F094C2E00CADFEA /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = StateViews/LoadingView.swift; sourceTree = "<group>"; };
 		952397431F094C2E00CADFEA /* StateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StateView.swift; path = StateViews/StateView.swift; sourceTree = "<group>"; };
@@ -1558,7 +1552,6 @@
 				95818DCC1F0AE01D00CBD139 /* zea */,
 				95818DD21F0AE03A00CBD139 /* zh-Hans */,
 				95818DD81F0AE06000CBD139 /* zu */,
-				9518A0781F1028BA007A5A4F /* en-GB */,
 			);
 			name = InfoPlist.strings;
 			path = .;
@@ -1698,7 +1691,6 @@
 				95818DCB1F0AE01C00CBD139 /* zea */,
 				95818DD11F0AE03A00CBD139 /* zh-Hans */,
 				95818DD71F0AE05F00CBD139 /* zu */,
-				9518A07B1F1028BC007A5A4F /* en-GB */,
 			);
 			name = Settings.storyboard;
 			path = .;
@@ -1837,7 +1829,6 @@
 				95818DC81F0AE01B00CBD139 /* zea */,
 				95818DCE1F0AE03800CBD139 /* zh-Hans */,
 				95818DD41F0AE05E00CBD139 /* zu */,
-				9518A07C1F1028BC007A5A4F /* en-GB */,
 			);
 			name = InitialView.xib;
 			path = StateViews;
@@ -1976,7 +1967,6 @@
 				95818DC91F0AE01C00CBD139 /* zea */,
 				95818DCF1F0AE03900CBD139 /* zh-Hans */,
 				95818DD51F0AE05F00CBD139 /* zu */,
-				9518A0791F1028BB007A5A4F /* en-GB */,
 			);
 			name = Main.storyboard;
 			path = .;
@@ -2115,7 +2105,6 @@
 				95818DCA1F0AE01C00CBD139 /* zea */,
 				95818DD01F0AE03900CBD139 /* zh-Hans */,
 				95818DD61F0AE05F00CBD139 /* zu */,
-				9518A07A1F1028BB007A5A4F /* en-GB */,
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
@@ -2254,7 +2243,6 @@
 				95818DCD1F0AE01D00CBD139 /* zea */,
 				95818DD31F0AE03A00CBD139 /* zh-Hans */,
 				95818DD91F0AE06000CBD139 /* zu */,
-				9518A07D1F1028BC007A5A4F /* en-GB */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
