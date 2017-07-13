@@ -22,6 +22,7 @@
 		957094B51EA16C4B00268236 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957094B31EA16C4B00268236 /* ProductDetailViewController.swift */; };
 		957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957094B91EA24DFC00268236 /* XLPagerTabStrip.framework */; };
 		957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957094C91EA26C8800268236 /* ProductNutritionViewController.swift */; };
+		9575BC6B1F16C1C40024386C /* RectangleOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9575BC6A1F16C1C40024386C /* RectangleOverlay.swift */; };
 		95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B131EBE4E5C003E3256 /* UITableViewCell.swift */; };
 		95781B431EBE861F003E3256 /* ProductDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B421EBE861F003E3256 /* ProductDetailPageViewController.swift */; };
 		95781B551EBE89D1003E3256 /* ButtonBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781B471EBE89D1003E3256 /* ButtonBarView.xib */; };
@@ -101,6 +102,7 @@
 		957094B31EA16C4B00268236 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		957094B91EA24DFC00268236 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		957094C91EA26C8800268236 /* ProductNutritionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNutritionViewController.swift; sourceTree = "<group>"; };
+		9575BC6A1F16C1C40024386C /* RectangleOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleOverlay.swift; sourceTree = "<group>"; };
 		95781B131EBE4E5C003E3256 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		95781B421EBE861F003E3256 /* ProductDetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailPageViewController.swift; sourceTree = "<group>"; };
 		95781B471EBE89D1003E3256 /* ButtonBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonBarView.xib; sourceTree = "<group>"; };
@@ -1006,6 +1008,7 @@
 				95D6A75B1E9C08520017B423 /* ProductTableViewCell.swift */,
 				95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */,
 				959661D51F127F090017BA88 /* FlashButton.swift */,
+				9575BC6A1F16C1C40024386C /* RectangleOverlay.swift */,
 			);
 			path = ProductSearch;
 			sourceTree = "<group>";
@@ -1412,6 +1415,7 @@
 				95E16B2B1EE9D8B100331B2B /* NutritionLevelView.swift in Sources */,
 				952397451F094C2E00CADFEA /* StateView.swift in Sources */,
 				95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */,
+				9575BC6B1F16C1C40024386C /* RectangleOverlay.swift in Sources */,
 				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

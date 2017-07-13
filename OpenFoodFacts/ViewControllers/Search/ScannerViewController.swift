@@ -25,6 +25,7 @@ class ScannerViewController: UIViewController {
     fileprivate var captureSession: AVCaptureSession?
     fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     fileprivate lazy var flashButton = FlashButton()
+    fileprivate lazy var overlay = RectangleOverlay()
     
     fileprivate var lastCodeScanned: String?
     
@@ -33,6 +34,7 @@ class ScannerViewController: UIViewController {
         
         configureVideoView()
         configureFlashView()
+        configureOverlay()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -86,7 +88,7 @@ class ScannerViewController: UIViewController {
     }
     
     fileprivate func configureFlashView() {
-        if AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo).hasTorch {
+        if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.hasTorch {
             flashButton.translatesAutoresizingMaskIntoConstraints = false
             flashButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapFlashButton(_:))))
             self.view.addSubview(flashButton)
@@ -96,6 +98,17 @@ class ScannerViewController: UIViewController {
             
             self.view.addConstraints([bottomConstraint, leftConstraint])
         }
+    }
+    
+    fileprivate func configureOverlay() {
+        overlay.text = NSLocalizedString("product-scanner.overlay.scan-product", comment: "User help in the scan view")
+        self.view.addSubview(overlay)
+        
+        var constraints = [NSLayoutConstraint]()
+        constraints.append(NSLayoutConstraint(item: overlay, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0))
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[overlay]-0-|", options: [], metrics: nil, views: ["overlay": overlay])
+        
+        self.view.addConstraints(constraints)
     }
 }
 
