@@ -10,17 +10,8 @@ import UIKit
 
 @IBDesignable class RectangleOverlay: UIView {
     fileprivate lazy var textLabel = UILabel()
-    var text = String() {
-        didSet {
-            textLabel.text = text
-        }
-    }
     
-    convenience init() {
-        self.init(text: "")
-    }
-    
-    init(text: String) {
+    init() {
         super.init(frame: .zero)
         configureView()
         configureTextLabel()
@@ -47,5 +38,12 @@ import UIKit
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.textAlignment = .center
         textLabel.textColor = .white
+        textLabel.numberOfLines = 3
+    }
+    
+    func set(text: String) {
+        UIView.transition(with: textLabel, duration: 0.25, options: .transitionCrossDissolve, animations: { [weak self] in
+            self?.textLabel.text = text
+            }, completion: nil)
     }
 }

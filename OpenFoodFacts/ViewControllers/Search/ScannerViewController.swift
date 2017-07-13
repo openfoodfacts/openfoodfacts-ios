@@ -101,7 +101,7 @@ class ScannerViewController: UIViewController {
     }
     
     fileprivate func configureOverlay() {
-        overlay.text = NSLocalizedString("product-scanner.overlay.scan-product", comment: "User help in the scan view")
+        overlay.set(text: NSLocalizedString("product-scanner.overlay.user-help", comment: "User help in the scan view"))
         self.view.addSubview(overlay)
         
         var constraints = [NSLayoutConstraint]()
@@ -109,6 +109,10 @@ class ScannerViewController: UIViewController {
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[overlay]-0-|", options: [], metrics: nil, views: ["overlay": overlay])
         
         self.view.addConstraints(constraints)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            self.overlay.set(text: NSLocalizedString("product-scanner.overlay.extended-user-help", comment: "User help in the scan view"))
+        })
     }
 }
 
