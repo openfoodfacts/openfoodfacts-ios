@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class RectangleOverlay: UIView {
+@IBDesignable class TextOverlay: UIView {
     fileprivate lazy var textLabel = UILabel()
     
     init() {
@@ -27,11 +27,8 @@ import UIKit
         self.addSubview(textLabel)
         
         let views = ["textLabel": textLabel]
-        var constraints = [NSLayoutConstraint]()
-        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[textLabel]-10-|", options: [], metrics: nil, views: views)
-        constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-5-[textLabel]-5-|", options: [], metrics: nil, views: views)
-        
-        self.addConstraints(constraints)
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[textLabel]-10-|", options: [], metrics: nil, views: views))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-5-[textLabel]-5-|", options: [], metrics: nil, views: views))
     }
     
     fileprivate func configureTextLabel() {

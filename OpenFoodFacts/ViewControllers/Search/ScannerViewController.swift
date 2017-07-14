@@ -25,7 +25,7 @@ class ScannerViewController: UIViewController {
     fileprivate var captureSession: AVCaptureSession?
     fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     fileprivate lazy var flashButton = FlashButton()
-    fileprivate lazy var overlay = RectangleOverlay()
+    fileprivate lazy var overlay = TextOverlay()
     
     fileprivate var lastCodeScanned: String?
     
