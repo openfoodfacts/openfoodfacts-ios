@@ -35,6 +35,7 @@ class ScannerViewController: UIViewController {
         configureVideoView()
         configureFlashView()
         configureOverlay()
+        configureTapToFocus()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -114,6 +115,10 @@ class ScannerViewController: UIViewController {
             self.overlay.set(text: NSLocalizedString("product-scanner.overlay.extended-user-help", comment: "User help in the scan view"))
         })
     }
+    
+    fileprivate func configureTapToFocus() {
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToFocus(_:))))
+    }
 }
 
 extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
@@ -164,6 +169,20 @@ extension ScannerViewController {
             device.unlockForConfiguration()
         } catch {
             Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+    
+    func didTapToFocus(_ gesture: UITapGestureRecognizer) {
+        if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.isFocusPointOfInterestSupported, let videoPreviewLayer = self.videoPreviewLayer {
+            let touchPoint = gesture.location(in: self.view)
+            do {
+                try device.lockForConfiguration()
+                device.focusPointOfInterest = videoPreviewLayer.captureDevicePointOfInterest(for: touchPoint)
+                device.focusMode = .continuousAutoFocus
+                device.unlockForConfiguration()
+            } catch {
+                Crashlytics.sharedInstance().recordError(error)
+            }
         }
     }
 }
