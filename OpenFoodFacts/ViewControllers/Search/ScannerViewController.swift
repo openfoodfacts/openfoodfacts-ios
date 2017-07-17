@@ -11,21 +11,22 @@ import AVFoundation
 import Crashlytics
 
 class ScannerViewController: UIViewController {
-    let supportedBarcodes = [AVMetadataObjectTypeUPCECode,
-                             AVMetadataObjectTypeCode39Code,
-                             AVMetadataObjectTypeCode39Mod43Code,
-                             AVMetadataObjectTypeCode93Code,
-                             AVMetadataObjectTypeCode128Code,
-                             AVMetadataObjectTypeEAN8Code,
-                             AVMetadataObjectTypeEAN13Code,
-                             AVMetadataObjectTypePDF417Code,
-                             AVMetadataObjectTypeITF14Code,
-                             AVMetadataObjectTypeInterleaved2of5Code]
+    fileprivate let supportedBarcodes = [AVMetadataObjectTypeUPCECode,
+                                         AVMetadataObjectTypeCode39Code,
+                                         AVMetadataObjectTypeCode39Mod43Code,
+                                         AVMetadataObjectTypeCode93Code,
+                                         AVMetadataObjectTypeCode128Code,
+                                         AVMetadataObjectTypeEAN8Code,
+                                         AVMetadataObjectTypeEAN13Code,
+                                         AVMetadataObjectTypePDF417Code,
+                                         AVMetadataObjectTypeITF14Code,
+                                         AVMetadataObjectTypeInterleaved2of5Code]
 
     fileprivate var captureSession: AVCaptureSession?
     fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     fileprivate lazy var flashButton = FlashButton()
     fileprivate lazy var overlay = TextOverlay()
+    fileprivate var tapToFocusView: TapToFocusView?
 
     fileprivate var lastCodeScanned: String?
 
@@ -176,6 +177,16 @@ extension ScannerViewController {
     func didTapToFocus(_ gesture: UITapGestureRecognizer) {
         if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.isFocusPointOfInterestSupported, let videoPreviewLayer = self.videoPreviewLayer {
             let touchPoint = gesture.location(in: self.view)
+
+            let tapToFocusView = self.tapToFocusView ?? TapToFocusView()
+
+            if self.tapToFocusView == nil {
+                self.tapToFocusView = tapToFocusView
+                self.view.addSubview(tapToFocusView)
+            }
+
+            tapToFocusView.updateCenter(touchPoint)
+
             do {
                 try device.lockForConfiguration()
                 device.focusPointOfInterest = videoPreviewLayer.captureDevicePointOfInterest(for: touchPoint)

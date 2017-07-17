@@ -49,6 +49,7 @@
 		95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB91EC3A898003E3256 /* TagTransform.swift */; };
 		95781BC61EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BC51EC3A8A8003E3256 /* ConfigurableUITableViewCell.swift */; };
 		95818A991F095E3E00CBD139 /* InitialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95818A9B1F095E3E00CBD139 /* InitialView.xib */; };
+		9581C5AB1F1D512C006250A3 /* TapToFocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581C5AA1F1D512C006250A3 /* TapToFocusView.swift */; };
 		959661D61F127F090017BA88 /* FlashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959661D51F127F090017BA88 /* FlashButton.swift */; };
 		95A7E07B1F07D4B9004D7B60 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7E0791F07D4B9004D7B60 /* SearchTableViewController.swift */; };
 		95A7E07C1F07D4B9004D7B60 /* SearchTableViewControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7E07A1F07D4B9004D7B60 /* SearchTableViewControllerState.swift */; };
@@ -903,6 +904,7 @@
 		95818DD71F0AE05F00CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Settings.strings; sourceTree = "<group>"; };
 		95818DD81F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95818DD91F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9581C5AA1F1D512C006250A3 /* TapToFocusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapToFocusView.swift; sourceTree = "<group>"; };
 		959661D51F127F090017BA88 /* FlashButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashButton.swift; sourceTree = "<group>"; };
 		95A7E0641F0581B6004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1009,6 +1011,7 @@
 				95D6A75C1E9C08520017B423 /* ProductTableViewCell.xib */,
 				959661D51F127F090017BA88 /* FlashButton.swift */,
 				9575BC6A1F16C1C40024386C /* TextOverlay.swift */,
+				9581C5AA1F1D512C006250A3 /* TapToFocusView.swift */,
 			);
 			path = ProductSearch;
 			sourceTree = "<group>";
@@ -1418,6 +1421,7 @@
 				95A7E07C1F07D4B9004D7B60 /* SearchTableViewControllerState.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
 				957094CA1EA26C8800268236 /* ProductNutritionViewController.swift in Sources */,
+				9581C5AB1F1D512C006250A3 /* TapToFocusView.swift in Sources */,
 				95A7E07B1F07D4B9004D7B60 /* SearchTableViewController.swift in Sources */,
 				957094B51EA16C4B00268236 /* ProductDetailViewController.swift in Sources */,
 				957094AF1EA124E800268236 /* ProductService.swift in Sources */,
