@@ -24,40 +24,41 @@ class SearchTableViewController: UIViewController {
             case .initial: tableView.backgroundView = initialView
             case .loading: tableView.backgroundView = loadingView
             case .empty: tableView.backgroundView = emptyView
-            case .content(_): tableView.backgroundView = nil
+            case .content: tableView.backgroundView = nil
             case .error: tableView.backgroundView = errorView
             }
             self.tableView.reloadData()
         }
     }
-    
+
     // Background views
+    // swiftlint:disable force_cast
     fileprivate lazy var initialView = Bundle.main.loadNibNamed("InitialView", owner: self, options: nil)!.first as! UIView
     fileprivate lazy var loadingView: UIView = LoadingView(frame: self.view.bounds)
     fileprivate lazy var emptyView: UIView = EmptyView(frame: self.view.bounds)
     fileprivate lazy var errorView: UIView = ErrorView(frame: self.view.bounds)
-    
+
     /* When the user searches a product by barcode and it's found, the product's detail view is loaded.
      If the user loads taps the back button, after presenting the search view the app goes back to the product's detail view again.
      This boolean breaks that loop. */
     fileprivate var wasSearchBarEdited = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         configureTableView()
         configureSearchController()
         configureNavigationBar()
         configureGestureRecognizers()
     }
-    
+
     fileprivate func configureTableView() {
         tableView.backgroundView = initialView // State.initial background view
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ProductTableViewCell.self))
-        
+
         tableView.rowHeight = 100
     }
-    
+
     fileprivate func configureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -68,11 +69,11 @@ class SearchTableViewController: UIViewController {
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
-    
+
     fileprivate func configureNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "barcode"), style: .plain, target: self, action: #selector(scanBarcode))
     }
-    
+
     fileprivate func configureGestureRecognizers() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapTableViewBackground(_:)))
         self.tapGestureRecognizer = tap
@@ -82,40 +83,41 @@ class SearchTableViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension SearchTableViewController: UITableViewDataSource {
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         switch state {
-        case .content(_):
+        case .content:
             tableView.separatorStyle = .singleLine
             tableView.isScrollEnabled = true
-            
+
             return 1
         default:
             tableView.separatorStyle = .none
             tableView.isScrollEnabled = false
-            
+
             if let tap = tapGestureRecognizer {
                 tableView.backgroundView?.addGestureRecognizer(tap)
             }
-            
+
             return 0
         }
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard case let .content(response) = state else { return 0 }
         return response.products.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell
-        
+
         guard case let .content(response) = state else { return cell }
         cell.configure(withProduct: response.products[indexPath.row])
         if response.products.count == indexPath.row + 5, let page = Int(response.page), response.products.count < response.count {
             getProducts(fromService: ProductService(), page: page + 1, withQuery: response.query)
         }
-        
+
         return cell
     }
 }
@@ -152,22 +154,22 @@ extension SearchTableViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
     }
-    
+
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(false, animated: true)
     }
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         wasSearchBarEdited = true
         if searchText.isEmpty { // x button was tapped or text was deleted
             clearResults()
         }
     }
-    
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         clearResults()
     }
-    
+
     fileprivate func clearResults() {
         state = .initial
     }
@@ -204,7 +206,7 @@ extension SearchTableViewController {
         // ask the search bar to resign focus so it goes back to it's begining state and the keyboard gets dismissed
         if searchController.isActive {
             switch state {
-            case .content(_):
+            case .content:
                 return
             default:
                 if let text = searchController.searchBar.text, text.isEmpty {
@@ -220,9 +222,10 @@ private extension SearchTableViewController {
     func showProductDetails(product: Product) {
         navigationController?.pushViewController(productDetails(product: product), animated: true)
     }
-    
+
     func productDetails(product: Product) -> ProductDetailViewController {
         let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
+        // swiftlint:disable force_cast
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
         productDetailVC.product = product
         return productDetailVC

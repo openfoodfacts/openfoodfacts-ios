@@ -21,7 +21,7 @@ enum InfoRowKey: LocalizedString {
     case citiesTags = "product-detail.summary.citiesTags"
     case stores = "product-detail.summary.stores"
     case countries = "product-detail.summary.countries"
-    
+
     // Ingredients
     case ingredientsList = "product-detail.ingredients.ingredients-list"
     case allergens = "product-detail.ingredients.allergens-list"
@@ -29,7 +29,7 @@ enum InfoRowKey: LocalizedString {
     case additives = "product-detail.ingredients.additives-list"
     case palmOilIngredients = "product-detail.ingredients.palm-oil-ingredients"
     case possiblePalmOilIngredients = "product-detail.ingredients.possible-palm-oil-ingredients"
-    
+
     // Nutrition
     case energy = "nutrition.energy"
     case fats = "nutrition.fats"
@@ -94,17 +94,17 @@ enum InfoRowKey: LocalizedString {
     case collagenMeatProteinRatio = "nutrition.minerals.collagen-meat-protein-ratio"
     case cocoa = "nutrition.minerals.cocoa"
     case chlorophyl = "nutrition.minerals.chlorophyl"
-    
+
     case servingSize = "product-detail.nutrition.serving-size"
     case carbonFootprint = "product-detail.nutrition.carbon-footprint"
-    
+
     // Nutritional table
     case nutritionalTableHeader = "product-detail.nutrition-table.nutritional-table-header"
-    
+
     var localizedString: String {
-        return self.rawValue.v
+        return self.rawValue.localizedString
     }
-    
+
     init?(localizedString: String) {
         self.init(rawValue: LocalizedString(localized: localizedString))
     }
@@ -115,14 +115,14 @@ struct InfoRow {
     let value: String
     var secondaryValue: String?
     let highlight: Bool
-    
+
     init(label: InfoRowKey, value: String) {
         self.label = label
         self.value = value
         self.secondaryValue = nil
         self.highlight = false
     }
-    
+
     init(label: InfoRowKey, value: String, secondaryValue: String?, highlight: Bool = false) {
         self.label = label
         self.value = value

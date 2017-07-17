@@ -11,13 +11,13 @@ import UIKit
 class LoadingView: StateView {
     override func setupView() {
         super.setupView()
-        
+
         self.frame = super.frame
-        
+
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityIndicator.startAnimating()
         activityIndicator.center = super.center
-        
+
         self.addSubview(activityIndicator)
     }
 }

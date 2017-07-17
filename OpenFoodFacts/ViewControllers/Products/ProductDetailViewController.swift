@@ -11,48 +11,49 @@ import XLPagerTabStrip
 import Crashlytics
 
 class ProductDetailViewController: ButtonBarPagerTabStripViewController {
-    
+
     var product: Product!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         buttonBarView.register(UINib(nibName: "ButtonBarView", bundle: nil), forCellWithReuseIdentifier: "Cell")
         buttonBarView.backgroundColor = .white
         settings.style.selectedBarBackgroundColor = .white
         buttonBarView.selectedBar.backgroundColor = self.view.tintColor
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
-        
+
         navigationController?.navigationBar.isTranslucent = false
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+
         navigationController?.navigationBar.isTranslucent = true
     }
-    
+
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         var vcs = [UIViewController]()
-        
+
         vcs.append(getSummaryVC())
         vcs.append(getIngredientsVC())
         vcs.append(getNutritionVC())
         vcs.append(getNutritionTableVC())
-        
+
         return vcs
     }
-    
+
+    // swiftlint:disable cyclomatic_complexity
     fileprivate func getSummaryVC() -> UIViewController {
         let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
-        
+
         var summaryInfoRows = [InfoRow]()
-        
+
         if let barcode = product.barcode, !barcode.isEmpty {
             summaryInfoRows.append(InfoRow(label: .barcode, value: barcode))
         }
@@ -86,15 +87,15 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         if let array = product.countries, !array.isEmpty {
             summaryInfoRows.append(InfoRow(label: .countries, value: array.joined(separator: ", ")))
         }
-        
+
         return ProductDetailPageViewController<SummaryHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: summaryTitle, infoRows: summaryInfoRows)
     }
-    
+
     fileprivate func getIngredientsVC() -> UIViewController {
         let ingredientsTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
-        
+
         var ingredientsInfoRows = [InfoRow]()
-        
+
         if let ingredientsList = product.ingredientsList, !ingredientsList.isEmpty {
             ingredientsInfoRows.append(InfoRow(label: .ingredientsList, value: ingredientsList))
         }
@@ -113,31 +114,35 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         if let array = product.possiblePalmOilIngredients, !array.isEmpty {
             ingredientsInfoRows.append(InfoRow(label: .possiblePalmOilIngredients, value: array.joined(separator: ", ")))
         }
-        
+
         return ProductDetailPageViewController<IngredientHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRows: ingredientsInfoRows)
     }
-    
+
     fileprivate func getNutritionVC() -> UIViewController {
         let nutritionTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
-        
+
         var nutritionInfoRows = [InfoRow]()
-        
+
         if let servingSize = product.servingSize, !servingSize.isEmpty {
             nutritionInfoRows.append(InfoRow(label: .servingSize, value: servingSize))
         }
         if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
             nutritionInfoRows.append(InfoRow(label: .carbonFootprint, value:(String(carbonFootprint) + " " + unit)))
         }
-        
+
         return ProductNutritionViewController(product: product, localizedTitle: nutritionTitle, infoRows: nutritionInfoRows)
     }
-    
+
+    // swiftlint:disable cyclomatic_complexity
     fileprivate func getNutritionTableVC() -> UIViewController {
         let nutritionTableTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
         var nutritionTableInfoRows = [InfoRow]()
-        
-        nutritionTableInfoRows.append(InfoRow(label: .nutritionalTableHeader, value: NSLocalizedString("product-detail.nutrition-table.for-100g", comment: ""), secondaryValue: NSLocalizedString("product-detail.nutrition-table.for-serving", comment: "")))
-        
+
+        let headerRow = InfoRow(label: .nutritionalTableHeader, value: NSLocalizedString("product-detail.nutrition-table.for-100g", comment: ""),
+                                secondaryValue: NSLocalizedString("product-detail.nutrition-table.for-serving", comment: ""))
+
+        nutritionTableInfoRows.append(headerRow)
+
         if let energy = product.nutriments?.energy, let infoRow = energy.asInfoRow {
             nutritionTableInfoRows.append(infoRow)
         }
@@ -188,7 +193,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
                 }
             }
         }
-        
+
         return ProductDetailPageViewController<NutritionTableHeaderTableViewCell, NutritionTableRowTableViewCell>(product: product, localizedTitle: nutritionTableTitle, infoRows: nutritionTableInfoRows)
     }
 }

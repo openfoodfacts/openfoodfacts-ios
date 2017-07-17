@@ -10,17 +10,17 @@ import UIKit
 
 class StateView: UIView {
     var message: String?
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
     }
-    
+
     func setupView() {
         backgroundColor = .white
     }

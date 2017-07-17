@@ -12,7 +12,7 @@ extension Double {
     var twoDecimalRounded: Double {
         return (self * 100).rounded() / 100
     }
-    
+
     var asTwoDecimalRoundedString: String {
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 0

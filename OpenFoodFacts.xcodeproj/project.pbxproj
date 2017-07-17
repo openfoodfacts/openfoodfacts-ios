@@ -38,7 +38,7 @@
 		95781B941EC23F18003E3256 /* NutritionLevelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B921EC23F18003E3256 /* NutritionLevelsTableViewCell.swift */; };
 		95781B9B1EC26B24003E3256 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B9A1EC26B24003E3256 /* Double.swift */; };
 		95781BA91EC3A079003E3256 /* NutritionLevelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95781BA81EC3A079003E3256 /* NutritionLevelsTableViewCell.xib */; };
-		95781BBC1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BAF1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift */; };
+		95781BBC1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */; };
 		95781BBD1EC3A898003E3256 /* OFFWriteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */; };
 		95781BBE1EC3A898003E3256 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB11EC3A898003E3256 /* Product.swift */; };
 		95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB21EC3A898003E3256 /* ProductsResponse.swift */; };
@@ -118,7 +118,7 @@
 		95781B921EC23F18003E3256 /* NutritionLevelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionLevelsTableViewCell.swift; sourceTree = "<group>"; };
 		95781B9A1EC26B24003E3256 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		95781BA81EC3A079003E3256 /* NutritionLevelsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionLevelsTableViewCell.xib; sourceTree = "<group>"; };
-		95781BAF1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFFReadAPIkeysJSON.swift; sourceTree = "<group>"; };
+		95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFFReadAPIKeysJSON.swift; sourceTree = "<group>"; };
 		95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFFWriteAPI.swift; sourceTree = "<group>"; };
 		95781BB11EC3A898003E3256 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		95781BB21EC3A898003E3256 /* ProductsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsResponse.swift; sourceTree = "<group>"; };
@@ -1068,7 +1068,7 @@
 			isa = PBXGroup;
 			children = (
 				95E9F0421EC8D7AB00BA20B0 /* Nutriments */,
-				95781BAF1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift */,
+				95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */,
 				95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */,
 				95781BB11EC3A898003E3256 /* Product.swift */,
 				95781BB21EC3A898003E3256 /* ProductsResponse.swift */,
@@ -1255,6 +1255,7 @@
 				95C2650C1E96D55B004212EC /* Resources */,
 				95C368081E9EC999008BB582 /* ShellScript */,
 				95CE24DE1ED5508500EF3D79 /* ShellScript */,
+				9581C5A91F1D48A2006250A3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1331,6 +1332,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9581C5A91F1D48A2006250A3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		95C368081E9EC999008BB582 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1382,7 +1396,7 @@
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
 				95781B431EBE861F003E3256 /* ProductDetailPageViewController.swift in Sources */,
 				95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */,
-				95781BBC1EC3A898003E3256 /* OFFReadAPIkeysJSON.swift in Sources */,
+				95781BBC1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift in Sources */,
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
 				95DFD7CB1F01A213007FDB69 /* NutriScoreView.swift in Sources */,
 				95E9F0401EC64F6600BA20B0 /* NutritionTableRowTableViewCell.swift in Sources */,

@@ -12,7 +12,7 @@ extension String {
     func isNumber() -> Bool {
         guard let regex = try? NSRegularExpression(pattern: "^\\d*$") else { return false }
         let matches = regex.matches(in: self, options: [], range: NSRange(location: 0, length: self.characters.count))
-        
+
         return !matches.isEmpty
     }
 }

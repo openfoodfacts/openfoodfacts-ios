@@ -9,9 +9,9 @@
 import UIKit
 
 class NutritionHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
-    
+
     @IBOutlet weak var nutriscoreView: NutriScoreView!
-    
+
     override func configure(with product: Product, completionHandler: (() -> Void)?) {
         if let nutriscore = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscore.uppercased()) {
             nutriscoreView.isHidden = false

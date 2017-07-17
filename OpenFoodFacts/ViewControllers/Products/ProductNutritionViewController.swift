@@ -11,15 +11,15 @@ import XLPagerTabStrip
 
 /// Product Detail Page subclass
 class ProductNutritionViewController: ProductDetailPageViewController<NutritionHeaderTableViewCell, InfoRowTableViewCell> {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.register(UINib(nibName: NutritionLevelsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: NutritionLevelsTableViewCell.identifier)
     }
-    
+
     // MARK: - Table view delegate
-    
+
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -30,12 +30,12 @@ class ProductNutritionViewController: ProductDetailPageViewController<NutritionH
             return 44
         }
     }
-    
+
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0, 2:
@@ -44,7 +44,7 @@ class ProductNutritionViewController: ProductDetailPageViewController<NutritionH
             return infoRows.count
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -55,12 +55,13 @@ class ProductNutritionViewController: ProductDetailPageViewController<NutritionH
             return super.createRow(row: indexPath.row)
         }
     }
-    
+
     func createNutritionLevelsCell() -> NutritionLevelsTableViewCell {
+        // swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: NutritionLevelsTableViewCell.identifier) as! NutritionLevelsTableViewCell
-        
+
         cell.configure(with: product)
-        
+
         return cell
     }
 }

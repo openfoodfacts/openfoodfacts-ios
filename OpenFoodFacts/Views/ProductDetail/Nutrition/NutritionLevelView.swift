@@ -13,7 +13,7 @@ class NutritionLevelView: UIView {
     @IBOutlet weak var value: UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var level: UILabel!
-    
+
     func configure(image: UIImage?, value: String, label: String, level: String) {
         self.imageView.image = image
         self.value.text = value

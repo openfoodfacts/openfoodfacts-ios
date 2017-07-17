@@ -22,7 +22,7 @@ struct Nutriments: Mappable {
     var minerals: [NutrimentItem]
     var carbonFootprint: Double?
     var carbonFootprintUnit: String?
-    
+
     init?(map: Map) {
         fats = [NutrimentItem]()
         carbohydrates = [NutrimentItem]()
@@ -30,10 +30,10 @@ struct Nutriments: Mappable {
         vitamins = [NutrimentItem]()
         minerals = [NutrimentItem]()
     }
-    
+
     mutating func mapping(map: Map) {
         energy = NutrimentItem(nameKey: OFFJson.EnergyKey, map: map, localized: .energy)
-        
+
         // Fats
         fats.append(NutrimentItem(nameKey: OFFJson.FatKey, map: map, localized: .fats, isMainItem: true))
         fats.append(NutrimentItem(nameKey: OFFJson.SaturatedFatKey, map: map, localized: .saturatedFats))
@@ -44,7 +44,7 @@ struct Nutriments: Mappable {
         fats.append(NutrimentItem(nameKey: OFFJson.Omega9FatKey, map: map, localized: .omega9))
         fats.append(NutrimentItem(nameKey: OFFJson.TransFatKey, map: map, localized: .transFat))
         fats.append(NutrimentItem(nameKey: OFFJson.CholesterolKey, map: map, localized: .cholesterol))
-        
+
         // Carbohydrates
         carbohydrates.append(NutrimentItem(nameKey: OFFJson.CarbohydratesKey, map: map, localized: .carbohydrates, isMainItem: true))
         carbohydrates.append(NutrimentItem(nameKey: OFFJson.SugarsKey, map: map, localized: .sugars))
@@ -54,21 +54,21 @@ struct Nutriments: Mappable {
         carbohydrates.append(NutrimentItem(nameKey: OFFJson.LactoseKey, map: map, localized: .lactose))
         carbohydrates.append(NutrimentItem(nameKey: OFFJson.MaltoseKey, map: map, localized: .maltose))
         carbohydrates.append(NutrimentItem(nameKey: OFFJson.MaltodextrinsKey, map: map, localized: .maltodextrins))
-        
+
         // Fiber
         fiber = NutrimentItem(nameKey: OFFJson.FiberKey, map: map, localized: .fiber)
-        
+
         // Protein
         proteins.append(NutrimentItem(nameKey: OFFJson.ProteinsKey, map: map, localized: .proteins, isMainItem: true))
         proteins.append(NutrimentItem(nameKey: OFFJson.CaseinKey, map: map, localized: .casein))
         proteins.append(NutrimentItem(nameKey: OFFJson.SerumProteinsKey, map: map, localized: .serumProteins))
         proteins.append(NutrimentItem(nameKey: OFFJson.NucleotidesKey, map: map, localized: .nucleotides))
-        
+
         // Salt and Alcohol
         salt = NutrimentItem(nameKey: OFFJson.SaltKey, map: map, localized: .salt)
         sodium = NutrimentItem(nameKey: OFFJson.SodiumKey, map: map, localized: .sodium)
         alcohol = NutrimentItem(nameKey: OFFJson.AlcoholKey, map: map, localized: .alcohol)
-        
+
         // Vitamin
         vitamins.append(NutrimentItem(nameKey: OFFJson.VitaminAKey, map: map, localized: .a, isMainItem: true))
         vitamins.append(NutrimentItem(nameKey: OFFJson.BetaCaroteneKey, map: map, localized: .betaCarotene))
@@ -84,7 +84,7 @@ struct Nutriments: Mappable {
         vitamins.append(NutrimentItem(nameKey: OFFJson.VitaminB12Key, map: map, localized: .b12))
         vitamins.append(NutrimentItem(nameKey: OFFJson.BiotinKey, map: map, localized: .biotin))
         vitamins.append(NutrimentItem(nameKey: OFFJson.PantothenicAcidKey, map: map, localized: .pantothenicAcid))
-        
+
         // Minerals
         minerals.append(NutrimentItem(nameKey: OFFJson.SilicaKey, map: map, localized: .silica, isMainItem: true))
         minerals.append(NutrimentItem(nameKey: OFFJson.BicarbonateKey, map: map, localized: .bicarbonate))
@@ -109,7 +109,7 @@ struct Nutriments: Mappable {
         minerals.append(NutrimentItem(nameKey: OFFJson.CollagenMeatProteinRatio, map: map, localized: .collagenMeatProteinRatio))
         minerals.append(NutrimentItem(nameKey: OFFJson.CacaoKey, map: map, localized: .cocoa))
         minerals.append(NutrimentItem(nameKey: OFFJson.ChlorophylKey, map: map, localized: .chlorophyl))
-        
+
         carbonFootprint <- (map[OFFJson.CarbonFootprint100gKey], DoubleTransform())
         carbonFootprintUnit <- map[OFFJson.CarbonFootprintUnitKey]
     }

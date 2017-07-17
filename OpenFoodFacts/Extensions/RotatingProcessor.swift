@@ -11,7 +11,7 @@ import Kingfisher
 
 struct RotatingProcessor: ImageProcessor {
     let identifier = "org.openfoodfacts.orientation"
-    
+
     // Rotate image
     func process(item: ImageProcessItem, options: KingfisherOptionsInfo) -> Image? {
         switch item {
@@ -24,7 +24,7 @@ struct RotatingProcessor: ImageProcessor {
             default:
                 return image
             }
-        case .data(_):
+        case .data:
             return (DefaultImageProcessor() >> self).process(item: item, options: options)
         }
     }

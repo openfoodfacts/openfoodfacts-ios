@@ -21,30 +21,30 @@ class ScannerViewController: UIViewController {
                              AVMetadataObjectTypePDF417Code,
                              AVMetadataObjectTypeITF14Code,
                              AVMetadataObjectTypeInterleaved2of5Code]
-    
+
     fileprivate var captureSession: AVCaptureSession?
     fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     fileprivate lazy var flashButton = FlashButton()
     fileprivate lazy var overlay = TextOverlay()
-    
+
     fileprivate var lastCodeScanned: String?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         configureVideoView()
         configureFlashView()
         configureOverlay()
         configureTapToFocus()
     }
-    
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: { context in
+        coordinator.animate(alongsideTransition: { _ in
             self.videoPreviewLayer?.connection.videoOrientation = self.transformOrientation()
             self.videoPreviewLayer?.frame = self.view.bounds
         }, completion: nil)
     }
-    
+
     fileprivate func transformOrientation() -> AVCaptureVideoOrientation {
         switch UIDevice.current.orientation {
         case .landscapeLeft:
@@ -59,63 +59,63 @@ class ScannerViewController: UIViewController {
             return .portrait
         }
     }
-    
+
     fileprivate func configureVideoView() {
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-        
+
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice)
-            
+
             captureSession = AVCaptureSession()
             captureSession?.addInput(input)
-            
+
             let captureMetadataOutput = AVCaptureMetadataOutput()
             captureSession?.addOutput(captureMetadataOutput)
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             captureMetadataOutput.metadataObjectTypes = supportedBarcodes
-            
+
             if let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession) {
                 videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
                 videoPreviewLayer.frame = view.layer.bounds
                 self.videoPreviewLayer = videoPreviewLayer
                 view.layer.addSublayer(videoPreviewLayer)
             }
-            
+
             captureSession?.startRunning()
         } catch {
             Crashlytics.sharedInstance().recordError(error)
             return
         }
     }
-    
+
     fileprivate func configureFlashView() {
         if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.hasTorch {
             flashButton.translatesAutoresizingMaskIntoConstraints = false
             flashButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapFlashButton(_:))))
             self.view.addSubview(flashButton)
-            
+
             let bottomConstraint = NSLayoutConstraint(item: self.bottomLayoutGuide, attribute: .top, relatedBy: .equal, toItem: flashButton, attribute: .bottom, multiplier: 1, constant: 15)
             let leftConstraint = NSLayoutConstraint(item: flashButton, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 15)
-            
+
             self.view.addConstraints([bottomConstraint, leftConstraint])
         }
     }
-    
+
     fileprivate func configureOverlay() {
         overlay.setText(NSLocalizedString("product-scanner.overlay.user-help", comment: "User help in the scan view"))
         self.view.addSubview(overlay)
-        
+
         var constraints = [NSLayoutConstraint]()
         constraints.append(NSLayoutConstraint(item: overlay, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0))
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[overlay]-0-|", options: [], metrics: nil, views: ["overlay": overlay])
-        
+
         self.view.addConstraints(constraints)
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
             self.overlay.setText(NSLocalizedString("product-scanner.overlay.extended-user-help", comment: "User help in the scan view"))
         })
     }
-    
+
     fileprivate func configureTapToFocus() {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToFocus(_:))))
     }
@@ -126,21 +126,22 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         if metadataObjects == nil || metadataObjects.count == 0 {
             return
         }
-        
+
         if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
-            if (lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode)) {
+            if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
                 lastCodeScanned = barcode
                 getProduct(fromService: ProductService(), barcode: barcode)
             }
         }
     }
-    
+
     func getProduct(fromService service: ProductService, barcode: String) {
         service.getProduct(byBarcode: barcode, onSuccess: { product in
             let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
+            // swiftlint:disable force_cast
             let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
             productDetailVC.product = product
-            
+
             self.navigationController?.pushViewController(productDetailVC, animated: true)
         }, onError: { error in
             Crashlytics.sharedInstance().recordError(error)
@@ -171,7 +172,7 @@ extension ScannerViewController {
             Crashlytics.sharedInstance().recordError(error)
         }
     }
-    
+
     func didTapToFocus(_ gesture: UITapGestureRecognizer) {
         if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.isFocusPointOfInterestSupported, let videoPreviewLayer = self.videoPreviewLayer {
             let touchPoint = gesture.location(in: self.view)

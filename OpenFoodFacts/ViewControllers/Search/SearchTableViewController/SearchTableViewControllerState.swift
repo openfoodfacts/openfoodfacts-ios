@@ -9,7 +9,7 @@
 import Foundation
 
 extension SearchTableViewController {
-    
+
     /// State enum for the Search VC
     ///
     /// - initial: First stage after loading view

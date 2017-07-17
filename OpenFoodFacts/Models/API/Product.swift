@@ -36,11 +36,11 @@ struct Product: Mappable {
     var nutritionLevels: NutritionLevels?
     var nutriments: Nutriments?
     var nutritionTableImage: String?
-    
-    init?(map: Map){
-        
+
+    init?(map: Map) {
+
     }
-    
+
     mutating func mapping(map: Map) {
         name <- map[OFFJson.ProductNameKey]
         brands <- (map[OFFJson.BrandsKey], ArrayTransform())

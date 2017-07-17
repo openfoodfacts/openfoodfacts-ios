@@ -12,5 +12,5 @@ class CameraViewController: UINavigationController {
 }
 
 extension CameraViewController: UIPickerViewDelegate {
-    
+
 }

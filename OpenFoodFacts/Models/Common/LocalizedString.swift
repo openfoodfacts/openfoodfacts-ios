@@ -9,26 +9,26 @@
 import Foundation
 
 struct LocalizedString: ExpressibleByStringLiteral, Equatable {
-    
-    let v: String
-    
+
+    let localizedString: String
+
     init(key: String) {
-        self.v = NSLocalizedString(key, comment: "")
+        self.localizedString = NSLocalizedString(key, comment: "")
     }
     init(localized: String) {
-        self.v = localized
+        self.localizedString = localized
     }
-    init(stringLiteral value:String) {
-        self.init(key: value)
+    init(stringLiteral localizedString: String) {
+        self.init(key: localizedString)
     }
-    init(extendedGraphemeClusterLiteral value: String) {
-        self.init(key: value)
+    init(extendedGraphemeClusterLiteral localizedString: String) {
+        self.init(key: localizedString)
     }
-    init(unicodeScalarLiteral value: String) {
-        self.init(key: value)
+    init(unicodeScalarLiteral localizedString: String) {
+        self.init(key: localizedString)
     }
 }
 
-func ==(lhs:LocalizedString, rhs:LocalizedString) -> Bool {
-    return lhs.v == rhs.v
+func == (lhs: LocalizedString, rhs: LocalizedString) -> Bool {
+    return lhs.localizedString == rhs.localizedString
 }

@@ -11,11 +11,11 @@ import UIKit
 class ConfigurableUITableViewCell<T>: UITableViewCell {
     weak var delegate: CellImageTapable?
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint?
-    
+
     func configure(with: T, completionHandler: (() -> Void)? = nil) {
         // Do nothing, expect implementation in subclasses
     }
-    
+
     /// Check if the cell has enough information to be displayed
     ///
     /// - Parameter _: Object with the information to display

@@ -27,10 +27,10 @@ extension UIImage {
         default:
             break
         }
-        
+
         return UIImage(cgImage: self.cgImage!, scale: 1.0, orientation: orientation)
     }
-    
+
     func rotateLeft() -> UIImage? {
         var orientation = UIImageOrientation.up
         switch self.imageOrientation {
@@ -49,7 +49,7 @@ extension UIImage {
         default:
             break
         }
-        
+
         return UIImage(cgImage: self.cgImage!, scale: 1.0, orientation: orientation)
     }
 }

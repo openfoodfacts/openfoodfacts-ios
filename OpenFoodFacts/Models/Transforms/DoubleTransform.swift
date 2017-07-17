@@ -14,22 +14,22 @@ import ObjectMapper
 public class DoubleTransform: TransformType {
     public typealias Object = Double
     public typealias JSON = String
-    
+
     public func transformFromJSON(_ value: Any?) -> Object? {
         if let value = value as? String, let doubleValue = Double(value) {
             return doubleValue
         } else if let value = value as? Double {
             return value
         }
-        
+
         return nil
     }
-    
+
     public func transformToJSON(_ value: Object?) -> JSON? {
         if let value = value {
             return String(value)
         }
-        
+
         return nil
     }
 }

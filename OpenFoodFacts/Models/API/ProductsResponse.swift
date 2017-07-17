@@ -14,10 +14,10 @@ class ProductsResponse: Mappable {
     var count = 0
     var page = "0"
     var products = [Product]()
-    
+
     required init?(map: Map) {
     }
-    
+
     func mapping(map: Map) {
         count <- map[OFFJson.CountKey]
         page <- map[OFFJson.PageKey]
