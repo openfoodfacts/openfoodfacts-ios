@@ -50,8 +50,9 @@ enum FlashStatus {
         self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         self.addSubview(flashImageView)
 
-        self.addConstraint(NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: flashButtonSize))
-        self.addConstraint(NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: flashButtonSize))
+        NSLayoutConstraint.activate([
+            self.widthAnchor.constraint(equalToConstant: flashButtonSize),
+            self.heightAnchor.constraint(equalToConstant: flashButtonSize)])
     }
 
     fileprivate func configureFlashImageView() {
@@ -59,10 +60,11 @@ enum FlashStatus {
 
         let image = UIImage(named: flashOffImageName)! // Show always be an asset
 
-        self.addConstraint(NSLayoutConstraint(item: flashImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 8))
-        self.addConstraint(NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: flashImageView, attribute: .bottom, multiplier: 1, constant: 7))
-        self.addConstraint(NSLayoutConstraint(item: flashImageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: image.size.width))
-        self.addConstraint(NSLayoutConstraint(item: flashImageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
+        NSLayoutConstraint.activate([
+            flashImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
+            self.bottomAnchor.constraint(equalTo: flashImageView.bottomAnchor, constant: 7),
+            flashImageView.widthAnchor.constraint(equalToConstant: image.size.width),
+            flashImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0)])
     }
 
     override func willMove(toSuperview newSuperview: UIView?) {
