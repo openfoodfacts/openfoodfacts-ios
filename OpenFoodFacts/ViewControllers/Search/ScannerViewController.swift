@@ -124,7 +124,7 @@ class ScannerViewController: UIViewController {
 
 extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        if metadataObjects == nil || metadataObjects.count == 0 {
+        if metadataObjects == nil || metadataObjects.isEmpty {
             return
         }
 
@@ -139,7 +139,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     func getProduct(fromService service: ProductService, barcode: String) {
         service.getProduct(byBarcode: barcode, onSuccess: { product in
             let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
-            // swiftlint:disable force_cast
+            // swiftlint:disable:next force_cast
             let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
             productDetailVC.product = product
 

@@ -102,6 +102,7 @@ import UIKit
         case D
         case E
     }
+    // swiftlint:enable identifier_name
 
     public var currentScore: Score? = nil {
         didSet {
@@ -177,7 +178,7 @@ import UIKit
     func loadViewFromNib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "NutriScoreView", bundle: bundle)
-        // swiftlint:disable force_cast
+        // swiftlint:disable:next force_cast
         return nib.instantiate(withOwner: self, options: nil)[0] as! UIView
     }
 

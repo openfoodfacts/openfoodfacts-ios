@@ -11,6 +11,8 @@ import Foundation
 // JSON keys
 
 struct OFFJson {
+    // swiftlint:disable identifier_name
+
     static let CountKey = "count"
     static let PageKey = "page"
     static let ProductsKey = "products"
@@ -266,4 +268,6 @@ struct OFFJson {
     static let CompleteKey = "complete"
     static let AdditivesDebugTagsKey = "additives_debug_tags"
     static let IngredientsIdsDebugKey = "ingredients_ids_debug"
+
+    // swiftlint:enable identifier_name
 }

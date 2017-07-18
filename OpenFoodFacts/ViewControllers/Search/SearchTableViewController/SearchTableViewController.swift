@@ -32,7 +32,7 @@ class SearchTableViewController: UIViewController {
     }
 
     // Background views
-    // swiftlint:disable force_cast
+    // swiftlint:disable:next force_cast
     fileprivate lazy var initialView = Bundle.main.loadNibNamed("InitialView", owner: self, options: nil)!.first as! UIView
     fileprivate lazy var loadingView: UIView = LoadingView(frame: self.view.bounds)
     fileprivate lazy var emptyView: UIView = EmptyView(frame: self.view.bounds)
@@ -109,7 +109,7 @@ extension SearchTableViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // swiftlint:disable force_cast
+        // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell
 
         guard case let .content(response) = state else { return cell }
@@ -186,7 +186,7 @@ extension SearchTableViewController {
                 oldResponse.products.append(contentsOf: response.products)
                 self.state = .content(oldResponse)
             default: // Got new response
-                if response.count == 0 {
+                if response.count == 0 { // swiftlint:disable:this empty_count
                     self.state = .empty
                 } else {
                     self.state = .content(response)
@@ -225,7 +225,7 @@ private extension SearchTableViewController {
 
     func productDetails(product: Product) -> ProductDetailViewController {
         let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
-        // swiftlint:disable force_cast
+        // swiftlint:disable:next force_cast
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
         productDetailVC.product = product
         return productDetailVC

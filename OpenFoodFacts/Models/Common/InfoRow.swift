@@ -9,6 +9,8 @@
 import Foundation
 
 enum InfoRowKey: LocalizedString {
+    // swiftlint:disable identifier_name
+
     // Summary
     case barcode = "product-detail.summary.barcode"
     case quantity = "product-detail.summary.quantity"
@@ -100,6 +102,8 @@ enum InfoRowKey: LocalizedString {
 
     // Nutritional table
     case nutritionalTableHeader = "product-detail.nutrition-table.nutritional-table-header"
+
+    // swiftlint:enable identifier_name
 
     var localizedString: String {
         return self.rawValue.localizedString

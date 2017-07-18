@@ -81,7 +81,7 @@ UIViewController, UITableViewDelegate, UITableViewDataSource, IndicatorInfoProvi
     }
 
     func createHeaderCell() -> Header {
-        // swiftlint:disable force_cast
+        // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: Header.identifier) as! Header
 
         cell.configure(with: product) {
@@ -95,7 +95,7 @@ UIViewController, UITableViewDelegate, UITableViewDataSource, IndicatorInfoProvi
     }
 
     func createRow(row: Int) -> Row {
-        // swiftlint:disable force_cast
+        // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: Row.identifier) as! Row
 
         let infoRow = infoRows[row]

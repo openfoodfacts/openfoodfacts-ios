@@ -15,6 +15,7 @@ enum FlashStatus {
     case off
     case on
 }
+// swiftlint:enable identifier_name
 
 @IBDesignable class FlashButton: UIView {
     @IBInspectable fileprivate var flashButtonSize: CGFloat = 40

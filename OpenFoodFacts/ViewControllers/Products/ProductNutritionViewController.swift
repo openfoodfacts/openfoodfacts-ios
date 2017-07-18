@@ -57,7 +57,7 @@ class ProductNutritionViewController: ProductDetailPageViewController<NutritionH
     }
 
     func createNutritionLevelsCell() -> NutritionLevelsTableViewCell {
-        // swiftlint:disable force_cast
+        // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: NutritionLevelsTableViewCell.identifier) as! NutritionLevelsTableViewCell
 
         cell.configure(with: product)

@@ -31,6 +31,7 @@ struct Nutriments: Mappable {
         minerals = [NutrimentItem]()
     }
 
+    // swiftlint:disable function_body_length
     mutating func mapping(map: Map) {
         energy = NutrimentItem(nameKey: OFFJson.EnergyKey, map: map, localized: .energy)
 
@@ -113,4 +114,5 @@ struct Nutriments: Mappable {
         carbonFootprint <- (map[OFFJson.CarbonFootprint100gKey], DoubleTransform())
         carbonFootprintUnit <- map[OFFJson.CarbonFootprintUnitKey]
     }
+    // swiftlint:enable function_body_length
 }

@@ -48,7 +48,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         return vcs
     }
 
-    // swiftlint:disable cyclomatic_complexity
+    // swiftlint:disable:next cyclomatic_complexity
     fileprivate func getSummaryVC() -> UIViewController {
         let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
 
@@ -133,7 +133,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         return ProductNutritionViewController(product: product, localizedTitle: nutritionTitle, infoRows: nutritionInfoRows)
     }
 
-    // swiftlint:disable cyclomatic_complexity
+    // swiftlint:disable:next cyclomatic_complexity
     fileprivate func getNutritionTableVC() -> UIViewController {
         let nutritionTableTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
         var nutritionTableInfoRows = [InfoRow]()
@@ -194,6 +194,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
             }
         }
 
-        return ProductDetailPageViewController<NutritionTableHeaderTableViewCell, NutritionTableRowTableViewCell>(product: product, localizedTitle: nutritionTableTitle, infoRows: nutritionTableInfoRows)
+        return ProductDetailPageViewController<NutritionTableHeaderTableViewCell, NutritionTableRowTableViewCell>(product: product,
+                                                                                                                  localizedTitle: nutritionTableTitle,
+                                                                                                                  infoRows: nutritionTableInfoRows)
     }
 }
