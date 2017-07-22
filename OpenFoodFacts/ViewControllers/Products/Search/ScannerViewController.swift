@@ -39,6 +39,16 @@ class ScannerViewController: UIViewController {
         configureTapToFocus()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        captureSession?.startRunning()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        captureSession?.stopRunning()
+    }
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { _ in
             self.videoPreviewLayer?.connection.videoOrientation = self.transformOrientation()
@@ -81,8 +91,6 @@ class ScannerViewController: UIViewController {
                 self.videoPreviewLayer = videoPreviewLayer
                 view.layer.addSublayer(videoPreviewLayer)
             }
-
-            captureSession?.startRunning()
         } catch {
             Crashlytics.sharedInstance().recordError(error)
             return

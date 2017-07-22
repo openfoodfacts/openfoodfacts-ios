@@ -85,7 +85,7 @@ struct ProductService: ProductApi {
         while ean13Barcode.characters.count < 13 {
             ean13Barcode += "x"
         }
-        
+
         return ean13Barcode
     }
 }
