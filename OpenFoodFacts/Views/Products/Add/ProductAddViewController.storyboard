@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A8v-Ao-FSs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Product Add View Controller-->
+        <scene sceneID="SQb-fS-rbg">
+            <objects>
+                <viewController id="A8v-Ao-FSs" customClass="ProductAddViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CxL-xd-i7D"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lao-9p-WaM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L1V-v9-X54">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcz-Dc-5OG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-bW-zl0">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="463"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zwf-af-22Y">
+                                                <rect key="frame" x="10" y="10" width="355" height="453"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Mu-dr-4FU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="21.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Barcode:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNX-8u-MhF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z2-Lt-GRa">
+                                                                <rect key="frame" x="77.5" y="0.0" width="277.5" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXu-MT-2XN">
+                                                        <rect key="frame" x="0.0" y="31.5" width="355" height="150.5"/>
+                                                        <string key="text">This product is not yet in the Open Food Facts database. Could you please take some pictures of the product, barcode, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.</string>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMi-fh-iQt">
+                                                        <rect key="frame" x="0.0" y="192" width="355" height="30"/>
+                                                        <state key="normal" title="Take a picture"/>
+                                                        <connections>
+                                                            <action selector="didTapTakePictureButton:" destination="A8v-Ao-FSs" eventType="touchUpInside" id="PO1-cC-Yp8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note: the pictures you send are published under the free licence Creative Commons Attribution and ShareAlike." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjC-nW-Oeb">
+                                                        <rect key="frame" x="0.0" y="232" width="355" height="61"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kK2-es-lYg">
+                                                        <rect key="frame" x="0.0" y="303" width="355" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brands" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-Km-ieP">
+                                                        <rect key="frame" x="0.0" y="343" width="355" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjx-9U-rIz">
+                                                        <rect key="frame" x="0.0" y="383" width="355" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsI-Pf-EUr">
+                                                        <rect key="frame" x="0.0" y="423" width="355" height="30"/>
+                                                        <state key="normal" title="Save"/>
+                                                        <connections>
+                                                            <action selector="didTapSaveButton:" destination="A8v-Ao-FSs" eventType="touchUpInside" id="yEp-zv-aeh"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="zwf-af-22Y" firstAttribute="top" secondItem="HHR-bW-zl0" secondAttribute="top" constant="10" id="0Fo-8X-vwG"/>
+                                            <constraint firstItem="zwf-af-22Y" firstAttribute="leading" secondItem="HHR-bW-zl0" secondAttribute="leading" constant="10" id="3A6-qr-1qb"/>
+                                            <constraint firstAttribute="trailing" secondItem="zwf-af-22Y" secondAttribute="trailing" constant="10" id="6gr-7D-36t"/>
+                                            <constraint firstAttribute="bottom" secondItem="zwf-af-22Y" secondAttribute="bottom" id="x8l-sv-TXB"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HHR-bW-zl0" secondAttribute="trailing" id="4q3-we-ClA"/>
+                                    <constraint firstItem="HHR-bW-zl0" firstAttribute="top" secondItem="mcz-Dc-5OG" secondAttribute="top" id="FX3-4m-gKx"/>
+                                    <constraint firstAttribute="bottom" secondItem="HHR-bW-zl0" secondAttribute="bottom" id="PAZ-6X-KXX"/>
+                                    <constraint firstItem="HHR-bW-zl0" firstAttribute="leading" secondItem="mcz-Dc-5OG" secondAttribute="leading" id="V6F-xS-MdM"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="mcz-Dc-5OG" secondAttribute="bottom" id="7JF-ia-NqH"/>
+                            <constraint firstItem="HHR-bW-zl0" firstAttribute="width" secondItem="L1V-v9-X54" secondAttribute="width" id="GEl-gG-98Z"/>
+                            <constraint firstItem="mcz-Dc-5OG" firstAttribute="leading" secondItem="L1V-v9-X54" secondAttribute="leading" id="NfU-Ns-Duj"/>
+                            <constraint firstItem="mcz-Dc-5OG" firstAttribute="top" secondItem="L1V-v9-X54" secondAttribute="topMargin" id="UvO-3A-9dm"/>
+                            <constraint firstAttribute="trailing" secondItem="mcz-Dc-5OG" secondAttribute="trailing" id="dEQ-4F-Mz6"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="barcodeLabel" destination="9z2-Lt-GRa" id="8B1-lf-KbH"/>
+                        <outlet property="brandsField" destination="0WS-Km-ieP" id="ZoN-aj-Igl"/>
+                        <outlet property="productNameField" destination="kK2-es-lYg" id="b2e-BW-m6n"/>
+                        <outlet property="quantityField" destination="Hjx-9U-rIz" id="bpt-lS-aAt"/>
+                        <outlet property="scrollView" destination="mcz-Dc-5OG" id="OVO-1S-Tis"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3l-ik-wBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="71.514242878560722"/>
+        </scene>
+    </scenes>
+</document>

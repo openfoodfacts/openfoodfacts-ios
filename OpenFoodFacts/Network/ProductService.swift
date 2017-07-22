@@ -14,7 +14,7 @@ import Crashlytics
 protocol ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
 
-    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product) -> Void, onError: @escaping (Error) -> Void)
+    func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
 }
 
 struct ProductService: ProductApi {
@@ -52,17 +52,17 @@ struct ProductService: ProductApi {
         }
     }
 
-    func getProduct(byBarcode barcode: String, onSuccess: @escaping (Product) -> Void, onError: @escaping (Error) -> Void) {
+    func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         let url = endpoint + "/api/v0/product/\(barcode).json"
 
         Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
         Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
         print("URL: \(url)")
 
-        Alamofire.request(url).responseObject(keyPath: "product") { (response: DataResponse<Product>) in
+        Alamofire.request(url).responseObject { (response: DataResponse<ProductsResponse>) in
             switch response.result {
-            case .success(let product):
-                onSuccess(product)
+            case .success(let productResponse):
+                onSuccess(productResponse)
             case .failure(let error):
                 onError(error)
                 Crashlytics.sharedInstance().recordError(error)
@@ -85,7 +85,7 @@ struct ProductService: ProductApi {
         while ean13Barcode.characters.count < 13 {
             ean13Barcode += "x"
         }
-
+        
         return ean13Barcode
     }
 }

@@ -14,6 +14,7 @@ class ProductsResponse: Mappable {
     var count = 0
     var page = "0"
     var products = [Product]()
+    var product: Product?
 
     required init?(map: Map) {
     }
@@ -22,5 +23,6 @@ class ProductsResponse: Mappable {
         count <- map[OFFJson.CountKey]
         page <- map[OFFJson.PageKey]
         products <- map[OFFJson.ProductsKey]
+        product <- map[OFFJson.ProductKey]
     }
 }

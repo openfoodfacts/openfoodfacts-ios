@@ -137,15 +137,14 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
 
     func getProduct(fromService service: ProductService, barcode: String) {
-        service.getProduct(byBarcode: barcode, onSuccess: { product in
-            let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
-            // swiftlint:disable:next force_cast
-            let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
-            productDetailVC.product = product
-
-            self.navigationController?.pushViewController(productDetailVC, animated: true)
-        }, onError: { error in
-            Crashlytics.sharedInstance().recordError(error)
+        service.getProduct(byBarcode: barcode, onSuccess: { response in
+            if let product = response.product {
+                self.showProduct(product)
+            } else {
+                self.addNewProduct(barcode)
+            }
+        }, onError: { _ in
+            // TODO Handle error. Show alert that the barcode is not valid?
         })
     }
 }
@@ -191,6 +190,43 @@ extension ScannerViewController {
                 try device.lockForConfiguration()
                 device.focusPointOfInterest = videoPreviewLayer.captureDevicePointOfInterest(for: touchPoint)
                 device.focusMode = .continuousAutoFocus
+                device.unlockForConfiguration()
+            } catch {
+                Crashlytics.sharedInstance().recordError(error)
+            }
+        }
+    }
+}
+
+// MARK: - Navigation
+
+extension ScannerViewController {
+    func showProduct(_ product: Product) {
+        let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
+        // swiftlint:disable:next force_cast
+        let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
+        productDetailVC.product = product
+
+        self.navigationController?.pushViewController(productDetailVC, animated: true)
+    }
+
+    func addNewProduct(_ barcode: String) {
+        turnOffFlash()
+
+        let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
+        if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
+            addProductVC.barcode = barcode
+            self.navigationController?.pushViewController(addProductVC, animated: true)
+        }
+    }
+
+    fileprivate func turnOffFlash() {
+        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else { return }
+        if flashButton.state == .on {
+            do {
+                try device.lockForConfiguration()
+                flashButton.state = .off
+                device.torchMode = .off
                 device.unlockForConfiguration()
             } catch {
                 Crashlytics.sharedInstance().recordError(error)
