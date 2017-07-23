@@ -36,6 +36,17 @@ class ProductAddViewController: UIViewController {
         barcodeLabel.text = barcode
     }
 
+    @IBAction func didTapTakePictureButton(_ sender: UIButton) {
+        activeField?.resignFirstResponder()
+    }
+
+    @IBAction func didTapSaveButton(_ sender: UIButton) {
+        activeField?.resignFirstResponder()
+    }
+}
+
+// MARK: - Keyboard notification handler
+extension ProductAddViewController {
     func keyboardWillShow(notification: Notification) {
         let info = notification.userInfo
         guard let keyboardFrame = (info?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
@@ -60,14 +71,6 @@ class ProductAddViewController: UIViewController {
     func keyboardWillHide(notification: Notification) {
         scrollView.contentInset = self.contentInsetsBeforeKeyboard
         scrollView.scrollIndicatorInsets = self.contentInsetsBeforeKeyboard
-    }
-
-    @IBAction func didTapTakePictureButton(_ sender: UIButton) {
-        activeField?.resignFirstResponder()
-    }
-
-    @IBAction func didTapSaveButton(_ sender: UIButton) {
-        activeField?.resignFirstResponder()
     }
 }
 
