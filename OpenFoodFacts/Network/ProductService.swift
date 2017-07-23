@@ -36,13 +36,13 @@ struct ProductService: ProductApi {
 
         Crashlytics.sharedInstance().setObjectValue(searchType, forKey: "product_search_type")
         Crashlytics.sharedInstance().setObjectValue(page, forKey: "product_search_page")
-        print("URL: \(url)")
+        log.debug("URL: \(url)")
         Answers.logSearch(withQuery: query, customAttributes: ["file": String(describing: ProductService.self), "search_type": searchType])
 
         Alamofire.request(url).responseObject { (response: DataResponse<ProductsResponse>) in
             switch response.result {
             case .success(let productResponse):
-                print("Got \(productResponse.count) products ")
+                log.debug("Got \(productResponse.count) products ")
                 productResponse.query = query
                 onSuccess(productResponse)
             case .failure(let error):
@@ -57,7 +57,7 @@ struct ProductService: ProductApi {
 
         Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
         Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
-        print("URL: \(url)")
+        log.debug("URL: \(url)")
 
         Alamofire.request(url).responseObject { (response: DataResponse<ProductsResponse>) in
             switch response.result {
@@ -74,7 +74,7 @@ struct ProductService: ProductApi {
         if let encodedParameters = parameters.lowercased().addingPercentEncoding(withAllowedCharacters: .alphanumerics) {
             return encodedParameters
         } else {
-            print("Could not add percentage encoding to: \(parameters)")
+            log.debug("Could not add percentage encoding to: \(parameters)")
             return parameters.lowercased()
         }
     }
