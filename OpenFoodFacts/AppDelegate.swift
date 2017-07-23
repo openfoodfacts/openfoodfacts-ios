@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if let tab = window?.rootViewController as? UITabBarController {
             for child in tab.viewControllers ?? [] {
-                if let vc = child as? SearchTableViewController {
+                if let navController = child as? UINavigationController, let vc = navController.topViewController as? SearchTableViewController {
                     vc.productService = productService
                 }
             }

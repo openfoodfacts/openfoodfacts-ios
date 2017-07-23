@@ -18,7 +18,8 @@ class ProductAddViewController: UIViewController {
     fileprivate var activeField: UITextField?
     fileprivate var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
 
-    var barcode: String?
+    var barcode: String!
+    var productService: ProductService!
 
     override func viewDidLoad() {
 

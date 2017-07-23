@@ -16,7 +16,7 @@ import Crashlytics
 class SearchTableViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
     fileprivate var searchController: UISearchController!
-    lazy var productService = ProductService()
+    var productService: ProductService!
     fileprivate var queryRequestWorkItem: DispatchWorkItem?
     fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
     fileprivate var state = State.initial {
@@ -237,6 +237,8 @@ private extension SearchTableViewController {
 
 extension SearchTableViewController {
     func scanBarcode() {
-        navigationController?.pushViewController(ScannerViewController(), animated: true)
+        let scanVC = ScannerViewController()
+        scanVC.productService = productService
+        navigationController?.pushViewController(scanVC, animated: true)
     }
 }

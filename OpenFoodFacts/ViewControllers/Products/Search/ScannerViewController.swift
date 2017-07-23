@@ -27,8 +27,8 @@ class ScannerViewController: UIViewController {
     fileprivate lazy var flashButton = FlashButton()
     fileprivate lazy var overlay = TextOverlay()
     fileprivate var tapToFocusView: TapToFocusView?
-
     fileprivate var lastCodeScanned: String?
+    var productService: ProductService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,13 +139,13 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
                 lastCodeScanned = barcode
-                getProduct(fromService: ProductService(), barcode: barcode)
+                getProduct(barcode: barcode)
             }
         }
     }
 
-    func getProduct(fromService service: ProductService, barcode: String) {
-        service.getProduct(byBarcode: barcode, onSuccess: { response in
+    func getProduct(barcode: String) {
+        productService.getProduct(byBarcode: barcode, onSuccess: { response in
             if let product = response.product {
                 self.showProduct(product)
             } else {
@@ -224,6 +224,7 @@ extension ScannerViewController {
         let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
         if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
             addProductVC.barcode = barcode
+            addProductVC.productService = productService
             self.navigationController?.pushViewController(addProductVC, animated: true)
         }
     }
