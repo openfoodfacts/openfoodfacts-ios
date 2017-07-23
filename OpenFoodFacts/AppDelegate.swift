@@ -21,6 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configureLog()
         Fabric.with([Crashlytics.self])
+
+        let productService = ProductService()
+
+        if let tab = window?.rootViewController as? UITabBarController {
+            for child in tab.viewControllers ?? [] {
+                if let vc = child as? SearchTableViewController {
+                    vc.productService = productService
+                }
+            }
+        }
+
         return true
     }
 

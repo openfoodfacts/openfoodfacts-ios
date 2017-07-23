@@ -16,6 +16,7 @@ import Crashlytics
 class SearchTableViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
     fileprivate var searchController: UISearchController!
+    lazy var productService = ProductService()
     fileprivate var queryRequestWorkItem: DispatchWorkItem?
     fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
     fileprivate var state = State.initial {
@@ -115,7 +116,7 @@ extension SearchTableViewController: UITableViewDataSource {
         guard case let .content(response) = state else { return cell }
         cell.configure(withProduct: response.products[indexPath.row])
         if response.products.count == indexPath.row + 5, let page = Int(response.page), response.products.count < response.count {
-            getProducts(fromService: ProductService(), page: page + 1, withQuery: response.query)
+            getProducts(page: page + 1, withQuery: response.query)
         }
 
         return cell
@@ -139,7 +140,7 @@ extension SearchTableViewController: UISearchResultsUpdating {
         if let query = searchController.searchBar.text, !query.isEmpty, wasSearchBarEdited {
             state = .loading
             let request = DispatchWorkItem { [weak self] in
-                self?.getProducts(fromService: ProductService(), page: 1, withQuery: query)
+                self?.getProducts(page: 1, withQuery: query)
             }
             queryRequestWorkItem = request
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250), execute: request)
@@ -178,8 +179,8 @@ extension SearchTableViewController: UISearchBarDelegate {
 // MARK: - Data source
 
 extension SearchTableViewController {
-    func getProducts(fromService service: ProductService, page: Int, withQuery query: String) {
-        service.getProducts(for: query, page: page, onSuccess: { response in
+    func getProducts(page: Int, withQuery query: String) {
+        productService.getProducts(for: query, page: page, onSuccess: { response in
             // TODO If this query returns only a product, should it go directly to detail view instead of the tableview?
             switch self.state {
             case .content(let oldResponse): // Append new products to existing response
