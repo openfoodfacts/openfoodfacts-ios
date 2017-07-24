@@ -17,7 +17,6 @@
 		956FF8891F1FF0740069D678 /* ProductDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8841F1FF0740069D678 /* ProductDetailPageViewController.swift */; };
 		956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */; };
 		956FF88B1F1FF0740069D678 /* ProductNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8861F1FF0740069D678 /* ProductNutritionViewController.swift */; };
-		956FF88C1F1FF0740069D678 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8871F1FF0740069D678 /* ProductsViewController.swift */; };
 		956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */; };
 		956FF93E1F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8921F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift */; };
 		956FF93F1F1FF0CA0069D678 /* InfoRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8931F1FF0CA0069D678 /* InfoRowTableViewCell.swift */; };
@@ -74,7 +73,6 @@
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
 		95C2651C1E96D55B004212EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C2651A1E96D55B004212EC /* LaunchScreen.storyboard */; };
 		95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C265241E96D5C2004212EC /* AVFoundation.framework */; };
-		95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265281E96D6F0004212EC /* CameraViewController.swift */; };
 		95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */; };
 		95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */; };
 		95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C368091E9ECC0C008BB582 /* ObjectMapper.framework */; };
@@ -83,6 +81,7 @@
 		95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24E01ED5509300EF3D79 /* Crashlytics.framework */; };
 		95DDAF581F24FB160096B74E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */; };
 		95DDAF591F24FB160096B74E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF571F24FB160096B74E /* XCGLogger.framework */; };
+		95DDAF621F25401D0096B74E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDAF601F25401D0096B74E /* CameraViewController.swift */; };
 		95DFD7CD1F01A45C007FDB69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DFD7CF1F01A45C007FDB69 /* Localizable.strings */; };
 		95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E16B2E1EE9E20A00331B2B /* UIStackView.swift */; };
 		95E3ADE21F21433D00CD61D9 /* ProductAddViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E3ADE11F21433D00CD61D9 /* ProductAddViewController.storyboard */; };
@@ -102,7 +101,6 @@
 		956FF8841F1FF0740069D678 /* ProductDetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailPageViewController.swift; sourceTree = "<group>"; };
 		956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		956FF8861F1FF0740069D678 /* ProductNutritionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNutritionViewController.swift; sourceTree = "<group>"; };
-		956FF8871F1FF0740069D678 /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonBarView.xib; sourceTree = "<group>"; };
 		956FF8921F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableUITableViewCell.swift; sourceTree = "<group>"; };
 		956FF8931F1FF0CA0069D678 /* InfoRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoRowTableViewCell.swift; sourceTree = "<group>"; };
@@ -937,7 +935,6 @@
 		95C265181E96D55B004212EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95C2651B1E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95C265241E96D5C2004212EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		95C265281E96D6F0004212EC /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		95C368091E9ECC0C008BB582 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
@@ -946,6 +943,7 @@
 		95CE24E01ED5509300EF3D79 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95DDAF571F24FB160096B74E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
+		95DDAF601F25401D0096B74E /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		95E16B2E1EE9E20A00331B2B /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		95E3ADE11F21433D00CD61D9 /* ProductAddViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductAddViewController.storyboard; sourceTree = "<group>"; };
 		95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nutriments.swift; path = Nutriments/Nutriments.swift; sourceTree = "<group>"; };
@@ -1007,7 +1005,6 @@
 				956FF8841F1FF0740069D678 /* ProductDetailPageViewController.swift */,
 				956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */,
 				956FF8861F1FF0740069D678 /* ProductNutritionViewController.swift */,
-				956FF8871F1FF0740069D678 /* ProductsViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1242,6 +1239,7 @@
 		95C2652A1E96D6FA004212EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				95DDAF5E1F25401D0096B74E /* Camera */,
 				95C2652B1E96D705004212EC /* Products */,
 			);
 			path = ViewControllers;
@@ -1253,7 +1251,6 @@
 				956FF8811F1FF0740069D678 /* Add */,
 				956FF8831F1FF0740069D678 /* Detail */,
 				956FF95F1F1FF0FD0069D678 /* Search */,
-				95C265281E96D6F0004212EC /* CameraViewController.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -1288,6 +1285,14 @@
 				95781BB61EC3A898003E3256 /* Transforms */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		95DDAF5E1F25401D0096B74E /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				95DDAF601F25401D0096B74E /* CameraViewController.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		95E9F0421EC8D7AB00BA20B0 /* Nutriments */ = {
@@ -1590,9 +1595,7 @@
 				956FF9451F1FF0CA0069D678 /* NutritionHeaderTableViewCell.swift in Sources */,
 				956FF94D1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift in Sources */,
 				956FF93E1F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift in Sources */,
-				956FF88C1F1FF0740069D678 /* ProductsViewController.swift in Sources */,
 				956FF9491F1FF0CA0069D678 /* NutritionLevelView.swift in Sources */,
-				95C265291E96D6F0004212EC /* CameraViewController.swift in Sources */,
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
 				956FF9591F1FF0CA0069D678 /* ErrorView.swift in Sources */,
 				956FF9641F1FF0FD0069D678 /* ScannerViewController.swift in Sources */,
@@ -1631,6 +1634,7 @@
 				956FF94B1F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.swift in Sources */,
 				956FF95A1F1FF0CA0069D678 /* LoadingView.swift in Sources */,
 				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
+				95DDAF621F25401D0096B74E /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

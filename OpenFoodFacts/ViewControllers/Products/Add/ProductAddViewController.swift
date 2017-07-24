@@ -17,6 +17,7 @@ class ProductAddViewController: UIViewController {
 
     fileprivate var activeField: UITextField?
     fileprivate var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
+    fileprivate var cameraController: CameraController?
 
     var barcode: String!
     var productService: ProductService!
@@ -38,7 +39,11 @@ class ProductAddViewController: UIViewController {
     }
 
     @IBAction func didTapTakePictureButton(_ sender: UIButton) {
-        activeField?.resignFirstResponder()
+        if let cameraController = CameraController(presentingViewController: self) {
+            self.cameraController = cameraController
+            cameraController.delegate = self
+            cameraController.show()
+        }
     }
 
     @IBAction func didTapSaveButton(_ sender: UIButton) {
@@ -82,5 +87,11 @@ extension ProductAddViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
+    }
+}
+
+extension ProductAddViewController: CameraControllerDelegate {
+    func didGetImage(image: UIImage) {
+        productService.uploadImage(image, barcode: barcode)
     }
 }

@@ -10,19 +10,23 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 import Crashlytics
+import UIKit
 
 protocol ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
 
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
+
+    func uploadImage(_ image: UIImage, barcode: String)
 }
 
-struct ProductService: ProductApi {
-    fileprivate let endpoint = "https://ssl-api.openfoodfacts.org"
+fileprivate let getEndpoint = "https://ssl-api.openfoodfacts.org"
+fileprivate let postEndpoint = "https://world.openfoodfacts.net"
 
+struct ProductService: ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         var query = query
-        var url = endpoint
+        var url = getEndpoint
         var searchType = "by_product"
         if query.isNumber() {
             query = buildBarcodeQueryParameter(query)
@@ -53,7 +57,7 @@ struct ProductService: ProductApi {
     }
 
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
-        let url = endpoint + "/api/v0/product/\(barcode).json"
+        let url = getEndpoint + "/api/v0/product/\(barcode).json"
 
         Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
         Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
@@ -87,5 +91,30 @@ struct ProductService: ProductApi {
         }
 
         return ean13Barcode
+    }
+}
+
+extension ProductService {
+    func uploadImage(_ image: UIImage, barcode: String) {
+        if let imageRepresentation = UIImageJPEGRepresentation(image, 1.0), let barcode = barcode.data(using: .utf8) {
+            Alamofire.upload(
+                multipartFormData: { multipartFormData in
+                    multipartFormData.append(barcode, withName: "code")
+                    multipartFormData.append(imageRepresentation, withName: "imagefield")
+            },
+                to: postEndpoint + "/cgi/product_image_upload.pl",
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .success(let upload, _, _):
+                        upload
+                        .authenticate(user: "off", password: "off")
+                        .responseJSON { response in
+                            debugPrint(response)
+                        }
+                    case .failure(let encodingError):
+                        debugPrint(encodingError)
+                    }
+            })
+        }
     }
 }
