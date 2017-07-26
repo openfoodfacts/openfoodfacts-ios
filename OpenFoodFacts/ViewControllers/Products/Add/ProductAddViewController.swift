@@ -92,6 +92,7 @@ extension ProductAddViewController: UITextFieldDelegate {
 
 extension ProductAddViewController: CameraControllerDelegate {
     func didGetImage(image: UIImage) {
-        productService.uploadImage(image, barcode: barcode)
+        // For now, images will be always uploaded with type front
+        productService.uploadImage(ProductImage(image: image, type: .front), barcode: barcode)
     }
 }

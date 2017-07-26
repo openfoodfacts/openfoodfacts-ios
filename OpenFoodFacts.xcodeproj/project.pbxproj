@@ -82,6 +82,7 @@
 		95DDAF581F24FB160096B74E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */; };
 		95DDAF591F24FB160096B74E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF571F24FB160096B74E /* XCGLogger.framework */; };
 		95DDAF621F25401D0096B74E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDAF601F25401D0096B74E /* CameraViewController.swift */; };
+		95DDAF661F2916D40096B74E /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDAF651F2916D30096B74E /* ProductImage.swift */; };
 		95DFD7CD1F01A45C007FDB69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DFD7CF1F01A45C007FDB69 /* Localizable.strings */; };
 		95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E16B2E1EE9E20A00331B2B /* UIStackView.swift */; };
 		95E3ADE21F21433D00CD61D9 /* ProductAddViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E3ADE11F21433D00CD61D9 /* ProductAddViewController.storyboard */; };
@@ -944,6 +945,7 @@
 		95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95DDAF571F24FB160096B74E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		95DDAF601F25401D0096B74E /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		95DDAF651F2916D30096B74E /* ProductImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
 		95E16B2E1EE9E20A00331B2B /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		95E3ADE11F21433D00CD61D9 /* ProductAddViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductAddViewController.storyboard; sourceTree = "<group>"; };
 		95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nutriments.swift; path = Nutriments/Nutriments.swift; sourceTree = "<group>"; };
@@ -1157,6 +1159,7 @@
 				95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */,
 				95781BB11EC3A898003E3256 /* Product.swift */,
 				95781BB21EC3A898003E3256 /* ProductsResponse.swift */,
+				95DDAF651F2916D30096B74E /* ProductImage.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1635,6 +1638,7 @@
 				956FF95A1F1FF0CA0069D678 /* LoadingView.swift in Sources */,
 				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
 				95DDAF621F25401D0096B74E /* CameraViewController.swift in Sources */,
+				95DDAF661F2916D40096B74E /* ProductImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

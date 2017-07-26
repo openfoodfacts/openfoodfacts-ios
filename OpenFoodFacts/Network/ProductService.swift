@@ -17,7 +17,7 @@ protocol ProductApi {
 
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
 
-    func uploadImage(_ image: UIImage, barcode: String)
+    func uploadImage(_ productImage: ProductImage, barcode: String)
 }
 
 fileprivate let getEndpoint = "https://ssl-api.openfoodfacts.org"
@@ -95,26 +95,44 @@ struct ProductService: ProductApi {
 }
 
 extension ProductService {
-    func uploadImage(_ image: UIImage, barcode: String) {
-        if let imageRepresentation = UIImageJPEGRepresentation(image, 1.0), let barcode = barcode.data(using: .utf8) {
+    func uploadImage(_ productImage: ProductImage, barcode: String) {
+        guard let fileURL = getImageUrl(productImage) else { return }
+
+        if let barcode = barcode.data(using: .utf8) {
             Alamofire.upload(
                 multipartFormData: { multipartFormData in
                     multipartFormData.append(barcode, withName: "code")
-                    multipartFormData.append(imageRepresentation, withName: "imagefield")
+                    multipartFormData.append(fileURL, withName: "imgupload_\(productImage.type.rawValue)")
+                    multipartFormData.append(productImage.type.rawValue.data(using: .utf8)!, withName: "imagefield")
             },
                 to: postEndpoint + "/cgi/product_image_upload.pl",
+                headers: ["Content-Disposition": "form-data; name=\"imgupload_\(productImage.type.rawValue)\"; filename=\"\(productImage.fileName)\""],
                 encodingCompletion: { encodingResult in
                     switch encodingResult {
                     case .success(let upload, _, _):
                         upload
-                        .authenticate(user: "off", password: "off")
-                        .responseJSON { response in
-                            debugPrint(response)
+                            .authenticate(user: "off", password: "off")
+                            .responseJSON { response in
+                                debugPrint(response)
                         }
                     case .failure(let encodingError):
                         debugPrint(encodingError)
                     }
             })
+        }
+    }
+
+    fileprivate func getImageUrl(_ productImage: ProductImage) -> URL? {
+        do {
+            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+            let filePath = "\(paths[0])/\(productImage.fileName)"
+            let fileURL = URL(fileURLWithPath: filePath)
+            if let image = productImage.image, let imageRepresentation = UIImageJPEGRepresentation(image, 0.1) {
+                try imageRepresentation.write(to: fileURL)
+            }
+            return fileURL
+        } catch {
+            return nil
         }
     }
 }
