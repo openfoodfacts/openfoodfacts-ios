@@ -14,6 +14,7 @@ class ProductAddViewController: UIViewController {
     @IBOutlet weak var brandsField: UITextField!
     @IBOutlet weak var quantityField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var uploadedImagesStackView: UIStackView!
 
     fileprivate var activeField: UITextField?
     fileprivate var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
@@ -93,6 +94,16 @@ extension ProductAddViewController: UITextFieldDelegate {
 extension ProductAddViewController: CameraControllerDelegate {
     func didGetImage(image: UIImage) {
         // For now, images will be always uploaded with type front
-        productService.uploadImage(ProductImage(image: image, type: .front), barcode: barcode)
+        productService.uploadImage(ProductImage(image: image, type: .front), barcode: barcode, onSuccess: {
+            self.uploadedImagesStackView.addArrangedSubview(self.createUploadedImageLabel())
+        }, onError: { _ in
+            // Do nothing, saying something to the user would be nice.
+        })
+    }
+
+    fileprivate func createUploadedImageLabel() -> UILabel {
+        let label = UILabel()
+        label.text = NSLocalizedString("product-add.uploaded-image", comment: "")
+        return label
     }
 }

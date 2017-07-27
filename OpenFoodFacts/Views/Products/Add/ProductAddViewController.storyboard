@@ -25,10 +25,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-bW-zl0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="463"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="573"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zwf-af-22Y">
-                                                <rect key="frame" x="10" y="10" width="355" height="453"/>
+                                                <rect key="frame" x="10" y="10" width="355" height="563"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Mu-dr-4FU">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="21.5"/>
@@ -61,32 +61,38 @@
                                                             <action selector="didTapTakePictureButton:" destination="A8v-Ao-FSs" eventType="touchUpInside" id="PO1-cC-Yp8"/>
                                                         </connections>
                                                     </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Li4-Au-Fse">
+                                                        <rect key="frame" x="0.0" y="232" width="355" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" placeholder="YES" id="bk0-hH-iFW"/>
+                                                        </constraints>
+                                                    </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note: the pictures you send are published under the free licence Creative Commons Attribution and ShareAlike." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjC-nW-Oeb">
-                                                        <rect key="frame" x="0.0" y="232" width="355" height="61"/>
+                                                        <rect key="frame" x="0.0" y="342" width="355" height="61"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kK2-es-lYg">
-                                                        <rect key="frame" x="0.0" y="303" width="355" height="30"/>
+                                                        <rect key="frame" x="0.0" y="413" width="355" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brands" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-Km-ieP">
-                                                        <rect key="frame" x="0.0" y="343" width="355" height="30"/>
+                                                        <rect key="frame" x="0.0" y="453" width="355" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjx-9U-rIz">
-                                                        <rect key="frame" x="0.0" y="383" width="355" height="30"/>
+                                                        <rect key="frame" x="0.0" y="493" width="355" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsI-Pf-EUr">
-                                                        <rect key="frame" x="0.0" y="423" width="355" height="30"/>
+                                                        <rect key="frame" x="0.0" y="533" width="355" height="30"/>
                                                         <state key="normal" title="Save"/>
                                                         <connections>
                                                             <action selector="didTapSaveButton:" destination="A8v-Ao-FSs" eventType="touchUpInside" id="yEp-zv-aeh"/>
@@ -130,11 +136,12 @@
                         <outlet property="productNameField" destination="kK2-es-lYg" id="b2e-BW-m6n"/>
                         <outlet property="quantityField" destination="Hjx-9U-rIz" id="bpt-lS-aAt"/>
                         <outlet property="scrollView" destination="mcz-Dc-5OG" id="OVO-1S-Tis"/>
+                        <outlet property="uploadedImagesStackView" destination="Li4-Au-Fse" id="FXs-Yp-zy7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3l-ik-wBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="71.514242878560722"/>
+            <point key="canvasLocation" x="-60" y="71.064467766116948"/>
         </scene>
     </scenes>
 </document>

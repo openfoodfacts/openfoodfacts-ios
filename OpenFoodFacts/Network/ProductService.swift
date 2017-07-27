@@ -17,7 +17,7 @@ protocol ProductApi {
 
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
 
-    func uploadImage(_ productImage: ProductImage, barcode: String)
+    func uploadImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
 }
 
 fileprivate let getEndpoint = "https://ssl-api.openfoodfacts.org"
@@ -95,7 +95,7 @@ struct ProductService: ProductApi {
 }
 
 extension ProductService {
-    func uploadImage(_ productImage: ProductImage, barcode: String) {
+    func uploadImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         guard let fileURL = getImageUrl(productImage) else { return }
 
         if let barcode = barcode.data(using: .utf8) {
@@ -113,10 +113,27 @@ extension ProductService {
                         upload
                             .authenticate(user: "off", password: "off")
                             .responseJSON { response in
-                                debugPrint(response)
+                                switch response.result {
+                                case .success(let response):
+                                    if let json = response as? [String: Any], let status = json["status"] as? String, "status ok" == status {
+                                        onSuccess()
+                                    } else {
+                                        let error = NSError(domain:"ProductServiceErrorDomain", code:1, userInfo:[
+                                            "imageType": productImage.type.rawValue,
+                                            "fileName": productImage.fileName,
+                                            "fileURL": fileURL
+                                            ])
+                                        Crashlytics.sharedInstance().recordError(error)
+                                        onError(error)
+                                    }
+                                case .failure(let error):
+                                    Crashlytics.sharedInstance().recordError(error)
+                                    onError(error)
+                                }
                         }
                     case .failure(let encodingError):
-                        debugPrint(encodingError)
+                        Crashlytics.sharedInstance().recordError(encodingError)
+                        onError(encodingError)
                     }
             })
         }
