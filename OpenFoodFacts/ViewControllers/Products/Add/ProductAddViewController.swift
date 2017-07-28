@@ -19,8 +19,13 @@ class ProductAddViewController: UIViewController {
     fileprivate var activeField: UITextField?
     fileprivate var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
     fileprivate var cameraController: CameraController?
+    fileprivate lazy var product = Product()
 
-    var barcode: String!
+    var barcode: String! {
+        didSet {
+            product.barcode = barcode
+        }
+    }
     var productService: ProductService!
 
     override func viewDidLoad() {
@@ -49,6 +54,21 @@ class ProductAddViewController: UIViewController {
 
     @IBAction func didTapSaveButton(_ sender: UIButton) {
         activeField?.resignFirstResponder()
+        product.name = productNameField.text
+        if let brand = brandsField.text {
+            product.brands = [brand]
+        }
+        product.quantity = quantityField.text
+
+        productService.postProduct(product, onSuccess: {
+            self.navigationController?.popToRootViewController(animated: true)
+        }, onError: { _ in
+            let alert = UIAlertController(title: NSLocalizedString("product-add.save-error.title", comment: ""), message: NSLocalizedString("product-add.save-error.message", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("product-add.save-error.action", comment: ""), style: .default, handler: { _ in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        })
     }
 }
 
@@ -94,7 +114,7 @@ extension ProductAddViewController: UITextFieldDelegate {
 extension ProductAddViewController: CameraControllerDelegate {
     func didGetImage(image: UIImage) {
         // For now, images will be always uploaded with type front
-        productService.uploadImage(ProductImage(image: image, type: .front), barcode: barcode, onSuccess: {
+        productService.postImage(ProductImage(image: image, type: .front), barcode: barcode, onSuccess: {
             self.uploadedImagesStackView.addArrangedSubview(self.createUploadedImageLabel())
         }, onError: { _ in
             // Do nothing, saying something to the user would be nice.
