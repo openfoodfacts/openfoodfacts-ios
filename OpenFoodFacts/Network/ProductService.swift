@@ -39,10 +39,12 @@ struct ProductService: ProductApi {
 
         Crashlytics.sharedInstance().setObjectValue(searchType, forKey: "product_search_type")
         Crashlytics.sharedInstance().setObjectValue(page, forKey: "product_search_page")
-        log.debug("URL: \(url)")
         Answers.logSearch(withQuery: query, customAttributes: ["file": String(describing: ProductService.self), "search_type": searchType])
 
-        Alamofire.request(url).responseObject { (response: DataResponse<ProductsResponse>) in
+        let request = Alamofire.request(url)
+        log.debug(request.debugDescription)
+        request.responseObject { (response: DataResponse<ProductsResponse>) in
+            log.debug(response.debugDescription)
             switch response.result {
             case .success(let productResponse):
                 log.debug("Got \(productResponse.count) products ")
@@ -60,15 +62,17 @@ struct ProductService: ProductApi {
 
         Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
         Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
-        log.debug("URL: \(url)")
 
-        Alamofire.request(url).responseObject { (response: DataResponse<ProductsResponse>) in
+        let request: DataRequest = Alamofire.request(url)
+        log.debug(request.debugDescription)
+        request.responseObject { (response: DataResponse<ProductsResponse>) in
+            log.debug(response.debugDescription)
             switch response.result {
             case .success(let productResponse):
                 onSuccess(productResponse)
             case .failure(let error):
-                onError(error)
                 Crashlytics.sharedInstance().recordError(error)
+                onError(error)
             }
         }
     }
@@ -109,9 +113,11 @@ extension ProductService {
                 encodingCompletion: { encodingResult in
                     switch encodingResult {
                     case .success(let upload, _, _):
+                        log.debug(upload.debugDescription)
                         upload
                             .authenticate(user: "off", password: "off")
                             .responseJSON { response in
+                                log.debug(response.debugDescription)
                                 switch response.result {
                                 case .success(let response):
                                     if let json = response as? [String: Any], let status = json["status"] as? String, "status ok" == status {
@@ -155,13 +161,11 @@ extension ProductService {
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         let url = "\(postEndpoint)/cgi/product_jqm2.pl"
 
-        Alamofire.request(url,
-                          method: .post,
-                          parameters: product.toJSON(),
-                          encoding: URLEncoding.default)
-            .authenticate(user: "off", password: "off")
+        let request = Alamofire.request(url, method: .post, parameters: product.toJSON(), encoding: URLEncoding.default)
+        log.debug(request.debugDescription)
+        request.authenticate(user: "off", password: "off")
             .responseJSON(completionHandler: { response in
-                debugPrint(response)
+                log.debug(response.debugDescription)
                 switch response.result {
                 case .success(let responseBody):
                     if let json = responseBody as? [String: Any], let status = json["status_verbose"] as? String, "fields saved" == status {
@@ -179,7 +183,6 @@ extension ProductService {
                     Crashlytics.sharedInstance().recordError(error)
                     onError(error)
                 }
-
             })
     }
 }
