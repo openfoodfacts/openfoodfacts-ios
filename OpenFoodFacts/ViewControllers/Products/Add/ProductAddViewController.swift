@@ -9,7 +9,7 @@
 import UIKit
 import NotificationBanner
 
-class ProductAddViewController: UIViewController {
+class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var productNameField: UITextField!
     @IBOutlet weak var brandsField: UITextField!
@@ -19,23 +19,7 @@ class ProductAddViewController: UIViewController {
 
     fileprivate var activeField: UITextField?
     fileprivate var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
-    fileprivate var cameraController: CameraController?
     fileprivate lazy var product = Product()
-    fileprivate lazy var uploadingImageBanner: StatusBarNotificationBanner = {
-        let banner = StatusBarNotificationBanner(title: NSLocalizedString("product-add.uploading-image-banner.title", comment: ""), style: .info)
-        banner.autoDismiss = false
-        return banner
-    }()
-    fileprivate lazy var uploadingImageErrorBanner: NotificationBanner = {
-        let banner = NotificationBanner(title: NSLocalizedString("product-add.image-upload-error-banner.title", comment: ""),
-                                        subtitle: NSLocalizedString("product-add.image-upload-error-banner.subtitle", comment: ""),
-                                        style: .danger)
-        return banner
-    }()
-    fileprivate lazy var uploadingImageSuccessBanner: NotificationBanner = {
-        let banner = NotificationBanner(title: NSLocalizedString("product-add.image-upload-success-banner.title", comment: ""), style: .success)
-        return banner
-    }()
     fileprivate lazy var productAddSuccessBanner: NotificationBanner = {
         let banner = NotificationBanner(title: NSLocalizedString("product-add.product-add-success-banner.title", comment: ""), style: .success)
         return banner
@@ -50,12 +34,11 @@ class ProductAddViewController: UIViewController {
         return alert
     }()
 
-    var barcode: String! {
+    override var barcode: String! {
         didSet {
             product.barcode = barcode
         }
     }
-    var productService: ProductService!
 
     override func viewDidLoad() {
         productNameField.delegate = self
@@ -70,14 +53,6 @@ class ProductAddViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         barcodeLabel.text = barcode
-    }
-
-    @IBAction func didTapTakePictureButton(_ sender: UIButton) {
-        if let cameraController = CameraController(presentingViewController: self) {
-            self.cameraController = cameraController
-            cameraController.delegate = self
-            cameraController.show()
-        }
     }
 
     @IBAction func didTapSaveButton(_ sender: UIButton) {
@@ -136,18 +111,9 @@ extension ProductAddViewController: UITextFieldDelegate {
     }
 }
 
-extension ProductAddViewController: CameraControllerDelegate {
-    func didGetImage(image: UIImage) {
-        // For now, images will be always uploaded with type front
-        uploadingImageBanner.show()
-        productService.postImage(ProductImage(image: image, type: .front), barcode: barcode, onSuccess: {
-            self.uploadingImageBanner.dismiss()
-            self.uploadingImageSuccessBanner.show()
-            self.uploadedImagesStackView.addArrangedSubview(self.createUploadedImageLabel())
-        }, onError: { _ in
-            self.uploadingImageBanner.dismiss()
-            self.uploadingImageErrorBanner.show()
-        })
+extension ProductAddViewController: TakePictureViewControllerDelegate {
+    func postImageSuccess() {
+        self.uploadedImagesStackView.addArrangedSubview(self.createUploadedImageLabel())
     }
 
     fileprivate func createUploadedImageLabel() -> UILabel {

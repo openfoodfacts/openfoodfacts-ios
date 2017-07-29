@@ -10,6 +10,7 @@
 		9501634B1F2CE9A20057B8D5 /* MarqueeLabelSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9501633B1F2CE9780057B8D5 /* MarqueeLabelSwift.framework */; };
 		9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9501633D1F2CE9780057B8D5 /* NotificationBanner.framework */; };
 		9501634D1F2CEE700057B8D5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950163431F2CE9780057B8D5 /* SnapKit.framework */; };
+		950163741F2D1EF20057B8D5 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950163731F2D1EF20057B8D5 /* TakePictureViewController.swift */; };
 		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
 		9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525708B1EE9BC91002FC40D /* CellImageTapable.swift */; };
 		953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953664F41ECA212100D6D398 /* NutrimentItem.swift */; };
@@ -162,6 +163,7 @@
 		950163471F2CE9780057B8D5 /* XCGLogger.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = XCGLogger.framework.dSYM; sourceTree = "<group>"; };
 		950163481F2CE9780057B8D5 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		950163491F2CE9780057B8D5 /* XLPagerTabStrip.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = XLPagerTabStrip.framework.dSYM; sourceTree = "<group>"; };
+		950163731F2D1EF20057B8D5 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakePictureViewController.swift; path = Common/TakePictureViewController.swift; sourceTree = "<group>"; };
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9525708B1EE9BC91002FC40D /* CellImageTapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellImageTapable.swift; path = Protocols/CellImageTapable.swift; sourceTree = "<group>"; };
 		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
@@ -1131,6 +1133,14 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		950163721F2D1EDA0057B8D5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				950163731F2D1EF20057B8D5 /* TakePictureViewController.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		9525708A1EE9BC43002FC40D /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -1397,6 +1407,7 @@
 		95C2652A1E96D6FA004212EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				950163721F2D1EDA0057B8D5 /* Common */,
 				95DDAF5E1F25401D0096B74E /* Camera */,
 				95C2652B1E96D705004212EC /* Products */,
 			);
@@ -1798,6 +1809,7 @@
 				956FF94B1F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.swift in Sources */,
 				956FF95A1F1FF0CA0069D678 /* LoadingView.swift in Sources */,
 				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
+				950163741F2D1EF20057B8D5 /* TakePictureViewController.swift in Sources */,
 				95DDAF621F25401D0096B74E /* CameraViewController.swift in Sources */,
 				95DDAF661F2916D40096B74E /* ProductImage.swift in Sources */,
 			);
@@ -2740,7 +2752,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JVHN2X67GT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2762,7 +2774,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = JVHN2X67GT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

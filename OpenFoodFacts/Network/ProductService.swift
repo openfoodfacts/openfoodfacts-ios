@@ -58,14 +58,16 @@ struct ProductService: ProductApi {
     }
 
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
-        let url = getEndpoint + "/api/v0/product/\(barcode).json"
+        let url = postEndpoint + "/api/v0/product/\(barcode).json"
+//        let url = getEndpoint + "/api/v0/product/\(barcode).json"
 
         Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
         Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
 
         let request: DataRequest = Alamofire.request(url)
         log.debug(request.debugDescription)
-        request.responseObject { (response: DataResponse<ProductsResponse>) in
+        request.authenticate(user: "off", password: "off")
+            .responseObject { (response: DataResponse<ProductsResponse>) in
             log.debug(response.debugDescription)
             switch response.result {
             case .success(let productResponse):

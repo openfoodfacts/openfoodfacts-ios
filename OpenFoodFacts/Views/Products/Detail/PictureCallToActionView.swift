@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @IBDesignable class PictureCallToActionView: UIView {
 
     @IBOutlet weak var textLabel: UILabel!
