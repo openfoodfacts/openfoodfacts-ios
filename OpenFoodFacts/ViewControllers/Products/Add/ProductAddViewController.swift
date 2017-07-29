@@ -40,6 +40,15 @@ class ProductAddViewController: UIViewController {
         let banner = NotificationBanner(title: NSLocalizedString("product-add.product-add-success-banner.title", comment: ""), style: .success)
         return banner
     }()
+    fileprivate lazy var productPostErrorAlert: UIAlertController = {
+        let alert = UIAlertController(title: NSLocalizedString("product-add.save-error.title", comment: ""),
+                                      message: NSLocalizedString("product-add.save-error.message", comment: ""),
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("product-add.save-error.action", comment: ""),
+                                      style: .default,
+                                      handler: { _ in alert.dismiss(animated: true, completion: nil) }))
+        return alert
+    }()
 
     var barcode: String! {
         didSet {
@@ -49,7 +58,6 @@ class ProductAddViewController: UIViewController {
     var productService: ProductService!
 
     override func viewDidLoad() {
-
         productNameField.delegate = self
         brandsField.delegate = self
         quantityField.delegate = self
@@ -84,11 +92,7 @@ class ProductAddViewController: UIViewController {
             self.productAddSuccessBanner.show()
             self.navigationController?.popToRootViewController(animated: true)
         }, onError: { _ in
-            let alert = UIAlertController(title: NSLocalizedString("product-add.save-error.title", comment: ""), message: NSLocalizedString("product-add.save-error.message", comment: ""), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("product-add.save-error.action", comment: ""), style: .default, handler: { _ in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            self.present(alert, animated: true, completion: nil)
+            self.present(self.productPostErrorAlert, animated: true, completion: nil)
         })
     }
 }
@@ -100,7 +104,7 @@ extension ProductAddViewController {
         guard let keyboardFrame = (info?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         guard let activeField = self.activeField else { return }
 
-        var keyboardHeight: CGFloat = keyboardFrame.height < keyboardFrame.width ? keyboardFrame.height : keyboardFrame.width
+        let keyboardHeight: CGFloat = keyboardFrame.height < keyboardFrame.width ? keyboardFrame.height : keyboardFrame.width
 
         self.contentInsetsBeforeKeyboard = scrollView.contentInset
         var contentInsets = scrollView.contentInset
