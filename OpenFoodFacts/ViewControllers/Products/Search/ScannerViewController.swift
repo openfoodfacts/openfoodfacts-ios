@@ -28,6 +28,7 @@ class ScannerViewController: UIViewController {
     fileprivate lazy var overlay = TextOverlay()
     fileprivate var tapToFocusView: TapToFocusView?
     fileprivate var lastCodeScanned: String?
+    fileprivate var showHelpInOverlayTask: DispatchWorkItem?
     var productService: ProductService!
 
     override func viewDidLoad() {
@@ -41,12 +42,15 @@ class ScannerViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        lastCodeScanned = nil
+        resetOverlay()
         captureSession?.startRunning()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         captureSession?.stopRunning()
+        showHelpInOverlayTask?.cancel()
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -111,7 +115,6 @@ class ScannerViewController: UIViewController {
     }
 
     fileprivate func configureOverlay() {
-        overlay.setText(NSLocalizedString("product-scanner.overlay.user-help", comment: "User help in the scan view"))
         self.view.addSubview(overlay)
 
         var constraints = [NSLayoutConstraint]()
@@ -120,9 +123,26 @@ class ScannerViewController: UIViewController {
 
         self.view.addConstraints(constraints)
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-            self.overlay.setText(NSLocalizedString("product-scanner.overlay.extended-user-help", comment: "User help in the scan view"))
-        })
+        resetOverlay()
+    }
+
+    fileprivate func resetOverlay() {
+        overlay.setText(NSLocalizedString("product-scanner.overlay.user-help", comment: "User help in the scan view"))
+        showHelpInOverlayTask?.cancel()
+        showScanHelpInstructions()
+    }
+
+    fileprivate func showScanHelpInstructions() {
+        let task = DispatchWorkItem {
+            if self.lastCodeScanned == nil {
+                self.overlay.setText(NSLocalizedString("product-scanner.overlay.extended-user-help", comment: "User help in the scan view"))
+            } else {
+                self.showScanHelpInstructions()
+            }
+        }
+
+        self.showHelpInOverlayTask = task
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: task)
     }
 
     fileprivate func configureTapToFocus() {
