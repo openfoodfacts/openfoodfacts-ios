@@ -18,6 +18,14 @@
 "product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 
 // Product Add
+/* Displayed when an image taken by the user is beign uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "Uploading image...";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "Something went wrong";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "Image was uploaded successfully 👍";
 "product-add.uploaded-image" = "Image uploaded, thanks!";
 "product-add.save-error.title" = "Error while saving product";
 "product-add.save-error.message" = "Try again later";

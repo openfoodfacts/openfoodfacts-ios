@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBanner
 
 class ProductAddViewController: UIViewController {
     @IBOutlet weak var barcodeLabel: UILabel!
@@ -20,6 +21,21 @@ class ProductAddViewController: UIViewController {
     fileprivate var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
     fileprivate var cameraController: CameraController?
     fileprivate lazy var product = Product()
+    fileprivate lazy var uploadingImageBanner: StatusBarNotificationBanner = {
+        let banner = StatusBarNotificationBanner(title: NSLocalizedString("product-add.uploading-image-banner.title", comment: ""), style: .info)
+        banner.autoDismiss = false
+        return banner
+    }()
+    fileprivate lazy var uploadingImageErrorBanner: NotificationBanner = {
+        let banner = NotificationBanner(title: NSLocalizedString("product-add.image-upload-error-banner.title", comment: ""),
+                                        subtitle: NSLocalizedString("product-add.image-upload-error-banner.subtitle", comment: ""),
+                                        style: .danger)
+        return banner
+    }()
+    fileprivate lazy var uploadingImageSuccessBanner: NotificationBanner = {
+        let banner = NotificationBanner(title: NSLocalizedString("product-add.image-upload-success-banner.title", comment: ""), style: .success)
+        return banner
+    }()
 
     var barcode: String! {
         didSet {
@@ -114,10 +130,14 @@ extension ProductAddViewController: UITextFieldDelegate {
 extension ProductAddViewController: CameraControllerDelegate {
     func didGetImage(image: UIImage) {
         // For now, images will be always uploaded with type front
+        uploadingImageBanner.show()
         productService.postImage(ProductImage(image: image, type: .front), barcode: barcode, onSuccess: {
+            self.uploadingImageBanner.dismiss()
+            self.uploadingImageSuccessBanner.show()
             self.uploadedImagesStackView.addArrangedSubview(self.createUploadedImageLabel())
         }, onError: { _ in
-            // Do nothing, saying something to the user would be nice.
+            self.uploadingImageBanner.dismiss()
+            self.uploadingImageErrorBanner.show()
         })
     }
 

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9501634A1F2CE9A20057B8D5 /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950163391F2CE9780057B8D5 /* MarqueeLabel.framework */; };
 		9501634B1F2CE9A20057B8D5 /* MarqueeLabelSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9501633B1F2CE9780057B8D5 /* MarqueeLabelSwift.framework */; };
 		9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9501633D1F2CE9780057B8D5 /* NotificationBanner.framework */; };
-		9501634D1F2CEE700057B8D5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950163431F2CE9780057B8D5 /* SnapKit.framework */; };
 		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
 		9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525708B1EE9BC91002FC40D /* CellImageTapable.swift */; };
 		953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953664F41ECA212100D6D398 /* NutrimentItem.swift */; };
@@ -1028,7 +1028,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9501634D1F2CEE700057B8D5 /* SnapKit.framework in Frameworks */,
 				9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */,
 				957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */,
 				95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */,
@@ -1041,6 +1040,7 @@
 				95DDAF581F24FB160096B74E /* ObjcExceptionBridging.framework in Frameworks */,
 				95DDAF591F24FB160096B74E /* XCGLogger.framework in Frameworks */,
 				953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */,
+				9501634A1F2CE9A20057B8D5 /* MarqueeLabel.framework in Frameworks */,
 				9501634B1F2CE9A20057B8D5 /* MarqueeLabelSwift.framework in Frameworks */,
 				9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */,
 			);
@@ -1710,9 +1710,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ImageViewer.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/MarqueeLabelSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NotificationBanner.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
@@ -1723,9 +1723,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ImageViewer.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MarqueeLabelSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NotificationBanner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
