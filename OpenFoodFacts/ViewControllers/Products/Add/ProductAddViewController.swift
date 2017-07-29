@@ -36,6 +36,10 @@ class ProductAddViewController: UIViewController {
         let banner = NotificationBanner(title: NSLocalizedString("product-add.image-upload-success-banner.title", comment: ""), style: .success)
         return banner
     }()
+    fileprivate lazy var productAddSuccessBanner: NotificationBanner = {
+        let banner = NotificationBanner(title: NSLocalizedString("product-add.product-add-success-banner.title", comment: ""), style: .success)
+        return banner
+    }()
 
     var barcode: String! {
         didSet {
@@ -77,6 +81,7 @@ class ProductAddViewController: UIViewController {
         product.quantity = quantityField.text
 
         productService.postProduct(product, onSuccess: {
+            self.productAddSuccessBanner.show()
             self.navigationController?.popToRootViewController(animated: true)
         }, onError: { _ in
             let alert = UIAlertController(title: NSLocalizedString("product-add.save-error.title", comment: ""), message: NSLocalizedString("product-add.save-error.message", comment: ""), preferredStyle: .alert)
