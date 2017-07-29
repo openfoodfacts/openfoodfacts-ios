@@ -100,7 +100,9 @@ extension ProductAddViewController {
         guard let keyboardFrame = (info?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         guard let activeField = self.activeField else { return }
 
-        let keyboardHeight: CGFloat = keyboardFrame.height < keyboardFrame.width ? keyboardFrame.height : keyboardFrame.width
+        var keyboardHeight: CGFloat = keyboardFrame.height < keyboardFrame.width ? keyboardFrame.height : keyboardFrame.width
+
+        keyboardHeight += 15 // Give a little more space
 
         self.contentInsetsBeforeKeyboard = scrollView.contentInset
         var contentInsets = scrollView.contentInset
