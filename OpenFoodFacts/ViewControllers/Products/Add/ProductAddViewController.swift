@@ -102,8 +102,6 @@ extension ProductAddViewController {
 
         var keyboardHeight: CGFloat = keyboardFrame.height < keyboardFrame.width ? keyboardFrame.height : keyboardFrame.width
 
-        keyboardHeight += 15 // Give a little more space
-
         self.contentInsetsBeforeKeyboard = scrollView.contentInset
         var contentInsets = scrollView.contentInset
         contentInsets.bottom = keyboardHeight

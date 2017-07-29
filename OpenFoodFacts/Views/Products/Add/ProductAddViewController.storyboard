@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-bW-zl0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="584.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="599.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zwf-af-22Y">
                                                 <rect key="frame" x="10" y="10" width="355" height="574.5"/>
@@ -108,7 +108,7 @@
                                             <constraint firstItem="zwf-af-22Y" firstAttribute="top" secondItem="HHR-bW-zl0" secondAttribute="top" constant="10" id="0Fo-8X-vwG"/>
                                             <constraint firstItem="zwf-af-22Y" firstAttribute="leading" secondItem="HHR-bW-zl0" secondAttribute="leading" constant="10" id="3A6-qr-1qb"/>
                                             <constraint firstAttribute="trailing" secondItem="zwf-af-22Y" secondAttribute="trailing" constant="10" id="6gr-7D-36t"/>
-                                            <constraint firstAttribute="bottom" secondItem="zwf-af-22Y" secondAttribute="bottom" id="x8l-sv-TXB"/>
+                                            <constraint firstAttribute="bottom" secondItem="zwf-af-22Y" secondAttribute="bottom" constant="15" id="x8l-sv-TXB"/>
                                         </constraints>
                                     </view>
                                 </subviews>
