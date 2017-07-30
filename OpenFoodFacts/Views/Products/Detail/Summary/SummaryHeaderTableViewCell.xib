@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,70 +14,9 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="187.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="64G-C4-iHm">
-                        <rect key="frame" x="10" y="10" width="300" height="167.5"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IR9-1E-IOI">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="133.5"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wPX-N8-77A">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="133.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="133.5" id="PxI-qH-4ar"/>
-                                        </constraints>
-                                    </imageView>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vL2-cr-jAW" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="0.0" width="0.0" height="133.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81h-m3-oPV">
-                                        <rect key="frame" x="150" y="0.0" width="150" height="133.5"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnG-73-JJs" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="36.5" width="150" height="60.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="bnG-73-JJs" secondAttribute="height" multiplier="310:126" id="CG1-RJ-unU"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="bnG-73-JJs" firstAttribute="width" secondItem="81h-m3-oPV" secondAttribute="width" id="Jgq-Wd-8h9"/>
-                                            <constraint firstItem="bnG-73-JJs" firstAttribute="centerY" secondItem="81h-m3-oPV" secondAttribute="centerY" id="aSM-S6-5pH"/>
-                                            <constraint firstItem="bnG-73-JJs" firstAttribute="centerX" secondItem="81h-m3-oPV" secondAttribute="centerX" id="d8N-bX-5oN"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEW-Xk-bj4">
-                                <rect key="frame" x="0.0" y="143.5" width="300" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="LEW-Xk-bj4" firstAttribute="width" secondItem="64G-C4-iHm" secondAttribute="width" id="KzP-yQ-Avs"/>
-                        </constraints>
-                    </stackView>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="64G-C4-iHm" secondAttribute="bottom" constant="10" id="5gC-15-ZSr"/>
-                    <constraint firstAttribute="trailing" secondItem="64G-C4-iHm" secondAttribute="trailing" constant="10" id="O7y-rG-ODZ"/>
-                    <constraint firstItem="64G-C4-iHm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="msU-oD-txN"/>
-                    <constraint firstItem="64G-C4-iHm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="uuF-lE-lhh"/>
-                </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="callToActionView" destination="vL2-cr-jAW" id="jJm-Wc-QOh"/>
-                <outlet property="nutriscore" destination="bnG-73-JJs" id="VUq-tZ-Unt"/>
-                <outlet property="productImage" destination="wPX-N8-77A" id="YWQ-vI-K1o"/>
-                <outlet property="productName" destination="LEW-Xk-bj4" id="UZK-Wr-Vb5"/>
-            </connections>
             <point key="canvasLocation" x="34" y="126"/>
         </tableViewCell>
     </objects>

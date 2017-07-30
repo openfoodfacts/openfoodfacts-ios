@@ -72,6 +72,8 @@
 		95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB71EC3A898003E3256 /* ArrayTransform.swift */; };
 		95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB81EC3A898003E3256 /* DoubleTransform.swift */; };
 		95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB91EC3A898003E3256 /* TagTransform.swift */; };
+		95902B461F2E284700A72EF7 /* HeaderTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95902B441F2E284700A72EF7 /* HeaderTableViewCellController.swift */; };
+		95902B471F2E284700A72EF7 /* HeaderTableViewCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95902B451F2E284700A72EF7 /* HeaderTableViewCellController.xib */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -997,6 +999,8 @@
 		95818DD71F0AE05F00CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Settings.strings; sourceTree = "<group>"; };
 		95818DD81F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95818DD91F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		95902B441F2E284700A72EF7 /* HeaderTableViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCellController.swift; sourceTree = "<group>"; };
+		95902B451F2E284700A72EF7 /* HeaderTableViewCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderTableViewCellController.xib; sourceTree = "<group>"; };
 		95A7E0641F0581B6004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A7E0671F058F5D004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -1251,6 +1255,8 @@
 			children = (
 				956FF8AA1F1FF0CA0069D678 /* SummaryHeaderTableViewCell.swift */,
 				956FF8AB1F1FF0CA0069D678 /* SummaryHeaderTableViewCell.xib */,
+				95902B441F2E284700A72EF7 /* HeaderTableViewCellController.swift */,
+				95902B451F2E284700A72EF7 /* HeaderTableViewCellController.xib */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -1667,6 +1673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				956FF9501F1FF0CA0069D678 /* PictureCallToActionView.xib in Resources */,
+				95902B471F2E284700A72EF7 /* HeaderTableViewCellController.xib in Resources */,
 				95E3ADE21F21433D00CD61D9 /* ProductAddViewController.storyboard in Resources */,
 				956FF9401F1FF0CA0069D678 /* InfoRowTableViewCell.xib in Resources */,
 				956FF94A1F1FF0CA0069D678 /* NutritionLevelView.xib in Resources */,
@@ -1795,6 +1802,7 @@
 				95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */,
 				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
+				95902B461F2E284700A72EF7 /* HeaderTableViewCellController.swift in Sources */,
 				956FF9661F1FF0FD0069D678 /* SearchTableViewControllerState.swift in Sources */,
 				956FF8891F1FF0740069D678 /* ProductDetailPageViewController.swift in Sources */,
 				957094AF1EA124E800268236 /* ProductService.swift in Sources */,
