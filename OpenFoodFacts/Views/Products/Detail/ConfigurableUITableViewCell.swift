@@ -12,15 +12,6 @@ class ConfigurableUITableViewCell<T>: UITableViewCell {
     weak var delegate: CellImageTapable?
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint?
 
-    weak var hostedView: UIView! {
-        didSet {
-            hostedView.translatesAutoresizingMaskIntoConstraints = false
-            self.contentView.addSubview(hostedView)
-            self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[hostedView]-10-|", options: [], metrics: nil, views: ["hostedView": hostedView]))
-            self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[hostedView]-10-|", options: [], metrics: nil, views: ["hostedView": hostedView]))
-        }
-    }
-
     func configure(with: T, completionHandler: (() -> Void)? = nil) {
         // Do nothing, expect implementation in subclasses
     }

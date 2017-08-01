@@ -19,20 +19,11 @@ UIViewController, UITableViewDelegate, UITableViewDataSource, IndicatorInfoProvi
     internal let infoRows: [InfoRow]
     internal let localizedTitle: String
 
-    var headerTableViewCellController: HeaderTableViewCellController
-
     init(product: Product, localizedTitle: String, infoRows: [InfoRow]) {
         self.product = product
         self.infoRows = infoRows
         self.localizedTitle = localizedTitle
-
-        let headerTableViewCellController = HeaderTableViewCellController(with: product)
-        self.headerTableViewCellController = headerTableViewCellController
-
         super.init(nibName: nil, bundle: nil)
-
-        self.addChildViewController(headerTableViewCellController)
-        headerTableViewCellController.didMove(toParentViewController: self)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -92,15 +83,13 @@ UIViewController, UITableViewDelegate, UITableViewDataSource, IndicatorInfoProvi
     func createHeaderCell() -> Header {
         // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: Header.identifier) as! Header
-//        headerTableViewCellController.view.frame = cell.contentView.bounds
-        cell.hostedView = headerTableViewCellController.view
 
-//        cell.configure(with: product) {
-//            // Trigger row height recalculation due to async loaded images in dynamic height rows
-//            self.tableView.beginUpdates()
-//            self.tableView.endUpdates()
-//        }
-//        cell.delegate = self
+        cell.configure(with: product) {
+            // Trigger row height recalculation due to async loaded images in dynamic height rows
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
+        cell.delegate = self
 
         return cell
     }
