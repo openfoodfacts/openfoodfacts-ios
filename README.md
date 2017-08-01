@@ -8,11 +8,16 @@
 - [x] Product list
 - [x] Product detail
 - [ ] On-device Product cache
-- [ ] Image upload
+- [x] Image upload
 - [ ] Internationalised user interface
 
-## Pointers
+## Building
 
-* https://developer.apple.com/reference/avfoundation/avcapturesession
-* https://developer.apple.com/reference/avfoundation/AVCaptureVideoPreviewLayer
-* https://github.com/aleene/FoodViewer
+### Dependencies
+We use Carthage for dependency management. If you don't have Carthage installed check how to install it [here](https://github.com/Carthage/Carthage#installing-carthage).
+
+Run `carthage bootstrap --platform iOS` before opening the project in Xcode
+
+## Support
+
+OpenFoodFacts has a Slack team, join the #iOS channel. Click [here](https://slack-ssl-openfoodfacts.herokuapp.com/) to join.
