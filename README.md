@@ -11,13 +11,13 @@
 - [x] Image upload
 - [ ] Internationalised user interface
 
-## Building
+## Building
 
 ### Dependencies
 We use Carthage for dependency management. If you don't have Carthage installed check how to install it [here](https://github.com/Carthage/Carthage#installing-carthage).
 
 Run `carthage bootstrap --platform iOS` before opening the project in Xcode
 
-## Support
+## Support
 
 OpenFoodFacts has a Slack team, join the #iOS channel. Click [here](https://slack-ssl-openfoodfacts.herokuapp.com/) to join.
