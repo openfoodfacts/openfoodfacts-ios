@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SummaryHeaderCell" customModule="OpenFoodFacts" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="577-dH-PK6">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HzK-AD-uFX">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O4L-8Q-S8P">
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="133"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="133" id="iG2-hJ-dpJ"/>
+                                    </constraints>
+                                </imageView>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvT-fB-mXf" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
+                                    <rect key="frame" x="160" y="0.0" width="0.0" height="133"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWC-x5-RVm">
+                                    <rect key="frame" x="160" y="0.0" width="160" height="133"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="En8-F1-oSJ" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="34" width="159.5" height="65"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="En8-F1-oSJ" secondAttribute="height" multiplier="310:126" id="KSx-wH-yvR"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="En8-F1-oSJ" firstAttribute="width" secondItem="oWC-x5-RVm" secondAttribute="width" id="BOQ-Nj-bsa"/>
+                                        <constraint firstItem="En8-F1-oSJ" firstAttribute="centerY" secondItem="oWC-x5-RVm" secondAttribute="centerY" id="af9-RK-rwj"/>
+                                        <constraint firstItem="En8-F1-oSJ" firstAttribute="centerX" secondItem="oWC-x5-RVm" secondAttribute="centerX" id="jHI-Z1-YrY"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9V-Zl-aZa">
+                            <rect key="frame" x="0.0" y="143" width="320" height="45"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="u9V-Zl-aZa" firstAttribute="width" secondItem="577-dH-PK6" secondAttribute="width" id="fjF-Ln-PZg"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="577-dH-PK6" secondAttribute="bottom" id="HzG-BK-GDg"/>
+                <constraint firstAttribute="trailing" secondItem="577-dH-PK6" secondAttribute="trailing" id="QB4-w8-dTM"/>
+                <constraint firstItem="577-dH-PK6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="h1i-aZ-hBe"/>
+                <constraint firstItem="577-dH-PK6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vqE-SC-Mf7"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
