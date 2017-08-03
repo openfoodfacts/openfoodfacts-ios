@@ -41,9 +41,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         var vcs = [UIViewController]()
 
         vcs.append(getSummaryVC())
-        vcs.append(getIngredientsVC())
-        vcs.append(getNutritionVC())
-        vcs.append(getNutritionTableVC())
+//        vcs.append(getIngredientsVC())
+//        vcs.append(getNutritionVC())
+//        vcs.append(getNutritionTableVC())
 
         return vcs
     }
@@ -59,7 +59,17 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         sections.append(headerSection)
 
         // Rows
-        // TODO
+        var rows = [FormRow]()
+        if let barcode = product.barcode, !barcode.isEmpty {
+            let localizedLabel = InfoRowKey.barcode.localizedString
+            let row = FormRow(label: localizedLabel, value: barcode, cellType: InfoRowTableViewCell.self)
+            rows.append(row)
+        }
+
+        let rowsSection = FormSection(rows: rows)
+        sections.append(rowsSection)
+
+        // TODO The rest
 
         let form = Form(title: summaryTitle, sections: sections)
         return SummaryFormTableViewController(with: form)
@@ -104,110 +114,114 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     }
 
     fileprivate func getIngredientsVC() -> UIViewController {
-        let ingredientsTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
+//        let ingredientsTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
 
-        var ingredientsInfoRows = [InfoRow]()
+        return UIViewController()
 
-        if let ingredientsList = product.ingredientsList, !ingredientsList.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .ingredientsList, value: ingredientsList))
-        }
-        if let allergens = product.allergens, !allergens.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .allergens, value: allergens))
-        }
-        if let traces = product.traces, !traces.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .traces, value: traces))
-        }
-        if let additives = product.additives?.map({ $0.value.uppercased() }).joined(separator: ", "), !additives.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .additives, value: additives))
-        }
-        if let array = product.palmOilIngredients, !array.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .palmOilIngredients, value: array.joined(separator: ", ")))
-        }
-        if let array = product.possiblePalmOilIngredients, !array.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .possiblePalmOilIngredients, value: array.joined(separator: ", ")))
-        }
-
-        return ProductDetailPageViewController<IngredientHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRows: ingredientsInfoRows)
+//        var ingredientsInfoRows = [InfoRow]()
+//
+//        if let ingredientsList = product.ingredientsList, !ingredientsList.isEmpty {
+//            ingredientsInfoRows.append(InfoRow(label: .ingredientsList, value: ingredientsList))
+//        }
+//        if let allergens = product.allergens, !allergens.isEmpty {
+//            ingredientsInfoRows.append(InfoRow(label: .allergens, value: allergens))
+//        }
+//        if let traces = product.traces, !traces.isEmpty {
+//            ingredientsInfoRows.append(InfoRow(label: .traces, value: traces))
+//        }
+//        if let additives = product.additives?.map({ $0.value.uppercased() }).joined(separator: ", "), !additives.isEmpty {
+//            ingredientsInfoRows.append(InfoRow(label: .additives, value: additives))
+//        }
+//        if let array = product.palmOilIngredients, !array.isEmpty {
+//            ingredientsInfoRows.append(InfoRow(label: .palmOilIngredients, value: array.joined(separator: ", ")))
+//        }
+//        if let array = product.possiblePalmOilIngredients, !array.isEmpty {
+//            ingredientsInfoRows.append(InfoRow(label: .possiblePalmOilIngredients, value: array.joined(separator: ", ")))
+//        }
+//
+//        return ProductDetailPageViewController<IngredientHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRows: ingredientsInfoRows)
     }
 
     fileprivate func getNutritionVC() -> UIViewController {
-        let nutritionTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
-
-        var nutritionInfoRows = [InfoRow]()
-
-        if let servingSize = product.servingSize, !servingSize.isEmpty {
-            nutritionInfoRows.append(InfoRow(label: .servingSize, value: servingSize))
-        }
-        if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
-            nutritionInfoRows.append(InfoRow(label: .carbonFootprint, value:(String(carbonFootprint) + " " + unit)))
-        }
-
-        return ProductNutritionViewController(product: product, localizedTitle: nutritionTitle, infoRows: nutritionInfoRows)
+        return UIViewController()
+//        let nutritionTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
+//
+//        var nutritionInfoRows = [InfoRow]()
+//
+//        if let servingSize = product.servingSize, !servingSize.isEmpty {
+//            nutritionInfoRows.append(InfoRow(label: .servingSize, value: servingSize))
+//        }
+//        if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
+//            nutritionInfoRows.append(InfoRow(label: .carbonFootprint, value:(String(carbonFootprint) + " " + unit)))
+//        }
+//
+//        return ProductNutritionViewController(product: product, localizedTitle: nutritionTitle, infoRows: nutritionInfoRows)
     }
 
     // swiftlint:disable:next cyclomatic_complexity
     fileprivate func getNutritionTableVC() -> UIViewController {
-        let nutritionTableTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
-        var nutritionTableInfoRows = [InfoRow]()
-
-        let headerRow = InfoRow(label: .nutritionalTableHeader, value: NSLocalizedString("product-detail.nutrition-table.for-100g", comment: ""),
-                                secondaryValue: NSLocalizedString("product-detail.nutrition-table.for-serving", comment: ""))
-
-        nutritionTableInfoRows.append(headerRow)
-
-        if let energy = product.nutriments?.energy, let infoRow = energy.asInfoRow {
-            nutritionTableInfoRows.append(infoRow)
-        }
-        if let fats = product.nutriments?.fats {
-            for item in fats {
-                if let infoRow = item.asInfoRow {
-                    nutritionTableInfoRows.append(infoRow)
-                }
-            }
-        }
-        if let carbohydrates = product.nutriments?.carbohydrates {
-            for item in carbohydrates {
-                if let infoRow = item.asInfoRow {
-                    nutritionTableInfoRows.append(infoRow)
-                }
-            }
-        }
-        if let fiber = product.nutriments?.fiber, let infoRow = fiber.asInfoRow {
-            nutritionTableInfoRows.append(infoRow)
-        }
-        if let proteins = product.nutriments?.proteins {
-            for item in proteins {
-                if let infoRow = item.asInfoRow {
-                    nutritionTableInfoRows.append(infoRow)
-                }
-            }
-        }
-        if let salt = product.nutriments?.salt, let infoRow = salt.asInfoRow {
-            nutritionTableInfoRows.append(infoRow)
-        }
-        if let sodium = product.nutriments?.sodium, let infoRow = sodium.asInfoRow {
-            nutritionTableInfoRows.append(infoRow)
-        }
-        if let alcohol = product.nutriments?.alcohol, let infoRow = alcohol.asInfoRow {
-            nutritionTableInfoRows.append(infoRow)
-        }
-        if let vitamins = product.nutriments?.vitamins {
-            for item in vitamins {
-                if let infoRow = item.asInfoRow {
-                    nutritionTableInfoRows.append(infoRow)
-                }
-            }
-        }
-        if let minerals = product.nutriments?.minerals {
-            for item in minerals {
-                if let infoRow = item.asInfoRow {
-                    nutritionTableInfoRows.append(infoRow)
-                }
-            }
-        }
-
-        return ProductDetailPageViewController<NutritionTableHeaderTableViewCell, NutritionTableRowTableViewCell>(product: product,
-                                                                                                                  localizedTitle: nutritionTableTitle,
-                                                                                                                  infoRows: nutritionTableInfoRows)
+        return UIViewController()
+//        let nutritionTableTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
+//        var nutritionTableInfoRows = [InfoRow]()
+//
+//        let headerRow = InfoRow(label: .nutritionalTableHeader, value: NSLocalizedString("product-detail.nutrition-table.for-100g", comment: ""),
+//                                secondaryValue: NSLocalizedString("product-detail.nutrition-table.for-serving", comment: ""))
+//
+//        nutritionTableInfoRows.append(headerRow)
+//
+//        if let energy = product.nutriments?.energy, let infoRow = energy.asInfoRow {
+//            nutritionTableInfoRows.append(infoRow)
+//        }
+//        if let fats = product.nutriments?.fats {
+//            for item in fats {
+//                if let infoRow = item.asInfoRow {
+//                    nutritionTableInfoRows.append(infoRow)
+//                }
+//            }
+//        }
+//        if let carbohydrates = product.nutriments?.carbohydrates {
+//            for item in carbohydrates {
+//                if let infoRow = item.asInfoRow {
+//                    nutritionTableInfoRows.append(infoRow)
+//                }
+//            }
+//        }
+//        if let fiber = product.nutriments?.fiber, let infoRow = fiber.asInfoRow {
+//            nutritionTableInfoRows.append(infoRow)
+//        }
+//        if let proteins = product.nutriments?.proteins {
+//            for item in proteins {
+//                if let infoRow = item.asInfoRow {
+//                    nutritionTableInfoRows.append(infoRow)
+//                }
+//            }
+//        }
+//        if let salt = product.nutriments?.salt, let infoRow = salt.asInfoRow {
+//            nutritionTableInfoRows.append(infoRow)
+//        }
+//        if let sodium = product.nutriments?.sodium, let infoRow = sodium.asInfoRow {
+//            nutritionTableInfoRows.append(infoRow)
+//        }
+//        if let alcohol = product.nutriments?.alcohol, let infoRow = alcohol.asInfoRow {
+//            nutritionTableInfoRows.append(infoRow)
+//        }
+//        if let vitamins = product.nutriments?.vitamins {
+//            for item in vitamins {
+//                if let infoRow = item.asInfoRow {
+//                    nutritionTableInfoRows.append(infoRow)
+//                }
+//            }
+//        }
+//        if let minerals = product.nutriments?.minerals {
+//            for item in minerals {
+//                if let infoRow = item.asInfoRow {
+//                    nutritionTableInfoRows.append(infoRow)
+//                }
+//            }
+//        }
+//
+//        return ProductDetailPageViewController<NutritionTableHeaderTableViewCell, NutritionTableRowTableViewCell>(product: product,
+//                                                                                                                  localizedTitle: nutritionTableTitle,
+//                                                                                                                  infoRows: nutritionTableInfoRows)
     }
 }
