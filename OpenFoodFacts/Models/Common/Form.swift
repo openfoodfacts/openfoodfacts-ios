@@ -14,10 +14,14 @@ struct Form {
 
     func getCellTypes() -> [ProductDetailBaseCell.Type] {
         var array = [ProductDetailBaseCell.Type]()
+        var identifiers = Set<String>()
 
         for section in sections {
             for row in section.rows {
-                array.append(row.cellType)
+                if !identifiers.contains(row.cellType.identifier) {
+                    identifiers.insert(row.cellType.identifier)
+                    array.append(row.cellType)
+                }
             }
         }
 
