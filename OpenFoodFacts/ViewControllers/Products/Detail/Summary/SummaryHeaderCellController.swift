@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ImageViewer
 
-class HeaderTableViewCellController: UIViewController {
+class SummaryHeaderCellController: UIViewController {
     var product: Product!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var callToActionView: PictureCallToActionView!
@@ -20,7 +21,7 @@ class HeaderTableViewCellController: UIViewController {
     @IBOutlet weak var productName: UILabel!
 
     convenience init(with product: Product) {
-        self.init(nibName: String(describing: HeaderTableViewCellController.self), bundle: nil)
+        self.init(nibName: String(describing: SummaryHeaderCellController.self), bundle: nil)
         self.product = product
     }
 
@@ -34,8 +35,8 @@ class HeaderTableViewCellController: UIViewController {
             productImage.kf.indicatorType = .activity
             productImage.kf.setImage(with: url)
 
-//            let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
-//            productImage.addGestureRecognizer(tap)
+            let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
+            productImage.addGestureRecognizer(tap)
             productImage.isUserInteractionEnabled = true
         } else {
             productImage.isHidden = true
@@ -53,6 +54,15 @@ class HeaderTableViewCellController: UIViewController {
             productName.text = name
         } else {
             productName.isHidden = true
+        }
+    }
+}
+
+// MARK: - Gesture recognizers
+extension SummaryHeaderCellController {
+    func didTapProductImage(_ sender: UITapGestureRecognizer) {
+        if let imageView = sender.view as? UIImageView {
+            ImageViewer.show(imageView, presentingVC: self)
         }
     }
 }

@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 @IBDesignable class PictureCallToActionView: UIView {
 
     @IBOutlet weak var textLabel: UILabel!
@@ -37,7 +36,7 @@ import UIKit
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
         // swiftlint:disable:next force_cast
         let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
-
+        
         return view
     }
 }

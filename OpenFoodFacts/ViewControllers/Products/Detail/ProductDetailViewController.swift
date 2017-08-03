@@ -55,14 +55,14 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         var sections = [FormSection]()
 
         // Header
-        let headerSection = FormSection(rows: [FormRow(value: product, cellType: SummaryHeaderCell.self)])
+        let headerSection = FormSection(rows: [FormRow(value: product, cellType: HostedViewCell.self)])
         sections.append(headerSection)
 
         // Rows
         // TODO
 
-        let form = Form(title: summaryTitle, sections: sections, cellTypes: [SummaryHeaderCell.self])
-        return FormTableView(with: form)
+        let form = Form(title: summaryTitle, sections: sections)
+        return SummaryFormTableViewController(with: form)
 
 //        var summaryInfoRows = [InfoRow]()
 //

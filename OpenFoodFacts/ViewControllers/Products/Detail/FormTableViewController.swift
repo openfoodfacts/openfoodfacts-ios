@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class FormTableView: UITableViewController {
+class FormTableViewController: UITableViewController {
     let form: Form
 
     fileprivate let localizedTitle: String
@@ -29,20 +29,27 @@ class FormTableView: UITableViewController {
 
         tableView.alwaysBounceVertical = false // prevent scroll when table view fits in screen
         tableView.tableFooterView = UIView(frame: CGRect.zero) // Hide empty rows
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.allowsSelection = false
 
-        for cellType in form.cellTypes {
-            tableView.register(UINib(nibName: cellType.identifier, bundle: nil), forCellReuseIdentifier: cellType.identifier)
+        for cellType in form.getCellTypes() {
+            if Bundle.main.path(forResource: cellType.identifier, ofType: "nib") != nil {
+                tableView.register(UINib(nibName: cellType.identifier, bundle: nil), forCellReuseIdentifier: cellType.identifier)
+            } else {
+                tableView.register(cellType, forCellReuseIdentifier: cellType.identifier)
+            }
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print()
+    func getCell(for formRow: FormRow) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! ProductDetailBaseCell // swiftlint:disable:this force_cast
+        cell.configure(with: formRow)
+        return cell
     }
 }
 
 // MARK: - TableView Data Source
-extension FormTableView {
+extension FormTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return form.sections.count
     }
@@ -53,21 +60,19 @@ extension FormTableView {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let formRow = form.sections[indexPath.section].rows[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! ProductDetailBaseCell // swiftlint:disable:this force_cast
-        cell.configure(with: formRow)
-        return cell
+        return getCell(for: formRow)
     }
 }
 
 // MARK: - TableView delegate
-extension FormTableView {
+extension FormTableViewController {
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         let cellType = form.sections[indexPath.section].rows[indexPath.row].cellType
         return cellType.estimatedHeight
     }
 }
 
-extension FormTableView: IndicatorInfoProvider {
+extension FormTableViewController: IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: localizedTitle)
     }

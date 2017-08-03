@@ -11,8 +11,18 @@ import Foundation
 struct Form {
     var title: String
     var sections: [FormSection]
-    // TODO: Should we loop sections to get all cell types? Need this for registering the cells with the tableview
-    var cellTypes: [ProductDetailBaseCell.Type]
+
+    func getCellTypes() -> [ProductDetailBaseCell.Type] {
+        var array = [ProductDetailBaseCell.Type]()
+
+        for section in sections {
+            for row in section.rows {
+                array.append(row.cellType)
+            }
+        }
+
+        return array
+    }
 }
 
 struct FormSection {
