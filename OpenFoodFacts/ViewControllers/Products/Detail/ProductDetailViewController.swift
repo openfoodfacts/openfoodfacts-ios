@@ -50,66 +50,39 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
     // swiftlint:disable:next cyclomatic_complexity
     fileprivate func getSummaryVC() -> UIViewController {
-        let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
-
         var sections = [FormSection]()
 
         // Header
-        let headerSection = FormSection(rows: [FormRow(value: product, cellType: HostedViewCell.self)])
-        sections.append(headerSection)
+        sections.append(FormSection(rows: [FormRow(value: product, cellType: HostedViewCell.self)]))
 
         // Rows
         var rows = [FormRow]()
-        if let barcode = product.barcode, !barcode.isEmpty {
-            let localizedLabel = InfoRowKey.barcode.localizedString
-            rows.append(FormRow(label: localizedLabel, value: barcode, cellType: InfoRowTableViewCell.self))
-        }
-        if let quantity = product.quantity, !quantity.isEmpty {
-            let localizedLabel = InfoRowKey.quantity.localizedString
-            rows.append(FormRow(label: localizedLabel, value: quantity, cellType: InfoRowTableViewCell.self))
-        }
-        if let array = product.packaging, !array.isEmpty {
-            let localizedLabel = InfoRowKey.packaging.localizedString
-            rows.append(FormRow(label: localizedLabel, value: array.joined(separator: ", "), cellType: InfoRowTableViewCell.self))
-        }
-        if let array = product.brands, !array.isEmpty {
-            let localizedLabel = InfoRowKey.brands.localizedString
-            rows.append(FormRow(label: localizedLabel, value: array.joined(separator: ", "), cellType: InfoRowTableViewCell.self))
-        }
-        if let manufacturingPlaces = product.manufacturingPlaces, !manufacturingPlaces.isEmpty {
-            let localizedLabel = InfoRowKey.manufacturingPlaces.localizedString
-            rows.append(FormRow(label: localizedLabel, value: manufacturingPlaces, cellType: InfoRowTableViewCell.self))
-        }
-        if let origins = product.origins, !origins.isEmpty {
-            let localizedLabel = InfoRowKey.origins.localizedString
-            rows.append(FormRow(label: localizedLabel, value: origins, cellType: InfoRowTableViewCell.self))
-        }
-        if let array = product.categories, !array.isEmpty {
-            let localizedLabel = InfoRowKey.categories.localizedString
-            rows.append(FormRow(label: localizedLabel, value: array.joined(separator: ", "), cellType: InfoRowTableViewCell.self))
-        }
-        if let array = product.labels, !array.isEmpty {
-            let localizedLabel = InfoRowKey.labels.localizedString
-            rows.append(FormRow(label: localizedLabel, value: array.joined(separator: ", "), cellType: InfoRowTableViewCell.self))
-        }
-        if let citiesTags = product.citiesTags, !citiesTags.isEmpty {
-            let localizedLabel = InfoRowKey.citiesTags.localizedString
-            rows.append(FormRow(label: localizedLabel, value: citiesTags, cellType: InfoRowTableViewCell.self))
-        }
-        if let array = product.stores, !array.isEmpty {
-            let localizedLabel = InfoRowKey.stores.localizedString
-            rows.append(FormRow(label: localizedLabel, value: array.joined(separator: ", "), cellType: InfoRowTableViewCell.self))
-        }
-        if let array = product.countries, !array.isEmpty {
-            let localizedLabel = InfoRowKey.countries.localizedString
-            rows.append(FormRow(label: localizedLabel, value: array.joined(separator: ", "), cellType: InfoRowTableViewCell.self))
-        }
 
-        let rowsSection = FormSection(rows: rows)
-        sections.append(rowsSection)
+        createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString)
+        createFormRow(with: &rows, item: product.quantity, label: InfoRowKey.quantity.localizedString)
+        createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
+        createFormRow(with: &rows, item: product.brands, label: InfoRowKey.brands.localizedString)
+        createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
+        createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
+        createFormRow(with: &rows, item: product.categories, label: InfoRowKey.categories.localizedString)
+        createFormRow(with: &rows, item: product.labels, label: InfoRowKey.labels.localizedString)
+        createFormRow(with: &rows, item: product.citiesTags, label: InfoRowKey.citiesTags.localizedString)
+        createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
+        createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
 
-        let form = Form(title: summaryTitle, sections: sections)
-        return SummaryFormTableViewController(with: form)
+        sections.append(FormSection(rows: rows))
+
+        let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
+
+        return SummaryFormTableViewController(with: Form(title: summaryTitle, sections: sections))
+    }
+
+    fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self) {
+        if let value = item as? String, !value.isEmpty {
+            array.append(FormRow(label: label, value: value, cellType: cellType))
+        } else if let value = item as? [String], !value.isEmpty {
+            array.append(FormRow(label: label, value: value, cellType: cellType))
+        }
     }
 
     fileprivate func getIngredientsVC() -> UIViewController {

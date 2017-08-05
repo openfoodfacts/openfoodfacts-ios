@@ -25,6 +25,8 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
 
         if let value = formRow.value as? String {
             combination.append(NSAttributedString(string: value, attributes: regular))
+        } else if let value = formRow.value as? [String] {
+            combination.append(NSAttributedString(string: value.joined(separator: ", "), attributes: regular))
         }
 
         self.label.attributedText = combination
