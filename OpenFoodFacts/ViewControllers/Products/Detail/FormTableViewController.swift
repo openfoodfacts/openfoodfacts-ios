@@ -9,6 +9,10 @@
 import UIKit
 import XLPagerTabStrip
 
+protocol FormTableViewControllerDelegate: class {
+    func cellSizeDidChange()
+}
+
 class FormTableViewController: UITableViewController {
     let form: Form
 
@@ -75,5 +79,12 @@ extension FormTableViewController {
 extension FormTableViewController: IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: localizedTitle)
+    }
+}
+
+extension FormTableViewController: FormTableViewControllerDelegate {
+    func cellSizeDidChange() {
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }

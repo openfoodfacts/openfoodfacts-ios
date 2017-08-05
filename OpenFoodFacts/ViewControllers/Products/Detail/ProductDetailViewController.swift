@@ -41,7 +41,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         var vcs = [UIViewController]()
 
         vcs.append(getSummaryVC())
-//        vcs.append(getIngredientsVC())
+        vcs.append(getIngredientsVC())
 //        vcs.append(getNutritionVC())
 //        vcs.append(getNutritionTableVC())
 
@@ -86,32 +86,26 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     }
 
     fileprivate func getIngredientsVC() -> UIViewController {
-//        let ingredientsTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
+        var sections = [FormSection]()
 
-        return UIViewController()
+        // Header
+        sections.append(FormSection(rows: [FormRow(value: product, cellType: HostedViewCell.self)]))
 
-//        var ingredientsInfoRows = [InfoRow]()
-//
-//        if let ingredientsList = product.ingredientsList, !ingredientsList.isEmpty {
-//            ingredientsInfoRows.append(InfoRow(label: .ingredientsList, value: ingredientsList))
-//        }
-//        if let allergens = product.allergens, !allergens.isEmpty {
-//            ingredientsInfoRows.append(InfoRow(label: .allergens, value: allergens))
-//        }
-//        if let traces = product.traces, !traces.isEmpty {
-//            ingredientsInfoRows.append(InfoRow(label: .traces, value: traces))
-//        }
-//        if let additives = product.additives?.map({ $0.value.uppercased() }).joined(separator: ", "), !additives.isEmpty {
-//            ingredientsInfoRows.append(InfoRow(label: .additives, value: additives))
-//        }
-//        if let array = product.palmOilIngredients, !array.isEmpty {
-//            ingredientsInfoRows.append(InfoRow(label: .palmOilIngredients, value: array.joined(separator: ", ")))
-//        }
-//        if let array = product.possiblePalmOilIngredients, !array.isEmpty {
-//            ingredientsInfoRows.append(InfoRow(label: .possiblePalmOilIngredients, value: array.joined(separator: ", ")))
-//        }
-//
-//        return ProductDetailPageViewController<IngredientHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRows: ingredientsInfoRows)
+        // Rows
+        var rows = [FormRow]()
+
+        createFormRow(with: &rows, item: product.ingredientsList, label: InfoRowKey.ingredientsList.localizedString)
+        createFormRow(with: &rows, item: product.allergens, label: InfoRowKey.allergens.localizedString)
+        createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
+        createFormRow(with: &rows, item: product.additives?.map({ $0.value.uppercased() }), label: InfoRowKey.additives.localizedString)
+        createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
+        createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
+
+        sections.append(FormSection(rows: rows))
+
+        let summaryTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
+
+        return IngredientsFormTableViewController(with: Form(title: summaryTitle, sections: sections))
     }
 
     fileprivate func getNutritionVC() -> UIViewController {

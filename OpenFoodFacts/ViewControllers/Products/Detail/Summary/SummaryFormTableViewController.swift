@@ -36,4 +36,19 @@ class SummaryFormTableViewController: FormTableViewController {
             return super.getCell(for: formRow)
         }
     }
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if cell is HostedViewCell, let summaryHeaderCellController = summaryHeaderCellController {
+            self.addChildViewController(summaryHeaderCellController)
+            summaryHeaderCellController.didMove(toParentViewController: self)
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if cell is HostedViewCell {
+            self.summaryHeaderCellController?.view.removeFromSuperview()
+            self.summaryHeaderCellController?.willMove(toParentViewController: nil)
+            self.summaryHeaderCellController?.removeFromParentViewController()
+        }
+    }
 }

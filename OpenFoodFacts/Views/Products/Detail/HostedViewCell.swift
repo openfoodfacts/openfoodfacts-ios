@@ -9,6 +9,8 @@
 import UIKit
 
 class HostedViewCell: ProductDetailBaseCell {
+    override class var estimatedHeight: CGFloat { return 150 }
+
     weak var hostedView: UIView! {
         didSet {
             hostedView.translatesAutoresizingMaskIntoConstraints = false
