@@ -20,7 +20,6 @@
 		956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8821F1FF0740069D678 /* ProductAddViewController.swift */; };
 		956FF8891F1FF0740069D678 /* ProductDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8841F1FF0740069D678 /* ProductDetailPageViewController.swift */; };
 		956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */; };
-		956FF88B1F1FF0740069D678 /* ProductNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8861F1FF0740069D678 /* ProductNutritionViewController.swift */; };
 		956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */; };
 		956FF93E1F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8921F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift */; };
 		956FF93F1F1FF0CA0069D678 /* InfoRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8931F1FF0CA0069D678 /* InfoRowTableViewCell.swift */; };
@@ -178,7 +177,6 @@
 		956FF8821F1FF0740069D678 /* ProductAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAddViewController.swift; sourceTree = "<group>"; };
 		956FF8841F1FF0740069D678 /* ProductDetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailPageViewController.swift; sourceTree = "<group>"; };
 		956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
-		956FF8861F1FF0740069D678 /* ProductNutritionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNutritionViewController.swift; sourceTree = "<group>"; };
 		956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonBarView.xib; sourceTree = "<group>"; };
 		956FF8921F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableUITableViewCell.swift; sourceTree = "<group>"; };
 		956FF8931F1FF0CA0069D678 /* InfoRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoRowTableViewCell.swift; sourceTree = "<group>"; };
@@ -1184,7 +1182,6 @@
 				956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */,
 				957CBEC11F33B35B00A1B398 /* Summary */,
 				958F33401F361954005269C5 /* Ingredients */,
-				956FF8861F1FF0740069D678 /* ProductNutritionViewController.swift */,
 				957CBEAB1F323B1F00A1B398 /* FormTableViewController.swift */,
 			);
 			path = Detail;
@@ -1826,7 +1823,6 @@
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
 				956FF93F1F1FF0CA0069D678 /* InfoRowTableViewCell.swift in Sources */,
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
-				956FF88B1F1FF0740069D678 /* ProductNutritionViewController.swift in Sources */,
 				956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */,
 				956FF9651F1FF0FD0069D678 /* SearchTableViewController.swift in Sources */,
 				95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */,

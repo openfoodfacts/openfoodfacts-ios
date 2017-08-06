@@ -42,7 +42,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         vcs.append(getSummaryVC())
         vcs.append(getIngredientsVC())
-//        vcs.append(getNutritionVC())
+        vcs.append(getNutritionVC())
 //        vcs.append(getNutritionTableVC())
 
         return vcs
@@ -73,14 +73,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         return SummaryFormTableViewController(with: Form(title: summaryTitle, rows: rows))
     }
 
-    fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self) {
-        if let value = item as? String, !value.isEmpty {
-            array.append(FormRow(label: label, value: value, cellType: cellType))
-        } else if let value = item as? [String], !value.isEmpty {
-            array.append(FormRow(label: label, value: value, cellType: cellType))
-        }
-    }
-
     fileprivate func getIngredientsVC() -> UIViewController {
         var rows = [FormRow]()
 
@@ -101,19 +93,23 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     }
 
     fileprivate func getNutritionVC() -> UIViewController {
-        return UIViewController()
-//        let nutritionTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
-//
-//        var nutritionInfoRows = [InfoRow]()
-//
-//        if let servingSize = product.servingSize, !servingSize.isEmpty {
-//            nutritionInfoRows.append(InfoRow(label: .servingSize, value: servingSize))
-//        }
-//        if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
-//            nutritionInfoRows.append(InfoRow(label: .carbonFootprint, value:(String(carbonFootprint) + " " + unit)))
-//        }
-//
-//        return ProductNutritionViewController(product: product, localizedTitle: nutritionTitle, infoRows: nutritionInfoRows)
+        var rows = [FormRow]()
+
+        // Nutriscore cell
+        createFormRow(with: &rows, item: product.nutriscore, cellType: NutritionHeaderTableViewCell.self)
+
+        // Info rows
+        createFormRow(with: &rows, item: product.servingSize, label: InfoRowKey.servingSize.localizedString)
+        if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
+            createFormRow(with: &rows, item: "\(carbonFootprint) \(unit)", label: InfoRowKey.carbonFootprint.localizedString)
+        }
+
+        // Nutrition levels
+        createFormRow(with: &rows, item: product, cellType: NutritionLevelsTableViewCell.self)
+
+        let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
+
+        return FormTableViewController(with: Form(title: summaryTitle, rows: rows))
     }
 
     // swiftlint:disable:next cyclomatic_complexity
@@ -181,5 +177,15 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 //        return ProductDetailPageViewController<NutritionTableHeaderTableViewCell, NutritionTableRowTableViewCell>(product: product,
 //                                                                                                                  localizedTitle: nutritionTableTitle,
 //                                                                                                                  infoRows: nutritionTableInfoRows)
+    }
+
+    fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self) {
+        if let value = item as? String, !value.isEmpty {
+            array.append(FormRow(label: label, value: value, cellType: cellType))
+        } else if let value = item as? [String], !value.isEmpty {
+            array.append(FormRow(label: label, value: value, cellType: cellType))
+        } else if item != nil {
+            array.append(FormRow(label: label, value: item, cellType: cellType))
+        }
     }
 }
