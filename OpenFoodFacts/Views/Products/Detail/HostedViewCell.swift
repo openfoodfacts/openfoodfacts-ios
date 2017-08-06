@@ -11,12 +11,20 @@ import UIKit
 class HostedViewCell: ProductDetailBaseCell {
     override class var estimatedHeight: CGFloat { return 150 }
 
-    weak var hostedView: UIView! {
+    weak var hostedView: UIView? {
         didSet {
-            hostedView.translatesAutoresizingMaskIntoConstraints = false
-            self.contentView.addSubview(hostedView)
-            self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[hostedView]-10-|", options: [], metrics: nil, views: ["hostedView": hostedView]))
-            self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[hostedView]-10-|", options: [], metrics: nil, views: ["hostedView": hostedView]))
+            if let hostedView = hostedView {
+                hostedView.translatesAutoresizingMaskIntoConstraints = false
+                self.contentView.addSubview(hostedView)
+                self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[hostedView]-10-|", options: [], metrics: nil, views: ["hostedView": hostedView]))
+                self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[hostedView]-10-|", options: [], metrics: nil, views: ["hostedView": hostedView]))
+            }
         }
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.hostedView?.removeFromSuperview()
+        self.hostedView = nil
     }
 }

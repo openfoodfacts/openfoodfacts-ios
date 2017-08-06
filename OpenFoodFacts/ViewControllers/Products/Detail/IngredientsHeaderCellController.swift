@@ -46,8 +46,6 @@ class IngredientsHeaderCellController: UIViewController {
             callToActionView.textLabel.text = NSLocalizedString("call-to-action.ingredients", comment: "")
         }
     }
-
-    // TODO, Reuse?
 }
 
 // MARK: - Gesture recognizers
