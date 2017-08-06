@@ -55,15 +55,15 @@ class FormTableViewController: UITableViewController {
 // MARK: - TableView Data Source
 extension FormTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return form.sections.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return form.sections[section].rows.count
+        return form.rows.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let formRow = form.sections[indexPath.section].rows[indexPath.row]
+        let formRow = form.rows[indexPath.row]
         return getCell(for: formRow)
     }
 }
@@ -71,7 +71,7 @@ extension FormTableViewController {
 // MARK: - TableView delegate
 extension FormTableViewController {
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cellType = form.sections[indexPath.section].rows[indexPath.row].cellType
+        let cellType = form.rows[indexPath.row].cellType
         return cellType.estimatedHeight
     }
 }

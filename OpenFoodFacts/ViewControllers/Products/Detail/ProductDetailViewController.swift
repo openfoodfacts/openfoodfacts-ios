@@ -50,14 +50,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
     // swiftlint:disable:next cyclomatic_complexity
     fileprivate func getSummaryVC() -> UIViewController {
-        var sections = [FormSection]()
-
-        // Header
-        sections.append(FormSection(rows: [FormRow(value: product, cellType: HostedViewCell.self)]))
-
-        // Rows
         var rows = [FormRow]()
 
+        // Header
+        rows.append(FormRow(value: product, cellType: HostedViewCell.self))
+
+        // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString)
         createFormRow(with: &rows, item: product.quantity, label: InfoRowKey.quantity.localizedString)
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
@@ -70,11 +68,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
         createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
 
-        sections.append(FormSection(rows: rows))
-
         let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
 
-        return SummaryFormTableViewController(with: Form(title: summaryTitle, sections: sections))
+        return SummaryFormTableViewController(with: Form(title: summaryTitle, rows: rows))
     }
 
     fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self) {
@@ -86,14 +82,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     }
 
     fileprivate func getIngredientsVC() -> UIViewController {
-        var sections = [FormSection]()
-
-        // Header
-        sections.append(FormSection(rows: [FormRow(value: product, cellType: HostedViewCell.self)]))
-
-        // Rows
         var rows = [FormRow]()
 
+        // Header
+        rows.append(FormRow(value: product, cellType: HostedViewCell.self))
+
+        // Rows
         createFormRow(with: &rows, item: product.ingredientsList, label: InfoRowKey.ingredientsList.localizedString)
         createFormRow(with: &rows, item: product.allergens, label: InfoRowKey.allergens.localizedString)
         createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
@@ -101,11 +95,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
         createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
 
-        sections.append(FormSection(rows: rows))
-
         let summaryTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
 
-        return IngredientsFormTableViewController(with: Form(title: summaryTitle, sections: sections))
+        return IngredientsFormTableViewController(with: Form(title: summaryTitle, rows: rows))
     }
 
     fileprivate func getNutritionVC() -> UIViewController {

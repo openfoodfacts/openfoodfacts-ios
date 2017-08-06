@@ -10,27 +10,21 @@ import Foundation
 
 struct Form {
     var title: String
-    var sections: [FormSection]
+    var rows: [FormRow]
 
     func getCellTypes() -> [ProductDetailBaseCell.Type] {
         var array = [ProductDetailBaseCell.Type]()
         var identifiers = Set<String>()
 
-        for section in sections {
-            for row in section.rows {
-                if !identifiers.contains(row.cellType.identifier) {
-                    identifiers.insert(row.cellType.identifier)
-                    array.append(row.cellType)
-                }
+        for row in rows {
+            if !identifiers.contains(row.cellType.identifier) {
+                identifiers.insert(row.cellType.identifier)
+                array.append(row.cellType)
             }
         }
 
         return array
     }
-}
-
-struct FormSection {
-    var rows: [FormRow]
 }
 
 struct FormRow {
