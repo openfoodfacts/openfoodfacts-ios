@@ -234,6 +234,7 @@ extension ScannerViewController {
         // swiftlint:disable:next force_cast
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
         productDetailVC.product = product
+        productDetailVC.productService = productService
 
         self.navigationController?.pushViewController(productDetailVC, animated: true)
     }

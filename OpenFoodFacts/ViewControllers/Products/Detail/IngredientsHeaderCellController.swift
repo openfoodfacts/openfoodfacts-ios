@@ -9,16 +9,19 @@
 import UIKit
 import ImageViewer
 
-class IngredientsHeaderCellController: UIViewController {
+class IngredientsHeaderCellController: TakePictureViewController {
     var product: Product!
     @IBOutlet weak var ingredients: UIImageView!
     @IBOutlet weak var callToActionView: PictureCallToActionView!
 
     weak var delegate: FormTableViewControllerDelegate?
 
-    convenience init(with product: Product) {
+    convenience init(with product: Product, productService: ProductService) {
         self.init(nibName: String(describing: IngredientsHeaderCellController.self), bundle: nil)
         self.product = product
+        super.barcode = product.barcode
+        super.productService = productService
+        super.imageType = .ingredients
     }
 
     override func viewDidLoad() {
@@ -44,6 +47,7 @@ class IngredientsHeaderCellController: UIViewController {
             ingredients.isHidden = true
             callToActionView.isHidden = false
             callToActionView.textLabel.text = NSLocalizedString("call-to-action.ingredients", comment: "")
+            callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
         }
     }
 }

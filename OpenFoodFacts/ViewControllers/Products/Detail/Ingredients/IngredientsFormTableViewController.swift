@@ -11,8 +11,8 @@ import UIKit
 class IngredientsFormTableViewController: FormTableViewController {
     var ingredientsHeaderCellController: IngredientsHeaderCellController?
 
-    override init(with form: Form) {
-        super.init(with: form)
+    override init(with form: Form, productService: ProductService) {
+        super.init(with: form, productService: productService)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class IngredientsFormTableViewController: FormTableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
             cell.configure(with: formRow)
 
-            let ingredientsHeaderCellController = IngredientsHeaderCellController(with: product)
+            let ingredientsHeaderCellController = IngredientsHeaderCellController(with: product, productService: productService)
             ingredientsHeaderCellController.delegate = self
             cell.hostedView = ingredientsHeaderCellController.view
             self.ingredientsHeaderCellController = ingredientsHeaderCellController

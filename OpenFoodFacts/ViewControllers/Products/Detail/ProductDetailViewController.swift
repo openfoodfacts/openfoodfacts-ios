@@ -13,6 +13,7 @@ import Crashlytics
 class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
     var product: Product!
+    var productService: ProductService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +71,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
 
-        return SummaryFormTableViewController(with: Form(title: summaryTitle, rows: rows))
+        return SummaryFormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
     }
 
     fileprivate func getIngredientsVC() -> UIViewController {
@@ -89,7 +90,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
 
-        return IngredientsFormTableViewController(with: Form(title: summaryTitle, rows: rows))
+        return IngredientsFormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
     }
 
     fileprivate func getNutritionVC() -> UIViewController {
@@ -109,7 +110,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
 
-        return FormTableViewController(with: Form(title: summaryTitle, rows: rows))
+        return FormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
     }
 
     // swiftlint:disable:next cyclomatic_complexity
@@ -178,7 +179,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
 
-        return NutritionTableFormTableViewController(with: Form(title: summaryTitle, rows: rows))
+        return NutritionTableFormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
     }
 
     fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self) {

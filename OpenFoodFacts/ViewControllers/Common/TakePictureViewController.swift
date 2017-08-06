@@ -9,15 +9,11 @@
 import UIKit
 import NotificationBanner
 
-protocol TakePictureViewControllerDelegate: class {
-    func postImageSuccess()
-}
-
 class TakePictureViewController: UIViewController {
     var productService: ProductService!
     var barcode: String!
+    var imageType: ImageType = .front
     fileprivate var cameraController: CameraController?
-    weak var delegate: TakePictureViewControllerDelegate?
 
     // Feedback banners
     fileprivate lazy var uploadingImageBanner: StatusBarNotificationBanner = {
@@ -40,7 +36,7 @@ class TakePictureViewController: UIViewController {
         return banner
     }()
 
-    @IBAction func didTapTakePictureButton(_ sender: UIButton) {
+    @IBAction func didTapTakePictureButton(_ sender: Any) {
         if let cameraController = CameraController(presentingViewController: self) {
             self.cameraController = cameraController
             cameraController.delegate = self
@@ -53,13 +49,15 @@ extension TakePictureViewController: CameraControllerDelegate {
     func didGetImage(image: UIImage) {
         // For now, images will be always uploaded with type front
         uploadingImageBanner.show()
-        productService.postImage(ProductImage(image: image, type: .front), barcode: barcode, onSuccess: {
+        productService.postImage(ProductImage(image: image, type: imageType), barcode: barcode, onSuccess: {
             self.uploadingImageBanner.dismiss()
             self.uploadingImageSuccessBanner.show()
-            self.delegate?.postImageSuccess()
+            self.postImageSuccess()
         }, onError: { _ in
             self.uploadingImageBanner.dismiss()
             self.uploadingImageErrorBanner.show()
         })
     }
+
+    func postImageSuccess() { /* Do nothing, overridable */  }
 }

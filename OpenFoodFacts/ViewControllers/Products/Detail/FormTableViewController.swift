@@ -15,11 +15,13 @@ protocol FormTableViewControllerDelegate: class {
 
 class FormTableViewController: UITableViewController {
     let form: Form
+    let productService: ProductService
 
     fileprivate let localizedTitle: String
 
-    init(with form: Form) {
+    init(with form: Form, productService: ProductService) {
         self.form = form
+        self.productService = productService
         localizedTitle = form.title
         super.init(nibName: nil, bundle: nil)
     }

@@ -9,8 +9,8 @@
 import UIKit
 import ImageViewer
 
-class SummaryHeaderCellController: UIViewController {
-    var product: Product!
+class SummaryHeaderCellController: TakePictureViewController {
+    fileprivate var product: Product!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var callToActionView: PictureCallToActionView!
     @IBOutlet weak var nutriscore: NutriScoreView! {
@@ -20,9 +20,12 @@ class SummaryHeaderCellController: UIViewController {
     }
     @IBOutlet weak var productName: UILabel!
 
-    convenience init(with product: Product) {
+    convenience init(with product: Product, productService: ProductService) {
         self.init(nibName: String(describing: SummaryHeaderCellController.self), bundle: nil)
         self.product = product
+        super.barcode = product.barcode
+        super.productService = productService
+        super.imageType = .front
     }
 
     override func viewDidLoad() {
@@ -42,6 +45,7 @@ class SummaryHeaderCellController: UIViewController {
             productImage.isHidden = true
             callToActionView.textLabel.text = NSLocalizedString("call-to-action.summary", comment: "")
             callToActionView.isHidden = false
+            callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
         }
 
         if let nutriscoreValue = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue.uppercased()) {

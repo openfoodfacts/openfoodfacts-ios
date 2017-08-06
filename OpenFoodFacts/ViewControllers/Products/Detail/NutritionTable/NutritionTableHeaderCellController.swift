@@ -9,17 +9,21 @@
 import UIKit
 import ImageViewer
 
-class NutritionTableHeaderCellController: UIViewController {
+class NutritionTableHeaderCellController: TakePictureViewController {
     var product: Product!
     @IBOutlet weak var nutritionTableImage: UIImageView!
     @IBOutlet weak var servingSizeLabel: UILabel!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint?
+    @IBOutlet weak var callToActionView: PictureCallToActionView!
 
     weak var delegate: FormTableViewControllerDelegate?
 
-    convenience init(with product: Product) {
+    convenience init(with product: Product, productService: ProductService) {
         self.init(nibName: String(describing: NutritionTableHeaderCellController.self), bundle: nil)
         self.product = product
+        super.barcode = product.barcode
+        super.productService = productService
+        super.imageType = .nutrition
     }
 
     override func viewDidLoad() {
@@ -46,6 +50,11 @@ class NutritionTableHeaderCellController: UIViewController {
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             nutritionTableImage.addGestureRecognizer(tap)
             nutritionTableImage.isUserInteractionEnabled = true
+        } else {
+            nutritionTableImage.isHidden = true
+            callToActionView.isHidden = false
+            callToActionView.textLabel.text = NSLocalizedString("call-to-action.nutrition", comment: "")
+            callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
         }
 
         if let servingSize = product.servingSize {

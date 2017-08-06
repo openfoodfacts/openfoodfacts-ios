@@ -11,8 +11,8 @@ import UIKit
 class SummaryFormTableViewController: FormTableViewController {
     var summaryHeaderCellController: SummaryHeaderCellController?
 
-    override init(with form: Form) {
-        super.init(with: form)
+    override init(with form: Form, productService: ProductService) {
+        super.init(with: form, productService: productService)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class SummaryFormTableViewController: FormTableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
             cell.configure(with: formRow)
 
-            let summaryHeaderCellController = SummaryHeaderCellController(with: product)
+            let summaryHeaderCellController = SummaryHeaderCellController(with: product, productService: productService)
             cell.hostedView = summaryHeaderCellController.view
             self.summaryHeaderCellController = summaryHeaderCellController
 
