@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NutritionTableRowTableViewCell: ConfigurableUITableViewCell<InfoRow> {
+class NutritionTableRowTableViewCell: ProductDetailBaseCell {
 
     @IBOutlet weak var rowLabel: UILabel!
     @IBOutlet weak var valuePer100g: UILabel!
@@ -16,13 +16,15 @@ class NutritionTableRowTableViewCell: ConfigurableUITableViewCell<InfoRow> {
 
     fileprivate let fontSize: CGFloat = 17
 
-    override func configure(with infoRow: InfoRow, completionHandler: (() -> Void)?) {
-        let attributes = [NSFontAttributeName: infoRow.highlight ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)]
+    override func configure(with formRow: FormRow) {
+        guard let nutritionTableRow = formRow.value as? NutritionTableRow else { return }
 
-        rowLabel.attributedText = NSAttributedString(string: infoRow.label.localizedString, attributes: attributes)
-        valuePer100g.attributedText = NSAttributedString(string: infoRow.value, attributes: attributes)
+        let attributes = [NSFontAttributeName: nutritionTableRow.highlight ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)]
 
-        if let perServing = infoRow.secondaryValue {
+        rowLabel.attributedText = NSAttributedString(string: nutritionTableRow.label, attributes: attributes)
+        valuePer100g.attributedText = NSAttributedString(string: nutritionTableRow.perSizeValue, attributes: attributes)
+
+        if let perServing = nutritionTableRow.perServingValue {
             valuePerServing.attributedText = NSAttributedString(string: perServing, attributes: attributes)
         }
     }

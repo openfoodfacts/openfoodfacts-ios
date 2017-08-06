@@ -18,27 +18,18 @@
 		9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9543129C1EEC57A1009F0621 /* ImageViewer.framework */; };
 		955ED9BC1EB290F900BB80BA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9BE1EB290F900BB80BA /* Settings.storyboard */; };
 		956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8821F1FF0740069D678 /* ProductAddViewController.swift */; };
-		956FF8891F1FF0740069D678 /* ProductDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8841F1FF0740069D678 /* ProductDetailPageViewController.swift */; };
 		956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */; };
 		956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */; };
-		956FF93E1F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8921F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift */; };
-		956FF93F1F1FF0CA0069D678 /* InfoRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8931F1FF0CA0069D678 /* InfoRowTableViewCell.swift */; };
-		956FF9401F1FF0CA0069D678 /* InfoRowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8941F1FF0CA0069D678 /* InfoRowTableViewCell.xib */; };
 		956FF9421F1FF0CA0069D678 /* IngredientsHeaderCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8971F1FF0CA0069D678 /* IngredientsHeaderCellController.xib */; };
-		956FF9431F1FF0CA0069D678 /* NutriScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8981F1FF0CA0069D678 /* NutriScoreView.swift */; };
-		956FF9441F1FF0CA0069D678 /* NutriScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8991F1FF0CA0069D678 /* NutriScoreView.xib */; };
 		956FF9451F1FF0CA0069D678 /* NutritionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF89B1F1FF0CA0069D678 /* NutritionHeaderTableViewCell.swift */; };
 		956FF9461F1FF0CA0069D678 /* NutritionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF89C1F1FF0CA0069D678 /* NutritionHeaderTableViewCell.xib */; };
 		956FF9471F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF89D1F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift */; };
 		956FF9481F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF89E1F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib */; };
 		956FF9491F1FF0CA0069D678 /* NutritionLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF89F1F1FF0CA0069D678 /* NutritionLevelView.swift */; };
 		956FF94A1F1FF0CA0069D678 /* NutritionLevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8A01F1FF0CA0069D678 /* NutritionLevelView.xib */; };
-		956FF94B1F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8A21F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.swift */; };
-		956FF94C1F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8A31F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.xib */; };
+		956FF94C1F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8A31F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib */; };
 		956FF94D1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8A41F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift */; };
 		956FF94E1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8A51F1FF0CA0069D678 /* NutritionTableRowTableViewCell.xib */; };
-		956FF94F1F1FF0CA0069D678 /* PictureCallToActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8A61F1FF0CA0069D678 /* PictureCallToActionView.swift */; };
-		956FF9501F1FF0CA0069D678 /* PictureCallToActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8A71F1FF0CA0069D678 /* PictureCallToActionView.xib */; };
 		956FF9511F1FF0CA0069D678 /* ProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8A81F1FF0CA0069D678 /* ProductDetailViewController.storyboard */; };
 		956FF9541F1FF0CA0069D678 /* FlashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8AD1F1FF0CA0069D678 /* FlashButton.swift */; };
 		956FF9551F1FF0CA0069D678 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8AE1F1FF0CA0069D678 /* ProductTableViewCell.swift */; };
@@ -71,11 +62,20 @@
 		957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEAB1F323B1F00A1B398 /* FormTableViewController.swift */; };
 		957CBEBA1F3312FB00A1B398 /* HostedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEB91F3312FB00A1B398 /* HostedViewCell.swift */; };
 		957CBEBE1F33B2FE00A1B398 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEBD1F33B2FE00A1B398 /* Form.swift */; };
-		957CBEC01F33B31F00A1B398 /* FormRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEBF1F33B31F00A1B398 /* FormRowCell.swift */; };
+		957CBEC01F33B31F00A1B398 /* ProductDetailBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEBF1F33B31F00A1B398 /* ProductDetailBaseCell.swift */; };
 		957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEC21F33B36400A1B398 /* SummaryFormTableViewController.swift */; };
 		957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEC31F33B36400A1B398 /* SummaryHeaderCellController.swift */; };
 		958F33421F36196D005269C5 /* IngredientsFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33411F36196D005269C5 /* IngredientsFormTableViewController.swift */; };
 		958F33441F361A9D005269C5 /* IngredientsHeaderCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33431F361A9D005269C5 /* IngredientsHeaderCellController.swift */; };
+		958F334B1F3777D7005269C5 /* NutritionTableFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F334A1F3777D7005269C5 /* NutritionTableFormTableViewController.swift */; };
+		958F334D1F377831005269C5 /* NutritionTableHeaderCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F334C1F377831005269C5 /* NutritionTableHeaderCellController.swift */; };
+		958F334F1F377B07005269C5 /* NutritionTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F334E1F377B07005269C5 /* NutritionTableRow.swift */; };
+		958F33531F378076005269C5 /* InfoRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33511F378076005269C5 /* InfoRowTableViewCell.swift */; };
+		958F33541F378076005269C5 /* InfoRowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958F33521F378076005269C5 /* InfoRowTableViewCell.xib */; };
+		958F33571F378086005269C5 /* NutriScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33551F378085005269C5 /* NutriScoreView.swift */; };
+		958F33581F378086005269C5 /* NutriScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958F33561F378085005269C5 /* NutriScoreView.xib */; };
+		958F335B1F37809A005269C5 /* PictureCallToActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33591F37809A005269C5 /* PictureCallToActionView.swift */; };
+		958F335C1F37809A005269C5 /* PictureCallToActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958F335A1F37809A005269C5 /* PictureCallToActionView.xib */; };
 		95902B471F2E284700A72EF7 /* SummaryHeaderCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
@@ -175,27 +175,18 @@
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9543129C1EEC57A1009F0621 /* ImageViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageViewer.framework; path = Carthage/Build/iOS/ImageViewer.framework; sourceTree = "<group>"; };
 		956FF8821F1FF0740069D678 /* ProductAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAddViewController.swift; sourceTree = "<group>"; };
-		956FF8841F1FF0740069D678 /* ProductDetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailPageViewController.swift; sourceTree = "<group>"; };
 		956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonBarView.xib; sourceTree = "<group>"; };
-		956FF8921F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableUITableViewCell.swift; sourceTree = "<group>"; };
-		956FF8931F1FF0CA0069D678 /* InfoRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoRowTableViewCell.swift; sourceTree = "<group>"; };
-		956FF8941F1FF0CA0069D678 /* InfoRowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoRowTableViewCell.xib; sourceTree = "<group>"; };
 		956FF8971F1FF0CA0069D678 /* IngredientsHeaderCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsHeaderCellController.xib; sourceTree = "<group>"; };
-		956FF8981F1FF0CA0069D678 /* NutriScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutriScoreView.swift; sourceTree = "<group>"; };
-		956FF8991F1FF0CA0069D678 /* NutriScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutriScoreView.xib; sourceTree = "<group>"; };
 		956FF89B1F1FF0CA0069D678 /* NutritionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		956FF89C1F1FF0CA0069D678 /* NutritionHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		956FF89D1F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionLevelsTableViewCell.swift; sourceTree = "<group>"; };
 		956FF89E1F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionLevelsTableViewCell.xib; sourceTree = "<group>"; };
 		956FF89F1F1FF0CA0069D678 /* NutritionLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionLevelView.swift; sourceTree = "<group>"; };
 		956FF8A01F1FF0CA0069D678 /* NutritionLevelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionLevelView.xib; sourceTree = "<group>"; };
-		956FF8A21F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionTableHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		956FF8A31F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionTableHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		956FF8A31F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionTableHeaderCellController.xib; sourceTree = "<group>"; };
 		956FF8A41F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionTableRowTableViewCell.swift; sourceTree = "<group>"; };
 		956FF8A51F1FF0CA0069D678 /* NutritionTableRowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionTableRowTableViewCell.xib; sourceTree = "<group>"; };
-		956FF8A61F1FF0CA0069D678 /* PictureCallToActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCallToActionView.swift; sourceTree = "<group>"; };
-		956FF8A71F1FF0CA0069D678 /* PictureCallToActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureCallToActionView.xib; sourceTree = "<group>"; };
 		956FF8A81F1FF0CA0069D678 /* ProductDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductDetailViewController.storyboard; sourceTree = "<group>"; };
 		956FF8AD1F1FF0CA0069D678 /* FlashButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashButton.swift; sourceTree = "<group>"; };
 		956FF8AE1F1FF0CA0069D678 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -356,7 +347,7 @@
 		957CBEAB1F323B1F00A1B398 /* FormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
 		957CBEB91F3312FB00A1B398 /* HostedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostedViewCell.swift; sourceTree = "<group>"; };
 		957CBEBD1F33B2FE00A1B398 /* Form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
-		957CBEBF1F33B31F00A1B398 /* FormRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRowCell.swift; sourceTree = "<group>"; };
+		957CBEBF1F33B31F00A1B398 /* ProductDetailBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailBaseCell.swift; sourceTree = "<group>"; };
 		957CBEC21F33B36400A1B398 /* SummaryFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryFormTableViewController.swift; path = Summary/SummaryFormTableViewController.swift; sourceTree = "<group>"; };
 		957CBEC31F33B36400A1B398 /* SummaryHeaderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryHeaderCellController.swift; path = Summary/SummaryHeaderCellController.swift; sourceTree = "<group>"; };
 		95818AAB1F0AD4D800CBD139 /* aa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = aa; path = Localization/aa.lproj/Main.strings; sourceTree = "<group>"; };
@@ -1006,6 +997,15 @@
 		95818DD91F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Localizable.strings; sourceTree = "<group>"; };
 		958F33411F36196D005269C5 /* IngredientsFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientsFormTableViewController.swift; path = Ingredients/IngredientsFormTableViewController.swift; sourceTree = "<group>"; };
 		958F33431F361A9D005269C5 /* IngredientsHeaderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsHeaderCellController.swift; sourceTree = "<group>"; };
+		958F334A1F3777D7005269C5 /* NutritionTableFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionTableFormTableViewController.swift; path = NutritionTable/NutritionTableFormTableViewController.swift; sourceTree = "<group>"; };
+		958F334C1F377831005269C5 /* NutritionTableHeaderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionTableHeaderCellController.swift; path = NutritionTable/NutritionTableHeaderCellController.swift; sourceTree = "<group>"; };
+		958F334E1F377B07005269C5 /* NutritionTableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionTableRow.swift; sourceTree = "<group>"; };
+		958F33511F378076005269C5 /* InfoRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoRowTableViewCell.swift; path = Common/InfoRowTableViewCell.swift; sourceTree = "<group>"; };
+		958F33521F378076005269C5 /* InfoRowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoRowTableViewCell.xib; path = Common/InfoRowTableViewCell.xib; sourceTree = "<group>"; };
+		958F33551F378085005269C5 /* NutriScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutriScoreView.swift; path = Common/NutriScoreView.swift; sourceTree = "<group>"; };
+		958F33561F378085005269C5 /* NutriScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NutriScoreView.xib; path = Common/NutriScoreView.xib; sourceTree = "<group>"; };
+		958F33591F37809A005269C5 /* PictureCallToActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureCallToActionView.swift; path = Common/PictureCallToActionView.swift; sourceTree = "<group>"; };
+		958F335A1F37809A005269C5 /* PictureCallToActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PictureCallToActionView.xib; path = Common/PictureCallToActionView.xib; sourceTree = "<group>"; };
 		95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryHeaderCellController.xib; sourceTree = "<group>"; };
 		95A7E0641F0581B6004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1178,10 +1178,10 @@
 		956FF8831F1FF0740069D678 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				956FF8841F1FF0740069D678 /* ProductDetailPageViewController.swift */,
 				956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */,
 				957CBEC11F33B35B00A1B398 /* Summary */,
 				958F33401F361954005269C5 /* Ingredients */,
+				958F33491F3777C3005269C5 /* NutritionTable */,
 				957CBEAB1F323B1F00A1B398 /* FormTableViewController.swift */,
 			);
 			path = Detail;
@@ -1208,21 +1208,15 @@
 		956FF8901F1FF0CA0069D678 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				958F33501F378056005269C5 /* Common */,
 				956FF8A91F1FF0CA0069D678 /* Summary */,
 				956FF8951F1FF0CA0069D678 /* Ingredients */,
 				956FF89A1F1FF0CA0069D678 /* Nutrition */,
 				956FF8A11F1FF0CA0069D678 /* NutritionTable */,
 				956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */,
-				956FF8921F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift */,
-				956FF8931F1FF0CA0069D678 /* InfoRowTableViewCell.swift */,
-				956FF8941F1FF0CA0069D678 /* InfoRowTableViewCell.xib */,
+				957CBEBF1F33B31F00A1B398 /* ProductDetailBaseCell.swift */,
 				957CBEB91F3312FB00A1B398 /* HostedViewCell.swift */,
-				956FF8981F1FF0CA0069D678 /* NutriScoreView.swift */,
-				956FF8991F1FF0CA0069D678 /* NutriScoreView.xib */,
-				956FF8A61F1FF0CA0069D678 /* PictureCallToActionView.swift */,
-				956FF8A71F1FF0CA0069D678 /* PictureCallToActionView.xib */,
 				956FF8A81F1FF0CA0069D678 /* ProductDetailViewController.storyboard */,
-				957CBEBF1F33B31F00A1B398 /* FormRowCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1251,8 +1245,7 @@
 		956FF8A11F1FF0CA0069D678 /* NutritionTable */ = {
 			isa = PBXGroup;
 			children = (
-				956FF8A21F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.swift */,
-				956FF8A31F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.xib */,
+				956FF8A31F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib */,
 				956FF8A41F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift */,
 				956FF8A51F1FF0CA0069D678 /* NutritionTableRowTableViewCell.xib */,
 			);
@@ -1346,6 +1339,7 @@
 				95781BB41EC3A898003E3256 /* InfoRow.swift */,
 				95781BB51EC3A898003E3256 /* LocalizedString.swift */,
 				957CBEBD1F33B2FE00A1B398 /* Form.swift */,
+				958F334E1F377B07005269C5 /* NutritionTableRow.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1376,6 +1370,28 @@
 				958F33431F361A9D005269C5 /* IngredientsHeaderCellController.swift */,
 			);
 			name = Ingredients;
+			sourceTree = "<group>";
+		};
+		958F33491F3777C3005269C5 /* NutritionTable */ = {
+			isa = PBXGroup;
+			children = (
+				958F334A1F3777D7005269C5 /* NutritionTableFormTableViewController.swift */,
+				958F334C1F377831005269C5 /* NutritionTableHeaderCellController.swift */,
+			);
+			name = NutritionTable;
+			sourceTree = "<group>";
+		};
+		958F33501F378056005269C5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				958F33511F378076005269C5 /* InfoRowTableViewCell.swift */,
+				958F33521F378076005269C5 /* InfoRowTableViewCell.xib */,
+				958F33551F378085005269C5 /* NutriScoreView.swift */,
+				958F33561F378085005269C5 /* NutriScoreView.xib */,
+				958F33591F37809A005269C5 /* PictureCallToActionView.swift */,
+				958F335A1F37809A005269C5 /* PictureCallToActionView.xib */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		95C265051E96D55B004212EC = {
@@ -1697,25 +1713,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956FF9501F1FF0CA0069D678 /* PictureCallToActionView.xib in Resources */,
 				95902B471F2E284700A72EF7 /* SummaryHeaderCellController.xib in Resources */,
 				95E3ADE21F21433D00CD61D9 /* ProductAddViewController.storyboard in Resources */,
-				956FF9401F1FF0CA0069D678 /* InfoRowTableViewCell.xib in Resources */,
+				958F33581F378086005269C5 /* NutriScoreView.xib in Resources */,
 				956FF94A1F1FF0CA0069D678 /* NutritionLevelView.xib in Resources */,
 				951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */,
 				95DFD7CD1F01A45C007FDB69 /* Localizable.strings in Resources */,
 				955ED9BC1EB290F900BB80BA /* Settings.storyboard in Resources */,
 				956FF94E1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.xib in Resources */,
-				956FF9441F1FF0CA0069D678 /* NutriScoreView.xib in Resources */,
 				956FF9461F1FF0CA0069D678 /* NutritionHeaderTableViewCell.xib in Resources */,
 				956FF9561F1FF0CA0069D678 /* ProductTableViewCell.xib in Resources */,
 				95C2651C1E96D55B004212EC /* LaunchScreen.storyboard in Resources */,
-				956FF94C1F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.xib in Resources */,
+				956FF94C1F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib in Resources */,
 				956FF95B1F1FF0CA0069D678 /* InitialView.strings in Resources */,
 				956FF9481F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib in Resources */,
 				956FF9571F1FF0CA0069D678 /* InitialView.xib in Resources */,
 				95C265191E96D55B004212EC /* Assets.xcassets in Resources */,
+				958F335C1F37809A005269C5 /* PictureCallToActionView.xib in Resources */,
 				956FF9421F1FF0CA0069D678 /* IngredientsHeaderCellController.xib in Resources */,
+				958F33541F378076005269C5 /* InfoRowTableViewCell.xib in Resources */,
 				956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */,
 				956FF9511F1FF0CA0069D678 /* ProductDetailViewController.storyboard in Resources */,
 				95C265171E96D55B004212EC /* Main.storyboard in Resources */,
@@ -1796,19 +1812,19 @@
 				95781BC01EC3A898003E3256 /* InfoRow.swift in Sources */,
 				95781BBD1EC3A898003E3256 /* OFFWriteAPI.swift in Sources */,
 				958F33421F36196D005269C5 /* IngredientsFormTableViewController.swift in Sources */,
-				956FF94F1F1FF0CA0069D678 /* PictureCallToActionView.swift in Sources */,
 				957CBEBE1F33B2FE00A1B398 /* Form.swift in Sources */,
+				958F334B1F3777D7005269C5 /* NutritionTableFormTableViewController.swift in Sources */,
 				95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */,
 				95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */,
 				956FF9451F1FF0CA0069D678 /* NutritionHeaderTableViewCell.swift in Sources */,
 				956FF94D1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift in Sources */,
-				956FF93E1F1FF0CA0069D678 /* ConfigurableUITableViewCell.swift in Sources */,
+				958F334F1F377B07005269C5 /* NutritionTableRow.swift in Sources */,
 				956FF9491F1FF0CA0069D678 /* NutritionLevelView.swift in Sources */,
 				957CBEBA1F3312FB00A1B398 /* HostedViewCell.swift in Sources */,
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
 				956FF9591F1FF0CA0069D678 /* ErrorView.swift in Sources */,
 				956FF9641F1FF0FD0069D678 /* ScannerViewController.swift in Sources */,
-				957CBEC01F33B31F00A1B398 /* FormRowCell.swift in Sources */,
+				957CBEC01F33B31F00A1B398 /* ProductDetailBaseCell.swift in Sources */,
 				958F33441F361A9D005269C5 /* IngredientsHeaderCellController.swift in Sources */,
 				956FF9551F1FF0CA0069D678 /* ProductTableViewCell.swift in Sources */,
 				95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */,
@@ -1816,12 +1832,12 @@
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
 				956FF9581F1FF0CA0069D678 /* EmptyView.swift in Sources */,
 				956FF9541F1FF0CA0069D678 /* FlashButton.swift in Sources */,
+				958F33571F378086005269C5 /* NutriScoreView.swift in Sources */,
 				956FF95D1F1FF0CA0069D678 /* TapToFocusView.swift in Sources */,
 				956FF95E1F1FF0CA0069D678 /* TextOverlay.swift in Sources */,
 				956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */,
 				956FF9471F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
-				956FF93F1F1FF0CA0069D678 /* InfoRowTableViewCell.swift in Sources */,
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
 				956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */,
 				956FF9651F1FF0FD0069D678 /* SearchTableViewController.swift in Sources */,
@@ -1830,19 +1846,19 @@
 				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
 				956FF9661F1FF0FD0069D678 /* SearchTableViewControllerState.swift in Sources */,
-				956FF8891F1FF0740069D678 /* ProductDetailPageViewController.swift in Sources */,
+				958F33531F378076005269C5 /* InfoRowTableViewCell.swift in Sources */,
 				957094AF1EA124E800268236 /* ProductService.swift in Sources */,
 				95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */,
 				957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */,
 				957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */,
-				956FF9431F1FF0CA0069D678 /* NutriScoreView.swift in Sources */,
 				957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */,
+				958F335B1F37809A005269C5 /* PictureCallToActionView.swift in Sources */,
+				958F334D1F377831005269C5 /* NutritionTableHeaderCellController.swift in Sources */,
 				95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */,
 				95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */,
 				95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */,
 				956FF95C1F1FF0CA0069D678 /* StateView.swift in Sources */,
 				95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */,
-				956FF94B1F1FF0CA0069D678 /* NutritionTableHeaderTableViewCell.swift in Sources */,
 				956FF95A1F1FF0CA0069D678 /* LoadingView.swift in Sources */,
 				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
 				950163741F2D1EF20057B8D5 /* TakePictureViewController.swift in Sources */,

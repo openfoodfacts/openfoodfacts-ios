@@ -1,20 +1,33 @@
 //
-//  NutritionTableHeaderTableViewCell.swift
+//  NutritionTableHeaderCellController.swift
 //  OpenFoodFacts
 //
-//  Created by Andrés Pizá Bückmann on 12/05/2017.
+//  Created by Andrés Pizá Bückmann on 06/08/2017.
 //  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
 //
 
 import UIKit
-import Kingfisher
+import ImageViewer
 
-class NutritionTableHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
-
+class NutritionTableHeaderCellController: UIViewController {
+    var product: Product!
     @IBOutlet weak var nutritionTableImage: UIImageView!
     @IBOutlet weak var servingSizeLabel: UILabel!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint?
 
-    override func configure(with product: Product, completionHandler: (() -> Void)?) {
+    weak var delegate: FormTableViewControllerDelegate?
+
+    convenience init(with product: Product) {
+        self.init(nibName: String(describing: NutritionTableHeaderCellController.self), bundle: nil)
+        self.product = product
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+    }
+
+    fileprivate func setupViews() {
         self.imageHeightConstraint?.constant = 30
 
         if let imageUrl = product.nutritionTableImage, let url = URL(string: imageUrl) {
@@ -24,9 +37,9 @@ class NutritionTableHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
                     self.imageHeightConstraint?.constant = min(image.size.height, 130)
                 }
 
-                // When the image is not cached in memory, call completion handler so the cell is reloaded and resized properly
-                if cacheType != .memory, let completionHandler = completionHandler {
-                    completionHandler()
+                // When the image is not cached in memory, call delegate method to handle the cell's size change
+                if cacheType != .memory {
+                    self.delegate?.cellSizeDidChange()
                 }
             }
 
@@ -39,8 +52,13 @@ class NutritionTableHeaderTableViewCell: ConfigurableUITableViewCell<Product> {
             servingSizeLabel.text = "\(NSLocalizedString("product-detail.nutrition-table.for-serving", comment: "")): \(servingSize)"
         }
     }
+}
 
+// MARK: - Gesture recognizers
+extension NutritionTableHeaderCellController {
     func didTapProductImage(_ sender: UITapGestureRecognizer) {
-        delegate?.didTap(imageView: nutritionTableImage, sender: self)
+        if let imageView = sender.view as? UIImageView {
+            ImageViewer.show(imageView, presentingVC: self)
+        }
     }
 }
