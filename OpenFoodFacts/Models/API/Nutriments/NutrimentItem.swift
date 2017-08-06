@@ -26,11 +26,11 @@ struct NutrimentItem {
 
     let localized: InfoRowKey
 
-    var asInfoRow: InfoRow? {
+    var nutritionTableRow: NutritionTableRow? {
         guard let per100g = self.per100g else { return nil }
         guard let perServing = self.perServing else { return nil }
         guard let unit = self.unit else { return nil }
-        return InfoRow(label: localized, value: "\(per100g.asTwoDecimalRoundedString) \(unit)", secondaryValue: "\(perServing.asTwoDecimalRoundedString) \(unit)", highlight: isMainItem)
+        return NutritionTableRow(label: localized.localizedString, perSizeValue: "\(per100g.asTwoDecimalRoundedString) \(unit)", perServingValue: "\(perServing.asTwoDecimalRoundedString) \(unit)", highlight: isMainItem)
     }
 
     init(nameKey: String, map: Map, localized: InfoRowKey, isMainItem mainItem: Bool = false) {

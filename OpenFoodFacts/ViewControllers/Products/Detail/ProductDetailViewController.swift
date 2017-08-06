@@ -13,6 +13,7 @@ import Crashlytics
 class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
     var product: Product!
+    var productService: ProductService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,152 +51,153 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
     // swiftlint:disable:next cyclomatic_complexity
     fileprivate func getSummaryVC() -> UIViewController {
+        var rows = [FormRow]()
+
+        // Header
+        rows.append(FormRow(value: product, cellType: HostedViewCell.self))
+
+        // Rows
+        createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString)
+        createFormRow(with: &rows, item: product.quantity, label: InfoRowKey.quantity.localizedString)
+        createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
+        createFormRow(with: &rows, item: product.brands, label: InfoRowKey.brands.localizedString)
+        createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
+        createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
+        createFormRow(with: &rows, item: product.categories, label: InfoRowKey.categories.localizedString)
+        createFormRow(with: &rows, item: product.labels, label: InfoRowKey.labels.localizedString)
+        createFormRow(with: &rows, item: product.citiesTags, label: InfoRowKey.citiesTags.localizedString)
+        createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
+        createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
+
         let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
 
-        var summaryInfoRows = [InfoRow]()
-
-        if let barcode = product.barcode, !barcode.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .barcode, value: barcode))
-        }
-        if let quantity = product.quantity, !quantity.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .quantity, value: quantity))
-        }
-        if let array = product.packaging, !array.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .packaging, value: array.joined(separator: ", ")))
-        }
-        if let array = product.brands, !array.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .brands, value: array.joined(separator: ", ")))
-        }
-        if let manufacturingPlaces = product.manufacturingPlaces, !manufacturingPlaces.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .manufacturingPlaces, value: manufacturingPlaces))
-        }
-        if let origins = product.origins, !origins.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .origins, value: origins))
-        }
-        if let array = product.categories, !array.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .categories, value: array.joined(separator: ", ")))
-        }
-        if let array = product.labels, !array.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .labels, value: array.joined(separator: ", ")))
-        }
-        if let citiesTags = product.citiesTags, !citiesTags.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .citiesTags, value: citiesTags))
-        }
-        if let array = product.stores, !array.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .stores, value: array.joined(separator: ", ")))
-        }
-        if let array = product.countries, !array.isEmpty {
-            summaryInfoRows.append(InfoRow(label: .countries, value: array.joined(separator: ", ")))
-        }
-
-        return ProductDetailPageViewController<SummaryHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: summaryTitle, infoRows: summaryInfoRows)
+        return SummaryFormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
     }
 
     fileprivate func getIngredientsVC() -> UIViewController {
-        let ingredientsTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
+        var rows = [FormRow]()
 
-        var ingredientsInfoRows = [InfoRow]()
+        // Header
+        rows.append(FormRow(value: product, cellType: HostedViewCell.self))
 
-        if let ingredientsList = product.ingredientsList, !ingredientsList.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .ingredientsList, value: ingredientsList))
-        }
-        if let allergens = product.allergens, !allergens.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .allergens, value: allergens))
-        }
-        if let traces = product.traces, !traces.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .traces, value: traces))
-        }
-        if let additives = product.additives?.map({ $0.value.uppercased() }).joined(separator: ", "), !additives.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .additives, value: additives))
-        }
-        if let array = product.palmOilIngredients, !array.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .palmOilIngredients, value: array.joined(separator: ", ")))
-        }
-        if let array = product.possiblePalmOilIngredients, !array.isEmpty {
-            ingredientsInfoRows.append(InfoRow(label: .possiblePalmOilIngredients, value: array.joined(separator: ", ")))
-        }
+        // Rows
+        createFormRow(with: &rows, item: product.ingredientsList, label: InfoRowKey.ingredientsList.localizedString)
+        createFormRow(with: &rows, item: product.allergens, label: InfoRowKey.allergens.localizedString)
+        createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
+        createFormRow(with: &rows, item: product.additives?.map({ $0.value.uppercased() }), label: InfoRowKey.additives.localizedString)
+        createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
+        createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
 
-        return ProductDetailPageViewController<IngredientHeaderTableViewCell, InfoRowTableViewCell>(product: product, localizedTitle: ingredientsTitle, infoRows: ingredientsInfoRows)
+        let summaryTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
+
+        return IngredientsFormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
     }
 
     fileprivate func getNutritionVC() -> UIViewController {
-        let nutritionTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
+        var rows = [FormRow]()
 
-        var nutritionInfoRows = [InfoRow]()
+        // Nutriscore cell
+        createFormRow(with: &rows, item: product.nutriscore, cellType: NutritionHeaderTableViewCell.self)
 
-        if let servingSize = product.servingSize, !servingSize.isEmpty {
-            nutritionInfoRows.append(InfoRow(label: .servingSize, value: servingSize))
-        }
+        // Info rows
+        createFormRow(with: &rows, item: product.servingSize, label: InfoRowKey.servingSize.localizedString)
         if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
-            nutritionInfoRows.append(InfoRow(label: .carbonFootprint, value:(String(carbonFootprint) + " " + unit)))
+            createFormRow(with: &rows, item: "\(carbonFootprint) \(unit)", label: InfoRowKey.carbonFootprint.localizedString)
         }
 
-        return ProductNutritionViewController(product: product, localizedTitle: nutritionTitle, infoRows: nutritionInfoRows)
+        // Nutrition levels
+        createFormRow(with: &rows, item: product, cellType: NutritionLevelsTableViewCell.self)
+
+        let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
+
+        return FormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
     }
 
     // swiftlint:disable:next cyclomatic_complexity
     fileprivate func getNutritionTableVC() -> UIViewController {
-        let nutritionTableTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
-        var nutritionTableInfoRows = [InfoRow]()
+        var rows = [FormRow]()
 
-        let headerRow = InfoRow(label: .nutritionalTableHeader, value: NSLocalizedString("product-detail.nutrition-table.for-100g", comment: ""),
-                                secondaryValue: NSLocalizedString("product-detail.nutrition-table.for-serving", comment: ""))
+        // Header
+        createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
 
-        nutritionTableInfoRows.append(headerRow)
+        // Nutrition table rows
+        let headerRow = NutritionTableRow(label: InfoRowKey.nutritionalTableHeader.localizedString,
+                                          perSizeValue: NSLocalizedString("product-detail.nutrition-table.for-100g", comment: ""),
+                                          perServingValue: NSLocalizedString("product-detail.nutrition-table.for-serving", comment: ""))
+        createFormRow(with: &rows, item: headerRow, cellType: NutritionTableRowTableViewCell.self)
 
-        if let energy = product.nutriments?.energy, let infoRow = energy.asInfoRow {
-            nutritionTableInfoRows.append(infoRow)
+        if let energy = product.nutriments?.energy, let nutritionTableRow = energy.nutritionTableRow {
+            createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
         }
         if let fats = product.nutriments?.fats {
             for item in fats {
-                if let infoRow = item.asInfoRow {
-                    nutritionTableInfoRows.append(infoRow)
+                if let nutritionTableRow = item.nutritionTableRow {
+                    createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
                 }
             }
         }
         if let carbohydrates = product.nutriments?.carbohydrates {
             for item in carbohydrates {
-                if let infoRow = item.asInfoRow {
-                    nutritionTableInfoRows.append(infoRow)
+                if let nutritionTableRow = item.nutritionTableRow {
+                    createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
                 }
             }
         }
-        if let fiber = product.nutriments?.fiber, let infoRow = fiber.asInfoRow {
-            nutritionTableInfoRows.append(infoRow)
+        if let fiber = product.nutriments?.fiber, let nutritionTableRow = fiber.nutritionTableRow {
+            createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
         }
         if let proteins = product.nutriments?.proteins {
             for item in proteins {
-                if let infoRow = item.asInfoRow {
-                    nutritionTableInfoRows.append(infoRow)
+                if let nutritionTableRow = item.nutritionTableRow {
+                    createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
                 }
             }
         }
-        if let salt = product.nutriments?.salt, let infoRow = salt.asInfoRow {
-            nutritionTableInfoRows.append(infoRow)
+        if let salt = product.nutriments?.salt, let nutritionTableRow = salt.nutritionTableRow {
+            createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
         }
-        if let sodium = product.nutriments?.sodium, let infoRow = sodium.asInfoRow {
-            nutritionTableInfoRows.append(infoRow)
+        if let sodium = product.nutriments?.sodium, let nutritionTableRow = sodium.nutritionTableRow {
+            createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
         }
-        if let alcohol = product.nutriments?.alcohol, let infoRow = alcohol.asInfoRow {
-            nutritionTableInfoRows.append(infoRow)
+        if let alcohol = product.nutriments?.alcohol, let nutritionTableRow = alcohol.nutritionTableRow {
+            createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
         }
         if let vitamins = product.nutriments?.vitamins {
             for item in vitamins {
-                if let infoRow = item.asInfoRow {
-                    nutritionTableInfoRows.append(infoRow)
+                if let nutritionTableRow = item.nutritionTableRow {
+                    createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
                 }
             }
         }
         if let minerals = product.nutriments?.minerals {
             for item in minerals {
-                if let infoRow = item.asInfoRow {
-                    nutritionTableInfoRows.append(infoRow)
+                if let nutritionTableRow = item.nutritionTableRow {
+                    createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
                 }
             }
         }
 
-        return ProductDetailPageViewController<NutritionTableHeaderTableViewCell, NutritionTableRowTableViewCell>(product: product,
-                                                                                                                  localizedTitle: nutritionTableTitle,
-                                                                                                                  infoRows: nutritionTableInfoRows)
+        let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
+
+        return NutritionTableFormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
+    }
+
+    fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self) {
+        // Check item has a value, if so add to the array of rows.
+        switch item {
+        case let value as String:
+            // Check if it's empty here insted of doing 'case let value as String where !value.isEmpty' because an empty String ("") would not match this case but the default one
+            if !value.isEmpty {
+                array.append(FormRow(label: label, value: value, cellType: cellType))
+            }
+        case let value as [Any]:
+            if !value.isEmpty {
+                array.append(FormRow(label: label, value: value, cellType: cellType))
+            }
+        default:
+            if let value = item {
+                array.append(FormRow(label: label, value: value, cellType: cellType))
+            }
+        }
     }
 }

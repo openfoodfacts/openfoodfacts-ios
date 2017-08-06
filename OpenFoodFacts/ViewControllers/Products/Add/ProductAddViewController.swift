@@ -111,8 +111,8 @@ extension ProductAddViewController: UITextFieldDelegate {
     }
 }
 
-extension ProductAddViewController: TakePictureViewControllerDelegate {
-    func postImageSuccess() {
+extension ProductAddViewController {
+    override func postImageSuccess() {
         self.uploadedImagesStackView.addArrangedSubview(self.createUploadedImageLabel())
     }
 

@@ -229,6 +229,7 @@ private extension SearchTableViewController {
         // swiftlint:disable:next force_cast
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
         productDetailVC.product = product
+        productDetailVC.productService = productService
         return productDetailVC
     }
 }
