@@ -182,12 +182,21 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     }
 
     fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self) {
-        if let value = item as? String, !value.isEmpty {
-            array.append(FormRow(label: label, value: value, cellType: cellType))
-        } else if let value = item as? [String], !value.isEmpty {
-            array.append(FormRow(label: label, value: value, cellType: cellType))
-        } else if let value = item {
-            array.append(FormRow(label: label, value: value, cellType: cellType))
+        // Check item has a value, if so add to the array of rows.
+        switch item {
+        case let value as String:
+            // Check if it's empty here insted of doing 'case let value as String where !value.isEmpty' because an empty String ("") would not match this case but the default one
+            if !value.isEmpty {
+                array.append(FormRow(label: label, value: value, cellType: cellType))
+            }
+        case let value as [Any]:
+            if !value.isEmpty {
+                array.append(FormRow(label: label, value: value, cellType: cellType))
+            }
+        default:
+            if let value = item {
+                array.append(FormRow(label: label, value: value, cellType: cellType))
+            }
         }
     }
 }
