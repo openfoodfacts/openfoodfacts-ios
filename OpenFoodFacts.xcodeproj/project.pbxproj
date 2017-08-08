@@ -99,7 +99,23 @@
 		95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */; };
 		95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C881EDB6CDD00D99115 /* UIImage.swift */; };
 		95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */; };
+		95F31BF81F3A292E00B8AF90 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F31BF61F3A231000B8AF90 /* Nimble.framework */; };
+		95F31BF91F3A292E00B8AF90 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F31BF41F3A230400B8AF90 /* OHHTTPStubs.framework */; };
+		95F31C0A1F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F31C071F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json */; };
+		95F31C0B1F3A43C400B8AF90 /* GetProductsByNameSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F31C081F3A43C400B8AF90 /* GetProductsByNameSuccess.json */; };
+		95F31C0C1F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F31C091F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json */; };
+		95F31C111F3A45CF00B8AF90 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F31C101F3A45CF00B8AF90 /* ProductService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		95F31BEF1F38F71E00B8AF90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95C265061E96D55B004212EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95C2650D1E96D55B004212EC;
+			remoteInfo = OpenFoodFacts;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		950163071F2CE9780057B8D5 /* .Alamofire.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .Alamofire.version; sourceTree = "<group>"; };
@@ -1033,6 +1049,14 @@
 		95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionLevels.swift; path = Nutriments/NutritionLevels.swift; sourceTree = "<group>"; };
 		95F14C881EDB6CDD00D99115 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingProcessor.swift; sourceTree = "<group>"; };
+		95F31BEA1F38F71D00B8AF90 /* OpenFoodFactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenFoodFactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F31BEE1F38F71E00B8AF90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95F31BF41F3A230400B8AF90 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		95F31BF61F3A231000B8AF90 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		95F31C071F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetProductByBarcodeSuccess.json; sourceTree = "<group>"; };
+		95F31C081F3A43C400B8AF90 /* GetProductsByNameSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetProductsByNameSuccess.json; sourceTree = "<group>"; };
+		95F31C091F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetProductsByPartialBarcodeSuccess.json; sourceTree = "<group>"; };
+		95F31C101F3A45CF00B8AF90 /* ProductService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1055,6 +1079,15 @@
 				953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */,
 				9501634B1F2CE9A20057B8D5 /* MarqueeLabelSwift.framework in Frameworks */,
 				9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F31BE71F38F71D00B8AF90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F31BF81F3A292E00B8AF90 /* Nimble.framework in Frameworks */,
+				95F31BF91F3A292E00B8AF90 /* OHHTTPStubs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1399,6 +1432,7 @@
 			children = (
 				95C265231E96D5C2004212EC /* Frameworks */,
 				95C265101E96D55B004212EC /* OpenFoodFacts */,
+				95F31BEB1F38F71D00B8AF90 /* OpenFoodFactsTests */,
 				95C2650F1E96D55B004212EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1407,6 +1441,7 @@
 			isa = PBXGroup;
 			children = (
 				95C2650E1E96D55B004212EC /* OpenFoodFacts.app */,
+				95F31BEA1F38F71D00B8AF90 /* OpenFoodFactsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1434,6 +1469,8 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95F31BF61F3A231000B8AF90 /* Nimble.framework */,
+				95F31BF41F3A230400B8AF90 /* OHHTTPStubs.framework */,
 				950163061F2CE9780057B8D5 /* Build */,
 				95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */,
 				95DDAF571F24FB160096B74E /* XCGLogger.framework */,
@@ -1521,6 +1558,34 @@
 			name = Nutriments;
 			sourceTree = "<group>";
 		};
+		95F31BEB1F38F71D00B8AF90 /* OpenFoodFactsTests */ = {
+			isa = PBXGroup;
+			children = (
+				95F31C061F3A43C400B8AF90 /* Resources */,
+				95F31C0F1F3A45CF00B8AF90 /* Network */,
+				95F31BEE1F38F71E00B8AF90 /* Info.plist */,
+			);
+			path = OpenFoodFactsTests;
+			sourceTree = "<group>";
+		};
+		95F31C061F3A43C400B8AF90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95F31C071F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json */,
+				95F31C081F3A43C400B8AF90 /* GetProductsByNameSuccess.json */,
+				95F31C091F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		95F31C0F1F3A45CF00B8AF90 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				95F31C101F3A45CF00B8AF90 /* ProductService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1544,6 +1609,25 @@
 			productReference = 95C2650E1E96D55B004212EC /* OpenFoodFacts.app */;
 			productType = "com.apple.product-type.application";
 		};
+		95F31BE91F38F71D00B8AF90 /* OpenFoodFactsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95F31BF31F38F71E00B8AF90 /* Build configuration list for PBXNativeTarget "OpenFoodFactsTests" */;
+			buildPhases = (
+				95F31BE61F38F71D00B8AF90 /* Sources */,
+				95F31BE71F38F71D00B8AF90 /* Frameworks */,
+				95F31BE81F38F71D00B8AF90 /* Resources */,
+				95F31BFA1F3A295C00B8AF90 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95F31BF01F38F71E00B8AF90 /* PBXTargetDependency */,
+			);
+			name = OpenFoodFactsTests;
+			productName = OpenFoodFactsTests;
+			productReference = 95F31BEA1F38F71D00B8AF90 /* OpenFoodFactsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1558,6 +1642,12 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = JVHN2X67GT;
 						ProvisioningStyle = Automatic;
+					};
+					95F31BE91F38F71D00B8AF90 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = JVHN2X67GT;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 95C2650D1E96D55B004212EC;
 					};
 				};
 			};
@@ -1704,6 +1794,7 @@
 			projectRoot = "";
 			targets = (
 				95C2650D1E96D55B004212EC /* OpenFoodFacts */,
+				95F31BE91F38F71D00B8AF90 /* OpenFoodFactsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1735,6 +1826,16 @@
 				956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */,
 				956FF9511F1FF0CA0069D678 /* ProductDetailViewController.storyboard in Resources */,
 				95C265171E96D55B004212EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F31BE81F38F71D00B8AF90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F31C0C1F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json in Resources */,
+				95F31C0A1F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json in Resources */,
+				95F31C0B1F3A43C400B8AF90 /* GetProductsByNameSuccess.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1802,6 +1903,23 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 2a83bde9cbf98b48f34f2f27fdb7baa31cf9b5f8 8edbf06d5de27983cb0bf34ca9e266b949a15616bfd9e7a3f6ee013b97cc3d46";
 		};
+		95F31BFA1F3A295C00B8AF90 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/OHHTTPStubs.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1867,7 +1985,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95F31BE61F38F71D00B8AF90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F31C111F3A45CF00B8AF90 /* ProductService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95F31BF01F38F71E00B8AF90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95C2650D1E96D55B004212EC /* OpenFoodFacts */;
+			targetProxy = 95F31BEF1F38F71E00B8AF90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		951FB09F1EB2989A005CAE33 /* InfoPlist.strings */ = {
@@ -2843,6 +2977,42 @@
 			};
 			name = Release;
 		};
+		95F31BF11F38F71E00B8AF90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = JVHN2X67GT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = OpenFoodFactsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenFoodFacts.app/OpenFoodFacts";
+			};
+			name = Debug;
+		};
+		95F31BF21F38F71E00B8AF90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = JVHN2X67GT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = OpenFoodFactsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenFoodFacts.app/OpenFoodFacts";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2863,6 +3033,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		95F31BF31F38F71E00B8AF90 /* Build configuration list for PBXNativeTarget "OpenFoodFactsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F31BF11F38F71E00B8AF90 /* Debug */,
+				95F31BF21F38F71E00B8AF90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

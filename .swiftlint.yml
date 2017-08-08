@@ -1,7 +1,8 @@
 opt_in_rules:
   - empty_count
 included:
-  - OpenFoodFacts/
+  - OpenFoodFacts
+  - OpenFoodFactsTests
 excluded:
   - Carthage
 line_length: 

@@ -51,8 +51,8 @@ struct ProductService: ProductApi {
                 productResponse.query = query
                 onSuccess(productResponse)
             case .failure(let error):
-                onError(error)
                 Crashlytics.sharedInstance().recordError(error)
+                onError(error)
             }
         }
     }
