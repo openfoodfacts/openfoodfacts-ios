@@ -17,6 +17,9 @@
 		953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
 		9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9543129C1EEC57A1009F0621 /* ImageViewer.framework */; };
 		955ED9BC1EB290F900BB80BA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9BE1EB290F900BB80BA /* Settings.storyboard */; };
+		9568D9081F3CF5C30058E151 /* PostImageSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 9568D9071F3CF5C30058E151 /* PostImageSuccess.json */; };
+		9568D90A1F3CFBD90058E151 /* PostImageFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = 9568D9091F3CFBD90058E151 /* PostImageFailure.json */; };
+		9568D90C1F3CFE260058E151 /* PostProductSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 9568D90B1F3CFE260058E151 /* PostProductSuccess.json */; };
 		956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8821F1FF0740069D678 /* ProductAddViewController.swift */; };
 		956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */; };
 		956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */; };
@@ -104,7 +107,8 @@
 		95F31C0A1F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F31C071F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json */; };
 		95F31C0B1F3A43C400B8AF90 /* GetProductsByNameSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F31C081F3A43C400B8AF90 /* GetProductsByNameSuccess.json */; };
 		95F31C0C1F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F31C091F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json */; };
-		95F31C111F3A45CF00B8AF90 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F31C101F3A45CF00B8AF90 /* ProductService.swift */; };
+		95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */; };
+		95F31C131F3BA8EC00B8AF90 /* test_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F31C121F3BA8EC00B8AF90 /* test_image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +194,9 @@
 		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9543129C1EEC57A1009F0621 /* ImageViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageViewer.framework; path = Carthage/Build/iOS/ImageViewer.framework; sourceTree = "<group>"; };
+		9568D9071F3CF5C30058E151 /* PostImageSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PostImageSuccess.json; sourceTree = "<group>"; };
+		9568D9091F3CFBD90058E151 /* PostImageFailure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PostImageFailure.json; sourceTree = "<group>"; };
+		9568D90B1F3CFE260058E151 /* PostProductSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PostProductSuccess.json; sourceTree = "<group>"; };
 		956FF8821F1FF0740069D678 /* ProductAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAddViewController.swift; sourceTree = "<group>"; };
 		956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonBarView.xib; sourceTree = "<group>"; };
@@ -1056,7 +1063,8 @@
 		95F31C071F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetProductByBarcodeSuccess.json; sourceTree = "<group>"; };
 		95F31C081F3A43C400B8AF90 /* GetProductsByNameSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetProductsByNameSuccess.json; sourceTree = "<group>"; };
 		95F31C091F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetProductsByPartialBarcodeSuccess.json; sourceTree = "<group>"; };
-		95F31C101F3A45CF00B8AF90 /* ProductService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceTests.swift; sourceTree = "<group>"; };
+		95F31C121F3BA8EC00B8AF90 /* test_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1574,6 +1582,10 @@
 				95F31C071F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json */,
 				95F31C081F3A43C400B8AF90 /* GetProductsByNameSuccess.json */,
 				95F31C091F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json */,
+				95F31C121F3BA8EC00B8AF90 /* test_image.jpg */,
+				9568D9071F3CF5C30058E151 /* PostImageSuccess.json */,
+				9568D9091F3CFBD90058E151 /* PostImageFailure.json */,
+				9568D90B1F3CFE260058E151 /* PostProductSuccess.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1581,7 +1593,7 @@
 		95F31C0F1F3A45CF00B8AF90 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				95F31C101F3A45CF00B8AF90 /* ProductService.swift */,
+				95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1833,9 +1845,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9568D9081F3CF5C30058E151 /* PostImageSuccess.json in Resources */,
 				95F31C0C1F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json in Resources */,
 				95F31C0A1F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json in Resources */,
 				95F31C0B1F3A43C400B8AF90 /* GetProductsByNameSuccess.json in Resources */,
+				9568D90A1F3CFBD90058E151 /* PostImageFailure.json in Resources */,
+				9568D90C1F3CFE260058E151 /* PostProductSuccess.json in Resources */,
+				95F31C131F3BA8EC00B8AF90 /* test_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1989,7 +2005,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F31C111F3A45CF00B8AF90 /* ProductService.swift in Sources */,
+				95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3041,6 +3057,7 @@
 				95F31BF21F38F71E00B8AF90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

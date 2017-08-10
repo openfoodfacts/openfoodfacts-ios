@@ -121,8 +121,8 @@ extension ProductService {
                             .responseJSON { response in
                                 log.debug(response.debugDescription)
                                 switch response.result {
-                                case .success(let response):
-                                    if let json = response as? [String: Any], let status = json["status"] as? String, "status ok" == status {
+                                case .success(let responseBody):
+                                    if let json = responseBody as? [String: Any], let status = json["status"] as? String, "status ok" == status {
                                         onSuccess()
                                     } else {
                                         let error = NSError(domain:"ProductServiceErrorDomain", code: 1, userInfo:[
@@ -153,9 +153,18 @@ extension ProductService {
             let fileURL = URL(fileURLWithPath: filePath)
             if let image = productImage.image, let imageRepresentation = UIImageJPEGRepresentation(image, 0.1) {
                 try imageRepresentation.write(to: fileURL)
+                return fileURL
             }
-            return fileURL
-        } catch {
+            let error = NSError(domain:"ProductServiceErrorDomain", code: 1, userInfo:[
+                "imageType": productImage.type.rawValue,
+                "fileName": productImage.fileName,
+                "isImageNil": productImage.image == nil,
+                "message": "Unable to get UIImageJPEGRepresentation"
+                ])
+            Crashlytics.sharedInstance().recordError(error)
+            return nil
+        } catch let error {
+            Crashlytics.sharedInstance().recordError(error)
             return nil
         }
     }
