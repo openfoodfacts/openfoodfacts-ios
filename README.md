@@ -1,4 +1,6 @@
 # Open Food Facts iOS app
+[![Build Status](https://travis-ci.org/openfoodfacts/openfoodfacts-ios.svg?branch=master)](https://travis-ci.org/openfoodfacts/openfoodfacts-ios)
+
 [Open Food Facts](http://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.
 
 ## Features
