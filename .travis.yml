@@ -3,8 +3,12 @@ osx_image: xcode8.3
 xcode_project: OpenFoodFacts.xcodeproj
 xcode_scheme: OpenFoodFactsTests
 
+cache:
+  directories:
+  - Carthage
+
 before_script:
-  - carthage bootstrap --platform iOS
+  - carthage bootstrap --platform iOS --cache-builds
 script:
   - xcodebuild clean test -project OpenFoodFacts.xcodeproj -scheme OpenFoodFacts -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
 after_success:
