@@ -2,16 +2,19 @@ language: objective-c
 osx_image: xcode8.3
 xcode_project: OpenFoodFacts.xcodeproj
 xcode_scheme: OpenFoodFactsTests
-
 cache:
   directories:
   - Carthage
-
 before_script:
-  - carthage bootstrap --platform iOS --cache-builds
+- carthage bootstrap --platform iOS --cache-builds
 script:
-  - xcodebuild clean test -project OpenFoodFacts.xcodeproj -scheme OpenFoodFacts -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+- xcodebuild clean test -project OpenFoodFacts.xcodeproj -scheme OpenFoodFacts -destination
+  "platform=iOS Simulator,name=iPhone 7,OS=10.3.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+  ONLY_ACTIVE_ARCH=NO
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
 notifications:
-    slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
+  slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
+env:
+  global:
+    secure: RUCZUZU3Ypa6qxHg1mc7jhoPzKCTXc8kyPtzNgahBr80i4rR+zufwq4P6QkoQAtY9/qxKUWrABoTzCQ+peeUOtr6cxWLSqZoAH9YnUfHzNkD1+WLGvgxU0fJmwSA29O3hAEhqh7JwfIfKIKL5VcSnbZMdV1eDu0uX07Hd6EL5a0G/TitUCG5fwqoJ735nGsqWVJoaIEWESAGDyRxhhog8O7oHOtp6xwqx2XUlXz5kfNlWglFbcZ1Jf4/X9qP5x3JPyd4oIekFqRHCrs3hcr3oAJKWhviF/edIK22jm1q+EKjYmqhvtJGOKG6CLfXnSpp0fW6n/tVHddck6dQ9FyqEhsvadxlW4IPNwCjxm0qd1R4BGWE/Vei0tzHtua65vhu1vqNmMnvqr8HYn7ML2/kv4Lf5p+oQZz5pz56rMYVPbAz3fDqQmy0iWuhIQ1gsyK3sVB8IZL5ml9pgU28036qmH5cRqZdC1gViZwFT6pOZVkCQ5jUGK1gwNJrP9on9jduYeWBqBHDsHxmWAFvUSuuHLUK/tojGaKc9HeVKVWS5D/JkhlG2BafUWMY3zQVkPoLRDjn6rypdBH1K77SlYRUZhipb+AqiHSfjbR6kP19U6qo1IU3dFbDNOvyONlpRNLXvUfQQ+VeeuSzJxp4JTbvY2MeUFEdv/94MR1PNNbvjuM=
