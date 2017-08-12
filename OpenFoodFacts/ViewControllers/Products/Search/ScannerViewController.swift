@@ -29,7 +29,16 @@ class ScannerViewController: UIViewController {
     fileprivate var tapToFocusView: TapToFocusView?
     fileprivate var lastCodeScanned: String?
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
-    var productService: ProductService!
+    let productService: ProductService
+
+    init(productService: ProductService) {
+        self.productService = productService
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -238,8 +238,7 @@ private extension SearchTableViewController {
 
 extension SearchTableViewController {
     func scanBarcode() {
-        let scanVC = ScannerViewController()
-        scanVC.productService = productService
+        let scanVC = ScannerViewController(productService: productService)
         navigationController?.pushViewController(scanVC, animated: true)
     }
 }

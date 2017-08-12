@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d3Z-kw-o7T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d3Z-kw-o7T">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +32,13 @@
                             <constraint firstItem="gwe-ZE-54x" firstAttribute="top" secondItem="ocG-5L-BJ0" secondAttribute="bottom" id="sst-HC-8fu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3uh-fc-kbe"/>
+                    <navigationItem key="navigationItem" id="3uh-fc-kbe">
+                        <barButtonItem key="rightBarButtonItem" image="barcode" style="done" id="kQL-21-4Ew">
+                            <connections>
+                                <action selector="didTapScanButton:" destination="d3Z-kw-o7T" id="Lhh-pH-xPB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="containerView" destination="ocG-5L-BJ0" id="a48-mW-DXd"/>
@@ -44,4 +49,7 @@
             <point key="canvasLocation" x="1368.8" y="104.7976011994003"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="barcode" width="25" height="25"/>
+    </resources>
 </document>

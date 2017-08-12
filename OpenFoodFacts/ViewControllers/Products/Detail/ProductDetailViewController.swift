@@ -38,6 +38,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         navigationController?.navigationBar.isTranslucent = true
     }
 
+    // MARK: - Product pages
+
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         var vcs = [UIViewController]()
 
@@ -199,5 +201,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
                 array.append(FormRow(label: label, value: value, cellType: cellType))
             }
         }
+    }
+
+    // MARK: - Nav bar button
+
+    @IBAction func didTapScanButton(_ sender: UIBarButtonItem) {
+        let scanVC = ScannerViewController(productService: productService)
+        navigationController?.pushViewController(scanVC, animated: true)
     }
 }
