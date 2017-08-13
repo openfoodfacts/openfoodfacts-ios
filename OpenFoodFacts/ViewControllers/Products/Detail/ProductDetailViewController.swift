@@ -59,7 +59,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         rows.append(FormRow(value: product, cellType: HostedViewCell.self))
 
         // Rows
-        createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString)
+        createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.quantity, label: InfoRowKey.quantity.localizedString)
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
         createFormRow(with: &rows, item: product.brands, label: InfoRowKey.brands.localizedString)
@@ -184,21 +184,22 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         return NutritionTableFormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
     }
 
-    fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self) {
+    fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self,
+                                   isCopiable: Bool = false) {
         // Check item has a value, if so add to the array of rows.
         switch item {
         case let value as String:
             // Check if it's empty here insted of doing 'case let value as String where !value.isEmpty' because an empty String ("") would not match this case but the default one
             if !value.isEmpty {
-                array.append(FormRow(label: label, value: value, cellType: cellType))
+                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
             }
         case let value as [Any]:
             if !value.isEmpty {
-                array.append(FormRow(label: label, value: value, cellType: cellType))
+                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
             }
         default:
             if let value = item {
-                array.append(FormRow(label: label, value: value, cellType: cellType))
+                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
             }
         }
     }

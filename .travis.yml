@@ -11,8 +11,6 @@ script:
 - xcodebuild clean test -project OpenFoodFacts.xcodeproj -scheme OpenFoodFacts -destination
   "platform=iOS Simulator,name=iPhone 7,OS=10.3.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
   ONLY_ACTIVE_ARCH=NO
-after_success:
-- bash <(curl -s https://codecov.io/bash)
 notifications:
   slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
 env:

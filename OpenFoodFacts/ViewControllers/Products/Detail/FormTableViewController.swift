@@ -76,6 +76,25 @@ extension FormTableViewController {
         let cellType = form.rows[indexPath.row].cellType
         return cellType.estimatedHeight
     }
+
+    override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+        return form.rows[indexPath.row].isCopiable
+    }
+
+    override func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        if action == #selector(copy(_:)) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+        let formRow = form.rows[indexPath.row]
+        guard let value = formRow.getValueAsString() else { return }
+        UIPasteboard.general.string = value
+        UIMenuController.shared.setMenuVisible(false, animated: true)
+    }
 }
 
 extension FormTableViewController: IndicatorInfoProvider {

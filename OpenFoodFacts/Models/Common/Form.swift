@@ -31,10 +31,22 @@ struct FormRow {
     var label: String?
     var value: Any
     var cellType: ProductDetailBaseCell.Type
+    let isCopiable: Bool
 
-    init(label: String? = nil, value: Any, cellType: ProductDetailBaseCell.Type) {
+    init(label: String? = nil, value: Any, cellType: ProductDetailBaseCell.Type, isCopiable: Bool = false) {
         self.label = label
         self.value = value
         self.cellType = cellType
+        self.isCopiable = isCopiable
+    }
+
+    func getValueAsString() -> String? {
+        if let value = value as? String {
+            return value
+        } else if let value = value as? [String] {
+            return value.joined(separator: ", ")
+        }
+
+        return nil
     }
 }
