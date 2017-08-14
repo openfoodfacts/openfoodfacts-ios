@@ -16,9 +16,10 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var brandLabel: UILabel!
     @IBOutlet weak var separatorLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var brandQuantityStackView: UIStackView!
 
     func configure(withProduct product: Product) {
-        name.text = product.name
+        name.text = product.name ?? product.barcode
 
         if let quantity = product.quantity, !quantity.isEmpty {
             quantityLabel.text = quantity
@@ -36,6 +37,10 @@ class ProductTableViewCell: UITableViewCell {
             separatorLabel.isHidden = true
         }
 
+        if brandLabel.isHidden && quantityLabel.isHidden {
+            brandQuantityStackView.isHidden = true
+        }
+
         if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
             photo.kf.indicatorType = .activity
             photo.kf.setImage(with: url)
@@ -47,6 +52,7 @@ class ProductTableViewCell: UITableViewCell {
         brandLabel.isHidden = false
         separatorLabel.isHidden = false
         photo.kf.cancelDownloadTask()
-        photo.image = nil
+        photo.image = #imageLiteral(resourceName: "image-add-button")
+        brandQuantityStackView.isHidden = false
     }
 }
