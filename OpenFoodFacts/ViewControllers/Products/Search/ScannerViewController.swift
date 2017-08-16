@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Crashlytics
+import NotificationBanner
 
 class ScannerViewController: UIViewController {
     fileprivate let supportedBarcodes = [AVMetadataObjectTypeUPCECode,
@@ -181,7 +182,8 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                 self.addNewProduct(barcode)
             }
         }, onError: { _ in
-            // TODO Handle error. Show alert that the barcode is not valid?
+            StatusBarNotificationBanner(title: NSLocalizedString("product-scanner.barcode.error", comment: ""), style: .danger).show()
+            self.lastCodeScanned = nil
         })
     }
 }
