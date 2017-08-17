@@ -22,7 +22,7 @@ protocol ProductApi {
 fileprivate let getEndpoint = "https://ssl-api.openfoodfacts.org"
 fileprivate let postEndpoint = "https://world.openfoodfacts.net"
 
-struct ProductService: ProductApi {
+class ProductService: ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         var query = query
         var url = getEndpoint

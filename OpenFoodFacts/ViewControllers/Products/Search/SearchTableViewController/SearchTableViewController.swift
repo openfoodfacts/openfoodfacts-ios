@@ -14,12 +14,12 @@ import Crashlytics
 // MARK: - UIViewController
 
 class SearchTableViewController: UIViewController {
-    @IBOutlet fileprivate weak var tableView: UITableView!
-    fileprivate var searchController: UISearchController!
-    var productService: ProductService!
-    fileprivate var queryRequestWorkItem: DispatchWorkItem?
-    fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
-    fileprivate var state = State.initial {
+    @IBOutlet weak var tableView: UITableView!
+    var searchController: UISearchController!
+    var productApi: ProductApi!
+    var queryRequestWorkItem: DispatchWorkItem?
+    var tapGestureRecognizer: UITapGestureRecognizer?
+    var state = State.initial {
         didSet {
             switch state {
             case .initial: tableView.backgroundView = initialView
@@ -34,10 +34,10 @@ class SearchTableViewController: UIViewController {
 
     // Background views
     // swiftlint:disable:next force_cast
-    fileprivate lazy var initialView = Bundle.main.loadNibNamed("InitialView", owner: self, options: nil)!.first as! UIView
-    fileprivate lazy var loadingView: UIView = LoadingView(frame: self.view.bounds)
-    fileprivate lazy var emptyView: UIView = EmptyView(frame: self.view.bounds)
-    fileprivate lazy var errorView: UIView = ErrorView(frame: self.view.bounds)
+    lazy var initialView = Bundle.main.loadNibNamed("InitialView", owner: self, options: nil)!.first as! UIView
+    lazy var loadingView: UIView = LoadingView(frame: self.view.bounds)
+    lazy var emptyView: UIView = EmptyView(frame: self.view.bounds)
+    lazy var errorView: UIView = ErrorView(frame: self.view.bounds)
 
     /* When the user searches a product by barcode and it's found, the product's detail view is loaded.
      If the user loads taps the back button, after presenting the search view the app goes back to the product's detail view again.
@@ -180,7 +180,7 @@ extension SearchTableViewController: UISearchBarDelegate {
 
 extension SearchTableViewController {
     func getProducts(page: Int, withQuery query: String) {
-        productService.getProducts(for: query, page: page, onSuccess: { response in
+        productApi.getProducts(for: query, page: page, onSuccess: { response in
             // TODO If this query returns only a product, should it go directly to detail view instead of the tableview?
             switch self.state {
             case .content(let oldResponse): // Append new products to existing response
@@ -229,7 +229,7 @@ private extension SearchTableViewController {
         // swiftlint:disable:next force_cast
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
         productDetailVC.product = product
-        productDetailVC.productService = productService
+        productDetailVC.productApi = productApi
         return productDetailVC
     }
 }
@@ -238,7 +238,7 @@ private extension SearchTableViewController {
 
 extension SearchTableViewController {
     func scanBarcode() {
-        let scanVC = ScannerViewController(productService: productService)
+        let scanVC = ScannerViewController(productApi: productApi)
         navigationController?.pushViewController(scanVC, animated: true)
     }
 }

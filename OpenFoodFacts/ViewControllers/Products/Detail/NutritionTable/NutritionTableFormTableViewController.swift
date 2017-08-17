@@ -11,8 +11,8 @@ import UIKit
 class NutritionTableFormTableViewController: FormTableViewController {
     var nutritionTableHeaderCellController: NutritionTableHeaderCellController?
 
-    override init(with form: Form, productService: ProductService) {
-        super.init(with: form, productService: productService)
+    override init(with form: Form, productApi: ProductApi) {
+        super.init(with: form, productApi: productApi)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class NutritionTableFormTableViewController: FormTableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
             cell.configure(with: formRow)
 
-            let nutritionTableHeaderCellController = NutritionTableHeaderCellController(with: product, productService: productService)
+            let nutritionTableHeaderCellController = NutritionTableHeaderCellController(with: product, productApi: productApi)
             nutritionTableHeaderCellController.delegate = self
             cell.hostedView = nutritionTableHeaderCellController.view
             self.nutritionTableHeaderCellController = nutritionTableHeaderCellController

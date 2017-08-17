@@ -13,7 +13,7 @@ import Crashlytics
 class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
     var product: Product!
-    var productService: ProductService!
+    var productApi: ProductApi!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
 
-        return SummaryFormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
+        return SummaryFormTableViewController(with: Form(title: summaryTitle, rows: rows), productApi: productApi)
     }
 
     fileprivate func getIngredientsVC() -> UIViewController {
@@ -92,7 +92,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
 
-        return IngredientsFormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
+        return IngredientsFormTableViewController(with: Form(title: summaryTitle, rows: rows), productApi: productApi)
     }
 
     fileprivate func getNutritionVC() -> UIViewController {
@@ -112,7 +112,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
 
-        return FormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
+        return FormTableViewController(with: Form(title: summaryTitle, rows: rows), productApi: productApi)
     }
 
     // swiftlint:disable:next cyclomatic_complexity
@@ -181,7 +181,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
 
-        return NutritionTableFormTableViewController(with: Form(title: summaryTitle, rows: rows), productService: productService)
+        return NutritionTableFormTableViewController(with: Form(title: summaryTitle, rows: rows), productApi: productApi)
     }
 
     fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self,
@@ -207,7 +207,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     // MARK: - Nav bar button
 
     @IBAction func didTapScanButton(_ sender: UIBarButtonItem) {
-        let scanVC = ScannerViewController(productService: productService)
+        let scanVC = ScannerViewController(productApi: productApi)
         navigationController?.pushViewController(scanVC, animated: true)
     }
 }

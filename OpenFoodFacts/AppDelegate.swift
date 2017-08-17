@@ -22,12 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureLog()
         Fabric.with([Crashlytics.self])
 
-        let productService = ProductService()
+        let productApi = ProductService()
 
         if let tab = window?.rootViewController as? UITabBarController {
             for child in tab.viewControllers ?? [] {
                 if let navController = child as? UINavigationController, let vc = navController.topViewController as? SearchTableViewController {
-                    vc.productService = productService
+                    vc.productApi = productApi
                 }
             }
         }

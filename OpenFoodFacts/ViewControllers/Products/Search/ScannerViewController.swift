@@ -30,10 +30,10 @@ class ScannerViewController: UIViewController {
     fileprivate var tapToFocusView: TapToFocusView?
     fileprivate var lastCodeScanned: String?
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
-    let productService: ProductService
+    let productApi: ProductApi
 
-    init(productService: ProductService) {
-        self.productService = productService
+    init(productApi: ProductApi) {
+        self.productApi = productApi
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -175,7 +175,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
 
     func getProduct(barcode: String) {
-        productService.getProduct(byBarcode: barcode, onSuccess: { response in
+        productApi.getProduct(byBarcode: barcode, onSuccess: { response in
             if let product = response.product {
                 self.showProduct(product)
             } else {
@@ -245,7 +245,7 @@ extension ScannerViewController {
         // swiftlint:disable:next force_cast
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
         productDetailVC.product = product
-        productDetailVC.productService = productService
+        productDetailVC.productApi = productApi
 
         self.navigationController?.pushViewController(productDetailVC, animated: true)
     }
@@ -256,7 +256,7 @@ extension ScannerViewController {
         let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
         if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
             addProductVC.barcode = barcode
-            addProductVC.productService = productService
+            addProductVC.productApi = productApi
             self.navigationController?.pushViewController(addProductVC, animated: true)
         }
     }

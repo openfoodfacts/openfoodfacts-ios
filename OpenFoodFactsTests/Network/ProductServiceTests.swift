@@ -15,11 +15,11 @@ fileprivate let networkDownErrorCode = -1009
 
 class ProductServiceTests: XCTestCase {
 
-    var productService: ProductService!
+    var productApi: ProductApi!
 
     override func setUp() {
         super.setUp()
-        productService = ProductService()
+        productApi = ProductService()
     }
 
     override func tearDown() {
@@ -44,7 +44,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productService.getProducts(for: query, page: page, onSuccess: success, onError: error)
+        productApi.getProducts(for: query, page: page, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
@@ -68,7 +68,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productService.getProducts(for: query, page: page, onSuccess: success, onError: error)
+        productApi.getProducts(for: query, page: page, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
@@ -89,7 +89,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productService.getProducts(for: query, page: page, onSuccess: success, onError: error)
+        productApi.getProducts(for: query, page: page, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
@@ -112,7 +112,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productService.getProduct(byBarcode: barcode, onSuccess: success, onError: error)
+        productApi.getProduct(byBarcode: barcode, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
@@ -132,7 +132,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productService.getProduct(byBarcode: barcode, onSuccess: success, onError: error)
+        productApi.getProduct(byBarcode: barcode, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
@@ -166,7 +166,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productService.postImage(productImage, barcode: barcode, onSuccess: success, onError: error)
+        productApi.postImage(productImage, barcode: barcode, onSuccess: success, onError: error)
 
         // then
         expect(resultSuccessful).toEventually(beTrue())
@@ -196,7 +196,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productService.postImage(productImage, barcode: barcode, onSuccess: success, onError: error)
+        productApi.postImage(productImage, barcode: barcode, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
@@ -230,7 +230,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productService.postImage(productImage, barcode: barcode, onSuccess: success, onError: error)
+        productApi.postImage(productImage, barcode: barcode, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
@@ -254,7 +254,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productService.postProduct(product, onSuccess: success, onError: error)
+        productApi.postProduct(product, onSuccess: success, onError: error)
 
         // then
         expect(resultSuccessful).toEventually(beTrue())
@@ -273,7 +273,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productService.postProduct(product, onSuccess: success, onError: error)
+        productApi.postProduct(product, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())

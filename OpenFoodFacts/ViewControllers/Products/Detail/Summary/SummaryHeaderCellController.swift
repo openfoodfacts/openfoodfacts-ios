@@ -20,11 +20,11 @@ class SummaryHeaderCellController: TakePictureViewController {
     }
     @IBOutlet weak var productName: UILabel!
 
-    convenience init(with product: Product, productService: ProductService) {
+    convenience init(with product: Product, productApi: ProductApi) {
         self.init(nibName: String(describing: SummaryHeaderCellController.self), bundle: nil)
         self.product = product
         super.barcode = product.barcode
-        super.productService = productService
+        super.productApi = productApi
         super.imageType = .front
     }
 

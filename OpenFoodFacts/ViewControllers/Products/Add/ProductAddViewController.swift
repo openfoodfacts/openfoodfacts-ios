@@ -63,7 +63,7 @@ class ProductAddViewController: TakePictureViewController {
         }
         product.quantity = quantityField.text
 
-        productService.postProduct(product, onSuccess: {
+        productApi.postProduct(product, onSuccess: {
             self.productAddSuccessBanner.show()
             self.navigationController?.popToRootViewController(animated: true)
         }, onError: { _ in
