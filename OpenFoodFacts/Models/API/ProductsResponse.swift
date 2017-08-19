@@ -11,8 +11,9 @@ import ObjectMapper
 
 class ProductsResponse: Mappable {
     var query = ""
-    var count = 0
+    var totalProducts = 0
     var page = "0"
+    var pageSize = "0"
     var products = [Product]()
     var product: Product?
 
@@ -20,8 +21,9 @@ class ProductsResponse: Mappable {
     }
 
     func mapping(map: Map) {
-        count <- map[OFFJson.CountKey]
+        totalProducts <- map[OFFJson.CountKey]
         page <- map[OFFJson.PageKey]
+        pageSize <- map[OFFJson.PageSizeKey]
         products <- map[OFFJson.ProductsKey]
         product <- map[OFFJson.ProductKey]
     }

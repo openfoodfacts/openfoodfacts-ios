@@ -115,7 +115,7 @@ extension SearchTableViewController: UITableViewDataSource {
 
         guard case let .content(response) = state else { return cell }
         cell.configure(withProduct: response.products[indexPath.row])
-        if response.products.count == indexPath.row + 5, let page = Int(response.page), response.products.count < response.count {
+        if response.products.count == indexPath.row + 5, let page = Int(response.page), response.products.count < response.totalProducts {
             getProducts(page: page + 1, withQuery: response.query)
         }
 
@@ -185,9 +185,11 @@ extension SearchTableViewController {
             switch self.state {
             case .content(let oldResponse): // Append new products to existing response
                 oldResponse.products.append(contentsOf: response.products)
+                oldResponse.page = response.page
+                oldResponse.pageSize = response.pageSize
                 self.state = .content(oldResponse)
             default: // Got new response
-                if response.count == 0 { // swiftlint:disable:this empty_count
+                if response.totalProducts == 0 {
                     self.state = .empty
                 } else {
                     self.state = .content(response)

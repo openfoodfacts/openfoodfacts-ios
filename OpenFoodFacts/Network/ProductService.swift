@@ -46,10 +46,10 @@ class ProductService: ProductApi {
         request.responseObject { (response: DataResponse<ProductsResponse>) in
             log.debug(response.debugDescription)
             switch response.result {
-            case .success(let productResponse):
-                log.debug("Got \(productResponse.count) products ")
-                productResponse.query = query
-                onSuccess(productResponse)
+            case .success(let productsResponse):
+                log.debug("Got \(productsResponse.products.count) products ")
+                productsResponse.query = query
+                onSuccess(productsResponse)
             case .failure(let error):
                 Crashlytics.sharedInstance().recordError(error)
                 onError(error)

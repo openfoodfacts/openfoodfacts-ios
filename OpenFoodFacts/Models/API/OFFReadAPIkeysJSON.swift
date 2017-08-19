@@ -15,6 +15,7 @@ struct OFFJson {
 
     static let CountKey = "count"
     static let PageKey = "page"
+    static let PageSizeKey = "page_size"
     static let ProductsKey = "products"
     static let StatusKey = "status"
     static let StatusVerboseKey = "status_verbose"

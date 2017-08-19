@@ -13,7 +13,7 @@ import ObjectMapper
 class ProductServiceMock: ProductApi {
     var query: String?
     var page: Int?
-    var productResponse: ProductsResponse!
+    var productsResponse: ProductsResponse!
     let error = NSError(domain:NSURLErrorDomain, code:-1009, userInfo: nil)
 
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
@@ -21,7 +21,7 @@ class ProductServiceMock: ProductApi {
         self.page = page
 
         if "Fanta" == query {
-            onSuccess(productResponse)
+            onSuccess(productsResponse)
         } else {
             onError(error)
         }
@@ -35,6 +35,6 @@ class ProductServiceMock: ProductApi {
     }
 
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-
+        
     }
 }

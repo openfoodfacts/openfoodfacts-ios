@@ -82,6 +82,7 @@
 		95902B471F2E284700A72EF7 /* SummaryHeaderCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */; };
 		9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */; };
 		9596B5161F45FF040076F52C /* ProductServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596B5151F45FF040076F52C /* ProductServiceMock.swift */; };
+		9596B5181F48D80A0076F52C /* GetProductsByNameSuccessPage2.json in Resources */ = {isa = PBXBuildFile; fileRef = 9596B5171F48D80A0076F52C /* GetProductsByNameSuccessPage2.json */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -1034,6 +1035,7 @@
 		95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryHeaderCellController.xib; sourceTree = "<group>"; };
 		9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9596B5151F45FF040076F52C /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceMock.swift; sourceTree = "<group>"; };
+		9596B5171F48D80A0076F52C /* GetProductsByNameSuccessPage2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetProductsByNameSuccessPage2.json; sourceTree = "<group>"; };
 		95A7E0641F0581B6004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A7E0671F058F5D004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -1627,6 +1629,7 @@
 			children = (
 				95F31C071F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json */,
 				95F31C081F3A43C400B8AF90 /* GetProductsByNameSuccess.json */,
+				9596B5171F48D80A0076F52C /* GetProductsByNameSuccessPage2.json */,
 				95F31C091F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json */,
 				95F31C121F3BA8EC00B8AF90 /* test_image.jpg */,
 				9568D9071F3CF5C30058E151 /* PostImageSuccess.json */,
@@ -1893,6 +1896,7 @@
 			files = (
 				9568D9081F3CF5C30058E151 /* PostImageSuccess.json in Resources */,
 				95F31C0C1F3A43C400B8AF90 /* GetProductsByPartialBarcodeSuccess.json in Resources */,
+				9596B5181F48D80A0076F52C /* GetProductsByNameSuccessPage2.json in Resources */,
 				95F31C0A1F3A43C400B8AF90 /* GetProductByBarcodeSuccess.json in Resources */,
 				95F31C0B1F3A43C400B8AF90 /* GetProductsByNameSuccess.json in Resources */,
 				9568D90A1F3CFBD90058E151 /* PostImageFailure.json in Resources */,
