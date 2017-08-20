@@ -3,17 +3,20 @@
 # https://docs.fastlane.tools
 fastlane_version "1.109.0"
 
-# This value helps us track success metrics for Fastfiles
-# we automatically generate. Feel free to remove this line
-# once you get things running smoothly!
-generated_fastfile_id "51b89fc9-7ab1-4280-ad4d-652aa9392afa"
-
 default_platform :ios
 
-# Fastfile actions accept additional configuration, but
-# don't worry, fastlane will prompt you for required
-# info which you can add here later
+desc "Run all the tests"
+lane :test do
+  scan(
+    scheme: "OpenFoodFacts",
+    devices: ["iPhone 7"]
+  )
+end
+
+desc "Build and send the beta to TestFlight"
 lane :beta do
+  ensure_git_status_clean
+
   increment_build_number
 
   cert
@@ -24,6 +27,22 @@ lane :beta do
     scheme: "OpenFoodFacts"
   )
 
-  # upload to Testflight
+  test
+
+  # Upload to test flight
   pilot(skip_waiting_for_build_processing: true)
+
+  # Commit version bump
+  version = get_version_number(xcodeproj: "OpenFoodFacts.xcodeproj")
+  build_number = get_build_number(xcodeproj: "OpenFoodFacts.xcodeproj")
+  version_tag = "#{version}-#{build_number}"
+
+  commit_version_bump(
+    message: "Version bump to #{version_tag}",
+    xcodeproj: "OpenFoodFacts.xcodeproj"
+  )
+  add_git_tag(
+    tag: version_tag
+  )
+  push_to_git_remote
 end

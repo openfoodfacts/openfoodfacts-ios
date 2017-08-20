@@ -29,11 +29,16 @@ xcode-select --install
 </table>
 
 # Available Actions
+### test
+```
+fastlane test
+```
+Run all the tests
 ### beta
 ```
 fastlane beta
 ```
-
+Build and send the beta to TestFlight
 
 ----
 
