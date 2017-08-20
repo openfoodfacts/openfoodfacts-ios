@@ -35,6 +35,6 @@ class ProductServiceMock: ProductApi {
     }
 
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        
+
     }
 }

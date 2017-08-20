@@ -181,7 +181,6 @@ extension SearchTableViewController: UISearchBarDelegate {
 extension SearchTableViewController {
     func getProducts(page: Int, withQuery query: String) {
         productApi.getProducts(for: query, page: page, onSuccess: { response in
-            // TODO If this query returns only a product, should it go directly to detail view instead of the tableview?
             switch self.state {
             case .content(let oldResponse): // Append new products to existing response
                 oldResponse.products.append(contentsOf: response.products)
