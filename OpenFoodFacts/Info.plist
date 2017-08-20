@@ -34,6 +34,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>GET_ENDPOINT</key>
+	<string>https://${GET_ENDPOINT}</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -42,6 +44,8 @@
 	<string>Use your camera to scan barcodes and take pictures of products to add to the database</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Take and upload pictures of products</string>
+	<key>POST_ENDPOINT</key>
+	<string>https://${POST_ENDPOINT}</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

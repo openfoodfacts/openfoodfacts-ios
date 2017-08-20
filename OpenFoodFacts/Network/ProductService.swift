@@ -19,13 +19,15 @@ protocol ProductApi {
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
 }
 
-fileprivate let getEndpoint = "https://ssl-api.openfoodfacts.org"
-fileprivate let postEndpoint = "https://world.openfoodfacts.net"
+struct Endpoint {
+    static let get = Bundle.main.infoDictionary?["GET_ENDPOINT"] as! String // swiftlint:disable:this force_cast
+    static let post = Bundle.main.infoDictionary?["POST_ENDPOINT"] as! String // swiftlint:disable:this force_cast
+}
 
 class ProductService: ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         var query = query
-        var url = getEndpoint
+        var url = Endpoint.get
         var searchType = "by_product"
         if query.isNumber() {
             query = buildBarcodeQueryParameter(query)
@@ -58,8 +60,14 @@ class ProductService: ProductApi {
     }
 
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
-        let url = postEndpoint + "/api/v0/product/\(barcode).json"
-//        let url = getEndpoint + "/api/v0/product/\(barcode).json"
+        var url: String
+        #if DEBUG
+        url = Endpoint.post
+        #else
+        url = Endpoint.get
+        #endif
+
+        url += "/api/v0/product/\(barcode).json"
 
         Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
         Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
@@ -110,7 +118,7 @@ extension ProductService {
                     multipartFormData.append(fileURL, withName: "imgupload_\(productImage.type.rawValue)")
                     multipartFormData.append(productImage.type.rawValue.data(using: .utf8)!, withName: "imagefield")
             },
-                to: postEndpoint + "/cgi/product_image_upload.pl",
+                to: Endpoint.post + "/cgi/product_image_upload.pl",
                 headers: ["Content-Disposition": "form-data; name=\"imgupload_\(productImage.type.rawValue)\"; filename=\"\(productImage.fileName)\""],
                 encodingCompletion: { encodingResult in
                     switch encodingResult {
@@ -170,9 +178,7 @@ extension ProductService {
     }
 
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        let url = "\(postEndpoint)/cgi/product_jqm2.pl"
-
-        let request = Alamofire.request(url, method: .post, parameters: product.toJSON(), encoding: URLEncoding.default)
+        let request = Alamofire.request("\(Endpoint.post)/cgi/product_jqm2.pl", method: .post, parameters: product.toJSON(), encoding: URLEncoding.default)
         log.debug(request.debugDescription)
         request.authenticate(user: "off", password: "off")
             .responseJSON(completionHandler: { response in

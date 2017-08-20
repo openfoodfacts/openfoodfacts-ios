@@ -323,12 +323,11 @@ class SearchTableViewControllerTests: XCTestCase {
         guard let json = jsonObject as? [String: Any] else { fail("Failed to cast json"); return nil }
         return json
     }
-    
+
     private func buildProductsResponseForJsonFile(_ fileName: String) -> ProductsResponse {
         let map = Map(mappingType: .fromJSON, JSON: getJson(fileName)!)
         let productResponse = ProductsResponse(map: map)!
         productResponse.mapping(map: map)
         return productResponse
     }
-    
 }
