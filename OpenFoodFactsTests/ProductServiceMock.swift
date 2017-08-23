@@ -11,9 +11,9 @@ import Foundation
 import ObjectMapper
 
 class ProductServiceMock: ProductApi {
-    private (set) var query: String?
-    private (set) var page: Int?
-    private (set) var productsResponse: ProductsResponse!
+    var query: String?
+    var page: Int?
+    var productsResponse: ProductsResponse!
     let error = NSError(domain:NSURLErrorDomain, code:-1009, userInfo: nil)
 
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
