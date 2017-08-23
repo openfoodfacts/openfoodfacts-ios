@@ -18,8 +18,8 @@ class SearchTableViewControllerTests: XCTestCase {
     var productApi: ProductServiceMock!
 
     private struct ProductsResponseFile {
-        static let successPage1 = "GetProductsByNameSuccess"
-        static let successPage2 = "GetProductsByNameSuccessPage2"
+        static let successPage1 = "GET_ProductsByName_200"
+        static let successPage2 = "GET_ProductsByNamePage2_200"
     }
 
     override func setUp() {

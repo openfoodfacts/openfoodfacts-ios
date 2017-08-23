@@ -37,7 +37,7 @@ class ProductServiceTests: XCTestCase {
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
         stub(condition: isAbsoluteURLString("https://ssl-api.openfoodfacts.org/cgi/search.pl?search_terms=fanta&search_simple=1&action=process&json=1&page=1")) { _ in
             return OHHTTPStubsResponse(
-                fileAtPath: OHPathForFile("GetProductsByNameSuccess.json", type(of: self))!,
+                fileAtPath: OHPathForFile("GET_ProductsByName_200.json", type(of: self))!,
                 statusCode: 200,
                 headers: ["Content-Type": "application/json"]
             )
@@ -61,7 +61,7 @@ class ProductServiceTests: XCTestCase {
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
         stub(condition: isAbsoluteURLString("https://ssl-api.openfoodfacts.org/code/1234xxxxxxxxx.json")) { _ in
             return OHHTTPStubsResponse(
-                fileAtPath: OHPathForFile("GetProductsByPartialBarcodeSuccess.json", type(of: self))!,
+                fileAtPath: OHPathForFile("GET_ProductsByPartialBarcode_200.json", type(of: self))!,
                 statusCode: 200,
                 headers: ["Content-Type": "application/json"]
             )
@@ -105,7 +105,7 @@ class ProductServiceTests: XCTestCase {
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
         stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/api/v0/product/5449000011527.json")) { _ in
             return OHHTTPStubsResponse(
-                fileAtPath: OHPathForFile("GetProductByBarcodeSuccess.json", type(of: self))!,
+                fileAtPath: OHPathForFile("GET_ProductsByBarcode_200.json", type(of: self))!,
                 statusCode: 200,
                 headers: ["Content-Type": "application/json"]
             )
@@ -159,7 +159,7 @@ class ProductServiceTests: XCTestCase {
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
         stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/cgi/product_image_upload.pl")) { _ in
             return OHHTTPStubsResponse(
-                fileAtPath: OHPathForFile("PostImageSuccess.json", type(of: self))!,
+                fileAtPath: OHPathForFile("POST_Image_200.json", type(of: self))!,
                 statusCode: 200,
                 headers: ["Content-Type": "application/json"]
             )
@@ -223,7 +223,7 @@ class ProductServiceTests: XCTestCase {
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/cgi/product_image_upload.pl")) { _ in
             return OHHTTPStubsResponse(
-                fileAtPath: OHPathForFile("PostImageFailure.json", type(of: self))!,
+                fileAtPath: OHPathForFile("POST_Image_400.json", type(of: self))!,
                 statusCode: 200,
                 headers: ["Content-Type": "application/json"]
             )
@@ -247,7 +247,7 @@ class ProductServiceTests: XCTestCase {
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
         stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/cgi/product_jqm2.pl")) { _ in
             return OHHTTPStubsResponse(
-                fileAtPath: OHPathForFile("PostProductSuccess.json", type(of: self))!,
+                fileAtPath: OHPathForFile("POST_Product_200.json", type(of: self))!,
                 statusCode: 200,
                 headers: ["Content-Type": "application/json"]
             )
