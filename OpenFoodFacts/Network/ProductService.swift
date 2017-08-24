@@ -28,7 +28,7 @@ class ProductService: ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         var query = query
         var url = Endpoint.get
-        var searchType = "by_product"
+        var searchType: String
         if query.isNumber() {
             query = buildBarcodeQueryParameter(query)
             url += "/code/\(query).json"
@@ -36,6 +36,7 @@ class ProductService: ProductApi {
             Crashlytics.sharedInstance().setObjectValue(query, forKey: "product_search_barcode")
         } else {
             url += "/cgi/search.pl?search_terms=\(encodeParameters(query))&search_simple=1&action=process&json=1&page=\(page)"
+            searchType = "by_product"
             Crashlytics.sharedInstance().setObjectValue(query, forKey: "product_search_name")
         }
 

@@ -19,8 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        configureLog()
-        Fabric.with([Crashlytics.self])
+        if ProcessInfo().environment["UITesting"] == nil {
+            configureLog()
+            Fabric.with([Crashlytics.self])
+        }
 
         let productApi = ProductService()
 

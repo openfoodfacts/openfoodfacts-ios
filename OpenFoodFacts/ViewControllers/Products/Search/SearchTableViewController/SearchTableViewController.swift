@@ -69,6 +69,10 @@ class SearchTableViewController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+
+        let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField
+        searchField?.isAccessibilityElement = true
+        searchField?.accessibilityIdentifier = "Product Search Bar"
     }
 
     fileprivate func configureNavigationBar() {
