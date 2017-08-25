@@ -27,6 +27,7 @@ class UITestCase: XCTestCase {
     }
 
     func waitForElementToAppear(_ element: XCUIElement, file: String = #file, line: UInt = #line) {
+        _ = app.staticTexts.count // force cached accessibility hierarchy refresh
         let existsPredicate = NSPredicate(format: "exists == true")
         expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
 

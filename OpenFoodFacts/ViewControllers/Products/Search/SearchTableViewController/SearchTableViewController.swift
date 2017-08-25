@@ -72,11 +72,13 @@ class SearchTableViewController: UIViewController {
 
         let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField
         searchField?.isAccessibilityElement = true
-        searchField?.accessibilityIdentifier = "Product Search Bar"
+        searchField?.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
     }
 
     fileprivate func configureNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "barcode"), style: .plain, target: self, action: #selector(scanBarcode))
+        let scanButton = UIBarButtonItem(image: UIImage(named: "barcode"), style: .plain, target: self, action: #selector(scanBarcode))
+        scanButton.accessibilityIdentifier = AccessibilityIdentifiers.scanButton
+        navigationItem.rightBarButtonItem = scanButton
     }
 
     fileprivate func configureGestureRecognizers() {

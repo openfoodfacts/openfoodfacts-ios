@@ -16,12 +16,18 @@ enum HTTPMethod {
 
 struct HTTPStubInfo {
     let url: String
-    let jsonFilename: String
+    let jsonFilename: String?
     let method: HTTPMethod
+
+    init(url: String, jsonFilename: String? = nil, method: HTTPMethod) {
+        self.url = url
+        self.jsonFilename = jsonFilename
+        self.method = method
+    }
 }
 
 let initialStubs = [
-    HTTPStubInfo(url: "/cgi/search.pl?search_terms=fanta&search_simple=1&action=process&json=1&page=1", jsonFilename: "GET_ProductsByName_200", method: .GET),
+    HTTPStubInfo(url: "/cgi/search.pl", jsonFilename: "GET_ProductsByName_200", method: .GET)
 ]
 
 class HTTPDynamicStubs {
@@ -40,7 +46,11 @@ class HTTPDynamicStubs {
     func setupInitialStubs() {
         // Setting up all the initial mocks from the array
         for stub in initialStubs {
-            setupStub(url: stub.url, filename: stub.jsonFilename, method: stub.method)
+            if let jsonFilename = stub.jsonFilename {
+                setupStub(url: stub.url, filename: jsonFilename, method: stub.method)
+            } else {
+                setupErrorStub(url: stub.url)
+            }
         }
     }
 
@@ -49,12 +59,22 @@ class HTTPDynamicStubs {
         let filePath = testBundle.path(forResource: filename, ofType: "json")
         let fileUrl = URL(fileURLWithPath: filePath!)
         let data = try! Data(contentsOf: fileUrl, options: .uncached)
-        // Looking for a file and converting it to JSON
         let json = dataToJSON(data: data)
 
-        // Swifter makes it very easy to create stubbed responses
         let response: ((HttpRequest) -> HttpResponse) = { _ in
             return HttpResponse.ok(.json(json as AnyObject))
+        }
+
+        switch method  {
+        case .GET : server.GET[url] = response
+        case .POST: server.POST[url] = response
+        }
+
+    }
+
+    public func setupErrorStub(url: String, method: HTTPMethod = .GET) {
+        let response: ((HttpRequest) -> HttpResponse) = { _ in
+            return HttpResponse.internalServerError
         }
 
         switch method  {

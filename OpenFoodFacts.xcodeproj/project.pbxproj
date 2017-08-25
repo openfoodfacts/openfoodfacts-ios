@@ -16,6 +16,8 @@
 		951FA77A1F4E22B00096AC5A /* HTTPDynamicStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7791F4E22B00096AC5A /* HTTPDynamicStubs.swift */; };
 		951FA77C1F4E232A0096AC5A /* GET_ProductsByName_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 958BE7801F4E1DC500603688 /* GET_ProductsByName_200.json */; };
 		951FA7831F4F6B8E0096AC5A /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7821F4F6B8E0096AC5A /* UITestCase.swift */; };
+		951FA7881F50C0670096AC5A /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */; };
+		951FA7891F50C06A0096AC5A /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */; };
 		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
 		9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525708B1EE9BC91002FC40D /* CellImageTapable.swift */; };
 		953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953664F41ECA212100D6D398 /* NutrimentItem.swift */; };
@@ -210,6 +212,7 @@
 		951FA7791F4E22B00096AC5A /* HTTPDynamicStubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPDynamicStubs.swift; sourceTree = "<group>"; };
 		951FA77D1F4F68670096AC5A /* UITesting.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = UITesting.xcconfig; path = Config/UITesting.xcconfig; sourceTree = "<group>"; };
 		951FA7821F4F6B8E0096AC5A /* UITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
+		951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessibilityIdentifiers.swift; path = Helpers/AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9525708B1EE9BC91002FC40D /* CellImageTapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellImageTapable.swift; path = Protocols/CellImageTapable.swift; sourceTree = "<group>"; };
 		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
@@ -1238,6 +1241,14 @@
 			path = OpenFoodFactsUITests;
 			sourceTree = "<group>";
 		};
+		951FA7841F50C0310096AC5A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		9525708A1EE9BC43002FC40D /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -1545,6 +1556,7 @@
 		95C265101E96D55B004212EC /* OpenFoodFacts */ = {
 			isa = PBXGroup;
 			children = (
+				951FA7841F50C0310096AC5A /* Helpers */,
 				95CF59E01F49F11900700580 /* Config */,
 				9525708A1EE9BC43002FC40D /* Protocols */,
 				95CB99A51EA55BEF00CBDDF9 /* Extensions */,
@@ -2099,6 +2111,7 @@
 				951FA7701F4E22790096AC5A /* ProductSearchUITests.swift in Sources */,
 				951FA77A1F4E22B00096AC5A /* HTTPDynamicStubs.swift in Sources */,
 				951FA7831F4F6B8E0096AC5A /* UITestCase.swift in Sources */,
+				951FA7891F50C06A0096AC5A /* AccessibilityIdentifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2145,6 +2158,7 @@
 				956FF9661F1FF0FD0069D678 /* SearchTableViewControllerState.swift in Sources */,
 				958F33531F378076005269C5 /* InfoRowTableViewCell.swift in Sources */,
 				957094AF1EA124E800268236 /* ProductService.swift in Sources */,
+				951FA7881F50C0670096AC5A /* AccessibilityIdentifiers.swift in Sources */,
 				95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */,
 				957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */,
 				957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */,

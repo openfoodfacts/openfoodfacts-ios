@@ -10,14 +10,57 @@ import XCTest
 
 class ProductSearchUITests: UITestCase {
 
-    func testResultCellExists() {
-        let searchField = app.searchFields["Product Search Bar"]
-        XCTAssertTrue(searchField.exists)
-        searchField.tap()
-        searchField.typeText("Fanta")
+    private let offDescriptionText = "Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels."
+    private let searchQuery = "Fanta"
+    private let searchQueryForError = "Sprite"
+    private let cellProductName = "Fanta Orange"
+    private let errorText = "Something went wrong, Please try again"
 
-        let productName = app.cells.staticTexts["Fanta Orange"]
+    func testInitialView() {
+        let offDescription = app.tables[offDescriptionText]
+        waitForElementToAppear(offDescription)
+        XCTAssert(offDescription.exists)
+    }
+
+    func testResultCellExists() {
+        let searchField = app.searchFields[AccessibilityIdentifiers.productSearchBar]
+        XCTAssert(searchField.exists)
+        searchField.tap()
+        searchField.typeText(searchQuery)
+
+        let productName = app.cells.staticTexts[cellProductName]
         waitForElementToAppear(productName)
-        XCTAssertTrue(productName.exists)
+        XCTAssert(productName.exists)
+    }
+
+    func testCancellingASearchDisplaysInitialView() {
+        let searchField = app.searchFields[AccessibilityIdentifiers.productSearchBar]
+        XCTAssert(searchField.exists)
+        searchField.tap()
+        searchField.typeText(searchQuery)
+
+        app.buttons["Cancel"].tap()
+
+        let offDescription = app.tables[offDescriptionText]
+        waitForElementToAppear(offDescription)
+        XCTAssert(offDescription.exists)
+    }
+
+    func testTappingScanButtonShowsScanView() {
+        app.buttons[AccessibilityIdentifiers.scanButton].tap()
+        XCTAssert(app.navigationBars["OpenFoodFacts.ScannerView"].exists)
+    }
+
+    func testResponseWithErrorShowsErrorView() {
+        dynamicStubs.setupErrorStub(url: "/cgi/search.pl")
+
+        let searchField = app.searchFields[AccessibilityIdentifiers.productSearchBar]
+        XCTAssert(searchField.exists)
+        searchField.tap()
+        searchField.typeText(searchQueryForError)
+
+        let errorText = app.tables[self.errorText]
+        waitForElementToAppear(errorText)
+        XCTAssert(errorText.exists)
     }
 }
