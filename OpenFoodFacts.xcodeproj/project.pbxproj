@@ -210,7 +210,7 @@
 		951FA76F1F4E22790096AC5A /* ProductSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSearchUITests.swift; sourceTree = "<group>"; };
 		951FA7711F4E22790096AC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		951FA7791F4E22B00096AC5A /* HTTPDynamicStubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPDynamicStubs.swift; sourceTree = "<group>"; };
-		951FA77D1F4F68670096AC5A /* UITesting.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = UITesting.xcconfig; path = Config/UITesting.xcconfig; sourceTree = "<group>"; };
+		951FA77D1F4F68670096AC5A /* Testing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Testing.xcconfig; path = Config/Testing.xcconfig; sourceTree = "<group>"; };
 		951FA7821F4F6B8E0096AC5A /* UITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessibilityIdentifiers.swift; path = Helpers/AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1635,7 +1635,7 @@
 			isa = PBXGroup;
 			children = (
 				95CF59E11F49F12A00700580 /* Debug.xcconfig */,
-				951FA77D1F4F68670096AC5A /* UITesting.xcconfig */,
+				951FA77D1F4F68670096AC5A /* Testing.xcconfig */,
 				95CF59E21F49F13300700580 /* Release.xcconfig */,
 			);
 			name = Config;
@@ -3075,114 +3075,6 @@
 			};
 			name = Release;
 		};
-		951FA77E1F4F68D30096AC5A /* UITesting */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 951FA77D1F4F68670096AC5A /* UITesting.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = UITesting;
-		};
-		951FA77F1F4F68D30096AC5A /* UITesting */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 11;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = JVHN2X67GT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = UITesting;
-		};
-		951FA7801F4F68D30096AC5A /* UITesting */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = JVHN2X67GT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = OpenFoodFactsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenFoodFacts.app/OpenFoodFacts";
-			};
-			name = UITesting;
-		};
-		951FA7811F4F68D30096AC5A /* UITesting */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = JVHN2X67GT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = OpenFoodFactsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = OpenFoodFacts;
-			};
-			name = UITesting;
-		};
 		95C2651E1E96D55B004212EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 95CF59E11F49F12A00700580 /* Debug.xcconfig */;
@@ -3321,6 +3213,114 @@
 			};
 			name = Release;
 		};
+		95F2B0431F516E13004F8AF9 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 951FA77D1F4F68670096AC5A /* Testing.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Testing;
+		};
+		95F2B0441F516E13004F8AF9 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 11;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = JVHN2X67GT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Testing;
+		};
+		95F2B0451F516E13004F8AF9 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = JVHN2X67GT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = OpenFoodFactsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenFoodFacts.app/OpenFoodFacts";
+			};
+			name = Testing;
+		};
+		95F2B0461F516E13004F8AF9 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = JVHN2X67GT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = OpenFoodFactsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OpenFoodFacts;
+			};
+			name = Testing;
+		};
 		95F31BF11F38F71E00B8AF90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3364,16 +3364,17 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				951FA7751F4E22790096AC5A /* Debug */,
-				951FA7811F4F68D30096AC5A /* UITesting */,
+				95F2B0461F516E13004F8AF9 /* Testing */,
 				951FA7771F4E22790096AC5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95C265091E96D55B004212EC /* Build configuration list for PBXProject "OpenFoodFacts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95C2651E1E96D55B004212EC /* Debug */,
-				951FA77E1F4F68D30096AC5A /* UITesting */,
+				95F2B0431F516E13004F8AF9 /* Testing */,
 				95C2651F1E96D55B004212EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -3383,7 +3384,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95C265211E96D55B004212EC /* Debug */,
-				951FA77F1F4F68D30096AC5A /* UITesting */,
+				95F2B0441F516E13004F8AF9 /* Testing */,
 				95C265221E96D55B004212EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -3393,7 +3394,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95F31BF11F38F71E00B8AF90 /* Debug */,
-				951FA7801F4F68D30096AC5A /* UITesting */,
+				95F2B0451F516E13004F8AF9 /* Testing */,
 				95F31BF21F38F71E00B8AF90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

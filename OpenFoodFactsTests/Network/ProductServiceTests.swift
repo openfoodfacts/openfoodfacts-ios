@@ -35,7 +35,7 @@ class ProductServiceTests: XCTestCase {
         let page = 1
         let success: (ProductsResponse) -> Void = { response in result = response }
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
-        stub(condition: isAbsoluteURLString("https://ssl-api.openfoodfacts.org/cgi/search.pl?search_terms=fanta&search_simple=1&action=process&json=1&page=1")) { _ in
+        stub(condition: isPath("/cgi/search.pl")) { _ in
             return OHHTTPStubsResponse(
                 fileAtPath: OHPathForFile("GET_ProductsByName_200.json", type(of: self))!,
                 statusCode: 200,
@@ -59,7 +59,7 @@ class ProductServiceTests: XCTestCase {
         let page = 1
         let success: (ProductsResponse) -> Void = { response in result = response }
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
-        stub(condition: isAbsoluteURLString("https://ssl-api.openfoodfacts.org/code/1234xxxxxxxxx.json")) { _ in
+        stub(condition: isPath("/code/1234xxxxxxxxx.json")) { _ in
             return OHHTTPStubsResponse(
                 fileAtPath: OHPathForFile("GET_ProductsByPartialBarcode_200.json", type(of: self))!,
                 statusCode: 200,
@@ -83,7 +83,7 @@ class ProductServiceTests: XCTestCase {
         let page = 1
         let success: (ProductsResponse) -> Void = { response in XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
-        stub(condition: isAbsoluteURLString("https://ssl-api.openfoodfacts.org/code/1234xxxxxxxxx.json")) { _ in
+        stub(condition: isPath("/code/1234xxxxxxxxx.json")) { _ in
             let notConnectedError = NSError(domain:NSURLErrorDomain, code:networkDownErrorCode, userInfo:nil)
             return OHHTTPStubsResponse(error:notConnectedError)
         }
@@ -103,7 +103,7 @@ class ProductServiceTests: XCTestCase {
         let barcode = "5449000011527"
         let success: (ProductsResponse) -> Void = { response in result = response }
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
-        stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/api/v0/product/5449000011527.json")) { _ in
+        stub(condition: isPath("/api/v0/product/5449000011527.json")) { _ in
             return OHHTTPStubsResponse(
                 fileAtPath: OHPathForFile("GET_ProductsByBarcode_200.json", type(of: self))!,
                 statusCode: 200,
@@ -126,7 +126,7 @@ class ProductServiceTests: XCTestCase {
         let barcode = "5449000011527"
         let success: (ProductsResponse) -> Void = { response in XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
-        stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/api/v0/product/5449000011527.json")) { _ in
+        stub(condition: isPath("/api/v0/product/5449000011527.json")) { _ in
             let notConnectedError = NSError(domain:NSURLErrorDomain, code:networkDownErrorCode, userInfo:nil)
             return OHHTTPStubsResponse(error:notConnectedError)
         }
@@ -157,7 +157,7 @@ class ProductServiceTests: XCTestCase {
         let barcode = "5449000011527"
         let success: () -> Void = { resultSuccessful = true }
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
-        stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/cgi/product_image_upload.pl")) { _ in
+        stub(condition: isPath("/cgi/product_image_upload.pl")) { _ in
             return OHHTTPStubsResponse(
                 fileAtPath: OHPathForFile("POST_Image_200.json", type(of: self))!,
                 statusCode: 200,
@@ -190,7 +190,7 @@ class ProductServiceTests: XCTestCase {
         let barcode = "5449000011527"
         let success: () -> Void = { XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
-        stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/cgi/product_image_upload.pl")) { _ in
+        stub(condition: isPath("/cgi/product_image_upload.pl")) { _ in
             let notConnectedError = NSError(domain:NSURLErrorDomain, code:networkDownErrorCode, userInfo:nil)
             return OHHTTPStubsResponse(error:notConnectedError)
         }
@@ -221,7 +221,7 @@ class ProductServiceTests: XCTestCase {
         let barcode = "5449000011527"
         let success: () -> Void = { XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
-        stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/cgi/product_image_upload.pl")) { _ in
+        stub(condition: isPath("/cgi/product_image_upload.pl")) { _ in
             return OHHTTPStubsResponse(
                 fileAtPath: OHPathForFile("POST_Image_400.json", type(of: self))!,
                 statusCode: 200,
@@ -245,7 +245,7 @@ class ProductServiceTests: XCTestCase {
         let product = Product()
         let success: () -> Void = { resultSuccessful = true }
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
-        stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/cgi/product_jqm2.pl")) { _ in
+        stub(condition: isPath("/cgi/product_jqm2.pl")) { _ in
             return OHHTTPStubsResponse(
                 fileAtPath: OHPathForFile("POST_Product_200.json", type(of: self))!,
                 statusCode: 200,
@@ -267,7 +267,7 @@ class ProductServiceTests: XCTestCase {
         let product = Product()
         let success: () -> Void = { XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
-        stub(condition: isAbsoluteURLString("https://world.openfoodfacts.net/cgi/product_jqm2.pl")) { _ in
+        stub(condition: isPath("/cgi/product_jqm2.pl")) { _ in
             let notConnectedError = NSError(domain:NSURLErrorDomain, code:networkDownErrorCode, userInfo:nil)
             return OHHTTPStubsResponse(error:notConnectedError)
         }

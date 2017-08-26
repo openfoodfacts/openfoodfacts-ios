@@ -69,7 +69,6 @@ class HTTPDynamicStubs {
         case .GET : server.GET[url] = response
         case .POST: server.POST[url] = response
         }
-
     }
 
     public func setupErrorStub(url: String, method: HTTPMethod = .GET) {
