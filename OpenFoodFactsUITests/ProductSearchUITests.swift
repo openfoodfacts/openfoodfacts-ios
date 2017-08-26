@@ -11,9 +11,7 @@ import XCTest
 class ProductSearchUITests: UITestCase {
 
     private let offDescriptionText = "Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels."
-    private let searchQuery = "Fanta"
     private let searchQueryForError = "Sprite"
-    private let cellProductName = "Fanta Orange"
     private let errorText = "Something went wrong, Please try again"
 
     func testInitialView() {

@@ -12,6 +12,9 @@ class UITestCase: XCTestCase {
     let app = XCUIApplication()
     let dynamicStubs = HTTPDynamicStubs()
 
+    let searchQuery = "Fanta"
+    let cellProductName = "Fanta Orange"
+
     override func setUp() {
         super.setUp()
         dynamicStubs.setUp()

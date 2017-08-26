@@ -115,6 +115,9 @@
 		95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */; };
 		95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C881EDB6CDD00D99115 /* UIImage.swift */; };
 		95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */; };
+		95F2B04B1F51A0F6004F8AF9 /* ProductDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2B04A1F51A0F6004F8AF9 /* ProductDetailUITests.swift */; };
+		95F2B04D1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F2B04C1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json */; };
+		95F2B04E1F521F7D004F8AF9 /* GET_ProductsByNameOnlyOne_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F2B04C1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json */; };
 		95F31BF81F3A292E00B8AF90 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F31BF61F3A231000B8AF90 /* Nimble.framework */; };
 		95F31BF91F3A292E00B8AF90 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F31BF41F3A230400B8AF90 /* OHHTTPStubs.framework */; };
 		95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */; };
@@ -1089,6 +1092,8 @@
 		95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionLevels.swift; path = Nutriments/NutritionLevels.swift; sourceTree = "<group>"; };
 		95F14C881EDB6CDD00D99115 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingProcessor.swift; sourceTree = "<group>"; };
+		95F2B04A1F51A0F6004F8AF9 /* ProductDetailUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailUITests.swift; sourceTree = "<group>"; };
+		95F2B04C1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByNameOnlyOne_200.json; sourceTree = "<group>"; };
 		95F31BEA1F38F71D00B8AF90 /* OpenFoodFactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenFoodFactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F31BEE1F38F71E00B8AF90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F31BF41F3A230400B8AF90 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
@@ -1235,6 +1240,7 @@
 			children = (
 				951FA7821F4F6B8E0096AC5A /* UITestCase.swift */,
 				951FA76F1F4E22790096AC5A /* ProductSearchUITests.swift */,
+				95F2B04A1F51A0F6004F8AF9 /* ProductDetailUITests.swift */,
 				951FA7791F4E22B00096AC5A /* HTTPDynamicStubs.swift */,
 				951FA7711F4E22790096AC5A /* Info.plist */,
 			);
@@ -1696,6 +1702,7 @@
 				95F31C121F3BA8EC00B8AF90 /* test_image.jpg */,
 				958BE77F1F4E1DC500603688 /* GET_ProductsByBarcode_200.json */,
 				958BE7801F4E1DC500603688 /* GET_ProductsByName_200.json */,
+				95F2B04C1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json */,
 				958BE7811F4E1DC500603688 /* GET_ProductsByNamePage2_200.json */,
 				958BE7821F4E1DC500603688 /* GET_ProductsByPartialBarcode_200.json */,
 				958BE7831F4E1DC500603688 /* POST_Image_200.json */,
@@ -1957,6 +1964,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F2B04E1F521F7D004F8AF9 /* GET_ProductsByNameOnlyOne_200.json in Resources */,
 				951FA77C1F4E232A0096AC5A /* GET_ProductsByName_200.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1997,6 +2005,7 @@
 				958BE78B1F4E1DC500603688 /* POST_Image_400.json in Resources */,
 				958BE78A1F4E1DC500603688 /* POST_Image_200.json in Resources */,
 				958BE7871F4E1DC500603688 /* GET_ProductsByName_200.json in Resources */,
+				95F2B04D1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json in Resources */,
 				95F31C131F3BA8EC00B8AF90 /* test_image.jpg in Resources */,
 				958BE78C1F4E1DC500603688 /* POST_Product_200.json in Resources */,
 				958BE7891F4E1DC500603688 /* GET_ProductsByPartialBarcode_200.json in Resources */,
@@ -2111,6 +2120,7 @@
 				951FA7701F4E22790096AC5A /* ProductSearchUITests.swift in Sources */,
 				951FA77A1F4E22B00096AC5A /* HTTPDynamicStubs.swift in Sources */,
 				951FA7831F4F6B8E0096AC5A /* UITestCase.swift in Sources */,
+				95F2B04B1F51A0F6004F8AF9 /* ProductDetailUITests.swift in Sources */,
 				951FA7891F50C06A0096AC5A /* AccessibilityIdentifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
