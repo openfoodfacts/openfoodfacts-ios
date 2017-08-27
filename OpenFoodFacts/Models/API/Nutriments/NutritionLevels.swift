@@ -43,7 +43,10 @@ struct NutritionLevels: Mappable {
     var salt: NutritionLevel?
 
     init?(map: Map) {
-
+        if map.JSON[OFFJson.NutrientLevelsFatKey] == nil && map.JSON[OFFJson.NutrientLevelsSaturatedFatKey] == nil
+            && map.JSON[OFFJson.NutrientLevelsSugarsKey] == nil && map.JSON[OFFJson.NutrientLevelsSaltKey] == nil {
+            return nil
+        }
     }
 
     mutating func mapping(map: Map) {

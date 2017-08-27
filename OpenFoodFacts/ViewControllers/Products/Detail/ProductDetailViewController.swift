@@ -45,7 +45,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         vcs.append(getSummaryVC())
         vcs.append(getIngredientsVC())
-        vcs.append(getNutritionVC())
+        if let nutritionVC = getNutritionVC() {
+            vcs.append(nutritionVC)
+        }
         vcs.append(getNutritionTableVC())
 
         return vcs
@@ -95,20 +97,31 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         return IngredientsFormTableViewController(with: Form(title: summaryTitle, rows: rows), productApi: productApi)
     }
 
-    fileprivate func getNutritionVC() -> UIViewController {
+    fileprivate func getNutritionVC() -> UIViewController? {
         var rows = [FormRow]()
 
         // Nutriscore cell
-        createFormRow(with: &rows, item: product.nutriscore, cellType: NutritionHeaderTableViewCell.self)
+        if product.nutriscore != nil {
+            createFormRow(with: &rows, item: product.nutriscore, cellType: NutritionHeaderTableViewCell.self)
+        }
 
         // Info rows
-        createFormRow(with: &rows, item: product.servingSize, label: InfoRowKey.servingSize.localizedString)
+        if product.servingSize != nil {
+            createFormRow(with: &rows, item: product.servingSize, label: InfoRowKey.servingSize.localizedString)
+        }
+
         if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
             createFormRow(with: &rows, item: "\(carbonFootprint) \(unit)", label: InfoRowKey.carbonFootprint.localizedString)
         }
 
         // Nutrition levels
-        createFormRow(with: &rows, item: product, cellType: NutritionLevelsTableViewCell.self)
+        if product.nutritionLevels != nil {
+            createFormRow(with: &rows, item: product, cellType: NutritionLevelsTableViewCell.self)
+        }
+
+        if rows.isEmpty {
+            return nil
+        }
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
 

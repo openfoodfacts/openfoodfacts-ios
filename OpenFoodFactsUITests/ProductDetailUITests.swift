@@ -10,10 +10,45 @@ import XCTest
 
 class ProductDetailUITests: UITestCase {
 
-    override func setUp() {
-        super.setUp()
+    func testSummaryPage() {
+        showDetailsOfProduct(in: "GET_ProductsByNameOnlyOne_200")
 
-        dynamicStubs.setupStub(url: "/cgi/search.pl", filename: "GET_ProductsByNameOnlyOne_200", method: .GET)
+        let barcode = app.staticTexts["Barcode: 5449000011527"]
+        XCTAssert(barcode.exists)
+    }
+
+    func testIngredientsPage() {
+        showDetailsOfProduct(in: "GET_ProductsByNameOnlyOne_200")
+
+        app.staticTexts["Ingredients"].tap()
+        let additives = app.staticTexts["Additives: E160, E202, E412, E950, E955"]
+        XCTAssert(additives.exists)
+    }
+
+    func testNutritionPage() {
+        showDetailsOfProduct(in: "GET_ProductsByNameOnlyOne_200")
+
+        app.staticTexts["Nutrition"].tap()
+        let sugarQuantity = app.staticTexts["6.5 "]
+        XCTAssert(sugarQuantity.exists)
+    }
+
+    func testNutritionTablePage() {
+        showDetailsOfProduct(in: "GET_ProductsByNameOnlyOne_200")
+
+        app.staticTexts["Nutrition table"].tap()
+        let carbohydrateLabel = app.staticTexts["Carbohydrate"]
+        XCTAssert(carbohydrateLabel.exists)
+    }
+
+    func testNutritionPageNotShownWhenItHasNoData() {
+        showDetailsOfProduct(in: "GET_ProductsByNameNoNutrition_200")
+
+        XCTAssertFalse(app.staticTexts["Nutrition"].exists)
+    }
+
+    private func showDetailsOfProduct(in filename: String) {
+        dynamicStubs.setupStub(url: "/cgi/search.pl", filename: filename, method: .GET)
 
         let searchField = app.searchFields[AccessibilityIdentifiers.productSearchBar]
         searchField.tap()
@@ -23,28 +58,5 @@ class ProductDetailUITests: UITestCase {
 
         let cell = app.tables.children(matching: .cell).element(boundBy: 0).staticTexts[cellProductName]
         cell.tap()
-    }
-
-    func testSummaryPage() {
-        let barcode = app.staticTexts["Barcode: 5449000011527"]
-        XCTAssert(barcode.exists)
-    }
-
-    func testIngredientsPage() {
-        app.staticTexts["Ingredients"].tap()
-        let additives = app.staticTexts["Additives: E160, E202, E412, E950, E955"]
-        XCTAssert(additives.exists)
-    }
-
-    func testNutritionPage() {
-        app.staticTexts["Nutrition"].tap()
-        let sugarQuantity = app.staticTexts["6.5 "]
-        XCTAssert(sugarQuantity.exists)
-    }
-
-    func testNutritionTablePage() {
-        app.staticTexts["Nutrition table"].tap()
-        let carbohydrateLabel = app.staticTexts["Carbohydrate"]
-        XCTAssert(carbohydrateLabel.exists)
     }
 }
