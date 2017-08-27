@@ -37,6 +37,7 @@ class FormTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRect.zero) // Hide empty rows
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
+        tableView.cellLayoutMarginsFollowReadableWidth = false
 
         for cellType in form.getCellTypes() {
             if Bundle.main.path(forResource: cellType.identifier, ofType: "nib") != nil {
