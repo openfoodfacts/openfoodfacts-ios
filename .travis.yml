@@ -1,18 +1,16 @@
 language: objective-c
 osx_image: xcode8.3
-xcode_project: OpenFoodFacts.xcodeproj
-xcode_scheme: OpenFoodFactsTests
 cache:
   directories:
   - Carthage
-  before_install:
-  - gem update fastlane --no-ri --no-rdoc --no-document
+before_install:
+- bundle update
 before_script:
 - carthage bootstrap --platform iOS --cache-builds
 script:
-  - fastlane test
+- fastlane test
 notifications:
   slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
 env:
   global:
-    secure: RUCZUZU3Ypa6qxHg1mc7jhoPzKCTXc8kyPtzNgahBr80i4rR+zufwq4P6QkoQAtY9/qxKUWrABoTzCQ+peeUOtr6cxWLSqZoAH9YnUfHzNkD1+WLGvgxU0fJmwSA29O3hAEhqh7JwfIfKIKL5VcSnbZMdV1eDu0uX07Hd6EL5a0G/TitUCG5fwqoJ735nGsqWVJoaIEWESAGDyRxhhog8O7oHOtp6xwqx2XUlXz5kfNlWglFbcZ1Jf4/X9qP5x3JPyd4oIekFqRHCrs3hcr3oAJKWhviF/edIK22jm1q+EKjYmqhvtJGOKG6CLfXnSpp0fW6n/tVHddck6dQ9FyqEhsvadxlW4IPNwCjxm0qd1R4BGWE/Vei0tzHtua65vhu1vqNmMnvqr8HYn7ML2/kv4Lf5p+oQZz5pz56rMYVPbAz3fDqQmy0iWuhIQ1gsyK3sVB8IZL5ml9pgU28036qmH5cRqZdC1gViZwFT6pOZVkCQ5jUGK1gwNJrP9on9jduYeWBqBHDsHxmWAFvUSuuHLUK/tojGaKc9HeVKVWS5D/JkhlG2BafUWMY3zQVkPoLRDjn6rypdBH1K77SlYRUZhipb+AqiHSfjbR6kP19U6qo1IU3dFbDNOvyONlpRNLXvUfQQ+VeeuSzJxp4JTbvY2MeUFEdv/94MR1PNNbvjuM=
+    secure: sxvxr2o8bL9uXFoVD3uFwLre94WxWkPtsXd3NdGIs6c07b1FUyvME3qv6Ez413gQmCe1YiLAHg7Ib9hl8dI2FthRxhUFfo8aKm+VumYcV2e6iAlcyqdEHIu+IIes2ccs1Cf+ymOiKCMxV0s1FzoeC3hZIdcQuzSfCG6yDlt2X+CKa/NsZ78DOhCgXQdoMA9hlhPQ3RnpcQ8C1bvqWASCspGW/u9kkj78KA9YITL+rEVQqwt6l/+T30L7D3iUWEMLsg+BkO7tif98ev3vCi4s8DcAra93+y5LgOhynR6UJjBOI5ggbzziUoCbpeKrrMxCBshH3KQkMWLyiQ0s6s4k6sm+FwllBcPyrqEynxRjmykDoNG0qxIA/8wHTtjkqzuJ05kryQuJxrHf9tXCyvpO8Hz+/fK6PXB/fEQo1O53OOEECy5EbR8m+ZYwSQUAuKkzYyNGh0oKvgpG06Rbf8HGIY5e+mGWqVnWLBzTfSmoTGByALYYK5Og7+0L4XH8svedTwmM4HAhgT8kx7jFp8bKnv56aUrFiqOMlGqwhMaVn11pEm30fn2gojLXo3riIHkNnMIv+p8vpq++0PssL8gWW6ENQ7YOPb5ou2/cIWWj3oliEEfVtiUiregNgTxEbK0EH+9T1OGFWKJXzGcqIi/gX1fjg8TQ+WJz2kbtMcpLOe4=
