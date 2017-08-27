@@ -5,6 +5,8 @@ xcode_scheme: OpenFoodFactsTests
 cache:
   directories:
   - Carthage
+  before_install:
+  - gem update fastlane --no-ri --no-rdoc --no-document
 before_script:
 - carthage bootstrap --platform iOS --cache-builds
 script:
