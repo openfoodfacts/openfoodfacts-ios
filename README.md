@@ -20,6 +20,10 @@ We use Carthage for dependency management. If you don't have Carthage installed 
 
 Run `carthage bootstrap --platform iOS` before opening the project in Xcode
 
+### Fastlane
+
+Currently there are two lanes, one for running the tests (`fastlane test`) and one for uploading a new beta to TestFlight (`fastlane beta`).
+
 ## Support
 
 OpenFoodFacts has a Slack team, join the #iOS channel. Click [here](https://slack-ssl-openfoodfacts.herokuapp.com/) to join.

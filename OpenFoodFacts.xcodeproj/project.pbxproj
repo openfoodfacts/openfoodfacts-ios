@@ -118,6 +118,7 @@
 		95F2B04B1F51A0F6004F8AF9 /* ProductDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2B04A1F51A0F6004F8AF9 /* ProductDetailUITests.swift */; };
 		95F2B04D1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F2B04C1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json */; };
 		95F2B04E1F521F7D004F8AF9 /* GET_ProductsByNameOnlyOne_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F2B04C1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json */; };
+		95F2B0501F52DDC7004F8AF9 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 95F2B04F1F52DDC7004F8AF9 /* README.md */; };
 		95F31BF81F3A292E00B8AF90 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F31BF61F3A231000B8AF90 /* Nimble.framework */; };
 		95F31BF91F3A292E00B8AF90 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F31BF41F3A230400B8AF90 /* OHHTTPStubs.framework */; };
 		95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */; };
@@ -1094,6 +1095,7 @@
 		95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingProcessor.swift; sourceTree = "<group>"; };
 		95F2B04A1F51A0F6004F8AF9 /* ProductDetailUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailUITests.swift; sourceTree = "<group>"; };
 		95F2B04C1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByNameOnlyOne_200.json; sourceTree = "<group>"; };
+		95F2B04F1F52DDC7004F8AF9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		95F31BEA1F38F71D00B8AF90 /* OpenFoodFactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenFoodFactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F31BEE1F38F71E00B8AF90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F31BF41F3A230400B8AF90 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
@@ -1541,6 +1543,7 @@
 		95C265051E96D55B004212EC = {
 			isa = PBXGroup;
 			children = (
+				95F2B04F1F52DDC7004F8AF9 /* README.md */,
 				95C265231E96D5C2004212EC /* Frameworks */,
 				95C265101E96D55B004212EC /* OpenFoodFacts */,
 				95F31BEB1F38F71D00B8AF90 /* OpenFoodFactsTests */,
@@ -2194,6 +2197,7 @@
 			files = (
 				9596B5161F45FF040076F52C /* ProductServiceMock.swift in Sources */,
 				95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */,
+				95F2B0501F52DDC7004F8AF9 /* README.md in Sources */,
 				9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
