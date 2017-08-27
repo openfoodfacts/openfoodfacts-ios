@@ -27,23 +27,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h4r-NG-xwT">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7WZ-fb-FXP">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="133"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="133" id="GoV-Le-gVH"/>
-                                    </constraints>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="7WZ-fb-FXP">
+                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="130"/>
                                 </imageView>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igt-YD-1SC" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                    <rect key="frame" x="160" y="0.0" width="0.0" height="133"/>
+                                    <rect key="frame" x="106.5" y="0.0" width="107" height="130"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4l-Cj-xX4">
-                                    <rect key="frame" x="160" y="0.0" width="160" height="133"/>
+                                    <rect key="frame" x="213.5" y="0.0" width="106.5" height="130"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYL-Ot-UMp" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="34" width="160" height="65"/>
+                                            <rect key="frame" x="0.5" y="43.5" width="106.5" height="43"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="NYL-Ot-UMp" secondAttribute="height" multiplier="310:126" id="w7H-je-Vf4"/>
@@ -52,15 +49,20 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="width" secondItem="o4l-Cj-xX4" secondAttribute="width" priority="750" id="ANw-FW-wnx"/>
                                         <constraint firstItem="NYL-Ot-UMp" firstAttribute="centerX" secondItem="o4l-Cj-xX4" secondAttribute="centerX" id="NV3-SU-haa"/>
-                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="centerY" secondItem="o4l-Cj-xX4" secondAttribute="centerY" id="Ts6-Ex-mwN"/>
-                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="width" secondItem="o4l-Cj-xX4" secondAttribute="width" id="q4c-3F-qNX"/>
+                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="centerY" secondItem="o4l-Cj-xX4" secondAttribute="centerY" id="ODH-0R-D2V"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NYL-Ot-UMp" secondAttribute="bottom" constant="10" id="gAz-RR-Lkg"/>
+                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="o4l-Cj-xX4" secondAttribute="top" constant="10" id="utQ-Oj-uLk"/>
                                     </constraints>
                                 </view>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="130" id="6tm-10-rfN"/>
+                            </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EX-hp-rp2">
-                            <rect key="frame" x="0.0" y="143" width="320" height="45"/>
+                            <rect key="frame" x="0.0" y="140" width="320" height="48"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
