@@ -168,6 +168,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
 
         if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
+                captureSession?.stopRunning()
                 lastCodeScanned = barcode
                 getProduct(barcode: barcode)
             }
@@ -184,6 +185,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }, onError: { _ in
             StatusBarNotificationBanner(title: NSLocalizedString("product-scanner.barcode.error", comment: ""), style: .danger).show()
             self.lastCodeScanned = nil
+            self.captureSession?.startRunning()
         })
     }
 }
