@@ -81,7 +81,7 @@ class SearchTableViewControllerTests: XCTestCase {
 
         let result = viewController.tableView(tableView, numberOfRowsInSection: section)
 
-        expect(result) == productsResponse.products.count
+        expect(result) == productsResponse.products.count + 1
     }
 
     func testNumberOfRowsInSectionWhenStateIsNotContent() {
@@ -105,7 +105,7 @@ class SearchTableViewControllerTests: XCTestCase {
         expect(result.name.text) == expectedProduct.name
     }
 
-    func testCellForRowAtIndexPathFetchesNextPageWhenGettingFifthLastRow() {
+    func testWillDisplayCellForRowAtIndexPathFetchesNextPageWhenAboutToDisplayFifthLastRow() {
         let tableView = viewController.tableView!
         let query = "Fanta"
         let initialPage = "1"
@@ -116,7 +116,7 @@ class SearchTableViewControllerTests: XCTestCase {
         let indexPath = IndexPath(row: productIndex, section: 0)
         viewController.state = .content(productsResponse)
 
-        _ = viewController.tableView(tableView, cellForRowAt: indexPath) as! ProductTableViewCell
+        viewController.tableView(tableView, willDisplay: UITableViewCell(), forRowAt: indexPath)
 
         expect(self.productApi.query) == query
         expect(self.productApi.page) == Int(initialPage)! + 1
@@ -221,7 +221,9 @@ class SearchTableViewControllerTests: XCTestCase {
         let page = 2
         let query = "Fanta"
         let firstPageResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
+        firstPageResponse.query = query
         let expectedResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage2)
+        expectedResponse.query = query
         let expectedProductsCount = firstPageResponse.products.count + expectedResponse.products.count
         productApi.productsResponse = expectedResponse
         viewController.state = .content(firstPageResponse)
