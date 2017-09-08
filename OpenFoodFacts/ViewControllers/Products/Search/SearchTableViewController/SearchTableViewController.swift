@@ -198,7 +198,7 @@ extension SearchTableViewController {
     func getProducts(page: Int, withQuery query: String) {
         productApi.getProducts(for: query, page: page, onSuccess: { response in
             switch self.state {
-            case .content(let oldResponse): // Append new products to existing response
+            case .content(let oldResponse) where oldResponse.query == query: // Append new products to existing response
                 oldResponse.products.append(contentsOf: response.products)
                 oldResponse.page = response.page
                 oldResponse.pageSize = response.pageSize

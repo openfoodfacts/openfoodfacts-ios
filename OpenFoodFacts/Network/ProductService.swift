@@ -25,7 +25,11 @@ struct Endpoint {
 }
 
 class ProductService: ProductApi {
+    private var lastGetProductsRequest: DataRequest?
+
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
+        lastGetProductsRequest?.cancel()
+
         var query = query
         var url = Endpoint.get
         var searchType: String
@@ -44,7 +48,7 @@ class ProductService: ProductApi {
         Crashlytics.sharedInstance().setObjectValue(page, forKey: "product_search_page")
         Answers.logSearch(withQuery: query, customAttributes: ["file": String(describing: ProductService.self), "search_type": searchType])
 
-        let request = Alamofire.request(url)
+        let request = Alamofire.SessionManager.default.request(url)
         log.debug(request.debugDescription)
         request.responseObject { (response: DataResponse<ProductsResponse>) in
             log.debug(response.debugDescription)
@@ -58,14 +62,16 @@ class ProductService: ProductApi {
                 onError(error)
             }
         }
+
+        self.lastGetProductsRequest = request
     }
 
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         var url: String
         #if DEBUG
-        url = Endpoint.post
+            url = Endpoint.post
         #else
-        url = Endpoint.get
+            url = Endpoint.get
         #endif
 
         url += "/api/v0/product/\(barcode).json"
@@ -77,14 +83,14 @@ class ProductService: ProductApi {
         log.debug(request.debugDescription)
         request.authenticate(user: "off", password: "off")
             .responseObject { (response: DataResponse<ProductsResponse>) in
-            log.debug(response.debugDescription)
-            switch response.result {
-            case .success(let productResponse):
-                onSuccess(productResponse)
-            case .failure(let error):
-                Crashlytics.sharedInstance().recordError(error)
-                onError(error)
-            }
+                log.debug(response.debugDescription)
+                switch response.result {
+                case .success(let productResponse):
+                    onSuccess(productResponse)
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                    onError(error)
+                }
         }
     }
 
