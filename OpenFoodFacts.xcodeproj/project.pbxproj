@@ -104,6 +104,9 @@
 		95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB99A61EA55BF900CBDDF9 /* String.swift */; };
 		95CE24E11ED5509300EF3D79 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24DF1ED5509300EF3D79 /* Fabric.framework */; };
 		95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24E01ED5509300EF3D79 /* Crashlytics.framework */; };
+		95D060D91F6085320052012D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D060D81F6085320052012D /* LoadingCell.xib */; };
+		95D060DB1F6094D30052012D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D060DA1F6094D30052012D /* UITableView.swift */; };
+		95D060DD1F609DF70052012D /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D060DC1F609DF70052012D /* LoadingCell.swift */; };
 		95DDAF581F24FB160096B74E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */; };
 		95DDAF591F24FB160096B74E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF571F24FB160096B74E /* XCGLogger.framework */; };
 		95DDAF621F25401D0096B74E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDAF601F25401D0096B74E /* CameraViewController.swift */; };
@@ -1083,6 +1086,9 @@
 		95CE24E01ED5509300EF3D79 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		95CF59E11F49F12A00700580 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Config/Debug.xcconfig; sourceTree = "<group>"; };
 		95CF59E21F49F13300700580 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Config/Release.xcconfig; sourceTree = "<group>"; };
+		95D060D81F6085320052012D /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		95D060DA1F6094D30052012D /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		95D060DC1F609DF70052012D /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95DDAF571F24FB160096B74E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		95DDAF601F25401D0096B74E /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -1376,6 +1382,8 @@
 				956FF8AF1F1FF0CA0069D678 /* ProductTableViewCell.xib */,
 				956FF93A1F1FF0CA0069D678 /* TapToFocusView.swift */,
 				956FF93B1F1FF0CA0069D678 /* TextOverlay.swift */,
+				95D060DC1F609DF70052012D /* LoadingCell.swift */,
+				95D060D81F6085320052012D /* LoadingCell.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1637,6 +1645,7 @@
 				95F14C881EDB6CDD00D99115 /* UIImage.swift */,
 				95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */,
 				95E16B2E1EE9E20A00331B2B /* UIStackView.swift */,
+				95D060DA1F6094D30052012D /* UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1999,6 +2008,7 @@
 				956FF9421F1FF0CA0069D678 /* IngredientsHeaderCellController.xib in Resources */,
 				958F33541F378076005269C5 /* InfoRowTableViewCell.xib in Resources */,
 				956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */,
+				95D060D91F6085320052012D /* LoadingCell.xib in Resources */,
 				956FF9511F1FF0CA0069D678 /* ProductDetailViewController.storyboard in Resources */,
 				95C265171E96D55B004212EC /* Main.storyboard in Resources */,
 			);
@@ -2163,6 +2173,7 @@
 				956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */,
 				956FF9471F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
+				95D060DB1F6094D30052012D /* UITableView.swift in Sources */,
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
 				956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */,
 				956FF9651F1FF0FD0069D678 /* SearchTableViewController.swift in Sources */,
@@ -2179,6 +2190,7 @@
 				957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */,
 				957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */,
 				958F335B1F37809A005269C5 /* PictureCallToActionView.swift in Sources */,
+				95D060DD1F609DF70052012D /* LoadingCell.swift in Sources */,
 				958F334D1F377831005269C5 /* NutritionTableHeaderCellController.swift in Sources */,
 				95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */,
 				95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */,

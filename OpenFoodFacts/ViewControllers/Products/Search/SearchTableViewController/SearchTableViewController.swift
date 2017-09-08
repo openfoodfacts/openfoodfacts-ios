@@ -56,6 +56,7 @@ class SearchTableViewController: UIViewController {
     fileprivate func configureTableView() {
         tableView.backgroundView = initialView // State.initial background view
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ProductTableViewCell.self))
+        tableView.register(UINib(nibName: String(describing: LoadingCell.self), bundle: nil), forCellReuseIdentifier: String(describing: LoadingCell.self))
 
         tableView.rowHeight = 100
     }
@@ -112,20 +113,24 @@ extension SearchTableViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard case let .content(response) = state else { return 0 }
-        return response.products.count
+        return responseHasMorePages(response) ? response.products.count + 1 : response.products.count // +1 for the loading cell
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // swiftlint:disable:next force_cast
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell
+        guard case let .content(response) = state else { return UITableViewCell() }
 
-        guard case let .content(response) = state else { return cell }
-        cell.configure(withProduct: response.products[indexPath.row])
-        if response.products.count == indexPath.row + 5, let page = Int(response.page), response.products.count < response.totalProducts {
-            getProducts(page: page + 1, withQuery: response.query)
+        if responseHasMorePages(response) && tableView.lastIndexPath == indexPath {
+            return tableView.dequeueReusableCell(withIdentifier: String(describing: LoadingCell.self), for: indexPath)
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell // swiftlint:disable:this force_cast
+
+            cell.configure(withProduct: response.products[indexPath.row])
+            if response.products.count == indexPath.row + 5, let page = Int(response.page), responseHasMorePages(response) {
+                getProducts(page: page + 1, withQuery: response.query)
+            }
+
+            return cell
         }
-
-        return cell
     }
 }
 
@@ -238,6 +243,10 @@ private extension SearchTableViewController {
         productDetailVC.product = product
         productDetailVC.productApi = productApi
         return productDetailVC
+    }
+
+    func responseHasMorePages(_ response: ProductsResponse) -> Bool {
+        return response.products.count < response.totalProducts
     }
 }
 
