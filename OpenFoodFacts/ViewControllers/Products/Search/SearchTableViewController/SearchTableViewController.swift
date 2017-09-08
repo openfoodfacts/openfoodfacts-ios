@@ -125,11 +125,16 @@ extension SearchTableViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell // swiftlint:disable:this force_cast
 
             cell.configure(withProduct: response.products[indexPath.row])
-            if response.products.count == indexPath.row + 5, let page = Int(response.page), responseHasMorePages(response) {
-                getProducts(page: page + 1, withQuery: response.query)
-            }
 
             return cell
+        }
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard case let .content(response) = state else { return }
+
+        if response.products.count == indexPath.row + 5, let page = Int(response.page), responseHasMorePages(response) {
+            getProducts(page: page + 1, withQuery: response.query)
         }
     }
 }
