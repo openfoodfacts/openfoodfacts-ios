@@ -14,7 +14,6 @@
 		951FA7701F4E22790096AC5A /* ProductSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA76F1F4E22790096AC5A /* ProductSearchUITests.swift */; };
 		951FA7781F4E22860096AC5A /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958BE7781F4E1BB500603688 /* Swifter.framework */; };
 		951FA77A1F4E22B00096AC5A /* HTTPDynamicStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7791F4E22B00096AC5A /* HTTPDynamicStubs.swift */; };
-		951FA77C1F4E232A0096AC5A /* GET_ProductsByName_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 958BE7801F4E1DC500603688 /* GET_ProductsByName_200.json */; };
 		951FA7831F4F6B8E0096AC5A /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7821F4F6B8E0096AC5A /* UITestCase.swift */; };
 		951FA7881F50C0670096AC5A /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */; };
 		951FA7891F50C06A0096AC5A /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */; };
@@ -72,13 +71,6 @@
 		957CBEC01F33B31F00A1B398 /* ProductDetailBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEBF1F33B31F00A1B398 /* ProductDetailBaseCell.swift */; };
 		957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEC21F33B36400A1B398 /* SummaryFormTableViewController.swift */; };
 		957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEC31F33B36400A1B398 /* SummaryHeaderCellController.swift */; };
-		958BE7861F4E1DC500603688 /* GET_ProductsByBarcode_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 958BE77F1F4E1DC500603688 /* GET_ProductsByBarcode_200.json */; };
-		958BE7871F4E1DC500603688 /* GET_ProductsByName_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 958BE7801F4E1DC500603688 /* GET_ProductsByName_200.json */; };
-		958BE7881F4E1DC500603688 /* GET_ProductsByNamePage2_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 958BE7811F4E1DC500603688 /* GET_ProductsByNamePage2_200.json */; };
-		958BE7891F4E1DC500603688 /* GET_ProductsByPartialBarcode_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 958BE7821F4E1DC500603688 /* GET_ProductsByPartialBarcode_200.json */; };
-		958BE78A1F4E1DC500603688 /* POST_Image_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 958BE7831F4E1DC500603688 /* POST_Image_200.json */; };
-		958BE78B1F4E1DC500603688 /* POST_Image_400.json in Resources */ = {isa = PBXBuildFile; fileRef = 958BE7841F4E1DC500603688 /* POST_Image_400.json */; };
-		958BE78C1F4E1DC500603688 /* POST_Product_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 958BE7851F4E1DC500603688 /* POST_Product_200.json */; };
 		958F33421F36196D005269C5 /* IngredientsFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33411F36196D005269C5 /* IngredientsFormTableViewController.swift */; };
 		958F33441F361A9D005269C5 /* IngredientsHeaderCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33431F361A9D005269C5 /* IngredientsHeaderCellController.swift */; };
 		958F334B1F3777D7005269C5 /* NutritionTableFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F334A1F3777D7005269C5 /* NutritionTableFormTableViewController.swift */; };
@@ -118,13 +110,32 @@
 		95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */; };
 		95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C881EDB6CDD00D99115 /* UIImage.swift */; };
 		95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */; };
+		95F184A01F655BC700A544C2 /* GET_ProductsByBarcode_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F1848C1F655BB500A544C2 /* GET_ProductsByBarcode_200.json */; };
+		95F184A11F655BC800A544C2 /* GET_ProductsByBarcode_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F1848C1F655BB500A544C2 /* GET_ProductsByBarcode_200.json */; };
+		95F184A21F655BCC00A544C2 /* GET_ProductsByNameNoNutrition_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F1848E1F655BB500A544C2 /* GET_ProductsByNameNoNutrition_200.json */; };
+		95F184A31F655BCC00A544C2 /* GET_ProductsByNameNoNutrition_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F1848E1F655BB500A544C2 /* GET_ProductsByNameNoNutrition_200.json */; };
+		95F184A41F655BCF00A544C2 /* GET_ProductsByName_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F1848D1F655BB500A544C2 /* GET_ProductsByName_200.json */; };
+		95F184A51F655BCF00A544C2 /* GET_ProductsByName_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F1848D1F655BB500A544C2 /* GET_ProductsByName_200.json */; };
+		95F184A61F655BD400A544C2 /* GET_ProductsByNameOnlyOne_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F1848F1F655BB500A544C2 /* GET_ProductsByNameOnlyOne_200.json */; };
+		95F184A71F655BD500A544C2 /* GET_ProductsByNameOnlyOne_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F1848F1F655BB500A544C2 /* GET_ProductsByNameOnlyOne_200.json */; };
+		95F184A81F655BD800A544C2 /* GET_ProductsByNamePage2_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184901F655BB500A544C2 /* GET_ProductsByNamePage2_200.json */; };
+		95F184A91F655BD800A544C2 /* GET_ProductsByNamePage2_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184901F655BB500A544C2 /* GET_ProductsByNamePage2_200.json */; };
+		95F184AA1F655C0E00A544C2 /* GET_ProductsByPartialBarcode_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184911F655BB500A544C2 /* GET_ProductsByPartialBarcode_200.json */; };
+		95F184AB1F655C0E00A544C2 /* GET_ProductsByPartialBarcode_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184911F655BB500A544C2 /* GET_ProductsByPartialBarcode_200.json */; };
+		95F184AC1F655C1400A544C2 /* POST_Image_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184921F655BB500A544C2 /* POST_Image_200.json */; };
+		95F184AD1F655C1400A544C2 /* POST_Image_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184921F655BB500A544C2 /* POST_Image_200.json */; };
+		95F184AE1F655C1700A544C2 /* POST_Image_400.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184931F655BB500A544C2 /* POST_Image_400.json */; };
+		95F184AF1F655C1700A544C2 /* POST_Image_400.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184931F655BB500A544C2 /* POST_Image_400.json */; };
+		95F184B01F655C1900A544C2 /* POST_Product_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184941F655BB500A544C2 /* POST_Product_200.json */; };
+		95F184B11F655C1A00A544C2 /* POST_Product_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184941F655BB500A544C2 /* POST_Product_200.json */; };
+		95F184B21F655C1D00A544C2 /* test_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F184951F655BB500A544C2 /* test_image.jpg */; };
+		95F184B31F655C1E00A544C2 /* test_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F184951F655BB500A544C2 /* test_image.jpg */; };
+		95F184B51F655C6200A544C2 /* GET_ProductsByNameSinglePage_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184B41F655C6200A544C2 /* GET_ProductsByNameSinglePage_200.json */; };
+		95F184B61F655C6200A544C2 /* GET_ProductsByNameSinglePage_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F184B41F655C6200A544C2 /* GET_ProductsByNameSinglePage_200.json */; };
 		95F2B04B1F51A0F6004F8AF9 /* ProductDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2B04A1F51A0F6004F8AF9 /* ProductDetailUITests.swift */; };
-		95F2B04E1F521F7D004F8AF9 /* GET_ProductsByNameOnlyOne_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F2B04C1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json */; };
-		95F2B0531F52EAD9004F8AF9 /* GET_ProductsByNameNoNutrition_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F2B0511F52EAD5004F8AF9 /* GET_ProductsByNameNoNutrition_200.json */; };
 		95F31BF81F3A292E00B8AF90 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F31BF61F3A231000B8AF90 /* Nimble.framework */; };
 		95F31BF91F3A292E00B8AF90 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F31BF41F3A230400B8AF90 /* OHHTTPStubs.framework */; };
 		95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */; };
-		95F31C131F3BA8EC00B8AF90 /* test_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F31C121F3BA8EC00B8AF90 /* test_image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1046,13 +1057,6 @@
 		95818DD81F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95818DD91F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Localizable.strings; sourceTree = "<group>"; };
 		958BE7781F4E1BB500603688 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
-		958BE77F1F4E1DC500603688 /* GET_ProductsByBarcode_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByBarcode_200.json; sourceTree = "<group>"; };
-		958BE7801F4E1DC500603688 /* GET_ProductsByName_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByName_200.json; sourceTree = "<group>"; };
-		958BE7811F4E1DC500603688 /* GET_ProductsByNamePage2_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByNamePage2_200.json; sourceTree = "<group>"; };
-		958BE7821F4E1DC500603688 /* GET_ProductsByPartialBarcode_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByPartialBarcode_200.json; sourceTree = "<group>"; };
-		958BE7831F4E1DC500603688 /* POST_Image_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = POST_Image_200.json; sourceTree = "<group>"; };
-		958BE7841F4E1DC500603688 /* POST_Image_400.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = POST_Image_400.json; sourceTree = "<group>"; };
-		958BE7851F4E1DC500603688 /* POST_Product_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = POST_Product_200.json; sourceTree = "<group>"; };
 		958F33411F36196D005269C5 /* IngredientsFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientsFormTableViewController.swift; path = Ingredients/IngredientsFormTableViewController.swift; sourceTree = "<group>"; };
 		958F33431F361A9D005269C5 /* IngredientsHeaderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsHeaderCellController.swift; sourceTree = "<group>"; };
 		958F334A1F3777D7005269C5 /* NutritionTableFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionTableFormTableViewController.swift; path = NutritionTable/NutritionTableFormTableViewController.swift; sourceTree = "<group>"; };
@@ -1098,16 +1102,24 @@
 		95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionLevels.swift; path = Nutriments/NutritionLevels.swift; sourceTree = "<group>"; };
 		95F14C881EDB6CDD00D99115 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingProcessor.swift; sourceTree = "<group>"; };
+		95F1848C1F655BB500A544C2 /* GET_ProductsByBarcode_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByBarcode_200.json; sourceTree = "<group>"; };
+		95F1848D1F655BB500A544C2 /* GET_ProductsByName_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByName_200.json; sourceTree = "<group>"; };
+		95F1848E1F655BB500A544C2 /* GET_ProductsByNameNoNutrition_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByNameNoNutrition_200.json; sourceTree = "<group>"; };
+		95F1848F1F655BB500A544C2 /* GET_ProductsByNameOnlyOne_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByNameOnlyOne_200.json; sourceTree = "<group>"; };
+		95F184901F655BB500A544C2 /* GET_ProductsByNamePage2_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByNamePage2_200.json; sourceTree = "<group>"; };
+		95F184911F655BB500A544C2 /* GET_ProductsByPartialBarcode_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByPartialBarcode_200.json; sourceTree = "<group>"; };
+		95F184921F655BB500A544C2 /* POST_Image_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = POST_Image_200.json; sourceTree = "<group>"; };
+		95F184931F655BB500A544C2 /* POST_Image_400.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = POST_Image_400.json; sourceTree = "<group>"; };
+		95F184941F655BB500A544C2 /* POST_Product_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = POST_Product_200.json; sourceTree = "<group>"; };
+		95F184951F655BB500A544C2 /* test_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image.jpg; sourceTree = "<group>"; };
+		95F184B41F655C6200A544C2 /* GET_ProductsByNameSinglePage_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByNameSinglePage_200.json; sourceTree = "<group>"; };
 		95F2B04A1F51A0F6004F8AF9 /* ProductDetailUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailUITests.swift; sourceTree = "<group>"; };
-		95F2B04C1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByNameOnlyOne_200.json; sourceTree = "<group>"; };
 		95F2B04F1F52DDC7004F8AF9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		95F2B0511F52EAD5004F8AF9 /* GET_ProductsByNameNoNutrition_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByNameNoNutrition_200.json; sourceTree = "<group>"; };
 		95F31BEA1F38F71D00B8AF90 /* OpenFoodFactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenFoodFactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F31BEE1F38F71E00B8AF90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F31BF41F3A230400B8AF90 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		95F31BF61F3A231000B8AF90 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceTests.swift; sourceTree = "<group>"; };
-		95F31C121F3BA8EC00B8AF90 /* test_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1556,6 +1568,7 @@
 				95C265101E96D55B004212EC /* OpenFoodFacts */,
 				95F31BEB1F38F71D00B8AF90 /* OpenFoodFactsTests */,
 				951FA76E1F4E22790096AC5A /* OpenFoodFactsUITests */,
+				95F1848B1F655BB500A544C2 /* Test Resources */,
 				95C2650F1E96D55B004212EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1696,33 +1709,33 @@
 			name = Nutriments;
 			sourceTree = "<group>";
 		};
+		95F1848B1F655BB500A544C2 /* Test Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95F1848C1F655BB500A544C2 /* GET_ProductsByBarcode_200.json */,
+				95F1848D1F655BB500A544C2 /* GET_ProductsByName_200.json */,
+				95F1848E1F655BB500A544C2 /* GET_ProductsByNameNoNutrition_200.json */,
+				95F1848F1F655BB500A544C2 /* GET_ProductsByNameOnlyOne_200.json */,
+				95F184901F655BB500A544C2 /* GET_ProductsByNamePage2_200.json */,
+				95F184B41F655C6200A544C2 /* GET_ProductsByNameSinglePage_200.json */,
+				95F184911F655BB500A544C2 /* GET_ProductsByPartialBarcode_200.json */,
+				95F184921F655BB500A544C2 /* POST_Image_200.json */,
+				95F184931F655BB500A544C2 /* POST_Image_400.json */,
+				95F184941F655BB500A544C2 /* POST_Product_200.json */,
+				95F184951F655BB500A544C2 /* test_image.jpg */,
+			);
+			path = "Test Resources";
+			sourceTree = "<group>";
+		};
 		95F31BEB1F38F71D00B8AF90 /* OpenFoodFactsTests */ = {
 			isa = PBXGroup;
 			children = (
 				9596B5141F45FEEF0076F52C /* Common */,
 				9596B50C1F45FAE30076F52C /* ViewControllers */,
-				95F31C061F3A43C400B8AF90 /* Resources */,
 				95F31C0F1F3A45CF00B8AF90 /* Network */,
 				95F31BEE1F38F71E00B8AF90 /* Info.plist */,
 			);
 			path = OpenFoodFactsTests;
-			sourceTree = "<group>";
-		};
-		95F31C061F3A43C400B8AF90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				95F31C121F3BA8EC00B8AF90 /* test_image.jpg */,
-				958BE77F1F4E1DC500603688 /* GET_ProductsByBarcode_200.json */,
-				958BE7801F4E1DC500603688 /* GET_ProductsByName_200.json */,
-				95F2B04C1F521ED4004F8AF9 /* GET_ProductsByNameOnlyOne_200.json */,
-				95F2B0511F52EAD5004F8AF9 /* GET_ProductsByNameNoNutrition_200.json */,
-				958BE7811F4E1DC500603688 /* GET_ProductsByNamePage2_200.json */,
-				958BE7821F4E1DC500603688 /* GET_ProductsByPartialBarcode_200.json */,
-				958BE7831F4E1DC500603688 /* POST_Image_200.json */,
-				958BE7841F4E1DC500603688 /* POST_Image_400.json */,
-				958BE7851F4E1DC500603688 /* POST_Product_200.json */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		95F31C0F1F3A45CF00B8AF90 /* Network */ = {
@@ -1977,9 +1990,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F2B0531F52EAD9004F8AF9 /* GET_ProductsByNameNoNutrition_200.json in Resources */,
-				95F2B04E1F521F7D004F8AF9 /* GET_ProductsByNameOnlyOne_200.json in Resources */,
-				951FA77C1F4E232A0096AC5A /* GET_ProductsByName_200.json in Resources */,
+				95F184B61F655C6200A544C2 /* GET_ProductsByNameSinglePage_200.json in Resources */,
+				95F184A91F655BD800A544C2 /* GET_ProductsByNamePage2_200.json in Resources */,
+				95F184AC1F655C1400A544C2 /* POST_Image_200.json in Resources */,
+				95F184A41F655BCF00A544C2 /* GET_ProductsByName_200.json in Resources */,
+				95F184A11F655BC800A544C2 /* GET_ProductsByBarcode_200.json in Resources */,
+				95F184A71F655BD500A544C2 /* GET_ProductsByNameOnlyOne_200.json in Resources */,
+				95F184A31F655BCC00A544C2 /* GET_ProductsByNameNoNutrition_200.json in Resources */,
+				95F184AE1F655C1700A544C2 /* POST_Image_400.json in Resources */,
+				95F184B01F655C1900A544C2 /* POST_Product_200.json in Resources */,
+				95F184AB1F655C0E00A544C2 /* GET_ProductsByPartialBarcode_200.json in Resources */,
+				95F184B31F655C1E00A544C2 /* test_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2017,14 +2038,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958BE78B1F4E1DC500603688 /* POST_Image_400.json in Resources */,
-				958BE78A1F4E1DC500603688 /* POST_Image_200.json in Resources */,
-				958BE7871F4E1DC500603688 /* GET_ProductsByName_200.json in Resources */,
-				95F31C131F3BA8EC00B8AF90 /* test_image.jpg in Resources */,
-				958BE78C1F4E1DC500603688 /* POST_Product_200.json in Resources */,
-				958BE7891F4E1DC500603688 /* GET_ProductsByPartialBarcode_200.json in Resources */,
-				958BE7881F4E1DC500603688 /* GET_ProductsByNamePage2_200.json in Resources */,
-				958BE7861F4E1DC500603688 /* GET_ProductsByBarcode_200.json in Resources */,
+				95F184B51F655C6200A544C2 /* GET_ProductsByNameSinglePage_200.json in Resources */,
+				95F184A81F655BD800A544C2 /* GET_ProductsByNamePage2_200.json in Resources */,
+				95F184AD1F655C1400A544C2 /* POST_Image_200.json in Resources */,
+				95F184A51F655BCF00A544C2 /* GET_ProductsByName_200.json in Resources */,
+				95F184A01F655BC700A544C2 /* GET_ProductsByBarcode_200.json in Resources */,
+				95F184A61F655BD400A544C2 /* GET_ProductsByNameOnlyOne_200.json in Resources */,
+				95F184A21F655BCC00A544C2 /* GET_ProductsByNameNoNutrition_200.json in Resources */,
+				95F184AF1F655C1700A544C2 /* POST_Image_400.json in Resources */,
+				95F184B11F655C1A00A544C2 /* POST_Product_200.json in Resources */,
+				95F184AA1F655C0E00A544C2 /* GET_ProductsByPartialBarcode_200.json in Resources */,
+				95F184B21F655C1D00A544C2 /* test_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

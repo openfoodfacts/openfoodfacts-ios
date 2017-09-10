@@ -27,7 +27,7 @@ struct HTTPStubInfo {
 }
 
 let initialStubs = [
-    HTTPStubInfo(url: "/cgi/search.pl", jsonFilename: "GET_ProductsByName_200", method: .GET)
+    HTTPStubInfo(url: "/cgi/search.pl", jsonFilename: "GET_ProductsByNameSinglePage_200", method: .GET)
 ]
 
 class HTTPDynamicStubs {
