@@ -74,6 +74,7 @@
 		957D9C361F6720B8005C5AE0 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C351F6720B8005C5AE0 /* StringTests.swift */; };
 		957D9C381F6728FA005C5AE0 /* UITableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C371F6728FA005C5AE0 /* UITableViewCellTests.swift */; };
 		957D9C3A1F6729E1005C5AE0 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C391F6729E1005C5AE0 /* DoubleTests.swift */; };
+		957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C3B1F672CC9005C5AE0 /* UIImageTests.swift */; };
 		958F33421F36196D005269C5 /* IngredientsFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33411F36196D005269C5 /* IngredientsFormTableViewController.swift */; };
 		958F33441F361A9D005269C5 /* IngredientsHeaderCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33431F361A9D005269C5 /* IngredientsHeaderCellController.swift */; };
 		958F334B1F3777D7005269C5 /* NutritionTableFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F334A1F3777D7005269C5 /* NutritionTableFormTableViewController.swift */; };
@@ -417,6 +418,7 @@
 		957D9C351F6720B8005C5AE0 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		957D9C371F6728FA005C5AE0 /* UITableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellTests.swift; sourceTree = "<group>"; };
 		957D9C391F6729E1005C5AE0 /* DoubleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTests.swift; sourceTree = "<group>"; };
+		957D9C3B1F672CC9005C5AE0 /* UIImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTests.swift; sourceTree = "<group>"; };
 		95818AAB1F0AD4D800CBD139 /* aa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = aa; path = Localization/aa.lproj/Main.strings; sourceTree = "<group>"; };
 		95818AAC1F0AD4D900CBD139 /* aa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = aa; path = Localization/aa.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		95818AAD1F0AD4D900CBD139 /* aa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = aa; path = Localization/aa.lproj/Settings.strings; sourceTree = "<group>"; };
@@ -1501,6 +1503,7 @@
 				957D9C351F6720B8005C5AE0 /* StringTests.swift */,
 				957D9C371F6728FA005C5AE0 /* UITableViewCellTests.swift */,
 				957D9C391F6729E1005C5AE0 /* DoubleTests.swift */,
+				957D9C3B1F672CC9005C5AE0 /* UIImageTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2254,6 +2257,7 @@
 				957D9C361F6720B8005C5AE0 /* StringTests.swift in Sources */,
 				957D9C381F6728FA005C5AE0 /* UITableViewCellTests.swift in Sources */,
 				957D9C3A1F6729E1005C5AE0 /* DoubleTests.swift in Sources */,
+				957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */,
 				9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
