@@ -68,6 +68,9 @@ class ProductService: ProductApi {
 
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         var url: String
+
+        // In debug mode we post products to the test environment (.net), so we use the post endpoint to get a product by barcode (when scanning it) 
+        // so we get the product as a result for this get
         #if DEBUG
             url = Endpoint.post
         #else
