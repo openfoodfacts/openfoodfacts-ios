@@ -48,8 +48,8 @@ class SearchTableViewController: UIViewController {
         super.viewDidLoad()
 
         configureTableView()
-        configureSearchController()
         configureNavigationBar()
+        configureSearchController()
         configureGestureRecognizers()
     }
 
@@ -61,25 +61,31 @@ class SearchTableViewController: UIViewController {
         tableView.rowHeight = 100
     }
 
-    fileprivate func configureSearchController() {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = NSLocalizedString("product-search.search-placeholder", comment: "Placeholder for the product search bar")
-        searchController.searchBar.delegate = self
-        searchController.hidesNavigationBarDuringPresentation = false
-        definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
-
-        let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField
-        searchField?.isAccessibilityElement = true
-        searchField?.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
-    }
-
     fileprivate func configureNavigationBar() {
         let scanButton = UIBarButtonItem(image: UIImage(named: "barcode"), style: .plain, target: self, action: #selector(scanBarcode))
         scanButton.accessibilityIdentifier = AccessibilityIdentifiers.scanButton
         navigationItem.rightBarButtonItem = scanButton
+    }
+
+    fileprivate func configureSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = NSLocalizedString("product-search.search-placeholder", comment: "Placeholder for the product search bar")
+        searchController.searchBar.delegate = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        definesPresentationContext = true
+
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = searchController
+            navigationItem.hidesSearchBarWhenScrolling = false
+        } else {
+            tableView.tableHeaderView = searchController.searchBar
+        }
+
+        let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField
+        searchField?.isAccessibilityElement = true
+        searchField?.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
     }
 
     fileprivate func configureGestureRecognizers() {
