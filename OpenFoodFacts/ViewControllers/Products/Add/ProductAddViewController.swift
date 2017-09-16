@@ -20,10 +20,6 @@ class ProductAddViewController: TakePictureViewController {
     fileprivate var activeField: UITextField?
     fileprivate var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
     fileprivate lazy var product = Product()
-    fileprivate lazy var productAddSuccessBanner: NotificationBanner = {
-        let banner = NotificationBanner(title: NSLocalizedString("product-add.product-add-success-banner.title", comment: ""), style: .success)
-        return banner
-    }()
     fileprivate lazy var productPostErrorAlert: UIAlertController = {
         let alert = UIAlertController(title: NSLocalizedString("product-add.save-error.title", comment: ""),
                                       message: NSLocalizedString("product-add.save-error.message", comment: ""),

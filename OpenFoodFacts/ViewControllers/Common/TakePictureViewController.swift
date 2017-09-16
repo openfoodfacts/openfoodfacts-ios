@@ -13,35 +13,36 @@ class TakePictureViewController: UIViewController {
     var productApi: ProductApi!
     var barcode: String!
     var imageType: ImageType = .front
-    fileprivate var cameraController: CameraController?
+    var cameraController: CameraController?
 
     // Feedback banners
-    fileprivate lazy var uploadingImageBanner: StatusBarNotificationBanner = {
+    lazy var uploadingImageBanner: StatusBarNotificationBanner = {
         let banner = StatusBarNotificationBanner(title: NSLocalizedString("product-add.uploading-image-banner.title", comment: ""), style: .info)
         banner.autoDismiss = false
         return banner
     }()
-    fileprivate lazy var uploadingImageErrorBanner: NotificationBanner = {
+    lazy var uploadingImageErrorBanner: NotificationBanner = {
         let banner = NotificationBanner(title: NSLocalizedString("product-add.image-upload-error-banner.title", comment: ""),
                                         subtitle: NSLocalizedString("product-add.image-upload-error-banner.subtitle", comment: ""),
                                         style: .danger)
         return banner
     }()
-    fileprivate lazy var uploadingImageSuccessBanner: NotificationBanner = {
+    lazy var uploadingImageSuccessBanner: NotificationBanner = {
         let banner = NotificationBanner(title: NSLocalizedString("product-add.image-upload-success-banner.title", comment: ""), style: .success)
         return banner
     }()
-    fileprivate lazy var productAddSuccessBanner: NotificationBanner = {
+    lazy var productAddSuccessBanner: NotificationBanner = {
         let banner = NotificationBanner(title: NSLocalizedString("product-add.product-add-success-banner.title", comment: ""), style: .success)
         return banner
     }()
 
     @IBAction func didTapTakePictureButton(_ sender: Any) {
-        if let cameraController = CameraController(presentingViewController: self) {
-            self.cameraController = cameraController
-            cameraController.delegate = self
-            cameraController.show()
+        if self.cameraController == nil {
+            self.cameraController = CameraControllerImpl(presentingViewController: self)
         }
+        guard var cameraController = self.cameraController else { return }
+        cameraController.delegate = self
+        cameraController.show()
     }
 }
 
@@ -59,5 +60,5 @@ extension TakePictureViewController: CameraControllerDelegate {
         })
     }
 
-    func postImageSuccess() { /* Do nothing, overridable */  }
+    func postImageSuccess() { /* Do nothing, overridable */ }
 }

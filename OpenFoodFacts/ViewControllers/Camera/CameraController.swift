@@ -9,11 +9,18 @@
 import UIKit
 import MobileCoreServices
 
+protocol CameraController {
+    weak var delegate: CameraControllerDelegate? { get set }
+
+    /// Show camera's controller view
+    func show()
+}
+
 protocol CameraControllerDelegate: class {
     func didGetImage(image: UIImage)
 }
 
-class CameraController: NSObject {
+class CameraControllerImpl: NSObject, CameraController {
     fileprivate let presentingViewController: UIViewController
     fileprivate let desiredType: String
     fileprivate lazy var picker = UIImagePickerController()
@@ -43,7 +50,7 @@ class CameraController: NSObject {
     }
 }
 
-extension CameraController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension CameraControllerImpl: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             delegate?.didGetImage(image: image)

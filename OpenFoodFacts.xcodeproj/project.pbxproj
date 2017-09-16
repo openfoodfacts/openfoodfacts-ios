@@ -93,6 +93,7 @@
 		958F335C1F37809A005269C5 /* PictureCallToActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958F335A1F37809A005269C5 /* PictureCallToActionView.xib */; };
 		95902B471F2E284700A72EF7 /* SummaryHeaderCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */; };
 		9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */; };
+		95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265171E96D55B004212EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C265151E96D55B004212EC /* Main.storyboard */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -109,7 +110,7 @@
 		95D060DD1F609DF70052012D /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D060DC1F609DF70052012D /* LoadingCell.swift */; };
 		95DDAF581F24FB160096B74E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */; };
 		95DDAF591F24FB160096B74E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF571F24FB160096B74E /* XCGLogger.framework */; };
-		95DDAF621F25401D0096B74E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDAF601F25401D0096B74E /* CameraViewController.swift */; };
+		95DDAF621F25401D0096B74E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDAF601F25401D0096B74E /* CameraController.swift */; };
 		95DDAF661F2916D40096B74E /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDAF651F2916D30096B74E /* ProductImage.swift */; };
 		95DFD7CD1F01A45C007FDB69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DFD7CF1F01A45C007FDB69 /* Localizable.strings */; };
 		95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E16B2E1EE9E20A00331B2B /* UIStackView.swift */; };
@@ -1091,6 +1092,7 @@
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A7E0671F058F5D004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95A7E0691F0590E7004D7B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localization/en.lproj/Settings.strings; sourceTree = "<group>"; };
+		95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewControllerTests.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265161E96D55B004212EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1110,7 +1112,7 @@
 		95D060DC1F609DF70052012D /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95DDAF571F24FB160096B74E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
-		95DDAF601F25401D0096B74E /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		95DDAF601F25401D0096B74E /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		95DDAF651F2916D30096B74E /* ProductImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
 		95E16B2E1EE9E20A00331B2B /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		95E3ADE11F21433D00CD61D9 /* ProductAddViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductAddViewController.storyboard; sourceTree = "<group>"; };
@@ -1553,6 +1555,7 @@
 		9596B50C1F45FAE30076F52C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				95BA22671F6B21B00090C471 /* Common */,
 				9596B50D1F45FAE30076F52C /* Products */,
 			);
 			path = ViewControllers;
@@ -1589,6 +1592,14 @@
 				9510B0271F6885690012953A /* TestHelper.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		95BA22671F6B21B00090C471 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		95C265051E96D55B004212EC = {
@@ -1725,7 +1736,7 @@
 		95DDAF5E1F25401D0096B74E /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				95DDAF601F25401D0096B74E /* CameraViewController.swift */,
+				95DDAF601F25401D0096B74E /* CameraController.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -2255,7 +2266,7 @@
 				956FF95A1F1FF0CA0069D678 /* LoadingView.swift in Sources */,
 				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
 				950163741F2D1EF20057B8D5 /* TakePictureViewController.swift in Sources */,
-				95DDAF621F25401D0096B74E /* CameraViewController.swift in Sources */,
+				95DDAF621F25401D0096B74E /* CameraController.swift in Sources */,
 				95DDAF661F2916D40096B74E /* ProductImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2266,6 +2277,7 @@
 			files = (
 				9510B02A1F6888770012953A /* UITableViewTests.swift in Sources */,
 				95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */,
+				95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */,
 				9510B0281F6885690012953A /* TestHelper.swift in Sources */,
 				957D9C361F6720B8005C5AE0 /* StringTests.swift in Sources */,
 				957D9C3E1F688066005C5AE0 /* UIStackViewTests.swift in Sources */,
