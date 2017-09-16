@@ -198,6 +198,7 @@ class SearchTableViewControllerTests: XCTestCase {
         let query = "Fanta"
         let expectedProductsResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
         productApi.productsResponse = expectedProductsResponse
+        viewController.state = .loading
 
         viewController.getProducts(page: page, withQuery: query)
 
@@ -211,6 +212,7 @@ class SearchTableViewControllerTests: XCTestCase {
     func testGetProductsChangesStateToEmptyWhenResponseIsEmpty() {
         let page = 1
         let query = "Fanta"
+        viewController.state = .loading
 
         viewController.getProducts(page: page, withQuery: query)
 

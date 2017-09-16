@@ -209,12 +209,15 @@ extension SearchTableViewController {
                 oldResponse.page = response.page
                 oldResponse.pageSize = response.pageSize
                 self.state = .content(oldResponse)
-            default: // Got new response
+            case .loading: // Got new response
                 if response.totalProducts == 0 {
                     self.state = .empty
                 } else {
                     self.state = .content(response)
                 }
+            default:
+                // Do nothing, this method should only be called when searching a new query or fetching a new page for the previous query
+                return
             }
         }, onError: { error in
             self.state = .error(error)
