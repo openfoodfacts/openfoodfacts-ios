@@ -11,7 +11,7 @@ import XCTest
 import Nimble
 import OHHTTPStubs
 
-fileprivate let networkDownErrorCode = -1009
+private let networkDownErrorCode = -1009
 
 class ProductServiceTests: XCTestCase {
 

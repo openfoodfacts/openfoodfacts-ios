@@ -8,8 +8,8 @@
 
 import UIKit
 
-fileprivate let flashOffImageName = "flash_off"
-fileprivate let flashOnImageName = "flash_on"
+private let flashOffImageName = "flash_off"
+private let flashOnImageName = "flash_on"
 // swiftlint:disable identifier_name
 enum FlashStatus {
     case off

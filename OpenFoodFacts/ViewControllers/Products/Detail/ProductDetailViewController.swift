@@ -53,7 +53,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         return vcs
     }
 
-    // swiftlint:disable:next cyclomatic_complexity
     fileprivate func getSummaryVC() -> UIViewController {
         var rows = [FormRow]()
 

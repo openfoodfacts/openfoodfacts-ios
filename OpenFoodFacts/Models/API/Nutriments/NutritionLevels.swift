@@ -15,7 +15,7 @@ enum NutritionLevel: String {
     case high
 }
 
-fileprivate class NutritionLevelTransform: TransformType {
+private class NutritionLevelTransform: TransformType {
     typealias Object = NutritionLevel
     typealias JSON = String
 

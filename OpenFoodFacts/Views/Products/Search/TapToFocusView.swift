@@ -8,9 +8,9 @@
 
 import UIKit
 
-fileprivate let initialSideSize = 100
-fileprivate let finalSideSize = 70
-fileprivate let borderColor = UIColor(red: 1.00, green: 0.80, blue: 0.00, alpha: 1.0)
+private let initialSideSize = 100
+private let finalSideSize = 70
+private let borderColor = UIColor(red: 1.00, green: 0.80, blue: 0.00, alpha: 1.0)
 
 class TapToFocusView: UIView {
     fileprivate let initialSize = CGSize(width: initialSideSize, height: initialSideSize)
