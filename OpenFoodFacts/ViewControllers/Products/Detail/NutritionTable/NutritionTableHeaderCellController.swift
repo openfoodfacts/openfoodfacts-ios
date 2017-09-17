@@ -65,7 +65,7 @@ class NutritionTableHeaderCellController: TakePictureViewController {
 
 // MARK: - Gesture recognizers
 extension NutritionTableHeaderCellController {
-    func didTapProductImage(_ sender: UITapGestureRecognizer) {
+    @objc func didTapProductImage(_ sender: UITapGestureRecognizer) {
         if let imageView = sender.view as? UIImageView {
             ImageViewer.show(imageView, presentingVC: self)
         }

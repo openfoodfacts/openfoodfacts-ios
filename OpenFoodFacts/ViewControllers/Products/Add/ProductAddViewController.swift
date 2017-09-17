@@ -70,7 +70,7 @@ class ProductAddViewController: TakePictureViewController {
 
 // MARK: - Keyboard notification handler
 extension ProductAddViewController {
-    func keyboardWillShow(notification: Notification) {
+    @objc func keyboardWillShow(notification: Notification) {
         let info = notification.userInfo
         guard let keyboardFrame = (info?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         guard let activeField = self.activeField else { return }
@@ -91,7 +91,7 @@ extension ProductAddViewController {
         }
     }
 
-    func keyboardWillHide(notification: Notification) {
+    @objc func keyboardWillHide(notification: Notification) {
         scrollView.contentInset = self.contentInsetsBeforeKeyboard
         scrollView.scrollIndicatorInsets = self.contentInsetsBeforeKeyboard
     }

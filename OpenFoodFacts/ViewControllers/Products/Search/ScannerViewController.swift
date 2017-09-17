@@ -12,16 +12,16 @@ import Crashlytics
 import NotificationBanner
 
 class ScannerViewController: UIViewController {
-    fileprivate let supportedBarcodes = [AVMetadataObjectTypeUPCECode,
-                                         AVMetadataObjectTypeCode39Code,
-                                         AVMetadataObjectTypeCode39Mod43Code,
-                                         AVMetadataObjectTypeCode93Code,
-                                         AVMetadataObjectTypeCode128Code,
-                                         AVMetadataObjectTypeEAN8Code,
-                                         AVMetadataObjectTypeEAN13Code,
-                                         AVMetadataObjectTypePDF417Code,
-                                         AVMetadataObjectTypeITF14Code,
-                                         AVMetadataObjectTypeInterleaved2of5Code]
+    fileprivate let supportedBarcodes = [AVMetadataObject.ObjectType.upce,
+                                         AVMetadataObject.ObjectType.code39,
+                                         AVMetadataObject.ObjectType.code39Mod43,
+                                         AVMetadataObject.ObjectType.code93,
+                                         AVMetadataObject.ObjectType.code128,
+                                         AVMetadataObject.ObjectType.ean8,
+                                         AVMetadataObject.ObjectType.ean13,
+                                         AVMetadataObject.ObjectType.pdf417,
+                                         AVMetadataObject.ObjectType.itf14,
+                                         AVMetadataObject.ObjectType.interleaved2of5]
 
     fileprivate var captureSession: AVCaptureSession?
     fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
@@ -65,7 +65,7 @@ class ScannerViewController: UIViewController {
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { _ in
-            self.videoPreviewLayer?.connection.videoOrientation = self.transformOrientation()
+            self.videoPreviewLayer?.connection?.videoOrientation = self.transformOrientation()
             self.videoPreviewLayer?.frame = self.view.bounds
         }, completion: nil)
     }
@@ -86,21 +86,22 @@ class ScannerViewController: UIViewController {
     }
 
     fileprivate func configureVideoView() {
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else { return }
 
         do {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
-
             captureSession = AVCaptureSession()
-            captureSession?.addInput(input)
 
-            let captureMetadataOutput = AVCaptureMetadataOutput()
-            captureSession?.addOutput(captureMetadataOutput)
-            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            captureMetadataOutput.metadataObjectTypes = supportedBarcodes
+            if let captureSession = captureSession {
+                let input = try AVCaptureDeviceInput(device: captureDevice)
+                captureSession.addInput(input)
 
-            if let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession) {
-                videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+                let captureMetadataOutput = AVCaptureMetadataOutput()
+                captureSession.addOutput(captureMetadataOutput)
+                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                captureMetadataOutput.metadataObjectTypes = supportedBarcodes
+
+                let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+                videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
                 videoPreviewLayer.frame = view.layer.bounds
                 self.videoPreviewLayer = videoPreviewLayer
                 view.layer.addSublayer(videoPreviewLayer)
@@ -112,7 +113,7 @@ class ScannerViewController: UIViewController {
     }
 
     fileprivate func configureFlashView() {
-        if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.hasTorch {
+        if let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch {
             flashButton.translatesAutoresizingMaskIntoConstraints = false
             flashButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapFlashButton(_:))))
             self.view.addSubview(flashButton)
@@ -161,8 +162,8 @@ class ScannerViewController: UIViewController {
 }
 
 extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        if metadataObjects == nil || metadataObjects.isEmpty {
+    func metadataOutput(captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        if metadataObjects.isEmpty {
             return
         }
 
@@ -192,8 +193,8 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
 
 // MARK: - Gesture recognizers
 extension ScannerViewController {
-    func didTapFlashButton(_ gesture: UITapGestureRecognizer) {
-        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else { return }
+    @objc func didTapFlashButton(_ gesture: UITapGestureRecognizer) {
+        guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }
         do {
             try device.lockForConfiguration()
             switch flashButton.state {
@@ -203,7 +204,7 @@ extension ScannerViewController {
             case .off:
                 flashButton.state = .on
                 do {
-                    try device.setTorchModeOnWithLevel(1.0)
+                    try device.setTorchModeOn(level: 1.0)
                 } catch {
                     Crashlytics.sharedInstance().recordError(error)
                 }
@@ -214,8 +215,8 @@ extension ScannerViewController {
         }
     }
 
-    func didTapToFocus(_ gesture: UITapGestureRecognizer) {
-        if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.isFocusPointOfInterestSupported, let videoPreviewLayer = self.videoPreviewLayer {
+    @objc func didTapToFocus(_ gesture: UITapGestureRecognizer) {
+        if let device = AVCaptureDevice.default(for: AVMediaType.video), device.isFocusPointOfInterestSupported, let videoPreviewLayer = self.videoPreviewLayer {
             let touchPoint = gesture.location(in: self.view)
 
             let tapToFocusView = self.tapToFocusView ?? TapToFocusView()
@@ -229,7 +230,7 @@ extension ScannerViewController {
 
             do {
                 try device.lockForConfiguration()
-                device.focusPointOfInterest = videoPreviewLayer.captureDevicePointOfInterest(for: touchPoint)
+                device.focusPointOfInterest = videoPreviewLayer.captureDevicePointConverted(fromLayerPoint: touchPoint)
                 device.focusMode = .continuousAutoFocus
                 device.unlockForConfiguration()
             } catch {
@@ -264,7 +265,7 @@ extension ScannerViewController {
     }
 
     fileprivate func turnOffFlash() {
-        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else { return }
+        guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }
         if flashButton.state == .on {
             do {
                 try device.lockForConfiguration()

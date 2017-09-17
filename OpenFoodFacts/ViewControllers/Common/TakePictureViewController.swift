@@ -60,5 +60,5 @@ extension TakePictureViewController: CameraControllerDelegate {
         })
     }
 
-    func postImageSuccess() { /* Do nothing, overridable */ }
+    @objc func postImageSuccess() { /* Do nothing, overridable */ }
 }

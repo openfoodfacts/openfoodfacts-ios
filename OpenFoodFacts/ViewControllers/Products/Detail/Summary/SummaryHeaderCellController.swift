@@ -64,7 +64,7 @@ class SummaryHeaderCellController: TakePictureViewController {
 
 // MARK: - Gesture recognizers
 extension SummaryHeaderCellController {
-    func didTapProductImage(_ sender: UITapGestureRecognizer) {
+    @objc func didTapProductImage(_ sender: UITapGestureRecognizer) {
         if let imageView = sender.view as? UIImageView {
             ImageViewer.show(imageView, presentingVC: self)
         }

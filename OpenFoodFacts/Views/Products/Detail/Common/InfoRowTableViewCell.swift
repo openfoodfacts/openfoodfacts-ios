@@ -17,8 +17,8 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
         guard let rowLabel = formRow.label else { return }
         guard let value = formRow.getValueAsString() else { return }
 
-        let bold = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.boldSystemFont(ofSize: textSize)]
-        let regular = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.systemFont(ofSize: textSize)]
+        let bold = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: textSize)]
+        let regular = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: textSize)]
 
         let combination = NSMutableAttributedString()
         combination.append(NSAttributedString(string: rowLabel + ": ", attributes: bold))

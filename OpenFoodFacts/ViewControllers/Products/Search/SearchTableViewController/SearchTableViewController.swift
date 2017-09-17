@@ -228,7 +228,7 @@ extension SearchTableViewController {
 // MARK: - Gesture recognizers
 
 extension SearchTableViewController {
-    func didTapTableViewBackground(_ sender: UITapGestureRecognizer) {
+    @objc func didTapTableViewBackground(_ sender: UITapGestureRecognizer) {
         // When the search bar has no text and the user taps the background view of the table view,
         // ask the search bar to resign focus so it goes back to it's begining state and the keyboard gets dismissed
         if searchController.isActive {
@@ -267,7 +267,7 @@ private extension SearchTableViewController {
 // MARK: - Scanning
 
 extension SearchTableViewController {
-    func scanBarcode() {
+    @objc func scanBarcode() {
         let scanVC = ScannerViewController(productApi: productApi)
         navigationController?.pushViewController(scanVC, animated: true)
     }

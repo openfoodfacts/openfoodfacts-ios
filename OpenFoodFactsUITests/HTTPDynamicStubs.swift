@@ -55,7 +55,7 @@ class HTTPDynamicStubs {
     }
 
     public func setupStub(url: String, filename: String, method: HTTPMethod = .GET) {
-        let testBundle = Bundle(for: type(of: self))
+        let testBundle = Bundle(for: Swift.type(of: self))
         let filePath = testBundle.path(forResource: filename, ofType: "json")
         let fileUrl = URL(fileURLWithPath: filePath!)
         let data = try! Data(contentsOf: fileUrl, options: .uncached)
