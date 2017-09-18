@@ -23,7 +23,8 @@ class ScannerViewController: UIViewController {
                                          AVMetadataObject.ObjectType.itf14,
                                          AVMetadataObject.ObjectType.interleaved2of5]
 
-    fileprivate var captureSession: AVCaptureSession?
+    fileprivate var captureSession = AVCaptureSession()
+    fileprivate var barcodeQueue = DispatchQueue(label: "barcode processing queue", attributes: [], target: nil)
     fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     fileprivate lazy var flashButton = FlashButton()
     fileprivate lazy var overlay = TextOverlay()
@@ -54,12 +55,12 @@ class ScannerViewController: UIViewController {
         super.viewWillAppear(animated)
         lastCodeScanned = nil
         resetOverlay()
-        captureSession?.startRunning()
+        captureSession.startRunning()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        captureSession?.stopRunning()
+        captureSession.stopRunning()
         showHelpInOverlayTask?.cancel()
     }
 
@@ -89,23 +90,19 @@ class ScannerViewController: UIViewController {
         guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else { return }
 
         do {
-            captureSession = AVCaptureSession()
+            let input = try AVCaptureDeviceInput(device: captureDevice)
+            captureSession.addInput(input)
 
-            if let captureSession = captureSession {
-                let input = try AVCaptureDeviceInput(device: captureDevice)
-                captureSession.addInput(input)
+            let captureMetadataOutput = AVCaptureMetadataOutput()
+            captureSession.addOutput(captureMetadataOutput)
+            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: barcodeQueue)
+            captureMetadataOutput.metadataObjectTypes = supportedBarcodes
 
-                let captureMetadataOutput = AVCaptureMetadataOutput()
-                captureSession.addOutput(captureMetadataOutput)
-                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-                captureMetadataOutput.metadataObjectTypes = supportedBarcodes
-
-                let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-                videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-                videoPreviewLayer.frame = view.layer.bounds
-                self.videoPreviewLayer = videoPreviewLayer
-                view.layer.addSublayer(videoPreviewLayer)
-            }
+            let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            videoPreviewLayer.frame = view.layer.bounds
+            self.videoPreviewLayer = videoPreviewLayer
+            view.layer.addSublayer(videoPreviewLayer)
         } catch {
             Crashlytics.sharedInstance().recordError(error)
             return
@@ -162,14 +159,14 @@ class ScannerViewController: UIViewController {
 }
 
 extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
-    func metadataOutput(captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjects.isEmpty {
             return
         }
 
         if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
-                captureSession?.stopRunning()
+                captureSession.stopRunning()
                 lastCodeScanned = barcode
                 getProduct(barcode: barcode)
             }
@@ -186,7 +183,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }, onError: { _ in
             StatusBarNotificationBanner(title: NSLocalizedString("product-scanner.barcode.error", comment: ""), style: .danger).show()
             self.lastCodeScanned = nil
-            self.captureSession?.startRunning()
+            self.captureSession.startRunning()
         })
     }
 }
