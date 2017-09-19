@@ -15,6 +15,7 @@
 		9510B0241F6883E00012953A /* ProductServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0231F6883E00012953A /* ProductServiceMock.swift */; };
 		9510B0281F6885690012953A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0271F6885690012953A /* TestHelper.swift */; };
 		9510B02A1F6888770012953A /* UITableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0291F6888770012953A /* UITableViewTests.swift */; };
+		951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */; };
 		951FA7701F4E22790096AC5A /* ProductSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA76F1F4E22790096AC5A /* ProductSearchUITests.swift */; };
 		951FA7781F4E22860096AC5A /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958BE7781F4E1BB500603688 /* Swifter.framework */; };
 		951FA77A1F4E22B00096AC5A /* HTTPDynamicStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7791F4E22B00096AC5A /* HTTPDynamicStubs.swift */; };
@@ -236,6 +237,7 @@
 		9510B0231F6883E00012953A /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductServiceMock.swift; path = Common/ProductServiceMock.swift; sourceTree = "<group>"; };
 		9510B0271F6885690012953A /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = Common/TestHelper.swift; sourceTree = "<group>"; };
 		9510B0291F6888770012953A /* UITableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewTests.swift; sourceTree = "<group>"; };
+		951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		951FA76D1F4E22790096AC5A /* OpenFoodFactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenFoodFactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		951FA76F1F4E22790096AC5A /* ProductSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSearchUITests.swift; sourceTree = "<group>"; };
 		951FA7711F4E22790096AC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1168,6 +1170,7 @@
 				953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */,
 				9501634B1F2CE9A20057B8D5 /* MarqueeLabelSwift.framework in Frameworks */,
 				9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */,
+				951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1650,6 +1653,7 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */,
 				958BE7781F4E1BB500603688 /* Swifter.framework */,
 				95F31BF61F3A231000B8AF90 /* Nimble.framework */,
 				95F31BF41F3A230400B8AF90 /* OHHTTPStubs.framework */,
@@ -2146,6 +2150,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MarqueeLabelSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NotificationBanner.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
@@ -2159,6 +2164,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MarqueeLabelSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NotificationBanner.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

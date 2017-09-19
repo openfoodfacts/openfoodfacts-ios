@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import Crashlytics
 import NotificationBanner
+import SVProgressHUD
 
 class ScannerViewController: UIViewController {
     fileprivate let supportedBarcodes = [AVMetadataObject.ObjectType.upce,
@@ -208,14 +209,28 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
 
     func getProduct(barcode: String) {
+        DispatchQueue.main.async {
+            let productLoadingMessage = NSLocalizedString("product-scanner.search.status", comment: "")
+            SVProgressHUD.setDefaultMaskType(.black)
+            SVProgressHUD.setDefaultAnimationType(.native)
+            SVProgressHUD.show(withStatus: productLoadingMessage)
+        }
+
         productApi.getProduct(byBarcode: barcode, onSuccess: { response in
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+            }
             if let product = response.product {
                 self.showProduct(product)
             } else {
                 self.addNewProduct(barcode)
             }
         }, onError: { _ in
-            StatusBarNotificationBanner(title: NSLocalizedString("product-scanner.barcode.error", comment: ""), style: .danger).show()
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                StatusBarNotificationBanner(title: NSLocalizedString("product-scanner.barcode.error", comment: ""), style: .danger).show()
+            }
+
             self.lastCodeScanned = nil
             self.session.startRunning()
         })
