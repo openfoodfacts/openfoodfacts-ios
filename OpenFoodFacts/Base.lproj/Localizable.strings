@@ -19,6 +19,14 @@
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
 
+"product-scanner.permissions.noPermissions.title" = "OpenFoodFacts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
+"product-scanner.permissions.noPermissions.action.title" = "Open Settings";
+
+"product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
+"product-scanner.permissions.failed.message" = "Check in Privacy Settings if OpenFoodFacts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Uploading image...";

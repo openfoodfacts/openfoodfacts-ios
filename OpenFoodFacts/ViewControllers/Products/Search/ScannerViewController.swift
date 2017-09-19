@@ -23,8 +23,8 @@ class ScannerViewController: UIViewController {
                                          AVMetadataObject.ObjectType.itf14,
                                          AVMetadataObject.ObjectType.interleaved2of5]
 
-    fileprivate var captureSession = AVCaptureSession()
-    fileprivate var barcodeQueue = DispatchQueue(label: "barcode processing queue", attributes: [], target: nil)
+    fileprivate var session = AVCaptureSession()
+    fileprivate var barcodeQueue = DispatchQueue(label: "barcode queue")
     fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     fileprivate lazy var flashButton = FlashButton()
     fileprivate lazy var overlay = TextOverlay()
@@ -32,6 +32,7 @@ class ScannerViewController: UIViewController {
     fileprivate var lastCodeScanned: String?
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
     let productApi: ProductApi
+    var configResult: SessionConfigResult = .success
 
     init(productApi: ProductApi) {
         self.productApi = productApi
@@ -44,8 +45,10 @@ class ScannerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureVideoView()
+
+        checkCameraPermissions()
+        configureSession()
         configureFlashView()
         configureOverlay()
         configureTapToFocus()
@@ -55,12 +58,20 @@ class ScannerViewController: UIViewController {
         super.viewWillAppear(animated)
         lastCodeScanned = nil
         resetOverlay()
-        captureSession.startRunning()
+
+        switch configResult {
+        case .success:
+            session.startRunning()
+        case .noPermissions:
+            requestPermissions()
+        case .failed:
+            returnToRootController()
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        captureSession.stopRunning()
+        session.stopRunning()
         showHelpInOverlayTask?.cancel()
     }
 
@@ -86,24 +97,40 @@ class ScannerViewController: UIViewController {
         }
     }
 
-    fileprivate func configureVideoView() {
-        guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else { return }
+    private func configureVideoView() {
+        let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
+        videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        videoPreviewLayer.frame = self.view.layer.bounds
+        self.videoPreviewLayer = videoPreviewLayer
+        self.view.layer.addSublayer(videoPreviewLayer)
+    }
+
+    fileprivate func configureSession() {
+        if configResult != .success {
+            return
+        }
+
+        guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else {
+            configResult = .failed
+            handleNoCamera()
+            return
+        }
+
+        session.beginConfiguration()
+        defer {
+            session.commitConfiguration()
+        }
 
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice)
-            captureSession.addInput(input)
+            session.addInput(input)
 
             let captureMetadataOutput = AVCaptureMetadataOutput()
-            captureSession.addOutput(captureMetadataOutput)
+            session.addOutput(captureMetadataOutput)
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: barcodeQueue)
             captureMetadataOutput.metadataObjectTypes = supportedBarcodes
-
-            let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-            videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoPreviewLayer.frame = view.layer.bounds
-            self.videoPreviewLayer = videoPreviewLayer
-            view.layer.addSublayer(videoPreviewLayer)
         } catch {
+            configResult = .failed
             Crashlytics.sharedInstance().recordError(error)
             return
         }
@@ -156,7 +183,14 @@ class ScannerViewController: UIViewController {
     fileprivate func configureTapToFocus() {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToFocus(_:))))
     }
+
+    private func handleNoCamera() {
+        let error = NSError(domain:"ScannerViewControllerErrorDomain", code: 1, userInfo:["errorType": "No camera found"])
+        Crashlytics.sharedInstance().recordError(error)
+    }
 }
+
+// MARK: - AVCapture delegate
 
 extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
@@ -166,7 +200,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
 
         if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
-                captureSession.stopRunning()
+                session.stopRunning()
                 lastCodeScanned = barcode
                 getProduct(barcode: barcode)
             }
@@ -183,7 +217,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }, onError: { _ in
             StatusBarNotificationBanner(title: NSLocalizedString("product-scanner.barcode.error", comment: ""), style: .danger).show()
             self.lastCodeScanned = nil
-            self.captureSession.startRunning()
+            self.session.startRunning()
         })
     }
 }
@@ -273,5 +307,57 @@ extension ScannerViewController {
                 Crashlytics.sharedInstance().recordError(error)
             }
         }
+    }
+}
+
+// MARK: - Permissions
+
+extension ScannerViewController {
+    enum SessionConfigResult {
+        case success, noPermissions, failed
+    }
+
+    private func checkCameraPermissions() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            break
+        case .notDetermined:
+            barcodeQueue.suspend()
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
+                if !granted {
+                    self.configResult = .failed
+                }
+                self.barcodeQueue.resume()
+            })
+        default:
+            self.configResult = .noPermissions
+        }
+    }
+
+    private func requestPermissions() {
+        let title = NSLocalizedString("product-scanner.permissions.noPermissions.title", comment: "")
+        let message = NSLocalizedString("product-scanner.permissions.noPermissions.message", comment: "")
+        let actionTitle = NSLocalizedString("product-scanner.permissions.noPermissions.action.title", comment: "")
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { _ in
+            guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString) else { return }
+            UIApplication.shared.openURL(settingsURL)
+        }))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    private func returnToRootController() {
+        let title = NSLocalizedString("product-scanner.permissions.failed.title", comment: "")
+        let message = NSLocalizedString("product-scanner.permissions.failed.message", comment: "")
+        let actionTitle = NSLocalizedString("product-scanner.permissions.failed.action.title", comment: "")
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+
+        self.present(alert, animated: true, completion: nil)
     }
 }
