@@ -22,29 +22,19 @@ protocol CameraControllerDelegate: class {
 
 class CameraControllerImpl: NSObject, CameraController {
     fileprivate let presentingViewController: UIViewController
-    fileprivate let desiredType: String
-    fileprivate lazy var picker = UIImagePickerController()
+    var picker: UIImagePickerController?
+    lazy var cameraHelper: CameraHelperProtocol = CameraHelper()
 
     weak var delegate: CameraControllerDelegate?
 
-    init?(presentingViewController: UIViewController) {
-        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-            return nil
-        }
-
-        let desiredType = String(kUTTypeImage)
-
-        if UIImagePickerController.availableMediaTypes(for: .camera)?.index(of: desiredType) == nil {
-            return nil
-        }
-
-        self.desiredType = desiredType
+    init(presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
+        super.init()
     }
 
     func show() {
-        picker.sourceType = .camera
-        picker.mediaTypes = [desiredType]
+        guard let picker = cameraHelper.getImagePickerForTaking(.image) else { return }
+        self.picker = picker
         picker.delegate = self
         self.presentingViewController.present(picker, animated: true, completion: nil)
     }
@@ -63,6 +53,6 @@ extension CameraControllerImpl: UIImagePickerControllerDelegate, UINavigationCon
     }
 
     fileprivate func dismiss() {
-        self.picker.dismiss(animated: true, completion: nil)
+        self.presentingViewController.dismiss(animated: true, completion: nil)
     }
 }
