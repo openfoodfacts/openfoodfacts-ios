@@ -16,13 +16,32 @@
 ## Building
 
 ### Dependencies
-We use Carthage for dependency management. If you don't have Carthage installed check how to install it [here](https://github.com/Carthage/Carthage#installing-carthage).
+We use Carthage for dependency management.
 
 Run `carthage bootstrap --platform iOS` before opening the project in Xcode
+
+You can install [Carthage](https://github.com/Carthage/Carthage) with Homebrew:
+```
+brew install carthage
+```
 
 ### Fastlane
 
 Currently there are two lanes, one for running the tests (`fastlane test`) and one for uploading a new beta to TestFlight (`fastlane beta`).
+
+You can install [Fastlane](https://github.com/fastlane/fastlane) with Homebrew:
+```
+brew cask install fastlane
+```
+
+### SwiftLint
+
+We have a script that runs when buildin the app that executes SwiftLint to enforce a series of conventrions and style to the code.
+
+You can install [SwiftLint](https://github.com/realm/SwiftLint/) with Homebrew:
+```
+brew install swiftlint
+```
 
 ## Support
 
