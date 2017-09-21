@@ -333,6 +333,12 @@ extension ScannerViewController {
     }
 
     private func checkCameraPermissions() {
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            self.configResult = .failed
+            returnToRootController()
+            return
+        }
+
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             break

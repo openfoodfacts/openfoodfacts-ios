@@ -45,8 +45,13 @@ class ProductSearchUITests: UITestCase {
     }
 
     func testTappingScanButtonShowsScanView() {
+        addUIInterruptionMonitor(withDescription: "Scanning setup failed because no camera was found") { (alert) -> Bool in
+            alert.buttons["Leave barcode scanning"].tap()
+            return true
+        }
+
         app.buttons[AccessibilityIdentifiers.scanButton].tap()
-        XCTAssert(app.navigationBars["OpenFoodFacts.ScannerView"].exists)
+        app.tap()
     }
 
     func testResponseWithErrorShowsErrorView() {
