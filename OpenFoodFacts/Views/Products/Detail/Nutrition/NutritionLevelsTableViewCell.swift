@@ -13,8 +13,6 @@ class NutritionLevelsTableViewCell: ProductDetailBaseCell {
 
     @IBOutlet weak var stackView: UIStackView!
 
-    // TODO Using g as default, because sometimes the API does not return the _unit field and previously I was if letting the unit too, so sometimes it wasn't entering a 0-valued nutrition level and setting the UILabels. Can the unit be different to 'g', maybe for US or UK? Is it a product specific thing or by country/language/locale?
-
     override func configure(with formRow: FormRow) {
         guard let product = formRow.value as? Product else { return }
 
@@ -63,7 +61,7 @@ class NutritionLevelsTableViewCell: ProductDetailBaseCell {
 
         levelView.configure(
             image: getImageLevel(level: level),
-            value: "\(value.twoDecimalRounded) \(item.unit ?? "g")",
+            value: "\(value.twoDecimalRounded) \(item.unit ?? "")",
             label: localizedLabel,
             level: getLevelLocalized(level: level))
 
