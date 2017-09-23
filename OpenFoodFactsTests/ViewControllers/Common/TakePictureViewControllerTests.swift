@@ -60,8 +60,8 @@ class TakePictureViewControllerTests: XCTestCase {
 
         viewController.didGetImage(image: testImage)
 
-        expect(self.notificationBannerEventMap[uploadingBannerTitle]).toEventually(contain([.willAppear, .didAppear, .willDisappear, .didDisappear]))
-        expect(self.notificationBannerEventMap[imageUploadErrorBannerTitle]).toEventually(contain([.willAppear, .didAppear]))
+        expect(self.notificationBannerEventMap[uploadingBannerTitle]).toEventually(contain([.willAppear, .didAppear, .willDisappear, .didDisappear]), timeout: 10)
+        expect(self.notificationBannerEventMap[imageUploadErrorBannerTitle]).toEventually(contain([.willAppear, .didAppear]), timeout: 10)
         XCTAssertNotNil(mockProductApi.productImage)
     }
 
