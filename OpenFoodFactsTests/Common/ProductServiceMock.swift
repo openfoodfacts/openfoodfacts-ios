@@ -16,6 +16,7 @@ class ProductServiceMock: ProductApi {
     var productsResponse: ProductsResponse!
     let error = NSError(domain:NSURLErrorDomain, code:-1009, userInfo: nil)
     var productImage: ProductImage?
+    var product: Product!
 
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         self.query = query
@@ -42,6 +43,12 @@ class ProductServiceMock: ProductApi {
     }
 
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        self.product = product
 
+        if "123456789" == product.barcode {
+            onSuccess()
+        } else {
+            onError(error)
+        }
     }
 }

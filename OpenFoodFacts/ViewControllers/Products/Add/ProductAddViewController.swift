@@ -17,10 +17,10 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var uploadedImagesStackView: UIStackView!
 
-    fileprivate var activeField: UITextField?
-    fileprivate var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
-    fileprivate lazy var product = Product()
-    fileprivate lazy var productPostErrorAlert: UIAlertController = {
+    var activeField: UITextField?
+    var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
+    lazy var product = Product()
+    lazy var productPostErrorAlert: UIAlertController = {
         let alert = UIAlertController(title: NSLocalizedString("product-add.save-error.title", comment: ""),
                                       message: NSLocalizedString("product-add.save-error.message", comment: ""),
                                       preferredStyle: .alert)
