@@ -41,8 +41,11 @@ class ProductAddViewControllerTests: XCTestCase {
     override func tearDown() {
         viewController.activeField?.resignFirstResponder()
         viewController = nil
+        XCUIDevice.shared.orientation = .portrait
         super.tearDown()
     }
+
+    // MARK: - Barcode didSet
 
     func testSettingBarcodeUpdatesProductBarcode() {
         viewController.barcode = anotherBarcode
@@ -50,11 +53,15 @@ class ProductAddViewControllerTests: XCTestCase {
         expect(self.viewController.product.barcode).to(equal(anotherBarcode))
     }
 
+    // MARK: - viewWillAppear
+
     func testWhenAfterWillAppearBarcodeLabelIsUpdated() {
         viewController.barcode = barcode
 
         expect(self.viewController.barcodeLabel.text).to(equal(barcode))
     }
+
+    // MARK: - didTapSaveButton
 
     func testOnSaveButtonTapProductIsSent() {
         viewController.barcode = barcode
@@ -87,6 +94,8 @@ class ProductAddViewControllerTests: XCTestCase {
         expect(alertController.actions[0].title).to(equal(NSLocalizedString("product-add.save-error.action", comment: "")))
     }
 
+    // MARK: - keyboardWillShow
+
     func testKeyboardWillShowShouldUpdateScrollViewInsetsWhenOrientationPortrait() {
         let width = CGFloat(375)
         let height = CGFloat(258)
@@ -106,6 +115,7 @@ class ProductAddViewControllerTests: XCTestCase {
     }
 
     func testKeyboardWillShowShouldUpdateScrollViewInsetsWhenOrientationLandscape() {
+        XCUIDevice.shared.orientation = .landscapeLeft
         let width = CGFloat(258)
         let height = CGFloat(375)
         let rectSize = CGSize(width: width, height: height)
@@ -136,10 +146,13 @@ class ProductAddViewControllerTests: XCTestCase {
         let cgRect = CGRect(origin: CGPoint.zero, size: rectSize)
         let userInfo: [String: Any] = [UIKeyboardFrameEndUserInfoKey: cgRect as NSValue]
         let notification = Notification(name: .UIKeyboardWillShow, object: nil, userInfo: userInfo)
+
         viewController.keyboardWillShow(notification: notification)
 
         expect(self.viewController.contentInsetsBeforeKeyboard).to(equal(UIEdgeInsets.zero))
     }
+
+    // MARK: - keyboardWillHide
 
     func testKeyboardWillHideShouldResetScrollViewInsets() {
         let notification = Notification(name: .UIKeyboardWillHide, object: nil, userInfo: nil)
@@ -154,11 +167,15 @@ class ProductAddViewControllerTests: XCTestCase {
         expect(self.viewController.scrollView.scrollIndicatorInsets).to(equal(UIEdgeInsets.zero))
     }
 
+    // MARK: - textFieldDidBeginEditing
+
     func testTextFieldDidBeginEditingSetsActiveField() {
         viewController.textFieldDidBeginEditing(viewController.brandsField)
 
         expect(self.viewController.activeField).to(equal(viewController.brandsField))
     }
+
+    // MARK: - textFieldDidEndEditing
 
     func testTextFieldDidEndEditingSetsActiveFieldToNil() {
         viewController.activeField = viewController.productNameField
@@ -167,6 +184,8 @@ class ProductAddViewControllerTests: XCTestCase {
 
         expect(self.viewController.activeField).to(beNil())
     }
+
+    // MARK: - postImageSuccess
 
     func testPostImageSuccessAdds() {
         viewController.postImageSuccess()
