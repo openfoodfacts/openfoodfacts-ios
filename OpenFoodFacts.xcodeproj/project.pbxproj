@@ -24,13 +24,16 @@
 		951FA7891F50C06A0096AC5A /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */; };
 		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
 		9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525708B1EE9BC91002FC40D /* CellImageTapable.swift */; };
+		9528560B1F78512300863FC6 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528560A1F78512300863FC6 /* Array.swift */; };
 		953498F91F76967A00568C35 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953498F81F76967A00568C35 /* NavigationControllerMock.swift */; };
+		953498FC1F77AFF900568C35 /* ProductDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */; };
 		953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953664F41ECA212100D6D398 /* NutrimentItem.swift */; };
 		953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
 		9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9543129C1EEC57A1009F0621 /* ImageViewer.framework */; };
 		954587941F730C2D00269E71 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954587931F730C2D00269E71 /* CameraHelper.swift */; };
 		954587971F73101500269E71 /* CameraControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954587961F73101500269E71 /* CameraControllerTests.swift */; };
 		955ED9BC1EB290F900BB80BA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955ED9BE1EB290F900BB80BA /* Settings.storyboard */; };
+		956AEA851F78024C00969AF3 /* Product_fanta_orange.json in Resources */ = {isa = PBXBuildFile; fileRef = 956AEA831F78014900969AF3 /* Product_fanta_orange.json */; };
 		956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8821F1FF0740069D678 /* ProductAddViewController.swift */; };
 		956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */; };
 		956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */; };
@@ -251,12 +254,15 @@
 		951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessibilityIdentifiers.swift; path = Helpers/AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9525708B1EE9BC91002FC40D /* CellImageTapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellImageTapable.swift; path = Protocols/CellImageTapable.swift; sourceTree = "<group>"; };
+		9528560A1F78512300863FC6 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		953498F81F76967A00568C35 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationControllerMock.swift; path = Common/NavigationControllerMock.swift; sourceTree = "<group>"; };
+		953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9543129C1EEC57A1009F0621 /* ImageViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageViewer.framework; path = Carthage/Build/iOS/ImageViewer.framework; sourceTree = "<group>"; };
 		954587931F730C2D00269E71 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraHelper.swift; path = Helpers/CameraHelper.swift; sourceTree = "<group>"; };
 		954587961F73101500269E71 /* CameraControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerTests.swift; sourceTree = "<group>"; };
+		956AEA831F78014900969AF3 /* Product_fanta_orange.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Product_fanta_orange.json; sourceTree = "<group>"; };
 		956FF8821F1FF0740069D678 /* ProductAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAddViewController.swift; sourceTree = "<group>"; };
 		956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		956FF8911F1FF0CA0069D678 /* ButtonBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonBarView.xib; sourceTree = "<group>"; };
@@ -1321,6 +1327,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		953498FA1F77AFD200568C35 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		954587951F73100C00269E71 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -1594,6 +1608,7 @@
 			isa = PBXGroup;
 			children = (
 				957E5F3E1F768EA500465BED /* Add */,
+				953498FA1F77AFD200568C35 /* Detail */,
 				9596B50E1F45FAE30076F52C /* Search */,
 			);
 			path = Products;
@@ -1732,6 +1747,7 @@
 				95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */,
 				95E16B2E1EE9E20A00331B2B /* UIStackView.swift */,
 				95D060DA1F6094D30052012D /* UITableView.swift */,
+				9528560A1F78512300863FC6 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1797,6 +1813,7 @@
 				95F184931F655BB500A544C2 /* POST_Image_400.json */,
 				95F184941F655BB500A544C2 /* POST_Product_200.json */,
 				95F184951F655BB500A544C2 /* test_image.jpg */,
+				956AEA831F78014900969AF3 /* Product_fanta_orange.json */,
 			);
 			path = "Test Resources";
 			sourceTree = "<group>";
@@ -2126,6 +2143,7 @@
 				95F184AF1F655C1700A544C2 /* POST_Image_400.json in Resources */,
 				95F184B11F655C1A00A544C2 /* POST_Product_200.json in Resources */,
 				95F184AA1F655C0E00A544C2 /* GET_ProductsByPartialBarcode_200.json in Resources */,
+				956AEA851F78024C00969AF3 /* Product_fanta_orange.json in Resources */,
 				95F184B21F655C1D00A544C2 /* test_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2268,6 +2286,7 @@
 				95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */,
 				95781BBC1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift in Sources */,
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
+				9528560B1F78512300863FC6 /* Array.swift in Sources */,
 				956FF9581F1FF0CA0069D678 /* EmptyView.swift in Sources */,
 				956FF9541F1FF0CA0069D678 /* FlashButton.swift in Sources */,
 				958F33571F378086005269C5 /* NutriScoreView.swift in Sources */,
@@ -2320,6 +2339,7 @@
 				95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */,
 				9510B0281F6885690012953A /* TestHelper.swift in Sources */,
 				957D9C361F6720B8005C5AE0 /* StringTests.swift in Sources */,
+				953498FC1F77AFF900568C35 /* ProductDetailViewControllerTests.swift in Sources */,
 				957D9C3E1F688066005C5AE0 /* UIStackViewTests.swift in Sources */,
 				957D9C381F6728FA005C5AE0 /* UITableViewCellTests.swift in Sources */,
 				957D9C3A1F6729E1005C5AE0 /* DoubleTests.swift in Sources */,

@@ -28,12 +28,17 @@ struct NutrimentItem {
 
     var nutritionTableRow: NutritionTableRow? {
         guard let per100g = self.per100g else { return nil }
-        guard let perServing = self.perServing else { return nil }
         guard let unit = self.unit else { return nil }
-        return NutritionTableRow(label: localized.localizedString, perSizeValue: "\(per100g.asTwoDecimalRoundedString) \(unit)", perServingValue: "\(perServing.asTwoDecimalRoundedString) \(unit)", highlight: isMainItem)
+
+        var perServingValue: String?
+        if let perServing = perServing {
+            perServingValue = "\(perServing.asTwoDecimalRoundedString) \(unit)"
+        }
+
+        return NutritionTableRow(label: localized.localizedString, perSizeValue: "\(per100g.asTwoDecimalRoundedString) \(unit)", perServingValue: perServingValue, highlight: isMainItem)
     }
 
-    init(nameKey: String, map: Map, localized: InfoRowKey, isMainItem mainItem: Bool = false) {
+    init?(nameKey: String, map: Map, localized: InfoRowKey, isMainItem mainItem: Bool = false) {
         self.nameKey = nameKey
         self.per100gKey = "\(nameKey)_100g"
         self.servingKey = "\(nameKey)_serving"
@@ -48,5 +53,10 @@ struct NutrimentItem {
         self.isMainItem = mainItem
 
         self.localized = localized
+
+        // Fail init if some basic values are not present
+        if self.per100g == nil && self.perServing == nil {
+            return nil
+        }
     }
 }

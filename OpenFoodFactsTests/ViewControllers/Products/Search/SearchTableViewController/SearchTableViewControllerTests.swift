@@ -319,17 +319,9 @@ class SearchTableViewControllerTests: XCTestCase {
     }
 
     // MARK: - Helper functions
-    private func getJson(_ fileName: String) -> [String: Any]? {
-        let bundle = Bundle(for: type(of: self))
-        guard let url = bundle.url(forResource: fileName, withExtension: "json") else { fail("Failed to get json file: \(fileName)"); return nil }
-        guard let data = try? Data(contentsOf: url) else { fail("Failed to read json file"); return nil }
-        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) else { fail("Failed to parse json"); return nil }
-        guard let json = jsonObject as? [String: Any] else { fail("Failed to cast json"); return nil }
-        return json
-    }
 
     private func buildProductsResponseForJsonFile(_ fileName: String) -> ProductsResponse {
-        let map = Map(mappingType: .fromJSON, JSON: getJson(fileName)!)
+        let map = Map(mappingType: .fromJSON, JSON: TestHelper.sharedInstance.getJson(fileName))
         let productResponse = ProductsResponse(map: map)!
         productResponse.mapping(map: map)
         return productResponse

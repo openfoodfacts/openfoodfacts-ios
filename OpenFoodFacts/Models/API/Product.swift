@@ -22,12 +22,12 @@ struct Product: Mappable {
     var manufacturingPlaces: String?
     var origins: String?
     var labels: [String]?
-    var citiesTags: String?
+    var citiesTags: [String]?
     var stores: [String]?
     var countries: [String]?
     var ingredientsImageUrl: String?
     var ingredientsList: String?
-    var allergens: String?
+    var allergens: [String]?
     var traces: String?
     var additives: [Tag]?
     var palmOilIngredients: [String]?
