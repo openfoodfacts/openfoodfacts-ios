@@ -25,6 +25,7 @@
 		951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951FB09F1EB2989A005CAE33 /* InfoPlist.strings */; };
 		9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525708B1EE9BC91002FC40D /* CellImageTapable.swift */; };
 		9528560B1F78512300863FC6 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528560A1F78512300863FC6 /* Array.swift */; };
+		9528560E1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528560D1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift */; };
 		953498F91F76967A00568C35 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953498F81F76967A00568C35 /* NavigationControllerMock.swift */; };
 		953498FC1F77AFF900568C35 /* ProductDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */; };
 		953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953664F41ECA212100D6D398 /* NutrimentItem.swift */; };
@@ -255,6 +256,7 @@
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9525708B1EE9BC91002FC40D /* CellImageTapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellImageTapable.swift; path = Protocols/CellImageTapable.swift; sourceTree = "<group>"; };
 		9528560A1F78512300863FC6 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		9528560D1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryFormTableViewControllerTests.swift; sourceTree = "<group>"; };
 		953498F81F76967A00568C35 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationControllerMock.swift; path = Common/NavigationControllerMock.swift; sourceTree = "<group>"; };
 		953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
@@ -1327,10 +1329,19 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		9528560C1F798E9F00863FC6 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				9528560D1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
 		953498FA1F77AFD200568C35 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
 				953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */,
+				9528560C1F798E9F00863FC6 /* Summary */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -2347,6 +2358,7 @@
 				957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */,
 				9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */,
 				957E5F401F768EAF00465BED /* ProductAddViewControllerTests.swift in Sources */,
+				9528560E1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift in Sources */,
 				9510B0241F6883E00012953A /* ProductServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
