@@ -111,6 +111,7 @@
 		95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */; };
 		95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */; };
 		95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C368091E9ECC0C008BB582 /* ObjectMapper.framework */; };
+		95CA1AE71F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA1AE61F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift */; };
 		95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB99A61EA55BF900CBDDF9 /* String.swift */; };
 		95CE24E11ED5509300EF3D79 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24DF1ED5509300EF3D79 /* Fabric.framework */; };
 		95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24E01ED5509300EF3D79 /* Crashlytics.framework */; };
@@ -1120,6 +1121,7 @@
 		95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		95C368091E9ECC0C008BB582 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
+		95CA1AE61F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsFormTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95CB99A61EA55BF900CBDDF9 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		95CE24DF1ED5509300EF3D79 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		95CE24E01ED5509300EF3D79 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -1342,6 +1344,7 @@
 			children = (
 				953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */,
 				9528560C1F798E9F00863FC6 /* Summary */,
+				95CA1AE51F7AC1BF00A0390B /* Ingredients */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1746,6 +1749,14 @@
 				956FF95F1F1FF0FD0069D678 /* Search */,
 			);
 			path = Products;
+			sourceTree = "<group>";
+		};
+		95CA1AE51F7AC1BF00A0390B /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				95CA1AE61F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift */,
+			);
+			path = Ingredients;
 			sourceTree = "<group>";
 		};
 		95CB99A51EA55BEF00CBDDF9 /* Extensions */ = {
@@ -2355,6 +2366,7 @@
 				957D9C381F6728FA005C5AE0 /* UITableViewCellTests.swift in Sources */,
 				957D9C3A1F6729E1005C5AE0 /* DoubleTests.swift in Sources */,
 				9510B0201F6882C30012953A /* RotatingProcessorTests.swift in Sources */,
+				95CA1AE71F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift in Sources */,
 				957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */,
 				9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */,
 				957E5F401F768EAF00465BED /* ProductAddViewControllerTests.swift in Sources */,

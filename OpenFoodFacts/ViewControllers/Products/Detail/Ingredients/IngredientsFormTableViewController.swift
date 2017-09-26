@@ -29,6 +29,9 @@ class IngredientsFormTableViewController: FormTableViewController {
             cell.hostedView = ingredientsHeaderCellController.view
             self.ingredientsHeaderCellController = ingredientsHeaderCellController
 
+            self.addChildViewController(ingredientsHeaderCellController)
+            ingredientsHeaderCellController.didMove(toParentViewController: self)
+
             return cell
         } else {
             return super.getCell(for: formRow)
