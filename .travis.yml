@@ -10,9 +10,9 @@ before_script:
 script:
   - fastlane test
 after_failure:
-  - cat fatlane/report.xml
-  - cat fastlane/test_report/system_logs-iPhone 7_iOS_11.0.logarchive
-  - cat fastlane/test_report/report.html
+  - cat -n ~/Library/Logs/scan/*
+  - cat -n $TMPDIR/com.apple.dt.XCTest-status/Session*.log
+  - cat -n ~/Library/Logs/DiagnosticReports/xctest*.crash
 notifications:
   slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
 env:
