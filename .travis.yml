@@ -4,11 +4,15 @@ cache:
   directories:
   - Carthage
 before_install:
-- gem install fastlane --no-rdoc --no-ri --no-document --quiet
+  - gem install fastlane --no-rdoc --no-ri --no-document --quiet
 before_script:
-- carthage bootstrap --platform iOS --cache-builds
+  - carthage bootstrap --platform iOS --cache-builds
 script:
-- fastlane test
+  - fastlane test
+after_failure:
+  - cat fatlane/report.xml
+  - cat fastlane/test_report/system_logs-iPhone 7_iOS_11.0.logarchive
+  - cat fastlane/test_report/report.html
 notifications:
   slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
 env:
