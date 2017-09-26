@@ -10,8 +10,8 @@ import XCTest
 @testable import OpenFoodFacts
 import Nimble
 
-class IngredientsFormTableViewControllerTests: XCTestCase {
-    var viewController: IngredientsFormTableViewController!
+class NutritionTableFormTableViewControllerTests: XCTestCase {
+    var viewController: NutritionTableFormTableViewController!
     var productApi: ProductServiceMock!
     var headerFormRow: FormRow!
     var infoFormRow: FormRow!
@@ -27,7 +27,7 @@ class IngredientsFormTableViewControllerTests: XCTestCase {
 
         productApi = ProductServiceMock()
         form = Form(title: "", rows: [headerFormRow, infoFormRow])
-        viewController = IngredientsFormTableViewController(with: form, productApi: productApi)
+        viewController = NutritionTableFormTableViewController(with: form, productApi: productApi)
     }
 
     // MARK: - Init
@@ -41,40 +41,40 @@ class IngredientsFormTableViewControllerTests: XCTestCase {
     func testGetCellCreatesHeaderRowWhenTypeIsHostedCell() {
         let cell = viewController.getCell(for: headerFormRow)
 
-        expect(self.viewController.ingredientsHeaderCellController).notTo(beNil())
-        expect(self.viewController.childViewControllers[0]).to(equal(self.viewController.ingredientsHeaderCellController))
+        expect(self.viewController.nutritionTableHeaderCellController).notTo(beNil())
+        expect(self.viewController.childViewControllers[0]).to(equal(self.viewController.nutritionTableHeaderCellController))
         expect(cell is HostedViewCell).to(beTrue())
     }
 
     func testGetCellCreatesCellUsingSuperclassMethod() {
         let cell = viewController.getCell(for: infoFormRow)
 
-        expect(self.viewController.ingredientsHeaderCellController).to(beNil())
+        expect(self.viewController.nutritionTableHeaderCellController).to(beNil())
         expect(self.viewController.childViewControllers.count).to(equal(0))
         expect(cell is InfoRowTableViewCell).to(beTrue())
     }
 
     // MARK: - willDisplay
     func testWillDisplayAddsHeaderCellControllerAsChildVC() {
-        let ingredientsHeaderCellController = IngredientsHeaderCellController()
-        viewController.ingredientsHeaderCellController = ingredientsHeaderCellController
+        let nutritionTableHeaderCellController = NutritionTableHeaderCellController()
+        viewController.nutritionTableHeaderCellController = nutritionTableHeaderCellController
 
         viewController.tableView(self.viewController.tableView, willDisplay: HostedViewCell(), forRowAt: IndexPath(row: 0, section: 0))
 
-        expect(self.viewController.childViewControllers[0]).to(equal(ingredientsHeaderCellController))
+        expect(self.viewController.childViewControllers[0]).to(equal(nutritionTableHeaderCellController))
     }
 
     // MARK: - didEndDisplaying
     func testDidEndDisplayingRemovesHeaderControllerFromVC() {
-        let ingredientsHeaderCellController = IngredientsHeaderCellController(with: Product(), productApi: productApi)
-        viewController.ingredientsHeaderCellController = ingredientsHeaderCellController
-        viewController.addChildViewController(ingredientsHeaderCellController)
-        ingredientsHeaderCellController.didMove(toParentViewController: viewController)
-        viewController.view.addSubview(ingredientsHeaderCellController.view)
+        let nutritionTableHeaderCellController = NutritionTableHeaderCellController(with: Product(), productApi: productApi)
+        viewController.nutritionTableHeaderCellController = nutritionTableHeaderCellController
+        viewController.addChildViewController(nutritionTableHeaderCellController)
+        nutritionTableHeaderCellController.didMove(toParentViewController: viewController)
+        viewController.view.addSubview(nutritionTableHeaderCellController.view)
 
         viewController.tableView(self.viewController.tableView, didEndDisplaying: HostedViewCell(), forRowAt: IndexPath(row: 0, section: 0))
 
-        expect(ingredientsHeaderCellController.view.superview).to(beNil())
+        expect(nutritionTableHeaderCellController.view.superview).to(beNil())
         expect(self.viewController.childViewControllers.count).to(equal(0))
     }
 }

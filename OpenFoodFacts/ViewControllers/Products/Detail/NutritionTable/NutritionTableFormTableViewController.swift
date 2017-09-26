@@ -29,6 +29,9 @@ class NutritionTableFormTableViewController: FormTableViewController {
             cell.hostedView = nutritionTableHeaderCellController.view
             self.nutritionTableHeaderCellController = nutritionTableHeaderCellController
 
+            self.addChildViewController(nutritionTableHeaderCellController)
+            nutritionTableHeaderCellController.didMove(toParentViewController: self)
+
             return cell
         } else {
             return super.getCell(for: formRow)

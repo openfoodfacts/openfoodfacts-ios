@@ -14,4 +14,6 @@ type_body_length:
 file_length:
   warning: 500
   error: 1200
-
+type_name:
+  min_length: 3
+  max_length: 50
