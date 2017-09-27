@@ -111,7 +111,7 @@ class ProductAddViewControllerTests: XCTestCase {
 
         expect(self.viewController.scrollView.contentInset.bottom).to(equal(height))
         expect(self.viewController.scrollView.scrollIndicatorInsets.bottom).to(equal(height))
-        expect(self.viewController.scrollView.contentOffset).toEventuallyNot(equal(CGPoint.zero))
+        expect(self.viewController.scrollView.contentOffset).toEventuallyNot(equal(CGPoint.zero), timeout: 10)
     }
 
     func testKeyboardWillShowShouldUpdateScrollViewInsetsWhenOrientationLandscape() {
