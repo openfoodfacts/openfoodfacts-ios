@@ -104,7 +104,6 @@ class ProductAddViewControllerTests: XCTestCase {
         let userInfo: [String: Any] = [UIKeyboardFrameEndUserInfoKey: cgRect as NSValue]
         let notification = Notification(name: .UIKeyboardWillShow, object: nil, userInfo: userInfo)
         viewController.quantityField.becomeFirstResponder()
-        expect(self.viewController.quantityField.isFirstResponder).toEventually(beTrue())
         viewController.activeField = viewController.quantityField
 
         viewController.keyboardWillShow(notification: notification)
