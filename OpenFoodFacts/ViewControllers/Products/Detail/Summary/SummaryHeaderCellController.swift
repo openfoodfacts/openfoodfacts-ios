@@ -10,7 +10,7 @@ import UIKit
 import ImageViewer
 
 class SummaryHeaderCellController: TakePictureViewController {
-    fileprivate var product: Product!
+    var product: Product!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var callToActionView: PictureCallToActionView!
     @IBOutlet weak var nutriscore: NutriScoreView! {
@@ -41,6 +41,7 @@ class SummaryHeaderCellController: TakePictureViewController {
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             productImage.addGestureRecognizer(tap)
             productImage.isUserInteractionEnabled = true
+            callToActionView.isHidden = true
         } else {
             productImage.isHidden = true
             callToActionView.textLabel.text = NSLocalizedString("call-to-action.summary", comment: "")
