@@ -9,10 +9,6 @@ before_script:
   - carthage bootstrap --platform iOS --cache-builds
 script:
   - fastlane test
-after_failure:
-  - cat -n ~/Library/Logs/scan/*
-  - cat -n $TMPDIR/com.apple.dt.XCTest-status/Session*.log
-  - cat -n ~/Library/Logs/DiagnosticReports/xctest*.crash
 notifications:
   slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
 env:
