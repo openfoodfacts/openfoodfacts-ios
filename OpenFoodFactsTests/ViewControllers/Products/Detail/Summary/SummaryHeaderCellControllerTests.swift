@@ -67,6 +67,7 @@ class SummaryHeaderCellControllerTests: XCTestCase {
         expect(self.viewController.productName.isHidden).to(beTrue())
     }
 
+    // MARK: - didTapProductImage
     func testDidTapProductImage() {
         let recognizer = UITapGestureRecognizer(target: nil, action: nil)
         let imageView = UIImageView()

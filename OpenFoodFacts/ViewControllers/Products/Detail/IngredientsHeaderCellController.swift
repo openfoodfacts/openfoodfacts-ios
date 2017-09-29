@@ -43,6 +43,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             ingredients.addGestureRecognizer(tap)
             ingredients.isUserInteractionEnabled = true
+            callToActionView.isHidden = true
         } else {
             ingredients.isHidden = true
             callToActionView.isHidden = false

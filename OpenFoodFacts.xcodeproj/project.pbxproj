@@ -78,6 +78,7 @@
 		95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB71EC3A898003E3256 /* ArrayTransform.swift */; };
 		95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB81EC3A898003E3256 /* DoubleTransform.swift */; };
 		95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB91EC3A898003E3256 /* TagTransform.swift */; };
+		9579EB411F7EA94C00B13A4D /* IngredientsHeaderCellControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579EB401F7EA94C00B13A4D /* IngredientsHeaderCellControllerTests.swift */; };
 		957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEAB1F323B1F00A1B398 /* FormTableViewController.swift */; };
 		957CBEBA1F3312FB00A1B398 /* HostedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEB91F3312FB00A1B398 /* HostedViewCell.swift */; };
 		957CBEBE1F33B2FE00A1B398 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957CBEBD1F33B2FE00A1B398 /* Form.swift */; };
@@ -439,6 +440,7 @@
 		95781BB71EC3A898003E3256 /* ArrayTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTransform.swift; sourceTree = "<group>"; };
 		95781BB81EC3A898003E3256 /* DoubleTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTransform.swift; sourceTree = "<group>"; };
 		95781BB91EC3A898003E3256 /* TagTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTransform.swift; sourceTree = "<group>"; };
+		9579EB401F7EA94C00B13A4D /* IngredientsHeaderCellControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsHeaderCellControllerTests.swift; sourceTree = "<group>"; };
 		957CBEAB1F323B1F00A1B398 /* FormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
 		957CBEB91F3312FB00A1B398 /* HostedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostedViewCell.swift; sourceTree = "<group>"; };
 		957CBEBD1F33B2FE00A1B398 /* Form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
@@ -1761,6 +1763,7 @@
 			isa = PBXGroup;
 			children = (
 				95CA1AE61F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift */,
+				9579EB401F7EA94C00B13A4D /* IngredientsHeaderCellControllerTests.swift */,
 			);
 			path = Ingredients;
 			sourceTree = "<group>";
@@ -2372,6 +2375,7 @@
 				95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */,
 				953498F91F76967A00568C35 /* NavigationControllerMock.swift in Sources */,
 				95CA1AEA1F7AD8F900A0390B /* NutritionTableFormTableViewControllerTests.swift in Sources */,
+				9579EB411F7EA94C00B13A4D /* IngredientsHeaderCellControllerTests.swift in Sources */,
 				954587971F73101500269E71 /* CameraControllerTests.swift in Sources */,
 				95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */,
 				9510B0281F6885690012953A /* TestHelper.swift in Sources */,
