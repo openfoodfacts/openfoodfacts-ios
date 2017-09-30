@@ -50,6 +50,7 @@ class NutritionTableHeaderCellController: TakePictureViewController {
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             nutritionTableImage.addGestureRecognizer(tap)
             nutritionTableImage.isUserInteractionEnabled = true
+            callToActionView.isHidden = true
         } else {
             nutritionTableImage.isHidden = true
             callToActionView.isHidden = false
