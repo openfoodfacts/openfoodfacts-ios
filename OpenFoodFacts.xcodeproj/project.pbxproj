@@ -18,6 +18,7 @@
 		9510B02A1F6888770012953A /* UITableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0291F6888770012953A /* UITableViewTests.swift */; };
 		951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */; };
 		951EA4931F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EA4921F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift */; };
+		951EA4951F80EC8200FD1544 /* FormTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EA4941F80EC8200FD1544 /* FormTableViewControllerTests.swift */; };
 		951FA7701F4E22790096AC5A /* ProductSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA76F1F4E22790096AC5A /* ProductSearchUITests.swift */; };
 		951FA7781F4E22860096AC5A /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958BE7781F4E1BB500603688 /* Swifter.framework */; };
 		951FA77A1F4E22B00096AC5A /* HTTPDynamicStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7791F4E22B00096AC5A /* HTTPDynamicStubs.swift */; };
@@ -253,6 +254,7 @@
 		9510B0291F6888770012953A /* UITableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewTests.swift; sourceTree = "<group>"; };
 		951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		951EA4921F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableHeaderCellControllerTests.swift; sourceTree = "<group>"; };
+		951EA4941F80EC8200FD1544 /* FormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewControllerTests.swift; sourceTree = "<group>"; };
 		951FA76D1F4E22790096AC5A /* OpenFoodFactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenFoodFactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		951FA76F1F4E22790096AC5A /* ProductSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSearchUITests.swift; sourceTree = "<group>"; };
 		951FA7711F4E22790096AC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1355,6 +1357,7 @@
 				9528560C1F798E9F00863FC6 /* Summary */,
 				95CA1AE51F7AC1BF00A0390B /* Ingredients */,
 				95CA1AE81F7AD8E400A0390B /* NutritionTable */,
+				951EA4941F80EC8200FD1544 /* FormTableViewControllerTests.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -2383,6 +2386,7 @@
 				95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */,
 				9510B0281F6885690012953A /* TestHelper.swift in Sources */,
 				950547F21F7ADBFB0017A63D /* SummaryHeaderCellControllerTests.swift in Sources */,
+				951EA4951F80EC8200FD1544 /* FormTableViewControllerTests.swift in Sources */,
 				957D9C361F6720B8005C5AE0 /* StringTests.swift in Sources */,
 				953498FC1F77AFF900568C35 /* ProductDetailViewControllerTests.swift in Sources */,
 				957D9C3E1F688066005C5AE0 /* UIStackViewTests.swift in Sources */,
