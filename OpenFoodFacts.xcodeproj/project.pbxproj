@@ -94,6 +94,9 @@
 		957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C3B1F672CC9005C5AE0 /* UIImageTests.swift */; };
 		957D9C3E1F688066005C5AE0 /* UIStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C3D1F688066005C5AE0 /* UIStackViewTests.swift */; };
 		957E5F401F768EAF00465BED /* ProductAddViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957E5F3F1F768EAF00465BED /* ProductAddViewControllerTests.swift */; };
+		9587DF6E1F82CCD60069F0A6 /* PictureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587DF6D1F82CCD60069F0A6 /* PictureTableViewController.swift */; };
+		9587DF701F83F6580069F0A6 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587DF6F1F83F6580069F0A6 /* PictureTableViewCell.swift */; };
+		9587DF731F84056F0069F0A6 /* PictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587DF721F84056F0069F0A6 /* PictureViewModel.swift */; };
 		958F33421F36196D005269C5 /* IngredientsFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33411F36196D005269C5 /* IngredientsFormTableViewController.swift */; };
 		958F33441F361A9D005269C5 /* IngredientsHeaderCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33431F361A9D005269C5 /* IngredientsHeaderCellController.swift */; };
 		958F334B1F3777D7005269C5 /* NutritionTableFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F334A1F3777D7005269C5 /* NutritionTableFormTableViewController.swift */; };
@@ -1104,6 +1107,9 @@
 		95818DD71F0AE05F00CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Settings.strings; sourceTree = "<group>"; };
 		95818DD81F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95818DD91F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9587DF6D1F82CCD60069F0A6 /* PictureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewController.swift; sourceTree = "<group>"; };
+		9587DF6F1F83F6580069F0A6 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewCell.swift; sourceTree = "<group>"; };
+		9587DF721F84056F0069F0A6 /* PictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewModel.swift; sourceTree = "<group>"; };
 		958BE7781F4E1BB500603688 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
 		958F33411F36196D005269C5 /* IngredientsFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientsFormTableViewController.swift; path = Ingredients/IngredientsFormTableViewController.swift; sourceTree = "<group>"; };
 		958F33431F361A9D005269C5 /* IngredientsHeaderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsHeaderCellController.swift; sourceTree = "<group>"; };
@@ -1376,6 +1382,7 @@
 			isa = PBXGroup;
 			children = (
 				956FF8821F1FF0740069D678 /* ProductAddViewController.swift */,
+				9587DF6D1F82CCD60069F0A6 /* PictureTableViewController.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -1406,6 +1413,7 @@
 			isa = PBXGroup;
 			children = (
 				95E3ADE11F21433D00CD61D9 /* ProductAddViewController.storyboard */,
+				9587DF6F1F83F6580069F0A6 /* PictureTableViewCell.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -1591,6 +1599,14 @@
 				957E5F3F1F768EAF00465BED /* ProductAddViewControllerTests.swift */,
 			);
 			path = Add;
+			sourceTree = "<group>";
+		};
+		9587DF711F8405620069F0A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9587DF721F84056F0069F0A6 /* PictureViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		958F33401F361954005269C5 /* Ingredients */ = {
@@ -1825,6 +1841,7 @@
 				95781BAC1EC3A898003E3256 /* API */,
 				95781BB31EC3A898003E3256 /* Common */,
 				95781BB61EC3A898003E3256 /* Transforms */,
+				9587DF711F8405620069F0A6 /* ViewModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2329,13 +2346,16 @@
 				956FF9591F1FF0CA0069D678 /* ErrorView.swift in Sources */,
 				956FF9641F1FF0FD0069D678 /* ScannerViewController.swift in Sources */,
 				957CBEC01F33B31F00A1B398 /* ProductDetailBaseCell.swift in Sources */,
+				9587DF6E1F82CCD60069F0A6 /* PictureTableViewController.swift in Sources */,
 				958F33441F361A9D005269C5 /* IngredientsHeaderCellController.swift in Sources */,
 				956FF9551F1FF0CA0069D678 /* ProductTableViewCell.swift in Sources */,
 				95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */,
+				9587DF731F84056F0069F0A6 /* PictureViewModel.swift in Sources */,
 				95781BBC1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift in Sources */,
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
 				9528560B1F78512300863FC6 /* Array.swift in Sources */,
 				956FF9581F1FF0CA0069D678 /* EmptyView.swift in Sources */,
+				9587DF701F83F6580069F0A6 /* PictureTableViewCell.swift in Sources */,
 				956FF9541F1FF0CA0069D678 /* FlashButton.swift in Sources */,
 				958F33571F378086005269C5 /* NutriScoreView.swift in Sources */,
 				956FF95D1F1FF0CA0069D678 /* TapToFocusView.swift in Sources */,

@@ -53,12 +53,12 @@ extension TakePictureViewController: CameraControllerDelegate {
         productApi.postImage(ProductImage(image: image, type: imageType), barcode: barcode, onSuccess: {
             self.uploadingImageBanner.dismiss()
             self.uploadingImageSuccessBanner.show()
-            self.postImageSuccess()
+            self.postImageSuccess(image: image)
         }, onError: { _ in
             self.uploadingImageBanner.dismiss()
             self.uploadingImageErrorBanner.show()
         })
     }
 
-    @objc func postImageSuccess() { /* Do nothing, overridable */ }
+    @objc func postImageSuccess(image: UIImage) { /* Do nothing, overridable */ }
 }

@@ -66,6 +66,14 @@ class ProductAddViewController: TakePictureViewController {
             self.present(self.productPostErrorAlert, animated: true, completion: nil)
         })
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TakePictureSegue" {
+            guard let destination = segue.destination as? PictureTableViewController else { return; }
+            destination.barcode = barcode
+            destination.productApi = productApi
+        }
+    }
 }
 
 // MARK: - Keyboard notification handler
@@ -104,17 +112,5 @@ extension ProductAddViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
-    }
-}
-
-extension ProductAddViewController {
-    override func postImageSuccess() {
-        self.uploadedImagesStackView.addArrangedSubview(self.createUploadedImageLabel())
-    }
-
-    fileprivate func createUploadedImageLabel() -> UILabel {
-        let label = UILabel()
-        label.text = NSLocalizedString("product-add.uploaded-image", comment: "")
-        return label
     }
 }

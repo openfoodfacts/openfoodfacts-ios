@@ -183,14 +183,4 @@ class ProductAddViewControllerTests: XCTestCase {
 
         expect(self.viewController.activeField).to(beNil())
     }
-
-    // MARK: - postImageSuccess
-
-    func testPostImageSuccessAdds() {
-        viewController.postImageSuccess()
-
-        expect(self.viewController.uploadedImagesStackView.arrangedSubviews[0] is UILabel).to(beTrue())
-        let label = self.viewController.uploadedImagesStackView.arrangedSubviews[0] as! UILabel
-        expect(label.text).to(equal(NSLocalizedString("product-add.uploaded-image", comment: "")))
-    }
 }
