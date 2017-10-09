@@ -145,7 +145,7 @@
         <!--Picture Table View Controller-->
         <scene sceneID="JM0-F6-vwk">
             <objects>
-                <tableViewController id="aa7-Yb-Tnr" customClass="PictureTableViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PictureTableViewController" id="aa7-Yb-Tnr" customClass="PictureTableViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dZI-hr-PVt">
                         <rect key="frame" x="0.0" y="0.0" width="355" height="153"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

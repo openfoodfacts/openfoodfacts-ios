@@ -10,11 +10,12 @@ import UIKit
 
 class PictureTableViewController: TakePictureViewController {
     @IBOutlet weak var tableView: UITableView!
-    var pictures = [PictureViewModel]()
-    private var currentPictureForCell: IndexPath?
+    var pictures: [PictureViewModel]!
+    var currentPictureForCell: IndexPath?
 
     override func viewDidLoad() {
         tableView.isScrollEnabled = false
+        pictures = [PictureViewModel]()
         pictures.append(PictureViewModel(imageType: .front))
         pictures.append(PictureViewModel(imageType: .ingredients))
         pictures.append(PictureViewModel(imageType: .nutrition))
@@ -22,8 +23,8 @@ class PictureTableViewController: TakePictureViewController {
     }
 
     @IBAction func didTapCellTakePictureButton(_ sender: UIButton) {
-        guard let cell = sender.superview?.superview?.superview?.superview as? PictureTableViewCell else { return; }
-        guard let indexPath = tableView.indexPath(for: cell) else { return; }
+        guard let cell = sender.superview?.superview?.superview?.superview as? PictureTableViewCell else { return }
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
         currentPictureForCell = indexPath
         imageType = pictures[indexPath.row].imageType
         didTapTakePictureButton(sender)
@@ -52,7 +53,7 @@ extension PictureTableViewController: UITableViewDataSource {
 // MARK: - TakePictureController extension
 extension PictureTableViewController {
     override func postImageSuccess(image: UIImage) {
-        guard let indexPath = currentPictureForCell else { return; }
+        guard let indexPath = currentPictureForCell else { return }
         pictures[indexPath.row].image = image
         tableView.reloadRows(at: [indexPath], with: .automatic)
         currentPictureForCell = nil

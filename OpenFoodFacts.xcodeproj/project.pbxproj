@@ -119,6 +119,8 @@
 		95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */; };
 		95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */; };
 		95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C368091E9ECC0C008BB582 /* ObjectMapper.framework */; };
+		95C54A7A1F8BFDB90008B5D8 /* PictureTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C54A791F8BFDB90008B5D8 /* PictureTableViewControllerTests.swift */; };
+		95C54A7C1F8C0E8B0008B5D8 /* CameraControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C54A7B1F8C0E8B0008B5D8 /* CameraControllerMock.swift */; };
 		95CA1AE71F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA1AE61F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift */; };
 		95CA1AEA1F7AD8F900A0390B /* NutritionTableFormTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA1AE91F7AD8F900A0390B /* NutritionTableFormTableViewControllerTests.swift */; };
 		95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB99A61EA55BF900CBDDF9 /* String.swift */; };
@@ -1138,6 +1140,8 @@
 		95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		95C368091E9ECC0C008BB582 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
+		95C54A791F8BFDB90008B5D8 /* PictureTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewControllerTests.swift; sourceTree = "<group>"; };
+		95C54A7B1F8C0E8B0008B5D8 /* CameraControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraControllerMock.swift; path = Common/CameraControllerMock.swift; sourceTree = "<group>"; };
 		95CA1AE61F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsFormTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95CA1AE91F7AD8F900A0390B /* NutritionTableFormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableFormTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95CB99A61EA55BF900CBDDF9 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -1597,6 +1601,7 @@
 			isa = PBXGroup;
 			children = (
 				957E5F3F1F768EAF00465BED /* ProductAddViewControllerTests.swift */,
+				95C54A791F8BFDB90008B5D8 /* PictureTableViewControllerTests.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -1682,6 +1687,7 @@
 				9510B0231F6883E00012953A /* ProductServiceMock.swift */,
 				9510B0271F6885690012953A /* TestHelper.swift */,
 				953498F81F76967A00568C35 /* NavigationControllerMock.swift */,
+				95C54A7B1F8C0E8B0008B5D8 /* CameraControllerMock.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -2414,9 +2420,11 @@
 				953498FC1F77AFF900568C35 /* ProductDetailViewControllerTests.swift in Sources */,
 				957D9C3E1F688066005C5AE0 /* UIStackViewTests.swift in Sources */,
 				951EA4931F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift in Sources */,
+				95C54A7A1F8BFDB90008B5D8 /* PictureTableViewControllerTests.swift in Sources */,
 				957D9C381F6728FA005C5AE0 /* UITableViewCellTests.swift in Sources */,
 				957D9C3A1F6729E1005C5AE0 /* DoubleTests.swift in Sources */,
 				9510B0201F6882C30012953A /* RotatingProcessorTests.swift in Sources */,
+				95C54A7C1F8C0E8B0008B5D8 /* CameraControllerMock.swift in Sources */,
 				95CA1AE71F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift in Sources */,
 				957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */,
 				9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */,
