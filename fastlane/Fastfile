@@ -19,8 +19,7 @@ lane :beta do
 
   increment_build_number
 
-  cert
-  sigh
+  match(type: "appstore")
 
   # build your iOS app
   gym(
