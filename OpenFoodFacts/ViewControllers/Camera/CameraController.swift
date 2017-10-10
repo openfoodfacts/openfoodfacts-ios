@@ -41,7 +41,7 @@ class CameraControllerImpl: NSObject, CameraController {
 }
 
 extension CameraControllerImpl: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             delegate?.didGetImage(image: image)
             dismiss()

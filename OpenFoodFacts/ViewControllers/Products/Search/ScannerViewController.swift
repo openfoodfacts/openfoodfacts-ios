@@ -91,8 +91,6 @@ class ScannerViewController: UIViewController {
             return .landscapeLeft
         case .portraitUpsideDown:
             return .portraitUpsideDown
-        case .portrait:
-            fallthrough
         default:
             return .portrait
         }
@@ -186,7 +184,7 @@ class ScannerViewController: UIViewController {
     }
 
     private func handleNoCamera() {
-        let error = NSError(domain:"ScannerViewControllerErrorDomain", code: 1, userInfo:["errorType": "No camera found"])
+        let error = NSError(domain: "ScannerViewControllerErrorDomain", code: 1, userInfo: ["errorType": "No camera found"])
         Crashlytics.sharedInstance().recordError(error)
     }
 }

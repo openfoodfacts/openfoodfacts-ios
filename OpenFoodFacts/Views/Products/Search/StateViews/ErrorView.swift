@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let textColor = UIColor(red:0.56, green:0.56, blue:0.58, alpha:0.78)
+private let textColor = UIColor(red: 0.56, green: 0.56, blue: 0.58, alpha: 0.78)
 
 class ErrorView: StateView {
     override func setupView() {

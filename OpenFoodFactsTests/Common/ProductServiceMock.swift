@@ -14,7 +14,7 @@ class ProductServiceMock: ProductApi {
     var query: String?
     var page: Int?
     var productsResponse: ProductsResponse!
-    let error = NSError(domain:NSURLErrorDomain, code:-1009, userInfo: nil)
+    let error = NSError(domain: NSURLErrorDomain, code: -1009, userInfo: nil)
     var productImage: ProductImage?
     var product: Product!
 

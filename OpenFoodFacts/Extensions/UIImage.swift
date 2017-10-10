@@ -14,16 +14,12 @@ extension UIImage {
         switch self.imageOrientation {
         case .up:
             orientation = UIImageOrientation.right
-            break
         case .right:
             orientation = UIImageOrientation.down
-            break
         case .down:
             orientation = UIImageOrientation.left
-            break
         case .left:
             orientation = UIImageOrientation.up
-            break
         default:
             break
         }
@@ -36,16 +32,12 @@ extension UIImage {
         switch self.imageOrientation {
         case .up:
             orientation = UIImageOrientation.left
-            break
         case .left:
             orientation = UIImageOrientation.down
-            break
         case .down:
             orientation = UIImageOrientation.right
-            break
         case .right:
             orientation = UIImageOrientation.up
-            break
         default:
             break
         }

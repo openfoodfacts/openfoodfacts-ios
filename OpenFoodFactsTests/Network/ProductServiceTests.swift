@@ -84,8 +84,8 @@ class ProductServiceTests: XCTestCase {
         let success: (ProductsResponse) -> Void = { response in XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/code/1234xxxxxxxxx.json")) { _ in
-            let notConnectedError = NSError(domain:NSURLErrorDomain, code:networkDownErrorCode, userInfo:nil)
-            return OHHTTPStubsResponse(error:notConnectedError)
+            let notConnectedError = NSError(domain: NSURLErrorDomain, code: networkDownErrorCode, userInfo: nil)
+            return OHHTTPStubsResponse(error: notConnectedError)
         }
 
         // when
@@ -127,8 +127,8 @@ class ProductServiceTests: XCTestCase {
         let success: (ProductsResponse) -> Void = { response in XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/api/v0/product/5449000011527.json")) { _ in
-            let notConnectedError = NSError(domain:NSURLErrorDomain, code:networkDownErrorCode, userInfo:nil)
-            return OHHTTPStubsResponse(error:notConnectedError)
+            let notConnectedError = NSError(domain: NSURLErrorDomain, code: networkDownErrorCode, userInfo: nil)
+            return OHHTTPStubsResponse(error: notConnectedError)
         }
 
         // when
@@ -191,8 +191,8 @@ class ProductServiceTests: XCTestCase {
         let success: () -> Void = { XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/cgi/product_image_upload.pl")) { _ in
-            let notConnectedError = NSError(domain:NSURLErrorDomain, code:networkDownErrorCode, userInfo:nil)
-            return OHHTTPStubsResponse(error:notConnectedError)
+            let notConnectedError = NSError(domain: NSURLErrorDomain, code: networkDownErrorCode, userInfo: nil)
+            return OHHTTPStubsResponse(error: notConnectedError)
         }
 
         // when
@@ -268,8 +268,8 @@ class ProductServiceTests: XCTestCase {
         let success: () -> Void = { XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/cgi/product_jqm2.pl")) { _ in
-            let notConnectedError = NSError(domain:NSURLErrorDomain, code:networkDownErrorCode, userInfo:nil)
-            return OHHTTPStubsResponse(error:notConnectedError)
+            let notConnectedError = NSError(domain: NSURLErrorDomain, code: networkDownErrorCode, userInfo: nil)
+            return OHHTTPStubsResponse(error: notConnectedError)
         }
 
         // when

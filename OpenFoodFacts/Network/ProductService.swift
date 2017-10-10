@@ -143,7 +143,7 @@ extension ProductService {
                                     if let json = responseBody as? [String: Any], let status = json["status"] as? String, "status ok" == status {
                                         onSuccess()
                                     } else {
-                                        let error = NSError(domain:"ProductServiceErrorDomain", code: 1, userInfo:[
+                                        let error = NSError(domain: "ProductServiceErrorDomain", code: 1, userInfo: [
                                             "imageType": productImage.type.rawValue,
                                             "fileName": productImage.fileName,
                                             "fileURL": fileURL
@@ -173,7 +173,7 @@ extension ProductService {
                 try imageRepresentation.write(to: fileURL)
                 return fileURL
             }
-            let error = NSError(domain:"ProductServiceErrorDomain", code: 1, userInfo:[
+            let error = NSError(domain: "ProductServiceErrorDomain", code: 1, userInfo: [
                 "imageType": productImage.type.rawValue,
                 "fileName": productImage.fileName,
                 "isImageNil": productImage.image == nil,
@@ -198,7 +198,7 @@ extension ProductService {
                     if let json = responseBody as? [String: Any], let status = json["status_verbose"] as? String, "fields saved" == status {
                         onSuccess()
                     } else {
-                        let error = NSError(domain:"ProductServiceErrorDomain", code: 1, userInfo:[
+                        let error = NSError(domain: "ProductServiceErrorDomain", code: 1, userInfo: [
                             "product": product.toJSONString() ?? "{\"error\": \"Could convert product to JSON\"}"
                             ])
                         log.error(error)
