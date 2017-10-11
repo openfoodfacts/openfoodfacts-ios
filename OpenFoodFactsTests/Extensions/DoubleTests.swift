@@ -29,4 +29,9 @@ class DoubleTests: XCTestCase {
         let value = 123.0
         XCTAssertEqual("123", value.asTwoDecimalRoundedString)
     }
+
+    func testAsTwoDecimalRoundedStringShouldHaveLeadingZeroWhenValueAsLeadingZero() {
+        let value = 0.789
+        XCTAssertEqual("0.79", value.asTwoDecimalRoundedString)
+    }
 }
