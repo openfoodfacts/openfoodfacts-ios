@@ -94,6 +94,15 @@
 		957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C3B1F672CC9005C5AE0 /* UIImageTests.swift */; };
 		957D9C3E1F688066005C5AE0 /* UIStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C3D1F688066005C5AE0 /* UIStackViewTests.swift */; };
 		957E5F401F768EAF00465BED /* ProductAddViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957E5F3F1F768EAF00465BED /* ProductAddViewControllerTests.swift */; };
+		9581B3D31F9009DC0036AC7C /* LocalizableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3C61F9006300036AC7C /* LocalizableString.swift */; };
+		9581B3D41F9009E40036AC7C /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3C81F9006300036AC7C /* Localizable.swift */; };
+		9581B3D51F9009E70036AC7C /* LocalizableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3CA1F9006300036AC7C /* LocalizableTextField.swift */; };
+		9581B3D61F9009E90036AC7C /* LocalizableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3CB1F9006300036AC7C /* LocalizableTextView.swift */; };
+		9581B3D71F9009EB0036AC7C /* LocalizableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3CC1F9006300036AC7C /* LocalizableButton.swift */; };
+		9581B3D81F9009EE0036AC7C /* LocalizableNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3CD1F9006300036AC7C /* LocalizableNavigationItem.swift */; };
+		9581B3D91F9009F00036AC7C /* LocalizableUISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3CE1F9006300036AC7C /* LocalizableUISearchBar.swift */; };
+		9581B3DA1F9009F20036AC7C /* LocalizableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3CF1F9006300036AC7C /* LocalizableLabel.swift */; };
+		9581B3DB1F9009F40036AC7C /* LocalizableUIBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3D01F9006300036AC7C /* LocalizableUIBarItem.swift */; };
 		9587DF6E1F82CCD60069F0A6 /* PictureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587DF6D1F82CCD60069F0A6 /* PictureTableViewController.swift */; };
 		9587DF701F83F6580069F0A6 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587DF6F1F83F6580069F0A6 /* PictureTableViewCell.swift */; };
 		9587DF731F84056F0069F0A6 /* PictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587DF721F84056F0069F0A6 /* PictureViewModel.swift */; };
@@ -1109,6 +1118,17 @@
 		95818DD71F0AE05F00CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Settings.strings; sourceTree = "<group>"; };
 		95818DD81F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95818DD91F0AE06000CBD139 /* zu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zu; path = Localization/zu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9581B3C21F9006300036AC7C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9581B3C41F9006300036AC7C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9581B3C61F9006300036AC7C /* LocalizableString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableString.swift; sourceTree = "<group>"; };
+		9581B3C81F9006300036AC7C /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		9581B3CA1F9006300036AC7C /* LocalizableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableTextField.swift; sourceTree = "<group>"; };
+		9581B3CB1F9006300036AC7C /* LocalizableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableTextView.swift; sourceTree = "<group>"; };
+		9581B3CC1F9006300036AC7C /* LocalizableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableButton.swift; sourceTree = "<group>"; };
+		9581B3CD1F9006300036AC7C /* LocalizableNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableNavigationItem.swift; sourceTree = "<group>"; };
+		9581B3CE1F9006300036AC7C /* LocalizableUISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableUISearchBar.swift; sourceTree = "<group>"; };
+		9581B3CF1F9006300036AC7C /* LocalizableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableLabel.swift; sourceTree = "<group>"; };
+		9581B3D01F9006300036AC7C /* LocalizableUIBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableUIBarItem.swift; sourceTree = "<group>"; };
 		9587DF6D1F82CCD60069F0A6 /* PictureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewController.swift; sourceTree = "<group>"; };
 		9587DF6F1F83F6580069F0A6 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewCell.swift; sourceTree = "<group>"; };
 		9587DF721F84056F0069F0A6 /* PictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewModel.swift; sourceTree = "<group>"; };
@@ -1606,6 +1626,56 @@
 			path = Add;
 			sourceTree = "<group>";
 		};
+		9581B3C11F9006300036AC7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9581B3C21F9006300036AC7C /* README.md */,
+				9581B3C31F9006300036AC7C /* IBLocalizable */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		9581B3C31F9006300036AC7C /* IBLocalizable */ = {
+			isa = PBXGroup;
+			children = (
+				9581B3C41F9006300036AC7C /* LICENSE */,
+				9581B3C51F9006300036AC7C /* Utils */,
+				9581B3C71F9006300036AC7C /* Protocol */,
+				9581B3C91F9006300036AC7C /* Views */,
+			);
+			path = IBLocalizable;
+			sourceTree = "<group>";
+		};
+		9581B3C51F9006300036AC7C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9581B3C61F9006300036AC7C /* LocalizableString.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9581B3C71F9006300036AC7C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9581B3C81F9006300036AC7C /* Localizable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		9581B3C91F9006300036AC7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9581B3CA1F9006300036AC7C /* LocalizableTextField.swift */,
+				9581B3CB1F9006300036AC7C /* LocalizableTextView.swift */,
+				9581B3CC1F9006300036AC7C /* LocalizableButton.swift */,
+				9581B3CD1F9006300036AC7C /* LocalizableNavigationItem.swift */,
+				9581B3CE1F9006300036AC7C /* LocalizableUISearchBar.swift */,
+				9581B3CF1F9006300036AC7C /* LocalizableLabel.swift */,
+				9581B3D01F9006300036AC7C /* LocalizableUIBarItem.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9587DF711F8405620069F0A6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1728,6 +1798,7 @@
 			children = (
 				951FA7841F50C0310096AC5A /* Helpers */,
 				95CF59E01F49F11900700580 /* Config */,
+				9581B3C11F9006300036AC7C /* Frameworks */,
 				9525708A1EE9BC43002FC40D /* Protocols */,
 				95CB99A51EA55BEF00CBDDF9 /* Extensions */,
 				95D6A7621E9C18F00017B423 /* Models */,
@@ -2347,9 +2418,13 @@
 				956FF94D1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift in Sources */,
 				958F334F1F377B07005269C5 /* NutritionTableRow.swift in Sources */,
 				956FF9491F1FF0CA0069D678 /* NutritionLevelView.swift in Sources */,
+				9581B3D31F9009DC0036AC7C /* LocalizableString.swift in Sources */,
+				9581B3D71F9009EB0036AC7C /* LocalizableButton.swift in Sources */,
 				957CBEBA1F3312FB00A1B398 /* HostedViewCell.swift in Sources */,
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
+				9581B3D51F9009E70036AC7C /* LocalizableTextField.swift in Sources */,
 				956FF9591F1FF0CA0069D678 /* ErrorView.swift in Sources */,
+				9581B3DB1F9009F40036AC7C /* LocalizableUIBarItem.swift in Sources */,
 				956FF9641F1FF0FD0069D678 /* ScannerViewController.swift in Sources */,
 				957CBEC01F33B31F00A1B398 /* ProductDetailBaseCell.swift in Sources */,
 				9587DF6E1F82CCD60069F0A6 /* PictureTableViewController.swift in Sources */,
@@ -2357,6 +2432,7 @@
 				956FF9551F1FF0CA0069D678 /* ProductTableViewCell.swift in Sources */,
 				95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */,
 				9587DF731F84056F0069F0A6 /* PictureViewModel.swift in Sources */,
+				9581B3D61F9009E90036AC7C /* LocalizableTextView.swift in Sources */,
 				95781BBC1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift in Sources */,
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
 				9528560B1F78512300863FC6 /* Array.swift in Sources */,
@@ -2368,10 +2444,12 @@
 				956FF95E1F1FF0CA0069D678 /* TextOverlay.swift in Sources */,
 				956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */,
 				956FF9471F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift in Sources */,
+				9581B3D91F9009F00036AC7C /* LocalizableUISearchBar.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
 				95D060DB1F6094D30052012D /* UITableView.swift in Sources */,
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
 				956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */,
+				9581B3D41F9009E40036AC7C /* Localizable.swift in Sources */,
 				956FF9651F1FF0FD0069D678 /* SearchTableViewController.swift in Sources */,
 				95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */,
 				95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */,
@@ -2392,7 +2470,9 @@
 				95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */,
 				95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */,
 				95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */,
+				9581B3DA1F9009F20036AC7C /* LocalizableLabel.swift in Sources */,
 				956FF95C1F1FF0CA0069D678 /* StateView.swift in Sources */,
+				9581B3D81F9009EE0036AC7C /* LocalizableNavigationItem.swift in Sources */,
 				95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */,
 				956FF95A1F1FF0CA0069D678 /* LoadingView.swift in Sources */,
 				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
