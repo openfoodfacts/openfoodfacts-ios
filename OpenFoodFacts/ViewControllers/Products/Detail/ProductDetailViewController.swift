@@ -85,7 +85,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         // Rows
         createFormRow(with: &rows, item: product.ingredientsList, label: InfoRowKey.ingredientsList.localizedString)
-        createFormRow(with: &rows, item: product.allergens, label: InfoRowKey.allergens.localizedString)
+        createFormRow(with: &rows, item: product.allergens?.map({ $0.value.capitalized }), label: InfoRowKey.allergens.localizedString)
         createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
         createFormRow(with: &rows, item: product.additives?.map({ $0.value.uppercased() }), label: InfoRowKey.additives.localizedString)
         createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
