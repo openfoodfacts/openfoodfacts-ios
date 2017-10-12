@@ -10,6 +10,12 @@ import XCTest
 @testable import OpenFoodFacts
 
 class StringTests: XCTestCase {
+    func testNSRange() {
+        let test = "test"
+        let expectedRange = NSRange(location: 0, length: 4)
+        XCTAssertEqual(expectedRange, test.nsrange)
+    }
+
     func testIsNumberReturnsTrueWhenStringIsNumber() {
         XCTAssertTrue("2".isNumber())
     }

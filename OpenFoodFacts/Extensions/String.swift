@@ -9,6 +9,10 @@
 import Foundation
 
 extension String {
+    var nsrange: NSRange {
+        return NSRange(location: 0, length: self.count)
+    }
+
     func isNumber() -> Bool {
         guard let regex = try? NSRegularExpression(pattern: "^\\d*$") else { return false }
         let matches = regex.matches(in: self, options: [], range: NSRange(location: 0, length: self.characters.count))
