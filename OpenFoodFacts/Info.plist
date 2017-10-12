@@ -2,22 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>barcode</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>QUICK_ACTION_SCAN_BARCODE</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>scan</string>
-		</dict>
-	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsLocalNetworking</key>
-		<true/>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -56,12 +40,28 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Use your camera to scan barcodes and take pictures of products to add to the database</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Take and upload pictures of products</string>
 	<key>POST_ENDPOINT</key>
 	<string>${POST_ENDPOINT}</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>barcode</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>QUICK_ACTION_SCAN_BARCODE</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>scan</string>
+		</dict>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
