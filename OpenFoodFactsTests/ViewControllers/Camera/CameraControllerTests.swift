@@ -51,7 +51,7 @@ class CameraControllerTests: XCTestCase {
 
         cameraController.imagePickerControllerDidCancel(imagePicker)
 
-        expect(self.presentingViewController.presentedViewController).toEventually(beNil())
+        expect(self.presentingViewController.presentedViewController).toEventually(beNil(), timeout: 10)
     }
 }
 
