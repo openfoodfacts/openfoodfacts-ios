@@ -104,6 +104,7 @@
 		9581B3DB1F9009F40036AC7C /* LocalizableUIBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3D01F9006300036AC7C /* LocalizableUIBarItem.swift */; };
 		9581B3E61F900F180036AC7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9581B3E51F900E6A0036AC7C /* Main.storyboard */; };
 		9581B3E71F900F1D0036AC7C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9581B3E41F900E490036AC7C /* Settings.storyboard */; };
+		9581B3EA1F912B5C0036AC7C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B3E91F912B5C0036AC7C /* UserController.swift */; };
 		9587DF6E1F82CCD60069F0A6 /* PictureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587DF6D1F82CCD60069F0A6 /* PictureTableViewController.swift */; };
 		9587DF701F83F6580069F0A6 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587DF6F1F83F6580069F0A6 /* PictureTableViewCell.swift */; };
 		9587DF731F84056F0069F0A6 /* PictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587DF721F84056F0069F0A6 /* PictureViewModel.swift */; };
@@ -119,6 +120,7 @@
 		958F335B1F37809A005269C5 /* PictureCallToActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F33591F37809A005269C5 /* PictureCallToActionView.swift */; };
 		958F335C1F37809A005269C5 /* PictureCallToActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958F335A1F37809A005269C5 /* PictureCallToActionView.xib */; };
 		95902B471F2E284700A72EF7 /* SummaryHeaderCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */; };
+		959530081F91408F00979613 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */; };
 		9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */; };
 		95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
@@ -873,6 +875,7 @@
 		9581B3D01F9006300036AC7C /* LocalizableUIBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableUIBarItem.swift; sourceTree = "<group>"; };
 		9581B3E41F900E490036AC7C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9581B3E51F900E6A0036AC7C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9581B3E91F912B5C0036AC7C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		9587DF6D1F82CCD60069F0A6 /* PictureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewController.swift; sourceTree = "<group>"; };
 		9587DF6F1F83F6580069F0A6 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewCell.swift; sourceTree = "<group>"; };
 		9587DF721F84056F0069F0A6 /* PictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewModel.swift; sourceTree = "<group>"; };
@@ -889,6 +892,7 @@
 		958F33591F37809A005269C5 /* PictureCallToActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureCallToActionView.swift; path = Common/PictureCallToActionView.swift; sourceTree = "<group>"; };
 		958F335A1F37809A005269C5 /* PictureCallToActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PictureCallToActionView.xib; path = Common/PictureCallToActionView.xib; sourceTree = "<group>"; };
 		95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryHeaderCellController.xib; sourceTree = "<group>"; };
+		959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 		9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A7E0671F058F5D004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -972,6 +976,7 @@
 				9501634B1F2CE9A20057B8D5 /* MarqueeLabelSwift.framework in Frameworks */,
 				9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */,
 				951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */,
+				959530081F91408F00979613 /* IQKeyboardManagerSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1417,6 +1422,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9581B3E81F912B480036AC7C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9581B3E91F912B5C0036AC7C /* UserController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		9587DF711F8405620069F0A6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1560,6 +1573,7 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */,
 				951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */,
 				958BE7781F4E1BB500603688 /* Swifter.framework */,
 				95F31BF61F3A231000B8AF90 /* Nimble.framework */,
@@ -1587,6 +1601,7 @@
 				950163721F2D1EDA0057B8D5 /* Common */,
 				95DDAF5E1F25401D0096B74E /* Camera */,
 				95C2652B1E96D705004212EC /* Products */,
+				9581B3E81F912B480036AC7C /* User */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2080,6 +2095,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NotificationBanner.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
@@ -2094,6 +2110,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NotificationBanner.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2155,6 +2172,7 @@
 				958F334B1F3777D7005269C5 /* NutritionTableFormTableViewController.swift in Sources */,
 				95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */,
 				95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */,
+				9581B3EA1F912B5C0036AC7C /* UserController.swift in Sources */,
 				956FF9451F1FF0CA0069D678 /* NutritionHeaderTableViewCell.swift in Sources */,
 				956FF94D1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift in Sources */,
 				958F334F1F377B07005269C5 /* NutritionTableRow.swift in Sources */,

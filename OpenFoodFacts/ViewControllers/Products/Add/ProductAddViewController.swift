@@ -91,7 +91,7 @@ extension ProductAddViewController {
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
 
-        // If field is hidden by keyboard, scroll so it's visible)
+        // If field is hidden by keyboard, scroll so it's visible
         var frame = self.view.frame
         frame.size.height -= keyboardHeight
         if !frame.contains(activeField.frame.origin) {
