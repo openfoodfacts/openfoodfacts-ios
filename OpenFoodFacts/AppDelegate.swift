@@ -25,8 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         let productApi = ProductService()
-        let searchTVC = findSearchTVCFromRootController()
-        searchTVC?.productApi = productApi
+        injectProductApiToClients(productApi)
 
         return true
     }
@@ -38,11 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = rootVC
 
             let productApi = ProductService()
-            let searchTVC = findSearchTVCFromRootController()
-            searchTVC?.productApi = productApi
+            injectProductApiToClients(productApi)
 
             let scanVC = ScannerViewController(productApi: productApi)
-            searchTVC?.navigationController?.pushViewController(scanVC, animated: false)
+            if let tab = window?.rootViewController as? UITabBarController {
+                for child in tab.viewControllers ?? [] {
+                    if let navController = child as? UINavigationController, let vc = navController.topViewController as? SearchTableViewController {
+                        vc.navigationController?.pushViewController(scanVC, animated: false)
+                    }
+                }
+            }
         }
     }
 
@@ -61,15 +65,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
 
-    fileprivate func findSearchTVCFromRootController() -> SearchTableViewController? {
+    fileprivate func injectProductApiToClients(_ productApi: ProductApi) {
         if let tab = window?.rootViewController as? UITabBarController {
             for child in tab.viewControllers ?? [] {
-                if let navController = child as? UINavigationController, let vc = navController.topViewController as? SearchTableViewController {
-                    return vc
+                if let top = child as? ProductApiClient {
+                    top.set(productApi)
+                } else if let navController = child as? UINavigationController, let vc = navController.topViewController as? SearchTableViewController {
+                    vc.productApi = productApi
                 }
             }
         }
-
-        return nil
     }
 }

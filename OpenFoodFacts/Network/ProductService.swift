@@ -17,15 +17,23 @@ protocol ProductApi {
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
     func postImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+    func login(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void)
 }
 
 struct Endpoint {
     static let get = Bundle.main.infoDictionary?["GET_ENDPOINT"] as! String // swiftlint:disable:this force_cast
     static let post = Bundle.main.infoDictionary?["POST_ENDPOINT"] as! String // swiftlint:disable:this force_cast
+    static let login = Bundle.main.infoDictionary?["LOGIN_ENDPOINT"] as! String // swiftlint:disable:this force_cast
 }
 
 class ProductService: ProductApi {
     private var lastGetProductsRequest: DataRequest?
+
+    let errorDomain = "ProductServiceErrorDomain"
+    enum ErrorCodes: Int {
+        case generic = 1
+        case wrongCredentials = 2
+    }
 
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         lastGetProductsRequest?.cancel()
@@ -127,7 +135,11 @@ extension ProductService {
                     multipartFormData.append(barcode, withName: "code")
                     multipartFormData.append(fileURL, withName: "imgupload_\(productImage.type.rawValue)")
                     multipartFormData.append(productImage.type.rawValue.data(using: .utf8)!, withName: "imagefield")
-            },
+
+                    if let username = self.getUsername(), let usernameData = username.data(using: .utf8) {
+                        multipartFormData.append(usernameData, withName: userIdKey)
+                    }
+                },
                 to: Endpoint.post + "/cgi/product_image_upload.pl",
                 headers: ["Content-Disposition": "form-data; name=\"imgupload_\(productImage.type.rawValue)\"; filename=\"\(productImage.fileName)\""],
                 encodingCompletion: { encodingResult in
@@ -143,7 +155,7 @@ extension ProductService {
                                     if let json = responseBody as? [String: Any], let status = json["status"] as? String, "status ok" == status {
                                         onSuccess()
                                     } else {
-                                        let error = NSError(domain: "ProductServiceErrorDomain", code: 1, userInfo: [
+                                        let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: [
                                             "imageType": productImage.type.rawValue,
                                             "fileName": productImage.fileName,
                                             "fileURL": fileURL
@@ -173,7 +185,7 @@ extension ProductService {
                 try imageRepresentation.write(to: fileURL)
                 return fileURL
             }
-            let error = NSError(domain: "ProductServiceErrorDomain", code: 1, userInfo: [
+            let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: [
                 "imageType": productImage.type.rawValue,
                 "fileName": productImage.fileName,
                 "isImageNil": productImage.image == nil,
@@ -188,17 +200,23 @@ extension ProductService {
     }
 
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        let request = Alamofire.request("\(Endpoint.post)/cgi/product_jqm2.pl", method: .post, parameters: product.toJSON(), encoding: URLEncoding.default)
+        var params = product.toJSON()
+
+        if let username = getUsername() {
+            params[userIdKey] = username
+        }
+
+        let request = Alamofire.request("\(Endpoint.post)/cgi/product_jqm2.pl", method: .post, parameters: params, encoding: URLEncoding.default)
         log.debug(request.debugDescription)
-        request.authenticate(user: "off", password: "off")
-            .responseJSON(completionHandler: { response in
+
+        request.responseJSON(completionHandler: { response in
                 log.debug(response.debugDescription)
                 switch response.result {
                 case .success(let responseBody):
                     if let json = responseBody as? [String: Any], let status = json["status_verbose"] as? String, "fields saved" == status {
                         onSuccess()
                     } else {
-                        let error = NSError(domain: "ProductServiceErrorDomain", code: 1, userInfo: [
+                        let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: [
                             "product": product.toJSONString() ?? "{\"error\": \"Could convert product to JSON\"}"
                             ])
                         log.error(error)
@@ -211,5 +229,39 @@ extension ProductService {
                     onError(error)
                 }
             })
+    }
+}
+
+private let usernameKey = "username"
+private let userIdKey = "user_id"
+extension ProductService {
+    func login(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void) {
+        let parameters = [userIdKey: username, "password": password, ".submit": "Sign-in"]
+        let request = Alamofire.request(Endpoint.login, method: .post, parameters: parameters)
+        log.debug(request.debugDescription)
+        request.responseString(completionHandler: { response in
+            log.debug(response.debugDescription)
+            switch response.result {
+            case .success(let html):
+                if !html.contains("Incorrect user name or password.") && !html.contains("See you soon!") {
+                    let defaults = UserDefaults.standard
+                    defaults.set(username, forKey: usernameKey)
+                    onSuccess()
+                } else {
+                    let error = NSError(domain: self.errorDomain, code: ErrorCodes.wrongCredentials.rawValue)
+                    log.error(error)
+                    onError(error)
+                }
+            case .failure(let error as NSError):
+                log.error(error)
+                Crashlytics.sharedInstance().recordError(error)
+                onError(error)
+            }
+        })
+    }
+
+    private func getUsername() -> String? {
+        let defaults = UserDefaults.standard
+        return defaults.string(forKey: usernameKey)
     }
 }

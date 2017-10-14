@@ -272,3 +272,11 @@ extension SearchTableViewController {
         navigationController?.pushViewController(scanVC, animated: true)
     }
 }
+
+// MARK: - ProductApi client
+
+extension SearchTableViewController: ProductApiClient {
+    func set(_ productApi: ProductApi) {
+        self.productApi = productApi
+    }
+}

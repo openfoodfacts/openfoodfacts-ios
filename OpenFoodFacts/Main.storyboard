@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,8 +23,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="SMQ-pD-tsL" kind="relationship" relationship="viewControllers" id="36n-lc-F7m"/>
-                        <segue destination="ztY-tr-pbE" kind="relationship" relationship="viewControllers" id="kIl-4S-N13"/>
-                        <segue destination="rNt-He-NC7" kind="relationship" relationship="viewControllers" id="kYc-G8-HHQ"/>
+                        <segue destination="NnO-Ld-7xD" kind="relationship" relationship="viewControllers" id="VwM-Bn-Tnp"/>
+                        <segue destination="rNt-He-NC7" kind="relationship" relationship="viewControllers" id="eiJ-J3-TmR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxi-KM-qIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,9 +82,30 @@
             <point key="canvasLocation" x="564" y="-898.2008995502249"/>
         </scene>
         <!--User-->
+        <scene sceneID="mfB-kP-AS2">
+            <objects>
+                <viewController id="NnO-Ld-7xD" customClass="UserViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zLI-Eg-hl9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ev5-K8-egJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="User" image="user" id="suf-7j-yw2">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.tab-bar.item"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R6L-Ff-d3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="519" y="-100"/>
+        </scene>
+        <!--User-->
         <scene sceneID="OHx-jL-bnx">
             <objects>
-                <viewController id="ztY-tr-pbE" customClass="UserController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="ztY-tr-pbE" customClass="LoginViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qPx-jk-Fer">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,7 +128,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.login"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceH-fk-HV9">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ceH-fk-HV9">
                                                         <rect key="frame" x="0.0" y="38" width="335" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -115,7 +137,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.username"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VpK-MH-KZX">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VpK-MH-KZX">
                                                         <rect key="frame" x="0.0" y="76" width="335" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -232,7 +254,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AR5-mS-Hd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621.60000000000002" y="-101.19940029985008"/>
+            <point key="canvasLocation" x="1503" y="-217"/>
+        </scene>
+        <!--Logged In View Controller-->
+        <scene sceneID="p79-QY-SMX">
+            <objects>
+                <viewController storyboardIdentifier="LoggedInViewController" id="wEm-Se-73e" customClass="LoggedInViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SaN-Hn-Iof">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Oav-5H-kuu">
+                                <rect key="frame" x="0.0" y="270" width="375" height="127.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Or3-1y-for">
+                                        <rect key="frame" x="77" y="0.0" width="221" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a3-jM-cH9">
+                                                <rect key="frame" x="0.0" y="0.0" width="76" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=", you are logged in." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdJ-5D-Btn">
+                                                <rect key="frame" x="76" y="0.0" width="145" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZq-Aq-CTr">
+                                        <rect key="frame" x="0.0" y="28.5" width="375" height="61"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All the products you add and the product photos you upload will be credited to your account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0c-7K-MNQ">
+                                                <rect key="frame" x="8" y="0.0" width="359" height="61"/>
+                                                <viewLayoutGuide key="safeArea" id="qVe-2d-xCG"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="m0c-7K-MNQ" secondAttribute="bottom" id="AHs-Ow-I6W"/>
+                                            <constraint firstItem="m0c-7K-MNQ" firstAttribute="top" secondItem="aZq-Aq-CTr" secondAttribute="top" id="OrO-xj-uif"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="m0c-7K-MNQ" secondAttribute="trailing" id="WND-36-Sg6"/>
+                                            <constraint firstItem="m0c-7K-MNQ" firstAttribute="leading" secondItem="aZq-Aq-CTr" secondAttribute="leadingMargin" id="cUw-k1-TLZ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx2-Gt-Ejv">
+                                        <rect key="frame" x="159" y="97.5" width="57" height="30"/>
+                                        <state key="normal" title="Sign out"/>
+                                        <connections>
+                                            <action selector="didTapSignOut:" destination="wEm-Se-73e" eventType="touchUpInside" id="auJ-za-kMT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Oav-5H-kuu" firstAttribute="centerX" secondItem="SaN-Hn-Iof" secondAttribute="centerX" id="Dgz-LG-zue"/>
+                            <constraint firstItem="Oav-5H-kuu" firstAttribute="centerY" secondItem="SaN-Hn-Iof" secondAttribute="centerY" id="EPQ-J2-I3l"/>
+                            <constraint firstItem="Oav-5H-kuu" firstAttribute="width" secondItem="SaN-Hn-Iof" secondAttribute="width" id="FSh-gy-kUJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qgt-Jl-gAA"/>
+                    </view>
+                    <connections>
+                        <outlet property="usernameLabel" destination="2a3-jM-cH9" id="ugt-On-Ryy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Smf-Ra-Bc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="474"/>
         </scene>
         <!--Settings-->
         <scene sceneID="aJB-Vt-Nsm">

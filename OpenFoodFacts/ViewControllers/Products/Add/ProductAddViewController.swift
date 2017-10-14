@@ -24,7 +24,7 @@ class ProductAddViewController: TakePictureViewController {
         let alert = UIAlertController(title: NSLocalizedString("product-add.save-error.title", comment: ""),
                                       message: NSLocalizedString("product-add.save-error.message", comment: ""),
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("product-add.save-error.action", comment: ""),
+        alert.addAction(UIAlertAction(title: NSLocalizedString("alert.action.ok", comment: ""),
                                       style: .default,
                                       handler: { _ in alert.dismiss(animated: true, completion: nil) }))
         return alert

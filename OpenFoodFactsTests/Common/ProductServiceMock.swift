@@ -11,6 +11,7 @@ import Foundation
 import ObjectMapper
 
 class ProductServiceMock: ProductApi {
+
     var query: String?
     var page: Int?
     var productsResponse: ProductsResponse!
@@ -50,5 +51,8 @@ class ProductServiceMock: ProductApi {
         } else {
             onError(error)
         }
+    }
+
+    func login(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void) {
     }
 }
