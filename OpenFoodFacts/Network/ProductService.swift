@@ -100,15 +100,16 @@ class ProductService: ProductApi {
 
         let request: DataRequest = Alamofire.request(url)
         log.debug(request.debugDescription)
+
         request.responseObject { (response: DataResponse<ProductsResponse>) in
-                log.debug(response.debugDescription)
-                switch response.result {
-                case .success(let productResponse):
-                    onSuccess(productResponse)
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                    onError(error)
-                }
+            log.debug(response.debugDescription)
+            switch response.result {
+            case .success(let productResponse):
+                onSuccess(productResponse)
+            case .failure(let error):
+                Crashlytics.sharedInstance().recordError(error)
+                onError(error)
+            }
         }
     }
 
@@ -143,40 +144,38 @@ extension ProductService {
                     multipartFormData.append(fileURL, withName: "imgupload_\(productImage.type.rawValue)")
                     multipartFormData.append(productImage.type.rawValue.data(using: .utf8)!, withName: Params.imagefield)
 
-                    if let username = CredentialsController.shared.getUsername(), let usernameData = username.data(using: .utf8) {
-                        multipartFormData.append(usernameData, withName: Params.userId)
+                    if let credentials = CredentialsController.shared.getCredentials(),
+                        let username = credentials.username.data(using: .utf8),
+                        let password = credentials.password.data(using: .utf8) {
+                        multipartFormData.append(username, withName: Params.userId)
+                        multipartFormData.append(password, withName: Params.password)
                     }
-                },
+            },
                 to: Endpoint.post + "/cgi/product_image_upload.pl",
                 headers: ["Content-Disposition": "form-data; name=\"imgupload_\(productImage.type.rawValue)\"; filename=\"\(productImage.fileName)\""],
                 encodingCompletion: { encodingResult in
                     switch encodingResult {
                     case .success(let upload, _, _):
                         log.debug(upload.debugDescription)
-
-                        if let credentials = CredentialsController.shared.getCredentials() {
-                            upload.authenticate(user: credentials.username, password: credentials.password)
-                        }
-
                         upload.responseJSON { response in
-                                log.debug(response.debugDescription)
-                                switch response.result {
-                                case .success(let responseBody):
-                                    if let json = responseBody as? [String: Any], let status = json["status"] as? String, "status ok" == status {
-                                        onSuccess()
-                                    } else {
-                                        let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: [
-                                            "imageType": productImage.type.rawValue,
-                                            "fileName": productImage.fileName,
-                                            "fileURL": fileURL
-                                            ])
-                                        Crashlytics.sharedInstance().recordError(error)
-                                        onError(error)
-                                    }
-                                case .failure(let error):
+                            log.debug(response.debugDescription)
+                            switch response.result {
+                            case .success(let responseBody):
+                                if let json = responseBody as? [String: Any], let status = json["status"] as? String, "status ok" == status {
+                                    onSuccess()
+                                } else {
+                                    let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: [
+                                        "imageType": productImage.type.rawValue,
+                                        "fileName": productImage.fileName,
+                                        "fileURL": fileURL
+                                        ])
                                     Crashlytics.sharedInstance().recordError(error)
                                     onError(error)
                                 }
+                            case .failure(let error):
+                                Crashlytics.sharedInstance().recordError(error)
+                                onError(error)
+                            }
                         }
                     case .failure(let encodingError):
                         Crashlytics.sharedInstance().recordError(encodingError)
@@ -212,37 +211,33 @@ extension ProductService {
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         var params = product.toJSON()
 
-        if let username = CredentialsController.shared.getUsername() {
-            params[Params.userId] = username
+        if let credentials = CredentialsController.shared.getCredentials() {
+            params[Params.userId] = credentials.username
+            params[Params.password] = credentials.password
         }
 
         let request = Alamofire.request("\(Endpoint.post)/cgi/product_jqm2.pl", method: .post, parameters: params, encoding: URLEncoding.default)
         log.debug(request.debugDescription)
 
-        if let credentials = CredentialsController.shared.getCredentials() {
-            request.authenticate(user: credentials.username, password: credentials.password)
-        }
-
         request.responseJSON(completionHandler: { response in
-                log.debug(response.debugDescription)
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String: Any], let status = json["status_verbose"] as? String, "fields saved" == status {
-                        onSuccess()
-                    } else {
-                        let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: [
-                            "product": product.toJSONString() ?? "{\"error\": \"Could convert product to JSON\"}"
-                            ])
-                        log.error(error)
-                        Crashlytics.sharedInstance().recordError(error)
-                        onError(error)
-                    }
-                case .failure(let error):
+            log.debug(response.debugDescription)
+            switch response.result {
+            case .success(let responseBody):
+                if let json = responseBody as? [String: Any], let status = json["status_verbose"] as? String, "fields saved" == status {
+                    onSuccess()
+                } else {
+                    let userInfo = ["product": product.toJSONString() ?? "{\"error\": \"Could convert product to JSON\"}"]
+                    let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: userInfo)
                     log.error(error)
                     Crashlytics.sharedInstance().recordError(error)
                     onError(error)
                 }
-            })
+            case .failure(let error):
+                log.error(error)
+                Crashlytics.sharedInstance().recordError(error)
+                onError(error)
+            }
+        })
     }
 }
 
