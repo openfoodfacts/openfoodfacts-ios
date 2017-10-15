@@ -143,7 +143,7 @@ extension ProductService {
                     multipartFormData.append(fileURL, withName: "imgupload_\(productImage.type.rawValue)")
                     multipartFormData.append(productImage.type.rawValue.data(using: .utf8)!, withName: Params.imagefield)
 
-                    if let username = self.getUsername(), let usernameData = username.data(using: .utf8) {
+                    if let username = CredentialsController.shared.getUsername(), let usernameData = username.data(using: .utf8) {
                         multipartFormData.append(usernameData, withName: Params.userId)
                     }
                 },
@@ -153,9 +153,12 @@ extension ProductService {
                     switch encodingResult {
                     case .success(let upload, _, _):
                         log.debug(upload.debugDescription)
-                        upload
-                            .authenticate(user: "off", password: "off")
-                            .responseJSON { response in
+
+                        if let credentials = CredentialsController.shared.getCredentials() {
+                            upload.authenticate(user: credentials.username, password: credentials.password)
+                        }
+
+                        upload.responseJSON { response in
                                 log.debug(response.debugDescription)
                                 switch response.result {
                                 case .success(let responseBody):
@@ -209,12 +212,16 @@ extension ProductService {
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         var params = product.toJSON()
 
-        if let username = getUsername() {
+        if let username = CredentialsController.shared.getUsername() {
             params[Params.userId] = username
         }
 
         let request = Alamofire.request("\(Endpoint.post)/cgi/product_jqm2.pl", method: .post, parameters: params, encoding: URLEncoding.default)
         log.debug(request.debugDescription)
+
+        if let credentials = CredentialsController.shared.getCredentials() {
+            request.authenticate(user: credentials.username, password: credentials.password)
+        }
 
         request.responseJSON(completionHandler: { response in
                 log.debug(response.debugDescription)
@@ -249,8 +256,7 @@ extension ProductService {
             switch response.result {
             case .success(let html):
                 if !html.contains("Incorrect user name or password.") && !html.contains("See you soon!") {
-                    let defaults = UserDefaults.standard
-                    defaults.set(username, forKey: UserDefaultsConstants.username)
+                    CredentialsController.shared.saveCredentials(username: username, password: password)
                     onSuccess()
                 } else {
                     let error = NSError(domain: self.errorDomain, code: ErrorCodes.wrongCredentials.rawValue)
@@ -263,10 +269,5 @@ extension ProductService {
                 onError(error)
             }
         })
-    }
-
-    private func getUsername() -> String? {
-        let defaults = UserDefaults.standard
-        return defaults.string(forKey: UserDefaultsConstants.username)
     }
 }

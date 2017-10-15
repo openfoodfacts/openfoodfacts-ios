@@ -12,8 +12,7 @@ class LoggedInViewController: ChildViewController {
     @IBOutlet weak var usernameLabel: UILabel!
 
     override func viewDidLoad() {
-        let defaults = UserDefaults.standard
-        if let username = defaults.string(forKey: UserDefaultsConstants.username) {
+        if let username = CredentialsController.shared.getUsername() {
             usernameLabel.text = username
         } else {
             dismiss()
@@ -21,8 +20,7 @@ class LoggedInViewController: ChildViewController {
     }
 
     @IBAction func didTapSignOut(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        defaults.removeObject(forKey: UserDefaultsConstants.username)
+        CredentialsController.shared.clearCredentials()
         dismiss()
     }
 }

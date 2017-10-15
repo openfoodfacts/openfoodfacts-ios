@@ -16,7 +16,8 @@
 		9510B0241F6883E00012953A /* ProductServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0231F6883E00012953A /* ProductServiceMock.swift */; };
 		9510B0281F6885690012953A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0271F6885690012953A /* TestHelper.swift */; };
 		9510B02A1F6888770012953A /* UITableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0291F6888770012953A /* UITableViewTests.swift */; };
-		9518681A1F9350EE00416226 /* UserDefaultsContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951868191F9350EE00416226 /* UserDefaultsContants.swift */; };
+		9518681C1F93537000416226 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9518681B1F93536F00416226 /* KeychainAccess.framework */; };
+		951868211F9357CF00416226 /* CredentialsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951868201F9357CF00416226 /* CredentialsController.swift */; };
 		951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */; };
 		951EA4931F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EA4921F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift */; };
 		951EA4951F80EC8200FD1544 /* FormTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EA4941F80EC8200FD1544 /* FormTableViewControllerTests.swift */; };
@@ -34,6 +35,7 @@
 		953498F91F76967A00568C35 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953498F81F76967A00568C35 /* NavigationControllerMock.swift */; };
 		953498FC1F77AFF900568C35 /* ProductDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */; };
 		953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953664F41ECA212100D6D398 /* NutrimentItem.swift */; };
+		95387C741F93646D00EF3380 /* CredentialsControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95387C731F93646D00EF3380 /* CredentialsControllerTests.swift */; };
 		953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
 		953CDD591F929C680096C428 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CDD581F929C680096C428 /* LoggedInViewController.swift */; };
 		953CDD5B1F92A12A0096C428 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CDD5A1F92A12A0096C428 /* UserViewController.swift */; };
@@ -273,7 +275,8 @@
 		9510B0231F6883E00012953A /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductServiceMock.swift; path = Common/ProductServiceMock.swift; sourceTree = "<group>"; };
 		9510B0271F6885690012953A /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = Common/TestHelper.swift; sourceTree = "<group>"; };
 		9510B0291F6888770012953A /* UITableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewTests.swift; sourceTree = "<group>"; };
-		951868191F9350EE00416226 /* UserDefaultsContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultsContants.swift; path = Helpers/UserDefaultsContants.swift; sourceTree = "<group>"; };
+		9518681B1F93536F00416226 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		951868201F9357CF00416226 /* CredentialsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsController.swift; sourceTree = "<group>"; };
 		951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		951EA4921F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableHeaderCellControllerTests.swift; sourceTree = "<group>"; };
 		951EA4941F80EC8200FD1544 /* FormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -292,6 +295,7 @@
 		953498F81F76967A00568C35 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationControllerMock.swift; path = Common/NavigationControllerMock.swift; sourceTree = "<group>"; };
 		953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
+		95387C731F93646D00EF3380 /* CredentialsControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsControllerTests.swift; sourceTree = "<group>"; };
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		953CDD581F929C680096C428 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		953CDD5A1F92A12A0096C428 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -985,6 +989,7 @@
 				9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */,
 				951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */,
 				959530081F91408F00979613 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				9518681C1F93537000416226 /* KeychainAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1090,6 +1095,14 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		9518681F1F9357BE00416226 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				951868201F9357CF00416226 /* CredentialsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		951FA76E1F4E22790096AC5A /* OpenFoodFactsUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1107,7 +1120,6 @@
 			children = (
 				951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */,
 				954587931F730C2D00269E71 /* CameraHelper.swift */,
-				951868191F9350EE00416226 /* UserDefaultsContants.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1148,6 +1160,14 @@
 				951EA4941F80EC8200FD1544 /* FormTableViewControllerTests.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		95387C721F93645600EF3380 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95387C731F93646D00EF3380 /* CredentialsControllerTests.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		954587951F73100C00269E71 /* Camera */ = {
@@ -1569,6 +1589,7 @@
 				95CB99A51EA55BEF00CBDDF9 /* Extensions */,
 				95D6A7621E9C18F00017B423 /* Models */,
 				9527E7881E9EBDDC00833F04 /* Network */,
+				9518681F1F9357BE00416226 /* Controllers */,
 				95C2652A1E96D6FA004212EC /* ViewControllers */,
 				95D6A7591E9C080A0017B423 /* Views */,
 				95C265111E96D55B004212EC /* AppDelegate.swift */,
@@ -1585,6 +1606,7 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9518681B1F93536F00416226 /* KeychainAccess.framework */,
 				959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */,
 				951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */,
 				958BE7781F4E1BB500603688 /* Swifter.framework */,
@@ -1733,6 +1755,7 @@
 			children = (
 				9596B5141F45FEEF0076F52C /* Common */,
 				957D9C341F6720A6005C5AE0 /* Extensions */,
+				95387C721F93645600EF3380 /* Controllers */,
 				9596B50C1F45FAE30076F52C /* ViewControllers */,
 				95F31C0F1F3A45CF00B8AF90 /* Network */,
 				95F31BEE1F38F71E00B8AF90 /* Info.plist */,
@@ -2108,6 +2131,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/NotificationBanner.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
@@ -2123,6 +2147,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NotificationBanner.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2193,7 +2218,6 @@
 				9581B3D71F9009EB0036AC7C /* LocalizableButton.swift in Sources */,
 				957CBEBA1F3312FB00A1B398 /* HostedViewCell.swift in Sources */,
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
-				9518681A1F9350EE00416226 /* UserDefaultsContants.swift in Sources */,
 				9581B3D51F9009E70036AC7C /* LocalizableTextField.swift in Sources */,
 				956FF9591F1FF0CA0069D678 /* ErrorView.swift in Sources */,
 				9581B3DB1F9009F40036AC7C /* LocalizableUIBarItem.swift in Sources */,
@@ -2224,6 +2248,7 @@
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
 				956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */,
 				9581B3D41F9009E40036AC7C /* Localizable.swift in Sources */,
+				951868211F9357CF00416226 /* CredentialsController.swift in Sources */,
 				956FF9651F1FF0FD0069D678 /* SearchTableViewController.swift in Sources */,
 				95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */,
 				95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */,
@@ -2284,6 +2309,7 @@
 				957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */,
 				9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */,
 				957E5F401F768EAF00465BED /* ProductAddViewControllerTests.swift in Sources */,
+				95387C741F93646D00EF3380 /* CredentialsControllerTests.swift in Sources */,
 				9523E7D81F817F3500622922 /* ArrayTests.swift in Sources */,
 				9528560E1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift in Sources */,
 				9510B0241F6883E00012953A /* ProductServiceMock.swift in Sources */,

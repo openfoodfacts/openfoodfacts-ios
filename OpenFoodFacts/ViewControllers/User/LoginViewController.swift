@@ -15,7 +15,6 @@ class LoginViewController: ChildViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
 
-    var productApi: ProductApi!
     var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
 
     lazy var errorBanner: NotificationBanner = {
@@ -81,11 +80,5 @@ class LoginViewController: ChildViewController {
             self.errorBanner.subtitleLabel?.text = subtitle
             self.errorBanner.show()
         })
-    }
-}
-
-extension LoginViewController: ProductApiClient {
-    func set(_ productApi: ProductApi) {
-        self.productApi = productApi
     }
 }
