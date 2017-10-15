@@ -96,7 +96,7 @@ class ProductAddViewControllerTests: XCTestCase {
 
     // MARK: - keyboardWillShow
 
-    // Note: This test may fail when the simulator is not configured to show the software keyboard.
+    // Note: This test may fail when the simulator is not configured to show the software keyboard. It should always work when running via fastlane (fastlane test) because before running the software keyboard is enabled via a shell command and disabled after the tests.
     func testKeyboardWillShowShouldUpdateScrollViewInsetsWhenOrientationPortrait() {
         let width = CGFloat(375)
         let height = CGFloat(258)
