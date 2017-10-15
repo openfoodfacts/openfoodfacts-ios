@@ -244,7 +244,7 @@ class ProductServiceTests: XCTestCase {
         // given
         let product = Product()
         let success: () -> Void = { resultSuccessful = true }
-        let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
+        let error: (Error) -> Void = { _ in XCTFail("Expecting a successful result") }
         stub(condition: isPath("/cgi/product_jqm2.pl")) { _ in
             return OHHTTPStubsResponse(
                 fileAtPath: OHPathForFile("POST_Product_200.json", type(of: self))!,
@@ -278,5 +278,58 @@ class ProductServiceTests: XCTestCase {
         // then
         expect(result).toEventuallyNot(beNil())
         expect(result?.code) == networkDownErrorCode
+    }
+
+    // MARK: - login
+    func testLogin() {
+        var resultSuccessful = false
+        let username = "test_user"
+        let password = "test_password"
+        let success: () -> Void = { resultSuccessful = true }
+        let error: (Error) -> Void = { _ in XCTFail("Expected a successful result") }
+        stub(condition: isPath("/cgi/session.pl")) { _ in
+            return OHHTTPStubsResponse(
+                data: "<html>Logged in just fine</html>".data(using: .utf8)!,
+                statusCode: 200,
+                headers: ["Content-Type": "application/html"])
+        }
+
+        productApi.login(username: username, password: password, onSuccess: success, onError: error)
+
+        expect(resultSuccessful).toEventually(beTrue(), timeout: 10)
+    }
+
+    func testLoginShouldReturnErrorWhenCredentialsAreWrong() {
+        var result: NSError?
+        let username = "test_user"
+        let password = "test_password"
+        let success: () -> Void = { XCTFail("Expected a failing result") }
+        let error: (NSError) -> Void = { error in result = error }
+        stub(condition: isPath("/cgi/session.pl")) { _ in
+            return OHHTTPStubsResponse(
+                data: "<html>Incorrect user name or password.</html>".data(using: .utf8)!,
+                statusCode: 200,
+                headers: ["Content-Type": "application/html"])
+        }
+
+        productApi.login(username: username, password: password, onSuccess: success, onError: error)
+
+        expect(result?.code).toEventually(equal(ProductService.ErrorCodes.wrongCredentials.rawValue), timeout: 10)
+    }
+
+    func testLoginShouldReturnErrorWhenServerReturnsError() {
+        var result: NSError?
+        let username = "test_user"
+        let password = "test_password"
+        let success: () -> Void = { XCTFail("Expected a failing result") }
+        let error: (NSError) -> Void = { error in result = error }
+        stub(condition: isPath("/cgi/session.pl")) { _ in
+            let notConnectedError = NSError(domain: NSURLErrorDomain, code: networkDownErrorCode, userInfo: nil)
+            return OHHTTPStubsResponse(error: notConnectedError)
+        }
+
+        productApi.login(username: username, password: password, onSuccess: success, onError: error)
+
+        expect(result?.code).toEventually(equal(networkDownErrorCode), timeout: 10)
     }
 }
