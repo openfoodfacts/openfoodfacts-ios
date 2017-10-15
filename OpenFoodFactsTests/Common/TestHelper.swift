@@ -8,6 +8,7 @@
 
 import UIKit
 import Nimble
+import KeychainAccess
 
 // swiftlint:disable force_try
 class TestHelper {
@@ -35,5 +36,24 @@ class TestHelper {
         guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) else { fail("Failed to parse json"); return [:] }
         guard let json = jsonObject as? [String: Any] else { fail("Failed to cast json"); return [:] }
         return json
+    }
+
+    func clearCredentials() {
+        let userDefaultsUsernameKey = "username"
+        let keychainServiceIdentifier = "org.openfoodfacts.openfoodfacts"
+        let keychain = Keychain(service: keychainServiceIdentifier)
+
+        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+            if key == userDefaultsUsernameKey, let username = value as? String {
+                try! keychain.remove(username)
+            }
+            UserDefaults.standard.removeObject(forKey: key)
+        }
+    }
+
+    @discardableResult func createUsernameInUserDefaults() -> String {
+        let username = "test_username"
+        UserDefaults.standard.set(username, forKey: "username")
+        return username
     }
 }

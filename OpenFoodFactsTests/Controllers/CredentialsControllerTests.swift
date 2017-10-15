@@ -15,23 +15,16 @@ import KeychainAccess
 class CredentialsControllerTests: XCTestCase {
     var controller: CredentialsController!
 
-    let userDefaultsUsernameKey = "username"
-    static let keychainServiceIdentifier = "org.openfoodfacts.openfoodfacts"
-    let keychain = Keychain(service: keychainServiceIdentifier)
     let testUser = "test_user"
     let testPassword = "test_password"
 
+    let userDefaultsUsernameKey = "username"
+    static let keychainServiceIdentifier = "org.openfoodfacts.openfoodfacts"
+    let keychain = Keychain(service: keychainServiceIdentifier)
+
     override func setUp() {
         controller = CredentialsController()
-
-        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
-            if key == userDefaultsUsernameKey, let username = value as? String {
-
-                try! keychain.remove(username)
-            }
-
-            UserDefaults.standard.removeObject(forKey: key)
-        }
+        TestHelper.sharedInstance.clearCredentials()
     }
 
     func testGetUsernameShouldReturnUsername() {

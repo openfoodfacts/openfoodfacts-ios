@@ -128,6 +128,7 @@
 		959530081F91408F00979613 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */; };
 		9595300A1F9156B100979613 /* ProductApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959530091F9156B100979613 /* ProductApiClient.swift */; };
 		9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */; };
+		95B512E61F93FEBD003B0012 /* LoggedInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */; };
 		95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -153,6 +154,7 @@
 		95DFD7CD1F01A45C007FDB69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DFD7CF1F01A45C007FDB69 /* Localizable.strings */; };
 		95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E16B2E1EE9E20A00331B2B /* UIStackView.swift */; };
 		95E3ADE21F21433D00CD61D9 /* ProductAddViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E3ADE11F21433D00CD61D9 /* ProductAddViewController.storyboard */; };
+		95E76EF81F93F77000FA144E /* UserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EF71F93F77000FA144E /* UserViewControllerTests.swift */; };
 		95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */; };
 		95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */; };
 		95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F14C881EDB6CDD00D99115 /* UIImage.swift */; };
@@ -908,6 +910,7 @@
 		9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A7E0671F058F5D004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewControllerTests.swift; sourceTree = "<group>"; };
 		95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewControllerTests.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -935,6 +938,7 @@
 		95DDAF651F2916D30096B74E /* ProductImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
 		95E16B2E1EE9E20A00331B2B /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		95E3ADE11F21433D00CD61D9 /* ProductAddViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductAddViewController.storyboard; sourceTree = "<group>"; };
+		95E76EF71F93F77000FA144E /* UserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerTests.swift; sourceTree = "<group>"; };
 		95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nutriments.swift; path = Nutriments/Nutriments.swift; sourceTree = "<group>"; };
 		95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionLevels.swift; path = Nutriments/NutritionLevels.swift; sourceTree = "<group>"; };
 		95F14C881EDB6CDD00D99115 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -1507,6 +1511,7 @@
 				954587951F73100C00269E71 /* Camera */,
 				95BA22671F6B21B00090C471 /* Common */,
 				9596B50D1F45FAE30076F52C /* Products */,
+				95E76EF61F93F71000FA144E /* User */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1719,6 +1724,15 @@
 				95DDAF601F25401D0096B74E /* CameraController.swift */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		95E76EF61F93F71000FA144E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				95E76EF71F93F77000FA144E /* UserViewControllerTests.swift */,
+				95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		95E9F0421EC8D7AB00BA20B0 /* Nutriments */ = {
@@ -2304,6 +2318,7 @@
 				957D9C381F6728FA005C5AE0 /* UITableViewCellTests.swift in Sources */,
 				957D9C3A1F6729E1005C5AE0 /* DoubleTests.swift in Sources */,
 				9510B0201F6882C30012953A /* RotatingProcessorTests.swift in Sources */,
+				95B512E61F93FEBD003B0012 /* LoggedInViewControllerTests.swift in Sources */,
 				95C54A7C1F8C0E8B0008B5D8 /* CameraControllerMock.swift in Sources */,
 				95CA1AE71F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift in Sources */,
 				957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */,
@@ -2311,6 +2326,7 @@
 				957E5F401F768EAF00465BED /* ProductAddViewControllerTests.swift in Sources */,
 				95387C741F93646D00EF3380 /* CredentialsControllerTests.swift in Sources */,
 				9523E7D81F817F3500622922 /* ArrayTests.swift in Sources */,
+				95E76EF81F93F77000FA144E /* UserViewControllerTests.swift in Sources */,
 				9528560E1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift in Sources */,
 				9510B0241F6883E00012953A /* ProductServiceMock.swift in Sources */,
 			);
