@@ -17,17 +17,17 @@ class NutritionLevelsTableViewCell: ProductDetailBaseCell {
         guard let product = formRow.value as? Product else { return }
 
         if let levelView = createLevelView(level: product.nutritionLevels?.fat,
-                                           item: product.nutriments?.fats[0],
+                                           item: getNutritionItem(at: 0, from: product.nutriments?.fats),
                                            localizedLabel: NSLocalizedString("nutrition.fats", comment: "Nutrition, fat")) {
             stackView.addArrangedSubview(levelView)
         }
         if let levelView = createLevelView(level: product.nutritionLevels?.saturatedFat,
-                                           item: product.nutriments?.fats[1],
+                                           item: getNutritionItem(at: 1, from: product.nutriments?.fats),
                                            localizedLabel: NSLocalizedString("nutrition.fats.saturated-fat", comment: "Nutrition, saturated fat")) {
             stackView.addArrangedSubview(levelView)
         }
         if let levelView = createLevelView(level: product.nutritionLevels?.sugars,
-                                           item: product.nutriments?.carbohydrates[1],
+                                           item: getNutritionItem(at: 1, from: product.nutriments?.carbohydrates),
                                            localizedLabel: NSLocalizedString("nutrition.carbohydrate.sugars", comment: "Nutrition, sugars")) {
             stackView.addArrangedSubview(levelView)
         }
@@ -66,6 +66,15 @@ class NutritionLevelsTableViewCell: ProductDetailBaseCell {
             level: getLevelLocalized(level: level))
 
         return levelView
+    }
+
+    private func getNutritionItem(at index: Int, from: [NutrimentItem]?) -> NutrimentItem? {
+        guard let array = from else { return nil }
+        if array.count > index {
+            return array[index]
+        } else {
+            return nil
+        }
     }
 
     override func prepareForReuse() {
