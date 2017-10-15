@@ -30,7 +30,7 @@ class UserViewController: UIViewController {
     private func showAppropiateChildViewController() {
         let defaults = UserDefaults.standard
 
-        if defaults.string(forKey: "username") != nil {
+        if defaults.string(forKey: UserDefaultsConstants.username) != nil {
             presentViewController(identifier: String(describing: LoggedInViewController.self))
         } else {
             presentViewController(identifier: String(describing: LoginViewController.self))

@@ -26,6 +26,14 @@ struct Endpoint {
     static let login = Bundle.main.infoDictionary?["LOGIN_ENDPOINT"] as! String // swiftlint:disable:this force_cast
 }
 
+struct Params {
+    static let code = "code"
+    static let imagefield = "imagefield"
+    static let userId = "user_id"
+    static let password = "password"
+    static let submit = ".submit"
+}
+
 class ProductService: ProductApi {
     private var lastGetProductsRequest: DataRequest?
 
@@ -92,8 +100,7 @@ class ProductService: ProductApi {
 
         let request: DataRequest = Alamofire.request(url)
         log.debug(request.debugDescription)
-        request.authenticate(user: "off", password: "off")
-            .responseObject { (response: DataResponse<ProductsResponse>) in
+        request.responseObject { (response: DataResponse<ProductsResponse>) in
                 log.debug(response.debugDescription)
                 switch response.result {
                 case .success(let productResponse):
@@ -132,12 +139,12 @@ extension ProductService {
         if let barcode = barcode.data(using: .utf8) {
             Alamofire.upload(
                 multipartFormData: { multipartFormData in
-                    multipartFormData.append(barcode, withName: "code")
+                    multipartFormData.append(barcode, withName: Params.code)
                     multipartFormData.append(fileURL, withName: "imgupload_\(productImage.type.rawValue)")
-                    multipartFormData.append(productImage.type.rawValue.data(using: .utf8)!, withName: "imagefield")
+                    multipartFormData.append(productImage.type.rawValue.data(using: .utf8)!, withName: Params.imagefield)
 
                     if let username = self.getUsername(), let usernameData = username.data(using: .utf8) {
-                        multipartFormData.append(usernameData, withName: userIdKey)
+                        multipartFormData.append(usernameData, withName: Params.userId)
                     }
                 },
                 to: Endpoint.post + "/cgi/product_image_upload.pl",
@@ -203,7 +210,7 @@ extension ProductService {
         var params = product.toJSON()
 
         if let username = getUsername() {
-            params[userIdKey] = username
+            params[Params.userId] = username
         }
 
         let request = Alamofire.request("\(Endpoint.post)/cgi/product_jqm2.pl", method: .post, parameters: params, encoding: URLEncoding.default)
@@ -232,11 +239,9 @@ extension ProductService {
     }
 }
 
-private let usernameKey = "username"
-private let userIdKey = "user_id"
 extension ProductService {
     func login(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void) {
-        let parameters = [userIdKey: username, "password": password, ".submit": "Sign-in"]
+        let parameters = [Params.userId: username, Params.password: password, Params.submit: "Sign-in"]
         let request = Alamofire.request(Endpoint.login, method: .post, parameters: parameters)
         log.debug(request.debugDescription)
         request.responseString(completionHandler: { response in
@@ -245,7 +250,7 @@ extension ProductService {
             case .success(let html):
                 if !html.contains("Incorrect user name or password.") && !html.contains("See you soon!") {
                     let defaults = UserDefaults.standard
-                    defaults.set(username, forKey: usernameKey)
+                    defaults.set(username, forKey: UserDefaultsConstants.username)
                     onSuccess()
                 } else {
                     let error = NSError(domain: self.errorDomain, code: ErrorCodes.wrongCredentials.rawValue)
@@ -262,6 +267,6 @@ extension ProductService {
 
     private func getUsername() -> String? {
         let defaults = UserDefaults.standard
-        return defaults.string(forKey: usernameKey)
+        return defaults.string(forKey: UserDefaultsConstants.username)
     }
 }

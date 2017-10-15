@@ -16,6 +16,7 @@
 		9510B0241F6883E00012953A /* ProductServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0231F6883E00012953A /* ProductServiceMock.swift */; };
 		9510B0281F6885690012953A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0271F6885690012953A /* TestHelper.swift */; };
 		9510B02A1F6888770012953A /* UITableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0291F6888770012953A /* UITableViewTests.swift */; };
+		9518681A1F9350EE00416226 /* UserDefaultsContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951868191F9350EE00416226 /* UserDefaultsContants.swift */; };
 		951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */; };
 		951EA4931F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EA4921F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift */; };
 		951EA4951F80EC8200FD1544 /* FormTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EA4941F80EC8200FD1544 /* FormTableViewControllerTests.swift */; };
@@ -272,6 +273,7 @@
 		9510B0231F6883E00012953A /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductServiceMock.swift; path = Common/ProductServiceMock.swift; sourceTree = "<group>"; };
 		9510B0271F6885690012953A /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = Common/TestHelper.swift; sourceTree = "<group>"; };
 		9510B0291F6888770012953A /* UITableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewTests.swift; sourceTree = "<group>"; };
+		951868191F9350EE00416226 /* UserDefaultsContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultsContants.swift; path = Helpers/UserDefaultsContants.swift; sourceTree = "<group>"; };
 		951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		951EA4921F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableHeaderCellControllerTests.swift; sourceTree = "<group>"; };
 		951EA4941F80EC8200FD1544 /* FormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -1105,6 +1107,7 @@
 			children = (
 				951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */,
 				954587931F730C2D00269E71 /* CameraHelper.swift */,
+				951868191F9350EE00416226 /* UserDefaultsContants.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -2190,6 +2193,7 @@
 				9581B3D71F9009EB0036AC7C /* LocalizableButton.swift in Sources */,
 				957CBEBA1F3312FB00A1B398 /* HostedViewCell.swift in Sources */,
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
+				9518681A1F9350EE00416226 /* UserDefaultsContants.swift in Sources */,
 				9581B3D51F9009E70036AC7C /* LocalizableTextField.swift in Sources */,
 				956FF9591F1FF0CA0069D678 /* ErrorView.swift in Sources */,
 				9581B3DB1F9009F40036AC7C /* LocalizableUIBarItem.swift in Sources */,
