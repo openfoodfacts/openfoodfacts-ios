@@ -129,6 +129,8 @@
 		9595300A1F9156B100979613 /* ProductApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959530091F9156B100979613 /* ProductApiClient.swift */; };
 		9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */; };
 		95B512E61F93FEBD003B0012 /* LoggedInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */; };
+		95B512E81F94E915003B0012 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E71F94E915003B0012 /* LoginViewControllerTests.swift */; };
+		95B512EA1F94E97B003B0012 /* ChildDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */; };
 		95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -911,6 +913,8 @@
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A7E0671F058F5D004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewControllerTests.swift; sourceTree = "<group>"; };
+		95B512E71F94E915003B0012 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
+		95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChildDelegateMock.swift; path = Common/ChildDelegateMock.swift; sourceTree = "<group>"; };
 		95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewControllerTests.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1549,6 +1553,7 @@
 				9510B0271F6885690012953A /* TestHelper.swift */,
 				953498F81F76967A00568C35 /* NavigationControllerMock.swift */,
 				95C54A7B1F8C0E8B0008B5D8 /* CameraControllerMock.swift */,
+				95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1731,6 +1736,7 @@
 			children = (
 				95E76EF71F93F77000FA144E /* UserViewControllerTests.swift */,
 				95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */,
+				95B512E71F94E915003B0012 /* LoginViewControllerTests.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -2304,6 +2310,7 @@
 				95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */,
 				953498F91F76967A00568C35 /* NavigationControllerMock.swift in Sources */,
 				95CA1AEA1F7AD8F900A0390B /* NutritionTableFormTableViewControllerTests.swift in Sources */,
+				95B512EA1F94E97B003B0012 /* ChildDelegateMock.swift in Sources */,
 				9579EB411F7EA94C00B13A4D /* IngredientsHeaderCellControllerTests.swift in Sources */,
 				954587971F73101500269E71 /* CameraControllerTests.swift in Sources */,
 				95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */,
@@ -2318,6 +2325,7 @@
 				957D9C381F6728FA005C5AE0 /* UITableViewCellTests.swift in Sources */,
 				957D9C3A1F6729E1005C5AE0 /* DoubleTests.swift in Sources */,
 				9510B0201F6882C30012953A /* RotatingProcessorTests.swift in Sources */,
+				95B512E81F94E915003B0012 /* LoginViewControllerTests.swift in Sources */,
 				95B512E61F93FEBD003B0012 /* LoggedInViewControllerTests.swift in Sources */,
 				95C54A7C1F8C0E8B0008B5D8 /* CameraControllerMock.swift in Sources */,
 				95CA1AE71F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift in Sources */,

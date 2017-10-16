@@ -56,10 +56,3 @@ class LoggedInViewControllerTests: XCTestCase {
         expect(UserDefaults.standard.string(forKey: "username")).toEventually(beNil(), timeout: 10)
     }
 }
-
-class ChildDelegateMock: ChildDelegate {
-    var removedChild: ChildViewController?
-    func removeChild(_ child: ChildViewController) {
-        removedChild = child
-    }
-}

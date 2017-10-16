@@ -18,6 +18,9 @@ class ProductServiceMock: ProductApi {
     let error = NSError(domain: NSURLErrorDomain, code: -1009, userInfo: nil)
     var productImage: ProductImage?
     var product: Product!
+    var didLogin = false
+    var loginUsername: String?
+    var loginPassword: String?
 
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         self.query = query
@@ -54,5 +57,17 @@ class ProductServiceMock: ProductApi {
     }
 
     func login(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void) {
+        didLogin = true
+
+        if username == "test_user" {
+            loginUsername = username
+            loginPassword = password
+            onSuccess()
+        } else if username == password {
+            let wrongCredentials = NSError(domain: "ProductServiceErrorDomain", code: ProductService.ErrorCodes.wrongCredentials.rawValue, userInfo: nil)
+            onError(wrongCredentials)
+        } else {
+            onError(error)
+        }
     }
 }

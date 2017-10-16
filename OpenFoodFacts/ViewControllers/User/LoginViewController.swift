@@ -31,10 +31,6 @@ class LoginViewController: ChildViewController {
         return alert
     }()
 
-    override func viewDidLoad() {
-        IQKeyboardManager.sharedManager().shouldToolbarUsesTextFieldTintColor = true
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().shouldToolbarUsesTextFieldTintColor = true
