@@ -131,6 +131,7 @@
 		95B512E61F93FEBD003B0012 /* LoggedInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */; };
 		95B512E81F94E915003B0012 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E71F94E915003B0012 /* LoginViewControllerTests.swift */; };
 		95B512EA1F94E97B003B0012 /* ChildDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */; };
+		95B512EC1F94FEE7003B0012 /* UserViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512EB1F94FEE7003B0012 /* UserViewControllerUITests.swift */; };
 		95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
@@ -915,6 +916,7 @@
 		95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewControllerTests.swift; sourceTree = "<group>"; };
 		95B512E71F94E915003B0012 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChildDelegateMock.swift; path = Common/ChildDelegateMock.swift; sourceTree = "<group>"; };
+		95B512EB1F94FEE7003B0012 /* UserViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerUITests.swift; sourceTree = "<group>"; };
 		95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewControllerTests.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1119,6 +1121,7 @@
 				95F2B04A1F51A0F6004F8AF9 /* ProductDetailUITests.swift */,
 				951FA7791F4E22B00096AC5A /* HTTPDynamicStubs.swift */,
 				951FA7711F4E22790096AC5A /* Info.plist */,
+				95B512EB1F94FEE7003B0012 /* UserViewControllerUITests.swift */,
 			);
 			path = OpenFoodFactsUITests;
 			sourceTree = "<group>";
@@ -2211,6 +2214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				951FA7701F4E22790096AC5A /* ProductSearchUITests.swift in Sources */,
+				95B512EC1F94FEE7003B0012 /* UserViewControllerUITests.swift in Sources */,
 				951FA77A1F4E22B00096AC5A /* HTTPDynamicStubs.swift in Sources */,
 				951FA7831F4F6B8E0096AC5A /* UITestCase.swift in Sources */,
 				95F2B04B1F51A0F6004F8AF9 /* ProductDetailUITests.swift in Sources */,

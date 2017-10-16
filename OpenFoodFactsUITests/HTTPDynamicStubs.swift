@@ -17,11 +17,13 @@ enum HTTPMethod {
 struct HTTPStubInfo {
     let url: String
     let jsonFilename: String?
+    let html: String?
     let method: HTTPMethod
 
-    init(url: String, jsonFilename: String? = nil, method: HTTPMethod) {
+    init(url: String, jsonFilename: String? = nil, html: String? = nil, method: HTTPMethod) {
         self.url = url
         self.jsonFilename = jsonFilename
+        self.html = html
         self.method = method
     }
 }
@@ -48,6 +50,8 @@ class HTTPDynamicStubs {
         for stub in initialStubs {
             if let jsonFilename = stub.jsonFilename {
                 setupStub(url: stub.url, filename: jsonFilename, method: stub.method)
+            } else if let html = stub.html {
+                setupStub(url: stub.url, html: html, method: stub.method)
             } else {
                 setupErrorStub(url: stub.url)
             }
@@ -63,6 +67,17 @@ class HTTPDynamicStubs {
 
         let response: ((HttpRequest) -> HttpResponse) = { _ in
             return HttpResponse.ok(.json(json as AnyObject))
+        }
+
+        switch method  {
+        case .GET : server.GET[url] = response
+        case .POST: server.POST[url] = response
+        }
+    }
+
+    public func setupStub(url: String, html: String, method: HTTPMethod) {
+        let response: ((HttpRequest) -> HttpResponse) = { _ in
+            return HttpResponse.ok(.html(html))
         }
 
         switch method  {
