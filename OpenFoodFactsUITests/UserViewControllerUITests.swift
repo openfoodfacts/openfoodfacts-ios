@@ -32,9 +32,12 @@ class UserViewControllerUITests: UITestCase {
 
         if !app.staticTexts[", you are logged in."].exists {
             dynamicStubs.setupStub(url: "/cgi/session.pl", html: "<html>Logged in</html>", method: .POST)
+            logIn()
         }
 
-        app.buttons["Sign out"].tap()
+        let signOutButton = app.buttons["Sign out"]
+        waitForElementToAppear(signOutButton)
+        signOutButton.tap()
         let loginButton = app.buttons["Login"]
         waitForElementToAppear(loginButton)
     }
