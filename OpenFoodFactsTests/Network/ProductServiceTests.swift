@@ -27,6 +27,7 @@ class ProductServiceTests: XCTestCase {
         super.tearDown()
     }
 
+    // MARK: - getProductsForQuery
     func testGetProductsForQueryShouldReturnListOfProductsWhenQueryIsNotANumber() {
         var result: ProductsResponse?
 
@@ -119,6 +120,7 @@ class ProductServiceTests: XCTestCase {
         expect(result?.product).toNot(beNil())
     }
 
+    // MARK: - getProductByBarcode
     func testGetProductByBarcodeShouldFailWhenConnectionFails() {
         var result: NSError?
 
@@ -139,6 +141,7 @@ class ProductServiceTests: XCTestCase {
         expect(result?.code) == networkDownErrorCode
     }
 
+    // MARK: - postImage
     func testPostImageShouldSucceed() {
         var resultSuccessful = false
 
@@ -238,6 +241,7 @@ class ProductServiceTests: XCTestCase {
         expect(result!.domain) == "ProductServiceErrorDomain"
     }
 
+    // MARK: - postProduct
     func testPostProductShouldSucceed() {
         var resultSuccessful = false
 

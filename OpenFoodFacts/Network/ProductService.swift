@@ -101,6 +101,10 @@ class ProductService: ProductApi {
         let request: DataRequest = Alamofire.request(url)
         log.debug(request.debugDescription)
 
+        #if DEBUG
+            request.authenticate(user: "off", password: "off")
+        #endif
+
         request.responseObject { (response: DataResponse<ProductsResponse>) in
             log.debug(response.debugDescription)
             switch response.result {
@@ -215,6 +219,17 @@ extension ProductService {
             params[Params.userId] = credentials.username
             params[Params.password] = credentials.password
         }
+
+        var appVersion = "unknown"
+        var id = "unknown"
+
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            appVersion = version
+        }
+        if let uuid = UIDevice.current.identifierForVendor?.uuidString {
+            id = uuid
+        }
+        params["comment"] = "Contributed using: OFF app for iOS - v\(appVersion) - user id: \(id)"
 
         let request = Alamofire.request("\(Endpoint.post)/cgi/product_jqm2.pl", method: .post, parameters: params, encoding: URLEncoding.default)
         log.debug(request.debugDescription)
