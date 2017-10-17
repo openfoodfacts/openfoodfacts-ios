@@ -5,8 +5,6 @@ cache:
   - Carthage
 before_install:
   - gem install fastlane --no-rdoc --no-ri --no-document --quiet
-before_script:
-  - carthage bootstrap --platform iOS --cache-builds
 script:
   - fastlane test
 notifications:

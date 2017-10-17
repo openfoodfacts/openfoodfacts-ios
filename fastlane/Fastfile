@@ -6,6 +6,7 @@ default_platform :ios
 
 desc "Run all the tests"
 lane :test do
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
   sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool no")
   scan(
     scheme: "OpenFoodFacts",
@@ -22,6 +23,8 @@ lane :beta do
   increment_build_number
 
   match(type: "appstore")
+
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
 
   # build your iOS app
   gym(
