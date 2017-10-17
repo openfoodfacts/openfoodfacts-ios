@@ -34,7 +34,7 @@ class UITestCase: XCTestCase {
         let existsPredicate = NSPredicate(format: "exists == true")
         expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
 
-        waitForExpectations(timeout: 5) { (error) -> Void in
+        waitForExpectations(timeout: 10) { (error) -> Void in
             if (error != nil) {
                 let message = "Failed to find \(element) after 5 seconds."
                 self.recordFailure(withDescription: message, inFile: file, atLine: Int(line), expected: true)
