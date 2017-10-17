@@ -18,7 +18,7 @@ class ProductServiceMock: ProductApi {
     let error = NSError(domain: NSURLErrorDomain, code: -1009, userInfo: nil)
     var productImage: ProductImage?
     var product: Product!
-    var didLogin = false
+    var didLogIn = false
     var loginUsername: String?
     var loginPassword: String?
 
@@ -56,8 +56,8 @@ class ProductServiceMock: ProductApi {
         }
     }
 
-    func login(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void) {
-        didLogin = true
+    func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void) {
+        didLogIn = true
 
         if username == "test_user" {
             loginUsername = username

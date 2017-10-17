@@ -119,13 +119,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h1t-3r-axE">
                                                 <rect key="frame" x="20" y="20" width="335" height="270.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHp-A0-JOs">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHp-A0-JOs">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.login"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.log-in"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ceH-fk-HV9">
@@ -151,9 +151,9 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbh-Kg-9jt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
-                                                                <state key="normal" title="Login"/>
+                                                                <state key="normal" title="Log In"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.login"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.log-in"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="didTapLoginButton:" destination="ztY-tr-pbE" eventType="touchUpInside" id="duY-Ta-zcP"/>
@@ -191,7 +191,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.why-login.text"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.why-log-in.text"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
@@ -304,8 +304,11 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx2-Gt-Ejv">
-                                        <rect key="frame" x="159" y="97.5" width="57" height="30"/>
-                                        <state key="normal" title="Sign out"/>
+                                        <rect key="frame" x="160" y="97.5" width="55" height="30"/>
+                                        <state key="normal" title="Log Out"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.log-out"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="didTapSignOut:" destination="wEm-Se-73e" eventType="touchUpInside" id="auJ-za-kMT"/>
                                         </connections>

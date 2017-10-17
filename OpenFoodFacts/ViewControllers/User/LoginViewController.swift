@@ -60,7 +60,7 @@ class LoginViewController: ChildViewController {
             return
         }
 
-        productApi.login(username: username, password: password, onSuccess: {
+        productApi.logIn(username: username, password: password, onSuccess: {
             self.dismiss()
         }, onError: { error in
             let title: String

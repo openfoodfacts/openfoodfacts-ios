@@ -68,7 +68,7 @@ class LoginViewControllerTests: XCTestCase {
 
         viewController.didTapLoginButton(UIButton())
 
-        expect(self.productApi.didLogin).toEventually(beTrue(), timeout: 10)
+        expect(self.productApi.didLogIn).toEventually(beTrue(), timeout: 10)
         expect(self.childDelegate.removedChild is LoginViewController).toEventually(beTrue(), timeout: 10)
     }
 

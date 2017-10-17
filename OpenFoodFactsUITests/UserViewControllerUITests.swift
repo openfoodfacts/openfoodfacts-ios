@@ -9,7 +9,7 @@
 import XCTest
 
 class UserViewControllerUITests: UITestCase {
-    func testLogin() {
+    func testlogIn() {
         dynamicStubs.setupStub(url: "/cgi/session.pl", html: "<html>Logged in</html>", method: .POST)
 
         let app = XCUIApplication()
@@ -17,10 +17,10 @@ class UserViewControllerUITests: UITestCase {
 
         // Sign out if logged in
         if app.staticTexts[", you are logged in."].exists {
-            app.buttons["Sign out"].tap()
+            app.buttons["Log Out"].tap()
         }
 
-        login()
+        logIn()
 
         let label = app.staticTexts[", you are logged in."]
         waitForElementToAppear(label)
@@ -35,18 +35,18 @@ class UserViewControllerUITests: UITestCase {
             logIn()
         }
 
-        let signOutButton = app.buttons["Sign out"]
-        waitForElementToAppear(signOutButton)
-        signOutButton.tap()
-        let loginButton = app.buttons["Login"]
-        waitForElementToAppear(loginButton)
+        let logOutButton = app.buttons["Log Out"]
+        waitForElementToAppear(logOutButton)
+        logOutButton.tap()
+        let logInButton = app.buttons["Log In"]
+        waitForElementToAppear(logInButton)
     }
 
-    func testAlertDisplayedWhenLoginWithoutUsername() {
+    func testAlertDisplayedWhenlogInWithoutUsername() {
         let app = XCUIApplication()
         app.tabBars.buttons["User"].tap()
 
-        app.buttons["Login"].tap()
+        app.buttons["Log In"].tap()
 
         addUIInterruptionMonitor(withDescription: "Username is required") { (alert) -> Bool in
             alert.buttons["Ok"].tap()
@@ -54,7 +54,7 @@ class UserViewControllerUITests: UITestCase {
         }
     }
 
-    func testAlertDisplayedWhenLoginWithoutPassword() {
+    func testAlertDisplayedWhenlogInWithoutPassword() {
         let app = XCUIApplication()
         app.tabBars.buttons["User"].tap()
 
@@ -62,7 +62,7 @@ class UserViewControllerUITests: UITestCase {
         username.tap()
         username.typeText("test_user")
 
-        app.buttons["Login"].tap()
+        app.buttons["Log In"].tap()
 
         addUIInterruptionMonitor(withDescription: "Password is required") { (alert) -> Bool in
             alert.buttons["Ok"].tap()
@@ -70,7 +70,7 @@ class UserViewControllerUITests: UITestCase {
         }
     }
 
-    private func login() {
+    private func logIn() {
         let username = app.scrollViews.textFields["Username"]
         username.tap()
         username.typeText("test_user")
@@ -79,6 +79,6 @@ class UserViewControllerUITests: UITestCase {
         password.tap()
         password.typeText("test_pass")
 
-        app.buttons["Login"].tap()
+        app.buttons["Log In"].tap()
     }
 }

@@ -17,7 +17,7 @@ protocol ProductApi {
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
     func postImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
-    func login(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void)
+    func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void)
 }
 
 struct Endpoint {
@@ -257,7 +257,7 @@ extension ProductService {
 }
 
 extension ProductService {
-    func login(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void) {
+    func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void) {
         let parameters = [Params.userId: username, Params.password: password, Params.submit: "Sign-in"]
         let request = Alamofire.request(Endpoint.login, method: .post, parameters: parameters)
         log.debug(request.debugDescription)

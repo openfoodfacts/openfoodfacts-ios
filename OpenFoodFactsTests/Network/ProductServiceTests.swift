@@ -284,7 +284,7 @@ class ProductServiceTests: XCTestCase {
         expect(result?.code) == networkDownErrorCode
     }
 
-    // MARK: - login
+    // MARK: - logIn
     func testLogin() {
         var resultSuccessful = false
         let username = "test_user"
@@ -298,7 +298,7 @@ class ProductServiceTests: XCTestCase {
                 headers: ["Content-Type": "application/html"])
         }
 
-        productApi.login(username: username, password: password, onSuccess: success, onError: error)
+        productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
         expect(resultSuccessful).toEventually(beTrue(), timeout: 10)
     }
@@ -316,7 +316,7 @@ class ProductServiceTests: XCTestCase {
                 headers: ["Content-Type": "application/html"])
         }
 
-        productApi.login(username: username, password: password, onSuccess: success, onError: error)
+        productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
         expect(result?.code).toEventually(equal(ProductService.ErrorCodes.wrongCredentials.rawValue), timeout: 10)
     }
@@ -332,7 +332,7 @@ class ProductServiceTests: XCTestCase {
             return OHHTTPStubsResponse(error: notConnectedError)
         }
 
-        productApi.login(username: username, password: password, onSuccess: success, onError: error)
+        productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
         expect(result?.code).toEventually(equal(networkDownErrorCode), timeout: 10)
     }
