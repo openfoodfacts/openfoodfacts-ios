@@ -39,6 +39,11 @@ Run all the tests
 fastlane beta
 ```
 Build and send the beta to TestFlight
+### refresh_dsyms
+```
+fastlane refresh_dsyms
+```
+Upload dsyms to Fabric
 
 ----
 
