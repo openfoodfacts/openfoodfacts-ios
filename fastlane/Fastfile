@@ -7,13 +7,17 @@ default_platform :ios
 desc "Run all the tests"
 lane :test do
   carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
-  sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool no")
+  if !is_ci
+    sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool no")
+  end
   scan(
     scheme: "OpenFoodFacts",
     devices: ["iPhone 8"],
     output_types: "html"
   )
-  sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool yes")
+  if !is_ci
+    sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool yes")
+  end
 end
 
 desc "Build and send the beta to TestFlight"
