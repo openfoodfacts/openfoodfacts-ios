@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         let productApi = ProductService()
-        injectProductApiToClients(productApi)
+        setupViewControllers(productApi)
 
         return true
     }
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = rootVC
 
             let productApi = ProductService()
-            injectProductApiToClients(productApi)
+            setupViewControllers(productApi)
 
             let scanVC = ScannerViewController(productApi: productApi)
             if let tab = window?.rootViewController as? UITabBarController {
@@ -65,13 +65,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
 
-    fileprivate func injectProductApiToClients(_ productApi: ProductApi) {
+    fileprivate func setupViewControllers(_ productApi: ProductApi) {
         if let tab = window?.rootViewController as? UITabBarController {
             for child in tab.viewControllers ?? [] {
                 if let top = child as? ProductApiClient {
                     top.set(productApi)
                 } else if let navController = child as? UINavigationController, let vc = navController.topViewController as? SearchTableViewController {
                     vc.productApi = productApi
+
+                    if UserDefaults.standard.bool(forKey: UserDefaultsConstants.scanningOnLaunch) {
+                        vc.scanBarcode()
+                    }
                 }
             }
         }

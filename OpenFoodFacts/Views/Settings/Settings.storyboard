@@ -4,14 +4,16 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Settings Table View Controller-->
         <scene sceneID="CP6-Uq-Okc">
             <objects>
-                <tableViewController id="JHQ-0r-3ik" sceneMemberID="viewController">
+                <tableViewController id="JHQ-0r-3ik" customClass="SettingsTableViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="csX-iR-dgu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,12 +34,49 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="settings.about.title"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="c7X-Xf-g2w" kind="show" id="VC0-30-bum"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UrK-9j-8rU">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UrK-9j-8rU" id="BKV-uW-hHd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dfi-Kz-RF8">
+                                                    <rect key="frame" x="318" y="8" width="51" height="27.5"/>
+                                                    <connections>
+                                                        <action selector="didSwitchScanOnLaunch:" destination="JHQ-0r-3ik" eventType="valueChanged" id="tFt-9y-ldM"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Show Scan On App Launch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2R-39-0sC">
+                                                    <rect key="frame" x="8" y="8" width="302" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="settings.scan-on-launch.title"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e2R-39-0sC" secondAttribute="bottom" id="7Sx-uk-9Wr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Dfi-Kz-RF8" secondAttribute="bottom" id="8sL-HD-6MY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Dfi-Kz-RF8" secondAttribute="trailing" id="BiZ-op-nVe"/>
+                                                <constraint firstItem="e2R-39-0sC" firstAttribute="leading" secondItem="BKV-uW-hHd" secondAttribute="leadingMargin" id="IXY-9i-kwI"/>
+                                                <constraint firstItem="e2R-39-0sC" firstAttribute="top" secondItem="BKV-uW-hHd" secondAttribute="topMargin" id="ek3-sE-fYa"/>
+                                                <constraint firstItem="Dfi-Kz-RF8" firstAttribute="top" secondItem="BKV-uW-hHd" secondAttribute="topMargin" id="i2S-PG-tDF"/>
+                                                <constraint firstItem="Dfi-Kz-RF8" firstAttribute="leading" secondItem="e2R-39-0sC" secondAttribute="trailing" constant="8" symbolic="YES" id="vir-qa-IkI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -48,6 +87,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dLK-Qu-QrL"/>
+                    <connections>
+                        <outlet property="scanOnLaunchSwitch" destination="Dfi-Kz-RF8" id="PEn-Cu-fsr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRA-n6-xsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

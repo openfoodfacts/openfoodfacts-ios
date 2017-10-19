@@ -56,4 +56,10 @@ class TestHelper {
         UserDefaults.standard.set(username, forKey: "username")
         return username
     }
+
+    func clearUserDefaults() {
+        for (key, _) in UserDefaults.standard.dictionaryRepresentation() {
+            UserDefaults.standard.removeObject(forKey: key)
+        }
+    }
 }
