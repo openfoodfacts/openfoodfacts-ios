@@ -13,7 +13,8 @@ lane :test do
   scan(
     scheme: "OpenFoodFacts",
     devices: ["iPhone 8"],
-    output_types: "html"
+    output_types: "html",
+    skip_build: true
   )
   if !is_ci
     sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool yes")
