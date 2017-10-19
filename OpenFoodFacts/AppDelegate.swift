@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if ProcessInfo().environment["UITesting"] == nil {
             configureLog()
             Fabric.with([Crashlytics.self])
+        } else {
+            UIApplication.shared.keyWindow?.layer.speed = 100
         }
 
         let productApi = ProductService()
