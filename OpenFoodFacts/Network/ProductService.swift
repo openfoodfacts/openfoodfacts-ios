@@ -13,7 +13,7 @@ import Crashlytics
 import UIKit
 
 protocol ProductApi {
-    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
+    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (NSError) -> Void)
     func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
     func postImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
@@ -43,7 +43,7 @@ class ProductService: ProductApi {
         case wrongCredentials = 2
     }
 
-    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
+    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (NSError) -> Void) {
         lastGetProductsRequest?.cancel()
 
         var query = query
@@ -73,7 +73,7 @@ class ProductService: ProductApi {
                 log.debug("Got \(productsResponse.products.count) products ")
                 productsResponse.query = query
                 onSuccess(productsResponse)
-            case .failure(let error):
+            case .failure(let error as NSError):
                 Crashlytics.sharedInstance().recordError(error)
                 onError(error)
             }

@@ -254,6 +254,29 @@ class SearchTableViewControllerTests: XCTestCase {
         })
     }
 
+    func testGetProductsShouldNotChangeStateWhenResponseReceivedAndStateNotContentOrLoading() {
+        let page = 1
+        let query = "Fanta"
+        productApi.productsResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
+        viewController.state = .error(productApi.error)
+
+        viewController.getProducts(page: page, withQuery: query)
+
+        expect(self.viewController.state).to(beError { error in
+            expect(error) === self.productApi.error as Error
+        })
+    }
+
+    func testGetProductsShouldNotChangeStateWhenErrorDueToCancelledRequest() {
+        let page = 1
+        let query = "Cancelled"
+        viewController.state = .loading
+
+        viewController.getProducts(page: page, withQuery: query)
+
+        expect(self.viewController.state).to(beLoading())
+    }
+
     // MARK: - Gesture recognizers
 
     func testDidTapTableViewBackgroundDismissesSearchBarWhenStateIsNotContentAndSearchBarHasNoText() {
@@ -312,6 +335,15 @@ class SearchTableViewControllerTests: XCTestCase {
             if let actual = try expression.evaluate(),
                 case let .error(error) = actual {
                 test(error)
+                return PredicateResult(status: .matches, message: message)
+            }
+            return PredicateResult(status: .fail, message: message)
+        }
+    }
+
+    private func beLoading() -> Predicate<SearchTableViewController.State> {
+        return Predicate.define("be <loading>") { expression, message in
+            if let actual = try expression.evaluate(), case .loading = actual {
                 return PredicateResult(status: .matches, message: message)
             }
             return PredicateResult(status: .fail, message: message)

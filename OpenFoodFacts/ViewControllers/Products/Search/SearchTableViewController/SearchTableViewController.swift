@@ -220,7 +220,11 @@ extension SearchTableViewController {
                 return
             }
         }, onError: { error in
-            self.state = .error(error)
+            if error.code == NSURLErrorCancelled {
+                // Ignore, a newer request cancelled this one
+            } else {
+                self.state = .error(error)
+            }
         })
     }
 }
