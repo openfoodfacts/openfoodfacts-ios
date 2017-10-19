@@ -54,6 +54,7 @@ class SummaryHeaderCellControllerTests: XCTestCase {
         expect(self.viewController.callToActionView.isHidden).to(beTrue())
         expect(self.viewController.nutriscore.currentScore).to(equal(NutriScoreView.Score.A))
         expect(self.viewController.productName.text).to(equal(productName))
+        expect(self.viewController.addNewPictureButton.isHidden).to(beFalse())
     }
 
     func testViewDidLoadWhenProductDoesNotHaveImageUrlAndNutriscoreAndProductName() {
@@ -65,6 +66,7 @@ class SummaryHeaderCellControllerTests: XCTestCase {
         expect(self.viewController.callToActionView.gestureRecognizers![0] is UITapGestureRecognizer).to(beTrue())
         expect(self.viewController.nutriscore.superview?.isHidden).to(beTrue())
         expect(self.viewController.productName.isHidden).to(beTrue())
+        expect(self.viewController.addNewPictureButton.isHidden).to(beTrue())
     }
 
     // MARK: - didTapProductImage

@@ -15,6 +15,7 @@ class NutritionTableHeaderCellController: TakePictureViewController {
     @IBOutlet weak var servingSizeLabel: UILabel!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint?
     @IBOutlet weak var callToActionView: PictureCallToActionView!
+    @IBOutlet weak var addNewPictureButton: UIButton!
 
     weak var delegate: FormTableViewControllerDelegate?
 
@@ -51,11 +52,13 @@ class NutritionTableHeaderCellController: TakePictureViewController {
             nutritionTableImage.addGestureRecognizer(tap)
             nutritionTableImage.isUserInteractionEnabled = true
             callToActionView.isHidden = true
+            addNewPictureButton.isHidden = false
         } else {
             nutritionTableImage.isHidden = true
             callToActionView.isHidden = false
             callToActionView.textLabel.text = NSLocalizedString("call-to-action.nutrition", comment: "")
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
+            addNewPictureButton.isHidden = true
         }
 
         if let servingSize = product.servingSize {

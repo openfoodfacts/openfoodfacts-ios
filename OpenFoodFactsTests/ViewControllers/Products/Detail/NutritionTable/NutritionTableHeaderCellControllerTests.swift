@@ -56,6 +56,7 @@ class NutritionTableHeaderCellControllerTests: XCTestCase {
         expect(self.viewController.nutritionTableImage.isUserInteractionEnabled).toEventually(beTrue(), timeout: 10)
         expect(self.viewController.nutritionTableImage.gestureRecognizers![0] is UITapGestureRecognizer).toEventually(beTrue(), timeout: 10)
         expect(self.viewController.callToActionView.isHidden).to(beTrue())
+        expect(self.viewController.addNewPictureButton.isHidden).to(beFalse())
     }
 
     func testViewDidLoadWhenImageHeightLargerThan130() {
@@ -88,6 +89,7 @@ class NutritionTableHeaderCellControllerTests: XCTestCase {
         expect(self.viewController.callToActionView.isHidden).to(beFalse())
         expect(self.viewController.callToActionView.textLabel.text).to(equal(NSLocalizedString("call-to-action.nutrition", comment: "")))
         expect(self.viewController.callToActionView.gestureRecognizers![0] is UITapGestureRecognizer).to(beTrue())
+        expect(self.viewController.addNewPictureButton.isHidden).to(beTrue())
     }
 
     func testViewDidLoadShouldShowServiceSizeLabelWhenServingSizeValuePresent() {

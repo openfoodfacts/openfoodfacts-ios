@@ -19,6 +19,7 @@ class SummaryHeaderCellController: TakePictureViewController {
         }
     }
     @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var addNewPictureButton: UIButton!
 
     convenience init(with product: Product, productApi: ProductApi) {
         self.init(nibName: String(describing: SummaryHeaderCellController.self), bundle: nil)
@@ -42,11 +43,13 @@ class SummaryHeaderCellController: TakePictureViewController {
             productImage.addGestureRecognizer(tap)
             productImage.isUserInteractionEnabled = true
             callToActionView.isHidden = true
+            addNewPictureButton.isHidden = false
         } else {
             productImage.isHidden = true
             callToActionView.textLabel.text = NSLocalizedString("call-to-action.summary", comment: "")
             callToActionView.isHidden = false
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
+            addNewPictureButton.isHidden = true
         }
 
         if let nutriscoreValue = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue.uppercased()) {

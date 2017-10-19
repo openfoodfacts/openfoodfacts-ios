@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SummaryHeaderTableViewCellController" customModule="OpenFoodFacts" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SummaryHeaderCellController" customModule="OpenFoodFacts" customModuleProvider="target">
             <connections>
+                <outlet property="addNewPictureButton" destination="ryx-rz-zza" id="Ba8-yv-k4N"/>
                 <outlet property="callToActionView" destination="igt-YD-1SC" id="YrF-sp-4yT"/>
                 <outlet property="nutriscore" destination="NYL-Ot-UMp" id="vZZ-H4-HPR"/>
                 <outlet property="productImage" destination="7WZ-fb-FXP" id="NEh-ZU-158"/>
@@ -27,20 +29,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h4r-NG-xwT">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="7WZ-fb-FXP">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="153"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="120"/>
                                 </imageView>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igt-YD-1SC" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                    <rect key="frame" x="160" y="0.0" width="0.0" height="153"/>
+                                    <rect key="frame" x="160" y="0.0" width="0.0" height="120"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4l-Cj-xX4">
-                                    <rect key="frame" x="160" y="0.0" width="160" height="153"/>
+                                    <rect key="frame" x="160" y="0.0" width="160" height="120"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYL-Ot-UMp" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                            <rect key="frame" x="-83.5" y="10" width="328" height="133"/>
+                                            <rect key="frame" x="0.5" y="27.5" width="160" height="65"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="NYL-Ot-UMp" secondAttribute="height" multiplier="310:126" id="w7H-je-Vf4"/>
@@ -61,8 +63,18 @@
                                 <constraint firstAttribute="height" priority="750" constant="130" id="6tm-10-rfN"/>
                             </constraints>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-rz-zza">
+                            <rect key="frame" x="0.0" y="130" width="320" height="27.5"/>
+                            <state key="normal" title="Take a new picture"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-detail.header.add-new-picture"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapTakePictureButton:" destination="-1" eventType="touchUpInside" id="YJf-Ca-cc8"/>
+                            </connections>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EX-hp-rp2">
-                            <rect key="frame" x="0.0" y="163" width="320" height="25"/>
+                            <rect key="frame" x="0.0" y="167.5" width="320" height="20.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

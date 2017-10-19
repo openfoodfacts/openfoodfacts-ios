@@ -13,6 +13,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
     var product: Product!
     @IBOutlet weak var ingredients: UIImageView!
     @IBOutlet weak var callToActionView: PictureCallToActionView!
+    @IBOutlet weak var addNewPictureButton: UIButton!
 
     weak var delegate: FormTableViewControllerDelegate?
 
@@ -44,11 +45,13 @@ class IngredientsHeaderCellController: TakePictureViewController {
             ingredients.addGestureRecognizer(tap)
             ingredients.isUserInteractionEnabled = true
             callToActionView.isHidden = true
+            addNewPictureButton.isHidden = false
         } else {
             ingredients.isHidden = true
             callToActionView.isHidden = false
             callToActionView.textLabel.text = NSLocalizedString("call-to-action.ingredients", comment: "")
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
+            addNewPictureButton.isHidden = true
         }
     }
 }
