@@ -277,6 +277,24 @@ class SearchTableViewControllerTests: XCTestCase {
         expect(self.viewController.state).to(beLoading())
     }
 
+    func testGetProductsShouldSetNewResponseWhenStateIsContentButNewResponseIsForDifferentQuery() {
+        let page  = 1
+        let query = "Water"
+        let secondQuery = "Fanta"
+        let productResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
+        productResponse.query = query
+        let secondProductResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
+        productResponse.query = secondQuery
+        productApi.productsResponse = secondProductResponse
+        viewController.state = .content(productResponse)
+
+        viewController.getProducts(page: page, withQuery: secondQuery)
+
+        expect(self.viewController.state).to(beContent(test: { response in
+            expect(response.query).to(equal(secondQuery))
+        }))
+    }
+
     // MARK: - Gesture recognizers
 
     func testDidTapTableViewBackgroundDismissesSearchBarWhenStateIsNotContentAndSearchBarHasNoText() {

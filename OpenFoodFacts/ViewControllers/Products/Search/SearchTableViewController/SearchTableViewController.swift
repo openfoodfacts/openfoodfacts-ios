@@ -209,6 +209,8 @@ extension SearchTableViewController {
                 oldResponse.page = response.page
                 oldResponse.pageSize = response.pageSize
                 self.state = .content(oldResponse)
+            case .content(let oldResponse) where oldResponse.query != query:
+                self.state = .content(response)
             case .loading: // Got new response
                 if response.totalProducts == 0 {
                     self.state = .empty
