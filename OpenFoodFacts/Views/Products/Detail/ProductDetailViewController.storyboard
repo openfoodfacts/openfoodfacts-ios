@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d3Z-kw-o7T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d3Z-kw-o7T">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +19,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gwe-ZE-54x"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O6D-DT-fwP">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocG-5L-BJ0">
@@ -33,11 +35,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3uh-fc-kbe">
-                        <barButtonItem key="rightBarButtonItem" image="barcode" style="done" id="kQL-21-4Ew">
-                            <connections>
-                                <action selector="didTapScanButton:" destination="d3Z-kw-o7T" id="Lhh-pH-xPB"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Edit" id="rzv-bg-kSh">
+                                <connections>
+                                    <action selector="didTapEditButton:" destination="d3Z-kw-o7T" id="Lz2-R5-f1S"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="barcode" style="done" id="kQL-21-4Ew">
+                                <connections>
+                                    <action selector="didTapScanButton:" destination="d3Z-kw-o7T" id="Lhh-pH-xPB"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>

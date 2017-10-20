@@ -9,6 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 import Crashlytics
+import SafariServices
 
 class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
@@ -221,5 +222,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     @IBAction func didTapScanButton(_ sender: UIBarButtonItem) {
         let scanVC = ScannerViewController(productApi: productApi)
         navigationController?.pushViewController(scanVC, animated: true)
+    }
+
+    @IBAction func didTapEditButton(_ sender: UIBarButtonItem) {
+        if let barcode = self.product?.barcode, let url = URL(string: URLs.Edit + barcode) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: false)
+            present(vc, animated: true)
+        }
     }
 }

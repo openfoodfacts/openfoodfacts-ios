@@ -11,6 +11,7 @@ import XCTest
 import Nimble
 import XLPagerTabStrip
 import ObjectMapper
+import SafariServices
 
 // swiftlint:disable force_cast
 class ProductDetailViewControllerTests: XCTestCase {
@@ -246,6 +247,16 @@ class ProductDetailViewControllerTests: XCTestCase {
 
         expect(self.navigationController.pushedViewController is ScannerViewController).toEventually(beTrue())
         expect(self.navigationController.isViewControllerPushAnimated).toEventually(beTrue())
+    }
+
+    // MARK: - didTapEditButton
+    func testDidTapEditButton() {
+        viewController.product = Product()
+        viewController.product.barcode = "123456789"
+
+        viewController.didTapEditButton(UIBarButtonItem())
+
+        expect(self.viewController.presentedViewController is SFSafariViewController).to(beTrue())
     }
 
     // MARK: - Helper functions
