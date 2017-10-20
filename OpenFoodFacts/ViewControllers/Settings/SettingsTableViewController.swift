@@ -7,13 +7,44 @@
 //
 
 import UIKit
+import SafariServices
 
 class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
 
+    private let discoverIndexPath = IndexPath(row: 1, section: 1)
+    private let howToContributeIndexPath = IndexPath(row: 2, section: 1)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         scanOnLaunchSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsConstants.scanningOnLaunch)
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "settings.tab-bar.item".localized
+        } else if section == 1 {
+            return "settings.sections.information".localized
+        } else {
+            return ""
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var url: URL?
+        switch indexPath {
+        case discoverIndexPath:
+            url = URL(string: URLs.Discover)
+        case howToContributeIndexPath:
+            url = URL(string: URLs.HowToContribute)
+        default:
+            break
+        }
+
+        if let url = url {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            present(vc, animated: true)
+        }
     }
 
     @IBAction func didSwitchScanOnLaunch(_ sender: UISwitch) {

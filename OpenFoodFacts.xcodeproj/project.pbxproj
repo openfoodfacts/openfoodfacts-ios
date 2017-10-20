@@ -12,6 +12,7 @@
 		9501634D1F2CEE700057B8D5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950163431F2CE9780057B8D5 /* SnapKit.framework */; };
 		950163741F2D1EF20057B8D5 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950163731F2D1EF20057B8D5 /* TakePictureViewController.swift */; };
 		950547F21F7ADBFB0017A63D /* SummaryHeaderCellControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950547F11F7ADBFB0017A63D /* SummaryHeaderCellControllerTests.swift */; };
+		950ACC6D1F9945D500B54B78 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950ACC6C1F9945D500B54B78 /* URLs.swift */; };
 		9510B0201F6882C30012953A /* RotatingProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B01F1F6882C30012953A /* RotatingProcessorTests.swift */; };
 		9510B0241F6883E00012953A /* ProductServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0231F6883E00012953A /* ProductServiceMock.swift */; };
 		9510B0281F6885690012953A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0271F6885690012953A /* TestHelper.swift */; };
@@ -278,6 +279,7 @@
 		950163491F2CE9780057B8D5 /* XLPagerTabStrip.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = XLPagerTabStrip.framework.dSYM; sourceTree = "<group>"; };
 		950163731F2D1EF20057B8D5 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakePictureViewController.swift; path = Common/TakePictureViewController.swift; sourceTree = "<group>"; };
 		950547F11F7ADBFB0017A63D /* SummaryHeaderCellControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderCellControllerTests.swift; sourceTree = "<group>"; };
+		950ACC6C1F9945D500B54B78 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		9510B01F1F6882C30012953A /* RotatingProcessorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingProcessorTests.swift; sourceTree = "<group>"; };
 		9510B0231F6883E00012953A /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductServiceMock.swift; path = Common/ProductServiceMock.swift; sourceTree = "<group>"; };
 		9510B0271F6885690012953A /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = Common/TestHelper.swift; sourceTree = "<group>"; };
@@ -293,7 +295,7 @@
 		951FA7791F4E22B00096AC5A /* HTTPDynamicStubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPDynamicStubs.swift; sourceTree = "<group>"; };
 		951FA77D1F4F68670096AC5A /* Testing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Testing.xcconfig; path = Config/Testing.xcconfig; sourceTree = "<group>"; };
 		951FA7821F4F6B8E0096AC5A /* UITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
-		951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessibilityIdentifiers.swift; path = Helpers/AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9523E7D71F817F3500622922 /* ArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
 		9524464C1F98FAD2005B6246 /* SettingsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -308,7 +310,7 @@
 		953CDD581F929C680096C428 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		953CDD5A1F92A12A0096C428 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		9543129C1EEC57A1009F0621 /* ImageViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageViewer.framework; path = Carthage/Build/iOS/ImageViewer.framework; sourceTree = "<group>"; };
-		954587931F730C2D00269E71 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraHelper.swift; path = Helpers/CameraHelper.swift; sourceTree = "<group>"; };
+		954587931F730C2D00269E71 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
 		954587961F73101500269E71 /* CameraControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerTests.swift; sourceTree = "<group>"; };
 		956AEA831F78014900969AF3 /* Product_fanta_orange.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Product_fanta_orange.json; sourceTree = "<group>"; };
 		956FF8821F1FF0740069D678 /* ProductAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAddViewController.swift; sourceTree = "<group>"; };
@@ -713,7 +715,7 @@
 		95F31BF61F3A231000B8AF90 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceTests.swift; sourceTree = "<group>"; };
 		95F7DB391F98DDAC00428208 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultsConstants.swift; path = Helpers/UserDefaultsConstants.swift; sourceTree = "<group>"; };
+		95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -879,8 +881,9 @@
 				951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */,
 				954587931F730C2D00269E71 /* CameraHelper.swift */,
 				95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */,
+				950ACC6C1F9945D500B54B78 /* URLs.swift */,
 			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9524464B1F98FAC3005B6246 /* Settings */ = {
@@ -2057,6 +2060,7 @@
 				9581B3D81F9009EE0036AC7C /* LocalizableNavigationItem.swift in Sources */,
 				95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */,
 				956FF95A1F1FF0CA0069D678 /* LoadingView.swift in Sources */,
+				950ACC6D1F9945D500B54B78 /* URLs.swift in Sources */,
 				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
 				950163741F2D1EF20057B8D5 /* TakePictureViewController.swift in Sources */,
 				95DDAF621F25401D0096B74E /* CameraController.swift in Sources */,
