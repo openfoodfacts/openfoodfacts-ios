@@ -142,7 +142,7 @@ class LoginViewControllerTests: XCTestCase {
 
         viewController.didTapLoginButton(UIButton())
 
-        expect(self.viewController.presentedViewController is UIAlertController).toEventually(beTrue())
+        expect(self.viewController.presentedViewController is UIAlertController).toEventually(beTrue(), timeout: 10)
         let alertController = self.viewController.presentedViewController as! UIAlertController
         expect(alertController.title).to(equal(NSLocalizedString("user.alert.password-missing", comment: "")))
         expect(alertController.actions[0].title).to(equal(NSLocalizedString("alert.action.ok", comment: "")))
