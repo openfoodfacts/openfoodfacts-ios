@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
@@ -42,8 +41,7 @@ class SettingsTableViewController: UITableViewController {
         }
 
         if let url = url {
-            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: false)
-            present(vc, animated: true)
+            openUrlInApp(url)
         }
     }
 

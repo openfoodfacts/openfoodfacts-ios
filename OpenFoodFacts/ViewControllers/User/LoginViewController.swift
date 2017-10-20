@@ -9,7 +9,6 @@
 import UIKit
 import IQKeyboardManagerSwift
 import NotificationBanner
-import SafariServices
 
 class LoginViewController: ChildViewController {
     @IBOutlet weak var usernameField: UITextField!
@@ -81,8 +80,7 @@ class LoginViewController: ChildViewController {
 
     @IBAction func didTapCreateAccountButton(_ sender: UIButton) {
         if let url = URL(string: URLs.CreateAccount) {
-            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: false)
-            present(vc, animated: true)
+            openUrlInApp(url)
         }
     }
 }
