@@ -277,12 +277,12 @@
 		950163471F2CE9780057B8D5 /* XCGLogger.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = XCGLogger.framework.dSYM; sourceTree = "<group>"; };
 		950163481F2CE9780057B8D5 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		950163491F2CE9780057B8D5 /* XLPagerTabStrip.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = XLPagerTabStrip.framework.dSYM; sourceTree = "<group>"; };
-		950163731F2D1EF20057B8D5 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakePictureViewController.swift; path = Common/TakePictureViewController.swift; sourceTree = "<group>"; };
+		950163731F2D1EF20057B8D5 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		950547F11F7ADBFB0017A63D /* SummaryHeaderCellControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderCellControllerTests.swift; sourceTree = "<group>"; };
 		950ACC6C1F9945D500B54B78 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		9510B01F1F6882C30012953A /* RotatingProcessorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingProcessorTests.swift; sourceTree = "<group>"; };
-		9510B0231F6883E00012953A /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductServiceMock.swift; path = Common/ProductServiceMock.swift; sourceTree = "<group>"; };
-		9510B0271F6885690012953A /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = Common/TestHelper.swift; sourceTree = "<group>"; };
+		9510B0231F6883E00012953A /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceMock.swift; sourceTree = "<group>"; };
+		9510B0271F6885690012953A /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		9510B0291F6888770012953A /* UITableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewTests.swift; sourceTree = "<group>"; };
 		9518681B1F93536F00416226 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		951868201F9357CF00416226 /* CredentialsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsController.swift; sourceTree = "<group>"; };
@@ -293,18 +293,18 @@
 		951FA76F1F4E22790096AC5A /* ProductSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSearchUITests.swift; sourceTree = "<group>"; };
 		951FA7711F4E22790096AC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		951FA7791F4E22B00096AC5A /* HTTPDynamicStubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPDynamicStubs.swift; sourceTree = "<group>"; };
-		951FA77D1F4F68670096AC5A /* Testing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Testing.xcconfig; path = Config/Testing.xcconfig; sourceTree = "<group>"; };
+		951FA77D1F4F68670096AC5A /* Testing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Testing.xcconfig; sourceTree = "<group>"; };
 		951FA7821F4F6B8E0096AC5A /* UITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		951FB0991EB29852005CAE33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9523E7D71F817F3500622922 /* ArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
 		9524464C1F98FAD2005B6246 /* SettingsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewControllerTests.swift; sourceTree = "<group>"; };
-		9525708B1EE9BC91002FC40D /* CellImageTapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellImageTapable.swift; path = Protocols/CellImageTapable.swift; sourceTree = "<group>"; };
+		9525708B1EE9BC91002FC40D /* CellImageTapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellImageTapable.swift; sourceTree = "<group>"; };
 		9528560A1F78512300863FC6 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		9528560D1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryFormTableViewControllerTests.swift; sourceTree = "<group>"; };
-		953498F81F76967A00568C35 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationControllerMock.swift; path = Common/NavigationControllerMock.swift; sourceTree = "<group>"; };
+		953498F81F76967A00568C35 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
 		953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewControllerTests.swift; sourceTree = "<group>"; };
-		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutrimentItem.swift; path = Nutriments/NutrimentItem.swift; sourceTree = "<group>"; };
+		953664F41ECA212100D6D398 /* NutrimentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutrimentItem.swift; sourceTree = "<group>"; };
 		95387C731F93646D00EF3380 /* CredentialsControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsControllerTests.swift; sourceTree = "<group>"; };
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		953CDD581F929C680096C428 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
@@ -358,8 +358,8 @@
 		957CBEB91F3312FB00A1B398 /* HostedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostedViewCell.swift; sourceTree = "<group>"; };
 		957CBEBD1F33B2FE00A1B398 /* Form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		957CBEBF1F33B31F00A1B398 /* ProductDetailBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailBaseCell.swift; sourceTree = "<group>"; };
-		957CBEC21F33B36400A1B398 /* SummaryFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryFormTableViewController.swift; path = Summary/SummaryFormTableViewController.swift; sourceTree = "<group>"; };
-		957CBEC31F33B36400A1B398 /* SummaryHeaderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryHeaderCellController.swift; path = Summary/SummaryHeaderCellController.swift; sourceTree = "<group>"; };
+		957CBEC21F33B36400A1B398 /* SummaryFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryFormTableViewController.swift; sourceTree = "<group>"; };
+		957CBEC31F33B36400A1B398 /* SummaryHeaderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryHeaderCellController.swift; sourceTree = "<group>"; };
 		957D9C351F6720B8005C5AE0 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		957D9C371F6728FA005C5AE0 /* UITableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellTests.swift; sourceTree = "<group>"; };
 		957D9C391F6729E1005C5AE0 /* DoubleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTests.swift; sourceTree = "<group>"; };
@@ -644,26 +644,26 @@
 		95890AB41F967DE200085B20 /* InitialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialView.xib; sourceTree = "<group>"; };
 		95890AB61F967EE600085B20 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		958BE7781F4E1BB500603688 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
-		958F33411F36196D005269C5 /* IngredientsFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientsFormTableViewController.swift; path = Ingredients/IngredientsFormTableViewController.swift; sourceTree = "<group>"; };
+		958F33411F36196D005269C5 /* IngredientsFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsFormTableViewController.swift; sourceTree = "<group>"; };
 		958F33431F361A9D005269C5 /* IngredientsHeaderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsHeaderCellController.swift; sourceTree = "<group>"; };
-		958F334A1F3777D7005269C5 /* NutritionTableFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionTableFormTableViewController.swift; path = NutritionTable/NutritionTableFormTableViewController.swift; sourceTree = "<group>"; };
-		958F334C1F377831005269C5 /* NutritionTableHeaderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionTableHeaderCellController.swift; path = NutritionTable/NutritionTableHeaderCellController.swift; sourceTree = "<group>"; };
+		958F334A1F3777D7005269C5 /* NutritionTableFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionTableFormTableViewController.swift; sourceTree = "<group>"; };
+		958F334C1F377831005269C5 /* NutritionTableHeaderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionTableHeaderCellController.swift; sourceTree = "<group>"; };
 		958F334E1F377B07005269C5 /* NutritionTableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionTableRow.swift; sourceTree = "<group>"; };
-		958F33511F378076005269C5 /* InfoRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoRowTableViewCell.swift; path = Common/InfoRowTableViewCell.swift; sourceTree = "<group>"; };
-		958F33521F378076005269C5 /* InfoRowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoRowTableViewCell.xib; path = Common/InfoRowTableViewCell.xib; sourceTree = "<group>"; };
-		958F33551F378085005269C5 /* NutriScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutriScoreView.swift; path = Common/NutriScoreView.swift; sourceTree = "<group>"; };
-		958F33561F378085005269C5 /* NutriScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NutriScoreView.xib; path = Common/NutriScoreView.xib; sourceTree = "<group>"; };
-		958F33591F37809A005269C5 /* PictureCallToActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureCallToActionView.swift; path = Common/PictureCallToActionView.swift; sourceTree = "<group>"; };
-		958F335A1F37809A005269C5 /* PictureCallToActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PictureCallToActionView.xib; path = Common/PictureCallToActionView.xib; sourceTree = "<group>"; };
+		958F33511F378076005269C5 /* InfoRowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoRowTableViewCell.swift; sourceTree = "<group>"; };
+		958F33521F378076005269C5 /* InfoRowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoRowTableViewCell.xib; sourceTree = "<group>"; };
+		958F33551F378085005269C5 /* NutriScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutriScoreView.swift; sourceTree = "<group>"; };
+		958F33561F378085005269C5 /* NutriScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutriScoreView.xib; sourceTree = "<group>"; };
+		958F33591F37809A005269C5 /* PictureCallToActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCallToActionView.swift; sourceTree = "<group>"; };
+		958F335A1F37809A005269C5 /* PictureCallToActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureCallToActionView.xib; sourceTree = "<group>"; };
 		95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryHeaderCellController.xib; sourceTree = "<group>"; };
 		959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
-		959530091F9156B100979613 /* ProductApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductApiClient.swift; path = Protocols/ProductApiClient.swift; sourceTree = "<group>"; };
+		959530091F9156B100979613 /* ProductApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductApiClient.swift; sourceTree = "<group>"; };
 		9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A7E0671F058F5D004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewControllerTests.swift; sourceTree = "<group>"; };
 		95B512E71F94E915003B0012 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
-		95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChildDelegateMock.swift; path = Common/ChildDelegateMock.swift; sourceTree = "<group>"; };
+		95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDelegateMock.swift; sourceTree = "<group>"; };
 		95B512EB1F94FEE7003B0012 /* UserViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerUITests.swift; sourceTree = "<group>"; };
 		95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewControllerTests.swift; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -674,14 +674,14 @@
 		95C368091E9ECC0C008BB582 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
 		95C54A791F8BFDB90008B5D8 /* PictureTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewControllerTests.swift; sourceTree = "<group>"; };
-		95C54A7B1F8C0E8B0008B5D8 /* CameraControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraControllerMock.swift; path = Common/CameraControllerMock.swift; sourceTree = "<group>"; };
+		95C54A7B1F8C0E8B0008B5D8 /* CameraControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerMock.swift; sourceTree = "<group>"; };
 		95CA1AE61F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsFormTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95CA1AE91F7AD8F900A0390B /* NutritionTableFormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableFormTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95CB99A61EA55BF900CBDDF9 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		95CE24DF1ED5509300EF3D79 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		95CE24E01ED5509300EF3D79 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		95CF59E11F49F12A00700580 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Config/Debug.xcconfig; sourceTree = "<group>"; };
-		95CF59E21F49F13300700580 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Config/Release.xcconfig; sourceTree = "<group>"; };
+		95CF59E11F49F12A00700580 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		95CF59E21F49F13300700580 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		95D060D81F6085320052012D /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		95D060DA1F6094D30052012D /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		95D060DC1F609DF70052012D /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
@@ -692,8 +692,8 @@
 		95E16B2E1EE9E20A00331B2B /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		95E3ADE11F21433D00CD61D9 /* ProductAddViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductAddViewController.storyboard; sourceTree = "<group>"; };
 		95E76EF71F93F77000FA144E /* UserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerTests.swift; sourceTree = "<group>"; };
-		95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nutriments.swift; path = Nutriments/Nutriments.swift; sourceTree = "<group>"; };
-		95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NutritionLevels.swift; path = Nutriments/NutritionLevels.swift; sourceTree = "<group>"; };
+		95E9F0451EC8D7D900BA20B0 /* Nutriments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutriments.swift; sourceTree = "<group>"; };
+		95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionLevels.swift; sourceTree = "<group>"; };
 		95F14C881EDB6CDD00D99115 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		95F14C8A1EDCADD600D99115 /* RotatingProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingProcessor.swift; sourceTree = "<group>"; };
 		95F1848C1F655BB500A544C2 /* GET_ProductsByBarcode_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GET_ProductsByBarcode_200.json; sourceTree = "<group>"; };
@@ -851,7 +851,7 @@
 			children = (
 				950163731F2D1EF20057B8D5 /* TakePictureViewController.swift */,
 			);
-			name = Common;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		9518681F1F9357BE00416226 /* Controllers */ = {
@@ -900,7 +900,7 @@
 				9525708B1EE9BC91002FC40D /* CellImageTapable.swift */,
 				959530091F9156B100979613 /* ProductApiClient.swift */,
 			);
-			name = Protocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		9527E7881E9EBDDC00833F04 /* Network */ = {
@@ -1136,7 +1136,7 @@
 				957CBEC21F33B36400A1B398 /* SummaryFormTableViewController.swift */,
 				957CBEC31F33B36400A1B398 /* SummaryHeaderCellController.swift */,
 			);
-			name = Summary;
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		957D9C341F6720A6005C5AE0 /* Extensions */ = {
@@ -1237,7 +1237,7 @@
 				958F33411F36196D005269C5 /* IngredientsFormTableViewController.swift */,
 				958F33431F361A9D005269C5 /* IngredientsHeaderCellController.swift */,
 			);
-			name = Ingredients;
+			path = Ingredients;
 			sourceTree = "<group>";
 		};
 		958F33491F3777C3005269C5 /* NutritionTable */ = {
@@ -1246,7 +1246,7 @@
 				958F334A1F3777D7005269C5 /* NutritionTableFormTableViewController.swift */,
 				958F334C1F377831005269C5 /* NutritionTableHeaderCellController.swift */,
 			);
-			name = NutritionTable;
+			path = NutritionTable;
 			sourceTree = "<group>";
 		};
 		958F33501F378056005269C5 /* Common */ = {
@@ -1259,7 +1259,7 @@
 				958F33591F37809A005269C5 /* PictureCallToActionView.swift */,
 				958F335A1F37809A005269C5 /* PictureCallToActionView.xib */,
 			);
-			name = Common;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		9596B50C1F45FAE30076F52C /* ViewControllers */ = {
@@ -1309,7 +1309,7 @@
 				95C54A7B1F8C0E8B0008B5D8 /* CameraControllerMock.swift */,
 				95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */,
 			);
-			name = Common;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		95BA22671F6B21B00090C471 /* Common */ = {
@@ -1455,7 +1455,7 @@
 				951FA77D1F4F68670096AC5A /* Testing.xcconfig */,
 				95CF59E21F49F13300700580 /* Release.xcconfig */,
 			);
-			name = Config;
+			path = Config;
 			sourceTree = "<group>";
 		};
 		95D6A7591E9C080A0017B423 /* Views */ = {
@@ -1503,7 +1503,7 @@
 				95E9F0461EC8D7D900BA20B0 /* NutritionLevels.swift */,
 				953664F41ECA212100D6D398 /* NutrimentItem.swift */,
 			);
-			name = Nutriments;
+			path = Nutriments;
 			sourceTree = "<group>";
 		};
 		95F1848B1F655BB500A544C2 /* Test Resources */ = {
