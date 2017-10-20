@@ -10,6 +10,7 @@ import XCTest
 @testable import OpenFoodFacts
 import Nimble
 import IQKeyboardManagerSwift
+import SafariServices
 
 // swiftlint:disable force_cast
 // swiftlint:disable weak_delegate
@@ -145,5 +146,12 @@ class LoginViewControllerTests: XCTestCase {
         let alertController = self.viewController.presentedViewController as! UIAlertController
         expect(alertController.title).to(equal(NSLocalizedString("user.alert.password-missing", comment: "")))
         expect(alertController.actions[0].title).to(equal(NSLocalizedString("alert.action.ok", comment: "")))
+    }
+
+    // MARK: - didTapCreateAccountButton
+    func testDidTapCreateAccountButton() {
+        viewController.didTapCreateAccountButton(UIButton())
+
+        expect(self.viewController.presentedViewController is SFSafariViewController).to(beTrue())
     }
 }

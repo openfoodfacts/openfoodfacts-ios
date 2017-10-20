@@ -9,6 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import NotificationBanner
+import SafariServices
 
 class LoginViewController: ChildViewController {
     @IBOutlet weak var usernameField: UITextField!
@@ -76,5 +77,12 @@ class LoginViewController: ChildViewController {
             self.errorBanner.subtitleLabel?.text = subtitle
             self.errorBanner.show()
         })
+    }
+
+    @IBAction func didTapCreateAccountButton(_ sender: UIButton) {
+        if let url = URL(string: URLs.CreateAccount) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: false)
+            present(vc, animated: true)
+        }
     }
 }

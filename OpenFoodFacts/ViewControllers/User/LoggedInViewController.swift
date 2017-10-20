@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class LoggedInViewController: ChildViewController {
     @IBOutlet weak var usernameLabel: UILabel!
@@ -22,5 +23,12 @@ class LoggedInViewController: ChildViewController {
     @IBAction func didTapSignOut(_ sender: UIButton) {
         CredentialsController.shared.clearCredentials()
         dismiss()
+    }
+
+    @IBAction func didTapYourContributionsButton(_ sender: UIButton) {
+        if let username = CredentialsController.shared.getUsername(), let url = URL(string: URLs.YourContributions + username) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: false)
+            present(vc, animated: true)
+        }
     }
 }
