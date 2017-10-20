@@ -42,7 +42,7 @@ class SettingsTableViewController: UITableViewController {
         }
 
         if let url = url {
-            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: false)
             present(vc, animated: true)
         }
     }
