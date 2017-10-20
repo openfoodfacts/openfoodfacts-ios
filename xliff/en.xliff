@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file original="OpenFoodFacts/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body/>
-  </file>
-  <file original="OpenFoodFacts/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body>
-      <trans-unit id="Eh6-Oa-ZfG.title">
-        <source>Item</source>
-        <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "Eh6-Oa-ZfG";</note>
-      </trans-unit>
-    </body>
-  </file>
   <file original="OpenFoodFacts/Info.plist" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0.1" build-num="9A1004"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
@@ -28,18 +11,29 @@
       <trans-unit id="CFBundleName">
         <source>$(PRODUCT_NAME)</source>
       </trans-unit>
-      <trans-unit id="CFBundleShortVersionString">
-        <source>1.0</source>
+      <trans-unit id="NSCameraUsageDescription">
+        <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
+      </trans-unit>
+      <trans-unit id="NSPhotoLibraryUsageDescription">
+        <source>Take and upload pictures of products</source>
       </trans-unit>
     </body>
   </file>
   <file original="OpenFoodFacts/Localizable.strings" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0.1" build-num="9A1004"/>
     </header>
     <body>
+      <trans-unit id="alert.action.ok">
+        <source>alert.action.ok</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="call-to-action.ingredients">
         <source>call-to-action.ingredients</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="call-to-action.nutrition">
+        <source>call-to-action.nutrition</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
@@ -74,6 +68,34 @@
         <source>nutrition.salt</source>
         <note>Nutrition, salt</note>
       </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.subtitle">
+        <source>product-add.image-upload-error-banner.subtitle</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.title">
+        <source>product-add.image-upload-error-banner.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-success-banner.title">
+        <source>product-add.image-upload-success-banner.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.product-add-success-banner.title">
+        <source>product-add.product-add-success-banner.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.message">
+        <source>product-add.save-error.message</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.title">
+        <source>product-add.save-error.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.uploading-image-banner.title">
+        <source>product-add.uploading-image-banner.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-100g">
         <source>product-detail.nutrition-table.for-100g</source>
         <note>No comment provided by engineer.</note>
@@ -98,6 +120,10 @@
         <source>product-detail.page-title.summary</source>
         <note>Product detail, summary</note>
       </trans-unit>
+      <trans-unit id="product-scanner.barcode.error">
+        <source>product-scanner.barcode.error</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="product-scanner.overlay.extended-user-help">
         <source>product-scanner.overlay.extended-user-help</source>
         <note>User help in the scan view</note>
@@ -105,6 +131,34 @@
       <trans-unit id="product-scanner.overlay.user-help">
         <source>product-scanner.overlay.user-help</source>
         <note>User help in the scan view</note>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.action.title">
+        <source>product-scanner.permissions.failed.action.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.message">
+        <source>product-scanner.permissions.failed.message</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.title">
+        <source>product-scanner.permissions.failed.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.action.title">
+        <source>product-scanner.permissions.noPermissions.action.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.message">
+        <source>product-scanner.permissions.noPermissions.message</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.title">
+        <source>product-scanner.permissions.noPermissions.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-scanner.search.status">
+        <source>product-scanner.search.status</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-search.error-view.subtitle">
         <source>product-search.error-view.subtitle</source>
@@ -122,34 +176,100 @@
         <source>product-search.search-placeholder</source>
         <note>Placeholder for the product search bar</note>
       </trans-unit>
+      <trans-unit id="product.images.front">
+        <source>product.images.front</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product.images.ingredients">
+        <source>product.images.ingredients</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product.images.nutrition">
+        <source>product.images.nutrition</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product.images.picture">
+        <source>product.images.picture</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product.images.product">
+        <source>product.images.product</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product.images.take-picture">
+        <source>product.images.take-picture</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
     </body>
   </file>
-  <file original="OpenFoodFacts/Views/Products/Search/StateViews/Base.lproj/InitialView.xib" source-language="en" datatype="plaintext">
+  <file original="OpenFoodFactsTests/Localizable.strings" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body/>
-  </file>
-  <file original="OpenFoodFacts/Views/Settings/Base.lproj/Settings.storyboard" source-language="en" datatype="plaintext">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0.1" build-num="9A1004"/>
     </header>
     <body>
-      <trans-unit id="3Vi-oE-IJx.text">
-        <source>Credits</source>
-        <note>Class = "UILabel"; text = "Credits"; ObjectID = "3Vi-oE-IJx";</note>
+      <trans-unit id="alert.action.ok">
+        <source>alert.action.ok</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="c7X-Xf-g2w.title">
-        <source>About</source>
-        <note>Class = "UIViewController"; title = "About"; ObjectID = "c7X-Xf-g2w";</note>
+      <trans-unit id="call-to-action.ingredients">
+        <source>call-to-action.ingredients</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="sO1-VI-YDa.text">
-        <source>About</source>
-        <note>Class = "UILabel"; text = "About"; ObjectID = "sO1-VI-YDa";</note>
+      <trans-unit id="call-to-action.nutrition">
+        <source>call-to-action.nutrition</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="tnR-0p-cA3.title">
-        <source>Settings</source>
-        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "tnR-0p-cA3";</note>
+      <trans-unit id="call-to-action.summary">
+        <source>call-to-action.summary</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.title">
+        <source>product-add.image-upload-error-banner.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-success-banner.title">
+        <source>product-add.image-upload-success-banner.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.message">
+        <source>product-add.save-error.message</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.title">
+        <source>product-add.save-error.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.uploading-image-banner.title">
+        <source>product-add.uploading-image-banner.title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-detail.nutrition-table.for-serving">
+        <source>product-detail.nutrition-table.for-serving</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.ingredients">
+        <source>product-detail.page-title.ingredients</source>
+        <note>Product detail, ingredients</note>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition">
+        <source>product-detail.page-title.nutrition</source>
+        <note>Product detail, nutrition</note>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition-table">
+        <source>product-detail.page-title.nutrition-table</source>
+        <note>Product detail, nutrition table</note>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.summary">
+        <source>product-detail.page-title.summary</source>
+        <note>Product detail, summary</note>
+      </trans-unit>
+      <trans-unit id="user.alert.password-missing">
+        <source>user.alert.password-missing</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="user.alert.username-missing">
+        <source>user.alert.username-missing</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>
   </file>
