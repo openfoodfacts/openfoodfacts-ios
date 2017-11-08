@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="OpenFoodFacts/Info.plist" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0.1" build-num="9A1004"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
@@ -17,194 +17,525 @@
       <trans-unit id="NSPhotoLibraryUsageDescription">
         <source>Take and upload pictures of products</source>
       </trans-unit>
+      <trans-unit id="QUICK_ACTION_SCAN_BARCODE">
+        <source>Scan a barcode</source>
+      </trans-unit>
     </body>
   </file>
-  <file original="OpenFoodFacts/Localizable.strings" source-language="en" datatype="plaintext">
+  <file original="OpenFoodFacts/en.lproj/Localizable.strings" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0.1" build-num="9A1004"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
       <trans-unit id="alert.action.ok">
-        <source>alert.action.ok</source>
+        <source>Ok</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
-        <source>call-to-action.ingredients</source>
+        <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
-        <source>call-to-action.nutrition</source>
+        <source>Take a picture of the nutrition table</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
-        <source>call-to-action.summary</source>
+        <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="nutrition-level.high">
-        <source>nutrition-level.high</source>
+        <source>in high quantity</source>
         <note>Nutrition Level, high</note>
       </trans-unit>
       <trans-unit id="nutrition-level.low">
-        <source>nutrition-level.low</source>
+        <source>in low quantity</source>
         <note>Nutrition Level, low</note>
       </trans-unit>
       <trans-unit id="nutrition-level.moderate">
-        <source>nutrition-level.moderate</source>
+        <source>in moderate quantity</source>
         <note>Nutrition Level, moderate</note>
       </trans-unit>
+      <trans-unit id="nutrition.alcohol">
+        <source>Alcohol</source>
+      </trans-unit>
+      <trans-unit id="nutrition.carbohydrate">
+        <source>Carbohydrate</source>
+      </trans-unit>
+      <trans-unit id="nutrition.carbohydrate.fructose">
+        <source>Fructose</source>
+      </trans-unit>
+      <trans-unit id="nutrition.carbohydrate.glucose">
+        <source>Glucose</source>
+      </trans-unit>
+      <trans-unit id="nutrition.carbohydrate.lactose">
+        <source>Lactose</source>
+      </trans-unit>
+      <trans-unit id="nutrition.carbohydrate.maltodextrins">
+        <source>Maltodextrins</source>
+      </trans-unit>
+      <trans-unit id="nutrition.carbohydrate.maltose">
+        <source>Maltose</source>
+      </trans-unit>
+      <trans-unit id="nutrition.carbohydrate.sucrose">
+        <source>Sucrose</source>
+      </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sugars">
-        <source>nutrition.carbohydrate.sugars</source>
+        <source>Sugars</source>
         <note>Nutrition, sugars</note>
       </trans-unit>
+      <trans-unit id="nutrition.energy">
+        <source>Energy</source>
+      </trans-unit>
       <trans-unit id="nutrition.fats">
-        <source>nutrition.fats</source>
+        <source>Fats</source>
         <note>Nutrition, fat</note>
       </trans-unit>
+      <trans-unit id="nutrition.fats.cholesterol">
+        <source>Cholesterol</source>
+      </trans-unit>
+      <trans-unit id="nutrition.fats.mono-unsaturated-fat">
+        <source>Mono unsaturated fat</source>
+      </trans-unit>
+      <trans-unit id="nutrition.fats.omega3">
+        <source>Omega 3</source>
+      </trans-unit>
+      <trans-unit id="nutrition.fats.omega6">
+        <source>Omega 6</source>
+      </trans-unit>
+      <trans-unit id="nutrition.fats.omega9">
+        <source>Omega 9</source>
+      </trans-unit>
+      <trans-unit id="nutrition.fats.poly-unsaturated-fat">
+        <source>Poly unsaturated fat</source>
+      </trans-unit>
       <trans-unit id="nutrition.fats.saturated-fat">
-        <source>nutrition.fats.saturated-fat</source>
+        <source>Saturated fat</source>
         <note>Nutrition, saturated fat</note>
       </trans-unit>
+      <trans-unit id="nutrition.fats.trans-fat">
+        <source>Trans fat</source>
+      </trans-unit>
+      <trans-unit id="nutrition.fiber">
+        <source>Dietary fiber</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals">
+        <source>Minerals</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.bicarbonate">
+        <source>Bicarbonate</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.caffeine">
+        <source>Caffeine</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.calcium">
+        <source>Calcium</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.chloride">
+        <source>Chloride</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.chlorophyl">
+        <source>Chlorophyl</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.chromium">
+        <source>Chromium</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.cocoa">
+        <source>Cocoa</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.collagen-meat-protein-ratio">
+        <source>Collagen meat protein ratio</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.copper">
+        <source>Copper</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.fluoride">
+        <source>Fluoride</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.fruits-vegetables-nuts">
+        <source>Fruits, vegetables, nuts</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.iodine">
+        <source>Iodine</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.iron">
+        <source>Iron</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.magnesium">
+        <source>Magnesium</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.manganese">
+        <source>Manganese</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.molybdenum">
+        <source>Molybdenum</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.ph">
+        <source>pH</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.phosphorus">
+        <source>Phosphorus</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.potassium">
+        <source>Potassium</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.selenium">
+        <source>Selenium</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.silica">
+        <source>Silica</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.taurine">
+        <source>Taurine</source>
+      </trans-unit>
+      <trans-unit id="nutrition.minerals.zinc">
+        <source>Zinc</source>
+      </trans-unit>
+      <trans-unit id="nutrition.proteins">
+        <source>Proteins</source>
+      </trans-unit>
+      <trans-unit id="nutrition.proteins.casein">
+        <source>Casein</source>
+      </trans-unit>
+      <trans-unit id="nutrition.proteins.nucleotides">
+        <source>Nucleotides</source>
+      </trans-unit>
+      <trans-unit id="nutrition.proteins.serum-proteins">
+        <source>Serum Proteins</source>
+      </trans-unit>
       <trans-unit id="nutrition.salt">
-        <source>nutrition.salt</source>
+        <source>Salt</source>
         <note>Nutrition, salt</note>
       </trans-unit>
+      <trans-unit id="nutrition.sodium">
+        <source>Sodium</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins">
+        <source>Vitamins</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.a">
+        <source>Vitamin A</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.b1">
+        <source>Vitamin B1</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.b2">
+        <source>Vitamin B2</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.b6">
+        <source>Vitamin B6</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.b9">
+        <source>Vitamin B9</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.b12">
+        <source>Vitamin B12</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.beta-carotene">
+        <source>Beta carotene</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.biotin">
+        <source>Biotin</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.c">
+        <source>Vitamin C</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.d">
+        <source>Vitamin D</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.e">
+        <source>Vitamin E</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.k">
+        <source>Vitamin K</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.pantothenic-acid">
+        <source>Pantothenic acid</source>
+      </trans-unit>
+      <trans-unit id="nutrition.vitamins.pp">
+        <source>Vitamin PP</source>
+      </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.subtitle">
-        <source>product-add.image-upload-error-banner.subtitle</source>
+        <source>Please try to take the picture again</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
-        <source>product-add.image-upload-error-banner.title</source>
+        <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
-        <source>product-add.image-upload-success-banner.title</source>
+        <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-add.product-add-success-banner.title">
-        <source>product-add.product-add-success-banner.title</source>
+        <source>Product added successfully. Thank you!</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
-        <source>product-add.save-error.message</source>
+        <source>Try again later</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
-        <source>product-add.save-error.title</source>
+        <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="product-add.uploaded-image">
+        <source>Image uploaded, thanks!</source>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
-        <source>product-add.uploading-image-banner.title</source>
+        <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="product-detail.edit-alert.subtitle">
+        <source>Scroll down to the 'Save' button</source>
+      </trans-unit>
+      <trans-unit id="product-detail.edit-alert.title">
+        <source>Remember to save your changes</source>
+      </trans-unit>
+      <trans-unit id="product-detail.header.add-new-picture">
+        <source>Add a new picture</source>
+      </trans-unit>
+      <trans-unit id="product-detail.ingredients.additives-list">
+        <source>Additives</source>
+      </trans-unit>
+      <trans-unit id="product-detail.ingredients.allergens-list">
+        <source>Substances or products causing allergies or intolerances</source>
+      </trans-unit>
+      <trans-unit id="product-detail.ingredients.ingredients-list">
+        <source>List of ingredients</source>
+      </trans-unit>
+      <trans-unit id="product-detail.ingredients.palm-oil-ingredients">
+        <source>Ingredients from palm oil</source>
+      </trans-unit>
+      <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients">
+        <source>Ingredients that may be from palm oil</source>
+      </trans-unit>
+      <trans-unit id="product-detail.ingredients.traces-list">
+        <source>Traces</source>
+      </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-100g">
-        <source>product-detail.nutrition-table.for-100g</source>
+        <source>For 100 g</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
-        <source>product-detail.nutrition-table.for-serving</source>
+        <source>Per serving</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="product-detail.nutrition-table.nutritional-table-header">
+        <source>Nutrition facts</source>
+      </trans-unit>
+      <trans-unit id="product-detail.nutrition.carbon-footprint">
+        <source>Carbon footprint / CO2 emissions</source>
+      </trans-unit>
+      <trans-unit id="product-detail.nutrition.serving-size">
+        <source>Serving size</source>
+      </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
-        <source>product-detail.page-title.ingredients</source>
+        <source>Ingredients</source>
         <note>Product detail, ingredients</note>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
-        <source>product-detail.page-title.nutrition</source>
+        <source>Nutrition</source>
         <note>Product detail, nutrition</note>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
-        <source>product-detail.page-title.nutrition-table</source>
+        <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
-        <source>product-detail.page-title.summary</source>
+        <source>Summary</source>
         <note>Product detail, summary</note>
       </trans-unit>
+      <trans-unit id="product-detail.summary.barcode">
+        <source>Barcode</source>
+      </trans-unit>
+      <trans-unit id="product-detail.summary.brands">
+        <source>Brands</source>
+      </trans-unit>
+      <trans-unit id="product-detail.summary.categories">
+        <source>Categories</source>
+      </trans-unit>
+      <trans-unit id="product-detail.summary.citiesTags">
+        <source>City, state and country where purchased</source>
+      </trans-unit>
+      <trans-unit id="product-detail.summary.countries">
+        <source>Countries where sold</source>
+      </trans-unit>
+      <trans-unit id="product-detail.summary.labels">
+        <source>Labels, certifications, awards</source>
+      </trans-unit>
+      <trans-unit id="product-detail.summary.manufacturing-places">
+        <source>Manufacturing or processing places</source>
+      </trans-unit>
+      <trans-unit id="product-detail.summary.origins">
+        <source>Origin of ingredients</source>
+      </trans-unit>
+      <trans-unit id="product-detail.summary.packaging">
+        <source>Packaging</source>
+      </trans-unit>
+      <trans-unit id="product-detail.summary.quantity">
+        <source>Quantity</source>
+      </trans-unit>
+      <trans-unit id="product-detail.summary.stores">
+        <source>Stores</source>
+      </trans-unit>
       <trans-unit id="product-scanner.barcode.error">
-        <source>product-scanner.barcode.error</source>
+        <source>Error scanning barcode. Please try again in a few moments.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-scanner.overlay.extended-user-help">
-        <source>product-scanner.overlay.extended-user-help</source>
+        <source>Can't find a barcode.
+Center the barcode in the screen.
+Make sure the barcode is well lit.</source>
         <note>User help in the scan view</note>
       </trans-unit>
       <trans-unit id="product-scanner.overlay.user-help">
-        <source>product-scanner.overlay.user-help</source>
+        <source>Scan the barcode of the product</source>
         <note>User help in the scan view</note>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.action.title">
-        <source>product-scanner.permissions.failed.action.title</source>
+        <source>Leave barcode scanning</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.message">
-        <source>product-scanner.permissions.failed.message</source>
+        <source>Check in Privacy Settings if OpenFoodFacts has permission to use the camera</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.title">
-        <source>product-scanner.permissions.failed.title</source>
+        <source>Could not setup barcode scanning</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.action.title">
-        <source>product-scanner.permissions.noPermissions.action.title</source>
+        <source>Open Settings</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.message">
-        <source>product-scanner.permissions.noPermissions.message</source>
+        <source>Please grant permission to use the camera to be able to scan barcodes</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.title">
-        <source>product-scanner.permissions.noPermissions.title</source>
+        <source>OpenFoodFacts needs camera permissions</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-scanner.search.status">
-        <source>product-scanner.search.status</source>
+        <source>Loading product...</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product-search.error-view.subtitle">
-        <source>product-search.error-view.subtitle</source>
+        <source>Please try again</source>
         <note>Error view subtitle</note>
       </trans-unit>
       <trans-unit id="product-search.error-view.title">
-        <source>product-search.error-view.title</source>
+        <source>Something went wrong</source>
         <note>Error view title</note>
       </trans-unit>
+      <trans-unit id="product-search.initial-view.text">
+        <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
+      </trans-unit>
       <trans-unit id="product-search.no-results">
-        <source>product-search.no-results</source>
+        <source>No Results</source>
         <note>No products where found for current search</note>
       </trans-unit>
       <trans-unit id="product-search.search-placeholder">
-        <source>product-search.search-placeholder</source>
+        <source>Search for a product by name or barcode</source>
         <note>Placeholder for the product search bar</note>
       </trans-unit>
       <trans-unit id="product.images.front">
-        <source>product.images.front</source>
+        <source>front</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product.images.ingredients">
-        <source>product.images.ingredients</source>
+        <source>ingredients</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product.images.nutrition">
-        <source>product.images.nutrition</source>
+        <source>nutrition table</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product.images.picture">
-        <source>product.images.picture</source>
+        <source>picture ✅</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product.images.product">
-        <source>product.images.product</source>
+        <source>Product's</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="product.images.take-picture">
-        <source>product.images.take-picture</source>
+        <source>Take a picture of the product's</source>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="settings.credits.text">
+        <source>"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</source>
+      </trans-unit>
+      <trans-unit id="settings.credits.title">
+        <source>Credits</source>
+      </trans-unit>
+      <trans-unit id="settings.information.discover">
+        <source>Discover</source>
+      </trans-unit>
+      <trans-unit id="settings.information.how-to-contribute">
+        <source>How To Contribute</source>
+      </trans-unit>
+      <trans-unit id="settings.scan-on-launch.title">
+        <source>Show Scan On App Launch</source>
+      </trans-unit>
+      <trans-unit id="settings.sections.information">
+        <source>Information</source>
+      </trans-unit>
+      <trans-unit id="settings.tab-bar.item">
+        <source>Settings</source>
+      </trans-unit>
+      <trans-unit id="user.alert.generic-error.subtitle">
+        <source>Please try again in a few moments</source>
+      </trans-unit>
+      <trans-unit id="user.alert.generic-error.title">
+        <source>There was an error logging in</source>
+      </trans-unit>
+      <trans-unit id="user.alert.password-missing">
+        <source>Password is required</source>
+      </trans-unit>
+      <trans-unit id="user.alert.username-missing">
+        <source>Username is required</source>
+      </trans-unit>
+      <trans-unit id="user.alert.wrong-credentials.subtitle">
+        <source>Check your username and password are correct</source>
+      </trans-unit>
+      <trans-unit id="user.alert.wrong-credentials.title">
+        <source>Unable to log in</source>
+      </trans-unit>
+      <trans-unit id="user.check-your-contributions.button">
+        <source>Check Your Contributions</source>
+      </trans-unit>
+      <trans-unit id="user.create-account.button">
+        <source>Create An Account</source>
+      </trans-unit>
+      <trans-unit id="user.create-account.text">
+        <source>If you don't have an account, click the link bellow to create one.</source>
+      </trans-unit>
+      <trans-unit id="user.log-in">
+        <source>Log In</source>
+      </trans-unit>
+      <trans-unit id="user.log-out">
+        <source>Log Out</source>
+      </trans-unit>
+      <trans-unit id="user.password">
+        <source>Password</source>
+      </trans-unit>
+      <trans-unit id="user.tab-bar.item">
+        <source>User</source>
+      </trans-unit>
+      <trans-unit id="user.username">
+        <source>Username</source>
+      </trans-unit>
+      <trans-unit id="user.why-log-in.text">
+        <source>Login in with your account will associate all your contributions to your account.</source>
       </trans-unit>
     </body>
   </file>
   <file original="OpenFoodFactsTests/Localizable.strings" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0.1" build-num="9A1004"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
       <trans-unit id="alert.action.ok">
