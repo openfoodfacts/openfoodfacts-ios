@@ -661,8 +661,6 @@
 		959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 		959530091F9156B100979613 /* ProductApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductApiClient.swift; sourceTree = "<group>"; };
 		9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewControllerTests.swift; sourceTree = "<group>"; };
-		95A7E0661F058F57004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		95A7E0671F058F5D004D7B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewControllerTests.swift; sourceTree = "<group>"; };
 		95B512E71F94E915003B0012 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDelegateMock.swift; sourceTree = "<group>"; };
@@ -677,6 +675,8 @@
 		95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
 		95C54A791F8BFDB90008B5D8 /* PictureTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95C54A7B1F8C0E8B0008B5D8 /* CameraControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerMock.swift; sourceTree = "<group>"; };
+		95C9C4D91FB3932A00896417 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		95C9C4DA1FB3939100896417 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95CA1AE61F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsFormTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95CA1AE91F7AD8F900A0390B /* NutritionTableFormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTableFormTableViewControllerTests.swift; sourceTree = "<group>"; };
 		95CB99A61EA55BF900CBDDF9 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -2130,7 +2130,6 @@
 		951FB09F1EB2989A005CAE33 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				95A7E0671F058F5D004D7B60 /* Base */,
 				95818AAE1F0AD4D900CBD139 /* aa */,
 				95818AB41F0AD4E600CBD139 /* ach */,
 				95818ABA1F0AD4FA00CBD139 /* af */,
@@ -2260,6 +2259,7 @@
 				95818DCC1F0AE01D00CBD139 /* zea */,
 				95818DD21F0AE03A00CBD139 /* zh-Hans */,
 				95818DD81F0AE06000CBD139 /* zu */,
+				95C9C4DA1FB3939100896417 /* en */,
 			);
 			name = InfoPlist.strings;
 			path = .;
@@ -2268,7 +2268,6 @@
 		95DFD7CF1F01A45C007FDB69 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				95A7E0661F058F57004D7B60 /* Base */,
 				95818AAF1F0AD4D900CBD139 /* aa */,
 				95818AB51F0AD4E600CBD139 /* ach */,
 				95818ABB1F0AD4FA00CBD139 /* af */,
@@ -2398,6 +2397,7 @@
 				95818DCD1F0AE01D00CBD139 /* zea */,
 				95818DD31F0AE03A00CBD139 /* zh-Hans */,
 				95818DD91F0AE06000CBD139 /* zu */,
+				95C9C4D91FB3932A00896417 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
