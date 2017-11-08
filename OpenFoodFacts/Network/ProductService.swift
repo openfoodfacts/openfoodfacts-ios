@@ -129,7 +129,7 @@ class ProductService: ProductApi {
     fileprivate func buildBarcodeQueryParameter(_ barcode: String) -> String {
         var ean13Barcode = barcode
 
-        while ean13Barcode.characters.count < 13 {
+        while ean13Barcode.count < 13 {
             ean13Barcode += "x"
         }
 
