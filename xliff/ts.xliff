@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file original="OpenFoodFacts/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="ts">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body/>
-  </file>
-  <file original="OpenFoodFacts/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="ts">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body>
-      <trans-unit id="Eh6-Oa-ZfG.title">
-        <source>Item</source>
-        <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "Eh6-Oa-ZfG";</note>
-        <target xml:lang="ts" state="needs-translation">Item</target>
-      </trans-unit>
-    </body>
-  </file>
   <file original="OpenFoodFacts/Info.plist" source-language="en" datatype="plaintext" target-language="ts">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
@@ -31,10 +13,6 @@
         <source>$(PRODUCT_NAME)</source>
         <target xml:lang="ts" state="needs-translation">$(PRODUCT_NAME)</target>
       </trans-unit>
-      <trans-unit id="CFBundleShortVersionString">
-        <source>1.0</source>
-        <target xml:lang="ts" state="needs-translation">1.0</target>
-      </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
         <target xml:lang="ts" state="needs-translation">Use your camera to scan barcodes and take pictures of products to add to the database</target>
@@ -43,52 +21,22 @@
         <source>Take and upload pictures of products</source>
         <target xml:lang="ts" state="needs-translation">Take and upload pictures of products</target>
       </trans-unit>
-    </body>
-  </file>
-  <file original="OpenFoodFacts/Views/ProductSearch/Base.lproj/EmptyProductsView.xib" source-language="en" datatype="plaintext" target-language="ts">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body>
-      <trans-unit id="ElV-MH-zPQ.text">
-        <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
-        <note>Class = "UILabel"; text = "Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels."; ObjectID = "ElV-MH-zPQ";</note>
-        <target xml:lang="ts" state="needs-translation">Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</target>
-      </trans-unit>
-    </body>
-  </file>
-  <file original="OpenFoodFacts/Views/Settings/Base.lproj/Settings.storyboard" source-language="en" datatype="plaintext" target-language="ts">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body>
-      <trans-unit id="3Vi-oE-IJx.text">
-        <source>Credits</source>
-        <note>Class = "UILabel"; text = "Credits"; ObjectID = "3Vi-oE-IJx";</note>
-        <target xml:lang="ts" state="needs-translation">Credits</target>
-      </trans-unit>
-      <trans-unit id="c7X-Xf-g2w.title">
-        <source>About</source>
-        <note>Class = "UIViewController"; title = "About"; ObjectID = "c7X-Xf-g2w";</note>
-        <target xml:lang="ts" state="needs-translation">About</target>
-      </trans-unit>
-      <trans-unit id="sO1-VI-YDa.text">
-        <source>About</source>
-        <note>Class = "UILabel"; text = "About"; ObjectID = "sO1-VI-YDa";</note>
-        <target xml:lang="ts" state="needs-translation">About</target>
-      </trans-unit>
-      <trans-unit id="tnR-0p-cA3.title">
-        <source>Settings</source>
-        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "tnR-0p-cA3";</note>
-        <target xml:lang="ts" state="needs-translation">Settings</target>
+      <trans-unit id="QUICK_ACTION_SCAN_BARCODE">
+        <source>Scan a barcode</source>
+        <target xml:lang="ts" state="needs-translation">Scan a barcode</target>
       </trans-unit>
     </body>
   </file>
   <file original="OpenFoodFacts/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="ts">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
+      <trans-unit id="alert.action.ok">
+        <source>Ok</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Ok</target>
+      </trans-unit>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
@@ -96,6 +44,7 @@
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition table</source>
+        <note>No comment provided by engineer.</note>
         <target xml:lang="ts" state="needs-translation">Take a picture of the nutrition table</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
@@ -382,6 +331,57 @@
         <source>Vitamin PP</source>
         <target xml:lang="ts" state="needs-translation">Vitamin PP</target>
       </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.subtitle">
+        <source>Please try to take the picture again</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Please try to take the picture again</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.title">
+        <source>Something went wrong</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Something went wrong</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-success-banner.title">
+        <source>Image was uploaded successfully</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Image was uploaded successfully</target>
+      </trans-unit>
+      <trans-unit id="product-add.product-add-success-banner.title">
+        <source>Product added successfully. Thank you!</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Product added successfully. Thank you!</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.message">
+        <source>Try again later</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Try again later</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.title">
+        <source>Error while saving product</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Error while saving product</target>
+      </trans-unit>
+      <trans-unit id="product-add.uploaded-image">
+        <source>Image uploaded, thanks!</source>
+        <target xml:lang="ts" state="needs-translation">Image uploaded, thanks!</target>
+      </trans-unit>
+      <trans-unit id="product-add.uploading-image-banner.title">
+        <source>Uploading image...</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Uploading image...</target>
+      </trans-unit>
+      <trans-unit id="product-detail.edit-alert.subtitle">
+        <source>Scroll down to the 'Save' button</source>
+        <target xml:lang="ts" state="needs-translation">Scroll down to the 'Save' button</target>
+      </trans-unit>
+      <trans-unit id="product-detail.edit-alert.title">
+        <source>Remember to save your changes</source>
+        <target xml:lang="ts" state="needs-translation">Remember to save your changes</target>
+      </trans-unit>
+      <trans-unit id="product-detail.header.add-new-picture">
+        <source>Add a new picture</source>
+        <target xml:lang="ts" state="needs-translation">Add a new picture</target>
+      </trans-unit>
       <trans-unit id="product-detail.ingredients.additives-list">
         <source>Additives</source>
         <target xml:lang="ts" state="needs-translation">Additives</target>
@@ -492,10 +492,292 @@
         <source>Stores</source>
         <target xml:lang="ts" state="needs-translation">Stores</target>
       </trans-unit>
+      <trans-unit id="product-scanner.barcode.error">
+        <source>Error scanning barcode. Please try again in a few moments.</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Error scanning barcode. Please try again in a few moments.</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.overlay.extended-user-help">
+        <source>Can't find a barcode.
+Center the barcode in the screen.
+Make sure the barcode is well lit.</source>
+        <note>User help in the scan view</note>
+        <target xml:lang="ts" state="needs-translation">Can't find a barcode.
+Center the barcode in the screen.
+Make sure the barcode is well lit.</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.overlay.user-help">
+        <source>Scan the barcode of the product</source>
+        <note>User help in the scan view</note>
+        <target xml:lang="ts" state="needs-translation">Scan the barcode of the product</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.action.title">
+        <source>Leave barcode scanning</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Leave barcode scanning</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.message">
+        <source>Check in Privacy Settings if OpenFoodFacts has permission to use the camera</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Check in Privacy Settings if OpenFoodFacts has permission to use the camera</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.title">
+        <source>Could not setup barcode scanning</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Could not setup barcode scanning</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.action.title">
+        <source>Open Settings</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Open Settings</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.message">
+        <source>Please grant permission to use the camera to be able to scan barcodes</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Please grant permission to use the camera to be able to scan barcodes</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.title">
+        <source>OpenFoodFacts needs camera permissions</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">OpenFoodFacts needs camera permissions</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.search.status">
+        <source>Loading product...</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Loading product...</target>
+      </trans-unit>
+      <trans-unit id="product-search.error-view.subtitle">
+        <source>Please try again</source>
+        <note>Error view subtitle</note>
+        <target xml:lang="ts" state="needs-translation">Please try again</target>
+      </trans-unit>
+      <trans-unit id="product-search.error-view.title">
+        <source>Something went wrong</source>
+        <note>Error view title</note>
+        <target xml:lang="ts" state="needs-translation">Something went wrong</target>
+      </trans-unit>
+      <trans-unit id="product-search.initial-view.text">
+        <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
+        <target xml:lang="ts" state="needs-translation">Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</target>
+      </trans-unit>
+      <trans-unit id="product-search.no-results">
+        <source>No Results</source>
+        <note>No products where found for current search</note>
+        <target xml:lang="ts" state="needs-translation">No Results</target>
+      </trans-unit>
       <trans-unit id="product-search.search-placeholder">
         <source>Search for a product by name or barcode</source>
         <note>Placeholder for the product search bar</note>
         <target xml:lang="ts" state="needs-translation">Search for a product by name or barcode</target>
+      </trans-unit>
+      <trans-unit id="product.images.front">
+        <source>front</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">front</target>
+      </trans-unit>
+      <trans-unit id="product.images.ingredients">
+        <source>ingredients</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">ingredients</target>
+      </trans-unit>
+      <trans-unit id="product.images.nutrition">
+        <source>nutrition table</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">nutrition table</target>
+      </trans-unit>
+      <trans-unit id="product.images.picture">
+        <source>picture ✅</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">picture ✅</target>
+      </trans-unit>
+      <trans-unit id="product.images.product">
+        <source>Product's</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Product's</target>
+      </trans-unit>
+      <trans-unit id="product.images.take-picture">
+        <source>Take a picture of the product's</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">Take a picture of the product's</target>
+      </trans-unit>
+      <trans-unit id="settings.credits.text">
+        <source>"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</source>
+        <target xml:lang="ts" state="needs-translation">"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</target>
+      </trans-unit>
+      <trans-unit id="settings.credits.title">
+        <source>Credits</source>
+        <target xml:lang="ts" state="needs-translation">Credits</target>
+      </trans-unit>
+      <trans-unit id="settings.information.discover">
+        <source>Discover</source>
+        <target xml:lang="ts" state="needs-translation">Discover</target>
+      </trans-unit>
+      <trans-unit id="settings.information.how-to-contribute">
+        <source>How To Contribute</source>
+        <target xml:lang="ts" state="needs-translation">How To Contribute</target>
+      </trans-unit>
+      <trans-unit id="settings.scan-on-launch.title">
+        <source>Show Scan On App Launch</source>
+        <target xml:lang="ts" state="needs-translation">Show Scan On App Launch</target>
+      </trans-unit>
+      <trans-unit id="settings.sections.information">
+        <source>Information</source>
+        <target xml:lang="ts" state="needs-translation">Information</target>
+      </trans-unit>
+      <trans-unit id="settings.tab-bar.item">
+        <source>Settings</source>
+        <target xml:lang="ts" state="needs-translation">Settings</target>
+      </trans-unit>
+      <trans-unit id="user.alert.generic-error.subtitle">
+        <source>Please try again in a few moments</source>
+        <target xml:lang="ts" state="needs-translation">Please try again in a few moments</target>
+      </trans-unit>
+      <trans-unit id="user.alert.generic-error.title">
+        <source>There was an error logging in</source>
+        <target xml:lang="ts" state="needs-translation">There was an error logging in</target>
+      </trans-unit>
+      <trans-unit id="user.alert.password-missing">
+        <source>Password is required</source>
+        <target xml:lang="ts" state="needs-translation">Password is required</target>
+      </trans-unit>
+      <trans-unit id="user.alert.username-missing">
+        <source>Username is required</source>
+        <target xml:lang="ts" state="needs-translation">Username is required</target>
+      </trans-unit>
+      <trans-unit id="user.alert.wrong-credentials.subtitle">
+        <source>Check your username and password are correct</source>
+        <target xml:lang="ts" state="needs-translation">Check your username and password are correct</target>
+      </trans-unit>
+      <trans-unit id="user.alert.wrong-credentials.title">
+        <source>Unable to log in</source>
+        <target xml:lang="ts" state="needs-translation">Unable to log in</target>
+      </trans-unit>
+      <trans-unit id="user.check-your-contributions.button">
+        <source>Check Your Contributions</source>
+        <target xml:lang="ts" state="needs-translation">Check Your Contributions</target>
+      </trans-unit>
+      <trans-unit id="user.create-account.button">
+        <source>Create An Account</source>
+        <target xml:lang="ts" state="needs-translation">Create An Account</target>
+      </trans-unit>
+      <trans-unit id="user.create-account.text">
+        <source>If you don't have an account, click the link bellow to create one.</source>
+        <target xml:lang="ts" state="needs-translation">If you don't have an account, click the link bellow to create one.</target>
+      </trans-unit>
+      <trans-unit id="user.log-in">
+        <source>Log In</source>
+        <target xml:lang="ts" state="needs-translation">Log In</target>
+      </trans-unit>
+      <trans-unit id="user.log-out">
+        <source>Log Out</source>
+        <target xml:lang="ts" state="needs-translation">Log Out</target>
+      </trans-unit>
+      <trans-unit id="user.password">
+        <source>Password</source>
+        <target xml:lang="ts" state="needs-translation">Password</target>
+      </trans-unit>
+      <trans-unit id="user.tab-bar.item">
+        <source>User</source>
+        <target xml:lang="ts" state="needs-translation">User</target>
+      </trans-unit>
+      <trans-unit id="user.username">
+        <source>Username</source>
+        <target xml:lang="ts" state="needs-translation">Username</target>
+      </trans-unit>
+      <trans-unit id="user.why-log-in.text">
+        <source>Login in with your account will associate all your contributions to your account.</source>
+        <target xml:lang="ts" state="needs-translation">Login in with your account will associate all your contributions to your account.</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFactsTests/Localizable.strings" source-language="en" datatype="plaintext" target-language="ts">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
+    </header>
+    <body>
+      <trans-unit id="alert.action.ok">
+        <source>alert.action.ok</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">alert.action.ok</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.ingredients">
+        <source>call-to-action.ingredients</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">call-to-action.ingredients</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.nutrition">
+        <source>call-to-action.nutrition</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">call-to-action.nutrition</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.summary">
+        <source>call-to-action.summary</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">call-to-action.summary</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.title">
+        <source>product-add.image-upload-error-banner.title</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">product-add.image-upload-error-banner.title</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-success-banner.title">
+        <source>product-add.image-upload-success-banner.title</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">product-add.image-upload-success-banner.title</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.message">
+        <source>product-add.save-error.message</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">product-add.save-error.message</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.title">
+        <source>product-add.save-error.title</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">product-add.save-error.title</target>
+      </trans-unit>
+      <trans-unit id="product-add.uploading-image-banner.title">
+        <source>product-add.uploading-image-banner.title</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">product-add.uploading-image-banner.title</target>
+      </trans-unit>
+      <trans-unit id="product-detail.nutrition-table.for-serving">
+        <source>product-detail.nutrition-table.for-serving</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">product-detail.nutrition-table.for-serving</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.ingredients">
+        <source>product-detail.page-title.ingredients</source>
+        <note>Product detail, ingredients</note>
+        <target xml:lang="ts" state="needs-translation">product-detail.page-title.ingredients</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition">
+        <source>product-detail.page-title.nutrition</source>
+        <note>Product detail, nutrition</note>
+        <target xml:lang="ts" state="needs-translation">product-detail.page-title.nutrition</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition-table">
+        <source>product-detail.page-title.nutrition-table</source>
+        <note>Product detail, nutrition table</note>
+        <target xml:lang="ts" state="needs-translation">product-detail.page-title.nutrition-table</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.summary">
+        <source>product-detail.page-title.summary</source>
+        <note>Product detail, summary</note>
+        <target xml:lang="ts" state="needs-translation">product-detail.page-title.summary</target>
+      </trans-unit>
+      <trans-unit id="user.alert.password-missing">
+        <source>user.alert.password-missing</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">user.alert.password-missing</target>
+      </trans-unit>
+      <trans-unit id="user.alert.username-missing">
+        <source>user.alert.username-missing</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="ts" state="needs-translation">user.alert.username-missing</target>
       </trans-unit>
     </body>
   </file>

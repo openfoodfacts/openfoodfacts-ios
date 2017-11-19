@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file original="OpenFoodFacts/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="lol">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body/>
-  </file>
-  <file original="OpenFoodFacts/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="lol">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body>
-      <trans-unit id="Eh6-Oa-ZfG.title">
-        <source>Item</source>
-        <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "Eh6-Oa-ZfG";</note>
-        <target xml:lang="lol">crwdns35980:0crwdne35980:0</target>
-      </trans-unit>
-    </body>
-  </file>
   <file original="OpenFoodFacts/Info.plist" source-language="en" datatype="plaintext" target-language="lol">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
@@ -31,10 +13,6 @@
         <source>$(PRODUCT_NAME)</source>
         <target xml:lang="lol">crwdns35984:0$(PRODUCT_NAME)crwdne35984:0</target>
       </trans-unit>
-      <trans-unit id="CFBundleShortVersionString">
-        <source>1.0</source>
-        <target xml:lang="lol">crwdns35985:0crwdne35985:0</target>
-      </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
         <target xml:lang="lol">crwdns35986:0crwdne35986:0</target>
@@ -43,52 +21,22 @@
         <source>Take and upload pictures of products</source>
         <target xml:lang="lol">crwdns35987:0crwdne35987:0</target>
       </trans-unit>
-    </body>
-  </file>
-  <file original="OpenFoodFacts/Views/ProductSearch/Base.lproj/EmptyProductsView.xib" source-language="en" datatype="plaintext" target-language="lol">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body>
-      <trans-unit id="ElV-MH-zPQ.text">
-        <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
-        <note>Class = "UILabel"; text = "Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels."; ObjectID = "ElV-MH-zPQ";</note>
-        <target xml:lang="lol">crwdns36002:0crwdne36002:0</target>
-      </trans-unit>
-    </body>
-  </file>
-  <file original="OpenFoodFacts/Views/Settings/Base.lproj/Settings.storyboard" source-language="en" datatype="plaintext" target-language="lol">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body>
-      <trans-unit id="3Vi-oE-IJx.text">
-        <source>Credits</source>
-        <note>Class = "UILabel"; text = "Credits"; ObjectID = "3Vi-oE-IJx";</note>
-        <target xml:lang="lol">crwdns36106:0crwdne36106:0</target>
-      </trans-unit>
-      <trans-unit id="c7X-Xf-g2w.title">
-        <source>About</source>
-        <note>Class = "UIViewController"; title = "About"; ObjectID = "c7X-Xf-g2w";</note>
-        <target xml:lang="lol">crwdns36107:0crwdne36107:0</target>
-      </trans-unit>
-      <trans-unit id="sO1-VI-YDa.text">
-        <source>About</source>
-        <note>Class = "UILabel"; text = "About"; ObjectID = "sO1-VI-YDa";</note>
-        <target xml:lang="lol">crwdns36108:0crwdne36108:0</target>
-      </trans-unit>
-      <trans-unit id="tnR-0p-cA3.title">
-        <source>Settings</source>
-        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "tnR-0p-cA3";</note>
-        <target xml:lang="lol">crwdns36109:0crwdne36109:0</target>
+      <trans-unit id="QUICK_ACTION_SCAN_BARCODE">
+        <source>Scan a barcode</source>
+        <target xml:lang="lol">crwdns36876:0crwdne36876:0</target>
       </trans-unit>
     </body>
   </file>
   <file original="OpenFoodFacts/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="lol">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
+      <trans-unit id="alert.action.ok">
+        <source>Ok</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36877:0crwdne36877:0</target>
+      </trans-unit>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
@@ -96,6 +44,7 @@
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition table</source>
+        <note>No comment provided by engineer.</note>
         <target xml:lang="lol">crwdns36009:0crwdne36009:0</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
@@ -382,6 +331,57 @@
         <source>Vitamin PP</source>
         <target xml:lang="lol">crwdns36078:0crwdne36078:0</target>
       </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.subtitle">
+        <source>Please try to take the picture again</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36878:0crwdne36878:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.title">
+        <source>Something went wrong</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36879:0crwdne36879:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-success-banner.title">
+        <source>Image was uploaded successfully</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36880:0crwdne36880:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.product-add-success-banner.title">
+        <source>Product added successfully. Thank you!</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36881:0crwdne36881:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.message">
+        <source>Try again later</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36882:0crwdne36882:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.title">
+        <source>Error while saving product</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36883:0crwdne36883:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.uploaded-image">
+        <source>Image uploaded, thanks!</source>
+        <target xml:lang="lol">crwdns36884:0crwdne36884:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.uploading-image-banner.title">
+        <source>Uploading image...</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36885:0crwdne36885:0</target>
+      </trans-unit>
+      <trans-unit id="product-detail.edit-alert.subtitle">
+        <source>Scroll down to the 'Save' button</source>
+        <target xml:lang="lol">crwdns36886:0crwdne36886:0</target>
+      </trans-unit>
+      <trans-unit id="product-detail.edit-alert.title">
+        <source>Remember to save your changes</source>
+        <target xml:lang="lol">crwdns36887:0crwdne36887:0</target>
+      </trans-unit>
+      <trans-unit id="product-detail.header.add-new-picture">
+        <source>Add a new picture</source>
+        <target xml:lang="lol">crwdns36888:0crwdne36888:0</target>
+      </trans-unit>
       <trans-unit id="product-detail.ingredients.additives-list">
         <source>Additives</source>
         <target xml:lang="lol">crwdns36079:0crwdne36079:0</target>
@@ -492,10 +492,288 @@
         <source>Stores</source>
         <target xml:lang="lol">crwdns36104:0crwdne36104:0</target>
       </trans-unit>
+      <trans-unit id="product-scanner.barcode.error">
+        <source>Error scanning barcode. Please try again in a few moments.</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36889:0crwdne36889:0</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.overlay.extended-user-help">
+        <source>Can't find a barcode.
+Center the barcode in the screen.
+Make sure the barcode is well lit.</source>
+        <note>User help in the scan view</note>
+        <target xml:lang="lol">crwdns36890:0crwdne36890:0</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.overlay.user-help">
+        <source>Scan the barcode of the product</source>
+        <note>User help in the scan view</note>
+        <target xml:lang="lol">crwdns36891:0crwdne36891:0</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.action.title">
+        <source>Leave barcode scanning</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36892:0crwdne36892:0</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.message">
+        <source>Check in Privacy Settings if OpenFoodFacts has permission to use the camera</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36893:0crwdne36893:0</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.title">
+        <source>Could not setup barcode scanning</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36894:0crwdne36894:0</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.action.title">
+        <source>Open Settings</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36895:0crwdne36895:0</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.message">
+        <source>Please grant permission to use the camera to be able to scan barcodes</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36896:0crwdne36896:0</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.title">
+        <source>OpenFoodFacts needs camera permissions</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36897:0crwdne36897:0</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.search.status">
+        <source>Loading product...</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36898:0crwdne36898:0</target>
+      </trans-unit>
+      <trans-unit id="product-search.error-view.subtitle">
+        <source>Please try again</source>
+        <note>Error view subtitle</note>
+        <target xml:lang="lol">crwdns36899:0crwdne36899:0</target>
+      </trans-unit>
+      <trans-unit id="product-search.error-view.title">
+        <source>Something went wrong</source>
+        <note>Error view title</note>
+        <target xml:lang="lol">crwdns36900:0crwdne36900:0</target>
+      </trans-unit>
+      <trans-unit id="product-search.initial-view.text">
+        <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
+        <target xml:lang="lol">crwdns36901:0crwdne36901:0</target>
+      </trans-unit>
+      <trans-unit id="product-search.no-results">
+        <source>No Results</source>
+        <note>No products where found for current search</note>
+        <target xml:lang="lol">crwdns36902:0crwdne36902:0</target>
+      </trans-unit>
       <trans-unit id="product-search.search-placeholder">
         <source>Search for a product by name or barcode</source>
         <note>Placeholder for the product search bar</note>
         <target xml:lang="lol">crwdns36105:0crwdne36105:0</target>
+      </trans-unit>
+      <trans-unit id="product.images.front">
+        <source>front</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36903:0crwdne36903:0</target>
+      </trans-unit>
+      <trans-unit id="product.images.ingredients">
+        <source>ingredients</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36904:0crwdne36904:0</target>
+      </trans-unit>
+      <trans-unit id="product.images.nutrition">
+        <source>nutrition table</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36905:0crwdne36905:0</target>
+      </trans-unit>
+      <trans-unit id="product.images.picture">
+        <source>picture ✅</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36906:0crwdne36906:0</target>
+      </trans-unit>
+      <trans-unit id="product.images.product">
+        <source>Product's</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36907:0crwdne36907:0</target>
+      </trans-unit>
+      <trans-unit id="product.images.take-picture">
+        <source>Take a picture of the product's</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36908:0crwdne36908:0</target>
+      </trans-unit>
+      <trans-unit id="settings.credits.text">
+        <source>"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</source>
+        <target xml:lang="lol">crwdns36909:0crwdne36909:0</target>
+      </trans-unit>
+      <trans-unit id="settings.credits.title">
+        <source>Credits</source>
+        <target xml:lang="lol">crwdns36910:0crwdne36910:0</target>
+      </trans-unit>
+      <trans-unit id="settings.information.discover">
+        <source>Discover</source>
+        <target xml:lang="lol">crwdns36911:0crwdne36911:0</target>
+      </trans-unit>
+      <trans-unit id="settings.information.how-to-contribute">
+        <source>How To Contribute</source>
+        <target xml:lang="lol">crwdns36912:0crwdne36912:0</target>
+      </trans-unit>
+      <trans-unit id="settings.scan-on-launch.title">
+        <source>Show Scan On App Launch</source>
+        <target xml:lang="lol">crwdns36913:0crwdne36913:0</target>
+      </trans-unit>
+      <trans-unit id="settings.sections.information">
+        <source>Information</source>
+        <target xml:lang="lol">crwdns36914:0crwdne36914:0</target>
+      </trans-unit>
+      <trans-unit id="settings.tab-bar.item">
+        <source>Settings</source>
+        <target xml:lang="lol">crwdns36915:0crwdne36915:0</target>
+      </trans-unit>
+      <trans-unit id="user.alert.generic-error.subtitle">
+        <source>Please try again in a few moments</source>
+        <target xml:lang="lol">crwdns36916:0crwdne36916:0</target>
+      </trans-unit>
+      <trans-unit id="user.alert.generic-error.title">
+        <source>There was an error logging in</source>
+        <target xml:lang="lol">crwdns36917:0crwdne36917:0</target>
+      </trans-unit>
+      <trans-unit id="user.alert.password-missing">
+        <source>Password is required</source>
+        <target xml:lang="lol">crwdns36918:0crwdne36918:0</target>
+      </trans-unit>
+      <trans-unit id="user.alert.username-missing">
+        <source>Username is required</source>
+        <target xml:lang="lol">crwdns36919:0crwdne36919:0</target>
+      </trans-unit>
+      <trans-unit id="user.alert.wrong-credentials.subtitle">
+        <source>Check your username and password are correct</source>
+        <target xml:lang="lol">crwdns36920:0crwdne36920:0</target>
+      </trans-unit>
+      <trans-unit id="user.alert.wrong-credentials.title">
+        <source>Unable to log in</source>
+        <target xml:lang="lol">crwdns36921:0crwdne36921:0</target>
+      </trans-unit>
+      <trans-unit id="user.check-your-contributions.button">
+        <source>Check Your Contributions</source>
+        <target xml:lang="lol">crwdns36922:0crwdne36922:0</target>
+      </trans-unit>
+      <trans-unit id="user.create-account.button">
+        <source>Create An Account</source>
+        <target xml:lang="lol">crwdns36923:0crwdne36923:0</target>
+      </trans-unit>
+      <trans-unit id="user.create-account.text">
+        <source>If you don't have an account, click the link bellow to create one.</source>
+        <target xml:lang="lol">crwdns36924:0crwdne36924:0</target>
+      </trans-unit>
+      <trans-unit id="user.log-in">
+        <source>Log In</source>
+        <target xml:lang="lol">crwdns36925:0crwdne36925:0</target>
+      </trans-unit>
+      <trans-unit id="user.log-out">
+        <source>Log Out</source>
+        <target xml:lang="lol">crwdns36926:0crwdne36926:0</target>
+      </trans-unit>
+      <trans-unit id="user.password">
+        <source>Password</source>
+        <target xml:lang="lol">crwdns36927:0crwdne36927:0</target>
+      </trans-unit>
+      <trans-unit id="user.tab-bar.item">
+        <source>User</source>
+        <target xml:lang="lol">crwdns36928:0crwdne36928:0</target>
+      </trans-unit>
+      <trans-unit id="user.username">
+        <source>Username</source>
+        <target xml:lang="lol">crwdns36929:0crwdne36929:0</target>
+      </trans-unit>
+      <trans-unit id="user.why-log-in.text">
+        <source>Login in with your account will associate all your contributions to your account.</source>
+        <target xml:lang="lol">crwdns36930:0crwdne36930:0</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFactsTests/Localizable.strings" source-language="en" datatype="plaintext" target-language="lol">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
+    </header>
+    <body>
+      <trans-unit id="alert.action.ok">
+        <source>alert.action.ok</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36931:0crwdne36931:0</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.ingredients">
+        <source>call-to-action.ingredients</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36932:0crwdne36932:0</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.nutrition">
+        <source>call-to-action.nutrition</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36933:0crwdne36933:0</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.summary">
+        <source>call-to-action.summary</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36934:0crwdne36934:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.title">
+        <source>product-add.image-upload-error-banner.title</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36935:0crwdne36935:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-success-banner.title">
+        <source>product-add.image-upload-success-banner.title</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36936:0crwdne36936:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.message">
+        <source>product-add.save-error.message</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36937:0crwdne36937:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.title">
+        <source>product-add.save-error.title</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36938:0crwdne36938:0</target>
+      </trans-unit>
+      <trans-unit id="product-add.uploading-image-banner.title">
+        <source>product-add.uploading-image-banner.title</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36939:0crwdne36939:0</target>
+      </trans-unit>
+      <trans-unit id="product-detail.nutrition-table.for-serving">
+        <source>product-detail.nutrition-table.for-serving</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36940:0crwdne36940:0</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.ingredients">
+        <source>product-detail.page-title.ingredients</source>
+        <note>Product detail, ingredients</note>
+        <target xml:lang="lol">crwdns36941:0crwdne36941:0</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition">
+        <source>product-detail.page-title.nutrition</source>
+        <note>Product detail, nutrition</note>
+        <target xml:lang="lol">crwdns36942:0crwdne36942:0</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition-table">
+        <source>product-detail.page-title.nutrition-table</source>
+        <note>Product detail, nutrition table</note>
+        <target xml:lang="lol">crwdns36943:0crwdne36943:0</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.summary">
+        <source>product-detail.page-title.summary</source>
+        <note>Product detail, summary</note>
+        <target xml:lang="lol">crwdns36944:0crwdne36944:0</target>
+      </trans-unit>
+      <trans-unit id="user.alert.password-missing">
+        <source>user.alert.password-missing</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36945:0crwdne36945:0</target>
+      </trans-unit>
+      <trans-unit id="user.alert.username-missing">
+        <source>user.alert.username-missing</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="lol">crwdns36946:0crwdne36946:0</target>
       </trans-unit>
     </body>
   </file>
