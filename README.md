@@ -18,7 +18,7 @@
 ### Dependencies
 We use Carthage for dependency management.
 
-Run `carthage bootstrap --platform iOS` before opening the project in Xcode
+Run `carthage bootstrap --platform iOS --cache-builds` before opening the project in Xcode.
 
 You can install [Carthage](https://github.com/Carthage/Carthage) with Homebrew:
 ```
@@ -36,7 +36,7 @@ brew cask install fastlane
 
 ### SwiftLint
 
-We have a script that runs when buildin the app that executes SwiftLint to enforce a series of conventrions and style to the code.
+We have a script that runs when building the app, it executes SwiftLint to enforce a style and conventions to the code.
 
 You can install [SwiftLint](https://github.com/realm/SwiftLint/) with Homebrew:
 ```
