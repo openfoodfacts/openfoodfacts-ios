@@ -51,7 +51,7 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
                 highlightedText.deleteCharacters(in: trailingRange)
                 highlightedText.deleteCharacters(in: initialRange)
             }
-        } catch(let error) {
+        } catch let error {
             let userInfo = ["bold_words_pattern": boldWordsPattern, "original_text": originalText]
             Crashlytics.sharedInstance().recordError(error, withAdditionalUserInfo: userInfo)
         }
