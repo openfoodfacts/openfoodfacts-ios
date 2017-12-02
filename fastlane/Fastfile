@@ -63,3 +63,7 @@ lane :refresh_dsyms do
   clean_build_artifacts           # Delete the local dSYM files
 end
 
+desc "Upload metadata"
+lane :metadata do
+  deliver(skip_binary_upload: true)
+end
