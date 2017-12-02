@@ -1,9 +1,3 @@
-# The Appfile can be used to specify information that's used across all fastlane
-# tools, like your username or the app's bundle identifier.
-#
-# For more details, check out the documentation at:
-# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
-
-app_identifier "org.openfoodfacts.openfoodfacts" # the bundle identifier of your app
+app_identifier "org.openfoodfacts.openfoodfacts"
 apple_id ENV["APPLE_ID"]
 team_id ENV["TEAM_ID"]
