@@ -98,11 +98,11 @@ class ProductServiceTests: XCTestCase {
     }
 
     func testGetProductByBarcodeShouldSucceedWhenResponseHasProduct() {
-        var result: ProductsResponse?
+        var result: Product?
 
         // given
         let barcode = "5449000011527"
-        let success: (ProductsResponse) -> Void = { response in result = response }
+        let success: (Product?) -> Void = { response in result = response }
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
         stub(condition: isPath("/api/v0/product/5449000011527.json")) { _ in
             return OHHTTPStubsResponse(
@@ -113,11 +113,10 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productApi.getProduct(byBarcode: barcode, onSuccess: success, onError: error)
+        productApi.getProduct(byBarcode: barcode, isScanning: true, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
-        expect(result?.product).toNot(beNil())
     }
 
     // MARK: - getProductByBarcode
@@ -126,7 +125,7 @@ class ProductServiceTests: XCTestCase {
 
         // given
         let barcode = "5449000011527"
-        let success: (ProductsResponse) -> Void = { response in XCTFail("Expecting a failing result") }
+        let success: (Product?) -> Void = { response in XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/api/v0/product/5449000011527.json")) { _ in
             let notConnectedError = NSError(domain: NSURLErrorDomain, code: networkDownErrorCode, userInfo: nil)
@@ -134,7 +133,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productApi.getProduct(byBarcode: barcode, onSuccess: success, onError: error)
+        productApi.getProduct(byBarcode: barcode, isScanning: false, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())

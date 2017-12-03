@@ -23,6 +23,9 @@ class ProductServiceMock: ProductApi {
     var loginUsername: String?
     var loginPassword: String?
 
+    var productByBarcodeCalled = false
+    var productByBarcodeScanning: Bool?
+
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (NSError) -> Void) {
         self.query = query
         self.page = page
@@ -36,7 +39,15 @@ class ProductServiceMock: ProductApi {
         }
     }
 
-    func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
+    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
+        productByBarcodeCalled = true
+        productByBarcodeScanning = isScanning
+
+        if barcode == "123456789" {
+            onSuccess(product)
+        } else {
+            onError(error)
+        }
     }
 
     func postImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {

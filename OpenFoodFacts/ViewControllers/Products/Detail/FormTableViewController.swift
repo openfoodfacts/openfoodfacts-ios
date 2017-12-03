@@ -14,8 +14,15 @@ protocol FormTableViewControllerDelegate: class {
 }
 
 class FormTableViewController: UITableViewController {
-    let form: Form
+    var form: Form! {
+        didSet {
+            if oldValue != nil {
+                self.tableView.reloadData()
+            }
+        }
+    }
     let productApi: ProductApi
+    weak var delegate: ProductDetailRefreshDelegate?
 
     fileprivate let localizedTitle: String
 
@@ -24,6 +31,8 @@ class FormTableViewController: UITableViewController {
         self.productApi = productApi
         localizedTitle = form.title
         super.init(nibName: nil, bundle: nil)
+
+        configureTableViewController()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -52,6 +61,12 @@ class FormTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! ProductDetailBaseCell // swiftlint:disable:this force_cast
         cell.configure(with: formRow)
         return cell
+    }
+
+    private func configureTableViewController() {
+        let refreshControl = UIRefreshControl()
+        self.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
     }
 }
 
@@ -108,5 +123,17 @@ extension FormTableViewController: FormTableViewControllerDelegate {
     func cellSizeDidChange() {
         tableView.beginUpdates()
         tableView.endUpdates()
+    }
+}
+
+// MARK: - Refresh control
+
+extension FormTableViewController {
+    @objc func refresh(_ refreshControl: UIRefreshControl) {
+        delegate?.refreshProduct {
+            DispatchQueue.main.async {
+                refreshControl.endRefreshing()
+            }
+        }
     }
 }

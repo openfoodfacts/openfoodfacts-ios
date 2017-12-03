@@ -148,4 +148,27 @@ class FormTableViewControllerTests: XCTestCase {
     func testCellSizeDidChange() {
         viewController.cellSizeDidChange()
     }
+
+    // MARK: - refresh
+    func testRefreshControl() {
+        let delegateMock = ProductDetailRefreshDelegateMock()
+        viewController.delegate = delegateMock
+        let refreshControl = UIRefreshControl()
+        refreshControl.beginRefreshing()
+
+        viewController.refresh(refreshControl)
+
+        expect(refreshControl.isRefreshing).toEventually(beFalse())
+    }
+}
+
+private class ProductDetailRefreshDelegateMock: ProductDetailRefreshDelegate {
+    var didCallRefreshProduct = false
+
+    func refreshProduct(completion: () -> Void) {
+        didCallRefreshProduct = true
+        completion()
+    }
+
+
 }
