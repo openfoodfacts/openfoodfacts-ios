@@ -54,6 +54,52 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
     }
 
     fileprivate func getSummaryVC() -> UIViewController {
+        let form = createSummaryForm()
+        let vc = SummaryFormTableViewController(with: form, productApi: productApi)
+        vc.delegate = self
+        return vc
+    }
+
+    fileprivate func getIngredientsVC() -> UIViewController {
+        let form = createIngredientsForm()
+        let vc = IngredientsFormTableViewController(with: form, productApi: productApi)
+        vc.delegate = self
+        return vc
+    }
+
+    fileprivate func getNutritionVC() -> UIViewController? {
+        guard let form = createNutritionForm() else { return nil }
+        let vc = FormTableViewController(with: form, productApi: productApi)
+        vc.delegate = self
+        return vc
+    }
+
+    fileprivate func getNutritionTableVC() -> UIViewController {
+        let form = createNutritionTableForm()
+        let vc = NutritionTableFormTableViewController(with: form, productApi: productApi)
+        vc.delegate = self
+        return vc
+    }
+
+    // MARK: - Form creation methods
+
+    private func updateForms(with updatedProduct: Product) {
+        self.product = updatedProduct
+
+        if let viewControllers = self.viewControllers as? [FormTableViewController] {
+            viewControllers[0].form = createSummaryForm()
+            viewControllers[1].form = createIngredientsForm()
+
+            if viewControllers.count == 3 {
+                viewControllers[2].form = createNutritionTableForm()
+            } else {
+                viewControllers[2].form = createNutritionForm()
+                viewControllers[3].form = createNutritionTableForm()
+            }
+        }
+    }
+
+    private func createSummaryForm() -> Form {
         var rows = [FormRow]()
 
         // Header
@@ -74,10 +120,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
 
-        return SummaryFormTableViewController(with: Form(title: summaryTitle, rows: rows), productApi: productApi)
+        return Form(title: summaryTitle, rows: rows)
     }
 
-    fileprivate func getIngredientsVC() -> UIViewController {
+    private func createIngredientsForm() -> Form {
         var rows = [FormRow]()
 
         // Header
@@ -93,10 +139,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
 
-        return IngredientsFormTableViewController(with: Form(title: summaryTitle, rows: rows), productApi: productApi)
+        return Form(title: summaryTitle, rows: rows)
     }
 
-    fileprivate func getNutritionVC() -> UIViewController? {
+    private func createNutritionForm() -> Form? {
         var rows = [FormRow]()
 
         // Nutriscore cell
@@ -124,11 +170,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
 
-        return FormTableViewController(with: Form(title: summaryTitle, rows: rows), productApi: productApi)
+        return Form(title: summaryTitle, rows: rows)
     }
 
     // swiftlint:disable:next cyclomatic_complexity
-    fileprivate func getNutritionTableVC() -> UIViewController {
+    private func createNutritionTableForm() -> Form {
         var rows = [FormRow]()
 
         // Header
@@ -193,11 +239,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
 
-        return NutritionTableFormTableViewController(with: Form(title: summaryTitle, rows: rows), productApi: productApi)
+        return Form(title: summaryTitle, rows: rows)
     }
 
-    fileprivate func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self,
-                                   isCopiable: Bool = false) {
+    private func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self, isCopiable: Bool = false) {
         // Check item has a value, if so add to the array of rows.
         switch item {
         case let value as String:
@@ -227,5 +272,29 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         if let barcode = self.product?.barcode, let url = URL(string: URLs.Edit + barcode) {
             openUrlInApp(url, showAlert: true)
         }
+    }
+}
+
+// MARK: - Refresh delegate
+
+protocol ProductDetailRefreshDelegate: class {
+    func refreshProduct(completion: () -> Void)
+}
+
+extension ProductDetailViewController: ProductDetailRefreshDelegate {
+    func refreshProduct(completion: () -> Void) {
+        if let barcode = product.barcode {
+            productApi.getProduct(byBarcode: barcode, isScanning: false, onSuccess: { response in
+                if let updatedProduct = response {
+                    self.updateForms(with: updatedProduct)
+                }
+            }, onError: { error in
+                // No error should be thrown here, as the product was loaded previously
+                Crashlytics.sharedInstance().recordError(error)
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+        }
+
+        completion()
     }
 }

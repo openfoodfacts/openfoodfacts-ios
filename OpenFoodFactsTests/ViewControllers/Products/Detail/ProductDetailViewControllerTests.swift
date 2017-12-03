@@ -81,11 +81,11 @@ class ProductDetailViewControllerTests: XCTestCase {
 
         let summaryVC = viewControllers[0] as! SummaryFormTableViewController
         var form = summaryVC.form
-        var rows = form.rows
+        var rows = form!.rows
 
         // There should be a better way to assert all this... but how? 🤔
 
-        expect(form.title).to(equal(NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")))
+        expect(form!.title).to(equal(NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")))
         expect(rows[0].label).to(beNil())
         expect(rows[0].cellType == HostedViewCell.self).to(beTrue())
         expect(rows[0].isCopiable).to(beFalse())
@@ -126,9 +126,9 @@ class ProductDetailViewControllerTests: XCTestCase {
 
         let ingredientsVC = viewControllers[1] as! IngredientsFormTableViewController
         form = ingredientsVC.form
-        rows = form.rows
+        rows = form!.rows
 
-        expect(form.title).to(equal(NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")))
+        expect(form!.title).to(equal(NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")))
         expect(rows[0].label).to(beNil())
         expect(rows[0].cellType == HostedViewCell.self).to(beTrue())
         expect(rows[0].isCopiable).to(beFalse())
@@ -155,9 +155,9 @@ class ProductDetailViewControllerTests: XCTestCase {
 
         let nutritionVC = viewControllers[2] as! FormTableViewController
         form = nutritionVC.form
-        rows = form.rows
+        rows = form!.rows
 
-        expect(form.title).to(equal(NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")))
+        expect(form!.title).to(equal(NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")))
         expect(rows[0].value as? String).to(equal(product.nutriscore))
         expect(rows[0].cellType == NutritionHeaderTableViewCell.self).to(beTrue())
         expect(rows[1].label).to(equal(InfoRowKey.servingSize.localizedString))
@@ -171,9 +171,9 @@ class ProductDetailViewControllerTests: XCTestCase {
 
         let nutritionTableVC = viewControllers[3] as! NutritionTableFormTableViewController
         form = nutritionTableVC.form
-        rows = form.rows
+        rows = form!.rows
 
-        expect(form.title).to(equal(NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")))
+        expect(form!.title).to(equal(NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")))
         expect(rows[0].label).to(beNil())
         expect(rows[0].cellType == HostedViewCell.self).to(beTrue())
         expect(rows[0].isCopiable).to(beFalse())
@@ -257,6 +257,58 @@ class ProductDetailViewControllerTests: XCTestCase {
         viewController.didTapEditButton(UIBarButtonItem())
 
         expect(self.viewController.presentedViewController is SFSafariViewController).to(beTrue())
+    }
+
+    // MARK: - Form creation methods
+    func testRefreshProductCallsApiWhenProductHasBarcode() {
+        let expectedName = "Updated"
+        var product = buildProductForJsonFile(productFile)
+        product.barcode = "123456789"
+        product.name = "Original"
+        viewController.product = product
+        productApi.product = product
+        productApi.product.name = expectedName
+        viewController.viewDidLoad()
+
+        var refreshCompleted = false
+
+        viewController.refreshProduct {
+            refreshCompleted = true
+        }
+
+        let viewControllers = self.viewController.viewControllers as! [FormTableViewController]
+        let firstRowValue = viewControllers[0].form.rows[0].value as! Product
+
+        expect(refreshCompleted).to(beTrue())
+        expect(self.productApi.productByBarcodeCalled).to(beTrue())
+        expect(firstRowValue.name).to(equal(expectedName))
+    }
+
+    func testRefreshProductWhenApiCallReturnsError() {
+        var product = buildProductForJsonFile(productFile)
+        product.barcode = "111111111"
+        viewController.product = product
+        productApi.product = product
+
+        var refreshCompleted = false
+
+        viewController.refreshProduct {
+            refreshCompleted = true
+        }
+
+        expect(refreshCompleted).to(beTrue())
+        expect(self.navigationController.didPopToRootViewController).to(beTrue())
+    }
+
+    func testRefreshProductDoesNotCallApiWhenNoBarcode() {
+        var refreshCompleted = false
+
+        viewController.refreshProduct {
+            refreshCompleted = true
+        }
+
+        expect(refreshCompleted).to(beTrue())
+        expect(self.productApi.productByBarcodeCalled).to(beFalse())
     }
 
     // MARK: - Helper functions

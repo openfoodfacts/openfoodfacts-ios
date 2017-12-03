@@ -14,7 +14,7 @@ import UIKit
 
 protocol ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (NSError) -> Void)
-    func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
+    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
     func postImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void)
@@ -82,13 +82,17 @@ class ProductService: ProductApi {
         self.lastGetProductsRequest = request
     }
 
-    func getProduct(byBarcode barcode: String, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
+    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
         var url: String
 
         // In debug mode we post products to the test environment (.net), so we use the post endpoint to get a product by barcode (when scanning it) 
         // so we get the product as a result for this get
         #if DEBUG
-            url = Endpoint.post
+            if isScanning {
+                url = Endpoint.post
+            } else {
+                url = Endpoint.get
+            }
         #else
             url = Endpoint.get
         #endif
@@ -109,7 +113,7 @@ class ProductService: ProductApi {
             log.debug(response.debugDescription)
             switch response.result {
             case .success(let productResponse):
-                onSuccess(productResponse)
+                onSuccess(productResponse.product)
             case .failure(let error):
                 Crashlytics.sharedInstance().recordError(error)
                 onError(error)
