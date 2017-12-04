@@ -170,5 +170,4 @@ private class ProductDetailRefreshDelegateMock: ProductDetailRefreshDelegate {
         completion()
     }
 
-
 }
