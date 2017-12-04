@@ -17,20 +17,21 @@ struct PictureViewModel {
 
 extension PictureViewModel {
     init(imageType: ImageType) {
-        var text = "\(NSLocalizedString("product.images.take-picture", comment: "")) "
+        var text = "\("product.images.take-picture".localized) "
         var uploadedPictureText: String?
         switch imageType {
         case .front:
-            text += NSLocalizedString("product.images.front", comment: "")
-            uploadedPictureText = "\(NSLocalizedString("product.images.product", comment: "")) \(NSLocalizedString("product.images.front", comment: "")) \(NSLocalizedString("product.images.picture", comment: ""))"
+            text += "product.images.front".localized
+            uploadedPictureText = "\("product.images.product".localized) \("product.images.front".localized) \("product.images.picture".localized)"
         case .ingredients:
-            text += NSLocalizedString("product.images.ingredients", comment: "")
-            uploadedPictureText = "\(NSLocalizedString("product.images.product", comment: "")) \(NSLocalizedString("product.images.ingredients", comment: "")) \(NSLocalizedString("product.images.picture", comment: ""))"
+            text += "product.images.ingredients".localized
+            uploadedPictureText = "\("product.images.product".localized) \("product.images.ingredients".localized) \("product.images.picture".localized)"
         case .nutrition:
-            text += NSLocalizedString("product.images.nutrition", comment: "")
-            uploadedPictureText = "\(NSLocalizedString("product.images.product", comment: "")) \(NSLocalizedString("product.images.nutrition", comment: "")) \(NSLocalizedString("product.images.picture", comment: ""))"
+            text += "product.images.nutrition".localized
+            uploadedPictureText = "\("product.images.product".localized) \("product.images.nutrition".localized) \("product.images.picture".localized)"
         }
 
         self.init(imageType: imageType, text: text, image: nil, uploadedPictureText: uploadedPictureText)
     }
 }
+

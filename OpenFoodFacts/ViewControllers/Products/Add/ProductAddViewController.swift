@@ -21,10 +21,10 @@ class ProductAddViewController: TakePictureViewController {
     var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
     lazy var product = Product()
     lazy var productPostErrorAlert: UIAlertController = {
-        let alert = UIAlertController(title: NSLocalizedString("product-add.save-error.title", comment: ""),
-                                      message: NSLocalizedString("product-add.save-error.message", comment: ""),
+        let alert = UIAlertController(title: "product-add.save-error.title".localized,
+                                      message: "product-add.save-error.message".localized,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("alert.action.ok", comment: ""),
+        alert.addAction(UIAlertAction(title: "alert.action.ok".localized,
                                       style: .default,
                                       handler: { _ in alert.dismiss(animated: true, completion: nil) }))
         return alert

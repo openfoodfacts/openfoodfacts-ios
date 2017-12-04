@@ -17,7 +17,7 @@ class ErrorView: StateView {
         self.frame = super.frame
 
         let mainLabel = UILabel()
-        mainLabel.text = NSLocalizedString("product-search.error-view.title", comment: "Error view title")
+        mainLabel.text = "product-search.error-view.title".localized
         mainLabel.textAlignment = .center
         mainLabel.textColor = textColor
         mainLabel.font = mainLabel.font.withSize(25)
@@ -25,7 +25,7 @@ class ErrorView: StateView {
         mainLabel.sizeToFit()
 
         let secondayLabel = UILabel()
-        secondayLabel.text = NSLocalizedString("product-search.error-view.subtitle", comment: "Error view subtitle")
+        secondayLabel.text = "product-search.error-view.subtitle".localized
         secondayLabel.textAlignment = .center
         secondayLabel.textColor = textColor
         secondayLabel.font = mainLabel.font.withSize(18)

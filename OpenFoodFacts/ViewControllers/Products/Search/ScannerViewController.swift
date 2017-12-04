@@ -161,7 +161,7 @@ class ScannerViewController: UIViewController {
     }
 
     fileprivate func resetOverlay() {
-        overlay.setText(NSLocalizedString("product-scanner.overlay.user-help", comment: "User help in the scan view"))
+        overlay.setText("product-scanner.overlay.user-help".localized)
         showHelpInOverlayTask?.cancel()
         showScanHelpInstructions()
     }
@@ -169,7 +169,7 @@ class ScannerViewController: UIViewController {
     fileprivate func showScanHelpInstructions() {
         let task = DispatchWorkItem {
             if self.lastCodeScanned == nil {
-                self.overlay.setText(NSLocalizedString("product-scanner.overlay.extended-user-help", comment: "User help in the scan view"))
+                self.overlay.setText("product-scanner.overlay.extended-user-help".localized)
             } else {
                 self.showScanHelpInstructions()
             }
@@ -208,7 +208,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
 
     func getProduct(barcode: String) {
         DispatchQueue.main.async {
-            let productLoadingMessage = NSLocalizedString("product-scanner.search.status", comment: "")
+            let productLoadingMessage = "product-scanner.search.status".localized
             SVProgressHUD.setDefaultMaskType(.black)
             SVProgressHUD.setDefaultAnimationType(.native)
             SVProgressHUD.show(withStatus: productLoadingMessage)
@@ -226,7 +226,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }, onError: { _ in
             DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
-                StatusBarNotificationBanner(title: NSLocalizedString("product-scanner.barcode.error", comment: ""), style: .danger).show()
+                StatusBarNotificationBanner(title: "product-scanner.barcode.error".localized, style: .danger).show()
             }
 
             self.lastCodeScanned = nil
@@ -354,9 +354,9 @@ extension ScannerViewController {
     }
 
     private func requestPermissions() {
-        let title = NSLocalizedString("product-scanner.permissions.noPermissions.title", comment: "")
-        let message = NSLocalizedString("product-scanner.permissions.noPermissions.message", comment: "")
-        let actionTitle = NSLocalizedString("product-scanner.permissions.noPermissions.action.title", comment: "")
+        let title = "product-scanner.permissions.noPermissions.title".localized
+        let message = "product-scanner.permissions.noPermissions.message".localized
+        let actionTitle = "product-scanner.permissions.noPermissions.action.title".localized
 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { _ in
@@ -368,9 +368,9 @@ extension ScannerViewController {
     }
 
     private func returnToRootController() {
-        let title = NSLocalizedString("product-scanner.permissions.failed.title", comment: "")
-        let message = NSLocalizedString("product-scanner.permissions.failed.message", comment: "")
-        let actionTitle = NSLocalizedString("product-scanner.permissions.failed.action.title", comment: "")
+        let title = "product-scanner.permissions.failed.title".localized
+        let message = "product-scanner.permissions.failed.message".localized
+        let actionTitle = "product-scanner.permissions.failed.action.title".localized
 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { _ in

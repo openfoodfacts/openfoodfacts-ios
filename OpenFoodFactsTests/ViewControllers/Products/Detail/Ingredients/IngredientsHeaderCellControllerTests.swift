@@ -62,7 +62,7 @@ class IngredientsHeaderCellControllerTests: XCTestCase {
 
         expect(self.viewController.ingredients.isHidden).to(beTrue())
         expect(self.viewController.callToActionView.isHidden).to(beFalse())
-        expect(self.viewController.callToActionView.textLabel.text).to(equal(NSLocalizedString("call-to-action.ingredients", comment: "")))
+        expect(self.viewController.callToActionView.textLabel.text).to(equal("call-to-action.ingredients".localized))
         expect(self.viewController.callToActionView.gestureRecognizers![0] is UITapGestureRecognizer).to(beTrue())
         expect(self.viewController.addNewPictureButton.isHidden).to(beTrue())
     }

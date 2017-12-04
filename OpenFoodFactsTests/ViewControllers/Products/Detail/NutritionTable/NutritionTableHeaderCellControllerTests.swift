@@ -87,7 +87,7 @@ class NutritionTableHeaderCellControllerTests: XCTestCase {
 
         expect(self.viewController.nutritionTableImage.isHidden).to(beTrue())
         expect(self.viewController.callToActionView.isHidden).to(beFalse())
-        expect(self.viewController.callToActionView.textLabel.text).to(equal(NSLocalizedString("call-to-action.nutrition", comment: "")))
+        expect(self.viewController.callToActionView.textLabel.text).to(equal("call-to-action.nutrition".localized))
         expect(self.viewController.callToActionView.gestureRecognizers![0] is UITapGestureRecognizer).to(beTrue())
         expect(self.viewController.addNewPictureButton.isHidden).to(beTrue())
     }
@@ -98,7 +98,7 @@ class NutritionTableHeaderCellControllerTests: XCTestCase {
 
         viewController.viewDidLoad()
 
-        expect(self.viewController.servingSizeLabel.text).to(equal("\(NSLocalizedString("product-detail.nutrition-table.for-serving", comment: "")): \(servingSize)"))
+        expect(self.viewController.servingSizeLabel.text).to(equal("\("product-detail.nutrition-table.for-serving".localized): \(servingSize)"))
     }
 
     // MARK: - didTapProductImage

@@ -89,9 +89,9 @@ class ProductAddViewControllerTests: XCTestCase {
 
         expect(self.viewController.presentedViewController is UIAlertController).toEventually(beTrue())
         let alertController = self.viewController.presentedViewController as! UIAlertController
-        expect(alertController.title).to(equal(NSLocalizedString("product-add.save-error.title", comment: "")))
-        expect(alertController.message).to(equal(NSLocalizedString("product-add.save-error.message", comment: "")))
-        expect(alertController.actions[0].title).to(equal(NSLocalizedString("alert.action.ok", comment: "")))
+        expect(alertController.title).to(equal("product-add.save-error.title".localized))
+        expect(alertController.message).to(equal("product-add.save-error.message".localized))
+        expect(alertController.actions[0].title).to(equal("alert.action.ok".localized))
     }
 
     // MARK: - keyboardWillShow

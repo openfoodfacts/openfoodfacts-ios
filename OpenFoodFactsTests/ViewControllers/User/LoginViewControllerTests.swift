@@ -133,8 +133,8 @@ class LoginViewControllerTests: XCTestCase {
 
         expect(self.viewController.presentedViewController is UIAlertController).toEventually(beTrue())
         let alertController = self.viewController.presentedViewController as! UIAlertController
-        expect(alertController.title).to(equal(NSLocalizedString("user.alert.username-missing", comment: "")))
-        expect(alertController.actions[0].title).to(equal(NSLocalizedString("alert.action.ok", comment: "")))
+        expect(alertController.title).to(equal("user.alert.username-missing".localized))
+        expect(alertController.actions[0].title).to(equal("alert.action.ok".localized))
     }
 
     func testDidTapLoginButtonShowAlertWhenPasswordNotPresent() {
@@ -144,8 +144,8 @@ class LoginViewControllerTests: XCTestCase {
 
         expect(self.viewController.presentedViewController is UIAlertController).toEventually(beTrue(), timeout: 10)
         let alertController = self.viewController.presentedViewController as! UIAlertController
-        expect(alertController.title).to(equal(NSLocalizedString("user.alert.password-missing", comment: "")))
-        expect(alertController.actions[0].title).to(equal(NSLocalizedString("alert.action.ok", comment: "")))
+        expect(alertController.title).to(equal("user.alert.password-missing".localized))
+        expect(alertController.actions[0].title).to(equal("alert.action.ok".localized))
     }
 
     // MARK: - didTapCreateAccountButton

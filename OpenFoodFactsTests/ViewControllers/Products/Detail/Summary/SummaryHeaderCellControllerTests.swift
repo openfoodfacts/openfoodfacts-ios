@@ -62,7 +62,7 @@ class SummaryHeaderCellControllerTests: XCTestCase {
 
         expect(self.viewController.productImage.isHidden).to(beTrue())
         expect(self.viewController.callToActionView.isHidden).to(beFalse())
-        expect(self.viewController.callToActionView.textLabel.text).to(equal(NSLocalizedString("call-to-action.summary", comment: "")))
+        expect(self.viewController.callToActionView.textLabel.text).to(equal("call-to-action.summary".localized))
         expect(self.viewController.callToActionView.gestureRecognizers![0] is UITapGestureRecognizer).to(beTrue())
         expect(self.viewController.nutriscore.superview?.isHidden).to(beTrue())
         expect(self.viewController.productName.isHidden).to(beTrue())

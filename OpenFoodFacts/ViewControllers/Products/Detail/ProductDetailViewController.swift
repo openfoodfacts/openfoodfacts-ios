@@ -118,7 +118,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
         createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
 
-        let summaryTitle = NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")
+        let summaryTitle = "product-detail.page-title.summary".localized
 
         return Form(title: summaryTitle, rows: rows)
     }
@@ -137,7 +137,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
         createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
 
-        let summaryTitle = NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")
+        let summaryTitle = "product-detail.page-title.ingredients".localized
 
         return Form(title: summaryTitle, rows: rows)
     }
@@ -168,7 +168,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
             return nil
         }
 
-        let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")
+        let summaryTitle = "product-detail.page-title.nutrition".localized
 
         return Form(title: summaryTitle, rows: rows)
     }
@@ -182,8 +182,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
         // Nutrition table rows
         let headerRow = NutritionTableRow(label: InfoRowKey.nutritionalTableHeader.localizedString,
-                                          perSizeValue: NSLocalizedString("product-detail.nutrition-table.for-100g", comment: ""),
-                                          perServingValue: NSLocalizedString("product-detail.nutrition-table.for-serving", comment: ""))
+                                          perSizeValue: "product-detail.nutrition-table.for-100g".localized,
+                                          perServingValue: "product-detail.nutrition-table.for-serving".localized)
         createFormRow(with: &rows, item: headerRow, cellType: NutritionTableRowTableViewCell.self)
 
         if let energy = product.nutriments?.energy, let nutritionTableRow = energy.nutritionTableRow {
@@ -237,7 +237,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
             }
         }
 
-        let summaryTitle = NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")
+        let summaryTitle = "product-detail.page-title.nutrition-table".localized
 
         return Form(title: summaryTitle, rows: rows)
     }

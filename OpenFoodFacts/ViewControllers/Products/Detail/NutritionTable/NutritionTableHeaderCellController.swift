@@ -56,13 +56,13 @@ class NutritionTableHeaderCellController: TakePictureViewController {
         } else {
             nutritionTableImage.isHidden = true
             callToActionView.isHidden = false
-            callToActionView.textLabel.text = NSLocalizedString("call-to-action.nutrition", comment: "")
+            callToActionView.textLabel.text = "call-to-action.nutrition".localized
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
             addNewPictureButton.isHidden = true
         }
 
         if let servingSize = product.servingSize {
-            servingSizeLabel.text = "\(NSLocalizedString("product-detail.nutrition-table.for-serving", comment: "")): \(servingSize)"
+            servingSizeLabel.text = "\("product-detail.nutrition-table.for-serving".localized): \(servingSize)"
         }
     }
 }
