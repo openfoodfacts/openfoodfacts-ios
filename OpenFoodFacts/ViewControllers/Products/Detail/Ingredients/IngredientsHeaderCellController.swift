@@ -49,7 +49,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
         } else {
             ingredients.isHidden = true
             callToActionView.isHidden = false
-            callToActionView.textLabel.text = NSLocalizedString("call-to-action.ingredients", comment: "")
+            callToActionView.textLabel.text = "call-to-action.ingredients".localized
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
             addNewPictureButton.isHidden = true
         }

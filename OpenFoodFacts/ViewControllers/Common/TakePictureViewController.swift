@@ -17,22 +17,22 @@ class TakePictureViewController: UIViewController {
 
     // Feedback banners
     lazy var uploadingImageBanner: StatusBarNotificationBanner = {
-        let banner = StatusBarNotificationBanner(title: NSLocalizedString("product-add.uploading-image-banner.title", comment: ""), style: .info)
+        let banner = StatusBarNotificationBanner(title: "product-add.uploading-image-banner.title".localized, style: .info)
         banner.autoDismiss = false
         return banner
     }()
     lazy var uploadingImageErrorBanner: NotificationBanner = {
-        let banner = NotificationBanner(title: NSLocalizedString("product-add.image-upload-error-banner.title", comment: ""),
-                                        subtitle: NSLocalizedString("product-add.image-upload-error-banner.subtitle", comment: ""),
+        let banner = NotificationBanner(title: "product-add.image-upload-error-banner.title".localized,
+                                        subtitle: "product-add.image-upload-error-banner.subtitle".localized,
                                         style: .danger)
         return banner
     }()
     lazy var uploadingImageSuccessBanner: NotificationBanner = {
-        let banner = NotificationBanner(title: NSLocalizedString("product-add.image-upload-success-banner.title", comment: ""), style: .success)
+        let banner = NotificationBanner(title: "product-add.image-upload-success-banner.title".localized, style: .success)
         return banner
     }()
     lazy var productAddSuccessBanner: NotificationBanner = {
-        let banner = NotificationBanner(title: NSLocalizedString("product-add.product-add-success-banner.title", comment: ""), style: .success)
+        let banner = NotificationBanner(title: "product-add.product-add-success-banner.title".localized, style: .success)
         return banner
     }()
 

@@ -16,7 +16,7 @@ class EmptyView: StateView {
 
         let emptyLabel = UILabel()
         emptyLabel.translatesAutoresizingMaskIntoConstraints = false
-        emptyLabel.text = NSLocalizedString("product-search.no-results", comment: "No products where found for current search")
+        emptyLabel.text = "product-search.no-results".localized
         emptyLabel.textAlignment = .center
         emptyLabel.sizeToFit()
 

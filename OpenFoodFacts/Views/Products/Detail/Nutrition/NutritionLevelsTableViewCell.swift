@@ -18,22 +18,22 @@ class NutritionLevelsTableViewCell: ProductDetailBaseCell {
 
         if let levelView = createLevelView(level: product.nutritionLevels?.fat,
                                            item: getNutritionItem(at: 0, from: product.nutriments?.fats),
-                                           localizedLabel: NSLocalizedString("nutrition.fats", comment: "Nutrition, fat")) {
+                                           localizedLabel: "nutrition.fats".localized) {
             stackView.addArrangedSubview(levelView)
         }
         if let levelView = createLevelView(level: product.nutritionLevels?.saturatedFat,
                                            item: getNutritionItem(at: 1, from: product.nutriments?.fats),
-                                           localizedLabel: NSLocalizedString("nutrition.fats.saturated-fat", comment: "Nutrition, saturated fat")) {
+                                           localizedLabel: "nutrition.fats.saturated-fat".localized) {
             stackView.addArrangedSubview(levelView)
         }
         if let levelView = createLevelView(level: product.nutritionLevels?.sugars,
                                            item: getNutritionItem(at: 1, from: product.nutriments?.carbohydrates),
-                                           localizedLabel: NSLocalizedString("nutrition.carbohydrate.sugars", comment: "Nutrition, sugars")) {
+                                           localizedLabel: "nutrition.carbohydrate.sugars".localized) {
             stackView.addArrangedSubview(levelView)
         }
         if let levelView = createLevelView(level: product.nutritionLevels?.salt,
                                            item: product.nutriments?.salt,
-                                           localizedLabel: NSLocalizedString("nutrition.salt", comment: "Nutrition, salt")) {
+                                           localizedLabel: "nutrition.salt".localized) {
             stackView.addArrangedSubview(levelView)
         }
     }
@@ -41,11 +41,11 @@ class NutritionLevelsTableViewCell: ProductDetailBaseCell {
     fileprivate func getLevelLocalized(level: NutritionLevel) -> String {
         switch level {
         case .low:
-            return NSLocalizedString("nutrition-level.low", comment: "Nutrition Level, low")
+            return "nutrition-level.low".localized
         case .moderate:
-            return NSLocalizedString("nutrition-level.moderate", comment: "Nutrition Level, moderate")
+            return "nutrition-level.moderate".localized
         case .high:
-            return NSLocalizedString("nutrition-level.high", comment: "Nutrition Level, high")
+            return "nutrition-level.high".localized
         }
     }
 

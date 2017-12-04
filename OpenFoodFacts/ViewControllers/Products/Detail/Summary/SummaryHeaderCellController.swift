@@ -46,7 +46,7 @@ class SummaryHeaderCellController: TakePictureViewController {
             addNewPictureButton.isHidden = false
         } else {
             productImage.isHidden = true
-            callToActionView.textLabel.text = NSLocalizedString("call-to-action.summary", comment: "")
+            callToActionView.textLabel.text = "call-to-action.summary".localized
             callToActionView.isHidden = false
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
             addNewPictureButton.isHidden = true

@@ -85,7 +85,7 @@ class ProductDetailViewControllerTests: XCTestCase {
 
         // There should be a better way to assert all this... but how? 🤔
 
-        expect(form!.title).to(equal(NSLocalizedString("product-detail.page-title.summary", comment: "Product detail, summary")))
+        expect(form!.title).to(equal("product-detail.page-title.summary".localized))
         expect(rows[0].label).to(beNil())
         expect(rows[0].cellType == HostedViewCell.self).to(beTrue())
         expect(rows[0].isCopiable).to(beFalse())
@@ -128,7 +128,7 @@ class ProductDetailViewControllerTests: XCTestCase {
         form = ingredientsVC.form
         rows = form!.rows
 
-        expect(form!.title).to(equal(NSLocalizedString("product-detail.page-title.ingredients", comment: "Product detail, ingredients")))
+        expect(form!.title).to(equal("product-detail.page-title.ingredients".localized))
         expect(rows[0].label).to(beNil())
         expect(rows[0].cellType == HostedViewCell.self).to(beTrue())
         expect(rows[0].isCopiable).to(beFalse())
@@ -157,7 +157,7 @@ class ProductDetailViewControllerTests: XCTestCase {
         form = nutritionVC.form
         rows = form!.rows
 
-        expect(form!.title).to(equal(NSLocalizedString("product-detail.page-title.nutrition", comment: "Product detail, nutrition")))
+        expect(form!.title).to(equal("product-detail.page-title.nutrition".localized))
         expect(rows[0].value as? String).to(equal(product.nutriscore))
         expect(rows[0].cellType == NutritionHeaderTableViewCell.self).to(beTrue())
         expect(rows[1].label).to(equal(InfoRowKey.servingSize.localizedString))
@@ -173,7 +173,7 @@ class ProductDetailViewControllerTests: XCTestCase {
         form = nutritionTableVC.form
         rows = form!.rows
 
-        expect(form!.title).to(equal(NSLocalizedString("product-detail.page-title.nutrition-table", comment: "Product detail, nutrition table")))
+        expect(form!.title).to(equal("product-detail.page-title.nutrition-table".localized))
         expect(rows[0].label).to(beNil())
         expect(rows[0].cellType == HostedViewCell.self).to(beTrue())
         expect(rows[0].isCopiable).to(beFalse())

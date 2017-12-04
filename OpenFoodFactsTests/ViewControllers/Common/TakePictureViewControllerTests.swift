@@ -42,8 +42,8 @@ class TakePictureViewControllerTests: XCTestCase {
 
     func testDidGetImageSuccessHandlerWhenPostingImage() {
         let testImage = TestHelper.sharedInstance.getTestImage()
-        let uploadingBannerTitle = NSLocalizedString("product-add.uploading-image-banner.title", comment: "")
-        let imageUploadSuccessBannerTitle = NSLocalizedString("product-add.image-upload-success-banner.title", comment: "")
+        let uploadingBannerTitle = "product-add.uploading-image-banner.title".localized
+        let imageUploadSuccessBannerTitle = "product-add.image-upload-success-banner.title".localized
 
         viewController.didGetImage(image: testImage)
 
@@ -55,8 +55,8 @@ class TakePictureViewControllerTests: XCTestCase {
     func testDidGetImageErrorHandlerWhenPostingImage() {
         viewController.barcode = "111111111"
         let testImage = TestHelper.sharedInstance.getTestImage()
-        let uploadingBannerTitle = NSLocalizedString("product-add.uploading-image-banner.title", comment: "")
-        let imageUploadErrorBannerTitle = NSLocalizedString("product-add.image-upload-error-banner.title", comment: "")
+        let uploadingBannerTitle = "product-add.uploading-image-banner.title".localized
+        let imageUploadErrorBannerTitle = "product-add.image-upload-error-banner.title".localized
 
         viewController.didGetImage(image: testImage)
 
