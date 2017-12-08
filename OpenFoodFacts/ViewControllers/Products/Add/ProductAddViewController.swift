@@ -14,6 +14,7 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var productNameField: UITextField!
     @IBOutlet weak var brandsField: UITextField!
     @IBOutlet weak var quantityField: UITextField!
+    @IBOutlet weak var languageField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var uploadedImagesStackView: UIStackView!
 
@@ -30,6 +31,10 @@ class ProductAddViewController: TakePictureViewController {
         return alert
     }()
 
+    private var pickerController: PickerViewController?
+    private var pickerToolbarController: PickerToolbarViewController?
+    private var languageValue: String = "en" // Use English as default
+
     override var barcode: String! {
         didSet {
             product.barcode = barcode
@@ -37,13 +42,9 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     override func viewDidLoad() {
-        productNameField.delegate = self
-        brandsField.delegate = self
-        quantityField.delegate = self
-
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        configureLanguageField()
+        configureDelegates()
+        configureNotifications()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +59,7 @@ class ProductAddViewController: TakePictureViewController {
             product.brands = [brand]
         }
         product.quantity = quantityField.text
+        product.lang = languageValue
 
         productApi.postProduct(product, onSuccess: {
             self.productAddSuccessBanner.show()
@@ -73,6 +75,42 @@ class ProductAddViewController: TakePictureViewController {
             destination.barcode = barcode
             destination.productApi = productApi
         }
+    }
+
+    private func configureLanguageField() {
+        let languages = productApi.getLanguages()
+
+        let defaultValue: Int? = languages.index(where: { $0.code == self.languageValue })
+
+        self.pickerController = PickerViewController(data: languages, defaultValue: defaultValue, delegate: self)
+        self.pickerToolbarController = PickerToolbarViewController(title: "product-add.language.toolbar-title".localized, delegate: self)
+
+        if let pickerView = pickerController?.view as? UIPickerView {
+            self.languageField.inputView = pickerView
+        }
+
+        if let toolbarView = pickerToolbarController?.view as? UIToolbar {
+            self.languageField.inputAccessoryView = toolbarView
+        }
+
+        // Set current language as default
+        if let languageCode = Locale.current.languageCode {
+            self.languageValue = languageCode
+        }
+
+        self.languageField.text = Locale.current.localizedString(forIdentifier: self.languageValue)
+    }
+
+    private func configureDelegates() {
+        productNameField.delegate = self
+        brandsField.delegate = self
+        quantityField.delegate = self
+    }
+
+    private func configureNotifications() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
     }
 }
 
@@ -112,5 +150,16 @@ extension ProductAddViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
+    }
+}
+
+extension ProductAddViewController: PickerViewDelegate {
+    func didGetSelection(value: Language) {
+        self.languageValue = value.code
+        self.languageField.text = value.name
+    }
+
+    func didDismiss() {
+        self.languageField.resignFirstResponder()
     }
 }

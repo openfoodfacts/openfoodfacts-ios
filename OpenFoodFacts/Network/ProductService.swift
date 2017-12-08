@@ -15,6 +15,7 @@ import UIKit
 protocol ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (NSError) -> Void)
     func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
+    func getLanguages() -> [Language]
     func postImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void)
@@ -119,6 +120,21 @@ class ProductService: ProductApi {
                 onError(error)
             }
         }
+    }
+
+    func getLanguages() -> [Language] {
+        // Get all ISO 639-1 languages
+        return Locale.isoLanguageCodes
+            .filter({ $0.count == 2 })
+            .flatMap({
+                let code = $0
+                if let name = Locale.current.localizedString(forIdentifier: $0) {
+                    return Language(code: code, name: name)
+                } else {
+                    return nil
+                }
+            })
+            .sorted(by: { $0.name < $1.name })
     }
 
     fileprivate func encodeParameters(_ parameters: String) -> String {

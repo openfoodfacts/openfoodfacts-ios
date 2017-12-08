@@ -11,7 +11,6 @@ import Foundation
 import ObjectMapper
 
 class ProductServiceMock: ProductApi {
-
     var query: String?
     var page: Int?
     var productsResponse: ProductsResponse!
@@ -48,6 +47,10 @@ class ProductServiceMock: ProductApi {
         } else {
             onError(error)
         }
+    }
+
+    func getLanguages() -> [Language] {
+        return [Language(code: "en", name: "English")]
     }
 
     func postImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
