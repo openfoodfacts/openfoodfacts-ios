@@ -34,4 +34,3 @@ extension PictureViewModel {
         self.init(imageType: imageType, text: text, image: nil, uploadedPictureText: uploadedPictureText)
     }
 }
-
