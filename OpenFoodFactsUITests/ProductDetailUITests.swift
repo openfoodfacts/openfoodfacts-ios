@@ -20,7 +20,9 @@ class ProductDetailUITests: UITestCase {
     func testIngredientsPage() {
         showDetailsOfProduct(in: "GET_ProductsByNameOnlyOne_200")
 
-        app.staticTexts["Ingredients"].tap()
+        let ingredients = app.staticTexts["Ingredients"]
+        ingredients.coordinate(withNormalizedOffset: CGVector(dx: 0.0, dy: 0.0)).tap()
+
         let additives = app.staticTexts["Additives: E160, E202, E412, E950, E955"]
         XCTAssert(additives.exists)
     }
@@ -28,7 +30,8 @@ class ProductDetailUITests: UITestCase {
     func testNutritionPage() {
         showDetailsOfProduct(in: "GET_ProductsByNameOnlyOne_200")
 
-        app.staticTexts["Nutrition"].tap()
+        let nutrition = app.staticTexts["Nutrition"]
+        nutrition.coordinate(withNormalizedOffset: CGVector(dx: 0.0, dy: 0.0)).tap()
         let sugarQuantity = app.staticTexts["6.5 "]
         XCTAssert(sugarQuantity.exists)
     }
@@ -36,7 +39,8 @@ class ProductDetailUITests: UITestCase {
     func testNutritionTablePage() {
         showDetailsOfProduct(in: "GET_ProductsByNameOnlyOne_200")
 
-        app.staticTexts["Nutrition table"].tap()
+        let nutritionTable = app.staticTexts["Nutrition table"]
+        nutritionTable.coordinate(withNormalizedOffset: CGVector(dx: 0.0, dy: 0.0)).tap()
         let carbohydrateLabel = app.staticTexts["Carbohydrate"]
         XCTAssert(carbohydrateLabel.exists)
     }
