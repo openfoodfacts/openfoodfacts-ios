@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A8v-Ao-FSs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A8v-Ao-FSs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -28,10 +28,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="936"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-bW-zl0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="636"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zwf-af-22Y">
-                                                <rect key="frame" x="10" y="10" width="355" height="571"/>
+                                                <rect key="frame" x="10" y="10" width="355" height="611"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Mu-dr-4FU">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="21.5"/>
@@ -90,8 +90,14 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wZ6-bT-PKj">
+                                                        <rect key="frame" x="0.0" y="538" width="355" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsI-Pf-EUr">
-                                                        <rect key="frame" x="0.0" y="538" width="355" height="33"/>
+                                                        <rect key="frame" x="0.0" y="578" width="355" height="33"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Save"/>
                                                         <connections>
@@ -133,6 +139,7 @@
                     <connections>
                         <outlet property="barcodeLabel" destination="9z2-Lt-GRa" id="8B1-lf-KbH"/>
                         <outlet property="brandsField" destination="0WS-Km-ieP" id="ZoN-aj-Igl"/>
+                        <outlet property="languageField" destination="wZ6-bT-PKj" id="LuI-Rz-uYf"/>
                         <outlet property="productNameField" destination="kK2-es-lYg" id="b2e-BW-m6n"/>
                         <outlet property="quantityField" destination="Hjx-9U-rIz" id="bpt-lS-aAt"/>
                         <outlet property="scrollView" destination="mcz-Dc-5OG" id="OVO-1S-Tis"/>
