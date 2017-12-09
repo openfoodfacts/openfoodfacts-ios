@@ -13,9 +13,9 @@ class PickerViewDelegateMock: PickerViewDelegate {
     var selected: Language?
     var didDismissCalled = false
 
-    func didGetSelection(value: Language) {
+    func didGetSelection(value: Pickable) {
         didGetSelectionCalled = true
-        selected = value
+        selected = value as? Language
     }
 
     func didDismiss() {

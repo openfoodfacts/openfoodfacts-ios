@@ -19,3 +19,9 @@ extension Language: Equatable {
         return lhs.code == rhs.code && lhs.name == rhs.name
     }
 }
+
+extension Language: Pickable {
+    var rowTitle: String {
+        return self.name
+    }
+}

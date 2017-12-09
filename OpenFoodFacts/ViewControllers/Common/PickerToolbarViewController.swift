@@ -12,7 +12,7 @@ class PickerToolbarViewController: UIViewController {
     private let toolbarTitle: String?
     private weak var delegate: PickerViewDelegate?
 
-    init(title: String?, delegate: PickerViewDelegate? = nil) {
+    init(title: String? = nil, delegate: PickerViewDelegate? = nil) {
         self.toolbarTitle = title
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)

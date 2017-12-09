@@ -20,3 +20,9 @@ extension String {
         return !matches.isEmpty
     }
 }
+
+extension String: Pickable {
+    var rowTitle: String {
+        return self
+    }
+}

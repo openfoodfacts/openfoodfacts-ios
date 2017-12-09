@@ -18,7 +18,8 @@ class ProductAddViewControllerTests: XCTestCase {
 
     private let barcode = "123456789"
     private let anotherBarcode = "987654321"
-    private let quantity = "50 cl"
+    private let quantity = "50"
+    private let quantityUnit = "cl"
     private let brands = "Fanta"
     private let productName = "Fanta Orange"
 
@@ -68,6 +69,7 @@ class ProductAddViewControllerTests: XCTestCase {
         viewController.productNameField.text = productName
         viewController.brandsField.text = brands
         viewController.quantityField.text = quantity
+        viewController.quantityUnitField.text = quantityUnit
         viewController.quantityField.becomeFirstResponder()
 
         viewController.didTapSaveButton(UIButton())
@@ -76,7 +78,7 @@ class ProductAddViewControllerTests: XCTestCase {
         expect(self.productApi.product).toEventuallyNot(beNil())
         expect(self.productApi.product.name).to(equal(productName))
         expect(self.productApi.product.brands).to(equal([brands]))
-        expect(self.productApi.product.quantity).to(equal(quantity))
+        expect(self.productApi.product.quantity).to(equal("\(quantity) \(quantityUnit)"))
         expect(self.productApi.product.barcode).to(equal(barcode))
         expect(self.viewController.productAddSuccessBanner.isHidden).to(beFalse())
         expect(self.navigationController.didPopToRootViewController).to(beTrue())
