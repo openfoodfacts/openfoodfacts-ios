@@ -162,6 +162,8 @@
 		95D060D91F6085320052012D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D060D81F6085320052012D /* LoadingCell.xib */; };
 		95D060DB1F6094D30052012D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D060DA1F6094D30052012D /* UITableView.swift */; };
 		95D060DD1F609DF70052012D /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D060DC1F609DF70052012D /* LoadingCell.swift */; };
+		95D3559B1FDC63EA008961B1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D355991FDC63E9008961B1 /* RealmSwift.framework */; };
+		95D3559C1FDC63EA008961B1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D3559A1FDC63EA008961B1 /* Realm.framework */; };
 		95DDAF581F24FB160096B74E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */; };
 		95DDAF591F24FB160096B74E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF571F24FB160096B74E /* XCGLogger.framework */; };
 		95DDAF621F25401D0096B74E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDAF601F25401D0096B74E /* CameraController.swift */; };
@@ -706,6 +708,8 @@
 		95D060D81F6085320052012D /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		95D060DA1F6094D30052012D /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		95D060DC1F609DF70052012D /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		95D355991FDC63E9008961B1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		95D3559A1FDC63EA008961B1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95DDAF571F24FB160096B74E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		95DDAF601F25401D0096B74E /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -752,6 +756,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D3559B1FDC63EA008961B1 /* RealmSwift.framework in Frameworks */,
+				95D3559C1FDC63EA008961B1 /* Realm.framework in Frameworks */,
 				9501634D1F2CEE700057B8D5 /* SnapKit.framework in Frameworks */,
 				9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */,
 				957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */,
@@ -1408,6 +1414,8 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95D3559A1FDC63EA008961B1 /* Realm.framework */,
+				95D355991FDC63E9008961B1 /* RealmSwift.framework */,
 				95AA2B001FDB264500EE3A14 /* Quick.framework */,
 				9518681B1F93536F00416226 /* KeychainAccess.framework */,
 				959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */,
@@ -1958,6 +1966,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
@@ -1974,6 +1984,8 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
