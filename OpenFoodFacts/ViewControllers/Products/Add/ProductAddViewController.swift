@@ -14,6 +14,7 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var productNameField: UITextField!
     @IBOutlet weak var brandsField: UITextField!
     @IBOutlet weak var quantityField: UITextField!
+    @IBOutlet weak var quantityUnitField: UITextField!
     @IBOutlet weak var languageField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var uploadedImagesStackView: UIStackView!
@@ -31,8 +32,10 @@ class ProductAddViewController: TakePictureViewController {
         return alert
     }()
 
-    private var pickerController: PickerViewController?
-    private var pickerToolbarController: PickerToolbarViewController?
+    private var quantityUnitPickerController: PickerViewController?
+    private var quantityUnitPickerToolbarController: PickerToolbarViewController?
+    private var languagePickerController: PickerViewController?
+    private var languagePickerToolbarController: PickerToolbarViewController?
     private var languageValue: String = "en" // Use English as default
 
     override var barcode: String! {
@@ -42,6 +45,7 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     override func viewDidLoad() {
+        configureQuantityUnitField()
         configureLanguageField()
         configureDelegates()
         configureNotifications()
@@ -54,12 +58,18 @@ class ProductAddViewController: TakePictureViewController {
 
     @IBAction func didTapSaveButton(_ sender: UIButton) {
         activeField?.resignFirstResponder()
+
+        // Set field values in product
         product.name = productNameField.text
+        product.lang = languageValue
+
         if let brand = brandsField.text {
             product.brands = [brand]
         }
-        product.quantity = quantityField.text
-        product.lang = languageValue
+
+        if let value = quantityField.text, let unit = quantityUnitField.text {
+            product.quantity = "\(value) \(unit)"
+        }
 
         productApi.postProduct(product, onSuccess: {
             self.productAddSuccessBanner.show()
@@ -77,19 +87,39 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
 
+    private func configureQuantityUnitField() {
+        let units = ["g", "mg", "kg", "l", "cl", "ml"]
+
+        self.quantityUnitPickerController = PickerViewController(data: units, defaultValue: 0, delegate: self)
+        self.quantityUnitPickerToolbarController = PickerToolbarViewController(delegate: self)
+
+        if let pickerView = quantityUnitPickerController?.view as? UIPickerView {
+            self.quantityUnitField.inputView = pickerView
+        }
+
+        if let toolbarView = quantityUnitPickerToolbarController?.view as? UIToolbar {
+            self.quantityUnitField.inputAccessoryView = toolbarView
+        }
+
+        self.quantityUnitField.text = units[0]
+
+        // Hide blinking cursor
+        self.quantityUnitField.tintColor = .clear
+    }
+
     private func configureLanguageField() {
         let languages = productApi.getLanguages()
 
         let defaultValue: Int? = languages.index(where: { $0.code == self.languageValue })
 
-        self.pickerController = PickerViewController(data: languages, defaultValue: defaultValue, delegate: self)
-        self.pickerToolbarController = PickerToolbarViewController(title: "product-add.language.toolbar-title".localized, delegate: self)
+        self.languagePickerController = PickerViewController(data: languages, defaultValue: defaultValue, delegate: self)
+        self.languagePickerToolbarController = PickerToolbarViewController(title: "product-add.language.toolbar-title".localized, delegate: self)
 
-        if let pickerView = pickerController?.view as? UIPickerView {
+        if let pickerView = languagePickerController?.view as? UIPickerView {
             self.languageField.inputView = pickerView
         }
 
-        if let toolbarView = pickerToolbarController?.view as? UIToolbar {
+        if let toolbarView = languagePickerToolbarController?.view as? UIToolbar {
             self.languageField.inputAccessoryView = toolbarView
         }
 
@@ -99,12 +129,17 @@ class ProductAddViewController: TakePictureViewController {
         }
 
         self.languageField.text = Locale.current.localizedString(forIdentifier: self.languageValue)
+
+        // Hide blinking cursor
+        self.languageField.tintColor = .clear
     }
 
     private func configureDelegates() {
         productNameField.delegate = self
         brandsField.delegate = self
         quantityField.delegate = self
+        quantityUnitField.delegate = self
+        languageField.delegate = self
     }
 
     private func configureNotifications() {
@@ -154,12 +189,20 @@ extension ProductAddViewController: UITextFieldDelegate {
 }
 
 extension ProductAddViewController: PickerViewDelegate {
-    func didGetSelection(value: Language) {
-        self.languageValue = value.code
-        self.languageField.text = value.name
+    func didGetSelection(value: Pickable) {
+        switch value {
+        case let language as Language:
+            self.languageValue = language.code
+            self.languageField.text = language.name
+        case let string as String:
+            self.quantityUnitField.text = string
+        default:
+            // Do nothing
+            return
+        }
     }
 
     func didDismiss() {
-        self.languageField.resignFirstResponder()
+        self.activeField?.resignFirstResponder()
     }
 }

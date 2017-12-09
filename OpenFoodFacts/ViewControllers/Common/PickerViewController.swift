@@ -9,16 +9,20 @@
 import UIKit
 
 protocol PickerViewDelegate: class {
-    func didGetSelection(value: Language)
+    func didGetSelection(value: Pickable)
     func didDismiss()
 }
 
+protocol Pickable {
+    var rowTitle: String { get }
+}
+
 class PickerViewController: UIViewController {
-    private var data: [Language]
+    private var data: [Pickable]
     private var defaultValue: Int?
     weak var delegate: PickerViewDelegate?
 
-    init(data: [Language], defaultValue: Int? = nil, delegate: PickerViewDelegate? = nil) {
+    init(data: [Pickable], defaultValue: Int? = nil, delegate: PickerViewDelegate? = nil) {
         self.data = data
         self.defaultValue = defaultValue
         self.delegate = delegate
@@ -57,7 +61,7 @@ extension PickerViewController: UIPickerViewDataSource {
 
 extension PickerViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return data[row].name
+        return data[row].rowTitle
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
