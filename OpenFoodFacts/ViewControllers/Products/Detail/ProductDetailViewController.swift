@@ -10,7 +10,7 @@ import UIKit
 import XLPagerTabStrip
 import Crashlytics
 
-class ProductDetailViewController: ButtonBarPagerTabStripViewController {
+class ProductDetailViewController: ButtonBarPagerTabStripViewController, ProductApiClient {
 
     var product: Product!
     var productApi: ProductApi!
@@ -30,12 +30,21 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
         Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
 
         navigationController?.navigationBar.isTranslucent = false
+        if var buttons = navigationItem.rightBarButtonItems, buttons.count == 1 {
+            let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(didTapEditButton(_:)))
+            buttons.insert(editButton, at: 0)
+            navigationItem.rightBarButtonItems = buttons
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         navigationController?.navigationBar.isTranslucent = true
+        if var buttons = navigationItem.rightBarButtonItems, buttons.count == 2 {
+            buttons.remove(at: 0)
+            navigationItem.rightBarButtonItems = buttons
+        }
     }
 
     // MARK: - Product pages
@@ -263,12 +272,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController {
 
     // MARK: - Nav bar button
 
-    @IBAction func didTapScanButton(_ sender: UIBarButtonItem) {
-        let scanVC = ScannerViewController(productApi: productApi)
-        navigationController?.pushViewController(scanVC, animated: true)
-    }
-
-    @IBAction func didTapEditButton(_ sender: UIBarButtonItem) {
+    @objc func didTapEditButton(_ sender: UIBarButtonItem) {
         if let barcode = self.product?.barcode, let url = URL(string: URLs.Edit + barcode) {
             openUrlInApp(url, showAlert: true)
         }

@@ -241,14 +241,6 @@ class ProductDetailViewControllerTests: XCTestCase {
         expect(rows[13].cellType == NutritionTableRowTableViewCell.self).to(beTrue())
     }
 
-    // MARK: - didTapScanButton
-    func testDidTapScanButtonPushesScannerView() {
-        viewController.didTapScanButton(UIBarButtonItem())
-
-        expect(self.navigationController.pushedViewController is ScannerViewController).toEventually(beTrue())
-        expect(self.navigationController.isViewControllerPushAnimated).toEventually(beTrue())
-    }
-
     // MARK: - didTapEditButton
     func testDidTapEditButton() {
         viewController.product = Product()

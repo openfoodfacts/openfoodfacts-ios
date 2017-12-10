@@ -70,14 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func setupViewControllers(_ productApi: ProductApi) {
         if let tab = window?.rootViewController as? UITabBarController {
             for child in tab.viewControllers ?? [] {
-                if let top = child as? ProductApiClient {
-                    top.set(productApi)
-                } else if let navController = child as? UINavigationController, let vc = navController.topViewController as? SearchTableViewController {
-                    vc.productApi = productApi
-
-                    if UserDefaults.standard.bool(forKey: UserDefaultsConstants.scanningOnLaunch) {
-                        vc.scanBarcode()
-                    }
+                if var top = child as? ProductApiClient {
+                    top.productApi = productApi
                 }
             }
         }

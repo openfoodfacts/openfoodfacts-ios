@@ -13,8 +13,8 @@ import Crashlytics
 
 // MARK: - UIViewController
 
-class SearchTableViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+class SearchTableViewController: UITableViewController, ProductApiClient {
+
     var searchController: UISearchController!
     var productApi: ProductApi!
     var queryRequestWorkItem: DispatchWorkItem?
@@ -31,6 +31,7 @@ class SearchTableViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    weak var delegate: SearchViewControllerDelegate?
 
     // Background views
     // swiftlint:disable:next force_cast
@@ -48,7 +49,6 @@ class SearchTableViewController: UIViewController {
         super.viewDidLoad()
 
         configureTableView()
-        configureNavigationBar()
         configureSearchController()
         configureGestureRecognizers()
     }
@@ -59,12 +59,6 @@ class SearchTableViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: LoadingCell.self), bundle: nil), forCellReuseIdentifier: String(describing: LoadingCell.self))
 
         tableView.rowHeight = 100
-    }
-
-    fileprivate func configureNavigationBar() {
-        let scanButton = UIBarButtonItem(image: UIImage(named: "barcode"), style: .plain, target: self, action: #selector(scanBarcode))
-        scanButton.accessibilityIdentifier = AccessibilityIdentifiers.scanButton
-        navigationItem.rightBarButtonItem = scanButton
     }
 
     fileprivate func configureSearchController() {
@@ -96,9 +90,9 @@ class SearchTableViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension SearchTableViewController: UITableViewDataSource {
+extension SearchTableViewController {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         switch state {
         case .content:
             tableView.separatorStyle = .singleLine
@@ -117,12 +111,12 @@ extension SearchTableViewController: UITableViewDataSource {
         }
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard case let .content(response) = state else { return 0 }
         return responseHasMorePages(response) ? response.products.count + 1 : response.products.count // +1 for the loading cell
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard case let .content(response) = state else { return UITableViewCell() }
 
         if responseHasMorePages(response) && tableView.lastIndexPath == indexPath {
@@ -136,7 +130,7 @@ extension SearchTableViewController: UITableViewDataSource {
         }
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard case let .content(response) = state else { return }
 
         if response.products.count == indexPath.row + 5, let page = Int(response.page), responseHasMorePages(response) {
@@ -147,10 +141,10 @@ extension SearchTableViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension SearchTableViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension SearchTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard case let .content(response) = state else { return }
-        showProductDetails(product: response.products[indexPath.row])
+        delegate?.showProductDetails(product: response.products[indexPath.row])
     }
 }
 
@@ -251,38 +245,9 @@ extension SearchTableViewController {
 }
 
 // MARK: - Private functions
+
 private extension SearchTableViewController {
-    func showProductDetails(product: Product) {
-        navigationController?.pushViewController(productDetails(product: product), animated: true)
-    }
-
-    func productDetails(product: Product) -> ProductDetailViewController {
-        let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
-        // swiftlint:disable:next force_cast
-        let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
-        productDetailVC.product = product
-        productDetailVC.productApi = productApi
-        return productDetailVC
-    }
-
     func responseHasMorePages(_ response: ProductsResponse) -> Bool {
         return response.products.count < response.totalProducts
-    }
-}
-
-// MARK: - Scanning
-
-extension SearchTableViewController {
-    @objc func scanBarcode() {
-        let scanVC = ScannerViewController(productApi: productApi)
-        navigationController?.pushViewController(scanVC, animated: true)
-    }
-}
-
-// MARK: - ProductApi client
-
-extension SearchTableViewController: ProductApiClient {
-    func set(_ productApi: ProductApi) {
-        self.productApi = productApi
     }
 }
