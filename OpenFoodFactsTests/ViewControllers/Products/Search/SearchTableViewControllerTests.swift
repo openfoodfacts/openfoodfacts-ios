@@ -15,6 +15,7 @@ import ObjectMapper
 class SearchTableViewControllerTests: XCTestCase {
 
     var viewController: SearchTableViewController!
+    var searchViewControllerMock: SearchViewControllerMock!
     var productApi: ProductServiceMock!
 
     private struct ProductsResponseFile {
@@ -25,18 +26,16 @@ class SearchTableViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let tabBarController = storyboard.instantiateInitialViewController() as! UITabBarController
-        let navigationController = tabBarController.viewControllers?[0] as! UINavigationController
-        viewController = navigationController.topViewController as! SearchTableViewController
+        searchViewControllerMock = SearchViewControllerMock()
+        viewController = SearchTableViewController.loadFromStoryboard() as SearchTableViewController
         productApi = ProductServiceMock()
         productApi.productsResponse = ProductsResponse(map: Map(mappingType: .fromJSON, JSON: [String: Any]()))!
 
         viewController.productApi = productApi
+        viewController.delegate = searchViewControllerMock
 
         UIApplication.shared.keyWindow!.rootViewController = viewController
 
-        expect(navigationController.view).notTo(beNil())
         expect(self.viewController.view).notTo(beNil())
     }
 
@@ -132,7 +131,8 @@ class SearchTableViewControllerTests: XCTestCase {
 
         viewController.tableView(tableView, didSelectRowAt: indexPath)
 
-        expect(self.viewController.navigationController?.topViewController).toEventually(beAnInstanceOf(ProductDetailViewController.self))
+        expect(self.searchViewControllerMock.showProductDetailsCalled).to(beTrue())
+        expect(self.searchViewControllerMock.showProductDetailsProduct!.barcode).to(equal(productsResponse.products[0].barcode))
     }
 
     // MARK: - UISearchResultsUpdating
@@ -307,16 +307,6 @@ class SearchTableViewControllerTests: XCTestCase {
         expect(self.viewController.searchController.searchBar.isFirstResponder) == false
     }
 
-    // MARK: - Scanning
-
-    func testScanBarcodePushesScannerViewController() {
-        viewController.scanBarcode()
-
-        expect(self.viewController.navigationController?.topViewController).toEventually(beAnInstanceOf(ScannerViewController.self))
-        let targetViewController = self.viewController.navigationController?.topViewController as! ScannerViewController
-        expect(targetViewController.productApi) === productApi
-    }
-
     // MARK: - Custom matchers
 
     private func beInitial() -> Predicate<SearchTableViewController.State> {
@@ -375,5 +365,15 @@ class SearchTableViewControllerTests: XCTestCase {
         let productResponse = ProductsResponse(map: map)!
         productResponse.mapping(map: map)
         return productResponse
+    }
+}
+
+class SearchViewControllerMock: SearchViewControllerDelegate {
+    var showProductDetailsCalled = false
+    var showProductDetailsProduct: Product?
+
+    func showProductDetails(product: Product) {
+        showProductDetailsCalled = true
+        showProductDetailsProduct = product
     }
 }

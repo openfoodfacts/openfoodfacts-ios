@@ -144,6 +144,7 @@
 		95B512EA1F94E97B003B0012 /* ChildDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */; };
 		95B512EC1F94FEE7003B0012 /* UserViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512EB1F94FEE7003B0012 /* UserViewControllerUITests.swift */; };
 		95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */; };
+		95C216491FDC8A5900EC5BCB /* SearchTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C216481FDC8A5900EC5BCB /* SearchTableViewController.storyboard */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
 		95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C265241E96D5C2004212EC /* AVFoundation.framework */; };
@@ -164,6 +165,8 @@
 		95D060DD1F609DF70052012D /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D060DC1F609DF70052012D /* LoadingCell.swift */; };
 		95D3559B1FDC63EA008961B1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D355991FDC63E9008961B1 /* RealmSwift.framework */; };
 		95D3559C1FDC63EA008961B1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D3559A1FDC63EA008961B1 /* Realm.framework */; };
+		95D355AA1FDC69FA008961B1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D355A91FDC69FA008961B1 /* SearchViewController.swift */; };
+		95DB3BE41FDD50BC00E83B76 /* SearchViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB3BE31FDD50BC00E83B76 /* SearchViewControllerSpec.swift */; };
 		95DDAF581F24FB160096B74E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */; };
 		95DDAF591F24FB160096B74E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF571F24FB160096B74E /* XCGLogger.framework */; };
 		95DDAF621F25401D0096B74E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDAF601F25401D0096B74E /* CameraController.swift */; };
@@ -685,6 +688,7 @@
 		95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDelegateMock.swift; sourceTree = "<group>"; };
 		95B512EB1F94FEE7003B0012 /* UserViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerUITests.swift; sourceTree = "<group>"; };
 		95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewControllerTests.swift; sourceTree = "<group>"; };
+		95C216481FDC8A5900EC5BCB /* SearchTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTableViewController.storyboard; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265181E96D55B004212EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -710,6 +714,8 @@
 		95D060DC1F609DF70052012D /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		95D355991FDC63E9008961B1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		95D3559A1FDC63EA008961B1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		95D355A91FDC69FA008961B1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = OpenFoodFacts/ViewControllers/History/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
+		95DB3BE31FDD50BC00E83B76 /* SearchViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerSpec.swift; sourceTree = "<group>"; };
 		95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95DDAF571F24FB160096B74E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		95DDAF601F25401D0096B74E /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -999,10 +1005,10 @@
 			isa = PBXGroup;
 			children = (
 				956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */,
+				957CBEAB1F323B1F00A1B398 /* FormTableViewController.swift */,
 				957CBEC11F33B35B00A1B398 /* Summary */,
 				958F33401F361954005269C5 /* Ingredients */,
 				958F33491F3777C3005269C5 /* NutritionTable */,
-				957CBEAB1F323B1F00A1B398 /* FormTableViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1092,6 +1098,7 @@
 				956FF93B1F1FF0CA0069D678 /* TextOverlay.swift */,
 				95D060DC1F609DF70052012D /* LoadingCell.swift */,
 				95D060D81F6085320052012D /* LoadingCell.xib */,
+				95C216481FDC8A5900EC5BCB /* SearchTableViewController.storyboard */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1111,19 +1118,12 @@
 		956FF95F1F1FF0FD0069D678 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				95D355A91FDC69FA008961B1 /* SearchViewController.swift */,
 				956FF9601F1FF0FD0069D678 /* ScannerViewController.swift */,
-				956FF9611F1FF0FD0069D678 /* SearchTableViewController */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		956FF9611F1FF0FD0069D678 /* SearchTableViewController */ = {
-			isa = PBXGroup;
-			children = (
 				956FF9621F1FF0FD0069D678 /* SearchTableViewController.swift */,
 				956FF9631F1FF0FD0069D678 /* SearchTableViewControllerState.swift */,
 			);
-			path = SearchTableViewController;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		957094DC1EA3D00500268236 /* Settings */ = {
@@ -1285,17 +1285,10 @@
 		9596B50E1F45FAE30076F52C /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				9596B50F1F45FAE30076F52C /* SearchTableViewController */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		9596B50F1F45FAE30076F52C /* SearchTableViewController */ = {
-			isa = PBXGroup;
-			children = (
+				95DB3BE31FDD50BC00E83B76 /* SearchViewControllerSpec.swift */,
 				9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */,
 			);
-			path = SearchTableViewController;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		9596B5141F45FEEF0076F52C /* Common */ = {
@@ -1404,9 +1397,7 @@
 				95C265181E96D55B004212EC /* Assets.xcassets */,
 				951FB0991EB29852005CAE33 /* Info.plist */,
 				951FB09F1EB2989A005CAE33 /* InfoPlist.strings */,
-				95890AB61F967EE600085B20 /* LaunchScreen.storyboard */,
 				95DFD7CF1F01A45C007FDB69 /* Localizable.strings */,
-				9581B3E51F900E6A0036AC7C /* Main.storyboard */,
 			);
 			path = OpenFoodFacts;
 			sourceTree = "<group>";
@@ -1509,6 +1500,8 @@
 		95D6A7591E9C080A0017B423 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9581B3E51F900E6A0036AC7C /* Main.storyboard */,
+				95890AB61F967EE600085B20 /* LaunchScreen.storyboard */,
 				95019A721FDAAAA300A7BB79 /* Common */,
 				956FF88D1F1FF0CA0069D678 /* Products */,
 				957094DC1EA3D00500268236 /* Settings */,
@@ -1883,6 +1876,7 @@
 				95890AB71F967EE900085B20 /* LaunchScreen.storyboard in Resources */,
 				956FF9461F1FF0CA0069D678 /* NutritionHeaderTableViewCell.xib in Resources */,
 				956FF9561F1FF0CA0069D678 /* ProductTableViewCell.xib in Resources */,
+				95C216491FDC8A5900EC5BCB /* SearchTableViewController.storyboard in Resources */,
 				95890AB51F967E6300085B20 /* InitialView.xib in Resources */,
 				956FF94C1F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib in Resources */,
 				956FF9481F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib in Resources */,
@@ -2063,6 +2057,7 @@
 				956FF9641F1FF0FD0069D678 /* ScannerViewController.swift in Sources */,
 				957CBEC01F33B31F00A1B398 /* ProductDetailBaseCell.swift in Sources */,
 				953CDD591F929C680096C428 /* LoggedInViewController.swift in Sources */,
+				95D355AA1FDC69FA008961B1 /* SearchViewController.swift in Sources */,
 				9587DF6E1F82CCD60069F0A6 /* PictureTableViewController.swift in Sources */,
 				958F33441F361A9D005269C5 /* IngredientsHeaderCellController.swift in Sources */,
 				956FF9551F1FF0CA0069D678 /* ProductTableViewCell.swift in Sources */,
@@ -2155,6 +2150,7 @@
 				951EA4931F801C6100FD1544 /* NutritionTableHeaderCellControllerTests.swift in Sources */,
 				95C54A7A1F8BFDB90008B5D8 /* PictureTableViewControllerTests.swift in Sources */,
 				957D9C381F6728FA005C5AE0 /* UITableViewCellTests.swift in Sources */,
+				95DB3BE41FDD50BC00E83B76 /* SearchViewControllerSpec.swift in Sources */,
 				957D9C3A1F6729E1005C5AE0 /* DoubleTests.swift in Sources */,
 				9510B0201F6882C30012953A /* RotatingProcessorTests.swift in Sources */,
 				95B512E81F94E915003B0012 /* LoginViewControllerTests.swift in Sources */,
