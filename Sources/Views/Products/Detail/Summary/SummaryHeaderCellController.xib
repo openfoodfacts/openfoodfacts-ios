@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SummaryHeaderCellController" customModule="OpenFoodFacts" customModuleProvider="target">
+            <connections>
+                <outlet property="addNewPictureButton" destination="ryx-rz-zza" id="Ba8-yv-k4N"/>
+                <outlet property="callToActionView" destination="igt-YD-1SC" id="YrF-sp-4yT"/>
+                <outlet property="nutriscore" destination="NYL-Ot-UMp" id="vZZ-H4-HPR"/>
+                <outlet property="productImage" destination="7WZ-fb-FXP" id="NEh-ZU-158"/>
+                <outlet property="productName" destination="2EX-hp-rp2" id="9j4-XA-cdH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iZW-95-z5S">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h4r-NG-xwT">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="7WZ-fb-FXP">
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="120"/>
+                                </imageView>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igt-YD-1SC" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
+                                    <rect key="frame" x="160" y="0.0" width="0.0" height="120"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4l-Cj-xX4">
+                                    <rect key="frame" x="160" y="0.0" width="160" height="120"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYL-Ot-UMp" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
+                                            <rect key="frame" x="0.5" y="27.5" width="160" height="65"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="NYL-Ot-UMp" secondAttribute="height" multiplier="310:126" id="w7H-je-Vf4"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="width" secondItem="o4l-Cj-xX4" secondAttribute="width" priority="750" id="ANw-FW-wnx"/>
+                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="centerX" secondItem="o4l-Cj-xX4" secondAttribute="centerX" id="NV3-SU-haa"/>
+                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="centerY" secondItem="o4l-Cj-xX4" secondAttribute="centerY" id="ODH-0R-D2V"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NYL-Ot-UMp" secondAttribute="bottom" constant="10" id="gAz-RR-Lkg"/>
+                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="o4l-Cj-xX4" secondAttribute="top" constant="10" id="utQ-Oj-uLk"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="750" constant="130" id="6tm-10-rfN"/>
+                            </constraints>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-rz-zza">
+                            <rect key="frame" x="0.0" y="130" width="320" height="27.5"/>
+                            <state key="normal" title="Take a new picture"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-detail.header.add-new-picture"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapTakePictureButton:" destination="-1" eventType="touchUpInside" id="YJf-Ca-cc8"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EX-hp-rp2">
+                            <rect key="frame" x="0.0" y="167.5" width="320" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="2EX-hp-rp2" firstAttribute="width" secondItem="iZW-95-z5S" secondAttribute="width" id="xVo-h8-XQT"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="iZW-95-z5S" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="19Z-4i-8p5"/>
+                <constraint firstAttribute="trailing" secondItem="iZW-95-z5S" secondAttribute="trailing" id="7Wl-MG-XQo"/>
+                <constraint firstAttribute="bottom" secondItem="iZW-95-z5S" secondAttribute="bottom" id="9Nu-NF-HNO"/>
+                <constraint firstItem="iZW-95-z5S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aAF-MJ-YAt"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

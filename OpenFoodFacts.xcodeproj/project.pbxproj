@@ -19,6 +19,7 @@
 		9510B0241F6883E00012953A /* ProductServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0231F6883E00012953A /* ProductServiceMock.swift */; };
 		9510B0281F6885690012953A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0271F6885690012953A /* TestHelper.swift */; };
 		9510B02A1F6888770012953A /* UITableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0291F6888770012953A /* UITableViewTests.swift */; };
+		9514608A1FE5A9680038E73D /* HistoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951460891FE5A9680038E73D /* HistoryItemCell.swift */; };
 		9518681C1F93537000416226 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9518681B1F93536F00416226 /* KeychainAccess.framework */; };
 		951868211F9357CF00416226 /* CredentialsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951868201F9357CF00416226 /* CredentialsController.swift */; };
 		951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */; };
@@ -34,6 +35,12 @@
 		9523E7D81F817F3500622922 /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9523E7D71F817F3500622922 /* ArrayTests.swift */; };
 		9524464D1F98FAD2005B6246 /* SettingsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524464C1F98FAD2005B6246 /* SettingsTableViewControllerTests.swift */; };
 		9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525708B1EE9BC91002FC40D /* CellImageTapable.swift */; };
+		9526F8F51FDF2A8B0008E1CC /* DataManagerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526F8F41FDF2A8B0008E1CC /* DataManagerClient.swift */; };
+		9526F8F71FDF34C70008E1CC /* DataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526F8F61FDF34C70008E1CC /* DataManagerMock.swift */; };
+		9526F8FA1FE1C5230008E1CC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9526F8F81FE1C5230008E1CC /* Fabric.framework */; };
+		9526F8FB1FE1C5230008E1CC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9526F8F91FE1C5230008E1CC /* Crashlytics.framework */; };
+		9526F8FE1FE1C7C30008E1CC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9526F8FC1FE1C7C30008E1CC /* Fabric.framework */; };
+		9526F8FF1FE1C7C40008E1CC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9526F8FD1FE1C7C30008E1CC /* Crashlytics.framework */; };
 		9528560B1F78512300863FC6 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528560A1F78512300863FC6 /* Array.swift */; };
 		9528560E1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528560D1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift */; };
 		952C3BE91F9A335F003C755A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C3BE81F9A335F003C755A /* UIViewController.swift */; };
@@ -100,6 +107,9 @@
 		957D9C3A1F6729E1005C5AE0 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C391F6729E1005C5AE0 /* DoubleTests.swift */; };
 		957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C3B1F672CC9005C5AE0 /* UIImageTests.swift */; };
 		957D9C3E1F688066005C5AE0 /* UIStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D9C3D1F688066005C5AE0 /* UIStackViewTests.swift */; };
+		957E05C21FE6D0B600868315 /* SingleLetterNutriscoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957E05C11FE6D0B600868315 /* SingleLetterNutriscoreView.swift */; };
+		957E05C41FE6D4DF00868315 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957E05C31FE6D4DF00868315 /* UIColor.swift */; };
+		957E05C61FE6D59E00868315 /* SingleLetterNutriscoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 957E05C51FE6D59E00868315 /* SingleLetterNutriscoreView.xib */; };
 		957E5F401F768EAF00465BED /* ProductAddViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957E5F3F1F768EAF00465BED /* ProductAddViewControllerTests.swift */; };
 		9581B3E61F900F180036AC7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9581B3E51F900E6A0036AC7C /* Main.storyboard */; };
 		9581B3E71F900F1D0036AC7C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9581B3E41F900E490036AC7C /* Settings.storyboard */; };
@@ -144,7 +154,7 @@
 		95B512EA1F94E97B003B0012 /* ChildDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */; };
 		95B512EC1F94FEE7003B0012 /* UserViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512EB1F94FEE7003B0012 /* UserViewControllerUITests.swift */; };
 		95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */; };
-		95C216491FDC8A5900EC5BCB /* SearchTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C216481FDC8A5900EC5BCB /* SearchTableViewController.storyboard */; };
+		95C216491FDC8A5900EC5BCB /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C216481FDC8A5900EC5BCB /* Search.storyboard */; };
 		95C265121E96D55B004212EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C265111E96D55B004212EC /* AppDelegate.swift */; };
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
 		95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C265241E96D5C2004212EC /* AVFoundation.framework */; };
@@ -158,8 +168,6 @@
 		95CA1AE71F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA1AE61F7AC1CB00A0390B /* IngredientsFormTableViewControllerTests.swift */; };
 		95CA1AEA1F7AD8F900A0390B /* NutritionTableFormTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA1AE91F7AD8F900A0390B /* NutritionTableFormTableViewControllerTests.swift */; };
 		95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB99A61EA55BF900CBDDF9 /* String.swift */; };
-		95CE24E11ED5509300EF3D79 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24DF1ED5509300EF3D79 /* Fabric.framework */; };
-		95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE24E01ED5509300EF3D79 /* Crashlytics.framework */; };
 		95D060D91F6085320052012D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D060D81F6085320052012D /* LoadingCell.xib */; };
 		95D060DB1F6094D30052012D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D060DA1F6094D30052012D /* UITableView.swift */; };
 		95D060DD1F609DF70052012D /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D060DC1F609DF70052012D /* LoadingCell.swift */; };
@@ -167,6 +175,10 @@
 		95D3559C1FDC63EA008961B1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D3559A1FDC63EA008961B1 /* Realm.framework */; };
 		95D355AA1FDC69FA008961B1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D355A91FDC69FA008961B1 /* SearchViewController.swift */; };
 		95DB3BE41FDD50BC00E83B76 /* SearchViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB3BE31FDD50BC00E83B76 /* SearchViewControllerSpec.swift */; };
+		95DB3BE61FDD8F2300E83B76 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB3BE51FDD8F2300E83B76 /* HistoryItem.swift */; };
+		95DB3BE81FDD923300E83B76 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB3BE71FDD923300E83B76 /* DataManager.swift */; };
+		95DB3BEA1FDD97D800E83B76 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB3BE91FDD97D800E83B76 /* HistoryTableViewController.swift */; };
+		95DB3BEC1FDD9B0E00E83B76 /* Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB3BEB1FDD9B0E00E83B76 /* Instantiable.swift */; };
 		95DDAF581F24FB160096B74E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */; };
 		95DDAF591F24FB160096B74E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DDAF571F24FB160096B74E /* XCGLogger.framework */; };
 		95DDAF621F25401D0096B74E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDAF601F25401D0096B74E /* CameraController.swift */; };
@@ -302,6 +314,7 @@
 		9510B0231F6883E00012953A /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceMock.swift; sourceTree = "<group>"; };
 		9510B0271F6885690012953A /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		9510B0291F6888770012953A /* UITableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewTests.swift; sourceTree = "<group>"; };
+		951460891FE5A9680038E73D /* HistoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemCell.swift; sourceTree = "<group>"; };
 		9518681B1F93536F00416226 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		951868201F9357CF00416226 /* CredentialsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsController.swift; sourceTree = "<group>"; };
 		951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
@@ -318,6 +331,12 @@
 		9523E7D71F817F3500622922 /* ArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
 		9524464C1F98FAD2005B6246 /* SettingsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9525708B1EE9BC91002FC40D /* CellImageTapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellImageTapable.swift; sourceTree = "<group>"; };
+		9526F8F41FDF2A8B0008E1CC /* DataManagerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerClient.swift; sourceTree = "<group>"; };
+		9526F8F61FDF34C70008E1CC /* DataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerMock.swift; sourceTree = "<group>"; };
+		9526F8F81FE1C5230008E1CC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Sources/Frameworks/Fabric.framework; sourceTree = "<group>"; };
+		9526F8F91FE1C5230008E1CC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Sources/Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
+		9526F8FC1FE1C7C30008E1CC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		9526F8FD1FE1C7C30008E1CC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		9528560A1F78512300863FC6 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		9528560D1F798EAA00863FC6 /* SummaryFormTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryFormTableViewControllerTests.swift; sourceTree = "<group>"; };
 		952C3BE81F9A335F003C755A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -384,6 +403,9 @@
 		957D9C391F6729E1005C5AE0 /* DoubleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTests.swift; sourceTree = "<group>"; };
 		957D9C3B1F672CC9005C5AE0 /* UIImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTests.swift; sourceTree = "<group>"; };
 		957D9C3D1F688066005C5AE0 /* UIStackViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackViewTests.swift; sourceTree = "<group>"; };
+		957E05C11FE6D0B600868315 /* SingleLetterNutriscoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLetterNutriscoreView.swift; sourceTree = "<group>"; };
+		957E05C31FE6D4DF00868315 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		957E05C51FE6D59E00868315 /* SingleLetterNutriscoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleLetterNutriscoreView.xib; sourceTree = "<group>"; };
 		957E5F3F1F768EAF00465BED /* ProductAddViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddViewControllerTests.swift; sourceTree = "<group>"; };
 		95818AAE1F0AD4D900CBD139 /* aa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = aa; path = Localization/aa.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95818AAF1F0AD4D900CBD139 /* aa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = aa; path = Localization/aa.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -667,7 +689,7 @@
 		959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 		959530091F9156B100979613 /* ProductApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductApiClient.swift; sourceTree = "<group>"; };
 		9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewControllerTests.swift; sourceTree = "<group>"; };
-		95A565C81FD6011F00C997C8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = OpenFoodFacts/Frameworks/README.md; sourceTree = SOURCE_ROOT; };
+		95A565C81FD6011F00C997C8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		95A566051FD6037800C997C8 /* LocalizableString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableString.swift; sourceTree = "<group>"; };
 		95A566071FD6037800C997C8 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		95A566081FD6037800C997C8 /* IBLocalizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBLocalizable.h; sourceTree = "<group>"; };
@@ -688,7 +710,7 @@
 		95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDelegateMock.swift; sourceTree = "<group>"; };
 		95B512EB1F94FEE7003B0012 /* UserViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerUITests.swift; sourceTree = "<group>"; };
 		95BA22681F6B21BA0090C471 /* TakePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewControllerTests.swift; sourceTree = "<group>"; };
-		95C216481FDC8A5900EC5BCB /* SearchTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTableViewController.storyboard; sourceTree = "<group>"; };
+		95C216481FDC8A5900EC5BCB /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		95C2650E1E96D55B004212EC /* OpenFoodFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFoodFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C265111E96D55B004212EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C265181E96D55B004212EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -714,8 +736,12 @@
 		95D060DC1F609DF70052012D /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		95D355991FDC63E9008961B1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		95D3559A1FDC63EA008961B1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		95D355A91FDC69FA008961B1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = OpenFoodFacts/ViewControllers/History/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
+		95D355A91FDC69FA008961B1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		95DB3BE31FDD50BC00E83B76 /* SearchViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerSpec.swift; sourceTree = "<group>"; };
+		95DB3BE51FDD8F2300E83B76 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
+		95DB3BE71FDD923300E83B76 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		95DB3BE91FDD97D800E83B76 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		95DB3BEB1FDD9B0E00E83B76 /* Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiable.swift; sourceTree = "<group>"; };
 		95DDAF561F24FB160096B74E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95DDAF571F24FB160096B74E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		95DDAF601F25401D0096B74E /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -767,10 +793,8 @@
 				9501634D1F2CEE700057B8D5 /* SnapKit.framework in Frameworks */,
 				9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */,
 				957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */,
-				95CE24E21ED5509300EF3D79 /* Crashlytics.framework in Frameworks */,
 				957094B11EA163CF00268236 /* Kingfisher.framework in Frameworks */,
 				95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */,
-				95CE24E11ED5509300EF3D79 /* Fabric.framework in Frameworks */,
 				95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */,
 				95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */,
 				95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */,
@@ -782,6 +806,8 @@
 				951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */,
 				959530081F91408F00979613 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				9518681C1F93537000416226 /* KeychainAccess.framework in Frameworks */,
+				9526F8FA1FE1C5230008E1CC /* Fabric.framework in Frameworks */,
+				9526F8FB1FE1C5230008E1CC /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,8 +816,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F31BF81F3A292E00B8AF90 /* Nimble.framework in Frameworks */,
+				9526F8FF1FE1C7C40008E1CC /* Crashlytics.framework in Frameworks */,
 				95F31BF91F3A292E00B8AF90 /* OHHTTPStubs.framework in Frameworks */,
 				95AA2B011FDB264600EE3A14 /* Quick.framework in Frameworks */,
+				9526F8FE1FE1C7C30008E1CC /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,6 +922,8 @@
 			isa = PBXGroup;
 			children = (
 				95019A731FDAAABC00A7BB79 /* PickerActionSheet.xib */,
+				957E05C11FE6D0B600868315 /* SingleLetterNutriscoreView.swift */,
+				957E05C51FE6D59E00868315 /* SingleLetterNutriscoreView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -906,7 +936,7 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		951FA76E1F4E22790096AC5A /* OpenFoodFactsUITests */ = {
+		951FA76E1F4E22790096AC5A /* UITests */ = {
 			isa = PBXGroup;
 			children = (
 				951FA7821F4F6B8E0096AC5A /* UITestCase.swift */,
@@ -916,7 +946,7 @@
 				951FA7711F4E22790096AC5A /* Info.plist */,
 				95B512EB1F94FEE7003B0012 /* UserViewControllerUITests.swift */,
 			);
-			path = OpenFoodFactsUITests;
+			path = UITests;
 			sourceTree = "<group>";
 		};
 		951FA7841F50C0310096AC5A /* Helpers */ = {
@@ -943,6 +973,8 @@
 			children = (
 				9525708B1EE9BC91002FC40D /* CellImageTapable.swift */,
 				959530091F9156B100979613 /* ProductApiClient.swift */,
+				9526F8F41FDF2A8B0008E1CC /* DataManagerClient.swift */,
+				95DB3BEB1FDD9B0E00E83B76 /* Instantiable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1098,7 +1130,8 @@
 				956FF93B1F1FF0CA0069D678 /* TextOverlay.swift */,
 				95D060DC1F609DF70052012D /* LoadingCell.swift */,
 				95D060D81F6085320052012D /* LoadingCell.xib */,
-				95C216481FDC8A5900EC5BCB /* SearchTableViewController.storyboard */,
+				95C216481FDC8A5900EC5BCB /* Search.storyboard */,
+				951460891FE5A9680038E73D /* HistoryItemCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1122,6 +1155,7 @@
 				956FF9601F1FF0FD0069D678 /* ScannerViewController.swift */,
 				956FF9621F1FF0FD0069D678 /* SearchTableViewController.swift */,
 				956FF9631F1FF0FD0069D678 /* SearchTableViewControllerState.swift */,
+				95DB3BE91FDD97D800E83B76 /* HistoryTableViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1205,6 +1239,8 @@
 		9581B3C11F9006300036AC7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9526F8FD1FE1C7C30008E1CC /* Crashlytics.framework */,
+				9526F8FC1FE1C7C30008E1CC /* Fabric.framework */,
 				95A565C81FD6011F00C997C8 /* README.md */,
 				95A566031FD6037800C997C8 /* IBLocalizable */,
 			);
@@ -1300,6 +1336,7 @@
 				95C54A7B1F8C0E8B0008B5D8 /* CameraControllerMock.swift */,
 				95B512E91F94E97B003B0012 /* ChildDelegateMock.swift */,
 				95C5E2971FDB33FB006A5772 /* PickerViewDelegateMock.swift */,
+				9526F8F61FDF34C70008E1CC /* DataManagerMock.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1362,10 +1399,10 @@
 			children = (
 				95F2B04F1F52DDC7004F8AF9 /* README.md */,
 				95C265231E96D5C2004212EC /* Frameworks */,
-				95C265101E96D55B004212EC /* OpenFoodFacts */,
-				95F31BEB1F38F71D00B8AF90 /* OpenFoodFactsTests */,
-				951FA76E1F4E22790096AC5A /* OpenFoodFactsUITests */,
-				95F1848B1F655BB500A544C2 /* Test Resources */,
+				95C265101E96D55B004212EC /* Sources */,
+				95F31BEB1F38F71D00B8AF90 /* Tests */,
+				951FA76E1F4E22790096AC5A /* UITests */,
+				95F1848B1F655BB500A544C2 /* TestResources */,
 				95C2650F1E96D55B004212EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1380,7 +1417,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		95C265101E96D55B004212EC /* OpenFoodFacts */ = {
+		95C265101E96D55B004212EC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				951FA7841F50C0310096AC5A /* Helpers */,
@@ -1399,12 +1436,14 @@
 				951FB09F1EB2989A005CAE33 /* InfoPlist.strings */,
 				95DFD7CF1F01A45C007FDB69 /* Localizable.strings */,
 			);
-			path = OpenFoodFacts;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9526F8F91FE1C5230008E1CC /* Crashlytics.framework */,
+				9526F8F81FE1C5230008E1CC /* Fabric.framework */,
 				95D3559A1FDC63EA008961B1 /* Realm.framework */,
 				95D355991FDC63E9008961B1 /* RealmSwift.framework */,
 				95AA2B001FDB264500EE3A14 /* Quick.framework */,
@@ -1483,6 +1522,7 @@
 				95D060DA1F6094D30052012D /* UITableView.swift */,
 				9528560A1F78512300863FC6 /* Array.swift */,
 				952C3BE81F9A335F003C755A /* UIViewController.swift */,
+				957E05C31FE6D4DF00868315 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1516,6 +1556,8 @@
 				95781BB31EC3A898003E3256 /* Common */,
 				95781BB61EC3A898003E3256 /* Transforms */,
 				9587DF711F8405620069F0A6 /* ViewModel */,
+				95DB3BE51FDD8F2300E83B76 /* HistoryItem.swift */,
+				95DB3BE71FDD923300E83B76 /* DataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1548,7 +1590,7 @@
 			path = Nutriments;
 			sourceTree = "<group>";
 		};
-		95F1848B1F655BB500A544C2 /* Test Resources */ = {
+		95F1848B1F655BB500A544C2 /* TestResources */ = {
 			isa = PBXGroup;
 			children = (
 				95F1848C1F655BB500A544C2 /* GET_ProductsByBarcode_200.json */,
@@ -1564,10 +1606,10 @@
 				95F184951F655BB500A544C2 /* test_image.jpg */,
 				956AEA831F78014900969AF3 /* Product_fanta_orange.json */,
 			);
-			path = "Test Resources";
+			path = TestResources;
 			sourceTree = "<group>";
 		};
-		95F31BEB1F38F71D00B8AF90 /* OpenFoodFactsTests */ = {
+		95F31BEB1F38F71D00B8AF90 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				9596B5141F45FEEF0076F52C /* Common */,
@@ -1577,7 +1619,7 @@
 				95F31C0F1F3A45CF00B8AF90 /* Network */,
 				95F31BEE1F38F71E00B8AF90 /* Info.plist */,
 			);
-			path = OpenFoodFactsTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		95F31C0F1F3A45CF00B8AF90 /* Network */ = {
@@ -1864,6 +1906,7 @@
 				95902B471F2E284700A72EF7 /* SummaryHeaderCellController.xib in Resources */,
 				95E3ADE21F21433D00CD61D9 /* ProductAddViewController.storyboard in Resources */,
 				9581B3E71F900F1D0036AC7C /* Settings.storyboard in Resources */,
+				957E05C61FE6D59E00868315 /* SingleLetterNutriscoreView.xib in Resources */,
 				958F33581F378086005269C5 /* NutriScoreView.xib in Resources */,
 				956FF94A1F1FF0CA0069D678 /* NutritionLevelView.xib in Resources */,
 				951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */,
@@ -1876,7 +1919,7 @@
 				95890AB71F967EE900085B20 /* LaunchScreen.storyboard in Resources */,
 				956FF9461F1FF0CA0069D678 /* NutritionHeaderTableViewCell.xib in Resources */,
 				956FF9561F1FF0CA0069D678 /* ProductTableViewCell.xib in Resources */,
-				95C216491FDC8A5900EC5BCB /* SearchTableViewController.storyboard in Resources */,
+				95C216491FDC8A5900EC5BCB /* Search.storyboard in Resources */,
 				95890AB51F967E6300085B20 /* InitialView.xib in Resources */,
 				956FF94C1F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib in Resources */,
 				956FF9481F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib in Resources */,
@@ -1996,7 +2039,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 2a83bde9cbf98b48f34f2f27fdb7baa31cf9b5f8 8edbf06d5de27983cb0bf34ca9e266b949a15616bfd9e7a3f6ee013b97cc3d46";
+			shellScript = "\"${PROJECT_DIR}/Sources/Frameworks/Fabric.framework/run\" 2a83bde9cbf98b48f34f2f27fdb7baa31cf9b5f8 8edbf06d5de27983cb0bf34ca9e266b949a15616bfd9e7a3f6ee013b97cc3d46";
 		};
 		95F31BFA1F3A295C00B8AF90 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2045,9 +2088,11 @@
 				95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */,
 				95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */,
 				9581B3EA1F912B5C0036AC7C /* LoginViewController.swift in Sources */,
+				95DB3BEC1FDD9B0E00E83B76 /* Instantiable.swift in Sources */,
 				956FF9451F1FF0CA0069D678 /* NutritionHeaderTableViewCell.swift in Sources */,
 				956FF94D1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift in Sources */,
 				95A566121FD6037800C997C8 /* LocalizableString.swift in Sources */,
+				957E05C21FE6D0B600868315 /* SingleLetterNutriscoreView.swift in Sources */,
 				958F334F1F377B07005269C5 /* NutritionTableRow.swift in Sources */,
 				956FF9491F1FF0CA0069D678 /* NutritionLevelView.swift in Sources */,
 				95F7DB3A1F98DDAC00428208 /* SettingsTableViewController.swift in Sources */,
@@ -2068,6 +2113,7 @@
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
 				9528560B1F78512300863FC6 /* Array.swift in Sources */,
 				956FF9581F1FF0CA0069D678 /* EmptyView.swift in Sources */,
+				95DB3BE61FDD8F2300E83B76 /* HistoryItem.swift in Sources */,
 				9587DF701F83F6580069F0A6 /* PictureTableViewCell.swift in Sources */,
 				956FF9541F1FF0CA0069D678 /* FlashButton.swift in Sources */,
 				958F33571F378086005269C5 /* NutriScoreView.swift in Sources */,
@@ -2086,6 +2132,7 @@
 				95AA2AFF1FDABB2D00EE3A14 /* Language.swift in Sources */,
 				95A566151FD6037800C997C8 /* LocalizableTextView.swift in Sources */,
 				951868211F9357CF00416226 /* CredentialsController.swift in Sources */,
+				957E05C41FE6D4DF00868315 /* UIColor.swift in Sources */,
 				956FF9651F1FF0FD0069D678 /* SearchTableViewController.swift in Sources */,
 				95AA2AFD1FDAB6E800EE3A14 /* PickerToolbarViewController.swift in Sources */,
 				95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */,
@@ -2094,6 +2141,7 @@
 				954587941F730C2D00269E71 /* CameraHelper.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
 				956FF9661F1FF0FD0069D678 /* SearchTableViewControllerState.swift in Sources */,
+				95DB3BE81FDD923300E83B76 /* DataManager.swift in Sources */,
 				95F7DB3E1F98E42500428208 /* UserDefaultsConstants.swift in Sources */,
 				952C3BE91F9A335F003C755A /* UIViewController.swift in Sources */,
 				958F33531F378076005269C5 /* InfoRowTableViewCell.swift in Sources */,
@@ -2104,11 +2152,14 @@
 				957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */,
 				957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */,
 				957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */,
+				9526F8F51FDF2A8B0008E1CC /* DataManagerClient.swift in Sources */,
 				958F335B1F37809A005269C5 /* PictureCallToActionView.swift in Sources */,
 				95D060DD1F609DF70052012D /* LoadingCell.swift in Sources */,
+				95DB3BEA1FDD97D800E83B76 /* HistoryTableViewController.swift in Sources */,
 				958F334D1F377831005269C5 /* NutritionTableHeaderCellController.swift in Sources */,
 				95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */,
 				95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */,
+				9514608A1FE5A9680038E73D /* HistoryItemCell.swift in Sources */,
 				95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */,
 				9595300A1F9156B100979613 /* ProductApiClient.swift in Sources */,
 				956FF95C1F1FF0CA0069D678 /* StateView.swift in Sources */,
@@ -2152,6 +2203,7 @@
 				957D9C381F6728FA005C5AE0 /* UITableViewCellTests.swift in Sources */,
 				95DB3BE41FDD50BC00E83B76 /* SearchViewControllerSpec.swift in Sources */,
 				957D9C3A1F6729E1005C5AE0 /* DoubleTests.swift in Sources */,
+				9526F8F71FDF34C70008E1CC /* DataManagerMock.swift in Sources */,
 				9510B0201F6882C30012953A /* RotatingProcessorTests.swift in Sources */,
 				95B512E81F94E915003B0012 /* LoginViewControllerTests.swift in Sources */,
 				95B512E61F93FEBD003B0012 /* LoggedInViewControllerTests.swift in Sources */,
@@ -2472,7 +2524,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = OpenFoodFactsUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2493,7 +2545,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = OpenFoodFactsUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2624,8 +2676,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sources/Frameworks",
 				);
-				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
@@ -2650,8 +2703,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sources/Frameworks",
 				);
-				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
@@ -2734,8 +2788,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sources/Frameworks",
 				);
-				INFOPLIST_FILE = OpenFoodFacts/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
@@ -2758,8 +2813,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Sources/Frameworks",
 				);
-				INFOPLIST_FILE = OpenFoodFactsTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2780,7 +2836,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = OpenFoodFactsUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2801,8 +2857,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Sources/Frameworks",
 				);
-				INFOPLIST_FILE = OpenFoodFactsTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2823,8 +2880,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Sources/Frameworks",
 				);
-				INFOPLIST_FILE = OpenFoodFactsTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.OpenFoodFactsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
