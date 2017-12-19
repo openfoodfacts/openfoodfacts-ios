@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import NotificationBanner
 
-private struct CellId {
+struct HistoryCellId {
     static let privacy = "PrivacyCell"
     static let item = "HistoryItemCell"
 }
 
 protocol HistoryTableViewControllerDelegate: class {
-    func showItem(_ item: HistoryItem)
+    func showItem(_ item: HistoryItem, onError: @escaping () -> Void)
 }
 
 class HistoryTableViewController: UITableViewController {
@@ -22,10 +23,9 @@ class HistoryTableViewController: UITableViewController {
     lazy var items = [Age: [HistoryItem]]()
     weak var delegate: HistoryTableViewControllerDelegate?
 
-    override func viewDidLoad() {
-        tableView.estimatedRowHeight = 100.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-    }
+    let showDetailsBanner = NotificationBanner(title: "product-search.error-view.title".localized,
+                                               subtitle: "product-search.error-view.subtitle".localized,
+                                               style: .danger)
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,12 +61,12 @@ extension HistoryTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let id = isPrivacySection(indexPath.section) ? CellId.privacy : CellId.item
+        let id = isPrivacySection(indexPath.section) ? HistoryCellId.privacy : HistoryCellId.item
         let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath)
 
         guard let item = getItem(forIndex: indexPath) else { return cell }
 
-        if id == CellId.item {
+        if id == HistoryCellId.item {
             (cell as! HistoryItemCell).configure(item) // swiftlint:disable:this force_cast
         }
 
@@ -108,7 +108,10 @@ extension HistoryTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard !isPrivacySection(indexPath.section) else { return }
         guard let item = getItem(forIndex: indexPath) else { return }
-        delegate?.showItem(item)
+
+        delegate?.showItem(item) {
+            self.showDetailsBanner.show()
+        }
     }
 }
 

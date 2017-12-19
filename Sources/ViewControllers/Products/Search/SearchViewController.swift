@@ -46,6 +46,7 @@ class SearchViewController: UIViewController, ProductApiClient, DataManagerClien
 }
 
 extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewControllerDelegate {
+
     func showProductDetails(product: Product) {
         let productDetailsVC = ProductDetailViewController.loadFromStoryboard() as ProductDetailViewController
         productDetailsVC.product = product
@@ -71,19 +72,15 @@ extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewCo
         self.rootNavigationController.pushViewController(historyVC, animated: true)
     }
 
-    func showItem(_ item: HistoryItem) {
+    func showItem(_ item: HistoryItem, onError: @escaping () -> Void) {
         productApi.getProduct(byBarcode: item.barcode, isScanning: false, onSuccess: { product in
             if let product = product {
                 self.showProductDetails(product: product)
             } else {
-                self.showHistoryError()
+                onError()
             }
-        }, onError: { error in
-            self.showHistoryError(error)
+        }, onError: { _ in
+            onError()
         })
-    }
-
-    private func showHistoryError(_ error: Error? = nil) {
-        // TODO Show error
     }
 }

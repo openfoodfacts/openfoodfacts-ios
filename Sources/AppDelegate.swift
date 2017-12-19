@@ -53,7 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             setupViewControllers(productApi, dataManager)
 
-            // TODO Refactor this taking into account the new flow vc
             // Display scan vc
             let scanVC = ScannerViewController(productApi: productApi)
             if let tab = window?.rootViewController as? UITabBarController {

@@ -12,7 +12,7 @@ import Nimble
 import OHHTTPStubs
 
 private let networkDownErrorCode = -1009
-// FIXME Review after finishing Search History
+
 class ProductServiceTests: XCTestCase {
 
     var productApi: ProductApi!
