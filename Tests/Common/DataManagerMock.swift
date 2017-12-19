@@ -9,13 +9,23 @@
 @testable import OpenFoodFacts
 
 class DataManagerMock: DataManagerProtocol {
+    var getHistoryCalled = false
+    var historyToReturn: [Age: [HistoryItem]]?
+    var addHistoyItemCalled = false
+    var addHistoryItemProduct: Product?
+    var clearHistoryCalled = false
+
     func getHistory() -> [Age: [HistoryItem]] {
-        return [Age: [HistoryItem]]()
+        getHistoryCalled = true
+        return historyToReturn ?? [Age: [HistoryItem]]()
     }
 
     func addHistoryItem(_ product: Product) {
+        addHistoyItemCalled = true
+        addHistoryItemProduct = product
     }
 
     func clearHistory() {
+        clearHistoryCalled = true
     }
 }
