@@ -11,20 +11,18 @@ import XCTest
 import Nimble
 import SafariServices
 
-// swiftlint:disable force_cast
 // swiftlint:disable weak_delegate
 class LoggedInViewControllerTests: XCTestCase {
     var viewController: LoggedInViewController!
-    var childDelegate: ChildDelegateMock!
+    var delegate: UserViewControllerDelegateMock!
 
     override func setUp() {
         super.setUp()
 
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        viewController = storyboard.instantiateViewController(withIdentifier: String(describing: LoggedInViewController.self)) as! LoggedInViewController
+        viewController = LoggedInViewController.loadFromStoryboard(named: StoryboardNames.user) as LoggedInViewController
 
-        childDelegate = ChildDelegateMock()
-        viewController.delegate = childDelegate
+        delegate = UserViewControllerDelegateMock()
+        viewController.delegate = delegate
 
         UIApplication.shared.keyWindow!.rootViewController = viewController
 
@@ -45,7 +43,7 @@ class LoggedInViewControllerTests: XCTestCase {
     func testViewDidLoadShouldDismissLoggedInVCWhenCredentialsNotInUserDefaults() {
         viewController.viewDidLoad()
 
-        expect(self.childDelegate.removedChild).toEventuallyNot(beNil(), timeout: 10)
+        expect(self.delegate.dismissCalled).to(beTrue())
     }
 
     func testDidTapSignoutButton() {
@@ -53,7 +51,7 @@ class LoggedInViewControllerTests: XCTestCase {
 
         viewController.didTapSignOut(UIButton())
 
-        expect(self.childDelegate.removedChild).toEventuallyNot(beNil(), timeout: 10)
+        expect(self.delegate.dismissCalled).to(beTrue())
         expect(UserDefaults.standard.string(forKey: "username")).toEventually(beNil(), timeout: 10)
     }
 

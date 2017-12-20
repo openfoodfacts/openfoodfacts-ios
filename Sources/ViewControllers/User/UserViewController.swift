@@ -8,67 +8,47 @@
 
 import UIKit
 
-// MARK: - ChildViewController
-protocol ChildDelegate: class {
-    func removeChild(_ child: ChildViewController)
-}
-
-class ChildViewController: UIViewController, ProductApiClient {
-    weak var delegate: ChildDelegate?
-    var productApi: ProductApi!
-
-    func dismiss() {
-        self.delegate?.removeChild(self)
-    }
-
-    func set(_ productApi: ProductApi) {
-        self.productApi = productApi
-    }
-}
-
 // MARK: - UserViewController
-class UserViewController: UIViewController {
-    var currentChildVC: UIViewController?
+class UserViewController: UIViewController, ProductApiClient {
     var productApi: ProductApi!
 
     override func viewDidLoad() {
-        showAppropiateChildViewController()
+        loadChildVC()
     }
 
-    private func showAppropiateChildViewController() {
+    private func loadChildVC() {
+        let vc: UIViewController
+
         if CredentialsController.shared.getUsername() != nil {
-            presentViewController(identifier: String(describing: LoggedInViewController.self))
+            vc = createLoggedIn()
         } else {
-            presentViewController(identifier: String(describing: LoginViewController.self))
+            vc = createLogIn()
         }
+
+        transition(to: vc)
     }
 
-    private func presentViewController(identifier: String) {
-        log.debug("Presenting \(identifier)")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        // swiftlint:disable:next force_cast
-        let vc = storyboard.instantiateViewController(withIdentifier: identifier) as! ChildViewController
+    private func createLoggedIn() -> LoggedInViewController {
+        let vc = LoggedInViewController.loadFromStoryboard(named: StoryboardNames.user) as LoggedInViewController
+        vc.productApi = productApi
         vc.delegate = self
-        vc.set(productApi)
-        currentChildVC = vc
-        self.addChildViewController(vc)
-        self.view.addSubview(vc.view)
-        vc.didMove(toParentViewController: self)
+        return vc
+    }
+
+    private func createLogIn() -> LoginViewController {
+        let vc = LoginViewController.loadFromStoryboard(named: StoryboardNames.user) as LoginViewController
+        vc.productApi = productApi
+        vc.delegate = self
+        return vc
     }
 }
 
-extension UserViewController: ChildDelegate {
-    func removeChild(_ child: ChildViewController) {
-        currentChildVC?.willMove(toParentViewController: nil)
-        currentChildVC?.view.removeFromSuperview()
-        currentChildVC?.removeFromParentViewController()
-
-        showAppropiateChildViewController()
-    }
+protocol UserViewControllerDelegate: class {
+    func dismiss()
 }
 
-extension UserViewController: ProductApiClient {
-    func set(_ productApi: ProductApi) {
-        self.productApi = productApi
+extension UserViewController: UserViewControllerDelegate {
+    func dismiss() {
+        loadChildVC()
     }
 }

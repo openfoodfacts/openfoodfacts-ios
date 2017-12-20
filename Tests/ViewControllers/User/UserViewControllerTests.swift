@@ -26,40 +26,26 @@ class UserViewControllerTests: XCTestCase {
         viewController.productApi = productApi
 
         TestHelper.sharedInstance.clearCredentials()
-
-        UIApplication.shared.keyWindow!.rootViewController = viewController
-
-        expect(self.viewController.view).notTo(beNil())
     }
 
     // MARK: - viewDidLoad
     func testViewDidLoadShouldLoadLoginVCWhenCredentialsNotPresent() {
-        viewController.viewDidLoad()
+        // Force viewDidLoad call
+        UIApplication.shared.keyWindow!.rootViewController = viewController
+        expect(self.viewController.view).notTo(beNil())
 
-        expect(self.viewController.currentChildVC is LoginViewController).toEventually(beTrue(), timeout: 10)
-        expect(self.viewController.view.subviews[1]).toEventually(equal(self.viewController.currentChildVC?.view), timeout: 10)
+        expect(self.viewController.childViewControllers[0] is LoginViewController).toEventually(beTrue(), timeout: 10)
+        expect(self.viewController.view.subviews[2]).toEventually(equal(self.viewController.childViewControllers[0].view), timeout: 10)
     }
 
     func testUserViewControllerShouldLoadLoggedinVCWhenCredentiaArePresent() {
         TestHelper.sharedInstance.createUsernameInUserDefaults()
 
-        viewController.viewDidLoad()
+        // Force viewDidLoad call
+        UIApplication.shared.keyWindow!.rootViewController = viewController
+        expect(self.viewController.view).notTo(beNil())
 
-        expect(self.viewController.currentChildVC is LoggedInViewController).toEventually(beTrue(), timeout: 10)
-        expect(self.viewController.view.subviews[1]).toEventually(equal(self.viewController.currentChildVC?.view), timeout: 10)
-    }
-
-    // MARK: - removeChild
-    func testRemoveChild() {
-        let childViewController = LoggedInViewController()
-        viewController.currentChildVC = childViewController
-        viewController.addChildViewController(childViewController)
-        viewController.view.addSubview(childViewController.view)
-        childViewController.didMove(toParentViewController: viewController)
-
-        viewController.removeChild(childViewController)
-
-        expect(childViewController.view.superview).to(beNil())
-        expect(self.viewController.currentChildVC is LoggedInViewController).toEventually(beFalse(), timeout: 10)
+        expect(self.viewController.childViewControllers[0] is LoggedInViewController).toEventually(beTrue(), timeout: 10)
+        expect(self.viewController.view.subviews[2]).toEventually(equal(self.viewController.childViewControllers[0].view), timeout: 10)
     }
 }

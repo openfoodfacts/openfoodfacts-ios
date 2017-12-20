@@ -1,5 +1,5 @@
 //
-//  ChildDelegateMock.swift
+//  UserViewControllerDelegateMock.swift
 //  OpenFoodFactsTests
 //
 //  Created by Andrés Pizá Bückmann on 16/10/2017.
@@ -8,9 +8,10 @@
 
 @testable import OpenFoodFacts
 
-class ChildDelegateMock: ChildDelegate {
-    var removedChild: ChildViewController?
-    func removeChild(_ child: ChildViewController) {
-        removedChild = child
+class UserViewControllerDelegateMock: UserViewControllerDelegate {
+    var dismissCalled = false
+
+    func dismiss() {
+        dismissCalled = true
     }
 }

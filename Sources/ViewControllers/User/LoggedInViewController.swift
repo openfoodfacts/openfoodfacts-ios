@@ -8,20 +8,23 @@
 
 import UIKit
 
-class LoggedInViewController: ChildViewController {
+class LoggedInViewController: UIViewController, ProductApiClient {
+    var productApi: ProductApi!
+    weak var delegate: UserViewControllerDelegate?
+
     @IBOutlet weak var usernameLabel: UILabel!
 
     override func viewDidLoad() {
         if let username = CredentialsController.shared.getUsername() {
             usernameLabel.text = username
         } else {
-            dismiss()
+            delegate?.dismiss()
         }
     }
 
     @IBAction func didTapSignOut(_ sender: UIButton) {
         CredentialsController.shared.clearCredentials()
-        dismiss()
+        delegate?.dismiss()
     }
 
     @IBAction func didTapYourContributionsButton(_ sender: UIButton) {

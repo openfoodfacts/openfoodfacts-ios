@@ -16,17 +16,16 @@ import SafariServices
 // swiftlint:disable weak_delegate
 class LoginViewControllerTests: XCTestCase {
     var viewController: LoginViewController!
-    var childDelegate: ChildDelegateMock!
+    var delegate: UserViewControllerDelegateMock!
     var productApi: ProductServiceMock!
 
     override func setUp() {
         super.setUp()
 
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        viewController = storyboard.instantiateViewController(withIdentifier: String(describing: LoginViewController.self)) as! LoginViewController
+        viewController = LoginViewController.loadFromStoryboard(named: StoryboardNames.user) as LoginViewController
 
-        childDelegate = ChildDelegateMock()
-        viewController.delegate = childDelegate
+        delegate = UserViewControllerDelegateMock()
+        viewController.delegate = delegate
 
         productApi = ProductServiceMock()
         viewController.productApi = productApi
@@ -70,7 +69,7 @@ class LoginViewControllerTests: XCTestCase {
         viewController.didTapLoginButton(UIButton())
 
         expect(self.productApi.didLogIn).toEventually(beTrue(), timeout: 10)
-        expect(self.childDelegate.removedChild is LoginViewController).toEventually(beTrue(), timeout: 10)
+        expect(self.delegate.dismissCalled).to(beTrue())
     }
 
     func testDidTapLoginButtonShouldResignUsernameFieldAsFirstResponder() {

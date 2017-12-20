@@ -10,7 +10,10 @@ import UIKit
 import IQKeyboardManagerSwift
 import NotificationBanner
 
-class LoginViewController: ChildViewController {
+class LoginViewController: UIViewController, ProductApiClient {
+    var productApi: ProductApi!
+    weak var delegate: UserViewControllerDelegate?
+
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -61,7 +64,7 @@ class LoginViewController: ChildViewController {
         }
 
         productApi.logIn(username: username, password: password, onSuccess: {
-            self.dismiss()
+            self.delegate?.dismiss()
         }, onError: { error in
             let title: String
             let subtitle: String
