@@ -6,8 +6,8 @@
 //  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol ProductApiClient {
+protocol ProductApiClient where Self: UIViewController {
     var productApi: ProductApi! { get set }
 }
