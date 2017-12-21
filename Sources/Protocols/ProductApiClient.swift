@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol ProductApiClient where Self: UIViewController {
+protocol ProductApiClient {
     var productApi: ProductApi! { get set }
 }
