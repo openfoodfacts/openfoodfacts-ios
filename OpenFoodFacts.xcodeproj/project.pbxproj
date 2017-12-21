@@ -54,6 +54,9 @@
 		9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9543129C1EEC57A1009F0621 /* ImageViewer.framework */; };
 		954587941F730C2D00269E71 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954587931F730C2D00269E71 /* CameraHelper.swift */; };
 		954587971F73101500269E71 /* CameraControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954587961F73101500269E71 /* CameraControllerTests.swift */; };
+		95513BC31FEAD6CA0027C198 /* PendingUploadItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95513BC21FEAD6CA0027C198 /* PendingUploadItemCell.swift */; };
+		95513BC51FEAD8640027C198 /* PendingUploadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95513BC41FEAD8640027C198 /* PendingUploadTableViewController.swift */; };
+		95513BC71FEAD9980027C198 /* PendingUploadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95513BC61FEAD9980027C198 /* PendingUploadItem.swift */; };
 		956AEA851F78024C00969AF3 /* Product_fanta_orange.json in Resources */ = {isa = PBXBuildFile; fileRef = 956AEA831F78014900969AF3 /* Product_fanta_orange.json */; };
 		956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8821F1FF0740069D678 /* ProductAddViewController.swift */; };
 		956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FF8851F1FF0740069D678 /* ProductDetailViewController.swift */; };
@@ -153,6 +156,7 @@
 		95AA2AFF1FDABB2D00EE3A14 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA2AFE1FDABB2D00EE3A14 /* Language.swift */; };
 		95AA2B011FDB264600EE3A14 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AA2B001FDB264500EE3A14 /* Quick.framework */; };
 		95AA2B031FDB268500EE3A14 /* PickerViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA2B021FDB268500EE3A14 /* PickerViewControllerSpec.swift */; };
+		95B157921FEC1EDC0087778B /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B157911FEC1EDC0087778B /* PersistenceManager.swift */; };
 		95B512E61F93FEBD003B0012 /* LoggedInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */; };
 		95B512E81F94E915003B0012 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E71F94E915003B0012 /* LoginViewControllerTests.swift */; };
 		95B512EA1F94E97B003B0012 /* UserViewControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B512E91F94E97B003B0012 /* UserViewControllerDelegateMock.swift */; };
@@ -354,6 +358,9 @@
 		9543129C1EEC57A1009F0621 /* ImageViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageViewer.framework; path = Carthage/Build/iOS/ImageViewer.framework; sourceTree = "<group>"; };
 		954587931F730C2D00269E71 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
 		954587961F73101500269E71 /* CameraControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerTests.swift; sourceTree = "<group>"; };
+		95513BC21FEAD6CA0027C198 /* PendingUploadItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingUploadItemCell.swift; sourceTree = "<group>"; };
+		95513BC41FEAD8640027C198 /* PendingUploadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingUploadTableViewController.swift; sourceTree = "<group>"; };
+		95513BC61FEAD9980027C198 /* PendingUploadItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingUploadItem.swift; sourceTree = "<group>"; };
 		956939051FE9483B003A50DA /* HistoryTableViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewControllerSpec.swift; sourceTree = "<group>"; };
 		956AEA831F78014900969AF3 /* Product_fanta_orange.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Product_fanta_orange.json; sourceTree = "<group>"; };
 		956FF8821F1FF0740069D678 /* ProductAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAddViewController.swift; sourceTree = "<group>"; };
@@ -713,6 +720,7 @@
 		95AA2AFE1FDABB2D00EE3A14 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		95AA2B001FDB264500EE3A14 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		95AA2B021FDB268500EE3A14 /* PickerViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewControllerSpec.swift; sourceTree = "<group>"; };
+		95B157911FEC1EDC0087778B /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		95B512E51F93FEBD003B0012 /* LoggedInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewControllerTests.swift; sourceTree = "<group>"; };
 		95B512E71F94E915003B0012 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		95B512E91F94E97B003B0012 /* UserViewControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerDelegateMock.swift; sourceTree = "<group>"; };
@@ -1261,6 +1269,7 @@
 				953CDD5A1F92A12A0096C428 /* UserViewController.swift */,
 				9581B3E91F912B5C0036AC7C /* LoginViewController.swift */,
 				953CDD581F929C680096C428 /* LoggedInViewController.swift */,
+				95513BC41FEAD8640027C198 /* PendingUploadTableViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1362,6 +1371,7 @@
 			isa = PBXGroup;
 			children = (
 				95A526B21FEAC50F005526B1 /* User.storyboard */,
+				95513BC21FEAD6CA0027C198 /* PendingUploadItemCell.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1585,6 +1595,8 @@
 				9587DF711F8405620069F0A6 /* ViewModel */,
 				95DB3BE51FDD8F2300E83B76 /* HistoryItem.swift */,
 				95DB3BE71FDD923300E83B76 /* DataManager.swift */,
+				95B157911FEC1EDC0087778B /* PersistenceManager.swift */,
+				95513BC61FEAD9980027C198 /* PendingUploadItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2124,6 +2136,7 @@
 				957E05C21FE6D0B600868315 /* SingleLetterNutriscoreView.swift in Sources */,
 				958F334F1F377B07005269C5 /* NutritionTableRow.swift in Sources */,
 				956FF9491F1FF0CA0069D678 /* NutritionLevelView.swift in Sources */,
+				95B157921FEC1EDC0087778B /* PersistenceManager.swift in Sources */,
 				95F7DB3A1F98DDAC00428208 /* SettingsTableViewController.swift in Sources */,
 				957CBEBA1F3312FB00A1B398 /* HostedViewCell.swift in Sources */,
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
@@ -2143,6 +2156,7 @@
 				9528560B1F78512300863FC6 /* Array.swift in Sources */,
 				956FF9581F1FF0CA0069D678 /* EmptyView.swift in Sources */,
 				95DB3BE61FDD8F2300E83B76 /* HistoryItem.swift in Sources */,
+				95513BC71FEAD9980027C198 /* PendingUploadItem.swift in Sources */,
 				9587DF701F83F6580069F0A6 /* PictureTableViewCell.swift in Sources */,
 				956FF9541F1FF0CA0069D678 /* FlashButton.swift in Sources */,
 				958F33571F378086005269C5 /* NutriScoreView.swift in Sources */,
@@ -2156,8 +2170,10 @@
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
 				95D060DB1F6094D30052012D /* UITableView.swift in Sources */,
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
+				95513BC31FEAD6CA0027C198 /* PendingUploadItemCell.swift in Sources */,
 				95A566171FD6037800C997C8 /* LocalizableNavigationItem.swift in Sources */,
 				956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */,
+				95513BC51FEAD8640027C198 /* PendingUploadTableViewController.swift in Sources */,
 				95AA2AFF1FDABB2D00EE3A14 /* Language.swift in Sources */,
 				95A566151FD6037800C997C8 /* LocalizableTextView.swift in Sources */,
 				951868211F9357CF00416226 /* CredentialsController.swift in Sources */,
