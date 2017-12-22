@@ -10,10 +10,10 @@ import UIKit
 import XLPagerTabStrip
 import Crashlytics
 
-class ProductDetailViewController: ButtonBarPagerTabStripViewController, ProductApiClient {
+class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient {
 
     var product: Product!
-    var productApi: ProductApi!
+    var dataManager: DataManagerProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,28 +64,28 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, Product
 
     fileprivate func getSummaryVC() -> UIViewController {
         let form = createSummaryForm()
-        let vc = SummaryFormTableViewController(with: form, productApi: productApi)
+        let vc = SummaryFormTableViewController(with: form, dataManager: dataManager)
         vc.delegate = self
         return vc
     }
 
     fileprivate func getIngredientsVC() -> UIViewController {
         let form = createIngredientsForm()
-        let vc = IngredientsFormTableViewController(with: form, productApi: productApi)
+        let vc = IngredientsFormTableViewController(with: form, dataManager: dataManager)
         vc.delegate = self
         return vc
     }
 
     fileprivate func getNutritionVC() -> UIViewController? {
         guard let form = createNutritionForm() else { return nil }
-        let vc = FormTableViewController(with: form, productApi: productApi)
+        let vc = FormTableViewController(with: form, dataManager: dataManager)
         vc.delegate = self
         return vc
     }
 
     fileprivate func getNutritionTableVC() -> UIViewController {
         let form = createNutritionTableForm()
-        let vc = NutritionTableFormTableViewController(with: form, productApi: productApi)
+        let vc = NutritionTableFormTableViewController(with: form, dataManager: dataManager)
         vc.delegate = self
         return vc
     }
@@ -288,7 +288,7 @@ protocol ProductDetailRefreshDelegate: class {
 extension ProductDetailViewController: ProductDetailRefreshDelegate {
     func refreshProduct(completion: () -> Void) {
         if let barcode = product.barcode {
-            productApi.getProduct(byBarcode: barcode, isScanning: false, onSuccess: { response in
+            dataManager.getProduct(byBarcode: barcode, isScanning: false, onSuccess: { response in
                 if let updatedProduct = response {
                     self.updateForms(with: updatedProduct)
                 }

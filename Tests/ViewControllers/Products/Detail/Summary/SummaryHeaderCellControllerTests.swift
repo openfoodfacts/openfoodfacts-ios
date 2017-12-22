@@ -14,12 +14,12 @@ import ImageViewer
 
 class SummaryHeaderCellControllerTests: XCTestCase {
     var viewController: SummaryHeaderCellController!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
 
     override func setUp() {
-        productApi = ProductServiceMock()
+        dataManager = DataManagerMock()
 
-        viewController = SummaryHeaderCellController(with: Product(), productApi: productApi)
+        viewController = SummaryHeaderCellController(with: Product(), dataManager: dataManager)
 
         UIApplication.shared.keyWindow!.rootViewController = viewController
 

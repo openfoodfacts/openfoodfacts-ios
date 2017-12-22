@@ -10,7 +10,7 @@ import UIKit
 import NotificationBanner
 
 class TakePictureViewController: UIViewController {
-    var productApi: ProductApi!
+    var dataManager: DataManagerProtocol!
     var barcode: String!
     var imageType: ImageType = .front
     var cameraController: CameraController?
@@ -50,7 +50,7 @@ extension TakePictureViewController: CameraControllerDelegate {
     func didGetImage(image: UIImage) {
         // For now, images will be always uploaded with type front
         uploadingImageBanner.show()
-        productApi.postImage(ProductImage(image: image, type: imageType), barcode: barcode, onSuccess: {
+        dataManager.postImage(ProductImage(barcode: barcode, image: image, type: imageType), onSuccess: {
             self.uploadingImageBanner.dismiss()
             self.uploadingImageSuccessBanner.show()
             self.postImageSuccess(image: image)

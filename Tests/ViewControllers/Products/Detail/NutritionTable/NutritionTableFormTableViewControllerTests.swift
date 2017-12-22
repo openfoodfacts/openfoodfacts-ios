@@ -12,7 +12,7 @@ import Nimble
 
 class NutritionTableFormTableViewControllerTests: XCTestCase {
     var viewController: NutritionTableFormTableViewController!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
     var headerFormRow: FormRow!
     var infoFormRow: FormRow!
     var form: Form!
@@ -25,14 +25,14 @@ class NutritionTableFormTableViewControllerTests: XCTestCase {
         headerFormRow = FormRow(label: label, value: product, cellType: cellType, isCopiable: isCopiable)
         infoFormRow = FormRow(value: product, cellType: InfoRowTableViewCell.self)
 
-        productApi = ProductServiceMock()
+        dataManager = DataManagerMock()
         form = Form(title: "", rows: [headerFormRow, infoFormRow])
-        viewController = NutritionTableFormTableViewController(with: form, productApi: productApi)
+        viewController = NutritionTableFormTableViewController(with: form, dataManager: dataManager)
     }
 
     // MARK: - Init
     func testInitWithFormAndProductApi() {
-        let vc = SummaryFormTableViewController(with: form, productApi: productApi)
+        let vc = SummaryFormTableViewController(with: form, dataManager: dataManager)
 
         expect(vc).notTo(beNil())
     }
@@ -66,7 +66,7 @@ class NutritionTableFormTableViewControllerTests: XCTestCase {
 
     // MARK: - didEndDisplaying
     func testDidEndDisplayingRemovesHeaderControllerFromVC() {
-        let nutritionTableHeaderCellController = NutritionTableHeaderCellController(with: Product(), productApi: productApi)
+        let nutritionTableHeaderCellController = NutritionTableHeaderCellController(with: Product(), dataManager: dataManager)
         viewController.nutritionTableHeaderCellController = nutritionTableHeaderCellController
         viewController.addChildViewController(nutritionTableHeaderCellController)
         nutritionTableHeaderCellController.didMove(toParentViewController: viewController)

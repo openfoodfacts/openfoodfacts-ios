@@ -16,7 +16,7 @@ class SearchTableViewControllerTests: XCTestCase {
 
     var viewController: SearchTableViewController!
     var searchViewControllerMock: SearchViewControllerMock!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
 
     private struct ProductsResponseFile {
         static let successPage1 = "GET_ProductsByName_200"
@@ -28,10 +28,10 @@ class SearchTableViewControllerTests: XCTestCase {
 
         searchViewControllerMock = SearchViewControllerMock()
         viewController = SearchTableViewController.loadFromStoryboard(named: "Search") as SearchTableViewController
-        productApi = ProductServiceMock()
-        productApi.productsResponse = ProductsResponse(map: Map(mappingType: .fromJSON, JSON: [String: Any]()))!
+        dataManager = DataManagerMock()
+        dataManager.productsResponse = ProductsResponse(map: Map(mappingType: .fromJSON, JSON: [String: Any]()))!
 
-        viewController.productApi = productApi
+        viewController.dataManager = dataManager
         viewController.delegate = searchViewControllerMock
 
         UIApplication.shared.keyWindow!.rootViewController = viewController
@@ -110,15 +110,15 @@ class SearchTableViewControllerTests: XCTestCase {
         let initialPage = "1"
         let productsResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
         productsResponse.query = query
-        productApi.productsResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage2)
+        dataManager.productsResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage2)
         let productIndex = productsResponse.products.count - 5
         let indexPath = IndexPath(row: productIndex, section: 0)
         viewController.state = .content(productsResponse)
 
         viewController.tableView(tableView, willDisplay: UITableViewCell(), forRowAt: indexPath)
 
-        expect(self.productApi.query) == query
-        expect(self.productApi.page) == Int(initialPage)! + 1
+        expect(self.dataManager.query) == query
+        expect(self.dataManager.page) == Int(initialPage)! + 1
     }
 
     // MARK: - UITableViewDelegate
@@ -145,8 +145,8 @@ class SearchTableViewControllerTests: XCTestCase {
 
         viewController.updateSearchResults(for: viewController.searchController)
 
-        expect(self.productApi.query).toEventually(equal(query), timeout: 5)
-        expect(self.productApi.page).toEventually(equal(1), timeout: 5)
+        expect(self.dataManager.query).toEventually(equal(query), timeout: 5)
+        expect(self.dataManager.page).toEventually(equal(1), timeout: 5)
     }
 
     // MARK: - UISearchBarDelegate
@@ -197,13 +197,13 @@ class SearchTableViewControllerTests: XCTestCase {
         let page = 1
         let query = "Fanta"
         let expectedProductsResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
-        productApi.productsResponse = expectedProductsResponse
+        dataManager.productsResponse = expectedProductsResponse
         viewController.state = .loading
 
         viewController.getProducts(page: page, withQuery: query)
 
-        expect(self.productApi.page) == page
-        expect(self.productApi.query) == query
+        expect(self.dataManager.page) == page
+        expect(self.dataManager.query) == query
         expect(self.viewController.state).to(beContent { response in
             expect(response) === expectedProductsResponse
         })
@@ -227,13 +227,13 @@ class SearchTableViewControllerTests: XCTestCase {
         let expectedResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage2)
         expectedResponse.query = query
         let expectedProductsCount = firstPageResponse.products.count + expectedResponse.products.count
-        productApi.productsResponse = expectedResponse
+        dataManager.productsResponse = expectedResponse
         viewController.state = .content(firstPageResponse)
 
         viewController.getProducts(page: page, withQuery: query)
 
-        expect(self.productApi.page) == page
-        expect(self.productApi.query) == query
+        expect(self.dataManager.page) == page
+        expect(self.dataManager.query) == query
         expect(self.viewController.state).to(beContent { response in
             expect(response.totalProducts) == expectedResponse.totalProducts
             expect(response.page) == String(page)
@@ -247,23 +247,23 @@ class SearchTableViewControllerTests: XCTestCase {
 
         viewController.getProducts(page: page, withQuery: query)
 
-        expect(self.productApi.page) == page
-        expect(self.productApi.query) == query
+        expect(self.dataManager.page) == page
+        expect(self.dataManager.query) == query
         expect(self.viewController.state).to(beError { error in
-            expect(error) === self.productApi.error as Error
+            expect(error) === self.dataManager.error as Error
         })
     }
 
     func testGetProductsShouldNotChangeStateWhenResponseReceivedAndStateNotContentOrLoading() {
         let page = 1
         let query = "Fanta"
-        productApi.productsResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
-        viewController.state = .error(productApi.error)
+        dataManager.productsResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
+        viewController.state = .error(dataManager.error)
 
         viewController.getProducts(page: page, withQuery: query)
 
         expect(self.viewController.state).to(beError { error in
-            expect(error) === self.productApi.error as Error
+            expect(error) === self.dataManager.error as Error
         })
     }
 
@@ -285,7 +285,7 @@ class SearchTableViewControllerTests: XCTestCase {
         productResponse.query = query
         let secondProductResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
         productResponse.query = secondQuery
-        productApi.productsResponse = secondProductResponse
+        dataManager.productsResponse = secondProductResponse
         viewController.state = .content(productResponse)
 
         viewController.getProducts(page: page, withQuery: secondQuery)

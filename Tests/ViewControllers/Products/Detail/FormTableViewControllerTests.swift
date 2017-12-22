@@ -13,7 +13,7 @@ import XLPagerTabStrip
 
 class FormTableViewControllerTests: XCTestCase {
     var viewController: FormTableViewController!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
     var form: Form!
     let firstRowValue = "abc"
     let secondRowValue = 123
@@ -23,8 +23,8 @@ class FormTableViewControllerTests: XCTestCase {
         let rows = [FormRow(value: firstRowValue, cellType: HostedViewCell.self),
                     FormRow(value: secondRowValue, cellType: NutritionLevelsTableViewCell.self)]
         form = Form(title: title, rows: rows)
-        productApi = ProductServiceMock()
-        viewController = FormTableViewController(with: form, productApi: productApi)
+        dataManager = DataManagerMock()
+        viewController = FormTableViewController(with: form, dataManager: dataManager)
         UIApplication.shared.keyWindow!.rootViewController = viewController
         expect(self.viewController.view).toNot(beNil())
     }

@@ -17,11 +17,11 @@ class IngredientsHeaderCellController: TakePictureViewController {
 
     weak var delegate: FormTableViewControllerDelegate?
 
-    convenience init(with product: Product, productApi: ProductApi) {
+    convenience init(with product: Product, dataManager: DataManagerProtocol) {
         self.init(nibName: String(describing: IngredientsHeaderCellController.self), bundle: nil)
         self.product = product
         super.barcode = product.barcode
-        super.productApi = productApi
+        super.dataManager = dataManager
         super.imageType = .ingredients
     }
 

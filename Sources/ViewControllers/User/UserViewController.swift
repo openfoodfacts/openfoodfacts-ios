@@ -9,8 +9,8 @@
 import UIKit
 
 // MARK: - UserViewController
-class UserViewController: UIViewController, ProductApiClient {
-    var productApi: ProductApi!
+class UserViewController: UIViewController, DataManagerClient {
+    var dataManager: DataManagerProtocol!
 
     override func viewDidLoad() {
         loadChildVC()
@@ -30,14 +30,14 @@ class UserViewController: UIViewController, ProductApiClient {
 
     private func createLoggedIn() -> LoggedInViewController {
         let vc = LoggedInViewController.loadFromStoryboard(named: StoryboardNames.user) as LoggedInViewController
-        vc.productApi = productApi
+        vc.dataManager = dataManager
         vc.delegate = self
         return vc
     }
 
     private func createLogIn() -> LoginViewController {
         let vc = LoginViewController.loadFromStoryboard(named: StoryboardNames.user) as LoginViewController
-        vc.productApi = productApi
+        vc.dataManager = dataManager
         vc.delegate = self
         return vc
     }

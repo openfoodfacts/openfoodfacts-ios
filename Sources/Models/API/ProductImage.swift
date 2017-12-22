@@ -15,12 +15,14 @@ enum ImageType: String {
 }
 
 struct ProductImage {
-    let image: UIImage?
+    let barcode: String
+    let image: UIImage
     let fileURL: URL?
     let fileName = "\(UUID().uuidString).jpg"
     let type: ImageType
 
-    init(image: UIImage, type: ImageType) {
+    init(barcode: String, image: UIImage, type: ImageType) {
+        self.barcode = barcode
         self.image = image
         self.fileURL = nil
         self.type = type

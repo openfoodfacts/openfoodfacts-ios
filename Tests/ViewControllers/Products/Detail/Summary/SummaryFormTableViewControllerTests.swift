@@ -12,7 +12,7 @@ import Nimble
 
 class SummaryFormTableViewControllerTests: XCTestCase {
     var viewController: SummaryFormTableViewController!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
     var headerFormRow: FormRow!
     var infoFormRow: FormRow!
     var form: Form!
@@ -25,14 +25,14 @@ class SummaryFormTableViewControllerTests: XCTestCase {
         headerFormRow = FormRow(label: label, value: product, cellType: cellType, isCopiable: isCopiable)
         infoFormRow = FormRow(value: product, cellType: InfoRowTableViewCell.self)
 
-        productApi = ProductServiceMock()
+        dataManager = DataManagerMock()
         form = Form(title: "", rows: [headerFormRow, infoFormRow])
-        viewController = SummaryFormTableViewController(with: form, productApi: productApi)
+        viewController = SummaryFormTableViewController(with: form, dataManager: dataManager)
     }
 
     // MARK: - Init
     func testInitWithFormAndProductApi() {
-        let vc = SummaryFormTableViewController(with: form, productApi: productApi)
+        let vc = SummaryFormTableViewController(with: form, dataManager: dataManager)
 
         expect(vc).notTo(beNil())
     }
@@ -66,7 +66,7 @@ class SummaryFormTableViewControllerTests: XCTestCase {
 
     // MARK: - didEndDisplaying
     func testDidEndDisplayingRemovesHeaderControllerFromVC() {
-        let summaryHeaderCellController = SummaryHeaderCellController(with: Product(), productApi: productApi)
+        let summaryHeaderCellController = SummaryHeaderCellController(with: Product(), dataManager: dataManager)
         viewController.summaryHeaderCellController = summaryHeaderCellController
         viewController.addChildViewController(summaryHeaderCellController)
         summaryHeaderCellController.didMove(toParentViewController: viewController)

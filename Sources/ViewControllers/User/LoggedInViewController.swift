@@ -8,8 +8,8 @@
 
 import UIKit
 
-class LoggedInViewController: UIViewController, ProductApiClient {
-    var productApi: ProductApi!
+class LoggedInViewController: UIViewController, DataManagerClient {
+    var dataManager: DataManagerProtocol!
     weak var delegate: UserViewControllerDelegate?
 
     @IBOutlet weak var usernameLabel: UILabel!

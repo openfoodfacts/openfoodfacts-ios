@@ -17,7 +17,7 @@ import SafariServices
 class ProductDetailViewControllerTests: XCTestCase {
     var viewController: ProductDetailViewController!
     var navigationController: UINavigationControllerMock!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
     var pagerTabStripController: PagerTabStripViewController!
 
     private let tintColor = UIColor(red: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0)
@@ -30,8 +30,8 @@ class ProductDetailViewControllerTests: XCTestCase {
         viewController = storyboard.instantiateInitialViewController() as! ProductDetailViewController
         navigationController = UINavigationControllerMock(rootViewController: viewController)
 
-        productApi = ProductServiceMock()
-        viewController.productApi = productApi
+        dataManager = DataManagerMock()
+        viewController.dataManager = dataManager
         viewController.product = Product()
 
         pagerTabStripController = PagerTabStripViewController()
@@ -258,8 +258,8 @@ class ProductDetailViewControllerTests: XCTestCase {
         product.barcode = "123456789"
         product.name = "Original"
         viewController.product = product
-        productApi.product = product
-        productApi.product.name = expectedName
+        dataManager.product = product
+        dataManager.product.name = expectedName
         viewController.viewDidLoad()
 
         var refreshCompleted = false
@@ -272,7 +272,7 @@ class ProductDetailViewControllerTests: XCTestCase {
         let firstRowValue = viewControllers[0].form.rows[0].value as! Product
 
         expect(refreshCompleted).to(beTrue())
-        expect(self.productApi.productByBarcodeCalled).to(beTrue())
+        expect(self.dataManager.productByBarcodeCalled).to(beTrue())
         expect(firstRowValue.name).to(equal(expectedName))
     }
 
@@ -280,7 +280,7 @@ class ProductDetailViewControllerTests: XCTestCase {
         var product = buildProductForJsonFile(productFile)
         product.barcode = "111111111"
         viewController.product = product
-        productApi.product = product
+        dataManager.product = product
 
         var refreshCompleted = false
 
@@ -300,7 +300,7 @@ class ProductDetailViewControllerTests: XCTestCase {
         }
 
         expect(refreshCompleted).to(beTrue())
-        expect(self.productApi.productByBarcodeCalled).to(beFalse())
+        expect(self.dataManager.productByBarcodeCalled).to(beFalse())
     }
 
     // MARK: - Helper functions

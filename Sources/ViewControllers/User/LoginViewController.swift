@@ -10,8 +10,8 @@ import UIKit
 import IQKeyboardManagerSwift
 import NotificationBanner
 
-class LoginViewController: UIViewController, ProductApiClient {
-    var productApi: ProductApi!
+class LoginViewController: UIViewController, DataManagerClient {
+    var dataManager: DataManagerProtocol!
     weak var delegate: UserViewControllerDelegate?
 
     @IBOutlet weak var usernameField: UITextField!
@@ -63,12 +63,12 @@ class LoginViewController: UIViewController, ProductApiClient {
             return
         }
 
-        productApi.logIn(username: username, password: password, onSuccess: {
+        dataManager.logIn(username: username, password: password, onSuccess: {
             self.delegate?.dismiss()
         }, onError: { error in
             let title: String
             let subtitle: String
-            if error.code == ProductService.ErrorCodes.wrongCredentials.rawValue {
+            if (error as NSError).code == ProductService.ErrorCodes.wrongCredentials.rawValue {
                 title = "user.alert.wrong-credentials.title".localized
                 subtitle = "user.alert.wrong-credentials.subtitle".localized
             } else {

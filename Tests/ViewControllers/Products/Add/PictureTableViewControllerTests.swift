@@ -14,7 +14,7 @@ import Nimble
 class PictureTableViewControllerTests: XCTestCase {
     var viewController: PictureTableViewController!
     var navigationController: UINavigationControllerMock!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
     var cameraControllerMock: CameraControllerMock!
 
     override func setUp() {
@@ -22,8 +22,8 @@ class PictureTableViewControllerTests: XCTestCase {
         viewController = storyboard.instantiateViewController(withIdentifier: String(describing: PictureTableViewController.self)) as! PictureTableViewController
         navigationController = UINavigationControllerMock(rootViewController: viewController)
 
-        productApi = ProductServiceMock()
-        viewController.productApi = productApi
+        dataManager = DataManagerMock()
+        viewController.dataManager = dataManager
 
         cameraControllerMock = CameraControllerMock()
         viewController.cameraController = cameraControllerMock

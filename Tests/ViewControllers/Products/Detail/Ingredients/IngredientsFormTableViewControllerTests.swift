@@ -12,7 +12,7 @@ import Nimble
 
 class IngredientsFormTableViewControllerTests: XCTestCase {
     var viewController: IngredientsFormTableViewController!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
     var headerFormRow: FormRow!
     var infoFormRow: FormRow!
     var form: Form!
@@ -25,14 +25,14 @@ class IngredientsFormTableViewControllerTests: XCTestCase {
         headerFormRow = FormRow(label: label, value: product, cellType: cellType, isCopiable: isCopiable)
         infoFormRow = FormRow(value: product, cellType: InfoRowTableViewCell.self)
 
-        productApi = ProductServiceMock()
+        dataManager = DataManagerMock()
         form = Form(title: "", rows: [headerFormRow, infoFormRow])
-        viewController = IngredientsFormTableViewController(with: form, productApi: productApi)
+        viewController = IngredientsFormTableViewController(with: form, dataManager: dataManager)
     }
 
     // MARK: - Init
     func testInitWithFormAndProductApi() {
-        let vc = SummaryFormTableViewController(with: form, productApi: productApi)
+        let vc = SummaryFormTableViewController(with: form, dataManager: dataManager)
 
         expect(vc).notTo(beNil())
     }
@@ -66,7 +66,7 @@ class IngredientsFormTableViewControllerTests: XCTestCase {
 
     // MARK: - didEndDisplaying
     func testDidEndDisplayingRemovesHeaderControllerFromVC() {
-        let ingredientsHeaderCellController = IngredientsHeaderCellController(with: Product(), productApi: productApi)
+        let ingredientsHeaderCellController = IngredientsHeaderCellController(with: Product(), dataManager: dataManager)
         viewController.ingredientsHeaderCellController = ingredientsHeaderCellController
         viewController.addChildViewController(ingredientsHeaderCellController)
         ingredientsHeaderCellController.didMove(toParentViewController: viewController)
