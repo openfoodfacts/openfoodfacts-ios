@@ -15,12 +15,12 @@ import Kingfisher
 
 class NutritionTableHeaderCellControllerTests: XCTestCase {
     var viewController: NutritionTableHeaderCellController!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
 
     override func setUp() {
-        productApi = ProductServiceMock()
+        dataManager = DataManagerMock()
 
-        viewController = NutritionTableHeaderCellController(with: Product(), productApi: productApi)
+        viewController = NutritionTableHeaderCellController(with: Product(), dataManager: dataManager)
 
         UIApplication.shared.keyWindow!.rootViewController = viewController
 

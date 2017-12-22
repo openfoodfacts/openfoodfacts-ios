@@ -12,8 +12,7 @@ protocol SearchViewControllerDelegate: class {
     func showProductDetails(product: Product)
 }
 
-class SearchViewController: UIViewController, ProductApiClient, DataManagerClient {
-    var productApi: ProductApi!
+class SearchViewController: UIViewController, DataManagerClient {
     var dataManager: DataManagerProtocol!
     var rootNavigationController: UINavigationController!
 
@@ -38,7 +37,7 @@ class SearchViewController: UIViewController, ProductApiClient, DataManagerClien
 
     private func createSearchTableVC() -> SearchTableViewController {
         let searchTableVC = SearchTableViewController.loadFromStoryboard(named: StoryboardNames.search) as SearchTableViewController
-        searchTableVC.productApi = productApi
+        searchTableVC.dataManager = dataManager
         searchTableVC.delegate = self
         searchTableVC.navigationItem.rightBarButtonItems = [createScanButton(), createHistoryButton()]
         return searchTableVC
@@ -50,7 +49,7 @@ extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewCo
     func showProductDetails(product: Product) {
         let productDetailsVC = ProductDetailViewController.loadFromStoryboard() as ProductDetailViewController
         productDetailsVC.product = product
-        productDetailsVC.productApi = productApi
+        productDetailsVC.dataManager = dataManager
         productDetailsVC.navigationItem.rightBarButtonItems = [createScanButton()]
 
         // Store product in search history
@@ -60,7 +59,7 @@ extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewCo
     }
 
     @objc func scanBarcode(_ sender: UIBarButtonItem) {
-        let scanVC = ScannerViewController(productApi: productApi)
+        let scanVC = ScannerViewController(dataManager: dataManager)
         self.rootNavigationController.pushViewController(scanVC, animated: true)
     }
 
@@ -73,7 +72,7 @@ extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewCo
     }
 
     func showItem(_ item: HistoryItem, onError: @escaping () -> Void) {
-        productApi.getProduct(byBarcode: item.barcode, isScanning: false, onSuccess: { product in
+        dataManager.getProduct(byBarcode: item.barcode, isScanning: false, onSuccess: { product in
             if let product = product {
                 self.showProductDetails(product: product)
             } else {

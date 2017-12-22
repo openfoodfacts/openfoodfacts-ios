@@ -13,10 +13,10 @@ import Crashlytics
 
 // MARK: - UIViewController
 
-class SearchTableViewController: UITableViewController, ProductApiClient {
+class SearchTableViewController: UITableViewController, DataManagerClient {
+    var dataManager: DataManagerProtocol!
 
     var searchController: UISearchController!
-    var productApi: ProductApi!
     var queryRequestWorkItem: DispatchWorkItem?
     var tapGestureRecognizer: UITapGestureRecognizer?
     var state = State.initial {
@@ -196,7 +196,7 @@ extension SearchTableViewController: UISearchBarDelegate {
 
 extension SearchTableViewController {
     func getProducts(page: Int, withQuery query: String) {
-        productApi.getProducts(for: query, page: page, onSuccess: { response in
+        dataManager.getProducts(for: query, page: page, onSuccess: { response in
             switch self.state {
             case .content(let oldResponse) where oldResponse.query == query: // Append new products to existing response
                 oldResponse.products.append(contentsOf: response.products)
@@ -216,7 +216,7 @@ extension SearchTableViewController {
                 return
             }
         }, onError: { error in
-            if error.code == NSURLErrorCancelled {
+            if (error as NSError).code == NSURLErrorCancelled {
                 // Ignore, a newer request cancelled this one
             } else {
                 self.state = .error(error)

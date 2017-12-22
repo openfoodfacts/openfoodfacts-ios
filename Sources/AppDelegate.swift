@@ -31,8 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         // Inject dependencies
-        let dataManager = DataManager()
         let productApi = ProductService()
+        let persistenceManager = PersistenceManager()
+        let dataManager = DataManager()
+        dataManager.productApi = productApi
+        dataManager.persistenceManager = persistenceManager
 
         setupViewControllers(productApi, dataManager)
 
@@ -48,13 +51,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = rootVC
 
             // Inject dependencies
-            let dataManager = DataManager()
             let productApi = ProductService()
+            let persistenceManager = PersistenceManager()
+            let dataManager = DataManager()
+            dataManager.productApi = productApi
+            dataManager.persistenceManager = persistenceManager
 
             setupViewControllers(productApi, dataManager)
 
             // Display scan vc
-            let scanVC = ScannerViewController(productApi: productApi)
+            let scanVC = ScannerViewController(dataManager: dataManager)
             if let tab = window?.rootViewController as? UITabBarController {
                 for child in tab.viewControllers ?? [] {
                     if let navController = child as? UINavigationController, let vc = navController.topViewController as? SearchTableViewController {
@@ -88,10 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func setupViewControllers(_ productApi: ProductApi, _ dataManager: DataManager) {
         if let tab = window?.rootViewController as? UITabBarController {
             for child in tab.viewControllers ?? [] {
-                if var top = child as? ProductApiClient {
-                    top.productApi = productApi
-                }
-
                 if var top = child as? DataManagerClient {
                     top.dataManager = dataManager
                 }

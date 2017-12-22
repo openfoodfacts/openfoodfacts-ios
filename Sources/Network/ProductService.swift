@@ -13,12 +13,11 @@ import Crashlytics
 import UIKit
 
 protocol ProductApi {
-    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (NSError) -> Void)
+    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
     func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
-    func getLanguages() -> [Language]
-    func postImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+    func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
-    func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void)
+    func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
 }
 
 struct Endpoint {
@@ -44,7 +43,7 @@ class ProductService: ProductApi {
         case wrongCredentials = 2
     }
 
-    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (NSError) -> Void) {
+    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         lastGetProductsRequest?.cancel()
 
         var query = query
@@ -123,21 +122,6 @@ class ProductService: ProductApi {
         }
     }
 
-    func getLanguages() -> [Language] {
-        // Get all ISO 639-1 languages
-        return Locale.isoLanguageCodes
-            .filter({ $0.count == 2 })
-            .flatMap({
-                let code = $0
-                if let name = Locale.current.localizedString(forIdentifier: $0) {
-                    return Language(code: code, name: name)
-                } else {
-                    return nil
-                }
-            })
-            .sorted(by: { $0.name < $1.name })
-    }
-
     fileprivate func encodeParameters(_ parameters: String) -> String {
         if let encodedParameters = parameters.lowercased().addingPercentEncoding(withAllowedCharacters: .alphanumerics) {
             return encodedParameters
@@ -159,10 +143,10 @@ class ProductService: ProductApi {
 }
 
 extension ProductService {
-    func postImage(_ productImage: ProductImage, barcode: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+    func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         guard let fileURL = getImageUrl(productImage) else { return }
 
-        if let barcode = barcode.data(using: .utf8) {
+        if let barcode = productImage.barcode.data(using: .utf8) {
             Alamofire.upload(
                 multipartFormData: { multipartFormData in
                     multipartFormData.append(barcode, withName: Params.code)
@@ -215,14 +199,13 @@ extension ProductService {
             let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
             let filePath = "\(paths[0])/\(productImage.fileName)"
             let fileURL = URL(fileURLWithPath: filePath)
-            if let image = productImage.image, let imageRepresentation = UIImageJPEGRepresentation(image, 0.1) {
+            if let imageRepresentation = UIImageJPEGRepresentation(productImage.image, 0.1) {
                 try imageRepresentation.write(to: fileURL)
                 return fileURL
             }
             let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: [
                 "imageType": productImage.type.rawValue,
                 "fileName": productImage.fileName,
-                "isImageNil": productImage.image == nil,
                 "message": "Unable to get UIImageJPEGRepresentation"
                 ])
             Crashlytics.sharedInstance().recordError(error)
@@ -278,7 +261,7 @@ extension ProductService {
 }
 
 extension ProductService {
-    func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (NSError) -> Void) {
+    func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         let parameters = [Params.userId: username, Params.password: password, Params.submit: "Sign-in"]
         let request = Alamofire.request(Endpoint.login, method: .post, parameters: parameters)
         log.debug(request.debugDescription)

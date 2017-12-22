@@ -51,6 +51,7 @@
 		953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
 		953CDD591F929C680096C428 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CDD581F929C680096C428 /* LoggedInViewController.swift */; };
 		953CDD5B1F92A12A0096C428 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CDD5A1F92A12A0096C428 /* UserViewController.swift */; };
+		9540778A1FEDA3B70058E15B /* PersistenceManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954077881FEDA39A0058E15B /* PersistenceManagerMock.swift */; };
 		9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9543129C1EEC57A1009F0621 /* ImageViewer.framework */; };
 		954587941F730C2D00269E71 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954587931F730C2D00269E71 /* CameraHelper.swift */; };
 		954587971F73101500269E71 /* CameraControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954587961F73101500269E71 /* CameraControllerTests.swift */; };
@@ -136,7 +137,6 @@
 		958F335C1F37809A005269C5 /* PictureCallToActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958F335A1F37809A005269C5 /* PictureCallToActionView.xib */; };
 		95902B471F2E284700A72EF7 /* SummaryHeaderCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */; };
 		959530081F91408F00979613 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */; };
-		9595300A1F9156B100979613 /* ProductApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959530091F9156B100979613 /* ProductApiClient.swift */; };
 		9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */; };
 		959FA52E1FE83C3F008A5A39 /* DataManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959FA52C1FE83C09008A5A39 /* DataManagerSpec.swift */; };
 		95A526B31FEAC50F005526B1 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A526B21FEAC50F005526B1 /* User.storyboard */; };
@@ -355,6 +355,7 @@
 		953C2BE31E9EC22200FD99D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		953CDD581F929C680096C428 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		953CDD5A1F92A12A0096C428 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		954077881FEDA39A0058E15B /* PersistenceManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerMock.swift; sourceTree = "<group>"; };
 		9543129C1EEC57A1009F0621 /* ImageViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageViewer.framework; path = Carthage/Build/iOS/ImageViewer.framework; sourceTree = "<group>"; };
 		954587931F730C2D00269E71 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
 		954587961F73101500269E71 /* CameraControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerTests.swift; sourceTree = "<group>"; };
@@ -699,7 +700,6 @@
 		958F335A1F37809A005269C5 /* PictureCallToActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureCallToActionView.xib; sourceTree = "<group>"; };
 		95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryHeaderCellController.xib; sourceTree = "<group>"; };
 		959530071F91408F00979613 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
-		959530091F9156B100979613 /* ProductApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductApiClient.swift; sourceTree = "<group>"; };
 		9596B5121F45FAFB0076F52C /* SearchTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewControllerTests.swift; sourceTree = "<group>"; };
 		959FA52C1FE83C09008A5A39 /* DataManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerSpec.swift; sourceTree = "<group>"; };
 		95A526B21FEAC50F005526B1 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
@@ -988,7 +988,6 @@
 			isa = PBXGroup;
 			children = (
 				9525708B1EE9BC91002FC40D /* CellImageTapable.swift */,
-				959530091F9156B100979613 /* ProductApiClient.swift */,
 				9526F8F41FDF2A8B0008E1CC /* DataManagerClient.swift */,
 				95DB3BEB1FDD9B0E00E83B76 /* Instantiable.swift */,
 			);
@@ -1363,6 +1362,7 @@
 			isa = PBXGroup;
 			children = (
 				959FA52C1FE83C09008A5A39 /* DataManagerSpec.swift */,
+				954077881FEDA39A0058E15B /* PersistenceManagerMock.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2206,7 +2206,6 @@
 				95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */,
 				9514608A1FE5A9680038E73D /* HistoryItemCell.swift in Sources */,
 				95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */,
-				9595300A1F9156B100979613 /* ProductApiClient.swift in Sources */,
 				956FF95C1F1FF0CA0069D678 /* StateView.swift in Sources */,
 				95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */,
 				956FF95A1F1FF0CA0069D678 /* LoadingView.swift in Sources */,
@@ -2235,6 +2234,7 @@
 				95B512EA1F94E97B003B0012 /* UserViewControllerDelegateMock.swift in Sources */,
 				9579EB411F7EA94C00B13A4D /* IngredientsHeaderCellControllerTests.swift in Sources */,
 				959FA52E1FE83C3F008A5A39 /* DataManagerSpec.swift in Sources */,
+				9540778A1FEDA3B70058E15B /* PersistenceManagerMock.swift in Sources */,
 				954587971F73101500269E71 /* CameraControllerTests.swift in Sources */,
 				95BA22691F6B21BA0090C471 /* TakePictureViewControllerTests.swift in Sources */,
 				9510B0281F6885690012953A /* TestHelper.swift in Sources */,

@@ -32,11 +32,11 @@ class ScannerViewController: UIViewController {
     fileprivate var tapToFocusView: TapToFocusView?
     fileprivate var lastCodeScanned: String?
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
-    let productApi: ProductApi
+    let dataManager: DataManagerProtocol
     var configResult: SessionConfigResult = .success
 
-    init(productApi: ProductApi) {
-        self.productApi = productApi
+    init(dataManager: DataManagerProtocol) {
+        self.dataManager = dataManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -214,7 +214,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             SVProgressHUD.show(withStatus: productLoadingMessage)
         }
 
-        productApi.getProduct(byBarcode: barcode, isScanning: true, onSuccess: { response in
+        dataManager.getProduct(byBarcode: barcode, isScanning: true, onSuccess: { response in
             DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
             }
@@ -292,7 +292,7 @@ extension ScannerViewController {
         // swiftlint:disable:next force_cast
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
         productDetailVC.product = product
-        productDetailVC.productApi = productApi
+        productDetailVC.dataManager = dataManager
 
         self.navigationController?.pushViewController(productDetailVC, animated: true)
     }
@@ -303,7 +303,7 @@ extension ScannerViewController {
         let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
         if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
             addProductVC.barcode = barcode
-            addProductVC.productApi = productApi
+            addProductVC.dataManager = dataManager
             self.navigationController?.pushViewController(addProductVC, animated: true)
         }
     }

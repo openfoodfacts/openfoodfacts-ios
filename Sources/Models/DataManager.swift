@@ -12,6 +12,13 @@ import Crashlytics
 import UIKit
 
 protocol DataManagerProtocol {
+    // Search
+    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
+    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
+
+    // User
+    func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+
     // Search history
     func getHistory() -> [Age: [HistoryItem]]
     func addHistoryItem(_ product: Product)
@@ -19,14 +26,37 @@ protocol DataManagerProtocol {
 
     // Product - Add
     func addProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+    func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+
+    // Products pending upload
     func getItemsPendingUpload() -> [PendingUploadItem]
+
+    // Misc
+    func getLanguages() -> [Language]
 }
 
-class DataManager: DataManagerProtocol, ProductApiClient {
+class DataManager: DataManagerProtocol {
     var productApi: ProductApi!
     var persistenceManager: PersistenceManagerProtocol!
 
+    // MARK: - Search
+
+    func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
+        productApi.getProducts(for: query, page: page, onSuccess: onSuccess, onError: onError)
+    }
+
+    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
+        productApi.getProduct(byBarcode: barcode, isScanning: isScanning, onSuccess: onSuccess, onError: onError)
+    }
+
+    // MARK: - User
+
+    func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        productApi.logIn(username: username, password: password, onSuccess: onSuccess, onError: onError)
+    }
+
     // MARK: - Search history
+
     func getHistory() -> [Age: [HistoryItem]] {
         let items = persistenceManager.getHistory()
 
@@ -57,23 +87,45 @@ class DataManager: DataManagerProtocol, ProductApiClient {
 
             if (error as NSError).code == NSURLErrorNotConnectedToInternet {
                 self.persistenceManager.addPendingUploadItem(product)
+                onSuccess()
             } else {
                 onError(error)
             }
         })
     }
 
-    func getItemsPendingUpload() -> [PendingUploadItem] {
-        let realm = getRealm()
-        let items = Array(realm.objects(PendingUploadItem.self))
-
-        for item in items {
-            item.frontImage = UIImage(contentsOfFile: item.frontUrl)
-            item.ingredientsImage = UIImage(contentsOfFile: item.ingredientsUrl)
-            item.nutritionImage = UIImage(contentsOfFile: item.nutritionUrl)
+    func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        productApi.postImage(productImage, onSuccess: onSuccess) { error in
+            if (error as NSError).code == NSURLErrorNotConnectedToInternet {
+                self.persistenceManager.addPendingUploadItem(productImage)
+                onSuccess()
+            } else {
+                onError(error)
+            }
         }
+    }
 
-        return items
+    // MARK: - Products pending upload
+
+    func getItemsPendingUpload() -> [PendingUploadItem] {
+        return persistenceManager.getItemsPendingUpload()
+    }
+
+    // MARK: - Misc
+
+    func getLanguages() -> [Language] {
+        // Get all ISO 639-1 languages
+        return Locale.isoLanguageCodes
+            .filter({ $0.count == 2 })
+            .flatMap({
+                let code = $0
+                if let name = Locale.current.localizedString(forIdentifier: $0) {
+                    return Language(code: code, name: name)
+                } else {
+                    return nil
+                }
+            })
+            .sorted(by: { $0.name < $1.name })
     }
 
     private func getRealm() -> Realm {

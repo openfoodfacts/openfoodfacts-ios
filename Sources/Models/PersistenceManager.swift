@@ -19,10 +19,14 @@ protocol PersistenceManagerProtocol {
 
     // Products pending upload
     func addPendingUploadItem(_ product: Product)
+    func addPendingUploadItem(_ productImage: ProductImage)
+    func getItemsPendingUpload() -> [PendingUploadItem]
 }
 
 class PersistenceManager: PersistenceManagerProtocol {
+
     // MARK: - Search history
+
     func getHistory() -> [HistoryItem] {
         let realm = getRealm()
         return Array(realm.objects(HistoryItem.self).sorted(byKeyPath: "timestamp", ascending: false))
@@ -74,6 +78,7 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     // MARK: - Products pending upload
+
     func addPendingUploadItem(_ product: Product) {
         guard let barcode = product.barcode else { return }
 
@@ -82,6 +87,7 @@ class PersistenceManager: PersistenceManagerProtocol {
         item.quantity = product.quantity
 
         if item.barcode == "" {
+            // Set primary key when new item created
             item.barcode = barcode
         }
 
@@ -101,6 +107,7 @@ class PersistenceManager: PersistenceManagerProtocol {
             item.nutritionUrl = url
         }
 
+        // Save in Realm
         let realm = getRealm()
 
         do {
@@ -111,6 +118,55 @@ class PersistenceManager: PersistenceManagerProtocol {
             log.error(error)
             Crashlytics.sharedInstance().recordError(error)
         }
+    }
+
+    func addPendingUploadItem(_ productImage: ProductImage) {
+        let item = getPendingUploadItem(forBarcode: productImage.barcode) ?? PendingUploadItem()
+
+        if item.barcode == "" {
+            // Set primary key when new item created
+            item.barcode = productImage.barcode
+        }
+
+        switch productImage.type {
+        case .front:
+            if let url = saveImage(productImage.image) {
+                item.frontUrl = url
+            }
+        case .ingredients:
+            if let url = saveImage(productImage.image) {
+                item.ingredientsUrl = url
+            }
+        case .nutrition:
+            if let url = saveImage(productImage.image) {
+                item.nutritionUrl = url
+            }
+        }
+
+        // Save in Realm
+        let realm = getRealm()
+
+        do {
+            try realm.write {
+                realm.add(item)
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+
+    func getItemsPendingUpload() -> [PendingUploadItem] {
+        let realm = getRealm()
+        let items = Array(realm.objects(PendingUploadItem.self))
+
+        for item in items {
+            item.frontImage = UIImage(contentsOfFile: item.frontUrl)
+            item.ingredientsImage = UIImage(contentsOfFile: item.ingredientsUrl)
+            item.nutritionImage = UIImage(contentsOfFile: item.nutritionUrl)
+        }
+
+        return items
     }
 
     private func getPendingUploadItem(forBarcode barcode: String) -> PendingUploadItem? {

@@ -16,13 +16,10 @@ class SearchViewControllerSpec: QuickSpec {
     override func spec() {
         var viewController: SearchViewController!
         var dataManager: DataManagerMock!
-        var productApi: ProductServiceMock!
 
         beforeEach {
             dataManager = DataManagerMock()
-            productApi = ProductServiceMock()
             viewController = SearchViewController.loadFromMainStoryboard() as SearchViewController
-            viewController.productApi = productApi
             viewController.dataManager = dataManager
             expect(viewController.view).toNot(beNil())
         }
@@ -88,8 +85,8 @@ class SearchViewControllerSpec: QuickSpec {
                     var errorCalled = false
 
                     beforeEach {
-                        productApi.product = Product()
-                        productApi.product.barcode = barcode
+                        dataManager.product = Product()
+                        dataManager.product.barcode = barcode
                         let item = HistoryItem()
                         item.barcode = barcode
 
@@ -99,9 +96,9 @@ class SearchViewControllerSpec: QuickSpec {
                     }
 
                     it("fetches item from server") {
-                        productApi.product = Product()
+                        dataManager.product = Product()
 
-                        expect(productApi.productByBarcodeCalled).to(beTrue())
+                        expect(dataManager.productByBarcodeCalled).to(beTrue())
                     }
 
                     it("pushes DetailViewController") {
@@ -118,7 +115,7 @@ class SearchViewControllerSpec: QuickSpec {
                     var errorCalled = false
 
                     beforeEach {
-                        productApi.product = nil
+                        dataManager.product = nil
                         let item = HistoryItem()
                         item.barcode = barcode
 
@@ -128,7 +125,7 @@ class SearchViewControllerSpec: QuickSpec {
                     }
 
                     it("shows error when API call succeeds but product is nil") {
-                        productApi.product = nil
+                        dataManager.product = nil
 
                         expect(errorCalled).to(beTrue())
                     }

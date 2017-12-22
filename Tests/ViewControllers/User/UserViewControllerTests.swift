@@ -13,7 +13,7 @@ import Nimble
 // swiftlint:disable force_cast
 class UserViewControllerTests: XCTestCase {
     var viewController: UserViewController!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
 
     override func setUp() {
         super.setUp()
@@ -22,8 +22,8 @@ class UserViewControllerTests: XCTestCase {
         let tabBarController = storyboard.instantiateInitialViewController() as! UITabBarController
         viewController = tabBarController.viewControllers?[1] as! UserViewController
 
-        productApi = ProductServiceMock()
-        viewController.productApi = productApi
+        dataManager = DataManagerMock()
+        viewController.dataManager = dataManager
 
         TestHelper.sharedInstance.clearCredentials()
     }

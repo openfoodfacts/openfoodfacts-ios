@@ -239,9 +239,6 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.products-pending-upload.button"/>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="didTapYourContributionsButton:" destination="ajI-Jn-gGa" eventType="touchUpInside" id="2JM-wO-OmU"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9L-mX-Jom">
                                         <rect key="frame" x="160" y="173.5" width="55" height="30"/>

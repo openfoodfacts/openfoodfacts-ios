@@ -155,8 +155,8 @@ class ProductServiceTests: XCTestCase {
             XCTFail("Error loading test image")
         }
         guard let image = imageFromFile else { XCTFail("Instance of UIImage with test image could not be created"); return }
-        let productImage = ProductImage(image: image, type: .front)
         let barcode = "5449000011527"
+        let productImage = ProductImage(barcode: barcode, image: image, type: .front)
         let success: () -> Void = { resultSuccessful = true }
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
         stub(condition: isPath("/cgi/product_image_upload.pl")) { _ in
@@ -168,7 +168,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productApi.postImage(productImage, barcode: barcode, onSuccess: success, onError: error)
+        productApi.postImage(productImage, onSuccess: success, onError: error)
 
         // then
         expect(resultSuccessful).toEventually(beTrue())
@@ -188,8 +188,8 @@ class ProductServiceTests: XCTestCase {
             XCTFail("Error loading test image")
         }
         guard let image = imageFromFile else { XCTFail("Instance of UIImage with test image could not be created"); return }
-        let productImage = ProductImage(image: image, type: .front)
         let barcode = "5449000011527"
+        let productImage = ProductImage(barcode: barcode, image: image, type: .front)
         let success: () -> Void = { XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/cgi/product_image_upload.pl")) { _ in
@@ -198,7 +198,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productApi.postImage(productImage, barcode: barcode, onSuccess: success, onError: error)
+        productApi.postImage(productImage, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
@@ -219,8 +219,8 @@ class ProductServiceTests: XCTestCase {
             XCTFail("Error loading test image")
         }
         guard let image = imageFromFile else { XCTFail("Instance of UIImage with test image could not be created"); return }
-        let productImage = ProductImage(image: image, type: .front)
         let barcode = "5449000011527"
+        let productImage = ProductImage(barcode: barcode, image: image, type: .front)
         let success: () -> Void = { XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/cgi/product_image_upload.pl")) { _ in
@@ -232,7 +232,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productApi.postImage(productImage, barcode: barcode, onSuccess: success, onError: error)
+        productApi.postImage(productImage, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
@@ -303,11 +303,11 @@ class ProductServiceTests: XCTestCase {
     }
 
     func testLoginShouldReturnErrorWhenCredentialsAreWrong() {
-        var result: NSError?
+        var result: Error?
         let username = "test_user"
         let password = "test_password"
         let success: () -> Void = { XCTFail("Expected a failing result") }
-        let error: (NSError) -> Void = { error in result = error }
+        let error: (Error) -> Void = { error in result = error }
         stub(condition: isPath("/cgi/session.pl")) { _ in
             return OHHTTPStubsResponse(
                 data: "<html>Incorrect user name or password.</html>".data(using: .utf8)!,
@@ -317,15 +317,15 @@ class ProductServiceTests: XCTestCase {
 
         productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
-        expect(result?.code).toEventually(equal(ProductService.ErrorCodes.wrongCredentials.rawValue), timeout: 10)
+        expect((result as NSError?)?.code).toEventually(equal(ProductService.ErrorCodes.wrongCredentials.rawValue), timeout: 10)
     }
 
     func testLoginShouldReturnErrorWhenServerReturnsError() {
-        var result: NSError?
+        var result: Error?
         let username = "test_user"
         let password = "test_password"
         let success: () -> Void = { XCTFail("Expected a failing result") }
-        let error: (NSError) -> Void = { error in result = error }
+        let error: (Error) -> Void = { error in result = error }
         stub(condition: isPath("/cgi/session.pl")) { _ in
             let notConnectedError = NSError(domain: NSURLErrorDomain, code: networkDownErrorCode, userInfo: nil)
             return OHHTTPStubsResponse(error: notConnectedError)
@@ -333,6 +333,6 @@ class ProductServiceTests: XCTestCase {
 
         productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
-        expect(result?.code).toEventually(equal(networkDownErrorCode), timeout: 10)
+        expect((result as NSError?)?.code).toEventually(equal(networkDownErrorCode), timeout: 10)
     }
 }

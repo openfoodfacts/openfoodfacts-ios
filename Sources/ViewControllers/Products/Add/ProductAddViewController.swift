@@ -71,7 +71,7 @@ class ProductAddViewController: TakePictureViewController {
             product.quantity = "\(value) \(unit)"
         }
 
-        productApi.postProduct(product, onSuccess: {
+        dataManager.addProduct(product, onSuccess: {
             self.productAddSuccessBanner.show()
             self.navigationController?.popToRootViewController(animated: true)
         }, onError: { _ in
@@ -83,7 +83,7 @@ class ProductAddViewController: TakePictureViewController {
         if segue.identifier == "TakePictureSegue" {
             guard let destination = segue.destination as? PictureTableViewController else { return; }
             destination.barcode = barcode
-            destination.productApi = productApi
+            destination.dataManager = dataManager
         }
     }
 
@@ -108,7 +108,7 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     private func configureLanguageField() {
-        let languages = productApi.getLanguages()
+        let languages = dataManager.getLanguages()
 
         let defaultValue: Int? = languages.index(where: { $0.code == self.languageValue })
 

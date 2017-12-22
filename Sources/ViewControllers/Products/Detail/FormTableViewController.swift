@@ -21,14 +21,14 @@ class FormTableViewController: UITableViewController {
             }
         }
     }
-    let productApi: ProductApi
+    let dataManager: DataManagerProtocol
     weak var delegate: ProductDetailRefreshDelegate?
 
     fileprivate let localizedTitle: String
 
-    init(with form: Form, productApi: ProductApi) {
+    init(with form: Form, dataManager: DataManagerProtocol) {
         self.form = form
-        self.productApi = productApi
+        self.dataManager = dataManager
         localizedTitle = form.title
         super.init(nibName: nil, bundle: nil)
 

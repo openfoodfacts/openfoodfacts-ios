@@ -14,7 +14,7 @@ import Nimble
 class ProductAddViewControllerTests: XCTestCase {
     var viewController: ProductAddViewController!
     var navigationController: UINavigationControllerMock!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
 
     private let barcode = "123456789"
     private let anotherBarcode = "987654321"
@@ -30,8 +30,8 @@ class ProductAddViewControllerTests: XCTestCase {
         viewController = storyboard.instantiateInitialViewController() as! ProductAddViewController
         navigationController = UINavigationControllerMock(rootViewController: viewController)
 
-        productApi = ProductServiceMock()
-        viewController.productApi = productApi
+        dataManager = DataManagerMock()
+        viewController.dataManager = dataManager
 
         UIApplication.shared.keyWindow!.rootViewController = navigationController
 
@@ -75,11 +75,11 @@ class ProductAddViewControllerTests: XCTestCase {
         viewController.didTapSaveButton(UIButton())
 
         expect(self.viewController.quantityField.isFirstResponder).to(beFalse())
-        expect(self.productApi.product).toEventuallyNot(beNil())
-        expect(self.productApi.product.name).to(equal(productName))
-        expect(self.productApi.product.brands).to(equal([brands]))
-        expect(self.productApi.product.quantity).to(equal("\(quantity) \(quantityUnit)"))
-        expect(self.productApi.product.barcode).to(equal(barcode))
+        expect(self.dataManager.product).toEventuallyNot(beNil())
+        expect(self.dataManager.product.name).to(equal(productName))
+        expect(self.dataManager.product.brands).to(equal([brands]))
+        expect(self.dataManager.product.quantity).to(equal("\(quantity) \(quantityUnit)"))
+        expect(self.dataManager.product.barcode).to(equal(barcode))
         expect(self.viewController.productAddSuccessBanner.isHidden).to(beFalse())
         expect(self.navigationController.didPopToRootViewController).to(beTrue())
     }

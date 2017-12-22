@@ -17,7 +17,7 @@ import SafariServices
 class LoginViewControllerTests: XCTestCase {
     var viewController: LoginViewController!
     var delegate: UserViewControllerDelegateMock!
-    var productApi: ProductServiceMock!
+    var dataManager: DataManagerMock!
 
     override func setUp() {
         super.setUp()
@@ -27,8 +27,8 @@ class LoginViewControllerTests: XCTestCase {
         delegate = UserViewControllerDelegateMock()
         viewController.delegate = delegate
 
-        productApi = ProductServiceMock()
-        viewController.productApi = productApi
+        dataManager = DataManagerMock()
+        viewController.dataManager = dataManager
 
         UIApplication.shared.keyWindow!.rootViewController = viewController
 
@@ -68,7 +68,7 @@ class LoginViewControllerTests: XCTestCase {
 
         viewController.didTapLoginButton(UIButton())
 
-        expect(self.productApi.didLogIn).toEventually(beTrue(), timeout: 10)
+        expect(self.dataManager.didLogIn).toEventually(beTrue(), timeout: 10)
         expect(self.delegate.dismissCalled).to(beTrue())
     }
 

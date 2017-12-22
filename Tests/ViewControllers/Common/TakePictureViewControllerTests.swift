@@ -13,7 +13,7 @@ import Nimble
 
 class TakePictureViewControllerTests: XCTestCase {
     var viewController: TakePictureViewController!
-    var mockProductApi: ProductServiceMock!
+    var mockDataManager: DataManagerMock!
     let barcode = "123456789"
     var cameraController: CameraControllerMock!
     var notificationBannerEventMap: [String: [NotificationEventType]]!
@@ -21,12 +21,12 @@ class TakePictureViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        mockProductApi = ProductServiceMock()
+        mockDataManager = DataManagerMock()
         cameraController = CameraControllerMock()
         notificationBannerEventMap = [String: [NotificationEventType]]()
 
         viewController = TakePictureViewController()
-        viewController.productApi = mockProductApi
+        viewController.dataManager = mockDataManager
         viewController.barcode = barcode
         viewController.cameraController = cameraController
         viewController.uploadingImageBanner.delegate = self
@@ -49,7 +49,7 @@ class TakePictureViewControllerTests: XCTestCase {
 
         expect(self.notificationBannerEventMap[uploadingBannerTitle]).toEventually(contain([.willAppear, .didAppear, .willDisappear, .didDisappear]))
         expect(self.notificationBannerEventMap[imageUploadSuccessBannerTitle]).toEventually(contain([.willAppear, .didAppear]), timeout: 10, pollInterval: 0.2)
-        XCTAssertNotNil(mockProductApi.productImage)
+        XCTAssertNotNil(mockDataManager.productImage)
     }
 
     func testDidGetImageErrorHandlerWhenPostingImage() {
@@ -62,7 +62,7 @@ class TakePictureViewControllerTests: XCTestCase {
 
         expect(self.notificationBannerEventMap[uploadingBannerTitle]).toEventually(contain([.willAppear, .didAppear, .willDisappear, .didDisappear]), timeout: 10)
         expect(self.notificationBannerEventMap[imageUploadErrorBannerTitle]).toEventually(contain([.willAppear, .didAppear]), timeout: 10)
-        XCTAssertNotNil(mockProductApi.productImage)
+        XCTAssertNotNil(mockDataManager.productImage)
     }
 
     class CameraControllerMock: CameraController {
