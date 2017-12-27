@@ -10,8 +10,13 @@
 
 class UserViewControllerDelegateMock: UserViewControllerDelegate {
     var dismissCalled = false
+    var showProductsPendingUploadCalled = false
 
     func dismiss() {
         dismissCalled = true
+    }
+
+    func showProductsPendingUpload() {
+        showProductsPendingUploadCalled = true
     }
 }

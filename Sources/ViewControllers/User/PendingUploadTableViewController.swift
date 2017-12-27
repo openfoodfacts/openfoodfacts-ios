@@ -14,8 +14,23 @@ struct PendingUploadCellIds {
 }
 
 class PendingUploadTableViewController: UITableViewController, DataManagerClient {
+    @IBOutlet weak var uploadButton: UIBarButtonItem!
     var dataManager: DataManagerProtocol!
-    lazy var items: [PendingUploadItem] = dataManager.getItemsPendingUpload()
+    private lazy var _items: [PendingUploadItem] = dataManager.getItemsPendingUpload()
+    var items: [PendingUploadItem] {
+        set {
+            _items = newValue
+        }
+        get {
+            if _items.isEmpty {
+                uploadButton.isEnabled = false
+            } else {
+                uploadButton.isEnabled = true
+            }
+
+            return _items
+        }
+    }
 }
 
 // MARK: - Data Source

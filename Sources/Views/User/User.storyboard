@@ -239,6 +239,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.products-pending-upload.button"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapProductsPendingUploadButton:" destination="ajI-Jn-gGa" eventType="touchUpInside" id="yDi-0X-BLo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9L-mX-Jom">
                                         <rect key="frame" x="160" y="173.5" width="55" height="30"/>
@@ -402,7 +405,7 @@
                                     <outlet property="separatorLabel" destination="s8I-bF-cDf" id="X7C-SK-Ee5"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PendingUploadInfoCell" rowHeight="95" id="76H-h8-5yV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PendingUploadInfoCell" rowHeight="95" id="76H-h8-5yV">
                                 <rect key="frame" x="0.0" y="103" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="76H-h8-5yV" id="esK-NL-KZL">
@@ -440,6 +443,9 @@ The app will try to upload them automatically when you are back online or you ca
                         <barButtonItem key="rightBarButtonItem" image="upload" id="sve-0C-eUH"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="uploadButton" destination="sve-0C-eUH" id="7ba-iq-yK3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbO-CW-1My" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

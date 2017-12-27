@@ -32,4 +32,8 @@ class LoggedInViewController: UIViewController, DataManagerClient {
             openUrlInApp(url)
         }
     }
+
+    @IBAction func didTapProductsPendingUploadButton(_ sender: UIButton) {
+        delegate?.showProductsPendingUpload()
+    }
 }

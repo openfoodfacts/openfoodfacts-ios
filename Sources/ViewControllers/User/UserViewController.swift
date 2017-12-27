@@ -11,8 +11,13 @@ import UIKit
 // MARK: - UserViewController
 class UserViewController: UIViewController, DataManagerClient {
     var dataManager: DataManagerProtocol!
+    var childNavigationController: UINavigationController!
 
     override func viewDidLoad() {
+        if childNavigationController == nil {
+            childNavigationController = UINavigationController()
+        }
+
         loadChildVC()
     }
 
@@ -28,11 +33,14 @@ class UserViewController: UIViewController, DataManagerClient {
         transition(to: vc)
     }
 
-    private func createLoggedIn() -> LoggedInViewController {
+    private func createLoggedIn() -> UIViewController {
         let vc = LoggedInViewController.loadFromStoryboard(named: .user) as LoggedInViewController
         vc.dataManager = dataManager
         vc.delegate = self
-        return vc
+
+        childNavigationController.pushViewController(vc, animated: true)
+
+        return childNavigationController
     }
 
     private func createLogIn() -> LoginViewController {
@@ -45,10 +53,17 @@ class UserViewController: UIViewController, DataManagerClient {
 
 protocol UserViewControllerDelegate: class {
     func dismiss()
+    func showProductsPendingUpload()
 }
 
 extension UserViewController: UserViewControllerDelegate {
     func dismiss() {
         loadChildVC()
+    }
+
+    func showProductsPendingUpload() {
+        let vc = PendingUploadTableViewController.loadFromStoryboard(named: .user) as PendingUploadTableViewController
+        vc.dataManager = dataManager
+        childNavigationController.pushViewController(vc, animated: true)
     }
 }
