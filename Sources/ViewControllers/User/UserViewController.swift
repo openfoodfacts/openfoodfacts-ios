@@ -29,14 +29,14 @@ class UserViewController: UIViewController, DataManagerClient {
     }
 
     private func createLoggedIn() -> LoggedInViewController {
-        let vc = LoggedInViewController.loadFromStoryboard(named: StoryboardNames.user) as LoggedInViewController
+        let vc = LoggedInViewController.loadFromStoryboard(named: .user) as LoggedInViewController
         vc.dataManager = dataManager
         vc.delegate = self
         return vc
     }
 
     private func createLogIn() -> LoginViewController {
-        let vc = LoginViewController.loadFromStoryboard(named: StoryboardNames.user) as LoginViewController
+        let vc = LoginViewController.loadFromStoryboard(named: .user) as LoginViewController
         vc.dataManager = dataManager
         vc.delegate = self
         return vc

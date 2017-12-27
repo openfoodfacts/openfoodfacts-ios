@@ -36,7 +36,7 @@ class SearchViewController: UIViewController, DataManagerClient {
     }
 
     private func createSearchTableVC() -> SearchTableViewController {
-        let searchTableVC = SearchTableViewController.loadFromStoryboard(named: StoryboardNames.search) as SearchTableViewController
+        let searchTableVC = SearchTableViewController.loadFromStoryboard(named: .search) as SearchTableViewController
         searchTableVC.dataManager = dataManager
         searchTableVC.delegate = self
         searchTableVC.navigationItem.rightBarButtonItems = [createScanButton(), createHistoryButton()]
@@ -64,7 +64,7 @@ extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewCo
     }
 
     @objc func showHistory(_ sender: UIBarButtonItem) {
-        let historyVC = HistoryTableViewController.loadFromStoryboard(named: StoryboardNames.search) as HistoryTableViewController
+        let historyVC = HistoryTableViewController.loadFromStoryboard(named: .search) as HistoryTableViewController
         historyVC.dataManager = dataManager
         historyVC.delegate = self
 

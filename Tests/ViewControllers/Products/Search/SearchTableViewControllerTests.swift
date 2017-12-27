@@ -27,7 +27,7 @@ class SearchTableViewControllerTests: XCTestCase {
         super.setUp()
 
         searchViewControllerMock = SearchViewControllerMock()
-        viewController = SearchTableViewController.loadFromStoryboard(named: "Search") as SearchTableViewController
+        viewController = SearchTableViewController.loadFromStoryboard(named: .search) as SearchTableViewController
         dataManager = DataManagerMock()
         dataManager.productsResponse = ProductsResponse(map: Map(mappingType: .fromJSON, JSON: [String: Any]()))!
 

@@ -19,7 +19,7 @@ class LoggedInViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        viewController = LoggedInViewController.loadFromStoryboard(named: StoryboardNames.user) as LoggedInViewController
+        viewController = LoggedInViewController.loadFromStoryboard(named: .user) as LoggedInViewController
 
         delegate = UserViewControllerDelegateMock()
         viewController.delegate = delegate

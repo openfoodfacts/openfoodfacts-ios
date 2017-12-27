@@ -22,7 +22,7 @@ class LoginViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        viewController = LoginViewController.loadFromStoryboard(named: StoryboardNames.user) as LoginViewController
+        viewController = LoginViewController.loadFromStoryboard(named: .user) as LoginViewController
 
         delegate = UserViewControllerDelegateMock()
         viewController.delegate = delegate

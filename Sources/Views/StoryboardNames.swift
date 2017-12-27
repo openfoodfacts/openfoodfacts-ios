@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct StoryboardNames {
-    static let search = "Search"
-    static let user = "User"
+enum StoryboardNames: String {
+    case search = "Search"
+    case user = "User"
 }
