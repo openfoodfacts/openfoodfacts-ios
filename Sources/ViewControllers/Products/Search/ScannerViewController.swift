@@ -215,23 +215,33 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
 
         dataManager.getProduct(byBarcode: barcode, isScanning: true, onSuccess: { response in
-            DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
-            }
-            if let product = response {
-                self.showProduct(product)
+            self.handleGetProductSuccess(barcode, response)
+        }, onError: { error in
+            if isOffline(errorCode: (error as NSError).code) {
+                // Assume product does not exist and store locally for later upload
+                self.handleGetProductSuccess(barcode, nil)
             } else {
-                self.addNewProduct(barcode)
-            }
-        }, onError: { _ in
-            DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
-                StatusBarNotificationBanner(title: "product-scanner.barcode.error".localized, style: .danger).show()
-            }
+                DispatchQueue.main.async {
+                    SVProgressHUD.dismiss()
+                    StatusBarNotificationBanner(title: "product-scanner.barcode.error".localized, style: .danger).show()
+                }
 
-            self.lastCodeScanned = nil
-            self.session.startRunning()
+                self.lastCodeScanned = nil
+                self.session.startRunning()
+            }
         })
+    }
+
+    private func handleGetProductSuccess(_ barcode: String, _ product: Product?) {
+        DispatchQueue.main.async {
+            SVProgressHUD.dismiss()
+        }
+
+        if let product = product {
+            self.showProduct(product)
+        } else {
+            self.addNewProduct(barcode)
+        }
     }
 }
 

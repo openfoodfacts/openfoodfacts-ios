@@ -103,11 +103,11 @@ class DataManagerMock: DataManagerProtocol {
         }
     }
 
-    func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+    func postImage(_ productImage: ProductImage, onSuccess: @escaping (_ isOffline: Bool) -> Void, onError: @escaping (Error) -> Void) {
         self.productImage = productImage
 
         if "123456789" == productImage.barcode {
-            onSuccess()
+            onSuccess(false)
         } else {
             onError(error)
         }

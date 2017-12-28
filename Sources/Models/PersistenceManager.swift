@@ -161,9 +161,9 @@ class PersistenceManager: PersistenceManagerProtocol {
         let items = Array(realm.objects(PendingUploadItem.self))
 
         for item in items {
-            item.frontImage = UIImage(contentsOfFile: item.frontUrl)
-            item.ingredientsImage = UIImage(contentsOfFile: item.ingredientsUrl)
-            item.nutritionImage = UIImage(contentsOfFile: item.nutritionUrl)
+            item.frontImage = loadImage(item.frontUrl)
+            item.ingredientsImage = loadImage(item.ingredientsUrl)
+            item.nutritionImage = loadImage(item.nutritionUrl)
         }
 
         return items
@@ -175,13 +175,26 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     private func saveImage(_ image: UIImage) -> String? {
+        let imageName = "\(UUID().uuidString).png"
         let data = UIImagePNGRepresentation(image)
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let imageURL = documentsURL.appendingPathComponent("\(UUID().uuidString).png")
+        let imageURL = documentsURL.appendingPathComponent(imageName)
 
         do {
             try data?.write(to: imageURL)
-            return imageURL.absoluteString
+            return imageName
+        } catch {
+            return nil
+        }
+    }
+
+    private func loadImage(_ imageName: String?) -> UIImage? {
+        do {
+            guard let imageName = imageName else { return nil }
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let imageURL = documentsURL.appendingPathComponent(imageName)
+            let imageData = try Data(contentsOf: imageURL)
+            return UIImage(data: imageData)
         } catch {
             return nil
         }

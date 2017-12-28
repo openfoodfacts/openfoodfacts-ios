@@ -16,9 +16,9 @@ class PendingUploadItem: Object {
     @objc dynamic var brand: String?
     @objc dynamic var quantity: String?
     @objc dynamic var language = "en"
-    @objc dynamic var frontUrl = ""
-    @objc dynamic var ingredientsUrl = ""
-    @objc dynamic var nutritionUrl = ""
+    @objc dynamic var frontUrl: String?
+    @objc dynamic var ingredientsUrl: String?
+    @objc dynamic var nutritionUrl: String?
 
     var frontImage: UIImage?
     var ingredientsImage: UIImage?

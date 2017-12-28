@@ -26,7 +26,7 @@ protocol DataManagerProtocol {
 
     // Product - Add
     func addProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
-    func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+    func postImage(_ productImage: ProductImage, onSuccess: @escaping (_ isOffline: Bool) -> Void, onError: @escaping (Error) -> Void)
 
     // Products pending upload
     func getItemsPendingUpload() -> [PendingUploadItem]
@@ -85,7 +85,7 @@ class DataManager: DataManagerProtocol {
     func addProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         productApi.postProduct(product, onSuccess: onSuccess, onError: { error in
 
-            if (error as NSError).code == NSURLErrorNotConnectedToInternet {
+            if isOffline(errorCode: (error as NSError).code) {
                 self.persistenceManager.addPendingUploadItem(product)
                 onSuccess()
             } else {
@@ -94,15 +94,17 @@ class DataManager: DataManagerProtocol {
         })
     }
 
-    func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        productApi.postImage(productImage, onSuccess: onSuccess) { error in
-            if (error as NSError).code == NSURLErrorNotConnectedToInternet {
+    func postImage(_ productImage: ProductImage, onSuccess: @escaping (_ isOffline: Bool) -> Void, onError: @escaping (Error) -> Void) {
+        productApi.postImage(productImage, onSuccess: {
+            onSuccess(false)
+        }, onError: { error in
+            if isOffline(errorCode: (error as NSError).code) {
                 self.persistenceManager.addPendingUploadItem(productImage)
-                onSuccess()
+                onSuccess(true)
             } else {
                 onError(error)
             }
-        }
+        })
     }
 
     // MARK: - Products pending upload

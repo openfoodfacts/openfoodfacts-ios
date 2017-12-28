@@ -163,7 +163,7 @@ class DataManagerSpec: QuickSpec {
             it("it calls product api and succeeds") {
                 let barcode = "1"
                 let productImage = ProductImage(barcode: barcode, image: UIImage(), type: .front)
-                let onSuccess: () -> Void = { }
+                let onSuccess: (Bool) -> Void = { _ in }
                 let onError: (Error) -> Void = { _ in XCTFail("Expected success") }
 
                 dataManager.postImage(productImage, onSuccess: onSuccess, onError: onError)
@@ -174,7 +174,7 @@ class DataManagerSpec: QuickSpec {
             it("it calls product api, failes due to no internet and saves product on device for later upload") {
                 let barcode = "2"
                 let productImage = ProductImage(barcode: barcode, image: UIImage(), type: .front)
-                let onSuccess: () -> Void = { }
+                let onSuccess: (Bool) -> Void = { _ in }
                 let onError: (Error) -> Void = { _ in XCTFail("Expected success") }
 
                 dataManager.postImage(productImage, onSuccess: onSuccess, onError: onError)
@@ -186,7 +186,7 @@ class DataManagerSpec: QuickSpec {
             it("it calls product api and calls onError") {
                 let barcode = "3"
                 let productImage = ProductImage(barcode: barcode, image: UIImage(), type: .front)
-                let onSuccess: () -> Void = { XCTFail("Expected error") }
+                let onSuccess: (Bool) -> Void = { _ in XCTFail("Expected error") }
                 let onError: (Error) -> Void = { _ in }
 
                 dataManager.postImage(productImage, onSuccess: onSuccess, onError: onError)

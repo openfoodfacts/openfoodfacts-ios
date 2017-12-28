@@ -55,6 +55,7 @@
 		9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9543129C1EEC57A1009F0621 /* ImageViewer.framework */; };
 		954587941F730C2D00269E71 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954587931F730C2D00269E71 /* CameraHelper.swift */; };
 		954587971F73101500269E71 /* CameraControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954587961F73101500269E71 /* CameraControllerTests.swift */; };
+		9549F2BE1FF43F2F00BA797C /* DataManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9549F2BD1FF43F2F00BA797C /* DataManagerHelper.swift */; };
 		95513BC31FEAD6CA0027C198 /* PendingUploadItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95513BC21FEAD6CA0027C198 /* PendingUploadItemCell.swift */; };
 		95513BC51FEAD8640027C198 /* PendingUploadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95513BC41FEAD8640027C198 /* PendingUploadTableViewController.swift */; };
 		95513BC71FEAD9980027C198 /* PendingUploadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95513BC61FEAD9980027C198 /* PendingUploadItem.swift */; };
@@ -359,6 +360,7 @@
 		9543129C1EEC57A1009F0621 /* ImageViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageViewer.framework; path = Carthage/Build/iOS/ImageViewer.framework; sourceTree = "<group>"; };
 		954587931F730C2D00269E71 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
 		954587961F73101500269E71 /* CameraControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerTests.swift; sourceTree = "<group>"; };
+		9549F2BD1FF43F2F00BA797C /* DataManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerHelper.swift; sourceTree = "<group>"; };
 		95513BC21FEAD6CA0027C198 /* PendingUploadItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingUploadItemCell.swift; sourceTree = "<group>"; };
 		95513BC41FEAD8640027C198 /* PendingUploadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingUploadTableViewController.swift; sourceTree = "<group>"; };
 		95513BC61FEAD9980027C198 /* PendingUploadItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingUploadItem.swift; sourceTree = "<group>"; };
@@ -1597,6 +1599,7 @@
 				95DB3BE71FDD923300E83B76 /* DataManager.swift */,
 				95B157911FEC1EDC0087778B /* PersistenceManager.swift */,
 				95513BC61FEAD9980027C198 /* PendingUploadItem.swift */,
+				9549F2BD1FF43F2F00BA797C /* DataManagerHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2182,6 +2185,7 @@
 				95AA2AFD1FDAB6E800EE3A14 /* PickerToolbarViewController.swift in Sources */,
 				95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */,
 				95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */,
+				9549F2BE1FF43F2F00BA797C /* DataManagerHelper.swift in Sources */,
 				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
 				954587941F730C2D00269E71 /* CameraHelper.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
