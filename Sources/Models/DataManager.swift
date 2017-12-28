@@ -30,6 +30,7 @@ protocol DataManagerProtocol {
 
     // Products pending upload
     func getItemsPendingUpload() -> [PendingUploadItem]
+    func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem?
 
     // Misc
     func getLanguages() -> [Language]
@@ -111,6 +112,10 @@ class DataManager: DataManagerProtocol {
 
     func getItemsPendingUpload() -> [PendingUploadItem] {
         return persistenceManager.getItemsPendingUpload()
+    }
+
+    func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem? {
+        return persistenceManager.getItemPendingUpload(forBarcode: barcode)
     }
 
     // MARK: - Misc

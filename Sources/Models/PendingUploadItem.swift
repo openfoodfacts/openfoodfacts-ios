@@ -14,7 +14,8 @@ class PendingUploadItem: Object {
     @objc dynamic var barcode = ""
     @objc dynamic var productName: String?
     @objc dynamic var brand: String?
-    @objc dynamic var quantity: String?
+    @objc dynamic var quantityValue: String?
+    @objc dynamic var quantityUnit: String?
     @objc dynamic var language = "en"
     @objc dynamic var frontUrl: String?
     @objc dynamic var ingredientsUrl: String?

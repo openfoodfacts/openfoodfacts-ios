@@ -21,6 +21,7 @@ protocol PersistenceManagerProtocol {
     func addPendingUploadItem(_ product: Product)
     func addPendingUploadItem(_ productImage: ProductImage)
     func getItemsPendingUpload() -> [PendingUploadItem]
+    func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem?
 }
 
 class PersistenceManager: PersistenceManagerProtocol {
@@ -84,7 +85,8 @@ class PersistenceManager: PersistenceManagerProtocol {
 
         let item = getPendingUploadItem(forBarcode: barcode) ?? PendingUploadItem()
         item.productName = product.name
-        item.quantity = product.quantity
+        item.quantityValue = product.quantityValue
+        item.quantityUnit = product.quantityUnit
 
         if item.barcode == "" {
             // Set primary key when new item created
@@ -167,6 +169,11 @@ class PersistenceManager: PersistenceManagerProtocol {
         }
 
         return items
+    }
+
+    func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem? {
+        let realm = getRealm()
+        return realm.object(ofType: PendingUploadItem.self, forPrimaryKey: barcode)
     }
 
     private func getPendingUploadItem(forBarcode barcode: String) -> PendingUploadItem? {

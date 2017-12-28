@@ -9,6 +9,7 @@
 @testable import OpenFoodFacts
 
 class PersistenceManagerMock: PersistenceManagerProtocol {
+
     var getHistoryCalled = false
     var history: [HistoryItem]?
     var addHistoryItemCalled = false
@@ -17,6 +18,10 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
     var addPendingUploadItemCalled = false
     var productImage: ProductImage?
     var getItemsPendingUploadCalled = false
+
+    var getItemPendingUploadCalled = false
+    var getItemPendingUploadBarcode: String?
+    var getItemPendingUploadPendingUploadItem: PendingUploadItem?
 
     // MARK: - Search history
 
@@ -49,5 +54,11 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
     func getItemsPendingUpload() -> [PendingUploadItem] {
         getItemsPendingUploadCalled = true
         return [PendingUploadItem]()
+    }
+
+    func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem? {
+        getItemPendingUploadCalled = true
+        getItemPendingUploadBarcode = barcode
+        return getItemPendingUploadPendingUploadItem
     }
 }

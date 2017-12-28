@@ -36,6 +36,12 @@ class DataManagerMock: DataManagerProtocol {
     var clearHistoryCalled = false
     var getLanguagesCalled = false
 
+    // Products pending upload
+    var getItemsPendingUploadCalled = false
+
+    var getItemPendingUploadCalled = false
+    var pendingUploadItem: PendingUploadItem?
+
     // MARK: - Search
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         self.query = query
@@ -115,7 +121,13 @@ class DataManagerMock: DataManagerProtocol {
 
     // MARK: - Products pending upload
     func getItemsPendingUpload() -> [PendingUploadItem] {
+        getItemsPendingUploadCalled = true
         return [PendingUploadItem]()
+    }
+
+    func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem? {
+        getItemPendingUploadCalled = true
+        return pendingUploadItem
     }
 
     // MARK: - Misc

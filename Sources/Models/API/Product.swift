@@ -12,7 +12,7 @@ import ObjectMapper
 struct Product: Mappable {
     var name: String?
     var brands: [String]?
-    var quantity: String?
+    private var _quantity: String?
     var imageUrl: String?
     var frontImageUrl: String?
     var barcode: String?
@@ -38,13 +38,31 @@ struct Product: Mappable {
     var nutritionTableImage: String?
     var lang: String?
 
+    // These are not in any json response, but we will use them internally for all products we create as they are easier to work with
+    var quantity: String? {
+        get {
+            if _quantity == nil, let quantityValue = quantityValue, !quantityValue.isEmpty, let quantityUnit = quantityUnit, !quantityUnit.isEmpty {
+                return "\(quantityValue) (quantityUnit)"
+            } else if let quantity = _quantity {
+                return quantity
+            } else {
+                return nil
+            }
+        }
+        set {
+            _quantity = newValue
+        }
+    }
+    var quantityValue: String?
+    var quantityUnit: String?
+
     init() {}
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
         name <- map[OFFJson.ProductNameKey]
         brands <- (map[OFFJson.BrandsKey], ArrayTransform())
-        quantity <- map[OFFJson.QuantityKey]
+        _quantity <- map[OFFJson.QuantityKey]
         frontImageUrl <- map[OFFJson.ImageFrontUrlKey]
         imageUrl <- map[OFFJson.ImageUrlKey]
         barcode <- map[OFFJson.CodeKey]

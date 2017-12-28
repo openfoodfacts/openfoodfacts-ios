@@ -10,6 +10,8 @@ import UIKit
 import NotificationBanner
 
 class ProductAddViewController: TakePictureViewController {
+    // IBOutlets
+
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var productNameField: UITextField!
     @IBOutlet weak var brandsField: UITextField!
@@ -18,6 +20,12 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var languageField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var uploadedImagesStackView: UIStackView!
+
+    // Constants
+
+    let validQuantityUnits = ["g", "mg", "kg", "l", "cl", "ml"]
+
+    // ivars
 
     var activeField: UITextField?
     var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
@@ -32,17 +40,21 @@ class ProductAddViewController: TakePictureViewController {
         return alert
     }()
 
-    private var quantityUnitPickerController: PickerViewController?
-    private var quantityUnitPickerToolbarController: PickerToolbarViewController?
-    private var languagePickerController: PickerViewController?
-    private var languagePickerToolbarController: PickerToolbarViewController?
-    private var languageValue: String = "en" // Use English as default
+    // Mandatory ivars
 
     override var barcode: String! {
         didSet {
             product.barcode = barcode
         }
     }
+
+    // Private vars
+
+    private var quantityUnitPickerController: PickerViewController?
+    private var quantityUnitPickerToolbarController: PickerToolbarViewController?
+    private var languagePickerController: PickerViewController?
+    private var languagePickerToolbarController: PickerToolbarViewController?
+    private var languageValue: String = "en" // Use English as default
 
     override func viewDidLoad() {
         configureQuantityUnitField()
@@ -54,6 +66,10 @@ class ProductAddViewController: TakePictureViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         barcodeLabel.text = barcode
+
+        if let barcode = self.barcode, let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode) {
+            fillForm(withPendingUploadItem: pendingUploadItem)
+        }
     }
 
     @IBAction func didTapSaveButton(_ sender: UIButton) {
@@ -88,9 +104,7 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     private func configureQuantityUnitField() {
-        let units = ["g", "mg", "kg", "l", "cl", "ml"]
-
-        self.quantityUnitPickerController = PickerViewController(data: units, defaultValue: 0, delegate: self)
+        self.quantityUnitPickerController = PickerViewController(data: validQuantityUnits, defaultValue: 0, delegate: self)
         self.quantityUnitPickerToolbarController = PickerToolbarViewController(delegate: self)
 
         if let pickerView = quantityUnitPickerController?.view as? UIPickerView {
@@ -101,7 +115,7 @@ class ProductAddViewController: TakePictureViewController {
             self.quantityUnitField.inputAccessoryView = toolbarView
         }
 
-        self.quantityUnitField.text = units[0]
+        self.quantityUnitField.text = validQuantityUnits[0]
 
         // Hide blinking cursor
         self.quantityUnitField.tintColor = .clear
@@ -146,6 +160,16 @@ class ProductAddViewController: TakePictureViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+    }
+
+    private func fillForm(withPendingUploadItem pendingUploadItem: PendingUploadItem) {
+        productNameField.text = pendingUploadItem.productName
+        brandsField.text = pendingUploadItem.brand
+        quantityField.text = pendingUploadItem.quantityValue
+        quantityUnitField.text = pendingUploadItem.quantityUnit
+
+        // Set language
+        didGetSelection(value: Language(code: pendingUploadItem.language, name: Locale.current.localizedString(forIdentifier: pendingUploadItem.language) ?? pendingUploadItem.language))
     }
 }
 

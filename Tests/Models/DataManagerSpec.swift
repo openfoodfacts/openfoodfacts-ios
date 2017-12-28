@@ -204,5 +204,17 @@ class DataManagerSpec: QuickSpec {
                 expect(persistenceManager.getItemsPendingUploadCalled).to(beTrue())
             }
         }
+
+        describe(".getItemPendingUpload()") {
+            let barcode = "123456789"
+            beforeEach {
+                _ = dataManager.getItemPendingUpload(forBarcode: barcode)
+            }
+
+            it("passes the call to persistance manager") {
+                expect(persistenceManager.getItemPendingUploadCalled).to(beTrue())
+                expect(persistenceManager.getItemPendingUploadBarcode).to(equal(barcode))
+            }
+        }
     }
 }
