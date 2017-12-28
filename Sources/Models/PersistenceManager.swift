@@ -121,38 +121,38 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     func addPendingUploadItem(_ productImage: ProductImage) {
-        let item = getPendingUploadItem(forBarcode: productImage.barcode) ?? PendingUploadItem()
+        DispatchQueue.global(qos: .background).async {
+            let realm = self.getRealm()
+            let item = self.getPendingUploadItem(forBarcode: productImage.barcode) ?? PendingUploadItem()
 
-        if item.barcode == "" {
-            // Set primary key when new item created
-            item.barcode = productImage.barcode
-        }
+            do {
+                try realm.write {
+                    if item.barcode == "" {
+                        // Set primary key when new item created
+                        item.barcode = productImage.barcode
+                    }
 
-        switch productImage.type {
-        case .front:
-            if let url = saveImage(productImage.image) {
-                item.frontUrl = url
-            }
-        case .ingredients:
-            if let url = saveImage(productImage.image) {
-                item.ingredientsUrl = url
-            }
-        case .nutrition:
-            if let url = saveImage(productImage.image) {
-                item.nutritionUrl = url
-            }
-        }
+                    switch productImage.type {
+                    case .front:
+                        if let url = self.saveImage(productImage.image) {
+                            item.frontUrl = url
+                        }
+                    case .ingredients:
+                        if let url = self.saveImage(productImage.image) {
+                            item.ingredientsUrl = url
+                        }
+                    case .nutrition:
+                        if let url = self.saveImage(productImage.image) {
+                            item.nutritionUrl = url
+                        }
+                    }
 
-        // Save in Realm
-        let realm = getRealm()
-
-        do {
-            try realm.write {
-                realm.add(item)
+                    realm.add(item)
+                }
+            } catch let error as NSError {
+                log.error(error)
+                Crashlytics.sharedInstance().recordError(error)
             }
-        } catch let error as NSError {
-            log.error(error)
-            Crashlytics.sharedInstance().recordError(error)
         }
     }
 
