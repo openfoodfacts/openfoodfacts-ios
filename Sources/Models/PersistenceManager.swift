@@ -175,8 +175,8 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     private func saveImage(_ image: UIImage) -> String? {
-        let imageName = "\(UUID().uuidString).png"
-        let data = UIImagePNGRepresentation(image)
+        let imageName = "\(UUID().uuidString).jpg"
+        let data = UIImageJPEGRepresentation(image, 1.0)
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let imageURL = documentsURL.appendingPathComponent(imageName)
 
