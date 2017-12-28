@@ -123,7 +123,7 @@ class LoginViewControllerTests: XCTestCase {
 
         expect(self.viewController.usernameField.isFirstResponder).toEventually(beFalse(), timeout: 10)
         expect(self.viewController.errorBanner.titleLabel?.text).toEventually(equal("user.alert.generic-error.title".localized), timeout: 10)
-        expect(self.viewController.errorBanner.subtitleLabel?.text).toEventually(equal("user.alert.generic-error.sutbitlt".localized), timeout: 10)
+        expect(self.viewController.errorBanner.subtitleLabel?.text).toEventually(equal("user.alert.generic-error.subtitle".localized), timeout: 10)
         expect(self.viewController.errorBanner.isDisplaying).toEventually(beTrue(), timeout: 10)
     }
 

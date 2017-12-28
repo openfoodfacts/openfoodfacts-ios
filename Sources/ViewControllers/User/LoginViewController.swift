@@ -73,7 +73,7 @@ class LoginViewController: UIViewController, DataManagerClient {
                 subtitle = "user.alert.wrong-credentials.subtitle".localized
             } else {
                 title = "user.alert.generic-error.title".localized
-                subtitle = "user.alert.generic-error.sutbitlt".localized
+                subtitle = "user.alert.generic-error.subtitle".localized
             }
             self.errorBanner.titleLabel?.text = title
             self.errorBanner.subtitleLabel?.text = subtitle
