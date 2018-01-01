@@ -10,18 +10,38 @@
 
 class PersistenceManagerMock: PersistenceManagerProtocol {
 
+    // Common
+    var product: Product?
+    var pendingUploadItem: PendingUploadItem?
+
+    // getHistory
     var getHistoryCalled = false
     var history: [HistoryItem]?
+
+    // addHistoryItem
     var addHistoryItemCalled = false
-    var product: Product?
+
+    // clearHistory
     var clearHistoryCalled = false
+
+    // addPendingUploadItem
     var addPendingUploadItemCalled = false
     var productImage: ProductImage?
-    var getItemsPendingUploadCalled = false
 
+    // getItemsPendingUpload
+    var getItemsPendingUploadCalled = false
+    var itemsPendingUpload: [PendingUploadItem]?
+
+    // getItemPendingUpload
     var getItemPendingUploadCalled = false
     var getItemPendingUploadBarcode: String?
     var getItemPendingUploadPendingUploadItem: PendingUploadItem?
+
+    // deletePendingUploadItem
+    var deletePendingUploadItemCalled = false
+
+    // updatePendingUploadItem
+    var updatePendingUploadItemCalled = false
 
     // MARK: - Search history
 
@@ -53,12 +73,22 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
 
     func getItemsPendingUpload() -> [PendingUploadItem] {
         getItemsPendingUploadCalled = true
-        return [PendingUploadItem]()
+        return itemsPendingUpload ?? [PendingUploadItem]()
     }
 
     func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem? {
         getItemPendingUploadCalled = true
         getItemPendingUploadBarcode = barcode
         return getItemPendingUploadPendingUploadItem
+    }
+
+    func deletePendingUploadItem(_ item: PendingUploadItem) {
+        deletePendingUploadItemCalled = true
+        pendingUploadItem = item
+    }
+
+    func updatePendingUploadItem(_ item: PendingUploadItem) {
+        updatePendingUploadItemCalled = true
+        pendingUploadItem = item
     }
 }

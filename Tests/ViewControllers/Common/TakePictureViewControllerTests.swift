@@ -65,6 +65,15 @@ class TakePictureViewControllerTests: XCTestCase {
         XCTAssertNotNil(mockDataManager.productImage)
     }
 
+    func testDidGetImageDoesNotCallDataManagerWhenImageCanNotBeSaved() {
+        viewController.barcode = "111111111"
+
+        viewController.didGetImage(image: UIImage())
+
+        expect(self.mockDataManager.postImageCalled).to(beFalse())
+        expect(self.viewController.uploadingImageErrorBanner.isHidden).to(beFalse())
+    }
+
     class CameraControllerMock: CameraController {
         var isShown = false
         weak var delegate: CameraControllerDelegate?

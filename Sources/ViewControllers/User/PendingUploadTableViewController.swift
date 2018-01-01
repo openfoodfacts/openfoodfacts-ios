@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 struct PendingUploadCellIds {
     static let item = "PendingUploadItemCell"
@@ -16,7 +17,11 @@ struct PendingUploadCellIds {
 class PendingUploadTableViewController: UITableViewController, DataManagerClient {
     @IBOutlet weak var uploadButton: UIBarButtonItem!
     var dataManager: DataManagerProtocol!
-    var items = [PendingUploadItem]()
+    var items = [PendingUploadItem]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,13 +33,29 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
             uploadButton.isEnabled = true
         }
     }
+
+    @IBAction func uploadButtonTapped(_ sender: UIBarButtonItem) {
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.showProgress(0.0, status: "pending-upload.hud.status".localized)
+
+        dataManager.uploadPendingItems(mergeProcessor: PendingProductMergeProcessor()) { progress in
+            if progress < 1.0 {
+                SVProgressHUD.showProgress(progress, status: "pending-upload.hud.status".localized)
+            } else {
+                SVProgressHUD.showProgress(1.0, status: "pending-upload.hud.status".localized)
+                SVProgressHUD.dismiss()
+                SVProgressHUD.setDefaultMaskType(.none)
+                self.items = self.dataManager.getItemsPendingUpload()
+            }
+        }
+    }
 }
 
 // MARK: - Data Source
 
 extension PendingUploadTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return items.count + 1 // + 1 for info cell
+        return (items.isEmpty ? 0 : 1) + 1 // + 1 for info cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,6 +79,6 @@ extension PendingUploadTableViewController {
     }
 
     private func isInfoSection(_ section: Int) -> Bool {
-        return section > items.count - 1
+        return section > (items.isEmpty ? 0 : 1) - 1
     }
 }

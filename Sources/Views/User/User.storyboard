@@ -440,7 +440,11 @@ The app will try to upload them automatically when you are back online or you ca
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="F9J-HE-5nU">
-                        <barButtonItem key="rightBarButtonItem" image="upload" id="sve-0C-eUH"/>
+                        <barButtonItem key="rightBarButtonItem" image="upload" id="sve-0C-eUH">
+                            <connections>
+                                <action selector="uploadButtonTapped:" destination="Luf-2j-6bF" id="cm0-0K-6zE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>

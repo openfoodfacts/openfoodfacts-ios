@@ -65,8 +65,7 @@ class ProductAddViewControllerTests: XCTestCase {
         let quantityValue = "33"
         let quantityUnit = "cl"
         let language = "de"
-        let pendingUploadItem = PendingUploadItem()
-        pendingUploadItem.barcode = barcode
+        let pendingUploadItem = PendingUploadItem(barcode: barcode)
         pendingUploadItem.productName = productName
         pendingUploadItem.brand = brand
         pendingUploadItem.quantityValue = quantityValue

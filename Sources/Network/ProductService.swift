@@ -37,11 +37,7 @@ struct Params {
 class ProductService: ProductApi {
     private var lastGetProductsRequest: DataRequest?
 
-    let errorDomain = "ProductServiceErrorDomain"
-    enum ErrorCodes: Int {
-        case generic = 1
-        case wrongCredentials = 2
-    }
+    private let utilityQueue = DispatchQueue.global(qos: .utility)
 
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         lastGetProductsRequest?.cancel()
@@ -66,7 +62,7 @@ class ProductService: ProductApi {
 
         let request = Alamofire.SessionManager.default.request(url)
         log.debug(request.debugDescription)
-        request.responseObject { (response: DataResponse<ProductsResponse>) in
+        request.responseObject(queue: utilityQueue) { (response: DataResponse<ProductsResponse>) in
             log.debug(response.debugDescription)
             switch response.result {
             case .success(let productsResponse):
@@ -110,11 +106,13 @@ class ProductService: ProductApi {
             request.authenticate(user: "off", password: "off")
         #endif
 
-        request.responseObject { (response: DataResponse<ProductsResponse>) in
+        request.responseObject(queue: utilityQueue) { (response: DataResponse<ProductsResponse>) in
             log.debug(response.debugDescription)
             switch response.result {
             case .success(let productResponse):
-                onSuccess(productResponse.product)
+                DispatchQueue.global(qos: .background).async {
+                    onSuccess(productResponse.product)
+                }
             case .failure(let error):
                 Crashlytics.sharedInstance().recordError(error)
                 onError(error)
@@ -143,8 +141,9 @@ class ProductService: ProductApi {
 }
 
 extension ProductService {
+    // swiftlint:disable:next function_body_length
     func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        guard let fileURL = getImageUrl(productImage) else { return }
+        guard let fileURL = getImageUrl(productImage) else { log.debug("Unable to get image url"); return }
 
         if let barcode = productImage.barcode.data(using: .utf8) {
             Alamofire.upload(
@@ -163,57 +162,47 @@ extension ProductService {
                 to: Endpoint.post + "/cgi/product_image_upload.pl",
                 headers: ["Content-Disposition": "form-data; name=\"imgupload_\(productImage.type.rawValue)\"; filename=\"\(productImage.fileName)\""],
                 encodingCompletion: { encodingResult in
-                    switch encodingResult {
-                    case .success(let upload, _, _):
-                        log.debug(upload.debugDescription)
-                        upload.responseJSON { response in
-                            log.debug(response.debugDescription)
-                            switch response.result {
-                            case .success(let responseBody):
-                                if let json = responseBody as? [String: Any], let status = json["status"] as? String, "status ok" == status {
-                                    onSuccess()
-                                } else {
-                                    let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: [
-                                        "imageType": productImage.type.rawValue,
-                                        "fileName": productImage.fileName,
-                                        "fileURL": fileURL
-                                        ])
+                    self.utilityQueue.async {
+                        switch encodingResult {
+                        case .success(let upload, _, _):
+                            #if DEBUG
+                                upload.authenticate(user: "off", password: "off")
+                            #endif
+
+                            log.debug(upload.debugDescription)
+                            upload.responseJSON { response in
+                                log.debug(response.debugDescription)
+                                switch response.result {
+                                case .success(let responseBody):
+                                    if let json = responseBody as? [String: Any], let status = json["status"] as? String, "status ok" == status {
+                                        onSuccess()
+                                    } else {
+                                        let error = NSError(domain: Errors.domain, code: Errors.codes.generic.rawValue, userInfo: [
+                                            "imageType": productImage.type.rawValue,
+                                            "fileName": productImage.fileName,
+                                            "fileURL": fileURL
+                                            ])
+                                        Crashlytics.sharedInstance().recordError(error)
+                                        onError(error)
+                                    }
+                                case .failure(let error):
                                     Crashlytics.sharedInstance().recordError(error)
                                     onError(error)
                                 }
-                            case .failure(let error):
-                                Crashlytics.sharedInstance().recordError(error)
-                                onError(error)
                             }
+                        case .failure(let encodingError):
+                            Crashlytics.sharedInstance().recordError(encodingError)
+                            onError(encodingError)
                         }
-                    case .failure(let encodingError):
-                        Crashlytics.sharedInstance().recordError(encodingError)
-                        onError(encodingError)
                     }
             })
         }
     }
 
     fileprivate func getImageUrl(_ productImage: ProductImage) -> URL? {
-        do {
-            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-            let filePath = "\(paths[0])/\(productImage.fileName)"
-            let fileURL = URL(fileURLWithPath: filePath)
-            if let imageRepresentation = UIImageJPEGRepresentation(productImage.image, 0.1) {
-                try imageRepresentation.write(to: fileURL)
-                return fileURL
-            }
-            let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: [
-                "imageType": productImage.type.rawValue,
-                "fileName": productImage.fileName,
-                "message": "Unable to get UIImageJPEGRepresentation"
-                ])
-            Crashlytics.sharedInstance().recordError(error)
-            return nil
-        } catch let error {
-            Crashlytics.sharedInstance().recordError(error)
-            return nil
-        }
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let filePath = "\(paths[0])/\(productImage.fileName)"
+        return URL(fileURLWithPath: filePath)
     }
 
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
@@ -238,7 +227,7 @@ extension ProductService {
         let request = Alamofire.request("\(Endpoint.post)/cgi/product_jqm2.pl", method: .post, parameters: params, encoding: URLEncoding.default)
         log.debug(request.debugDescription)
 
-        request.responseJSON(completionHandler: { response in
+        request.responseJSON(queue: utilityQueue) { response in
             log.debug(response.debugDescription)
             switch response.result {
             case .success(let responseBody):
@@ -246,7 +235,7 @@ extension ProductService {
                     onSuccess()
                 } else {
                     let userInfo = ["product": product.toJSONString() ?? "{\"error\": \"Could convert product to JSON\"}"]
-                    let error = NSError(domain: self.errorDomain, code: ErrorCodes.generic.rawValue, userInfo: userInfo)
+                    let error = NSError(domain: Errors.domain, code: Errors.codes.generic.rawValue, userInfo: userInfo)
                     log.error(error)
                     Crashlytics.sharedInstance().recordError(error)
                     onError(error)
@@ -256,7 +245,7 @@ extension ProductService {
                 Crashlytics.sharedInstance().recordError(error)
                 onError(error)
             }
-        })
+        }
     }
 }
 
@@ -265,7 +254,7 @@ extension ProductService {
         let parameters = [Params.userId: username, Params.password: password, Params.submit: "Sign-in"]
         let request = Alamofire.request(Endpoint.login, method: .post, parameters: parameters)
         log.debug(request.debugDescription)
-        request.responseString(completionHandler: { response in
+        request.responseString(queue: utilityQueue) { response in
             log.debug(response.debugDescription)
             switch response.result {
             case .success(let html):
@@ -273,7 +262,7 @@ extension ProductService {
                     CredentialsController.shared.saveCredentials(username: username, password: password)
                     onSuccess()
                 } else {
-                    let error = NSError(domain: self.errorDomain, code: ErrorCodes.wrongCredentials.rawValue)
+                    let error = NSError(domain: Errors.domain, code: Errors.codes.wrongCredentials.rawValue)
                     log.error(error)
                     onError(error)
                 }
@@ -282,6 +271,6 @@ extension ProductService {
                 Crashlytics.sharedInstance().recordError(error)
                 onError(error)
             }
-        })
+        }
     }
 }

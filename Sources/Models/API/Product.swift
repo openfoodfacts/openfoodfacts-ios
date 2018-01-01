@@ -42,7 +42,7 @@ struct Product: Mappable {
     var quantity: String? {
         get {
             if _quantity == nil, let quantityValue = quantityValue, !quantityValue.isEmpty, let quantityUnit = quantityUnit, !quantityUnit.isEmpty {
-                return "\(quantityValue) (quantityUnit)"
+                return "\(quantityValue) \(quantityUnit)"
             } else if let quantity = _quantity {
                 return quantity
             } else {

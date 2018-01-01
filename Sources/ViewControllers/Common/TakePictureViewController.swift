@@ -50,7 +50,14 @@ extension TakePictureViewController: CameraControllerDelegate {
     func didGetImage(image: UIImage) {
         // For now, images will be always uploaded with type front
         uploadingImageBanner.show()
-        dataManager.postImage(ProductImage(barcode: barcode, image: image, type: imageType), onSuccess: { isOffline in
+
+        guard let productImage = ProductImage(barcode: barcode, image: image, type: imageType) else {
+            uploadingImageBanner.dismiss()
+            uploadingImageErrorBanner.show()
+            return
+        }
+
+        dataManager.postImage(productImage, onSuccess: { isOffline in
             if isOffline {
                 self.uploadingImageSuccessBanner.titleLabel?.text = "product-add.image-save-success-banner.title".localized
             } else {

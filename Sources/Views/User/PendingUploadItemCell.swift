@@ -41,8 +41,8 @@ class PendingUploadItemCell: UITableViewCell {
             brandQuantityStackView.isHidden = true
         }
 
-        frontImage.image = item.frontImage
-        ingredientsImage.image = item.ingredientsImage
-        nutritionImage.image = item.nutritionImage
+        frontImage.image = item.frontImage?.image
+        ingredientsImage.image = item.ingredientsImage?.image
+        nutritionImage.image = item.nutritionImage?.image
     }
 }
