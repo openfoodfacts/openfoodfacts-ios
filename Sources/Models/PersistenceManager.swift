@@ -105,6 +105,9 @@ class PersistenceManager: PersistenceManagerProtocol {
             try realm.write {
                 realm.add(realmItem)
             }
+
+            let count = getItemsPendingUpload().count
+            NotificationCenter.default.post(name: .pendingUploadBadgeChange, object: nil, userInfo: [NotificationUserInfoKey.pendingUploadItemCount: count])
         } catch let error as NSError {
             log.error(error)
             Crashlytics.sharedInstance().recordError(error)

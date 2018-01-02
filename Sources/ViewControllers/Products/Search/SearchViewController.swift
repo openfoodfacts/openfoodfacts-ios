@@ -59,6 +59,10 @@ extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewCo
     }
 
     @objc func scanBarcode(_ sender: UIBarButtonItem) {
+        scanBarcode()
+    }
+
+    func scanBarcode() {
         let scanVC = ScannerViewController(dataManager: dataManager)
         self.rootNavigationController.pushViewController(scanVC, animated: true)
     }

@@ -186,6 +186,10 @@
 		95D060D91F6085320052012D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D060D81F6085320052012D /* LoadingCell.xib */; };
 		95D060DB1F6094D30052012D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D060DA1F6094D30052012D /* UITableView.swift */; };
 		95D060DD1F609DF70052012D /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D060DC1F609DF70052012D /* LoadingCell.swift */; };
+		95D1D2981FFC30D900595EA1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1D2971FFC30D900595EA1 /* RootViewController.swift */; };
+		95D1D29A1FFC32E400595EA1 /* DeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1D2991FFC32E400595EA1 /* DeepLinkManager.swift */; };
+		95D1D29C1FFC33B600595EA1 /* ShortcutParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1D29B1FFC33B600595EA1 /* ShortcutParser.swift */; };
+		95D1D29E1FFC36C900595EA1 /* TabBarNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1D29D1FFC36C900595EA1 /* TabBarNotificationController.swift */; };
 		95D3559B1FDC63EA008961B1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D355991FDC63E9008961B1 /* RealmSwift.framework */; };
 		95D3559C1FDC63EA008961B1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D3559A1FDC63EA008961B1 /* Realm.framework */; };
 		95D355AA1FDC69FA008961B1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D355A91FDC69FA008961B1 /* SearchViewController.swift */; };
@@ -764,6 +768,10 @@
 		95D060D81F6085320052012D /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		95D060DA1F6094D30052012D /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		95D060DC1F609DF70052012D /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		95D1D2971FFC30D900595EA1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		95D1D2991FFC32E400595EA1 /* DeepLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManager.swift; sourceTree = "<group>"; };
+		95D1D29B1FFC33B600595EA1 /* ShortcutParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutParser.swift; sourceTree = "<group>"; };
+		95D1D29D1FFC36C900595EA1 /* TabBarNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNotificationController.swift; sourceTree = "<group>"; };
 		95D355991FDC63E9008961B1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		95D3559A1FDC63EA008961B1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		95D355A91FDC69FA008961B1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -962,6 +970,9 @@
 			isa = PBXGroup;
 			children = (
 				951868201F9357CF00416226 /* CredentialsController.swift */,
+				95D1D2991FFC32E400595EA1 /* DeepLinkManager.swift */,
+				95D1D29B1FFC33B600595EA1 /* ShortcutParser.swift */,
+				95D1D29D1FFC36C900595EA1 /* TabBarNotificationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1537,6 +1548,7 @@
 				95C2652B1E96D705004212EC /* Products */,
 				9581B3E81F912B480036AC7C /* User */,
 				95F7DB381F98DDA100428208 /* Settings */,
+				95D1D2971FFC30D900595EA1 /* RootViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2171,6 +2183,7 @@
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
 				956FF9591F1FF0CA0069D678 /* ErrorView.swift in Sources */,
 				956FF9641F1FF0FD0069D678 /* ScannerViewController.swift in Sources */,
+				95D1D29E1FFC36C900595EA1 /* TabBarNotificationController.swift in Sources */,
 				957CBEC01F33B31F00A1B398 /* ProductDetailBaseCell.swift in Sources */,
 				953CDD591F929C680096C428 /* LoggedInViewController.swift in Sources */,
 				95D355AA1FDC69FA008961B1 /* SearchViewController.swift in Sources */,
@@ -2216,6 +2229,7 @@
 				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
 				954587941F730C2D00269E71 /* CameraHelper.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
+				95D1D29A1FFC32E400595EA1 /* DeepLinkManager.swift in Sources */,
 				956FF9661F1FF0FD0069D678 /* SearchTableViewControllerState.swift in Sources */,
 				95DB3BE81FDD923300E83B76 /* DataManager.swift in Sources */,
 				95F7DB3E1F98E42500428208 /* UserDefaultsConstants.swift in Sources */,
@@ -2229,6 +2243,7 @@
 				957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */,
 				957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */,
 				957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */,
+				95D1D29C1FFC33B600595EA1 /* ShortcutParser.swift in Sources */,
 				9526F8F51FDF2A8B0008E1CC /* DataManagerClient.swift in Sources */,
 				958F335B1F37809A005269C5 /* PictureCallToActionView.swift in Sources */,
 				95D060DD1F609DF70052012D /* LoadingCell.swift in Sources */,
@@ -2236,6 +2251,7 @@
 				958F334D1F377831005269C5 /* NutritionTableHeaderCellController.swift in Sources */,
 				95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */,
 				95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */,
+				95D1D2981FFC30D900595EA1 /* RootViewController.swift in Sources */,
 				9514608A1FE5A9680038E73D /* HistoryItemCell.swift in Sources */,
 				95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */,
 				956FF95C1F1FF0CA0069D678 /* StateView.swift in Sources */,

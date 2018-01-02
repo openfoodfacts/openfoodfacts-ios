@@ -25,7 +25,14 @@ class UserViewController: UIViewController, DataManagerClient {
         let vc: UIViewController
 
         if CredentialsController.shared.getUsername() != nil {
-            vc = createLoggedIn()
+            createLoggedIn()
+
+            if !dataManager.getItemsPendingUpload().isEmpty {
+                showProductsPendingUpload()
+            }
+
+            vc = childNavigationController
+
         } else {
             vc = createLogIn()
         }
@@ -33,14 +40,12 @@ class UserViewController: UIViewController, DataManagerClient {
         transition(to: vc)
     }
 
-    private func createLoggedIn() -> UIViewController {
+    private func createLoggedIn() {
         let vc = LoggedInViewController.loadFromStoryboard(named: .user) as LoggedInViewController
         vc.dataManager = dataManager
         vc.delegate = self
 
         childNavigationController.pushViewController(vc, animated: true)
-
-        return childNavigationController
     }
 
     private func createLogIn() -> LoginViewController {

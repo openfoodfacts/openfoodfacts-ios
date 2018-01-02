@@ -30,45 +30,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.shared.keyWindow?.layer.speed = 100
         }
 
-        // Inject dependencies
-        let productApi = ProductService()
-        let persistenceManager = PersistenceManager()
-        let dataManager = DataManager()
-        dataManager.productApi = productApi
-        dataManager.persistenceManager = persistenceManager
+        ShortcutParser.shared.registerShortcuts()
 
-        setupViewControllers(productApi, dataManager)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = RootViewController()
+        window?.makeKeyAndVisible()
 
         return true
     }
 
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        DeepLinkManager.shared.checkDeepLink()
+    }
+
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        if shortcutItem.type == "scan" {
-
-            // Instantiate main vc
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let rootVC = storyboard.instantiateInitialViewController()
-            window?.rootViewController = rootVC
-
-            // Inject dependencies
-            let productApi = ProductService()
-            let persistenceManager = PersistenceManager()
-            let dataManager = DataManager()
-            dataManager.productApi = productApi
-            dataManager.persistenceManager = persistenceManager
-
-            setupViewControllers(productApi, dataManager)
-
-            // Display scan vc
-            let scanVC = ScannerViewController(dataManager: dataManager)
-            if let tab = window?.rootViewController as? UITabBarController {
-                for child in tab.viewControllers ?? [] {
-                    if let navController = child as? UINavigationController, let vc = navController.topViewController as? SearchTableViewController {
-                        vc.navigationController?.pushViewController(scanVC, animated: false)
-                    }
-                }
-            }
-        }
+        completionHandler(DeepLinkManager.shared.handleShortcut(item: shortcutItem))
     }
 
     fileprivate func configureLog() {
@@ -83,22 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         systemDestination.showDate = true
         log.add(destination: systemDestination)
         log.logAppDetails()
-
-    }
-
-    /// Inject dependencies into tab view controllers
-    ///
-    /// - Parameters:
-    ///   - productApi: API Client
-    ///   - dataManager: Local store client
-    fileprivate func setupViewControllers(_ productApi: ProductApi, _ dataManager: DataManager) {
-        if let tab = window?.rootViewController as? UITabBarController {
-            for child in tab.viewControllers ?? [] {
-                if var top = child as? DataManagerClient {
-                    top.dataManager = dataManager
-                }
-            }
-        }
     }
 
     private func configureRealm() {
@@ -110,5 +70,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }*/)
 
         Realm.Configuration.defaultConfiguration = config
+    }
+}
+
+// swiftlint:disable force_cast
+extension AppDelegate {
+    static var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+
+    var rootViewController: RootViewController {
+        return window!.rootViewController as! RootViewController
     }
 }
