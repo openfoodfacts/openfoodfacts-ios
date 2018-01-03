@@ -163,10 +163,21 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     private func fillForm(withPendingUploadItem pendingUploadItem: PendingUploadItem) {
-        productNameField.text = pendingUploadItem.productName
-        brandsField.text = pendingUploadItem.brand
-        quantityField.text = pendingUploadItem.quantityValue
-        quantityUnitField.text = pendingUploadItem.quantityUnit
+        if let productName = pendingUploadItem.productName {
+            productNameField.text = productName
+        }
+
+        if let brand = pendingUploadItem.brand {
+            brandsField.text = brand
+        }
+
+        if let quantityValue = pendingUploadItem.quantityValue {
+            quantityField.text = quantityValue
+        }
+
+        if let quantityUnit = pendingUploadItem.quantityUnit {
+            quantityUnitField.text = quantityUnit
+        }
 
         // Set language
         didGetSelection(value: Language(code: pendingUploadItem.language, name: Locale.current.localizedString(forIdentifier: pendingUploadItem.language) ?? pendingUploadItem.language))
