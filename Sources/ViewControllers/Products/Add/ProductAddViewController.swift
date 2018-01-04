@@ -19,7 +19,7 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var quantityUnitField: UITextField!
     @IBOutlet weak var languageField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var uploadedImagesStackView: UIStackView!
+    @IBOutlet weak var productTextSection: UIView!
 
     // Constants
 
@@ -61,6 +61,7 @@ class ProductAddViewController: TakePictureViewController {
         configureLanguageField()
         configureDelegates()
         configureNotifications()
+        configureProductTextSection()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -181,6 +182,11 @@ class ProductAddViewController: TakePictureViewController {
 
         // Set language
         didGetSelection(value: Language(code: pendingUploadItem.language, name: Locale.current.localizedString(forIdentifier: pendingUploadItem.language) ?? pendingUploadItem.language))
+    }
+
+    private func configureProductTextSection() {
+        productTextSection.layer.borderColor = UIColor.lightGray.cgColor
+        productTextSection.layer.borderWidth = 1.0
     }
 }
 
