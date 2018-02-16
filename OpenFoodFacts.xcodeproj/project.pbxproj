@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437FBA42036F1F800D107B6 /* CreditsViewController.swift */; };
+		74CB633920373B6D008FC48D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 74CB633820373B6C008FC48D /* Credits.html */; };
 		9501634B1F2CE9A20057B8D5 /* MarqueeLabelSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9501633B1F2CE9780057B8D5 /* MarqueeLabelSwift.framework */; };
 		9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9501633D1F2CE9780057B8D5 /* NotificationBanner.framework */; };
 		9501634D1F2CEE700057B8D5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950163431F2CE9780057B8D5 /* SnapKit.framework */; };
@@ -258,6 +260,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7437FBA42036F1F800D107B6 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		74CB633820373B6C008FC48D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		950163071F2CE9780057B8D5 /* .Alamofire.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .Alamofire.version; sourceTree = "<group>"; };
 		950163081F2CE9780057B8D5 /* .AlamofireObjectMapper.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .AlamofireObjectMapper.version; sourceTree = "<group>"; };
 		950163091F2CE9780057B8D5 /* .ImageViewer.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .ImageViewer.version; sourceTree = "<group>"; };
@@ -1715,6 +1719,8 @@
 			isa = PBXGroup;
 			children = (
 				95F7DB391F98DDAC00428208 /* SettingsTableViewController.swift */,
+				7437FBA42036F1F800D107B6 /* CreditsViewController.swift */,
+				74CB633820373B6C008FC48D /* Credits.html */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -2011,6 +2017,7 @@
 				958F33541F378076005269C5 /* InfoRowTableViewCell.xib in Resources */,
 				956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */,
 				95D060D91F6085320052012D /* LoadingCell.xib in Resources */,
+				74CB633920373B6D008FC48D /* Credits.html in Resources */,
 				956FF9511F1FF0CA0069D678 /* ProductDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2163,6 +2170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95781BC01EC3A898003E3256 /* InfoRow.swift in Sources */,
+				7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */,
 				95781BBD1EC3A898003E3256 /* OFFWriteAPI.swift in Sources */,
 				958F33421F36196D005269C5 /* IngredientsFormTableViewController.swift in Sources */,
 				957CBEBE1F33B2FE00A1B398 /* Form.swift in Sources */,
