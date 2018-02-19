@@ -10,21 +10,34 @@ import Foundation
 import RealmSwift
 import UIKit
 
-class PendingUploadItem: Object {
-    @objc dynamic var barcode = ""
-    @objc dynamic var productName: String?
-    @objc dynamic var brand: String?
-    @objc dynamic var quantity: String?
-    @objc dynamic var language = "en"
-    @objc dynamic var frontUrl = ""
-    @objc dynamic var ingredientsUrl = ""
-    @objc dynamic var nutritionUrl = ""
+class PendingUploadItem {
+    let barcode: String
+    var productName: String?
+    var brand: String?
+    var quantityValue: String?
+    var quantityUnit: String?
+    var language = "en"
+    var frontImage: ProductImage?
+    var ingredientsImage: ProductImage?
+    var nutritionImage: ProductImage?
 
-    var frontImage: UIImage?
-    var ingredientsImage: UIImage?
-    var nutritionImage: UIImage?
+    init(barcode: String) {
+        self.barcode = barcode
+    }
 
-    override static func primaryKey() -> String? {
-        return "barcode"
+    func toProduct() -> Product {
+        var product = Product()
+
+        product.barcode = barcode
+        product.name = productName
+        product.quantityValue = quantityValue
+        product.quantityUnit = quantityUnit
+        product.lang = language
+
+        if let brand = self.brand {
+            product.brands = [brand]
+        }
+
+        return product
     }
 }

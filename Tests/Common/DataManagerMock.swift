@@ -36,6 +36,19 @@ class DataManagerMock: DataManagerProtocol {
     var clearHistoryCalled = false
     var getLanguagesCalled = false
 
+    // Product - Add
+    var postImageCalled = false
+
+    // Products pending upload
+    var getItemsPendingUploadCalled = false
+    var items: [PendingUploadItem]?
+
+    var getItemPendingUploadCalled = false
+    var pendingUploadItem: PendingUploadItem?
+
+    var uploadPendingItemsCalled = false
+    var progress: Float?
+
     // MARK: - Search
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void) {
         self.query = query
@@ -70,7 +83,7 @@ class DataManagerMock: DataManagerProtocol {
             loginPassword = password
             onSuccess()
         } else if username == password {
-            let wrongCredentials = NSError(domain: "ProductServiceErrorDomain", code: ProductService.ErrorCodes.wrongCredentials.rawValue, userInfo: nil)
+            let wrongCredentials = NSError(domain: "ProductServiceErrorDomain", code: Errors.codes.wrongCredentials.rawValue, userInfo: nil)
             onError(wrongCredentials)
         } else {
             onError(error)
@@ -103,11 +116,12 @@ class DataManagerMock: DataManagerProtocol {
         }
     }
 
-    func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+    func postImage(_ productImage: ProductImage, onSuccess: @escaping (_ isOffline: Bool) -> Void, onError: @escaping (Error) -> Void) {
+        postImageCalled = true
         self.productImage = productImage
 
         if "123456789" == productImage.barcode {
-            onSuccess()
+            onSuccess(false)
         } else {
             onError(error)
         }
@@ -115,7 +129,21 @@ class DataManagerMock: DataManagerProtocol {
 
     // MARK: - Products pending upload
     func getItemsPendingUpload() -> [PendingUploadItem] {
-        return [PendingUploadItem]()
+        getItemsPendingUploadCalled = true
+        return items ?? [PendingUploadItem]()
+    }
+
+    func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem? {
+        getItemPendingUploadCalled = true
+        return pendingUploadItem
+    }
+
+    func uploadPendingItems(mergeProcessor: ProductMergeProcessor, itemProcessedHandler: @escaping (Float) -> Void) {
+        uploadPendingItemsCalled = true
+
+        if let progress = progress {
+            itemProcessedHandler(progress)
+        }
     }
 
     // MARK: - Misc

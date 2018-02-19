@@ -6,6 +6,9 @@
  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
  */
 
+// App Shortcuts
+"shortcuts.scan" = "Scan barcode";
+
 // Product Search
 
 "product-search.search-placeholder" = "Search for a product by name or barcode";
@@ -39,6 +42,7 @@
 "product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
 "product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
 "product-add.uploaded-image" = "Image uploaded, thanks!";
@@ -216,6 +220,7 @@
 "pending-upload.info.text" = "These are products you added while offline.
 
 The app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
 
 // Search history
 "history.cell.privacy" = "Your search history is only stored on your device";

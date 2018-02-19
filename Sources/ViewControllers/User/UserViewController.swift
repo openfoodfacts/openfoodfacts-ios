@@ -11,8 +11,13 @@ import UIKit
 // MARK: - UserViewController
 class UserViewController: UIViewController, DataManagerClient {
     var dataManager: DataManagerProtocol!
+    var childNavigationController: UINavigationController!
 
     override func viewDidLoad() {
+        if childNavigationController == nil {
+            childNavigationController = UINavigationController()
+        }
+
         loadChildVC()
     }
 
@@ -20,7 +25,14 @@ class UserViewController: UIViewController, DataManagerClient {
         let vc: UIViewController
 
         if CredentialsController.shared.getUsername() != nil {
-            vc = createLoggedIn()
+            createLoggedIn()
+
+            if !dataManager.getItemsPendingUpload().isEmpty {
+                showProductsPendingUpload()
+            }
+
+            vc = childNavigationController
+
         } else {
             vc = createLogIn()
         }
@@ -28,15 +40,16 @@ class UserViewController: UIViewController, DataManagerClient {
         transition(to: vc)
     }
 
-    private func createLoggedIn() -> LoggedInViewController {
-        let vc = LoggedInViewController.loadFromStoryboard(named: StoryboardNames.user) as LoggedInViewController
+    private func createLoggedIn() {
+        let vc = LoggedInViewController.loadFromStoryboard(named: .user) as LoggedInViewController
         vc.dataManager = dataManager
         vc.delegate = self
-        return vc
+
+        childNavigationController.pushViewController(vc, animated: true)
     }
 
     private func createLogIn() -> LoginViewController {
-        let vc = LoginViewController.loadFromStoryboard(named: StoryboardNames.user) as LoginViewController
+        let vc = LoginViewController.loadFromStoryboard(named: .user) as LoginViewController
         vc.dataManager = dataManager
         vc.delegate = self
         return vc
@@ -45,10 +58,17 @@ class UserViewController: UIViewController, DataManagerClient {
 
 protocol UserViewControllerDelegate: class {
     func dismiss()
+    func showProductsPendingUpload()
 }
 
 extension UserViewController: UserViewControllerDelegate {
     func dismiss() {
         loadChildVC()
+    }
+
+    func showProductsPendingUpload() {
+        let vc = PendingUploadTableViewController.loadFromStoryboard(named: .user) as PendingUploadTableViewController
+        vc.dataManager = dataManager
+        childNavigationController.pushViewController(vc, animated: true)
     }
 }

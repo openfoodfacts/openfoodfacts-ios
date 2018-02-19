@@ -22,7 +22,7 @@ class HistoryTableViewControllerSpec: QuickSpec {
             tableView = UITableViewMock()
             delegate = HistoryTableViewControllerDelegateMock()
             dataManager = DataManagerMock()
-            viewController = HistoryTableViewController.loadFromStoryboard(named: "Search") as HistoryTableViewController
+            viewController = HistoryTableViewController.loadFromStoryboard(named: .search) as HistoryTableViewController
             viewController.dataManager = dataManager
             viewController.delegate = delegate
         }

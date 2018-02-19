@@ -21,6 +21,9 @@ protocol PersistenceManagerProtocol {
     func addPendingUploadItem(_ product: Product)
     func addPendingUploadItem(_ productImage: ProductImage)
     func getItemsPendingUpload() -> [PendingUploadItem]
+    func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem?
+    func deletePendingUploadItem(_ item: PendingUploadItem)
+    func updatePendingUploadItem(_ item: PendingUploadItem)
 }
 
 class PersistenceManager: PersistenceManagerProtocol {
@@ -82,38 +85,29 @@ class PersistenceManager: PersistenceManagerProtocol {
     func addPendingUploadItem(_ product: Product) {
         guard let barcode = product.barcode else { return }
 
-        let item = getPendingUploadItem(forBarcode: barcode) ?? PendingUploadItem()
+        let item = getPendingUploadItem(forBarcode: barcode) ?? PendingUploadItem(barcode: barcode)
         item.productName = product.name
-        item.quantity = product.quantity
-
-        if item.barcode == "" {
-            // Set primary key when new item created
-            item.barcode = barcode
-        }
+        item.quantityValue = product.quantityValue
+        item.quantityUnit = product.quantityUnit
 
         if let brands = product.brands {
             item.brand = brands[0]
         }
 
-        if let frontImage = item.frontImage, let url = saveImage(frontImage) {
-            item.frontUrl = url
-        }
-
-        if let ingredientsImage = item.ingredientsImage, let url = saveImage(ingredientsImage) {
-            item.ingredientsUrl = url
-        }
-
-        if let nutritionImage = item.nutritionImage, let url = saveImage(nutritionImage) {
-            item.nutritionUrl = url
-        }
+        // Images are not saved here because everytime a picture is taken (in ProductAdd, for example),
+        // DataManager gets called and it stores it already on the PendingUploadItem
 
         // Save in Realm
         let realm = getRealm()
 
         do {
+            let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
             try realm.write {
-                realm.add(item)
+                realm.add(realmItem)
             }
+
+            let count = getItemsPendingUpload().count
+            NotificationCenter.default.post(name: .pendingUploadBadgeChange, object: nil, userInfo: [NotificationUserInfoKey.pendingUploadItemCount: count])
         } catch let error as NSError {
             log.error(error)
             Crashlytics.sharedInstance().recordError(error)
@@ -121,70 +115,75 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     func addPendingUploadItem(_ productImage: ProductImage) {
-        let item = getPendingUploadItem(forBarcode: productImage.barcode) ?? PendingUploadItem()
+        DispatchQueue.global(qos: .background).async {
+            let realm = self.getRealm()
+            let item = self.getPendingUploadItem(forBarcode: productImage.barcode) ?? PendingUploadItem(barcode: productImage.barcode)
 
-        if item.barcode == "" {
-            // Set primary key when new item created
-            item.barcode = productImage.barcode
-        }
+            do {
+                switch productImage.type {
+                case .front:
+                    item.frontImage = productImage
+                case .ingredients:
+                    item.ingredientsImage = productImage
+                case .nutrition:
+                    item.nutritionImage = productImage
+                }
 
-        switch productImage.type {
-        case .front:
-            if let url = saveImage(productImage.image) {
-                item.frontUrl = url
-            }
-        case .ingredients:
-            if let url = saveImage(productImage.image) {
-                item.ingredientsUrl = url
-            }
-        case .nutrition:
-            if let url = saveImage(productImage.image) {
-                item.nutritionUrl = url
-            }
-        }
+                let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
 
-        // Save in Realm
-        let realm = getRealm()
-
-        do {
-            try realm.write {
-                realm.add(item)
+                try realm.write {
+                    realm.add(realmItem)
+                }
+            } catch let error as NSError {
+                log.error(error)
+                Crashlytics.sharedInstance().recordError(error)
             }
-        } catch let error as NSError {
-            log.error(error)
-            Crashlytics.sharedInstance().recordError(error)
         }
     }
 
     func getItemsPendingUpload() -> [PendingUploadItem] {
         let realm = getRealm()
-        let items = Array(realm.objects(PendingUploadItem.self))
+        return Array(realm.objects(RealmPendingUploadItem.self)).map { $0.toPendingUploadItem() }
+    }
 
-        for item in items {
-            item.frontImage = UIImage(contentsOfFile: item.frontUrl)
-            item.ingredientsImage = UIImage(contentsOfFile: item.ingredientsUrl)
-            item.nutritionImage = UIImage(contentsOfFile: item.nutritionUrl)
+    func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem? {
+        let realm = getRealm()
+        return realm.object(ofType: RealmPendingUploadItem.self, forPrimaryKey: barcode)?.toPendingUploadItem()
+    }
+
+    func deletePendingUploadItem(_ item: PendingUploadItem) {
+        DispatchQueue.global(qos: .background).async {
+            let realm = self.getRealm()
+            do {
+                guard let realmItem = realm.object(ofType: RealmPendingUploadItem.self, forPrimaryKey: item.barcode) else { return }
+                try realm.write {
+                    realm.delete(realmItem)
+                }
+            } catch let error as NSError {
+                log.error(error)
+                Crashlytics.sharedInstance().recordError(error)
+            }
         }
+    }
 
-        return items
+    func updatePendingUploadItem(_ item: PendingUploadItem) {
+        DispatchQueue.global(qos: .background).async {
+            let realm = self.getRealm()
+            do {
+                let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
+                try realm.write {
+                    realm.add(realmItem, update: true)
+                }
+            } catch let error as NSError {
+                log.error(error)
+                Crashlytics.sharedInstance().recordError(error)
+            }
+        }
     }
 
     private func getPendingUploadItem(forBarcode barcode: String) -> PendingUploadItem? {
         let realm = getRealm()
-        return realm.object(ofType: PendingUploadItem.self, forPrimaryKey: barcode)
-    }
-
-    private func saveImage(_ image: UIImage) -> String? {
-        let data = UIImagePNGRepresentation(image)
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let imageURL = documentsURL.appendingPathComponent("\(UUID().uuidString).png")
-
-        do {
-            try data?.write(to: imageURL)
-            return imageURL.absoluteString
-        } catch {
-            return nil
-        }
+        return realm.object(ofType: RealmPendingUploadItem.self, forPrimaryKey: barcode)?.toPendingUploadItem()
     }
 
     // MARK: - Private functions

@@ -21,8 +21,8 @@ class PendingUploadItemCell: UITableViewCell {
     func configure(with item: PendingUploadItem) {
         productNameLabel.text = item.productName ?? item.barcode
 
-        if let quantity = item.quantity, !quantity.isEmpty {
-            quantityLabel.text = quantity
+        if let quantityValue = item.quantityValue, !quantityValue.isEmpty {
+            quantityLabel.text = "\(quantityValue) \(item.quantityUnit ?? "")" // QuantityUnit should always be present
         } else {
             quantityLabel.isHidden = true
         }
@@ -41,8 +41,8 @@ class PendingUploadItemCell: UITableViewCell {
             brandQuantityStackView.isHidden = true
         }
 
-        frontImage.image = item.frontImage
-        ingredientsImage.image = item.ingredientsImage
-        nutritionImage.image = item.nutritionImage
+        frontImage.image = item.frontImage?.image
+        ingredientsImage.image = item.ingredientsImage?.image
+        nutritionImage.image = item.nutritionImage?.image
     }
 }

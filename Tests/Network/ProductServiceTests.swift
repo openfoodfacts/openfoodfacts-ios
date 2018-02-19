@@ -156,7 +156,7 @@ class ProductServiceTests: XCTestCase {
         }
         guard let image = imageFromFile else { XCTFail("Instance of UIImage with test image could not be created"); return }
         let barcode = "5449000011527"
-        let productImage = ProductImage(barcode: barcode, image: image, type: .front)
+        guard let productImage = ProductImage(barcode: barcode, image: image, type: .front) else { XCTFail("A non nil ProductImage is required for the test"); return }
         let success: () -> Void = { resultSuccessful = true }
         let error: (Error) -> Void = { _ in XCTFail("Expecting a successfull result") }
         stub(condition: isPath("/cgi/product_image_upload.pl")) { _ in
@@ -189,7 +189,7 @@ class ProductServiceTests: XCTestCase {
         }
         guard let image = imageFromFile else { XCTFail("Instance of UIImage with test image could not be created"); return }
         let barcode = "5449000011527"
-        let productImage = ProductImage(barcode: barcode, image: image, type: .front)
+        guard let productImage = ProductImage(barcode: barcode, image: image, type: .front) else { XCTFail("A non nil ProductImage is required for the test"); return }
         let success: () -> Void = { XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/cgi/product_image_upload.pl")) { _ in
@@ -220,7 +220,7 @@ class ProductServiceTests: XCTestCase {
         }
         guard let image = imageFromFile else { XCTFail("Instance of UIImage with test image could not be created"); return }
         let barcode = "5449000011527"
-        let productImage = ProductImage(barcode: barcode, image: image, type: .front)
+        guard let productImage = ProductImage(barcode: barcode, image: image, type: .front) else { XCTFail("A non nil ProductImage is required for the test"); return }
         let success: () -> Void = { XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/cgi/product_image_upload.pl")) { _ in
@@ -237,7 +237,7 @@ class ProductServiceTests: XCTestCase {
         // then
         expect(result).toEventuallyNot(beNil())
         expect(result!.code) == 1
-        expect(result!.domain) == "ProductServiceErrorDomain"
+        expect(result!.domain) == Errors.domain
     }
 
     // MARK: - postProduct
@@ -317,7 +317,7 @@ class ProductServiceTests: XCTestCase {
 
         productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
-        expect((result as NSError?)?.code).toEventually(equal(ProductService.ErrorCodes.wrongCredentials.rawValue), timeout: 10)
+        expect((result as NSError?)?.code).toEventually(equal(Errors.codes.wrongCredentials.rawValue), timeout: 10)
     }
 
     func testLoginShouldReturnErrorWhenServerReturnsError() {

@@ -68,12 +68,12 @@ class LoginViewController: UIViewController, DataManagerClient {
         }, onError: { error in
             let title: String
             let subtitle: String
-            if (error as NSError).code == ProductService.ErrorCodes.wrongCredentials.rawValue {
+            if (error as NSError).code == Errors.codes.wrongCredentials.rawValue {
                 title = "user.alert.wrong-credentials.title".localized
                 subtitle = "user.alert.wrong-credentials.subtitle".localized
             } else {
                 title = "user.alert.generic-error.title".localized
-                subtitle = "user.alert.generic-error.sutbitlt".localized
+                subtitle = "user.alert.generic-error.subtitle".localized
             }
             self.errorBanner.titleLabel?.text = title
             self.errorBanner.subtitleLabel?.text = subtitle

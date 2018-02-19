@@ -29,10 +29,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="936"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-bW-zl0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="636"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="676"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zwf-af-22Y">
-                                                <rect key="frame" x="10" y="10" width="355" height="611"/>
+                                                <rect key="frame" x="10" y="10" width="355" height="651"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Mu-dr-4FU">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="21.5"/>
@@ -53,7 +53,9 @@
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXu-MT-2XN">
                                                         <rect key="frame" x="0.0" y="31.5" width="355" height="142.5"/>
-                                                        <string key="text">This product is not yet in the Open Food Facts database. Could you please take some pictures of the product, barcode, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.</string>
+                                                        <string key="text">This product is not yet in the Open Food Facts database. Could you please take some pictures of the product, barcode, ingredients list and nutrition facts to add it on Open Food Facts? 
+
+Thanks in advance.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -73,61 +75,78 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kK2-es-lYg">
-                                                        <rect key="frame" x="0.0" y="418" width="355" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-add.placeholder.name"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-Km-ieP">
-                                                        <rect key="frame" x="0.0" y="458" width="355" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-add.placeholder.brand"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F7a-rY-q9O">
-                                                        <rect key="frame" x="0.0" y="498" width="355" height="30"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jld-cb-TZR">
+                                                        <rect key="frame" x="0.0" y="418" width="355" height="233"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjx-9U-rIz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="289" height="30"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-add.placeholder.quantity-value"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="g" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nwT-Tp-6ai">
-                                                                <rect key="frame" x="297" y="0.0" width="58" height="30"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lNk-hX-0r2">
+                                                                <rect key="frame" x="8" y="8" width="339" height="217"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kK2-es-lYg">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="62"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-add.placeholder.name"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-Km-ieP">
+                                                                        <rect key="frame" x="0.0" y="70" width="339" height="30"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-add.placeholder.brand"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F7a-rY-q9O">
+                                                                        <rect key="frame" x="0.0" y="108" width="339" height="30"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjx-9U-rIz">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="276.5" height="30"/>
+                                                                                <nil key="textColor"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-add.placeholder.quantity-value"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </textField>
+                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="g" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nwT-Tp-6ai">
+                                                                                <rect key="frame" x="284.5" y="0.0" width="54.5" height="30"/>
+                                                                                <nil key="textColor"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <textInputTraits key="textInputTraits"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="nwT-Tp-6ai" firstAttribute="width" secondItem="Hjx-9U-rIz" secondAttribute="width" multiplier="0.2" id="pwi-j6-6cr"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wZ6-bT-PKj">
+                                                                        <rect key="frame" x="0.0" y="146" width="339" height="30"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsI-Pf-EUr">
+                                                                        <rect key="frame" x="0.0" y="184" width="339" height="33"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <state key="normal" title="Save"/>
+                                                                        <connections>
+                                                                            <action selector="didTapSaveButton:" destination="A8v-Ao-FSs" eventType="touchUpInside" id="yEp-zv-aeh"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
                                                         </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="nwT-Tp-6ai" firstAttribute="width" secondItem="Hjx-9U-rIz" secondAttribute="width" multiplier="0.2" id="pwi-j6-6cr"/>
+                                                            <constraint firstItem="lNk-hX-0r2" firstAttribute="top" secondItem="Jld-cb-TZR" secondAttribute="topMargin" id="8yr-qE-b1b"/>
+                                                            <constraint firstItem="lNk-hX-0r2" firstAttribute="leading" secondItem="Jld-cb-TZR" secondAttribute="leadingMargin" id="YTg-5G-1Qf"/>
+                                                            <constraint firstAttribute="bottomMargin" secondItem="lNk-hX-0r2" secondAttribute="bottom" id="sZ8-TL-eQE"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="lNk-hX-0r2" secondAttribute="trailing" id="zTT-yT-duS"/>
                                                         </constraints>
-                                                    </stackView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wZ6-bT-PKj">
-                                                        <rect key="frame" x="0.0" y="538" width="355" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsI-Pf-EUr">
-                                                        <rect key="frame" x="0.0" y="578" width="355" height="33"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="Save"/>
-                                                        <connections>
-                                                            <action selector="didTapSaveButton:" destination="A8v-Ao-FSs" eventType="touchUpInside" id="yEp-zv-aeh"/>
-                                                        </connections>
-                                                    </button>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -165,6 +184,7 @@
                         <outlet property="brandsField" destination="0WS-Km-ieP" id="ZoN-aj-Igl"/>
                         <outlet property="languageField" destination="wZ6-bT-PKj" id="LuI-Rz-uYf"/>
                         <outlet property="productNameField" destination="kK2-es-lYg" id="b2e-BW-m6n"/>
+                        <outlet property="productTextSection" destination="Jld-cb-TZR" id="0JZ-AL-cAn"/>
                         <outlet property="quantityField" destination="Hjx-9U-rIz" id="bpt-lS-aAt"/>
                         <outlet property="quantityUnitField" destination="nwT-Tp-6ai" id="v9W-Kg-ekd"/>
                         <outlet property="scrollView" destination="mcz-Dc-5OG" id="OVO-1S-Tis"/>

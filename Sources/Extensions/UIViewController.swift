@@ -16,8 +16,8 @@ extension UIViewController {
         return T(nibName: String(describing: self), bundle: .main)
     }
 
-    static func loadFromStoryboard<T: UIViewController>(named storyboardName: String? = nil) -> T {
-        let storyboard = UIStoryboard(name: storyboardName ?? String(describing: self), bundle: .main)
+    static func loadFromStoryboard<T: UIViewController>(named storyboardName: StoryboardNames? = nil) -> T {
+        let storyboard = UIStoryboard(name: storyboardName?.rawValue ?? String(describing: self), bundle: .main)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! T
         // swiftlint:disable:previous force_cast
     }

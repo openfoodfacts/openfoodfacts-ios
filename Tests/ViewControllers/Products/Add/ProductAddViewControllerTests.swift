@@ -33,10 +33,7 @@ class ProductAddViewControllerTests: XCTestCase {
         dataManager = DataManagerMock()
         viewController.dataManager = dataManager
 
-        UIApplication.shared.keyWindow!.rootViewController = navigationController
-
-        expect(self.navigationController.view).notTo(beNil())
-        expect(self.viewController.view).notTo(beNil())
+        triggerViewLifecycle()
     }
 
     override func tearDown() {
@@ -60,6 +57,30 @@ class ProductAddViewControllerTests: XCTestCase {
         viewController.barcode = barcode
 
         expect(self.viewController.barcodeLabel.text).to(equal(barcode))
+    }
+
+    func testFormIsFilledWhenPendingUploadItemExistsForTheBarcode() {
+        let productName = "product_name"
+        let brand = "Brand"
+        let quantityValue = "33"
+        let quantityUnit = "cl"
+        let language = "de"
+        let pendingUploadItem = PendingUploadItem(barcode: barcode)
+        pendingUploadItem.productName = productName
+        pendingUploadItem.brand = brand
+        pendingUploadItem.quantityValue = quantityValue
+        pendingUploadItem.quantityUnit = quantityUnit
+        pendingUploadItem.language = language
+        dataManager.pendingUploadItem = pendingUploadItem
+        viewController.barcode = barcode
+
+        viewController.viewWillAppear(false)
+
+        expect(self.viewController.productNameField.text).to(equal(productName))
+        expect(self.viewController.brandsField.text).to(equal(brand))
+        expect(self.viewController.quantityField.text).to(equal(quantityValue))
+        expect(self.viewController.quantityUnitField.text).to(equal(quantityUnit))
+        expect(self.viewController.languageField.text).to(equal(Locale.current.localizedString(forIdentifier: language)))
     }
 
     // MARK: - didTapSaveButton
@@ -98,9 +119,7 @@ class ProductAddViewControllerTests: XCTestCase {
 
     // MARK: - keyboardWillShow
 
-    // Note: This test may fail when the simulator is not configured to show the software keyboard.
-    // It should always work when running via fastlane (fastlane test),
-    // because before running the software keyboard is enabled via a shell command and disabled after the tests.
+    // Note: This test may fail in the simulator. To succeed the software keyboard needs to be activated.
     func testKeyboardWillShowShouldUpdateScrollViewInsetsWhenOrientationPortrait() {
         let width = CGFloat(375)
         let height = CGFloat(258)
@@ -187,5 +206,12 @@ class ProductAddViewControllerTests: XCTestCase {
         viewController.textFieldDidEndEditing(viewController.productNameField)
 
         expect(self.viewController.activeField).to(beNil())
+    }
+
+    // MARK: - Helper functions
+    private func triggerViewLifecycle() {
+        UIApplication.shared.keyWindow!.rootViewController = navigationController
+        expect(self.navigationController.view).notTo(beNil())
+        expect(self.viewController.view).notTo(beNil())
     }
 }

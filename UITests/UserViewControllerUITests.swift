@@ -45,6 +45,7 @@ class UserViewControllerUITests: UITestCase {
     func testAlertDisplayedWhenlogInWithoutUsername() {
         let app = XCUIApplication()
         app.tabBars.buttons["User"].tap()
+        logOut()
 
         app.buttons["Log In"].tap()
 
@@ -57,6 +58,7 @@ class UserViewControllerUITests: UITestCase {
     func testAlertDisplayedWhenlogInWithoutPassword() {
         let app = XCUIApplication()
         app.tabBars.buttons["User"].tap()
+        logOut()
 
         let username = app.scrollViews.textFields["Username"]
         username.tap()
@@ -70,6 +72,8 @@ class UserViewControllerUITests: UITestCase {
         }
     }
 
+    // MARK: - Helper function
+
     private func logIn() {
         let username = app.scrollViews.textFields["Username"]
         username.tap()
@@ -80,5 +84,11 @@ class UserViewControllerUITests: UITestCase {
         password.typeText("test_pass")
 
         app.buttons["Log In"].tap()
+    }
+
+    private func logOut() {
+        if app.staticTexts[", you are logged in."].exists {
+            app.buttons["Log Out"].tap()
+        }
     }
 }
