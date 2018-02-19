@@ -41,10 +41,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         DeepLinkManager.shared.checkDeepLink()
+        ReachabilityManager.shared.startMonitoring()
     }
 
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         completionHandler(DeepLinkManager.shared.handleShortcut(item: shortcutItem))
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        ReachabilityManager.shared.stopMonitoring()
     }
 
     fileprivate func configureLog() {
