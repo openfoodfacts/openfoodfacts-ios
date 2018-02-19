@@ -1748,9 +1748,9 @@
 				95C2650A1E96D55B004212EC /* Sources */,
 				95C2650B1E96D55B004212EC /* Frameworks */,
 				95C2650C1E96D55B004212EC /* Resources */,
-				95C368081E9EC999008BB582 /* ShellScript */,
-				95CE24DE1ED5508500EF3D79 /* ShellScript */,
-				9581C5A91F1D48A2006250A3 /* ShellScript */,
+				95C368081E9EC999008BB582 /* Carthage */,
+				95CE24DE1ED5508500EF3D79 /* Fabric */,
+				9581C5A91F1D48A2006250A3 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -2052,20 +2052,21 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		9581C5A91F1D48A2006250A3 /* ShellScript */ = {
+		9581C5A91F1D48A2006250A3 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		95C368081E9EC999008BB582 /* ShellScript */ = {
+		95C368081E9EC999008BB582 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
@@ -2088,6 +2089,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
+			name = Carthage;
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AlamofireObjectMapper.framework",
@@ -2110,13 +2112,14 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		95CE24DE1ED5508500EF3D79 /* ShellScript */ = {
+		95CE24DE1ED5508500EF3D79 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
