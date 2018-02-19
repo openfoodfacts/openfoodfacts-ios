@@ -82,15 +82,4 @@ extension AppDelegate {
     var rootViewController: RootViewController {
         return window!.rootViewController as! RootViewController
     }
-
-    private func configureRealm() {
-        let config = Realm.Configuration(
-            schemaVersion: 1/*,
-            migrationBlock: { migration, oldSchemaVersion in
-                if oldSchemaVersion < 1 {
-                }
-        }*/)
-
-        Realm.Configuration.defaultConfiguration = config
-    }
 }
