@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 class CreditsViewController: UIViewController {
+
+    private let creditsHTMLFile = (name: "Credits", type: "html")
 
     private var webView: UIWebView!
 
@@ -19,13 +22,24 @@ class CreditsViewController: UIViewController {
     }
 
     private func setupWebView() {
-        webView = UIWebView(frame: self.view.frame)
+        webView = UIWebView(frame: .zero)
         webView.backgroundColor = .white
         webView.clipsToBounds = true
         webView.delegate = self
         webView.scrollView.indicatorStyle = .white
         self.view.addSubview(webView)
-        guard let htmlCreditsFilePath = Bundle.main.path(forResource: "Credits", ofType: "html"),
+        webView.snp.makeConstraints { (make) in
+            if #available(iOS 11.0, *) {
+                make.edges.equalTo(self.view.safeAreaLayoutGuide)
+            } else {
+                make.edges.equalToSuperview()
+            }
+        }
+        loadHTMLForWebView()
+    }
+
+    private func loadHTMLForWebView() {
+        guard let htmlCreditsFilePath = Bundle.main.path(forResource: creditsHTMLFile.name, ofType: creditsHTMLFile.type),
             let htmlContent = try? String(contentsOfFile: htmlCreditsFilePath) else {
                 return
         }
@@ -37,14 +51,12 @@ class CreditsViewController: UIViewController {
 extension CreditsViewController: UIWebViewDelegate {
 
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        guard let requestURL = request.url else {
+        if navigationType == .linkClicked, let requestURL = request.url {
+            UIApplication.shared.openURL(requestURL)
             return false
         }
-        if UIApplication.shared.canOpenURL(requestURL) {
-            return !UIApplication.shared.openURL(requestURL)
-        }
+
         return true
     }
 
 }
-
