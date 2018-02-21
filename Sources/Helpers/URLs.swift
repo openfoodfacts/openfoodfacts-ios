@@ -12,6 +12,7 @@ struct URLs {
     static let Discover = "https://world.openfoodfacts.org/discover"
     static let HowToContribute = "https://world.openfoodfacts.org/contribute"
     static let CreateAccount = "https://world.openfoodfacts.org/cgi/user.pl"
+    static let ForgottenPassword = "https://world.openfoodfacts.org/cgi/reset_password.pl"
     static let Edit = "https://world.openfoodfacts.org/cgi/product.pl?type=edit&code="
     static let YourContributions = "https://world.openfoodfacts.org/contributor/"
 }
