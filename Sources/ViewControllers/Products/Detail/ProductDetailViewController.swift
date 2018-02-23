@@ -31,8 +31,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         navigationController?.navigationBar.isTranslucent = false
         if var buttons = navigationItem.rightBarButtonItems, buttons.count == 1 {
-            let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(didTapEditButton(_:)))
-            buttons.insert(editButton, at: 0)
+            let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShareButton(_:)))
+            buttons.insert(shareButton, at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
     }
@@ -272,10 +272,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
     // MARK: - Nav bar button
 
-    @objc func didTapEditButton(_ sender: UIBarButtonItem) {
-        if let barcode = self.product?.barcode, let url = URL(string: URLs.Edit + barcode) {
-            openUrlInApp(url, showAlert: true)
-        }
+    @objc func didTapShareButton(_ sender: UIBarButtonItem) {
+        SharingManager.shared.shareLink(string: URLs.urlForProduct(with: product.barcode), sender: self)
     }
 }
 
