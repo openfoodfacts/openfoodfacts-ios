@@ -11,6 +11,7 @@ import XCTest
 import Nimble
 import OHHTTPStubs
 import ImageViewer
+import SafariServices
 
 class SummaryHeaderCellControllerTests: XCTestCase {
     var viewController: SummaryHeaderCellController!
@@ -78,5 +79,15 @@ class SummaryHeaderCellControllerTests: XCTestCase {
         viewController.didTapProductImage(recognizer)
 
         expect(self.viewController.presentedViewController is ImageViewer).to(beTrue())
+    }
+
+    // MARK: - didTapEditButton
+    func testDidTapEditButton() {
+        viewController.product = Product()
+        viewController.product.barcode = "123456789"
+
+        viewController.didTapEditButton(UIButton())
+
+        expect(self.viewController.presentedViewController is SFSafariViewController).to(beTrue())
     }
 }

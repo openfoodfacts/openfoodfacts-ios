@@ -241,16 +241,6 @@ class ProductDetailViewControllerTests: XCTestCase {
         expect(rows[13].cellType == NutritionTableRowTableViewCell.self).to(beTrue())
     }
 
-    // MARK: - didTapEditButton
-    func testDidTapEditButton() {
-        viewController.product = Product()
-        viewController.product.barcode = "123456789"
-
-        viewController.didTapEditButton(UIBarButtonItem())
-
-        expect(self.viewController.presentedViewController is SFSafariViewController).to(beTrue())
-    }
-
     // MARK: - Form creation methods
     func testRefreshProductCallsApiWhenProductHasBarcode() {
         let expectedName = "Updated"
