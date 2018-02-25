@@ -30,9 +30,7 @@ class SettingsTableViewController: UITableViewController {
     }
 
     @IBAction func didTapOpenBeautyFacts(_ sender: UIButton) {
-        if let url = URL(string: URLs.OpenBeautyFacts) {
-            openUrlInApp(url)
-        }
+        UIApplication.shared.openURL(NSURL(string: "itms-apps://itunes.apple.com/us/app/open-beauty-facts/id1122926380?mt=8")! as URL)
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var url: URL?
