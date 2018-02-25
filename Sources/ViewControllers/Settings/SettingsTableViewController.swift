@@ -29,6 +29,11 @@ class SettingsTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func didTapOpenBeautyFacts(_ sender: UIButton) {
+        if let url = URL(string: URLs.OpenBeautyFacts) {
+            openUrlInApp(url)
+        }
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var url: URL?
         switch indexPath {
