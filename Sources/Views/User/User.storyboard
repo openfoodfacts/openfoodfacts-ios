@@ -76,7 +76,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <state key="normal" title="Forgot password?"/>
                                                         <connections>
-                                                            <action selector="didTapForgottenPassword:" destination="1d0-rW-cUw" eventType="touchUpInside" id="nsh-JI-q6f"/>
+                                                            <action selector="didTapForgotPassword:" destination="1d0-rW-cUw" eventType="touchUpInside" id="rVC-0b-zgV"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbA-8A-INd">
@@ -213,10 +213,10 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhP-dP-H6B">
-                                        <rect key="frame" x="17.5" y="28.5" width="340.5" height="61"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="375" height="61"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All the products you add and the product photos you upload will be credited to your account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omn-rL-TWm">
-                                                <rect key="frame" x="8" y="0.0" width="324.5" height="61"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="61"/>
                                                 <viewLayoutGuide key="safeArea" id="Er9-IE-whQ"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
