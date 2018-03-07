@@ -147,9 +147,12 @@
       </trans-unit>
       <trans-unit id="nutrition.fats.trans-fat">
         <source>Trans fat</source>
-        <target xml:lang="pl" state="translated">Trans-tłuszcze</target>
+        <target xml:lang="pl" state="translated">Tłuszcze trans</target>
         <alt-trans>
           <target xml:lang="pl">Tłuscze trans</target>
+        </alt-trans>
+        <alt-trans>
+          <target xml:lang="pl">Trans-tłuszcze</target>
         </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.fiber">
@@ -340,7 +343,10 @@
       <trans-unit id="product-add.image-upload-error-banner.subtitle">
         <source>Please try to take the picture again</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="pl" state="translated">Spróbuj zrobić zdjęcie poźniej</target>
+        <target xml:lang="pl" state="translated">Spróbuj zrobić zdjęcie później</target>
+        <alt-trans>
+          <target xml:lang="pl">Spróbuj zrobić zdjęcie poźniej</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
@@ -473,6 +479,9 @@
       <trans-unit id="product-detail.summary.countries">
         <source>Countries where sold</source>
         <target xml:lang="pl" state="translated">Kraje sprzedaż</target>
+        <alt-trans>
+          <target xml:lang="pl">Kraje sprzedaży</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.labels">
         <source>Labels, certifications, awards</source>
@@ -677,6 +686,9 @@ Ikona "Profil" została stworzona przez Smashicons (https://www.flaticon.com/aut
       <trans-unit id="user.log-in">
         <source>Log In</source>
         <target xml:lang="pl" state="translated">Zaloguj sie</target>
+        <alt-trans>
+          <target xml:lang="pl">Zaloguj się</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.log-out">
         <source>Log Out</source>
