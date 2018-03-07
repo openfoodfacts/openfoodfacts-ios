@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Arial.ttf">
+            <string>ArialMT</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -18,20 +24,38 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OpenFoodFactsLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uFh-I4-i6M">
-                                <rect key="frame" x="37.5" y="229" width="300" height="209"/>
+                                <rect key="frame" x="37.666666666666657" y="301.66666666666669" width="300" height="209"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uFh-I4-i6M" secondAttribute="height" multiplier="300:209" id="B5u-ie-2fG"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lyg-cG-jiX" userLabel="TheFreeFoodProductsDatabase">
+                                <rect key="frame" x="37.666666666666657" y="518.66666666666663" width="300" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="the free food products database" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t75-bh-yWl">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="MjL-RC-NEA"/>
+                                    <constraint firstAttribute="height" constant="41" id="MlP-SQ-ZUA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uFh-I4-i6M" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3jF-Kz-VIn"/>
                             <constraint firstItem="uFh-I4-i6M" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="A3n-sS-1su"/>
+                            <constraint firstItem="Lyg-cG-jiX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="133" id="ND6-0M-cln"/>
+                            <constraint firstItem="Lyg-cG-jiX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uMl-G9-jIM"/>
                         </constraints>
                     </view>
                 </viewController>

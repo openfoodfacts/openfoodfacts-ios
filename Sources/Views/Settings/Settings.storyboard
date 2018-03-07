@@ -15,10 +15,21 @@
         <scene sceneID="CP6-Uq-Okc">
             <objects>
                 <tableViewController id="JHQ-0r-3ik" customClass="SettingsTableViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="csX-iR-dgu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="csX-iR-dgu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Aa-Dz-FXQ">
+                            <rect key="frame" x="0.0" y="305" width="375" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Open Beauty Facts">
+                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="didTapOpenBeautyFacts:" destination="JHQ-0r-3ik" eventType="touchUpInside" id="eax-Qh-Wss"/>
+                            </connections>
+                        </button>
                         <sections>
                             <tableViewSection headerTitle="Settings" id="PnO-9O-d3f">
                                 <cells>
@@ -61,7 +72,7 @@
                             <tableViewSection headerTitle="Information" id="4Iw-4E-K39">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="sO1-VI-YDa" style="IBUITableViewCellStyleDefault" id="Kmy-UN-53c">
-                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="155" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kmy-UN-53c" id="Ks9-dx-rBd">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -87,7 +98,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="kNh-uX-HlE" style="IBUITableViewCellStyleDefault" id="msv-59-RFY">
-                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="199" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="msv-59-RFY" id="eqC-t8-efd">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -107,7 +118,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="c4X-ph-LDz" style="IBUITableViewCellStyleDefault" id="ewg-vo-vmg">
-                                        <rect key="frame" x="0.0" y="243.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="243" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ewg-vo-vmg" id="12j-8L-Ru9">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -141,7 +152,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRA-n6-xsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1519.2" y="539.28035982008998"/>
+            <point key="canvasLocation" x="1519.2" y="538.66995073891633"/>
         </scene>
         <!--Credits-->
         <scene sceneID="EA2-Rt-wrD">
