@@ -13,6 +13,7 @@ class SettingsTableViewController: UITableViewController {
 
     private let discoverIndexPath = IndexPath(row: 1, section: 1)
     private let howToContributeIndexPath = IndexPath(row: 2, section: 1)
+    private let supportOpenFoodFactsIndexPath = IndexPath(row: 0, section: 2)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,8 @@ class SettingsTableViewController: UITableViewController {
             return "settings.tab-bar.item".localized
         } else if section == 1 {
             return "settings.sections.information".localized
+        } else if section == 2 {
+            return "settings.sections.donate".localized
         } else {
             return ""
         }
@@ -41,6 +44,8 @@ class SettingsTableViewController: UITableViewController {
             url = URL(string: URLs.Discover)
         case howToContributeIndexPath:
             url = URL(string: URLs.HowToContribute)
+        case supportOpenFoodFactsIndexPath:
+            url = URL(string: URLs.SupportOpenFoodFacts)
         default:
             break
         }
