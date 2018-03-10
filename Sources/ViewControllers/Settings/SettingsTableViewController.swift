@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
 
     private let discoverIndexPath = IndexPath(row: 1, section: 1)
     private let howToContributeIndexPath = IndexPath(row: 0, section: 2)
     private let supportOpenFoodFactsIndexPath = IndexPath(row: 1, section: 2)
     private let translateOpenFoodFactsIndexPath = IndexPath(row: 2, section: 2)
+    private let contactTheTeamIndexPath = IndexPath(row: 0, section: 3)
+    private let frequentlyAskedQuestionsIndexPath = IndexPath(row: 1, section: 3)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,8 @@ class SettingsTableViewController: UITableViewController {
             return "settings.sections.information".localized
         } else if section == 2 {
             return "settings.sections.contribute".localized
+        } else if section == 3 {
+            return "settings.sections.about".localized
         } else {
             return ""
         }
@@ -49,6 +54,10 @@ class SettingsTableViewController: UITableViewController {
             url = URL(string: URLs.SupportOpenFoodFacts)
         case translateOpenFoodFactsIndexPath:
             url = URL(string: URLs.TranslateOpenFoodFacts)
+        case contactTheTeamIndexPath:
+            contactTheTeam()
+        case frequentlyAskedQuestionsIndexPath:
+            url = URL(string: URLs.FrequentlyAskedQuestions)
         default:
             break
         }
@@ -60,5 +69,30 @@ class SettingsTableViewController: UITableViewController {
 
     @IBAction func didSwitchScanOnLaunch(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsConstants.scanningOnLaunch)
+    }
+
+    func contactTheTeam() {
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail services are not available")
+            return
+        }
+        sendEmail()
+    }
+
+    func sendEmail() {
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+
+        composeVC.setToRecipients(["contact@openfoodfacts.org"])
+        composeVC.setSubject("Open Food Facts: ")
+        composeVC.setMessageBody("Thank you for contacting us.", isHTML: false)
+
+        self.present(composeVC, animated: true, completion: nil)
+    }
+
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+
+        controller.dismiss(animated: true, completion: nil)
     }
 }
