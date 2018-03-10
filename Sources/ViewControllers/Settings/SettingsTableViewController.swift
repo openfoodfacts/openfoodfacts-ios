@@ -12,8 +12,8 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
 
     private let discoverIndexPath = IndexPath(row: 1, section: 1)
-    private let howToContributeIndexPath = IndexPath(row: 2, section: 1)
-    private let supportOpenFoodFactsIndexPath = IndexPath(row: 0, section: 2)
+    private let howToContributeIndexPath = IndexPath(row: 0, section: 2)
+    private let supportOpenFoodFactsIndexPath = IndexPath(row: 1, section: 2)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class SettingsTableViewController: UITableViewController {
         } else if section == 1 {
             return "settings.sections.information".localized
         } else if section == 2 {
-            return "settings.sections.donate".localized
+            return "settings.sections.contribute".localized
         } else {
             return ""
         }
