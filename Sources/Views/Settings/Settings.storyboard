@@ -157,7 +157,7 @@
         <!--Credits-->
         <scene sceneID="EA2-Rt-wrD">
             <objects>
-                <viewController id="c7X-Xf-g2w" sceneMemberID="viewController">
+                <viewController id="c7X-Xf-g2w" customClass="CreditsViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q9m-a4-4Km"/>
                         <viewControllerLayoutGuide type="bottom" id="dOK-oU-BLm"/>
@@ -165,29 +165,7 @@
                     <view key="view" contentMode="scaleToFill" id="wZF-II-Hcy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8k-0p-YOJ">
-                                <rect key="frame" x="20" y="72" width="335" height="208"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
-"Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="c8k-0p-YOJ" firstAttribute="leading" secondItem="wZF-II-Hcy" secondAttribute="leading" constant="20" symbolic="YES" id="9bm-oT-GF6"/>
-                            <constraint firstItem="c8k-0p-YOJ" firstAttribute="top" secondItem="Q9m-a4-4Km" secondAttribute="bottom" constant="8" symbolic="YES" id="Xqe-Mg-OJO"/>
-                            <constraint firstAttribute="trailing" secondItem="c8k-0p-YOJ" secondAttribute="trailing" constant="20" symbolic="YES" id="d6d-gB-yBq"/>
-                            <constraint firstItem="dOK-oU-BLm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c8k-0p-YOJ" secondAttribute="bottom" constant="8" symbolic="YES" id="nH7-ld-Dou"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Credits" id="J3M-5Y-Hw2">
                         <userDefinedRuntimeAttributes>
