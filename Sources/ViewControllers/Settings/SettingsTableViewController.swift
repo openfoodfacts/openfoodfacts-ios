@@ -14,6 +14,7 @@ class SettingsTableViewController: UITableViewController {
     private let discoverIndexPath = IndexPath(row: 1, section: 1)
     private let howToContributeIndexPath = IndexPath(row: 0, section: 2)
     private let supportOpenFoodFactsIndexPath = IndexPath(row: 1, section: 2)
+    private let translateOpenFoodFactsIndexPath = IndexPath(row: 2, section: 2)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,8 @@ class SettingsTableViewController: UITableViewController {
             url = URL(string: URLs.HowToContribute)
         case supportOpenFoodFactsIndexPath:
             url = URL(string: URLs.SupportOpenFoodFacts)
+        case translateOpenFoodFactsIndexPath:
+            url = URL(string: URLs.TranslateOpenFoodFacts)
         default:
             break
         }
