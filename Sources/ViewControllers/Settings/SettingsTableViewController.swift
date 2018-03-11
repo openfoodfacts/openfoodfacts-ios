@@ -45,13 +45,14 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var url: URL?
+        var urlsupport: URL?
         switch indexPath {
         case discoverIndexPath:
             url = URL(string: URLs.Discover)
         case howToContributeIndexPath:
             url = URL(string: URLs.HowToContribute)
         case supportOpenFoodFactsIndexPath:
-            url = URL(string: URLs.SupportOpenFoodFacts)
+            urlsupport = URL(string: URLs.SupportOpenFoodFacts)
         case translateOpenFoodFactsIndexPath:
             url = URL(string: URLs.TranslateOpenFoodFacts)
         case contactTheTeamIndexPath:
@@ -64,6 +65,8 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
         if let url = url {
             openUrlInApp(url)
+        } else if let url = urlsupport {
+            UIApplication.shared.openURL(url)
         }
     }
 
