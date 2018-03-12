@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q1p-BW-0CD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q1p-BW-0CD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,10 +15,21 @@
         <scene sceneID="CP6-Uq-Okc">
             <objects>
                 <tableViewController id="JHQ-0r-3ik" customClass="SettingsTableViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="csX-iR-dgu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="csX-iR-dgu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Aa-Dz-FXQ">
+                            <rect key="frame" x="0.0" y="305" width="375" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Open Beauty Facts">
+                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="didTapOpenBeautyFacts:" destination="JHQ-0r-3ik" eventType="touchUpInside" id="eax-Qh-Wss"/>
+                            </connections>
+                        </button>
                         <sections>
                             <tableViewSection headerTitle="Settings" id="PnO-9O-d3f">
                                 <cells>
@@ -30,13 +41,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1OZ-JC-5WL">
-                                                    <rect key="frame" x="318" y="8" width="51" height="27.5"/>
+                                                    <rect key="frame" x="310" y="11" width="51" height="22"/>
                                                     <connections>
                                                         <action selector="didSwitchScanOnLaunch:" destination="JHQ-0r-3ik" eventType="valueChanged" id="BH6-1g-G4a"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Show Scan On App Launch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zy2-KN-U2I">
-                                                    <rect key="frame" x="8" y="8" width="302" height="27.5"/>
+                                                    <rect key="frame" x="16" y="11" width="286" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -61,10 +72,10 @@
                             <tableViewSection headerTitle="Information" id="4Iw-4E-K39">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="sO1-VI-YDa" style="IBUITableViewCellStyleDefault" id="Kmy-UN-53c">
-                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="155" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kmy-UN-53c" id="Ks9-dx-rBd">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Credits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sO1-VI-YDa">
@@ -87,10 +98,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="kNh-uX-HlE" style="IBUITableViewCellStyleDefault" id="msv-59-RFY">
-                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="199" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="msv-59-RFY" id="eqC-t8-efd">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Discover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kNh-uX-HlE">
@@ -107,10 +118,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="c4X-ph-LDz" style="IBUITableViewCellStyleDefault" id="ewg-vo-vmg">
-                                        <rect key="frame" x="0.0" y="243.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="243" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ewg-vo-vmg" id="12j-8L-Ru9">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="How To Contribute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c4X-ph-LDz">
@@ -141,12 +152,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRA-n6-xsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1519.2" y="539.28035982008998"/>
+            <point key="canvasLocation" x="1519.2" y="538.66995073891633"/>
         </scene>
         <!--Credits-->
         <scene sceneID="EA2-Rt-wrD">
             <objects>
-                <viewController id="c7X-Xf-g2w" sceneMemberID="viewController">
+                <viewController id="c7X-Xf-g2w" customClass="CreditsViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q9m-a4-4Km"/>
                         <viewControllerLayoutGuide type="bottom" id="dOK-oU-BLm"/>
@@ -154,29 +165,7 @@
                     <view key="view" contentMode="scaleToFill" id="wZF-II-Hcy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8k-0p-YOJ">
-                                <rect key="frame" x="20" y="72" width="335" height="208"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
-"Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="c8k-0p-YOJ" firstAttribute="leading" secondItem="wZF-II-Hcy" secondAttribute="leading" constant="20" symbolic="YES" id="9bm-oT-GF6"/>
-                            <constraint firstItem="c8k-0p-YOJ" firstAttribute="top" secondItem="Q9m-a4-4Km" secondAttribute="bottom" constant="8" symbolic="YES" id="Xqe-Mg-OJO"/>
-                            <constraint firstAttribute="trailing" secondItem="c8k-0p-YOJ" secondAttribute="trailing" constant="20" symbolic="YES" id="d6d-gB-yBq"/>
-                            <constraint firstItem="dOK-oU-BLm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c8k-0p-YOJ" secondAttribute="bottom" constant="8" symbolic="YES" id="nH7-ld-Dou"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Credits" id="J3M-5Y-Hw2">
                         <userDefinedRuntimeAttributes>

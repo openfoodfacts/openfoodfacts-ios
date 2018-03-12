@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F06B04B2037815400718712 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F06B04A2037815400718712 /* Reachability.framework */; };
 		5F06B04D203787EE00718712 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06B04C203787EE00718712 /* ReachabilityManager.swift */; };
+		7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437FBA42036F1F800D107B6 /* CreditsViewController.swift */; };
+		74CB633920373B6D008FC48D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 74CB633820373B6C008FC48D /* Credits.html */; };
 		9501634B1F2CE9A20057B8D5 /* MarqueeLabelSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9501633B1F2CE9780057B8D5 /* MarqueeLabelSwift.framework */; };
 		9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9501633D1F2CE9780057B8D5 /* NotificationBanner.framework */; };
 		9501634D1F2CEE700057B8D5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950163431F2CE9780057B8D5 /* SnapKit.framework */; };
@@ -262,6 +264,8 @@
 /* Begin PBXFileReference section */
 		5F06B04A2037815400718712 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
 		5F06B04C203787EE00718712 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		7437FBA42036F1F800D107B6 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		74CB633820373B6C008FC48D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		950163071F2CE9780057B8D5 /* .Alamofire.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .Alamofire.version; sourceTree = "<group>"; };
 		950163081F2CE9780057B8D5 /* .AlamofireObjectMapper.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .AlamofireObjectMapper.version; sourceTree = "<group>"; };
 		950163091F2CE9780057B8D5 /* .ImageViewer.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .ImageViewer.version; sourceTree = "<group>"; };
@@ -1722,6 +1726,8 @@
 			isa = PBXGroup;
 			children = (
 				95F7DB391F98DDAC00428208 /* SettingsTableViewController.swift */,
+				7437FBA42036F1F800D107B6 /* CreditsViewController.swift */,
+				74CB633820373B6C008FC48D /* Credits.html */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1755,9 +1761,9 @@
 				95C2650A1E96D55B004212EC /* Sources */,
 				95C2650B1E96D55B004212EC /* Frameworks */,
 				95C2650C1E96D55B004212EC /* Resources */,
-				95C368081E9EC999008BB582 /* ShellScript */,
-				95CE24DE1ED5508500EF3D79 /* ShellScript */,
-				9581C5A91F1D48A2006250A3 /* ShellScript */,
+				95C368081E9EC999008BB582 /* Carthage */,
+				95CE24DE1ED5508500EF3D79 /* Fabric */,
+				9581C5A91F1D48A2006250A3 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -2018,6 +2024,7 @@
 				958F33541F378076005269C5 /* InfoRowTableViewCell.xib in Resources */,
 				956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */,
 				95D060D91F6085320052012D /* LoadingCell.xib in Resources */,
+				74CB633920373B6D008FC48D /* Credits.html in Resources */,
 				956FF9511F1FF0CA0069D678 /* ProductDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2059,20 +2066,21 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		9581C5A91F1D48A2006250A3 /* ShellScript */ = {
+		9581C5A91F1D48A2006250A3 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		95C368081E9EC999008BB582 /* ShellScript */ = {
+		95C368081E9EC999008BB582 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
@@ -2096,6 +2104,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 			);
+			name = Carthage;
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AlamofireObjectMapper.framework",
@@ -2118,13 +2127,14 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		95CE24DE1ED5508500EF3D79 /* ShellScript */ = {
+		95CE24DE1ED5508500EF3D79 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
@@ -2171,6 +2181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95781BC01EC3A898003E3256 /* InfoRow.swift in Sources */,
+				7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */,
 				95781BBD1EC3A898003E3256 /* OFFWriteAPI.swift in Sources */,
 				958F33421F36196D005269C5 /* IngredientsFormTableViewController.swift in Sources */,
 				957CBEBE1F33B2FE00A1B398 /* Form.swift in Sources */,
