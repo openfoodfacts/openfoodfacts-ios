@@ -9,6 +9,13 @@
 import UIKit
 import MessageUI
 
+enum SettingsSection: Int {
+    case item
+    case information
+    case contribute
+    case about
+}
+
 class SettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
 
@@ -25,15 +32,16 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
+        switch SettingsSection(rawValue: section) {
+        case .item?:
             return "settings.tab-bar.item".localized
-        } else if section == 1 {
+        case .information?:
             return "settings.sections.information".localized
-        } else if section == 2 {
+        case .contribute?:
             return "settings.sections.contribute".localized
-        } else if section == 3 {
+        case .about?:
             return "settings.sections.about".localized
-        } else {
+        default:
             return ""
         }
     }
