@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SharingManager {
+final class SharingManager {
 
     static let shared = SharingManager()
 

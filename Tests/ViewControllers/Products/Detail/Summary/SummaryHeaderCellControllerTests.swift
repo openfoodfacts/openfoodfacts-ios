@@ -86,7 +86,7 @@ class SummaryHeaderCellControllerTests: XCTestCase {
         viewController.product = Product()
         viewController.product.barcode = "123456789"
 
-        viewController.didTapEditButton(UIButton())
+        viewController.editButton.sendActions(for: .touchUpInside)
 
         expect(self.viewController.presentedViewController is SFSafariViewController).to(beTrue())
     }
