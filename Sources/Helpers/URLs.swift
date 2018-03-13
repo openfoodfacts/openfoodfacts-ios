@@ -14,8 +14,9 @@ struct URLs {
     static let CreateAccount = "https://world.openfoodfacts.org/cgi/user.pl"
     static let Edit = "https://world.openfoodfacts.org/cgi/product.pl?type=edit&code="
     static let YourContributions = "https://world.openfoodfacts.org/contributor/"
+    static let ProductBaseURLWithLanguagePlaceholder = "https://world-LANGUAGE.openfoodfacts.org/product/"
     static let ProductBaseURL: String = {
-        return "https://world-LANGUAGE.openfoodfacts.org/product/".replacingOccurrences(of: "LANGUAGE", with: Locale.current.languageCode!)
+        return ProductBaseURLWithLanguagePlaceholder.replacingOccurrences(of: "LANGUAGE", with: Locale.current.languageCode!)
     }()
 
     static func urlForProduct(with code: String?) -> String {
