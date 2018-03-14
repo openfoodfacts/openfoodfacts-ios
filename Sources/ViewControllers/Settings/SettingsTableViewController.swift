@@ -32,17 +32,16 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch SettingsSection(rawValue: section) {
-        case .item?:
+        guard let Settings = SettingsSection(rawValue: section) else { return "" }
+        switch Settings {
+        case .item:
             return "settings.tab-bar.item".localized
-        case .information?:
+        case .information:
             return "settings.sections.information".localized
-        case .contribute?:
+        case .contribute:
             return "settings.sections.contribute".localized
-        case .about?:
+        case .about:
             return "settings.sections.about".localized
-        default:
-            return ""
         }
     }
 
