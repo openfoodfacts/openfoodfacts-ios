@@ -44,8 +44,8 @@ class LoginViewController: UIViewController, DataManagerClient {
         IQKeyboardManager.sharedManager().enable = false
     }
 
-    @IBAction func didTapForgottenPassword(_ sender: UIButton) {
-        if let url = URL(string: URLs.ForgottenPassword) {
+    @IBAction func didTapForgotPassword(_ sender: UIButton) {
+        if let url = URL(string: URLs.ForgotPassword) {
             openUrlInApp(url)
         }
     }
