@@ -23,7 +23,12 @@ class ProductDetailUITests: UITestCase {
         let ingredients = app.staticTexts["Ingredients"]
         ingredients.coordinate(withNormalizedOffset: CGVector(dx: 0.0, dy: 0.0)).tap()
 
-        let additives = app.staticTexts["Additives: E160, E202, E412, E950, E955"]
+        let additives = app.staticTexts["Additives:" + "\n\u{2022} " + "E160" + "\n"
+        + "\n\u{2022} " + "E202" + " - " + "Potassium sorbate" + "\n"
+        + "\n\u{2022} " + "E412" + " - " + "Guar gum (thickener)" + "\n"
+        + "\n\u{2022} " + "E950" + " - " + "Acesulfame potassium" + "\n"
+        + "\n\u{2022} " + "E955" + " - " + "Sucralose (Trichlorogalactosucrose)"]
+
         XCTAssert(additives.exists)
     }
 
