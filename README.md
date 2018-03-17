@@ -1,6 +1,15 @@
 # Open Food Facts iOS app
 [![Build Status](https://travis-ci.org/openfoodfacts/openfoodfacts-ios.svg?branch=master)](https://travis-ci.org/openfoodfacts/openfoodfacts-ios)
 
+[![Project Status](http://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
+[![Stories in Ready](https://badge.waffle.io/openfoodfacts/openfoodfacts-ios.svg?label=ready&title=Ready)](https://waffle.io/openfoodfacts/openfoodfacts-ios)
+[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/openfoodfacts/openfoodfacts-ios.svg)](https://isitmaintained.com/project/openfoodfacts/openfoodfacts-ios "Average time to resolve an issue")
+[![Percentage of issues still open](https://isitmaintained.com/badge/open/openfoodfacts/openfoodfacts-ios.svg)](https://isitmaintained.com/project/openfoodfacts/openfoodfacts-ios "Percentage of issues still open")
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/openfoodfacts/localized.svg)](https://crowdin.com/project/openfoodfacts)
+<br>
+<img src="https://static.openfoodfacts.org/images/misc/openfoodfacts-logo-en-178x150.png">
+## What is Open Food Facts?
+
 [Open Food Facts](http://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.
 
 ## Features
