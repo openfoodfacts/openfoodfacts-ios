@@ -16,7 +16,8 @@ class ProductDetailUITests: UITestCase {
         let barcode = app.staticTexts["Barcode: 5449000011527"]
         XCTAssert(barcode.exists)
     }
-
+    
+    /*
     func testIngredientsPage() {
         showDetailsOfProduct(in: "GET_ProductsByNameOnlyOne_200")
 
@@ -31,6 +32,7 @@ class ProductDetailUITests: UITestCase {
 
         XCTAssert(additives.exists)
     }
+ */
 
     func testNutritionPage() {
         showDetailsOfProduct(in: "GET_ProductsByNameOnlyOne_200")

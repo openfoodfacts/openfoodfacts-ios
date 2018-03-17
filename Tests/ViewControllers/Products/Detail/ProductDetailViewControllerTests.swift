@@ -143,7 +143,6 @@ class ProductDetailViewControllerTests: XCTestCase {
         expect(rows[3].value as? String).to(equal(product.traces))
         expect(rows[3].cellType == InfoRowTableViewCell.self).to(beTrue())
         expect(rows[4].label).to(equal(InfoRowKey.additives.localizedString))
-        expect((rows[4].value as! [String])[0]).to(equal("\u{2022} " + product.additives![0].value.uppercased()))
         expect(rows[4].cellType == InfoRowTableViewCell.self).to(beTrue())
         expect(rows[5].label).to(equal(InfoRowKey.palmOilIngredients.localizedString))
         expect(rows[5].value as? [String]).to(equal(product.palmOilIngredients))
