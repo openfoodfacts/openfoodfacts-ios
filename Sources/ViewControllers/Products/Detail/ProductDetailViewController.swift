@@ -253,19 +253,70 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
     private func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self, isCopiable: Bool = false) {
         // Check item has a value, if so add to the array of rows.
-        switch item {
-        case let value as String:
-            // Check if it's empty here insted of doing 'case let value as String where !value.isEmpty' because an empty String ("") would not match this case but the default one
-            if !value.isEmpty {
-                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+        if label == InfoRowKey.additives.localizedString {
+            print("here where label = InfoRowKey.additives.localizedString")
+            switch item {
+            case let value as String:
+                // Check if it's empty here insted of doing 'case let value as String where !value.isEmpty' because an empty String ("") would not match this case but the default one
+                if !value.isEmpty {
+                    array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                }
+            case var value as [Any]:
+                for index in 0 ..< value.count {
+                    if let anyObjectToString = value[index] as? String {
+                        let enumberCodeConvertedToString = anyObjectToString.localized
+                        if index == 0 {
+                            //check the case where the additive e-code is not included in the localizable string file
+                            if enumberCodeConvertedToString == anyObjectToString {
+                                value[index] = "\n\u{2022} " + anyObjectToString + "\n"
+                            } else {
+                            value[index] = "\n\u{2022} " + anyObjectToString + " - " + anyObjectToString.localized + "\n"
+                            }
+                        } else if index == (value.count - 1) {
+                            //check the case where the additive e-code is not included in the localizable string file
+                            if enumberCodeConvertedToString == anyObjectToString {
+                                value[index] = "\u{2022} " + anyObjectToString
+                            } else {
+                            value[index] = "\u{2022} " + anyObjectToString + " - " + anyObjectToString.localized
+                            }
+                        } else {
+                            //check the case where the additive e-code is not included in the localizable string file
+                            if enumberCodeConvertedToString == anyObjectToString {
+                                value[index] = "\u{2022} " + anyObjectToString + "\n"
+                            } else {
+                            value[index] = "\u{2022} " + anyObjectToString + " - " + anyObjectToString.localized + "\n"
+                            }
+                        }
+                    } else {
+                        print("Error, was not a string")
+                    }
+                }
+                if !value.isEmpty {
+                    array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                }
+            default:
+                if let value = item {
+                    print(value)
+                    array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                }
             }
-        case let value as [Any]:
-            if !value.isEmpty {
-                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
-            }
-        default:
-            if let value = item {
-                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+        }
+        else {
+            switch item {
+            case let value as String:
+                // Check if it's empty here insted of doing 'case let value as String where !value.isEmpty' because an empty String ("") would not match this case but the default one
+                if !value.isEmpty {
+                    array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                }
+            case let value as [Any]:
+                if !value.isEmpty {
+                    array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                }
+            default:
+                if let value = item {
+                    print(value)
+                    array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                }
             }
         }
     }

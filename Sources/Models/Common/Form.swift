@@ -44,7 +44,13 @@ struct FormRow {
         if let value = value as? String {
             return value
         } else if let value = value as? [String] {
+            //check to see if value contains a bullet \u{2022}. For example, addtivies in the ingredients form uses bullet list so commas are no longer necessary. Therefore the String array conversion needs to not include commas in this case. https://github.com/openfoodfacts/openfoodfacts-ios/issues/60
+            if value[0].range(of:"\u{2022}") != nil {
+                return value.joined(separator: "")
+            } else {
             return value.joined(separator: ", ")
+            }
+            
         }
 
         return nil
