@@ -34,6 +34,10 @@ https://crowdin.com/project/openfoodfacts
 - [ ] Native editing
 - [ ] On-device Product cache
 - [ ] ARKit overlay
+- [ ] Handle multilingual products (view)
+- [ ] Handle multilingual products (data addition)
+- [ ] Add support for the new JSON taxonomy system (multilingual, and data augmentation from Wikipedia/Wikidata)
+- [ ] Add a food category browser
 
 ## Images
 
