@@ -12,15 +12,28 @@
 
 [Open Food Facts](http://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.
 
-## Features
+
+### Translate Open Food Facts in your language
+
+You can help translate Open Food Facts and the app at (no technical knowledge required, takes a minute to signup): <br>
+https://crowdin.com/project/openfoodfacts
+
+## Features implemented
 
 - [x] Barcode scanning
 - [x] Product search
 - [x] Product list
 - [x] Product detail
-- [ ] On-device Product cache
 - [x] Image upload
+
+
+## Roadmap
+- [ ] On-the-fly OCR of ingredients and labels for new product addition
 - [ ] Internationalised user interface
+- [ ] Support for Open Beauty Facts, Open Pet Food Facts and Open Product Facts
+- [ ] Native editing
+- [ ] On-device Product cache
+- [ ] ARKit overlay
 
 ## Images
 
