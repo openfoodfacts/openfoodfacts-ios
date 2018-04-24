@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LOGIN_ENDPOINT</key>
-	<string>${LOGIN_ENDPOINT}</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -40,6 +38,8 @@
 	<string>${GET_ENDPOINT}</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LOGIN_ENDPOINT</key>
+	<string>${LOGIN_ENDPOINT}</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

@@ -20,6 +20,7 @@ class SummaryHeaderCellController: TakePictureViewController {
     }
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var addNewPictureButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
 
     convenience init(with product: Product, dataManager: DataManagerProtocol) {
         self.init(nibName: String(describing: SummaryHeaderCellController.self), bundle: nil)
@@ -63,7 +64,15 @@ class SummaryHeaderCellController: TakePictureViewController {
         } else {
             productName.isHidden = true
         }
+        setupEditButton()
     }
+
+    fileprivate func setupEditButton() {
+        let editButtonTitleString = Bundle(identifier: "com.apple.UIKit")?.localizedString(forKey: "Edit", value: "Edit", table: nil)
+        editButton.setTitle(editButtonTitleString, for: .normal)
+        editButton.addTarget(self, action: #selector(didTapEditButton(_:)), for: .touchUpInside)
+    }
+
 }
 
 // MARK: - Gesture recognizers
@@ -71,6 +80,12 @@ extension SummaryHeaderCellController {
     @objc func didTapProductImage(_ sender: UITapGestureRecognizer) {
         if let imageView = sender.view as? UIImageView {
             ImageViewer.show(imageView, presentingVC: self)
+        }
+    }
+
+    @objc func didTapEditButton(_ sender: UIButton) {
+        if let barcode = self.product?.barcode, let url = URL(string: URLs.Edit + barcode) {
+            openUrlInApp(url, showAlert: true)
         }
     }
 }
