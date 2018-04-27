@@ -312,7 +312,7 @@ class DataManager: DataManagerProtocol {
         // Get all ISO 639-1 languages
         return Locale.isoLanguageCodes
             .filter({ $0.count == 2 }) // Filter all codes that don't have two letters so we only keep two letter codes, aka ISO 639-1 codes
-            .compactMap({ // Weed out all languages where we don't have a localized language name
+            .flatMap({ // Weed out all languages where we don't have a localized language name
                 let code = $0
                 if let name = Locale.current.localizedString(forIdentifier: $0) {
                     return Language(code: code, name: name)
