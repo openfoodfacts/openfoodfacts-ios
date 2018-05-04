@@ -19,10 +19,12 @@ extension UIColor {
 
         var rgb: UInt32 = 0
 
+        // swiftlint:disable identifier_name
         var r: CGFloat = 0.0
         var g: CGFloat = 0.0
         var b: CGFloat = 0.0
         var a: CGFloat = 1.0
+        // swiftlint:enable identifier_name
 
         let length = hexSanitized.count
 
@@ -59,10 +61,12 @@ extension UIColor {
             return nil
         }
 
+        // swiftlint:disable identifier_name
         let r = Float(components[0])
         let g = Float(components[1])
         let b = Float(components[2])
         var a = Float(1.0)
+        // swiftlint:enable identifier_name
 
         if components.count >= 4 {
             a = Float(components[3])

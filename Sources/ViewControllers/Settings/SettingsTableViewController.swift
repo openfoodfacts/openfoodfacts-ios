@@ -32,6 +32,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        // swiftlint:disable:next identifier_name
         guard let Settings = SettingsSection(rawValue: section) else { return "" }
         switch Settings {
         case .item:
