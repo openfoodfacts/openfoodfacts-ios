@@ -22,7 +22,7 @@ class UserViewController: UIViewController, DataManagerClient {
     }
 
     private func loadChildVC() {
-        let UIVC: UIViewController
+        let childNavigationVC: UIViewController
 
         if CredentialsController.shared.getUsername() != nil {
             createLoggedIn()
@@ -31,13 +31,13 @@ class UserViewController: UIViewController, DataManagerClient {
                 showProductsPendingUpload()
             }
 
-            UIVC = childNavigationController
+            childNavigationVC = childNavigationController
 
         } else {
-            UIVC = createLogIn()
+            childNavigationVC = createLogIn()
         }
 
-        transition(to: UIVC)
+        transition(to: childNavigationVC)
     }
 
     private func createLoggedIn() {
