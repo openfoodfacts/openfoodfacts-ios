@@ -73,9 +73,9 @@ class SearchViewControllerSpec: QuickSpec {
                     viewController.showHistory(UIBarButtonItem())
 
                     expect(navigationControllerMock.pushedViewController is HistoryTableViewController).to(beTrue())
-                    let vc = navigationControllerMock.pushedViewController as! HistoryTableViewController
-                    expect(vc.dataManager).toNot(beNil())
-                    expect(vc.delegate).toNot(beNil())
+                    let historyTableVC = navigationControllerMock.pushedViewController as! HistoryTableViewController
+                    expect(historyTableVC.dataManager).toNot(beNil())
+                    expect(historyTableVC.delegate).toNot(beNil())
                 }
             }
 

@@ -64,30 +64,30 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
     fileprivate func getSummaryVC() -> UIViewController {
         let form = createSummaryForm()
-        let vc = SummaryFormTableViewController(with: form, dataManager: dataManager)
-        vc.delegate = self
-        return vc
+        let summaryFormTableVC = SummaryFormTableViewController(with: form, dataManager: dataManager)
+        summaryFormTableVC.delegate = self
+        return summaryFormTableVC
     }
 
     fileprivate func getIngredientsVC() -> UIViewController {
         let form = createIngredientsForm()
-        let vc = IngredientsFormTableViewController(with: form, dataManager: dataManager)
-        vc.delegate = self
-        return vc
+        let ingredientsFormTableVC = IngredientsFormTableViewController(with: form, dataManager: dataManager)
+        ingredientsFormTableVC.delegate = self
+        return ingredientsFormTableVC
     }
 
     fileprivate func getNutritionVC() -> UIViewController? {
         guard let form = createNutritionForm() else { return nil }
-        let vc = FormTableViewController(with: form, dataManager: dataManager)
-        vc.delegate = self
-        return vc
+        let formTableVC = FormTableViewController(with: form, dataManager: dataManager)
+        formTableVC.delegate = self
+        return formTableVC
     }
 
     fileprivate func getNutritionTableVC() -> UIViewController {
         let form = createNutritionTableForm()
-        let vc = NutritionTableFormTableViewController(with: form, dataManager: dataManager)
-        vc.delegate = self
-        return vc
+        let nutritionTableFormTableVC = NutritionTableFormTableViewController(with: form, dataManager: dataManager)
+        nutritionTableFormTableVC.delegate = self
+        return nutritionTableFormTableVC
     }
 
     // MARK: - Form creation methods

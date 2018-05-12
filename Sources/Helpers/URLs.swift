@@ -20,7 +20,6 @@ struct URLs {
     static let SupportOpenFoodFacts = "https://www.helloasso.com/associations/open-food-facts/formulaires/1/widget/en"
     static let TranslateOpenFoodFacts = "https://crowdin.com/project/openfoodfacts"
     static let FrequentlyAskedQuestions = "https://world.openfoodfacts.org/faq"
-  
     static let ProductBaseURL: String = {
         return ProductBaseURLWithLanguagePlaceholder.replacingOccurrences(of: "LANGUAGE", with: Locale.current.languageCode!)
     }()
