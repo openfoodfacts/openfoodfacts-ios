@@ -9,10 +9,6 @@
         <source>Open Nutrition</source>
         <target xml:lang="zh-Hans" state="translated">开放营养</target>
       </trans-unit>
-      <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="zh-Hans" state="translated">$(PRODUCT_NAME)</target>
-      </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
         <target xml:lang="zh-Hans" state="translated">使用相机扫描条形码，并将拍摄的产品照片添加到数据库中</target>
@@ -769,105 +765,99 @@ Make sure the barcode is well lit.</source>
     </header>
     <body>
       <trans-unit id="alert.action.ok">
-        <source>alert.action.ok</source>
+        <source>Ok</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">alert.action.ok</target>
+        <target xml:lang="zh-Hans" state="translated">确认</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
-        <source>call-to-action.ingredients</source>
+        <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">call-to-action.ingredients</target>
+        <target xml:lang="zh-Hans" state="translated">拍摄配料照片</target>
         <alt-trans>
-          <target xml:lang="zh-Hans">打电话行动，配料</target>
+          <target xml:lang="zh-Hans">拍摄营养成分</target>
         </alt-trans>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
-        <source>call-to-action.nutrition</source>
+        <source>Take a picture of the nutrition facts</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">call-to-action.nutrition</target>
-        <alt-trans>
-          <target xml:lang="zh-Hans">打电话行动，营养</target>
-        </alt-trans>
+        <target xml:lang="zh-Hans" state="needs-translation">Take a picture of the nutrition facts</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
-        <source>call-to-action.summary</source>
+        <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">call-to-action.summary</target>
-        <alt-trans>
-          <target xml:lang="zh-Hans">打电话行动，摘要</target>
-        </alt-trans>
+        <target xml:lang="zh-Hans" state="translated">拍摄正面照片</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
-        <source>product-add.image-upload-error-banner.title</source>
+        <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">product-add.image-upload-error-banner.title</target>
+        <target xml:lang="zh-Hans" state="translated">出错</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
-        <source>product-add.image-upload-success-banner.title</source>
+        <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">product-add.image-upload-success-banner.title</target>
-        <alt-trans>
-          <target xml:lang="zh-Hans">产品－增加，图片－上传－成功 标记</target>
-        </alt-trans>
+        <target xml:lang="zh-Hans" state="translated">图片上传成功</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
-        <source>product-add.save-error.message</source>
+        <source>Try again later</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">product-add.save-error.message</target>
+        <target xml:lang="zh-Hans" state="translated">稍后再试</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
-        <source>product-add.save-error.title</source>
+        <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">product-add.save-error.title</target>
-        <alt-trans>
-          <target xml:lang="zh-Hans">产品－添加，保存－错误，标题</target>
-        </alt-trans>
+        <target xml:lang="zh-Hans" state="translated">保存课程时出错</target>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
-        <source>product-add.uploading-image-banner.title</source>
+        <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">product-add.uploading-image-banner.title</target>
+        <target xml:lang="zh-Hans" state="translated">正在上传图片...</target>
+        <alt-trans>
+          <target xml:lang="zh-Hans">正在上传</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
-        <source>product-detail.nutrition-table.for-serving</source>
+        <source>Per serving</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">product-detail.nutrition-table.for-serving</target>
+        <target xml:lang="zh-Hans" state="translated">每份</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
-        <source>product-detail.page-title.ingredients</source>
+        <source>Ingredients</source>
         <note>Product detail, ingredients</note>
-        <target xml:lang="zh-Hans" state="translated">product-detail.page-title.ingredients</target>
+        <target xml:lang="zh-Hans" state="translated">配料</target>
+        <alt-trans>
+          <target xml:lang="zh-Hans">成分</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
-        <source>product-detail.page-title.nutrition</source>
+        <source>Nutrition</source>
         <note>Product detail, nutrition</note>
-        <target xml:lang="zh-Hans" state="translated">product-detail.page-title.nutrition</target>
+        <target xml:lang="zh-Hans" state="translated">营养</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
-        <source>product-detail.page-title.nutrition-table</source>
+        <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="zh-Hans" state="translated">product-detail.page-title.nutrition-table</target>
+        <target xml:lang="zh-Hans" state="translated">营养表</target>
+        <alt-trans>
+          <target xml:lang="zh-Hans">营养标签</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
-        <source>product-detail.page-title.summary</source>
+        <source>Summary</source>
         <note>Product detail, summary</note>
-        <target xml:lang="zh-Hans" state="translated">product-detail.page-title.summary</target>
+        <target xml:lang="zh-Hans" state="translated">概要</target>
+        <alt-trans>
+          <target xml:lang="zh-Hans">摘要</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
-        <source>user.alert.password-missing</source>
+        <source>Password is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">user.alert.password-missing</target>
-        <alt-trans>
-          <target xml:lang="zh-Hans">用户，警告，用户名—缺失</target>
-        </alt-trans>
+        <target xml:lang="zh-Hans" state="translated">需要密码</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
-        <source>user.alert.username-missing</source>
+        <source>Username is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hans" state="translated">user.alert.username-missing</target>
-        <alt-trans>
-          <target xml:lang="zh-Hans">用户，警告，用户名—缺失</target>
-        </alt-trans>
+        <target xml:lang="zh-Hans" state="translated">用户名必填</target>
       </trans-unit>
     </body>
   </file>
