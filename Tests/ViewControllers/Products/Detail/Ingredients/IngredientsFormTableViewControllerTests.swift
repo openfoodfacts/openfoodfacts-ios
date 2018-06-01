@@ -32,9 +32,9 @@ class IngredientsFormTableViewControllerTests: XCTestCase {
 
     // MARK: - Init
     func testInitWithFormAndProductApi() {
-        let vc = SummaryFormTableViewController(with: form, dataManager: dataManager)
+        let summaryFormTableVC = SummaryFormTableViewController(with: form, dataManager: dataManager)
 
-        expect(vc).notTo(beNil())
+        expect(summaryFormTableVC).notTo(beNil())
     }
 
     // MARK: - getCell
