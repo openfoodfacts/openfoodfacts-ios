@@ -11,6 +11,8 @@
 * Added the issues to the [project](https://github.com/openfoodfacts/openfoodfacts-ios/projects/2) to be worked during the summers for the Summer of Food 2018.
 * Set up the developer environment for the next three months.
 
+## Week starting June 11th
+
 ### Working on this week [Issue #94](https://github.com/openfoodfacts/openfoodfacts-ios/issues/94)
 
 * Designing reusable custom presentation for key information Overlay (Continuous scan for barcodes)
@@ -29,4 +31,6 @@
 ### Risks and concerns
 
 * Ensuring that the overlay does not interrupts User flow.
+
+
 
