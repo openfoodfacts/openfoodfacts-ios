@@ -133,8 +133,8 @@ extension SearchTableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard case let .content(response) = state else { return }
 
-        if response.products.count == indexPath.row + 5, let page = Int(response.page), responseHasMorePages(response) {
-            getProducts(page: page + 2, withQuery: response.query)
+        if response.products.count == indexPath.row + 5, responseHasMorePages(response) {
+            getProducts(page: response.page + 1, withQuery: response.query)
         }
     }
 }
@@ -199,7 +199,6 @@ extension SearchTableViewController {
         dataManager.getProducts(for: query, page: page, onSuccess: { response in
             switch self.state {
             case .content(let oldResponse) where oldResponse.query == query: // Append new products to existing response
-                self.getProducts(page: page + 1, withQuery: query)
                 oldResponse.products.append(contentsOf: response.products)
                 oldResponse.page = response.page
                 oldResponse.pageSize = response.pageSize

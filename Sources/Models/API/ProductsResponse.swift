@@ -12,7 +12,7 @@ import ObjectMapper
 class ProductsResponse: Mappable {
     var query = ""
     var totalProducts = 0
-    var page = "0"
+    var page = 0
     var pageSize = "0"
     var products = [Product]()
     var product: Product?
