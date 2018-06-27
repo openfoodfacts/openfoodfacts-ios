@@ -118,7 +118,7 @@ class SearchTableViewControllerTests: XCTestCase {
         viewController.tableView(tableView, willDisplay: UITableViewCell(), forRowAt: indexPath)
 
         expect(self.dataManager.query) == query
-        expect(self.dataManager.page) == Int(initialPage)! + 1
+        expect(self.dataManager.page) == Int(initialPage)!
     }
 
     // MARK: - UITableViewDelegate
@@ -236,7 +236,7 @@ class SearchTableViewControllerTests: XCTestCase {
         expect(self.dataManager.query) == query
         expect(self.viewController.state).to(beContent { response in
             expect(response.totalProducts) == expectedResponse.totalProducts
-            expect(response.page) == String(page)
+            expect(response.page) == expectedResponse.page
             expect(response.products.count) == expectedProductsCount
         })
     }
