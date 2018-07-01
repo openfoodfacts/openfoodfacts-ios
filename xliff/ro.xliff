@@ -36,17 +36,17 @@
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ro" state="needs-translation">Take a picture of the ingredients</target>
+        <target xml:lang="ro" state="translated">Faceți o poză ingredientelor</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition table</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ro" state="needs-translation">Take a picture of the nutrition table</target>
+        <target xml:lang="ro" state="translated">Faceți o poză tabelului cu informații nutriționale</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
         <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ro" state="needs-translation">Take a picture of the front</target>
+        <target xml:lang="ro" state="translated">Faceți o poză frontală produsului</target>
       </trans-unit>
       <trans-unit id="nutrition-level.high">
         <source>in high quantity</source>
@@ -119,15 +119,15 @@
       </trans-unit>
       <trans-unit id="nutrition.fats.omega3">
         <source>Omega 3</source>
-        <target xml:lang="ro" state="needs-translation">Omega 3</target>
+        <target xml:lang="ro" state="translated">Omega 3</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega6">
         <source>Omega 6</source>
-        <target xml:lang="ro" state="needs-translation">Omega 6</target>
+        <target xml:lang="ro" state="translated">Omega 6</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega9">
         <source>Omega 9</source>
-        <target xml:lang="ro" state="needs-translation">Omega 9</target>
+        <target xml:lang="ro" state="translated">Omega 9</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.poly-unsaturated-fat">
         <source>Poly unsaturated fat</source>
@@ -216,7 +216,7 @@
       </trans-unit>
       <trans-unit id="nutrition.minerals.ph">
         <source>pH</source>
-        <target xml:lang="ro" state="needs-translation">pH</target>
+        <target xml:lang="ro" state="translated">pH</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.phosphorus">
         <source>Phosphorus</source>
@@ -240,7 +240,7 @@
       </trans-unit>
       <trans-unit id="nutrition.minerals.zinc">
         <source>Zinc</source>
-        <target xml:lang="ro" state="needs-translation">Zinc</target>
+        <target xml:lang="ro" state="translated">Zinc</target>
       </trans-unit>
       <trans-unit id="nutrition.proteins">
         <source>Proteins</source>
@@ -554,7 +554,10 @@ Make sure the barcode is well lit.</target>
       </trans-unit>
       <trans-unit id="product-search.initial-view.text">
         <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
-        <target xml:lang="ro" state="needs-translation">Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</target>
+        <target xml:lang="ro" state="translated">Open Food Facts este o bază de date gratuită a produselor alimentare, ce cuprinde ingredientele, alergenii, declarațiile nutriționale și toate informatiile pe care le găsim pe etichetele produselor.</target>
+        <alt-trans>
+          <target xml:lang="ro">Open Food Facts este o bază de date gratuită a produselor alimentare cu ingrediente, alergeni, declarații nutriționale și toate informatiile pe care le găsim pe etichetele produselor.</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-search.no-results">
         <source>No Results</source>
@@ -703,7 +706,7 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ro" state="needs-translation">Take a picture of the ingredients</target>
+        <target xml:lang="ro" state="translated">Faceți o poză ingredientelor</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition facts</source>
@@ -713,7 +716,7 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="call-to-action.summary">
         <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ro" state="needs-translation">Take a picture of the front</target>
+        <target xml:lang="ro" state="translated">Faceți o poză frontală produsului</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
@@ -763,7 +766,10 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="product-detail.page-title.summary">
         <source>Summary</source>
         <note>Product detail, summary</note>
-        <target xml:lang="ro" state="translated">Continut</target>
+        <target xml:lang="ro" state="translated">Conținut</target>
+        <alt-trans>
+          <target xml:lang="ro">Continut</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
         <source>Password is required</source>
