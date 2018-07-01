@@ -9,10 +9,6 @@
         <source>Open Nutrition</source>
         <target xml:lang="bn" state="needs-translation">Open Nutrition</target>
       </trans-unit>
-      <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="bn" state="needs-translation">$(PRODUCT_NAME)</target>
-      </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
         <target xml:lang="bn" state="needs-translation">Use your camera to scan barcodes and take pictures of products to add to the database</target>
@@ -51,9 +47,6 @@
         <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="bn" state="translated">সামনের দিকের ছবি তুলুন</target>
-        <alt-trans>
-          <target xml:lang="bn">সামনের ছবি তুলুন</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition-level.high">
         <source>in high quantity</source>
@@ -64,25 +57,16 @@
         <source>in low quantity</source>
         <note>Nutrition Level, low</note>
         <target xml:lang="bn" state="translated">কম পরিমাণে </target>
-        <alt-trans>
-          <target xml:lang="bn">কম পরিমানে</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition-level.moderate">
         <source>in moderate quantity</source>
         <note>Nutrition Level, moderate</note>
         <target xml:lang="bn" state="translated">মাঝারি পরিমাণে</target>
-        <alt-trans>
-          <target xml:lang="bn">মাঝারি পরিমানে</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.alcohol">
         <source>Alcohol</source>
         <target xml:lang="bn" state="translated">
 অ্যালকোহল</target>
-        <alt-trans>
-          <target xml:lang="bn">এলকোহল</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate">
         <source>Carbohydrate</source>
@@ -107,9 +91,6 @@
       <trans-unit id="nutrition.carbohydrate.maltose">
         <source>Maltose</source>
         <target xml:lang="bn" state="translated">ম্যালটোজ</target>
-        <alt-trans>
-          <target xml:lang="bn">মালটোস</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sucrose">
         <source>Sucrose</source>
@@ -156,7 +137,7 @@
       <trans-unit id="nutrition.fats.saturated-fat">
         <source>Saturated fat</source>
         <note>Nutrition, saturated fat</note>
-        <target xml:lang="bn" state="needs-translation">Saturated fat</target>
+        <target xml:lang="bn" state="translated">সম্পৃক্ত চর্বি</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.trans-fat">
         <source>Trans fat</source>
@@ -165,9 +146,6 @@
       <trans-unit id="nutrition.fiber">
         <source>Dietary fiber</source>
         <target xml:lang="bn" state="translated">ডায়েটারি ফাইবার</target>
-        <alt-trans>
-          <target xml:lang="bn">খাদ্যতালিকাগত ফাইবার</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals">
         <source>Minerals</source>
@@ -224,37 +202,22 @@
       <trans-unit id="nutrition.minerals.iron">
         <source>Iron</source>
         <target xml:lang="bn" state="translated">লৌহ</target>
-        <alt-trans>
-          <target xml:lang="bn">লোহা</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.magnesium">
         <source>Magnesium</source>
         <target xml:lang="bn" state="translated">ম্যাগনেসিয়াম</target>
-        <alt-trans>
-          <target xml:lang="bn">ম্যাগনেশিয়াম</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.manganese">
         <source>Manganese</source>
         <target xml:lang="bn" state="translated">ম্যাঙ্গানিজ</target>
-        <alt-trans>
-          <target xml:lang="bn">ম্যাঙ্গানীজ্</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.molybdenum">
         <source>Molybdenum</source>
         <target xml:lang="bn" state="translated">মলিবডেনাম</target>
-        <alt-trans>
-          <target xml:lang="bn">উন্নত</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.ph">
         <source>pH</source>
         <target xml:lang="bn" state="translated">pH</target>
-        <alt-trans>
-          <target xml:lang="bn">pH এর</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.phosphorus">
         <source>Phosphorus</source>
@@ -263,9 +226,6 @@
       <trans-unit id="nutrition.minerals.potassium">
         <source>Potassium</source>
         <target xml:lang="bn" state="translated">পটাসিয়াম</target>
-        <alt-trans>
-          <target xml:lang="bn">পটাশিয়াম</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.selenium">
         <source>Selenium</source>
@@ -277,10 +237,7 @@
       </trans-unit>
       <trans-unit id="nutrition.minerals.taurine">
         <source>Taurine</source>
-        <target xml:lang="bn" state="translated">Taurine</target>
-        <alt-trans>
-          <target xml:lang="bn">বৃষসদৃশ</target>
-        </alt-trans>
+        <target xml:lang="bn" state="translated">বৃষসদৃশ</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.zinc">
         <source>Zinc</source>
@@ -306,9 +263,6 @@
         <source>Salt</source>
         <note>Nutrition, salt</note>
         <target xml:lang="bn" state="translated">লবন</target>
-        <alt-trans>
-          <target xml:lang="bn">লবণ</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.sodium">
         <source>Sodium</source>
@@ -317,9 +271,6 @@
       <trans-unit id="nutrition.vitamins">
         <source>Vitamins</source>
         <target xml:lang="bn" state="translated">ভিটামিনসমূহ</target>
-        <alt-trans>
-          <target xml:lang="bn">ভিটামিন</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.a">
         <source>Vitamin A</source>
@@ -352,9 +303,6 @@
       <trans-unit id="nutrition.vitamins.biotin">
         <source>Biotin</source>
         <target xml:lang="bn" state="translated">বায়োটিন</target>
-        <alt-trans>
-          <target xml:lang="bn">Biotin</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.c">
         <source>Vitamin C</source>
@@ -433,7 +381,7 @@
       </trans-unit>
       <trans-unit id="product-detail.ingredients.additives-list">
         <source>Additives</source>
-        <target xml:lang="bn" state="needs-translation">Additives</target>
+        <target xml:lang="bn" state="translated">ভোজ্য উপাদান</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.allergens-list">
         <source>Substances or products causing allergies or intolerances</source>
@@ -464,9 +412,6 @@
         <source>Per serving</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="bn" state="translated">প্রতি পরিবেশনে</target>
-        <alt-trans>
-          <target xml:lang="bn">ভজনা প্রতি</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.nutritional-table-header">
         <source>Nutrition facts</source>
@@ -474,11 +419,11 @@
       </trans-unit>
       <trans-unit id="product-detail.nutrition.carbon-footprint">
         <source>Carbon footprint / CO2 emissions</source>
-        <target xml:lang="bn" state="needs-translation">Carbon footprint / CO2 emissions</target>
+        <target xml:lang="bn" state="translated">কার্বন পদচিহ্ন / CO2 নির্গমন</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.serving-size">
         <source>Serving size</source>
-        <target xml:lang="bn" state="needs-translation">Serving size</target>
+        <target xml:lang="bn" state="translated">পরিবেশন পরিমাপ</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
         <source>Ingredients</source>
@@ -489,9 +434,6 @@
         <source>Nutrition</source>
         <note>Product detail, nutrition</note>
         <target xml:lang="bn" state="translated">পুষ্টি উপাদান</target>
-        <alt-trans>
-          <target xml:lang="bn">পুষ্টি</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
         <source>Nutrition table</source>
@@ -517,11 +459,11 @@
       </trans-unit>
       <trans-unit id="product-detail.summary.citiesTags">
         <source>City, state and country where purchased</source>
-        <target xml:lang="bn" state="needs-translation">City, state and country where purchased</target>
+        <target xml:lang="bn" state="translated">ক্রয়কৃত শহর, রাজ্য এবং দেশ</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.countries">
         <source>Countries where sold</source>
-        <target xml:lang="bn" state="needs-translation">Countries where sold</target>
+        <target xml:lang="bn" state="translated">যে দেশে বিক্রি হয়েছে</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.labels">
         <source>Labels, certifications, awards</source>
@@ -533,7 +475,7 @@
       </trans-unit>
       <trans-unit id="product-detail.summary.origins">
         <source>Origin of ingredients</source>
-        <target xml:lang="bn" state="needs-translation">Origin of ingredients</target>
+        <target xml:lang="bn" state="translated">প্রধান উপাদানসমূহ</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.packaging">
         <source>Packaging</source>
@@ -541,11 +483,11 @@
       </trans-unit>
       <trans-unit id="product-detail.summary.quantity">
         <source>Quantity</source>
-        <target xml:lang="bn" state="needs-translation">Quantity</target>
+        <target xml:lang="bn" state="translated">পরিমান</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.stores">
         <source>Stores</source>
-        <target xml:lang="bn" state="needs-translation">Stores</target>
+        <target xml:lang="bn" state="translated">দোকান সমূহ</target>
       </trans-unit>
       <trans-unit id="product-scanner.barcode.error">
         <source>Error scanning barcode. Please try again in a few moments.</source>
@@ -633,7 +575,7 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="product.images.ingredients">
         <source>ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">ingredients</target>
+        <target xml:lang="bn" state="translated">উপকরণসমূহ</target>
       </trans-unit>
       <trans-unit id="product.images.nutrition">
         <source>nutrition table</source>
@@ -755,84 +697,93 @@ Make sure the barcode is well lit.</target>
     </header>
     <body>
       <trans-unit id="alert.action.ok">
-        <source>alert.action.ok</source>
+        <source>Ok</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">alert.action.ok</target>
+        <target xml:lang="bn" state="needs-translation">Ok</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
-        <source>call-to-action.ingredients</source>
+        <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">call-to-action.ingredients</target>
+        <target xml:lang="bn" state="translated">উপাদানের একটি ছবি নিন</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
-        <source>call-to-action.nutrition</source>
+        <source>Take a picture of the nutrition facts</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">call-to-action.nutrition</target>
+        <target xml:lang="bn" state="needs-translation">Take a picture of the nutrition facts</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
-        <source>call-to-action.summary</source>
+        <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">call-to-action.summary</target>
+        <target xml:lang="bn" state="translated">সামনের দিকের ছবি তুলুন</target>
+        <alt-trans>
+          <target xml:lang="bn">সামনের ছবি তুলুন</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
-        <source>product-add.image-upload-error-banner.title</source>
+        <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">product-add.image-upload-error-banner.title</target>
+        <target xml:lang="bn" state="needs-translation">Something went wrong</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
-        <source>product-add.image-upload-success-banner.title</source>
+        <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">product-add.image-upload-success-banner.title</target>
+        <target xml:lang="bn" state="needs-translation">Image was uploaded successfully</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
-        <source>product-add.save-error.message</source>
+        <source>Try again later</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">product-add.save-error.message</target>
+        <target xml:lang="bn" state="needs-translation">Try again later</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
-        <source>product-add.save-error.title</source>
+        <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">product-add.save-error.title</target>
+        <target xml:lang="bn" state="needs-translation">Error while saving product</target>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
-        <source>product-add.uploading-image-banner.title</source>
+        <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">product-add.uploading-image-banner.title</target>
+        <target xml:lang="bn" state="needs-translation">Uploading image...</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
-        <source>product-detail.nutrition-table.for-serving</source>
+        <source>Per serving</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">product-detail.nutrition-table.for-serving</target>
+        <target xml:lang="bn" state="translated">প্রতি পরিবেশনে</target>
+        <alt-trans>
+          <target xml:lang="bn">ভজনা প্রতি</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
-        <source>product-detail.page-title.ingredients</source>
+        <source>Ingredients</source>
         <note>Product detail, ingredients</note>
-        <target xml:lang="bn" state="needs-translation">product-detail.page-title.ingredients</target>
+        <target xml:lang="bn" state="translated">উপকরণসমূহ</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
-        <source>product-detail.page-title.nutrition</source>
+        <source>Nutrition</source>
         <note>Product detail, nutrition</note>
-        <target xml:lang="bn" state="needs-translation">product-detail.page-title.nutrition</target>
+        <target xml:lang="bn" state="translated">পুষ্টি উপাদান</target>
+        <alt-trans>
+          <target xml:lang="bn">পুষ্টি</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
-        <source>product-detail.page-title.nutrition-table</source>
+        <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="bn" state="needs-translation">product-detail.page-title.nutrition-table</target>
+        <target xml:lang="bn" state="needs-translation">Nutrition table</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
-        <source>product-detail.page-title.summary</source>
+        <source>Summary</source>
         <note>Product detail, summary</note>
-        <target xml:lang="bn" state="needs-translation">product-detail.page-title.summary</target>
+        <target xml:lang="bn" state="translated">সারাংশ</target>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
-        <source>user.alert.password-missing</source>
+        <source>Password is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">user.alert.password-missing</target>
+        <target xml:lang="bn" state="needs-translation">Password is required</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
-        <source>user.alert.username-missing</source>
+        <source>Username is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="bn" state="needs-translation">user.alert.username-missing</target>
+        <target xml:lang="bn" state="needs-translation">Username is required</target>
       </trans-unit>
     </body>
   </file>
