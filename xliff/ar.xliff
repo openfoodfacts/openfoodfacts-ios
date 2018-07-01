@@ -9,10 +9,6 @@
         <source>Open Nutrition</source>
         <target xml:lang="ar" state="translated">التغذية المفتوحة</target>
       </trans-unit>
-      <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="ar" state="translated">$(PRODUCT_NAME)</target>
-      </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
         <target xml:lang="ar" state="translated">استخدام الكاميرا لمسح الباركود والتقاط الصور للمنتجات لإضافتها إلى قاعدة البيانات</target>
@@ -583,7 +579,7 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="product.images.nutrition">
         <source>nutrition table</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">nutrition table</target>
+        <target xml:lang="ar" state="translated">جدول الحقائق الغذائية</target>
       </trans-unit>
       <trans-unit id="product.images.picture">
         <source>picture ✅</source>
@@ -610,14 +606,11 @@ Make sure the barcode is well lit.</target>
       </trans-unit>
       <trans-unit id="settings.credits.title">
         <source>Credits</source>
-        <target xml:lang="ar" state="needs-translation">Credits</target>
+        <target xml:lang="ar" state="translated">إعتمادات</target>
       </trans-unit>
       <trans-unit id="settings.information.discover">
         <source>Discover</source>
-        <target xml:lang="ar" state="translated">إكتشف</target>
-        <alt-trans>
-          <target xml:lang="ar">اكتشف</target>
-        </alt-trans>
+        <target xml:lang="ar" state="translated">اكتشف</target>
       </trans-unit>
       <trans-unit id="settings.information.how-to-contribute">
         <source>How To Contribute</source>
@@ -703,84 +696,84 @@ Make sure the barcode is well lit.</target>
     </header>
     <body>
       <trans-unit id="alert.action.ok">
-        <source>alert.action.ok</source>
+        <source>Ok</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">alert.action.ok</target>
+        <target xml:lang="ar" state="needs-translation">Ok</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
-        <source>call-to-action.ingredients</source>
+        <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">call-to-action.ingredients</target>
+        <target xml:lang="ar" state="translated">التقط صورة للمكونات</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
-        <source>call-to-action.nutrition</source>
+        <source>Take a picture of the nutrition facts</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">call-to-action.nutrition</target>
+        <target xml:lang="ar" state="needs-translation">Take a picture of the nutrition facts</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
-        <source>call-to-action.summary</source>
+        <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">call-to-action.summary</target>
+        <target xml:lang="ar" state="translated">التقط صورة للأمام</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
-        <source>product-add.image-upload-error-banner.title</source>
+        <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">product-add.image-upload-error-banner.title</target>
+        <target xml:lang="ar" state="needs-translation">Something went wrong</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
-        <source>product-add.image-upload-success-banner.title</source>
+        <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">product-add.image-upload-success-banner.title</target>
+        <target xml:lang="ar" state="needs-translation">Image was uploaded successfully</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
-        <source>product-add.save-error.message</source>
+        <source>Try again later</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">product-add.save-error.message</target>
+        <target xml:lang="ar" state="needs-translation">Try again later</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
-        <source>product-add.save-error.title</source>
+        <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">product-add.save-error.title</target>
+        <target xml:lang="ar" state="needs-translation">Error while saving product</target>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
-        <source>product-add.uploading-image-banner.title</source>
+        <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">product-add.uploading-image-banner.title</target>
+        <target xml:lang="ar" state="needs-translation">Uploading image...</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
-        <source>product-detail.nutrition-table.for-serving</source>
+        <source>Per serving</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">product-detail.nutrition-table.for-serving</target>
+        <target xml:lang="ar" state="translated">لكل وجبة</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
-        <source>product-detail.page-title.ingredients</source>
+        <source>Ingredients</source>
         <note>Product detail, ingredients</note>
-        <target xml:lang="ar" state="needs-translation">product-detail.page-title.ingredients</target>
+        <target xml:lang="ar" state="translated">المكونات</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
-        <source>product-detail.page-title.nutrition</source>
+        <source>Nutrition</source>
         <note>Product detail, nutrition</note>
-        <target xml:lang="ar" state="needs-translation">product-detail.page-title.nutrition</target>
+        <target xml:lang="ar" state="translated">التغذية</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
-        <source>product-detail.page-title.nutrition-table</source>
+        <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="ar" state="needs-translation">product-detail.page-title.nutrition-table</target>
+        <target xml:lang="ar" state="translated">جدول الحقائق الغذائية</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
-        <source>product-detail.page-title.summary</source>
+        <source>Summary</source>
         <note>Product detail, summary</note>
-        <target xml:lang="ar" state="needs-translation">product-detail.page-title.summary</target>
+        <target xml:lang="ar" state="translated">الملخص</target>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
-        <source>user.alert.password-missing</source>
+        <source>Password is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">user.alert.password-missing</target>
+        <target xml:lang="ar" state="needs-translation">Password is required</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
-        <source>user.alert.username-missing</source>
+        <source>Username is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="ar" state="needs-translation">user.alert.username-missing</target>
+        <target xml:lang="ar" state="needs-translation">Username is required</target>
       </trans-unit>
     </body>
   </file>
