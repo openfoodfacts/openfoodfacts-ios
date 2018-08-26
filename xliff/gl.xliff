@@ -9,10 +9,6 @@
         <source>Open Nutrition</source>
         <target xml:lang="gl" state="needs-translation">Open Nutrition</target>
       </trans-unit>
-      <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="gl" state="needs-translation">$(PRODUCT_NAME)</target>
-      </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
         <target xml:lang="gl" state="needs-translation">Use your camera to scan barcodes and take pictures of products to add to the database</target>
@@ -40,36 +36,36 @@
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">Take a picture of the ingredients</target>
+        <target xml:lang="gl" state="translated">Tomar unha foto dos ingredientes</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition table</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">Take a picture of the nutrition table</target>
+        <target xml:lang="gl" state="translated">Tomar unha foto da táboa nutricional</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
         <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">Take a picture of the front</target>
+        <target xml:lang="gl" state="translated">Tomar unha foto frontal</target>
       </trans-unit>
       <trans-unit id="nutrition-level.high">
         <source>in high quantity</source>
         <note>Nutrition Level, high</note>
-        <target xml:lang="gl" state="needs-translation">in high quantity</target>
+        <target xml:lang="gl" state="translated">en alta cantidade</target>
       </trans-unit>
       <trans-unit id="nutrition-level.low">
         <source>in low quantity</source>
         <note>Nutrition Level, low</note>
-        <target xml:lang="gl" state="needs-translation">in low quantity</target>
+        <target xml:lang="gl" state="translated">en baixa cantidade</target>
       </trans-unit>
       <trans-unit id="nutrition-level.moderate">
         <source>in moderate quantity</source>
         <note>Nutrition Level, moderate</note>
-        <target xml:lang="gl" state="needs-translation">in moderate quantity</target>
+        <target xml:lang="gl" state="translated">con moderación</target>
       </trans-unit>
       <trans-unit id="nutrition.alcohol">
         <source>Alcohol</source>
-        <target xml:lang="gl" state="needs-translation">Alcohol</target>
+        <target xml:lang="gl" state="translated">Alcol</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate">
         <source>Carbohydrate</source>
@@ -77,32 +73,32 @@
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.fructose">
         <source>Fructose</source>
-        <target xml:lang="gl" state="needs-translation">Fructose</target>
+        <target xml:lang="gl" state="translated">Fructosa</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.glucose">
         <source>Glucose</source>
-        <target xml:lang="gl" state="needs-translation">Glucose</target>
+        <target xml:lang="gl" state="translated">Glucosa</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.lactose">
         <source>Lactose</source>
-        <target xml:lang="gl" state="needs-translation">Lactose</target>
+        <target xml:lang="gl" state="translated">Lactosa</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.maltodextrins">
         <source>Maltodextrins</source>
-        <target xml:lang="gl" state="needs-translation">Maltodextrins</target>
+        <target xml:lang="gl" state="translated">Maltodextrinas</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.maltose">
         <source>Maltose</source>
-        <target xml:lang="gl" state="needs-translation">Maltose</target>
+        <target xml:lang="gl" state="translated">Maltosa</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sucrose">
         <source>Sucrose</source>
-        <target xml:lang="gl" state="needs-translation">Sucrose</target>
+        <target xml:lang="gl" state="translated">Sacarosa</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sugars">
         <source>Sugars</source>
         <note>Nutrition, sugars</note>
-        <target xml:lang="gl" state="needs-translation">Sugars</target>
+        <target xml:lang="gl" state="translated">Azucres</target>
       </trans-unit>
       <trans-unit id="nutrition.energy">
         <source>Energy</source>
@@ -119,23 +115,23 @@
       </trans-unit>
       <trans-unit id="nutrition.fats.mono-unsaturated-fat">
         <source>Mono unsaturated fat</source>
-        <target xml:lang="gl" state="needs-translation">Mono unsaturated fat</target>
+        <target xml:lang="gl" state="translated">Graxa Mono insaturada</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega3">
         <source>Omega 3</source>
-        <target xml:lang="gl" state="needs-translation">Omega 3</target>
+        <target xml:lang="gl" state="translated">Omega 3</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega6">
         <source>Omega 6</source>
-        <target xml:lang="gl" state="needs-translation">Omega 6</target>
+        <target xml:lang="gl" state="translated">Omega 6</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega9">
         <source>Omega 9</source>
-        <target xml:lang="gl" state="needs-translation">Omega 9</target>
+        <target xml:lang="gl" state="translated">Omega 9</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.poly-unsaturated-fat">
         <source>Poly unsaturated fat</source>
-        <target xml:lang="gl" state="needs-translation">Poly unsaturated fat</target>
+        <target xml:lang="gl" state="translated">Graxa Poli insaturada</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.saturated-fat">
         <source>Saturated fat</source>
@@ -152,99 +148,102 @@
       </trans-unit>
       <trans-unit id="nutrition.minerals">
         <source>Minerals</source>
-        <target xml:lang="gl" state="needs-translation">Minerals</target>
+        <target xml:lang="gl" state="translated">Minerais</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.bicarbonate">
         <source>Bicarbonate</source>
-        <target xml:lang="gl" state="needs-translation">Bicarbonate</target>
+        <target xml:lang="gl" state="translated">Bicarbonato</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.caffeine">
         <source>Caffeine</source>
-        <target xml:lang="gl" state="needs-translation">Caffeine</target>
+        <target xml:lang="gl" state="translated">Cafeína</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.calcium">
         <source>Calcium</source>
-        <target xml:lang="gl" state="needs-translation">Calcium</target>
+        <target xml:lang="gl" state="translated">Calcio</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chloride">
         <source>Chloride</source>
-        <target xml:lang="gl" state="needs-translation">Chloride</target>
+        <target xml:lang="gl" state="translated">Cloro</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chlorophyl">
         <source>Chlorophyl</source>
-        <target xml:lang="gl" state="needs-translation">Chlorophyl</target>
+        <target xml:lang="gl" state="translated">Clorofila</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chromium">
         <source>Chromium</source>
-        <target xml:lang="gl" state="needs-translation">Chromium</target>
+        <target xml:lang="gl" state="translated">Cromo</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.cocoa">
         <source>Cocoa</source>
-        <target xml:lang="gl" state="needs-translation">Cocoa</target>
+        <target xml:lang="gl" state="translated">Cacao</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.collagen-meat-protein-ratio">
         <source>Collagen meat protein ratio</source>
-        <target xml:lang="gl" state="needs-translation">Collagen meat protein ratio</target>
+        <target xml:lang="gl" state="translated">Proporción de coláxeno proteína da carne</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.copper">
         <source>Copper</source>
-        <target xml:lang="gl" state="needs-translation">Copper</target>
+        <target xml:lang="gl" state="translated">Cobre</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.fluoride">
         <source>Fluoride</source>
-        <target xml:lang="gl" state="needs-translation">Fluoride</target>
+        <target xml:lang="gl" state="translated">Flúor</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.fruits-vegetables-nuts">
         <source>Fruits, vegetables, nuts</source>
-        <target xml:lang="gl" state="needs-translation">Fruits, vegetables, nuts</target>
+        <target xml:lang="gl" state="translated">Frutas, vexetais, frutos secos</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.iodine">
         <source>Iodine</source>
-        <target xml:lang="gl" state="needs-translation">Iodine</target>
+        <target xml:lang="gl" state="translated">Iodo</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.iron">
         <source>Iron</source>
-        <target xml:lang="gl" state="needs-translation">Iron</target>
+        <target xml:lang="gl" state="translated">Ferro</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.magnesium">
         <source>Magnesium</source>
-        <target xml:lang="gl" state="needs-translation">Magnesium</target>
+        <target xml:lang="gl" state="translated">Magnesio</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.manganese">
         <source>Manganese</source>
-        <target xml:lang="gl" state="needs-translation">Manganese</target>
+        <target xml:lang="gl" state="translated">Manganeso</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.molybdenum">
         <source>Molybdenum</source>
-        <target xml:lang="gl" state="needs-translation">Molybdenum</target>
+        <target xml:lang="gl" state="translated">Molibdeno</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.ph">
         <source>pH</source>
-        <target xml:lang="gl" state="needs-translation">pH</target>
+        <target xml:lang="gl" state="translated">pH</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.phosphorus">
         <source>Phosphorus</source>
-        <target xml:lang="gl" state="needs-translation">Phosphorus</target>
+        <target xml:lang="gl" state="translated">Fósforo</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.potassium">
         <source>Potassium</source>
-        <target xml:lang="gl" state="needs-translation">Potassium</target>
+        <target xml:lang="gl" state="translated">Potasio</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.selenium">
         <source>Selenium</source>
-        <target xml:lang="gl" state="needs-translation">Selenium</target>
+        <target xml:lang="gl" state="translated">Selenio</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.silica">
         <source>Silica</source>
-        <target xml:lang="gl" state="needs-translation">Silica</target>
+        <target xml:lang="gl" state="translated">Silicatos</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.taurine">
         <source>Taurine</source>
-        <target xml:lang="gl" state="needs-translation">Taurine</target>
+        <target xml:lang="gl" state="translated">Taurina</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.zinc">
         <source>Zinc</source>
-        <target xml:lang="gl" state="needs-translation">Zinc</target>
+        <target xml:lang="gl" state="translated">Cinc</target>
+        <alt-trans>
+          <target xml:lang="gl">Zinc</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.proteins">
         <source>Proteins</source>
@@ -252,20 +251,20 @@
       </trans-unit>
       <trans-unit id="nutrition.proteins.casein">
         <source>Casein</source>
-        <target xml:lang="gl" state="needs-translation">Casein</target>
+        <target xml:lang="gl" state="translated">Caseína</target>
       </trans-unit>
       <trans-unit id="nutrition.proteins.nucleotides">
         <source>Nucleotides</source>
-        <target xml:lang="gl" state="needs-translation">Nucleotides</target>
+        <target xml:lang="gl" state="translated">Nucleótidos</target>
       </trans-unit>
       <trans-unit id="nutrition.proteins.serum-proteins">
         <source>Serum Proteins</source>
-        <target xml:lang="gl" state="needs-translation">Serum Proteins</target>
+        <target xml:lang="gl" state="translated">Proteínas do soro</target>
       </trans-unit>
       <trans-unit id="nutrition.salt">
         <source>Salt</source>
         <note>Nutrition, salt</note>
-        <target xml:lang="gl" state="needs-translation">Salt</target>
+        <target xml:lang="gl" state="translated">Sal</target>
       </trans-unit>
       <trans-unit id="nutrition.sodium">
         <source>Sodium</source>
@@ -273,31 +272,31 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins">
         <source>Vitamins</source>
-        <target xml:lang="gl" state="needs-translation">Vitamins</target>
+        <target xml:lang="gl" state="translated">Vitaminas</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.a">
         <source>Vitamin A</source>
-        <target xml:lang="gl" state="needs-translation">Vitamin A</target>
+        <target xml:lang="gl" state="translated">Vitamina A</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b1">
         <source>Vitamin B1</source>
-        <target xml:lang="gl" state="needs-translation">Vitamin B1</target>
+        <target xml:lang="gl" state="translated">Vitamina B1</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b2">
         <source>Vitamin B2</source>
-        <target xml:lang="gl" state="needs-translation">Vitamin B2</target>
+        <target xml:lang="gl" state="translated">Vitamina B2</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b6">
         <source>Vitamin B6</source>
-        <target xml:lang="gl" state="needs-translation">Vitamin B6</target>
+        <target xml:lang="gl" state="translated">Vitamina B6</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b9">
         <source>Vitamin B9</source>
-        <target xml:lang="gl" state="needs-translation">Vitamin B9</target>
+        <target xml:lang="gl" state="translated">Vitamina B9</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b12">
         <source>Vitamin B12</source>
-        <target xml:lang="gl" state="needs-translation">Vitamin B12</target>
+        <target xml:lang="gl" state="translated">Vitamina B12</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.beta-carotene">
         <source>Beta carotene</source>
@@ -305,11 +304,11 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins.biotin">
         <source>Biotin</source>
-        <target xml:lang="gl" state="needs-translation">Biotin</target>
+        <target xml:lang="gl" state="translated">Biotina</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.c">
         <source>Vitamin C</source>
-        <target xml:lang="gl" state="needs-translation">Vitamin C</target>
+        <target xml:lang="gl" state="translated">Vitamina C</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.d">
         <source>Vitamin D</source>
@@ -325,11 +324,11 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins.pantothenic-acid">
         <source>Pantothenic acid</source>
-        <target xml:lang="gl" state="needs-translation">Pantothenic acid</target>
+        <target xml:lang="gl" state="translated">Ácido pantoteico</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.pp">
         <source>Vitamin PP</source>
-        <target xml:lang="gl" state="needs-translation">Vitamin PP</target>
+        <target xml:lang="gl" state="translated">Vitamina PP</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.subtitle">
         <source>Please try to take the picture again</source>
@@ -384,7 +383,7 @@
       </trans-unit>
       <trans-unit id="product-detail.ingredients.additives-list">
         <source>Additives</source>
-        <target xml:lang="gl" state="needs-translation">Additives</target>
+        <target xml:lang="gl" state="translated">Aditivos</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.allergens-list">
         <source>Substances or products causing allergies or intolerances</source>
@@ -396,20 +395,20 @@
       </trans-unit>
       <trans-unit id="product-detail.ingredients.palm-oil-ingredients">
         <source>Ingredients from palm oil</source>
-        <target xml:lang="gl" state="needs-translation">Ingredients from palm oil</target>
+        <target xml:lang="gl" state="translated">Ingredientes de aceite de palma</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients">
         <source>Ingredients that may be from palm oil</source>
-        <target xml:lang="gl" state="needs-translation">Ingredients that may be from palm oil</target>
+        <target xml:lang="gl" state="translated">Ingredientes que poden ser a partir de aceite de palma</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.traces-list">
         <source>Traces</source>
-        <target xml:lang="gl" state="needs-translation">Traces</target>
+        <target xml:lang="gl" state="translated">Trazas</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-100g">
         <source>For 100 g</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">For 100 g</target>
+        <target xml:lang="gl" state="translated">Por 100 g</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
         <source>Per serving</source>
@@ -422,11 +421,11 @@
       </trans-unit>
       <trans-unit id="product-detail.nutrition.carbon-footprint">
         <source>Carbon footprint / CO2 emissions</source>
-        <target xml:lang="gl" state="needs-translation">Carbon footprint / CO2 emissions</target>
+        <target xml:lang="gl" state="translated">Pegada de carbono / Emisións de CO2</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.serving-size">
         <source>Serving size</source>
-        <target xml:lang="gl" state="needs-translation">Serving size</target>
+        <target xml:lang="gl" state="translated">Tamaño da ración</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
         <source>Ingredients</source>
@@ -462,15 +461,15 @@
       </trans-unit>
       <trans-unit id="product-detail.summary.citiesTags">
         <source>City, state and country where purchased</source>
-        <target xml:lang="gl" state="needs-translation">City, state and country where purchased</target>
+        <target xml:lang="gl" state="translated">Cidade, provincia e país da compra</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.countries">
         <source>Countries where sold</source>
-        <target xml:lang="gl" state="needs-translation">Countries where sold</target>
+        <target xml:lang="gl" state="translated">Country</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.labels">
         <source>Labels, certifications, awards</source>
-        <target xml:lang="gl" state="needs-translation">Labels, certifications, awards</target>
+        <target xml:lang="gl" state="translated">Etiquetas, certificacións, premios</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.manufacturing-places">
         <source>Manufacturing or processing places</source>
@@ -478,19 +477,19 @@
       </trans-unit>
       <trans-unit id="product-detail.summary.origins">
         <source>Origin of ingredients</source>
-        <target xml:lang="gl" state="needs-translation">Origin of ingredients</target>
+        <target xml:lang="gl" state="translated">Orixe dos ingredientes</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.packaging">
         <source>Packaging</source>
-        <target xml:lang="gl" state="needs-translation">Packaging</target>
+        <target xml:lang="gl" state="translated">Empaquetado</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.quantity">
         <source>Quantity</source>
-        <target xml:lang="gl" state="needs-translation">Quantity</target>
+        <target xml:lang="gl" state="translated">Cantidade</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.stores">
         <source>Stores</source>
-        <target xml:lang="gl" state="needs-translation">Stores</target>
+        <target xml:lang="gl" state="translated">Tendas</target>
       </trans-unit>
       <trans-unit id="product-scanner.barcode.error">
         <source>Error scanning barcode. Please try again in a few moments.</source>
@@ -578,7 +577,7 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="product.images.ingredients">
         <source>ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">ingredients</target>
+        <target xml:lang="gl" state="translated">ingredientes</target>
       </trans-unit>
       <trans-unit id="product.images.nutrition">
         <source>nutrition table</source>
@@ -700,84 +699,84 @@ Make sure the barcode is well lit.</target>
     </header>
     <body>
       <trans-unit id="alert.action.ok">
-        <source>alert.action.ok</source>
+        <source>Ok</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">alert.action.ok</target>
+        <target xml:lang="gl" state="needs-translation">Ok</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
-        <source>call-to-action.ingredients</source>
+        <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">call-to-action.ingredients</target>
+        <target xml:lang="gl" state="translated">Tomar unha foto dos ingredientes</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
-        <source>call-to-action.nutrition</source>
+        <source>Take a picture of the nutrition facts</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">call-to-action.nutrition</target>
+        <target xml:lang="gl" state="needs-translation">Take a picture of the nutrition facts</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
-        <source>call-to-action.summary</source>
+        <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">call-to-action.summary</target>
+        <target xml:lang="gl" state="translated">Tomar unha foto frontal</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
-        <source>product-add.image-upload-error-banner.title</source>
+        <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">product-add.image-upload-error-banner.title</target>
+        <target xml:lang="gl" state="needs-translation">Something went wrong</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
-        <source>product-add.image-upload-success-banner.title</source>
+        <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">product-add.image-upload-success-banner.title</target>
+        <target xml:lang="gl" state="needs-translation">Image was uploaded successfully</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
-        <source>product-add.save-error.message</source>
+        <source>Try again later</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">product-add.save-error.message</target>
+        <target xml:lang="gl" state="needs-translation">Try again later</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
-        <source>product-add.save-error.title</source>
+        <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">product-add.save-error.title</target>
+        <target xml:lang="gl" state="needs-translation">Error while saving product</target>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
-        <source>product-add.uploading-image-banner.title</source>
+        <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">product-add.uploading-image-banner.title</target>
+        <target xml:lang="gl" state="needs-translation">Uploading image...</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
-        <source>product-detail.nutrition-table.for-serving</source>
+        <source>Per serving</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">product-detail.nutrition-table.for-serving</target>
+        <target xml:lang="gl" state="translated">Por ración</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
-        <source>product-detail.page-title.ingredients</source>
+        <source>Ingredients</source>
         <note>Product detail, ingredients</note>
-        <target xml:lang="gl" state="needs-translation">product-detail.page-title.ingredients</target>
+        <target xml:lang="gl" state="translated">Ingredientes</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
-        <source>product-detail.page-title.nutrition</source>
+        <source>Nutrition</source>
         <note>Product detail, nutrition</note>
-        <target xml:lang="gl" state="needs-translation">product-detail.page-title.nutrition</target>
+        <target xml:lang="gl" state="translated">Nutrición</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
-        <source>product-detail.page-title.nutrition-table</source>
+        <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="gl" state="needs-translation">product-detail.page-title.nutrition-table</target>
+        <target xml:lang="gl" state="needs-translation">Nutrition table</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
-        <source>product-detail.page-title.summary</source>
+        <source>Summary</source>
         <note>Product detail, summary</note>
-        <target xml:lang="gl" state="needs-translation">product-detail.page-title.summary</target>
+        <target xml:lang="gl" state="translated">Resumo</target>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
-        <source>user.alert.password-missing</source>
+        <source>Password is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">user.alert.password-missing</target>
+        <target xml:lang="gl" state="needs-translation">Password is required</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
-        <source>user.alert.username-missing</source>
+        <source>Username is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="gl" state="needs-translation">user.alert.username-missing</target>
+        <target xml:lang="gl" state="needs-translation">Username is required</target>
       </trans-unit>
     </body>
   </file>

@@ -7,23 +7,19 @@
     <body>
       <trans-unit id="CFBundleDisplayName">
         <source>Open Nutrition</source>
-        <target xml:lang="he" state="needs-translation">Open Nutrition</target>
-      </trans-unit>
-      <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="he" state="needs-translation">$(PRODUCT_NAME)</target>
+        <target xml:lang="he" state="translated">נתונים תזונתיים פתוחים</target>
       </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
-        <target xml:lang="he" state="needs-translation">Use your camera to scan barcodes and take pictures of products to add to the database</target>
+        <target xml:lang="he" state="translated">ניתן להשתמש במצלמה שלך כדי לסרוק ברקודים או לצלם תמונות של מוצרים להוספה למסד הנתונים</target>
       </trans-unit>
       <trans-unit id="NSPhotoLibraryUsageDescription">
         <source>Take and upload pictures of products</source>
-        <target xml:lang="he" state="needs-translation">Take and upload pictures of products</target>
+        <target xml:lang="he" state="translated">צילום והעלאת תמונות של המוצרים</target>
       </trans-unit>
       <trans-unit id="QUICK_ACTION_SCAN_BARCODE">
         <source>Scan a barcode</source>
-        <target xml:lang="he" state="needs-translation">Scan a barcode</target>
+        <target xml:lang="he" state="translated">סריקת ברקוד</target>
       </trans-unit>
     </body>
   </file>
@@ -35,7 +31,7 @@
       <trans-unit id="alert.action.ok">
         <source>Ok</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Ok</target>
+        <target xml:lang="he" state="translated">אישור</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
@@ -111,7 +107,7 @@
       <trans-unit id="nutrition.fats">
         <source>Fats</source>
         <note>Nutrition, fat</note>
-        <target xml:lang="he" state="needs-translation">Fats</target>
+        <target xml:lang="he" state="translated">שומנים</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.cholesterol">
         <source>Cholesterol</source>
@@ -119,7 +115,7 @@
       </trans-unit>
       <trans-unit id="nutrition.fats.mono-unsaturated-fat">
         <source>Mono unsaturated fat</source>
-        <target xml:lang="he" state="needs-translation">Mono unsaturated fat</target>
+        <target xml:lang="he" state="translated">שומן חד בלתי רווי</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega3">
         <source>Omega 3</source>
@@ -135,12 +131,12 @@
       </trans-unit>
       <trans-unit id="nutrition.fats.poly-unsaturated-fat">
         <source>Poly unsaturated fat</source>
-        <target xml:lang="he" state="needs-translation">Poly unsaturated fat</target>
+        <target xml:lang="he" state="translated">שומן רב בלתי רווי</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.saturated-fat">
         <source>Saturated fat</source>
         <note>Nutrition, saturated fat</note>
-        <target xml:lang="he" state="needs-translation">Saturated fat</target>
+        <target xml:lang="he" state="translated">שומן רווי</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.trans-fat">
         <source>Trans fat</source>
@@ -218,12 +214,9 @@
         <source>Molybdenum</source>
         <target xml:lang="he" state="translated">מוליבדן</target>
       </trans-unit>
-      <trans-unit id="nutrition.minerals.ph" approved="yes">
+      <trans-unit id="nutrition.minerals.ph">
         <source>pH</source>
-        <target xml:lang="he">pH</target>
-        <alt-trans>
-          <target xml:lang="he">Ph</target>
-        </alt-trans>
+        <target xml:lang="he" state="translated">pH</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.phosphorus">
         <source>Phosphorus</source>
@@ -263,7 +256,7 @@
       </trans-unit>
       <trans-unit id="nutrition.proteins.serum-proteins">
         <source>Serum Proteins</source>
-        <target xml:lang="he" state="needs-translation">Serum Proteins</target>
+        <target xml:lang="he" state="translated">חלבון בסרום</target>
       </trans-unit>
       <trans-unit id="nutrition.salt">
         <source>Salt</source>
@@ -304,7 +297,7 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins.beta-carotene">
         <source>Beta carotene</source>
-        <target xml:lang="he" state="needs-translation">Beta carotene</target>
+        <target xml:lang="he" state="translated">בטא קרוטן</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.biotin">
         <source>Biotin</source>
@@ -316,15 +309,15 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins.d">
         <source>Vitamin D</source>
-        <target xml:lang="he" state="needs-translation">Vitamin D</target>
+        <target xml:lang="he" state="translated">ויטמין D</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.e">
         <source>Vitamin E</source>
-        <target xml:lang="he" state="needs-translation">Vitamin E</target>
+        <target xml:lang="he" state="translated">ויטמין E</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.k">
         <source>Vitamin K</source>
-        <target xml:lang="he" state="needs-translation">Vitamin K</target>
+        <target xml:lang="he" state="translated">ויטמין K</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.pantothenic-acid">
         <source>Pantothenic acid</source>
@@ -337,57 +330,57 @@
       <trans-unit id="product-add.image-upload-error-banner.subtitle">
         <source>Please try to take the picture again</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Please try to take the picture again</target>
+        <target xml:lang="he" state="translated">נא לנסות לצלם שוב</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Something went wrong</target>
+        <target xml:lang="he" state="translated">משהו השתבש</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
         <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Image was uploaded successfully</target>
+        <target xml:lang="he" state="translated">התמונה הועלתה בהצלחה</target>
       </trans-unit>
       <trans-unit id="product-add.product-add-success-banner.title">
         <source>Product added successfully. Thank you!</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Product added successfully. Thank you!</target>
+        <target xml:lang="he" state="translated">המוצר נוסף בהצלחה. תודה!</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
         <source>Try again later</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Try again later</target>
+        <target xml:lang="he" state="translated">יש לנסות שוב מאוחר יותר</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
         <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Error while saving product</target>
+        <target xml:lang="he" state="translated">שגיאה בעת שמירת המוצר</target>
       </trans-unit>
       <trans-unit id="product-add.uploaded-image">
         <source>Image uploaded, thanks!</source>
-        <target xml:lang="he" state="needs-translation">Image uploaded, thanks!</target>
+        <target xml:lang="he" state="translated">התמונה הועלתה, תודה!</target>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
         <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Uploading image...</target>
+        <target xml:lang="he" state="translated">התמונה נשלחת…</target>
       </trans-unit>
       <trans-unit id="product-detail.edit-alert.subtitle">
         <source>Scroll down to the 'Save' button</source>
-        <target xml:lang="he" state="needs-translation">Scroll down to the 'Save' button</target>
+        <target xml:lang="he" state="translated">יש לגלול למטה לכפתור ‚שמירה’</target>
       </trans-unit>
       <trans-unit id="product-detail.edit-alert.title">
         <source>Remember to save your changes</source>
-        <target xml:lang="he" state="needs-translation">Remember to save your changes</target>
+        <target xml:lang="he" state="translated">מוטב לזכור לשמור את השינויים שלך</target>
       </trans-unit>
       <trans-unit id="product-detail.header.add-new-picture">
         <source>Add a new picture</source>
-        <target xml:lang="he" state="needs-translation">Add a new picture</target>
+        <target xml:lang="he" state="translated">הוספת תמונה חדשה</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.additives-list">
         <source>Additives</source>
-        <target xml:lang="he" state="needs-translation">Additives</target>
+        <target xml:lang="he" state="translated">תוספים</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.allergens-list">
         <source>Substances or products causing allergies or intolerances</source>
@@ -395,15 +388,15 @@
       </trans-unit>
       <trans-unit id="product-detail.ingredients.ingredients-list">
         <source>List of ingredients</source>
-        <target xml:lang="he" state="needs-translation">List of ingredients</target>
+        <target xml:lang="he" state="translated">רשימת מרכיבים</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.palm-oil-ingredients">
         <source>Ingredients from palm oil</source>
-        <target xml:lang="he" state="needs-translation">Ingredients from palm oil</target>
+        <target xml:lang="he" state="translated">רכיבים משמן דקלים</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients">
         <source>Ingredients that may be from palm oil</source>
-        <target xml:lang="he" state="needs-translation">Ingredients that may be from palm oil</target>
+        <target xml:lang="he" state="translated">רכיבים שעשויים להיות משמן דקלים</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.traces-list">
         <source>Traces</source>
@@ -425,7 +418,7 @@
       </trans-unit>
       <trans-unit id="product-detail.nutrition.carbon-footprint">
         <source>Carbon footprint / CO2 emissions</source>
-        <target xml:lang="he" state="needs-translation">Carbon footprint / CO2 emissions</target>
+        <target xml:lang="he" state="translated">טביעת רגל פחמנית / פליטות פחמן דו־חמצני</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.serving-size">
         <source>Serving size</source>
@@ -444,7 +437,7 @@
       <trans-unit id="product-detail.page-title.nutrition-table">
         <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="he" state="needs-translation">Nutrition table</target>
+        <target xml:lang="he" state="translated">טבלת ערכים תזונתיים</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
         <source>Summary</source>
@@ -477,7 +470,7 @@
       </trans-unit>
       <trans-unit id="product-detail.summary.manufacturing-places">
         <source>Manufacturing or processing places</source>
-        <target xml:lang="he" state="needs-translation">Manufacturing or processing places</target>
+        <target xml:lang="he" state="translated">מקומות הייצור או העיבוד</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.origins">
         <source>Origin of ingredients</source>
@@ -498,85 +491,85 @@
       <trans-unit id="product-scanner.barcode.error">
         <source>Error scanning barcode. Please try again in a few moments.</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Error scanning barcode. Please try again in a few moments.</target>
+        <target xml:lang="he" state="translated">אירעה שגיאה בסריקת הברקוד. נא לנסות שוב בעוד מספר רגעים.</target>
       </trans-unit>
       <trans-unit id="product-scanner.overlay.extended-user-help">
         <source>Can't find a barcode.
 Center the barcode in the screen.
 Make sure the barcode is well lit.</source>
         <note>User help in the scan view</note>
-        <target xml:lang="he" state="needs-translation">Can't find a barcode.
-Center the barcode in the screen.
-Make sure the barcode is well lit.</target>
+        <target xml:lang="he" state="translated">לא ניתן למצוא ברקוד.
+יש להציב את הברקוד במרכז המסך.
+נא לוודא שהברקוד מואר כראוי.</target>
       </trans-unit>
       <trans-unit id="product-scanner.overlay.user-help">
         <source>Scan the barcode of the product</source>
         <note>User help in the scan view</note>
-        <target xml:lang="he" state="needs-translation">Scan the barcode of the product</target>
+        <target xml:lang="he" state="translated">יש לסרוק את הברקוד של המוצר</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.action.title">
         <source>Leave barcode scanning</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Leave barcode scanning</target>
+        <target xml:lang="he" state="translated">יציאה מסריקת הברקוד</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.message">
         <source>Check in Privacy Settings if OpenFoodFacts has permission to use the camera</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Check in Privacy Settings if OpenFoodFacts has permission to use the camera</target>
+        <target xml:lang="he" state="translated">יש לבדוק בהגדרות הפרטיות אם ל־OpenFoodFacts יש הרשאה להשתמש במצלמה</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.title">
         <source>Could not setup barcode scanning</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Could not setup barcode scanning</target>
+        <target xml:lang="he" state="translated">לא ניתן להגדיר סריקת ברקוד</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.action.title">
         <source>Open Settings</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Open Settings</target>
+        <target xml:lang="he" state="translated">פתיחת ההגדרות</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.message">
         <source>Please grant permission to use the camera to be able to scan barcodes</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Please grant permission to use the camera to be able to scan barcodes</target>
+        <target xml:lang="he" state="translated">נא להעניק הרשאה לשימוש במצלמה כדי לאפשר סריקת ברקודים</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.title">
         <source>OpenFoodFacts needs camera permissions</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">OpenFoodFacts needs camera permissions</target>
+        <target xml:lang="he" state="translated">ל־OpenFoodFacts נדרשות הרשאות למצלמה</target>
       </trans-unit>
       <trans-unit id="product-scanner.search.status">
         <source>Loading product...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">Loading product...</target>
+        <target xml:lang="he" state="translated">המוצר נטען…</target>
       </trans-unit>
       <trans-unit id="product-search.error-view.subtitle">
         <source>Please try again</source>
         <note>Error view subtitle</note>
-        <target xml:lang="he" state="needs-translation">Please try again</target>
+        <target xml:lang="he" state="translated">נא לנסות שוב</target>
       </trans-unit>
       <trans-unit id="product-search.error-view.title">
         <source>Something went wrong</source>
         <note>Error view title</note>
-        <target xml:lang="he" state="needs-translation">Something went wrong</target>
+        <target xml:lang="he" state="translated">משהו השתבש</target>
       </trans-unit>
       <trans-unit id="product-search.initial-view.text">
         <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
-        <target xml:lang="he" state="needs-translation">Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</target>
+        <target xml:lang="he" state="translated">Open Food Facts הוא מסד נתונים של מוצרי מזון עם רכיבים, מעוררי רגישות, עובדות תזונתיות וכל שביב מידע שניתן למצוא על תווית המוצר.</target>
       </trans-unit>
       <trans-unit id="product-search.no-results">
         <source>No Results</source>
         <note>No products where found for current search</note>
-        <target xml:lang="he" state="needs-translation">No Results</target>
+        <target xml:lang="he" state="translated">אין תוצאות</target>
       </trans-unit>
       <trans-unit id="product-search.search-placeholder">
         <source>Search for a product by name or barcode</source>
         <note>Placeholder for the product search bar</note>
-        <target xml:lang="he" state="needs-translation">Search for a product by name or barcode</target>
+        <target xml:lang="he" state="translated">חיפוש מוצר לפי שם או ברקוד</target>
       </trans-unit>
       <trans-unit id="product.images.front">
         <source>front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">front</target>
+        <target xml:lang="he" state="translated">חזית</target>
       </trans-unit>
       <trans-unit id="product.images.ingredients">
         <source>ingredients</source>
@@ -586,12 +579,12 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="product.images.nutrition">
         <source>nutrition table</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">nutrition table</target>
+        <target xml:lang="he" state="translated">טבלת ערכים תזונתיים</target>
       </trans-unit>
       <trans-unit id="product.images.picture">
         <source>picture ✅</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">picture ✅</target>
+        <target xml:lang="he" state="translated">תמונה ✅</target>
       </trans-unit>
       <trans-unit id="product.images.product">
         <source>Product's</source>
@@ -607,13 +600,13 @@ Make sure the barcode is well lit.</target>
         <source>"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
 "Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
 "Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</source>
-        <target xml:lang="he" state="needs-translation">"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
-"Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
-"Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</target>
+        <target xml:lang="he" state="translated">סמל כפתור „סריקת הברקוד”, סמל ה„הגדרות” וסמל ה„ברק” שנוצרו על ידי Madebyoliver (http://www.flaticon.com/authors/madebyoliver) מוגשים תחת הרישיון CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+הסמל „צילום תמונה” שנוצר על ידי Picol (http://www.flaticon.com/authors/picol) מוגש תחת הרישיון CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+סמל ה„פרופיל” שנוצר על ידי Smashicons (https://www.flaticon.com/authors/smashicons) מוגש תחת הרישיון CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</target>
       </trans-unit>
       <trans-unit id="settings.credits.title">
         <source>Credits</source>
-        <target xml:lang="he" state="needs-translation">Credits</target>
+        <target xml:lang="he" state="translated">תודות</target>
       </trans-unit>
       <trans-unit id="settings.information.discover">
         <source>Discover</source>
@@ -621,11 +614,11 @@ Make sure the barcode is well lit.</target>
       </trans-unit>
       <trans-unit id="settings.information.how-to-contribute">
         <source>How To Contribute</source>
-        <target xml:lang="he" state="needs-translation">How To Contribute</target>
+        <target xml:lang="he" state="translated">כיצד לתרום</target>
       </trans-unit>
       <trans-unit id="settings.scan-on-launch.title">
         <source>Show Scan On App Launch</source>
-        <target xml:lang="he" state="needs-translation">Show Scan On App Launch</target>
+        <target xml:lang="he" state="translated">מעבר לסריקה עם הפעלת היישומון</target>
       </trans-unit>
       <trans-unit id="settings.sections.information">
         <source>Information</source>
@@ -637,47 +630,47 @@ Make sure the barcode is well lit.</target>
       </trans-unit>
       <trans-unit id="user.alert.generic-error.subtitle">
         <source>Please try again in a few moments</source>
-        <target xml:lang="he" state="needs-translation">Please try again in a few moments</target>
+        <target xml:lang="he" state="translated">נא לנסות שוב בעוד מספר רגעים</target>
       </trans-unit>
       <trans-unit id="user.alert.generic-error.title">
         <source>There was an error logging in</source>
-        <target xml:lang="he" state="needs-translation">There was an error logging in</target>
+        <target xml:lang="he" state="translated">אירעה שגיאה בכניסה</target>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
         <source>Password is required</source>
-        <target xml:lang="he" state="needs-translation">Password is required</target>
+        <target xml:lang="he" state="translated">נדרשת ססמה</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
         <source>Username is required</source>
-        <target xml:lang="he" state="needs-translation">Username is required</target>
+        <target xml:lang="he" state="translated">נדרש שם משתמש</target>
       </trans-unit>
       <trans-unit id="user.alert.wrong-credentials.subtitle">
         <source>Check your username and password are correct</source>
-        <target xml:lang="he" state="needs-translation">Check your username and password are correct</target>
+        <target xml:lang="he" state="translated">יש לוודא ששם המשתמש והססמה שלך נכונים</target>
       </trans-unit>
       <trans-unit id="user.alert.wrong-credentials.title">
         <source>Unable to log in</source>
-        <target xml:lang="he" state="needs-translation">Unable to log in</target>
+        <target xml:lang="he" state="translated">לא ניתן להיכנס</target>
       </trans-unit>
       <trans-unit id="user.check-your-contributions.button">
         <source>Check Your Contributions</source>
-        <target xml:lang="he" state="needs-translation">Check Your Contributions</target>
+        <target xml:lang="he" state="translated">הצגת התרומות שלך</target>
       </trans-unit>
       <trans-unit id="user.create-account.button">
         <source>Create An Account</source>
-        <target xml:lang="he" state="needs-translation">Create An Account</target>
+        <target xml:lang="he" state="translated">יצירת חשבון</target>
       </trans-unit>
       <trans-unit id="user.create-account.text">
         <source>If you don't have an account, click the link bellow to create one.</source>
-        <target xml:lang="he" state="needs-translation">If you don't have an account, click the link bellow to create one.</target>
+        <target xml:lang="he" state="translated">אם עוד אין לך חשבון, יש ללחוץ על הקישור להלן כדי ליצור אחד.</target>
       </trans-unit>
       <trans-unit id="user.log-in">
         <source>Log In</source>
-        <target xml:lang="he" state="needs-translation">Log In</target>
+        <target xml:lang="he" state="translated">כניסה</target>
       </trans-unit>
       <trans-unit id="user.log-out">
         <source>Log Out</source>
-        <target xml:lang="he" state="needs-translation">Log Out</target>
+        <target xml:lang="he" state="translated">יציאה</target>
       </trans-unit>
       <trans-unit id="user.password">
         <source>Password</source>
@@ -689,11 +682,11 @@ Make sure the barcode is well lit.</target>
       </trans-unit>
       <trans-unit id="user.username">
         <source>Username</source>
-        <target xml:lang="he" state="needs-translation">Username</target>
+        <target xml:lang="he" state="translated">שם משתמש</target>
       </trans-unit>
       <trans-unit id="user.why-log-in.text">
         <source>Login in with your account will associate all your contributions to your account.</source>
-        <target xml:lang="he" state="needs-translation">Login in with your account will associate all your contributions to your account.</target>
+        <target xml:lang="he" state="translated">כניסה עם החשבון שלך תשייך את כל התרומות לחשבונך.</target>
       </trans-unit>
     </body>
   </file>
@@ -703,84 +696,84 @@ Make sure the barcode is well lit.</target>
     </header>
     <body>
       <trans-unit id="alert.action.ok">
-        <source>alert.action.ok</source>
+        <source>Ok</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">alert.action.ok</target>
+        <target xml:lang="he" state="translated">אישור</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
-        <source>call-to-action.ingredients</source>
+        <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">call-to-action.ingredients</target>
+        <target xml:lang="he" state="translated">צילום תמונה של הרכיבים</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
-        <source>call-to-action.nutrition</source>
+        <source>Take a picture of the nutrition facts</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">call-to-action.nutrition</target>
+        <target xml:lang="he" state="translated">צילום העובדות התזונתיות</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
-        <source>call-to-action.summary</source>
+        <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">call-to-action.summary</target>
+        <target xml:lang="he" state="translated">צילום תמונה של החזית</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
-        <source>product-add.image-upload-error-banner.title</source>
+        <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">product-add.image-upload-error-banner.title</target>
+        <target xml:lang="he" state="translated">משהו השתבש</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
-        <source>product-add.image-upload-success-banner.title</source>
+        <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">product-add.image-upload-success-banner.title</target>
+        <target xml:lang="he" state="translated">התמונה הועלתה בהצלחה</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
-        <source>product-add.save-error.message</source>
+        <source>Try again later</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">product-add.save-error.message</target>
+        <target xml:lang="he" state="translated">יש לנסות שוב מאוחר יותר</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
-        <source>product-add.save-error.title</source>
+        <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">product-add.save-error.title</target>
+        <target xml:lang="he" state="translated">שגיאה בעת שמירת המוצר</target>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
-        <source>product-add.uploading-image-banner.title</source>
+        <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">product-add.uploading-image-banner.title</target>
+        <target xml:lang="he" state="translated">התמונה נשלחת…</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
-        <source>product-detail.nutrition-table.for-serving</source>
+        <source>Per serving</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">product-detail.nutrition-table.for-serving</target>
+        <target xml:lang="he" state="translated">להגשה</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
-        <source>product-detail.page-title.ingredients</source>
+        <source>Ingredients</source>
         <note>Product detail, ingredients</note>
-        <target xml:lang="he" state="needs-translation">product-detail.page-title.ingredients</target>
+        <target xml:lang="he" state="translated">רכיבים</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
-        <source>product-detail.page-title.nutrition</source>
+        <source>Nutrition</source>
         <note>Product detail, nutrition</note>
-        <target xml:lang="he" state="needs-translation">product-detail.page-title.nutrition</target>
+        <target xml:lang="he" state="translated">תזונה</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
-        <source>product-detail.page-title.nutrition-table</source>
+        <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="he" state="needs-translation">product-detail.page-title.nutrition-table</target>
+        <target xml:lang="he" state="translated">טבלת ערכים תזונתיים</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
-        <source>product-detail.page-title.summary</source>
+        <source>Summary</source>
         <note>Product detail, summary</note>
-        <target xml:lang="he" state="needs-translation">product-detail.page-title.summary</target>
+        <target xml:lang="he" state="translated">תקציר</target>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
-        <source>user.alert.password-missing</source>
+        <source>Password is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">user.alert.password-missing</target>
+        <target xml:lang="he" state="translated">נדרשת ססמה</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
-        <source>user.alert.username-missing</source>
+        <source>Username is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="he" state="needs-translation">user.alert.username-missing</target>
+        <target xml:lang="he" state="translated">נדרש שם משתמש</target>
       </trans-unit>
     </body>
   </file>

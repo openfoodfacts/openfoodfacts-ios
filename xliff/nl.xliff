@@ -1,107 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file original="OpenFoodFacts/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="nl-BE">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body/>
-  </file>
-  <file original="OpenFoodFacts/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="nl-BE">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body>
-      <trans-unit id="Eh6-Oa-ZfG.title">
-        <source>Item</source>
-        <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "Eh6-Oa-ZfG";</note>
-        <target xml:lang="nl-BE" state="needs-translation">Item</target>
-      </trans-unit>
-    </body>
-  </file>
   <file original="OpenFoodFacts/Info.plist" source-language="en" datatype="plaintext" target-language="nl-BE">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
         <source>Open Nutrition</source>
-        <target xml:lang="nl-BE" state="needs-translation">Open Nutrition</target>
-      </trans-unit>
-      <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="nl-BE" state="needs-translation">$(PRODUCT_NAME)</target>
-      </trans-unit>
-      <trans-unit id="CFBundleShortVersionString">
-        <source>1.0</source>
-        <target xml:lang="nl-BE" state="needs-translation">1.0</target>
+        <target xml:lang="nl-BE" state="translated">Open Nutrition</target>
       </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
-        <target xml:lang="nl-BE" state="needs-translation">Use your camera to scan barcodes and take pictures of products to add to the database</target>
+        <target xml:lang="nl-BE" state="translated">Gebruik uw camera om streepjescodes te scannen en foto's te maken van producten die u aan de database wilt toevoegen</target>
       </trans-unit>
       <trans-unit id="NSPhotoLibraryUsageDescription">
         <source>Take and upload pictures of products</source>
-        <target xml:lang="nl-BE" state="needs-translation">Take and upload pictures of products</target>
+        <target xml:lang="nl-BE" state="translated">Product foto's maken en uploaden</target>
       </trans-unit>
-    </body>
-  </file>
-  <file original="OpenFoodFacts/Views/ProductSearch/Base.lproj/EmptyProductsView.xib" source-language="en" datatype="plaintext" target-language="nl-BE">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body>
-      <trans-unit id="ElV-MH-zPQ.text">
-        <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
-        <note>Class = "UILabel"; text = "Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels."; ObjectID = "ElV-MH-zPQ";</note>
-        <target xml:lang="nl-BE" state="needs-translation">Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</target>
-      </trans-unit>
-    </body>
-  </file>
-  <file original="OpenFoodFacts/Views/Settings/Base.lproj/Settings.storyboard" source-language="en" datatype="plaintext" target-language="nl-BE">
-    <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
-    </header>
-    <body>
-      <trans-unit id="3Vi-oE-IJx.text">
-        <source>Credits</source>
-        <note>Class = "UILabel"; text = "Credits"; ObjectID = "3Vi-oE-IJx";</note>
-        <target xml:lang="nl-BE" state="needs-translation">Credits</target>
-      </trans-unit>
-      <trans-unit id="c7X-Xf-g2w.title">
-        <source>About</source>
-        <note>Class = "UIViewController"; title = "About"; ObjectID = "c7X-Xf-g2w";</note>
-        <target xml:lang="nl-BE" state="translated">Informatie</target>
-      </trans-unit>
-      <trans-unit id="sO1-VI-YDa.text">
-        <source>About</source>
-        <note>Class = "UILabel"; text = "About"; ObjectID = "sO1-VI-YDa";</note>
-        <target xml:lang="nl-BE" state="translated">Informatie</target>
-      </trans-unit>
-      <trans-unit id="tnR-0p-cA3.title">
-        <source>Settings</source>
-        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "tnR-0p-cA3";</note>
-        <target xml:lang="nl-BE" state="translated">Instellingen</target>
+      <trans-unit id="QUICK_ACTION_SCAN_BARCODE">
+        <source>Scan a barcode</source>
+        <target xml:lang="nl-BE" state="translated">Scan een barcode</target>
       </trans-unit>
     </body>
   </file>
   <file original="OpenFoodFacts/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="nl-BE">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.3" build-num="8E3004b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
+      <trans-unit id="alert.action.ok">
+        <source>Ok</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Ok</target>
+      </trans-unit>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="nl-BE" state="needs-translation">Take a picture of the ingredients</target>
+        <target xml:lang="nl-BE" state="translated">Maak een foto van de ingrediënten</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition table</source>
-        <target xml:lang="nl-BE" state="needs-translation">Take a picture of the nutrition table</target>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Maak een foto van de voedingstabel</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
         <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="nl-BE" state="needs-translation">Take a picture of the front</target>
+        <target xml:lang="nl-BE" state="translated">Maak een foto van de voorkant</target>
       </trans-unit>
       <trans-unit id="nutrition-level.high">
         <source>in high quantity</source>
@@ -120,7 +65,7 @@
       </trans-unit>
       <trans-unit id="nutrition.alcohol">
         <source>Alcohol</source>
-        <target xml:lang="nl-BE" state="needs-translation">Alcohol</target>
+        <target xml:lang="nl-BE" state="translated">Alcohol</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate">
         <source>Carbohydrate</source>
@@ -128,15 +73,15 @@
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.fructose">
         <source>Fructose</source>
-        <target xml:lang="nl-BE" state="needs-translation">Fructose</target>
+        <target xml:lang="nl-BE" state="translated">Fructose</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.glucose">
         <source>Glucose</source>
-        <target xml:lang="nl-BE" state="needs-translation">Glucose</target>
+        <target xml:lang="nl-BE" state="translated">Glucose</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.lactose">
         <source>Lactose</source>
-        <target xml:lang="nl-BE" state="needs-translation">Lactose</target>
+        <target xml:lang="nl-BE" state="translated">Lactose</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.maltodextrins">
         <source>Maltodextrins</source>
@@ -144,11 +89,11 @@
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.maltose">
         <source>Maltose</source>
-        <target xml:lang="nl-BE" state="needs-translation">Maltose</target>
+        <target xml:lang="nl-BE" state="translated">Maltose</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sucrose">
         <source>Sucrose</source>
-        <target xml:lang="nl-BE" state="needs-translation">Sucrose</target>
+        <target xml:lang="nl-BE" state="translated">Sucrose</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sugars">
         <source>Sugars</source>
@@ -162,11 +107,11 @@
       <trans-unit id="nutrition.fats">
         <source>Fats</source>
         <note>Nutrition, fat</note>
-        <target xml:lang="nl-BE" state="needs-translation">Fats</target>
+        <target xml:lang="nl-BE" state="translated">Vetten</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.cholesterol">
         <source>Cholesterol</source>
-        <target xml:lang="nl-BE" state="needs-translation">Cholesterol</target>
+        <target xml:lang="nl-BE" state="translated">Cholesterol</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.mono-unsaturated-fat">
         <source>Mono unsaturated fat</source>
@@ -174,15 +119,15 @@
       </trans-unit>
       <trans-unit id="nutrition.fats.omega3">
         <source>Omega 3</source>
-        <target xml:lang="nl-BE" state="needs-translation">Omega 3</target>
+        <target xml:lang="nl-BE" state="translated">Omega 3</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega6">
         <source>Omega 6</source>
-        <target xml:lang="nl-BE" state="needs-translation">Omega 6</target>
+        <target xml:lang="nl-BE" state="translated">Omega 6</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega9">
         <source>Omega 9</source>
-        <target xml:lang="nl-BE" state="needs-translation">Omega 9</target>
+        <target xml:lang="nl-BE" state="translated">Omega 9</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.poly-unsaturated-fat">
         <source>Poly unsaturated fat</source>
@@ -191,7 +136,7 @@
       <trans-unit id="nutrition.fats.saturated-fat">
         <source>Saturated fat</source>
         <note>Nutrition, saturated fat</note>
-        <target xml:lang="nl-BE" state="needs-translation">Saturated fat</target>
+        <target xml:lang="nl-BE" state="translated">Verzadigd vet</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.trans-fat">
         <source>Trans fat</source>
@@ -215,7 +160,7 @@
       </trans-unit>
       <trans-unit id="nutrition.minerals.calcium">
         <source>Calcium</source>
-        <target xml:lang="nl-BE" state="needs-translation">Calcium</target>
+        <target xml:lang="nl-BE" state="translated">Calcium</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chloride">
         <source>Chloride</source>
@@ -259,7 +204,7 @@
       </trans-unit>
       <trans-unit id="nutrition.minerals.magnesium">
         <source>Magnesium</source>
-        <target xml:lang="nl-BE" state="needs-translation">Magnesium</target>
+        <target xml:lang="nl-BE" state="translated">Magnesium</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.manganese">
         <source>Manganese</source>
@@ -271,7 +216,7 @@
       </trans-unit>
       <trans-unit id="nutrition.minerals.ph">
         <source>pH</source>
-        <target xml:lang="nl-BE" state="needs-translation">pH</target>
+        <target xml:lang="nl-BE" state="translated">pH</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.phosphorus">
         <source>Phosphorus</source>
@@ -291,7 +236,7 @@
       </trans-unit>
       <trans-unit id="nutrition.minerals.taurine">
         <source>Taurine</source>
-        <target xml:lang="nl-BE" state="needs-translation">Taurine</target>
+        <target xml:lang="nl-BE" state="translated">Taurine</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.zinc">
         <source>Zinc</source>
@@ -352,7 +297,7 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins.beta-carotene">
         <source>Beta carotene</source>
-        <target xml:lang="nl-BE" state="needs-translation">Beta carotene</target>
+        <target xml:lang="nl-BE" state="translated">Beta caroteen</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.biotin">
         <source>Biotin</source>
@@ -364,15 +309,15 @@
       </trans-unit>
       <trans-unit id="nutrition.vitamins.d">
         <source>Vitamin D</source>
-        <target xml:lang="nl-BE" state="needs-translation">Vitamin D</target>
+        <target xml:lang="nl-BE" state="translated">Vitamine D</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.e">
         <source>Vitamin E</source>
-        <target xml:lang="nl-BE" state="needs-translation">Vitamin E</target>
+        <target xml:lang="nl-BE" state="translated">Vitamine E</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.k">
         <source>Vitamin K</source>
-        <target xml:lang="nl-BE" state="needs-translation">Vitamin K</target>
+        <target xml:lang="nl-BE" state="translated">Vitamine K</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.pantothenic-acid">
         <source>Pantothenic acid</source>
@@ -382,9 +327,60 @@
         <source>Vitamin PP</source>
         <target xml:lang="nl-BE" state="translated">Vitamine PP</target>
       </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.subtitle">
+        <source>Please try to take the picture again</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Probeer opnieuw een foto te maken</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.title">
+        <source>Something went wrong</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Er ging iets mis</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-success-banner.title">
+        <source>Image was uploaded successfully</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Afbeelding is succesvol geüpload</target>
+      </trans-unit>
+      <trans-unit id="product-add.product-add-success-banner.title">
+        <source>Product added successfully. Thank you!</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Product succesvol toegevoegd. Dankjewel!</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.message">
+        <source>Try again later</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Probeer het later opnieuw</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.title">
+        <source>Error while saving product</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Fout tijdens opslaan van product</target>
+      </trans-unit>
+      <trans-unit id="product-add.uploaded-image">
+        <source>Image uploaded, thanks!</source>
+        <target xml:lang="nl-BE" state="translated">Afbeelding geüpload, bedankt!</target>
+      </trans-unit>
+      <trans-unit id="product-add.uploading-image-banner.title">
+        <source>Uploading image...</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Afbeelding uploaden...</target>
+      </trans-unit>
+      <trans-unit id="product-detail.edit-alert.subtitle">
+        <source>Scroll down to the 'Save' button</source>
+        <target xml:lang="nl-BE" state="translated">Scroll naar beneden naar "Opslaan"</target>
+      </trans-unit>
+      <trans-unit id="product-detail.edit-alert.title">
+        <source>Remember to save your changes</source>
+        <target xml:lang="nl-BE" state="translated">Vergeet niet om uw wijzigingen op te slaan</target>
+      </trans-unit>
+      <trans-unit id="product-detail.header.add-new-picture">
+        <source>Add a new picture</source>
+        <target xml:lang="nl-BE" state="translated">Voeg een nieuwe foto toe</target>
+      </trans-unit>
       <trans-unit id="product-detail.ingredients.additives-list">
         <source>Additives</source>
-        <target xml:lang="nl-BE" state="needs-translation">Additives</target>
+        <target xml:lang="nl-BE" state="translated">Additieven</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.allergens-list">
         <source>Substances or products causing allergies or intolerances</source>
@@ -392,15 +388,15 @@
       </trans-unit>
       <trans-unit id="product-detail.ingredients.ingredients-list">
         <source>List of ingredients</source>
-        <target xml:lang="nl-BE" state="needs-translation">List of ingredients</target>
+        <target xml:lang="nl-BE" state="translated">Lijst van ingrediënten</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.palm-oil-ingredients">
         <source>Ingredients from palm oil</source>
-        <target xml:lang="nl-BE" state="needs-translation">Ingredients from palm oil</target>
+        <target xml:lang="nl-BE" state="translated">Ingredients from palm oil</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients">
         <source>Ingredients that may be from palm oil</source>
-        <target xml:lang="nl-BE" state="needs-translation">Ingredients that may be from palm oil</target>
+        <target xml:lang="nl-BE" state="translated">Ingredienten die mogelijk palmolie bevatten</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.traces-list">
         <source>Traces</source>
@@ -422,7 +418,7 @@
       </trans-unit>
       <trans-unit id="product-detail.nutrition.carbon-footprint">
         <source>Carbon footprint / CO2 emissions</source>
-        <target xml:lang="nl-BE" state="needs-translation">Carbon footprint / CO2 emissions</target>
+        <target xml:lang="nl-BE" state="translated">Carbon footprint / CO2-uitstoot</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.serving-size">
         <source>Serving size</source>
@@ -441,7 +437,7 @@
       <trans-unit id="product-detail.page-title.nutrition-table">
         <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="nl-BE" state="needs-translation">Nutrition table</target>
+        <target xml:lang="nl-BE" state="translated">Voedingstabel</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
         <source>Summary</source>
@@ -492,10 +488,292 @@
         <source>Stores</source>
         <target xml:lang="nl-BE" state="translated">Winkels</target>
       </trans-unit>
+      <trans-unit id="product-scanner.barcode.error">
+        <source>Error scanning barcode. Please try again in a few moments.</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Fout bij het scannen van streepjescode. Probeer het over een paar seconden opnieuw.</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.overlay.extended-user-help">
+        <source>Can't find a barcode.
+Center the barcode in the screen.
+Make sure the barcode is well lit.</source>
+        <note>User help in the scan view</note>
+        <target xml:lang="nl-BE" state="translated">Kan streepjescode niet vinden.
+Centreer de streepjescode op het scherm.
+Zorg ervoor dat de streepjescode goed verlicht is.</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.overlay.user-help">
+        <source>Scan the barcode of the product</source>
+        <note>User help in the scan view</note>
+        <target xml:lang="nl-BE" state="translated">Scan de barcode van het product</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.action.title">
+        <source>Leave barcode scanning</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Laat barcode scannen</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.message">
+        <source>Check in Privacy Settings if OpenFoodFacts has permission to use the camera</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Controleer in Privacy-instellingen of OpenFoodFact toestemming heeft om de camera te gebruiken</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.failed.title">
+        <source>Could not setup barcode scanning</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Barcode scanner kan niet installeren</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.action.title">
+        <source>Open Settings</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Instellingen openen</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.message">
+        <source>Please grant permission to use the camera to be able to scan barcodes</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Sta toestemming toe om de camera te gebruiken om barcodes te scannen</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.permissions.noPermissions.title">
+        <source>OpenFoodFacts needs camera permissions</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">OpenFoodFacts heeft camerapermissies nodig</target>
+      </trans-unit>
+      <trans-unit id="product-scanner.search.status">
+        <source>Loading product...</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Product wordt geladen...</target>
+      </trans-unit>
+      <trans-unit id="product-search.error-view.subtitle">
+        <source>Please try again</source>
+        <note>Error view subtitle</note>
+        <target xml:lang="nl-BE" state="translated">Probeer het opnieuw</target>
+      </trans-unit>
+      <trans-unit id="product-search.error-view.title">
+        <source>Something went wrong</source>
+        <note>Error view title</note>
+        <target xml:lang="nl-BE" state="translated">Er ging iets mis</target>
+      </trans-unit>
+      <trans-unit id="product-search.initial-view.text">
+        <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
+        <target xml:lang="nl-BE" state="translated">Open Food Facts is een open database van voedingsproducten met ingrediënten, allergenen, voedingsinformatie en alle informatie die we kunnen vinden op de etiketten van de producten.</target>
+      </trans-unit>
+      <trans-unit id="product-search.no-results">
+        <source>No Results</source>
+        <note>No products where found for current search</note>
+        <target xml:lang="nl-BE" state="translated">Geen Resultaten</target>
+      </trans-unit>
       <trans-unit id="product-search.search-placeholder">
         <source>Search for a product by name or barcode</source>
         <note>Placeholder for the product search bar</note>
-        <target xml:lang="nl-BE" state="needs-translation">Search for a product by name or barcode</target>
+        <target xml:lang="nl-BE" state="translated">Zoek naar een product op naam of streepjescode</target>
+      </trans-unit>
+      <trans-unit id="product.images.front">
+        <source>front</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">voorkant</target>
+      </trans-unit>
+      <trans-unit id="product.images.ingredients">
+        <source>ingredients</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">ingrediënten</target>
+      </trans-unit>
+      <trans-unit id="product.images.nutrition">
+        <source>nutrition table</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">voedingstabel</target>
+      </trans-unit>
+      <trans-unit id="product.images.picture">
+        <source>picture ✅</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">foto ✅</target>
+      </trans-unit>
+      <trans-unit id="product.images.product">
+        <source>Product's</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Producten</target>
+      </trans-unit>
+      <trans-unit id="product.images.take-picture">
+        <source>Take a picture of the product's</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Maak een foto van de producten</target>
+      </trans-unit>
+      <trans-unit id="settings.credits.text">
+        <source>"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</source>
+        <target xml:lang="nl-BE" state="translated">"Scanknop "knoppictogram", "Instellingen" -pictogram en "Flash" -pictogram gemaakt door Madebyoliver(http://www.flaticon.com/authors/madebyoliver) heeft een licentie van CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Neem foto" pictogram gemaakt door Picol(http://www.flaticon.com/authors/picol) heeft een licentie van CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
+"Profiel" pictogram gemaakt door Smashicons (https://www.flaticon.com/authors/smashicons) heeft een licentie van CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</target>
+      </trans-unit>
+      <trans-unit id="settings.credits.title">
+        <source>Credits</source>
+        <target xml:lang="nl-BE" state="translated">Credits</target>
+      </trans-unit>
+      <trans-unit id="settings.information.discover">
+        <source>Discover</source>
+        <target xml:lang="nl-BE" state="translated">Ontdek</target>
+      </trans-unit>
+      <trans-unit id="settings.information.how-to-contribute">
+        <source>How To Contribute</source>
+        <target xml:lang="nl-BE" state="translated">Hoe kan je bijdragen</target>
+      </trans-unit>
+      <trans-unit id="settings.scan-on-launch.title">
+        <source>Show Scan On App Launch</source>
+        <target xml:lang="nl-BE" state="translated">Scan Op App Launch Weergeven</target>
+      </trans-unit>
+      <trans-unit id="settings.sections.information">
+        <source>Information</source>
+        <target xml:lang="nl-BE" state="translated">Melding</target>
+      </trans-unit>
+      <trans-unit id="settings.tab-bar.item">
+        <source>Settings</source>
+        <target xml:lang="nl-BE" state="translated">Instellingen</target>
+      </trans-unit>
+      <trans-unit id="user.alert.generic-error.subtitle">
+        <source>Please try again in a few moments</source>
+        <target xml:lang="nl-BE" state="translated">Probeer het opnieuw in een ogenblik</target>
+      </trans-unit>
+      <trans-unit id="user.alert.generic-error.title">
+        <source>There was an error logging in</source>
+        <target xml:lang="nl-BE" state="translated">Er is een fout opgetreden bij het inloggen</target>
+      </trans-unit>
+      <trans-unit id="user.alert.password-missing">
+        <source>Password is required</source>
+        <target xml:lang="nl-BE" state="translated">Wachtwoord is vereist</target>
+      </trans-unit>
+      <trans-unit id="user.alert.username-missing">
+        <source>Username is required</source>
+        <target xml:lang="nl-BE" state="translated">Gebruikersnaam is vereist</target>
+      </trans-unit>
+      <trans-unit id="user.alert.wrong-credentials.subtitle">
+        <source>Check your username and password are correct</source>
+        <target xml:lang="nl-BE" state="translated">Controleer uw gebruikersnaam en wachtwoord</target>
+      </trans-unit>
+      <trans-unit id="user.alert.wrong-credentials.title">
+        <source>Unable to log in</source>
+        <target xml:lang="nl-BE" state="translated">Kan niet inloggen</target>
+      </trans-unit>
+      <trans-unit id="user.check-your-contributions.button">
+        <source>Check Your Contributions</source>
+        <target xml:lang="nl-BE" state="translated">Controleer uw bijdragen</target>
+      </trans-unit>
+      <trans-unit id="user.create-account.button">
+        <source>Create An Account</source>
+        <target xml:lang="nl-BE" state="translated">Maak een account aan</target>
+      </trans-unit>
+      <trans-unit id="user.create-account.text">
+        <source>If you don't have an account, click the link bellow to create one.</source>
+        <target xml:lang="nl-BE" state="translated">Als u geen account hebt, klikt u op de onderstaande link om een ​​account aan te maken.</target>
+      </trans-unit>
+      <trans-unit id="user.log-in">
+        <source>Log In</source>
+        <target xml:lang="nl-BE" state="translated">Aanmelden</target>
+      </trans-unit>
+      <trans-unit id="user.log-out">
+        <source>Log Out</source>
+        <target xml:lang="nl-BE" state="translated">Uitloggen</target>
+      </trans-unit>
+      <trans-unit id="user.password">
+        <source>Password</source>
+        <target xml:lang="nl-BE" state="translated">Wachtwoord</target>
+      </trans-unit>
+      <trans-unit id="user.tab-bar.item">
+        <source>User</source>
+        <target xml:lang="nl-BE" state="translated">Gebruikersnaam</target>
+      </trans-unit>
+      <trans-unit id="user.username">
+        <source>Username</source>
+        <target xml:lang="nl-BE" state="translated">Gebruikersnaam</target>
+      </trans-unit>
+      <trans-unit id="user.why-log-in.text">
+        <source>Login in with your account will associate all your contributions to your account.</source>
+        <target xml:lang="nl-BE" state="translated">Wanneer u zich aanmeldt met uw account, worden al uw berichten gekoppeld aan uw account.</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFactsTests/Localizable.strings" source-language="en" datatype="plaintext" target-language="nl-BE">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
+    </header>
+    <body>
+      <trans-unit id="alert.action.ok">
+        <source>Ok</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Ok</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.ingredients">
+        <source>Take a picture of the ingredients</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Maak een foto van de ingrediënten</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.nutrition">
+        <source>Take a picture of the nutrition facts</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="needs-translation">Take a picture of the nutrition facts</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.summary">
+        <source>Take a picture of the front</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Maak een foto van de voorkant</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.title">
+        <source>Something went wrong</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Er ging iets mis</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-success-banner.title">
+        <source>Image was uploaded successfully</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Afbeelding is succesvol geüpload</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.message">
+        <source>Try again later</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Probeer het later opnieuw</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.title">
+        <source>Error while saving product</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Fout tijdens opslaan van product</target>
+      </trans-unit>
+      <trans-unit id="product-add.uploading-image-banner.title">
+        <source>Uploading image...</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Afbeelding uploaden...</target>
+      </trans-unit>
+      <trans-unit id="product-detail.nutrition-table.for-serving">
+        <source>Per serving</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Per portie</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.ingredients">
+        <source>Ingredients</source>
+        <note>Product detail, ingredients</note>
+        <target xml:lang="nl-BE" state="translated">Ingrediënten</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition">
+        <source>Nutrition</source>
+        <note>Product detail, nutrition</note>
+        <target xml:lang="nl-BE" state="translated">Voedingswaarde</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition-table">
+        <source>Nutrition table</source>
+        <note>Product detail, nutrition table</note>
+        <target xml:lang="nl-BE" state="translated">Voedingstabel</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.summary">
+        <source>Summary</source>
+        <note>Product detail, summary</note>
+        <target xml:lang="nl-BE" state="translated">Samenvatting</target>
+      </trans-unit>
+      <trans-unit id="user.alert.password-missing">
+        <source>Password is required</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Wachtwoord is vereist</target>
+      </trans-unit>
+      <trans-unit id="user.alert.username-missing">
+        <source>Username is required</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="nl-BE" state="translated">Gebruikersnaam is vereist</target>
       </trans-unit>
     </body>
   </file>

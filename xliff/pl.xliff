@@ -9,10 +9,6 @@
         <source>Open Nutrition</source>
         <target xml:lang="pl" state="translated">Otwórz odżywianie</target>
       </trans-unit>
-      <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="pl" state="translated">$(PRODUCT_NAME)</target>
-      </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
         <target xml:lang="pl" state="translated">Użyj aparatu do skanowania kodów kreskowych i robienia zdjęć do naszej bazy danych</target>
@@ -147,9 +143,12 @@
       </trans-unit>
       <trans-unit id="nutrition.fats.trans-fat">
         <source>Trans fat</source>
-        <target xml:lang="pl" state="translated">Trans-tłuszcze</target>
+        <target xml:lang="pl" state="translated">Tłuszcze trans</target>
         <alt-trans>
           <target xml:lang="pl">Tłuscze trans</target>
+        </alt-trans>
+        <alt-trans>
+          <target xml:lang="pl">Trans-tłuszcze</target>
         </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.fiber">
@@ -340,7 +339,10 @@
       <trans-unit id="product-add.image-upload-error-banner.subtitle">
         <source>Please try to take the picture again</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="pl" state="translated">Spróbuj zrobić zdjęcie poźniej</target>
+        <target xml:lang="pl" state="translated">Spróbuj zrobić zdjęcie później</target>
+        <alt-trans>
+          <target xml:lang="pl">Spróbuj zrobić zdjęcie poźniej</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
@@ -473,6 +475,9 @@
       <trans-unit id="product-detail.summary.countries">
         <source>Countries where sold</source>
         <target xml:lang="pl" state="translated">Kraje sprzedaż</target>
+        <alt-trans>
+          <target xml:lang="pl">Kraje sprzedaży</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.labels">
         <source>Labels, certifications, awards</source>
@@ -677,6 +682,9 @@ Ikona "Profil" została stworzona przez Smashicons (https://www.flaticon.com/aut
       <trans-unit id="user.log-in">
         <source>Log In</source>
         <target xml:lang="pl" state="translated">Zaloguj sie</target>
+        <alt-trans>
+          <target xml:lang="pl">Zaloguj się</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.log-out">
         <source>Log Out</source>
@@ -706,82 +714,82 @@ Ikona "Profil" została stworzona przez Smashicons (https://www.flaticon.com/aut
     </header>
     <body>
       <trans-unit id="alert.action.ok">
-        <source>alert.action.ok</source>
+        <source>Ok</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">alert.action.ok</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
-        <source>call-to-action.ingredients</source>
+        <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">call-to-action.ingredients</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
-        <source>call-to-action.nutrition</source>
+        <source>Take a picture of the nutrition facts</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">call-to-action.nutrition</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
-        <source>call-to-action.summary</source>
+        <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">call-to-action.summary</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
-        <source>product-add.image-upload-error-banner.title</source>
+        <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">product-add.image-upload-error-banner.title</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
-        <source>product-add.image-upload-success-banner.title</source>
+        <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">product-add.image-upload-success-banner.title</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
-        <source>product-add.save-error.message</source>
+        <source>Try again later</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">product-add.save-error.message</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
-        <source>product-add.save-error.title</source>
+        <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">product-add.save-error.title</target>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
-        <source>product-add.uploading-image-banner.title</source>
+        <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">product-add.uploading-image-banner.title</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
-        <source>product-detail.nutrition-table.for-serving</source>
+        <source>Per serving</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">product-detail.nutrition-table.for-serving</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
-        <source>product-detail.page-title.ingredients</source>
+        <source>Ingredients</source>
         <note>Product detail, ingredients</note>
         <target xml:lang="pl" state="translated">product-detail.page-title.ingredients</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
-        <source>product-detail.page-title.nutrition</source>
+        <source>Nutrition</source>
         <note>Product detail, nutrition</note>
         <target xml:lang="pl" state="translated">product-detail.page-title.nutrition</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
-        <source>product-detail.page-title.nutrition-table</source>
+        <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
         <target xml:lang="pl" state="translated">product-detail.page-title.nutrition-table</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
-        <source>product-detail.page-title.summary</source>
+        <source>Summary</source>
         <note>Product detail, summary</note>
         <target xml:lang="pl" state="translated">product-detail.page-title.summary</target>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
-        <source>user.alert.password-missing</source>
+        <source>Password is required</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">user.alert.password-missing</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
-        <source>user.alert.username-missing</source>
+        <source>Username is required</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="pl" state="translated">user.alert.username-missing</target>
       </trans-unit>
