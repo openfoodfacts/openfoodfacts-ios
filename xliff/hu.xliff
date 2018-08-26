@@ -745,12 +745,18 @@ A "Profile" ikont Smashicons készítette (https://www.flaticon.com/authors/smas
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="hu" state="translated">product-add.image-upload-error-banner.title</target>
+        <target xml:lang="hu" state="translated">Valami hiba történt</target>
+        <alt-trans>
+          <target xml:lang="hu">product-add.image-upload-error-banner.title</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
         <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="hu" state="translated">product-add.image-upload-success-banner.title</target>
+        <target xml:lang="hu" state="translated">A kép sikeresen fel lett töltve</target>
+        <alt-trans>
+          <target xml:lang="hu">product-add.image-upload-success-banner.title</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
         <source>Try again later</source>
