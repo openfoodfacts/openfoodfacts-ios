@@ -65,8 +65,11 @@
       </trans-unit>
       <trans-unit id="nutrition.alcohol">
         <source>Alcohol</source>
-        <target xml:lang="bn" state="translated">
+        <target xml:lang="bn" state="translated">অ্যালকোহল</target>
+        <alt-trans>
+          <target xml:lang="bn">
 অ্যালকোহল</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate">
         <source>Carbohydrate</source>
@@ -715,9 +718,6 @@ Make sure the barcode is well lit.</target>
         <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="bn" state="translated">সামনের দিকের ছবি তুলুন</target>
-        <alt-trans>
-          <target xml:lang="bn">সামনের ছবি তুলুন</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
@@ -748,9 +748,6 @@ Make sure the barcode is well lit.</target>
         <source>Per serving</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="bn" state="translated">প্রতি পরিবেশনে</target>
-        <alt-trans>
-          <target xml:lang="bn">ভজনা প্রতি</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
         <source>Ingredients</source>
@@ -761,9 +758,6 @@ Make sure the barcode is well lit.</target>
         <source>Nutrition</source>
         <note>Product detail, nutrition</note>
         <target xml:lang="bn" state="translated">পুষ্টি উপাদান</target>
-        <alt-trans>
-          <target xml:lang="bn">পুষ্টি</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
         <source>Nutrition table</source>
