@@ -1,0 +1,234 @@
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Scan barcode";
+
+// Product Search
+
+"product-search.search-placeholder" = "البحث عن منتج بواسطة الاسم أو الرمز الشريطي";
+"product-search.no-results" = "لا توجد نتائج";
+"product-search.error-view.title" = "حدث خطأ ما";
+"product-search.error-view.subtitle" = "من فضلك حاول مرة أخرى";
+"product-search.initial-view.text" = "Open Beauty Facts هو قاعدة بيانات لمنتجات مستحضرات التجميل مع المكونات، والمواد المسببة للحساسية، والمؤشرات وجميع المعلومات التي يمكن أن نجدها على ملصقات المنتج.";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "مسح باركود المنتج";
+"product-scanner.overlay.extended-user-help" = "لا يمكن العثور على الباركود.\nتوسيط الباركود في الشاشة.\nتأكد من إضاءة الباركود جيدًا.";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "خطأ في مسح الباركود. لحظات و اعد المحاولة مرة أخرى.";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "يرجى منح إذن لاستخدام الكاميرا لتكون قادرة على مسح الباركود";
+"product-scanner.permissions.noPermissions.action.title" = "فتح الإعدادات";
+
+"product-scanner.permissions.failed.title" = "لا يمكن إعداد مسح الباركود";
+"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "اترك مسح الباركود";
+
+"product-scanner.search.status" = "جارٍى تحميل المنتج...";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "جاري تحميل الصورة...";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "حدث خطأ ما";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "يرجى محاولة التقاط الصورة مرة أخرى";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "تم تحميل الصورة بنجاح";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "تمت إضافة المنتج بنجاح. شكراً!";
+"product-add.uploaded-image" = "تم تحميل الصورة ، شكرًا!";
+"product-add.save-error.title" = "خطأ أثناء حفظ المنتج";
+"product-add.save-error.message" = "أعد المحاولة لاحقًا";
+"alert.action.ok" = "تم";
+"product-add.language.toolbar-title" = "Select a language";
+/* Product Add name text field */
+"product-add.placeholder.name" = "اسم المنتج";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "العلامة التجارية";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity-value" = "Quantity value";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "إضافة صورة جديدة";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "تذكر أن تقوم بحفظ التغييرات الخاصة بك";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "تدرج للأسفل الى زر \"حفظ\"";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "الملخص";
+"product-detail.page-title.ingredients" = "المكونات";
+"product-detail.page-title.nutrition" = "التغذية";
+"product-detail.page-title.nutrition-table" = "جدول الحقائق الغذائية";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "الرمز الشريطي";
+"product-detail.summary.quantity" = "كمية";
+"product-detail.summary.packaging" = "التعبئة والتغليف";
+"product-detail.summary.brands" = "العلامات التجارية";
+"product-detail.summary.manufacturing-places" = "أماكن التصنيع أو التجهيز";
+"product-detail.summary.origins" = "أصل المكونات";
+"product-detail.summary.categories" = "الفئات";
+"product-detail.summary.labels" = "التسميات، الشهادات، الجوائز";
+"product-detail.summary.citiesTags" = "المدينة والولاية وبلد الشراء";
+"product-detail.summary.stores" = "المتاجر";
+"product-detail.summary.countries" = "بلدان بيع";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "قائمة المكونات";
+"product-detail.ingredients.allergens-list" = "مستأرج";
+"product-detail.ingredients.traces-list" = "آثار";
+"product-detail.ingredients.additives-list" = "إضافات";
+"product-detail.ingredients.palm-oil-ingredients" = "المكونات من زيت النخيل";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "المكونات التي قد تكون من زيت النخيل";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "حجم الحصة";
+"product-detail.nutrition.carbon-footprint" = "انبعاثات الكربون / انبعاثات ثاني أكسيد الكربون";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "حقائق غذائية";
+"product-detail.nutrition-table.for-100g" = "ل 100 غرام";
+"product-detail.nutrition-table.for-serving" = "لكل وجبة";
+
+// Nutrition levels
+"nutrition-level.low" = "في كمية المخزون";
+"nutrition-level.moderate" = "كمية معتدلة";
+"nutrition-level.high" = "كمية عالية";
+
+// Nutrition
+"nutrition.energy" = "الطاقة";
+"nutrition.fats" = "الدهون";
+"nutrition.fats.saturated-fat" = "الدهون المشبعة";
+"nutrition.fats.mono-unsaturated-fat" = "الدهون غير المشبعة أحادية";
+"nutrition.fats.poly-unsaturated-fat" = "الدهون غير المشبعة أحادية";
+"nutrition.fats.omega3" = "أوميغا 3";
+"nutrition.fats.omega6" = "أوميغا 3";
+"nutrition.fats.omega9" = "أوميغا 9";
+"nutrition.fats.trans-fat" = "الدهون غير المشبعة";
+"nutrition.fats.cholesterol" = "كوليسترول";
+"nutrition.carbohydrate" = "كربوهيدرات";
+"nutrition.carbohydrate.sugars" = "السكريات";
+"nutrition.carbohydrate.sucrose" = "السكروز";
+"nutrition.carbohydrate.glucose" = "الجلوكوز";
+"nutrition.carbohydrate.fructose" = "سكر الفاكهة";
+"nutrition.carbohydrate.lactose" = "اللاكتوز";
+"nutrition.carbohydrate.maltose" = "مالتوس";
+"nutrition.carbohydrate.maltodextrins" = "مالتوديكسترينس";
+"nutrition.fiber" = "الألياف الغذائية";
+"nutrition.proteins" = "البروتينات";
+"nutrition.proteins.casein" = "الكازين";
+"nutrition.proteins.serum-proteins" = "بروتينات المصل";
+"nutrition.proteins.nucleotides" = "النيوكليوتيدات";
+"nutrition.salt" = "ملح";
+"nutrition.sodium" = "صوديوم";
+"nutrition.alcohol" = "الكحول";
+"nutrition.vitamins" = "الفيتامينات";
+"nutrition.vitamins.a" = "فيتامين أ";
+"nutrition.vitamins.beta-carotene" = "بيتا كاروتين";
+"nutrition.vitamins.d" = "فيتامين د";
+"nutrition.vitamins.e" = "فيتامين هـ";
+"nutrition.vitamins.k" = "فيتامين ك";
+"nutrition.vitamins.c" = "فيتامين سي";
+"nutrition.vitamins.b1" = "فيتامين ب 1";
+"nutrition.vitamins.b2" = "فيتامين ب 2";
+"nutrition.vitamins.pp" = "فيتامين ب 2";
+"nutrition.vitamins.b6" = "فيتامين ب 6";
+"nutrition.vitamins.b9" = "فيتامين ب 9";
+"nutrition.vitamins.b12" = "فيتامين ب 12";
+"nutrition.vitamins.biotin" = "البيوتين";
+"nutrition.vitamins.pantothenic-acid" = "حمض البانتوثينيك";
+"nutrition.minerals" = "المعادن";
+"nutrition.minerals.silica" = "السيليكا";
+"nutrition.minerals.bicarbonate" = "بيكربونات";
+"nutrition.minerals.potassium" = "بوتاسيوم";
+"nutrition.minerals.chloride" = "كلوريد";
+"nutrition.minerals.calcium" = "الكالسيوم";
+"nutrition.minerals.phosphorus" = "الفوسفور";
+"nutrition.minerals.iron" = "الحديد";
+"nutrition.minerals.magnesium" = "المغنيسيوم";
+"nutrition.minerals.zinc" = "الزنك";
+"nutrition.minerals.copper" = "النحاس";
+"nutrition.minerals.manganese" = "المنغنيز";
+"nutrition.minerals.fluoride" = "الفلوريد";
+"nutrition.minerals.selenium" = "السيلينيوم";
+"nutrition.minerals.chromium" = "الكروم";
+"nutrition.minerals.molybdenum" = "الموليبدينوم";
+"nutrition.minerals.iodine" = "اليود";
+"nutrition.minerals.caffeine" = "الكافيين";
+"nutrition.minerals.taurine" = "توراين";
+"nutrition.minerals.ph" = "الرقم الهيدروجيني";
+"nutrition.minerals.fruits-vegetables-nuts" = "الفواكه والخضروات والمكسرات";
+"nutrition.minerals.collagen-meat-protein-ratio" = "نسبة بروتين اللحوم الكولاجين";
+"nutrition.minerals.cocoa" = "الكاكاو";
+"nutrition.minerals.chlorophyl" = "الكلوروفيل";
+
+// Call to action
+"call-to-action.summary" = "التقط صورة للأمام";
+"call-to-action.ingredients" = "التقط صورة للمكونات";
+"call-to-action.nutrition" = "التقط صورة لجدول الحقائق الغذائية";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.take-picture" = "التقاط صورة %s للمنتج";
+"product.images.product" = "المنتج";
+"product.images.picture" = "صورة ✅";
+"product.images.front" = "الأمامية";
+"product.images.ingredients" = "المكونات";
+"product.images.nutrition" = "جدول الحقائق الغذائية";
+
+// Settings storyboard
+"settings.tab-bar.item" = "الإعدادات";
+"settings.sections.information" = "معلومات";
+"settings.sections.contribute" = "المساهمة";
+"settings.sections.about" = "حول";
+"settings.credits.title" = "إعتمادات";
+"settings.scan-on-launch.title" = "إظهار الماسح عند تشغيل التطبيق";
+"settings.information.discover" = "إكتشف";
+"settings.contribute.how-to-contribute" = "كيفية المساهمة";
+"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.about.contact" = "جهة الاتصال";
+"settings.about.frequently-asked-questions" = "‮الأسئلة المتكررة";
+"settings.promotion.open-beauty-facts" = "حقائق الجمال مفتوحة";
+"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "المستخدم";
+"user.log-in" = "تسجيل الدخول";
+"user.log-out" = "تسجيل الخروج";
+"user.username" = "اسم المستخدم";
+"user.password" = "كلمة المرور";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "مساهماتك";
+"user.products-pending-upload.button" = "Products pending upload";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "إنشاء حساب";
+"user.why-log-in.text" = "سيؤدي تسجيل الدخول إلى حسابك إلى ربط جميع مساهماتك بحسابك.";
+"user.alert.wrong-credentials.title" = "فشل في تسجيل الدخول";
+"user.alert.wrong-credentials.subtitle" = "تحقق من اسم المستخدم وكلمة المرور الخاصة بك";
+"user.alert.generic-error.title" = "حدث خطأ أثناء تسجيل الدخول";
+"user.alert.generic-error.subtitle" = "الرجاء المحاولة مرة أخرى بعد بضع ثوان";
+"user.alert.username-missing" = "اسم المستخدم مطلوب";
+"user.alert.password-missing" = "رمز المرور مطلوب";
+"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
+
+// Search history
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "محو";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewWeeks" = "A few weeks ago";
+"history.section-titles.fewMonths" = "A few months ago";
+"history.section-titles.longTime" = "A long time ago";
