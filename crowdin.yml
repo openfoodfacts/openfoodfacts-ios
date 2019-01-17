@@ -1,7 +1,10 @@
 files:
   - source: /xliff/en.xliff
     translation: /xliff/%two_letters_code%.xliff
-
+    
+  - source: /Sources/en.lproj/Localizable.strings
+    translation: /Sources/%two_letters_code%.lproj/Localizable.strings
+    
   - source: /fastlane/metadata/en-US/description.txt
     translation: /fastlane/metadata/%two_letters_code%/description.txt
 
