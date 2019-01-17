@@ -1,0 +1,234 @@
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Scan barcode";
+
+// Product Search
+
+"product-search.search-placeholder" = "Søk etter et produkt med navn eller strekkode";
+"product-search.no-results" = "No Results";
+"product-search.error-view.title" = "Something went wrong";
+"product-search.error-view.subtitle" = "Please try again";
+"product-search.initial-view.text" = "Open Food Facts er en offentlig database for matprodukter med ingredienser, allergener, næringsfakta og all mulig informasjon som kan befinne seg på produktetiketter.";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "Scan the barcode of the product";
+"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
+"product-scanner.permissions.noPermissions.action.title" = "Open Settings";
+
+"product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
+"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+
+"product-scanner.search.status" = "Loading product...";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "Uploading image...";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "Something went wrong";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
+"product-add.uploaded-image" = "Image uploaded, thanks!";
+"product-add.save-error.title" = "Error while saving product";
+"product-add.save-error.message" = "Try again later";
+"alert.action.ok" = "Ok";
+"product-add.language.toolbar-title" = "Select a language";
+/* Product Add name text field */
+"product-add.placeholder.name" = "Product name";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "Merke";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity-value" = "Quantity value";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "Add a new picture";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "Remember to save your changes";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "Sammendrag";
+"product-detail.page-title.ingredients" = "Ingredienser";
+"product-detail.page-title.nutrition" = "Ernæring";
+"product-detail.page-title.nutrition-table" = "Næringsliste";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "Strekkode";
+"product-detail.summary.quantity" = "Mengde";
+"product-detail.summary.packaging" = "Emballasje";
+"product-detail.summary.brands" = "Merker";
+"product-detail.summary.manufacturing-places" = "Produksjon- eller behandlingssteder";
+"product-detail.summary.origins" = "Ingrediensopprinnelse";
+"product-detail.summary.categories" = "Kategorier";
+"product-detail.summary.labels" = "Etiketter, sertifiseringer, priser";
+"product-detail.summary.citiesTags" = "By, region eller land der produktet ble kjøpt";
+"product-detail.summary.stores" = "Butikker";
+"product-detail.summary.countries" = "Land hvor produktet selges";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "Ingrediensliste";
+"product-detail.ingredients.allergens-list" = "Stoffer eller produkter som forårsaker allergi eller intoleranse";
+"product-detail.ingredients.traces-list" = "Kan inneholde";
+"product-detail.ingredients.additives-list" = "Tilsetningsstoffer";
+"product-detail.ingredients.palm-oil-ingredients" = "Ingredienser som er tilknyttet palmeolje";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredienser som kan være tilknyttet palmeolje";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "Porsjonstørrelse";
+"product-detail.nutrition.carbon-footprint" = "Karbonutslipp / CO2-utslipp";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "Ernæringsinnhold";
+"product-detail.nutrition-table.for-100g" = "For 100 g";
+"product-detail.nutrition-table.for-serving" = "Per porsjon";
+
+// Nutrition levels
+"nutrition-level.low" = "i liten mengde";
+"nutrition-level.moderate" = "i moderat mengde";
+"nutrition-level.high" = "i høy mengde";
+
+// Nutrition
+"nutrition.energy" = "Energi";
+"nutrition.fats" = "Fett";
+"nutrition.fats.saturated-fat" = "Mettet fett";
+"nutrition.fats.mono-unsaturated-fat" = "Umettet fett (mono)";
+"nutrition.fats.poly-unsaturated-fat" = "Umettet fett (poly)";
+"nutrition.fats.omega3" = "Omega-3";
+"nutrition.fats.omega6" = "Omega-6";
+"nutrition.fats.omega9" = "Omega-9";
+"nutrition.fats.trans-fat" = "Trans-fett";
+"nutrition.fats.cholesterol" = "Kolesterol";
+"nutrition.carbohydrate" = "Karbohydrater";
+"nutrition.carbohydrate.sugars" = "Sukker";
+"nutrition.carbohydrate.sucrose" = "Sukrose";
+"nutrition.carbohydrate.glucose" = "Glukose";
+"nutrition.carbohydrate.fructose" = "Fruktose";
+"nutrition.carbohydrate.lactose" = "Laktose";
+"nutrition.carbohydrate.maltose" = "Maltose";
+"nutrition.carbohydrate.maltodextrins" = "Maltodekstrin";
+"nutrition.fiber" = "Fiber";
+"nutrition.proteins" = "Protein";
+"nutrition.proteins.casein" = "Kasein";
+"nutrition.proteins.serum-proteins" = "Serumproteiner";
+"nutrition.proteins.nucleotides" = "Nukleotider";
+"nutrition.salt" = "Salt";
+"nutrition.sodium" = "Natrium";
+"nutrition.alcohol" = "Alkohol";
+"nutrition.vitamins" = "Vitaminer";
+"nutrition.vitamins.a" = "Vitamin A";
+"nutrition.vitamins.beta-carotene" = "Betakaroten";
+"nutrition.vitamins.d" = "Vitamin D";
+"nutrition.vitamins.e" = "Vitamin E";
+"nutrition.vitamins.k" = "Vitamin K";
+"nutrition.vitamins.c" = "Vitamin C";
+"nutrition.vitamins.b1" = "Vitamin B1";
+"nutrition.vitamins.b2" = "Vitamin B2";
+"nutrition.vitamins.pp" = "Vitamin PP";
+"nutrition.vitamins.b6" = "Vitamin B6";
+"nutrition.vitamins.b9" = "Vitamin B9";
+"nutrition.vitamins.b12" = "Vitamin B12";
+"nutrition.vitamins.biotin" = "Biotin";
+"nutrition.vitamins.pantothenic-acid" = "Pantotensyre";
+"nutrition.minerals" = "Mineraler";
+"nutrition.minerals.silica" = "Silisium";
+"nutrition.minerals.bicarbonate" = "Bikarbonat";
+"nutrition.minerals.potassium" = "Kalium";
+"nutrition.minerals.chloride" = "Klorid";
+"nutrition.minerals.calcium" = "Kalsium";
+"nutrition.minerals.phosphorus" = "Fosfor";
+"nutrition.minerals.iron" = "Jern";
+"nutrition.minerals.magnesium" = "Magnesium";
+"nutrition.minerals.zinc" = "Sink";
+"nutrition.minerals.copper" = "Kobber";
+"nutrition.minerals.manganese" = "Mangan";
+"nutrition.minerals.fluoride" = "Fluor";
+"nutrition.minerals.selenium" = "Selen";
+"nutrition.minerals.chromium" = "Krom";
+"nutrition.minerals.molybdenum" = "Molybden";
+"nutrition.minerals.iodine" = "Jod";
+"nutrition.minerals.caffeine" = "Koffein";
+"nutrition.minerals.taurine" = "Taurin";
+"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.fruits-vegetables-nuts" = "Frukt, grønnsaker, nøtter";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Kollagenforhold";
+"nutrition.minerals.cocoa" = "Kakao";
+"nutrition.minerals.chlorophyl" = "Klorofyll";
+
+// Call to action
+"call-to-action.summary" = "Ta et bilde av forsiden";
+"call-to-action.ingredients" = "Ta et bilde av ingrediensene";
+"call-to-action.nutrition" = "Ta et bilde av næringslisten";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.take-picture" = "Take a picture of the product's";
+"product.images.product" = "Product's";
+"product.images.picture" = "picture ✅";
+"product.images.front" = "front";
+"product.images.ingredients" = "ingredienser";
+"product.images.nutrition" = "næringsliste";
+
+// Settings storyboard
+"settings.tab-bar.item" = "Innstillinger";
+"settings.sections.information" = "Informasjon";
+"settings.sections.contribute" = "Bidra";
+"settings.sections.about" = "Om";
+"settings.credits.title" = "Medvirkende";
+"settings.scan-on-launch.title" = "Show Scan On App Launch";
+"settings.information.discover" = "Utforsk";
+"settings.contribute.how-to-contribute" = "How To Contribute";
+"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.about.contact" = "Contact";
+"settings.about.frequently-asked-questions" = "Frequently Asked Questions";
+"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
+"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "Bruker";
+"user.log-in" = "Log In";
+"user.log-out" = "Log Out";
+"user.username" = "Username";
+"user.password" = "Passord";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "Check Your Contributions";
+"user.products-pending-upload.button" = "Products pending upload";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "Create An Account";
+"user.why-log-in.text" = "Login in with your account will associate all your contributions to your account.";
+"user.alert.wrong-credentials.title" = "Unable to log in";
+"user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
+"user.alert.generic-error.title" = "There was an error logging in";
+"user.alert.generic-error.subtitle" = "Please try again in a few moments";
+"user.alert.username-missing" = "Username is required";
+"user.alert.password-missing" = "Password is required";
+"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
+
+// Search history
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "Tøm";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewWeeks" = "A few weeks ago";
+"history.section-titles.fewMonths" = "A few months ago";
+"history.section-titles.longTime" = "A long time ago";
