@@ -1,0 +1,234 @@
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Scan barcode";
+
+// Product Search
+
+"product-search.search-placeholder" = "Search for a product by name or barcode";
+"product-search.no-results" = "No Results";
+"product-search.error-view.title" = "Something went wrong";
+"product-search.error-view.subtitle" = "Please try again";
+"product-search.initial-view.text" = "Open Food Facts এ উপাদানের উপাদান, এলার্জি, পুষ্টি সংক্রান্ত তথ্য এবং পণ্য লেবেলগুলিতে আমরা খুঁজে পেতে পারি এমন সব তথ্যগুলির সাথে খাদ্যের একটি খোলা ডাটাবেস।";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "Scan the barcode of the product";
+"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
+"product-scanner.permissions.noPermissions.action.title" = "Open Settings";
+
+"product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
+"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+
+"product-scanner.search.status" = "Loading product...";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "Uploading image...";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "Something went wrong";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
+"product-add.uploaded-image" = "Image uploaded, thanks!";
+"product-add.save-error.title" = "Error while saving product";
+"product-add.save-error.message" = "Try again later";
+"alert.action.ok" = "Ok";
+"product-add.language.toolbar-title" = "Select a language";
+/* Product Add name text field */
+"product-add.placeholder.name" = "Product name";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "ব্র্যান্ড";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity-value" = "Quantity value";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "Add a new picture";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "Remember to save your changes";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "সারাংশ";
+"product-detail.page-title.ingredients" = "উপকরণসমূহ";
+"product-detail.page-title.nutrition" = "পুষ্টি উপাদান";
+"product-detail.page-title.nutrition-table" = "Nutrition table";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "বারকোড";
+"product-detail.summary.quantity" = "পরিমান";
+"product-detail.summary.packaging" = "Packaging";
+"product-detail.summary.brands" = "মার্কা";
+"product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
+"product-detail.summary.origins" = "প্রধান উপাদানসমূহ";
+"product-detail.summary.categories" = "শ্রেণীসমূহ";
+"product-detail.summary.labels" = "Labels, certifications, awards";
+"product-detail.summary.citiesTags" = "ক্রয়কৃত শহর, রাজ্য এবং দেশ";
+"product-detail.summary.stores" = "দোকান সমূহ";
+"product-detail.summary.countries" = "যে দেশে বিক্রি হয়েছে";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "List of ingredients";
+"product-detail.ingredients.allergens-list" = "পদার্থ বা পণ্য যা বিরূপ বা অসহনীয় প্রতিক্রিয়ার সৃষ্টি করে";
+"product-detail.ingredients.traces-list" = "Traces";
+"product-detail.ingredients.additives-list" = "ভোজ্য উপাদান";
+"product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients that may be from palm oil";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "পরিবেশন পরিমাপ";
+"product-detail.nutrition.carbon-footprint" = "কার্বন পদচিহ্ন / CO2 নির্গমন";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "পুষ্টি তথ্য";
+"product-detail.nutrition-table.for-100g" = "100 গ্রামের জন্য";
+"product-detail.nutrition-table.for-serving" = "প্রতি পরিবেশনে";
+
+// Nutrition levels
+"nutrition-level.low" = "কম পরিমাণে ";
+"nutrition-level.moderate" = "মাঝারি পরিমাণে";
+"nutrition-level.high" = "উচ্চ মাত্রায়";
+
+// Nutrition
+"nutrition.energy" = "শক্তি";
+"nutrition.fats" = "Fats";
+"nutrition.fats.saturated-fat" = "সম্পৃক্ত চর্বি";
+"nutrition.fats.mono-unsaturated-fat" = "মণি অসম্পৃক্ত চর্বি";
+"nutrition.fats.poly-unsaturated-fat" = "পল্লি অসম্পৃক্ত চর্বি";
+"nutrition.fats.omega3" = "ওমেগা 3";
+"nutrition.fats.omega6" = "ওমেগা 6";
+"nutrition.fats.omega9" = "ওমেগা 9";
+"nutrition.fats.trans-fat" = "ট্রান্স ফ্যাট";
+"nutrition.fats.cholesterol" = "কোলেস্টেরল";
+"nutrition.carbohydrate" = "কার্বোহাইড্রেট";
+"nutrition.carbohydrate.sugars" = "চিনি";
+"nutrition.carbohydrate.sucrose" = "সুক্রোজ";
+"nutrition.carbohydrate.glucose" = "শর্করা";
+"nutrition.carbohydrate.fructose" = "ফ্রুক্টোজ";
+"nutrition.carbohydrate.lactose" = "ল্যাকটোজ";
+"nutrition.carbohydrate.maltose" = "ম্যালটোজ";
+"nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
+"nutrition.fiber" = "ডায়েটারি ফাইবার";
+"nutrition.proteins" = "প্রোটিন";
+"nutrition.proteins.casein" = "ছানাজাতীয় উপাদান";
+"nutrition.proteins.serum-proteins" = "সিরাম প্রোটিন";
+"nutrition.proteins.nucleotides" = "নিউক্লিওটাইডস";
+"nutrition.salt" = "লবন";
+"nutrition.sodium" = "সোডিয়াম";
+"nutrition.alcohol" = "অ্যালকোহল";
+"nutrition.vitamins" = "ভিটামিনসমূহ";
+"nutrition.vitamins.a" = "ভিটামিন এ";
+"nutrition.vitamins.beta-carotene" = "Beta carotene";
+"nutrition.vitamins.d" = "Vitamin D";
+"nutrition.vitamins.e" = "Vitamin E";
+"nutrition.vitamins.k" = "Vitamin K";
+"nutrition.vitamins.c" = "ভিটামিন সি";
+"nutrition.vitamins.b1" = "ভিটামিন বি 1";
+"nutrition.vitamins.b2" = "ভিটামিন B2";
+"nutrition.vitamins.pp" = "ভিটামিন পিপি";
+"nutrition.vitamins.b6" = "ভিটামিন বি 6";
+"nutrition.vitamins.b9" = "ভিটামিন বি 9";
+"nutrition.vitamins.b12" = "ভিটামিন B12";
+"nutrition.vitamins.biotin" = "বায়োটিন";
+"nutrition.vitamins.pantothenic-acid" = "Pantothenic অ্যাসিড";
+"nutrition.minerals" = "খনিজ পদার্থ";
+"nutrition.minerals.silica" = "সিলিকা";
+"nutrition.minerals.bicarbonate" = "বাইকার্বোনেট";
+"nutrition.minerals.potassium" = "পটাসিয়াম";
+"nutrition.minerals.chloride" = "ক্লোরাইড";
+"nutrition.minerals.calcium" = "ক্যালসিয়াম";
+"nutrition.minerals.phosphorus" = "ফসফরাস";
+"nutrition.minerals.iron" = "লৌহ";
+"nutrition.minerals.magnesium" = "ম্যাগনেসিয়াম";
+"nutrition.minerals.zinc" = "জিঙ্ক";
+"nutrition.minerals.copper" = "তামা";
+"nutrition.minerals.manganese" = "ম্যাঙ্গানিজ";
+"nutrition.minerals.fluoride" = "ফ্লোরাইড";
+"nutrition.minerals.selenium" = "সেলেনিয়াম";
+"nutrition.minerals.chromium" = "ক্রোমিয়াম";
+"nutrition.minerals.molybdenum" = "মলিবডেনাম";
+"nutrition.minerals.iodine" = "আয়োডিন";
+"nutrition.minerals.caffeine" = "ক্যাফেইন";
+"nutrition.minerals.taurine" = "বৃষসদৃশ";
+"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.fruits-vegetables-nuts" = "ফলমূল, শাকসবজি, বাদাম";
+"nutrition.minerals.collagen-meat-protein-ratio" = "কোলাজেন মাংস প্রোটিন অনুপাত";
+"nutrition.minerals.cocoa" = "কোকো";
+"nutrition.minerals.chlorophyl" = "ক্লোরোফিল";
+
+// Call to action
+"call-to-action.summary" = "সামনের দিকের ছবি তুলুন";
+"call-to-action.ingredients" = "উপাদানের একটি ছবি নিন";
+"call-to-action.nutrition" = "পুষ্টি তালিকার একটি ছবি তুলুন";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.take-picture" = "Take a picture of the product's";
+"product.images.product" = "Product's";
+"product.images.picture" = "picture ✅";
+"product.images.front" = "front";
+"product.images.ingredients" = "উপকরণসমূহ";
+"product.images.nutrition" = "nutrition table";
+
+// Settings storyboard
+"settings.tab-bar.item" = "সেটিংস";
+"settings.sections.information" = "তথ্য";
+"settings.sections.contribute" = "Contribute";
+"settings.sections.about" = "সম্পর্কে";
+"settings.credits.title" = "Credits";
+"settings.scan-on-launch.title" = "Show Scan On App Launch";
+"settings.information.discover" = "খুঁজুন";
+"settings.contribute.how-to-contribute" = "How To Contribute";
+"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.about.contact" = "Contact";
+"settings.about.frequently-asked-questions" = "Frequently Asked Questions";
+"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
+"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "ইউজার";
+"user.log-in" = "Log In";
+"user.log-out" = "Log Out";
+"user.username" = "Username";
+"user.password" = "পাসওয়ার্ড";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "Check Your Contributions";
+"user.products-pending-upload.button" = "Products pending upload";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "Create An Account";
+"user.why-log-in.text" = "Login in with your account will associate all your contributions to your account.";
+"user.alert.wrong-credentials.title" = "Unable to log in";
+"user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
+"user.alert.generic-error.title" = "There was an error logging in";
+"user.alert.generic-error.subtitle" = "Please try again in a few moments";
+"user.alert.username-missing" = "Username is required";
+"user.alert.password-missing" = "Password is required";
+"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
+
+// Search history
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "মুছে ফেলুন";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewWeeks" = "A few weeks ago";
+"history.section-titles.fewMonths" = "A few months ago";
+"history.section-titles.longTime" = "A long time ago";
