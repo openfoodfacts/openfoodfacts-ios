@@ -10,10 +10,10 @@ import UIKit
 import Kingfisher
 
 struct RotatingProcessor: ImageProcessor {
-    let identifier = "org.openfoodfacts.orientation"
-
+    
     // Rotate image
-    func process(item: ImageProcessItem, options: KingfisherOptionsInfo) -> Image? {
+
+    func process(item: ImageProcessItem, options: KingfisherParsedOptionsInfo) -> Image? {
         switch item {
         case .image(let image):
             switch image.imageOrientation {
@@ -25,7 +25,12 @@ struct RotatingProcessor: ImageProcessor {
                 return image
             }
         case .data:
-            return (DefaultImageProcessor() >> self).process(item: item, options: options)
+            return nil
+            // return (DefaultImageProcessor() >> self).process(item: item, options: options)
         }
+
     }
+    
+    let identifier = "org.openfoodfacts.orientation"
+
 }
