@@ -181,9 +181,6 @@
       <trans-unit id="nutrition.minerals.collagen-meat-protein-ratio">
         <source>Collagen meat protein ratio</source>
         <target xml:lang="hu" state="translated">Kollagén húsfehérje arány</target>
-        <alt-trans>
-          <target xml:lang="hu">Kollagén húsfehérje aránya</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.copper">
         <source>Copper</source>
@@ -334,9 +331,6 @@
         <source>Please try to take the picture again</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">Kérem, próbálja meg újra elkészíteni a képet</target>
-        <alt-trans>
-          <target xml:lang="hu">Kérjük, próbálja meg újra elkészíteni a képet</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
@@ -390,7 +384,7 @@
       </trans-unit>
       <trans-unit id="product-detail.ingredients.allergens-list" approved="yes">
         <source>Substances or products causing allergies or intolerances</source>
-        <target xml:lang="hu">Allergiás vagy intoleranciás reakciót okozó anyagok, termékek</target>
+        <target xml:lang="hu" state="translated">Allergiás vagy intoleranciás reakciót okozó anyagok, termékek</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.ingredients-list">
         <source>List of ingredients</source>
@@ -403,9 +397,6 @@
       <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients">
         <source>Ingredients that may be from palm oil</source>
         <target xml:lang="hu" state="translated">Összetevők amelyek pálmaolajat tartalmazhatnak</target>
-        <alt-trans>
-          <target xml:lang="hu">Összetevők, amelyek pálmaolajat tartalmazhatnak</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.traces-list">
         <source>Traces</source>
@@ -424,9 +415,6 @@
       <trans-unit id="product-detail.nutrition-table.nutritional-table-header">
         <source>Nutrition facts</source>
         <target xml:lang="hu" state="translated">Tápértékadatok</target>
-        <alt-trans>
-          <target xml:lang="hu">Tápanyag ismertető</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.carbon-footprint">
         <source>Carbon footprint / CO2 emissions</source>
@@ -458,15 +446,15 @@
       </trans-unit>
       <trans-unit id="product-detail.summary.barcode" approved="yes">
         <source>Barcode</source>
-        <target xml:lang="hu">Vonalkód</target>
+        <target xml:lang="hu" state="translated">Vonalkód</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.brands" approved="yes">
         <source>Brands</source>
-        <target xml:lang="hu">Márkanevek</target>
+        <target xml:lang="hu" state="translated">Márkanevek</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.categories" approved="yes">
         <source>Categories</source>
-        <target xml:lang="hu">Kategóriák</target>
+        <target xml:lang="hu" state="translated">Kategóriák</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.citiesTags">
         <source>City, state and country where purchased</source>
@@ -474,10 +462,7 @@
       </trans-unit>
       <trans-unit id="product-detail.summary.countries" approved="yes">
         <source>Countries where sold</source>
-        <target xml:lang="hu">Országok, ahol kapható</target>
-        <alt-trans>
-          <target xml:lang="hu">Országok, ahol árulják</target>
-        </alt-trans>
+        <target xml:lang="hu" state="translated">Országok, ahol kapható</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.labels">
         <source>Labels, certifications, awards</source>
@@ -507,9 +492,6 @@
         <source>Error scanning barcode. Please try again in a few moments.</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">Hiba történt a vonalkód beolvasása közben. Kérem, próbálja meg néhány pillanat múlva.</target>
-        <alt-trans>
-          <target xml:lang="hu">Hiba történt a vonalkód beolvasása közben. Kérjük, próbálja meg néhány pillanat múlva.</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.overlay.extended-user-help">
         <source>Can't find a barcode.
@@ -564,9 +546,6 @@ Győződjön meg róla, hogy a vonalkód jól megvilágított.</target>
         <source>Please try again</source>
         <note>Error view subtitle</note>
         <target xml:lang="hu" state="translated">Kérem, próbálja újra</target>
-        <alt-trans>
-          <target xml:lang="hu">Kérjük, próbálja újra</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-search.error-view.title">
         <source>Something went wrong</source>
@@ -595,7 +574,7 @@ Győződjön meg róla, hogy a vonalkód jól megvilágított.</target>
       <trans-unit id="product.images.ingredients" approved="yes">
         <source>ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="hu">összetevő(k)</target>
+        <target xml:lang="hu" state="translated">összetevő(k)</target>
       </trans-unit>
       <trans-unit id="product.images.nutrition">
         <source>nutrition table</source>
@@ -632,9 +611,6 @@ A "Profile" ikont Smashicons készítette (https://www.flaticon.com/authors/smas
       <trans-unit id="settings.information.discover">
         <source>Discover</source>
         <target xml:lang="hu" state="translated">Felfedez</target>
-        <alt-trans>
-          <target xml:lang="hu">Felfedezés</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="settings.information.how-to-contribute">
         <source>How To Contribute</source>
@@ -655,9 +631,6 @@ A "Profile" ikont Smashicons készítette (https://www.flaticon.com/authors/smas
       <trans-unit id="user.alert.generic-error.subtitle">
         <source>Please try again in a few moments</source>
         <target xml:lang="hu" state="translated">Kérem, próbálja meg néhány pillanat múlva</target>
-        <alt-trans>
-          <target xml:lang="hu">Kérjük, próbálja meg néhány pillanat múlva</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.generic-error.title">
         <source>There was an error logging in</source>
@@ -746,17 +719,11 @@ A "Profile" ikont Smashicons készítette (https://www.flaticon.com/authors/smas
         <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">Valami hiba történt</target>
-        <alt-trans>
-          <target xml:lang="hu">product-add.image-upload-error-banner.title</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
         <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">A kép sikeresen fel lett töltve</target>
-        <alt-trans>
-          <target xml:lang="hu">product-add.image-upload-success-banner.title</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
         <source>Try again later</source>
