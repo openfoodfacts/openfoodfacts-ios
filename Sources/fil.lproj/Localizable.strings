@@ -1,0 +1,234 @@
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Scan barcode";
+
+// Product Search
+
+"product-search.search-placeholder" = "Maghanap ng isang produkto ayon sa pangalan o barcode";
+"product-search.no-results" = "Walang Resulta";
+"product-search.error-view.title" = "May nangyaring mali";
+"product-search.error-view.subtitle" = "Mangyaring subukan muli";
+"product-search.initial-view.text" = "Ang Open Food Facts ay isang bukas na talaan ng datos ng mga produktong pagkain na naglalaman ng sangkap, allergens, mga nutrisyon at lahat ng mga impormasyon na makikita sa mga iteketa ng produkto.";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "I-scan ang barcode ng produkto";
+"product-scanner.overlay.extended-user-help" = "Hindi mahanap ang isang barcode. I-sentro ang barcode sa screen. Siguraduhin na ang barcode ay mahusay na naiilawan.";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "Error sa pag-scan ng barcode. Mangyaring subukan muli sa ilang sandali.";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "Mangyaring magbigay ng pahintulot na gamitin ang kamera upang ma-scan ang mga barcode";
+"product-scanner.permissions.noPermissions.action.title" = "Buksan ang mga setting";
+
+"product-scanner.permissions.failed.title" = "Hindi mai-setup ang pag-scan ng barcode";
+"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "Iwanan ang pag-scan ng barcode";
+
+"product-scanner.search.status" = "Naglo-load ng produkto...";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "Nag-uupload ng larawan...";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "May nangyaring mali";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "Mangyaring subukan na kuning muli ang larawan";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "Matagumpay na na-upload ang larawan";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "Matagumpay na naidagdag ang produkto. Salamat!";
+"product-add.uploaded-image" = "Na-upload ang larawan, salamat!";
+"product-add.save-error.title" = "Error habang nagse-save ng produkto";
+"product-add.save-error.message" = "Subukan ulit mamaya";
+"alert.action.ok" = "Sige";
+"product-add.language.toolbar-title" = "Select a language";
+/* Product Add name text field */
+"product-add.placeholder.name" = "Pangalan ng produkto";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "Mga Tatak";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity-value" = "Quantity value";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "Magdagdag ng bagong larawan";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "Tandaang i-save ang iyong mga pagbabago";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "Mag-scroll pababa sa pindutang 'Save'";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "Buod";
+"product-detail.page-title.ingredients" = "Mga sangkap";
+"product-detail.page-title.nutrition" = "Nutrisyon";
+"product-detail.page-title.nutrition-table" = "Talahanayan ng nutrisyon";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "Barcode";
+"product-detail.summary.quantity" = "Dami";
+"product-detail.summary.packaging" = "Packaging";
+"product-detail.summary.brands" = "Mga Tatak";
+"product-detail.summary.manufacturing-places" = "Mga lugar ng paggawa o pagproseso";
+"product-detail.summary.origins" = "Pinagmulan ng mga sangkap";
+"product-detail.summary.categories" = "Mga Kategorya";
+"product-detail.summary.labels" = "Mga label, mga sertipiko, mga parangal";
+"product-detail.summary.citiesTags" = "Lungsod, estado at bansa kung saan binili";
+"product-detail.summary.stores" = "Mga Tindahan";
+"product-detail.summary.countries" = "Mga bansa kung saan ibinebenta";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "Listahan ng mga sangkap";
+"product-detail.ingredients.allergens-list" = "Mga sangkap o mga produkto na nagiging sanhi ng alerdyi o mga intolerance";
+"product-detail.ingredients.traces-list" = "Mga bakas";
+"product-detail.ingredients.additives-list" = "Mga additibo";
+"product-detail.ingredients.palm-oil-ingredients" = "Mga sangkap mula sa palm oil";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Mga sangkap na maaaring mula sa palm oil";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "Sukat ng serving";
+"product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2 emissions";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "Talahanayan ng nutrisyon";
+"product-detail.nutrition-table.for-100g" = "Para sa 100 g";
+"product-detail.nutrition-table.for-serving" = "Bawat serving";
+
+// Nutrition levels
+"nutrition-level.low" = "kaunti lamang";
+"nutrition-level.moderate" = "katamtamang dami";
+"nutrition-level.high" = "madami";
+
+// Nutrition
+"nutrition.energy" = "Enerhiya";
+"nutrition.fats" = "Taba";
+"nutrition.fats.saturated-fat" = "Saturated na taba";
+"nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated na taba";
+"nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated na taba";
+"nutrition.fats.omega3" = "Omega 3";
+"nutrition.fats.omega6" = "Omega 6";
+"nutrition.fats.omega9" = "Omega 9";
+"nutrition.fats.trans-fat" = "Trans taba";
+"nutrition.fats.cholesterol" = "Kolesterol";
+"nutrition.carbohydrate" = "Carbohydrate";
+"nutrition.carbohydrate.sugars" = "Mga asukal";
+"nutrition.carbohydrate.sucrose" = "Sucrose";
+"nutrition.carbohydrate.glucose" = "Glucose";
+"nutrition.carbohydrate.fructose" = "Fructose";
+"nutrition.carbohydrate.lactose" = "Lactose";
+"nutrition.carbohydrate.maltose" = "Maltose";
+"nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
+"nutrition.fiber" = "Dietary fiber";
+"nutrition.proteins" = "Mga protina";
+"nutrition.proteins.casein" = "Casein";
+"nutrition.proteins.serum-proteins" = "Serum Proteins";
+"nutrition.proteins.nucleotides" = "Nucleotides";
+"nutrition.salt" = "Asin";
+"nutrition.sodium" = "Sodium";
+"nutrition.alcohol" = "Alkohol";
+"nutrition.vitamins" = "Mga bitamina";
+"nutrition.vitamins.a" = "Bitamina A";
+"nutrition.vitamins.beta-carotene" = "Beta carotene";
+"nutrition.vitamins.d" = "Bitamina D";
+"nutrition.vitamins.e" = "Bitamina E";
+"nutrition.vitamins.k" = "Bitamina K";
+"nutrition.vitamins.c" = "Bitamina C";
+"nutrition.vitamins.b1" = "Bitamina B1";
+"nutrition.vitamins.b2" = "Bitamina B2";
+"nutrition.vitamins.pp" = "Bitamina PP";
+"nutrition.vitamins.b6" = "Bitamina B6";
+"nutrition.vitamins.b9" = "Bitamina B9";
+"nutrition.vitamins.b12" = "Bitamina B12";
+"nutrition.vitamins.biotin" = "Biotin";
+"nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
+"nutrition.minerals" = "Mga mineral";
+"nutrition.minerals.silica" = "Silica";
+"nutrition.minerals.bicarbonate" = "Bicarbonate";
+"nutrition.minerals.potassium" = "Potassium";
+"nutrition.minerals.chloride" = "Chloride";
+"nutrition.minerals.calcium" = "Calcium";
+"nutrition.minerals.phosphorus" = "Phosphorus";
+"nutrition.minerals.iron" = "Iron";
+"nutrition.minerals.magnesium" = "Magnesium";
+"nutrition.minerals.zinc" = "Zinc";
+"nutrition.minerals.copper" = "Copper";
+"nutrition.minerals.manganese" = "Manganese";
+"nutrition.minerals.fluoride" = "Fluoride";
+"nutrition.minerals.selenium" = "Selenium";
+"nutrition.minerals.chromium" = "Chromium";
+"nutrition.minerals.molybdenum" = "Molybdenum";
+"nutrition.minerals.iodine" = "Iodine";
+"nutrition.minerals.caffeine" = "Caffeine";
+"nutrition.minerals.taurine" = "Taurine";
+"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.fruits-vegetables-nuts" = "Mga prutas, gulay, mani";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Ratio ng collagen para sa protina ng karne";
+"nutrition.minerals.cocoa" = "Cocoa";
+"nutrition.minerals.chlorophyl" = "Chlorophyl";
+
+// Call to action
+"call-to-action.summary" = "Kumuha ng isang larawan ng harapang bahagi";
+"call-to-action.ingredients" = "Kumuha ng larawan ng mga sangkap";
+"call-to-action.nutrition" = "Kumuha ng larawan ng talahanayan ng nutrisyon";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.take-picture" = "Kumuha ng larawan ng produkto";
+"product.images.product" = "Ng produkto";
+"product.images.picture" = "larawan ✅";
+"product.images.front" = "harap";
+"product.images.ingredients" = "mga sangkap";
+"product.images.nutrition" = "talahanayan ng nutrisyon";
+
+// Settings storyboard
+"settings.tab-bar.item" = "Mga setting";
+"settings.sections.information" = "Impormasyon";
+"settings.sections.contribute" = "Mag-ambag";
+"settings.sections.about" = "Tungkol sa";
+"settings.credits.title" = "Mga kredito";
+"settings.scan-on-launch.title" = "Ipakita ang mga Scan sa pabukas ng App";
+"settings.information.discover" = "Tuklasin";
+"settings.contribute.how-to-contribute" = "Paano mag-ambag";
+"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.about.contact" = "Kontak";
+"settings.about.frequently-asked-questions" = "Mga Madalas na tanong";
+"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
+"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "Gumagamit";
+"user.log-in" = "Mag-login";
+"user.log-out" = "Mag-log Out";
+"user.username" = "Username";
+"user.password" = "Password";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "Suriin ang Iyong mga Kontribusyon";
+"user.products-pending-upload.button" = "Products pending upload";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "Gumawa ng Account";
+"user.why-log-in.text" = "Ang pag-login gamit ang iyong account ay maguugnay ng lahat ng iyong mga kontribusyon sa iyong account.";
+"user.alert.wrong-credentials.title" = "Hindi makapaglog-in";
+"user.alert.wrong-credentials.subtitle" = "Suriin kung tama ang iyong username at password";
+"user.alert.generic-error.title" = "Nagkaroon ng error sa pag-login";
+"user.alert.generic-error.subtitle" = "Mangyaring subukan muli sa ilang sandali";
+"user.alert.username-missing" = "Kailangan ang username";
+"user.alert.password-missing" = "Kinakailangan ang password";
+"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
+
+// Search history
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "Linisin";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewWeeks" = "A few weeks ago";
+"history.section-titles.fewMonths" = "A few months ago";
+"history.section-titles.longTime" = "A long time ago";

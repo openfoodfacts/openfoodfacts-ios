@@ -5,8 +5,8 @@
  Created by Andrés Pizá Bückmann on 27/04/2017.
  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
  */
-
 // App Shortcuts
+
 "shortcuts.scan" = "Scan barcode";
 
 // Product Search
@@ -81,7 +81,7 @@
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
-"product-detail.summary.countries" = "Countries where sold";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
@@ -117,7 +117,7 @@
 "nutrition.fats.trans-fat" = "Trans fat";
 "nutrition.fats.cholesterol" = "Cholesterol";
 "nutrition.carbohydrate" = "Carbohydrate";
-"nutrition.carbohydrate.sugars" = "Sugars";
+"nutrition.carbohydrate.sugars" = "Sugar";
 "nutrition.carbohydrate.sucrose" = "Sucrose";
 "nutrition.carbohydrate.glucose" = "Glucose";
 "nutrition.carbohydrate.fructose" = "Fructose";
@@ -132,7 +132,7 @@
 "nutrition.salt" = "Salt";
 "nutrition.sodium" = "Sodium";
 "nutrition.alcohol" = "Alcohol";
-"nutrition.vitamins" = "Vitamins";
+"nutrition.vitamins" = "Vitamins and Minerals";
 "nutrition.vitamins.a" = "Vitamin A";
 "nutrition.vitamins.beta-carotene" = "Beta carotene";
 "nutrition.vitamins.d" = "Vitamin D";
@@ -200,11 +200,7 @@
 "settings.about.contact" = "Contact";
 "settings.about.frequently-asked-questions" = "Frequently Asked Questions";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
-\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)
-\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)
-\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)
-\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
 
 // User view
 /* Tab bar item */
@@ -225,9 +221,7 @@
 "user.alert.generic-error.subtitle" = "Please try again in a few moments";
 "user.alert.username-missing" = "Username is required";
 "user.alert.password-missing" = "Password is required";
-"pending-upload.info.text" = "These are products you added while offline.
-
-The app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
 "pending-upload.hud.status" = "Uploading";
 
 // Search history

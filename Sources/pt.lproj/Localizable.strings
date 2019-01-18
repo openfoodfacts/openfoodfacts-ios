@@ -1,0 +1,234 @@
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Scan barcode";
+
+// Product Search
+
+"product-search.search-placeholder" = "Pesquise um produto por nome ou código de barras";
+"product-search.no-results" = "Nenhum Resultado";
+"product-search.error-view.title" = "Algo correu mal";
+"product-search.error-view.subtitle" = "Por favor, tente de novo";
+"product-search.initial-view.text" = "Open Food Facts é uma base de dados de produtos alimentares com ingredientes, alergénios, tabela nutricional e todos os pedacinhos de informação que se encontram nos rótulos dos produtos.";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "Digitalizar o código de barras do produto";
+"product-scanner.overlay.extended-user-help" = "Não foi encontrado um código de barras. Centre o código de barras na tela. Certifique-se que o código de barras está bem iluminado.";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "Erro de código de barras. Por favor, tente novamente em alguns instantes.";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "Por favor, conceda permissão para usar a câmera para poder digitalizar códigos de barras";
+"product-scanner.permissions.noPermissions.action.title" = "Abrir Configurações";
+
+"product-scanner.permissions.failed.title" = "Não foi possível configurar a digitalização do código de barras";
+"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "Sair da leitura do código de barras";
+
+"product-scanner.search.status" = "Carregando produto...";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "Carregando imagem...";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "Algo correu mal";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "Por favor, tente tirar a foto novamente";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "A imagem foi carregada com sucesso";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "Produto adicionado com sucesso. Obrigado!";
+"product-add.uploaded-image" = "Imagem enviada, obrigado!";
+"product-add.save-error.title" = "Erro ao salvar o produto";
+"product-add.save-error.message" = "Tente novamente mais tarde";
+"alert.action.ok" = "OK";
+"product-add.language.toolbar-title" = "Select a language";
+/* Product Add name text field */
+"product-add.placeholder.name" = "Nome do produto";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "Marca";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity-value" = "Quantity value";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "Adicionar uma nova foto";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "Lembre-se de salvar as suas alterações";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "Role para baixo até ao botão 'Salvar'";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "Resumo";
+"product-detail.page-title.ingredients" = "Ingredientes";
+"product-detail.page-title.nutrition" = "Nutrição";
+"product-detail.page-title.nutrition-table" = "Tabela de nutrição";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "Código de barras";
+"product-detail.summary.quantity" = "Quantidade";
+"product-detail.summary.packaging" = "Embalagem";
+"product-detail.summary.brands" = "Marcas";
+"product-detail.summary.manufacturing-places" = "Locais de fabrico ou transformação";
+"product-detail.summary.origins" = "Origem dos ingredientes";
+"product-detail.summary.categories" = "Categorias";
+"product-detail.summary.labels" = "Etiquetas, certificações, prémios";
+"product-detail.summary.citiesTags" = "Cidade, estado e país onde foi comprado";
+"product-detail.summary.stores" = "Lojas";
+"product-detail.summary.countries" = "Países onde é vendido";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "Lista de ingredientes";
+"product-detail.ingredients.allergens-list" = "Produtos ou substâncias que provocam alergias ou intolerâncias";
+"product-detail.ingredients.traces-list" = "Vestígios";
+"product-detail.ingredients.additives-list" = "Aditivos";
+"product-detail.ingredients.palm-oil-ingredients" = "Ingredientes que derivam do óleo de palma";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredientes que podem derivar de óleo de palma";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "Tamanho da porção";
+"product-detail.nutrition.carbon-footprint" = "Pegada ecológica / emissões CO2";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "Informação nutricional";
+"product-detail.nutrition-table.for-100g" = "Por 100 g";
+"product-detail.nutrition-table.for-serving" = "Por porção";
+
+// Nutrition levels
+"nutrition-level.low" = "em quantidade baixa";
+"nutrition-level.moderate" = "em quantidade moderada";
+"nutrition-level.high" = "em quantidade elevada";
+
+// Nutrition
+"nutrition.energy" = "Energia";
+"nutrition.fats" = "Gorduras";
+"nutrition.fats.saturated-fat" = "Gordura saturada";
+"nutrition.fats.mono-unsaturated-fat" = "Gorduras monoinsaturadas";
+"nutrition.fats.poly-unsaturated-fat" = "Gorduras polinsaturadas";
+"nutrition.fats.omega3" = "Ómega 3";
+"nutrition.fats.omega6" = "Ómega 6";
+"nutrition.fats.omega9" = "Ómega 9";
+"nutrition.fats.trans-fat" = "Gorduras trans";
+"nutrition.fats.cholesterol" = "Colesterol";
+"nutrition.carbohydrate" = "Carboidratos";
+"nutrition.carbohydrate.sugars" = "Açúcares";
+"nutrition.carbohydrate.sucrose" = "Sacarose";
+"nutrition.carbohydrate.glucose" = "Glicose";
+"nutrition.carbohydrate.fructose" = "Frutose";
+"nutrition.carbohydrate.lactose" = "Lactose";
+"nutrition.carbohydrate.maltose" = "Maltose";
+"nutrition.carbohydrate.maltodextrins" = "Maltodextrinas";
+"nutrition.fiber" = "Fibra";
+"nutrition.proteins" = "Proteínas";
+"nutrition.proteins.casein" = "Caseína";
+"nutrition.proteins.serum-proteins" = "Proteínas Séricas";
+"nutrition.proteins.nucleotides" = "Nucleótidos";
+"nutrition.salt" = "Sal :";
+"nutrition.sodium" = "Sódio";
+"nutrition.alcohol" = "Álcool";
+"nutrition.vitamins" = "Vitaminas";
+"nutrition.vitamins.a" = "Vitamina A";
+"nutrition.vitamins.beta-carotene" = "Beta-caroteno";
+"nutrition.vitamins.d" = "Vitamina D";
+"nutrition.vitamins.e" = "Vitamina E";
+"nutrition.vitamins.k" = "Vitamina K";
+"nutrition.vitamins.c" = "Vitamina C";
+"nutrition.vitamins.b1" = "Vitamina B1";
+"nutrition.vitamins.b2" = "Vitamina B2";
+"nutrition.vitamins.pp" = "Vitamina PP";
+"nutrition.vitamins.b6" = "Vitamina B6";
+"nutrition.vitamins.b9" = "Vitamina B9";
+"nutrition.vitamins.b12" = "Vitamina B12";
+"nutrition.vitamins.biotin" = "Biotina";
+"nutrition.vitamins.pantothenic-acid" = "Ácido pantoténico";
+"nutrition.minerals" = "Minerais";
+"nutrition.minerals.silica" = "Sílica";
+"nutrition.minerals.bicarbonate" = "Bicarbonato";
+"nutrition.minerals.potassium" = "Potássio";
+"nutrition.minerals.chloride" = "Cloreto";
+"nutrition.minerals.calcium" = "Cálcio";
+"nutrition.minerals.phosphorus" = "Fósforo";
+"nutrition.minerals.iron" = "Ferro";
+"nutrition.minerals.magnesium" = "Magnésio";
+"nutrition.minerals.zinc" = "Zinco";
+"nutrition.minerals.copper" = "Cobre";
+"nutrition.minerals.manganese" = "Manganésio";
+"nutrition.minerals.fluoride" = "Fluoreto";
+"nutrition.minerals.selenium" = "Selénio";
+"nutrition.minerals.chromium" = "Crómio";
+"nutrition.minerals.molybdenum" = "Molibdénio";
+"nutrition.minerals.iodine" = "Iodo";
+"nutrition.minerals.caffeine" = "Cafeína";
+"nutrition.minerals.taurine" = "Taurina";
+"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.fruits-vegetables-nuts" = "Frutas, vegetais, nozes";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Relação colagénio/proteína de carne";
+"nutrition.minerals.cocoa" = "Cacau";
+"nutrition.minerals.chlorophyl" = "Clorofila";
+
+// Call to action
+"call-to-action.summary" = "Tirar foto frontal";
+"call-to-action.ingredients" = "Tirar foto aos ingredientes";
+"call-to-action.nutrition" = "Tirar foto à tabela nutricional";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.take-picture" = "Tire um foto dos produtos";
+"product.images.product" = "Produtos";
+"product.images.picture" = "imagem ✅";
+"product.images.front" = "parte frontal";
+"product.images.ingredients" = "ingredientes";
+"product.images.nutrition" = "tabela de nutrição";
+
+// Settings storyboard
+"settings.tab-bar.item" = "Definições";
+"settings.sections.information" = "Informação";
+"settings.sections.contribute" = "Contribuir";
+"settings.sections.about" = "Sobre";
+"settings.credits.title" = "Créditos";
+"settings.scan-on-launch.title" = "Mostrar varredura no lançamento da aplicação";
+"settings.information.discover" = "Descobrir";
+"settings.contribute.how-to-contribute" = "Como contribuir";
+"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.about.contact" = "Contacto";
+"settings.about.frequently-asked-questions" = "Perguntas Frequentes";
+"settings.promotion.open-beauty-facts" = "Open Beauty Facts - Portugal";
+"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "Utilizador";
+"user.log-in" = "Iniciar sessão";
+"user.log-out" = "Terminar Sessão";
+"user.username" = "Nome de Utilizador";
+"user.password" = "Palavra-passe";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "Verifique as suas contribuições";
+"user.products-pending-upload.button" = "Products pending upload";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "Crie uma conta";
+"user.why-log-in.text" = "Faça login na sua conta e associe todas as suas contribuições à sua conta.";
+"user.alert.wrong-credentials.title" = "Falha ao iniciar sessão";
+"user.alert.wrong-credentials.subtitle" = "Verifique se seu nome de usuário e senha estão corretos";
+"user.alert.generic-error.title" = "Houve um erro ao fazer login";
+"user.alert.generic-error.subtitle" = "Por favor, tente novamente em alguns momentos";
+"user.alert.username-missing" = "O nome de utilizador é obrigatório";
+"user.alert.password-missing" = "A palavra-passe é necessária";
+"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
+
+// Search history
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "Limpar";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewWeeks" = "A few weeks ago";
+"history.section-titles.fewMonths" = "A few months ago";
+"history.section-titles.longTime" = "A long time ago";
