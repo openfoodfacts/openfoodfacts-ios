@@ -37,6 +37,7 @@ class NutritionTableHeaderCellController: TakePictureViewController {
 
         if let imageUrl = product.nutritionTableImage, let url = URL(string: imageUrl) {
             nutritionTableImage.kf.indicatorType = .activity
+            /* upgraded to Kingfisher 5
             nutritionTableImage.kf.setImage(with: url, options: [.processor(RotatingProcessor())]) { (image, _, cacheType, _) in
                 if let image = image {
                     self.imageHeightConstraint?.constant = min(image.size.height, 130)
@@ -47,7 +48,20 @@ class NutritionTableHeaderCellController: TakePictureViewController {
                     self.delegate?.cellSizeDidChange()
                 }
             }
+             */
+            nutritionTableImage.kf.setImage(with: url, options: [.processor(RotatingProcessor())]) { result in
+                switch result {
+                case .success(let value):
+                    self.imageHeightConstraint?.constant = min(value.image.size.height, 130)
 
+                    // When the image is not cached in memory, call delegate method to handle the cell's size change
+                    if value.cacheType != .memory {
+                        self.delegate?.cellSizeDidChange()
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            }
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             nutritionTableImage.addGestureRecognizer(tap)
             nutritionTableImage.isUserInteractionEnabled = true
