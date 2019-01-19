@@ -371,7 +371,7 @@ extension ScannerViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { _ in
             guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString) else { return }
-            UIApplication.shared.openURL(settingsURL)
+            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
         }))
 
         self.present(alert, animated: true, completion: nil)

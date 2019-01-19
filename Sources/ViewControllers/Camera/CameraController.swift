@@ -10,7 +10,7 @@ import UIKit
 import MobileCoreServices
 
 protocol CameraController {
-    weak var delegate: CameraControllerDelegate? { get set }
+    var delegate: CameraControllerDelegate? { get set }
 
     /// Show camera's controller view
     func show()

@@ -47,7 +47,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
     @IBAction func didTapOpenBeautyFacts(_ sender: UIButton) {
         guard let url = URL(string: URLs.OpenBeautyFacts) else { return }
-        UIApplication.shared.openURL(url)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -73,7 +73,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         if let url = url {
             openUrlInApp(url)
         } else if let url = urlsupport {
-            UIApplication.shared.openURL(url)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 
