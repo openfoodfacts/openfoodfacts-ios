@@ -298,6 +298,7 @@ extension ScannerViewController {
 
 extension ScannerViewController {
     func showProduct(_ product: Product) {
+        dataManager.addHistoryItem(product)
         let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
         // swiftlint:disable:next force_cast
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
