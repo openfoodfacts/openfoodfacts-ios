@@ -46,7 +46,6 @@ class ScannerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureVideoView()
 
         checkCameraPermissions()
         configureSession()
@@ -57,6 +56,8 @@ class ScannerViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        configureVideoView()
+
         lastCodeScanned = nil
         resetOverlay()
 
@@ -100,8 +101,15 @@ class ScannerViewController: UIViewController {
         let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
         videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         videoPreviewLayer.frame = self.view.layer.bounds
+
         self.videoPreviewLayer = videoPreviewLayer
         self.view.layer.addSublayer(videoPreviewLayer)
+        // This needed to start out with the right orientation in landscape
+        // Unclear why this works at all
+        if let previewLayerConnection = self.videoPreviewLayer?.connection, previewLayerConnection.isVideoOrientationSupported {
+            previewLayerConnection.videoOrientation = transformOrientation()
+            self.videoPreviewLayer?.frame = self.view.layer.bounds
+        }
     }
 
     fileprivate func configureSession() {
