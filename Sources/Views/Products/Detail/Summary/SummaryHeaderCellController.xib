@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -43,7 +42,7 @@
                                     <rect key="frame" x="160" y="0.0" width="160" height="120"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYL-Ot-UMp" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                            <rect key="frame" x="0.5" y="27" width="160" height="65"/>
+                                            <rect key="frame" x="0.0" y="27.5" width="160" height="65"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="NYL-Ot-UMp" secondAttribute="height" multiplier="310:126" id="w7H-je-Vf4"/>
@@ -65,10 +64,10 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MT9-gZ-J7A">
-                            <rect key="frame" x="0.0" y="130" width="320" height="27.5"/>
+                            <rect key="frame" x="0.0" y="130" width="320" height="4"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-rz-zza">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="27.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="4"/>
                                     <state key="normal" title="Take a new picture"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-detail.header.add-new-picture"/>
@@ -78,13 +77,16 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71e-pv-NKy">
-                                    <rect key="frame" x="160" y="0.0" width="160" height="27.5"/>
+                                    <rect key="frame" x="160" y="0.0" width="160" height="4"/>
                                     <state key="normal" title="Edit"/>
                                 </button>
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EX-hp-rp2">
-                            <rect key="frame" x="0.0" y="167.5" width="320" height="20.5"/>
+                            <rect key="frame" x="0.0" y="144" width="320" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="baq-NZ-dgf"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

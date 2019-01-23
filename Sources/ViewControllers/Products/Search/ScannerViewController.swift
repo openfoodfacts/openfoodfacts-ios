@@ -108,7 +108,7 @@ class ScannerViewController: UIViewController {
         // Unclear why this works at all
         if let previewLayerConnection = self.videoPreviewLayer?.connection, previewLayerConnection.isVideoOrientationSupported {
             previewLayerConnection.videoOrientation = transformOrientation()
-            self.videoPreviewLayer?.frame = self.view.layer.bounds
+            //self.videoPreviewLayer?.frame = self.view.layer.bounds
         }
     }
 
