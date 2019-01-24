@@ -14,7 +14,7 @@ import UIKit
 
 protocol ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
-    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
+    func getProduct(byBarcode barcode: String, isScanning: Bool, isSummary: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
     func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
@@ -78,7 +78,7 @@ class ProductService: ProductApi {
         self.lastGetProductsRequest = request
     }
 
-    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
+    func getProduct(byBarcode barcode: String, isScanning: Bool, isSummary: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
 
         var url: String
 
@@ -98,6 +98,28 @@ class ProductService: ProductApi {
 
         Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
         Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
+
+        if isSummary {
+            // When we ask for a summary of the product, we specify to the server which fields we want (to make a smaller request). We would prefere to use the 'Parameter' normally used by Alamofire in this case, but this generates an url like
+            // {{host}}/product.json?fields=product_name%2Cbrands
+            // instead of
+            // {{host}}/product.json?fields=product_name,brands
+            // and it seems the server does not handle that, and does not return any field
+            // so we just append our fields directly to the url
+
+            url.append(contentsOf: "?fields=" + [
+                OFFJson.CodeKey,
+                OFFJson.ImageFrontUrlKey,
+                OFFJson.ImageFrontSmallUrlKey,
+                OFFJson.ImageUrlKey,
+                OFFJson.ImageSmallUrlKey,
+                OFFJson.BrandsKey,
+                OFFJson.ProductNameKey,
+                OFFJson.QuantityKey,
+                OFFJson.NutritionGradesKey,
+                OFFJson.NovaGroupKey
+                ].joined(separator: ","))
+        }
 
         let request: DataRequest = Alamofire.request(url)
         log.debug(request.debugDescription)

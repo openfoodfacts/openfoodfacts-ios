@@ -286,7 +286,7 @@ protocol ProductDetailRefreshDelegate: class {
 extension ProductDetailViewController: ProductDetailRefreshDelegate {
     func refreshProduct(completion: () -> Void) {
         if let barcode = product.barcode {
-            dataManager.getProduct(byBarcode: barcode, isScanning: false, onSuccess: { response in
+            dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { response in
                 if let updatedProduct = response {
                     self.updateForms(with: updatedProduct)
                 }
