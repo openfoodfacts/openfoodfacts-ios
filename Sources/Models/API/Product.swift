@@ -14,11 +14,14 @@ struct Product: Mappable {
     var brands: [String]?
     private var _quantity: String?
     var imageUrl: String?
+    var imageSmallUrl: String?
     var frontImageUrl: String?
+    var frontImageSmallUrl: String?
     var barcode: String?
     var packaging: [String]?
     var categories: [String]?
     var nutriscore: String?
+    var novaGroup: String?
     var manufacturingPlaces: String?
     var origins: String?
     var labels: [String]?
@@ -64,11 +67,14 @@ struct Product: Mappable {
         brands <- (map[OFFJson.BrandsKey], ArrayTransform())
         _quantity <- map[OFFJson.QuantityKey]
         frontImageUrl <- map[OFFJson.ImageFrontUrlKey]
+        frontImageSmallUrl <- map[OFFJson.ImageFrontSmallUrlKey]
         imageUrl <- map[OFFJson.ImageUrlKey]
+        imageSmallUrl <- map[OFFJson.ImageSmallUrlKey]
         barcode <- map[OFFJson.CodeKey]
         packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
         categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
         nutriscore <- map[OFFJson.NutritionGradesKey]
+        novaGroup <- map[OFFJson.NovaGroupKey]
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
         origins <- map[OFFJson.OriginsKey]
         labels <- (map[OFFJson.LabelsKey], ArrayTransform())

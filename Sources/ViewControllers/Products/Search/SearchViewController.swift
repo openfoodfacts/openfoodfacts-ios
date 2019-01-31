@@ -64,7 +64,15 @@ extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewCo
 
     func scanBarcode() {
         let scanVC = ScannerViewController(dataManager: dataManager)
-        self.rootNavigationController.pushViewController(scanVC, animated: true)
+
+        let navVC = UINavigationController(rootViewController: scanVC)
+        navVC.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "generic.back".localized, style: UIBarButtonItemStyle.done, target: self, action: #selector(dismissAnimated))
+
+        self.present(navVC, animated: true, completion: nil)
+    }
+
+    @objc func dismissAnimated() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     @objc func showHistory(_ sender: UIBarButtonItem) {
@@ -76,7 +84,7 @@ extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewCo
     }
 
     func showItem(_ item: HistoryItem, onError: @escaping () -> Void) {
-        dataManager.getProduct(byBarcode: item.barcode, isScanning: false, onSuccess: { product in
+        dataManager.getProduct(byBarcode: item.barcode, isScanning: false, isSummary: false, onSuccess: { product in
             if let product = product {
                 self.showProductDetails(product: product)
             } else {
