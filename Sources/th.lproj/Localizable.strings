@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Scan barcode";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "ย้อนกลับ";
+"generic.search" = "ค้นหา";
+
 // Product Search
 
 "product-search.search-placeholder" = "ค้นหาผลิตภัณฑ์ตามชื่อหรือบาร์โค้ด";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "สแกนบาร์โค้ดของผลิตภัณฑ์";
 "product-scanner.overlay.extended-user-help" = "ไม่พบบาร์โค้ด\nศูนย์บาร์โค้ดในหน้าจอ\nตรวจสอบให้แน่ใจบาร์โค้ดเป็นอย่างดีสว่าง";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "เกิดข้อผิดพลาดในการสแกนบาร์โค้ด โปรดลองอีกครั้งในอีกสักครู่.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "โปรดให้สิทธิ์ในการใช้กล้องเพื่อให้สามารถสแกนบาร์โค้ดได้";
@@ -81,7 +88,7 @@
 "product-detail.summary.labels" = "ป้ายกำกับการรับรองรางวัล";
 "product-detail.summary.citiesTags" = "เมืองรัฐและประเทศที่ซื้อ";
 "product-detail.summary.stores" = "ร้านค้า";
-"product-detail.summary.countries" = "ประเทศ";
+"product-detail.summary.countries" = "ประเทศที่ขาย";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "รายชื่อส่วนผสม";
@@ -117,7 +124,7 @@
 "nutrition.fats.trans-fat" = "ไขมันทรานส์";
 "nutrition.fats.cholesterol" = "คอเลสเตอรอล";
 "nutrition.carbohydrate" = "คาร์โบไฮเดรต";
-"nutrition.carbohydrate.sugars" = "Sugar";
+"nutrition.carbohydrate.sugars" = "น้ำตาล";
 "nutrition.carbohydrate.sucrose" = "ซูโครส";
 "nutrition.carbohydrate.glucose" = "กลูโคส";
 "nutrition.carbohydrate.fructose" = "ฟรักโทส";
@@ -132,7 +139,7 @@
 "nutrition.salt" = "เกลือ";
 "nutrition.sodium" = "โซเดียม";
 "nutrition.alcohol" = "เครื่องดื่มแอลกอฮอล์";
-"nutrition.vitamins" = "Vitamins and Minerals";
+"nutrition.vitamins" = "วิตามิน";
 "nutrition.vitamins.a" = "วิตามินเอ";
 "nutrition.vitamins.beta-carotene" = "เบต้าแคโรทีน";
 "nutrition.vitamins.d" = "วิตามินดี";
