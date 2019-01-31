@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Scan barcode";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "Back";
+"generic.search" = "ढूंढें";
+
 // Product Search
 
 "product-search.search-placeholder" = "नाम या बारकोड द्वारा किसी उत्पाद की खोज करें";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "उत्पाद के बारकोड को स्कैन करें";
 "product-scanner.overlay.extended-user-help" = "बारकोड नहीं मिल रहा। बारकोड स्क्रीन के केंद्र में रखे। सुनिश्चित करें कि बारकोड अच्छी तरह से ज्योतिर्मय है।";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "बारकोड स्कैनिंग में त्रुटि । कृपया कुछ क्षणों में पुन: प्रयास करें ।";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "बारकोड स्कैन करने के लिए कृपया कैमरे का उपयोग करने की अनुमति दें";
@@ -81,7 +88,7 @@
 "product-detail.summary.labels" = "लेबल, प्रमाणपत्र, पुरस्कार";
 "product-detail.summary.citiesTags" = "शहर, राज्य और देश जहाँ इसे खरीदा गया";
 "product-detail.summary.stores" = "दुकाने";
-"product-detail.summary.countries" = "देश";
+"product-detail.summary.countries" = "जिन देशों में बिकता है";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "सामग्री की तालिका";
@@ -117,7 +124,7 @@
 "nutrition.fats.trans-fat" = "ट्रांस वसा";
 "nutrition.fats.cholesterol" = "कोलेस्ट्रॉल";
 "nutrition.carbohydrate" = "कार्बोहाइड्रेट";
-"nutrition.carbohydrate.sugars" = "Sugar";
+"nutrition.carbohydrate.sugars" = "शुगर्स";
 "nutrition.carbohydrate.sucrose" = "सुक्रोज";
 "nutrition.carbohydrate.glucose" = "शर्करा";
 "nutrition.carbohydrate.fructose" = "फ्रुक्टोज";
@@ -132,7 +139,7 @@
 "nutrition.salt" = "नमक";
 "nutrition.sodium" = "सोडियम";
 "nutrition.alcohol" = "अल्कोहॉल";
-"nutrition.vitamins" = "Vitamins and Minerals";
+"nutrition.vitamins" = "विटामिन";
 "nutrition.vitamins.a" = "विटामिन ए";
 "nutrition.vitamins.beta-carotene" = "बीटा कैरोटीन";
 "nutrition.vitamins.d" = "विटामिन डी";
