@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Scan barcode";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "Tilbage";
+"generic.search" = "Søg";
+
 // Product Search
 
 "product-search.search-placeholder" = "Søg efter et produkt via navn eller stregkode";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skan produktstregkoden";
 "product-scanner.overlay.extended-user-help" = "Kan ikke finde en stregkode.\nCentrér stregkoden på skærmen.\nSørg for, at stregkoden er veloplyst.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Fejl under stregkodeskanning. Forsøg igen om et øjeblik.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Tildel kamerarettighed for at kunne skanne stregkoder";
@@ -81,7 +88,7 @@
 "product-detail.summary.labels" = "Etiketter, certificeringer, priser";
 "product-detail.summary.citiesTags" = "By, stat og land, hvor det er købt";
 "product-detail.summary.stores" = "Butikker";
-"product-detail.summary.countries" = "Land";
+"product-detail.summary.countries" = "Lande, hvorfra der sælges";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Ingrediensoversigt";
@@ -117,7 +124,7 @@
 "nutrition.fats.trans-fat" = "Transfedt";
 "nutrition.fats.cholesterol" = "Kolesterol";
 "nutrition.carbohydrate" = "Kulhydrat";
-"nutrition.carbohydrate.sugars" = "Sugar";
+"nutrition.carbohydrate.sugars" = "Sukkertyper";
 "nutrition.carbohydrate.sucrose" = "Saccharose";
 "nutrition.carbohydrate.glucose" = "Glukose";
 "nutrition.carbohydrate.fructose" = "Fruktose";
@@ -132,7 +139,7 @@
 "nutrition.salt" = "Salt";
 "nutrition.sodium" = "Natrium";
 "nutrition.alcohol" = "Alkohol";
-"nutrition.vitamins" = "Vitamins and Minerals";
+"nutrition.vitamins" = "Vitaminer";
 "nutrition.vitamins.a" = "Vitamin A";
 "nutrition.vitamins.beta-carotene" = "Betakaroten";
 "nutrition.vitamins.d" = "D-vitamin";
