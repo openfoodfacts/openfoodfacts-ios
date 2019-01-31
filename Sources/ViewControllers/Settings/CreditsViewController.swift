@@ -52,7 +52,7 @@ extension CreditsViewController: UIWebViewDelegate {
 
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if navigationType == .linkClicked, let requestURL = request.url {
-            UIApplication.shared.openURL(requestURL)
+            UIApplication.shared.open(requestURL, options: [:], completionHandler: nil)
             return false
         }
 

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanProductSummaryView" customModule="OpenFoodFacts" customModuleProvider="target">
+            <connections>
+                <outlet property="brandsLabel" destination="ACG-cp-2nn" id="8q2-qu-Vel"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="UHb-AH-vmc"/>
+                <outlet property="novaGroupView" destination="gHh-dz-dcC" id="0MP-PD-sB4"/>
+                <outlet property="nutriScoreView" destination="BJo-zp-gKS" id="VX4-e5-Td2"/>
+                <outlet property="productImageView" destination="Sx2-GJ-Tca" id="5Jy-0B-K1T"/>
+                <outlet property="quantityLabel" destination="BWs-qe-xhF" id="Fq5-iS-hnB"/>
+                <outlet property="titleLabel" destination="XTn-1C-s9c" id="ttN-SL-RkV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="657" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IP-af-Gp6">
+                    <rect key="frame" x="0.0" y="0.0" width="657" height="200"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sx2-GJ-Tca">
+                            <rect key="frame" x="0.0" y="8" width="217" height="184"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="XTn-1C-s9c">
+                            <rect key="frame" x="225" y="8" width="432" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naturalia 125g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="ACG-cp-2nn">
+                            <rect key="frame" x="225" y="146.5" width="226" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="125g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="BWs-qe-xhF">
+                            <rect key="frame" x="225" y="171" width="226" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="nova-group-1" translatesAutoresizingMaskIntoConstraints="NO" id="gHh-dz-dcC" customClass="NovaGroupView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="606" y="134.5" width="51" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="26H-L3-R2y"/>
+                                <constraint firstAttribute="width" constant="51" id="nvh-yO-hoA"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJo-zp-gKS" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="459" y="139" width="143" height="45"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gHh-dz-dcC" firstAttribute="trailing" secondItem="XTn-1C-s9c" secondAttribute="trailing" id="GfE-Wd-XGM"/>
+                        <constraint firstItem="BJo-zp-gKS" firstAttribute="width" secondItem="Sx2-GJ-Tca" secondAttribute="width" multiplier="0.66" id="KaQ-l5-gI2"/>
+                        <constraint firstItem="XTn-1C-s9c" firstAttribute="top" secondItem="Sx2-GJ-Tca" secondAttribute="top" id="Nud-o8-gXp"/>
+                        <constraint firstItem="XTn-1C-s9c" firstAttribute="leading" secondItem="Sx2-GJ-Tca" secondAttribute="trailing" constant="8" id="OjS-aw-fKO"/>
+                        <constraint firstAttribute="trailing" secondItem="XTn-1C-s9c" secondAttribute="trailing" id="R96-zU-flv"/>
+                        <constraint firstItem="Sx2-GJ-Tca" firstAttribute="width" secondItem="6IP-af-Gp6" secondAttribute="width" multiplier="0.33" id="SID-NO-9M5"/>
+                        <constraint firstItem="Sx2-GJ-Tca" firstAttribute="top" secondItem="6IP-af-Gp6" secondAttribute="top" constant="8" id="Sqt-Oh-dxr"/>
+                        <constraint firstItem="gHh-dz-dcC" firstAttribute="leading" secondItem="BJo-zp-gKS" secondAttribute="trailing" constant="4" id="VoK-HX-tBJ"/>
+                        <constraint firstAttribute="bottom" secondItem="Sx2-GJ-Tca" secondAttribute="bottom" constant="8" id="XVo-KN-du3"/>
+                        <constraint firstItem="BWs-qe-xhF" firstAttribute="bottom" secondItem="Sx2-GJ-Tca" secondAttribute="bottom" id="f25-cC-E15"/>
+                        <constraint firstItem="BWs-qe-xhF" firstAttribute="trailing" secondItem="ACG-cp-2nn" secondAttribute="trailing" id="het-Xd-Jb1"/>
+                        <constraint firstItem="BWs-qe-xhF" firstAttribute="leading" secondItem="ACG-cp-2nn" secondAttribute="leading" id="lJK-6F-LWC"/>
+                        <constraint firstItem="gHh-dz-dcC" firstAttribute="centerY" secondItem="BJo-zp-gKS" secondAttribute="centerY" constant="-4" id="oqP-K7-MxN"/>
+                        <constraint firstAttribute="bottom" secondItem="BJo-zp-gKS" secondAttribute="bottom" constant="16" id="sbu-Z2-NqN"/>
+                        <constraint firstItem="ACG-cp-2nn" firstAttribute="leading" secondItem="Sx2-GJ-Tca" secondAttribute="trailing" constant="8" id="w5I-vL-3SM"/>
+                        <constraint firstItem="BWs-qe-xhF" firstAttribute="top" secondItem="ACG-cp-2nn" secondAttribute="bottom" constant="4" id="wQU-Ah-23j"/>
+                        <constraint firstItem="Sx2-GJ-Tca" firstAttribute="leading" secondItem="6IP-af-Gp6" secondAttribute="leading" id="xXJ-RC-Btf"/>
+                        <constraint firstItem="BJo-zp-gKS" firstAttribute="leading" secondItem="ACG-cp-2nn" secondAttribute="trailing" constant="8" id="xtx-Qb-8ht"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6IP-af-Gp6" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="7WD-rY-e9j"/>
+                <constraint firstItem="6IP-af-Gp6" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="8Jg-ET-QT9"/>
+                <constraint firstItem="6IP-af-Gp6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="L9q-aV-jlo"/>
+                <constraint firstItem="6IP-af-Gp6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Xof-kP-LsY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="199.19999999999999" y="493.8530734632684"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="nova-group-1" width="131" height="220"/>
+    </resources>
+</document>

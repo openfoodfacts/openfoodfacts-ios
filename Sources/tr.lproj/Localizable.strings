@@ -1,0 +1,241 @@
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Scan barcode";
+
+// Generic strings that could be useful anywhere.
+"generic.back" = "Geri";
+"generic.search" = "Ara";
+
+// Product Search
+
+"product-search.search-placeholder" = "Ürünü ismi veya barkodu ile ara";
+"product-search.no-results" = "Sonuç Yok";
+"product-search.error-view.title" = "Bir şeyler ters gitti";
+"product-search.error-view.subtitle" = "Lütfen tekrar deneyin";
+"product-search.initial-view.text" = "Open Beauty Facts, içerdikleri maddeler, allerjenler, işaretler ve ürün etiketleri üzerinde bulabileceğimiz tüm bilgi çılgınlığı ürünleriyle dolu bir kozmetik ürünlerinden oluşan bir veritabanıdır.";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "Ürünün barkodunu tara";
+"product-scanner.overlay.extended-user-help" = "Barkod bulamıyorum. \nBarkodu ekrana ortalayın. \nBarkodun iyi aydınlatıldığından emin olun.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "Barkod tarama hatası. Lütfen birkaç dakika içinde tekrar deneyin.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "Barkodları tarayabilmek için lütfen kamerayı kullanma izni verin";
+"product-scanner.permissions.noPermissions.action.title" = "Ayarları Aç";
+
+"product-scanner.permissions.failed.title" = "Barkod Okuyucu başlatılamadı";
+"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "Barkod taramaya bırak";
+
+"product-scanner.search.status" = "Ürün yükleniyor...";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "Görüntü yükleniyor...";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "Bir şeyler ters gitti";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "Lütfen resmi tekrar çekmeyi deneyin";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "Görüntü başarıyla yüklendi";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "Ürün başarıyla eklendi. Teşekkürler!";
+"product-add.uploaded-image" = "Resim yüklendi, teşekkürler!";
+"product-add.save-error.title" = "Ürün kaydedilirken hata oluştu";
+"product-add.save-error.message" = "Daha sonra tekrar deneyin";
+"alert.action.ok" = "Tamam";
+"product-add.language.toolbar-title" = "Select a language";
+/* Product Add name text field */
+"product-add.placeholder.name" = "Ürün adı";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "Marka";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity-value" = "Quantity value";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "Yeni resim ekle";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "Yaptığınız değişiklikleri kaydetmeyi unutmayın";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "Aşşağı kaydırarak \"Kaydet\" butonuna basın";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "Özet";
+"product-detail.page-title.ingredients" = "İçindekiler";
+"product-detail.page-title.nutrition" = "Beslenme";
+"product-detail.page-title.nutrition-table" = "Besin Değerleri Tablosu";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "Barkod";
+"product-detail.summary.quantity" = "Miktar";
+"product-detail.summary.packaging" = "Ambalaj";
+"product-detail.summary.brands" = "Markalar";
+"product-detail.summary.manufacturing-places" = "Üretim veya işleme yerleri";
+"product-detail.summary.origins" = "Malzemelerin kaynağı";
+"product-detail.summary.categories" = "Kategoriler";
+"product-detail.summary.labels" = "Etiketler, sertifikalar, ödüller";
+"product-detail.summary.citiesTags" = "Satın alınan şehir, eyalet ve ülke";
+"product-detail.summary.stores" = "Mağazalar";
+"product-detail.summary.countries" = "Satılan ülkeler";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "Malzemelerin listesi";
+"product-detail.ingredients.allergens-list" = "Alerjiye veya toleranssızlığa neden olan maddeler veya ürünler";
+"product-detail.ingredients.traces-list" = "İz";
+"product-detail.ingredients.additives-list" = "Katkı maddeleri";
+"product-detail.ingredients.palm-oil-ingredients" = "Palmiye yağından malzemeler";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Palmiye yağı içerebilecek malzemeler";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "Porsiyon ölçüsü";
+"product-detail.nutrition.carbon-footprint" = "Carbon izi / CO2 emisyonu";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "Beslenme gerçekleri";
+"product-detail.nutrition-table.for-100g" = "100 gr için";
+"product-detail.nutrition-table.for-serving" = "Porsiyon başına";
+
+// Nutrition levels
+"nutrition-level.low" = "düşük miktarda";
+"nutrition-level.moderate" = "orta miktarda";
+"nutrition-level.high" = "yüksek miktarda";
+
+// Nutrition
+"nutrition.energy" = "Enerji";
+"nutrition.fats" = "Yağlar";
+"nutrition.fats.saturated-fat" = "Doymuş yağ";
+"nutrition.fats.mono-unsaturated-fat" = "Tekil doymamış yağ";
+"nutrition.fats.poly-unsaturated-fat" = "Çoklu doymamış yağ";
+"nutrition.fats.omega3" = "Omega 3";
+"nutrition.fats.omega6" = "Omega 6";
+"nutrition.fats.omega9" = "Omega 9";
+"nutrition.fats.trans-fat" = "Trans yağ";
+"nutrition.fats.cholesterol" = "Kollesterol";
+"nutrition.carbohydrate" = "Karbonhidrat";
+"nutrition.carbohydrate.sugars" = "Şeker";
+"nutrition.carbohydrate.sucrose" = "Sakkaroz";
+"nutrition.carbohydrate.glucose" = "Glikoz";
+"nutrition.carbohydrate.fructose" = "Fruktoz";
+"nutrition.carbohydrate.lactose" = "Laktoz";
+"nutrition.carbohydrate.maltose" = "Maltoz";
+"nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
+"nutrition.fiber" = "Diyet lifi";
+"nutrition.proteins" = "Proteinler";
+"nutrition.proteins.casein" = "Sütteki protein";
+"nutrition.proteins.serum-proteins" = "Serum proteinleri";
+"nutrition.proteins.nucleotides" = "Nükleotidler";
+"nutrition.salt" = "Tuz";
+"nutrition.sodium" = "Sodyum";
+"nutrition.alcohol" = "Alkol";
+"nutrition.vitamins" = "Vitaminler";
+"nutrition.vitamins.a" = "A vitamini";
+"nutrition.vitamins.beta-carotene" = "Beta karoten";
+"nutrition.vitamins.d" = "D vitamini";
+"nutrition.vitamins.e" = "E vitamini";
+"nutrition.vitamins.k" = "K vitamini";
+"nutrition.vitamins.c" = "C vitamini";
+"nutrition.vitamins.b1" = "B1 vitamini";
+"nutrition.vitamins.b2" = "B2 vitamini";
+"nutrition.vitamins.pp" = "PP vitamini";
+"nutrition.vitamins.b6" = "B6 vitamini";
+"nutrition.vitamins.b9" = "B9 vitamini";
+"nutrition.vitamins.b12" = "B12 vitamini";
+"nutrition.vitamins.biotin" = "Biyotin";
+"nutrition.vitamins.pantothenic-acid" = "Pantotenik asit";
+"nutrition.minerals" = "Mineraller";
+"nutrition.minerals.silica" = "Silika";
+"nutrition.minerals.bicarbonate" = "Bikarbonat";
+"nutrition.minerals.potassium" = "Potasyum";
+"nutrition.minerals.chloride" = "Klorid";
+"nutrition.minerals.calcium" = "Kalsiyum";
+"nutrition.minerals.phosphorus" = "Fosfor";
+"nutrition.minerals.iron" = "Demir";
+"nutrition.minerals.magnesium" = "Magnezyum";
+"nutrition.minerals.zinc" = "Çinko";
+"nutrition.minerals.copper" = "Bakır";
+"nutrition.minerals.manganese" = "Manganez";
+"nutrition.minerals.fluoride" = "Florür";
+"nutrition.minerals.selenium" = "Selenyum";
+"nutrition.minerals.chromium" = "Krom";
+"nutrition.minerals.molybdenum" = "Molibden";
+"nutrition.minerals.iodine" = "İyot";
+"nutrition.minerals.caffeine" = "Kafein";
+"nutrition.minerals.taurine" = "Taurin";
+"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.fruits-vegetables-nuts" = "Meyve, sebze, fındık";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Kollajen et protein oranı";
+"nutrition.minerals.cocoa" = "Kakao";
+"nutrition.minerals.chlorophyl" = "Klorofil";
+
+// Call to action
+"call-to-action.summary" = "Ön fotoğrafını çekin";
+"call-to-action.ingredients" = "Malzemelerin fotoğrafını çekin";
+"call-to-action.nutrition" = "Beslenme tablosunun resmini çekin";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.take-picture" = "Ürünlerin fotoğrafını çekin";
+"product.images.product" = "Ürünler";
+"product.images.picture" = "resim ✅";
+"product.images.front" = "ön";
+"product.images.ingredients" = "malzemeler";
+"product.images.nutrition" = "beslenme tablosu";
+
+// Settings storyboard
+"settings.tab-bar.item" = "Ayarlar";
+"settings.sections.information" = "Bilgi";
+"settings.sections.contribute" = "Katkı";
+"settings.sections.about" = "Hakkında";
+"settings.credits.title" = "Katkıda Bulunanlar";
+"settings.scan-on-launch.title" = "Uygulamayı Başlatma sırasında Tarama'yı Göster";
+"settings.information.discover" = "Keşfet";
+"settings.contribute.how-to-contribute" = "Nasıl katkıda bulunulur";
+"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.about.contact" = "İletişim";
+"settings.about.frequently-asked-questions" = "Sıkça Sorulan Sorular";
+"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
+"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "Kullanıcı";
+"user.log-in" = "Giriş Yap";
+"user.log-out" = "Çıkış Yap";
+"user.username" = "Kullanıcı adı";
+"user.password" = "Şifre";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "Katkılarınızı Kontrol Edin";
+"user.products-pending-upload.button" = "Products pending upload";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "Bir Hesap Oluşturun";
+"user.why-log-in.text" = "Hesabınızla giriş yapmak, katkılarınızın hesabınıza işlemesini sağlar.";
+"user.alert.wrong-credentials.title" = "Giriş yapılamıyor";
+"user.alert.wrong-credentials.subtitle" = "Kullanıcı adı ve şifrenizin doğruluğunu kontrol edin";
+"user.alert.generic-error.title" = "Oturum açmada bir hata oluştu";
+"user.alert.generic-error.subtitle" = "Lütfen birkaç saniye içinde tekrar deneyin";
+"user.alert.username-missing" = "Kullanıcı adı gereklidir";
+"user.alert.password-missing" = "Şifre gereklidir";
+"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
+
+// Search history
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "Temizle";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewWeeks" = "A few weeks ago";
+"history.section-titles.fewMonths" = "A few months ago";
+"history.section-titles.longTime" = "A long time ago";

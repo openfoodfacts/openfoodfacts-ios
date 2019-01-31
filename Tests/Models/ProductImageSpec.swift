@@ -13,7 +13,6 @@ import Nimble
 class ProductImageSpec: QuickSpec {
     override func spec() {
         var productImage: ProductImage?
-
         describe(".init") {
             describe("when image can not be saved") {
                 beforeEach {

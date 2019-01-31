@@ -133,8 +133,8 @@ extension SearchTableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard case let .content(response) = state else { return }
 
-        if response.products.count == indexPath.row + 5, let page = Int(response.page), responseHasMorePages(response) {
-            getProducts(page: page + 1, withQuery: response.query)
+        if response.products.count == indexPath.row + 5, responseHasMorePages(response) {
+            getProducts(page: response.page + 1, withQuery: response.query)
         }
     }
 }

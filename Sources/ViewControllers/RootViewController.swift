@@ -65,8 +65,8 @@ class RootViewController: UIViewController {
 
     private func showScan() {
         for child in tabBarVC.viewControllers ?? [] {
-            if let vc = child as? SearchViewController {
-                vc.scanBarcode()
+            if let searchVC = child as? SearchViewController {
+                searchVC.scanBarcode()
                 break
             }
         }

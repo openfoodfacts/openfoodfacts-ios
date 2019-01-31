@@ -9,10 +9,6 @@
         <source>Open Nutrition</source>
         <target xml:lang="es" state="translated">Open Nutrition</target>
       </trans-unit>
-      <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="es" state="translated">$(PRODUCT_NAME)</target>
-      </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
         <target xml:lang="es" state="translated">Utilice su cámara para escanear códigos de barras y tomar fotografías de productos para agregar a la base de datos</target>
@@ -98,9 +94,6 @@
       <trans-unit id="nutrition.carbohydrate.sucrose">
         <source>Sucrose</source>
         <target xml:lang="es" state="translated">Sacarosa</target>
-        <alt-trans>
-          <target xml:lang="es">Sucrosa</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sugars">
         <source>Sugars</source>
@@ -466,9 +459,6 @@
       <trans-unit id="product-detail.summary.citiesTags">
         <source>City, state and country where purchased</source>
         <target xml:lang="es" state="translated">Sitios donde compra</target>
-        <alt-trans>
-          <target xml:lang="es">Sitios de compra</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.countries">
         <source>Countries where sold</source>
@@ -706,82 +696,82 @@ El icono de "Perfil" creado por Smashicons (https://www.flaticon.com/authors/sma
     </header>
     <body>
       <trans-unit id="alert.action.ok">
-        <source>alert.action.ok</source>
+        <source>Ok</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">alert.action.ok</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
-        <source>call-to-action.ingredients</source>
+        <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">call-to-action.ingredients</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
-        <source>call-to-action.nutrition</source>
+        <source>Take a picture of the nutrition facts</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">call-to-action.nutrition</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
-        <source>call-to-action.summary</source>
+        <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">call-to-action.summary</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
-        <source>product-add.image-upload-error-banner.title</source>
+        <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">product-add.image-upload-error-banner.title</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
-        <source>product-add.image-upload-success-banner.title</source>
+        <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">product-add.image-upload-success-banner.title</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
-        <source>product-add.save-error.message</source>
+        <source>Try again later</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">producto-add.save-error.message</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
-        <source>product-add.save-error.title</source>
+        <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">product-add.save-error.title</target>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
-        <source>product-add.uploading-image-banner.title</source>
+        <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">product-add.uploading-image-banner.title</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
-        <source>product-detail.nutrition-table.for-serving</source>
+        <source>Per serving</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">product-detail.nutrition-table.for-serving</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
-        <source>product-detail.page-title.ingredients</source>
+        <source>Ingredients</source>
         <note>Product detail, ingredients</note>
         <target xml:lang="es" state="translated">product-detail.page-title.ingredients</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
-        <source>product-detail.page-title.nutrition</source>
+        <source>Nutrition</source>
         <note>Product detail, nutrition</note>
         <target xml:lang="es" state="translated">product-detail.page-title.nutrition</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
-        <source>product-detail.page-title.nutrition-table</source>
+        <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
         <target xml:lang="es" state="translated">product-detail.page-title.nutrition-table</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
-        <source>product-detail.page-title.summary</source>
+        <source>Summary</source>
         <note>Product detail, summary</note>
         <target xml:lang="es" state="translated">product-detail.page-title.summary</target>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
-        <source>user.alert.password-missing</source>
+        <source>Password is required</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">user.alert.password-missing</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
-        <source>user.alert.username-missing</source>
+        <source>Username is required</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="es" state="translated">user.alert.username-missing</target>
       </trans-unit>

@@ -14,7 +14,10 @@ import UIKit
 protocol DataManagerProtocol {
     // Search
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
-    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
+    func getProduct(byBarcode barcode: String,
+                    isScanning: Bool,
+                    isSummary: Bool,
+                    onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
 
     // User
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
@@ -60,8 +63,8 @@ class DataManager: DataManagerProtocol {
         })
     }
 
-    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
-        productApi.getProduct(byBarcode: barcode, isScanning: isScanning, onSuccess: { response in
+    func getProduct(byBarcode barcode: String, isScanning: Bool, isSummary: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
+        productApi.getProduct(byBarcode: barcode, isScanning: isScanning, isSummary: isSummary, onSuccess: { response in
             DispatchQueue.main.async {
                 onSuccess(response)
             }
@@ -184,7 +187,7 @@ class DataManager: DataManagerProtocol {
         let itemSemaphore = DispatchSemaphore(value: 0)
 
         // Check if product exists
-        self.productApi.getProduct(byBarcode: item.barcode, isScanning: false, onSuccess: { product in
+        self.productApi.getProduct(byBarcode: item.barcode, isScanning: false, isSummary: false, onSuccess: { product in
             var productToUpload: Product?
 
             // If exists, merge with PendingUploadItem and try to upload to the server the changes
@@ -312,7 +315,7 @@ class DataManager: DataManagerProtocol {
         // Get all ISO 639-1 languages
         return Locale.isoLanguageCodes
             .filter({ $0.count == 2 }) // Filter all codes that don't have two letters so we only keep two letter codes, aka ISO 639-1 codes
-            .flatMap({ // Weed out all languages where we don't have a localized language name
+            .compactMap({ // Weed out all languages where we don't have a localized language name
                 let code = $0
                 if let name = Locale.current.localizedString(forIdentifier: $0) {
                     return Language(code: code, name: name)

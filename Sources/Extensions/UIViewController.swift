@@ -29,8 +29,8 @@ extension UIViewController {
     }
 
     func openUrlInApp(_ url: URL, showAlert: Bool? = nil) {
-        let vc = SFSafariViewController(url: url, entersReaderIfAvailable: false)
-        present(vc, animated: true)
+        let sfSafariVC = SFSafariViewController(url: url, entersReaderIfAvailable: false)
+        present(sfSafariVC, animated: true)
 
         if showAlert == true {
             NotificationBanner(title: "product-detail.edit-alert.title".localized,

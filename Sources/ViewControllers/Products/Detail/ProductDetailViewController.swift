@@ -31,8 +31,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         navigationController?.navigationBar.isTranslucent = false
         if var buttons = navigationItem.rightBarButtonItems, buttons.count == 1 {
-            let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(didTapEditButton(_:)))
-            buttons.insert(editButton, at: 0)
+            let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShareButton(_:)))
+            buttons.insert(shareButton, at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
     }
@@ -64,30 +64,30 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
     fileprivate func getSummaryVC() -> UIViewController {
         let form = createSummaryForm()
-        let vc = SummaryFormTableViewController(with: form, dataManager: dataManager)
-        vc.delegate = self
-        return vc
+        let summaryFormTableVC = SummaryFormTableViewController(with: form, dataManager: dataManager)
+        summaryFormTableVC.delegate = self
+        return summaryFormTableVC
     }
 
     fileprivate func getIngredientsVC() -> UIViewController {
         let form = createIngredientsForm()
-        let vc = IngredientsFormTableViewController(with: form, dataManager: dataManager)
-        vc.delegate = self
-        return vc
+        let ingredientsFormTableVC = IngredientsFormTableViewController(with: form, dataManager: dataManager)
+        ingredientsFormTableVC.delegate = self
+        return ingredientsFormTableVC
     }
 
     fileprivate func getNutritionVC() -> UIViewController? {
         guard let form = createNutritionForm() else { return nil }
-        let vc = FormTableViewController(with: form, dataManager: dataManager)
-        vc.delegate = self
-        return vc
+        let formTableVC = FormTableViewController(with: form, dataManager: dataManager)
+        formTableVC.delegate = self
+        return formTableVC
     }
 
     fileprivate func getNutritionTableVC() -> UIViewController {
         let form = createNutritionTableForm()
-        let vc = NutritionTableFormTableViewController(with: form, dataManager: dataManager)
-        vc.delegate = self
-        return vc
+        let nutritionTableFormTableVC = NutritionTableFormTableViewController(with: form, dataManager: dataManager)
+        nutritionTableFormTableVC.delegate = self
+        return nutritionTableFormTableVC
     }
 
     // MARK: - Form creation methods
@@ -323,10 +323,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
     // MARK: - Nav bar button
 
-    @objc func didTapEditButton(_ sender: UIBarButtonItem) {
-        if let barcode = self.product?.barcode, let url = URL(string: URLs.Edit + barcode) {
-            openUrlInApp(url, showAlert: true)
-        }
+    @objc func didTapShareButton(_ sender: UIBarButtonItem) {
+        SharingManager.shared.shareLink(string: URLs.urlForProduct(with: product.barcode), sender: self)
     }
 }
 
@@ -339,7 +337,7 @@ protocol ProductDetailRefreshDelegate: class {
 extension ProductDetailViewController: ProductDetailRefreshDelegate {
     func refreshProduct(completion: () -> Void) {
         if let barcode = product.barcode {
-            dataManager.getProduct(byBarcode: barcode, isScanning: false, onSuccess: { response in
+            dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { response in
                 if let updatedProduct = response {
                     self.updateForms(with: updatedProduct)
                 }

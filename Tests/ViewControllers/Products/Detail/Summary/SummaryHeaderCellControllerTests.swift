@@ -11,6 +11,7 @@ import XCTest
 import Nimble
 import OHHTTPStubs
 import ImageViewer
+import SafariServices
 
 class SummaryHeaderCellControllerTests: XCTestCase {
     var viewController: SummaryHeaderCellController!
@@ -52,7 +53,7 @@ class SummaryHeaderCellControllerTests: XCTestCase {
         expect(self.viewController.productImage.isUserInteractionEnabled).toEventually(beTrue(), timeout: 10)
         expect(self.viewController.productImage.gestureRecognizers![0] is UITapGestureRecognizer).toEventually(beTrue(), timeout: 10)
         expect(self.viewController.callToActionView.isHidden).to(beTrue())
-        expect(self.viewController.nutriscore.currentScore).to(equal(NutriScoreView.Score.A))
+        expect(self.viewController.nutriscore.currentScore).to(equal(NutriScoreView.Score.a))
         expect(self.viewController.productName.text).to(equal(productName))
         expect(self.viewController.addNewPictureButton.isHidden).to(beFalse())
     }
@@ -78,5 +79,15 @@ class SummaryHeaderCellControllerTests: XCTestCase {
         viewController.didTapProductImage(recognizer)
 
         expect(self.viewController.presentedViewController is ImageViewer).to(beTrue())
+    }
+
+    // MARK: - didTapEditButton
+    func testDidTapEditButton() {
+        viewController.product = Product()
+        viewController.product.barcode = "123456789"
+
+        viewController.editButton.sendActions(for: .touchUpInside)
+
+        expect(self.viewController.presentedViewController is SFSafariViewController).to(beTrue())
     }
 }

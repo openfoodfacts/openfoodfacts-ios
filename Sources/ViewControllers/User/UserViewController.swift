@@ -22,7 +22,7 @@ class UserViewController: UIViewController, DataManagerClient {
     }
 
     private func loadChildVC() {
-        let vc: UIViewController
+        let childNavigationVC: UIViewController
 
         if CredentialsController.shared.getUsername() != nil {
             createLoggedIn()
@@ -31,28 +31,28 @@ class UserViewController: UIViewController, DataManagerClient {
                 showProductsPendingUpload()
             }
 
-            vc = childNavigationController
+            childNavigationVC = childNavigationController
 
         } else {
-            vc = createLogIn()
+            childNavigationVC = createLogIn()
         }
 
-        transition(to: vc)
+        transition(to: childNavigationVC)
     }
 
     private func createLoggedIn() {
-        let vc = LoggedInViewController.loadFromStoryboard(named: .user) as LoggedInViewController
-        vc.dataManager = dataManager
-        vc.delegate = self
+        let loggedInVC = LoggedInViewController.loadFromStoryboard(named: .user) as LoggedInViewController
+        loggedInVC.dataManager = dataManager
+        loggedInVC.delegate = self
 
-        childNavigationController.pushViewController(vc, animated: true)
+        childNavigationController.pushViewController(loggedInVC, animated: true)
     }
 
     private func createLogIn() -> LoginViewController {
-        let vc = LoginViewController.loadFromStoryboard(named: .user) as LoginViewController
-        vc.dataManager = dataManager
-        vc.delegate = self
-        return vc
+        let loginVC = LoginViewController.loadFromStoryboard(named: .user) as LoginViewController
+        loginVC.dataManager = dataManager
+        loginVC.delegate = self
+        return loginVC
     }
 }
 
@@ -67,8 +67,8 @@ extension UserViewController: UserViewControllerDelegate {
     }
 
     func showProductsPendingUpload() {
-        let vc = PendingUploadTableViewController.loadFromStoryboard(named: .user) as PendingUploadTableViewController
-        vc.dataManager = dataManager
-        childNavigationController.pushViewController(vc, animated: true)
+        let pendingUploadTableVC = PendingUploadTableViewController.loadFromStoryboard(named: .user) as PendingUploadTableViewController
+        pendingUploadTableVC.dataManager = dataManager
+        childNavigationController.pushViewController(pendingUploadTableVC, animated: true)
     }
 }
