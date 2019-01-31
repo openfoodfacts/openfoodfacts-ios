@@ -11,6 +11,7 @@ import AVFoundation
 import Crashlytics
 import NotificationBanner
 import SVProgressHUD
+import FloatingPanel
 
 class ScannerViewController: UIViewController {
     fileprivate let supportedBarcodes = [AVMetadataObject.ObjectType.upce,
@@ -26,6 +27,7 @@ class ScannerViewController: UIViewController {
 
     fileprivate var session = AVCaptureSession()
     fileprivate var barcodeQueue = DispatchQueue(label: "barcode queue")
+    fileprivate var videoPreviewView = UIView()
     fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     fileprivate lazy var flashButton = FlashButton()
     fileprivate lazy var overlay = TextOverlay()
@@ -34,6 +36,10 @@ class ScannerViewController: UIViewController {
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
     let dataManager: DataManagerProtocol
     var configResult: SessionConfigResult = .success
+
+    fileprivate var floatingPanelController: FloatingPanelController!
+    fileprivate var scannerResultController: ScannerResultViewController!
+    fileprivate var scannerFloatingPanelLayout = ScannerFloatingPanelLayout()
 
     init(dataManager: DataManagerProtocol) {
         self.dataManager = dataManager
@@ -47,18 +53,23 @@ class ScannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "product-scanner.view-title".localized
+
+        lastCodeScanned = nil
+
         checkCameraPermissions()
+        configureVideoView()
         configureSession()
-        configureFlashView()
         configureOverlay()
+        configureFlashView()
         configureTapToFocus()
+        configureFloatingPanel()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configureVideoView()
+        configureVideoPreviewLayer()
 
-        lastCodeScanned = nil
         resetOverlay()
 
         switch configResult {
@@ -97,13 +108,21 @@ class ScannerViewController: UIViewController {
         }
     }
 
-    private func configureVideoView() {
+    fileprivate func configureVideoView() {
+        videoPreviewView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(videoPreviewView)
+
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[videoPreviewView]-0-|", options: .directionLeadingToTrailing, metrics: nil, views: ["videoPreviewView": videoPreviewView]))
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[videoPreviewView]-0-|", options: .directionLeadingToTrailing, metrics: nil, views: ["videoPreviewView": videoPreviewView]))
+    }
+
+    private func configureVideoPreviewLayer() {
         let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
         videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         videoPreviewLayer.frame = self.view.layer.bounds
 
         self.videoPreviewLayer = videoPreviewLayer
-        self.view.layer.addSublayer(videoPreviewLayer)
+        self.videoPreviewView.layer.addSublayer(videoPreviewLayer)
         // This needed to start out with the right orientation in landscape
         // Unclear why this works at all
         if let previewLayerConnection = self.videoPreviewLayer?.connection, previewLayerConnection.isVideoOrientationSupported {
@@ -143,19 +162,6 @@ class ScannerViewController: UIViewController {
         }
     }
 
-    fileprivate func configureFlashView() {
-        if let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch {
-            flashButton.translatesAutoresizingMaskIntoConstraints = false
-            flashButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapFlashButton(_:))))
-            self.view.addSubview(flashButton)
-
-            let bottomConstraint = NSLayoutConstraint(item: self.bottomLayoutGuide, attribute: .top, relatedBy: .equal, toItem: flashButton, attribute: .bottom, multiplier: 1, constant: 15)
-            let leftConstraint = NSLayoutConstraint(item: flashButton, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 15)
-
-            self.view.addConstraints([bottomConstraint, leftConstraint])
-        }
-    }
-
     fileprivate func configureOverlay() {
         self.view.addSubview(overlay)
 
@@ -168,6 +174,19 @@ class ScannerViewController: UIViewController {
         resetOverlay()
     }
 
+    fileprivate func configureFlashView() {
+        if let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch {
+            flashButton.translatesAutoresizingMaskIntoConstraints = false
+            flashButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapFlashButton(_:))))
+            self.view.addSubview(flashButton)
+
+            let bottomConstraint = NSLayoutConstraint(item: self.overlay, attribute: .bottom, relatedBy: .equal, toItem: flashButton, attribute: .top, multiplier: 1, constant: -16)
+            let leftConstraint = NSLayoutConstraint(item: flashButton, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 16)
+
+            self.view.addConstraints([bottomConstraint, leftConstraint])
+        }
+    }
+
     fileprivate func resetOverlay() {
         overlay.setText("product-scanner.overlay.user-help".localized)
         showHelpInOverlayTask?.cancel()
@@ -175,11 +194,15 @@ class ScannerViewController: UIViewController {
     }
 
     fileprivate func showScanHelpInstructions() {
-        let task = DispatchWorkItem {
-            if self.lastCodeScanned == nil {
-                self.overlay.setText("product-scanner.overlay.extended-user-help".localized)
+        let task = DispatchWorkItem { [weak self] in
+            guard self != nil else { return }
+
+            if self?.lastCodeScanned == nil {
+                self?.overlay.setText("product-scanner.overlay.extended-user-help".localized)
+                self?.scannerFloatingPanelLayout.canShowDetails = true
+                self?.scannerResultController.status = .manualBarcode
             } else {
-                self.showScanHelpInstructions()
+                self?.showScanHelpInstructions()
             }
         }
 
@@ -188,7 +211,25 @@ class ScannerViewController: UIViewController {
     }
 
     fileprivate func configureTapToFocus() {
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToFocus(_:))))
+        self.videoPreviewView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToFocus(_:))))
+    }
+
+    fileprivate func configureFloatingPanel() {
+        floatingPanelController = FloatingPanelController()
+        floatingPanelController.delegate = self
+
+        let storyboard = UIStoryboard(name: "Search", bundle: nil)
+        // swiftlint:disable:next force_cast
+        scannerResultController = (storyboard.instantiateViewController(withIdentifier: "ScannerResultViewController") as! ScannerResultViewController)
+        floatingPanelController.set(contentViewController: scannerResultController)
+
+        floatingPanelController.surfaceView.backgroundColor = .clear
+        floatingPanelController.surfaceView.cornerRadius = 9.0
+        floatingPanelController.surfaceView.shadowHidden = false
+
+        floatingPanelController.addPanel(toParent: self)
+
+        scannerResultController.manualBarcodeInputView.delegate = self
     }
 
     private func handleNoCamera() {
@@ -207,48 +248,56 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
 
         if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
-                session.stopRunning()
+                resetOverlay()
                 lastCodeScanned = barcode
-                getProduct(barcode: barcode)
+                getProduct(barcode: barcode, isSummary: true)
             }
         }
     }
 
-    func getProduct(barcode: String) {
+    /// when isSummary is true, only a few fields of the products are downloaded, and when done, this methods calls itself with isSummary=false
+    func getProduct(barcode: String, isSummary: Bool) {
+        scannerFloatingPanelLayout.canShowDetails = false
         DispatchQueue.main.async {
-            let productLoadingMessage = "product-scanner.search.status".localized
-            SVProgressHUD.setDefaultMaskType(.black)
-            SVProgressHUD.setDefaultAnimationType(.native)
-            SVProgressHUD.show(withStatus: productLoadingMessage)
+            self.floatingPanelController.move(to: .tip, animated: true)
+            self.scannerResultController.status = .loading(barcode: barcode)
         }
 
-        dataManager.getProduct(byBarcode: barcode, isScanning: true, onSuccess: { response in
-            self.handleGetProductSuccess(barcode, response)
-        }, onError: { error in
+        dataManager.getProduct(byBarcode: barcode, isScanning: true, isSummary: isSummary, onSuccess: { [weak self] response in
+            self?.handleGetProductSuccess(barcode, response, isSummary: isSummary)
+
+            if response != nil, isSummary {
+                self?.getProduct(barcode: barcode, isSummary: false)
+            }
+
+        }, onError: { [weak self] error in
             if isOffline(errorCode: (error as NSError).code) {
                 // Assume product does not exist and store locally for later upload
-                self.handleGetProductSuccess(barcode, nil)
+                self?.handleGetProductSuccess(barcode, nil, isSummary: isSummary)
             } else {
                 DispatchQueue.main.async {
-                    SVProgressHUD.dismiss()
                     StatusBarNotificationBanner(title: "product-scanner.barcode.error".localized, style: .danger).show()
+                    self?.scannerResultController.status = .waitingForScan
                 }
-
-                self.lastCodeScanned = nil
-                self.session.startRunning()
+                self?.lastCodeScanned = nil
             }
         })
     }
 
-    private func handleGetProductSuccess(_ barcode: String, _ product: Product?) {
+    private func handleGetProductSuccess(_ barcode: String, _ product: Product?, isSummary: Bool) {
         DispatchQueue.main.async {
-            SVProgressHUD.dismiss()
-        }
-
-        if let product = product {
-            self.showProduct(product)
-        } else {
-            self.addNewProduct(barcode)
+            if let product = product {
+                if isSummary {
+                    self.scannerResultController.status = .hasSummary(product: product)
+                } else {
+                    self.scannerFloatingPanelLayout.canShowDetails = true
+                    self.dataManager.addHistoryItem(product)
+                    self.scannerResultController.status = .hasProduct(product: product, dataManager: self.dataManager)
+                }
+            } else {
+                self.addNewProduct(barcode)
+                self.scannerResultController.status = .waitingForScan
+            }
         }
     }
 }
@@ -279,13 +328,13 @@ extension ScannerViewController {
 
     @objc func didTapToFocus(_ gesture: UITapGestureRecognizer) {
         if let device = AVCaptureDevice.default(for: AVMediaType.video), device.isFocusPointOfInterestSupported, let videoPreviewLayer = self.videoPreviewLayer {
-            let touchPoint = gesture.location(in: self.view)
+            let touchPoint = gesture.location(in: self.videoPreviewView)
 
             let tapToFocusView = self.tapToFocusView ?? TapToFocusView()
 
             if self.tapToFocusView == nil {
                 self.tapToFocusView = tapToFocusView
-                self.view.addSubview(tapToFocusView)
+                self.videoPreviewView.addSubview(tapToFocusView)
             }
 
             tapToFocusView.updateCenter(touchPoint)
@@ -305,17 +354,6 @@ extension ScannerViewController {
 // MARK: - Navigation
 
 extension ScannerViewController {
-    func showProduct(_ product: Product) {
-        dataManager.addHistoryItem(product)
-        let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
-        // swiftlint:disable:next force_cast
-        let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
-        productDetailVC.product = product
-        productDetailVC.dataManager = dataManager
-
-        self.navigationController?.pushViewController(productDetailVC, animated: true)
-    }
-
     func addNewProduct(_ barcode: String) {
         turnOffFlash()
 
@@ -397,5 +435,66 @@ extension ScannerViewController {
         }))
 
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK: - FloatingPanel delegate
+extension ScannerViewController: FloatingPanelControllerDelegate {
+
+    func floatingPanel(_ viewController: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        return scannerFloatingPanelLayout
+    }
+
+    func floatingPanelDidChangePosition(_ floatingPanelVC: FloatingPanelController) {
+        if floatingPanelVC.position != .full {
+            self.view.endEditing(true)
+        }
+    }
+
+}
+
+// MARK: - ManualBarcodeInput delegate
+extension ScannerViewController: ManualBarcodeInputDelegate {
+    func didStartEditing() {
+        scannerFloatingPanelLayout.canShowDetails = true
+        floatingPanelController.move(to: FloatingPanelPosition.full, animated: true)
+    }
+
+    func didEndEditing() {
+        scannerFloatingPanelLayout.canShowDetails = false
+        floatingPanelController.move(to: FloatingPanelPosition.tip, animated: true)
+    }
+
+    func didTapSearch() {
+        guard let enteredBarcode = scannerResultController.manualBarcodeInputView.barcodeTextField.text else {
+            return
+        }
+        let barcode = enteredBarcode.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        guard !barcode.isEmpty else {
+            return
+        }
+        self.lastCodeScanned = barcode
+        self.getProduct(barcode: barcode, isSummary: true)
+    }
+}
+
+class ScannerFloatingPanelLayout: FloatingPanelLayout {
+
+    fileprivate var canShowDetails: Bool = false
+
+    public var initialPosition: FloatingPanelPosition {
+        return .tip
+    }
+
+    public var supportedPositions: Set<FloatingPanelPosition> {
+        return canShowDetails ? [.full, .tip] : [.tip]
+    }
+
+    public func insetFor(position: FloatingPanelPosition) -> CGFloat? {
+        switch position {
+        case .full: return 16.0
+        case .tip: return 112.0 + 16.0
+        default: return nil
+        }
     }
 }
