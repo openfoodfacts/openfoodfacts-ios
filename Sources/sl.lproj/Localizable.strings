@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Scan barcode";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "Nazaj";
+"generic.search" = "Iskanje";
+
 // Product Search
 
 "product-search.search-placeholder" = "Poiščite izdelek po imenu ali črtno kodo";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skenirajte črtno kodo izdelka";
 "product-scanner.overlay.extended-user-help" = "Črtne kode ni mogoče najti.\nSredišče črtne kode na zaslonu.\nPrepričajte se, da je črtna koda dobro osvetljena.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Napaka pri skeniranju črtne kode. Poskusite znova čez nekaj trenutkov.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Prosimo, podelite dovoljenje za uporabo fotoaparata, s katerim lahko skenirate črtne kode";
@@ -51,7 +58,7 @@
 "alert.action.ok" = "V redu";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
-"product-add.placeholder.name" = "Product name";
+"product-add.placeholder.name" = "Ime izdelka";
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Blagovna znamka";
 /* Product Add quantity text field */
@@ -81,7 +88,7 @@
 "product-detail.summary.labels" = "Etikete, potrdila, nagrade";
 "product-detail.summary.citiesTags" = "Mesto, država in država, kjer ste jih kupili";
 "product-detail.summary.stores" = "Trgovine";
-"product-detail.summary.countries" = "Država";
+"product-detail.summary.countries" = "Države, kjer se prodaja";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Seznam sestavin";
@@ -117,7 +124,7 @@
 "nutrition.fats.trans-fat" = "Trans maščoba";
 "nutrition.fats.cholesterol" = "Holesterol";
 "nutrition.carbohydrate" = "Ogljikovi hidrati";
-"nutrition.carbohydrate.sugars" = "Sugar";
+"nutrition.carbohydrate.sugars" = "Sladkorji";
 "nutrition.carbohydrate.sucrose" = "Saharoza";
 "nutrition.carbohydrate.glucose" = "Glukoza";
 "nutrition.carbohydrate.fructose" = "Fruktoza";
@@ -132,7 +139,7 @@
 "nutrition.salt" = "Sol";
 "nutrition.sodium" = "Natrij";
 "nutrition.alcohol" = "Alkohol";
-"nutrition.vitamins" = "Vitamins and Minerals";
+"nutrition.vitamins" = "Vitamini";
 "nutrition.vitamins.a" = "Vitamin A";
 "nutrition.vitamins.beta-carotene" = "Beta karoten";
 "nutrition.vitamins.d" = "Vitamin D";
@@ -189,7 +196,7 @@
 // Settings storyboard
 "settings.tab-bar.item" = "Nastavitve";
 "settings.sections.information" = "Informacije";
-"settings.sections.contribute" = "Contribute";
+"settings.sections.contribute" = "Prispevaj";
 "settings.sections.about" = "O programu";
 "settings.credits.title" = "Zasluge";
 "settings.scan-on-launch.title" = "Pokaži skeniranje pri zagonu aplikacije";
