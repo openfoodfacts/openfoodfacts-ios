@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Zeskanuj kod kreskowy";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "Wstecz";
+"generic.search" = "Poszukiwanie";
+
 // Product Search
 
 "product-search.search-placeholder" = "Wyszukaj produktu według nazwy lub kodu kreskowego";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "Zeskanuj kod kreskowy produktu";
 "product-scanner.overlay.extended-user-help" = "Nie można znaleźć kodu kreskowego.\nWyśrodkuj kod kreskowy na ekranie.\nUpewnij się że kod kreskowy jest dobrze oświetlony.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Błąd podczas skanowania kodu kreskowego. Spróbuj za kilka chwil.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "OpenFoodFacts wymaga dostępu do aparatu";
 "product-scanner.permissions.noPermissions.message" = "Proszę udziel uprawnienia aparatu, aby móc skanować kody kreskowe";

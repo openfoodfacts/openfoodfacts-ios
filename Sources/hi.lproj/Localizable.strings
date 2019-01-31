@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Scan barcode";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "Back";
+"generic.search" = "ढूंढें";
+
 // Product Search
 
 "product-search.search-placeholder" = "नाम या बारकोड द्वारा किसी उत्पाद की खोज करें";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "उत्पाद के बारकोड को स्कैन करें";
 "product-scanner.overlay.extended-user-help" = "बारकोड नहीं मिल रहा। बारकोड स्क्रीन के केंद्र में रखे। सुनिश्चित करें कि बारकोड अच्छी तरह से ज्योतिर्मय है।";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "बारकोड स्कैनिंग में त्रुटि । कृपया कुछ क्षणों में पुन: प्रयास करें ।";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "बारकोड स्कैन करने के लिए कृपया कैमरे का उपयोग करने की अनुमति दें";

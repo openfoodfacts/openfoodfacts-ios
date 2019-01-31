@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Scan barcode";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "Voltar";
+"generic.search" = "Procurar";
+
 // Product Search
 
 "product-search.search-placeholder" = "Pesquise um produto por nome ou código de barras";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "Digitalizar o código de barras do produto";
 "product-scanner.overlay.extended-user-help" = "Não foi encontrado um código de barras. Centre o código de barras na tela. Certifique-se que o código de barras está bem iluminado.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Erro de código de barras. Por favor, tente novamente em alguns instantes.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Por favor, conceda permissão para usar a câmera para poder digitalizar códigos de barras";
@@ -81,7 +88,7 @@
 "product-detail.summary.labels" = "Etiquetas, certificações, prémios";
 "product-detail.summary.citiesTags" = "Cidade, estado e país onde foi comprado";
 "product-detail.summary.stores" = "Lojas";
-"product-detail.summary.countries" = "Países onde é vendido";
+"product-detail.summary.countries" = "País";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Lista de ingredientes";
@@ -117,7 +124,7 @@
 "nutrition.fats.trans-fat" = "Gorduras trans";
 "nutrition.fats.cholesterol" = "Colesterol";
 "nutrition.carbohydrate" = "Carboidratos";
-"nutrition.carbohydrate.sugars" = "Açúcares";
+"nutrition.carbohydrate.sugars" = "Sugar";
 "nutrition.carbohydrate.sucrose" = "Sacarose";
 "nutrition.carbohydrate.glucose" = "Glicose";
 "nutrition.carbohydrate.fructose" = "Frutose";
@@ -132,7 +139,7 @@
 "nutrition.salt" = "Sal :";
 "nutrition.sodium" = "Sódio";
 "nutrition.alcohol" = "Álcool";
-"nutrition.vitamins" = "Vitaminas";
+"nutrition.vitamins" = "Vitamins and Minerals";
 "nutrition.vitamins.a" = "Vitamina A";
 "nutrition.vitamins.beta-carotene" = "Beta-caroteno";
 "nutrition.vitamins.d" = "Vitamina D";

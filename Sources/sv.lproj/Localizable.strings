@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Scan barcode";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "Tillbaka";
+"generic.search" = "Sök";
+
 // Product Search
 
 "product-search.search-placeholder" = "Sök efter en produkt med namn eller streckkod";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skanna streckkoden på produkten";
 "product-scanner.overlay.extended-user-help" = "Det går inte att hitta en streckkod.\nCentrera streckkoden på skärmen.\nKontrollera att streckkoden är väl synlig.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Fel inskannad streckkod. Vänligen försök igen om en stund.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Vänligen ge tillstånd att använda kameran för att kunna skanna streckkoder";

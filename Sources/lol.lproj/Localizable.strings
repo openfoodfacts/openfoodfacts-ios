@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "crwdns112020:0crwdne112020:0";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "crwdns112750:0crwdne112750:0";
+"generic.search" = "crwdns112752:0crwdne112752:0";
+
 // Product Search
 
 "product-search.search-placeholder" = "crwdns112022:0crwdne112022:0";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "crwdns112032:0crwdne112032:0";
 "product-scanner.overlay.extended-user-help" = "crwdns112034:0crwdne112034:0";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "crwdns112754:0crwdne112754:0";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "crwdns112036:0crwdne112036:0";
+"product-scanner.barcode-notfound.manual-enter" = "crwdns112756:0crwdne112756:0";
 
 "product-scanner.permissions.noPermissions.title" = "crwdns112038:0crwdne112038:0";
 "product-scanner.permissions.noPermissions.message" = "crwdns112040:0crwdne112040:0";
@@ -81,7 +88,7 @@
 "product-detail.summary.labels" = "crwdns112108:0crwdne112108:0";
 "product-detail.summary.citiesTags" = "crwdns112110:0crwdne112110:0";
 "product-detail.summary.stores" = "crwdns112112:0crwdne112112:0";
-"product-detail.summary.countries" = "crwdns112114:0crwdne112114:0";
+"product-detail.summary.countries" = "crwdns112372:0crwdne112372:0";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "crwdns112116:0crwdne112116:0";
@@ -117,7 +124,7 @@
 "nutrition.fats.trans-fat" = "crwdns112160:0crwdne112160:0";
 "nutrition.fats.cholesterol" = "crwdns112162:0crwdne112162:0";
 "nutrition.carbohydrate" = "crwdns112164:0crwdne112164:0";
-"nutrition.carbohydrate.sugars" = "crwdns112166:0crwdne112166:0";
+"nutrition.carbohydrate.sugars" = "crwdns112374:0crwdne112374:0";
 "nutrition.carbohydrate.sucrose" = "crwdns112168:0crwdne112168:0";
 "nutrition.carbohydrate.glucose" = "crwdns112170:0crwdne112170:0";
 "nutrition.carbohydrate.fructose" = "crwdns112172:0crwdne112172:0";
@@ -132,7 +139,7 @@
 "nutrition.salt" = "crwdns112190:0crwdne112190:0";
 "nutrition.sodium" = "crwdns112192:0crwdne112192:0";
 "nutrition.alcohol" = "crwdns112194:0crwdne112194:0";
-"nutrition.vitamins" = "crwdns112196:0crwdne112196:0";
+"nutrition.vitamins" = "crwdns112376:0crwdne112376:0";
 "nutrition.vitamins.a" = "crwdns112198:0crwdne112198:0";
 "nutrition.vitamins.beta-carotene" = "crwdns112200:0crwdne112200:0";
 "nutrition.vitamins.d" = "crwdns112202:0crwdne112202:0";
