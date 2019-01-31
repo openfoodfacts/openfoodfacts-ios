@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Scan barcode";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "戻る";
+"generic.search" = "検索";
+
 // Product Search
 
 "product-search.search-placeholder" = "名前またはバーコードで製品を検索";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "製品のバーコードをスキャンします";
 "product-scanner.overlay.extended-user-help" = "バーコードが見つかりません。\nバーコードを画面の中央に配置してください。\nバーコードがはっきり写っていることを確認してください。";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "バーコードスキャン中にエラーが発生しました。しばらくしてからもう一度やり直してください。";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "バーコードをスキャンできるようにカメラを使用する許可を与えてください";
@@ -81,7 +88,7 @@
 "product-detail.summary.labels" = "ラベル、認証、表彰";
 "product-detail.summary.citiesTags" = "市、州、購入した国";
 "product-detail.summary.stores" = "店舗";
-"product-detail.summary.countries" = "国";
+"product-detail.summary.countries" = "販売の国";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "原材料の一覧";
@@ -117,7 +124,7 @@
 "nutrition.fats.trans-fat" = "トランス脂肪酸";
 "nutrition.fats.cholesterol" = "コレステロール";
 "nutrition.carbohydrate" = "炭水化物";
-"nutrition.carbohydrate.sugars" = "Sugar";
+"nutrition.carbohydrate.sugars" = "砂糖";
 "nutrition.carbohydrate.sucrose" = "スクロース";
 "nutrition.carbohydrate.glucose" = "グルコース";
 "nutrition.carbohydrate.fructose" = "果糖";
@@ -132,7 +139,7 @@
 "nutrition.salt" = "食塩";
 "nutrition.sodium" = "ナトリウム";
 "nutrition.alcohol" = "アルコール";
-"nutrition.vitamins" = "Vitamins and Minerals";
+"nutrition.vitamins" = "ビタミン";
 "nutrition.vitamins.a" = "ビタミン A";
 "nutrition.vitamins.beta-carotene" = "ベータカロチン";
 "nutrition.vitamins.d" = "ビタミン D";
