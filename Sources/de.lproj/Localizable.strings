@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Strichcode einlesen";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "Zurück";
+"generic.search" = "Suchen";
+
 // Product Search
 
 "product-search.search-placeholder" = "Produktsuche nach Name oder Strichcode";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "Strichcode des Produkts einlesen";
 "product-scanner.overlay.extended-user-help" = "• Strichcode konnte nicht gefunden werden.\n• Zentrieren Sie den Streifencode auf dem Bildschirm.\n• Stellen Sie sicher, dass der Strichcode gut beleuchtet ist.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Ein Fehler ist beim Einlesen des Strichcode aufgetreten. Bitte versuchen Sie es nach einer kurzen Weile erneut.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts benötigt die Berechtigung, die Kamera verwenden zu dürfen";
 "product-scanner.permissions.noPermissions.message" = "Bitte erteilen Sie uns die Erlaubnis, die Kamera verwenden zu dürfen, um Strichcodes einlesen zu können";
@@ -81,7 +88,7 @@
 "product-detail.summary.labels" = "Kennzeichnungen, Zertifizierungen, Preise";
 "product-detail.summary.citiesTags" = "Stadt, Bundesland und Land des Kaufs";
 "product-detail.summary.stores" = "Läden";
-"product-detail.summary.countries" = "Land";
+"product-detail.summary.countries" = "Vertriebsländer";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Zutatenliste";
@@ -132,7 +139,7 @@
 "nutrition.salt" = "Salz";
 "nutrition.sodium" = "Natrium";
 "nutrition.alcohol" = "Alkohol";
-"nutrition.vitamins" = "Vitamine und Mineralstoffe";
+"nutrition.vitamins" = "Vitamine";
 "nutrition.vitamins.a" = "Vitamin A";
 "nutrition.vitamins.beta-carotene" = "Beta-Carotin";
 "nutrition.vitamins.d" = "Vitamin D";
@@ -200,7 +207,7 @@
 "settings.about.contact" = "Kontakt";
 "settings.about.frequently-asked-questions" = "Häufig gestellte Fragen";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+"settings.credits.text" = "Das \"Barcode scan\"-Icon, \"Settings\"-Icon und \"Flash\" Icon wurde erstellt von Madebyoliver (https://www.flaticon.com/authors/madebyoliver) ist lizenziert mit CC 3.0 von (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\"-Icon wurde von Picol (http://www.flaticon.com/authors/picol) erstellt und ist mit der CC 3.0 Lizenz von (https://creativecommons.org/licenses/by/3.0/) lizenziert.\nDas \"Profile\"-Icon wurde von Smashicons (https://www.flaticon.com/authors/smashicons) erstellt und ist lizensiert mit CC 3.0 von (https://creativecommons.org/licenses/by/3.0/)\nDas \"Gregor Cresnar\"-Icon wurde von Smashicons (https://www.flaticon.com/authors/gregor-cresnar) erstellt und ist lizenziert mit der CC 3.0 Lizenz von (https://creativecommons.org/licenses/by/3.0/)\nDas \"Search history\"-Icon wurde von Hadrien (https://www.flaticon.com/authors/hadrien) erstellt und ist auch mit der CC 3.0 Lizenz von (https://creativecommons.org/licenses/by/3.0/) lizenziert";
 
 // User view
 /* Tab bar item */
