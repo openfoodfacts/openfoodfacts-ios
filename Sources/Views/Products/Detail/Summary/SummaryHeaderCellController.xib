@@ -29,20 +29,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h4r-NG-xwT">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="7WZ-fb-FXP">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="114"/>
                                 </imageView>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igt-YD-1SC" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                    <rect key="frame" x="160" y="0.0" width="0.0" height="120"/>
+                                    <rect key="frame" x="160" y="0.0" width="0.0" height="114"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4l-Cj-xX4">
-                                    <rect key="frame" x="160" y="0.0" width="160" height="120"/>
+                                    <rect key="frame" x="160" y="0.0" width="160" height="114"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYL-Ot-UMp" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="27.5" width="160" height="65"/>
+                                            <rect key="frame" x="0.0" y="24.5" width="160" height="65"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="NYL-Ot-UMp" secondAttribute="height" multiplier="310:126" id="w7H-je-Vf4"/>
@@ -51,7 +51,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="width" secondItem="o4l-Cj-xX4" secondAttribute="width" priority="750" id="ANw-FW-wnx"/>
+                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="width" secondItem="o4l-Cj-xX4" secondAttribute="width" id="ANw-FW-wnx"/>
                                         <constraint firstItem="NYL-Ot-UMp" firstAttribute="centerX" secondItem="o4l-Cj-xX4" secondAttribute="centerX" id="NV3-SU-haa"/>
                                         <constraint firstItem="NYL-Ot-UMp" firstAttribute="centerY" secondItem="o4l-Cj-xX4" secondAttribute="centerY" id="ODH-0R-D2V"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NYL-Ot-UMp" secondAttribute="bottom" constant="10" id="gAz-RR-Lkg"/>
@@ -64,10 +64,10 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MT9-gZ-J7A">
-                            <rect key="frame" x="0.0" y="130" width="320" height="4"/>
+                            <rect key="frame" x="0.0" y="124" width="320" height="10"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-rz-zza">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="4"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="10"/>
                                     <state key="normal" title="Take a new picture"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-detail.header.add-new-picture"/>
@@ -77,7 +77,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71e-pv-NKy">
-                                    <rect key="frame" x="160" y="0.0" width="160" height="4"/>
+                                    <rect key="frame" x="160" y="0.0" width="160" height="10"/>
                                     <state key="normal" title="Edit"/>
                                 </button>
                             </subviews>
