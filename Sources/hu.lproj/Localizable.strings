@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Scan barcode";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "Vissza";
+"generic.search" = "Keres";
+
 // Product Search
 
 "product-search.search-placeholder" = "Termék keresése név vagy vonalkód alapján";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "A termék vonalkódjának beolvasása";
 "product-scanner.overlay.extended-user-help" = "Vonalkód nem található.\nHelyezze a vonalkódot a képernyőn középre.\nGyőződjön meg róla, hogy a vonalkód jól megvilágított.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Hiba történt a vonalkód beolvasása közben. Kérem, próbálja meg néhány pillanat múlva.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Kérem, engedélyezze a kamera használatát a vonalkódok beolvasásához";
@@ -81,7 +88,7 @@
 "product-detail.summary.labels" = "Címkék, tanúsítványok, díjak";
 "product-detail.summary.citiesTags" = "Vásárlás helye (város, állam és ország)";
 "product-detail.summary.stores" = "Boltok";
-"product-detail.summary.countries" = "Ország";
+"product-detail.summary.countries" = "Országok, ahol kapható";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Összetevők listája";
@@ -117,7 +124,7 @@
 "nutrition.fats.trans-fat" = "Transzzsír";
 "nutrition.fats.cholesterol" = "Koleszterin";
 "nutrition.carbohydrate" = "Szénhidrát";
-"nutrition.carbohydrate.sugars" = "Sugar";
+"nutrition.carbohydrate.sugars" = "Cukrok";
 "nutrition.carbohydrate.sucrose" = "Szacharóz";
 "nutrition.carbohydrate.glucose" = "Glükóz";
 "nutrition.carbohydrate.fructose" = "Fruktóz";
@@ -132,7 +139,7 @@
 "nutrition.salt" = "Só";
 "nutrition.sodium" = "Nátrium";
 "nutrition.alcohol" = "Alkohol";
-"nutrition.vitamins" = "Vitamins and Minerals";
+"nutrition.vitamins" = "Vitaminok";
 "nutrition.vitamins.a" = "A-vitamin";
 "nutrition.vitamins.beta-carotene" = "Béta-karotin";
 "nutrition.vitamins.d" = "D-vitamin";
