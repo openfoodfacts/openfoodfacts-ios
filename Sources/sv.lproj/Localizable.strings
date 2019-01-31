@@ -9,6 +9,10 @@
 
 "shortcuts.scan" = "Scan barcode";
 
+// Generic strings that could be useful anywhere.
+"generic.back" = "Tillbaka";
+"generic.search" = "Sök";
+
 // Product Search
 
 "product-search.search-placeholder" = "Sök efter en produkt med namn eller streckkod";
@@ -20,8 +24,11 @@
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skanna streckkoden på produkten";
 "product-scanner.overlay.extended-user-help" = "Det går inte att hitta en streckkod.\nCentrera streckkoden på skärmen.\nKontrollera att streckkoden är väl synlig.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Fel inskannad streckkod. Vänligen försök igen om en stund.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Vänligen ge tillstånd att använda kameran för att kunna skanna streckkoder";
@@ -81,7 +88,7 @@
 "product-detail.summary.labels" = "Etiketter, certifieringar, utmärkelser";
 "product-detail.summary.citiesTags" = "Stad, Län och Land där produkten köptes";
 "product-detail.summary.stores" = "Butiker";
-"product-detail.summary.countries" = "Land";
+"product-detail.summary.countries" = "Länder där såld";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Lista över ingredienser";
@@ -117,7 +124,7 @@
 "nutrition.fats.trans-fat" = "Transfett";
 "nutrition.fats.cholesterol" = "Kolesterol";
 "nutrition.carbohydrate" = "Kolhydrat";
-"nutrition.carbohydrate.sugars" = "Sugar";
+"nutrition.carbohydrate.sugars" = "Socker";
 "nutrition.carbohydrate.sucrose" = "Sackaros";
 "nutrition.carbohydrate.glucose" = "Glukos";
 "nutrition.carbohydrate.fructose" = "Fruktos";
@@ -132,7 +139,7 @@
 "nutrition.salt" = "Salt";
 "nutrition.sodium" = "Natrium";
 "nutrition.alcohol" = "Alkohol";
-"nutrition.vitamins" = "Vitamins and Minerals";
+"nutrition.vitamins" = "Vitaminer";
 "nutrition.vitamins.a" = "Vitamin A";
 "nutrition.vitamins.beta-carotene" = "Betakaroten";
 "nutrition.vitamins.d" = "Vitamin D";
