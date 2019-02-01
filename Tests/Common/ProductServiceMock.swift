@@ -44,7 +44,7 @@ class ProductServiceMock: ProductApi {
         getProductsCalled = true
     }
 
-    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
+    func getProduct(byBarcode barcode: String, isScanning: Bool, isSummary: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
         let successfulBarcode = ["1", "2", "4"]
 
         self.barcode = barcode

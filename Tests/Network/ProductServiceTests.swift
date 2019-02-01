@@ -113,7 +113,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productApi.getProduct(byBarcode: barcode, isScanning: true, onSuccess: success, onError: error)
+        productApi.getProduct(byBarcode: barcode, isScanning: true, isSummary: false, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
@@ -133,7 +133,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productApi.getProduct(byBarcode: barcode, isScanning: false, onSuccess: success, onError: error)
+        productApi.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())
