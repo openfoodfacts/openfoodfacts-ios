@@ -49,7 +49,7 @@ class DataManagerSpec: QuickSpec {
                 let onSuccess: (Product?) -> Void = { _ in }
                 let onError: (Error) -> Void = { _ in }
 
-                dataManager.getProduct(byBarcode: barcode, isScanning: isScanning, onSuccess: onSuccess, onError: onError)
+                dataManager.getProduct(byBarcode: barcode, isScanning: isScanning, isSummary: false, onSuccess: onSuccess, onError: onError)
 
                 expect(productApi.productByBarcodeCount).to(equal(1))
                 expect(productApi.barcode).to(equal(barcode))
