@@ -25,6 +25,7 @@ class HistoryItem: Object {
     @objc dynamic var imageUrl: String?
     @objc dynamic var timestamp = Date()
     @objc dynamic var nutriscore: String?
+    @objc dynamic var novagroup: String?
 
     var age: Age {
         let days: Double = 1 * 60 * 60 * 24
