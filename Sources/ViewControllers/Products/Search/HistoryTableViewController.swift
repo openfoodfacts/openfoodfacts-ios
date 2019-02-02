@@ -11,7 +11,7 @@ import NotificationBanner
 
 struct HistoryCellId {
     static let privacy = "PrivacyCell"
-    static let item = "HistoryItemCell"
+    static let item = "ProductTableViewCell"
 }
 
 protocol HistoryTableViewControllerDelegate: class {
@@ -26,6 +26,11 @@ class HistoryTableViewController: UITableViewController {
     let showDetailsBanner = NotificationBanner(title: "product-search.error-view.title".localized,
                                                subtitle: "product-search.error-view.subtitle".localized,
                                                style: .danger)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: HistoryCellId.item)
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -60,6 +65,13 @@ extension HistoryTableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if isPrivacySection(indexPath.section) {
+            return 44
+        }
+        return 100
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let id = isPrivacySection(indexPath.section) ? HistoryCellId.privacy : HistoryCellId.item
         let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath)
@@ -67,7 +79,7 @@ extension HistoryTableViewController {
         guard let item = getItem(forIndex: indexPath) else { return cell }
 
         if id == HistoryCellId.item {
-            (cell as! HistoryItemCell).configure(item) // swiftlint:disable:this force_cast
+            (cell as! ProductTableViewCell).configure(withHistoryItem: item) // swiftlint:disable:this force_cast
         }
 
         return cell
