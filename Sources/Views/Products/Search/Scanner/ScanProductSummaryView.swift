@@ -52,7 +52,7 @@ class ScanProductSummaryView: UIView {
             quantityLabel.text = quantity
         }
 
-        if let nutriscoreValue = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue.uppercased()) {
+        if let nutriscoreValue = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue) {
             nutriScoreView.currentScore = score
             nutriScoreView.isHidden = false
         } else {
