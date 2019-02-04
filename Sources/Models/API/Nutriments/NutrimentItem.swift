@@ -59,4 +59,15 @@ struct NutrimentItem {
             return nil
         }
     }
+
+    init?(nameKey: String, localized: InfoRowKey) {
+        self.nameKey = nameKey
+        self.per100gKey = "\(nameKey)_100g"
+        self.servingKey = "\(nameKey)_serving"
+        self.unitKey = "\(nameKey)_unit"
+        self.valueKey = "\(nameKey)_value"
+        self.isMainItem = false
+
+        self.localized = localized
+    }
 }

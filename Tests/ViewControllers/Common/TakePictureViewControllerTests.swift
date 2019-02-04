@@ -45,7 +45,7 @@ class TakePictureViewControllerTests: XCTestCase {
         let uploadingBannerTitle = "product-add.uploading-image-banner.title".localized
         let imageUploadSuccessBannerTitle = "product-add.image-upload-success-banner.title".localized
 
-        viewController.didGetImage(image: testImage)
+        viewController.didGetImage(image: testImage, forImageType: nil)
 
         expect(self.notificationBannerEventMap[uploadingBannerTitle]).toEventually(contain([.willAppear, .didAppear, .willDisappear, .didDisappear]))
         expect(self.notificationBannerEventMap[imageUploadSuccessBannerTitle]).toEventually(contain([.willAppear, .didAppear]), timeout: 10, pollInterval: 0.2)
@@ -58,7 +58,7 @@ class TakePictureViewControllerTests: XCTestCase {
         let uploadingBannerTitle = "product-add.uploading-image-banner.title".localized
         let imageUploadErrorBannerTitle = "product-add.image-upload-error-banner.title".localized
 
-        viewController.didGetImage(image: testImage)
+        viewController.didGetImage(image: testImage, forImageType: nil)
 
         expect(self.notificationBannerEventMap[uploadingBannerTitle]).toEventually(contain([.willAppear, .didAppear, .willDisappear, .didDisappear]), timeout: 10)
         expect(self.notificationBannerEventMap[imageUploadErrorBannerTitle]).toEventually(contain([.willAppear, .didAppear]), timeout: 10)
@@ -68,7 +68,7 @@ class TakePictureViewControllerTests: XCTestCase {
     func testDidGetImageDoesNotCallDataManagerWhenImageCanNotBeSaved() {
         viewController.barcode = "111111111"
 
-        viewController.didGetImage(image: UIImage())
+        viewController.didGetImage(image: UIImage(), forImageType: nil)
 
         expect(self.mockDataManager.postImageCalled).to(beFalse())
         expect(self.viewController.uploadingImageErrorBanner.isHidden).to(beFalse())
@@ -77,6 +77,7 @@ class TakePictureViewControllerTests: XCTestCase {
     class CameraControllerMock: CameraController {
         var isShown = false
         weak var delegate: CameraControllerDelegate?
+        var imageType: ImageType?
 
         func show() {
             isShown = true

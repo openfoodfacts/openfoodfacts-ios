@@ -23,9 +23,14 @@ protocol DataManagerProtocol {
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
 
     // Taxonomies
+    func objectSearch<T: Object>(forQuery: String?, ofClass: T.Type) -> Results<T>?
+
     func category(forTag: String) -> Category?
+    func categorySearch(query: String?) -> Results<Category>
     func allergen(forTag: Tag) -> Allergen?
     func additive(forTag: Tag) -> Additive?
+    func nutriment(forTag: String) -> Nutriment?
+    func nutrimentSearch(query: String?) -> Results<Nutriment>
 
     // Search history
     func getHistory() -> [Age: [HistoryItem]]
@@ -34,7 +39,10 @@ protocol DataManagerProtocol {
 
     // Product - Add
     func addProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+    func addProductNutritionTable(_ product: Product, nutritionTable: [String: Any], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func postImage(_ productImage: ProductImage, onSuccess: @escaping (_ isOffline: Bool) -> Void, onError: @escaping (Error) -> Void)
+
+    func getIngredientsOCR(forBarcode: String, productLanguageCode: String, onDone: @escaping (String?, Error?) -> Void)
 
     // Products pending upload
     func getItemsPendingUpload() -> [PendingUploadItem]
@@ -96,8 +104,16 @@ class DataManager: DataManagerProtocol {
     }
 
     // MARK: - Taxonomies
+    func objectSearch<T>(forQuery query: String?, ofClass: T.Type) -> Results<T>? where T: Object {
+        return persistenceManager.objectSearch(forQuery: query, ofClass: T.self)
+    }
+
     func category(forTag tag: String) -> Category? {
         return persistenceManager.category(forCode: tag)
+    }
+
+    func categorySearch(query: String?) -> Results<Category> {
+        return persistenceManager.categorySearch(query: query)
     }
 
     func allergen(forTag tag: Tag) -> Allergen? {
@@ -106,6 +122,14 @@ class DataManager: DataManagerProtocol {
 
     func additive(forTag tag: Tag) -> Additive? {
         return persistenceManager.additive(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func nutriment(forTag tag: String) -> Nutriment? {
+        return persistenceManager.nutriment(forCode: tag)
+    }
+
+    func nutrimentSearch(query: String?) -> Results<Nutriment> {
+        return persistenceManager.nutrimentSearch(query: query)
     }
 
     // MARK: - Search history
@@ -136,7 +160,31 @@ class DataManager: DataManagerProtocol {
     // MARK: - Product Add
 
     func addProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        productApi.postProduct(product, onSuccess: {
+        productApi.postProduct(product, rawParameters: nil, onSuccess: {
+            DispatchQueue.main.async {
+                onSuccess()
+            }
+        }, onError: { error in
+            if isOffline(errorCode: (error as NSError).code) {
+                self.persistenceManager.addPendingUploadItem(product)
+                DispatchQueue.main.async {
+                    onSuccess()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    onError(error)
+                }
+            }
+        })
+    }
+
+    func addProductNutritionTable(_ product: Product, nutritionTable: [String: Any], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        var params = [String: Any]()
+        nutritionTable.forEach { (key: String, value: Any) in
+            params["nutriment_\(key)"] = value
+        }
+
+        productApi.postProduct(product, rawParameters: params, onSuccess: {
             DispatchQueue.main.async {
                 onSuccess()
             }
@@ -171,6 +219,10 @@ class DataManager: DataManagerProtocol {
                 }
             }
         })
+    }
+
+    func getIngredientsOCR(forBarcode: String, productLanguageCode: String, onDone: @escaping (String?, Error?) -> Void) {
+        productApi.getIngredientsOCR(forBarcode: forBarcode, productLanguageCode: productLanguageCode, onDone: onDone)
     }
 
     // MARK: - Products pending upload
@@ -294,7 +346,7 @@ class DataManager: DataManagerProtocol {
 
         log.debug("Uploading product info of a PendingUploadItem...")
 
-        productApi.postProduct(product, onSuccess: {
+        productApi.postProduct(product, rawParameters: nil, onSuccess: {
             successHandler()
         }, onError: { _ in
             completionHandler(false)

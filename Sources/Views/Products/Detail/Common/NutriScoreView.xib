@@ -21,21 +21,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nutriscore-b" translatesAutoresizingMaskIntoConstraints="NO" id="djc-QD-bVB">
-                    <rect key="frame" x="0.0" y="0.0" width="310" height="128"/>
+                    <rect key="frame" x="38.5" y="0.0" width="233" height="126"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="djc-QD-bVB" secondAttribute="height" multiplier="389:210" id="Kqk-qw-rwm"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="djc-QD-bVB" secondAttribute="bottom" constant="-2" id="2zE-Xw-Uh7"/>
-                <constraint firstAttribute="trailing" secondItem="djc-QD-bVB" secondAttribute="trailing" id="Guu-Gx-rkY"/>
-                <constraint firstItem="djc-QD-bVB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aj8-4q-qZJ"/>
-                <constraint firstItem="djc-QD-bVB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nOD-Jg-U4k"/>
+                <constraint firstItem="djc-QD-bVB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="X21-1X-ZfM"/>
+                <constraint firstItem="djc-QD-bVB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" id="aKc-Oi-MCf"/>
+                <constraint firstItem="djc-QD-bVB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aVT-qJ-hlY"/>
+                <constraint firstItem="djc-QD-bVB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xVs-ck-1hk"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="33" y="54"/>
+            <point key="canvasLocation" x="32" y="53.973013493253376"/>
         </view>
     </objects>
     <resources>

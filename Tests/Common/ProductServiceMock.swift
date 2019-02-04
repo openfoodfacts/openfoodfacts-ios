@@ -76,6 +76,10 @@ class ProductServiceMock: ProductApi {
     }
 
     func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        self.postProduct(product, rawParameters: nil, onSuccess: onSuccess, onError: onError)
+    }
+
+    func postProduct(_ product: Product, rawParameters: [String: Any]?, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         self.product = product
         postProductCalled = true
 
@@ -88,6 +92,9 @@ class ProductServiceMock: ProductApi {
         } else {
             onSuccess()
         }
+    }
+
+    func getIngredientsOCR(forBarcode: String, productLanguageCode: String, onDone: @escaping (String?, Error?) -> Void) {
     }
 
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {

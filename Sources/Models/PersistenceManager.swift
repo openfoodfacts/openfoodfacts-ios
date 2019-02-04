@@ -18,11 +18,18 @@ protocol PersistenceManagerProtocol {
     func clearHistory()
 
     // taxonomies
+    func objectSearch<T: Object>(forQuery: String?, ofClass: T.Type) -> Results<T>?
+
     func save(categories: [Category])
     func category(forCode: String) -> Category?
+    func categorySearch(query: String?) -> Results<Category>
 
     func save(allergens: [Allergen])
     func allergen(forCode: String) -> Allergen?
+
+    func save(nutriments: [Nutriment])
+    func nutriment(forCode: String) -> Nutriment?
+    func nutrimentSearch(query: String?) -> Results<Nutriment>
 
     func save(additives: [Additive])
     func additive(forCode: String) -> Additive?
@@ -106,6 +113,14 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     // MARK: - Taxonomies
+    func objectSearch<T>(forQuery query: String?, ofClass: T.Type) -> Results<T>? where T: Object {
+        var results = getRealm().objects(T.self)
+        if let query = query, !query.isEmpty {
+            results = results.filter("indexedNames CONTAINS[cd] %@", query)
+        }
+        return results
+    }
+
     func save(categories: [Category]) {
         saveOrUpdate(objects: categories)
         log.info("Saved \(categories.count) categories in taxonomies database")
@@ -115,6 +130,14 @@ class PersistenceManager: PersistenceManagerProtocol {
         return getRealm().object(ofType: Category.self, forPrimaryKey: code)
     }
 
+    func categorySearch(query: String? = nil) -> Results<Category> {
+        var results = getRealm().objects(Category.self)
+        if let query = query, !query.isEmpty {
+            results = results.filter("indexedNames CONTAINS[cd] %@", query)
+        }
+        return results.sorted(byKeyPath: "mainName", ascending: true)
+    }
+
     func save(allergens: [Allergen]) {
         saveOrUpdate(objects: allergens)
         log.info("Saved \(allergens.count) allergens in taxonomies database")
@@ -122,6 +145,23 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     func allergen(forCode code: String) -> Allergen? {
         return getRealm().object(ofType: Allergen.self, forPrimaryKey: code)
+    }
+
+    func save(nutriments: [Nutriment]) {
+        saveOrUpdate(objects: nutriments)
+        log.info("Saved \(nutriments.count) nutriments in taxonomies database")
+    }
+
+    func nutriment(forCode code: String) -> Nutriment? {
+        return getRealm().object(ofType: Nutriment.self, forPrimaryKey: code)
+    }
+
+    func nutrimentSearch(query: String?) -> Results<Nutriment> {
+        var results = getRealm().objects(Nutriment.self)
+        if let query = query, !query.isEmpty {
+            results = results.filter("indexedNames CONTAINS[cd] %@", query)
+        }
+        return results.sorted(byKeyPath: "mainName", ascending: true)
     }
 
     func save(additives: [Additive]) {

@@ -80,6 +80,10 @@ class ScannerViewController: UIViewController {
         case .failed:
             returnToRootController()
         }
+
+        if let lastCodeScanned = lastCodeScanned {
+            self.getProduct(barcode: lastCodeScanned, isSummary: true, createIfNeeded: false)
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -256,7 +260,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
 
     /// when isSummary is true, only a few fields of the products are downloaded, and when done, this methods calls itself with isSummary=false
-    func getProduct(barcode: String, isSummary: Bool) {
+    func getProduct(barcode: String, isSummary: Bool, createIfNeeded: Bool = true) {
         scannerFloatingPanelLayout.canShowDetails = false
         DispatchQueue.main.async {
             self.floatingPanelController.move(to: .tip, animated: true)
@@ -264,7 +268,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
 
         dataManager.getProduct(byBarcode: barcode, isScanning: true, isSummary: isSummary, onSuccess: { [weak self] response in
-            self?.handleGetProductSuccess(barcode, response, isSummary: isSummary)
+            self?.handleGetProductSuccess(barcode, response, isSummary: isSummary, createIfNeeded: createIfNeeded)
 
             if response != nil, isSummary {
                 self?.getProduct(barcode: barcode, isSummary: false)
@@ -273,7 +277,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }, onError: { [weak self] error in
             if isOffline(errorCode: (error as NSError).code) {
                 // Assume product does not exist and store locally for later upload
-                self?.handleGetProductSuccess(barcode, nil, isSummary: isSummary)
+                self?.handleGetProductSuccess(barcode, nil, isSummary: isSummary, createIfNeeded: createIfNeeded)
             } else {
                 DispatchQueue.main.async {
                     StatusBarNotificationBanner(title: "product-scanner.barcode.error".localized, style: .danger).show()
@@ -284,7 +288,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         })
     }
 
-    private func handleGetProductSuccess(_ barcode: String, _ product: Product?, isSummary: Bool) {
+    private func handleGetProductSuccess(_ barcode: String, _ product: Product?, isSummary: Bool, createIfNeeded: Bool = true) {
         DispatchQueue.main.async {
             if let product = product {
                 if isSummary {
@@ -295,7 +299,9 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     self.scannerResultController.status = .hasProduct(product: product, dataManager: self.dataManager)
                 }
             } else {
-                self.addNewProduct(barcode)
+                if createIfNeeded == true {
+                    self.addNewProduct(barcode)
+                }
                 self.scannerResultController.status = .waitingForScan
             }
         }
