@@ -11,33 +11,36 @@ import Crashlytics
 
 class InfoRowTableViewCell: ProductDetailBaseCell {
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textView: UITextView!
     private static let textSize: CGFloat = 17
     private let bold = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: textSize)]
     private let regular = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: textSize)]
     private let boldWordsPattern = "(_\\w+_)"
 
-    override func configure(with formRow: FormRow) {
+    override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let rowLabel = formRow.label else { return }
-        guard let value = formRow.getValueAsString() else { return }
+        guard let value = formRow.getValueAsAttributedString() else { return }
 
         let combination = NSMutableAttributedString()
         combination.append(NSAttributedString(string: rowLabel + ": ", attributes: bold))
         combination.append(makeWordsBold(for: value))
 
-        self.label.attributedText = combination
+        self.textView.attributedText = combination
+
+        self.textView.delegate = viewController
     }
 
     /// Create an attributed string with word surrounded by '_' (e.g. _Milk_) bold.
     ///
     /// - Parameter originalText: Original text with words to be made bold surrounded by '_'
     /// - Returns: NSAttributedString with highlighted words
-    private func makeWordsBold(for originalText: String) -> NSAttributedString {
-        let highlightedText = NSMutableAttributedString(string: originalText)
+    private func makeWordsBold(for originalText: NSAttributedString) -> NSAttributedString {
+        let highlightedText = NSMutableAttributedString(attributedString: originalText)
+        highlightedText.addAttributes(regular, range: originalText.string.nsrange)
 
         do {
             let regex = try NSRegularExpression(pattern: boldWordsPattern)
-            let matches = regex.matches(in: originalText, range: originalText.nsrange)
+            let matches = regex.matches(in: originalText.string, range: originalText.string.nsrange)
 
             for match in matches.reversed() {
                 highlightedText.setAttributes(bold, range: match.range)
@@ -52,7 +55,7 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
                 highlightedText.deleteCharacters(in: initialRange)
             }
         } catch let error {
-            let userInfo = ["bold_words_pattern": boldWordsPattern, "original_text": originalText]
+            let userInfo = ["bold_words_pattern": boldWordsPattern, "original_text": originalText.string]
             Crashlytics.sharedInstance().recordError(error, withAdditionalUserInfo: userInfo)
         }
 

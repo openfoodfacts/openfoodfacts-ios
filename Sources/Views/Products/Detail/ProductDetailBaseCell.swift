@@ -11,7 +11,7 @@ import UIKit
 class ProductDetailBaseCell: UITableViewCell {
     class var estimatedHeight: CGFloat { return 55 }
 
-    func configure(with formRow: FormRow) {
+    func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         // Override
     }
 }

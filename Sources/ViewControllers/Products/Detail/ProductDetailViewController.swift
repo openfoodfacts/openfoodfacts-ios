@@ -121,9 +121,24 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product.brands, label: InfoRowKey.brands.localizedString)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
-        createFormRow(with: &rows, item: product.categories, label: InfoRowKey.categories.localizedString)
+
+        createFormRow(with: &rows, item: product.categoriesTags?.map({ (categoryTag: String) -> NSAttributedString in
+            if let category = dataManager.category(forTag: categoryTag) {
+                if let name = Tag.choose(inTags: Array(category.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forCategory: category)])
+                }
+            }
+            return NSAttributedString(string: categoryTag)
+        }), label: InfoRowKey.categories.localizedString)
+
         createFormRow(with: &rows, item: product.labels, label: InfoRowKey.labels.localizedString)
         createFormRow(with: &rows, item: product.citiesTags, label: InfoRowKey.citiesTags.localizedString)
+
+        createFormRow(with: &rows, item: product.embCodesTags?.map({ (tag: String) -> NSAttributedString in
+            return NSAttributedString(string: tag.uppercased().replacingOccurrences(of: "-", with: " "),
+                                      attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forEmbCodeTag: tag)])
+        }), label: InfoRowKey.embCodes.localizedString)
+        
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
         createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
 
@@ -140,9 +155,27 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         // Rows
         createFormRow(with: &rows, item: product.ingredientsList, label: InfoRowKey.ingredientsList.localizedString)
-        createFormRow(with: &rows, item: product.allergens?.map({ $0.value.capitalized }), label: InfoRowKey.allergens.localizedString)
+
+        createFormRow(with: &rows, item: product.allergens?.map({ (allergen: Tag) -> NSAttributedString in
+            if let allergen = dataManager.allergen(forTag: allergen) {
+                if let name = Tag.choose(inTags: Array(allergen.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forAllergen: allergen)])
+                }
+            }
+            return NSAttributedString(string: allergen.value.capitalized)
+        }), label: InfoRowKey.allergens.localizedString)
+
         createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
-        createFormRow(with: &rows, item: product.additives?.map({ $0.value.uppercased() }), label: InfoRowKey.additives.localizedString)
+
+        createFormRow(with: &rows, item: product.additives?.map({ (additive: Tag) -> NSAttributedString in
+            if let additive = dataManager.additive(forTag: additive) {
+                if let name = Tag.choose(inTags: Array(additive.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forAdditive: additive)])
+                }
+            }
+            return NSAttributedString(string: additive.value.uppercased())
+        }), label: InfoRowKey.additives.localizedString)
+
         createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
         createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
 

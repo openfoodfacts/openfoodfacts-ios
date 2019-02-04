@@ -7,11 +7,35 @@
 //
 
 import Foundation
+import RealmSwift
 import ObjectMapper
 
-public struct Tag {
-    let languageCode: String
-    let value: String
+public class Tag: Object {
+    @objc dynamic var languageCode: String = ""
+    @objc dynamic var value: String = ""
+
+    public convenience init(languageCode: String, value: String) {
+        self.init()
+        self.languageCode = languageCode
+        self.value = value
+    }
+
+    /// choose the most appropriate tags based on the language passed in parameters, default to english if not found
+    static func choose(inTags tags: [Tag], forLanguageCode languageCode: String? = nil) -> Tag? {
+        let lang = languageCode ?? Bundle.main.preferredLocalizations.first ?? "en"
+
+        if let tag = tags.first(where: { (tag: Tag) -> Bool in
+            return tag.languageCode == lang
+        }) {
+            return tag
+        }
+
+        if lang != "en" {
+            return choose(inTags: tags, forLanguageCode: "en")
+        }
+
+        return nil
+    }
 }
 
 public class TagTransform: TransformType {

@@ -49,4 +49,21 @@ struct FormRow {
 
         return nil
     }
+
+    func getValueAsAttributedString() -> NSAttributedString? {
+        if let value = value as? NSAttributedString {
+            return value
+        } else if let value = value as? [NSAttributedString] {
+            return value.reduce(into: NSMutableAttributedString(), { ( result: inout NSMutableAttributedString, attributedString: NSAttributedString) in
+                if result.length > 0 {
+                    result.append(NSAttributedString(string: ", "))
+                }
+                result.append(attributedString)
+            })
+        }
+        if let value = getValueAsString() {
+            return NSAttributedString(string: value)
+        }
+        return nil
+    }
 }
