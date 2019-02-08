@@ -10,225 +10,225 @@
 "shortcuts.scan" = "Scan barcode";
 
 // Generic strings that could be useful anywhere.
-"generic.back" = "后退";
-"generic.search" = "搜索";
+"generic.back" = "返回";
+"generic.search" = "搜尋";
 
 // Product Search
 
-"product-search.search-placeholder" = "按名称或者条形码搜索产品";
-"product-search.no-results" = "没有结果";
-"product-search.error-view.title" = "出错";
-"product-search.error-view.subtitle" = "请重试";
-"product-search.initial-view.text" = "打开“Open Food Facts”是一个化妆品数据库，我们可以在产品标签上找到该商品的成分，过敏原等所有信息。";
+"product-search.search-placeholder" = "按名稱或條碼搜索產品";
+"product-search.no-results" = "沒有結果";
+"product-search.error-view.title" = "出現錯誤";
+"product-search.error-view.subtitle" = "請重試";
+"product-search.initial-view.text" = "Open Food Facts 是一個食品的開發資料庫，它提供食品的營養成份、原料、配料、過敏原、…等資訊。這些資訊的來源全來自於產品本身的外包裝，";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "扫描条形码";
-"product-scanner.overlay.extended-user-help" = "找不到条形码\n在屏幕中央的条形码\n保持条形码光线充足";
+"product-scanner.overlay.user-help" = "掃描產品的條碼";
+"product-scanner.overlay.extended-user-help" = "找不到條碼。將條碼居中顯示在螢幕上。確保條碼的光照良好。";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "扫描条形码出错，请稍候再次尝试";
+"product-scanner.barcode.error" = "掃描條碼時出錯。請稍後再試。";
 "product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "请允许使用摄像头来扫描条形码";
-"product-scanner.permissions.noPermissions.action.title" = "打开设置";
+"product-scanner.permissions.noPermissions.message" = "請允許使用攝像頭掃描條碼";
+"product-scanner.permissions.noPermissions.action.title" = "打開設置";
 
-"product-scanner.permissions.failed.title" = "无法启动扫描条形码";
+"product-scanner.permissions.failed.title" = "無法設置條碼掃描";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
-"product-scanner.permissions.failed.action.title" = "留下条形码";
+"product-scanner.permissions.failed.action.title" = "離開條碼掃描";
 
-"product-scanner.search.status" = "正在加载产品。。。";
+"product-scanner.search.status" = "正在載入產品..。";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "正在上传图片...";
+"product-add.uploading-image-banner.title" = "正在上傳圖片…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "出错";
+"product-add.image-upload-error-banner.title" = "出現錯誤";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "请尝试再一次拍照";
+"product-add.image-upload-error-banner.subtitle" = "請嘗試再次拍照";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "图片上传成功";
+"product-add.image-upload-success-banner.title" = "圖片上傳成功";
 "product-add.image-save-success-banner.title" = "Image will be uploaded when online";
 /* Displayed when a product was successfully added to the products database */
-"product-add.product-add-success-banner.title" = "产品添加成功，谢谢";
-"product-add.uploaded-image" = "图片已上传，谢谢！";
-"product-add.save-error.title" = "保存课程时出错";
-"product-add.save-error.message" = "稍后再试";
-"alert.action.ok" = "确认";
+"product-add.product-add-success-banner.title" = "已成功添加產品。謝謝！";
+"product-add.uploaded-image" = "圖片已上傳, 謝謝!";
+"product-add.save-error.title" = "儲存檔案時發生錯誤";
+"product-add.save-error.message" = "稍後再試";
+"alert.action.ok" = "確定";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
-"product-add.placeholder.name" = "产品名称";
+"product-add.placeholder.name" = "品名";
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "品牌";
 /* Product Add quantity text field */
 "product-add.placeholder.quantity-value" = "Quantity value";
 
 // Product Detail
-"product-detail.header.add-new-picture" = "添加图片";
+"product-detail.header.add-new-picture" = "新增圖片";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.title" = "您需要保存您的修改";
+"product-detail.edit-alert.title" = "請記住保存您的更改";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.subtitle" = "向下滚动到“保存”按钮";
+"product-detail.edit-alert.subtitle" = "向下滾動到“保存”按鈕";
 
 // Product detail page titles
-"product-detail.page-title.summary" = "摘要";
+"product-detail.page-title.summary" = "總覽";
 "product-detail.page-title.ingredients" = "成分";
-"product-detail.page-title.nutrition" = "营养";
-"product-detail.page-title.nutrition-table" = "营养表";
+"product-detail.page-title.nutrition" = "營養成分";
+"product-detail.page-title.nutrition-table" = "營養成分表";
 
 // Product detail summary info rows labels
-"product-detail.summary.barcode" = "条形码";
-"product-detail.summary.quantity" = "数量";
-"product-detail.summary.packaging" = "包装";
+"product-detail.summary.barcode" = "條碼";
+"product-detail.summary.quantity" = "數量";
+"product-detail.summary.packaging" = "包裝套件";
 "product-detail.summary.brands" = "品牌";
-"product-detail.summary.manufacturing-places" = "制造或者加工场所";
-"product-detail.summary.origins" = "成分来源";
-"product-detail.summary.categories" = "类别";
-"product-detail.summary.labels" = "标签，认证，奖励";
-"product-detail.summary.citiesTags" = "购买的城市、省份和国家";
+"product-detail.summary.manufacturing-places" = "生產地點";
+"product-detail.summary.origins" = "配料來源";
+"product-detail.summary.categories" = "類別";
+"product-detail.summary.labels" = "標籤，認證，獎項";
+"product-detail.summary.citiesTags" = "購的買城市, 州及城鎮";
 "product-detail.summary.stores" = "商店";
 "product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "国家";
+"product-detail.summary.countries" = "國家";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "成分列表";
-"product-detail.ingredients.allergens-list" = "成分或产品可能导致过敏或不耐受";
-"product-detail.ingredients.traces-list" = "痕迹";
-"product-detail.ingredients.additives-list" = "添加";
-"product-detail.ingredients.palm-oil-ingredients" = "棕榈油成分";
-"product-detail.ingredients.possible-palm-oil-ingredients" = "可能来自棕榈油成分";
+"product-detail.ingredients.allergens-list" = "物品造成過敏";
+"product-detail.ingredients.traces-list" = "追蹤";
+"product-detail.ingredients.additives-list" = "添加劑";
+"product-detail.ingredients.palm-oil-ingredients" = "成分為棕櫚油";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "也許有棕櫚油成分";
 
 // Product detail nutrition info row labels
-"product-detail.nutrition.serving-size" = "分量";
-"product-detail.nutrition.carbon-footprint" = "碳足迹 / CO2 排放";
+"product-detail.nutrition.serving-size" = "份量";
+"product-detail.nutrition.carbon-footprint" = "碳足跡 / CO2 排放量︰";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutritional-table-header" = "营养成分";
-"product-detail.nutrition-table.for-100g" = "每 100 g";
+"product-detail.nutrition-table.nutritional-table-header" = "營養成分";
+"product-detail.nutrition-table.for-100g" = "每 100 公克";
 "product-detail.nutrition-table.for-serving" = "每份";
 
 // Nutrition levels
-"nutrition-level.low" = "库存量";
-"nutrition-level.moderate" = "中等数量";
-"nutrition-level.high" = "最高含量";
+"nutrition-level.low" = "低量";
+"nutrition-level.moderate" = "中等量";
+"nutrition-level.high" = "大量";
 
 // Nutrition
 "nutrition.energy" = "能量";
 "nutrition.fats" = "脂肪";
-"nutrition.fats.saturated-fat" = "饱和脂肪";
-"nutrition.fats.mono-unsaturated-fat" = "单不饱和脂肪";
-"nutrition.fats.poly-unsaturated-fat" = "多元不饱和脂肪";
+"nutrition.fats.saturated-fat" = "飽和脂肪";
+"nutrition.fats.mono-unsaturated-fat" = "單不飽和脂肪";
+"nutrition.fats.poly-unsaturated-fat" = "多不飽和脂肪";
 "nutrition.fats.omega3" = "欧米伽 3";
 "nutrition.fats.omega6" = "欧米伽 5";
 "nutrition.fats.omega9" = "欧米伽 9";
 "nutrition.fats.trans-fat" = "反式脂肪";
-"nutrition.fats.cholesterol" = "胆固醇";
+"nutrition.fats.cholesterol" = "膽固醇";
 "nutrition.carbohydrate" = "碳水化合物";
-"nutrition.carbohydrate.sugars" = "Sugar";
+"nutrition.carbohydrate.sugars" = "糖";
 "nutrition.carbohydrate.sucrose" = "蔗糖";
 "nutrition.carbohydrate.glucose" = "葡萄糖";
 "nutrition.carbohydrate.fructose" = "果糖";
 "nutrition.carbohydrate.lactose" = "乳糖";
-"nutrition.carbohydrate.maltose" = "麦芽糖";
-"nutrition.carbohydrate.maltodextrins" = "麦芽糖";
-"nutrition.fiber" = "膳食纤维";
-"nutrition.proteins" = "蛋白质";
+"nutrition.carbohydrate.maltose" = "麥芽糖";
+"nutrition.carbohydrate.maltodextrins" = "麥芽糊精";
+"nutrition.fiber" = "膳食纖維";
+"nutrition.proteins" = "蛋白質";
 "nutrition.proteins.casein" = "酪蛋白";
-"nutrition.proteins.serum-proteins" = "血浆蛋白";
+"nutrition.proteins.serum-proteins" = "血清蛋白";
 "nutrition.proteins.nucleotides" = "核苷酸";
-"nutrition.salt" = "盐";
-"nutrition.sodium" = "钠";
+"nutrition.salt" = "鹽";
+"nutrition.sodium" = "鈉";
 "nutrition.alcohol" = "酒精";
-"nutrition.vitamins" = "Vitamins and Minerals";
-"nutrition.vitamins.a" = "维生素 A";
-"nutrition.vitamins.beta-carotene" = "Β-胡萝卜素";
-"nutrition.vitamins.d" = "维生素 D";
-"nutrition.vitamins.e" = "维生素 E";
-"nutrition.vitamins.k" = "维生素 K";
-"nutrition.vitamins.c" = "维生素 C";
-"nutrition.vitamins.b1" = "维生素 B1";
-"nutrition.vitamins.b2" = "维生素 B2";
-"nutrition.vitamins.pp" = "维生素 PP";
-"nutrition.vitamins.b6" = "维生素 B6";
-"nutrition.vitamins.b9" = "维生素 B9";
-"nutrition.vitamins.b12" = "维生素 B12";
+"nutrition.vitamins" = "维生素";
+"nutrition.vitamins.a" = "維生素 A";
+"nutrition.vitamins.beta-carotene" = "Β-胡蘿蔔素";
+"nutrition.vitamins.d" = "維生素 D";
+"nutrition.vitamins.e" = "維生素 E";
+"nutrition.vitamins.k" = "維生素 K";
+"nutrition.vitamins.c" = "維生素 C";
+"nutrition.vitamins.b1" = "維生素 B1";
+"nutrition.vitamins.b2" = "維生素 B2";
+"nutrition.vitamins.pp" = "維生素 PP";
+"nutrition.vitamins.b6" = "維生素 B6";
+"nutrition.vitamins.b9" = "維生素 B9";
+"nutrition.vitamins.b12" = "維生素 B12";
 "nutrition.vitamins.biotin" = "生物素";
 "nutrition.vitamins.pantothenic-acid" = "泛酸";
-"nutrition.minerals" = "矿物质";
-"nutrition.minerals.silica" = "二氧化硅";
-"nutrition.minerals.bicarbonate" = "碳酸氢钠";
-"nutrition.minerals.potassium" = "钾";
+"nutrition.minerals" = "礦物質";
+"nutrition.minerals.silica" = "二氧化矽";
+"nutrition.minerals.bicarbonate" = "碳酸氫鹽";
+"nutrition.minerals.potassium" = "鉀";
 "nutrition.minerals.chloride" = "氯化物";
-"nutrition.minerals.calcium" = "钙";
+"nutrition.minerals.calcium" = "鈣";
 "nutrition.minerals.phosphorus" = "磷";
-"nutrition.minerals.iron" = "铁";
-"nutrition.minerals.magnesium" = "镁";
-"nutrition.minerals.zinc" = "锌";
-"nutrition.minerals.copper" = "铜";
-"nutrition.minerals.manganese" = "锰";
-"nutrition.minerals.fluoride" = "氟";
+"nutrition.minerals.iron" = "鐵";
+"nutrition.minerals.magnesium" = "鎂";
+"nutrition.minerals.zinc" = "鋅";
+"nutrition.minerals.copper" = "銅";
+"nutrition.minerals.manganese" = "錳";
+"nutrition.minerals.fluoride" = "氟化物";
 "nutrition.minerals.selenium" = "硒";
-"nutrition.minerals.chromium" = "铬";
-"nutrition.minerals.molybdenum" = "钼";
+"nutrition.minerals.chromium" = "鉻";
+"nutrition.minerals.molybdenum" = "鉬";
 "nutrition.minerals.iodine" = "碘";
 "nutrition.minerals.caffeine" = "咖啡因";
 "nutrition.minerals.taurine" = "牛磺酸";
-"nutrition.minerals.ph" = "pH";
-"nutrition.minerals.fruits-vegetables-nuts" = "水果，蔬菜，坚果";
-"nutrition.minerals.collagen-meat-protein-ratio" = "胶原蛋白比例";
-"nutrition.minerals.cocoa" = "可可粉";
-"nutrition.minerals.chlorophyl" = "叶绿素";
+"nutrition.minerals.ph" = "pH值";
+"nutrition.minerals.fruits-vegetables-nuts" = "水果，蔬菜，堅果";
+"nutrition.minerals.collagen-meat-protein-ratio" = "膠原蛋白肉與蛋白的比例";
+"nutrition.minerals.cocoa" = "可可";
+"nutrition.minerals.chlorophyl" = "葉綠素";
 
 // Call to action
-"call-to-action.summary" = "拍摄正面照片";
-"call-to-action.ingredients" = "拍摄营养成分";
-"call-to-action.nutrition" = "拍摄营养成分";
+"call-to-action.summary" = "拍攝正面的照片";
+"call-to-action.ingredients" = "拍攝成分的照片";
+"call-to-action.nutrition" = "拍攝營養成份表的照片";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.take-picture" = "拍摄产品照片";
-"product.images.product" = "产品";
-"product.images.picture" = "图片 ✅";
+"product.images.take-picture" = "拍下產品的照片";
+"product.images.product" = "產品";
+"product.images.picture" = "圖片✅";
 "product.images.front" = "前置";
 "product.images.ingredients" = "成分";
-"product.images.nutrition" = "营养标签";
+"product.images.nutrition" = "營養成分表";
 
 // Settings storyboard
-"settings.tab-bar.item" = "设置";
-"settings.sections.information" = "信息";
-"settings.sections.contribute" = "贡献";
-"settings.sections.about" = "关于";
-"settings.credits.title" = "致谢";
-"settings.scan-on-launch.title" = "在应用程序启动时显示扫描";
-"settings.information.discover" = "发现";
-"settings.contribute.how-to-contribute" = "如何参与";
+"settings.tab-bar.item" = "設定";
+"settings.sections.information" = "資訊";
+"settings.sections.contribute" = "貢獻";
+"settings.sections.about" = "關於";
+"settings.credits.title" = "感謝";
+"settings.scan-on-launch.title" = "在應用程式啟動時顯示掃描";
+"settings.information.discover" = "探索";
+"settings.contribute.how-to-contribute" = "如何貢獻";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
-"settings.about.contact" = "联系";
-"settings.about.frequently-asked-questions" = "常见问题";
-"settings.promotion.open-beauty-facts" = "打开护肤品页面";
+"settings.about.contact" = "聯繫方式";
+"settings.about.frequently-asked-questions" = "常見問答";
+"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
 "settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
 
 // User view
 /* Tab bar item */
-"user.tab-bar.item" = "用户";
-"user.log-in" = "登陆";
-"user.log-out" = "推出";
-"user.username" = "用户名";
-"user.password" = "密码";
+"user.tab-bar.item" = "使用者";
+"user.log-in" = "登錄";
+"user.log-out" = "登出";
+"user.username" = "用戶名";
+"user.password" = "密碼";
 "user.forgot-password" = "Forgot Password?";
-"user.check-your-contributions.button" = "检查您的贡献";
+"user.check-your-contributions.button" = "檢查你的貢獻";
 "user.products-pending-upload.button" = "Products pending upload";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
-"user.create-account.button" = "创建新的账户";
-"user.why-log-in.text" = "在账户中登录会将所有的贡献与您的账户相关联起来";
-"user.alert.wrong-credentials.title" = "登陆失败";
-"user.alert.wrong-credentials.subtitle" = "请检查您的用户名和密码";
-"user.alert.generic-error.title" = "登陆时出错";
-"user.alert.generic-error.subtitle" = "请稍后再试";
-"user.alert.username-missing" = "用户名必填";
-"user.alert.password-missing" = "需要密码";
+"user.create-account.button" = "建立一個新帳號";
+"user.why-log-in.text" = "使用您的帳戶登錄會將您的所有捐款與您的帳戶相關聯。";
+"user.alert.wrong-credentials.title" = "登入失敗";
+"user.alert.wrong-credentials.subtitle" = "請檢查您的用戶名和密碼";
+"user.alert.generic-error.title" = "登入時出錯。";
+"user.alert.generic-error.subtitle" = "請稍後再試。";
+"user.alert.username-missing" = "需要用戶名。";
+"user.alert.password-missing" = "需要密碼";
 "pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
 "pending-upload.hud.status" = "Uploading";
 
