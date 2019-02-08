@@ -1,505 +1,777 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="OpenFoodFacts/Info.plist" source-language="en" datatype="plaintext" target-language="fr">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.2" build-num="9C40b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
         <source>Open Nutrition</source>
-        <target>Open Nutrition</target>
-      </trans-unit>
-      <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
-        <target>$(PRODUCT_NAME)</target>
+        <target xml:lang="fr" state="translated">Open Nutrition</target>
       </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
+        <target xml:lang="fr" state="translated">Utilisez votre appareil photo pour numériser des codes barres et prendre des photos de produits à ajouter à la base de données</target>
       </trans-unit>
       <trans-unit id="NSPhotoLibraryUsageDescription">
         <source>Take and upload pictures of products</source>
+        <target xml:lang="fr" state="translated">Prenez et envoyez des photos de produits</target>
       </trans-unit>
       <trans-unit id="QUICK_ACTION_SCAN_BARCODE">
         <source>Scan a barcode</source>
+        <target xml:lang="fr" state="translated">Scanner le code-barre</target>
       </trans-unit>
     </body>
   </file>
   <file original="OpenFoodFacts/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="fr">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.2" build-num="9C40b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
       <trans-unit id="alert.action.ok">
         <source>Ok</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Ok</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Prendre une photo des ingrédients</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition table</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Prendre une photo du tableau nutritionnel</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
         <source>Take a picture of the front</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Prendre une photo de l’avant</target>
       </trans-unit>
       <trans-unit id="nutrition-level.high">
         <source>in high quantity</source>
+        <note>Nutrition Level, high</note>
+        <target xml:lang="fr" state="translated">en quantité élevée</target>
       </trans-unit>
       <trans-unit id="nutrition-level.low">
         <source>in low quantity</source>
+        <note>Nutrition Level, low</note>
+        <target xml:lang="fr" state="translated">en faible quantité</target>
       </trans-unit>
       <trans-unit id="nutrition-level.moderate">
         <source>in moderate quantity</source>
+        <note>Nutrition Level, moderate</note>
+        <target xml:lang="fr" state="translated">en quantité modérée</target>
       </trans-unit>
       <trans-unit id="nutrition.alcohol">
         <source>Alcohol</source>
+        <target xml:lang="fr" state="translated">Alcool</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate">
         <source>Carbohydrate</source>
+        <target xml:lang="fr" state="translated">Glucides</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.fructose">
         <source>Fructose</source>
+        <target xml:lang="fr" state="translated">Fructose</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.glucose">
         <source>Glucose</source>
+        <target xml:lang="fr" state="translated">Glucose</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.lactose">
         <source>Lactose</source>
+        <target xml:lang="fr" state="translated">Lactose</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.maltodextrins">
         <source>Maltodextrins</source>
+        <target xml:lang="fr" state="translated">Maltodextrine</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.maltose">
         <source>Maltose</source>
+        <target xml:lang="fr" state="translated">Maltose</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sucrose">
         <source>Sucrose</source>
+        <target xml:lang="fr" state="translated">Saccharose</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sugars">
         <source>Sugars</source>
+        <note>Nutrition, sugars</note>
+        <target xml:lang="fr" state="translated">Sucres</target>
       </trans-unit>
       <trans-unit id="nutrition.energy">
         <source>Energy</source>
+        <target xml:lang="fr" state="translated">Énergie</target>
       </trans-unit>
       <trans-unit id="nutrition.fats">
         <source>Fats</source>
+        <note>Nutrition, fat</note>
+        <target xml:lang="fr" state="translated">Matières grasses</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.cholesterol">
         <source>Cholesterol</source>
+        <target xml:lang="fr" state="translated">Cholestérol</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.mono-unsaturated-fat">
         <source>Mono unsaturated fat</source>
+        <target xml:lang="fr" state="translated">Graisses mono-insaturées</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega3">
         <source>Omega 3</source>
+        <target xml:lang="fr" state="translated">Oméga-3</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega6">
         <source>Omega 6</source>
+        <target xml:lang="fr" state="translated">Oméga-6</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega9">
         <source>Omega 9</source>
+        <target xml:lang="fr" state="translated">Oméga-9</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.poly-unsaturated-fat">
         <source>Poly unsaturated fat</source>
+        <target xml:lang="fr" state="translated">Graisses poly-insaturées</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.saturated-fat">
         <source>Saturated fat</source>
+        <note>Nutrition, saturated fat</note>
+        <target xml:lang="fr" state="translated">Graisses saturées</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.trans-fat">
         <source>Trans fat</source>
+        <target xml:lang="fr" state="translated">Graisses transaturées</target>
       </trans-unit>
       <trans-unit id="nutrition.fiber">
         <source>Dietary fiber</source>
+        <target xml:lang="fr" state="translated">Fibres alimentaires</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals">
         <source>Minerals</source>
+        <target xml:lang="fr" state="translated">Minéraux</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.bicarbonate">
         <source>Bicarbonate</source>
+        <target xml:lang="fr" state="translated">Bicarbonate</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.caffeine">
         <source>Caffeine</source>
+        <target xml:lang="fr" state="translated">Caféine</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.calcium">
         <source>Calcium</source>
+        <target xml:lang="fr" state="translated">Calcium</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chloride">
         <source>Chloride</source>
+        <target xml:lang="fr" state="translated">Chlorure</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chlorophyl">
         <source>Chlorophyl</source>
+        <target xml:lang="fr" state="translated">Chlorophylle</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chromium">
         <source>Chromium</source>
+        <target xml:lang="fr" state="translated">Chrome</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.cocoa">
         <source>Cocoa</source>
+        <target xml:lang="fr" state="translated">Cacao</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.collagen-meat-protein-ratio">
         <source>Collagen meat protein ratio</source>
+        <target xml:lang="fr" state="translated">Rapport collagène sur protéines de viande</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.copper">
         <source>Copper</source>
+        <target xml:lang="fr" state="translated">Cuivre</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.fluoride">
         <source>Fluoride</source>
+        <target xml:lang="fr" state="translated">Fluorure</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.fruits-vegetables-nuts">
         <source>Fruits, vegetables, nuts</source>
+        <target xml:lang="fr" state="translated">Fruits, légumes et noix</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.iodine">
         <source>Iodine</source>
+        <target xml:lang="fr" state="translated">Iode</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.iron">
         <source>Iron</source>
+        <target xml:lang="fr" state="translated">Fer</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.magnesium">
         <source>Magnesium</source>
+        <target xml:lang="fr" state="translated">Magnésium</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.manganese">
         <source>Manganese</source>
+        <target xml:lang="fr" state="translated">Manganèse</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.molybdenum">
         <source>Molybdenum</source>
+        <target xml:lang="fr" state="translated">Molybdène</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.ph">
         <source>pH</source>
+        <target xml:lang="fr" state="translated">pH</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.phosphorus">
         <source>Phosphorus</source>
+        <target xml:lang="fr" state="translated">Phosphore</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.potassium">
         <source>Potassium</source>
+        <target xml:lang="fr" state="translated">Potassium</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.selenium">
         <source>Selenium</source>
+        <target xml:lang="fr" state="translated">Sélénium</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.silica">
         <source>Silica</source>
+        <target xml:lang="fr" state="translated">Silice</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.taurine">
         <source>Taurine</source>
+        <target xml:lang="fr" state="translated">Taurine</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.zinc">
         <source>Zinc</source>
+        <target xml:lang="fr" state="translated">Zinc</target>
       </trans-unit>
       <trans-unit id="nutrition.proteins">
         <source>Proteins</source>
+        <target xml:lang="fr" state="translated">Protéines</target>
       </trans-unit>
       <trans-unit id="nutrition.proteins.casein">
         <source>Casein</source>
+        <target xml:lang="fr" state="translated">Caséine</target>
       </trans-unit>
       <trans-unit id="nutrition.proteins.nucleotides">
         <source>Nucleotides</source>
+        <target xml:lang="fr" state="translated">Nucléotides</target>
       </trans-unit>
       <trans-unit id="nutrition.proteins.serum-proteins">
         <source>Serum Proteins</source>
+        <target xml:lang="fr" state="translated">Protéines du sérum</target>
       </trans-unit>
       <trans-unit id="nutrition.salt">
         <source>Salt</source>
+        <note>Nutrition, salt</note>
+        <target xml:lang="fr" state="translated">Sel</target>
       </trans-unit>
       <trans-unit id="nutrition.sodium">
         <source>Sodium</source>
+        <target xml:lang="fr" state="translated">Sodium</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins">
         <source>Vitamins</source>
+        <target xml:lang="fr" state="translated">Vitamines</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.a">
         <source>Vitamin A</source>
+        <target xml:lang="fr" state="translated">Vitamine A</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b1">
         <source>Vitamin B1</source>
+        <target xml:lang="fr" state="translated">Vitamine B1</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b2">
         <source>Vitamin B2</source>
+        <target xml:lang="fr" state="translated">Vitamine B2</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b6">
         <source>Vitamin B6</source>
+        <target xml:lang="fr" state="translated">Vitamine B6</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b9">
         <source>Vitamin B9</source>
+        <target xml:lang="fr" state="translated">Vitamine B9</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b12">
         <source>Vitamin B12</source>
+        <target xml:lang="fr" state="translated">Vitamine B12</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.beta-carotene">
         <source>Beta carotene</source>
+        <target xml:lang="fr" state="translated">Bêta-carotène</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.biotin">
         <source>Biotin</source>
+        <target xml:lang="fr" state="translated">Biotine</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.c">
         <source>Vitamin C</source>
+        <target xml:lang="fr" state="translated">Vitamine C</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.d">
         <source>Vitamin D</source>
+        <target xml:lang="fr" state="translated">Vitamine D</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.e">
         <source>Vitamin E</source>
+        <target xml:lang="fr" state="translated">Vitamine E</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.k">
         <source>Vitamin K</source>
+        <target xml:lang="fr" state="translated">Vitamine K</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.pantothenic-acid">
         <source>Pantothenic acid</source>
+        <target xml:lang="fr" state="translated">Acide pantothénique</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.pp">
         <source>Vitamin PP</source>
+        <target xml:lang="fr" state="translated">Vitamine PP</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.subtitle">
         <source>Please try to take the picture again</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Veuillez essayer de reprendre la photo</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Une erreur s'est produite</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
         <source>Image was uploaded successfully</source>
-      </trans-unit>
-      <trans-unit id="product-add.language.toolbar-title">
-        <source>Select a language</source>
-      </trans-unit>
-      <trans-unit id="product-add.placeholder.brand">
-        <source>Brand</source>
-      </trans-unit>
-      <trans-unit id="product-add.placeholder.name">
-        <source>Product name</source>
-      </trans-unit>
-      <trans-unit id="product-add.placeholder.quantity-value">
-        <source>Quantity value</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">L'image a été téléchargée avec succès</target>
       </trans-unit>
       <trans-unit id="product-add.product-add-success-banner.title">
         <source>Product added successfully. Thank you!</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Produit ajouté avec succès. Merci!</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
         <source>Try again later</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Veuillez réessayer ultérieurement</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
         <source>Error while saving product</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Erreur lors de la sauvegarde du produit</target>
       </trans-unit>
       <trans-unit id="product-add.uploaded-image">
         <source>Image uploaded, thanks!</source>
+        <target xml:lang="fr" state="translated">Image téléchargée, merci!</target>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
         <source>Uploading image...</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Importation de l'image...</target>
       </trans-unit>
       <trans-unit id="product-detail.edit-alert.subtitle">
         <source>Scroll down to the 'Save' button</source>
+        <target xml:lang="fr" state="translated">Faire défiler jusqu'au bouton "Enregistrer"</target>
       </trans-unit>
       <trans-unit id="product-detail.edit-alert.title">
         <source>Remember to save your changes</source>
+        <target xml:lang="fr" state="translated">N'oubliez pas de sauvegarder vos modifications</target>
       </trans-unit>
       <trans-unit id="product-detail.header.add-new-picture">
         <source>Add a new picture</source>
+        <target xml:lang="fr" state="translated">Ajouter une nouvelle image</target>
       </trans-unit>
-      <trans-unit id="product-detail.ingredients.additives-list">
+      <trans-unit id="product-detail.ingredients.additives-list" approved="yes">
         <source>Additives</source>
+        <target xml:lang="fr" state="translated">Additifs</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.allergens-list">
         <source>Substances or products causing allergies or intolerances</source>
+        <target xml:lang="fr" state="translated">Substances ou produits provoquant des allergies ou intolérances</target>
       </trans-unit>
-      <trans-unit id="product-detail.ingredients.ingredients-list">
+      <trans-unit id="product-detail.ingredients.ingredients-list" approved="yes">
         <source>List of ingredients</source>
+        <target xml:lang="fr" state="translated">Liste des ingrédients</target>
       </trans-unit>
-      <trans-unit id="product-detail.ingredients.palm-oil-ingredients">
+      <trans-unit id="product-detail.ingredients.palm-oil-ingredients" approved="yes">
         <source>Ingredients from palm oil</source>
+        <target xml:lang="fr" state="translated">Ingrédients issus de l'huile de palme</target>
       </trans-unit>
-      <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients">
+      <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients" approved="yes">
         <source>Ingredients that may be from palm oil</source>
+        <target xml:lang="fr" state="translated">Ingrédients pouvant être issus de l'huile de palme</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.traces-list">
         <source>Traces</source>
+        <target xml:lang="fr" state="translated">Traces éventuelles</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-100g">
         <source>For 100 g</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Pour 100 g</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
         <source>Per serving</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Par portion</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.nutritional-table-header">
         <source>Nutrition facts</source>
+        <target xml:lang="fr" state="translated">Composition nutritionnelle</target>
       </trans-unit>
-      <trans-unit id="product-detail.nutrition.carbon-footprint">
+      <trans-unit id="product-detail.nutrition.carbon-footprint" approved="yes">
         <source>Carbon footprint / CO2 emissions</source>
+        <target xml:lang="fr" state="translated">Empreinte carbone / émissions de CO2</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.serving-size">
         <source>Serving size</source>
+        <target xml:lang="fr" state="translated">Taille d'une portion</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
         <source>Ingredients</source>
+        <note>Product detail, ingredients</note>
+        <target xml:lang="fr" state="translated">Ingrédients</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
         <source>Nutrition</source>
+        <note>Product detail, nutrition</note>
+        <target xml:lang="fr" state="translated">Nutrition</target>
       </trans-unit>
-      <trans-unit id="product-detail.page-title.nutrition-table">
+      <trans-unit id="product-detail.page-title.nutrition-table" approved="yes">
         <source>Nutrition table</source>
+        <note>Product detail, nutrition table</note>
+        <target xml:lang="fr" state="translated">Tableau nutritionnel</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
         <source>Summary</source>
+        <note>Product detail, summary</note>
+        <target xml:lang="fr" state="translated">Résumé</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.barcode">
         <source>Barcode</source>
+        <target xml:lang="fr" state="translated">Code barre</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.brands">
         <source>Brands</source>
+        <target xml:lang="fr" state="translated">Marques</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.categories">
         <source>Categories</source>
+        <target xml:lang="fr" state="translated">Catégories</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.citiesTags">
         <source>City, state and country where purchased</source>
+        <target xml:lang="fr" state="translated">Ville et pays d'achat</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.countries">
         <source>Countries where sold</source>
+        <target xml:lang="fr" state="translated">Pays de vente</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.labels">
         <source>Labels, certifications, awards</source>
+        <target xml:lang="fr" state="translated">Labels, certifications, récompenses</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.manufacturing-places">
         <source>Manufacturing or processing places</source>
+        <target xml:lang="fr" state="translated">Lieux de fabrication ou de transformation</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.origins">
         <source>Origin of ingredients</source>
+        <target xml:lang="fr" state="translated">Origine des ingrédients</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.packaging">
         <source>Packaging</source>
+        <target xml:lang="fr" state="translated">Conditionnement</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.quantity">
         <source>Quantity</source>
+        <target xml:lang="fr" state="translated">Quantité</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.stores">
         <source>Stores</source>
+        <target xml:lang="fr" state="translated">Magasins</target>
       </trans-unit>
       <trans-unit id="product-scanner.barcode.error">
         <source>Error scanning barcode. Please try again in a few moments.</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Erreur lors de la lecture du code à barres. Merci de réessayer dans quelques instants.</target>
       </trans-unit>
       <trans-unit id="product-scanner.overlay.extended-user-help">
         <source>Can't find a barcode.
 Center the barcode in the screen.
 Make sure the barcode is well lit.</source>
+        <note>User help in the scan view</note>
+        <target xml:lang="fr" state="translated">Code-barre non trouvé.
+Placez-le au centre de l'écran.
+Veillez à ce qu'il soit bien éclairé.</target>
       </trans-unit>
       <trans-unit id="product-scanner.overlay.user-help">
         <source>Scan the barcode of the product</source>
+        <note>User help in the scan view</note>
+        <target xml:lang="fr" state="translated">Scannez le code-barres du produit</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.action.title">
         <source>Leave barcode scanning</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Quitter le scan du code-barre</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.message">
         <source>Check in Privacy Settings if OpenFoodFacts has permission to use the camera</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Vérifiez dans les paramètres de confidentialité si Open Food Facts est autorisé à utiliser la caméra</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.title">
         <source>Could not setup barcode scanning</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Impossible d'installer la lecture de codes à barres</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.action.title">
         <source>Open Settings</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Ouvrir les paramètres</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.message">
         <source>Please grant permission to use the camera to be able to scan barcodes</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Veuillez accorder la permission d'utiliser l'appareil photo pour pouvoir scanner les codes à barres</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.title">
         <source>OpenFoodFacts needs camera permissions</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Open Food Facts a besoin de prendre des photos</target>
       </trans-unit>
       <trans-unit id="product-scanner.search.status">
         <source>Loading product...</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Chargement du produit...</target>
       </trans-unit>
       <trans-unit id="product-search.error-view.subtitle">
         <source>Please try again</source>
+        <note>Error view subtitle</note>
+        <target xml:lang="fr" state="translated">Veuillez réessayer</target>
       </trans-unit>
       <trans-unit id="product-search.error-view.title">
         <source>Something went wrong</source>
+        <note>Error view title</note>
+        <target xml:lang="fr" state="translated">Une erreur s'est produite</target>
       </trans-unit>
       <trans-unit id="product-search.initial-view.text">
         <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
+        <target xml:lang="fr" state="translated">Open Food Facts est une base de données ouverte de produits alimentaires contenant ingrédients, allergènes, informations nutritionnelles et toute information qui se trouve sur les étiquettes.</target>
       </trans-unit>
       <trans-unit id="product-search.no-results">
         <source>No Results</source>
+        <note>No products where found for current search</note>
+        <target xml:lang="fr" state="translated">Aucun résultat</target>
       </trans-unit>
-      <trans-unit id="product-search.search-placeholder">
+      <trans-unit id="product-search.search-placeholder" approved="yes">
         <source>Search for a product by name or barcode</source>
+        <note>Placeholder for the product search bar</note>
+        <target xml:lang="fr" state="translated">Rechercher un produit par nom ou par code-barres</target>
       </trans-unit>
       <trans-unit id="product.images.front">
         <source>front</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">de face</target>
       </trans-unit>
       <trans-unit id="product.images.ingredients">
         <source>ingredients</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">ingrédients</target>
       </trans-unit>
       <trans-unit id="product.images.nutrition">
         <source>nutrition table</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">tableau nutritionnel</target>
       </trans-unit>
       <trans-unit id="product.images.picture">
         <source>picture ✅</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">photo ✅</target>
       </trans-unit>
       <trans-unit id="product.images.product">
         <source>Product's</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Produit</target>
       </trans-unit>
       <trans-unit id="product.images.take-picture">
         <source>Take a picture of the product's</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Prendre une photo</target>
       </trans-unit>
       <trans-unit id="settings.credits.text">
         <source>"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
 "Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
 "Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</source>
+        <target xml:lang="fr" state="translated">Les icônes du bouton "Barcode scan", "Settings" et "Flash" réalisées par Madebyoliver (http://www.flaticon.com/authors/madebyoliver) sont sous licence CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/) L'icône "Take picture" réalisée par Picol (http://www.flaticon.com/authors/picol) est sous licence CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/) L'icône "Profile" réalisée par Smashicons (https://www.flaticon.com/authors/smashicons) est sous licence CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</target>
       </trans-unit>
       <trans-unit id="settings.credits.title">
         <source>Credits</source>
+        <target xml:lang="fr" state="translated">Remerciements</target>
       </trans-unit>
       <trans-unit id="settings.information.discover">
         <source>Discover</source>
+        <target xml:lang="fr" state="translated">Découvrir</target>
       </trans-unit>
       <trans-unit id="settings.information.how-to-contribute">
         <source>How To Contribute</source>
+        <target xml:lang="fr" state="translated">Comment contribuer</target>
       </trans-unit>
       <trans-unit id="settings.scan-on-launch.title">
         <source>Show Scan On App Launch</source>
+        <target xml:lang="fr" state="translated">Afficher le scan au lancement de l'application</target>
       </trans-unit>
       <trans-unit id="settings.sections.information">
         <source>Information</source>
+        <target xml:lang="fr" state="translated">Information</target>
       </trans-unit>
       <trans-unit id="settings.tab-bar.item">
         <source>Settings</source>
+        <target xml:lang="fr" state="translated">Paramètres</target>
       </trans-unit>
       <trans-unit id="user.alert.generic-error.subtitle">
         <source>Please try again in a few moments</source>
+        <target xml:lang="fr" state="translated">Merci de réessayer dans quelques instants</target>
       </trans-unit>
       <trans-unit id="user.alert.generic-error.title">
         <source>There was an error logging in</source>
+        <target xml:lang="fr" state="translated">Il y a eu un problème lors de la connexion</target>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
         <source>Password is required</source>
+        <target xml:lang="fr" state="translated">Le mot de passe est requis</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
         <source>Username is required</source>
+        <target xml:lang="fr" state="translated">Le nom d'utilisateur est requis</target>
       </trans-unit>
       <trans-unit id="user.alert.wrong-credentials.subtitle">
         <source>Check your username and password are correct</source>
+        <target xml:lang="fr" state="translated">Vérifiez que votre nom d'utilisateur et mot de passe sont corrects</target>
       </trans-unit>
       <trans-unit id="user.alert.wrong-credentials.title">
         <source>Unable to log in</source>
+        <target xml:lang="fr" state="translated">Échec de connexion</target>
       </trans-unit>
       <trans-unit id="user.check-your-contributions.button">
         <source>Check Your Contributions</source>
+        <target xml:lang="fr" state="translated">Vérifiez vos contributions</target>
       </trans-unit>
       <trans-unit id="user.create-account.button">
         <source>Create An Account</source>
+        <target xml:lang="fr" state="translated">Créer un compte</target>
       </trans-unit>
       <trans-unit id="user.create-account.text">
         <source>If you don't have an account, click the link bellow to create one.</source>
+        <target xml:lang="fr" state="translated">Si vous n'avez pas de compte, cliquez sur le lien ci-dessous pour en créer un.</target>
       </trans-unit>
       <trans-unit id="user.log-in">
         <source>Log In</source>
+        <target xml:lang="fr" state="translated">Se Connecter</target>
       </trans-unit>
       <trans-unit id="user.log-out">
         <source>Log Out</source>
+        <target xml:lang="fr" state="translated">Se Déconnecter</target>
       </trans-unit>
       <trans-unit id="user.password">
         <source>Password</source>
+        <target xml:lang="fr" state="translated">Mot de passe</target>
       </trans-unit>
       <trans-unit id="user.tab-bar.item">
         <source>User</source>
+        <target xml:lang="fr" state="translated">Utilisateur</target>
       </trans-unit>
       <trans-unit id="user.username">
         <source>Username</source>
+        <target xml:lang="fr" state="translated">Nom d'utilisateur</target>
       </trans-unit>
       <trans-unit id="user.why-log-in.text">
         <source>Login in with your account will associate all your contributions to your account.</source>
+        <target xml:lang="fr" state="translated">Connectez-vous avec votre compte pour associer toutes vos contributions à votre compte.</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="OpenFoodFactsTests/Localizable.strings" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
+    </header>
+    <body>
+      <trans-unit id="alert.action.ok">
+        <source>Ok</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Ok</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.ingredients" approved="yes">
+        <source>Take a picture of the ingredients</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Prendre une photo des ingrédients</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.nutrition">
+        <source>Take a picture of the nutrition facts</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Prendre une photo du tableau nutritionnel</target>
+      </trans-unit>
+      <trans-unit id="call-to-action.summary" approved="yes">
+        <source>Take a picture of the front</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Prendre une photo de l’avant</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-error-banner.title">
+        <source>Something went wrong</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Une erreur s'est produite</target>
+      </trans-unit>
+      <trans-unit id="product-add.image-upload-success-banner.title">
+        <source>Image was uploaded successfully</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">L'image a été téléchargée avec succès</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.message">
+        <source>Try again later</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Veuillez réessayer ultérieurement</target>
+      </trans-unit>
+      <trans-unit id="product-add.save-error.title">
+        <source>Error while saving product</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Erreur lors de la sauvegarde du produit</target>
+      </trans-unit>
+      <trans-unit id="product-add.uploading-image-banner.title">
+        <source>Uploading image...</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Importation de l'image...</target>
+      </trans-unit>
+      <trans-unit id="product-detail.nutrition-table.for-serving">
+        <source>Per serving</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Par portion</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.ingredients" approved="yes">
+        <source>Ingredients</source>
+        <note>Product detail, ingredients</note>
+        <target xml:lang="fr" state="translated">Ingrédients</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition">
+        <source>Nutrition</source>
+        <note>Product detail, nutrition</note>
+        <target xml:lang="fr" state="translated">Nutrition</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.nutrition-table" approved="yes">
+        <source>Nutrition table</source>
+        <note>Product detail, nutrition table</note>
+        <target xml:lang="fr" state="translated">Tableau nutritionnel</target>
+      </trans-unit>
+      <trans-unit id="product-detail.page-title.summary" approved="yes">
+        <source>Summary</source>
+        <note>Product detail, summary</note>
+        <target xml:lang="fr" state="translated">Résumé</target>
+      </trans-unit>
+      <trans-unit id="user.alert.password-missing">
+        <source>Password is required</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Le mot de passe est requis</target>
+      </trans-unit>
+      <trans-unit id="user.alert.username-missing">
+        <source>Username is required</source>
+        <note>No comment provided by engineer.</note>
+        <target xml:lang="fr" state="translated">Le nom d'utilisateur est requis</target>
       </trans-unit>
     </body>
   </file>

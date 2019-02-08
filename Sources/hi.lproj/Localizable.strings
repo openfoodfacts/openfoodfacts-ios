@@ -1,0 +1,241 @@
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Scan barcode";
+
+// Generic strings that could be useful anywhere.
+"generic.back" = "Back";
+"generic.search" = "ढूंढें";
+
+// Product Search
+
+"product-search.search-placeholder" = "नाम या बारकोड द्वारा किसी उत्पाद की खोज करें";
+"product-search.no-results" = "कोई परिणाम नहीं";
+"product-search.error-view.title" = "कुछ गड़बड़ हुई है।";
+"product-search.error-view.subtitle" = "कृपया फिर प्रयास करें";
+"product-search.initial-view.text" = "Open Food Facts सामग्री, एलर्जी, संकेत और सभी उत्पाद जानकारी के साथ सौंदर्य प्रसाधन उत्पादों का एक डाटाबेस है जिसे हम उत्पाद लेबल पर पा सकते हैं।";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "उत्पाद के बारकोड को स्कैन करें";
+"product-scanner.overlay.extended-user-help" = "बारकोड नहीं मिल रहा। बारकोड स्क्रीन के केंद्र में रखे। सुनिश्चित करें कि बारकोड अच्छी तरह से ज्योतिर्मय है।";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "बारकोड स्कैनिंग में त्रुटि । कृपया कुछ क्षणों में पुन: प्रयास करें ।";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "बारकोड स्कैन करने के लिए कृपया कैमरे का उपयोग करने की अनुमति दें";
+"product-scanner.permissions.noPermissions.action.title" = "सेटिंग्स खोलें";
+
+"product-scanner.permissions.failed.title" = "बारकोड स्कैनिंग को सेटअप नहीं किया जा सका";
+"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "बारकोड स्कैनिंग छोड़ें";
+
+"product-scanner.search.status" = "उत्पाद लोड हो रहा है...";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "छवि अपलोड हो रही है...";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "कुछ गड़बड़ हुई है।";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "कृपया फिर से तस्वीर लेने का प्रयास करें";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "छवि सफलतापूर्वक अपलोड की गई";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "उत्पाद सफलतापूर्वक डाला गया। धन्यवाद!";
+"product-add.uploaded-image" = "छवि अपलोड की गई, धन्यवाद!";
+"product-add.save-error.title" = "उत्पाद को सेव करने के दौरान त्रुटि";
+"product-add.save-error.message" = "बाद में पुन: प्रयास करें";
+"alert.action.ok" = "ठीक";
+"product-add.language.toolbar-title" = "Select a language";
+/* Product Add name text field */
+"product-add.placeholder.name" = "Product name";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "ब्रांड";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity-value" = "Quantity value";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "एक नई तस्वीर डालें";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "अपने परिवर्तनों को सहेजना याद रखें";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "'सहेजें' बटन तक नीचे स्क्रॉल करें";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "संग्रह";
+"product-detail.page-title.ingredients" = "सामग्री";
+"product-detail.page-title.nutrition" = "पोषण";
+"product-detail.page-title.nutrition-table" = "पोषण सूची";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "बारकोड";
+"product-detail.summary.quantity" = "मात्रा";
+"product-detail.summary.packaging" = "पैकेजिंग";
+"product-detail.summary.brands" = "ब्रांड";
+"product-detail.summary.manufacturing-places" = "विनिर्माण या प्रसंस्करण स्थान";
+"product-detail.summary.origins" = "सामग्री की उत्पत्ति";
+"product-detail.summary.categories" = "श्रेणियाँ";
+"product-detail.summary.labels" = "लेबल, प्रमाणपत्र, पुरस्कार";
+"product-detail.summary.citiesTags" = "शहर, राज्य और देश जहाँ इसे खरीदा गया";
+"product-detail.summary.stores" = "दुकाने";
+"product-detail.summary.countries" = "जिन देशों में बिकता है";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "सामग्री की तालिका";
+"product-detail.ingredients.allergens-list" = "पदार्थों या उत्पादों के कारण एलर्जी या असहिष्णुता";
+"product-detail.ingredients.traces-list" = "अवशेष";
+"product-detail.ingredients.additives-list" = "योगशील";
+"product-detail.ingredients.palm-oil-ingredients" = "ताड़ के तेल से सामग्री";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "सामग्री जो ताड़ के तेल से हो सकती है";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "सेवारत माप";
+"product-detail.nutrition.carbon-footprint" = "कार्बन पदचिह्न / कार्बन डाईऑक्साइड उत्सर्जन";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "पोषण तथ्य";
+"product-detail.nutrition-table.for-100g" = "१०० g के लिए";
+"product-detail.nutrition-table.for-serving" = "प्रत्येक हिस्सा";
+
+// Nutrition levels
+"nutrition-level.low" = "कम मात्रा में";
+"nutrition-level.moderate" = "मध्यम मात्रा में";
+"nutrition-level.high" = "अधिक मात्रा में";
+
+// Nutrition
+"nutrition.energy" = "ऊर्जा";
+"nutrition.fats" = "वसा";
+"nutrition.fats.saturated-fat" = "संतृप्त वसा";
+"nutrition.fats.mono-unsaturated-fat" = "एक-संतृप्त वसा";
+"nutrition.fats.poly-unsaturated-fat" = "बहुसंतृप्त वसा";
+"nutrition.fats.omega3" = "ओमेगा 3";
+"nutrition.fats.omega6" = "ओमेगा 6";
+"nutrition.fats.omega9" = "ओमेगा 9";
+"nutrition.fats.trans-fat" = "ट्रांस वसा";
+"nutrition.fats.cholesterol" = "कोलेस्ट्रॉल";
+"nutrition.carbohydrate" = "कार्बोहाइड्रेट";
+"nutrition.carbohydrate.sugars" = "शुगर्स";
+"nutrition.carbohydrate.sucrose" = "सुक्रोज";
+"nutrition.carbohydrate.glucose" = "शर्करा";
+"nutrition.carbohydrate.fructose" = "फ्रुक्टोज";
+"nutrition.carbohydrate.lactose" = "लैक्टोज";
+"nutrition.carbohydrate.maltose" = "माल्टोज़";
+"nutrition.carbohydrate.maltodextrins" = "माल्टोडेक्सट्रिन्स";
+"nutrition.fiber" = "फाइबर आहार";
+"nutrition.proteins" = "प्रोटीन";
+"nutrition.proteins.casein" = "कैसिइन";
+"nutrition.proteins.serum-proteins" = "सीरम प्रोटीन";
+"nutrition.proteins.nucleotides" = "न्यूक्लियोटाइड";
+"nutrition.salt" = "नमक";
+"nutrition.sodium" = "सोडियम";
+"nutrition.alcohol" = "अल्कोहॉल";
+"nutrition.vitamins" = "विटामिन";
+"nutrition.vitamins.a" = "विटामिन ए";
+"nutrition.vitamins.beta-carotene" = "बीटा कैरोटीन";
+"nutrition.vitamins.d" = "विटामिन डी";
+"nutrition.vitamins.e" = "विटामिन ई";
+"nutrition.vitamins.k" = "विटामिन के";
+"nutrition.vitamins.c" = "विटामिन सी";
+"nutrition.vitamins.b1" = "विटामिन बी 1";
+"nutrition.vitamins.b2" = "विटामिन बी 2";
+"nutrition.vitamins.pp" = "विटामिन पीपी";
+"nutrition.vitamins.b6" = "विटामिन बी 6";
+"nutrition.vitamins.b9" = "विटामिन बी 9";
+"nutrition.vitamins.b12" = "विटामिन बी 12";
+"nutrition.vitamins.biotin" = "बायोटिन";
+"nutrition.vitamins.pantothenic-acid" = "पैंटोथैनिक एसिड";
+"nutrition.minerals" = "खनिज";
+"nutrition.minerals.silica" = "सिलिका";
+"nutrition.minerals.bicarbonate" = "बिकारबोनिट";
+"nutrition.minerals.potassium" = "पोटेशियम";
+"nutrition.minerals.chloride" = "क्लोराइड";
+"nutrition.minerals.calcium" = "केल्शियम";
+"nutrition.minerals.phosphorus" = "फॉस्फोरस";
+"nutrition.minerals.iron" = "लोहा";
+"nutrition.minerals.magnesium" = "मैग्नीशियम";
+"nutrition.minerals.zinc" = "ज़िंक";
+"nutrition.minerals.copper" = "तांबा";
+"nutrition.minerals.manganese" = "मैंगनीज़";
+"nutrition.minerals.fluoride" = "फ्लोराइड";
+"nutrition.minerals.selenium" = "सेलेनियम";
+"nutrition.minerals.chromium" = "क्रोमियम";
+"nutrition.minerals.molybdenum" = "मॉलीब्डेनम";
+"nutrition.minerals.iodine" = "आयोडीन";
+"nutrition.minerals.caffeine" = "कैफीन";
+"nutrition.minerals.taurine" = "टौरीने";
+"nutrition.minerals.ph" = "पीएच";
+"nutrition.minerals.fruits-vegetables-nuts" = "फल, सब्जियां, दाने";
+"nutrition.minerals.collagen-meat-protein-ratio" = "कोलेजन मांस प्रोटीन अनुपात";
+"nutrition.minerals.cocoa" = "कोकोआ";
+"nutrition.minerals.chlorophyl" = "क्लोरोफिल";
+
+// Call to action
+"call-to-action.summary" = "सामने की तस्वीर ले";
+"call-to-action.ingredients" = "सामग्रियों की एक छायाचित्र लीजिए";
+"call-to-action.nutrition" = "पोषण तालिका की एक तस्वीर लें";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.take-picture" = "उत्पाद की तस्वीर लें";
+"product.images.product" = "उत्पाद की";
+"product.images.picture" = "तस्वीर✅";
+"product.images.front" = "सामने";
+"product.images.ingredients" = "सामग्री";
+"product.images.nutrition" = "पोषण सूची";
+
+// Settings storyboard
+"settings.tab-bar.item" = "सेटिंग्स";
+"settings.sections.information" = "जानकारी";
+"settings.sections.contribute" = "Contribute";
+"settings.sections.about" = "जानकारी";
+"settings.credits.title" = "क्रेडिट्स";
+"settings.scan-on-launch.title" = "ऐप लॉंच पर स्कैन दिखाएं";
+"settings.information.discover" = "तलाश करें";
+"settings.contribute.how-to-contribute" = "योगदान कैसे करें";
+"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.about.contact" = "संपर्क";
+"settings.about.frequently-asked-questions" = "अक्सर पूछे जाने वाले सवाल";
+"settings.promotion.open-beauty-facts" = "ओपन ब्यूटी फैक्ट्स";
+"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "उपयोगकर्ता";
+"user.log-in" = "लॉग इन करें";
+"user.log-out" = "लॉग आउट करें";
+"user.username" = "उपयोगकर्ता नाम";
+"user.password" = "पासवर्ड";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "अपने योगदान की जांच करें";
+"user.products-pending-upload.button" = "Products pending upload";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "अपना खाता बनाएं";
+"user.why-log-in.text" = "अपने खाते से लॉगिन करने पर आपके सभी योगदानों को अपने खाते में जोड़ देगा।";
+"user.alert.wrong-credentials.title" = "लॉग इन करने में असमर्थ";
+"user.alert.wrong-credentials.subtitle" = "अपने उपयोगकर्ता नाम और पासवर्ड की जांच कीजिये";
+"user.alert.generic-error.title" = "प्रवेश करने में कोई त्रुटि थी";
+"user.alert.generic-error.subtitle" = "कृपया कुछ क्षणों में पुन: प्रयास करें";
+"user.alert.username-missing" = "उपयोगकर्ता नाम आवश्यक है";
+"user.alert.password-missing" = "पासवर्ड आवश्यक है";
+"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
+
+// Search history
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "खाली करें";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewWeeks" = "A few weeks ago";
+"history.section-titles.fewMonths" = "A few months ago";
+"history.section-titles.longTime" = "A long time ago";

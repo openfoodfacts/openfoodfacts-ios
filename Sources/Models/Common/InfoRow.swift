@@ -22,6 +22,7 @@ enum InfoRowKey: LocalizedString {
     case labels = "product-detail.summary.labels"
     case citiesTags = "product-detail.summary.citiesTags"
     case stores = "product-detail.summary.stores"
+    case embCodes = "product-detail.summary.embCodes"
     case countries = "product-detail.summary.countries"
 
     // Ingredients

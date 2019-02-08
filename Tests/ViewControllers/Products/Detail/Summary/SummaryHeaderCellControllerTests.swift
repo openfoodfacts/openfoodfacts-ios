@@ -53,7 +53,7 @@ class SummaryHeaderCellControllerTests: XCTestCase {
         expect(self.viewController.productImage.isUserInteractionEnabled).toEventually(beTrue(), timeout: 10)
         expect(self.viewController.productImage.gestureRecognizers![0] is UITapGestureRecognizer).toEventually(beTrue(), timeout: 10)
         expect(self.viewController.callToActionView.isHidden).to(beTrue())
-        expect(self.viewController.nutriscore.currentScore).to(equal(NutriScoreView.Score.A))
+        expect(self.viewController.nutriscore.currentScore).to(equal(NutriScoreView.Score.a))
         expect(self.viewController.productName.text).to(equal(productName))
         expect(self.viewController.addNewPictureButton.isHidden).to(beFalse())
     }

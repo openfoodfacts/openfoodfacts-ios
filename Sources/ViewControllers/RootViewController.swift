@@ -29,8 +29,14 @@ class RootViewController: UIViewController {
         // Inject dependencies
         let productApi = ProductService()
         let persistenceManager = PersistenceManager()
+
+        let taxonomiesApi = TaxonomiesService()
+        taxonomiesApi.persistenceManager = persistenceManager
+        taxonomiesApi.refreshTaxonomiesFromServerIfNeeded()
+
         let dataManager = DataManager()
         dataManager.productApi = productApi
+        dataManager.taxonomiesApi = taxonomiesApi
         dataManager.persistenceManager = persistenceManager
 
         setupViewControllers(tabBarVC, dataManager)
@@ -65,8 +71,8 @@ class RootViewController: UIViewController {
 
     private func showScan() {
         for child in tabBarVC.viewControllers ?? [] {
-            if let vc = child as? SearchViewController {
-                vc.scanBarcode()
+            if let searchVC = child as? SearchViewController {
+                searchVC.scanBarcode()
                 break
             }
         }

@@ -59,6 +59,28 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
         clearHistoryCalled = true
     }
 
+    // MARK: - Taxonomies
+    func save(categories: [Category]) {
+    }
+
+    func category(forCode: String) -> Category? {
+        return nil
+    }
+
+    func save(allergens: [Allergen]) {
+    }
+
+    func allergen(forCode: String) -> Allergen? {
+        return nil
+    }
+
+    func save(additives: [Additive]) {
+    }
+
+    func additive(forCode: String) -> Additive? {
+        return nil
+    }
+
     // MARK: - Products pending upload
 
     func addPendingUploadItem(_ product: Product) {

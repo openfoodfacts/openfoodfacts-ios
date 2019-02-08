@@ -53,7 +53,7 @@ class SummaryHeaderCellController: TakePictureViewController {
             addNewPictureButton.isHidden = true
         }
 
-        if let nutriscoreValue = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue.uppercased()) {
+        if let nutriscoreValue = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue) {
             nutriscore.currentScore = score
         } else {
             nutriscore.superview?.isHidden = true

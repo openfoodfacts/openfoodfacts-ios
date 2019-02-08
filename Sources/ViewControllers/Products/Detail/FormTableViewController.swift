@@ -59,7 +59,7 @@ class FormTableViewController: UITableViewController {
 
     func getCell(for formRow: FormRow) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! ProductDetailBaseCell // swiftlint:disable:this force_cast
-        cell.configure(with: formRow)
+        cell.configure(with: formRow, in: self)
         return cell
     }
 
@@ -123,6 +123,13 @@ extension FormTableViewController: FormTableViewControllerDelegate {
     func cellSizeDidChange() {
         tableView.beginUpdates()
         tableView.endUpdates()
+    }
+}
+
+extension FormTableViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        openUrlInApp(URL)
+        return false
     }
 }
 

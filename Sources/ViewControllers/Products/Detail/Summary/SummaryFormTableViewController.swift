@@ -22,7 +22,7 @@ class SummaryFormTableViewController: FormTableViewController {
     override func getCell(for formRow: FormRow) -> UITableViewCell {
         if formRow.cellType is HostedViewCell.Type, let product = formRow.value as? Product {
             let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
-            cell.configure(with: formRow)
+            cell.configure(with: formRow, in: self)
 
             let summaryHeaderCellController = SummaryHeaderCellController(with: product, dataManager: dataManager)
             cell.hostedView = summaryHeaderCellController.view

@@ -107,7 +107,7 @@ class SearchTableViewControllerTests: XCTestCase {
     func testWillDisplayCellForRowAtIndexPathFetchesNextPageWhenAboutToDisplayFifthLastRow() {
         let tableView = viewController.tableView!
         let query = "Fanta"
-        let initialPage = "1"
+        let initialPage = 1
         let productsResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage1)
         productsResponse.query = query
         dataManager.productsResponse = buildProductsResponseForJsonFile(ProductsResponseFile.successPage2)
@@ -118,7 +118,7 @@ class SearchTableViewControllerTests: XCTestCase {
         viewController.tableView(tableView, willDisplay: UITableViewCell(), forRowAt: indexPath)
 
         expect(self.dataManager.query) == query
-        expect(self.dataManager.page) == Int(initialPage)! + 1
+        expect(self.dataManager.page) == initialPage
     }
 
     // MARK: - UITableViewDelegate
@@ -236,7 +236,7 @@ class SearchTableViewControllerTests: XCTestCase {
         expect(self.dataManager.query) == query
         expect(self.viewController.state).to(beContent { response in
             expect(response.totalProducts) == expectedResponse.totalProducts
-            expect(response.page) == String(page)
+            expect(response.page) == expectedResponse.page
             expect(response.products.count) == expectedProductsCount
         })
     }

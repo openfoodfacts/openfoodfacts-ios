@@ -9,10 +9,6 @@
         <source>Open Nutrition</source>
         <target xml:lang="hu" state="translated">Open Nutrition</target>
       </trans-unit>
-      <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
-        <target xml:lang="hu" state="translated">$(PRODUCT_NAME)</target>
-      </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
         <target xml:lang="hu" state="translated">Használja a kamerát a vonalkódok beolvasásához és készítsen képeket a termékekről, hogy hozzáadhassa azokat az adatbázishoz</target>
@@ -184,7 +180,7 @@
       </trans-unit>
       <trans-unit id="nutrition.minerals.collagen-meat-protein-ratio">
         <source>Collagen meat protein ratio</source>
-        <target xml:lang="hu" state="translated">Kollagén húsfehérje aránya</target>
+        <target xml:lang="hu" state="translated">Kollagén húsfehérje arány</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.copper">
         <source>Copper</source>
@@ -388,7 +384,7 @@
       </trans-unit>
       <trans-unit id="product-detail.ingredients.allergens-list" approved="yes">
         <source>Substances or products causing allergies or intolerances</source>
-        <target xml:lang="hu">Allergiás vagy intoleranciás reakciót okozó anyagok, termékek</target>
+        <target xml:lang="hu" state="translated">Allergiás vagy intoleranciás reakciót okozó anyagok, termékek</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.ingredients-list">
         <source>List of ingredients</source>
@@ -401,9 +397,6 @@
       <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients">
         <source>Ingredients that may be from palm oil</source>
         <target xml:lang="hu" state="translated">Összetevők amelyek pálmaolajat tartalmazhatnak</target>
-        <alt-trans>
-          <target xml:lang="hu">Összetevők, amelyek pálmaolajat tartalmazhatnak</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.traces-list">
         <source>Traces</source>
@@ -421,7 +414,7 @@
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.nutritional-table-header">
         <source>Nutrition facts</source>
-        <target xml:lang="hu" state="translated">Tápanyag ismertető</target>
+        <target xml:lang="hu" state="translated">Tápértékadatok</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.carbon-footprint">
         <source>Carbon footprint / CO2 emissions</source>
@@ -453,15 +446,15 @@
       </trans-unit>
       <trans-unit id="product-detail.summary.barcode" approved="yes">
         <source>Barcode</source>
-        <target xml:lang="hu">Vonalkód</target>
+        <target xml:lang="hu" state="translated">Vonalkód</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.brands" approved="yes">
         <source>Brands</source>
-        <target xml:lang="hu">Márkanevek</target>
+        <target xml:lang="hu" state="translated">Márkanevek</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.categories" approved="yes">
         <source>Categories</source>
-        <target xml:lang="hu">Kategóriák</target>
+        <target xml:lang="hu" state="translated">Kategóriák</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.citiesTags">
         <source>City, state and country where purchased</source>
@@ -469,7 +462,7 @@
       </trans-unit>
       <trans-unit id="product-detail.summary.countries" approved="yes">
         <source>Countries where sold</source>
-        <target xml:lang="hu">Országok, ahol kapható</target>
+        <target xml:lang="hu" state="translated">Országok, ahol kapható</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.labels">
         <source>Labels, certifications, awards</source>
@@ -562,9 +555,6 @@ Győződjön meg róla, hogy a vonalkód jól megvilágított.</target>
       <trans-unit id="product-search.initial-view.text">
         <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
         <target xml:lang="hu" state="translated">Az Open Food Facts élelmiszerek nyílt adatbázisa, a termékekhez tartozó összetevők, allergének, tápanyagok adataival együtt és egyéb információval, ami a termék csomagolásán vagy címkéjén szerepel.</target>
-        <alt-trans>
-          <target xml:lang="hu">Az Open Food Facts élelmiszerek nyílt adatbázisa, a termékekhez tartozó összetevők, allergének, tápanyagok adataival együtt és minden egyéb információval, ami a termék csomagolásán vagy címkéjén szerepel.</target>
-        </alt-trans>
       </trans-unit>
       <trans-unit id="product-search.no-results">
         <source>No Results</source>
@@ -584,7 +574,7 @@ Győződjön meg róla, hogy a vonalkód jól megvilágított.</target>
       <trans-unit id="product.images.ingredients" approved="yes">
         <source>ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="hu">összetevő(k)</target>
+        <target xml:lang="hu" state="translated">összetevő(k)</target>
       </trans-unit>
       <trans-unit id="product.images.nutrition">
         <source>nutrition table</source>
@@ -620,10 +610,7 @@ A "Profile" ikont Smashicons készítette (https://www.flaticon.com/authors/smas
       </trans-unit>
       <trans-unit id="settings.information.discover">
         <source>Discover</source>
-        <target xml:lang="hu" state="translated">Felfedezés</target>
-        <alt-trans>
-          <target xml:lang="hu">Feltárás</target>
-        </alt-trans>
+        <target xml:lang="hu" state="translated">Felfedez</target>
       </trans-unit>
       <trans-unit id="settings.information.how-to-contribute">
         <source>How To Contribute</source>
@@ -709,82 +696,82 @@ A "Profile" ikont Smashicons készítette (https://www.flaticon.com/authors/smas
     </header>
     <body>
       <trans-unit id="alert.action.ok">
-        <source>alert.action.ok</source>
+        <source>Ok</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">alert.action.ok</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
-        <source>call-to-action.ingredients</source>
+        <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">call-to-action.ingredients</target>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
-        <source>call-to-action.nutrition</source>
+        <source>Take a picture of the nutrition facts</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">call-to-action.nutrition</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
-        <source>call-to-action.summary</source>
+        <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">call-to-action.summary</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
-        <source>product-add.image-upload-error-banner.title</source>
+        <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="hu" state="translated">product-add.image-upload-error-banner.title</target>
+        <target xml:lang="hu" state="translated">Valami hiba történt</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
-        <source>product-add.image-upload-success-banner.title</source>
+        <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="hu" state="translated">product-add.image-upload-success-banner.title</target>
+        <target xml:lang="hu" state="translated">A kép sikeresen fel lett töltve</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
-        <source>product-add.save-error.message</source>
+        <source>Try again later</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">product-add.save-error.message</target>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
-        <source>product-add.save-error.title</source>
+        <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">product-add.save-error.title</target>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
-        <source>product-add.uploading-image-banner.title</source>
+        <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">product-add.uploading-image-banner.title</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
-        <source>product-detail.nutrition-table.for-serving</source>
+        <source>Per serving</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">product-detail.nutrition-table.for-serving</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
-        <source>product-detail.page-title.ingredients</source>
+        <source>Ingredients</source>
         <note>Product detail, ingredients</note>
         <target xml:lang="hu" state="translated">product-detail.page-title.ingredients</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
-        <source>product-detail.page-title.nutrition</source>
+        <source>Nutrition</source>
         <note>Product detail, nutrition</note>
         <target xml:lang="hu" state="translated">product-detail.page-title.nutrition</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
-        <source>product-detail.page-title.nutrition-table</source>
+        <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
         <target xml:lang="hu" state="translated">product-detail.page-title.nutrition-table</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
-        <source>product-detail.page-title.summary</source>
+        <source>Summary</source>
         <note>Product detail, summary</note>
         <target xml:lang="hu" state="translated">product-detail.page-title.summary</target>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
-        <source>user.alert.password-missing</source>
+        <source>Password is required</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">user.alert.password-missing</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
-        <source>user.alert.username-missing</source>
+        <source>Username is required</source>
         <note>No comment provided by engineer.</note>
         <target xml:lang="hu" state="translated">user.alert.username-missing</target>
       </trans-unit>

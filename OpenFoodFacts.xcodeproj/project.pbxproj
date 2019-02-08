@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3000855E2207A3A500DC3896 /* TaxonomiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000855D2207A3A500DC3896 /* TaxonomiesService.swift */; };
+		300085612207AC0700DC3896 /* Additive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085602207AC0700DC3896 /* Additive.swift */; };
+		300085632208777900DC3896 /* OFFUrlsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085622208777900DC3896 /* OFFUrlsHelper.swift */; };
+		303C279D2201AB6B00159961 /* ScanProductSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */; };
+		303C279F2201AB7B00159961 /* ScanProductSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */; };
+		303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */; };
+		303C27A32201AC1800159961 /* ManualBarcodeInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303C27A22201AC1800159961 /* ManualBarcodeInputView.xib */; };
+		303C27A52201C0E500159961 /* NovaGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A42201C0E500159961 /* NovaGroupView.swift */; };
+		307BBEB921FA16B100E2DF9D /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */; };
+		307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */; };
+		30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77D9B22088F0F00B180E9 /* Allergen.swift */; };
+		30E43D78220895B100D7A906 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E43D77220895B100D7A906 /* Category.swift */; };
 		7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437FBA42036F1F800D107B6 /* CreditsViewController.swift */; };
 		74C59E8B203FB9E2006C456F /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C59E8A203FB9E2006C456F /* SharingManager.swift */; };
 		74CB633920373B6D008FC48D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 74CB633820373B6C008FC48D /* Credits.html */; };
@@ -22,7 +34,6 @@
 		9510B0241F6883E00012953A /* ProductServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0231F6883E00012953A /* ProductServiceMock.swift */; };
 		9510B0281F6885690012953A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0271F6885690012953A /* TestHelper.swift */; };
 		9510B02A1F6888770012953A /* UITableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510B0291F6888770012953A /* UITableViewTests.swift */; };
-		9514608A1FE5A9680038E73D /* HistoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951460891FE5A9680038E73D /* HistoryItemCell.swift */; };
 		9518681C1F93537000416226 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9518681B1F93536F00416226 /* KeychainAccess.framework */; };
 		951868211F9357CF00416226 /* CredentialsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951868201F9357CF00416226 /* CredentialsController.swift */; };
 		951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */; };
@@ -161,7 +172,6 @@
 		95A566181FD6037800C997C8 /* LocalizableUISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5660E1FD6037800C997C8 /* LocalizableUISearchBar.swift */; };
 		95A566191FD6037800C997C8 /* LocalizableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5660F1FD6037800C997C8 /* LocalizableLabel.swift */; };
 		95A5661A1FD6037800C997C8 /* LocalizableUIBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A566101FD6037800C997C8 /* LocalizableUIBarItem.swift */; };
-		95A5661B1FD6037800C997C8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A566111FD6037800C997C8 /* Info.plist */; };
 		95AA2AFD1FDAB6E800EE3A14 /* PickerToolbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA2AFC1FDAB6E800EE3A14 /* PickerToolbarViewController.swift */; };
 		95AA2AFF1FDABB2D00EE3A14 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA2AFE1FDABB2D00EE3A14 /* Language.swift */; };
 		95AA2B011FDB264600EE3A14 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AA2B001FDB264500EE3A14 /* Quick.framework */; };
@@ -261,6 +271,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3000855D2207A3A500DC3896 /* TaxonomiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomiesService.swift; sourceTree = "<group>"; };
+		300085602207AC0700DC3896 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
+		300085622208777900DC3896 /* OFFUrlsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFUrlsHelper.swift; sourceTree = "<group>"; };
+		303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProductSummaryView.swift; sourceTree = "<group>"; };
+		303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanProductSummaryView.xib; sourceTree = "<group>"; };
+		303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBarcodeInputView.swift; sourceTree = "<group>"; };
+		303C27A22201AC1800159961 /* ManualBarcodeInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualBarcodeInputView.xib; sourceTree = "<group>"; };
+		303C27A42201C0E500159961 /* NovaGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaGroupView.swift; sourceTree = "<group>"; };
+		307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
+		307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerResultViewController.swift; sourceTree = "<group>"; };
+		30D77D9B22088F0F00B180E9 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
+		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		512702DF21F0B076002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		512702E021F0B077002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7437FBA42036F1F800D107B6 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		74C59E8A203FB9E2006C456F /* SharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
 		74CB633820373B6C008FC48D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
@@ -339,7 +363,6 @@
 		9510B0231F6883E00012953A /* ProductServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceMock.swift; sourceTree = "<group>"; };
 		9510B0271F6885690012953A /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		9510B0291F6888770012953A /* UITableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewTests.swift; sourceTree = "<group>"; };
-		951460891FE5A9680038E73D /* HistoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemCell.swift; sourceTree = "<group>"; };
 		9518681B1F93536F00416226 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		951868201F9357CF00416226 /* CredentialsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsController.swift; sourceTree = "<group>"; };
 		951D609E1F71C12C008E4BCC /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
@@ -852,6 +875,7 @@
 				9518681C1F93537000416226 /* KeychainAccess.framework in Frameworks */,
 				9526F8FA1FE1C5230008E1CC /* Fabric.framework in Frameworks */,
 				9526F8FB1FE1C5230008E1CC /* Crashlytics.framework in Frameworks */,
+				307BBEB921FA16B100E2DF9D /* FloatingPanel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,6 +894,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3000855F2207ABF800DC3896 /* Taxonomies */ = {
+			isa = PBXGroup;
+			children = (
+				300085602207AC0700DC3896 /* Additive.swift */,
+				30D77D9B22088F0F00B180E9 /* Allergen.swift */,
+				30E43D77220895B100D7A906 /* Category.swift */,
+			);
+			path = Taxonomies;
+			sourceTree = "<group>";
+		};
+		303C279B2201AB3B00159961 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */,
+				303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */,
+				303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */,
+				303C27A22201AC1800159961 /* ManualBarcodeInputView.xib */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
 		950163061F2CE9780057B8D5 /* Build */ = {
 			isa = PBXGroup;
 			children = (
@@ -1004,6 +1049,7 @@
 				95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */,
 				950ACC6C1F9945D500B54B78 /* URLs.swift */,
 				74C59E8A203FB9E2006C456F /* SharingManager.swift */,
+				300085622208777900DC3896 /* OFFUrlsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1030,6 +1076,7 @@
 			isa = PBXGroup;
 			children = (
 				957094AE1EA124E800268236 /* ProductService.swift */,
+				3000855D2207A3A500DC3896 /* TaxonomiesService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1152,6 +1199,7 @@
 				956FF89E1F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib */,
 				956FF89F1F1FF0CA0069D678 /* NutritionLevelView.swift */,
 				956FF8A01F1FF0CA0069D678 /* NutritionLevelView.xib */,
+				303C27A42201C0E500159961 /* NovaGroupView.swift */,
 			);
 			path = Nutrition;
 			sourceTree = "<group>";
@@ -1177,6 +1225,7 @@
 		956FF8AC1F1FF0CA0069D678 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				303C279B2201AB3B00159961 /* Scanner */,
 				956FF8B01F1FF0CA0069D678 /* StateViews */,
 				956FF8AD1F1FF0CA0069D678 /* FlashButton.swift */,
 				956FF8AE1F1FF0CA0069D678 /* ProductTableViewCell.swift */,
@@ -1186,7 +1235,6 @@
 				95D060DC1F609DF70052012D /* LoadingCell.swift */,
 				95D060D81F6085320052012D /* LoadingCell.xib */,
 				95C216481FDC8A5900EC5BCB /* Search.storyboard */,
-				951460891FE5A9680038E73D /* HistoryItemCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1208,6 +1256,7 @@
 			children = (
 				95D355A91FDC69FA008961B1 /* SearchViewController.swift */,
 				956FF9601F1FF0FD0069D678 /* ScannerViewController.swift */,
+				307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */,
 				956FF9621F1FF0FD0069D678 /* SearchTableViewController.swift */,
 				956FF9631F1FF0FD0069D678 /* SearchTableViewControllerState.swift */,
 				95DB3BE91FDD97D800E83B76 /* HistoryTableViewController.swift */,
@@ -1226,6 +1275,7 @@
 		95781BAC1EC3A898003E3256 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				3000855F2207ABF800DC3896 /* Taxonomies */,
 				95E9F0421EC8D7AB00BA20B0 /* Nutriments */,
 				95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */,
 				95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */,
@@ -1519,6 +1569,7 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */,
 				9526F8F91FE1C5230008E1CC /* Crashlytics.framework */,
 				9526F8F81FE1C5230008E1CC /* Fabric.framework */,
 				95D3559A1FDC63EA008961B1 /* Realm.framework */,
@@ -1796,7 +1847,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Andrés Pizá Bückmann";
 				TargetAttributes = {
 					951FA76C1F4E22790096AC5A = {
@@ -1808,8 +1859,9 @@
 					};
 					95C2650D1E96D55B004212EC = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = ZC9CYWD334;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					95F31BE91F38F71D00B8AF90 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -1956,6 +2008,7 @@
 				zea,
 				"zh-Hans",
 				zu,
+				nl,
 			);
 			mainGroup = 95C265051E96D55B004212EC;
 			productRefGroup = 95C2650F1E96D55B004212EC /* Products */;
@@ -1993,6 +2046,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				95902B471F2E284700A72EF7 /* SummaryHeaderCellController.xib in Resources */,
+				303C279F2201AB7B00159961 /* ScanProductSummaryView.xib in Resources */,
+				303C27A32201AC1800159961 /* ManualBarcodeInputView.xib in Resources */,
 				95E3ADE21F21433D00CD61D9 /* ProductAddViewController.storyboard in Resources */,
 				9581B3E71F900F1D0036AC7C /* Settings.storyboard in Resources */,
 				957E05C61FE6D59E00868315 /* SingleLetterNutriscoreView.xib in Resources */,
@@ -2002,7 +2057,6 @@
 				951FB09D1EB2989A005CAE33 /* InfoPlist.strings in Resources */,
 				9581B3E61F900F180036AC7C /* Main.storyboard in Resources */,
 				95DFD7CD1F01A45C007FDB69 /* Localizable.strings in Resources */,
-				95A5661B1FD6037800C997C8 /* Info.plist in Resources */,
 				95019A741FDAAABC00A7BB79 /* PickerActionSheet.xib in Resources */,
 				95A565C91FD6011F00C997C8 /* README.md in Resources */,
 				956FF94E1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.xib in Resources */,
@@ -2097,6 +2151,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -2116,6 +2171,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FloatingPanel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2181,10 +2237,12 @@
 				957CBEBE1F33B2FE00A1B398 /* Form.swift in Sources */,
 				958F334B1F3777D7005269C5 /* NutritionTableFormTableViewController.swift in Sources */,
 				95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */,
+				303C279D2201AB6B00159961 /* ScanProductSummaryView.swift in Sources */,
 				95781BC41EC3A898003E3256 /* TagTransform.swift in Sources */,
 				9581B3EA1F912B5C0036AC7C /* LoginViewController.swift in Sources */,
 				95DB3BEC1FDD9B0E00E83B76 /* Instantiable.swift in Sources */,
 				956FF9451F1FF0CA0069D678 /* NutritionHeaderTableViewCell.swift in Sources */,
+				303C27A52201C0E500159961 /* NovaGroupView.swift in Sources */,
 				956FF94D1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift in Sources */,
 				95A566121FD6037800C997C8 /* LocalizableString.swift in Sources */,
 				957E05C21FE6D0B600868315 /* SingleLetterNutriscoreView.swift in Sources */,
@@ -2221,11 +2279,13 @@
 				95A566191FD6037800C997C8 /* LocalizableLabel.swift in Sources */,
 				956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */,
 				953CDD5B1F92A12A0096C428 /* UserViewController.swift in Sources */,
+				30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */,
 				956FF9471F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
 				955BAFFB1FF7C63A0046F419 /* ErrorCodes.swift in Sources */,
 				95D060DB1F6094D30052012D /* UITableView.swift in Sources */,
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
+				300085632208777900DC3896 /* OFFUrlsHelper.swift in Sources */,
 				95513BC31FEAD6CA0027C198 /* PendingUploadItemCell.swift in Sources */,
 				95A566171FD6037800C997C8 /* LocalizableNavigationItem.swift in Sources */,
 				956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */,
@@ -2241,6 +2301,7 @@
 				9549F2BE1FF43F2F00BA797C /* DataManagerHelper.swift in Sources */,
 				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
 				954587941F730C2D00269E71 /* CameraHelper.swift in Sources */,
+				303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
 				95D1D29A1FFC32E400595EA1 /* DeepLinkManager.swift in Sources */,
 				956FF9661F1FF0FD0069D678 /* SearchTableViewControllerState.swift in Sources */,
@@ -2250,9 +2311,11 @@
 				958F33531F378076005269C5 /* InfoRowTableViewCell.swift in Sources */,
 				95A566181FD6037800C997C8 /* LocalizableUISearchBar.swift in Sources */,
 				957094AF1EA124E800268236 /* ProductService.swift in Sources */,
+				307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */,
 				955BAFF91FF668B70046F419 /* PendingProductMergeProcessor.swift in Sources */,
 				951FA7881F50C0670096AC5A /* AccessibilityIdentifiers.swift in Sources */,
 				95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */,
+				300085612207AC0700DC3896 /* Additive.swift in Sources */,
 				957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */,
 				957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */,
 				957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */,
@@ -2266,7 +2329,6 @@
 				95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */,
 				95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */,
 				95D1D2981FFC30D900595EA1 /* RootViewController.swift in Sources */,
-				9514608A1FE5A9680038E73D /* HistoryItemCell.swift in Sources */,
 				95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */,
 				956FF95C1F1FF0CA0069D678 /* StateView.swift in Sources */,
 				95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */,
@@ -2274,10 +2336,12 @@
 				950ACC6D1F9945D500B54B78 /* URLs.swift in Sources */,
 				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
 				950163741F2D1EF20057B8D5 /* TakePictureViewController.swift in Sources */,
+				30E43D78220895B100D7A906 /* Category.swift in Sources */,
 				95A566161FD6037800C997C8 /* LocalizableButton.swift in Sources */,
 				95DDAF621F25401D0096B74E /* CameraController.swift in Sources */,
 				955BAFFE1FF828540046F419 /* RealmPendingUploadItem.swift in Sources */,
 				95A566131FD6037800C997C8 /* Localizable.swift in Sources */,
+				3000855E2207A3A500DC3896 /* TaxonomiesService.swift in Sources */,
 				95019A761FDAB1AD00A7BB79 /* PickerViewController.swift in Sources */,
 				95DDAF661F2916D40096B74E /* ProductImage.swift in Sources */,
 				95A526B51FEAC573005526B1 /* StoryboardNames.swift in Sources */,
@@ -2483,6 +2547,7 @@
 				95818DD21F0AE03A00CBD139 /* zh-Hans */,
 				95818DD81F0AE06000CBD139 /* zu */,
 				95C9C4DA1FB3939100896417 /* en */,
+				512702DF21F0B076002EC65C /* nl */,
 			);
 			name = InfoPlist.strings;
 			path = .;
@@ -2621,6 +2686,7 @@
 				95818DD31F0AE03A00CBD139 /* zh-Hans */,
 				95818DD91F0AE06000CBD139 /* zu */,
 				95C9C4D91FB3932A00896417 /* en */,
+				512702E021F0B077002EC65C /* nl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2672,7 +2738,7 @@
 		};
 		95C2651E1E96D55B004212EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95CF59E11F49F12A00700580 /* Debug.xcconfig */;
+			baseConfigurationReference = 95CF59E21F49F13300700580 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -2686,6 +2752,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2693,6 +2760,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2719,7 +2787,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2744,6 +2812,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2751,6 +2820,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2771,7 +2841,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -2783,20 +2853,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Sources/Frameworks",
 				);
 				INFOPLIST_FILE = Sources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2811,19 +2882,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 19;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Sources/Frameworks",
 				);
 				INFOPLIST_FILE = Sources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2850,6 +2922,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2857,6 +2930,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2883,7 +2957,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2896,20 +2970,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Sources/Frameworks",
 				);
 				INFOPLIST_FILE = Sources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.openfoodfacts;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

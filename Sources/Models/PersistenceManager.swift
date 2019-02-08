@@ -17,6 +17,16 @@ protocol PersistenceManagerProtocol {
     func addHistoryItem(_ product: Product)
     func clearHistory()
 
+    // taxonomies
+    func save(categories: [Category])
+    func category(forCode: String) -> Category?
+
+    func save(allergens: [Allergen])
+    func allergen(forCode: String) -> Allergen?
+
+    func save(additives: [Additive])
+    func additive(forCode: String) -> Additive?
+
     // Products pending upload
     func addPendingUploadItem(_ product: Product)
     func addPendingUploadItem(_ productImage: ProductImage)
@@ -27,6 +37,20 @@ protocol PersistenceManagerProtocol {
 }
 
 class PersistenceManager: PersistenceManagerProtocol {
+
+    fileprivate func saveOrUpdate(objects: [Object]) {
+        let realm = getRealm()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+
+        do {
+            try realm.write {
+                realm.add(objects, update: true)
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
 
     // MARK: - Search history
 
@@ -49,6 +73,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 item.quantity = product.quantity
                 item.imageUrl = product.imageUrl
                 item.nutriscore = product.nutriscore
+                item.novagroup = product.novaGroup
                 item.timestamp = Date()
 
                 if let brands = product.brands, !brands.isEmpty {
@@ -78,6 +103,34 @@ class PersistenceManager: PersistenceManagerProtocol {
                 Crashlytics.sharedInstance().recordError(error)
             }
         }
+    }
+
+    // MARK: - Taxonomies
+    func save(categories: [Category]) {
+        saveOrUpdate(objects: categories)
+        log.info("Saved \(categories.count) categories in taxonomies database")
+    }
+
+    func category(forCode code: String) -> Category? {
+        return getRealm().object(ofType: Category.self, forPrimaryKey: code)
+    }
+
+    func save(allergens: [Allergen]) {
+        saveOrUpdate(objects: allergens)
+        log.info("Saved \(allergens.count) allergens in taxonomies database")
+    }
+
+    func allergen(forCode code: String) -> Allergen? {
+        return getRealm().object(ofType: Allergen.self, forPrimaryKey: code)
+    }
+
+    func save(additives: [Additive]) {
+        saveOrUpdate(objects: additives)
+        log.info("Saved \(additives.count) additives in taxonomies database")
+    }
+
+    func additive(forCode code: String) -> Additive? {
+        return getRealm().object(ofType: Additive.self, forPrimaryKey: code)
     }
 
     // MARK: - Products pending upload

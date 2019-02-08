@@ -14,15 +14,20 @@ struct Product: Mappable {
     var brands: [String]?
     private var _quantity: String?
     var imageUrl: String?
+    var imageSmallUrl: String?
     var frontImageUrl: String?
+    var frontImageSmallUrl: String?
     var barcode: String?
     var packaging: [String]?
     var categories: [String]?
+    var categoriesTags: [String]?
     var nutriscore: String?
+    var novaGroup: String?
     var manufacturingPlaces: String?
     var origins: String?
     var labels: [String]?
     var citiesTags: [String]?
+    var embCodesTags: [String]?
     var stores: [String]?
     var countries: [String]?
     var ingredientsImageUrl: String?
@@ -64,15 +69,20 @@ struct Product: Mappable {
         brands <- (map[OFFJson.BrandsKey], ArrayTransform())
         _quantity <- map[OFFJson.QuantityKey]
         frontImageUrl <- map[OFFJson.ImageFrontUrlKey]
+        frontImageSmallUrl <- map[OFFJson.ImageFrontSmallUrlKey]
         imageUrl <- map[OFFJson.ImageUrlKey]
+        imageSmallUrl <- map[OFFJson.ImageSmallUrlKey]
         barcode <- map[OFFJson.CodeKey]
         packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
         categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
+        categoriesTags <- (map[OFFJson.CategoriesTagsKey])
         nutriscore <- map[OFFJson.NutritionGradesKey]
+        novaGroup <- map[OFFJson.NovaGroupKey]
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
         origins <- map[OFFJson.OriginsKey]
         labels <- (map[OFFJson.LabelsKey], ArrayTransform())
         citiesTags <- map[OFFJson.CitiesTagsKey]
+        embCodesTags <- map[OFFJson.EmbCodesTagsKey]
         stores <- (map[OFFJson.StoresKey], ArrayTransform())
         countries <- (map[OFFJson.CountriesKey], ArrayTransform())
         ingredientsImageUrl <- map[OFFJson.ImageIngredientsUrlKey]

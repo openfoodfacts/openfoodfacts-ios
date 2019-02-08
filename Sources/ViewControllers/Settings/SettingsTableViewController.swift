@@ -32,8 +32,8 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let Settings = SettingsSection(rawValue: section) else { return "" }
-        switch Settings {
+        guard let settings = SettingsSection(rawValue: section) else { return "" }
+        switch settings {
         case .item:
             return "settings.tab-bar.item".localized
         case .information:
@@ -47,7 +47,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
     @IBAction func didTapOpenBeautyFacts(_ sender: UIButton) {
         guard let url = URL(string: URLs.OpenBeautyFacts) else { return }
-        UIApplication.shared.openURL(url)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -73,7 +73,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         if let url = url {
             openUrlInApp(url)
         } else if let url = urlsupport {
-            UIApplication.shared.openURL(url)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 

@@ -1,0 +1,241 @@
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Scan barcode";
+
+// Generic strings that could be useful anywhere.
+"generic.back" = "Back";
+"generic.search" = "ಹುಡುಕಿ";
+
+// Product Search
+
+"product-search.search-placeholder" = "ಹೆಸರು ಅಥವಾ ಬಾರ್ಕೋಡ್ ಮೂಲಕ ಉತ್ಪನ್ನಕ್ಕಾಗಿ ಹುಡುಕಿ";
+"product-search.no-results" = "ಫಲಿತಾಂಶಗಳು ಇಲ್ಲ";
+"product-search.error-view.title" = "ಏನೋ ತಪ್ಪಾಗಿದೆ";
+"product-search.error-view.subtitle" = "ದಯವಿಟ್ಟು ಪುನಹ ಪ್ರಯತ್ನಿಸಿ";
+"product-search.initial-view.text" = "ಓಪನ್ ಬ್ಯೂಟಿ ಫ್ಯಾಕ್ಟ್ಸ್ ಎನ್ನುವುದು ಪದಾರ್ಥಗಳು, ಅಲರ್ಜಿನ್ಗಳು, ಸೂಚಕಗಳು ಮತ್ತು ಉತ್ಪನ್ನದ ಲೇಬಲ್ಗಳಲ್ಲಿ ನಾವು ಪಡೆಯಬಹುದಾದ ಮಾಹಿತಿಯ ಎಲ್ಲಾ ಸುಳಿವುಗಳೊಂದಿಗೆ ಕಾಸ್ಮೆಟಿಕ್ ಉತ್ಪನ್ನಗಳ ಡೇಟಾಬೇಸ್ ಆಗಿದೆ.";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "ಉತ್ಪನ್ನದ ಬಾರ್ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ";
+"product-scanner.overlay.extended-user-help" = "ಬಾರ್ಕೋಡ್ ಅನ್ನು ಕಂಡುಹಿಡಿಯಲಾಗಲಿಲ್ಲ.\nತೆರೆಯಲ್ಲಿ ಬಾರ್ಕೋಡ್ ಅನ್ನು ಕೇಂದ್ರೀಕರಿಸಿ.\nಬಾರ್ಕೋಡ್ ಚೆನ್ನಾಗಿ ಬೆಳಗಿದೆಯೇ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "ಬಾರ್ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡುವಲ್ಲಿ ದೋಷ. ದಯವಿಟ್ಟು ಕೆಲವು ಕ್ಷಣಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "ದಯವಿಟ್ಟು ಬಾರ್ಕೋಡ್ಗಳನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಲು ಕ್ಯಾಮರಾವನ್ನು ಬಳಸಲು ಅನುಮತಿ ನೀಡಿ";
+"product-scanner.permissions.noPermissions.action.title" = "ಸೆಟ್ಟಿಂಗ್ಗಳನ್ನು ತೆರೆಯಿರಿ";
+
+"product-scanner.permissions.failed.title" = "ಬಾರ್ಕೋಡ್ ಸ್ಕ್ಯಾನಿಂಗ್ ಅನ್ನು ಹೊಂದಿಸಲಾಗಲಿಲ್ಲ";
+"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "ಬಾರ್ಕೋಡ್ ಸ್ಕ್ಯಾನಿಂಗ್ ಬಿಡಿ";
+
+"product-scanner.search.status" = "ಉತ್ಪನ್ನವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ %s";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "ಚಿತ್ರವನ್ನು ಅಪ್ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ ...";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "ಏನೋ ತಪ್ಪಾಗಿದೆ";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "ದಯವಿಟ್ಟು ಚಿತ್ರವನ್ನು ಮತ್ತೆ ತೆಗೆದುಕೊಳ್ಳಲು ಪ್ರಯತ್ನಿಸಿ";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "ಚಿತ್ರವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಅಪ್ಲೋಡ್ ಮಾಡಲಾಗಿದೆ";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "ಉತ್ಪನ್ನವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸೇರಿಸಲಾಗಿದೆ. ಧನ್ಯವಾದ!";
+"product-add.uploaded-image" = "ಚಿತ್ರ ಅಪ್ಲೋಡ್ ಮಾಡಲಾಗಿದೆ, ಧನ್ಯವಾದಗಳು!";
+"product-add.save-error.title" = "ಉತ್ಪನ್ನವನ್ನು ಉಳಿಸುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ";
+"product-add.save-error.message" = "ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ";
+"alert.action.ok" = "ಸರಿ";
+"product-add.language.toolbar-title" = "Select a language";
+/* Product Add name text field */
+"product-add.placeholder.name" = "Product name";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "ಬ್ರ್ಯಾಂಡ್";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity-value" = "Quantity value";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "ಈ ಉತ್ಪನ್ನವನ್ನು ಸೇರಿಸಿ";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "ನಿಮ್ಮ ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಲು ಮರೆಯದಿರಿ";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "'ಉಳಿಸು' ಬಟನ್ಗೆ ಕೆಳಗೆ ಸ್ಕ್ರಾಲ್ ಮಾಡಿ";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "ಸಾರಾಂಶ";
+"product-detail.page-title.ingredients" = "ಪದಾರ್ಥಗಳು";
+"product-detail.page-title.nutrition" = "ಪೋಷಣೆ";
+"product-detail.page-title.nutrition-table" = "ನ್ಯೂಟ್ರಿಷನ್ ಟೇಬಲ್";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "ಬಾರ್‌ ಕೋಡ್";
+"product-detail.summary.quantity" = "ಪ್ರಮಾಣ";
+"product-detail.summary.packaging" = "ಪ್ಯಾಕೇಜಿಂಗ್";
+"product-detail.summary.brands" = "ಬ್ರಾಂಡ್ಸ್";
+"product-detail.summary.manufacturing-places" = "ಉತ್ಪಾದನಾ ಅಥವಾ ಸಂಸ್ಕರಣೆ ಸ್ಥಳಗಳು:";
+"product-detail.summary.origins" = "ಪದಾರ್ಥಗಳ ಮೂಲ:";
+"product-detail.summary.categories" = "ವರ್ಗಗಳು";
+"product-detail.summary.labels" = "ಲೇಬಲ್ಗಳು, ಪ್ರಮಾಣೀಕರಣಗಳು, ಪ್ರಶಸ್ತಿಗಳು:";
+"product-detail.summary.citiesTags" = "ಖರೀದಿಸಿದ ನಗರ, ರಾಜ್ಯ ಮತ್ತು ದೇಶ:";
+"product-detail.summary.stores" = "ಅಂಗಡಿಗಳು";
+"product-detail.summary.countries" = "Country";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "ಪದಾರ್ಥಗಳ ಪಟ್ಟಿ";
+"product-detail.ingredients.allergens-list" = "ಅಲರ್ಜಿಗಳು ಅಥವಾ ಅಸಹಿಷ್ಣುತೆಗಳಿಗೆ ಕಾರಣವಾಗುವ ಪದಾರ್ಥಗಳು ಅಥವಾ ಉತ್ಪನ್ನಗಳು:";
+"product-detail.ingredients.traces-list" = "ಕುರುಹುಗಳು:";
+"product-detail.ingredients.additives-list" = "ಸೇರ್ಪಡೆ";
+"product-detail.ingredients.palm-oil-ingredients" = "ಪಾಮ್ ಎಣ್ಣೆಯಿಂದ ಬೇಕಾಗುವ ಪದಾರ್ಥಗಳು";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "ತಾಳೆ ಎಣ್ಣೆಯಿಂದ ಬೇಕಾದ ಪದಾರ್ಥಗಳು";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "ವಿತರಣೆಯ ಗಾತ್ರ";
+"product-detail.nutrition.carbon-footprint" = "ಇಂಗಾಲದ ಹೆಜ್ಜೆಗುರುತು / CO2 ಹೊರಸೂಸುವಿಕೆಗಳು: ";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "ಪೌಷ್ಟಿಕ ಅಂಶಗಳು";
+"product-detail.nutrition-table.for-100g" = "100 ಗ್ರಾಂ";
+"product-detail.nutrition-table.for-serving" = "ಪ್ರತಿ ಸೇವೆಗೆ";
+
+// Nutrition levels
+"nutrition-level.low" = "ಕಡಿಮೆ ಪ್ರಮಾಣದಲ್ಲಿ";
+"nutrition-level.moderate" = "ಮಧ್ಯಮ ಪ್ರಮಾಣದಲ್ಲಿ";
+"nutrition-level.high" = "ಹೆಚ್ಚಿನ ಪ್ರಮಾಣದಲ್ಲಿ";
+
+// Nutrition
+"nutrition.energy" = "ಶಕ್ತಿ";
+"nutrition.fats" = "ಫ್ಯಾಟ್";
+"nutrition.fats.saturated-fat" = "ಪರಿಷ್ಕರಿಸಿದ ಕೊಬ್ಬು";
+"nutrition.fats.mono-unsaturated-fat" = "ಏಕಕಾಲೀನ ಕೊಬ್ಬು";
+"nutrition.fats.poly-unsaturated-fat" = "ಪಾಲಿಅನ್ಸುಟರೇಟೆಡ್ ಕೊಬ್ಬು";
+"nutrition.fats.omega3" = "ಒಮೇಗಾ 3";
+"nutrition.fats.omega6" = "ಒಮೇಗಾ 6";
+"nutrition.fats.omega9" = "ಒಮೇಗಾ 9";
+"nutrition.fats.trans-fat" = "ಟ್ರಾನ್ಸ್ ಕೊಬ್ಬು";
+"nutrition.fats.cholesterol" = "ಕೊಲೆಸ್ಟರಾಲ್";
+"nutrition.carbohydrate" = "ಕಾರ್ಬೋಹೈಡ್ರೇಟ್";
+"nutrition.carbohydrate.sugars" = "ಸಕ್ಕರೆಗಳು";
+"nutrition.carbohydrate.sucrose" = "ಸುಕ್ರೋಸ್";
+"nutrition.carbohydrate.glucose" = "ಗ್ಲುಕೋಸ್";
+"nutrition.carbohydrate.fructose" = "ಫ್ರಕ್ಟೋಸ್";
+"nutrition.carbohydrate.lactose" = "ಲ್ಯಾಕ್ಟೋಸ್";
+"nutrition.carbohydrate.maltose" = "ಮಾಲ್ಟೋಸ್";
+"nutrition.carbohydrate.maltodextrins" = "ಮಾಲ್ಟೋಡೆಕ್ಸ್ಟ್ರಿನ್ಸ್";
+"nutrition.fiber" = "ಆಹಾರ ಫೈಬರ್";
+"nutrition.proteins" = "ಪ್ರೋಟೀನ್ಗಳು";
+"nutrition.proteins.casein" = "ಕೇಸಿನ್";
+"nutrition.proteins.serum-proteins" = "ರಕ್ತಸಾರ ಪ್ರೋಟೀನ್ಗಳು";
+"nutrition.proteins.nucleotides" = "ನ್ಯೂಕ್ಲಿಯೋಟೈಡ್ಗಳು";
+"nutrition.salt" = "ಸಾಲ್ಟ್";
+"nutrition.sodium" = "ಸೋಡಿಯಂ";
+"nutrition.alcohol" = "ಆಲ್ಕೋಹಾಲ್";
+"nutrition.vitamins" = "ವಿಟಮಿನ್ ಎ";
+"nutrition.vitamins.a" = "ವಿಟಮಿನ್ ಎ";
+"nutrition.vitamins.beta-carotene" = "ಬೀಟಾ ಕೆರೋಟಿನ್";
+"nutrition.vitamins.d" = "ವಿಟಮಿನ್ ಡಿ";
+"nutrition.vitamins.e" = "ವಿಟಮಿನ್ ಇ";
+"nutrition.vitamins.k" = "ಜೀವಸತ್ವ ಕೆ";
+"nutrition.vitamins.c" = "ವಿಟಮಿನ್ ಡಿ";
+"nutrition.vitamins.b1" = "ಜೀವಸತ್ವ B1";
+"nutrition.vitamins.b2" = "ಜೀವಸತ್ವ B2";
+"nutrition.vitamins.pp" = "ಜೀವಸತ್ವ ಪಿಪಿ";
+"nutrition.vitamins.b6" = "ಜೀವಸತ್ವ B6";
+"nutrition.vitamins.b9" = "ಜೀವಸತ್ವ B9";
+"nutrition.vitamins.b12" = "ವಿಟಮಿನ್ ಬಿ 12";
+"nutrition.vitamins.biotin" = "ಬಯೊಟಿನ್";
+"nutrition.vitamins.pantothenic-acid" = "ಪಾಂಟೊಥೆನಿಕ್ ಆಮ್ಲ";
+"nutrition.minerals" = "ಖನಿಜಗಳು";
+"nutrition.minerals.silica" = "ಸಿಲಿಕಾ";
+"nutrition.minerals.bicarbonate" = "ಬೈಕಾರ್ಬನೇಟ್";
+"nutrition.minerals.potassium" = "ಪೊಟ್ಯಾಸಿಯಮ್";
+"nutrition.minerals.chloride" = "ಕ್ಲೋರೈಡ್";
+"nutrition.minerals.calcium" = "ಕ್ಯಾಲ್ಸಿಯಂ";
+"nutrition.minerals.phosphorus" = "ರಂಜಕ";
+"nutrition.minerals.iron" = "ಕಬ್ಬಿಣ";
+"nutrition.minerals.magnesium" = "ಮೆಗ್ನೀಸಿಯಮ್";
+"nutrition.minerals.zinc" = "ಝಿಂಕ್";
+"nutrition.minerals.copper" = "ಕಾಪರ್";
+"nutrition.minerals.manganese" = "ಮ್ಯಾಂಗನೀಸ್";
+"nutrition.minerals.fluoride" = "ಫ್ಲೋರೈಡ್";
+"nutrition.minerals.selenium" = "ಸೆಲೆನಿಯಮ್";
+"nutrition.minerals.chromium" = "Chromium";
+"nutrition.minerals.molybdenum" = "ಮಾಲಿಬ್ಡಿನಮ್";
+"nutrition.minerals.iodine" = "ಅಯೋಡಿನ್";
+"nutrition.minerals.caffeine" = "ಕ್ಯಾಫೀನ್";
+"nutrition.minerals.taurine" = "ಟೌರೀನ್";
+"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.fruits-vegetables-nuts" = "ಹಣ್ಣುಗಳು, ತರಕಾರಿಗಳು, ಬೀಜಗಳು";
+"nutrition.minerals.collagen-meat-protein-ratio" = "ಕಾಲಜನ್ ಮಾಂಸ ಪ್ರೋಟೀನ್ ಅನುಪಾತ";
+"nutrition.minerals.cocoa" = "ಕೊಕೊ";
+"nutrition.minerals.chlorophyl" = "ಕ್ಲೋರೊಫಿಲ್";
+
+// Call to action
+"call-to-action.summary" = "ಪದಾರ್ಥಗಳ ಚಿತ್ರವನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ";
+"call-to-action.ingredients" = "ಪದಾರ್ಥಗಳ ಚಿತ್ರವನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ";
+"call-to-action.nutrition" = "ಪದಾರ್ಥಗಳ ಚಿತ್ರವನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.take-picture" = "ಪದಾರ್ಥಗಳ ಚಿತ್ರವನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ";
+"product.images.product" = "ಉತ್ಪನ್ನಗಳು";
+"product.images.picture" = "ಚಿತ್ರ ✅";
+"product.images.front" = "ಮುಂದೆ";
+"product.images.ingredients" = "ingredients";
+"product.images.nutrition" = "ನ್ಯೂಟ್ರಿಷನ್ ಟೇಬಲ್";
+
+// Settings storyboard
+"settings.tab-bar.item" = "ಸೆಟ್ಟಿಂಗ್";
+"settings.sections.information" = "ಮಾಹಿತಿ";
+"settings.sections.contribute" = "Contribute";
+"settings.sections.about" = "ಬಗ್ಗೆ";
+"settings.credits.title" = "ಕ್ರೆಡಿಟ್ಸ್";
+"settings.scan-on-launch.title" = "ಅಪ್ಲಿಕೇಶನ್ ಲಾಂಚ್ನಲ್ಲಿ ಸ್ಕ್ಯಾನ್ ತೋರಿಸಿ";
+"settings.information.discover" = "ಅನ್ವೇಷಿಸಿ";
+"settings.contribute.how-to-contribute" = "ಕೊಡುಗೆ ಹೇಗೆ";
+"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.about.contact" = "ಸಂಪರ್ಕಗಳು";
+"settings.about.frequently-asked-questions" = "ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು";
+"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
+"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "ಬಳಕೆದಾರ";
+"user.log-in" = "ಲಾಗಿನ್";
+"user.log-out" = "ಲಾಗ್ ಔಟ್";
+"user.username" = "ಬಳಕೆದಾರನ ಹೆಸರು";
+"user.password" = "ಪಾಸ್‌ವರ್ಡ್";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "ನಿಮ್ಮ ಕೊಡುಗೆಗಳು";
+"user.products-pending-upload.button" = "Products pending upload";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "ಖಾತೆ ರಚಿಸಿ";
+"user.why-log-in.text" = "ನಿಮ್ಮ ಖಾತೆಯೊಂದಿಗೆ ಲಾಗಿನ್ ಆಗಿ ನಿಮ್ಮ ಖಾತೆಗೆ ನಿಮ್ಮ ಎಲ್ಲಾ ಕೊಡುಗೆಗಳನ್ನು ಸಂಯೋಜಿಸಲಾಗುತ್ತದೆ.";
+"user.alert.wrong-credentials.title" = "ಪ್ರವೇಶ ವಿಫಲವಾಯಿತು";
+"user.alert.wrong-credentials.subtitle" = "ನಿಮ್ಮ ಬಳಕೆದಾರ ಹೆಸರು ಮತ್ತು ಪಾಸ್ವರ್ಡ್ ಸರಿಯಾಗಿವೆಯೆ ಎಂದು ಪರಿಶೀಲಿಸಿ";
+"user.alert.generic-error.title" = "ಲಾಗ್ ಇನ್ ಮಾಡುವಲ್ಲಿ ದೋಷ ಕಂಡುಬಂದಿದೆ";
+"user.alert.generic-error.subtitle" = "ದಯವಿಟ್ಟು ಕೆಲವು ಕ್ಷಣಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ";
+"user.alert.username-missing" = "ಬಳಕೆದಾರಹೆಸರು ಅಗತ್ಯವಿದೆ";
+"user.alert.password-missing" = "ಗುಪ್ತಪದದ ಅಗತ್ಯವಿದೆ";
+"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
+
+// Search history
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "ತೆರವು ಮಾಡಿ";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewWeeks" = "A few weeks ago";
+"history.section-titles.fewMonths" = "A few months ago";
+"history.section-titles.longTime" = "A long time ago";

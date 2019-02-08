@@ -16,7 +16,7 @@ class NutritionTableRowTableViewCell: ProductDetailBaseCell {
 
     fileprivate let fontSize: CGFloat = 17
 
-    override func configure(with formRow: FormRow) {
+    override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let nutritionTableRow = formRow.value as? NutritionTableRow else { return }
 
         let attributes = [NSAttributedStringKey.font: nutritionTableRow.highlight ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)]

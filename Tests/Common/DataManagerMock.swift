@@ -63,7 +63,7 @@ class DataManagerMock: DataManagerProtocol {
         }
     }
 
-    func getProduct(byBarcode barcode: String, isScanning: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
+    func getProduct(byBarcode barcode: String, isScanning: Bool, isSummary: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
         productByBarcodeCalled = true
         productByBarcodeScanning = isScanning
 
@@ -88,6 +88,19 @@ class DataManagerMock: DataManagerProtocol {
         } else {
             onError(error)
         }
+    }
+
+    // MARK: - taxonomies
+    func category(forTag: String) -> OpenFoodFacts.Category? {
+        return nil
+    }
+
+    func allergen(forTag: Tag) -> Allergen? {
+        return nil
+    }
+
+    func additive(forTag: Tag) -> Additive? {
+        return nil
     }
 
     // MARK: - Search history
