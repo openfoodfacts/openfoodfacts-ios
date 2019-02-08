@@ -32,21 +32,19 @@ class IngredientsHeaderCellController: TakePictureViewController {
 
     fileprivate func setupViews() {
         if let imageUrl = product.ingredientsImageUrl, let url = URL(string: imageUrl) {
+            log.debug("imageUrl = \(imageUrl)")
             ingredients.kf.indicatorType = .activity
-            //ingredients.kf.setImage(with: url, options: [.processor(RotatingProcessor())]) { (_, _, cacheType, _) in
-                ingredients.kf.setImage(with: url, options: [.processor(RotatingProcessor())]) { result in
-                    switch result {
-                    case .success(let value):
-                        // When the image is not cached in memory, call delegate method to handle the cell's size change
-                        if value.cacheType != .memory {
-                            self.delegate?.cellSizeDidChange()
-                        }
-                    case .failure(let error):
-                        print("Error: \(error)")
+            ingredients.kf.setImage(with: url, options: nil) { result in
+                switch result {
+                case .success(let value):
+                    // When the image is not cached in memory, call delegate method to handle the cell's size change
+                    if value.cacheType != .memory {
+                        self.delegate?.cellSizeDidChange()
                     }
+                case .failure(let error):
+                    print("Error: \(error)")
                 }
-
-            //}
+            }
 
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             ingredients.addGestureRecognizer(tap)
