@@ -30,36 +30,39 @@
                     <rect key="frame" x="0.0" y="0.0" width="657" height="152"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sx2-GJ-Tca">
-                            <rect key="frame" x="0.0" y="8" width="217" height="136"/>
+                            <rect key="frame" x="0.0" y="8" width="136" height="136"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Sx2-GJ-Tca" secondAttribute="height" multiplier="1:1" id="2tv-2H-czu"/>
+                            </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="XTn-1C-s9c">
-                            <rect key="frame" x="225" y="8" width="432" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="XTn-1C-s9c">
+                            <rect key="frame" x="144" y="8" width="513" height="20.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naturalia 125g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="ACG-cp-2nn">
-                            <rect key="frame" x="225" y="98.5" width="234.5" height="20.5"/>
+                            <rect key="frame" x="144" y="98.5" width="247.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="125g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="BWs-qe-xhF">
-                            <rect key="frame" x="225" y="123" width="234.5" height="21"/>
+                            <rect key="frame" x="144" y="123" width="247.5" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJo-zp-gKS" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="467.5" y="67" width="143" height="77"/>
+                            <rect key="frame" x="399.5" y="36.5" width="199.5" height="107.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="BJo-zp-gKS" secondAttribute="height" multiplier="389:210" id="Sbq-wS-s7I"/>
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="nova-group-1" translatesAutoresizingMaskIntoConstraints="NO" id="gHh-dz-dcC" customClass="NovaGroupView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="618.5" y="80" width="30.5" height="51"/>
+                            <rect key="frame" x="607" y="55" width="42" height="70.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="gHh-dz-dcC" secondAttribute="height" multiplier="131:220" id="iAi-Sq-NUk"/>
                             </constraints>
@@ -67,20 +70,20 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="BJo-zp-gKS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XTn-1C-s9c" secondAttribute="bottom" constant="8" id="3Hd-aT-VFC"/>
+                        <constraint firstItem="ACG-cp-2nn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XTn-1C-s9c" secondAttribute="bottom" constant="8" id="87t-wR-uvT"/>
                         <constraint firstItem="gHh-dz-dcC" firstAttribute="leading" secondItem="BJo-zp-gKS" secondAttribute="trailing" constant="8" id="9LP-K9-ayR"/>
-                        <constraint firstItem="BJo-zp-gKS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XTn-1C-s9c" secondAttribute="bottom" constant="8" id="GB9-Du-tLo"/>
                         <constraint firstItem="gHh-dz-dcC" firstAttribute="centerY" secondItem="BJo-zp-gKS" secondAttribute="centerY" id="IW3-jt-kAf"/>
-                        <constraint firstItem="BJo-zp-gKS" firstAttribute="width" secondItem="Sx2-GJ-Tca" secondAttribute="width" multiplier="0.66" id="KaQ-l5-gI2"/>
                         <constraint firstItem="XTn-1C-s9c" firstAttribute="top" secondItem="Sx2-GJ-Tca" secondAttribute="top" id="Nud-o8-gXp"/>
                         <constraint firstItem="XTn-1C-s9c" firstAttribute="leading" secondItem="Sx2-GJ-Tca" secondAttribute="trailing" constant="8" id="OjS-aw-fKO"/>
                         <constraint firstAttribute="trailing" secondItem="XTn-1C-s9c" secondAttribute="trailing" id="R96-zU-flv"/>
-                        <constraint firstItem="Sx2-GJ-Tca" firstAttribute="width" secondItem="6IP-af-Gp6" secondAttribute="width" multiplier="0.33" id="SID-NO-9M5"/>
                         <constraint firstItem="Sx2-GJ-Tca" firstAttribute="top" secondItem="6IP-af-Gp6" secondAttribute="top" constant="8" id="Sqt-Oh-dxr"/>
                         <constraint firstAttribute="bottom" secondItem="Sx2-GJ-Tca" secondAttribute="bottom" constant="8" id="XVo-KN-du3"/>
                         <constraint firstItem="gHh-dz-dcC" firstAttribute="height" secondItem="BJo-zp-gKS" secondAttribute="height" multiplier="0.66" id="Xd3-tL-Mpr"/>
                         <constraint firstAttribute="bottom" secondItem="BJo-zp-gKS" secondAttribute="bottom" constant="8" id="bwd-Vn-qaQ"/>
                         <constraint firstAttribute="trailing" secondItem="gHh-dz-dcC" secondAttribute="trailing" constant="8" id="dgA-5X-hfK"/>
                         <constraint firstItem="BWs-qe-xhF" firstAttribute="bottom" secondItem="Sx2-GJ-Tca" secondAttribute="bottom" id="f25-cC-E15"/>
+                        <constraint firstItem="gHh-dz-dcC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XTn-1C-s9c" secondAttribute="bottom" constant="8" id="gcF-iO-PPz"/>
                         <constraint firstItem="BWs-qe-xhF" firstAttribute="trailing" secondItem="ACG-cp-2nn" secondAttribute="trailing" id="het-Xd-Jb1"/>
                         <constraint firstItem="BWs-qe-xhF" firstAttribute="leading" secondItem="ACG-cp-2nn" secondAttribute="leading" id="lJK-6F-LWC"/>
                         <constraint firstItem="ACG-cp-2nn" firstAttribute="leading" secondItem="Sx2-GJ-Tca" secondAttribute="trailing" constant="8" id="w5I-vL-3SM"/>
