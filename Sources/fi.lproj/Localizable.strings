@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Skannaa viivakoodi";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Takaisin";
@@ -25,14 +25,14 @@
 "product-scanner.overlay.user-help" = "Lue tuotteen viivakoodi";
 "product-scanner.overlay.extended-user-help" = "Viivakoodia ei löydy.\nKeskitä viivakoodi näyttöön.\nVarmista, että viivakoodi on hyvin valaistu.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Skanneri";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Viivakoodin luku epäonnistui. Yritä hetken kuluttua uudestaan.";
 "product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts tarvitsee kameran käyttöoikeuden";
 "product-scanner.permissions.noPermissions.message" = "Anna lupa käyttää kameraa viivakoodien skannaamiseen";
-"product-scanner.permissions.noPermissions.action.title" = "Open Settings";
+"product-scanner.permissions.noPermissions.action.title" = "Avaa asetukset";
 
 "product-scanner.permissions.failed.title" = "Viivakoodinlukua ei voitu alustaa";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
@@ -56,7 +56,7 @@
 "product-add.save-error.title" = "Tuotteen tallentaminen epäonnistui";
 "product-add.save-error.message" = "Yritä myöhemmin uudelleen";
 "alert.action.ok" = "Ok";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Valitse kieli";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Tuotteen nimi";
 /* Product Add brand text field */
@@ -88,6 +88,7 @@
 "product-detail.summary.labels" = "Etiketit, sertifikaatit, palkinnot";
 "product-detail.summary.citiesTags" = "Kaupungin, valtion ja ostomaassa";
 "product-detail.summary.stores" = "Myymälät";
+"product-detail.summary.embCodes" = "Packager code";
 "product-detail.summary.countries" = "Maat myyntiehdot";
 
 // Product detail ingredients info row labels
@@ -202,9 +203,9 @@
 "settings.scan-on-launch.title" = "Avaa viivakoodinluku sovelluksen käynnistyessä";
 "settings.information.discover" = "Löydä";
 "settings.contribute.how-to-contribute" = "Miten voit auttaa";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
-"settings.about.contact" = "Contact";
+"settings.contribute.support-open-food-facts" = "Tue Open Food Factsia";
+"settings.contribute.translate-open-food-facts" = "Käännä Open Food Facts";
+"settings.about.contact" = "Yhteystiedot";
 "settings.about.frequently-asked-questions" = "Frequently Asked Questions";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
 "settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
@@ -229,13 +230,13 @@
 "user.alert.username-missing" = "Käyttäjätunnus on pakollinen";
 "user.alert.password-missing" = "Salasana tarvitaan";
 "pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"pending-upload.hud.status" = "Lähetetään";
 
 // Search history
 "history.cell.privacy" = "Your search history is only stored on your device";
 "history.button.clear" = "Tyhjennä";
 "history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
+"history.section-titles.fewDays" = "Muutama päivä sitten";
+"history.section-titles.fewWeeks" = "Muutama viikko sitten";
+"history.section-titles.fewMonths" = "Muutama kuukausi sitten";
+"history.section-titles.longTime" = "Kauan sitten";
