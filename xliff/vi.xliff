@@ -7,7 +7,7 @@
     <body>
       <trans-unit id="CFBundleDisplayName">
         <source>Open Nutrition</source>
-        <target xml:lang="vi" state="needs-translation">Open Nutrition</target>
+        <target xml:lang="vi" state="translated">Dinh dưỡng cho mọi người</target>
       </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
@@ -31,69 +31,81 @@
       <trans-unit id="alert.action.ok">
         <source>Ok</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Ok</target>
+        <target xml:lang="vi" state="translated">Đồng ý</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Take a picture of the ingredients</target>
+        <target xml:lang="vi" state="translated">Hãy chụp các thành phần nguyên liệu</target>
+        <alt-trans>
+          <target xml:lang="vi">Chụp các thành phần nguyên liệu</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition table</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Take a picture of the nutrition table</target>
+        <target xml:lang="vi" state="translated">Hãy chụp bảng dinh dưỡng</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
         <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Take a picture of the front</target>
+        <target xml:lang="vi" state="translated">Hãy chụp phía trước sản phầm</target>
       </trans-unit>
       <trans-unit id="nutrition-level.high">
         <source>in high quantity</source>
         <note>Nutrition Level, high</note>
-        <target xml:lang="vi" state="needs-translation">in high quantity</target>
+        <target xml:lang="vi" state="translated">nhiều quá đấy</target>
+        <alt-trans>
+          <target xml:lang="vi">chất lượng đấy</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition-level.low">
         <source>in low quantity</source>
         <note>Nutrition Level, low</note>
-        <target xml:lang="vi" state="needs-translation">in low quantity</target>
+        <target xml:lang="vi" state="translated">hơi ít quá</target>
+        <alt-trans>
+          <target xml:lang="vi">có vẻ kém đấy</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition-level.moderate">
         <source>in moderate quantity</source>
         <note>Nutrition Level, moderate</note>
-        <target xml:lang="vi" state="needs-translation">in moderate quantity</target>
+        <target xml:lang="vi" state="translated">vừa phải rồi</target>
+        <alt-trans>
+          <target xml:lang="vi">cũng tạm được</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.alcohol">
         <source>Alcohol</source>
-        <target xml:lang="vi" state="needs-translation">Alcohol</target>
+        <target xml:lang="vi" state="translated">Cồn</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate">
         <source>Carbohydrate</source>
-        <target xml:lang="vi" state="needs-translation">Carbohydrate</target>
+        <target xml:lang="vi" state="translated">Cacbohydrat</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.fructose">
         <source>Fructose</source>
-        <target xml:lang="vi" state="needs-translation">Fructose</target>
+        <target xml:lang="vi" state="translated">Đường đôi</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.glucose">
         <source>Glucose</source>
-        <target xml:lang="vi" state="needs-translation">Glucose</target>
+        <target xml:lang="vi" state="translated">Đường đơn</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.lactose">
         <source>Lactose</source>
-        <target xml:lang="vi" state="needs-translation">Lactose</target>
+        <target xml:lang="vi" state="translated">Đường sữa</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.maltodextrins">
         <source>Maltodextrins</source>
-        <target xml:lang="vi" state="needs-translation">Maltodextrins</target>
+        <target xml:lang="vi" state="translated">Bột tinh</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.maltose">
         <source>Maltose</source>
-        <target xml:lang="vi" state="needs-translation">Maltose</target>
+        <target xml:lang="vi" state="translated">Mạch nha</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sucrose">
         <source>Sucrose</source>
-        <target xml:lang="vi" state="needs-translation">Sucrose</target>
+        <target xml:lang="vi" state="translated">Đường mìa</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sugars">
         <source>Sugars</source>
@@ -102,141 +114,144 @@
       </trans-unit>
       <trans-unit id="nutrition.energy">
         <source>Energy</source>
-        <target xml:lang="vi" state="needs-translation">Energy</target>
+        <target xml:lang="vi" state="translated">Năng lượng</target>
       </trans-unit>
       <trans-unit id="nutrition.fats">
         <source>Fats</source>
         <note>Nutrition, fat</note>
-        <target xml:lang="vi" state="needs-translation">Fats</target>
+        <target xml:lang="vi" state="translated">Chất béo</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.cholesterol">
         <source>Cholesterol</source>
-        <target xml:lang="vi" state="needs-translation">Cholesterol</target>
+        <target xml:lang="vi" state="translated">Cholesterol</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.mono-unsaturated-fat">
         <source>Mono unsaturated fat</source>
-        <target xml:lang="vi" state="needs-translation">Mono unsaturated fat</target>
+        <target xml:lang="vi" state="translated">Chất béo không bão hòa đơn</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega3">
         <source>Omega 3</source>
-        <target xml:lang="vi" state="needs-translation">Omega 3</target>
+        <target xml:lang="vi" state="translated">Omega 3</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega6">
         <source>Omega 6</source>
-        <target xml:lang="vi" state="needs-translation">Omega 6</target>
+        <target xml:lang="vi" state="translated">Omega 6</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega9">
         <source>Omega 9</source>
-        <target xml:lang="vi" state="needs-translation">Omega 9</target>
+        <target xml:lang="vi" state="translated">Omega 9</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.poly-unsaturated-fat">
         <source>Poly unsaturated fat</source>
-        <target xml:lang="vi" state="needs-translation">Poly unsaturated fat</target>
+        <target xml:lang="vi" state="translated">Chất béo không bão hòa đa</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.saturated-fat">
         <source>Saturated fat</source>
         <note>Nutrition, saturated fat</note>
-        <target xml:lang="vi" state="needs-translation">Saturated fat</target>
+        <target xml:lang="vi" state="translated">Chất béo bão hòa</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.trans-fat">
         <source>Trans fat</source>
-        <target xml:lang="vi" state="needs-translation">Trans fat</target>
+        <target xml:lang="vi" state="translated">Chất béo chuyển hóa</target>
       </trans-unit>
       <trans-unit id="nutrition.fiber">
         <source>Dietary fiber</source>
-        <target xml:lang="vi" state="needs-translation">Dietary fiber</target>
+        <target xml:lang="vi" state="translated">Chất xơ</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals">
         <source>Minerals</source>
-        <target xml:lang="vi" state="needs-translation">Minerals</target>
+        <target xml:lang="vi" state="translated">Khoáng chất</target>
+        <alt-trans>
+          <target xml:lang="vi">Chất khoáng</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.bicarbonate">
         <source>Bicarbonate</source>
-        <target xml:lang="vi" state="needs-translation">Bicarbonate</target>
+        <target xml:lang="vi" state="translated">Muối cacbonat</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.caffeine">
         <source>Caffeine</source>
-        <target xml:lang="vi" state="needs-translation">Caffeine</target>
+        <target xml:lang="vi" state="translated">Caffeine</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.calcium">
         <source>Calcium</source>
-        <target xml:lang="vi" state="needs-translation">Calcium</target>
+        <target xml:lang="vi" state="translated">Canxi</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chloride">
         <source>Chloride</source>
-        <target xml:lang="vi" state="needs-translation">Chloride</target>
+        <target xml:lang="vi" state="translated">Clorua</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chlorophyl">
         <source>Chlorophyl</source>
-        <target xml:lang="vi" state="needs-translation">Chlorophyl</target>
+        <target xml:lang="vi" state="translated">Diệp lục</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chromium">
         <source>Chromium</source>
-        <target xml:lang="vi" state="needs-translation">Chromium</target>
+        <target xml:lang="vi" state="translated">Crom</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.cocoa">
         <source>Cocoa</source>
-        <target xml:lang="vi" state="needs-translation">Cocoa</target>
+        <target xml:lang="vi" state="translated">Ca cao</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.collagen-meat-protein-ratio">
         <source>Collagen meat protein ratio</source>
-        <target xml:lang="vi" state="needs-translation">Collagen meat protein ratio</target>
+        <target xml:lang="vi" state="translated">Tỷ lệ đạm trong thịt Collagen</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.copper">
         <source>Copper</source>
-        <target xml:lang="vi" state="needs-translation">Copper</target>
+        <target xml:lang="vi" state="translated">Đồng</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.fluoride">
         <source>Fluoride</source>
-        <target xml:lang="vi" state="needs-translation">Fluoride</target>
+        <target xml:lang="vi" state="translated">Flo</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.fruits-vegetables-nuts">
         <source>Fruits, vegetables, nuts</source>
-        <target xml:lang="vi" state="needs-translation">Fruits, vegetables, nuts</target>
+        <target xml:lang="vi" state="translated">Trái cây, rau củ, hạt</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.iodine">
         <source>Iodine</source>
-        <target xml:lang="vi" state="needs-translation">Iodine</target>
+        <target xml:lang="vi" state="translated">I-ốt</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.iron">
         <source>Iron</source>
-        <target xml:lang="vi" state="needs-translation">Iron</target>
+        <target xml:lang="vi" state="translated">Sắt</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.magnesium">
         <source>Magnesium</source>
-        <target xml:lang="vi" state="needs-translation">Magnesium</target>
+        <target xml:lang="vi" state="translated">Magiê</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.manganese">
         <source>Manganese</source>
-        <target xml:lang="vi" state="needs-translation">Manganese</target>
+        <target xml:lang="vi" state="translated">Mangan</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.molybdenum">
         <source>Molybdenum</source>
-        <target xml:lang="vi" state="needs-translation">Molybdenum</target>
+        <target xml:lang="vi" state="translated">Molypden</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.ph">
         <source>pH</source>
-        <target xml:lang="vi" state="needs-translation">pH</target>
+        <target xml:lang="vi" state="translated">độ kiềm</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.phosphorus">
         <source>Phosphorus</source>
-        <target xml:lang="vi" state="needs-translation">Phosphorus</target>
+        <target xml:lang="vi" state="translated">Phốt pho</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.potassium">
         <source>Potassium</source>
-        <target xml:lang="vi" state="needs-translation">Potassium</target>
+        <target xml:lang="vi" state="translated">Kali</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.selenium">
         <source>Selenium</source>
-        <target xml:lang="vi" state="needs-translation">Selenium</target>
+        <target xml:lang="vi" state="translated">Selen</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.silica">
         <source>Silica</source>
-        <target xml:lang="vi" state="needs-translation">Silica</target>
+        <target xml:lang="vi" state="translated">Silic dioxit</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.taurine">
         <source>Taurine</source>
-        <target xml:lang="vi" state="needs-translation">Taurine</target>
+        <target xml:lang="vi" state="translated">Taurin</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.zinc">
         <source>Zinc</source>
@@ -520,32 +535,32 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="product-scanner.permissions.failed.title">
         <source>Could not setup barcode scanning</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Could not setup barcode scanning</target>
+        <target xml:lang="vi" state="translated">Không thể chạy Trình quét mã vạch</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.action.title">
         <source>Open Settings</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Open Settings</target>
+        <target xml:lang="vi" state="translated">Mở cài đặt</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.message">
         <source>Please grant permission to use the camera to be able to scan barcodes</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Please grant permission to use the camera to be able to scan barcodes</target>
+        <target xml:lang="vi" state="translated">Vui lòng cấp quyền cho việc sử dụng máy ảnh để có thể quét mã vạch</target>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.title">
         <source>OpenFoodFacts needs camera permissions</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">OpenFoodFacts needs camera permissions</target>
+        <target xml:lang="vi" state="translated">OpenFoodFacts cần quyền truy cập máy ảnh</target>
       </trans-unit>
       <trans-unit id="product-scanner.search.status">
         <source>Loading product...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Loading product...</target>
+        <target xml:lang="vi" state="translated">Đang tải sản phẩm...</target>
       </trans-unit>
       <trans-unit id="product-search.error-view.subtitle">
         <source>Please try again</source>
         <note>Error view subtitle</note>
-        <target xml:lang="vi" state="needs-translation">Please try again</target>
+        <target xml:lang="vi" state="translated">Vui lòng thử lại</target>
       </trans-unit>
       <trans-unit id="product-search.error-view.title">
         <source>Something went wrong</source>
@@ -559,17 +574,17 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="product-search.no-results">
         <source>No Results</source>
         <note>No products where found for current search</note>
-        <target xml:lang="vi" state="needs-translation">No Results</target>
+        <target xml:lang="vi" state="translated">Không có kết quả</target>
       </trans-unit>
       <trans-unit id="product-search.search-placeholder">
         <source>Search for a product by name or barcode</source>
         <note>Placeholder for the product search bar</note>
-        <target xml:lang="vi" state="needs-translation">Search for a product by name or barcode</target>
+        <target xml:lang="vi" state="translated">Tìm kiếm sản phẩm theo tên hoặc thương hiệu</target>
       </trans-unit>
       <trans-unit id="product.images.front">
         <source>front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">front</target>
+        <target xml:lang="vi" state="translated">mặt trước</target>
       </trans-unit>
       <trans-unit id="product.images.ingredients">
         <source>ingredients</source>
@@ -579,34 +594,37 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="product.images.nutrition">
         <source>nutrition table</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">nutrition table</target>
+        <target xml:lang="vi" state="translated">bảng giá trị Dinh dưỡng</target>
       </trans-unit>
       <trans-unit id="product.images.picture">
         <source>picture ✅</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">picture ✅</target>
+        <target xml:lang="vi" state="translated">ảnh ✅</target>
+        <alt-trans>
+          <target xml:lang="vi">hình ảnh ✅</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product.images.product">
         <source>Product's</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Product's</target>
+        <target xml:lang="vi" state="translated">Của sản phẩm</target>
       </trans-unit>
       <trans-unit id="product.images.take-picture">
         <source>Take a picture of the product's</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Take a picture of the product's</target>
+        <target xml:lang="vi" state="translated">Hãy chụp ảnh sản phẩm</target>
       </trans-unit>
       <trans-unit id="settings.credits.text">
         <source>"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
 "Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
 "Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</source>
-        <target xml:lang="vi" state="needs-translation">"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
-"Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
-"Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</target>
+        <target xml:lang="vi" state="translated">Biểu tượng nút "Quét mã vạch", biểu tượng "Cài đặt" và biểu tượng "đèn Flash" tạo bởi madebyoliver (http://www.flaticon.com/authors/madebyoliver) được cấp phép với chứng chỉ CC 3.0 bởi (http://creativecommons.org/licenses/by/3.0/)
+Biểu tượng "Chụp ảnh" tạo bởi Picol (http://www.flaticon.com/authors/picol), giấy phép CC 3.0 (http://creativecommons.org/licenses/by/3.0/)
+Biểu tượng "Hồ sơ" tạo bởi Smashicons (https://www.flaticon.com/authors/smashicons) giấy phép CC 3.0 bởi (http://creativecommons.org/licenses/by/3.0/)</target>
       </trans-unit>
       <trans-unit id="settings.credits.title">
         <source>Credits</source>
-        <target xml:lang="vi" state="needs-translation">Credits</target>
+        <target xml:lang="vi" state="translated">Đóng góp</target>
       </trans-unit>
       <trans-unit id="settings.information.discover">
         <source>Discover</source>
@@ -614,15 +632,15 @@ Make sure the barcode is well lit.</target>
       </trans-unit>
       <trans-unit id="settings.information.how-to-contribute">
         <source>How To Contribute</source>
-        <target xml:lang="vi" state="needs-translation">How To Contribute</target>
+        <target xml:lang="vi" state="translated">Làm cách nào để đóng góp</target>
       </trans-unit>
       <trans-unit id="settings.scan-on-launch.title">
         <source>Show Scan On App Launch</source>
-        <target xml:lang="vi" state="needs-translation">Show Scan On App Launch</target>
+        <target xml:lang="vi" state="translated">Hiển thị Quét khi khởi động</target>
       </trans-unit>
       <trans-unit id="settings.sections.information">
         <source>Information</source>
-        <target xml:lang="vi" state="needs-translation">Information</target>
+        <target xml:lang="vi" state="translated">Thông tin</target>
       </trans-unit>
       <trans-unit id="settings.tab-bar.item">
         <source>Settings</source>
@@ -630,47 +648,47 @@ Make sure the barcode is well lit.</target>
       </trans-unit>
       <trans-unit id="user.alert.generic-error.subtitle">
         <source>Please try again in a few moments</source>
-        <target xml:lang="vi" state="needs-translation">Please try again in a few moments</target>
+        <target xml:lang="vi" state="translated">Xin vui lòng thử lại sau</target>
       </trans-unit>
       <trans-unit id="user.alert.generic-error.title">
         <source>There was an error logging in</source>
-        <target xml:lang="vi" state="needs-translation">There was an error logging in</target>
+        <target xml:lang="vi" state="translated">Đã có lỗi khi đăng nhập</target>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
         <source>Password is required</source>
-        <target xml:lang="vi" state="needs-translation">Password is required</target>
+        <target xml:lang="vi" state="translated">Bạn cần nhập mật khẩu</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
         <source>Username is required</source>
-        <target xml:lang="vi" state="needs-translation">Username is required</target>
+        <target xml:lang="vi" state="translated">Yêu cầu có tên đăng nhập</target>
       </trans-unit>
       <trans-unit id="user.alert.wrong-credentials.subtitle">
         <source>Check your username and password are correct</source>
-        <target xml:lang="vi" state="needs-translation">Check your username and password are correct</target>
+        <target xml:lang="vi" state="translated">Kiểm tra lại tên người dùng và mật khẩu</target>
       </trans-unit>
       <trans-unit id="user.alert.wrong-credentials.title">
         <source>Unable to log in</source>
-        <target xml:lang="vi" state="needs-translation">Unable to log in</target>
+        <target xml:lang="vi" state="translated">Không thể đăng nhập</target>
       </trans-unit>
       <trans-unit id="user.check-your-contributions.button">
         <source>Check Your Contributions</source>
-        <target xml:lang="vi" state="needs-translation">Check Your Contributions</target>
+        <target xml:lang="vi" state="translated">Kiểm tra đóng góp của bạn</target>
       </trans-unit>
       <trans-unit id="user.create-account.button">
         <source>Create An Account</source>
-        <target xml:lang="vi" state="needs-translation">Create An Account</target>
+        <target xml:lang="vi" state="translated">Tạo Tài khoản</target>
       </trans-unit>
       <trans-unit id="user.create-account.text">
         <source>If you don't have an account, click the link bellow to create one.</source>
-        <target xml:lang="vi" state="needs-translation">If you don't have an account, click the link bellow to create one.</target>
+        <target xml:lang="vi" state="translated">Nếu bạn không có tài khoản, hãy nhấp vào liên kết dưới đây để tạo.</target>
       </trans-unit>
       <trans-unit id="user.log-in">
         <source>Log In</source>
-        <target xml:lang="vi" state="needs-translation">Log In</target>
+        <target xml:lang="vi" state="translated">Đăng nhập</target>
       </trans-unit>
       <trans-unit id="user.log-out">
         <source>Log Out</source>
-        <target xml:lang="vi" state="needs-translation">Log Out</target>
+        <target xml:lang="vi" state="translated">Đăng xuất</target>
       </trans-unit>
       <trans-unit id="user.password">
         <source>Password</source>
@@ -678,15 +696,15 @@ Make sure the barcode is well lit.</target>
       </trans-unit>
       <trans-unit id="user.tab-bar.item">
         <source>User</source>
-        <target xml:lang="vi" state="needs-translation">User</target>
+        <target xml:lang="vi" state="translated">Người dùng</target>
       </trans-unit>
       <trans-unit id="user.username">
         <source>Username</source>
-        <target xml:lang="vi" state="needs-translation">Username</target>
+        <target xml:lang="vi" state="translated">Tên người dùng</target>
       </trans-unit>
       <trans-unit id="user.why-log-in.text">
         <source>Login in with your account will associate all your contributions to your account.</source>
-        <target xml:lang="vi" state="needs-translation">Login in with your account will associate all your contributions to your account.</target>
+        <target xml:lang="vi" state="translated">Đăng nhập bằng tài khoản của bạn sẽ liên kết tất cả các đóng góp.</target>
       </trans-unit>
     </body>
   </file>
@@ -698,22 +716,25 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="alert.action.ok">
         <source>Ok</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Ok</target>
+        <target xml:lang="vi" state="translated">Đồng ý</target>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Take a picture of the ingredients</target>
+        <target xml:lang="vi" state="translated">Hãy chụp các thành phần nguyên liệu</target>
+        <alt-trans>
+          <target xml:lang="vi">Chụp các thành phần nguyên liệu</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition facts</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Take a picture of the nutrition facts</target>
+        <target xml:lang="vi" state="translated">Hãy chụp lại các gợi ý về dinh dưỡng</target>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
         <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Take a picture of the front</target>
+        <target xml:lang="vi" state="translated">Hãy chụp phía trước sản phầm</target>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
@@ -768,12 +789,12 @@ Make sure the barcode is well lit.</target>
       <trans-unit id="user.alert.password-missing">
         <source>Password is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Password is required</target>
+        <target xml:lang="vi" state="translated">Bạn cần nhập mật khẩu</target>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
         <source>Username is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="vi" state="needs-translation">Username is required</target>
+        <target xml:lang="vi" state="translated">Yêu cầu có tên đăng nhập</target>
       </trans-unit>
     </body>
   </file>
