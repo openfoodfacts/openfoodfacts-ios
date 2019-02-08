@@ -13,7 +13,7 @@ class NutritionLevelsTableViewCell: ProductDetailBaseCell {
 
     @IBOutlet weak var stackView: UIStackView!
 
-    override func configure(with formRow: FormRow) {
+    override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let product = formRow.value as? Product else { return }
 
         if let levelView = createLevelView(level: product.nutritionLevels?.fat,

@@ -90,6 +90,19 @@ class DataManagerMock: DataManagerProtocol {
         }
     }
 
+    // MARK: - taxonomies
+    func category(forTag: String) -> OpenFoodFacts.Category? {
+        return nil
+    }
+
+    func allergen(forTag: Tag) -> Allergen? {
+        return nil
+    }
+
+    func additive(forTag: Tag) -> Additive? {
+        return nil
+    }
+
     // MARK: - Search history
     func getHistory() -> [Age: [HistoryItem]] {
         getHistoryCalled = true

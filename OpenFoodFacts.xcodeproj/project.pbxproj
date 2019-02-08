@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3000855E2207A3A500DC3896 /* TaxonomiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000855D2207A3A500DC3896 /* TaxonomiesService.swift */; };
+		300085612207AC0700DC3896 /* Additive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085602207AC0700DC3896 /* Additive.swift */; };
+		300085632208777900DC3896 /* OFFUrlsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085622208777900DC3896 /* OFFUrlsHelper.swift */; };
 		303C279D2201AB6B00159961 /* ScanProductSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */; };
 		303C279F2201AB7B00159961 /* ScanProductSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */; };
 		303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */; };
@@ -14,6 +17,8 @@
 		303C27A52201C0E500159961 /* NovaGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A42201C0E500159961 /* NovaGroupView.swift */; };
 		307BBEB921FA16B100E2DF9D /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */; };
 		307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */; };
+		30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77D9B22088F0F00B180E9 /* Allergen.swift */; };
+		30E43D78220895B100D7A906 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E43D77220895B100D7A906 /* Category.swift */; };
 		7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437FBA42036F1F800D107B6 /* CreditsViewController.swift */; };
 		74C59E8B203FB9E2006C456F /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C59E8A203FB9E2006C456F /* SharingManager.swift */; };
 		74CB633920373B6D008FC48D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 74CB633820373B6C008FC48D /* Credits.html */; };
@@ -266,6 +271,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3000855D2207A3A500DC3896 /* TaxonomiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomiesService.swift; sourceTree = "<group>"; };
+		300085602207AC0700DC3896 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
+		300085622208777900DC3896 /* OFFUrlsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFUrlsHelper.swift; sourceTree = "<group>"; };
 		303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProductSummaryView.swift; sourceTree = "<group>"; };
 		303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanProductSummaryView.xib; sourceTree = "<group>"; };
 		303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBarcodeInputView.swift; sourceTree = "<group>"; };
@@ -273,6 +281,8 @@
 		303C27A42201C0E500159961 /* NovaGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaGroupView.swift; sourceTree = "<group>"; };
 		307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerResultViewController.swift; sourceTree = "<group>"; };
+		30D77D9B22088F0F00B180E9 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
+		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		512702DF21F0B076002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		512702E021F0B077002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7437FBA42036F1F800D107B6 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
@@ -884,6 +894,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3000855F2207ABF800DC3896 /* Taxonomies */ = {
+			isa = PBXGroup;
+			children = (
+				300085602207AC0700DC3896 /* Additive.swift */,
+				30D77D9B22088F0F00B180E9 /* Allergen.swift */,
+				30E43D77220895B100D7A906 /* Category.swift */,
+			);
+			path = Taxonomies;
+			sourceTree = "<group>";
+		};
 		303C279B2201AB3B00159961 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -1029,6 +1049,7 @@
 				95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */,
 				950ACC6C1F9945D500B54B78 /* URLs.swift */,
 				74C59E8A203FB9E2006C456F /* SharingManager.swift */,
+				300085622208777900DC3896 /* OFFUrlsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1055,6 +1076,7 @@
 			isa = PBXGroup;
 			children = (
 				957094AE1EA124E800268236 /* ProductService.swift */,
+				3000855D2207A3A500DC3896 /* TaxonomiesService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1253,6 +1275,7 @@
 		95781BAC1EC3A898003E3256 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				3000855F2207ABF800DC3896 /* Taxonomies */,
 				95E9F0421EC8D7AB00BA20B0 /* Nutriments */,
 				95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */,
 				95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */,
@@ -2256,11 +2279,13 @@
 				95A566191FD6037800C997C8 /* LocalizableLabel.swift in Sources */,
 				956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */,
 				953CDD5B1F92A12A0096C428 /* UserViewController.swift in Sources */,
+				30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */,
 				956FF9471F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
 				955BAFFB1FF7C63A0046F419 /* ErrorCodes.swift in Sources */,
 				95D060DB1F6094D30052012D /* UITableView.swift in Sources */,
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
+				300085632208777900DC3896 /* OFFUrlsHelper.swift in Sources */,
 				95513BC31FEAD6CA0027C198 /* PendingUploadItemCell.swift in Sources */,
 				95A566171FD6037800C997C8 /* LocalizableNavigationItem.swift in Sources */,
 				956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */,
@@ -2290,6 +2315,7 @@
 				955BAFF91FF668B70046F419 /* PendingProductMergeProcessor.swift in Sources */,
 				951FA7881F50C0670096AC5A /* AccessibilityIdentifiers.swift in Sources */,
 				95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */,
+				300085612207AC0700DC3896 /* Additive.swift in Sources */,
 				957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */,
 				957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */,
 				957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */,
@@ -2310,10 +2336,12 @@
 				950ACC6D1F9945D500B54B78 /* URLs.swift in Sources */,
 				95781B9B1EC26B24003E3256 /* Double.swift in Sources */,
 				950163741F2D1EF20057B8D5 /* TakePictureViewController.swift in Sources */,
+				30E43D78220895B100D7A906 /* Category.swift in Sources */,
 				95A566161FD6037800C997C8 /* LocalizableButton.swift in Sources */,
 				95DDAF621F25401D0096B74E /* CameraController.swift in Sources */,
 				955BAFFE1FF828540046F419 /* RealmPendingUploadItem.swift in Sources */,
 				95A566131FD6037800C997C8 /* Localizable.swift in Sources */,
+				3000855E2207A3A500DC3896 /* TaxonomiesService.swift in Sources */,
 				95019A761FDAB1AD00A7BB79 /* PickerViewController.swift in Sources */,
 				95DDAF661F2916D40096B74E /* ProductImage.swift in Sources */,
 				95A526B51FEAC573005526B1 /* StoryboardNames.swift in Sources */,

@@ -22,6 +22,11 @@ protocol DataManagerProtocol {
     // User
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
 
+    // Taxonomies
+    func category(forTag: String) -> Category?
+    func allergen(forTag: Tag) -> Allergen?
+    func additive(forTag: Tag) -> Additive?
+
     // Search history
     func getHistory() -> [Age: [HistoryItem]]
     func addHistoryItem(_ product: Product)
@@ -47,6 +52,7 @@ protocol DataManagerProtocol {
 
 class DataManager: DataManagerProtocol {
     var productApi: ProductApi!
+    var taxonomiesApi: TaxonomiesApi!
     var persistenceManager: PersistenceManagerProtocol!
 
     // MARK: - Search
@@ -87,6 +93,19 @@ class DataManager: DataManagerProtocol {
                 onError(error)
             }
         })
+    }
+
+    // MARK: - Taxonomies
+    func category(forTag tag: String) -> Category? {
+        return persistenceManager.category(forCode: tag)
+    }
+
+    func allergen(forTag tag: Tag) -> Allergen? {
+        return persistenceManager.allergen(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func additive(forTag tag: Tag) -> Additive? {
+        return persistenceManager.additive(forCode: tag.languageCode + ":" + tag.value)
     }
 
     // MARK: - Search history

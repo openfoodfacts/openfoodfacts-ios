@@ -114,7 +114,7 @@ class HistoryTableViewControllerSpec: QuickSpec {
                 let result = viewController.tableView(viewController.tableView, cellForRowAt: indexPath)
 
                 expect(result.reuseIdentifier).to(equal(HistoryCellId.item))
-                expect(result is HistoryItemCell).to(beTrue())
+                expect(result is ProductTableViewCell).to(beTrue())
             }
         }
 
