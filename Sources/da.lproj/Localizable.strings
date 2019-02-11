@@ -28,14 +28,14 @@
 "product-scanner.view-title" = "Skanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Fejl under stregkodeskanning. Forsøg igen om et øjeblik.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can enter it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "Ingen stregkode fundet. Du kan angive den manuelt:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts behøver kamerarettighed";
 "product-scanner.permissions.noPermissions.message" = "Tildel kamerarettighed for at kunne skanne stregkoder";
 "product-scanner.permissions.noPermissions.action.title" = "Åbn Indstillinger";
 
 "product-scanner.permissions.failed.title" = "Kunne ikke opsætte stregkodeskanning";
-"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.message" = "Tjek i Fortrolighedsindstillinger, om Open Food Facts har kamerarettighed";
 "product-scanner.permissions.failed.action.title" = "Forlad stregkodeskanning";
 
 "product-scanner.search.status" = "Indlæser produkt...";
@@ -49,20 +49,20 @@
 "product-add.image-upload-error-banner.subtitle" = "Forsøg at tage fotoet igen";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
 "product-add.image-upload-success-banner.title" = "Foto uploadet";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-save-success-banner.title" = "Fotoet vil blive uploadet, når online";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "Produkt tilføjet. Tak!";
 "product-add.uploaded-image" = "Foto uploadet, tak!";
 "product-add.save-error.title" = "Fejl under lagring af produkt";
 "product-add.save-error.message" = "Forsøg igen senere";
 "alert.action.ok" = "OK";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Vælg sprog";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Produktnavn";
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Mærke";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity-value" = "Quantity value";
+"product-add.placeholder.quantity-value" = "Mængdeværdi";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Tilføj et nyt foto";
@@ -203,12 +203,12 @@
 "settings.scan-on-launch.title" = "Vis Scan På App Launch";
 "settings.information.discover" = "Opdag";
 "settings.contribute.how-to-contribute" = "Hvordan Man Bidrager";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.contribute.support-open-food-facts" = "Støt Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Oversæt Open Food Facts";
 "settings.about.contact" = "Kontakt";
 "settings.about.frequently-asked-questions" = "Ofte stillede spørgsmål";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+"settings.credits.text" = "Ikonerne \"Stregkodeskanning\", \"Indstillinger\" og \"Blitz\" udført af Madebyoliver (https://www.flaticon.com/authors/madebyoliver) er licenseret af CC 3.0 BY (http://creativecommons.org/licenses /by/3.0/)\n\"Tage foto\"-ikon udført af Picol (http://www.flaticon.com/authors/picol) er licenseret af CC 3.0 BY (https://creativecommons.org/licenses/by/3.0 /)\n\"Profil\"-ikon udført af Smashicons (https://www.flaticon.com/authors/smashicons) er licenseret af CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar \"-ikon udført af Smashicons (https://www.flaticon.com/authors/gregor-cresnar) er licenseret af CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Søghistorik\"-ikon udført af Hadrien (https://www.flaticon.com/authors/hadrien) er licenseret af CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
 
 // User view
 /* Tab bar item */
@@ -217,10 +217,10 @@
 "user.log-out" = "Log ud";
 "user.username" = "Brugernavn";
 "user.password" = "Adgangskode";
-"user.forgot-password" = "Forgot Password?";
+"user.forgot-password" = "Glemt adgangskode?";
 "user.check-your-contributions.button" = "Tjek dine bidrag";
-"user.products-pending-upload.button" = "Products pending upload";
-"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.products-pending-upload.button" = "Produkter afventer upload";
+"user.create-account.text" = "Har du ikke en konto, så tryk på linket nedenfor for at oprette én.";
 "user.create-account.button" = "Opret en konto";
 "user.why-log-in.text" = "Log ind med din konto for at associere alle dine bidrag med din konto.";
 "user.alert.wrong-credentials.title" = "Kan ikke logge ind";
@@ -229,14 +229,14 @@
 "user.alert.generic-error.subtitle" = "Forsøg venligst igen om et øjeblik";
 "user.alert.username-missing" = "Brugernavn er påkrævet";
 "user.alert.password-missing" = "Adgangskode er påkrævet";
-"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"pending-upload.info.text" = "Disse er produkter, du tilføjede, mens offline.\n\nApp'en vil forsæge at uploade dem automatisk, når du er online igen, eller du kan manuelt forsøge at uploade dem ved at trykke på knappen øverst til højre.";
+"pending-upload.hud.status" = "Uploader";
 
 // Search history
-"history.cell.privacy" = "Your search history is only stored on your device";
+"history.cell.privacy" = "Din søgehistorik gemmes kun på din enhed";
 "history.button.clear" = "Ryd";
-"history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
+"history.section-titles.last24h" = "Seneste 24 timer";
+"history.section-titles.fewDays" = "For få dage siden";
+"history.section-titles.fewWeeks" = "For få uger siden";
+"history.section-titles.fewMonths" = "For få måneder siden";
+"history.section-titles.longTime" = "For langt tid siden";
