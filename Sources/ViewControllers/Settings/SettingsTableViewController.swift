@@ -23,8 +23,8 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     private let howToContributeIndexPath = IndexPath(row: 0, section: 2)
     private let supportOpenFoodFactsIndexPath = IndexPath(row: 1, section: 2)
     private let translateOpenFoodFactsIndexPath = IndexPath(row: 2, section: 2)
-    private let contactTheTeamIndexPath = IndexPath(row: 0, section: 3)
-    private let frequentlyAskedQuestionsIndexPath = IndexPath(row: 1, section: 3)
+    private let contactTheTeamIndexPath = IndexPath(row: 1, section: 3)
+    private let frequentlyAskedQuestionsIndexPath = IndexPath(row: 0, section: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         case .item:
             return "settings.tab-bar.item".localized
         case .information:
-            return "settings.sections.information".localized
+            return "settings.sections.discover".localized
         case .contribute:
             return "settings.sections.contribute".localized
         case .about:
