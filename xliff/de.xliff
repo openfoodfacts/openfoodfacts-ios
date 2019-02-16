@@ -115,7 +115,10 @@
       </trans-unit>
       <trans-unit id="nutrition.fats.mono-unsaturated-fat">
         <source>Mono unsaturated fat</source>
-        <target xml:lang="de" state="translated">Einfach ungesättigte Fette</target>
+        <target xml:lang="de" state="translated">Einfach ungesättigte Fettsäuren</target>
+        <alt-trans>
+          <target xml:lang="de">Einfach ungesättigte Fette</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega3">
         <source>Omega 3</source>
@@ -372,7 +375,10 @@
       </trans-unit>
       <trans-unit id="product-detail.edit-alert.title">
         <source>Remember to save your changes</source>
-        <target xml:lang="de" state="translated">Denken Sie daran Ihre Änderungen zu speichern</target>
+        <target xml:lang="de" state="translated">Denken Sie daran, Ihre Änderungen zu speichern</target>
+        <alt-trans>
+          <target xml:lang="de">Denken Sie daran Ihre Änderungen zu speichern</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.header.add-new-picture">
         <source>Add a new picture</source>
@@ -405,12 +411,18 @@
       <trans-unit id="product-detail.nutrition-table.for-100g">
         <source>For 100 g</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="de" state="translated">je 100 g</target>
+        <target xml:lang="de" state="translated">Pro 100 g</target>
+        <alt-trans>
+          <target xml:lang="de">je 100 g</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
         <source>Per serving</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="de" state="translated">je Portion</target>
+        <target xml:lang="de" state="translated">Pro Portion</target>
+        <alt-trans>
+          <target xml:lang="de">je Portion</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.nutritional-table-header">
         <source>Nutrition facts</source>
@@ -491,7 +503,10 @@
       <trans-unit id="product-scanner.barcode.error">
         <source>Error scanning barcode. Please try again in a few moments.</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="de" state="translated">Ein Fehler ist beim Einlesen des Strichcode aufgetreten. Bitte versuchen Sie es nach einer kurzen Weile erneut.</target>
+        <target xml:lang="de" state="translated">Ein Fehler ist beim Einlesen des Strichcodes aufgetreten. Bitte versuchen Sie es nach einer kurzen Weile erneut.</target>
+        <alt-trans>
+          <target xml:lang="de">Ein Fehler ist beim Einlesen des Strichcode aufgetreten. Bitte versuchen Sie es nach einer kurzen Weile erneut.</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.overlay.extended-user-help">
         <source>Can't find a barcode.
@@ -515,7 +530,10 @@ Make sure the barcode is well lit.</source>
       <trans-unit id="product-scanner.permissions.failed.message">
         <source>Check in Privacy Settings if OpenFoodFacts has permission to use the camera</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="de" state="translated">Prüfen Sie bitte in den Privatsphäre-Einstellungen, ob OpenFoodFacts die Erlaubnis hat die Kamera zu verwenden</target>
+        <target xml:lang="de" state="translated">Prüfen Sie bitte in den Privatsphäre-Einstellungen, ob OpenFoodFacts die Erlaubnis hat, die Kamera zu verwenden</target>
+        <alt-trans>
+          <target xml:lang="de">Prüfen Sie bitte in den Privatsphäre-Einstellungen, ob OpenFoodFacts die Erlaubnis hat die Kamera zu verwenden</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.title">
         <source>Could not setup barcode scanning</source>
