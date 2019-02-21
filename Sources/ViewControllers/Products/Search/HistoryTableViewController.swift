@@ -39,9 +39,18 @@ class HistoryTableViewController: UITableViewController {
     }
 
     @IBAction func clearHistory(_ sender: UIBarButtonItem) {
-        dataManager.clearHistory()
-        items.removeAll()
-        tableView.reloadData()
+        let alert = UIAlertController(title: "history.clear.confirmation-title".localized, message: "history.clear.confirmation-message".localized, preferredStyle: .alert)
+        let clearAction = UIAlertAction(title: "history.button.clear".localized, style: .destructive) { (_) -> Void in
+            self.dataManager.clearHistory()
+            self.items.removeAll()
+            self.tableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "generic.cancel".localized, style: .default) { (_) -> Void in }
+
+        alert.addAction(cancelAction)
+        alert.addAction(clearAction)
+
+        present(alert, animated: true, completion: nil)
     }
 }
 
