@@ -24,12 +24,12 @@ class LoggedInViewController: UIViewController, DataManagerClient {
 
     @IBAction func didTapSignOut(_ sender: UIButton) {
         //create a logout alertviewcontroller
-        let logoutAlert = UIAlertController(title: "Notice", message: "Are you sure you want to log out ?", preferredStyle: .alert)
-        let yesAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+        let logoutAlert = UIAlertController(title: "Confirm Logout", message: "Are you sure you want to log out ?", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "OK", style: .default) { (_) in
             CredentialsController.shared.clearCredentials()
             self.delegate?.dismiss()
         }
-        let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        let noAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         logoutAlert.addAction(noAction)
         logoutAlert.addAction(yesAction)
         self.present(logoutAlert, animated: true, completion: nil)
