@@ -153,7 +153,7 @@ class DataManagerMock: DataManagerProtocol {
         }
     }
 
-    func addProductNutritionTable(_ product: Product, nutritionTable: [String: Any], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+    func addProductNutritionTable(_ product: Product, nutritionTable: [RealmPendingUploadNutrimentItem], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
     }
 
     func getIngredientsOCR(forBarcode: String, productLanguageCode: String, onDone: @escaping (String?, Error?) -> Void) {

@@ -14,12 +14,18 @@ class PendingUploadItem {
     let barcode: String
     var productName: String?
     var brand: String?
-    var quantityValue: String?
-    var quantityUnit: String?
+    var quantity: String?
+    var ingredientsList: String?
     var language = "en"
     var frontImage: ProductImage?
     var ingredientsImage: ProductImage?
     var nutritionImage: ProductImage?
+    var categories: [String]?
+
+    var noNutritionData: String?
+    var servingSize: String?
+    var nutritionDataPer: String?
+    let nutriments = List<RealmPendingUploadNutrimentItem>()
 
     init(barcode: String) {
         self.barcode = barcode
@@ -30,9 +36,16 @@ class PendingUploadItem {
 
         product.barcode = barcode
         product.name = productName
-        product.quantityValue = quantityValue
-        product.quantityUnit = quantityUnit
+        product.quantity = quantity
         product.lang = language
+        product.categories = categories
+        product.ingredientsList = ingredientsList
+
+        product.noNutritionData = noNutritionData
+        product.servingSize = servingSize
+        if let nutritionDataPer = nutritionDataPer {
+            product.nutritionDataPer = NutritionDataPer(rawValue: nutritionDataPer)
+        }
 
         if let brand = self.brand {
             product.brands = [brand]

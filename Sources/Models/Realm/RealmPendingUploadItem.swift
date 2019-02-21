@@ -12,16 +12,28 @@ import RealmSwift
 // Realm class, cloned from PendingUploadItem.
 //Outside of PersistanceManager PendingUploadItem will be used for easier work across threads.
 
+internal class RealmPendingUploadNutrimentItem: Object {
+    @objc dynamic var code: String = ""
+    @objc dynamic var value: Double = 0
+    @objc dynamic var unit: String = ""
+}
+
 internal class RealmPendingUploadItem: Object {
     @objc dynamic var barcode = ""
     @objc dynamic var productName: String?
     @objc dynamic var brand: String?
-    @objc dynamic var quantityValue: String?
-    @objc dynamic var quantityUnit: String?
+    @objc dynamic var quantity: String?
     @objc dynamic var language = "en"
     @objc dynamic var frontImageName: String?
     @objc dynamic var ingredientsImageName: String?
     @objc dynamic var nutritionImageName: String?
+    @objc dynamic var ingredientsList: String?
+    let categories = List<String>()
+
+    @objc dynamic var noNutritionData: String?
+    @objc dynamic var servingSize: String?
+    @objc dynamic var nutritionDataPer: String?
+    let nutriments = List<RealmPendingUploadNutrimentItem>()
 
     override static func primaryKey() -> String? {
         return "barcode"
@@ -35,12 +47,22 @@ internal class RealmPendingUploadItem: Object {
 
         self.productName = pendingUploadItem.productName
         self.brand = pendingUploadItem.brand
-        self.quantityValue = pendingUploadItem.quantityValue
-        self.quantityUnit = pendingUploadItem.quantityUnit
+        self.quantity = pendingUploadItem.quantity
         self.language = pendingUploadItem.language
         self.frontImageName = pendingUploadItem.frontImage?.fileName
         self.ingredientsImageName = pendingUploadItem.ingredientsImage?.fileName
         self.nutritionImageName = pendingUploadItem.nutritionImage?.fileName
+        self.ingredientsList = pendingUploadItem.ingredientsList
+        self.categories.removeAll()
+        if let categories = pendingUploadItem.categories {
+            self.categories.append(objectsIn: categories)
+        }
+
+        self.noNutritionData = pendingUploadItem.noNutritionData
+        self.servingSize = pendingUploadItem.servingSize
+        self.nutritionDataPer = pendingUploadItem.nutritionDataPer
+        self.nutriments.removeAll()
+        self.nutriments.append(objectsIn: pendingUploadItem.nutriments)
 
         return self
     }
@@ -50,9 +72,16 @@ internal class RealmPendingUploadItem: Object {
 
         pendingUploadItem.productName = self.productName
         pendingUploadItem.brand = self.brand
-        pendingUploadItem.quantityValue = self.quantityValue
-        pendingUploadItem.quantityUnit = self.quantityUnit
+        pendingUploadItem.quantity = self.quantity
         pendingUploadItem.language = self.language
+        pendingUploadItem.categories = self.categories.map { $0 }
+        pendingUploadItem.ingredientsList = self.ingredientsList
+
+        pendingUploadItem.noNutritionData = self.noNutritionData
+        pendingUploadItem.servingSize = self.servingSize
+        pendingUploadItem.nutritionDataPer = self.nutritionDataPer
+        pendingUploadItem.nutriments.removeAll()
+        pendingUploadItem.nutriments.append(objectsIn: self.nutriments)
 
         if let imageName = self.frontImageName {
             pendingUploadItem.frontImage = ProductImage(barcode: barcode, fileName: imageName, type: .front)

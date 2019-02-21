@@ -10,7 +10,6 @@
 import RealmSwift
 
 class PersistenceManagerMock: PersistenceManagerProtocol {
-
     // Common
     var product: Product?
     var pendingUploadItem: PendingUploadItem?
@@ -109,8 +108,7 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
     }
 
     // MARK: - Products pending upload
-
-    func addPendingUploadItem(_ product: Product) {
+    func addPendingUploadItem(_ product: Product, withNutritionTable nutriments: [RealmPendingUploadNutrimentItem]?) {
         addPendingUploadItemCalled = true
         self.product = product
     }

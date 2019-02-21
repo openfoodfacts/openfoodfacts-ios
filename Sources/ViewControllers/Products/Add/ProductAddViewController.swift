@@ -215,7 +215,7 @@ class ProductAddViewController: TakePictureViewController {
             product.servingSize = servingSize
         }
 
-        var nutriments = [String: Any]()
+        var nutriments = [RealmPendingUploadNutrimentItem]()
 
         product.noNutritionData = noNutritionDataSwitch.isOn ? "on" : "off"
 
@@ -229,8 +229,11 @@ class ProductAddViewController: TakePictureViewController {
             nutritiveValuesStackView.arrangedSubviews.forEach { (view: UIView) in
                 if let view = view as? EditNutritiveValueView {
                     if let value = view.inputTextField.text, let doubleValue = Double(value) {
-                        nutriments[view.nutrimentCode] = doubleValue
-                        nutriments[view.nutrimentCode + "_unit"] = view.selectedUnit
+                        nutriments.append(RealmPendingUploadNutrimentItem(value: [
+                            "code": view.nutrimentCode,
+                            "value": doubleValue,
+                            "unit": view.selectedUnit ?? ""
+                            ]))
                     }
                 }
             }
@@ -314,13 +317,24 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     @IBAction func noNutritionDataSwitchToggled(_ sender: Any) {
+        updateNoNutritionDataSwitchVisibility(animated: true)
+    }
+
+    fileprivate func updateNoNutritionDataSwitchVisibility(animated: Bool) {
         let isHidden = noNutritionDataSwitch.isOn
-        UIView.animate(withDuration: 0.2) {
+        if animated {
+            UIView.animate(withDuration: 0.2) {
+                self.nutritivePortionSegmentedControl.isHidden = isHidden
+                self.nutritiveValuesStackView.isHidden = isHidden
+                self.addNutrimentButton.isHidden = isHidden
+            }
+        } else {
             self.nutritivePortionSegmentedControl.isHidden = isHidden
             self.nutritiveValuesStackView.isHidden = isHidden
             self.addNutrimentButton.isHidden = isHidden
         }
         showNotSavedIndication(label: lastSavedNutrimentsLabel, key: "save-nutriments")
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -449,13 +463,58 @@ class ProductAddViewController: TakePictureViewController {
             brandsField.text = brand
         }
 
-        if let quantityValue = pendingUploadItem.quantityValue {
-            quantityField.text = quantityValue
+        if let categorieTag = pendingUploadItem.categories?.first {
+            if let categorie = dataManager.category(forTag: categorieTag) {
+                productCategoryField.text = categorie.names.chooseForCurrentLanguage()?.value ?? categorieTag
+            } else {
+                productCategoryField.text = categorieTag
+            }
+        }
+
+        if let quantity = pendingUploadItem.quantity {
+            quantityField.text = quantity
+        }
+
+        if let ingredientsList = pendingUploadItem.ingredientsList {
+            ingredientsTextField.text = ingredientsList
+        }
+
+        if let noNutritionData = pendingUploadItem.noNutritionData {
+            noNutritionDataSwitch.isOn = noNutritionData == "on"
+            updateNoNutritionDataSwitchVisibility(animated: false)
+        }
+        if let servingSize = pendingUploadItem.servingSize {
+            portionSizeInputView.inputTextField.text = servingSize
+        }
+        if let nutritionDataPer = pendingUploadItem.nutritionDataPer {
+            if let nutritionDataPer = NutritionDataPer(rawValue: nutritionDataPer) {
+                switch nutritionDataPer {
+                case .hundredGrams: nutritivePortionSegmentedControl.selectedSegmentIndex = 0
+                case .serving: nutritivePortionSegmentedControl.selectedSegmentIndex = 1
+                }
+            }
+        }
+        for nutriment in pendingUploadItem.nutriments {
+            add(nutrimentCode: nutriment.code)
+            if let view = editNutrimentView(forCode: nutriment.code) {
+                view.inputTextField.text = "\(nutriment.value)"
+                view.selectedUnit = nutriment.unit
+            }
         }
 
         // Set language
         didGetSelection(value: Language(code: pendingUploadItem.language, name: Locale.current.localizedString(forIdentifier: pendingUploadItem.language) ?? pendingUploadItem.language))
-        showNotSavedIndication(label: lastSavedProductInfosLabel, key: "save-info")
+    }
+
+    fileprivate func editNutrimentView(forCode: String) -> EditNutritiveValueView? {
+        for arrangedSubview in nutritiveValuesStackView.arrangedSubviews {
+            if let arrangedSubview = arrangedSubview as? EditNutritiveValueView {
+                if arrangedSubview.nutrimentCode == forCode {
+                    return arrangedSubview
+                }
+            }
+        }
+        return nil
     }
 }
 
@@ -644,12 +703,16 @@ extension ProductAddViewController: SelectCategoryDelegate {
 
 extension ProductAddViewController: SelectNutrimentDelegate {
     func didSelect(nutriment: Nutriment) {
-        if !displayedNutrimentItems.contains(nutriment.code) {
-            displayedNutrimentItems.append(nutriment.code)
-            refreshNutritiveInputsViews()
-        }
+        add(nutrimentCode: nutriment.code)
         self.navigationController?.popToViewController(self, animated: true)
         showNotSavedIndication(label: lastSavedNutrimentsLabel, key: "save-nutriments")
+    }
+
+    func add(nutrimentCode: String) {
+        if !displayedNutrimentItems.contains(nutrimentCode) {
+            displayedNutrimentItems.append(nutrimentCode)
+            refreshNutritiveInputsViews()
+        }
     }
 }
 

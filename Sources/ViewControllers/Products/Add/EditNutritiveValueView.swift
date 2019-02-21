@@ -93,7 +93,7 @@ class EditNutritiveValueView: UIView {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         tooMuchLabel.isHidden = true
-        
+
         refreshButton()
     }
 
