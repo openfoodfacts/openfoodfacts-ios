@@ -79,7 +79,6 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
     @IBAction func didSwitchScanOnLaunch(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsConstants.scanningOnLaunch)
-        UserDefaults.standard.synchronize()
     }
 
     func contactTheTeam() {
