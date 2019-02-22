@@ -18,17 +18,24 @@ protocol PersistenceManagerProtocol {
     func clearHistory()
 
     // taxonomies
+    func objectSearch<T: Object>(forQuery: String?, ofClass: T.Type) -> Results<T>?
+
     func save(categories: [Category])
     func category(forCode: String) -> Category?
+    func categorySearch(query: String?) -> Results<Category>
 
     func save(allergens: [Allergen])
     func allergen(forCode: String) -> Allergen?
+
+    func save(nutriments: [Nutriment])
+    func nutriment(forCode: String) -> Nutriment?
+    func nutrimentSearch(query: String?) -> Results<Nutriment>
 
     func save(additives: [Additive])
     func additive(forCode: String) -> Additive?
 
     // Products pending upload
-    func addPendingUploadItem(_ product: Product)
+    func addPendingUploadItem(_ product: Product, withNutritionTable nutriments: [RealmPendingUploadNutrimentItem]?)
     func addPendingUploadItem(_ productImage: ProductImage)
     func getItemsPendingUpload() -> [PendingUploadItem]
     func getItemPendingUpload(forBarcode barcode: String) -> PendingUploadItem?
@@ -106,6 +113,14 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     // MARK: - Taxonomies
+    func objectSearch<T>(forQuery query: String?, ofClass: T.Type) -> Results<T>? where T: Object {
+        var results = getRealm().objects(T.self)
+        if let query = query, !query.isEmpty {
+            results = results.filter("indexedNames CONTAINS[cd] %@", query)
+        }
+        return results
+    }
+
     func save(categories: [Category]) {
         saveOrUpdate(objects: categories)
         log.info("Saved \(categories.count) categories in taxonomies database")
@@ -115,6 +130,14 @@ class PersistenceManager: PersistenceManagerProtocol {
         return getRealm().object(ofType: Category.self, forPrimaryKey: code)
     }
 
+    func categorySearch(query: String? = nil) -> Results<Category> {
+        var results = getRealm().objects(Category.self)
+        if let query = query, !query.isEmpty {
+            results = results.filter("indexedNames CONTAINS[cd] %@", query)
+        }
+        return results.sorted(byKeyPath: "mainName", ascending: true)
+    }
+
     func save(allergens: [Allergen]) {
         saveOrUpdate(objects: allergens)
         log.info("Saved \(allergens.count) allergens in taxonomies database")
@@ -122,6 +145,23 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     func allergen(forCode code: String) -> Allergen? {
         return getRealm().object(ofType: Allergen.self, forPrimaryKey: code)
+    }
+
+    func save(nutriments: [Nutriment]) {
+        saveOrUpdate(objects: nutriments)
+        log.info("Saved \(nutriments.count) nutriments in taxonomies database")
+    }
+
+    func nutriment(forCode code: String) -> Nutriment? {
+        return getRealm().object(ofType: Nutriment.self, forPrimaryKey: code)
+    }
+
+    func nutrimentSearch(query: String?) -> Results<Nutriment> {
+        var results = getRealm().objects(Nutriment.self)
+        if let query = query, !query.isEmpty {
+            results = results.filter("indexedNames CONTAINS[cd] %@", query)
+        }
+        return results.sorted(byKeyPath: "mainName", ascending: true)
     }
 
     func save(additives: [Additive]) {
@@ -135,13 +175,35 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     // MARK: - Products pending upload
 
-    func addPendingUploadItem(_ product: Product) {
+    func addPendingUploadItem(_ product: Product, withNutritionTable nutriments: [RealmPendingUploadNutrimentItem]?) {
         guard let barcode = product.barcode else { return }
 
         let item = getPendingUploadItem(forBarcode: barcode) ?? PendingUploadItem(barcode: barcode)
-        item.productName = product.name
-        item.quantityValue = product.quantityValue
-        item.quantityUnit = product.quantityUnit
+        if let name = product.name {
+            item.productName = name
+        }
+        if let quantity = product.quantity {
+            item.quantity = quantity
+        }
+        if let categories = product.categories {
+            item.categories = categories
+        }
+        if let ingredientsList = product.ingredientsList {
+            item.ingredientsList = ingredientsList
+        }
+        if let noNutritionData = product.noNutritionData {
+            item.noNutritionData = noNutritionData
+        }
+        if let servingSize = product.servingSize {
+            item.servingSize = servingSize
+        }
+        if let rawValue = product.nutritionDataPer?.rawValue {
+            item.nutritionDataPer = rawValue
+        }
+        if let nutriments = nutriments {
+            item.nutriments.removeAll()
+            item.nutriments.append(objectsIn: nutriments)
+        }
 
         if let brands = product.brands {
             item.brand = brands[0]
@@ -156,7 +218,7 @@ class PersistenceManager: PersistenceManagerProtocol {
         do {
             let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
             try realm.write {
-                realm.add(realmItem)
+                realm.add(realmItem, update: true)
             }
 
             let count = getItemsPendingUpload().count
@@ -185,7 +247,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
 
                 try realm.write {
-                    realm.add(realmItem)
+                    realm.add(realmItem, update: true)
                 }
             } catch let error as NSError {
                 log.error(error)

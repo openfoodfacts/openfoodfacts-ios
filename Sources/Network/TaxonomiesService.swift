@@ -11,13 +11,14 @@ import AlamofireObjectMapper
 import Crashlytics
 
 enum TaxonomiesRouter: URLRequestConvertible {
-    case getAllergens, getAdditives, getCategories
+    case getAllergens, getAdditives, getCategories, getNutriments
 
     var path: String {
         switch self {
         case .getAllergens: return "/allergens.json"
         case .getAdditives: return "/additives.json"
         case .getCategories: return "/categories.json"
+        case .getNutriments: return "/nutrients.json"
         }
     }
 
@@ -101,6 +102,36 @@ class TaxonomiesService: TaxonomiesApi {
         }
     }
 
+    fileprivate func refreshNutriments(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getNutriments)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let nutriments = json.compactMap({ (nutrimentCode: String, value: Any) -> Nutriment? in
+                            guard let name = value as? [String: Any] else {
+                                return nil
+                            }
+                            let names = name.compactMap({ (languageCode: String, value: Any) -> Tag? in
+                                if let value = value as? String {
+                                    return Tag(languageCode: languageCode, value: value)
+                                }
+                                return nil
+                            })
+                            return Nutriment(code: nutrimentCode, names: names)
+                        })
+                        self.persistenceManager.save(nutriments: nutriments)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+
+                callback(success)
+        }
+    }
+
     fileprivate func refreshAdditives(_ callback: @escaping (_: Bool) -> Void) {
         Alamofire.request(TaxonomiesRouter.getAdditives)
             .responseJSON { (response) in
@@ -131,7 +162,7 @@ class TaxonomiesService: TaxonomiesApi {
     // swiftlint:disable identifier_name
 
     /// increment last number each time you want to force a refresh. Useful if you add a new refresh method or a new field
-    static fileprivate let USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD = "USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD__3"
+    static fileprivate let USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD = "USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD__9"
     static fileprivate let LAST_DOWNLOAD_DELAY: Double = 60 * 60 * 24 * 31 // 1 month
 
     // swiftlint:enable identifier_name
@@ -155,6 +186,12 @@ class TaxonomiesService: TaxonomiesApi {
 
                 group.enter()
                 self.refreshAllergens({ (success) in
+                    allSuccess = allSuccess && success
+                    group.leave()
+                })
+
+                group.enter()
+                self.refreshNutriments({ (success) in
                     allSuccess = allSuccess && success
                     group.leave()
                 })

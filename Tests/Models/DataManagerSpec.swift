@@ -272,16 +272,14 @@ class DataManagerSpec: QuickSpec {
                 let barcode = "1"
                 let name = "product_name"
                 let brand = "brand"
-                let quantityValue = "33"
-                let quantityUnit = "cl"
+                let quantity = "33cl"
                 let language = "de"
 
                 beforeEach {
                     let item1 = PendingUploadItem(barcode: barcode)
                     item1.productName = name
                     item1.brand = brand
-                    item1.quantityValue = quantityValue
-                    item1.quantityUnit = quantityUnit
+                    item1.quantity = quantity
                     item1.language = language
                     item1.frontImage = ProductImage(barcode: barcode, image: TestHelper.sharedInstance.getTestImage(), type: .front)!
                     item1.ingredientsImage = ProductImage(barcode: barcode, image: TestHelper.sharedInstance.getTestImage(), type: .ingredients)!
@@ -308,7 +306,7 @@ class DataManagerSpec: QuickSpec {
                         it("uploads the product as is") {
                             expect(productApi.product?.name).toEventually(equal(name))
                             expect(productApi.product?.brands).toEventually(equal([brand]))
-                            expect(productApi.product?.quantity).toEventually(equal("\(quantityValue) \(quantityUnit)"))
+                            expect(productApi.product?.quantity).toEventually(equal(quantity))
                             expect(productApi.product?.lang).toEventually(equal(language))
                         }
 
@@ -325,8 +323,7 @@ class DataManagerSpec: QuickSpec {
                         beforeEach {
                             productApi.product?.name = name
                             productApi.product?.brands = [brand]
-                            productApi.product?.quantityValue = quantityValue
-                            productApi.product?.quantityUnit = quantityUnit
+                            productApi.product?.quantity = quantity
                             productApi.product?.lang = language
 
                             dataManager.uploadPendingItems { _ in }
@@ -351,7 +348,7 @@ class DataManagerSpec: QuickSpec {
                         it("uploads the product as is") {
                             expect(productApi.product?.name).toEventually(equal(name))
                             expect(productApi.product?.brands).toEventually(equal([brand]))
-                            expect(productApi.product?.quantity).toEventually(equal("\(quantityValue) \(quantityUnit)"))
+                            expect(productApi.product?.quantity).toEventually(equal(quantity))
                             expect(productApi.product?.lang).toEventually(equal(language))
                         }
 
@@ -370,8 +367,7 @@ class DataManagerSpec: QuickSpec {
                             let item1 = PendingUploadItem(barcode: barcode)
                             item1.productName = name
                             item1.brand = brand
-                            item1.quantityValue = quantityValue
-                            item1.quantityUnit = quantityUnit
+                            item1.quantity = quantity
                             item1.language = language
                             item1.frontImage = ProductImage(barcode: barcode, image: TestHelper.sharedInstance.getTestImage(), type: .front)!
 
@@ -398,8 +394,7 @@ class DataManagerSpec: QuickSpec {
                             it("removes from updated item all the info that was successfully posted") {
                                 expect(persistenceManager.pendingUploadItem?.productName).toEventually(beNil())
                                 expect(persistenceManager.pendingUploadItem?.brand).toEventually(beNil())
-                                expect(persistenceManager.pendingUploadItem?.quantityValue).toEventually(beNil())
-                                expect(persistenceManager.pendingUploadItem?.quantityUnit).toEventually(beNil())
+                                expect(persistenceManager.pendingUploadItem?.quantity).toEventually(beNil())
                             }
 
                             it("saves the info that was not successfully posted") {

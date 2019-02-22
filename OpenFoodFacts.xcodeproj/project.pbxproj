@@ -15,9 +15,18 @@
 		303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */; };
 		303C27A32201AC1800159961 /* ManualBarcodeInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303C27A22201AC1800159961 /* ManualBarcodeInputView.xib */; };
 		303C27A52201C0E500159961 /* NovaGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A42201C0E500159961 /* NovaGroupView.swift */; };
+		30412DD2220E19BF00C485DD /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30412DD0220E19BF00C485DD /* SelectCategoryViewController.swift */; };
+		30412DD5220E2AF100C485DD /* SelectCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30412DD4220E2AF100C485DD /* SelectCategoryViewController.xib */; };
+		30412DD7220EF36500C485DD /* EditNutritiveValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30412DD6220EF36500C485DD /* EditNutritiveValueView.swift */; };
+		30412DD9220EF46300C485DD /* EditNutritiveValueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30412DD8220EF46300C485DD /* EditNutritiveValueView.xib */; };
+		30412DDB220F089700C485DD /* Nutriment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30412DDA220F089700C485DD /* Nutriment.swift */; };
+		30412DDE220F104900C485DD /* SelectNutrimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30412DDC220F104900C485DD /* SelectNutrimentViewController.swift */; };
+		30412DDF220F104900C485DD /* SelectNutrimentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30412DDD220F104900C485DD /* SelectNutrimentViewController.xib */; };
+		30412DE1220F111400C485DD /* SelectTaxonomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */; };
 		307BBEB921FA16B100E2DF9D /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */; };
 		307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */; };
 		30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77D9B22088F0F00B180E9 /* Allergen.swift */; };
+		30DB17F522122E4A0010EE6F /* TOCropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB17F422122E4A0010EE6F /* TOCropViewController.framework */; };
 		30E43D78220895B100D7A906 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E43D77220895B100D7A906 /* Category.swift */; };
 		7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437FBA42036F1F800D107B6 /* CreditsViewController.swift */; };
 		74C59E8B203FB9E2006C456F /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C59E8A203FB9E2006C456F /* SharingManager.swift */; };
@@ -279,9 +288,18 @@
 		303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBarcodeInputView.swift; sourceTree = "<group>"; };
 		303C27A22201AC1800159961 /* ManualBarcodeInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualBarcodeInputView.xib; sourceTree = "<group>"; };
 		303C27A42201C0E500159961 /* NovaGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaGroupView.swift; sourceTree = "<group>"; };
+		30412DD0220E19BF00C485DD /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
+		30412DD4220E2AF100C485DD /* SelectCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCategoryViewController.xib; sourceTree = "<group>"; };
+		30412DD6220EF36500C485DD /* EditNutritiveValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNutritiveValueView.swift; sourceTree = "<group>"; };
+		30412DD8220EF46300C485DD /* EditNutritiveValueView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditNutritiveValueView.xib; sourceTree = "<group>"; };
+		30412DDA220F089700C485DD /* Nutriment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutriment.swift; sourceTree = "<group>"; };
+		30412DDC220F104900C485DD /* SelectNutrimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNutrimentViewController.swift; sourceTree = "<group>"; };
+		30412DDD220F104900C485DD /* SelectNutrimentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectNutrimentViewController.xib; sourceTree = "<group>"; };
+		30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTaxonomyViewController.swift; sourceTree = "<group>"; };
 		307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerResultViewController.swift; sourceTree = "<group>"; };
 		30D77D9B22088F0F00B180E9 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
+		30DB17F422122E4A0010EE6F /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
 		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		512702DF21F0B076002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		512702E021F0B077002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -876,6 +894,7 @@
 				9526F8FA1FE1C5230008E1CC /* Fabric.framework in Frameworks */,
 				9526F8FB1FE1C5230008E1CC /* Crashlytics.framework in Frameworks */,
 				307BBEB921FA16B100E2DF9D /* FloatingPanel.framework in Frameworks */,
+				30DB17F522122E4A0010EE6F /* TOCropViewController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,6 +919,7 @@
 				300085602207AC0700DC3896 /* Additive.swift */,
 				30D77D9B22088F0F00B180E9 /* Allergen.swift */,
 				30E43D77220895B100D7A906 /* Category.swift */,
+				30412DDA220F089700C485DD /* Nutriment.swift */,
 			);
 			path = Taxonomies;
 			sourceTree = "<group>";
@@ -1131,6 +1151,13 @@
 			children = (
 				956FF8821F1FF0740069D678 /* ProductAddViewController.swift */,
 				9587DF6D1F82CCD60069F0A6 /* PictureTableViewController.swift */,
+				30412DD6220EF36500C485DD /* EditNutritiveValueView.swift */,
+				30412DD8220EF46300C485DD /* EditNutritiveValueView.xib */,
+				30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */,
+				30412DDC220F104900C485DD /* SelectNutrimentViewController.swift */,
+				30412DDD220F104900C485DD /* SelectNutrimentViewController.xib */,
+				30412DD0220E19BF00C485DD /* SelectCategoryViewController.swift */,
+				30412DD4220E2AF100C485DD /* SelectCategoryViewController.xib */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -1569,6 +1596,7 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30DB17F422122E4A0010EE6F /* TOCropViewController.framework */,
 				307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */,
 				9526F8F91FE1C5230008E1CC /* Crashlytics.framework */,
 				9526F8F81FE1C5230008E1CC /* Fabric.framework */,
@@ -2046,6 +2074,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95902B471F2E284700A72EF7 /* SummaryHeaderCellController.xib in Resources */,
+				30412DD5220E2AF100C485DD /* SelectCategoryViewController.xib in Resources */,
 				303C279F2201AB7B00159961 /* ScanProductSummaryView.xib in Resources */,
 				303C27A32201AC1800159961 /* ManualBarcodeInputView.xib in Resources */,
 				95E3ADE21F21433D00CD61D9 /* ProductAddViewController.storyboard in Resources */,
@@ -2059,11 +2088,13 @@
 				95DFD7CD1F01A45C007FDB69 /* Localizable.strings in Resources */,
 				95019A741FDAAABC00A7BB79 /* PickerActionSheet.xib in Resources */,
 				95A565C91FD6011F00C997C8 /* README.md in Resources */,
+				30412DDF220F104900C485DD /* SelectNutrimentViewController.xib in Resources */,
 				956FF94E1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.xib in Resources */,
 				95890AB71F967EE900085B20 /* LaunchScreen.storyboard in Resources */,
 				956FF9461F1FF0CA0069D678 /* NutritionHeaderTableViewCell.xib in Resources */,
 				956FF9561F1FF0CA0069D678 /* ProductTableViewCell.xib in Resources */,
 				95C216491FDC8A5900EC5BCB /* Search.storyboard in Resources */,
+				30412DD9220EF46300C485DD /* EditNutritiveValueView.xib in Resources */,
 				95890AB51F967E6300085B20 /* InitialView.xib in Resources */,
 				956FF94C1F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib in Resources */,
 				956FF9481F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib in Resources */,
@@ -2152,6 +2183,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TOCropViewController.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -2172,10 +2204,11 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FloatingPanel.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TOCropViewController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		95CE24DE1ED5508500EF3D79 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2285,10 +2318,12 @@
 				955BAFFB1FF7C63A0046F419 /* ErrorCodes.swift in Sources */,
 				95D060DB1F6094D30052012D /* UITableView.swift in Sources */,
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
+				30412DD2220E19BF00C485DD /* SelectCategoryViewController.swift in Sources */,
 				300085632208777900DC3896 /* OFFUrlsHelper.swift in Sources */,
 				95513BC31FEAD6CA0027C198 /* PendingUploadItemCell.swift in Sources */,
 				95A566171FD6037800C997C8 /* LocalizableNavigationItem.swift in Sources */,
 				956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */,
+				30412DDB220F089700C485DD /* Nutriment.swift in Sources */,
 				95513BC51FEAD8640027C198 /* PendingUploadTableViewController.swift in Sources */,
 				95AA2AFF1FDABB2D00EE3A14 /* Language.swift in Sources */,
 				95A566151FD6037800C997C8 /* LocalizableTextView.swift in Sources */,
@@ -2302,14 +2337,17 @@
 				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
 				954587941F730C2D00269E71 /* CameraHelper.swift in Sources */,
 				303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */,
+				30412DD7220EF36500C485DD /* EditNutritiveValueView.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
 				95D1D29A1FFC32E400595EA1 /* DeepLinkManager.swift in Sources */,
 				956FF9661F1FF0FD0069D678 /* SearchTableViewControllerState.swift in Sources */,
 				95DB3BE81FDD923300E83B76 /* DataManager.swift in Sources */,
+				30412DE1220F111400C485DD /* SelectTaxonomyViewController.swift in Sources */,
 				95F7DB3E1F98E42500428208 /* UserDefaultsConstants.swift in Sources */,
 				952C3BE91F9A335F003C755A /* UIViewController.swift in Sources */,
 				958F33531F378076005269C5 /* InfoRowTableViewCell.swift in Sources */,
 				95A566181FD6037800C997C8 /* LocalizableUISearchBar.swift in Sources */,
+				30412DDE220F104900C485DD /* SelectNutrimentViewController.swift in Sources */,
 				957094AF1EA124E800268236 /* ProductService.swift in Sources */,
 				307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */,
 				955BAFF91FF668B70046F419 /* PendingProductMergeProcessor.swift in Sources */,

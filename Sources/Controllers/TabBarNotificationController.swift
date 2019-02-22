@@ -27,10 +27,12 @@ class TabBarNotificationController {
 
     @objc func pendingUploadBadgeChange(_ notification: NSNotification) {
         guard let count = notification.userInfo?[NotificationUserInfoKey.pendingUploadItemCount] as? Int else { return }
-        guard let index = getTabBarItemIndexForTitle("user.tab-bar.item".localized) else { return }
-        self.tabBarController.tabBar.items?[index].badgeValue = count == 0 ? nil : "\(count)" // swiftlint:disable:this empty_count
-        UIApplication.shared.applicationIconBadgeNumber = count
-        log.debug("Updated PendingUpload badge with value \(count)")
+        DispatchQueue.main.async {
+            guard let index = self.getTabBarItemIndexForTitle("user.tab-bar.item".localized) else { return }
+            self.tabBarController.tabBar.items?[index].badgeValue = count == 0 ? nil : "\(count)" // swiftlint:disable:this empty_count
+            UIApplication.shared.applicationIconBadgeNumber = count
+            log.debug("Updated PendingUpload badge with value \(count)")
+        }
     }
 
     private func getTabBarItemIndexForTitle(_ title: String) -> Int? {
