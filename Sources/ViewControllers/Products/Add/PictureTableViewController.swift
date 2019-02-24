@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol PictureTableViewControllerDelegate: class {
+    func didPostIngredientImage()
+}
+
 class PictureTableViewController: TakePictureViewController {
     @IBOutlet weak var tableView: UITableView!
-    var pictures: [PictureViewModel]!
-    var currentPictureForCell: IndexPath?
+    var pictures = [PictureViewModel]()
+    weak var delegate: PictureTableViewControllerDelegate?
 
     override func viewDidLoad() {
         tableView.isScrollEnabled = false
@@ -19,15 +23,81 @@ class PictureTableViewController: TakePictureViewController {
         pictures.append(PictureViewModel(imageType: .front))
         pictures.append(PictureViewModel(imageType: .ingredients))
         pictures.append(PictureViewModel(imageType: .nutrition))
-        currentPictureForCell = nil
+
+        if let barcode = self.barcode, let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode) {
+            fillForm(withPendingUploadItem: pendingUploadItem)
+        }
+    }
+
+    fileprivate func index(forImageType type: ImageType) -> Int? {
+        return pictures.firstIndex(where: { (pic: PictureViewModel) -> Bool in
+            return pic.imageType == type
+        })
+    }
+
+    fileprivate func fillForm(withPendingUploadItem pendingUploadItem: PendingUploadItem) {
+        if let image = pendingUploadItem.frontImage {
+            if let index = index(forImageType: .front) {
+                pictures[index].image = image.image
+                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
+        }
+        if let image = pendingUploadItem.ingredientsImage {
+            if let index = index(forImageType: .ingredients) {
+                pictures[index].image = image.image
+                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
+        }
+        if let image = pendingUploadItem.nutritionImage {
+            if let index = index(forImageType: .nutrition) {
+                pictures[index].image = image.image
+                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
+        }
     }
 
     @IBAction func didTapCellTakePictureButton(_ sender: UIButton) {
         guard let cell = sender.superview?.superview?.superview?.superview as? PictureTableViewCell else { return }
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        currentPictureForCell = indexPath
         imageType = pictures[indexPath.row].imageType
         didTapTakePictureButton(sender)
+    }
+
+    override func postImageSuccess(image: UIImage, forImageType imageType: ImageType) {
+        guard let pictureIndex = index(forImageType: imageType) else { return }
+
+        pictures[pictureIndex].image = image
+        tableView.reloadRows(at: [IndexPath(row: pictureIndex, section: 0)], with: .automatic)
+
+        if imageType == .ingredients {
+            delegate?.didPostIngredientImage()
+        }
+    }
+
+    // we override but do NOT call super, because super will display the uploading banner, when we display the loading in the tableview
+    override func showUploadingImage(forType: ImageType?) {
+        guard let pictureIndex = index(forImageType: imageType) else { return }
+        pictures[pictureIndex].isUploading = true
+        tableView.reloadRows(at: [IndexPath(row: pictureIndex, section: 0)], with: .automatic)
+    }
+
+    // we override but do NOT call super, because super will display the success banner, when we display the success in the tableview
+    override func showSuccessUploadingImage(forType: ImageType?) {
+        guard let pictureIndex = index(forImageType: imageType) else { return }
+        pictures[pictureIndex].isUploading = false
+        tableView.reloadRows(at: [IndexPath(row: pictureIndex, section: 0)], with: .automatic)
+    }
+
+    // we override and call super, because we want to show the error banner
+    override func showErrorUploadingImage(forType: ImageType?) {
+        guard let pictureIndex = index(forImageType: imageType) else {
+            super.showErrorUploadingImage(forType: forType)
+            return
+        }
+        pictures[pictureIndex].isUploading = false
+        tableView.reloadRows(at: [IndexPath(row: pictureIndex, section: 0)], with: .automatic)
+
+        super.showErrorUploadingImage(forType: forType)
     }
 }
 
@@ -47,15 +117,5 @@ extension PictureTableViewController: UITableViewDataSource {
         }
         cell.configure(viewModel: pictures[indexPath.row])
         return cell
-    }
-}
-
-// MARK: - TakePictureController extension
-extension PictureTableViewController {
-    override func postImageSuccess(image: UIImage) {
-        guard let indexPath = currentPictureForCell else { return }
-        pictures[indexPath.row].image = image
-        tableView.reloadRows(at: [indexPath], with: .automatic)
-        currentPictureForCell = nil
     }
 }

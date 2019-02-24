@@ -42,36 +42,47 @@ class TakePictureViewController: UIViewController {
         }
         guard var cameraController = self.cameraController else { return }
         cameraController.delegate = self
+        cameraController.imageType = imageType
         cameraController.show()
+    }
+
+    func postImageSuccess(image: UIImage, forImageType imageType: ImageType) { /* Do nothing, overridable */ }
+
+    func showUploadingImage(forType: ImageType? = .front) {
+        uploadingImageBanner.show()
+    }
+
+    func showErrorUploadingImage(forType: ImageType? = .front) {
+        uploadingImageBanner.dismiss()
+        uploadingImageErrorBanner.show()
+    }
+
+    func showSuccessUploadingImage(forType: ImageType? = .front) {
+        uploadingImageBanner.dismiss()
+        uploadingImageSuccessBanner.show()
     }
 }
 
 extension TakePictureViewController: CameraControllerDelegate {
-    func didGetImage(image: UIImage) {
+    func didGetImage(image: UIImage, forImageType imageType: ImageType?) {
         // For now, images will be always uploaded with type front
-        uploadingImageBanner.show()
+        showUploadingImage(forType: imageType)
 
-        guard let productImage = ProductImage(barcode: barcode, image: image, type: imageType) else {
-            uploadingImageBanner.dismiss()
-            uploadingImageErrorBanner.show()
+        guard let productImage = ProductImage(barcode: barcode, image: image, type: imageType ?? .front) else {
+            showErrorUploadingImage(forType: imageType)
             return
         }
 
-        dataManager.postImage(productImage, onSuccess: { isOffline in
+        dataManager.postImage(productImage, onSuccess: { [weak self] isOffline in
             if isOffline {
-                self.uploadingImageSuccessBanner.titleLabel?.text = "product-add.image-save-success-banner.title".localized
+                self?.uploadingImageSuccessBanner.titleLabel?.text = "product-add.image-save-success-banner.title".localized
             } else {
-                self.uploadingImageSuccessBanner.titleLabel?.text = "product-add.image-upload-success-banner.title".localized
+                self?.uploadingImageSuccessBanner.titleLabel?.text = "product-add.image-upload-success-banner.title".localized
             }
-
-            self.uploadingImageBanner.dismiss()
-            self.uploadingImageSuccessBanner.show()
-            self.postImageSuccess(image: image)
-        }, onError: { _ in
-            self.uploadingImageBanner.dismiss()
-            self.uploadingImageErrorBanner.show()
+            self?.showSuccessUploadingImage(forType: imageType)
+            self?.postImageSuccess(image: image, forImageType: imageType ?? .front)
+        }, onError: { [weak self] _ in
+            self?.showErrorUploadingImage(forType: imageType)
         })
     }
-
-    @objc func postImageSuccess(image: UIImage) { /* Do nothing, overridable */ }
 }

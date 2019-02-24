@@ -23,9 +23,14 @@ protocol DataManagerProtocol {
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
 
     // Taxonomies
+    func objectSearch<T: Object>(forQuery: String?, ofClass: T.Type) -> Results<T>?
+
     func category(forTag: String) -> Category?
+    func categorySearch(query: String?) -> Results<Category>
     func allergen(forTag: Tag) -> Allergen?
     func additive(forTag: Tag) -> Additive?
+    func nutriment(forTag: String) -> Nutriment?
+    func nutrimentSearch(query: String?) -> Results<Nutriment>
 
     // Search history
     func getHistory() -> [Age: [HistoryItem]]
@@ -34,7 +39,10 @@ protocol DataManagerProtocol {
 
     // Product - Add
     func addProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+    func addProductNutritionTable(_ product: Product, nutritionTable: [RealmPendingUploadNutrimentItem], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func postImage(_ productImage: ProductImage, onSuccess: @escaping (_ isOffline: Bool) -> Void, onError: @escaping (Error) -> Void)
+
+    func getIngredientsOCR(forBarcode: String, productLanguageCode: String, onDone: @escaping (String?, Error?) -> Void)
 
     // Products pending upload
     func getItemsPendingUpload() -> [PendingUploadItem]
@@ -96,8 +104,16 @@ class DataManager: DataManagerProtocol {
     }
 
     // MARK: - Taxonomies
+    func objectSearch<T>(forQuery query: String?, ofClass: T.Type) -> Results<T>? where T: Object {
+        return persistenceManager.objectSearch(forQuery: query, ofClass: T.self)
+    }
+
     func category(forTag tag: String) -> Category? {
         return persistenceManager.category(forCode: tag)
+    }
+
+    func categorySearch(query: String?) -> Results<Category> {
+        return persistenceManager.categorySearch(query: query)
     }
 
     func allergen(forTag tag: Tag) -> Allergen? {
@@ -106,6 +122,14 @@ class DataManager: DataManagerProtocol {
 
     func additive(forTag tag: Tag) -> Additive? {
         return persistenceManager.additive(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func nutriment(forTag tag: String) -> Nutriment? {
+        return persistenceManager.nutriment(forCode: tag)
+    }
+
+    func nutrimentSearch(query: String?) -> Results<Nutriment> {
+        return persistenceManager.nutrimentSearch(query: query)
     }
 
     // MARK: - Search history
@@ -136,13 +160,39 @@ class DataManager: DataManagerProtocol {
     // MARK: - Product Add
 
     func addProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        productApi.postProduct(product, onSuccess: {
+        productApi.postProduct(product, rawParameters: nil, onSuccess: {
             DispatchQueue.main.async {
                 onSuccess()
             }
         }, onError: { error in
             if isOffline(errorCode: (error as NSError).code) {
-                self.persistenceManager.addPendingUploadItem(product)
+                self.persistenceManager.addPendingUploadItem(product, withNutritionTable: nil)
+                DispatchQueue.main.async {
+                    onSuccess()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    onError(error)
+                }
+            }
+        })
+    }
+
+    func addProductNutritionTable(_ product: Product, nutritionTable: [RealmPendingUploadNutrimentItem], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+
+        var params = [String: Any]()
+        nutritionTable.forEach { (item) in
+            params["nutriment_\(item.code)"] = item.value
+            params["nutriment_\(item.code)_unit"] = item.unit
+        }
+
+        productApi.postProduct(product, rawParameters: params, onSuccess: {
+            DispatchQueue.main.async {
+                onSuccess()
+            }
+        }, onError: { error in
+            if isOffline(errorCode: (error as NSError).code) {
+                self.persistenceManager.addPendingUploadItem(product, withNutritionTable: nutritionTable)
                 DispatchQueue.main.async {
                     onSuccess()
                 }
@@ -171,6 +221,10 @@ class DataManager: DataManagerProtocol {
                 }
             }
         })
+    }
+
+    func getIngredientsOCR(forBarcode: String, productLanguageCode: String, onDone: @escaping (String?, Error?) -> Void) {
+        productApi.getIngredientsOCR(forBarcode: forBarcode, productLanguageCode: productLanguageCode, onDone: onDone)
     }
 
     // MARK: - Products pending upload
@@ -208,14 +262,22 @@ class DataManager: DataManagerProtocol {
         // Check if product exists
         self.productApi.getProduct(byBarcode: item.barcode, isScanning: false, isSummary: false, onSuccess: { product in
             var productToUpload: Product?
+            var nutrimentsToUpload: [RealmPendingUploadNutrimentItem]?
 
             // If exists, merge with PendingUploadItem and try to upload to the server the changes
             // If it does not, upload all the info in PendingUploadItem (this will be the case when the product is new)
 
-            if let product = product, let mergedProduct = mergeProcessor.merge(item, product) {
-                log.debug("Product exists but there is new info to upload")
-                productToUpload = mergedProduct
-            } else if product == nil {
+            if let product = product {
+                let (mergedProduct, mergedNutriments) = mergeProcessor.merge(item, product)
+                if let mergedProduct = mergedProduct {
+                    log.debug("Product exists but there is new info to upload")
+                    productToUpload = mergedProduct
+                }
+                if let mergedNutriments = mergedNutriments {
+                    nutrimentsToUpload = mergedNutriments
+                }
+            }
+            if productToUpload == nil {
                 log.debug("Product does not exist, going to upload the info we have")
                 productToUpload = item.toProduct()
             }
@@ -229,7 +291,7 @@ class DataManager: DataManagerProtocol {
             var ingredientsImageSuccess = false
             var nutritionTableImageSuccess = false
 
-            self.uploadProduct(productToUpload, mergeTasks) { success in productSuccess = success }
+            self.uploadProduct(productToUpload, nutritionTable: nutrimentsToUpload, group: mergeTasks) { success in productSuccess = success }
             self.uploadImage(item.frontImage, mergeTasks) { success in frontImageSuccess = success }
             self.uploadImage(item.ingredientsImage, mergeTasks) { success in ingredientsImageSuccess = success }
             self.uploadImage(item.nutritionImage, mergeTasks) { success in nutritionTableImageSuccess = success }
@@ -248,8 +310,10 @@ class DataManager: DataManagerProtocol {
                 if productSuccess {
                     item.productName = nil
                     item.brand = nil
-                    item.quantityValue = nil
-                    item.quantityUnit = nil
+                    item.quantity = nil
+                    item.categories = nil
+                    item.ingredientsList = nil
+                    item.nutriments.removeAll()
                 }
 
                 if frontImageSuccess {
@@ -278,7 +342,7 @@ class DataManager: DataManagerProtocol {
         itemSemaphore.wait()
     }
 
-    private func uploadProduct(_ product: Product?, _ group: DispatchGroup, completionHandler: @escaping (Bool) -> Void) {
+    private func uploadProduct(_ product: Product?, nutritionTable: [RealmPendingUploadNutrimentItem]?, group: DispatchGroup, completionHandler: @escaping (Bool) -> Void) {
         group.enter()
 
         let successHandler = {
@@ -292,9 +356,15 @@ class DataManager: DataManagerProtocol {
             return
         }
 
+        var params = [String: Any]()
+        nutritionTable?.forEach { (item) in
+            params["nutriment_\(item.code)"] = item.value
+            params["nutriment_\(item.code)_unit"] = item.unit
+        }
+
         log.debug("Uploading product info of a PendingUploadItem...")
 
-        productApi.postProduct(product, onSuccess: {
+        productApi.postProduct(product, rawParameters: params, onSuccess: {
             successHandler()
         }, onError: { _ in
             completionHandler(false)

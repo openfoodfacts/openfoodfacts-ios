@@ -21,8 +21,9 @@ class PendingUploadItemCell: UITableViewCell {
     func configure(with item: PendingUploadItem) {
         productNameLabel.text = item.productName ?? item.barcode
 
-        if let quantityValue = item.quantityValue, !quantityValue.isEmpty {
-            quantityLabel.text = "\(quantityValue) \(item.quantityUnit ?? "")" // QuantityUnit should always be present
+
+        if let quantity = item.quantity, !quantity.isEmpty {
+            quantityLabel.text = quantity
         } else {
             quantityLabel.isHidden = true
         }

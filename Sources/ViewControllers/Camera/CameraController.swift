@@ -8,22 +8,25 @@
 
 import UIKit
 import MobileCoreServices
+import TOCropViewController
 
 protocol CameraController {
     var delegate: CameraControllerDelegate? { get set }
+    var imageType: ImageType? { get set }
 
     /// Show camera's controller view
     func show()
 }
 
 protocol CameraControllerDelegate: class {
-    func didGetImage(image: UIImage)
+    func didGetImage(image: UIImage, forImageType imageType: ImageType?)
 }
 
 class CameraControllerImpl: NSObject, CameraController {
     fileprivate let presentingViewController: UIViewController
     var picker: UIImagePickerController?
     lazy var cameraHelper: CameraHelperProtocol = CameraHelper()
+    var imageType: ImageType?
 
     weak var delegate: CameraControllerDelegate?
 
@@ -43,8 +46,15 @@ class CameraControllerImpl: NSObject, CameraController {
 extension CameraControllerImpl: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            delegate?.didGetImage(image: image)
-            dismiss()
+            if imageType == .ingredients {
+                dismiss()
+                let cropViewController = TOCropViewController(image: image)
+                cropViewController.delegate = self
+                self.presentingViewController.present(cropViewController, animated: true, completion: nil)
+            } else {
+                delegate?.didGetImage(image: image, forImageType: imageType)
+                dismiss()
+            }
         }
     }
 
@@ -54,5 +64,16 @@ extension CameraControllerImpl: UIImagePickerControllerDelegate, UINavigationCon
 
     fileprivate func dismiss() {
         self.presentingViewController.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CameraControllerImpl: TOCropViewControllerDelegate {
+    func cropViewController(_ cropViewController: TOCropViewController, didCropTo image: UIImage, with cropRect: CGRect, angle: Int) {
+        delegate?.didGetImage(image: image, forImageType: imageType)
+        dismiss()
+    }
+
+    func cropViewController(_ cropViewController: TOCropViewController, didFinishCancelled cancelled: Bool) {
+        dismiss()
     }
 }

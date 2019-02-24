@@ -257,7 +257,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productApi.postProduct(product, onSuccess: success, onError: error)
+        productApi.postProduct(product, rawParameters: nil, onSuccess: success, onError: error)
 
         // then
         expect(resultSuccessful).toEventually(beTrue())
@@ -276,7 +276,7 @@ class ProductServiceTests: XCTestCase {
         }
 
         // when
-        productApi.postProduct(product, onSuccess: success, onError: error)
+        productApi.postProduct(product, rawParameters: nil, onSuccess: success, onError: error)
 
         // then
         expect(result).toEventuallyNot(beNil())

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditNutritiveValueView" customModule="OpenFoodFacts" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="FTL-6g-AOW"/>
+                <outlet property="hiddenUnitInputTextField" destination="5W4-DX-mT6" id="zIu-ZT-mEF"/>
+                <outlet property="inputTextField" destination="MgS-51-Rkk" id="Mnr-E7-SJD"/>
+                <outlet property="singleUnitLabel" destination="oxP-Vz-Cnw" id="CQb-Ag-lJI"/>
+                <outlet property="titleLabel" destination="Lg0-Rq-X98" id="iGL-WX-8yA"/>
+                <outlet property="tooMuchLabel" destination="pmp-1e-M7F" id="TK5-ad-qha"/>
+                <outlet property="unitButton" destination="otO-MU-F4k" id="JA2-Rl-ovz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="440" height="166"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Title label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Lg0-Rq-X98">
+                    <rect key="frame" x="0.0" y="4" width="440" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="V0B-OL-2NT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pDq-bf-JuJ">
+                    <rect key="frame" x="0.0" y="27" width="440" height="135"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="quH-yz-bYP">
+                            <rect key="frame" x="0.0" y="0.0" width="440" height="30"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="756" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MgS-51-Rkk">
+                                    <rect key="frame" x="0.0" y="0.0" width="346" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxP-Vz-Cnw">
+                                    <rect key="frame" x="350" y="5" width="43" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otO-MU-F4k">
+                                    <rect key="frame" x="397" y="0.0" width="43" height="30"/>
+                                    <state key="normal" title="unit ↓"/>
+                                    <connections>
+                                        <action selector="unitButtonTapped:" destination="-1" eventType="touchUpInside" id="4EQ-94-BKL"/>
+                                    </connections>
+                                </button>
+                                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5W4-DX-mT6">
+                                    <rect key="frame" x="440" y="0.0" width="0.0" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="eJl-LL-bUe"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More than 100gs ???" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmp-1e-M7F">
+                            <rect key="frame" x="0.0" y="34" width="440" height="101"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="1" green="0.0" blue="0.037429042760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-add.nutritive.too-much"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Lg0-Rq-X98" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="5n3-sq-Jv5"/>
+                <constraint firstItem="pDq-bf-JuJ" firstAttribute="top" secondItem="Lg0-Rq-X98" secondAttribute="bottom" constant="5" id="D7u-Fb-bZM"/>
+                <constraint firstItem="Lg0-Rq-X98" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Hy6-bn-Hob"/>
+                <constraint firstItem="pDq-bf-JuJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LLd-sR-zRI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pDq-bf-JuJ" secondAttribute="bottom" constant="4" id="PS0-Td-oVf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Lg0-Rq-X98" secondAttribute="trailing" id="Vla-3k-q5L"/>
+                <constraint firstItem="pDq-bf-JuJ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ovg-Jh-1tM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-22" y="133"/>
+        </view>
+    </objects>
+</document>

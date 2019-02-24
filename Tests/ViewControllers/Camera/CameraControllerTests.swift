@@ -58,8 +58,9 @@ class CameraControllerTests: XCTestCase {
 class CameraControllerDelegateMock: NSObject, CameraControllerDelegate {
     var gotImage = false
     var image: UIImage?
+    var imageType: ImageType?
 
-    func didGetImage(image: UIImage) {
+    func didGetImage(image: UIImage, forImageType imageType: ImageType?) {
         gotImage = true
         self.image = image
     }

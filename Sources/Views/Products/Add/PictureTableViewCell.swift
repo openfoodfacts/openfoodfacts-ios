@@ -9,25 +9,42 @@
 import UIKit
 
 class PictureTableViewCell: UITableViewCell {
+    @IBOutlet weak var dataStackView: UIStackView!
+
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var pictureButton: UIButton!
     @IBOutlet weak var pictureLabel: UILabel!
 
-    func configure(viewModel: PictureViewModel) {
-        if let text = viewModel.text {
-            pictureButton.setTitle(text, for: .normal)
-        }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-        if let image = viewModel.image {
-            pictureView.image = image
-            pictureView.isHidden = false
-            pictureButton.isHidden = true
-            pictureLabel.isHidden = false
-            pictureLabel.text = viewModel.uploadedPictureText
+    func configure(viewModel: PictureViewModel) {
+        activityIndicator.color = UIColor.black
+
+        if viewModel.isUploading {
+            UIView.animate(withDuration: 0.2) {
+                self.dataStackView.alpha = 0
+                self.activityIndicator.startAnimating()
+            }
         } else {
-            pictureView.isHidden = true
-            pictureButton.isHidden = false
-            pictureLabel.isHidden = true
+            if let text = viewModel.text {
+                pictureButton.setTitle(text, for: .normal)
+            }
+
+            if let image = viewModel.image {
+                pictureView.image = image
+                pictureView.isHidden = false
+                pictureButton.isHidden = true
+                pictureLabel.isHidden = false
+                pictureLabel.text = viewModel.uploadedPictureText
+            } else {
+                pictureView.isHidden = true
+                pictureButton.isHidden = false
+                pictureLabel.isHidden = true
+            }
+            UIView.animate(withDuration: 0.2) {
+                self.dataStackView.alpha = 1
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
 }

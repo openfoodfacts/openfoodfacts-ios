@@ -16,8 +16,9 @@ protocol ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
     func getProduct(byBarcode barcode: String, isScanning: Bool, isSummary: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
     func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
-    func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+    func postProduct(_ product: Product, rawParameters: [String: Any]?, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+    func getIngredientsOCR(forBarcode: String, productLanguageCode: String, onDone: @escaping (String?, Error?) -> Void)
 }
 
 struct Endpoint {
@@ -172,7 +173,8 @@ extension ProductService {
                 multipartFormData: { multipartFormData in
                     multipartFormData.append(barcode, withName: Params.code)
                     multipartFormData.append(fileURL, withName: "imgupload_\(productImage.type.rawValue)")
-                    multipartFormData.append(productImage.type.rawValue.data(using: .utf8)!, withName: Params.imagefield)
+                    let lang = Bundle.main.preferredLocalizations.first ?? "en"
+                    multipartFormData.append(("\(productImage.type.rawValue)_\(lang)").data(using: .utf8)!, withName: Params.imagefield)
 
                     if let credentials = CredentialsController.shared.getCredentials(),
                         let username = credentials.username.data(using: .utf8),
@@ -227,8 +229,12 @@ extension ProductService {
         return URL(fileURLWithPath: filePath)
     }
 
-    func postProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+    func postProduct(_ product: Product, rawParameters: [String: Any]?, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         var params = product.toJSON()
+
+        if let rawParameters = rawParameters {
+            params.merge(rawParameters) { $1 }
+        }
 
         if let credentials = CredentialsController.shared.getCredentials() {
             params[Params.userId] = credentials.username
@@ -266,6 +272,34 @@ extension ProductService {
                 log.error(error)
                 Crashlytics.sharedInstance().recordError(error)
                 onError(error)
+            }
+        }
+    }
+
+    func getIngredientsOCR(forBarcode: String, productLanguageCode: String, onDone: @escaping (String?, Error?) -> Void) {
+
+        let params = [
+            "process_image": "1",
+            "ocr_engine": "google_cloud_vision",
+            "code": forBarcode,
+            "id": "ingredients_\(productLanguageCode)"
+        ]
+
+        let request = Alamofire.request("\(Endpoint.get)/cgi/ingredients.pl", method: .get, parameters: params, encoding: URLEncoding.default)
+
+        request.responseJSON(queue: utilityQueue) { response in
+            log.debug(response.debugDescription)
+            switch response.result {
+            case .success(let responseBody):
+                if let json = responseBody as? [String: Any] {
+                    onDone(json["ingredients_text_from_image"] as? String, nil)
+                } else {
+                    onDone(nil, nil)
+                }
+            case .failure(let error):
+                log.error(error)
+                Crashlytics.sharedInstance().recordError(error)
+                onDone(nil, error)
             }
         }
     }

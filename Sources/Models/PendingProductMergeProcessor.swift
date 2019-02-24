@@ -15,11 +15,11 @@ protocol ProductMergeProcessor {
     ///   - source: Source object
     ///   - target: Destination object
     /// - Returns: Destination object with source's info
-    func merge(_ source: PendingUploadItem, _ target: Product) -> Product?
+    func merge(_ source: PendingUploadItem, _ target: Product) -> (product: Product?, nutriments: [RealmPendingUploadNutrimentItem]?)
 }
 
 struct PendingProductMergeProcessor: ProductMergeProcessor {
-    func merge(_ source: PendingUploadItem, _ target: Product) -> Product? {
+    func merge(_ source: PendingUploadItem, _ target: Product) -> (product: Product?, nutriments: [RealmPendingUploadNutrimentItem]?) {
         var result = Product()
         var modified = false
 
@@ -35,14 +35,27 @@ struct PendingProductMergeProcessor: ProductMergeProcessor {
             result.brands = [brand]
         }
 
-        if target.quantityValue == nil, let quantityValue = source.quantityValue {
+        if target.quantity == nil, let quantity = source.quantity {
             modified = true
-            result.quantityValue = quantityValue
+            result.quantity = quantity
         }
 
-        if target.quantityUnit == nil, let quantityUnit = source.quantityUnit {
+        if target.noNutritionData == nil, let noNutritionData = source.noNutritionData {
             modified = true
-            result.quantityUnit = quantityUnit
+            result.noNutritionData = noNutritionData
+        }
+        if target.servingSize == nil, let servingSize = source.servingSize {
+            modified = true
+            result.servingSize = servingSize
+        }
+        if target.nutritionDataPer == nil, let nutritionDataPer = source.nutritionDataPer {
+            modified = true
+            result.nutritionDataPer = NutritionDataPer(rawValue: nutritionDataPer)
+        }
+
+        if target.ingredientsList == nil, let ingredientsList = source.ingredientsList {
+            modified = true
+            result.ingredientsList = ingredientsList
         }
 
         if target.lang == nil {
@@ -50,6 +63,16 @@ struct PendingProductMergeProcessor: ProductMergeProcessor {
             result.lang = source.language
         }
 
-        return modified ? result : nil
+        var nutriments = [RealmPendingUploadNutrimentItem]()
+        var nutrimentsModified = false
+        if target.nutriments == nil && source.nutriments.isEmpty == false {
+            nutrimentsModified = true
+            nutriments = source.nutriments.map { $0 }
+        }
+
+        let productResult = (nutrimentsModified || modified) ? result : nil
+        let nutrimentsResults = nutrimentsModified ? nutriments : nil
+
+        return (productResult, nutrimentsResults)
     }
 }
