@@ -165,6 +165,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: allergen.value.capitalized)
         }), label: InfoRowKey.allergens.localizedString)
 
+        if product.states?.contains("en:ingredients-to-be-completed") == true {
+            if product.allergens == nil || product.allergens?.isEmpty == true {
+                createFormRow(with: &rows, item: "product-detail.ingredients.allergens-list.missing-infos".localized, label: "⚠️")
+            }
+        }
+
         createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
 
         createFormRow(with: &rows, item: product.additives?.map({ (additive: Tag) -> NSAttributedString in

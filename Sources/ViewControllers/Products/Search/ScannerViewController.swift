@@ -33,6 +33,7 @@ class ScannerViewController: UIViewController {
     fileprivate lazy var overlay = TextOverlay()
     fileprivate var tapToFocusView: TapToFocusView?
     fileprivate var lastCodeScanned: String?
+    fileprivate var allergenAlertShown = false
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
     let dataManager: DataManagerProtocol
     var configResult: SessionConfigResult = .success
@@ -56,6 +57,7 @@ class ScannerViewController: UIViewController {
         self.title = "product-scanner.view-title".localized
 
         lastCodeScanned = nil
+        allergenAlertShown = false
 
         checkCameraPermissions()
         configureVideoView()
@@ -253,6 +255,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
                 resetOverlay()
+                allergenAlertShown = false
                 lastCodeScanned = barcode
                 getProduct(barcode: barcode, isSummary: true)
             }
@@ -288,6 +291,30 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         })
     }
 
+    fileprivate func showAllergenAlertIfNeeded(forProduct product: Product) {
+        guard let productAllergens = product.allergens else {
+            return
+        }
+
+        let allergensAlerts = dataManager.listAllergies()
+        let allergens = allergensAlerts.map { $0 }.filter { (allergen: Allergen) -> Bool in
+            for productAllergen in productAllergens where productAllergen.languageCode + ":" + productAllergen.value == allergen.code {
+                return true
+            }
+            return false
+        }
+
+        if allergens.isEmpty == false {
+            let names = allergens.compactMap { $0.names.chooseForCurrentLanguage()?.value }
+                .joined(separator: ", ")
+
+            let alert = UIAlertController(title: "⚠️ " + "product-detail.ingredients.allergens-alert.title".localized, message: names, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (_) -> Void in }
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+
     private func handleGetProductSuccess(_ barcode: String, _ product: Product?, isSummary: Bool, createIfNeeded: Bool = true) {
         DispatchQueue.main.async {
             if let product = product {
@@ -297,6 +324,10 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     self.scannerFloatingPanelLayout.canShowDetails = true
                     self.dataManager.addHistoryItem(product)
                     self.scannerResultController.status = .hasProduct(product: product, dataManager: self.dataManager)
+                    if self.allergenAlertShown == false {
+                        self.allergenAlertShown = true
+                        self.showAllergenAlertIfNeeded(forProduct: product)
+                    }
                 }
             } else {
                 if createIfNeeded == true {
@@ -480,6 +511,7 @@ extension ScannerViewController: ManualBarcodeInputDelegate {
             return
         }
         self.lastCodeScanned = barcode
+        allergenAlertShown = false
         self.getProduct(barcode: barcode, isSummary: true)
     }
 }

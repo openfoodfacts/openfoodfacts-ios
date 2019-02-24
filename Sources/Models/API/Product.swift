@@ -49,6 +49,7 @@ struct Product: Mappable {
     var nutriments: Nutriments?
     var nutritionTableImage: String?
     var lang: String?
+    var states: [String]?
 
     // These are not in any json response, but we will use them internally for all products we create as they are easier to work with
     var quantity: String? {
@@ -105,6 +106,7 @@ struct Product: Mappable {
         nutriments <- map[OFFJson.NutrimentsKey]
         nutritionDataPer <- map[OFFJson.NutritionDataPerKey]
         nutritionTableImage <- map[OFFJson.ImageNutritionUrlKey]
+        states <- (map[OFFJson.StatesKey], ArrayTransform())
         lang <- map[OFFJson.LangKey]
     }
 }

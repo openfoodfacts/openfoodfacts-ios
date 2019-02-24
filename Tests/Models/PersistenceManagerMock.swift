@@ -107,6 +107,17 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
         return nil
     }
 
+    // MARK: - Allergens settings
+    func addAllergy(toAllergen: Allergen) {
+    }
+
+    func removeAllergy(toAllergen: Allergen) {
+    }
+
+    func listAllergies() -> Results<Allergen> {
+        return realm().objects(Allergen.self)
+    }
+
     // MARK: - Products pending upload
     func addPendingUploadItem(_ product: Product, withNutritionTable nutriments: [RealmPendingUploadNutrimentItem]?) {
         addPendingUploadItemCalled = true
