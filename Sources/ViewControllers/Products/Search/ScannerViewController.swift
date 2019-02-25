@@ -41,6 +41,8 @@ class ScannerViewController: UIViewController {
     fileprivate var floatingPanelController: FloatingPanelController!
     fileprivate var scannerResultController: ScannerResultViewController!
     fileprivate var scannerFloatingPanelLayout = ScannerFloatingPanelLayout()
+    fileprivate let floatingLabelContainer = UIView()
+    fileprivate let floatingLabel = UILabel()
 
     init(dataManager: DataManagerProtocol) {
         self.dataManager = dataManager
@@ -65,7 +67,31 @@ class ScannerViewController: UIViewController {
         configureOverlay()
         configureFlashView()
         configureTapToFocus()
+
+        floatingLabel.text = "⚠️ " + "product-detail.ingredients.allergens-list.missing-infos".localized
+        floatingLabel.textAlignment = .center
+        floatingLabel.numberOfLines = 0
+        floatingLabel.textColor = .white
+
+        floatingLabelContainer.backgroundColor = UIColor.black.withAlphaComponent(0.66)
+        floatingLabelContainer.addSubview(floatingLabel)
+        floatingLabelContainer.isHidden = true
+
+        self.view.addSubview(floatingLabelContainer)
+        floatingLabelContainer.translatesAutoresizingMaskIntoConstraints = false
+        floatingLabel.translatesAutoresizingMaskIntoConstraints = false
+
         configureFloatingPanel()
+
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: floatingLabelContainer, attribute: .bottom, relatedBy: .equal, toItem: floatingPanelController.surfaceView, attribute: .top, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: floatingLabelContainer, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: floatingLabelContainer, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: floatingLabel, attribute: .bottom, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .bottom, multiplier: 1, constant: -16),
+            NSLayoutConstraint(item: floatingLabel, attribute: .top, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .top, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: floatingLabel, attribute: .leading, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .leading, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: floatingLabel, attribute: .trailing, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .trailing, multiplier: 1, constant: -8)
+            ])
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -256,6 +282,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
                 resetOverlay()
                 allergenAlertShown = false
+                floatingLabelContainer.isHidden = true
                 lastCodeScanned = barcode
                 getProduct(barcode: barcode, isSummary: true)
             }
@@ -329,12 +356,28 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                         self.showAllergenAlertIfNeeded(forProduct: product)
                     }
                 }
+
+                self.showAllergensFloatingLabelIfNeeded()
+
             } else {
                 if createIfNeeded == true {
                     self.addNewProduct(barcode)
                 }
                 self.scannerResultController.status = .waitingForScan
             }
+        }
+    }
+
+    fileprivate func showAllergensFloatingLabelIfNeeded() {
+        switch scannerResultController.status {
+        case .hasProduct(let product, _):
+            if product.states?.contains("en:ingredients-to-be-completed") == true {
+                self.floatingLabelContainer.isHidden = self.floatingPanelController.position != .tip
+            } else {
+                self.floatingLabelContainer.isHidden = true
+            }
+        default:
+            self.floatingLabelContainer.isHidden = true
         }
     }
 }
@@ -486,8 +529,8 @@ extension ScannerViewController: FloatingPanelControllerDelegate {
         if floatingPanelVC.position != .full {
             self.view.endEditing(true)
         }
+        self.showAllergensFloatingLabelIfNeeded()
     }
-
 }
 
 // MARK: - ManualBarcodeInput delegate
