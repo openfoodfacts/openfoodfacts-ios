@@ -48,6 +48,8 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "product-search.title".localized
+
         configureTableView()
         configureSearchController()
         configureGestureRecognizers()

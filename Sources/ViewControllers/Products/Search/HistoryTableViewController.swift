@@ -18,18 +18,23 @@ protocol HistoryTableViewControllerDelegate: class {
     func showItem(_ item: HistoryItem, onError: @escaping () -> Void)
 }
 
-class HistoryTableViewController: UITableViewController {
+class HistoryTableViewController: UITableViewController, DataManagerClient {
     var dataManager: DataManagerProtocol!
     lazy var items = [Age: [HistoryItem]]()
     weak var delegate: HistoryTableViewControllerDelegate?
 
-    let showDetailsBanner = NotificationBanner(title: "product-search.error-view.title".localized,
-                                               subtitle: "product-search.error-view.subtitle".localized,
-                                               style: .danger)
+    var showDetailsBanner: NotificationBanner!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.title = "history.title".localized
+
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: HistoryCellId.item)
+
+        showDetailsBanner = NotificationBanner(title: "product-search.error-view.title".localized,
+                                               subtitle: "product-search.error-view.subtitle".localized,
+                                               style: .danger)
     }
 
     override func viewWillAppear(_ animated: Bool) {

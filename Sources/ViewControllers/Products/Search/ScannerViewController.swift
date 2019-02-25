@@ -13,7 +13,7 @@ import NotificationBanner
 import SVProgressHUD
 import FloatingPanel
 
-class ScannerViewController: UIViewController {
+class ScannerViewController: UIViewController, DataManagerClient {
     fileprivate let supportedBarcodes = [AVMetadataObject.ObjectType.upce,
                                          AVMetadataObject.ObjectType.code39,
                                          AVMetadataObject.ObjectType.code39Mod43,
@@ -34,7 +34,8 @@ class ScannerViewController: UIViewController {
     fileprivate var tapToFocusView: TapToFocusView?
     fileprivate var lastCodeScanned: String?
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
-    let dataManager: DataManagerProtocol
+
+    var dataManager: DataManagerProtocol!
     var configResult: SessionConfigResult = .success
 
     fileprivate var floatingPanelController: FloatingPanelController!
@@ -47,7 +48,7 @@ class ScannerViewController: UIViewController {
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
 
     override func viewDidLoad() {

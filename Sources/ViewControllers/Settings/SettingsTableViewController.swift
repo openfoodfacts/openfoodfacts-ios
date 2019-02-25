@@ -28,6 +28,9 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.title = "settings.tab-bar.item".localized
+
         scanOnLaunchSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsConstants.scanningOnLaunch)
     }
 
