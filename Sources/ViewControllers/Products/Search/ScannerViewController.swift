@@ -33,6 +33,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
     fileprivate lazy var overlay = TextOverlay()
     fileprivate var tapToFocusView: TapToFocusView?
     fileprivate var lastCodeScanned: String?
+    fileprivate var barcodeToOpenAtStartup: String?
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
 
     var dataManager: DataManagerProtocol!
@@ -82,13 +83,23 @@ class ScannerViewController: UIViewController, DataManagerClient {
             returnToRootController()
         }
 
-        if let lastCodeScanned = lastCodeScanned {
-            self.getProduct(barcode: lastCodeScanned, isSummary: true, createIfNeeded: false)
+        if let barcodeToOpenAtStartup = barcodeToOpenAtStartup {
+            self.lastCodeScanned = barcodeToOpenAtStartup
+            self.barcodeToOpenAtStartup = nil
+            self.getProduct(barcode: barcodeToOpenAtStartup, isSummary: true, createIfNeeded: false)
+        } else {
+            self.floatingPanelController.move(to: .hidden, animated: false)
         }
+
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+
+        self.navigationController?.isNavigationBarHidden = false
+        self.lastCodeScanned = nil
+
         session.stopRunning()
         showHelpInOverlayTask?.cancel()
     }
@@ -206,6 +217,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
                 self?.overlay.setText("product-scanner.overlay.extended-user-help".localized)
                 self?.scannerFloatingPanelLayout.canShowDetails = true
                 self?.scannerResultController.status = .manualBarcode
+                self?.floatingPanelController.move(to: .tip, animated: true)
             } else {
                 self?.showScanHelpInstructions()
             }
@@ -368,6 +380,7 @@ extension ScannerViewController {
         if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
             addProductVC.barcode = barcode
             addProductVC.dataManager = dataManager
+            self.barcodeToOpenAtStartup = barcode
             self.navigationController?.pushViewController(addProductVC, animated: true)
         }
     }
@@ -490,7 +503,7 @@ class ScannerFloatingPanelLayout: FloatingPanelLayout {
     fileprivate var canShowDetails: Bool = false
 
     public var initialPosition: FloatingPanelPosition {
-        return .tip
+        return .hidden
     }
 
     public var supportedPositions: Set<FloatingPanelPosition> {

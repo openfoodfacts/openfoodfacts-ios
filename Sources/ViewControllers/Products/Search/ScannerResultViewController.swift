@@ -44,6 +44,7 @@ class ScannerResultViewController: UIViewController {
         topSummaryView.isHidden = true
         statusIndicatorLabel.isHidden = true
         manualBarcodeInputView.isHidden = true
+        productDetailsContainer.isHidden = true
 
         switch status {
 
@@ -65,7 +66,6 @@ class ScannerResultViewController: UIViewController {
         case .manualBarcode:
             manualBarcodeInputView.barcodeTextField.text = nil
             manualBarcodeInputView.isHidden = false
-
         }
     }
 
@@ -95,5 +95,7 @@ class ScannerResultViewController: UIViewController {
             .constraint(equalTo: productDetailsContainer.trailingAnchor).isActive = true
 
         productDetailVC.didMove(toParentViewController: self)
+
+        self.productDetailsContainer.isHidden = false
     }
 }
