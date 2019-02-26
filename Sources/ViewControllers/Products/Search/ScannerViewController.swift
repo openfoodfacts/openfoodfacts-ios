@@ -13,7 +13,7 @@ import NotificationBanner
 import SVProgressHUD
 import FloatingPanel
 
-class ScannerViewController: UIViewController {
+class ScannerViewController: UIViewController, DataManagerClient {
     fileprivate let supportedBarcodes = [AVMetadataObject.ObjectType.upce,
                                          AVMetadataObject.ObjectType.code39,
                                          AVMetadataObject.ObjectType.code39Mod43,
@@ -33,9 +33,11 @@ class ScannerViewController: UIViewController {
     fileprivate lazy var overlay = TextOverlay()
     fileprivate var tapToFocusView: TapToFocusView?
     fileprivate var lastCodeScanned: String?
+    fileprivate var barcodeToOpenAtStartup: String?
     fileprivate var allergenAlertShown = false
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
-    let dataManager: DataManagerProtocol
+
+    var dataManager: DataManagerProtocol!
     var configResult: SessionConfigResult = .success
 
     fileprivate var floatingPanelController: FloatingPanelController!
@@ -50,7 +52,7 @@ class ScannerViewController: UIViewController {
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
 
     override func viewDidLoad() {
@@ -109,13 +111,23 @@ class ScannerViewController: UIViewController {
             returnToRootController()
         }
 
-        if let lastCodeScanned = lastCodeScanned {
-            self.getProduct(barcode: lastCodeScanned, isSummary: true, createIfNeeded: false)
+        if let barcodeToOpenAtStartup = barcodeToOpenAtStartup {
+            self.lastCodeScanned = barcodeToOpenAtStartup
+            self.barcodeToOpenAtStartup = nil
+            self.getProduct(barcode: barcodeToOpenAtStartup, isSummary: true, createIfNeeded: false)
+        } else {
+            self.floatingPanelController.move(to: .hidden, animated: false)
         }
+
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+
+        self.navigationController?.isNavigationBarHidden = false
+        self.lastCodeScanned = nil
+
         session.stopRunning()
         showHelpInOverlayTask?.cancel()
     }
@@ -233,6 +245,7 @@ class ScannerViewController: UIViewController {
                 self?.overlay.setText("product-scanner.overlay.extended-user-help".localized)
                 self?.scannerFloatingPanelLayout.canShowDetails = true
                 self?.scannerResultController.status = .manualBarcode
+                self?.floatingPanelController.move(to: .tip, animated: true)
             } else {
                 self?.showScanHelpInstructions()
             }
@@ -441,6 +454,7 @@ extension ScannerViewController {
         if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
             addProductVC.barcode = barcode
             addProductVC.dataManager = dataManager
+            self.barcodeToOpenAtStartup = barcode
             self.navigationController?.pushViewController(addProductVC, animated: true)
         }
     }
@@ -564,7 +578,7 @@ class ScannerFloatingPanelLayout: FloatingPanelLayout {
     fileprivate var canShowDetails: Bool = false
 
     public var initialPosition: FloatingPanelPosition {
-        return .tip
+        return .hidden
     }
 
     public var supportedPositions: Set<FloatingPanelPosition> {

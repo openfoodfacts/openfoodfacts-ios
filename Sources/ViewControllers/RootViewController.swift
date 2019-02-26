@@ -62,8 +62,8 @@ class RootViewController: UIViewController {
                 top.dataManager = dataManager
             }
 
-            if var navVC = child as? UINavigationController {
-                if var top = navVC.viewControllers.first as? DataManagerClient {
+            if let nav = child as? UINavigationController {
+                if var top = nav.viewControllers.first as? DataManagerClient {
                     top.dataManager = dataManager
                 }
             }
@@ -77,8 +77,8 @@ class RootViewController: UIViewController {
 
     private func showScan() {
         for child in tabBarVC.viewControllers ?? [] {
-            if let searchVC = child as? SearchViewController {
-                searchVC.scanBarcode()
+            if let _ = child as? ScannerViewController {
+                tabBarVC.selectedIndex = tabBarVC.viewControllers?.firstIndex(of: child) ?? 0
                 break
             }
         }

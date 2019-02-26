@@ -21,7 +21,6 @@ class PendingUploadItemCell: UITableViewCell {
     func configure(with item: PendingUploadItem) {
         productNameLabel.text = item.productName ?? item.barcode
 
-
         if let quantity = item.quantity, !quantity.isEmpty {
             quantityLabel.text = quantity
         } else {
