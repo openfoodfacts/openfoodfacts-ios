@@ -14,22 +14,22 @@ struct HistoryCellId {
     static let item = "ProductTableViewCell"
 }
 
-protocol HistoryTableViewControllerDelegate: class {
-    func showItem(_ item: HistoryItem, onError: @escaping () -> Void)
-}
-
-class HistoryTableViewController: UITableViewController {
+class HistoryTableViewController: UITableViewController, DataManagerClient {
     var dataManager: DataManagerProtocol!
     lazy var items = [Age: [HistoryItem]]()
-    weak var delegate: HistoryTableViewControllerDelegate?
 
-    let showDetailsBanner = NotificationBanner(title: "product-search.error-view.title".localized,
-                                               subtitle: "product-search.error-view.subtitle".localized,
-                                               style: .danger)
+    var showDetailsBanner: NotificationBanner!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.title = "history.title".localized
+
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: HistoryCellId.item)
+
+        showDetailsBanner = NotificationBanner(title: "product-search.error-view.title".localized,
+                                               subtitle: "product-search.error-view.subtitle".localized,
+                                               style: .danger)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,9 +39,18 @@ class HistoryTableViewController: UITableViewController {
     }
 
     @IBAction func clearHistory(_ sender: UIBarButtonItem) {
-        dataManager.clearHistory()
-        items.removeAll()
-        tableView.reloadData()
+        let alert = UIAlertController(title: "history.clear.confirmation-title".localized, message: "history.clear.confirmation-message".localized, preferredStyle: .alert)
+        let clearAction = UIAlertAction(title: "history.button.clear".localized, style: .destructive) { (_) -> Void in
+            self.dataManager.clearHistory()
+            self.items.removeAll()
+            self.tableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "generic.cancel".localized, style: .default) { (_) -> Void in }
+
+        alert.addAction(cancelAction)
+        alert.addAction(clearAction)
+
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -121,9 +130,32 @@ extension HistoryTableViewController {
         guard !isPrivacySection(indexPath.section) else { return }
         guard let item = getItem(forIndex: indexPath) else { return }
 
-        delegate?.showItem(item) {
+        showItem(item) {
             self.showDetailsBanner.show()
         }
+    }
+
+    func showProductDetails(product: Product) {
+        let productDetailsVC = ProductDetailViewController.loadFromStoryboard() as ProductDetailViewController
+        productDetailsVC.product = product
+        productDetailsVC.dataManager = dataManager
+
+        // Store product in search history
+        dataManager.addHistoryItem(product)
+
+        self.navigationController?.pushViewController(productDetailsVC, animated: true)
+    }
+
+    func showItem(_ item: HistoryItem, onError: @escaping () -> Void) {
+        dataManager.getProduct(byBarcode: item.barcode, isScanning: false, isSummary: false, onSuccess: { product in
+            if let product = product {
+                self.showProductDetails(product: product)
+            } else {
+                onError()
+            }
+        }, onError: { _ in
+            onError()
+        })
     }
 }
 

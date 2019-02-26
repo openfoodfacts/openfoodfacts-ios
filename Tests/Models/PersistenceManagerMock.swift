@@ -7,9 +7,9 @@
 //
 
 @testable import OpenFoodFacts
+import RealmSwift
 
 class PersistenceManagerMock: PersistenceManagerProtocol {
-
     // Common
     var product: Product?
     var pendingUploadItem: PendingUploadItem?
@@ -59,7 +59,33 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
         clearHistoryCalled = true
     }
 
+    fileprivate func realm() -> Realm {
+        // swiftlint:disable:next force_try
+        return try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "in-memory-test-realm",
+                                                             schemaVersion: 1,
+                                                             deleteRealmIfMigrationNeeded: true))
+    }
+
     // MARK: - Taxonomies
+    func objectSearch<T>(forQuery: String?, ofClass: T.Type) -> Results<T>? where T: Object {
+        return realm().objects(T.self)
+    }
+
+    func save(nutriments: [Nutriment]) {
+    }
+
+    func nutriment(forCode: String) -> Nutriment? {
+        return nil
+    }
+
+    func nutrimentSearch(query: String?) -> Results<Nutriment> {
+        return realm().objects(Nutriment.self)
+    }
+
+    func categorySearch(query: String?) -> Results<Category> {
+        return realm().objects(Category.self)
+    }
+
     func save(categories: [Category]) {
     }
 
@@ -81,9 +107,19 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
         return nil
     }
 
-    // MARK: - Products pending upload
+    // MARK: - Allergens settings
+    func addAllergy(toAllergen: Allergen) {
+    }
 
-    func addPendingUploadItem(_ product: Product) {
+    func removeAllergy(toAllergen: Allergen) {
+    }
+
+    func listAllergies() -> Results<Allergen> {
+        return realm().objects(Allergen.self)
+    }
+
+    // MARK: - Products pending upload
+    func addPendingUploadItem(_ product: Product, withNutritionTable nutriments: [RealmPendingUploadNutrimentItem]?) {
         addPendingUploadItemCalled = true
         self.product = product
     }

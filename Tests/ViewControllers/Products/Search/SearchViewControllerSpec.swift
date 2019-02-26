@@ -29,8 +29,6 @@ class SearchViewControllerSpec: QuickSpec {
                 expect(viewController.childViewControllers[0] is UINavigationController).to(beTrue())
                 let nav = viewController.childViewControllers[0] as! UINavigationController
                 expect(nav.childViewControllers[0] is SearchTableViewController).to(beTrue())
-                let searchTVC = nav.childViewControllers[0] as! SearchTableViewController
-                expect(searchTVC.navigationItem.rightBarButtonItems![0].action).to(equal(#selector(SearchViewController.scanBarcode(_:))))
             }
         }
 
@@ -58,24 +56,6 @@ class SearchViewControllerSpec: QuickSpec {
                 it("saves product in search history") {
                     expect(dataManager.addHistoyItemCalled).to(beTrue())
                     expect(dataManager.addHistoryItemProduct?.barcode).to(equal(barcode))
-                }
-            }
-
-            describe("scanBarcode()") {
-                it("pushes ScannerViewController") {
-                    viewController.scanBarcode(UIBarButtonItem())
-                    expect(navigationControllerMock.pushedViewController is ScannerViewController).to(beTrue())
-                }
-            }
-
-            describe("showHistory()") {
-                it("pushes HistoryTableViewController") {
-                    viewController.showHistory(UIBarButtonItem())
-
-                    expect(navigationControllerMock.pushedViewController is HistoryTableViewController).to(beTrue())
-                    let historyTableVC = navigationControllerMock.pushedViewController as! HistoryTableViewController
-                    expect(historyTableVC.dataManager).toNot(beNil())
-                    expect(historyTableVC.delegate).toNot(beNil())
                 }
             }
 

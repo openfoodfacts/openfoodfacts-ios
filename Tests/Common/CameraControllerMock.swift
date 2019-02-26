@@ -12,6 +12,7 @@ import UIKit
 class CameraControllerMock: CameraController {
     weak var delegate: CameraControllerDelegate?
     var isShowing = false
+    var imageType: ImageType?
 
     func show() {
         isShowing = true

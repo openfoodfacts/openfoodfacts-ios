@@ -18,8 +18,7 @@ class ProductAddViewControllerTests: XCTestCase {
 
     private let barcode = "123456789"
     private let anotherBarcode = "987654321"
-    private let quantity = "50"
-    private let quantityUnit = "cl"
+    private let quantity = "50cl"
     private let brands = "Fanta"
     private let productName = "Fanta Orange"
 
@@ -37,7 +36,6 @@ class ProductAddViewControllerTests: XCTestCase {
     }
 
     override func tearDown() {
-        viewController.activeField?.resignFirstResponder()
         viewController = nil
         XCUIDevice.shared.orientation = .portrait
         super.tearDown()
@@ -68,8 +66,7 @@ class ProductAddViewControllerTests: XCTestCase {
         let pendingUploadItem = PendingUploadItem(barcode: barcode)
         pendingUploadItem.productName = productName
         pendingUploadItem.brand = brand
-        pendingUploadItem.quantityValue = quantityValue
-        pendingUploadItem.quantityUnit = quantityUnit
+        pendingUploadItem.quantity = quantity
         pendingUploadItem.language = language
         dataManager.pendingUploadItem = pendingUploadItem
         viewController.barcode = barcode
@@ -79,7 +76,6 @@ class ProductAddViewControllerTests: XCTestCase {
         expect(self.viewController.productNameField.text).to(equal(productName))
         expect(self.viewController.brandsField.text).to(equal(brand))
         expect(self.viewController.quantityField.text).to(equal(quantityValue))
-        expect(self.viewController.quantityUnitField.text).to(equal(quantityUnit))
         expect(self.viewController.languageField.text).to(equal(Locale.current.localizedString(forIdentifier: language)))
     }
 
@@ -90,16 +86,15 @@ class ProductAddViewControllerTests: XCTestCase {
         viewController.productNameField.text = productName
         viewController.brandsField.text = brands
         viewController.quantityField.text = quantity
-        viewController.quantityUnitField.text = quantityUnit
         viewController.quantityField.becomeFirstResponder()
 
-        viewController.didTapSaveButton(UIButton())
+        viewController.didTapSaveProductButton(UIButton())
 
         expect(self.viewController.quantityField.isFirstResponder).to(beFalse())
         expect(self.dataManager.product).toEventuallyNot(beNil())
         expect(self.dataManager.product.name).to(equal(productName))
         expect(self.dataManager.product.brands).to(equal([brands]))
-        expect(self.dataManager.product.quantity).to(equal("\(quantity) \(quantityUnit)"))
+        expect(self.dataManager.product.quantity).to(equal(quantity))
         expect(self.dataManager.product.barcode).to(equal(barcode))
         expect(self.viewController.productAddSuccessBanner.isHidden).to(beFalse())
         expect(self.navigationController.didPopToRootViewController).to(beTrue())
@@ -108,7 +103,7 @@ class ProductAddViewControllerTests: XCTestCase {
     func testOnSaveButtonTapErrorAlertIsShownWhenPostFails() {
         viewController.barcode = anotherBarcode
 
-        viewController.didTapSaveButton(UIButton())
+        viewController.didTapSaveProductButton(UIButton())
 
         expect(self.viewController.presentedViewController is UIAlertController).toEventually(beTrue())
         let alertController = self.viewController.presentedViewController as! UIAlertController
@@ -128,7 +123,6 @@ class ProductAddViewControllerTests: XCTestCase {
         let userInfo: [String: Any] = [UIKeyboardFrameEndUserInfoKey: cgRect as NSValue]
         let notification = Notification(name: .UIKeyboardWillShow, object: nil, userInfo: userInfo)
         viewController.quantityField.becomeFirstResponder()
-        viewController.activeField = viewController.quantityField
 
         viewController.keyboardWillShow(notification: notification)
 
@@ -146,7 +140,6 @@ class ProductAddViewControllerTests: XCTestCase {
         let userInfo: [String: Any] = [UIKeyboardFrameEndUserInfoKey: cgRect as NSValue]
         let notification = Notification(name: .UIKeyboardWillShow, object: nil, userInfo: userInfo)
         viewController.productNameField.becomeFirstResponder()
-        viewController.activeField = viewController.productNameField
 
         viewController.keyboardWillShow(notification: notification)
 
@@ -154,32 +147,10 @@ class ProductAddViewControllerTests: XCTestCase {
         expect(self.viewController.scrollView.scrollIndicatorInsets.bottom).to(equal(width))
     }
 
-    func testKeyboardWillShowShouldDoNothingWhenKeyboardFrameUnknown() {
-        let notification = Notification(name: .UIKeyboardWillShow, object: nil, userInfo: [:])
-
-        viewController.keyboardWillShow(notification: notification)
-
-        expect(self.viewController.contentInsetsBeforeKeyboard).to(equal(UIEdgeInsets.zero))
-    }
-
-    func testKeyboardWillShowShouldDoNothingWhenNoFieldIsActive() {
-        let width = CGFloat(20)
-        let height = CGFloat(15)
-        let rectSize = CGSize(width: width, height: height)
-        let cgRect = CGRect(origin: CGPoint.zero, size: rectSize)
-        let userInfo: [String: Any] = [UIKeyboardFrameEndUserInfoKey: cgRect as NSValue]
-        let notification = Notification(name: .UIKeyboardWillShow, object: nil, userInfo: userInfo)
-
-        viewController.keyboardWillShow(notification: notification)
-
-        expect(self.viewController.contentInsetsBeforeKeyboard).to(equal(UIEdgeInsets.zero))
-    }
-
     // MARK: - keyboardWillHide
 
     func testKeyboardWillHideShouldResetScrollViewInsets() {
         let notification = Notification(name: .UIKeyboardWillHide, object: nil, userInfo: nil)
-        viewController.contentInsetsBeforeKeyboard = UIEdgeInsets.zero
         let inset = UIEdgeInsets(top: 0, left: 10, bottom: 20, right: 30)
         viewController.scrollView.contentInset = inset
         viewController.scrollView.scrollIndicatorInsets = inset
@@ -188,24 +159,6 @@ class ProductAddViewControllerTests: XCTestCase {
 
         expect(self.viewController.scrollView.contentInset).to(equal(UIEdgeInsets.zero))
         expect(self.viewController.scrollView.scrollIndicatorInsets).to(equal(UIEdgeInsets.zero))
-    }
-
-    // MARK: - textFieldDidBeginEditing
-
-    func testTextFieldDidBeginEditingSetsActiveField() {
-        viewController.textFieldDidBeginEditing(viewController.brandsField)
-
-        expect(self.viewController.activeField).to(equal(viewController.brandsField))
-    }
-
-    // MARK: - textFieldDidEndEditing
-
-    func testTextFieldDidEndEditingSetsActiveFieldToNil() {
-        viewController.activeField = viewController.productNameField
-
-        viewController.textFieldDidEndEditing(viewController.productNameField)
-
-        expect(self.viewController.activeField).to(beNil())
     }
 
     // MARK: - Helper functions

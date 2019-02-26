@@ -57,7 +57,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         if let nutritionVC = getNutritionVC() {
             vcs.append(nutritionVC)
         }
-        vcs.append(getNutritionTableVC())
 
         return vcs
     }
@@ -78,13 +77,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
     fileprivate func getNutritionVC() -> UIViewController? {
         guard let form = createNutritionForm() else { return nil }
-        let formTableVC = FormTableViewController(with: form, dataManager: dataManager)
-        formTableVC.delegate = self
-        return formTableVC
-    }
-
-    fileprivate func getNutritionTableVC() -> UIViewController {
-        let form = createNutritionTableForm()
         let nutritionTableFormTableVC = NutritionTableFormTableViewController(with: form, dataManager: dataManager)
         nutritionTableFormTableVC.delegate = self
         return nutritionTableFormTableVC
@@ -98,14 +90,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         if let viewControllers = self.viewControllers as? [FormTableViewController] {
             viewControllers[0].form = createSummaryForm()
             viewControllers[1].form = createIngredientsForm()
-
-            if viewControllers.count == 3 {
-                viewControllers[2].form = createNutritionTableForm()
-            } else {
-                viewControllers[2].form = createNutritionForm()
-                viewControllers[3].form = createNutritionTableForm()
-            }
-        }
+            viewControllers[2].form = createNutritionForm()
+         }
     }
 
     private func createSummaryForm() -> Form {
@@ -138,7 +124,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: tag.uppercased().replacingOccurrences(of: "-", with: " "),
                                       attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forEmbCodeTag: tag)])
         }), label: InfoRowKey.embCodes.localizedString)
-        
+
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
         createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
 
@@ -164,6 +150,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             }
             return NSAttributedString(string: allergen.value.capitalized)
         }), label: InfoRowKey.allergens.localizedString)
+
+        if product.states?.contains("en:ingredients-to-be-completed") == true {
+            if product.allergens == nil || product.allergens?.isEmpty == true {
+                createFormRow(with: &rows, item: "product-detail.ingredients.allergens-list.missing-infos".localized, label: "⚠️")
+            }
+        }
 
         createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
 
@@ -206,19 +198,17 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             createFormRow(with: &rows, item: product, cellType: NutritionLevelsTableViewCell.self)
         }
 
+        createNutritionTableRows(rows: &rows)
+
         if rows.isEmpty {
             return nil
         }
 
-        let summaryTitle = "product-detail.page-title.nutrition".localized
-
-        return Form(title: summaryTitle, rows: rows)
+        return Form(title: "product-detail.page-title.nutrition".localized, rows: rows)
     }
 
     // swiftlint:disable:next cyclomatic_complexity
-    private func createNutritionTableForm() -> Form {
-        var rows = [FormRow]()
-
+    fileprivate func createNutritionTableRows(rows: inout [FormRow]) {
         // Header
         createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
 
@@ -278,10 +268,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
         }
-
-        let summaryTitle = "product-detail.page-title.nutrition-table".localized
-
-        return Form(title: summaryTitle, rows: rows)
     }
 
     private func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self, isCopiable: Bool = false) {

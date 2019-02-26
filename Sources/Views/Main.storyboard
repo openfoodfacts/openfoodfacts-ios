@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +21,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="VXh-yJ-52m" kind="relationship" relationship="viewControllers" id="Ehf-Z9-LTZ"/>
-                        <segue destination="NnO-Ld-7xD" kind="relationship" relationship="viewControllers" id="VwM-Bn-Tnp"/>
+                        <segue destination="2z5-iM-xjQ" kind="relationship" relationship="viewControllers" id="518-X0-aKB"/>
+                        <segue destination="wWT-tg-702" kind="relationship" relationship="viewControllers" id="0Tp-V7-7B3"/>
                         <segue destination="rNt-He-NC7" kind="relationship" relationship="viewControllers" id="eiJ-J3-TmR"/>
                     </connections>
                 </tabBarController>
@@ -40,26 +41,47 @@
             </objects>
             <point key="canvasLocation" x="518" y="-829"/>
         </scene>
-        <!--User-->
-        <scene sceneID="mfB-kP-AS2">
+        <!--Navigation Controller-->
+        <scene sceneID="EcN-lx-Z5L">
             <objects>
-                <viewController id="NnO-Ld-7xD" customClass="UserViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zLI-Eg-hl9">
+                <navigationController id="2z5-iM-xjQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="barcode" id="OFe-yH-vbP">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-scanner.view-title"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zWJ-cM-wEZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="KCg-et-v6Z" kind="relationship" relationship="rootViewController" id="hUL-QQ-ghY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oek-2C-StQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="652"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="uxI-SU-r8a">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzp-bH-fMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="KCg-et-v6Z" customClass="ScannerViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iqb-gJ-WyV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Ev5-K8-egJ"/>
+                        <viewLayoutGuide key="safeArea" id="est-XY-6RV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="User" image="user" id="suf-7j-yw2">
+                    <tabBarItem key="tabBarItem" image="barcode" id="WPC-Z8-aRL">
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.tab-bar.item"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-scanner.view-title"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="TeX-lq-JfG"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R6L-Ff-d3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="519" y="-100"/>
+            <point key="canvasLocation" x="1436" y="731"/>
         </scene>
         <!--Settings-->
         <scene sceneID="aJB-Vt-Nsm">
@@ -69,10 +91,83 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASu-D9-VHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="328"/>
+            <point key="canvasLocation" x="41" y="1019"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DbU-91-5Ke">
+            <objects>
+                <navigationController id="wWT-tg-702" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="MgE-9D-emK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L1G-SG-nSS">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="USd-NH-eQg" kind="relationship" relationship="rootViewController" id="8zW-Z3-kcI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T1w-fW-QuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="-130"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="Cy1-Fs-syj">
+            <objects>
+                <tableViewController storyboardIdentifier="HistoryTableViewController" title="History" id="USd-NH-eQg" customClass="HistoryTableViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JAK-RT-i8r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PrivacyCell" textLabel="TYF-vu-FgS" style="IBUITableViewCellStyleDefault" id="NTP-eY-GHl">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NTP-eY-GHl" id="VYe-l1-epW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Your search history is only stored on your device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TYF-vu-FgS">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="history.cell.privacy"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <viewLayoutGuide key="safeArea" id="Fbi-eN-bKO"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="USd-NH-eQg" id="Mo7-9r-j5R"/>
+                            <outlet property="delegate" destination="USd-NH-eQg" id="Dfz-mK-zsO"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="QGk-eG-HaU"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="WR4-V6-0yF">
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="67c-ys-5bh">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="history.button.clear"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clearHistory:" destination="USd-NH-eQg" id="yGp-Jt-V3C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeT-yh-SR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1967" y="-13"/>
         </scene>
     </scenes>
     <resources>
-        <image name="user" width="25" height="25"/>
+        <image name="barcode" width="4.6875" height="4.6875"/>
     </resources>
 </document>

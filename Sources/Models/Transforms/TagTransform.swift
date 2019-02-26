@@ -21,7 +21,7 @@ public class Tag: Object {
     }
 
     /// choose the most appropriate tags based on the language passed in parameters, default to english if not found
-    static func choose(inTags tags: [Tag], forLanguageCode languageCode: String? = nil) -> Tag? {
+    static func choose(inTags tags: [Tag], forLanguageCode languageCode: String? = nil, defaultToFirst: Bool = false) -> Tag? {
         let lang = languageCode ?? Bundle.main.preferredLocalizations.first ?? "en"
 
         if let tag = tags.first(where: { (tag: Tag) -> Bool in
@@ -34,7 +34,23 @@ public class Tag: Object {
             return choose(inTags: tags, forLanguageCode: "en")
         }
 
+        if defaultToFirst {
+            return tags.first
+        }
+
         return nil
+    }
+}
+
+extension Array where Element: Tag {
+    func chooseForCurrentLanguage(defaultToFirst: Bool = false) -> Tag? {
+        return Tag.choose(inTags: self, forLanguageCode: nil, defaultToFirst: defaultToFirst)
+    }
+}
+
+extension List where Element: Tag {
+    func chooseForCurrentLanguage(defaultToFirst: Bool = false) -> Tag? {
+        return Array(self).chooseForCurrentLanguage(defaultToFirst: defaultToFirst)
     }
 }
 

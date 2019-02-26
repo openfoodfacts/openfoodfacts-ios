@@ -13,24 +13,25 @@ struct PictureViewModel {
     let text: String?
     var image: UIImage?
     let uploadedPictureText: String?
+    var isUploading: Bool = false
 }
 
 extension PictureViewModel {
     init(imageType: ImageType) {
-        var text = "\("product.images.take-picture".localized) "
+        var text: String?
         var uploadedPictureText: String?
         switch imageType {
         case .front:
-            text += "product.images.front".localized
-            uploadedPictureText = "\("product.images.product".localized) \("product.images.front".localized) \("product.images.picture".localized)"
+            text = "product.images.take-picture.front".localized
+            uploadedPictureText = "product.images.took-picture.front".localized
         case .ingredients:
-            text += "product.images.ingredients".localized
-            uploadedPictureText = "\("product.images.product".localized) \("product.images.ingredients".localized) \("product.images.picture".localized)"
+            text = "product.images.take-picture.ingredients".localized
+            uploadedPictureText = "product.images.took-picture.ingredients".localized
         case .nutrition:
-            text += "product.images.nutrition".localized
-            uploadedPictureText = "\("product.images.product".localized) \("product.images.nutrition".localized) \("product.images.picture".localized)"
+            text = "product.images.take-picture.nutrition".localized
+            uploadedPictureText = "product.images.took-picture.nutrition".localized
         }
 
-        self.init(imageType: imageType, text: text, image: nil, uploadedPictureText: uploadedPictureText)
+        self.init(imageType: imageType, text: text, image: nil, uploadedPictureText: uploadedPictureText, isUploading: false)
     }
 }

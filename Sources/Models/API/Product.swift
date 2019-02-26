@@ -9,6 +9,11 @@
 import UIKit
 import ObjectMapper
 
+enum NutritionDataPer: String {
+    case hundredGrams = "100g"
+    case serving = "serving"
+}
+
 struct Product: Mappable {
     var name: String?
     var brands: [String]?
@@ -39,9 +44,12 @@ struct Product: Mappable {
     var possiblePalmOilIngredients: [String]?
     var servingSize: String?
     var nutritionLevels: NutritionLevels?
+    var nutritionDataPer: NutritionDataPer?
+    var noNutritionData: String?
     var nutriments: Nutriments?
     var nutritionTableImage: String?
     var lang: String?
+    var states: [String]?
 
     // These are not in any json response, but we will use them internally for all products we create as they are easier to work with
     var quantity: String? {
@@ -93,9 +101,12 @@ struct Product: Mappable {
         palmOilIngredients <- map[OFFJson.IngredientsFromPalmOilTagsKey]
         possiblePalmOilIngredients <- map[OFFJson.IngredientsThatMayBeFromPalmOilTagsKey]
         servingSize <- map[OFFJson.ServingSizeKey]
+        noNutritionData <- map[OFFJson.NoNutritionDataKey]
         nutritionLevels <- map[OFFJson.NutrientLevelsKey]
         nutriments <- map[OFFJson.NutrimentsKey]
+        nutritionDataPer <- map[OFFJson.NutritionDataPerKey]
         nutritionTableImage <- map[OFFJson.ImageNutritionUrlKey]
+        states <- (map[OFFJson.StatesKey], ArrayTransform())
         lang <- map[OFFJson.LangKey]
     }
 }

@@ -8,6 +8,7 @@
 
 @testable import OpenFoodFacts
 import Foundation
+import RealmSwift
 
 class DataManagerMock: DataManagerProtocol {
 
@@ -91,6 +92,29 @@ class DataManagerMock: DataManagerProtocol {
     }
 
     // MARK: - taxonomies
+    func objectSearch<T>(forQuery: String?, ofClass: T.Type) -> Results<T>? where T: Object {
+        return nil
+    }
+
+    fileprivate func realm() -> Realm {
+        // swiftlint:disable:next force_try
+        return try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "in-memory-test-realm",
+                                                             schemaVersion: 1,
+                                                             deleteRealmIfMigrationNeeded: true))
+    }
+
+    func categorySearch(query: String?) -> Results<OpenFoodFacts.Category> {
+        return realm().objects(OpenFoodFacts.Category.self)
+    }
+
+    func nutriment(forTag: String) -> Nutriment? {
+        return nil
+    }
+
+    func nutrimentSearch(query: String?) -> Results<Nutriment> {
+        return realm().objects(OpenFoodFacts.Nutriment.self)
+    }
+
     func category(forTag: String) -> OpenFoodFacts.Category? {
         return nil
     }
@@ -101,6 +125,17 @@ class DataManagerMock: DataManagerProtocol {
 
     func additive(forTag: Tag) -> Additive? {
         return nil
+    }
+
+    // MARK: - Allergens settings
+    func addAllergy(toAllergen: Allergen) {
+    }
+
+    func removeAllergy(toAllergen: Allergen) {
+    }
+
+    func listAllergies() -> Results<Allergen> {
+        return realm().objects(OpenFoodFacts.Allergen.self)
     }
 
     // MARK: - Search history
@@ -127,6 +162,12 @@ class DataManagerMock: DataManagerProtocol {
         } else {
             onError(error)
         }
+    }
+
+    func addProductNutritionTable(_ product: Product, nutritionTable: [RealmPendingUploadNutrimentItem], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+    }
+
+    func getIngredientsOCR(forBarcode: String, productLanguageCode: String, onDone: @escaping (String?, Error?) -> Void) {
     }
 
     func postImage(_ productImage: ProductImage, onSuccess: @escaping (_ isOffline: Bool) -> Void, onError: @escaping (Error) -> Void) {

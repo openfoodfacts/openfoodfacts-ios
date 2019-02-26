@@ -46,6 +46,7 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
                 SVProgressHUD.dismiss()
                 SVProgressHUD.setDefaultMaskType(.none)
                 self.items = self.dataManager.getItemsPendingUpload()
+                self.tableView.reloadData()
                 self.tabBarController?.tabBar.selectedItem?.badgeValue = self.items.isEmpty ? nil : "\(self.items.count)"
             }
         }
@@ -65,6 +66,14 @@ extension PendingUploadTableViewController {
         } else {
             return items.count
         }
+    }
+
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

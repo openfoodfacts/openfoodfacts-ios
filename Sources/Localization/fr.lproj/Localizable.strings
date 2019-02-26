@@ -12,14 +12,17 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Retour";
 "generic.search" = "Rechercher";
+"generic.cancel" = "Annuler";
+"generic.save" = "Sauvegarder";
 
 // Product Search
 
+"product-search.title" = "Rechercher";
 "product-search.search-placeholder" = "Rechercher un produit par nom ou par code-barres";
 "product-search.no-results" = "Aucun résultat";
 "product-search.error-view.title" = "Une erreur s'est produite";
 "product-search.error-view.subtitle" = "Veuillez réessayer";
-"product-search.initial-view.text" = "Open Food Facts est une base de données ouverte de produits alimentaires contenant ingrédients, allergènes, informations nutritionnelles et toute information qui se trouve sur les étiquettes.";
+"product-search.initial-view.slogan" = "l'information alimentaire ouverte";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scannez le code-barres du produit";
@@ -55,14 +58,74 @@
 "product-add.uploaded-image" = "Image téléchargée, merci!";
 "product-add.save-error.title" = "Erreur lors de la sauvegarde du produit";
 "product-add.save-error.message" = "Veuillez réessayer ultérieurement";
+"product-add.save-info.success" = "Informations sauvegardées à";
+"product-add.save-info.error" = "Informations non sauvegardées";
+"product-add.save-info.saving" = "Sauvegarde des informations...";
+"product-add.save-info.not-yet" = "Informations non sauvegardées";
+"product-add.save-ingredients.success" = "Ingrédients sauvegardés à";
+"product-add.save-ingredients.error" = "Ingrédients non sauvegardés";
+"product-add.save-ingredients.saving" = "Sauvegarde des ingrédients...";
+"product-add.save-ingredients.not-yet" = "Ingrédients non sauvegardés";
+"product-add.save-nutriments.success" = "Table nutritionnelle sauvegardée à";
+"product-add.save-nutriments.error" = "Table nutritionnelle non sauvegardée";
+"product-add.save-nutriments.saving" = "Sauvegarde de la table nutritionnelle...";
+"product-add.save-nutriments.not-yet" = "Table nutritionnelle non sauvegardée";
+"product-add.no-nutrition" = "Les informations nutritionnelles ne sont pas mentionnées sur le produit";
+
+"product-add.ocr-ingredients.success" = "Ingrédients lus depuis la photo à";
+"product-add.ocr-ingredients.error" = "Impossible de lire les ingrédients depuis la photo";
+"product-add.ocr-ingredients.saving" = "Lecture des ingrédients depuis la photo...";
+"product-add.ocr-ingredients.not-yet" = "En attente d'une photo d'ingrédients à lire";
+
+"product-add.nutriscore-explaination" = "Nutriscore calculé sur la base des informations nutritionnelles fournies";
+"product-add.novagroup-explaination" = "Novagroup calculé sur la base des ingrédients renseignés";
+
 "alert.action.ok" = "Ok";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Sélectionnez la langue";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Nom du produit";
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Marque";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity-value" = "Quantity value";
+"product-add.placeholder.quantity-value" = "Quantité";
+
+"product-add.title" = "Nouveau produit";
+"product-add.titles.barcode" = "Code-barres";
+"product-add.titles.top-explainations" = "Ce produit n'est pas encore dans la base de données Open Food Facts. Pourriez-vous prendre quelques photos du produit, de son code-barre, de la liste des ingrédients et des informations nutritionnelles afin de l'ajouter à la base ?   Merci par avance.";
+"product-add.titles.license-explaination" = "Note : les photos que vous envoyées sont publiées sous la license gratuite Creative Commons Attribution and ShareAlike.";
+
+"product-add.titles.product-info" = "Informations sur le produit";
+"product-add.label.product-name" = "Nom";
+"product-add.label.category" = "Catégorie";
+"product-add.details.category" = "Nécessaire pour calculer le Nutri-Score";
+"product-add.label.quantity" = "Quantité";
+"product-add.label.quantity-example" = "25g, 10oz, 5ml...";
+"product-add.label.language" = "Langue";
+
+"product-add.description.nutritive" = "Complétez les informations nutritionnelles et la catégorie pour calculer le Nutri-Score";
+"product-add.titles.nutritive" = "Informations nutritionnelles";
+"product-add.nutritive.choice.per-hundred-grams" = "pour 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "par portion";
+"product-add.nutritive.add-nutriment" = "Ajouter un élement de nutrition";
+"product-add.nutritive.too-much" = "Plus de 100g ?";
+
+"product-add.description.ingredients" = "Complétez les ingrédients pour obtenir le Groupe Nova";
+"product-add.titles.ingredients" = "Ingrédients";
+"product-add.ingredients.explaination" = "Prenez une photo de la liste des ingrédients (deuxième image plus haut), et la liste des ingrédients sera pré-remplie. Corrigez la si nécessaire, puis enregistrez !";
+"product-add.ingredients.button-delete" = "Trop mauvais, ignorer.";
+"product-add.ingredients.button-save" = "Ça a l'air tout bon, valider.";
+
+// Select Category
+"select-category.title" = "Categorie";
+"select-category.search-placeholder" = "Recherchez une catégorie";
+
+//Select Nutriment
+"select-nutriment.title" = "Nutrition";
+"select-nutriment.search-placeholder" = "Recherchez un élément de nutrition";
+
+// Select allergen
+"select-allergen.title" = "Allergènes";
+"select-allergen.search-placeholder" = "Rechercher un allergène";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Ajouter une nouvelle image";
@@ -94,6 +157,8 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Liste des ingrédients";
 "product-detail.ingredients.allergens-list" = "Substances ou produits provoquant des allergies ou intolérances";
+"product-detail.ingredients.allergens-alert.title" = "Contient des allergènes !";
+"product-detail.ingredients.allergens-list.missing-infos" = "Ce produit n'est pas complet. En conséquence, nous n'avons pas pu évaluer la présence d'allergènes.";
 "product-detail.ingredients.traces-list" = "Traces éventuelles";
 "product-detail.ingredients.additives-list" = "Additifs";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingrédients issus de l'huile de palme";
@@ -187,18 +252,23 @@
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.take-picture" = "Prendre une photo";
-"product.images.product" = "Produit";
-"product.images.picture" = "photo ✅";
-"product.images.front" = "de face";
-"product.images.ingredients" = "ingrédients";
-"product.images.nutrition" = "tableau nutritionnel";
+"product.images.took-picture.front" = "Photo de face ✅";
+"product.images.took-picture.ingredients" = "Photo des ingrédients ✅";
+"product.images.took-picture.nutrition" = "Photo du tableau nutritionnel ✅";
+
+"product.images.take-picture.front" = "Photo de face";
+"product.images.take-picture.ingredients" = "Photo des ingrédients";
+"product.images.take-picture.nutrition" = "Photo du tableau nutritionnel";
 
 // Settings storyboard
 "settings.tab-bar.item" = "Paramètres";
+"settings.allergies.title" = "Alertes allergènes";
+"settings.allergies.description" = "Ajoutez des allergènes à cette liste pour être avertis lorsque vous scannerez un produit en contenant.\n\nAttention: les informations relatives à vos allergies ne seront jamais envoyées aux serveurs d’Open Food Facts. Par ailleurs, soyez vigilant sur le fait que ces données ne sont pas fiables à 100%, et que la détection peut ne pas être précise à 100%. Veillez à vérifier également par vous-même !";
+"settings.allergies.add-button" = "Ajouter un allergène";
 "settings.sections.information" = "Information";
 "settings.sections.contribute" = "Contribuer";
 "settings.sections.about" = "À propos";
+"settings.user-profile" = "Votre profil";
 "settings.credits.title" = "Remerciements";
 "settings.scan-on-launch.title" = "Afficher le scan au lancement de l'application";
 "settings.information.discover" = "Découvrir";
@@ -233,8 +303,11 @@
 "pending-upload.hud.status" = "Uploading";
 
 // Search history
-"history.cell.privacy" = "Your search history is only stored on your device";
+"history.title" = "Historique";
+"history.cell.privacy" = "Votre historique de recherche est sauvegardé uniquement sur votre appareil";
 "history.button.clear" = "Effacer";
+"history.clear.confirmation-title" = "Effacer ?";
+"history.clear.confirmation-message" = "Tout votre historique sera effacé";
 "history.section-titles.last24h" = "Last 24 hours";
 "history.section-titles.fewDays" = "A few days ago";
 "history.section-titles.fewWeeks" = "A few weeks ago";

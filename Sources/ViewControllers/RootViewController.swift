@@ -62,6 +62,12 @@ class RootViewController: UIViewController {
                 top.dataManager = dataManager
             }
 
+            if let nav = child as? UINavigationController {
+                if var top = nav.viewControllers.first as? DataManagerClient {
+                    top.dataManager = dataManager
+                }
+            }
+
             if child is UserViewController, let item = tab.tabBar.items?[index] {
                 let items = dataManager.getItemsPendingUpload()
                 item.badgeValue = items.isEmpty ? nil : "\(items.count)"
@@ -71,8 +77,8 @@ class RootViewController: UIViewController {
 
     private func showScan() {
         for child in tabBarVC.viewControllers ?? [] {
-            if let searchVC = child as? SearchViewController {
-                searchVC.scanBarcode()
+            if let _ = child as? ScannerViewController {
+                tabBarVC.selectedIndex = tabBarVC.viewControllers?.firstIndex(of: child) ?? 0
                 break
             }
         }

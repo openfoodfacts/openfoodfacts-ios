@@ -40,7 +40,6 @@ class PictureTableViewControllerTests: XCTestCase {
 
         expect(self.viewController.tableView.isScrollEnabled).to(beFalse())
         expect(self.viewController.pictures.count).to(equal(3))
-        expect(self.viewController.currentPictureForCell).to(beNil())
     }
 
     // MARK: - didTapCellTakePictureButton
@@ -107,20 +106,14 @@ class PictureTableViewControllerTests: XCTestCase {
     // MARK: - postImageSuccess
     func testPostImageSuccess() {
         let testImage = TestHelper.sharedInstance.getTestImage()
-        viewController.currentPictureForCell = IndexPath(row: 0, section: 0)
-
-        viewController.postImageSuccess(image: testImage)
+        viewController.postImageSuccess(image: testImage, forImageType: .front)
 
         expect(self.viewController.pictures[0].image).to(equal(testImage))
-        expect(self.viewController.currentPictureForCell).to(beNil())
     }
 
     func testPostImageSuccessShouldDoNothingWhenThereIsNoCurrentPictureCell() {
         let testImage = TestHelper.sharedInstance.getTestImage()
-        viewController.currentPictureForCell = nil
-
-        viewController.postImageSuccess(image: testImage)
+        viewController.postImageSuccess(image: testImage, forImageType: .ingredients)
         expect(self.viewController.pictures[0].image).to(beNil())
-        expect(self.viewController.currentPictureForCell).to(beNil())
     }
 }
