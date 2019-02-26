@@ -12,14 +12,17 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Zurück";
 "generic.search" = "Suchen";
+"generic.cancel" = "Abbrechen";
+"generic.save" = "Speichern";
 
 // Product Search
 
+"product-search.title" = "Suchen";
 "product-search.search-placeholder" = "Produktsuche nach Name oder Strichcode";
 "product-search.no-results" = "Keine Ergebnisse";
 "product-search.error-view.title" = "Ein Problem ist aufgetreten ";
 "product-search.error-view.subtitle" = "Bitte versuchen Sie es erneut";
-"product-search.initial-view.text" = "„Open Food Facts” ist eine offene Datenbank von Lebensmitteln mit Inhaltsstoffen, Allergenen, Nährwertangaben und all den Kleinigkeiten, die wir auf den Produktetiketten finden können.";
+"product-search.initial-view.slogan" = "the free food products database";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Strichcode des Produkts einlesen";
@@ -55,6 +58,28 @@
 "product-add.uploaded-image" = "Foto wurde hochgeladen. Vielen Dank!";
 "product-add.save-error.title" = "Fehler beim Speichern des Produkts";
 "product-add.save-error.message" = "Versuchen Sie es später erneut";
+"product-add.save-info.success" = "Informationen gespeichert am";
+"product-add.save-info.error" = "Informationen nicht gespeichert";
+"product-add.save-info.saving" = "Produktinformationen speichern ...";
+"product-add.save-info.not-yet" = "Informationen noch nicht gespeichert";
+"product-add.save-ingredients.success" = "Zutaten gespeichert am";
+"product-add.save-ingredients.error" = "Zutaten nicht gespeichert";
+"product-add.save-ingredients.saving" = "Inhaltsstoffe speichern...";
+"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
+"product-add.save-nutriments.success" = "Nutriments saved at";
+"product-add.save-nutriments.error" = "Nutriments not saved";
+"product-add.save-nutriments.saving" = "Saving nutriments...";
+"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
+"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+
+"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
+"product-add.ocr-ingredients.error" = "Could not read ingredients from the picture";
+"product-add.ocr-ingredients.saving" = "Reading ingredients from the picture...";
+"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to read";
+
+"product-add.nutriscore-explaination" = "Nutriscore computed from the nutrition table";
+"product-add.novagroup-explaination" = "Novagroup computed based on the ingredients list";
+
 "alert.action.ok" = "OK";
 "product-add.language.toolbar-title" = "Sprache auswählen";
 /* Product Add name text field */
@@ -62,7 +87,45 @@
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Marke";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity-value" = "Mengeneinheit";
+"product-add.placeholder.quantity" = "Quantity value";
+
+"product-add.title" = "New product";
+"product-add.titles.barcode" = "Strichcode";
+"product-add.titles.top-explainations" = "This product is not yet in the Open Food Facts database. Could you please take some pictures of the product, barcode, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
+"product-add.titles.license-explaination" = "Anmerkung: Die Bilder, die Sie gesendet haben, werden mit der freien Lizenz Creative Commons Namensnennung und Weitergabe unter gleichen Bedingungen veröffentlicht.";
+
+"product-add.titles.product-info" = "Product information";
+"product-add.label.product-name" = "Name";
+"product-add.label.category" = "Kategorie";
+"product-add.label.quantity" = "Mengenangabe";
+"product-add.details.category" = "Needed for Nutri-Score computation";
+"product-add.label.quantity-example" = "25g, 10oz, 5ml...";
+"product-add.label.language" = "Sprache";
+
+"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.titles.nutritive" = "Nutritive data";
+"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.add-nutriment" = "Add a nutrition element";
+"product-add.nutritive.too-much" = "More than 100g?";
+
+"product-add.description.ingredients" = "Complete the ingredients to get the Nova group on food processing";
+"product-add.titles.ingredients" = "Inhaltsstoffe";
+"product-add.ingredients.explaination" = "Take a picture of the ingredients list (second image above), and the list of ingredients will be prefilled. Fix it if needed, then save it!";
+"product-add.ingredients.button-delete" = "Too bad, ignore";
+"product-add.ingredients.button-save" = "Looks good, save";
+
+// Select Category
+"select-category.title" = "Kategorie";
+"select-category.search-placeholder" = "Search for a category";
+
+// Select nutrition
+"select-nutriment.title" = "Nährwertangaben";
+"select-nutriment.search-placeholder" = "Search for a nutrition element";
+
+// Select allergen
+"select-allergen.title" = "Allergen";
+"select-allergen.search-placeholder" = "Search for an allergen";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Neues Foto hinzufügen";
@@ -94,6 +157,8 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Zutatenliste";
 "product-detail.ingredients.allergens-list" = "Stoffe oder Erzeugnisse, die Allergien oder Unverträglichkeiten auslösen";
+"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Product is missing some information, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Spuren";
 "product-detail.ingredients.additives-list" = "Zusatzstoffe";
 "product-detail.ingredients.palm-oil-ingredients" = "Aus Palmöl hergestellte Inhaltsstoffe";
@@ -187,18 +252,24 @@
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.take-picture" = "Foto des Produkts aufnehmen";
-"product.images.product" = "Produkte";
-"product.images.picture" = "Foto ✅";
-"product.images.front" = "Vorderseite";
-"product.images.ingredients" = "Inhaltsstoffe";
-"product.images.nutrition" = "Nährwerttabelle";
+"product.images.took-picture.front" = "Product's front picture ✅";
+"product.images.took-picture.ingredients" = "Product's ingredients picture ✅";
+"product.images.took-picture.nutrition" = "Product's nutrition table picture ✅";
+
+"product.images.take-picture.front" = "Picture of the product's front";
+"product.images.take-picture.ingredients" = "Picture of the product's ingredients";
+"product.images.take-picture.nutrition" = "Picture of the product's nutrition table";
 
 // Settings storyboard
 "settings.tab-bar.item" = "Einstellungen";
+"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will never be sent to Open Food Facts servers. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.add-button" = "Add allergens";
 "settings.sections.information" = "Informationen";
+"settings.sections.discover" = "Entdecken";
 "settings.sections.contribute" = "Mitwirken";
 "settings.sections.about" = "Über";
+"settings.user-profile" = "Your profile";
 "settings.credits.title" = "Danksagungen";
 "settings.scan-on-launch.title" = "Erfassung direkt beim Start anzeigen";
 "settings.information.discover" = "Entdecken";
@@ -233,8 +304,11 @@
 "pending-upload.hud.status" = "Wird hochgeladen ";
 
 // Search history
+"history.title" = "Search history";
 "history.cell.privacy" = "Ihr Suchverlauf wird nur auf Ihrem Gerät gespeichert";
 "history.button.clear" = "Leeren";
+"history.clear.confirmation-title" = "Clear history ?";
+"history.clear.confirmation-message" = "All your history will be deleted";
 "history.section-titles.last24h" = "Letzten 24 Stunden";
 "history.section-titles.fewDays" = "Vor ein paar Tagen";
 "history.section-titles.fewWeeks" = "Vor ein paar Wochen";

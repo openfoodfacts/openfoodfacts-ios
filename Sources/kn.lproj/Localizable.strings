@@ -12,14 +12,17 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Back";
 "generic.search" = "ಹುಡುಕಿ";
+"generic.cancel" = "Cancel";
+"generic.save" = "ಉಳಿಸು";
 
 // Product Search
 
+"product-search.title" = "ಹುಡುಕಿ";
 "product-search.search-placeholder" = "ಹೆಸರು ಅಥವಾ ಬಾರ್ಕೋಡ್ ಮೂಲಕ ಉತ್ಪನ್ನಕ್ಕಾಗಿ ಹುಡುಕಿ";
 "product-search.no-results" = "ಫಲಿತಾಂಶಗಳು ಇಲ್ಲ";
 "product-search.error-view.title" = "ಏನೋ ತಪ್ಪಾಗಿದೆ";
 "product-search.error-view.subtitle" = "ದಯವಿಟ್ಟು ಪುನಹ ಪ್ರಯತ್ನಿಸಿ";
-"product-search.initial-view.text" = "ಓಪನ್ ಬ್ಯೂಟಿ ಫ್ಯಾಕ್ಟ್ಸ್ ಎನ್ನುವುದು ಪದಾರ್ಥಗಳು, ಅಲರ್ಜಿನ್ಗಳು, ಸೂಚಕಗಳು ಮತ್ತು ಉತ್ಪನ್ನದ ಲೇಬಲ್ಗಳಲ್ಲಿ ನಾವು ಪಡೆಯಬಹುದಾದ ಮಾಹಿತಿಯ ಎಲ್ಲಾ ಸುಳಿವುಗಳೊಂದಿಗೆ ಕಾಸ್ಮೆಟಿಕ್ ಉತ್ಪನ್ನಗಳ ಡೇಟಾಬೇಸ್ ಆಗಿದೆ.";
+"product-search.initial-view.slogan" = "the free food products database";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "ಉತ್ಪನ್ನದ ಬಾರ್ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ";
@@ -55,6 +58,28 @@
 "product-add.uploaded-image" = "ಚಿತ್ರ ಅಪ್ಲೋಡ್ ಮಾಡಲಾಗಿದೆ, ಧನ್ಯವಾದಗಳು!";
 "product-add.save-error.title" = "ಉತ್ಪನ್ನವನ್ನು ಉಳಿಸುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ";
 "product-add.save-error.message" = "ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ";
+"product-add.save-info.success" = "Information saved at";
+"product-add.save-info.error" = "Information not saved";
+"product-add.save-info.saving" = "Saving product information...";
+"product-add.save-info.not-yet" = "Information not saved yet";
+"product-add.save-ingredients.success" = "Ingredients saved at";
+"product-add.save-ingredients.error" = "Ingredients not saved";
+"product-add.save-ingredients.saving" = "Saving ingredients...";
+"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
+"product-add.save-nutriments.success" = "Nutriments saved at";
+"product-add.save-nutriments.error" = "Nutriments not saved";
+"product-add.save-nutriments.saving" = "Saving nutriments...";
+"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
+"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+
+"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
+"product-add.ocr-ingredients.error" = "Could not read ingredients from the picture";
+"product-add.ocr-ingredients.saving" = "Reading ingredients from the picture...";
+"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to read";
+
+"product-add.nutriscore-explaination" = "Nutriscore computed from the nutrition table";
+"product-add.novagroup-explaination" = "Novagroup computed based on the ingredients list";
+
 "alert.action.ok" = "ಸರಿ";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
@@ -62,7 +87,45 @@
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "ಬ್ರ್ಯಾಂಡ್";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity-value" = "Quantity value";
+"product-add.placeholder.quantity" = "Quantity value";
+
+"product-add.title" = "New product";
+"product-add.titles.barcode" = "ಬಾರ್‌ ಕೋಡ್";
+"product-add.titles.top-explainations" = "This product is not yet in the Open Food Facts database. Could you please take some pictures of the product, barcode, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
+"product-add.titles.license-explaination" = "ಗಮನಿಸಿ: ನೀವು ಕಳುಹಿಸುವ ಚಿತ್ರಗಳು ಉಚಿತ ಪರವಾನಗಿ ಕ್ರಿಯೇಟಿವ್ ಕಾಮನ್ಸ್ ಅಟ್ರಿಬ್ಯೂಷನ್ ಮತ್ತು ಹಂಚಿಕೊಳ್ಳಿಎಚ್ಚೆಯಡಿಯಲ್ಲಿ ಪ್ರಕಟಿಸಲ್ಪಟ್ಟಿವೆ.";
+
+"product-add.titles.product-info" = "Product information";
+"product-add.label.product-name" = "ಹೆಸರು";
+"product-add.label.category" = "ವರ್ಗ";
+"product-add.label.quantity" = "ಪ್ರಮಾಣ";
+"product-add.details.category" = "Needed for Nutri-Score computation";
+"product-add.label.quantity-example" = "25g, 10oz, 5ml...";
+"product-add.label.language" = "ಭಾಷೆ";
+
+"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.titles.nutritive" = "Nutritive data";
+"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.add-nutriment" = "Add a nutrition element";
+"product-add.nutritive.too-much" = "More than 100g?";
+
+"product-add.description.ingredients" = "Complete the ingredients to get the Nova group on food processing";
+"product-add.titles.ingredients" = "ಪದಾರ್ಥಗಳು";
+"product-add.ingredients.explaination" = "Take a picture of the ingredients list (second image above), and the list of ingredients will be prefilled. Fix it if needed, then save it!";
+"product-add.ingredients.button-delete" = "Too bad, ignore";
+"product-add.ingredients.button-save" = "Looks good, save";
+
+// Select Category
+"select-category.title" = "ವರ್ಗ";
+"select-category.search-placeholder" = "Search for a category";
+
+// Select nutrition
+"select-nutriment.title" = "ಪೋಷಣೆ";
+"select-nutriment.search-placeholder" = "Search for a nutrition element";
+
+// Select allergen
+"select-allergen.title" = "Allergen";
+"select-allergen.search-placeholder" = "Search for an allergen";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "ಈ ಉತ್ಪನ್ನವನ್ನು ಸೇರಿಸಿ";
@@ -94,6 +157,8 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "ಪದಾರ್ಥಗಳ ಪಟ್ಟಿ";
 "product-detail.ingredients.allergens-list" = "ಅಲರ್ಜಿಗಳು ಅಥವಾ ಅಸಹಿಷ್ಣುತೆಗಳಿಗೆ ಕಾರಣವಾಗುವ ಪದಾರ್ಥಗಳು ಅಥವಾ ಉತ್ಪನ್ನಗಳು:";
+"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Product is missing some information, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "ಕುರುಹುಗಳು:";
 "product-detail.ingredients.additives-list" = "ಸೇರ್ಪಡೆ";
 "product-detail.ingredients.palm-oil-ingredients" = "ಪಾಮ್ ಎಣ್ಣೆಯಿಂದ ಬೇಕಾಗುವ ಪದಾರ್ಥಗಳು";
@@ -187,18 +252,24 @@
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.take-picture" = "ಪದಾರ್ಥಗಳ ಚಿತ್ರವನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ";
-"product.images.product" = "ಉತ್ಪನ್ನಗಳು";
-"product.images.picture" = "ಚಿತ್ರ ✅";
-"product.images.front" = "ಮುಂದೆ";
-"product.images.ingredients" = "ingredients";
-"product.images.nutrition" = "ನ್ಯೂಟ್ರಿಷನ್ ಟೇಬಲ್";
+"product.images.took-picture.front" = "Product's front picture ✅";
+"product.images.took-picture.ingredients" = "Product's ingredients picture ✅";
+"product.images.took-picture.nutrition" = "Product's nutrition table picture ✅";
+
+"product.images.take-picture.front" = "Picture of the product's front";
+"product.images.take-picture.ingredients" = "Picture of the product's ingredients";
+"product.images.take-picture.nutrition" = "Picture of the product's nutrition table";
 
 // Settings storyboard
 "settings.tab-bar.item" = "ಸೆಟ್ಟಿಂಗ್";
+"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will never be sent to Open Food Facts servers. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.add-button" = "Add allergens";
 "settings.sections.information" = "ಮಾಹಿತಿ";
+"settings.sections.discover" = "ಅನ್ವೇಷಿಸಿ";
 "settings.sections.contribute" = "Contribute";
 "settings.sections.about" = "ಬಗ್ಗೆ";
+"settings.user-profile" = "Your profile";
 "settings.credits.title" = "ಕ್ರೆಡಿಟ್ಸ್";
 "settings.scan-on-launch.title" = "ಅಪ್ಲಿಕೇಶನ್ ಲಾಂಚ್ನಲ್ಲಿ ಸ್ಕ್ಯಾನ್ ತೋರಿಸಿ";
 "settings.information.discover" = "ಅನ್ವೇಷಿಸಿ";
@@ -233,8 +304,11 @@
 "pending-upload.hud.status" = "Uploading";
 
 // Search history
+"history.title" = "Search history";
 "history.cell.privacy" = "Your search history is only stored on your device";
 "history.button.clear" = "ತೆರವು ಮಾಡಿ";
+"history.clear.confirmation-title" = "Clear history ?";
+"history.clear.confirmation-message" = "All your history will be deleted";
 "history.section-titles.last24h" = "Last 24 hours";
 "history.section-titles.fewDays" = "A few days ago";
 "history.section-titles.fewWeeks" = "A few weeks ago";

@@ -12,14 +12,17 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Back";
 "generic.search" = "Lêgerîn";
+"generic.cancel" = "Cancel";
+"generic.save" = "Rekor";
 
 // Product Search
 
+"product-search.title" = "Lêgerîn";
 "product-search.search-placeholder" = "Search for a product by name or barcode";
 "product-search.no-results" = "No Results";
 "product-search.error-view.title" = "Something went wrong";
 "product-search.error-view.subtitle" = "Please try again";
-"product-search.initial-view.text" = "Open Facts Food, di wan malzemeyên, alerjen, agahî adanî û berhemên mohrên a zelal bi hemû agahî em dikarin li ser heye berhemên xwarin peyda dagirtin.";
+"product-search.initial-view.slogan" = "the free food products database";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scan the barcode of the product";
@@ -55,6 +58,28 @@
 "product-add.uploaded-image" = "Image uploaded, thanks!";
 "product-add.save-error.title" = "Error while saving product";
 "product-add.save-error.message" = "Try again later";
+"product-add.save-info.success" = "Information saved at";
+"product-add.save-info.error" = "Information not saved";
+"product-add.save-info.saving" = "Saving product information...";
+"product-add.save-info.not-yet" = "Information not saved yet";
+"product-add.save-ingredients.success" = "Ingredients saved at";
+"product-add.save-ingredients.error" = "Ingredients not saved";
+"product-add.save-ingredients.saving" = "Saving ingredients...";
+"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
+"product-add.save-nutriments.success" = "Nutriments saved at";
+"product-add.save-nutriments.error" = "Nutriments not saved";
+"product-add.save-nutriments.saving" = "Saving nutriments...";
+"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
+"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+
+"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
+"product-add.ocr-ingredients.error" = "Could not read ingredients from the picture";
+"product-add.ocr-ingredients.saving" = "Reading ingredients from the picture...";
+"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to read";
+
+"product-add.nutriscore-explaination" = "Nutriscore computed from the nutrition table";
+"product-add.novagroup-explaination" = "Novagroup computed based on the ingredients list";
+
 "alert.action.ok" = "Temam";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
@@ -62,7 +87,45 @@
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Brand";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity-value" = "Quantity value";
+"product-add.placeholder.quantity" = "Quantity value";
+
+"product-add.title" = "New product";
+"product-add.titles.barcode" = "Barcode";
+"product-add.titles.top-explainations" = "This product is not yet in the Open Food Facts database. Could you please take some pictures of the product, barcode, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
+"product-add.titles.license-explaination" = "Nîşe: Gondermişke nigar xwe bi di bin lîsanseke azad Creative Commons Attribution ShareAlike û weşandin.";
+
+"product-add.titles.product-info" = "Product information";
+"product-add.label.product-name" = "Nav";
+"product-add.label.category" = "Kategori";
+"product-add.label.quantity" = "Quantity";
+"product-add.details.category" = "Needed for Nutri-Score computation";
+"product-add.label.quantity-example" = "25g, 10oz, 5ml...";
+"product-add.label.language" = "Ziman";
+
+"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.titles.nutritive" = "Nutritive data";
+"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.add-nutriment" = "Add a nutrition element";
+"product-add.nutritive.too-much" = "More than 100g?";
+
+"product-add.description.ingredients" = "Complete the ingredients to get the Nova group on food processing";
+"product-add.titles.ingredients" = "Materyalên";
+"product-add.ingredients.explaination" = "Take a picture of the ingredients list (second image above), and the list of ingredients will be prefilled. Fix it if needed, then save it!";
+"product-add.ingredients.button-delete" = "Too bad, ignore";
+"product-add.ingredients.button-save" = "Looks good, save";
+
+// Select Category
+"select-category.title" = "Kategori";
+"select-category.search-placeholder" = "Search for a category";
+
+// Select nutrition
+"select-nutriment.title" = "Xwarin û";
+"select-nutriment.search-placeholder" = "Search for a nutrition element";
+
+// Select allergen
+"select-allergen.title" = "Allergen";
+"select-allergen.search-placeholder" = "Search for an allergen";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Add a new picture";
@@ -94,6 +157,8 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Madeyên an berhemên ku sedema alerjî an tehamûlî";
+"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Product is missing some information, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Traces";
 "product-detail.ingredients.additives-list" = "Ji bilî";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
@@ -105,7 +170,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Xwarin û rast";
-"product-detail.nutrition-table.for-100g" = "Per 100 g";
+"product-detail.nutrition-table.for-100g" = "100 g";
 "product-detail.nutrition-table.for-serving" = "Per di xizmeta";
 
 // Nutrition levels
@@ -114,25 +179,25 @@
 "nutrition-level.high" = "mîqdarê bilind yên";
 
 // Nutrition
-"nutrition.energy" = "Calories";
+"nutrition.energy" = "Enerjiyê";
 "nutrition.fats" = "Fats";
 "nutrition.fats.saturated-fat" = "Saturated fat";
-"nutrition.fats.mono-unsaturated-fat" = "Monounsaturated fat";
-"nutrition.fats.poly-unsaturated-fat" = "Polyunsaturated fat";
+"nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated fat";
+"nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
 "nutrition.fats.trans-fat" = "Guhaztin run";
 "nutrition.fats.cholesterol" = "Kolesterolê";
 "nutrition.carbohydrate" = "Karbohîratê";
-"nutrition.carbohydrate.sugars" = "Sugar";
+"nutrition.carbohydrate.sugars" = "Şekirê";
 "nutrition.carbohydrate.sucrose" = "Sucrose";
 "nutrition.carbohydrate.glucose" = "Glucose";
 "nutrition.carbohydrate.fructose" = "Fructose";
 "nutrition.carbohydrate.lactose" = "Bê şekira";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Ji maltodextrins";
-"nutrition.fiber" = "Fiber";
+"nutrition.fiber" = "Parêz";
 "nutrition.proteins" = "Proteîna";
 "nutrition.proteins.casein" = "Kazein";
 "nutrition.proteins.serum-proteins" = "Serum xwînav";
@@ -140,7 +205,7 @@
 "nutrition.salt" = "Xwê";
 "nutrition.sodium" = "Sodyum";
 "nutrition.alcohol" = "Alcohol";
-"nutrition.vitamins" = "Vitamins and Minerals";
+"nutrition.vitamins" = "Vitamins";
 "nutrition.vitamins.a" = "Vitamin A";
 "nutrition.vitamins.beta-carotene" = "Beta carotene";
 "nutrition.vitamins.d" = "Vitamin D";
@@ -149,12 +214,12 @@
 "nutrition.vitamins.c" = "Vitamin C";
 "nutrition.vitamins.b1" = "Vitamin B1";
 "nutrition.vitamins.b2" = "Vitamin B2";
-"nutrition.vitamins.pp" = "Vitamin B3";
+"nutrition.vitamins.pp" = "Vitamin PP";
 "nutrition.vitamins.b6" = "Vitamin B6";
 "nutrition.vitamins.b9" = "Vitamin B9";
 "nutrition.vitamins.b12" = "Vitamin B12";
-"nutrition.vitamins.biotin" = "Vitamin B7";
-"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
+"nutrition.vitamins.biotin" = "Biotin";
+"nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
 "nutrition.minerals" = "Mîneralên";
 "nutrition.minerals.silica" = "Silica";
 "nutrition.minerals.bicarbonate" = "Bicarbonate";
@@ -176,29 +241,35 @@
 "nutrition.minerals.taurine" = "Taurine";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Fruits, vegetables, nuts";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen/Meat Protein Ratio";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
 "nutrition.minerals.cocoa" = "Kakawo";
-"nutrition.minerals.chlorophyl" = "Chlorophyll";
+"nutrition.minerals.chlorophyl" = "Klorofil";
 
 // Call to action
 "call-to-action.summary" = "Pişa resma bıkışıne";
 "call-to-action.ingredients" = "Resmi melzeme bıkışıne";
-"call-to-action.nutrition" = "Take a picture of the nutrition facts";
+"call-to-action.nutrition" = "Teblo rema bıkışıkının";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.take-picture" = "Take a picture of the product's";
-"product.images.product" = "Product's";
-"product.images.picture" = "picture ✅";
-"product.images.front" = "front";
-"product.images.ingredients" = "materyalên";
-"product.images.nutrition" = "nutrition table";
+"product.images.took-picture.front" = "Product's front picture ✅";
+"product.images.took-picture.ingredients" = "Product's ingredients picture ✅";
+"product.images.took-picture.nutrition" = "Product's nutrition table picture ✅";
+
+"product.images.take-picture.front" = "Picture of the product's front";
+"product.images.take-picture.ingredients" = "Picture of the product's ingredients";
+"product.images.take-picture.nutrition" = "Picture of the product's nutrition table";
 
 // Settings storyboard
 "settings.tab-bar.item" = "Ligorî";
+"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will never be sent to Open Food Facts servers. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.add-button" = "Add allergens";
 "settings.sections.information" = "Agahî";
+"settings.sections.discover" = "Ce_sûsîya";
 "settings.sections.contribute" = "Contribute";
 "settings.sections.about" = "Li_ser";
+"settings.user-profile" = "Your profile";
 "settings.credits.title" = "Credits";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
 "settings.information.discover" = "Ce_sûsîya";
@@ -233,8 +304,11 @@
 "pending-upload.hud.status" = "Uploading";
 
 // Search history
+"history.title" = "Search history";
 "history.cell.privacy" = "Your search history is only stored on your device";
 "history.button.clear" = "Vekirî";
+"history.clear.confirmation-title" = "Clear history ?";
+"history.clear.confirmation-message" = "All your history will be deleted";
 "history.section-titles.last24h" = "Last 24 hours";
 "history.section-titles.fewDays" = "A few days ago";
 "history.section-titles.fewWeeks" = "A few weeks ago";

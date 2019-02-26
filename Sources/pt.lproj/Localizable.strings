@@ -12,14 +12,17 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Voltar";
 "generic.search" = "Procurar";
+"generic.cancel" = "Cancelar";
+"generic.save" = "Guardar";
 
 // Product Search
 
+"product-search.title" = "Procurar";
 "product-search.search-placeholder" = "Pesquise um produto por nome ou código de barras";
 "product-search.no-results" = "Nenhum Resultado";
 "product-search.error-view.title" = "Algo correu mal";
 "product-search.error-view.subtitle" = "Por favor, tente de novo";
-"product-search.initial-view.text" = "Open Food Facts é uma base de dados de produtos alimentares com ingredientes, alergénios, tabela nutricional e todos os pedacinhos de informação que se encontram nos rótulos dos produtos.";
+"product-search.initial-view.slogan" = "the free food products database";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Digitalizar o código de barras do produto";
@@ -55,6 +58,28 @@
 "product-add.uploaded-image" = "Imagem enviada, obrigado!";
 "product-add.save-error.title" = "Erro ao salvar o produto";
 "product-add.save-error.message" = "Tente novamente mais tarde";
+"product-add.save-info.success" = "Information saved at";
+"product-add.save-info.error" = "Information not saved";
+"product-add.save-info.saving" = "Saving product information...";
+"product-add.save-info.not-yet" = "Information not saved yet";
+"product-add.save-ingredients.success" = "Ingredients saved at";
+"product-add.save-ingredients.error" = "Ingredients not saved";
+"product-add.save-ingredients.saving" = "Saving ingredients...";
+"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
+"product-add.save-nutriments.success" = "Nutriments saved at";
+"product-add.save-nutriments.error" = "Nutriments not saved";
+"product-add.save-nutriments.saving" = "Saving nutriments...";
+"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
+"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+
+"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
+"product-add.ocr-ingredients.error" = "Could not read ingredients from the picture";
+"product-add.ocr-ingredients.saving" = "Reading ingredients from the picture...";
+"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to read";
+
+"product-add.nutriscore-explaination" = "Nutriscore computed from the nutrition table";
+"product-add.novagroup-explaination" = "Novagroup computed based on the ingredients list";
+
 "alert.action.ok" = "OK";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
@@ -62,7 +87,45 @@
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Marca";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity-value" = "Quantity value";
+"product-add.placeholder.quantity" = "Quantity value";
+
+"product-add.title" = "New product";
+"product-add.titles.barcode" = "Código de barras";
+"product-add.titles.top-explainations" = "This product is not yet in the Open Food Facts database. Could you please take some pictures of the product, barcode, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
+"product-add.titles.license-explaination" = "Nota: as fotos que envia são publicadas sob a licença livre Creative Commons Atribuição-CompartilhaIgual.";
+
+"product-add.titles.product-info" = "Product information";
+"product-add.label.product-name" = "Nome";
+"product-add.label.category" = "Categoria";
+"product-add.label.quantity" = "Quantidade";
+"product-add.details.category" = "Needed for Nutri-Score computation";
+"product-add.label.quantity-example" = "25g, 10oz, 5ml...";
+"product-add.label.language" = "Idioma";
+
+"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.titles.nutritive" = "Nutritive data";
+"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.add-nutriment" = "Add a nutrition element";
+"product-add.nutritive.too-much" = "More than 100g?";
+
+"product-add.description.ingredients" = "Complete the ingredients to get the Nova group on food processing";
+"product-add.titles.ingredients" = "Ingredientes";
+"product-add.ingredients.explaination" = "Take a picture of the ingredients list (second image above), and the list of ingredients will be prefilled. Fix it if needed, then save it!";
+"product-add.ingredients.button-delete" = "Too bad, ignore";
+"product-add.ingredients.button-save" = "Looks good, save";
+
+// Select Category
+"select-category.title" = "Categoria";
+"select-category.search-placeholder" = "Search for a category";
+
+// Select nutrition
+"select-nutriment.title" = "Nutrição";
+"select-nutriment.search-placeholder" = "Search for a nutrition element";
+
+// Select allergen
+"select-allergen.title" = "Alérgeno";
+"select-allergen.search-placeholder" = "Search for an allergen";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Adicionar uma nova foto";
@@ -94,6 +157,8 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Lista de ingredientes";
 "product-detail.ingredients.allergens-list" = "Produtos ou substâncias que provocam alergias ou intolerâncias";
+"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Product is missing some information, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Vestígios";
 "product-detail.ingredients.additives-list" = "Aditivos";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredientes que derivam do óleo de palma";
@@ -187,18 +252,24 @@
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.take-picture" = "Tire um foto dos produtos";
-"product.images.product" = "Produtos";
-"product.images.picture" = "imagem ✅";
-"product.images.front" = "parte frontal";
-"product.images.ingredients" = "ingredientes";
-"product.images.nutrition" = "tabela de nutrição";
+"product.images.took-picture.front" = "Product's front picture ✅";
+"product.images.took-picture.ingredients" = "Product's ingredients picture ✅";
+"product.images.took-picture.nutrition" = "Product's nutrition table picture ✅";
+
+"product.images.take-picture.front" = "Picture of the product's front";
+"product.images.take-picture.ingredients" = "Picture of the product's ingredients";
+"product.images.take-picture.nutrition" = "Picture of the product's nutrition table";
 
 // Settings storyboard
 "settings.tab-bar.item" = "Definições";
+"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will never be sent to Open Food Facts servers. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.add-button" = "Add allergens";
 "settings.sections.information" = "Informação";
+"settings.sections.discover" = "Descobrir";
 "settings.sections.contribute" = "Contribuir";
 "settings.sections.about" = "Sobre";
+"settings.user-profile" = "Your profile";
 "settings.credits.title" = "Créditos";
 "settings.scan-on-launch.title" = "Mostrar varredura no lançamento da aplicação";
 "settings.information.discover" = "Descobrir";
@@ -233,8 +304,11 @@
 "pending-upload.hud.status" = "Uploading";
 
 // Search history
+"history.title" = "Search history";
 "history.cell.privacy" = "Your search history is only stored on your device";
 "history.button.clear" = "Limpar";
+"history.clear.confirmation-title" = "Clear history ?";
+"history.clear.confirmation-message" = "All your history will be deleted";
 "history.section-titles.last24h" = "Last 24 hours";
 "history.section-titles.fewDays" = "A few days ago";
 "history.section-titles.fewWeeks" = "A few weeks ago";
