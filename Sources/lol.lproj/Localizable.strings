@@ -12,14 +12,17 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "crwdns112750:0crwdne112750:0";
 "generic.search" = "crwdns112752:0crwdne112752:0";
+"generic.cancel" = "crwdns115428:0crwdne115428:0";
+"generic.save" = "crwdns115430:0crwdne115430:0";
 
 // Product Search
 
+"product-search.title" = "crwdns115432:0crwdne115432:0";
 "product-search.search-placeholder" = "crwdns112022:0crwdne112022:0";
 "product-search.no-results" = "crwdns112024:0crwdne112024:0";
 "product-search.error-view.title" = "crwdns112026:0crwdne112026:0";
 "product-search.error-view.subtitle" = "crwdns112028:0crwdne112028:0";
-"product-search.initial-view.text" = "crwdns112030:0crwdne112030:0";
+"product-search.initial-view.slogan" = "crwdns115434:0crwdne115434:0";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "crwdns112032:0crwdne112032:0";
@@ -55,6 +58,28 @@
 "product-add.uploaded-image" = "crwdns112064:0crwdne112064:0";
 "product-add.save-error.title" = "crwdns112066:0crwdne112066:0";
 "product-add.save-error.message" = "crwdns112068:0crwdne112068:0";
+"product-add.save-info.success" = "crwdns115436:0crwdne115436:0";
+"product-add.save-info.error" = "crwdns115438:0crwdne115438:0";
+"product-add.save-info.saving" = "crwdns115440:0crwdne115440:0";
+"product-add.save-info.not-yet" = "crwdns115442:0crwdne115442:0";
+"product-add.save-ingredients.success" = "crwdns115444:0crwdne115444:0";
+"product-add.save-ingredients.error" = "crwdns115446:0crwdne115446:0";
+"product-add.save-ingredients.saving" = "crwdns115448:0crwdne115448:0";
+"product-add.save-ingredients.not-yet" = "crwdns115450:0crwdne115450:0";
+"product-add.save-nutriments.success" = "crwdns115452:0crwdne115452:0";
+"product-add.save-nutriments.error" = "crwdns115454:0crwdne115454:0";
+"product-add.save-nutriments.saving" = "crwdns115456:0crwdne115456:0";
+"product-add.save-nutriments.not-yet" = "crwdns115458:0crwdne115458:0";
+"product-add.no-nutrition" = "crwdns115460:0crwdne115460:0";
+
+"product-add.ocr-ingredients.success" = "crwdns115462:0crwdne115462:0";
+"product-add.ocr-ingredients.error" = "crwdns115464:0crwdne115464:0";
+"product-add.ocr-ingredients.saving" = "crwdns115466:0crwdne115466:0";
+"product-add.ocr-ingredients.not-yet" = "crwdns115468:0crwdne115468:0";
+
+"product-add.nutriscore-explaination" = "crwdns115470:0crwdne115470:0";
+"product-add.novagroup-explaination" = "crwdns115472:0crwdne115472:0";
+
 "alert.action.ok" = "crwdns112070:0crwdne112070:0";
 "product-add.language.toolbar-title" = "crwdns112072:0crwdne112072:0";
 /* Product Add name text field */
@@ -62,7 +87,45 @@
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "crwdns112076:0crwdne112076:0";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity-value" = "crwdns112078:0crwdne112078:0";
+"product-add.placeholder.quantity" = "crwdns115474:0crwdne115474:0";
+
+"product-add.title" = "crwdns115476:0crwdne115476:0";
+"product-add.titles.barcode" = "crwdns115478:0crwdne115478:0";
+"product-add.titles.top-explainations" = "crwdns115480:0crwdne115480:0";
+"product-add.titles.license-explaination" = "crwdns115482:0crwdne115482:0";
+
+"product-add.titles.product-info" = "crwdns115484:0crwdne115484:0";
+"product-add.label.product-name" = "crwdns115486:0crwdne115486:0";
+"product-add.label.category" = "crwdns115488:0crwdne115488:0";
+"product-add.label.quantity" = "crwdns115490:0crwdne115490:0";
+"product-add.details.category" = "crwdns115492:0crwdne115492:0";
+"product-add.label.quantity-example" = "crwdns115494:0crwdne115494:0";
+"product-add.label.language" = "crwdns115496:0crwdne115496:0";
+
+"product-add.description.nutritive" = "crwdns115498:0crwdne115498:0";
+"product-add.titles.nutritive" = "crwdns115500:0crwdne115500:0";
+"product-add.nutritive.choice.per-hundred-grams" = "crwdns115502:0crwdne115502:0";
+"product-add.nutritive.choice.per-portion" = "crwdns115504:0crwdne115504:0";
+"product-add.nutritive.add-nutriment" = "crwdns115506:0crwdne115506:0";
+"product-add.nutritive.too-much" = "crwdns115508:0crwdne115508:0";
+
+"product-add.description.ingredients" = "crwdns115510:0crwdne115510:0";
+"product-add.titles.ingredients" = "crwdns115512:0crwdne115512:0";
+"product-add.ingredients.explaination" = "crwdns115514:0crwdne115514:0";
+"product-add.ingredients.button-delete" = "crwdns115516:0crwdne115516:0";
+"product-add.ingredients.button-save" = "crwdns115518:0crwdne115518:0";
+
+// Select Category
+"select-category.title" = "crwdns115520:0crwdne115520:0";
+"select-category.search-placeholder" = "crwdns115522:0crwdne115522:0";
+
+// Select nutrition
+"select-nutriment.title" = "crwdns115524:0crwdne115524:0";
+"select-nutriment.search-placeholder" = "crwdns115526:0crwdne115526:0";
+
+// Select allergen
+"select-allergen.title" = "crwdns115528:0crwdne115528:0";
+"select-allergen.search-placeholder" = "crwdns115530:0crwdne115530:0";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "crwdns112080:0crwdne112080:0";
@@ -94,6 +157,8 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "crwdns112116:0crwdne112116:0";
 "product-detail.ingredients.allergens-list" = "crwdns112118:0crwdne112118:0";
+"product-detail.ingredients.allergens-alert.title" = "crwdns115532:0crwdne115532:0";
+"product-detail.ingredients.allergens-list.missing-infos" = "crwdns115534:0crwdne115534:0";
 "product-detail.ingredients.traces-list" = "crwdns112120:0crwdne112120:0";
 "product-detail.ingredients.additives-list" = "crwdns112122:0crwdne112122:0";
 "product-detail.ingredients.palm-oil-ingredients" = "crwdns112124:0crwdne112124:0";
@@ -187,18 +252,24 @@
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.take-picture" = "crwdns112280:0crwdne112280:0";
-"product.images.product" = "crwdns112282:0crwdne112282:0";
-"product.images.picture" = "crwdns112284:0crwdne112284:0";
-"product.images.front" = "crwdns112286:0crwdne112286:0";
-"product.images.ingredients" = "crwdns112288:0crwdne112288:0";
-"product.images.nutrition" = "crwdns112290:0crwdne112290:0";
+"product.images.took-picture.front" = "crwdns115536:0crwdne115536:0";
+"product.images.took-picture.ingredients" = "crwdns115538:0crwdne115538:0";
+"product.images.took-picture.nutrition" = "crwdns115540:0crwdne115540:0";
+
+"product.images.take-picture.front" = "crwdns115542:0crwdne115542:0";
+"product.images.take-picture.ingredients" = "crwdns115544:0crwdne115544:0";
+"product.images.take-picture.nutrition" = "crwdns115546:0crwdne115546:0";
 
 // Settings storyboard
 "settings.tab-bar.item" = "crwdns112292:0crwdne112292:0";
+"settings.allergies.title" = "crwdns115548:0crwdne115548:0";
+"settings.allergies.description" = "crwdns115550:0crwdne115550:0";
+"settings.allergies.add-button" = "crwdns115552:0crwdne115552:0";
 "settings.sections.information" = "crwdns112294:0crwdne112294:0";
+"settings.sections.discover" = "crwdns115554:0crwdne115554:0";
 "settings.sections.contribute" = "crwdns112296:0crwdne112296:0";
 "settings.sections.about" = "crwdns112298:0crwdne112298:0";
+"settings.user-profile" = "crwdns115556:0crwdne115556:0";
 "settings.credits.title" = "crwdns112300:0crwdne112300:0";
 "settings.scan-on-launch.title" = "crwdns112302:0crwdne112302:0";
 "settings.information.discover" = "crwdns112304:0crwdne112304:0";
@@ -233,8 +304,11 @@
 "pending-upload.hud.status" = "crwdns112356:0crwdne112356:0";
 
 // Search history
+"history.title" = "crwdns115558:0crwdne115558:0";
 "history.cell.privacy" = "crwdns112358:0crwdne112358:0";
 "history.button.clear" = "crwdns112360:0crwdne112360:0";
+"history.clear.confirmation-title" = "crwdns115560:0crwdne115560:0";
+"history.clear.confirmation-message" = "crwdns115562:0crwdne115562:0";
 "history.section-titles.last24h" = "crwdns112362:0crwdne112362:0";
 "history.section-titles.fewDays" = "crwdns112364:0crwdne112364:0";
 "history.section-titles.fewWeeks" = "crwdns112366:0crwdne112366:0";
