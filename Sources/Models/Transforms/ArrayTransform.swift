@@ -15,7 +15,7 @@ public class ArrayTransform: TransformType {
 
     public func transformFromJSON(_ value: Any?) -> Object? {
         if let value = value as? String, !value.isEmpty {
-            return value.components(separatedBy: ",")
+            return value.components(separatedBy: ",").map { $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) }
         }
 
         return nil

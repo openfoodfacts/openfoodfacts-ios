@@ -10,6 +10,12 @@
 		3000855E2207A3A500DC3896 /* TaxonomiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000855D2207A3A500DC3896 /* TaxonomiesService.swift */; };
 		300085612207AC0700DC3896 /* Additive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085602207AC0700DC3896 /* Additive.swift */; };
 		300085632208777900DC3896 /* OFFUrlsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085622208777900DC3896 /* OFFUrlsHelper.swift */; };
+		302525E92223044E00C2C830 /* AllergensAlertsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302525E72223044E00C2C830 /* AllergensAlertsTableViewController.swift */; };
+		302525EC222307A200C2C830 /* RealmUserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302525EB222307A200C2C830 /* RealmUserPreferences.swift */; };
+		302525EF222311A000C2C830 /* SelectAllergenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302525ED222311A000C2C830 /* SelectAllergenViewController.swift */; };
+		302525F0222311A000C2C830 /* SelectAllergenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302525EE222311A000C2C830 /* SelectAllergenViewController.xib */; };
+		302525F32223145000C2C830 /* AllergensAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302525F12223145000C2C830 /* AllergensAddTableViewCell.swift */; };
+		302525F42223145000C2C830 /* AllergensAddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302525F22223145000C2C830 /* AllergensAddTableViewCell.xib */; };
 		303C279D2201AB6B00159961 /* ScanProductSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */; };
 		303C279F2201AB7B00159961 /* ScanProductSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */; };
 		303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */; };
@@ -283,6 +289,12 @@
 		3000855D2207A3A500DC3896 /* TaxonomiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomiesService.swift; sourceTree = "<group>"; };
 		300085602207AC0700DC3896 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
 		300085622208777900DC3896 /* OFFUrlsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFUrlsHelper.swift; sourceTree = "<group>"; };
+		302525E72223044E00C2C830 /* AllergensAlertsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergensAlertsTableViewController.swift; sourceTree = "<group>"; };
+		302525EB222307A200C2C830 /* RealmUserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUserPreferences.swift; sourceTree = "<group>"; };
+		302525ED222311A000C2C830 /* SelectAllergenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAllergenViewController.swift; sourceTree = "<group>"; };
+		302525EE222311A000C2C830 /* SelectAllergenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectAllergenViewController.xib; sourceTree = "<group>"; };
+		302525F12223145000C2C830 /* AllergensAddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergensAddTableViewCell.swift; sourceTree = "<group>"; };
+		302525F22223145000C2C830 /* AllergensAddTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllergensAddTableViewCell.xib; sourceTree = "<group>"; };
 		303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProductSummaryView.swift; sourceTree = "<group>"; };
 		303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanProductSummaryView.xib; sourceTree = "<group>"; };
 		303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBarcodeInputView.swift; sourceTree = "<group>"; };
@@ -1142,6 +1154,7 @@
 			isa = PBXGroup;
 			children = (
 				955BAFFD1FF828540046F419 /* RealmPendingUploadItem.swift */,
+				302525EB222307A200C2C830 /* RealmUserPreferences.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -1158,6 +1171,8 @@
 				30412DDD220F104900C485DD /* SelectNutrimentViewController.xib */,
 				30412DD0220E19BF00C485DD /* SelectCategoryViewController.swift */,
 				30412DD4220E2AF100C485DD /* SelectCategoryViewController.xib */,
+				302525ED222311A000C2C830 /* SelectAllergenViewController.swift */,
+				302525EE222311A000C2C830 /* SelectAllergenViewController.xib */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -1802,6 +1817,9 @@
 			children = (
 				95F7DB391F98DDAC00428208 /* SettingsTableViewController.swift */,
 				7437FBA42036F1F800D107B6 /* CreditsViewController.swift */,
+				302525E72223044E00C2C830 /* AllergensAlertsTableViewController.swift */,
+				302525F12223145000C2C830 /* AllergensAddTableViewCell.swift */,
+				302525F22223145000C2C830 /* AllergensAddTableViewCell.xib */,
 				74CB633820373B6C008FC48D /* Credits.html */,
 			);
 			path = Settings;
@@ -2073,6 +2091,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302525F42223145000C2C830 /* AllergensAddTableViewCell.xib in Resources */,
 				95902B471F2E284700A72EF7 /* SummaryHeaderCellController.xib in Resources */,
 				30412DD5220E2AF100C485DD /* SelectCategoryViewController.xib in Resources */,
 				303C279F2201AB7B00159961 /* ScanProductSummaryView.xib in Resources */,
@@ -2091,6 +2110,7 @@
 				30412DDF220F104900C485DD /* SelectNutrimentViewController.xib in Resources */,
 				956FF94E1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.xib in Resources */,
 				95890AB71F967EE900085B20 /* LaunchScreen.storyboard in Resources */,
+				302525F0222311A000C2C830 /* SelectAllergenViewController.xib in Resources */,
 				956FF9461F1FF0CA0069D678 /* NutritionHeaderTableViewCell.xib in Resources */,
 				956FF9561F1FF0CA0069D678 /* ProductTableViewCell.xib in Resources */,
 				95C216491FDC8A5900EC5BCB /* Search.storyboard in Resources */,
@@ -2306,6 +2326,7 @@
 				9587DF701F83F6580069F0A6 /* PictureTableViewCell.swift in Sources */,
 				956FF9541F1FF0CA0069D678 /* FlashButton.swift in Sources */,
 				958F33571F378086005269C5 /* NutriScoreView.swift in Sources */,
+				302525EC222307A200C2C830 /* RealmUserPreferences.swift in Sources */,
 				956FF95D1F1FF0CA0069D678 /* TapToFocusView.swift in Sources */,
 				956FF95E1F1FF0CA0069D678 /* TextOverlay.swift in Sources */,
 				95A5661A1FD6037800C997C8 /* LocalizableUIBarItem.swift in Sources */,
@@ -2334,6 +2355,7 @@
 				95E9F0481EC8D7D900BA20B0 /* NutritionLevels.swift in Sources */,
 				95781BC11EC3A898003E3256 /* LocalizedString.swift in Sources */,
 				9549F2BE1FF43F2F00BA797C /* DataManagerHelper.swift in Sources */,
+				302525E92223044E00C2C830 /* AllergensAlertsTableViewController.swift in Sources */,
 				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
 				954587941F730C2D00269E71 /* CameraHelper.swift in Sources */,
 				303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */,
@@ -2344,6 +2366,7 @@
 				95DB3BE81FDD923300E83B76 /* DataManager.swift in Sources */,
 				30412DE1220F111400C485DD /* SelectTaxonomyViewController.swift in Sources */,
 				95F7DB3E1F98E42500428208 /* UserDefaultsConstants.swift in Sources */,
+				302525EF222311A000C2C830 /* SelectAllergenViewController.swift in Sources */,
 				952C3BE91F9A335F003C755A /* UIViewController.swift in Sources */,
 				958F33531F378076005269C5 /* InfoRowTableViewCell.swift in Sources */,
 				95A566181FD6037800C997C8 /* LocalizableUISearchBar.swift in Sources */,
@@ -2367,6 +2390,7 @@
 				95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */,
 				95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */,
 				95D1D2981FFC30D900595EA1 /* RootViewController.swift in Sources */,
+				302525F32223145000C2C830 /* AllergensAddTableViewCell.swift in Sources */,
 				95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */,
 				956FF95C1F1FF0CA0069D678 /* StateView.swift in Sources */,
 				95E16B2F1EE9E20A00331B2B /* UIStackView.swift in Sources */,

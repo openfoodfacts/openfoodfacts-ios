@@ -122,6 +122,10 @@
 "select-nutriment.title" = "Nutrition";
 "select-nutriment.search-placeholder" = "Recherchez un élément de nutrition";
 
+// Select allergen
+"select-allergen.title" = "Allergènes";
+"select-allergen.search-placeholder" = "Rechercher un allergène";
+
 // Product Detail
 "product-detail.header.add-new-picture" = "Ajouter une nouvelle image";
 /* Keep this text as short as possible */
@@ -152,6 +156,8 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Liste des ingrédients";
 "product-detail.ingredients.allergens-list" = "Substances ou produits provoquant des allergies ou intolérances";
+"product-detail.ingredients.allergens-alert.title" = "Contient des allergènes !";
+"product-detail.ingredients.allergens-list.missing-infos" = "Ce produit n'est pas complet. En conséquence, nous n'avons pas pu évaluer la présence d'allergènes.";
 "product-detail.ingredients.traces-list" = "Traces éventuelles";
 "product-detail.ingredients.additives-list" = "Additifs";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingrédients issus de l'huile de palme";
@@ -255,6 +261,9 @@
 
 // Settings storyboard
 "settings.tab-bar.item" = "Paramètres";
+"settings.allergies.title" = "Alertes allergènes";
+"settings.allergies.description" = "Ajoutez des allergènes à cette liste pour être avertis lorsque vous scannerez un produit en contenant.\n\nAttention: les informations relatives à vos allergies ne seront jamais envoyées aux serveurs d’Open Food Facts. Par ailleurs, soyez vigilant sur le fait que ces données ne sont pas fiables à 100%, et que la détection peut ne pas être précise à 100%. Veillez à vérifier également par vous-même !";
+"settings.allergies.add-button" = "Ajouter un allergène";
 "settings.sections.information" = "Information";
 "settings.sections.contribute" = "Contribuer";
 "settings.sections.about" = "À propos";

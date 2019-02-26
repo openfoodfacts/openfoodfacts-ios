@@ -62,6 +62,12 @@ class RootViewController: UIViewController {
                 top.dataManager = dataManager
             }
 
+            if var navVC = child as? UINavigationController {
+                if var top = navVC.viewControllers.first as? DataManagerClient {
+                    top.dataManager = dataManager
+                }
+            }
+
             if child is UserViewController, let item = tab.tabBar.items?[index] {
                 let items = dataManager.getItemsPendingUpload()
                 item.badgeValue = items.isEmpty ? nil : "\(items.count)"

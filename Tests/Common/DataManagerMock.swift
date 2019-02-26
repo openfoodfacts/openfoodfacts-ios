@@ -127,6 +127,17 @@ class DataManagerMock: DataManagerProtocol {
         return nil
     }
 
+    // MARK: - Allergens settings
+    func addAllergy(toAllergen: Allergen) {
+    }
+
+    func removeAllergy(toAllergen: Allergen) {
+    }
+
+    func listAllergies() -> Results<Allergen> {
+        return realm().objects(OpenFoodFacts.Allergen.self)
+    }
+
     // MARK: - Search history
     func getHistory() -> [Age: [HistoryItem]] {
         getHistoryCalled = true
