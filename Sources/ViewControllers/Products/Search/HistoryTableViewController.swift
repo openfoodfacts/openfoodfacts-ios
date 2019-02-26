@@ -14,14 +14,9 @@ struct HistoryCellId {
     static let item = "ProductTableViewCell"
 }
 
-protocol HistoryTableViewControllerDelegate: class {
-    func showItem(_ item: HistoryItem, onError: @escaping () -> Void)
-}
-
 class HistoryTableViewController: UITableViewController, DataManagerClient {
     var dataManager: DataManagerProtocol!
     lazy var items = [Age: [HistoryItem]]()
-    weak var delegate: HistoryTableViewControllerDelegate?
 
     var showDetailsBanner: NotificationBanner!
 
@@ -135,9 +130,32 @@ extension HistoryTableViewController {
         guard !isPrivacySection(indexPath.section) else { return }
         guard let item = getItem(forIndex: indexPath) else { return }
 
-        delegate?.showItem(item) {
+        showItem(item) {
             self.showDetailsBanner.show()
         }
+    }
+
+    func showProductDetails(product: Product) {
+        let productDetailsVC = ProductDetailViewController.loadFromStoryboard() as ProductDetailViewController
+        productDetailsVC.product = product
+        productDetailsVC.dataManager = dataManager
+
+        // Store product in search history
+        dataManager.addHistoryItem(product)
+
+        self.navigationController?.pushViewController(productDetailsVC, animated: true)
+    }
+
+    func showItem(_ item: HistoryItem, onError: @escaping () -> Void) {
+        dataManager.getProduct(byBarcode: item.barcode, isScanning: false, isSummary: false, onSuccess: { product in
+            if let product = product {
+                self.showProductDetails(product: product)
+            } else {
+                onError()
+            }
+        }, onError: { _ in
+            onError()
+        })
     }
 }
 

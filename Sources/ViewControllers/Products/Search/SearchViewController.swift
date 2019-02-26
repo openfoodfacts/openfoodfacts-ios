@@ -35,7 +35,7 @@ class SearchViewController: UIViewController, DataManagerClient {
     }
 }
 
-extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewControllerDelegate {
+extension SearchViewController: SearchViewControllerDelegate {
 
     func showProductDetails(product: Product) {
         let productDetailsVC = ProductDetailViewController.loadFromStoryboard() as ProductDetailViewController
@@ -50,17 +50,5 @@ extension SearchViewController: SearchViewControllerDelegate, HistoryTableViewCo
 
     @objc func dismissAnimated() {
         self.dismiss(animated: true, completion: nil)
-    }
-
-    func showItem(_ item: HistoryItem, onError: @escaping () -> Void) {
-        dataManager.getProduct(byBarcode: item.barcode, isScanning: false, isSummary: false, onSuccess: { product in
-            if let product = product {
-                self.showProductDetails(product: product)
-            } else {
-                onError()
-            }
-        }, onError: { _ in
-            onError()
-        })
     }
 }
