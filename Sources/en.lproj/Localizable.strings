@@ -123,6 +123,10 @@
 "select-nutriment.title" = "Nutrition";
 "select-nutriment.search-placeholder" = "Search for a nutrition element";
 
+// Select allergen
+"select-allergen.title" = "Allergen";
+"select-allergen.search-placeholder" = "Search for an allergen";
+
 // Product Detail
 "product-detail.header.add-new-picture" = "Add a new picture";
 /* Keep this text as short as possible */
@@ -153,6 +157,8 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Substances or products causing allergies or intolerances";
+"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Product is missing some information, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Traces";
 "product-detail.ingredients.additives-list" = "Additives";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
@@ -256,6 +262,9 @@
 
 // Settings storyboard
 "settings.tab-bar.item" = "Settings";
+"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will never be sent to Open Food Facts servers. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.add-button" = "Add allergens";
 "settings.sections.information" = "Information";
 "settings.sections.discover" = "Discover";
 "settings.sections.contribute" = "Contribute";

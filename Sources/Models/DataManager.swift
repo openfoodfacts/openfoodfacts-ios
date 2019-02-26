@@ -37,6 +37,11 @@ protocol DataManagerProtocol {
     func addHistoryItem(_ product: Product)
     func clearHistory()
 
+    // Settings
+    func addAllergy(toAllergen: Allergen)
+    func removeAllergy(toAllergen: Allergen)
+    func listAllergies() -> Results<Allergen>
+
     // Product - Add
     func addProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func addProductNutritionTable(_ product: Product, nutritionTable: [RealmPendingUploadNutrimentItem], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
@@ -130,6 +135,20 @@ class DataManager: DataManagerProtocol {
 
     func nutrimentSearch(query: String?) -> Results<Nutriment> {
         return persistenceManager.nutrimentSearch(query: query)
+    }
+
+
+    // MARK: - Settings
+    func addAllergy(toAllergen: Allergen) {
+        persistenceManager.addAllergy(toAllergen: toAllergen)
+    }
+
+    func removeAllergy(toAllergen: Allergen) {
+        persistenceManager.removeAllergy(toAllergen: toAllergen)
+    }
+
+    func listAllergies() -> Results<Allergen> {
+        return persistenceManager.listAllergies()
     }
 
     // MARK: - Search history

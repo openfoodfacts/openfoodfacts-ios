@@ -16,15 +16,21 @@ enum SettingsSection: Int {
     case about
 }
 
-class SettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class SettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, DataManagerClient {
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
 
+    var dataManager: DataManagerProtocol!
+
+    private let frequentlyAskedQuestionsIndexPath = IndexPath(row: 0, section: 1)
+    private let allergensAlertsIndexPath = IndexPath(row: 1, section: 0)
+
     private let discoverIndexPath = IndexPath(row: 1, section: 1)
+
     private let howToContributeIndexPath = IndexPath(row: 0, section: 2)
     private let supportOpenFoodFactsIndexPath = IndexPath(row: 1, section: 2)
     private let translateOpenFoodFactsIndexPath = IndexPath(row: 2, section: 2)
+
     private let contactTheTeamIndexPath = IndexPath(row: 1, section: 3)
-    private let frequentlyAskedQuestionsIndexPath = IndexPath(row: 0, section: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +75,8 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
             contactTheTeam()
         case frequentlyAskedQuestionsIndexPath:
             url = URL(string: URLs.FrequentlyAskedQuestions)
+        case allergensAlertsIndexPath:
+            openAllergensAlerts()
         default:
             break
         }
@@ -90,6 +98,12 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
             return
         }
         sendEmail()
+    }
+
+    fileprivate func openAllergensAlerts() {
+        let alertsVC = AllergensAlertsTableViewController()
+        alertsVC.dataManager = dataManager
+        self.navigationController?.pushViewController(alertsVC, animated: true)
     }
 
     func sendEmail() {

@@ -34,6 +34,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
     fileprivate var tapToFocusView: TapToFocusView?
     fileprivate var lastCodeScanned: String?
     fileprivate var barcodeToOpenAtStartup: String?
+    fileprivate var allergenAlertShown = false
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
 
     var dataManager: DataManagerProtocol!
@@ -42,6 +43,8 @@ class ScannerViewController: UIViewController, DataManagerClient {
     fileprivate var floatingPanelController: FloatingPanelController!
     fileprivate var scannerResultController: ScannerResultViewController!
     fileprivate var scannerFloatingPanelLayout = ScannerFloatingPanelLayout()
+    fileprivate let floatingLabelContainer = UIView()
+    fileprivate let floatingLabel = UILabel()
 
     init(dataManager: DataManagerProtocol) {
         self.dataManager = dataManager
@@ -58,6 +61,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
         self.title = "product-scanner.view-title".localized
 
         lastCodeScanned = nil
+        allergenAlertShown = false
 
         checkCameraPermissions()
         configureVideoView()
@@ -65,7 +69,31 @@ class ScannerViewController: UIViewController, DataManagerClient {
         configureOverlay()
         configureFlashView()
         configureTapToFocus()
+
+        floatingLabel.text = "⚠️ " + "product-detail.ingredients.allergens-list.missing-infos".localized
+        floatingLabel.textAlignment = .center
+        floatingLabel.numberOfLines = 0
+        floatingLabel.textColor = .white
+
+        floatingLabelContainer.backgroundColor = UIColor.black.withAlphaComponent(0.66)
+        floatingLabelContainer.addSubview(floatingLabel)
+        floatingLabelContainer.isHidden = true
+
+        self.view.addSubview(floatingLabelContainer)
+        floatingLabelContainer.translatesAutoresizingMaskIntoConstraints = false
+        floatingLabel.translatesAutoresizingMaskIntoConstraints = false
+
         configureFloatingPanel()
+
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: floatingLabelContainer, attribute: .bottom, relatedBy: .equal, toItem: floatingPanelController.surfaceView, attribute: .top, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: floatingLabelContainer, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: floatingLabelContainer, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: floatingLabel, attribute: .bottom, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .bottom, multiplier: 1, constant: -16),
+            NSLayoutConstraint(item: floatingLabel, attribute: .top, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .top, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: floatingLabel, attribute: .leading, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .leading, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: floatingLabel, attribute: .trailing, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .trailing, multiplier: 1, constant: -8)
+            ])
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -266,6 +294,8 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
                 resetOverlay()
+                allergenAlertShown = false
+                floatingLabelContainer.isHidden = true
                 lastCodeScanned = barcode
                 getProduct(barcode: barcode, isSummary: true)
             }
@@ -301,6 +331,30 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         })
     }
 
+    fileprivate func showAllergenAlertIfNeeded(forProduct product: Product) {
+        guard let productAllergens = product.allergens else {
+            return
+        }
+
+        let allergensAlerts = dataManager.listAllergies()
+        let allergens = allergensAlerts.map { $0 }.filter { (allergen: Allergen) -> Bool in
+            for productAllergen in productAllergens where productAllergen.languageCode + ":" + productAllergen.value == allergen.code {
+                return true
+            }
+            return false
+        }
+
+        if allergens.isEmpty == false {
+            let names = allergens.compactMap { $0.names.chooseForCurrentLanguage()?.value }
+                .joined(separator: ", ")
+
+            let alert = UIAlertController(title: "⚠️ " + "product-detail.ingredients.allergens-alert.title".localized, message: names, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (_) -> Void in }
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+
     private func handleGetProductSuccess(_ barcode: String, _ product: Product?, isSummary: Bool, createIfNeeded: Bool = true) {
         DispatchQueue.main.async {
             if let product = product {
@@ -310,13 +364,33 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     self.scannerFloatingPanelLayout.canShowDetails = true
                     self.dataManager.addHistoryItem(product)
                     self.scannerResultController.status = .hasProduct(product: product, dataManager: self.dataManager)
+                    if self.allergenAlertShown == false {
+                        self.allergenAlertShown = true
+                        self.showAllergenAlertIfNeeded(forProduct: product)
+                    }
                 }
+
+                self.showAllergensFloatingLabelIfNeeded()
+
             } else {
                 if createIfNeeded == true {
                     self.addNewProduct(barcode)
                 }
                 self.scannerResultController.status = .waitingForScan
             }
+        }
+    }
+
+    fileprivate func showAllergensFloatingLabelIfNeeded() {
+        switch scannerResultController.status {
+        case .hasProduct(let product, _):
+            if product.states?.contains("en:ingredients-to-be-completed") == true {
+                self.floatingLabelContainer.isHidden = self.floatingPanelController.position != .tip
+            } else {
+                self.floatingLabelContainer.isHidden = true
+            }
+        default:
+            self.floatingLabelContainer.isHidden = true
         }
     }
 }
@@ -469,8 +543,8 @@ extension ScannerViewController: FloatingPanelControllerDelegate {
         if floatingPanelVC.position != .full {
             self.view.endEditing(true)
         }
+        self.showAllergensFloatingLabelIfNeeded()
     }
-
 }
 
 // MARK: - ManualBarcodeInput delegate
@@ -494,6 +568,7 @@ extension ScannerViewController: ManualBarcodeInputDelegate {
             return
         }
         self.lastCodeScanned = barcode
+        allergenAlertShown = false
         self.getProduct(barcode: barcode, isSummary: true)
     }
 }

@@ -34,6 +34,11 @@ protocol PersistenceManagerProtocol {
     func save(additives: [Additive])
     func additive(forCode: String) -> Additive?
 
+    // allergies settings
+    func addAllergy(toAllergen: Allergen)
+    func removeAllergy(toAllergen: Allergen)
+    func listAllergies() -> Results<Allergen>
+
     // Products pending upload
     func addPendingUploadItem(_ product: Product, withNutritionTable nutriments: [RealmPendingUploadNutrimentItem]?)
     func addPendingUploadItem(_ productImage: ProductImage)
@@ -171,6 +176,59 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     func additive(forCode code: String) -> Additive? {
         return getRealm().object(ofType: Additive.self, forPrimaryKey: code)
+    }
+
+    // MARK: User Preferences
+    fileprivate func getRealmUserPreferences() -> RealmUserPreferences {
+        if let prefs = getRealm().objects(RealmUserPreferences.self).first {
+            return prefs
+        }
+        let prefs = RealmUserPreferences()
+        do {
+            let realm = getRealm()
+            try realm.write {
+                realm.add(prefs)
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+        return prefs
+    }
+
+    // MARK: - Allergies Settings
+    func addAllergy(toAllergen: Allergen) {
+        let settings = getRealmUserPreferences()
+        let realm = getRealm()
+        do {
+            try  realm.write {
+                if !settings.allergens.contains(toAllergen) {
+                    settings.allergens.append(toAllergen)
+                }
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+
+    func removeAllergy(toAllergen: Allergen) {
+        let settings = getRealmUserPreferences()
+        let realm = getRealm()
+        do {
+            try  realm.write {
+                if let index = settings.allergens.index(of: toAllergen) {
+                    settings.allergens.remove(at: index)
+                }
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+
+    func listAllergies() -> Results<Allergen> {
+        return getRealmUserPreferences().allergens.sorted(byKeyPath: "mainName", ascending: true)
     }
 
     // MARK: - Products pending upload
