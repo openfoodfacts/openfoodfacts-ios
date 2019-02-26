@@ -65,7 +65,6 @@
         <!--Scanner View Controller-->
         <scene sceneID="uxI-SU-r8a">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qzp-bH-fMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="KCg-et-v6Z" customClass="ScannerViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iqb-gJ-WyV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -80,6 +79,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="TeX-lq-JfG"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzp-bH-fMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1436" y="731"/>
         </scene>
@@ -126,7 +126,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Your search history is only stored on your device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TYF-vu-FgS">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Your search history is only stored on your device" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TYF-vu-FgS">
                                             <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
