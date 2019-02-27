@@ -21,6 +21,7 @@
 		30270C302226E90100E6973D /* SummaryFooterCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C2F2226E90100E6973D /* SummaryFooterCellController.swift */; };
 		30270C322226EAD000E6973D /* SummaryFooterCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30270C312226EAD000E6973D /* SummaryFooterCellController.xib */; };
 		30270C342226F4A000E6973D /* operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C332226F4A000E6973D /* operators.swift */; };
+		30270C37222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C36222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift */; };
 		303C279D2201AB6B00159961 /* ScanProductSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */; };
 		303C279F2201AB7B00159961 /* ScanProductSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */; };
 		303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */; };
@@ -305,6 +306,7 @@
 		30270C2F2226E90100E6973D /* SummaryFooterCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryFooterCellController.swift; sourceTree = "<group>"; };
 		30270C312226EAD000E6973D /* SummaryFooterCellController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryFooterCellController.xib; sourceTree = "<group>"; };
 		30270C332226F4A000E6973D /* operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = operators.swift; sourceTree = "<group>"; };
+		30270C36222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentImpactTableFormTableViewController.swift; sourceTree = "<group>"; };
 		303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProductSummaryView.swift; sourceTree = "<group>"; };
 		303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanProductSummaryView.xib; sourceTree = "<group>"; };
 		303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBarcodeInputView.swift; sourceTree = "<group>"; };
@@ -946,6 +948,14 @@
 			path = Taxonomies;
 			sourceTree = "<group>";
 		};
+		30270C35222743A800E6973D /* Environment Impact */ = {
+			isa = PBXGroup;
+			children = (
+				30270C36222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift */,
+			);
+			path = "Environment Impact";
+			sourceTree = "<group>";
+		};
 		303C279B2201AB3B00159961 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -1196,6 +1206,7 @@
 				957CBEC11F33B35B00A1B398 /* Summary */,
 				958F33401F361954005269C5 /* Ingredients */,
 				958F33491F3777C3005269C5 /* NutritionTable */,
+				30270C35222743A800E6973D /* Environment Impact */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1449,6 +1460,8 @@
 			children = (
 				958F33511F378076005269C5 /* InfoRowTableViewCell.swift */,
 				958F33521F378076005269C5 /* InfoRowTableViewCell.xib */,
+				30270C3C2227459000E6973D /* InfoRowWebViewTableViewCell.swift */,
+				30270C3D2227459000E6973D /* InfoRowWebViewTableViewCell.xib */,
 				958F33551F378085005269C5 /* NutriScoreView.swift */,
 				958F33561F378085005269C5 /* NutriScoreView.xib */,
 				958F33591F37809A005269C5 /* PictureCallToActionView.swift */,
@@ -2336,6 +2349,7 @@
 				9587DF731F84056F0069F0A6 /* PictureViewModel.swift in Sources */,
 				95781BBC1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift in Sources */,
 				95A566141FD6037800C997C8 /* LocalizableTextField.swift in Sources */,
+				30270C37222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift in Sources */,
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
 				9528560B1F78512300863FC6 /* Array.swift in Sources */,
 				956FF9581F1FF0CA0069D678 /* EmptyView.swift in Sources */,

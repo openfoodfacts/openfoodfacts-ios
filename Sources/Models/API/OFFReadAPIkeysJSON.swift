@@ -270,6 +270,8 @@ struct OFFJson {
     static let CompleteKey = "complete"
     static let AdditivesDebugTagsKey = "additives_debug_tags"
     static let IngredientsIdsDebugKey = "ingredients_ids_debug"
+    static let EnvironmentInfoCardKey = "environment_infocard"
+    static let EnvironmentImpactLevelTagsKey = "environment_impact_level_tags"
 
     // swiftlint:enable identifier_name
 }

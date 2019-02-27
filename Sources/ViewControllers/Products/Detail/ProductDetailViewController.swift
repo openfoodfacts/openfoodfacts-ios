@@ -58,6 +58,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         if let nutritionVC = getNutritionVC() {
             vcs.append(nutritionVC)
         }
+        if let environmentImpactVC = getEnvironmentImpactVC() {
+            vcs.append(environmentImpactVC)
+        }
 
         return vcs
     }
@@ -84,16 +87,32 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         return nutritionTableFormTableVC
     }
 
+    fileprivate func getEnvironmentImpactVC() -> UIViewController? {
+        if product.environmentImpactLevelTags?.isEmpty == false, let infoCard = product.environmentInfoCard, infoCard.isEmpty == false {
+            let environmentImpactFormTableVC = EnvironmentImpactTableFormTableViewController()
+            environmentImpactFormTableVC.product = product
+            return environmentImpactFormTableVC
+        }
+        return nil
+    }
+
     // MARK: - Form creation methods
 
     private func updateForms(with updatedProduct: Product) {
         self.product = updatedProduct
 
-        if let viewControllers = self.viewControllers as? [FormTableViewController] {
-            viewControllers[0].form = createSummaryForm()
-            viewControllers[1].form = createIngredientsForm()
-            viewControllers[2].form = createNutritionForm()
-         }
+        for (index, viewController) in viewControllers.enumerated() {
+            if let vc0 = viewController as? FormTableViewController {
+                switch index {
+                case 0: vc0.form = createSummaryForm()
+                case 1: vc0.form = createIngredientsForm()
+                case 2: vc0.form = createNutritionForm()
+                default: break
+                }
+            } else if let vc1 = viewController as? EnvironmentImpactTableFormTableViewController {
+                vc1.product = product
+            }
+        }
     }
 
     private func createSummaryForm() -> Form {
