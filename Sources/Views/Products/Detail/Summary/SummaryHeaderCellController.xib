@@ -11,102 +11,41 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SummaryHeaderCellController" customModule="OpenFoodFacts" customModuleProvider="target">
             <connections>
-                <outlet property="addNewPictureButton" destination="ryx-rz-zza" id="Ba8-yv-k4N"/>
-                <outlet property="callToActionView" destination="igt-YD-1SC" id="YrF-sp-4yT"/>
-                <outlet property="editButton" destination="71e-pv-NKy" id="KDf-I1-ZFM"/>
-                <outlet property="nutriscore" destination="NYL-Ot-UMp" id="vZZ-H4-HPR"/>
-                <outlet property="productImage" destination="7WZ-fb-FXP" id="NEh-ZU-158"/>
-                <outlet property="productName" destination="2EX-hp-rp2" id="9j4-XA-cdH"/>
+                <outlet property="callToActionView" destination="TCJ-ji-73B" id="evU-MQ-LZ2"/>
+                <outlet property="editButton" destination="Zog-cN-cwK" id="IpE-rQ-Sew"/>
+                <outlet property="scanProductSummaryView" destination="JWp-qa-rIS" id="feX-mo-A77"/>
+                <outlet property="takePictureButtonView" destination="dKD-W6-pMm" id="qhe-GZ-M5S"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+            <rect key="frame" x="0.0" y="0.0" width="398" height="386"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iZW-95-z5S">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iZW-95-z5S">
+                    <rect key="frame" x="0.0" y="0.0" width="398" height="386"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h4r-NG-xwT">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="7WZ-fb-FXP">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="98.5"/>
-                                </imageView>
-                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igt-YD-1SC" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                    <rect key="frame" x="160" y="0.0" width="0.0" height="98.5"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4l-Cj-xX4">
-                                    <rect key="frame" x="160" y="0.0" width="160" height="98.5"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYL-Ot-UMp" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="16.5" width="160" height="65.5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="NYL-Ot-UMp" secondAttribute="height" multiplier="310:126" id="w7H-je-Vf4"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="width" secondItem="o4l-Cj-xX4" secondAttribute="width" id="ANw-FW-wnx"/>
-                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="centerX" secondItem="o4l-Cj-xX4" secondAttribute="centerX" id="NV3-SU-haa"/>
-                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="centerY" secondItem="o4l-Cj-xX4" secondAttribute="centerY" id="ODH-0R-D2V"/>
-                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NYL-Ot-UMp" secondAttribute="bottom" constant="10" id="gAz-RR-Lkg"/>
-                                        <constraint firstItem="NYL-Ot-UMp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="o4l-Cj-xX4" secondAttribute="top" constant="10" id="utQ-Oj-uLk"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCJ-ji-73B" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="398" height="99"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWp-qa-rIS" customClass="ScanProductSummaryView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="107" width="398" height="100"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" priority="750" constant="130" id="6tm-10-rfN"/>
+                                <constraint firstAttribute="height" priority="999" constant="100" id="DDa-j4-8Pq"/>
                             </constraints>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MT9-gZ-J7A">
-                            <rect key="frame" x="0.0" y="108.5" width="320" height="25.5"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7w-cf-XjZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="25.5"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-rz-zza">
-                                            <rect key="frame" x="67.5" y="0.0" width="25.5" height="25.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="ryx-rz-zza" secondAttribute="height" multiplier="1:1" id="HZk-Tp-wTr"/>
-                                                <constraint firstAttribute="height" constant="25.5" id="oEd-iB-cBL"/>
-                                            </constraints>
-                                            <state key="normal" image="image-add-button"/>
-                                            <connections>
-                                                <action selector="didTapTakePictureButton:" destination="-1" eventType="touchUpInside" id="YJf-Ca-cc8"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstItem="ryx-rz-zza" firstAttribute="centerX" secondItem="L7w-cf-XjZ" secondAttribute="centerX" id="Ier-sp-7Sj"/>
-                                        <constraint firstAttribute="bottom" secondItem="ryx-rz-zza" secondAttribute="bottom" id="Xce-E4-jXc"/>
-                                        <constraint firstItem="ryx-rz-zza" firstAttribute="top" secondItem="L7w-cf-XjZ" secondAttribute="top" id="dcy-rV-ADN"/>
-                                    </constraints>
-                                </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71e-pv-NKy">
-                                    <rect key="frame" x="160" y="0.0" width="160" height="25.5"/>
-                                    <state key="normal" title="Edit"/>
-                                </button>
-                            </subviews>
-                        </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EX-hp-rp2">
-                            <rect key="frame" x="0.0" y="144" width="320" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="baq-NZ-dgf"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKD-W6-pMm" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="215" width="398" height="113.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zog-cN-cwK">
+                            <rect key="frame" x="0.0" y="336.5" width="398" height="49.5"/>
+                            <state key="normal" title="edit button (to move)"/>
+                        </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="2EX-hp-rp2" firstAttribute="width" secondItem="iZW-95-z5S" secondAttribute="width" id="xVo-h8-XQT"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,9 +57,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="41.600000000000001" y="94.452773613193415"/>
         </view>
     </objects>
-    <resources>
-        <image name="image-add-button" width="130" height="130"/>
-    </resources>
 </document>
