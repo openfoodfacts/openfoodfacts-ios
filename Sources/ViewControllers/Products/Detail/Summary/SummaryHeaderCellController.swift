@@ -15,15 +15,17 @@ class SummaryHeaderCell: HostedViewCell {
 
 class SummaryHeaderCellController: TakePictureViewController {
     var product: Product!
+    var hideSummary: Bool = false
 
     @IBOutlet weak var callToActionView: PictureCallToActionView!
     @IBOutlet weak var scanProductSummaryView: ScanProductSummaryView!
 
     @IBOutlet weak var takePictureButtonView: IconButtonView!
 
-    convenience init(with product: Product, dataManager: DataManagerProtocol) {
+    convenience init(with product: Product, dataManager: DataManagerProtocol, hideSummary: Bool) {
         self.init(nibName: String(describing: SummaryHeaderCellController.self), bundle: nil)
         self.product = product
+        self.hideSummary = hideSummary
         super.barcode = product.barcode
         super.dataManager = dataManager
         super.imageType = .front
@@ -35,7 +37,9 @@ class SummaryHeaderCellController: TakePictureViewController {
     }
 
     fileprivate func setupViews() {
-        self.scanProductSummaryView.fillIn(product: product)
+        scanProductSummaryView.fillIn(product: product)
+
+        scanProductSummaryView.isHidden = hideSummary
 
         takePictureButtonView.delegate = self
 

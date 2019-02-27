@@ -9,6 +9,8 @@
 import UIKit
 
 class SummaryFormTableViewController: FormTableViewController {
+    var hideSummary: Bool = false
+
     var summaryHeaderCellController: SummaryHeaderCellController?
     var summaryFooterCellController: SummaryFooterCellController?
 
@@ -25,7 +27,7 @@ class SummaryFormTableViewController: FormTableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
             cell.configure(with: formRow, in: self)
 
-            let summaryHeaderCellController = SummaryHeaderCellController(with: product, dataManager: dataManager)
+            let summaryHeaderCellController = SummaryHeaderCellController(with: product, dataManager: dataManager, hideSummary: hideSummary)
             cell.hostedView = summaryHeaderCellController.view
             self.summaryHeaderCellController = summaryHeaderCellController
 

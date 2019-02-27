@@ -12,6 +12,7 @@ import Crashlytics
 
 class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient {
 
+    var hideSummary: Bool = false
     var product: Product!
     var dataManager: DataManagerProtocol!
 
@@ -65,6 +66,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         let form = createSummaryForm()
         let summaryFormTableVC = SummaryFormTableViewController(with: form, dataManager: dataManager)
         summaryFormTableVC.delegate = self
+        summaryFormTableVC.hideSummary = hideSummary
         return summaryFormTableVC
     }
 
