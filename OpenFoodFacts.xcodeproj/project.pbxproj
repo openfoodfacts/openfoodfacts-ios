@@ -18,6 +18,8 @@
 		302525F42223145000C2C830 /* AllergensAddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302525F22223145000C2C830 /* AllergensAddTableViewCell.xib */; };
 		30270C2C2226DE3100E6973D /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C2B2226DE3100E6973D /* IconButtonView.swift */; };
 		30270C2E2226DE3C00E6973D /* IconButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30270C2D2226DE3C00E6973D /* IconButtonView.xib */; };
+		30270C302226E90100E6973D /* SummaryFooterCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C2F2226E90100E6973D /* SummaryFooterCellController.swift */; };
+		30270C322226EAD000E6973D /* SummaryFooterCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30270C312226EAD000E6973D /* SummaryFooterCellController.xib */; };
 		303C279D2201AB6B00159961 /* ScanProductSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */; };
 		303C279F2201AB7B00159961 /* ScanProductSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */; };
 		303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */; };
@@ -299,6 +301,8 @@
 		302525F22223145000C2C830 /* AllergensAddTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllergensAddTableViewCell.xib; sourceTree = "<group>"; };
 		30270C2B2226DE3100E6973D /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
 		30270C2D2226DE3C00E6973D /* IconButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconButtonView.xib; sourceTree = "<group>"; };
+		30270C2F2226E90100E6973D /* SummaryFooterCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryFooterCellController.swift; sourceTree = "<group>"; };
+		30270C312226EAD000E6973D /* SummaryFooterCellController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryFooterCellController.xib; sourceTree = "<group>"; };
 		303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProductSummaryView.swift; sourceTree = "<group>"; };
 		303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanProductSummaryView.xib; sourceTree = "<group>"; };
 		303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBarcodeInputView.swift; sourceTree = "<group>"; };
@@ -1264,6 +1268,7 @@
 			isa = PBXGroup;
 			children = (
 				95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */,
+				30270C312226EAD000E6973D /* SummaryFooterCellController.xib */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -1359,6 +1364,7 @@
 			children = (
 				957CBEC21F33B36400A1B398 /* SummaryFormTableViewController.swift */,
 				957CBEC31F33B36400A1B398 /* SummaryHeaderCellController.swift */,
+				30270C2F2226E90100E6973D /* SummaryFooterCellController.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -2124,6 +2130,7 @@
 				30412DD9220EF46300C485DD /* EditNutritiveValueView.xib in Resources */,
 				95890AB51F967E6300085B20 /* InitialView.xib in Resources */,
 				956FF94C1F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib in Resources */,
+				30270C322226EAD000E6973D /* SummaryFooterCellController.xib in Resources */,
 				956FF9481F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib in Resources */,
 				95C265191E96D55B004212EC /* Assets.xcassets in Resources */,
 				958F335C1F37809A005269C5 /* PictureCallToActionView.xib in Resources */,
@@ -2352,6 +2359,7 @@
 				95513BC31FEAD6CA0027C198 /* PendingUploadItemCell.swift in Sources */,
 				95A566171FD6037800C997C8 /* LocalizableNavigationItem.swift in Sources */,
 				956FF8881F1FF0740069D678 /* ProductAddViewController.swift in Sources */,
+				30270C302226E90100E6973D /* SummaryFooterCellController.swift in Sources */,
 				30412DDB220F089700C485DD /* Nutriment.swift in Sources */,
 				95513BC51FEAD8640027C198 /* PendingUploadTableViewController.swift in Sources */,
 				95AA2AFF1FDABB2D00EE3A14 /* Language.swift in Sources */,

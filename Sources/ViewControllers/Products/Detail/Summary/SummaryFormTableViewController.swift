@@ -10,6 +10,7 @@ import UIKit
 
 class SummaryFormTableViewController: FormTableViewController {
     var summaryHeaderCellController: SummaryHeaderCellController?
+    var summaryFooterCellController: SummaryFooterCellController?
 
     override init(with form: Form, dataManager: DataManagerProtocol) {
         super.init(with: form, dataManager: dataManager)
@@ -20,7 +21,7 @@ class SummaryFormTableViewController: FormTableViewController {
     }
 
     override func getCell(for formRow: FormRow) -> UITableViewCell {
-        if formRow.cellType is HostedViewCell.Type, let product = formRow.value as? Product {
+        if formRow.cellType is SummaryHeaderCell.Type, let product = formRow.value as? Product {
             let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
             cell.configure(with: formRow, in: self)
 
@@ -30,6 +31,18 @@ class SummaryFormTableViewController: FormTableViewController {
 
             self.addChildViewController(summaryHeaderCellController)
             summaryHeaderCellController.didMove(toParentViewController: self)
+
+            return cell
+        } else if formRow.cellType is SummaryFooterCell.Type, let product = formRow.value as? Product {
+            let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
+            cell.configure(with: formRow, in: self)
+
+            let summaryFooterCellController = SummaryFooterCellController(with: product)
+            cell.hostedView = summaryFooterCellController.view
+            self.summaryFooterCellController = summaryFooterCellController
+
+            self.addChildViewController(summaryFooterCellController)
+            summaryFooterCellController.didMove(toParentViewController: self)
 
             return cell
         } else {

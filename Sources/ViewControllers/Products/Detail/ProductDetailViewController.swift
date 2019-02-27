@@ -98,7 +98,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         var rows = [FormRow]()
 
         // Header
-        rows.append(FormRow(value: product, cellType: HostedViewCell.self))
+        rows.append(FormRow(value: product, cellType: SummaryHeaderCell.self))
 
         // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
@@ -127,6 +127,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
         createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
+
+        // Footer
+        rows.append(FormRow(value: product, cellType: SummaryFooterCell.self))
 
         let summaryTitle = "product-detail.page-title.summary".localized
 

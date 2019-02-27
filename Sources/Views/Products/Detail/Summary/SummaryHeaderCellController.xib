@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SummaryHeaderCellController" customModule="OpenFoodFacts" customModuleProvider="target">
             <connections>
                 <outlet property="callToActionView" destination="TCJ-ji-73B" id="evU-MQ-LZ2"/>
-                <outlet property="editButton" destination="Zog-cN-cwK" id="IpE-rQ-Sew"/>
                 <outlet property="scanProductSummaryView" destination="JWp-qa-rIS" id="feX-mo-A77"/>
                 <outlet property="takePictureButtonView" destination="dKD-W6-pMm" id="qhe-GZ-M5S"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -27,24 +26,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="398" height="386"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCJ-ji-73B" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="398" height="99"/>
+                            <rect key="frame" x="0.0" y="0.0" width="398" height="116.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWp-qa-rIS" customClass="ScanProductSummaryView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="107" width="398" height="100"/>
+                            <rect key="frame" x="0.0" y="124.5" width="398" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" priority="999" constant="100" id="DDa-j4-8Pq"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKD-W6-pMm" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="215" width="398" height="113.5"/>
+                            <rect key="frame" x="0.0" y="232.5" width="398" height="153.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zog-cN-cwK">
-                            <rect key="frame" x="0.0" y="336.5" width="398" height="49.5"/>
-                            <state key="normal" title="edit button (to move)"/>
-                        </button>
                     </subviews>
                 </stackView>
             </subviews>

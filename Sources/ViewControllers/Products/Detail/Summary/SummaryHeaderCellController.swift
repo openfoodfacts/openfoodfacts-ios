@@ -9,6 +9,10 @@
 import UIKit
 import ImageViewer
 
+class SummaryHeaderCell: HostedViewCell {
+    // used only to specify which kind of cell we want to pass
+}
+
 class SummaryHeaderCellController: TakePictureViewController {
     var product: Product!
 
@@ -16,7 +20,6 @@ class SummaryHeaderCellController: TakePictureViewController {
     @IBOutlet weak var scanProductSummaryView: ScanProductSummaryView!
 
     @IBOutlet weak var takePictureButtonView: IconButtonView!
-    @IBOutlet weak var editButton: UIButton!
 
     convenience init(with product: Product, dataManager: DataManagerProtocol) {
         self.init(nibName: String(describing: SummaryHeaderCellController.self), bundle: nil)
@@ -49,16 +52,7 @@ class SummaryHeaderCellController: TakePictureViewController {
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
             takePictureButtonView.isHidden = true
         }
-
-        setupEditButton()
     }
-
-    fileprivate func setupEditButton() {
-        let editButtonTitleString = Bundle(identifier: "com.apple.UIKit")?.localizedString(forKey: "Edit", value: "Edit", table: nil)
-        editButton.setTitle(editButtonTitleString, for: .normal)
-        editButton.addTarget(self, action: #selector(didTapEditButton(_:)), for: .touchUpInside)
-    }
-
 }
 
 // MARK: - Gesture recognizers
@@ -66,12 +60,6 @@ extension SummaryHeaderCellController {
     @objc func didTapProductImage(_ sender: UITapGestureRecognizer) {
         if let imageView = sender.view as? UIImageView {
             ImageViewer.show(imageView, presentingVC: self)
-        }
-    }
-
-    @objc func didTapEditButton(_ sender: UIButton) {
-        if let barcode = self.product?.barcode, let url = URL(string: URLs.Edit + barcode) {
-            openUrlInApp(url, showAlert: true)
         }
     }
 }

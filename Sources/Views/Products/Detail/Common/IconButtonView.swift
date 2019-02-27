@@ -47,6 +47,10 @@ class IconButtonView: UIView {
         self.isUserInteractionEnabled = true
     }
 
+    func setImage(_ image: UIImage) {
+        iconImageView.image = image.withRenderingMode(.alwaysTemplate)
+    }
+
     fileprivate func loadFromNib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
