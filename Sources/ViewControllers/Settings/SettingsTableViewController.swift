@@ -88,6 +88,12 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destVC = segue.destination as? UserViewController {
+            destVC.dataManager = self.dataManager
+        }
+    }
+
     @IBAction func didSwitchScanOnLaunch(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsConstants.scanningOnLaunch)
     }
