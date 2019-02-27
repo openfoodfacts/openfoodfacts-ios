@@ -69,6 +69,6 @@ extension UserViewController: UserViewControllerDelegate {
     func showProductsPendingUpload() {
         let pendingUploadTableVC = PendingUploadTableViewController.loadFromStoryboard(named: .user) as PendingUploadTableViewController
         pendingUploadTableVC.dataManager = dataManager
-        childNavigationController.pushViewController(pendingUploadTableVC, animated: true)
+        self.navigationController?.pushViewController(pendingUploadTableVC, animated: true)
     }
 }

@@ -25,6 +25,7 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         items = dataManager.getItemsPendingUpload()
 
         if items.isEmpty {
@@ -32,6 +33,12 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
         } else {
             uploadButton.isEnabled = true
         }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "upload")!, style: .plain, target: self, action: #selector(PendingUploadTableViewController.uploadButtonTapped(_:)))
     }
 
     @IBAction func uploadButtonTapped(_ sender: UIBarButtonItem) {

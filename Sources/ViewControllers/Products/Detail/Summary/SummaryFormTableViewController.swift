@@ -39,7 +39,7 @@ class SummaryFormTableViewController: FormTableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
             cell.configure(with: formRow, in: self)
 
-            let summaryFooterCellController = SummaryFooterCellController(with: product)
+            let summaryFooterCellController = SummaryFooterCellController(with: product, dataManager: dataManager)
             cell.hostedView = summaryFooterCellController.view
             self.summaryFooterCellController = summaryFooterCellController
 
