@@ -143,8 +143,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         rows.append(FormRow(value: product, cellType: HostedViewCell.self))
 
         // Rows
-        createFormRow(with: &rows, item: product.ingredientsList, label: InfoRowKey.ingredientsList.localizedString)
-
+        if let ingredientsList = product.ingredientsList {
+            createFormRow(with: &rows, item: "\n" + ingredientsList, label: InfoRowKey.ingredientsList.localizedString)
+        }
         createFormRow(with: &rows, item: product.allergens?.map({ (allergen: Tag) -> NSAttributedString in
             if let allergen = dataManager.allergen(forTag: allergen) {
                 if let name = Tag.choose(inTags: Array(allergen.names)) {
@@ -154,9 +155,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: allergen.value.capitalized)
         }), label: InfoRowKey.allergens.localizedString)
 
-        if product.states?.contains("en:ingredients-to-be-completed") == true {
-            if product.allergens == nil || product.allergens?.isEmpty == true {
-                createFormRow(with: &rows, item: "product-detail.ingredients.allergens-list.missing-infos".localized, label: "⚠️")
+        if dataManager.listAllergies().isEmpty == false {
+            if product.states?.contains("en:ingredients-to-be-completed") == true {
+                if product.allergens == nil || product.allergens?.isEmpty == true {
+                    createFormRow(with: &rows, item: "product-detail.ingredients.allergens-list.missing-infos".localized, label: "⚠️")
+                }
             }
         }
 
