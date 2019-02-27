@@ -19,25 +19,25 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="398" height="386"/>
+            <rect key="frame" x="0.0" y="0.0" width="398" height="148"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iZW-95-z5S">
-                    <rect key="frame" x="0.0" y="0.0" width="398" height="386"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iZW-95-z5S">
+                    <rect key="frame" x="0.0" y="0.0" width="398" height="148"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCJ-ji-73B" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="398" height="116.5"/>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCJ-ji-73B" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="398" height="0.0"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWp-qa-rIS" customClass="ScanProductSummaryView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="124.5" width="398" height="100"/>
+                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="JWp-qa-rIS" customClass="ScanProductSummaryView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="398" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" priority="999" constant="100" id="DDa-j4-8Pq"/>
+                                <constraint firstAttribute="height" constant="100" id="l8p-xf-w84"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKD-W6-pMm" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="232.5" width="398" height="153.5"/>
+                            <rect key="frame" x="0.0" y="108" width="398" height="40"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
@@ -52,7 +52,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="41.600000000000001" y="94.452773613193415"/>
+            <point key="canvasLocation" x="41.600000000000001" y="-12.593703148425789"/>
         </view>
     </objects>
 </document>
