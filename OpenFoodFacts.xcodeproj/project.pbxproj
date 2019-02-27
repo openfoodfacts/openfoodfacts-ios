@@ -20,6 +20,7 @@
 		30270C2E2226DE3C00E6973D /* IconButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30270C2D2226DE3C00E6973D /* IconButtonView.xib */; };
 		30270C302226E90100E6973D /* SummaryFooterCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C2F2226E90100E6973D /* SummaryFooterCellController.swift */; };
 		30270C322226EAD000E6973D /* SummaryFooterCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30270C312226EAD000E6973D /* SummaryFooterCellController.xib */; };
+		30270C342226F4A000E6973D /* operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C332226F4A000E6973D /* operators.swift */; };
 		303C279D2201AB6B00159961 /* ScanProductSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */; };
 		303C279F2201AB7B00159961 /* ScanProductSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */; };
 		303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */; };
@@ -303,6 +304,7 @@
 		30270C2D2226DE3C00E6973D /* IconButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconButtonView.xib; sourceTree = "<group>"; };
 		30270C2F2226E90100E6973D /* SummaryFooterCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryFooterCellController.swift; sourceTree = "<group>"; };
 		30270C312226EAD000E6973D /* SummaryFooterCellController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryFooterCellController.xib; sourceTree = "<group>"; };
+		30270C332226F4A000E6973D /* operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = operators.swift; sourceTree = "<group>"; };
 		303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProductSummaryView.swift; sourceTree = "<group>"; };
 		303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanProductSummaryView.xib; sourceTree = "<group>"; };
 		303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBarcodeInputView.swift; sourceTree = "<group>"; };
@@ -1090,6 +1092,7 @@
 				950ACC6C1F9945D500B54B78 /* URLs.swift */,
 				74C59E8A203FB9E2006C456F /* SharingManager.swift */,
 				300085622208777900DC3896 /* OFFUrlsHelper.swift */,
+				30270C332226F4A000E6973D /* operators.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2309,6 +2312,7 @@
 				9581B3EA1F912B5C0036AC7C /* LoginViewController.swift in Sources */,
 				95DB3BEC1FDD9B0E00E83B76 /* Instantiable.swift in Sources */,
 				956FF9451F1FF0CA0069D678 /* NutritionHeaderTableViewCell.swift in Sources */,
+				30270C342226F4A000E6973D /* operators.swift in Sources */,
 				303C27A52201C0E500159961 /* NovaGroupView.swift in Sources */,
 				956FF94D1F1FF0CA0069D678 /* NutritionTableRowTableViewCell.swift in Sources */,
 				95A566121FD6037800C997C8 /* LocalizableString.swift in Sources */,

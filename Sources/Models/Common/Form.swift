@@ -32,19 +32,21 @@ struct FormRow {
     var value: Any
     var cellType: ProductDetailBaseCell.Type
     let isCopiable: Bool
+    var separator: String = ", "
 
-    init(label: String? = nil, value: Any, cellType: ProductDetailBaseCell.Type, isCopiable: Bool = false) {
+    init(label: String? = nil, value: Any, cellType: ProductDetailBaseCell.Type, isCopiable: Bool = false, separator: String = ", ") {
         self.label = label
         self.value = value
         self.cellType = cellType
         self.isCopiable = isCopiable
+        self.separator = separator
     }
 
     func getValueAsString() -> String? {
         if let value = value as? String {
             return value
         } else if let value = value as? [String] {
-            return value.joined(separator: ", ")
+            return value.joined(separator: separator)
         }
 
         return nil
@@ -56,7 +58,7 @@ struct FormRow {
         } else if let value = value as? [NSAttributedString] {
             return value.reduce(into: NSMutableAttributedString(), { ( result: inout NSMutableAttributedString, attributedString: NSAttributedString) in
                 if result.length > 0 {
-                    result.append(NSAttributedString(string: ", "))
+                    result.append(NSAttributedString(string: separator))
                 }
                 result.append(attributedString)
             })

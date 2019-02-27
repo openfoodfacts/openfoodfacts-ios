@@ -100,11 +100,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Header
         rows.append(FormRow(value: product, cellType: SummaryHeaderCell.self))
 
+        createNutrientsRows(rows: &rows)
+        createAdditivesRows(with: &rows, product: product, inLine: false)
+
         // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
-        createFormRow(with: &rows, item: product.quantity, label: InfoRowKey.quantity.localizedString)
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
-        createFormRow(with: &rows, item: product.brands, label: InfoRowKey.brands.localizedString)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
@@ -165,14 +166,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
 
-        createFormRow(with: &rows, item: product.additives?.map({ (additive: Tag) -> NSAttributedString in
-            if let additive = dataManager.additive(forTag: additive) {
-                if let name = Tag.choose(inTags: Array(additive.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forAdditive: additive)])
-                }
-            }
-            return NSAttributedString(string: additive.value.uppercased())
-        }), label: InfoRowKey.additives.localizedString)
+        createAdditivesRows(with: &rows, product: product, inLine: true)
 
         createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
         createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
@@ -180,6 +174,29 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         let summaryTitle = "product-detail.page-title.ingredients".localized
 
         return Form(title: summaryTitle, rows: rows)
+    }
+
+    fileprivate func createAdditivesRows(with rows: inout [FormRow], product: Product, inLine: Bool = true) {
+        guard let additives = product.additives, additives.isEmpty == false else {
+            return
+        }
+
+        var items: [Any] = []
+        if inLine == false {
+            items.append(NSAttributedString(string: " "))    //to have the first carriage return from the join with separator
+        }
+        items.append(contentsOf: additives.map({ (additive: Tag) -> NSAttributedString in
+            if let additive = dataManager.additive(forTag: additive) {
+                if let name = Tag.choose(inTags: Array(additive.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forAdditive: additive)])
+                }
+            }
+
+            return NSAttributedString(string: additive.value.uppercased())
+        }))
+
+        let separator = inLine ? ", " : "\n "
+        createFormRow(with: &rows, item: items, label: InfoRowKey.additives.localizedString, separator: separator)
     }
 
     private func createNutritionForm() -> Form? {
@@ -199,10 +216,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             createFormRow(with: &rows, item: "\(carbonFootprint) \(unit)", label: InfoRowKey.carbonFootprint.localizedString)
         }
 
-        // Nutrition levels
-        if product.nutritionLevels != nil {
-            createFormRow(with: &rows, item: product, cellType: NutritionLevelsTableViewCell.self)
-        }
+        createNutrientsRows(rows: &rows)
 
         createNutritionTableRows(rows: &rows)
 
@@ -211,6 +225,13 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
 
         return Form(title: "product-detail.page-title.nutrition".localized, rows: rows)
+    }
+
+    fileprivate func createNutrientsRows(rows: inout [FormRow]) {
+        // Nutrition levels
+        if product.nutritionLevels != nil {
+            createFormRow(with: &rows, item: product, cellType: NutritionLevelsTableViewCell.self)
+        }
     }
 
     // swiftlint:disable:next cyclomatic_complexity
@@ -276,21 +297,21 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
     }
 
-    private func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self, isCopiable: Bool = false) {
+    private func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self, isCopiable: Bool = false, separator: String = ", ") {
         // Check item has a value, if so add to the array of rows.
         switch item {
         case let value as String:
             // Check if it's empty here insted of doing 'case let value as String where !value.isEmpty' because an empty String ("") would not match this case but the default one
             if !value.isEmpty {
-                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable, separator: separator))
             }
         case let value as [Any]:
             if !value.isEmpty {
-                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable, separator: separator))
             }
         default:
             if let value = item {
-                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable, separator: separator))
             }
         }
     }
