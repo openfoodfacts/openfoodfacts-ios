@@ -216,9 +216,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
 
         // Nutrition table rows
-        let headerRow = NutritionTableRow(label: InfoRowKey.nutritionalTableHeader.localizedString,
-                                          perSizeValue: "product-detail.nutrition-table.for-100g".localized,
-                                          perServingValue: "product-detail.nutrition-table.for-serving".localized)
+        let headerRow = NutritionTableRow(label: "",
+                                          perSizeValue: "product-detail.nutrition-table.100g".localized,
+                                          perServingValue: "product-detail.nutrition-table.serving".localized)
         createFormRow(with: &rows, item: headerRow, cellType: NutritionTableRowTableViewCell.self)
 
         if let energy = product.nutriments?.energy, let nutritionTableRow = energy.nutritionTableRow {
