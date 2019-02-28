@@ -20,9 +20,11 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
     
     var dataManager: DataManagerProtocol!
-    
+
+    private let allergensAlertsIndexPath = IndexPath(row: 2, section: 0)
+
     private let frequentlyAskedQuestionsIndexPath = IndexPath(row: 0, section: 1)
-    private let allergensAlertsIndexPath = IndexPath(row: 1, section: 0)
+
     private let discoverIndexPath = IndexPath(row: 1, section: 1)
     private let howToContributeIndexPath = IndexPath(row: 0, section: 2)
     private let supportOpenFoodFactsIndexPath = IndexPath(row: 1, section: 2)
@@ -77,6 +79,13 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destVC = segue.destination as? UserViewController {
+            destVC.dataManager = self.dataManager
+        }
+    }
+
     @IBAction func didSwitchScanOnLaunch(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsConstants.scanningOnLaunch)
     }
