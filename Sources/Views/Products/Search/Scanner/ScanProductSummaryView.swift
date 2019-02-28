@@ -13,6 +13,7 @@ class ScanProductSummaryView: UIView {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var nutriScoreView: NutriScoreView!
     @IBOutlet weak var novaGroupView: NovaGroupView!
+    @IBOutlet weak var environmentImpactImageView: UIImageView!
     @IBOutlet weak var productImageView: UIImageView!
 
     override init(frame: CGRect) {
@@ -65,6 +66,13 @@ class ScanProductSummaryView: UIView {
             novaGroupView.isHidden = false
         } else {
             novaGroupView.isHidden = true
+        }
+
+        if let co2Impact = product.environmentImpactLevelTags?.first {
+            environmentImpactImageView.image = co2Impact.image
+            environmentImpactImageView.isHidden = false
+        } else {
+            environmentImpactImageView.isHidden = true
         }
     }
 

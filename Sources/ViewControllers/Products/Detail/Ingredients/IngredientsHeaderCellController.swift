@@ -13,7 +13,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
     var product: Product!
     @IBOutlet weak var ingredients: UIImageView!
     @IBOutlet weak var callToActionView: PictureCallToActionView!
-    @IBOutlet weak var addNewPictureButton: UIButton!
+    @IBOutlet weak var takePictureButtonView: IconButtonView!
 
     weak var delegate: FormTableViewControllerDelegate?
 
@@ -31,8 +31,9 @@ class IngredientsHeaderCellController: TakePictureViewController {
     }
 
     fileprivate func setupViews() {
+        self.takePictureButtonView.delegate = self
+
         if let imageUrl = product.ingredientsImageUrl, let url = URL(string: imageUrl) {
-            log.debug("imageUrl = \(imageUrl)")
             ingredients.kf.indicatorType = .activity
             ingredients.kf.setImage(with: url, options: nil) { result in
                 switch result {
@@ -50,13 +51,13 @@ class IngredientsHeaderCellController: TakePictureViewController {
             ingredients.addGestureRecognizer(tap)
             ingredients.isUserInteractionEnabled = true
             callToActionView.isHidden = true
-            addNewPictureButton.isHidden = false
+            takePictureButtonView.isHidden = false
         } else {
             ingredients.isHidden = true
             callToActionView.isHidden = false
             callToActionView.textLabel.text = "call-to-action.ingredients".localized
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
-            addNewPictureButton.isHidden = true
+            takePictureButtonView.isHidden = true
         }
     }
 }
@@ -67,5 +68,11 @@ extension IngredientsHeaderCellController {
         if let imageView = sender.view as? UIImageView {
             ImageViewer.show(imageView, presentingVC: self)
         }
+    }
+}
+
+extension IngredientsHeaderCellController: IconButtonViewDelegate {
+    func didTap() {
+        didTapTakePictureButton(callToActionView)
     }
 }

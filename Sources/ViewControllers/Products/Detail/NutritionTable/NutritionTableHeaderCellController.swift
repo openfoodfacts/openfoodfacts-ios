@@ -15,7 +15,7 @@ class NutritionTableHeaderCellController: TakePictureViewController {
     @IBOutlet weak var servingSizeLabel: UILabel!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint?
     @IBOutlet weak var callToActionView: PictureCallToActionView!
-    @IBOutlet weak var addNewPictureButton: UIButton!
+    @IBOutlet weak var takePictureButtonView: IconButtonView!
 
     weak var delegate: FormTableViewControllerDelegate?
 
@@ -34,6 +34,7 @@ class NutritionTableHeaderCellController: TakePictureViewController {
 
     fileprivate func setupViews() {
         self.imageHeightConstraint?.constant = 30
+        self.takePictureButtonView.delegate = self
 
         if let imageUrl = product.nutritionTableImage, let url = URL(string: imageUrl) {
             nutritionTableImage.kf.indicatorType = .activity
@@ -54,13 +55,13 @@ class NutritionTableHeaderCellController: TakePictureViewController {
             nutritionTableImage.addGestureRecognizer(tap)
             nutritionTableImage.isUserInteractionEnabled = true
             callToActionView.isHidden = true
-            addNewPictureButton.isHidden = false
+            takePictureButtonView.isHidden = false
         } else {
             nutritionTableImage.isHidden = true
             callToActionView.isHidden = false
             callToActionView.textLabel.text = "call-to-action.nutrition".localized
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
-            addNewPictureButton.isHidden = true
+            takePictureButtonView.isHidden = true
         }
 
         if let servingSize = product.servingSize {
@@ -75,5 +76,11 @@ extension NutritionTableHeaderCellController {
         if let imageView = sender.view as? UIImageView {
             ImageViewer.show(imageView, presentingVC: self)
         }
+    }
+}
+
+extension NutritionTableHeaderCellController: IconButtonViewDelegate {
+    func didTap() {
+        didTapTakePictureButton(callToActionView)
     }
 }

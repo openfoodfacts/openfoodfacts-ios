@@ -14,6 +14,20 @@ enum NutritionDataPer: String {
     case serving = "serving"
 }
 
+enum EnvironmentImpact: String {
+    case low = "en-low"
+    case medium = "en-medium"
+    case high = "en-high"
+
+    var image: UIImage {
+        switch self {
+        case .low: return UIImage(named: "co2-low")!
+        case .medium: return UIImage(named: "co2-medium")!
+        case .high: return UIImage(named: "co2-high")!
+        }
+    }
+}
+
 struct Product: Mappable {
     var name: String?
     var brands: [String]?
@@ -50,6 +64,8 @@ struct Product: Mappable {
     var nutritionTableImage: String?
     var lang: String?
     var states: [String]?
+    var environmentInfoCard: String?
+    var environmentImpactLevelTags: [EnvironmentImpact]?
 
     // These are not in any json response, but we will use them internally for all products we create as they are easier to work with
     var quantity: String? {
@@ -108,5 +124,7 @@ struct Product: Mappable {
         nutritionTableImage <- map[OFFJson.ImageNutritionUrlKey]
         states <- (map[OFFJson.StatesKey], ArrayTransform())
         lang <- map[OFFJson.LangKey]
+        environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
+        environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
     }
 }

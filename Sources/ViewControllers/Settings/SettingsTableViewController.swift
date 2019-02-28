@@ -21,9 +21,9 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
     var dataManager: DataManagerProtocol!
 
-    private let frequentlyAskedQuestionsIndexPath = IndexPath(row: 0, section: 1)
-    private let allergensAlertsIndexPath = IndexPath(row: 1, section: 0)
+    private let allergensAlertsIndexPath = IndexPath(row: 2, section: 0)
 
+    private let frequentlyAskedQuestionsIndexPath = IndexPath(row: 0, section: 1)
     private let discoverIndexPath = IndexPath(row: 1, section: 1)
 
     private let howToContributeIndexPath = IndexPath(row: 0, section: 2)
@@ -85,6 +85,12 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
             openUrlInApp(url)
         } else if let url = urlsupport {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destVC = segue.destination as? UserViewController {
+            destVC.dataManager = self.dataManager
         }
     }
 
