@@ -13,13 +13,13 @@
 "generic.back" = "Terug";
 "generic.search" = "Zoeken";
 "generic.cancel" = "Cancel";
-"generic.save" = "Bewaar";
+"generic.save" = "Opslaan";
 "generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 
 // Product Search
 
-"product-search.title" = "Zoek";
+"product-search.title" = "Zoeken";
 "product-search.search-placeholder" = "Search by name or barcode";
 "product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Er ging iets mis";
@@ -92,12 +92,12 @@
 "product-add.placeholder.quantity" = "Hoeveelheid";
 
 "product-add.title" = "New product";
-"product-add.titles.barcode" = "Streepjescode";
+"product-add.titles.barcode" = "Barcode";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
-"product-add.label.product-name" = "Naam:";
+"product-add.label.product-name" = "Naam";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Hoeveelheid";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
@@ -145,7 +145,7 @@
 "product-detail.page-title.environment-impact" = "Environment";
 
 // Product detail summary info rows labels
-"product-detail.summary.barcode" = "Streepjescode";
+"product-detail.summary.barcode" = "Barcode";
 "product-detail.summary.quantity" = "Hoeveelheid";
 "product-detail.summary.packaging" = "Verpakking";
 "product-detail.summary.brands" = "Merken";
@@ -174,7 +174,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Voedigswaarden";
-"product-detail.nutrition-table.for-100g" = "Per 100g";
+"product-detail.nutrition-table.for-100g" = "Per 100 g";
 "product-detail.nutrition-table.for-serving" = "Per portie";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
@@ -185,25 +185,25 @@
 "nutrition-level.high" = "grote hoeveelheid";
 
 // Nutrition
-"nutrition.energy" = "Energie";
+"nutrition.energy" = "Calories";
 "nutrition.fats" = "Vetten";
 "nutrition.fats.saturated-fat" = "Verzadigd vet";
-"nutrition.fats.mono-unsaturated-fat" = "Enkelvoudige onverzadigde vetzuren";
-"nutrition.fats.poly-unsaturated-fat" = "Meervoudig onvervaardigde vetzuren";
+"nutrition.fats.mono-unsaturated-fat" = "Monounsaturated fat";
+"nutrition.fats.poly-unsaturated-fat" = "Polyunsaturated fat";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
 "nutrition.fats.trans-fat" = "Transvet";
 "nutrition.fats.cholesterol" = "Cholesterol";
 "nutrition.carbohydrate" = "Koolhydraten";
-"nutrition.carbohydrate.sugars" = "Suikers";
+"nutrition.carbohydrate.sugars" = "Sugar";
 "nutrition.carbohydrate.sucrose" = "Sucrose";
 "nutrition.carbohydrate.glucose" = "Glucose";
 "nutrition.carbohydrate.fructose" = "Fructose";
 "nutrition.carbohydrate.lactose" = "Lactose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrine";
-"nutrition.fiber" = "Voedingsvezels";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Eiwitten";
 "nutrition.proteins.casein" = "Caseïne";
 "nutrition.proteins.serum-proteins" = "Serumproteïnen";
@@ -211,7 +211,7 @@
 "nutrition.salt" = "Zout";
 "nutrition.sodium" = "Natrium";
 "nutrition.alcohol" = "Alcohol";
-"nutrition.vitamins" = "Vitaminen";
+"nutrition.vitamins" = "Vitamins and Minerals";
 "nutrition.vitamins.a" = "Vitamine A";
 "nutrition.vitamins.beta-carotene" = "Beta caroteen";
 "nutrition.vitamins.d" = "Vitamine D";
@@ -220,12 +220,12 @@
 "nutrition.vitamins.c" = "Vitamine C";
 "nutrition.vitamins.b1" = "Vitamine B1";
 "nutrition.vitamins.b2" = "Vitamine B2";
-"nutrition.vitamins.pp" = "Vitamine PP";
+"nutrition.vitamins.pp" = "Vitamin B3";
 "nutrition.vitamins.b6" = "Vitamine B6";
 "nutrition.vitamins.b9" = "Vitamine B6";
 "nutrition.vitamins.b12" = "Vitamine B12";
-"nutrition.vitamins.biotin" = "Biotine";
-"nutrition.vitamins.pantothenic-acid" = "Pantotheenzuur";
+"nutrition.vitamins.biotin" = "Vitamin B7";
+"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
 "nutrition.minerals" = "Mineralen";
 "nutrition.minerals.silica" = "Silicium";
 "nutrition.minerals.bicarbonate" = "Carbonaten";
@@ -247,9 +247,9 @@
 "nutrition.minerals.taurine" = "Taurine";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Fruit, groente, noten";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Collageen vleesproteïne verhouding";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen/Meat Protein Ratio";
 "nutrition.minerals.cocoa" = "Cacao";
-"nutrition.minerals.chlorophyl" = "Chlorofyl";
+"nutrition.minerals.chlorophyl" = "Chlorophyll";
 
 // Call to action
 "call-to-action.summary" = "Take a photo of the front";
@@ -277,6 +277,9 @@
 "settings.sections.about" = "Informatie";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
+"settings.contact.message" = "Thank you for contacting us.";
+"settings.contact-alert.title" = "Could not send E-mail";
+"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Scan Op App Launch Weergeven";
 "settings.information.discover" = "Ontdek";
 "settings.contribute.how-to-contribute" = "Hoe kan je bijdragen";
