@@ -9,22 +9,23 @@
 import UIKit
 import ImageViewer
 
+class SummaryHeaderCell: HostedViewCell {
+    // used only to specify which kind of cell we want to pass
+}
+
 class SummaryHeaderCellController: TakePictureViewController {
     var product: Product!
-    @IBOutlet weak var productImage: UIImageView!
-    @IBOutlet weak var callToActionView: PictureCallToActionView!
-    @IBOutlet weak var nutriscore: NutriScoreView! {
-        didSet {
-            nutriscore?.currentScore = nil
-        }
-    }
-    @IBOutlet weak var productName: UILabel!
-    @IBOutlet weak var addNewPictureButton: UIButton!
-    @IBOutlet weak var editButton: UIButton!
+    var hideSummary: Bool = false
 
-    convenience init(with product: Product, dataManager: DataManagerProtocol) {
+    @IBOutlet weak var callToActionView: PictureCallToActionView!
+    @IBOutlet weak var scanProductSummaryView: ScanProductSummaryView!
+
+    @IBOutlet weak var takePictureButtonView: IconButtonView!
+
+    convenience init(with product: Product, dataManager: DataManagerProtocol, hideSummary: Bool) {
         self.init(nibName: String(describing: SummaryHeaderCellController.self), bundle: nil)
         self.product = product
+        self.hideSummary = hideSummary
         super.barcode = product.barcode
         super.dataManager = dataManager
         super.imageType = .front
@@ -36,43 +37,26 @@ class SummaryHeaderCellController: TakePictureViewController {
     }
 
     fileprivate func setupViews() {
-        if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
-            productImage.kf.indicatorType = .activity
-            productImage.kf.setImage(with: url)
+        scanProductSummaryView.fillIn(product: product)
 
+        scanProductSummaryView.isHidden = hideSummary
+
+        takePictureButtonView.delegate = self
+
+        if let imageUrl = product.frontImageUrl ?? product.imageUrl, URL(string: imageUrl) != nil {
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
-            productImage.addGestureRecognizer(tap)
-            productImage.isUserInteractionEnabled = true
+            scanProductSummaryView.productImageView.addGestureRecognizer(tap)
+            scanProductSummaryView.productImageView.isUserInteractionEnabled = true
             callToActionView.isHidden = true
-            addNewPictureButton.isHidden = false
+            takePictureButtonView.isHidden = false
         } else {
-            productImage.isHidden = true
+            scanProductSummaryView.productImageView.isHidden = true
             callToActionView.textLabel.text = "call-to-action.summary".localized
             callToActionView.isHidden = false
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
-            addNewPictureButton.isHidden = true
+            takePictureButtonView.isHidden = true
         }
-
-        if let nutriscoreValue = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue) {
-            nutriscore.currentScore = score
-        } else {
-            nutriscore.superview?.isHidden = true
-        }
-
-        if let name = product.name, !name.isEmpty {
-            productName.text = name
-        } else {
-            productName.isHidden = true
-        }
-        setupEditButton()
     }
-
-    fileprivate func setupEditButton() {
-        let editButtonTitleString = Bundle(identifier: "com.apple.UIKit")?.localizedString(forKey: "Edit", value: "Edit", table: nil)
-        editButton.setTitle(editButtonTitleString, for: .normal)
-        editButton.addTarget(self, action: #selector(didTapEditButton(_:)), for: .touchUpInside)
-    }
-
 }
 
 // MARK: - Gesture recognizers
@@ -82,10 +66,10 @@ extension SummaryHeaderCellController {
             ImageViewer.show(imageView, presentingVC: self)
         }
     }
+}
 
-    @objc func didTapEditButton(_ sender: UIButton) {
-        if let barcode = self.product?.barcode, let url = URL(string: URLs.Edit + barcode) {
-            openUrlInApp(url, showAlert: true)
-        }
+extension SummaryHeaderCellController: IconButtonViewDelegate {
+    func didTap() {
+        didTapTakePictureButton(callToActionView)
     }
 }

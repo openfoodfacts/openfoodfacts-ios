@@ -68,7 +68,7 @@ class RootViewController: UIViewController {
                 }
             }
 
-            if child is UserViewController, let item = tab.tabBar.items?[index] {
+            if child is SettingsTableViewController, let item = tab.tabBar.items?[index] {
                 let items = dataManager.getItemsPendingUpload()
                 item.badgeValue = items.isEmpty ? nil : "\(items.count)"
             }

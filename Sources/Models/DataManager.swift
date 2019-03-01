@@ -137,7 +137,6 @@ class DataManager: DataManagerProtocol {
         return persistenceManager.nutrimentSearch(query: query)
     }
 
-
     // MARK: - Settings
     func addAllergy(toAllergen: Allergen) {
         persistenceManager.addAllergy(toAllergen: toAllergen)

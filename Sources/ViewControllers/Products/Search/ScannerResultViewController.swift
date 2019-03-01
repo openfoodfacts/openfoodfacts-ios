@@ -80,6 +80,7 @@ class ScannerResultViewController: UIViewController {
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController
         productDetailVC.product = product
         productDetailVC.dataManager = dataManager
+        productDetailVC.hideSummary = true
 
         self.addChildViewController(productDetailVC)
         self.productDetailsContainer.addSubview(productDetailVC.view)

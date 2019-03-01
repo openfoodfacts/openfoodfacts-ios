@@ -12,6 +12,7 @@ import Crashlytics
 
 class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient {
 
+    var hideSummary: Bool = false
     var product: Product!
     var dataManager: DataManagerProtocol!
 
@@ -57,6 +58,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         if let nutritionVC = getNutritionVC() {
             vcs.append(nutritionVC)
         }
+        if let environmentImpactVC = getEnvironmentImpactVC() {
+            vcs.append(environmentImpactVC)
+        }
 
         return vcs
     }
@@ -65,6 +69,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         let form = createSummaryForm()
         let summaryFormTableVC = SummaryFormTableViewController(with: form, dataManager: dataManager)
         summaryFormTableVC.delegate = self
+        summaryFormTableVC.hideSummary = hideSummary
         return summaryFormTableVC
     }
 
@@ -82,29 +87,46 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         return nutritionTableFormTableVC
     }
 
+    fileprivate func getEnvironmentImpactVC() -> UIViewController? {
+        if product.environmentImpactLevelTags?.isEmpty == false, let infoCard = product.environmentInfoCard, infoCard.isEmpty == false {
+            let environmentImpactFormTableVC = EnvironmentImpactTableFormTableViewController()
+            environmentImpactFormTableVC.product = product
+            return environmentImpactFormTableVC
+        }
+        return nil
+    }
+
     // MARK: - Form creation methods
 
     private func updateForms(with updatedProduct: Product) {
         self.product = updatedProduct
 
-        if let viewControllers = self.viewControllers as? [FormTableViewController] {
-            viewControllers[0].form = createSummaryForm()
-            viewControllers[1].form = createIngredientsForm()
-            viewControllers[2].form = createNutritionForm()
-         }
+        for (index, viewController) in viewControllers.enumerated() {
+            if let vc0 = viewController as? FormTableViewController {
+                switch index {
+                case 0: vc0.form = createSummaryForm()
+                case 1: vc0.form = createIngredientsForm()
+                case 2: vc0.form = createNutritionForm()
+                default: break
+                }
+            } else if let vc1 = viewController as? EnvironmentImpactTableFormTableViewController {
+                vc1.product = product
+            }
+        }
     }
 
     private func createSummaryForm() -> Form {
         var rows = [FormRow]()
 
         // Header
-        rows.append(FormRow(value: product, cellType: HostedViewCell.self))
+        rows.append(FormRow(value: product, cellType: SummaryHeaderCell.self))
+
+        createNutrientsRows(rows: &rows)
+        createAdditivesRows(with: &rows, product: product, inLine: false)
 
         // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
-        createFormRow(with: &rows, item: product.quantity, label: InfoRowKey.quantity.localizedString)
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
-        createFormRow(with: &rows, item: product.brands, label: InfoRowKey.brands.localizedString)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
@@ -128,6 +150,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
         createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
 
+        // Footer
+        rows.append(FormRow(value: product, cellType: SummaryFooterCell.self))
+
         let summaryTitle = "product-detail.page-title.summary".localized
 
         return Form(title: summaryTitle, rows: rows)
@@ -140,8 +165,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         rows.append(FormRow(value: product, cellType: HostedViewCell.self))
 
         // Rows
-        createFormRow(with: &rows, item: product.ingredientsList, label: InfoRowKey.ingredientsList.localizedString)
-
+        if let ingredientsList = product.ingredientsList {
+            createFormRow(with: &rows, item: "\n" + ingredientsList, label: InfoRowKey.ingredientsList.localizedString)
+        }
         createFormRow(with: &rows, item: product.allergens?.map({ (allergen: Tag) -> NSAttributedString in
             if let allergen = dataManager.allergen(forTag: allergen) {
                 if let name = Tag.choose(inTags: Array(allergen.names)) {
@@ -151,22 +177,17 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: allergen.value.capitalized)
         }), label: InfoRowKey.allergens.localizedString)
 
-        if product.states?.contains("en:ingredients-to-be-completed") == true {
-            if product.allergens == nil || product.allergens?.isEmpty == true {
-                createFormRow(with: &rows, item: "product-detail.ingredients.allergens-list.missing-infos".localized, label: "⚠️")
+        if dataManager.listAllergies().isEmpty == false {
+            if product.states?.contains("en:ingredients-to-be-completed") == true {
+                if product.allergens == nil || product.allergens?.isEmpty == true {
+                    createFormRow(with: &rows, item: "product-detail.ingredients.allergens-list.missing-infos".localized, label: "⚠️")
+                }
             }
         }
 
         createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
 
-        createFormRow(with: &rows, item: product.additives?.map({ (additive: Tag) -> NSAttributedString in
-            if let additive = dataManager.additive(forTag: additive) {
-                if let name = Tag.choose(inTags: Array(additive.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forAdditive: additive)])
-                }
-            }
-            return NSAttributedString(string: additive.value.uppercased())
-        }), label: InfoRowKey.additives.localizedString)
+        createAdditivesRows(with: &rows, product: product, inLine: true)
 
         createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
         createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
@@ -174,6 +195,29 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         let summaryTitle = "product-detail.page-title.ingredients".localized
 
         return Form(title: summaryTitle, rows: rows)
+    }
+
+    fileprivate func createAdditivesRows(with rows: inout [FormRow], product: Product, inLine: Bool = true) {
+        guard let additives = product.additives, additives.isEmpty == false else {
+            return
+        }
+
+        var items: [Any] = []
+        if inLine == false {
+            items.append(NSAttributedString(string: " "))    //to have the first carriage return from the join with separator
+        }
+        items.append(contentsOf: additives.map({ (additive: Tag) -> NSAttributedString in
+            if let additive = dataManager.additive(forTag: additive) {
+                if let name = Tag.choose(inTags: Array(additive.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forAdditive: additive)])
+                }
+            }
+
+            return NSAttributedString(string: additive.value.uppercased())
+        }))
+
+        let separator = inLine ? ", " : "\n "
+        createFormRow(with: &rows, item: items, label: InfoRowKey.additives.localizedString, separator: separator)
     }
 
     private func createNutritionForm() -> Form? {
@@ -193,10 +237,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             createFormRow(with: &rows, item: "\(carbonFootprint) \(unit)", label: InfoRowKey.carbonFootprint.localizedString)
         }
 
-        // Nutrition levels
-        if product.nutritionLevels != nil {
-            createFormRow(with: &rows, item: product, cellType: NutritionLevelsTableViewCell.self)
-        }
+        createNutrientsRows(rows: &rows)
 
         createNutritionTableRows(rows: &rows)
 
@@ -207,15 +248,22 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         return Form(title: "product-detail.page-title.nutrition".localized, rows: rows)
     }
 
+    fileprivate func createNutrientsRows(rows: inout [FormRow]) {
+        // Nutrition levels
+        if product.nutritionLevels != nil {
+            createFormRow(with: &rows, item: product, cellType: NutritionLevelsTableViewCell.self)
+        }
+    }
+
     // swiftlint:disable:next cyclomatic_complexity
     fileprivate func createNutritionTableRows(rows: inout [FormRow]) {
         // Header
         createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
 
         // Nutrition table rows
-        let headerRow = NutritionTableRow(label: InfoRowKey.nutritionalTableHeader.localizedString,
-                                          perSizeValue: "product-detail.nutrition-table.for-100g".localized,
-                                          perServingValue: "product-detail.nutrition-table.for-serving".localized)
+        let headerRow = NutritionTableRow(label: "",
+                                          perSizeValue: "product-detail.nutrition-table.100g".localized,
+                                          perServingValue: "product-detail.nutrition-table.serving".localized)
         createFormRow(with: &rows, item: headerRow, cellType: NutritionTableRowTableViewCell.self)
 
         if let energy = product.nutriments?.energy, let nutritionTableRow = energy.nutritionTableRow {
@@ -270,21 +318,21 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
     }
 
-    private func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self, isCopiable: Bool = false) {
+    private func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self, isCopiable: Bool = false, separator: String = ", ") {
         // Check item has a value, if so add to the array of rows.
         switch item {
         case let value as String:
             // Check if it's empty here insted of doing 'case let value as String where !value.isEmpty' because an empty String ("") would not match this case but the default one
             if !value.isEmpty {
-                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable, separator: separator))
             }
         case let value as [Any]:
             if !value.isEmpty {
-                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable, separator: separator))
             }
         default:
             if let value = item {
-                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable))
+                array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable, separator: separator))
             }
         }
     }
