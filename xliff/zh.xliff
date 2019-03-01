@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file original="OpenFoodFacts/Info.plist" source-language="en" datatype="plaintext" target-language="zh-Hant">
+  <file original="OpenFoodFacts/Info.plist" source-language="en" datatype="plaintext" target-language="zh-HK">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
         <source>Open Nutrition</source>
-        <target xml:lang="zh-Hant" state="translated">開放式營養</target>
+        <target xml:lang="zh-HK" state="translated">開放式營養</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">开放营养</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="NSCameraUsageDescription">
         <source>Use your camera to scan barcodes and take pictures of products to add to the database</source>
-        <target xml:lang="zh-Hant" state="translated">使用您的相機掃描條碼和拍攝的產品添加到資料庫</target>
+        <target xml:lang="zh-HK" state="translated">使用您的相機掃描條碼和拍攝的產品添加到資料庫</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">使用相机扫描条形码，并将拍摄的产品照片添加到数据库中</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="NSPhotoLibraryUsageDescription">
         <source>Take and upload pictures of products</source>
-        <target xml:lang="zh-Hant" state="translated">拍攝並上傳產品圖片</target>
+        <target xml:lang="zh-HK" state="translated">拍攝並上傳產品圖片</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">拍照并且上传图片</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="QUICK_ACTION_SCAN_BARCODE">
         <source>Scan a barcode</source>
-        <target xml:lang="zh-Hant" state="translated">掃描條碼</target>
+        <target xml:lang="zh-HK" state="translated">掃描條碼</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">扫描条形码</target>
+        </alt-trans>
       </trans-unit>
     </body>
   </file>
-  <file original="OpenFoodFacts/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="zh-Hant">
+  <file original="OpenFoodFacts/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="zh-HK">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
@@ -31,662 +43,1024 @@
       <trans-unit id="alert.action.ok">
         <source>Ok</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">確定</target>
+        <target xml:lang="zh-HK" state="translated">確定</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">确认</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">拍攝成分的照片</target>
+        <target xml:lang="zh-HK" state="translated">拍攝成分的照片</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">拍摄营养成分</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition table</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">拍攝營養成份表的照片</target>
+        <target xml:lang="zh-HK" state="translated">拍攝營養成份表的照片</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">拍摄营养成分</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
         <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">拍攝正面的照片</target>
+        <target xml:lang="zh-HK" state="translated">拍攝正面的照片</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">拍摄正面照片</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition-level.high">
         <source>in high quantity</source>
         <note>Nutrition Level, high</note>
-        <target xml:lang="zh-Hant" state="translated">大量</target>
+        <target xml:lang="zh-HK" state="translated">大量</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">最高含量</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition-level.low">
         <source>in low quantity</source>
         <note>Nutrition Level, low</note>
-        <target xml:lang="zh-Hant" state="translated">低量</target>
+        <target xml:lang="zh-HK" state="translated">低量</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">库存量</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition-level.moderate">
         <source>in moderate quantity</source>
         <note>Nutrition Level, moderate</note>
-        <target xml:lang="zh-Hant" state="translated">中等量</target>
+        <target xml:lang="zh-HK" state="translated">中等量</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">中等数量</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.alcohol">
         <source>Alcohol</source>
-        <target xml:lang="zh-Hant" state="translated">酒精</target>
+        <target xml:lang="zh-HK" state="translated">酒精</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate">
         <source>Carbohydrate</source>
-        <target xml:lang="zh-Hant" state="translated">碳水化合物</target>
+        <target xml:lang="zh-HK" state="translated">碳水化合物</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.fructose">
         <source>Fructose</source>
-        <target xml:lang="zh-Hant" state="translated">果糖</target>
+        <target xml:lang="zh-HK" state="translated">果糖</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.glucose">
         <source>Glucose</source>
-        <target xml:lang="zh-Hant" state="translated">葡萄糖</target>
+        <target xml:lang="zh-HK" state="translated">葡萄糖</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.lactose">
         <source>Lactose</source>
-        <target xml:lang="zh-Hant" state="translated">乳糖</target>
+        <target xml:lang="zh-HK" state="translated">乳糖</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.maltodextrins">
         <source>Maltodextrins</source>
-        <target xml:lang="zh-Hant" state="translated">麥芽糊精</target>
+        <target xml:lang="zh-HK" state="translated">麥芽糊精</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">麦芽糖</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.maltose">
         <source>Maltose</source>
-        <target xml:lang="zh-Hant" state="translated">麥芽糖</target>
+        <target xml:lang="zh-HK" state="translated">麥芽糖</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">麦芽糖</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sucrose">
         <source>Sucrose</source>
-        <target xml:lang="zh-Hant" state="translated">蔗糖</target>
+        <target xml:lang="zh-HK" state="translated">蔗糖</target>
       </trans-unit>
       <trans-unit id="nutrition.carbohydrate.sugars">
         <source>Sugars</source>
         <note>Nutrition, sugars</note>
-        <target xml:lang="zh-Hant" state="translated">糖</target>
+        <target xml:lang="zh-HK" state="translated">糖</target>
       </trans-unit>
       <trans-unit id="nutrition.energy">
         <source>Energy</source>
-        <target xml:lang="zh-Hant" state="translated">能量</target>
+        <target xml:lang="zh-HK" state="translated">能量</target>
       </trans-unit>
       <trans-unit id="nutrition.fats">
         <source>Fats</source>
         <note>Nutrition, fat</note>
-        <target xml:lang="zh-Hant" state="translated">脂肪</target>
+        <target xml:lang="zh-HK" state="translated">脂肪</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.cholesterol">
         <source>Cholesterol</source>
-        <target xml:lang="zh-Hant" state="translated">膽固醇</target>
+        <target xml:lang="zh-HK" state="translated">膽固醇</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">胆固醇</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.fats.mono-unsaturated-fat">
         <source>Mono unsaturated fat</source>
-        <target xml:lang="zh-Hant" state="translated">單不飽和脂肪</target>
+        <target xml:lang="zh-HK" state="translated">單不飽和脂肪</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">单不饱和脂肪</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega3">
         <source>Omega 3</source>
-        <target xml:lang="zh-Hant" state="translated">Omega 3</target>
+        <target xml:lang="zh-HK" state="translated">欧米伽 3</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega6">
         <source>Omega 6</source>
-        <target xml:lang="zh-Hant" state="translated">Omega 6</target>
+        <target xml:lang="zh-HK" state="translated">欧米伽 5</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.omega9">
         <source>Omega 9</source>
-        <target xml:lang="zh-Hant" state="translated">Omega 9</target>
+        <target xml:lang="zh-HK" state="translated">欧米伽 9</target>
       </trans-unit>
       <trans-unit id="nutrition.fats.poly-unsaturated-fat">
         <source>Poly unsaturated fat</source>
-        <target xml:lang="zh-Hant" state="translated">多不飽和脂肪</target>
+        <target xml:lang="zh-HK" state="translated">多不飽和脂肪</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">多元不饱和脂肪</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.fats.saturated-fat">
         <source>Saturated fat</source>
         <note>Nutrition, saturated fat</note>
-        <target xml:lang="zh-Hant" state="translated">飽和脂肪</target>
+        <target xml:lang="zh-HK" state="translated">飽和脂肪</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">饱和脂肪</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.fats.trans-fat">
         <source>Trans fat</source>
-        <target xml:lang="zh-Hant" state="translated">反式脂肪</target>
+        <target xml:lang="zh-HK" state="translated">反式脂肪</target>
       </trans-unit>
       <trans-unit id="nutrition.fiber">
         <source>Dietary fiber</source>
-        <target xml:lang="zh-Hant" state="translated">膳食纖維</target>
+        <target xml:lang="zh-HK" state="translated">膳食纖維</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">膳食纤维</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals">
         <source>Minerals</source>
-        <target xml:lang="zh-Hant" state="translated">礦物質</target>
+        <target xml:lang="zh-HK" state="translated">礦物質</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">矿物质</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.bicarbonate">
         <source>Bicarbonate</source>
-        <target xml:lang="zh-Hant" state="translated">碳酸氫鹽</target>
+        <target xml:lang="zh-HK" state="translated">碳酸氫鹽</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">碳酸氢钠</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.caffeine">
         <source>Caffeine</source>
-        <target xml:lang="zh-Hant" state="translated">咖啡因</target>
+        <target xml:lang="zh-HK" state="translated">咖啡因</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.calcium">
         <source>Calcium</source>
-        <target xml:lang="zh-Hant" state="translated">鈣</target>
+        <target xml:lang="zh-HK" state="translated">鈣</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">钙</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chloride">
         <source>Chloride</source>
-        <target xml:lang="zh-Hant" state="translated">氯化物</target>
+        <target xml:lang="zh-HK" state="translated">氯化物</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chlorophyl">
         <source>Chlorophyl</source>
-        <target xml:lang="zh-Hant" state="translated">葉綠素</target>
+        <target xml:lang="zh-HK" state="translated">葉綠素</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">叶绿素</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.chromium">
         <source>Chromium</source>
-        <target xml:lang="zh-Hant" state="translated">鉻</target>
+        <target xml:lang="zh-HK" state="translated">鉻</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">铬</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.cocoa">
         <source>Cocoa</source>
-        <target xml:lang="zh-Hant" state="translated">可可</target>
+        <target xml:lang="zh-HK" state="translated">可可</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">可可粉</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.collagen-meat-protein-ratio">
         <source>Collagen meat protein ratio</source>
-        <target xml:lang="zh-Hant" state="translated">膠原蛋白肉與蛋白的比例</target>
+        <target xml:lang="zh-HK" state="translated">膠原蛋白肉與蛋白的比例</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">胶原蛋白比例</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.copper">
         <source>Copper</source>
-        <target xml:lang="zh-Hant" state="translated">銅</target>
+        <target xml:lang="zh-HK" state="translated">銅</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">铜</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.fluoride">
         <source>Fluoride</source>
-        <target xml:lang="zh-Hant" state="translated">氟化物</target>
+        <target xml:lang="zh-HK" state="translated">氟化物</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">氟</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.fruits-vegetables-nuts">
         <source>Fruits, vegetables, nuts</source>
-        <target xml:lang="zh-Hant" state="translated">水果，蔬菜，堅果</target>
+        <target xml:lang="zh-HK" state="translated">水果，蔬菜，堅果</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">水果，蔬菜，坚果</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.iodine">
         <source>Iodine</source>
-        <target xml:lang="zh-Hant" state="translated">碘</target>
+        <target xml:lang="zh-HK" state="translated">碘</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.iron">
         <source>Iron</source>
-        <target xml:lang="zh-Hant" state="translated">鐵</target>
+        <target xml:lang="zh-HK" state="translated">鐵</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">铁</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.magnesium">
         <source>Magnesium</source>
-        <target xml:lang="zh-Hant" state="translated">鎂</target>
+        <target xml:lang="zh-HK" state="translated">鎂</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">镁</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.manganese">
         <source>Manganese</source>
-        <target xml:lang="zh-Hant" state="translated">錳</target>
+        <target xml:lang="zh-HK" state="translated">錳</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">锰</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.molybdenum">
         <source>Molybdenum</source>
-        <target xml:lang="zh-Hant" state="translated">鉬</target>
+        <target xml:lang="zh-HK" state="translated">鉬</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">钼</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.ph">
         <source>pH</source>
-        <target xml:lang="zh-Hant" state="translated">pH值</target>
+        <target xml:lang="zh-HK" state="translated">pH值</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.phosphorus">
         <source>Phosphorus</source>
-        <target xml:lang="zh-Hant" state="translated">磷</target>
+        <target xml:lang="zh-HK" state="translated">磷</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.potassium">
         <source>Potassium</source>
-        <target xml:lang="zh-Hant" state="translated">鉀</target>
+        <target xml:lang="zh-HK" state="translated">鉀</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">钾</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.selenium">
         <source>Selenium</source>
-        <target xml:lang="zh-Hant" state="translated">硒</target>
+        <target xml:lang="zh-HK" state="translated">硒</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.silica">
         <source>Silica</source>
-        <target xml:lang="zh-Hant" state="translated">二氧化矽</target>
+        <target xml:lang="zh-HK" state="translated">二氧化矽</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">二氧化硅</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.minerals.taurine">
         <source>Taurine</source>
-        <target xml:lang="zh-Hant" state="translated">牛磺酸</target>
+        <target xml:lang="zh-HK" state="translated">牛磺酸</target>
       </trans-unit>
       <trans-unit id="nutrition.minerals.zinc">
         <source>Zinc</source>
-        <target xml:lang="zh-Hant" state="translated">鋅</target>
+        <target xml:lang="zh-HK" state="translated">鋅</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">锌</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.proteins">
         <source>Proteins</source>
-        <target xml:lang="zh-Hant" state="translated">蛋白質</target>
+        <target xml:lang="zh-HK" state="translated">蛋白質</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">蛋白质</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.proteins.casein">
         <source>Casein</source>
-        <target xml:lang="zh-Hant" state="translated">酪蛋白</target>
+        <target xml:lang="zh-HK" state="translated">酪蛋白</target>
       </trans-unit>
       <trans-unit id="nutrition.proteins.nucleotides">
         <source>Nucleotides</source>
-        <target xml:lang="zh-Hant" state="translated">核苷酸</target>
+        <target xml:lang="zh-HK" state="translated">核苷酸</target>
       </trans-unit>
       <trans-unit id="nutrition.proteins.serum-proteins">
         <source>Serum Proteins</source>
-        <target xml:lang="zh-Hant" state="translated">血清蛋白</target>
+        <target xml:lang="zh-HK" state="translated">血清蛋白</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">血浆蛋白</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.salt">
         <source>Salt</source>
         <note>Nutrition, salt</note>
-        <target xml:lang="zh-Hant" state="translated">鹽</target>
+        <target xml:lang="zh-HK" state="translated">鹽</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">盐</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.sodium">
         <source>Sodium</source>
-        <target xml:lang="zh-Hant" state="translated">鈉</target>
+        <target xml:lang="zh-HK" state="translated">鈉</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">钠</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins">
         <source>Vitamins</source>
-        <target xml:lang="zh-Hant" state="translated">維生素</target>
+        <target xml:lang="zh-HK" state="translated">維生素</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.a">
         <source>Vitamin A</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 A</target>
+        <target xml:lang="zh-HK" state="translated">維生素 A</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 A</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b1">
         <source>Vitamin B1</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 B1</target>
+        <target xml:lang="zh-HK" state="translated">維生素 B1</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 B1</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b2">
         <source>Vitamin B2</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 B2</target>
+        <target xml:lang="zh-HK" state="translated">維生素 B2</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 B2</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b6">
         <source>Vitamin B6</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 B6</target>
+        <target xml:lang="zh-HK" state="translated">維生素 B6</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 B6</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b9">
         <source>Vitamin B9</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 B9</target>
+        <target xml:lang="zh-HK" state="translated">維生素 B9</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 B9</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.b12">
         <source>Vitamin B12</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 B12</target>
+        <target xml:lang="zh-HK" state="translated">維生素 B12</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 B12</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.beta-carotene">
         <source>Beta carotene</source>
-        <target xml:lang="zh-Hant" state="translated">Β-胡蘿蔔素</target>
+        <target xml:lang="zh-HK" state="translated">Β-胡蘿蔔素</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">Β-胡萝卜素</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.biotin">
         <source>Biotin</source>
-        <target xml:lang="zh-Hant" state="translated">生物素</target>
+        <target xml:lang="zh-HK" state="translated">生物素</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.c">
         <source>Vitamin C</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 C</target>
+        <target xml:lang="zh-HK" state="translated">維生素 C</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 C</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.d">
         <source>Vitamin D</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 D</target>
+        <target xml:lang="zh-HK" state="translated">維生素 D</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 D</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.e">
         <source>Vitamin E</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 E</target>
+        <target xml:lang="zh-HK" state="translated">維生素 E</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 E</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.k">
         <source>Vitamin K</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 K</target>
+        <target xml:lang="zh-HK" state="translated">維生素 K</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 K</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.pantothenic-acid">
         <source>Pantothenic acid</source>
-        <target xml:lang="zh-Hant" state="translated">Pantothenic acid</target>
+        <target xml:lang="zh-HK" state="translated">泛酸</target>
       </trans-unit>
       <trans-unit id="nutrition.vitamins.pp">
         <source>Vitamin PP</source>
-        <target xml:lang="zh-Hant" state="translated">維生素 PP</target>
+        <target xml:lang="zh-HK" state="translated">維生素 PP</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">维生素 PP</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.subtitle">
         <source>Please try to take the picture again</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">請嘗試再次拍照</target>
+        <target xml:lang="zh-HK" state="translated">請嘗試再次拍照</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">请尝试再一次拍照</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">出現錯誤</target>
+        <target xml:lang="zh-HK" state="translated">出現錯誤</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">出错</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
         <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">圖片上傳成功</target>
+        <target xml:lang="zh-HK" state="translated">圖片上傳成功</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">图片上传成功</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.product-add-success-banner.title">
         <source>Product added successfully. Thank you!</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">已成功添加產品。謝謝！</target>
+        <target xml:lang="zh-HK" state="translated">已成功添加產品。謝謝！</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">产品添加成功，谢谢</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
         <source>Try again later</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">稍後再試</target>
+        <target xml:lang="zh-HK" state="translated">稍後再試</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">稍后再试</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
         <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">儲存檔案時發生錯誤</target>
+        <target xml:lang="zh-HK" state="translated">儲存檔案時發生錯誤</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">保存课程时出错</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.uploaded-image">
         <source>Image uploaded, thanks!</source>
-        <target xml:lang="zh-Hant" state="translated">圖片已上傳, 謝謝!</target>
+        <target xml:lang="zh-HK" state="translated">圖片已上傳, 謝謝!</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">图片已上传，谢谢！</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
         <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">正在上傳圖片…</target>
+        <target xml:lang="zh-HK" state="translated">正在上傳圖片…</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">正在上传图片...</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.edit-alert.subtitle">
         <source>Scroll down to the 'Save' button</source>
-        <target xml:lang="zh-Hant" state="translated">向下滾動到“保存”按鈕</target>
+        <target xml:lang="zh-HK" state="translated">向下滾動到“保存”按鈕</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">向下滚动到“保存”按钮</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.edit-alert.title">
         <source>Remember to save your changes</source>
-        <target xml:lang="zh-Hant" state="translated">請記住保存您的更改</target>
+        <target xml:lang="zh-HK" state="translated">請記住保存您的更改</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">您需要保存您的修改</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.header.add-new-picture">
         <source>Add a new picture</source>
-        <target xml:lang="zh-Hant" state="translated">新增圖片</target>
+        <target xml:lang="zh-HK" state="translated">新增圖片</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">添加图片</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.additives-list">
         <source>Additives</source>
-        <target xml:lang="zh-Hant" state="translated">添加劑</target>
+        <target xml:lang="zh-HK" state="translated">添加劑</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">添加</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.allergens-list">
         <source>Substances or products causing allergies or intolerances</source>
-        <target xml:lang="zh-Hant" state="translated">物品造成過敏</target>
+        <target xml:lang="zh-HK" state="translated">物品造成過敏</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">成分或产品可能导致过敏或不耐受</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.ingredients-list">
         <source>List of ingredients</source>
-        <target xml:lang="zh-Hant" state="translated">成分列表</target>
+        <target xml:lang="zh-HK" state="translated">成分列表</target>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.palm-oil-ingredients">
         <source>Ingredients from palm oil</source>
-        <target xml:lang="zh-Hant" state="translated">成分為棕櫚油</target>
+        <target xml:lang="zh-HK" state="translated">成分為棕櫚油</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">棕榈油成分</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.possible-palm-oil-ingredients">
         <source>Ingredients that may be from palm oil</source>
-        <target xml:lang="zh-Hant" state="translated">也許有棕櫚油成分</target>
+        <target xml:lang="zh-HK" state="translated">也許有棕櫚油成分</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">可能来自棕榈油成分</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.ingredients.traces-list">
         <source>Traces</source>
-        <target xml:lang="zh-Hant" state="translated">追蹤</target>
+        <target xml:lang="zh-HK" state="translated">追蹤</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">痕迹</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-100g">
         <source>For 100 g</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">每 100 公克</target>
+        <target xml:lang="zh-HK" state="translated">每 100 公克</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">每 100 g</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
         <source>Per serving</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">每份</target>
+        <target xml:lang="zh-HK" state="translated">每份</target>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.nutritional-table-header">
         <source>Nutrition facts</source>
-        <target xml:lang="zh-Hant" state="translated">營養成分</target>
+        <target xml:lang="zh-HK" state="translated">營養成分</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">营养成分</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.carbon-footprint">
         <source>Carbon footprint / CO2 emissions</source>
-        <target xml:lang="zh-Hant" state="translated">碳足跡 / CO2 排放量︰</target>
+        <target xml:lang="zh-HK" state="translated">碳足跡 / CO2 排放量︰</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">碳足迹 / CO2 排放</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.nutrition.serving-size">
         <source>Serving size</source>
-        <target xml:lang="zh-Hant" state="translated">份量</target>
+        <target xml:lang="zh-HK" state="translated">份量</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">分量</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
         <source>Ingredients</source>
         <note>Product detail, ingredients</note>
-        <target xml:lang="zh-Hant" state="translated">成分</target>
+        <target xml:lang="zh-HK" state="translated">成分</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
         <source>Nutrition</source>
         <note>Product detail, nutrition</note>
-        <target xml:lang="zh-Hant" state="translated">營養成分</target>
+        <target xml:lang="zh-HK" state="translated">營養成分</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">营养</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
         <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="zh-Hant" state="translated">營養成分表</target>
+        <target xml:lang="zh-HK" state="translated">營養成分表</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">营养表</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
         <source>Summary</source>
         <note>Product detail, summary</note>
-        <target xml:lang="zh-Hant" state="translated">總覽</target>
+        <target xml:lang="zh-HK" state="translated">總覽</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">摘要</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.barcode">
         <source>Barcode</source>
-        <target xml:lang="zh-Hant" state="translated">條碼</target>
+        <target xml:lang="zh-HK" state="translated">條碼</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">条形码</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.brands">
         <source>Brands</source>
-        <target xml:lang="zh-Hant" state="translated">品牌</target>
+        <target xml:lang="zh-HK" state="translated">品牌</target>
       </trans-unit>
       <trans-unit id="product-detail.summary.categories">
         <source>Categories</source>
-        <target xml:lang="zh-Hant" state="translated">類別</target>
+        <target xml:lang="zh-HK" state="translated">類別</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">类别</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.citiesTags">
         <source>City, state and country where purchased</source>
-        <target xml:lang="zh-Hant" state="translated">購的買城市, 州及城鎮</target>
+        <target xml:lang="zh-HK" state="translated">購的買城市, 州及城鎮</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">购买的城市、省份和国家</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.countries">
         <source>Countries where sold</source>
-        <target xml:lang="zh-Hant" state="translated">販售國</target>
+        <target xml:lang="zh-HK" state="translated">販售國</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">可出售的国家</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.labels">
         <source>Labels, certifications, awards</source>
-        <target xml:lang="zh-Hant" state="translated">標籤，認證，獎項</target>
+        <target xml:lang="zh-HK" state="translated">標籤，認證，獎項</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">标签，认证，奖励</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.manufacturing-places">
         <source>Manufacturing or processing places</source>
-        <target xml:lang="zh-Hant" state="translated">生產地點</target>
+        <target xml:lang="zh-HK" state="translated">生產地點</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">制造或者加工场所</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.origins">
         <source>Origin of ingredients</source>
-        <target xml:lang="zh-Hant" state="translated">配料來源</target>
+        <target xml:lang="zh-HK" state="translated">配料來源</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">成分来源</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.packaging">
         <source>Packaging</source>
-        <target xml:lang="zh-Hant" state="translated">包裝套件</target>
+        <target xml:lang="zh-HK" state="translated">包裝套件</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">包装</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.quantity">
         <source>Quantity</source>
-        <target xml:lang="zh-Hant" state="translated">數量</target>
+        <target xml:lang="zh-HK" state="translated">數量</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">数量</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.summary.stores">
         <source>Stores</source>
-        <target xml:lang="zh-Hant" state="translated">商店</target>
+        <target xml:lang="zh-HK" state="translated">商店</target>
       </trans-unit>
       <trans-unit id="product-scanner.barcode.error">
         <source>Error scanning barcode. Please try again in a few moments.</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">掃描條碼時出錯。請稍後再試。</target>
+        <target xml:lang="zh-HK" state="translated">掃描條碼時出錯。請稍後再試。</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">扫描条形码出错，请稍候再次尝试</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.overlay.extended-user-help">
         <source>Can't find a barcode.
 Center the barcode in the screen.
 Make sure the barcode is well lit.</source>
         <note>User help in the scan view</note>
-        <target xml:lang="zh-Hant" state="translated">找不到條碼。將條碼居中顯示在螢幕上。確保條碼的光照良好。</target>
+        <target xml:lang="zh-HK" state="translated">找不到條碼。將條碼居中顯示在螢幕上。確保條碼的光照良好。</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">找不到条形码
+在屏幕中央的条形码
+保持条形码光线充足</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.overlay.user-help">
         <source>Scan the barcode of the product</source>
         <note>User help in the scan view</note>
-        <target xml:lang="zh-Hant" state="translated">掃描產品的條碼</target>
+        <target xml:lang="zh-HK" state="translated">掃描產品的條碼</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">扫描条形码</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.action.title">
         <source>Leave barcode scanning</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">離開條碼掃描</target>
+        <target xml:lang="zh-HK" state="translated">離開條碼掃描</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">留下条形码</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.message">
         <source>Check in Privacy Settings if OpenFoodFacts has permission to use the camera</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">如果 OpenFoodFacts 有使用觀景窗的許可權, 請檢查隱私設置</target>
+        <target xml:lang="zh-HK" state="translated">如果 OpenFoodFacts 有使用觀景窗的許可權, 請檢查隱私設置</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">如果使用OpenFoodFacts，请检查隐私设置</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.failed.title">
         <source>Could not setup barcode scanning</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">無法設置條碼掃描</target>
+        <target xml:lang="zh-HK" state="translated">無法設置條碼掃描</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">无法启动扫描条形码</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.action.title">
         <source>Open Settings</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">打開設置</target>
+        <target xml:lang="zh-HK" state="translated">打開設置</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">打开设置</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.message">
         <source>Please grant permission to use the camera to be able to scan barcodes</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">請允許使用攝像頭掃描條碼</target>
+        <target xml:lang="zh-HK" state="translated">請允許使用攝像頭掃描條碼</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">请允许使用摄像头来扫描条形码</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.permissions.noPermissions.title">
         <source>OpenFoodFacts needs camera permissions</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">OpenFoodFacts需要相機權限</target>
+        <target xml:lang="zh-HK" state="translated">OpenFoodFacts需要相機權限</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">OpenFoodFacts需要相机权限</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-scanner.search.status">
         <source>Loading product...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">正在載入產品..。</target>
+        <target xml:lang="zh-HK" state="translated">正在載入產品..。</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">正在加载产品。。。</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-search.error-view.subtitle">
         <source>Please try again</source>
         <note>Error view subtitle</note>
-        <target xml:lang="zh-Hant" state="translated">請重試</target>
+        <target xml:lang="zh-HK" state="translated">請重試</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">请重试</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-search.error-view.title">
         <source>Something went wrong</source>
         <note>Error view title</note>
-        <target xml:lang="zh-Hant" state="translated">出現錯誤</target>
+        <target xml:lang="zh-HK" state="translated">出現錯誤</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">出错</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-search.initial-view.text">
         <source>Open Food Facts is an open database of food products with ingredients, allergens, nutrition facts and all the tidbits of information we can find on product labels.</source>
-        <target xml:lang="zh-Hant" state="translated">Open Food Facts 是一個食品的開發資料庫，它提供食品的營養成份、原料、配料、過敏原、…等資訊。這些資訊的來源全來自於產品本身的外包裝，</target>
+        <target xml:lang="zh-HK" state="translated">Open Food Facts 是一個食品的開發資料庫，它提供食品的營養成份、原料、配料、過敏原、…等資訊。這些資訊的來源全來自於產品本身的外包裝，</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">打开“Open Food Facts”是一个化妆品数据库，我们可以在产品标签上找到该商品的成分，过敏原等所有信息。</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-search.no-results">
         <source>No Results</source>
         <note>No products where found for current search</note>
-        <target xml:lang="zh-Hant" state="translated">沒有結果</target>
+        <target xml:lang="zh-HK" state="translated">沒有結果</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">没有结果</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-search.search-placeholder">
         <source>Search for a product by name or barcode</source>
         <note>Placeholder for the product search bar</note>
-        <target xml:lang="zh-Hant" state="translated">按名稱或條碼搜索產品</target>
+        <target xml:lang="zh-HK" state="translated">按名稱或條碼搜索產品</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">按名称或者条形码搜索产品</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product.images.front">
         <source>front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">前置</target>
+        <target xml:lang="zh-HK" state="translated">前置</target>
       </trans-unit>
       <trans-unit id="product.images.ingredients">
         <source>ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">成分</target>
+        <target xml:lang="zh-HK" state="translated">成分</target>
       </trans-unit>
       <trans-unit id="product.images.nutrition">
         <source>nutrition table</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">營養成分表</target>
+        <target xml:lang="zh-HK" state="translated">營養成分表</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">营养标签</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product.images.picture">
         <source>picture ✅</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">圖片✅</target>
+        <target xml:lang="zh-HK" state="translated">圖片✅</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">图片 ✅</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product.images.product">
         <source>Product's</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">產品</target>
+        <target xml:lang="zh-HK" state="translated">產品</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">产品</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product.images.take-picture">
         <source>Take a picture of the product's</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">拍下產品的照片</target>
+        <target xml:lang="zh-HK" state="translated">拍下產品的照片</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">拍摄产品照片</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="settings.credits.text">
         <source>"Barcode scan" button icon, "Settings" icon and "Flash" icon made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
 "Take picture" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)
 "Profile" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)</source>
-        <target xml:lang="zh-Hant" state="translated">"條碼掃描" 按鈕圖示, "設置" 圖示和 "Flash" 圖示由 Madebyoliver (HTTP://www.flaticon.com/authors/madebyoliver) 由 CC 3.0 授權 (HTTP://creativecommons.org/licenses/by/3.0/) "拍照" 圖示由 Picol (HTTP://www.flaticon.com/authors/picol) 由 cc 3.0 (HTTP://creativecommons.org/licenses/by/3.0/) "設定檔" 圖示由 Smashicons (HTTPs://www.flaticon.com/authors/smashicons) 授權, 由 cc 3.0 發牌 (HTTP://creativecommons.org/licenses//3.0/)</target>
+        <target xml:lang="zh-HK" state="translated">"條碼掃描" 按鈕圖示, "設置" 圖示和 "Flash" 圖示由 Madebyoliver (HTTP://www.flaticon.com/authors/madebyoliver) 由 CC 3.0 授權 (HTTP://creativecommons.org/licenses/by/3.0/) "拍照" 圖示由 Picol (HTTP://www.flaticon.com/authors/picol) 由 cc 3.0 (HTTP://creativecommons.org/licenses/by/3.0/) "設定檔" 圖示由 Smashicons (HTTPs://www.flaticon.com/authors/smashicons) 授權, 由 cc 3.0 發牌 (HTTP://creativecommons.org/licenses//3.0/)</target>
       </trans-unit>
       <trans-unit id="settings.credits.title">
         <source>Credits</source>
-        <target xml:lang="zh-Hant" state="translated">感謝</target>
+        <target xml:lang="zh-HK" state="translated">感謝</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">致谢</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="settings.information.discover">
         <source>Discover</source>
-        <target xml:lang="zh-Hant" state="translated">探索</target>
+        <target xml:lang="zh-HK" state="translated">探索</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">发现</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="settings.information.how-to-contribute">
         <source>How To Contribute</source>
-        <target xml:lang="zh-Hant" state="translated">如何貢獻</target>
+        <target xml:lang="zh-HK" state="translated">如何貢獻</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">如何参与</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="settings.scan-on-launch.title">
         <source>Show Scan On App Launch</source>
-        <target xml:lang="zh-Hant" state="translated">在應用程式啟動時顯示掃描</target>
+        <target xml:lang="zh-HK" state="translated">在應用程式啟動時顯示掃描</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">在应用程序启动时显示扫描</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="settings.sections.information">
         <source>Information</source>
-        <target xml:lang="zh-Hant" state="translated">資訊</target>
+        <target xml:lang="zh-HK" state="translated">資訊</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">信息</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="settings.tab-bar.item">
         <source>Settings</source>
-        <target xml:lang="zh-Hant" state="translated">設定</target>
+        <target xml:lang="zh-HK" state="translated">設定</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">设置</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.generic-error.subtitle">
         <source>Please try again in a few moments</source>
-        <target xml:lang="zh-Hant" state="translated">請稍後再試。</target>
+        <target xml:lang="zh-HK" state="translated">請稍後再試。</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">请稍后再试</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.generic-error.title">
         <source>There was an error logging in</source>
-        <target xml:lang="zh-Hant" state="translated">登入時出錯。</target>
+        <target xml:lang="zh-HK" state="translated">登入時出錯。</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">登陆时出错</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
         <source>Password is required</source>
-        <target xml:lang="zh-Hant" state="translated">需要密碼</target>
+        <target xml:lang="zh-HK" state="translated">需要密碼</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">需要密码</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
         <source>Username is required</source>
-        <target xml:lang="zh-Hant" state="translated">需要用戶名。</target>
+        <target xml:lang="zh-HK" state="translated">需要用戶名。</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">用户名必填</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.wrong-credentials.subtitle">
         <source>Check your username and password are correct</source>
-        <target xml:lang="zh-Hant" state="translated">請檢查您的用戶名和密碼</target>
+        <target xml:lang="zh-HK" state="translated">請檢查您的用戶名和密碼</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">请检查您的用户名和密码</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.wrong-credentials.title">
         <source>Unable to log in</source>
-        <target xml:lang="zh-Hant" state="translated">登入失敗</target>
+        <target xml:lang="zh-HK" state="translated">登入失敗</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">登陆失败</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.check-your-contributions.button">
         <source>Check Your Contributions</source>
-        <target xml:lang="zh-Hant" state="translated">檢查你的貢獻</target>
+        <target xml:lang="zh-HK" state="translated">檢查你的貢獻</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">检查您的贡献</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.create-account.button">
         <source>Create An Account</source>
-        <target xml:lang="zh-Hant" state="translated">建立一個新帳號</target>
+        <target xml:lang="zh-HK" state="translated">建立一個新帳號</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">创建新的账户</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.create-account.text">
         <source>If you don't have an account, click the link bellow to create one.</source>
-        <target xml:lang="zh-Hant" state="translated">如果您沒有帳戶，請點擊下面的鏈接創建一個帳戶。</target>
+        <target xml:lang="zh-HK" state="translated">如果您沒有帳戶，請點擊下面的鏈接創建一個帳戶。</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">如果您没有账户，请点击下面的链接创建一个新的账户</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.log-in">
         <source>Log In</source>
-        <target xml:lang="zh-Hant" state="translated">登錄</target>
+        <target xml:lang="zh-HK" state="translated">登錄</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">登陆</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.log-out">
         <source>Log Out</source>
-        <target xml:lang="zh-Hant" state="translated">登出</target>
+        <target xml:lang="zh-HK" state="translated">登出</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">推出</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.password">
         <source>Password</source>
-        <target xml:lang="zh-Hant" state="translated">密碼</target>
+        <target xml:lang="zh-HK" state="translated">密碼</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">密码</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.tab-bar.item">
         <source>User</source>
-        <target xml:lang="zh-Hant" state="translated">使用者</target>
+        <target xml:lang="zh-HK" state="translated">使用者</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">用户</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.username">
         <source>Username</source>
-        <target xml:lang="zh-Hant" state="translated">用戶名</target>
+        <target xml:lang="zh-HK" state="translated">用戶名</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">用户名</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.why-log-in.text">
         <source>Login in with your account will associate all your contributions to your account.</source>
-        <target xml:lang="zh-Hant" state="translated">使用您的帳戶登錄會將您的所有捐款與您的帳戶相關聯。</target>
+        <target xml:lang="zh-HK" state="translated">使用您的帳戶登錄會將您的所有捐款與您的帳戶相關聯。</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">在账户中登录会将所有的贡献与您的账户相关联起来</target>
+        </alt-trans>
       </trans-unit>
     </body>
   </file>
-  <file original="OpenFoodFactsTests/Localizable.strings" source-language="en" datatype="plaintext" target-language="zh-Hant">
+  <file original="OpenFoodFactsTests/Localizable.strings" source-language="en" datatype="plaintext" target-language="zh-HK">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
@@ -694,82 +1068,127 @@ Make sure the barcode is well lit.</source>
       <trans-unit id="alert.action.ok">
         <source>Ok</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">確定</target>
+        <target xml:lang="zh-HK" state="translated">確定</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">确认</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="call-to-action.ingredients">
         <source>Take a picture of the ingredients</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">拍攝成分的照片</target>
+        <target xml:lang="zh-HK" state="translated">拍攝成分的照片</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">拍摄配料照片</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="call-to-action.nutrition">
         <source>Take a picture of the nutrition facts</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">拍攝營養成分的照片</target>
+        <target xml:lang="zh-HK" state="translated">拍攝營養成分的照片</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">行動營養</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="call-to-action.summary">
         <source>Take a picture of the front</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">拍攝正面的照片</target>
+        <target xml:lang="zh-HK" state="translated">拍攝正面的照片</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">拍摄正面照片</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-error-banner.title">
         <source>Something went wrong</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">出現錯誤</target>
+        <target xml:lang="zh-HK" state="translated">出現錯誤</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">出错</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.image-upload-success-banner.title">
         <source>Image was uploaded successfully</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">圖片上傳成功</target>
+        <target xml:lang="zh-HK" state="translated">圖片上傳成功</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">图片上传成功</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.save-error.message">
         <source>Try again later</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">稍後再試</target>
+        <target xml:lang="zh-HK" state="translated">稍後再試</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">稍后再试</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.save-error.title">
         <source>Error while saving product</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">儲存檔案時發生錯誤</target>
+        <target xml:lang="zh-HK" state="translated">儲存檔案時發生錯誤</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">保存课程时出错</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-add.uploading-image-banner.title">
         <source>Uploading image...</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">正在上傳圖片…</target>
+        <target xml:lang="zh-HK" state="translated">正在上傳圖片…</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">正在上传图片...</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.nutrition-table.for-serving">
         <source>Per serving</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">每份</target>
+        <target xml:lang="zh-HK" state="translated">每份</target>
       </trans-unit>
       <trans-unit id="product-detail.page-title.ingredients">
         <source>Ingredients</source>
         <note>Product detail, ingredients</note>
-        <target xml:lang="zh-Hant" state="translated">成分</target>
+        <target xml:lang="zh-HK" state="translated">成分</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">配料</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition">
         <source>Nutrition</source>
         <note>Product detail, nutrition</note>
-        <target xml:lang="zh-Hant" state="translated">營養成分</target>
+        <target xml:lang="zh-HK" state="translated">營養成分</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">营养</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.nutrition-table">
         <source>Nutrition table</source>
         <note>Product detail, nutrition table</note>
-        <target xml:lang="zh-Hant" state="translated">營養成分表</target>
+        <target xml:lang="zh-HK" state="translated">營養成分表</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">营养表</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="product-detail.page-title.summary">
         <source>Summary</source>
         <note>Product detail, summary</note>
-        <target xml:lang="zh-Hant" state="translated">總覽</target>
+        <target xml:lang="zh-HK" state="translated">總覽</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">概要</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.password-missing">
         <source>Password is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">需要密碼</target>
+        <target xml:lang="zh-HK" state="translated">需要密碼</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">需要密码</target>
+        </alt-trans>
       </trans-unit>
       <trans-unit id="user.alert.username-missing">
         <source>Username is required</source>
         <note>No comment provided by engineer.</note>
-        <target xml:lang="zh-Hant" state="translated">需要用戶名。</target>
+        <target xml:lang="zh-HK" state="translated">需要用戶名。</target>
+        <alt-trans>
+          <target xml:lang="zh-HK">用户名必填</target>
+        </alt-trans>
       </trans-unit>
     </body>
   </file>
