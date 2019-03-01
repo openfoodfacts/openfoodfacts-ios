@@ -44,6 +44,10 @@ class RootViewController: UIViewController {
         transition(to: tabBarVC) { _ in
             let count = dataManager.getItemsPendingUpload().count
             NotificationCenter.default.post(name: .pendingUploadBadgeChange, object: nil, userInfo: [NotificationUserInfoKey.pendingUploadItemCount: count])
+            //to check for scanner state
+            if UserDefaults.standard.bool(forKey: UserDefaultsConstants.scanningOnLaunch) == true {
+                self.showScan()
+            }
         }
     }
 

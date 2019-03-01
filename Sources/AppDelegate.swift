@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         ShortcutParser.shared.registerShortcuts()
-
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
