@@ -13,11 +13,11 @@
 "generic.back" = "Terug";
 "generic.search" = "Zoeken";
 "generic.cancel" = "Cancel";
-"generic.save" = "Bewaar";
+"generic.save" = "Opslaan";
 
 // Product Search
 
-"product-search.title" = "Zoek";
+"product-search.title" = "Zoeken";
 "product-search.search-placeholder" = "Zoek naar een product op naam of streepjescode";
 "product-search.no-results" = "Geen Resultaten";
 "product-search.error-view.title" = "Er ging iets mis";
@@ -90,12 +90,12 @@
 "product-add.placeholder.quantity" = "Quantity value";
 
 "product-add.title" = "New product";
-"product-add.titles.barcode" = "Streepjescode";
+"product-add.titles.barcode" = "Barcode";
 "product-add.titles.top-explainations" = "This product is not yet in the Open Food Facts database. Could you please take some pictures of the product, barcode, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
-"product-add.titles.license-explaination" = "NB: de foto's die u upload, worden gepubliceerd onder de vrije licentie Creative Commons Attribution and ShareAlike.";
+"product-add.titles.license-explaination" = "NB: de foto's die je upload, worden gepubliceerd onder de vrije licentie Creative Commons Attribution and ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
-"product-add.label.product-name" = "Naam:";
+"product-add.label.product-name" = "Naam";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Hoeveelheid";
 "product-add.details.category" = "Needed for Nutri-Score computation";
@@ -129,6 +129,7 @@
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Voeg een nieuwe foto toe";
+"product-detail.edit" = "Edit this product";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "Vergeet niet om uw wijzigingen op te slaan";
 /* Keep this text as short as possible */
@@ -139,9 +140,10 @@
 "product-detail.page-title.ingredients" = "Ingrediënten";
 "product-detail.page-title.nutrition" = "Voedingswaarde";
 "product-detail.page-title.nutrition-table" = "Voedingstabel";
+"product-detail.page-title.environment-impact" = "Carbon footprint";
 
 // Product detail summary info rows labels
-"product-detail.summary.barcode" = "Streepjescode";
+"product-detail.summary.barcode" = "Barcode";
 "product-detail.summary.quantity" = "Hoeveelheid";
 "product-detail.summary.packaging" = "Verpakking";
 "product-detail.summary.brands" = "Merken";
@@ -170,8 +172,10 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Voedigswaarden";
-"product-detail.nutrition-table.for-100g" = "Per 100g";
+"product-detail.nutrition-table.for-100g" = "Per 100 g";
 "product-detail.nutrition-table.for-serving" = "Per portie";
+"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
 "nutrition-level.low" = "kleine hoeveelheid";
@@ -179,25 +183,25 @@
 "nutrition-level.high" = "grote hoeveelheid";
 
 // Nutrition
-"nutrition.energy" = "Energie";
+"nutrition.energy" = "Calories";
 "nutrition.fats" = "Vetten";
 "nutrition.fats.saturated-fat" = "Verzadigd vet";
-"nutrition.fats.mono-unsaturated-fat" = "Enkelvoudige onverzadigde vetzuren";
-"nutrition.fats.poly-unsaturated-fat" = "Meervoudig onvervaardigde vetzuren";
+"nutrition.fats.mono-unsaturated-fat" = "Monounsaturated fat";
+"nutrition.fats.poly-unsaturated-fat" = "Polyunsaturated fat";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
 "nutrition.fats.trans-fat" = "Transvet";
 "nutrition.fats.cholesterol" = "Cholesterol";
 "nutrition.carbohydrate" = "Koolhydraten";
-"nutrition.carbohydrate.sugars" = "Suikers";
+"nutrition.carbohydrate.sugars" = "Sugar";
 "nutrition.carbohydrate.sucrose" = "Sucrose";
 "nutrition.carbohydrate.glucose" = "Glucose";
 "nutrition.carbohydrate.fructose" = "Fructose";
 "nutrition.carbohydrate.lactose" = "Lactose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrine";
-"nutrition.fiber" = "Voedingsvezels";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Eiwitten";
 "nutrition.proteins.casein" = "Caseïne";
 "nutrition.proteins.serum-proteins" = "Serumproteïnen";
@@ -205,7 +209,7 @@
 "nutrition.salt" = "Zout";
 "nutrition.sodium" = "Natrium";
 "nutrition.alcohol" = "Alcohol";
-"nutrition.vitamins" = "Vitaminen";
+"nutrition.vitamins" = "Vitamins and Minerals";
 "nutrition.vitamins.a" = "Vitamine A";
 "nutrition.vitamins.beta-carotene" = "Beta caroteen";
 "nutrition.vitamins.d" = "Vitamine D";
@@ -214,12 +218,12 @@
 "nutrition.vitamins.c" = "Vitamine C";
 "nutrition.vitamins.b1" = "Vitamine B1";
 "nutrition.vitamins.b2" = "Vitamine B2";
-"nutrition.vitamins.pp" = "Vitamine PP";
+"nutrition.vitamins.pp" = "Vitamin B3";
 "nutrition.vitamins.b6" = "Vitamine B6";
 "nutrition.vitamins.b9" = "Vitamine B6";
 "nutrition.vitamins.b12" = "Vitamine B12";
-"nutrition.vitamins.biotin" = "Biotine";
-"nutrition.vitamins.pantothenic-acid" = "Pantotheenzuur";
+"nutrition.vitamins.biotin" = "Vitamin B7";
+"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
 "nutrition.minerals" = "Mineralen";
 "nutrition.minerals.silica" = "Silicium";
 "nutrition.minerals.bicarbonate" = "Carbonaten";
@@ -241,14 +245,14 @@
 "nutrition.minerals.taurine" = "Taurine";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Fruit, groente, noten";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Collageen vleesproteïne verhouding";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen/Meat Protein Ratio";
 "nutrition.minerals.cocoa" = "Cacao";
-"nutrition.minerals.chlorophyl" = "Chlorofyl";
+"nutrition.minerals.chlorophyl" = "Chlorophyll";
 
 // Call to action
 "call-to-action.summary" = "Maak een foto van de voorkant";
 "call-to-action.ingredients" = "Maak een foto van de ingrediënten";
-"call-to-action.nutrition" = "Maak een foto van de voedingstabel";
+"call-to-action.nutrition" = "Neem een foto van de voedingstabel";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
