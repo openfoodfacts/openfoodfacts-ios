@@ -180,7 +180,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         if dataManager.listAllergies().isEmpty == false {
             if product.states?.contains("en:ingredients-to-be-completed") == true {
                 if product.allergens == nil || product.allergens?.isEmpty == true {
-                    createFormRow(with: &rows, item: "product-detail.ingredients.allergens-list.missing-infos".localized, label: "⚠️")
+                    createFormRow(with: &rows, item: "⚠️ " + "product-detail.ingredients.allergens-list.missing-infos".localized, label: InfoRowKey.allergens.localizedString)
                 }
             }
         }
