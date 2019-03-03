@@ -66,7 +66,7 @@ struct Product: Mappable {
     var states: [String]?
     var environmentInfoCard: String?
     var environmentImpactLevelTags: [EnvironmentImpact]?
-    //
+    // new variables for local languages
     var languageCodes: [String:Int]?
     var names: [String:String] = [:]
     var genericNames: [String:String] = [:]

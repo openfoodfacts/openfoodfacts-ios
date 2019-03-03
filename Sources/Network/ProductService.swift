@@ -118,6 +118,7 @@ class ProductService: ProductApi {
         Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
 
         /* aleene: disabled to get all fields, not only those specified
+         // we cannot use the summary or the list as the tags are product and language dependent.
         if isSummary {
             // When we ask for a summary of the product, we specify to the server which fields we want (to make a smaller request). We would prefere to use the 'Parameter' normally used by Alamofire in this case, but this generates an url like
             // {{host}}/product.json?fields=product_name%2Cbrands
