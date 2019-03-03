@@ -43,6 +43,7 @@ struct OFFJson {
     static let AdditivesPrevNKey = "additives_prev_n"
     static let KeywordsKey = "_keywords"
     static let RevKey = "rev"
+                            static let LanguageCodes = "languages_codes"
     static let EditorsKey = "editors"
     static let InterfaceVersionCreatedKey = "interface_version_created"
     static let EmbCodesKey = "emb_codes"

@@ -29,7 +29,8 @@ enum EnvironmentImpact: String {
 }
 
 struct Product: Mappable {
-    var name: String?
+    // var name: String?
+    private var nameDecoded: String?
     var brands: [String]?
     private var _quantity: String?
     var imageUrl: String?
@@ -50,7 +51,6 @@ struct Product: Mappable {
     var stores: [String]?
     var countries: [String]?
     var ingredientsImageUrl: String?
-    var ingredientsList: String?
     var allergens: [Tag]?
     var traces: String?
     var additives: [Tag]?
@@ -66,7 +66,21 @@ struct Product: Mappable {
     var states: [String]?
     var environmentInfoCard: String?
     var environmentImpactLevelTags: [EnvironmentImpact]?
+    //
+    var languageCodes: [String:Int]?
+    var names: [String:String] = [:]
+    var genericNames: [String:String] = [:]
+    var ingredients: [String:String] = [:]
+    var ingredientsListDecoded: String?
 
+    
+    private struct KeyPreFix {
+        static let ProductName = "product_name_"
+        static let GenericName = "generic_name_"
+        static let IngredientsText = "ingredients_text_"
+        static let IngredientsTextWithAllergens = "ingredients_text_with_allergens_"
+    }
+    
     // These are not in any json response, but we will use them internally for all products we create as they are easier to work with
     var quantity: String? {
         get {
@@ -85,11 +99,39 @@ struct Product: Mappable {
     var quantityValue: String?
     var quantityUnit: String?
 
+    var ingredientsList: String? {
+        get {
+            if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
+                return ingredients[validCode]
+            } else {
+                return ingredientsListDecoded
+            }
+        }
+        set {
+            ingredientsListDecoded = newValue
+        }
+    }
+
+    var name: String? {
+        get {
+            if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
+                return names[validCode]
+            } else {
+                return nameDecoded
+            }
+        }
+        set {
+            nameDecoded = newValue
+        }
+    }
+    
+
     init() {}
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
-        name <- map[OFFJson.ProductNameKey]
+        languageCodes <- map[OFFJson.LanguageCodes]
+        nameDecoded <- map[OFFJson.ProductNameKey]
         brands <- (map[OFFJson.BrandsKey], ArrayTransform())
         _quantity <- map[OFFJson.QuantityKey]
         frontImageUrl <- map[OFFJson.ImageFrontUrlKey]
@@ -110,7 +152,7 @@ struct Product: Mappable {
         stores <- (map[OFFJson.StoresKey], ArrayTransform())
         countries <- (map[OFFJson.CountriesKey], ArrayTransform())
         ingredientsImageUrl <- map[OFFJson.ImageIngredientsUrlKey]
-        ingredientsList <- map[OFFJson.IngredientsKey]
+        ingredientsListDecoded <- map[OFFJson.IngredientsKey]
         allergens <- (map[OFFJson.AllergensTagsKey], TagTransform())
         traces <- map[OFFJson.TracesKey]
         additives <- (map[OFFJson.AdditivesTagsKey], TagTransform())
@@ -126,5 +168,46 @@ struct Product: Mappable {
         lang <- map[OFFJson.LangKey]
         environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
+        
+        // try to extract all language specific fields
+        
+        guard let validLanguageCodes = languageCodes else { return }
+        for (languageCode,_) in validLanguageCodes {
+            
+            names[languageCode] <- map[KeyPreFix.ProductName + languageCode]
+            genericNames[languageCode] <- map[KeyPreFix.GenericName + languageCode]
+            ingredients[languageCode] <- map[KeyPreFix.IngredientsText + languageCode]
+        }
     }
+    
+    func matchedLanguageCode(codes:[String]) -> String? {
+        guard let validLanguageCodes = languageCodes else { return nil }
+        for code in codes {
+            if validLanguageCodes[code] != nil {
+                return code
+            }
+        }
+        return lang
+    }
+
+}
+
+extension Locale {
+    
+    static var interfaceLanguageCode: String {
+        return Locale.preferredLanguages[0].split(separator:"-").map(String.init)[0]
+    }
+    
+    static var countryCode: String {
+        return Locale.current.identifier.split(separator:"_").map(String.init)[1]
+    }
+    
+    static var preferredLanguageCodes: [String] {
+        return Locale.preferredLanguages[0].split(separator:"-").map(String.init)
+    }
+    
+    static var preferredLanguageCode: String {
+        return Locale.preferredLanguageCodes[0]
+    }
+    
 }
