@@ -28,6 +28,51 @@ enum EnvironmentImpact: String {
     }
 }
 
+enum ImageTypeCategory {
+    case front
+    case ingredients
+    case nutrition
+    case general
+
+    // These decriptions are used in the deselect/update API's to OFF
+    var description: String {
+        switch self {
+        case .front:
+            return "front"
+        case .ingredients:
+            return "ingredients"
+        case .nutrition:
+            return "nutrition"
+        case .general:
+            return "general"
+        }
+    }
+
+    static var list: [ImageTypeCategory] {
+        return [.front, .ingredients, .nutrition]
+    }
+}
+
+enum ImageSizeCategory {
+    case thumb
+    case small
+    case display
+    case unknown
+    
+    var description: String {
+        switch self {
+        case .thumb:
+            return "thumb"
+        case .small:
+            return "small"
+        case .display:
+            return "display"
+        case .unknown:
+            return "unknown"
+        }
+    }
+}
+
 struct Product: Mappable {
     // var name: String?
     private var nameDecoded: String?
@@ -35,8 +80,8 @@ struct Product: Mappable {
     private var _quantity: String?
     var imageUrl: String?
     var imageSmallUrl: String?
-    var frontImageUrl: String?
-    var frontImageSmallUrl: String?
+    private var frontImageUrlDecoded: String?
+    private var frontImageSmallUrlDecoded: String?
     var barcode: String?
     var packaging: [String]?
     var categories: [String]?
@@ -50,7 +95,7 @@ struct Product: Mappable {
     var embCodesTags: [String]?
     var stores: [String]?
     var countries: [String]?
-    var ingredientsImageUrl: String?
+    private var ingredientsImageUrlDecoded: String?
     var allergens: [Tag]?
     var traces: String?
     var additives: [Tag]?
@@ -61,18 +106,20 @@ struct Product: Mappable {
     var nutritionDataPer: NutritionDataPer?
     var noNutritionData: String?
     var nutriments: Nutriments?
-    var nutritionTableImage: String?
+    private var nutritionTableImageDecoded: String?
     var lang: String?
     var states: [String]?
     var environmentInfoCard: String?
     var environmentImpactLevelTags: [EnvironmentImpact]?
     // new variables for local languages
-    var languageCodes: [String:Int]?
+    var languageCodes: [String : Int]?
     var names: [String:String] = [:]
     var genericNames: [String:String] = [:]
     var ingredients: [String:String] = [:]
     var ingredientsListDecoded: String?
-
+    
+    private var selectedImages: [String:Any] = [:]
+    private var images: [ImageTypeCategory:[ImageSizeCategory:[String:String]]] = [:]
     
     private struct KeyPreFix {
         static let ProductName = "product_name_"
@@ -125,7 +172,59 @@ struct Product: Mappable {
         }
     }
     
+    var frontImageUrl: String? {
+        if let frontImages = images[.front] {
+            if let displayFrontImages = frontImages[.display] {
+                if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
+                    if let validImageURLString = displayFrontImages[validCode] {
+                        return validImageURLString
+                    }
+                }
+            }
+        }
+        return frontImageUrlDecoded
+    }
 
+    var frontImageSmallUrl: String? {
+        if let frontImages = images[.front] {
+            if let displayFrontImages = frontImages[.small] {
+                if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
+                    if let validImageURLString = displayFrontImages[validCode] {
+                        return validImageURLString
+                    }
+                }
+            }
+        }
+        return frontImageSmallUrlDecoded
+    }
+
+    var ingredientsImageUrl: String? {
+        if let ingredientsImages = images[.ingredients] {
+            if let displayIngredientsImages = ingredientsImages[.display] {
+                if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
+                    if let validImageURLString = displayIngredientsImages[validCode] {
+                        return validImageURLString
+                    }
+                }
+            }
+        }
+        return ingredientsImageUrlDecoded
+    }
+
+    var nutritionTableImage: String? {
+        if let nutritionImages = images[.nutrition] {
+            if let displayNutritionImages = nutritionImages[.display] {
+                if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
+                    if let validImageURLString = displayNutritionImages[validCode] {
+                        return validImageURLString
+                    }
+                }
+            }
+        }
+        return nutritionTableImageDecoded
+    }
+
+    
     init() {}
     init?(map: Map) {}
 
@@ -134,8 +233,8 @@ struct Product: Mappable {
         nameDecoded <- map[OFFJson.ProductNameKey]
         brands <- (map[OFFJson.BrandsKey], ArrayTransform())
         _quantity <- map[OFFJson.QuantityKey]
-        frontImageUrl <- map[OFFJson.ImageFrontUrlKey]
-        frontImageSmallUrl <- map[OFFJson.ImageFrontSmallUrlKey]
+        frontImageUrlDecoded <- map[OFFJson.ImageFrontUrlKey]
+        frontImageSmallUrlDecoded <- map[OFFJson.ImageFrontSmallUrlKey]
         imageUrl <- map[OFFJson.ImageUrlKey]
         imageSmallUrl <- map[OFFJson.ImageSmallUrlKey]
         barcode <- map[OFFJson.CodeKey]
@@ -151,7 +250,7 @@ struct Product: Mappable {
         embCodesTags <- map[OFFJson.EmbCodesTagsKey]
         stores <- (map[OFFJson.StoresKey], ArrayTransform())
         countries <- (map[OFFJson.CountriesKey], ArrayTransform())
-        ingredientsImageUrl <- map[OFFJson.ImageIngredientsUrlKey]
+        ingredientsImageUrlDecoded <- map[OFFJson.ImageIngredientsUrlKey]
         ingredientsListDecoded <- map[OFFJson.IngredientsKey]
         allergens <- (map[OFFJson.AllergensTagsKey], TagTransform())
         traces <- map[OFFJson.TracesKey]
@@ -163,22 +262,28 @@ struct Product: Mappable {
         nutritionLevels <- map[OFFJson.NutrientLevelsKey]
         nutriments <- map[OFFJson.NutrimentsKey]
         nutritionDataPer <- map[OFFJson.NutritionDataPerKey]
-        nutritionTableImage <- map[OFFJson.ImageNutritionUrlKey]
+        nutritionTableImageDecoded <- map[OFFJson.ImageNutritionUrlKey]
         states <- (map[OFFJson.StatesKey], ArrayTransform())
         lang <- map[OFFJson.LangKey]
         environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
-        
+
+        selectedImages <- map[OFFJson.SelectedImages]
+
         // try to extract all language specific fields
-        
+
         guard let validLanguageCodes = languageCodes else { return }
+
         for (languageCode,_) in validLanguageCodes {
-            
+
             names[languageCode] <- map[KeyPreFix.ProductName + languageCode]
             genericNames[languageCode] <- map[KeyPreFix.GenericName + languageCode]
             ingredients[languageCode] <- map[KeyPreFix.IngredientsText + languageCode]
         }
-    }
+        
+        decodeImages(selectedImages)
+
+        }
     
     func matchedLanguageCode(codes:[String]) -> String? {
         guard let validLanguageCodes = languageCodes else { return nil }
@@ -190,24 +295,75 @@ struct Product: Mappable {
         return lang
     }
 
+    private mutating func decodeImages(_ selectedImages: [String:Any]) {
+        for imageTypes in selectedImages {
+            if let validImages = decodeTypes(imageTypes.key, value: imageTypes.value, for: .front) {
+                images[.front] = [validImages.0: validImages.1]
+            }
+            if let validImages = decodeTypes(imageTypes.key, value: imageTypes.value, for: .ingredients) {
+                images[.ingredients] = [validImages.0: validImages.1]
+            }
+            if let validImages = decodeTypes(imageTypes.key, value: imageTypes.value, for: .nutrition) {
+                images[.nutrition] = [validImages.0: validImages.1]
+            }
+        }
+    }
+
+    private func decodeTypes(_ key: String, value: Any, for sizeCategory: ImageTypeCategory) -> (ImageSizeCategory, [String:String])? {
+        var imageSizes: (ImageSizeCategory, [String:String])? = nil
+        if key == sizeCategory.description {
+            if let imageTypesSizes = value as? [String:Any] {
+                for imageTypeSize in imageTypesSizes {
+                    var image = decodeTypeSizes(imageTypeSize.key, value: imageTypeSize.value, for: .display)
+                    if let validImage = image {
+                        imageSizes = (.display, [validImage.0:validImage.1])
+                    }
+                    image = decodeTypeSizes(imageTypeSize.key, value: imageTypeSize.value, for: .small)
+                    if let validImage = image {
+                        imageSizes = (.small, [validImage.0:validImage.1])
+                    }
+
+                    image = decodeTypeSizes(imageTypeSize.key, value: imageTypeSize.value, for: .thumb)
+                    if let validImage = image {
+                        imageSizes = (.thumb, [validImage.0:validImage.1])
+                    }
+
+                }
+            }
+        }
+        return imageSizes
+    }
+
+    private func decodeTypeSizes(_ key: String, value: Any, for sizeCategory: ImageSizeCategory) -> (String, String)? {
+        var image: (String,String)? = nil
+        if key == sizeCategory.description {
+            if let imageTypeSizeSet = value as? [String:String] {
+                for languageImage in imageTypeSizeSet {
+                    image = (languageImage.key, languageImage.value)
+                }
+            }
+        }
+        return image
+    }
+
 }
 
 extension Locale {
-    
-    static var interfaceLanguageCode: String {
+
+    static var interfaceLanguageCode:String {
         return Locale.preferredLanguages[0].split(separator:"-").map(String.init)[0]
     }
-    
-    static var countryCode: String {
+
+    static var countryCode:String {
         return Locale.current.identifier.split(separator:"_").map(String.init)[1]
     }
-    
-    static var preferredLanguageCodes: [String] {
+
+    static var preferredLanguageCodes:[String] {
         return Locale.preferredLanguages[0].split(separator:"-").map(String.init)
     }
-    
+
     static var preferredLanguageCode: String {
         return Locale.preferredLanguageCodes[0]
     }
-    
+
 }

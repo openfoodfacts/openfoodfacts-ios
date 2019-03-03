@@ -274,6 +274,8 @@ struct OFFJson {
     static let IngredientsIdsDebugKey = "ingredients_ids_debug"
     static let EnvironmentInfoCardKey = "environment_infocard"
     static let EnvironmentImpactLevelTagsKey = "environment_impact_level_tags"
-
+    // to read images in the various languages
+    static let SelectedImages = "selected_images"
+    
     // swiftlint:enable identifier_name
 }
