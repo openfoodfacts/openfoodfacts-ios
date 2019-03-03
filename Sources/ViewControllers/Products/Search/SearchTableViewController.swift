@@ -155,14 +155,19 @@ extension SearchTableViewController {
 extension SearchTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         queryRequestWorkItem?.cancel()
-        if let query = searchController.searchBar.text, !query.isEmpty, wasSearchBarEdited {
-            state = .loading
-            let request = DispatchWorkItem { [weak self] in
-                self?.getProducts(page: 1, withQuery: query)
+        if let query = searchController.searchBar.text {
+            if !query.isEmpty {
+                if wasSearchBarEdited {
+                    state = .loading
+                    
+                    let request = DispatchWorkItem { [weak self] in
+                        self?.getProducts(page: 1, withQuery: query)
+                    }
+                    queryRequestWorkItem = request
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250), execute: request)
+                    wasSearchBarEdited = false
+                }
             }
-            queryRequestWorkItem = request
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250), execute: request)
-            wasSearchBarEdited = false
         }
     }
 }
