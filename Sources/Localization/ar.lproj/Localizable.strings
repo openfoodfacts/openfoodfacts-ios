@@ -1,1 +1,327 @@
-/* No Localized Strings */
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Scan barcode";
+
+// Generic strings that could be useful anywhere.
+"generic.back" = "عودة";
+"generic.search" = "بحث";
+"generic.cancel" = "Cancel";
+"generic.save" = "حفظ";
+"generic.cancel" = "Cancel";
+"generic.ok" = "تم";
+
+// Product Search
+
+"product-search.title" = "بحث";
+"product-search.search-placeholder" = "Search by name or barcode";
+"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
+"product-search.error-view.title" = "حدث خطأ ما";
+"product-search.error-view.subtitle" = "من فضلك حاول مرة أخرى";
+"product-search.initial-view.slogan" = "the free food products database";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "مسح باركود المنتج";
+"product-scanner.overlay.extended-user-help" = "لا يمكن العثور على الباركود.\nتوسيط الباركود في الشاشة.\nتأكد من إضاءة الباركود جيدًا.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "خطأ في مسح الباركود. لحظات و اعد المحاولة مرة أخرى.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
+"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+
+"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
+"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "اترك مسح الباركود";
+
+"product-scanner.search.status" = "Loading product…";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "Uploading image…";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "حدث خطأ ما";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "يرجى محاولة التقاط الصورة مرة أخرى";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "تم تحميل الصورة بنجاح";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "تمت إضافة المنتج بنجاح. شكراً!";
+"product-add.uploaded-image" = "تم تحميل الصورة ، شكرًا!";
+"product-add.save-error.title" = "خطأ أثناء حفظ المنتج";
+"product-add.save-error.message" = "Please try again later";
+"product-add.save-info.success" = "Information saved at";
+"product-add.save-info.error" = "Information not saved";
+"product-add.save-info.saving" = "Saving product information…";
+"product-add.save-info.not-yet" = "Information not saved yet";
+"product-add.save-ingredients.success" = "Ingredients saved at";
+"product-add.save-ingredients.error" = "Ingredients not saved";
+"product-add.save-ingredients.saving" = "Saving ingredients…";
+"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
+"product-add.save-nutriments.success" = "Nutriments saved at";
+"product-add.save-nutriments.error" = "Nutriments not saved";
+"product-add.save-nutriments.saving" = "Saving nutriments...";
+"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
+"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+
+"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
+"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
+"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
+"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+
+"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
+"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+
+"alert.action.ok" = "تم";
+"product-add.language.toolbar-title" = "Select a language";
+/* Product Add name text field */
+"product-add.placeholder.name" = "اسم المنتج";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "العلامة التجارية";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity" = "كمية";
+
+"product-add.title" = "New product";
+"product-add.titles.barcode" = "الرمز الشريطي";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
+"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+
+"product-add.titles.product-info" = "Product information";
+"product-add.label.product-name" = "اﻹسم";
+"product-add.label.category" = "Atassnifate";
+"product-add.label.quantity" = "كمية";
+"product-add.details.category" = "Needed to compute the Nutri-Score";
+"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.language" = "Languages";
+
+"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.titles.nutritive" = "حقائق غذائية";
+"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.add-nutriment" = "Add a nutrient";
+"product-add.nutritive.too-much" = "More than 100g ?";
+
+"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.titles.ingredients" = "المكونات";
+"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
+"product-add.ingredients.button-delete" = "Too bad, Ignore";
+"product-add.ingredients.button-save" = "Looks good, Save";
+
+// Select Category
+"select-category.title" = "Atassnifate";
+"select-category.search-placeholder" = "Search for a category";
+
+// Select nutrition
+"select-nutriment.title" = "التغذية";
+"select-nutriment.search-placeholder" = "Search for a nutrient";
+
+// Select allergen
+"select-allergen.title" = "Allergen";
+"select-allergen.search-placeholder" = "Search for an allergen";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "إضافة صورة جديدة";
+"product-detail.edit" = "Edit this product";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "تذكر أن تقوم بحفظ التغييرات الخاصة بك";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "تدرج للأسفل الى زر \"حفظ\"";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "الملخص";
+"product-detail.page-title.ingredients" = "المكونات";
+"product-detail.page-title.nutrition" = "التغذية";
+"product-detail.page-title.nutrition-table" = "جدول الحقائق الغذائية";
+"product-detail.page-title.environment-impact" = "Environment";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "الرمز الشريطي";
+"product-detail.summary.quantity" = "كمية";
+"product-detail.summary.packaging" = "التعبئة والتغليف";
+"product-detail.summary.brands" = "العلامات التجارية";
+"product-detail.summary.manufacturing-places" = "أماكن التصنيع أو التجهيز";
+"product-detail.summary.origins" = "أصل المكونات";
+"product-detail.summary.categories" = "الفئات";
+"product-detail.summary.labels" = "التسميات، الشهادات، الجوائز";
+"product-detail.summary.citiesTags" = "المدينة والولاية وبلد الشراء";
+"product-detail.summary.stores" = "المتاجر";
+"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.countries" = "بلدان بيع";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "قائمة المكونات";
+"product-detail.ingredients.allergens-list" = "مستأرج";
+"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.traces-list" = "آثار";
+"product-detail.ingredients.additives-list" = "إضافات";
+"product-detail.ingredients.palm-oil-ingredients" = "المكونات من زيت النخيل";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "المكونات التي قد تكون من زيت النخيل";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "حجم الحصة";
+"product-detail.nutrition.carbon-footprint" = "انبعاثات الكربون / انبعاثات ثاني أكسيد الكربون";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "حقائق غذائية";
+"product-detail.nutrition-table.for-100g" = "ل 100 غرام";
+"product-detail.nutrition-table.for-serving" = "لكل وجبة";
+"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.serving" = "serving";
+
+// Nutrition levels
+"nutrition-level.low" = "في كمية المخزون";
+"nutrition-level.moderate" = "كمية معتدلة";
+"nutrition-level.high" = "كمية عالية";
+
+// Nutrition
+"nutrition.energy" = "الطاقة";
+"nutrition.fats" = "الدهون";
+"nutrition.fats.saturated-fat" = "الدهون المشبعة";
+"nutrition.fats.mono-unsaturated-fat" = "الدهون غير المشبعة أحادية";
+"nutrition.fats.poly-unsaturated-fat" = "الدهون غير المشبعة أحادية";
+"nutrition.fats.omega3" = "أوميغا 3";
+"nutrition.fats.omega6" = "أوميغا 3";
+"nutrition.fats.omega9" = "أوميغا 9";
+"nutrition.fats.trans-fat" = "الدهون غير المشبعة";
+"nutrition.fats.cholesterol" = "كوليسترول";
+"nutrition.carbohydrate" = "كربوهيدرات";
+"nutrition.carbohydrate.sugars" = "السكريات";
+"nutrition.carbohydrate.sucrose" = "السكروز";
+"nutrition.carbohydrate.glucose" = "الجلوكوز";
+"nutrition.carbohydrate.fructose" = "سكر الفاكهة";
+"nutrition.carbohydrate.lactose" = "اللاكتوز";
+"nutrition.carbohydrate.maltose" = "مالتوس";
+"nutrition.carbohydrate.maltodextrins" = "مالتوديكسترينس";
+"nutrition.fiber" = "الألياف الغذائية";
+"nutrition.proteins" = "البروتينات";
+"nutrition.proteins.casein" = "الكازين";
+"nutrition.proteins.serum-proteins" = "بروتينات المصل";
+"nutrition.proteins.nucleotides" = "النيوكليوتيدات";
+"nutrition.salt" = "ملح";
+"nutrition.sodium" = "صوديوم";
+"nutrition.alcohol" = "الكحول";
+"nutrition.vitamins" = "الفيتامينات";
+"nutrition.vitamins.a" = "فيتامين أ";
+"nutrition.vitamins.beta-carotene" = "بيتا كاروتين";
+"nutrition.vitamins.d" = "فيتامين د";
+"nutrition.vitamins.e" = "فيتامين هـ";
+"nutrition.vitamins.k" = "فيتامين ك";
+"nutrition.vitamins.c" = "فيتامين سي";
+"nutrition.vitamins.b1" = "فيتامين ب 1";
+"nutrition.vitamins.b2" = "فيتامين ب 2";
+"nutrition.vitamins.pp" = "فيتامين ب 2";
+"nutrition.vitamins.b6" = "فيتامين ب 6";
+"nutrition.vitamins.b9" = "فيتامين ب 9";
+"nutrition.vitamins.b12" = "فيتامين ب 12";
+"nutrition.vitamins.biotin" = "البيوتين";
+"nutrition.vitamins.pantothenic-acid" = "حمض البانتوثينيك";
+"nutrition.minerals" = "المعادن";
+"nutrition.minerals.silica" = "السيليكا";
+"nutrition.minerals.bicarbonate" = "بيكربونات";
+"nutrition.minerals.potassium" = "بوتاسيوم";
+"nutrition.minerals.chloride" = "كلوريد";
+"nutrition.minerals.calcium" = "الكالسيوم";
+"nutrition.minerals.phosphorus" = "الفوسفور";
+"nutrition.minerals.iron" = "الحديد";
+"nutrition.minerals.magnesium" = "المغنيسيوم";
+"nutrition.minerals.zinc" = "الزنك";
+"nutrition.minerals.copper" = "النحاس";
+"nutrition.minerals.manganese" = "المنغنيز";
+"nutrition.minerals.fluoride" = "الفلوريد";
+"nutrition.minerals.selenium" = "السيلينيوم";
+"nutrition.minerals.chromium" = "الكروم";
+"nutrition.minerals.molybdenum" = "الموليبدينوم";
+"nutrition.minerals.iodine" = "اليود";
+"nutrition.minerals.caffeine" = "الكافيين";
+"nutrition.minerals.taurine" = "توراين";
+"nutrition.minerals.ph" = "الرقم الهيدروجيني";
+"nutrition.minerals.fruits-vegetables-nuts" = "الفواكه والخضروات والمكسرات";
+"nutrition.minerals.collagen-meat-protein-ratio" = "نسبة بروتين اللحوم الكولاجين";
+"nutrition.minerals.cocoa" = "الكاكاو";
+"nutrition.minerals.chlorophyl" = "الكلوروفيل";
+
+// Call to action
+"call-to-action.summary" = "Take a photo of the front";
+"call-to-action.ingredients" = "Take a photo of the ingredients";
+"call-to-action.nutrition" = "Take a photo of the nutrition facts";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.took-picture.front" = "Photo of the front ✅";
+"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
+"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+
+"product.images.take-picture.front" = "Photo of the front";
+"product.images.take-picture.ingredients" = "Photo of the ingredients";
+"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+
+// Settings storyboard
+"settings.tab-bar.item" = "الإعدادات";
+"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.add-button" = "Add allergens";
+"settings.sections.information" = "معلومات";
+"settings.sections.discover" = "إكتشف";
+"settings.sections.contribute" = "المساهمة";
+"settings.sections.about" = "حول";
+"settings.user-profile" = "Your contributor account";
+"settings.credits.title" = "إعتمادات";
+"settings.contact.message" = "Thank you for contacting us.";
+"settings.contact-alert.title" = "Could not send E-mail";
+"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
+"settings.scan-on-launch.title" = "إظهار الماسح عند تشغيل التطبيق";
+"settings.sections.discover" = "إكتشف";
+"settings.contribute.how-to-contribute" = "كيفية المساهمة";
+"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.about.contact" = "جهة الاتصال";
+"settings.about.frequently-asked-questions" = "‮الأسئلة المتكررة";
+"settings.promotion.open-beauty-facts" = "حقائق الجمال مفتوحة";
+"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "المستخدم";
+"user.log-in" = "تسجيل الدخول";
+"user.log-out" = "تسجيل الخروج";
+"user.username" = "اسم المستخدم";
+"user.password" = "كلمة المرور";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "View all your contributions";
+"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "Create an account";
+"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.alert.wrong-credentials.title" = "فشل في تسجيل الدخول";
+"user.alert.wrong-credentials.subtitle" = "تحقق من اسم المستخدم وكلمة المرور الخاصة بك";
+"user.alert.generic-error.title" = "حدث خطأ أثناء تسجيل الدخول";
+"user.alert.generic-error.subtitle" = "الرجاء المحاولة مرة أخرى بعد بضع ثوان";
+"user.alert.logout-confirmation.title" = "تأكيد تسجيل الخروج";
+"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
+"user.alert.username-missing" = "اسم المستخدم مطلوب";
+"user.alert.password-missing" = "رمز المرور مطلوب";
+"pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
+
+// Search history
+"history.title" = "Search history";
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "محو";
+"history.clear.confirmation-title" = "Clear your history ?";
+"history.clear.confirmation-message" = "All your history will be deleted";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewWeeks" = "A few weeks ago";
+"history.section-titles.fewMonths" = "A few months ago";
+"history.section-titles.longTime" = "A long time ago";
