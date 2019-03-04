@@ -17,6 +17,10 @@ class PictureTableViewCell: UITableViewCell {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    override func awakeFromNib() {
+        pictureView.contentMode = .scaleAspectFit
+    }
+
     func configure(viewModel: PictureViewModel) {
         activityIndicator.color = UIColor.black
 

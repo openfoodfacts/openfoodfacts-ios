@@ -259,24 +259,22 @@ class ProductAddViewController: TakePictureViewController {
         dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: true, onSuccess: { [weak self] (distantProduct: Product?) in
             DispatchQueue.main.async {
                 if let distantProduct = distantProduct {
-                    UIView.animate(withDuration: 0.2, animations: {
-                        if let nutriscoreString = distantProduct.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreString) {
-                            self?.nutriScoreView.currentScore = score
-                            self?.nutriscoreStackView.isHidden = false
-                        } else {
-                            self?.nutriscoreStackView.isHidden = true
-                        }
+                    if let nutriscoreString = distantProduct.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreString) {
+                        self?.nutriScoreView.currentScore = score
+                        self?.nutriscoreStackView.isHidden = false
+                    } else {
+                        self?.nutriscoreStackView.isHidden = true
+                    }
 
-                        if let novaGroupString = distantProduct.novaGroup, let novaGroup = NovaGroupView.NovaGroup(rawValue: novaGroupString) {
-                            self?.novaGroupView.novaGroup = novaGroup
-                            self?.novaGroupStackView.isHidden = false
-                        } else {
-                            self?.novaGroupStackView.isHidden = true
-                        }
-                    })
+                    if let novaGroupString = distantProduct.novaGroup, let novaGroup = NovaGroupView.NovaGroup(rawValue: novaGroupString) {
+                        self?.novaGroupView.novaGroup = novaGroup
+                        self?.novaGroupStackView.isHidden = false
+                    } else {
+                        self?.novaGroupStackView.isHidden = true
+                    }
                 }
             }
-        }) { (_) in }
+        }, onError: {_ in })
     }
 
     @IBAction func didTapIgnoreIngredientsButton(_ sender: Any) {
@@ -348,7 +346,7 @@ class ProductAddViewController: TakePictureViewController {
 
     fileprivate func refreshNutritiveInputsViews() {
         while nutritiveValuesStackView.arrangedSubviews.count < displayedNutrimentItems.count {
-            let newView = EditNutritiveValueView(frame: CGRect())
+            let newView = EditNutritiveValueView(frame: CGRect(x: 0, y: 0, width: nutritiveValuesStackView.frame.width, height: 44))
             newView.inputTextField.delegate = self
             newView.inputTextField.keyboardType = .decimalPad
             nutritiveValuesStackView.addArrangedSubview(newView)
