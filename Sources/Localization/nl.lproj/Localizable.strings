@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Scan de streepjescode";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Terug";
@@ -20,8 +20,8 @@
 // Product Search
 
 "product-search.title" = "Zoeken";
-"product-search.search-placeholder" = "Search by name or barcode";
-"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
+"product-search.search-placeholder" = "Zoek op naam of streepjescode";
+"product-search.no-results" = "Geen resultaten. U kunt een product toevoegen aan Open Food Facts door het te scannen.";
 "product-search.error-view.title" = "Er ging iets mis";
 "product-search.error-view.subtitle" = "Probeer het opnieuw";
 "product-search.initial-view.slogan" = "the free food products database";
@@ -33,43 +33,43 @@
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Fout bij het scannen van streepjescode. Probeer het over een paar seconden opnieuw.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "Geen barcode gevonden. Je kunt het handmatig intypen:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
-"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+"product-scanner.permissions.noPermissions.title" = "OpenFoodFacts heeft cameratoestemming nodig";
+"product-scanner.permissions.noPermissions.message" = "Geef de toestemming om de camera streepjescodes te laten scannen";
+"product-scanner.permissions.noPermissions.action.title" = "Open instellingen";
 
-"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.title" = "Barcode scannen kon niet gestart worden.";
+"product-scanner.permissions.failed.message" = "Zorg ervoor dat in Privacy-instellingen Open Food Facts toestemming heeft om de camera te gebruiken";
 "product-scanner.permissions.failed.action.title" = "Laat barcode scannen";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Product wordt geladen...";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image…";
+"product-add.uploading-image-banner.title" = "De foto wordt verzonden...";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Er ging iets mis";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.subtitle" = "Probeer opnieuw een foto te maken";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
 "product-add.image-upload-success-banner.title" = "Afbeelding is succesvol geüpload";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-save-success-banner.title" = "Afbeelding wordt geüpload wanneer je online bent";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "Product succesvol toegevoegd. Dankjewel!";
 "product-add.uploaded-image" = "Afbeelding geüpload, bedankt!";
 "product-add.save-error.title" = "Fout tijdens opslaan van product";
-"product-add.save-error.message" = "Please try again later";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
-"product-add.save-ingredients.success" = "Ingredients saved at";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
+"product-add.save-error.message" = "Probeer het later nog eens";
+"product-add.save-info.success" = "Informatie bewaard op";
+"product-add.save-info.error" = "Informatie niet bewaard";
+"product-add.save-info.saving" = "Productinformatie bewaren…";
+"product-add.save-info.not-yet" = "Informatie nog niet bewaard";
+"product-add.save-ingredients.success" = "Ingrediënten bewaard op";
+"product-add.save-ingredients.error" = "Ingrediënten niet bewaard";
+"product-add.save-ingredients.saving" = "Ingrediënten bewaren…";
+"product-add.save-ingredients.not-yet" = "Ingrediënten nog niet bewaard";
+"product-add.save-nutriments.success" = "Voedingswaarden bewaard op";
+"product-add.save-nutriments.error" = "Voedingswaarden niet bewaard";
 "product-add.save-nutriments.saving" = "Saving nutriments…";
 "product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
 "product-add.no-nutrition" = "Nutrition data are not displayed on the product";
@@ -263,14 +263,14 @@
 "product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
 
 "product.images.take-picture.front" = "Photo of the front";
-"product.images.take-picture.ingredients" = "Photo of the ingredients";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.ingredients" = "Foto van de ingrediënten";
+"product.images.take-picture.nutrition" = "Foto van de voedingswaardentabel";
 
 // Settings storyboard
 "settings.tab-bar.item" = "Instellingen";
-"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.title" = "Allergenen waarschuwing";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
+"settings.allergies.add-button" = "Voeg allergenen toe";
 "settings.sections.information" = "Opmerking";
 "settings.sections.discover" = "Ontdek";
 "settings.sections.contribute" = "Bijdragen";
@@ -283,8 +283,8 @@
 "settings.scan-on-launch.title" = "Scan Op App Launch Weergeven";
 "settings.sections.discover" = "Ontdek";
 "settings.contribute.how-to-contribute" = "Hoe kan je bijdragen";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.contribute.support-open-food-facts" = "Ondersteun Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Vertaal Open Food Facts";
 "settings.about.contact" = "Contact";
 "settings.about.frequently-asked-questions" = "Veelgestelde Vragen";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
