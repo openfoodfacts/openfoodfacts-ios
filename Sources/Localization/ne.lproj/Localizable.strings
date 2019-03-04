@@ -10,16 +10,16 @@
 "shortcuts.scan" = "Scan barcode";
 
 // Generic strings that could be useful anywhere.
-"generic.back" = "Back";
-"generic.search" = "جستجو";
+"generic.back" = "पछाडि";
+"generic.search" = "खोज्नुहोस्";
 "generic.cancel" = "Cancel";
-"generic.save" = "ذخيره";
+"generic.save" = "Save";
 "generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 
 // Product Search
 
-"product-search.title" = "جستجو";
+"product-search.title" = "खोज्नुहोस्";
 "product-search.search-placeholder" = "Search by name or barcode";
 "product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Something went wrong";
@@ -87,17 +87,17 @@
 /* Product Add name text field */
 "product-add.placeholder.name" = "Product name";
 /* Product Add brand text field */
-"product-add.placeholder.brand" = "نام تجاری";
+"product-add.placeholder.brand" = "ब्रान्ड";
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Quantity";
 
 "product-add.title" = "New product";
-"product-add.titles.barcode" = "بارکد";
+"product-add.titles.barcode" = "बारकोड";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
-"product-add.label.product-name" = "نام";
+"product-add.label.product-name" = "Name";
 "product-add.label.category" = "Category";
 "product-add.label.quantity" = "Quantity";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
@@ -112,7 +112,7 @@
 "product-add.nutritive.too-much" = "More than 100g ?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
-"product-add.titles.ingredients" = "مواد تشکیل دهنده";
+"product-add.titles.ingredients" = "आवश्यक सामग्रीहरू";
 "product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
 "product-add.ingredients.button-delete" = "Too bad, Ignore";
 "product-add.ingredients.button-save" = "Looks good, Save";
@@ -122,7 +122,7 @@
 "select-category.search-placeholder" = "Search for a category";
 
 // Select nutrition
-"select-nutriment.title" = "مواد مغذی";
+"select-nutriment.title" = "पोषण";
 "select-nutriment.search-placeholder" = "Search for a nutrient";
 
 // Select allergen
@@ -138,14 +138,14 @@
 "product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
 
 // Product detail page titles
-"product-detail.page-title.summary" = "چکیده";
-"product-detail.page-title.ingredients" = "مواد تشکیل دهنده";
-"product-detail.page-title.nutrition" = "مواد مغذی";
+"product-detail.page-title.summary" = "सारांश";
+"product-detail.page-title.ingredients" = "आवश्यक सामग्रीहरू";
+"product-detail.page-title.nutrition" = "पोषण";
 "product-detail.page-title.nutrition-table" = "Nutrition table";
 "product-detail.page-title.environment-impact" = "Environment";
 
 // Product detail summary info rows labels
-"product-detail.summary.barcode" = "بارکد";
+"product-detail.summary.barcode" = "बारकोड";
 "product-detail.summary.quantity" = "Quantity";
 "product-detail.summary.packaging" = "Packaging";
 "product-detail.summary.brands" = "Brands";
@@ -160,96 +160,96 @@
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
-"product-detail.ingredients.allergens-list" = "مواد و یا محصولات که باعث آلرژی یا عدم تحمل می شوند";
+"product-detail.ingredients.allergens-list" = "Substances or products causing allergies or intolerances";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Traces";
-"product-detail.ingredients.additives-list" = "مواد افزودنی:";
+"product-detail.ingredients.additives-list" = "Additives";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients that may be from palm oil";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Serving size";
-"product-detail.nutrition.carbon-footprint" = "انتشار CO2";
+"product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2 emissions";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutritional-table-header" = "ارزش غذایی";
-"product-detail.nutrition-table.for-100g" = "در 100 گرم";
-"product-detail.nutrition-table.for-serving" = "در هر وعده";
+"product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
+"product-detail.nutrition-table.for-100g" = "For 100 g";
+"product-detail.nutrition-table.for-serving" = "Per serving";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
-"nutrition-level.low" = "در مقدار کم";
-"nutrition-level.moderate" = "در مقدار متوسط";
-"nutrition-level.high" = "در مقدار بالا";
+"nutrition-level.low" = "in low quantity";
+"nutrition-level.moderate" = "in moderate quantity";
+"nutrition-level.high" = "in high quantity";
 
 // Nutrition
-"nutrition.energy" = "انرژی";
+"nutrition.energy" = "Energy";
 "nutrition.fats" = "Fats";
 "nutrition.fats.saturated-fat" = "Saturated fat";
-"nutrition.fats.mono-unsaturated-fat" = "چربی اشباع نشده مونو (با یک پیوند دوگانه)";
-"nutrition.fats.poly-unsaturated-fat" = "چربی غیر اشباع";
-"nutrition.fats.omega3" = "امگا 3";
-"nutrition.fats.omega6" = "امگا 6";
-"nutrition.fats.omega9" = "امگا 9";
-"nutrition.fats.trans-fat" = "چربی ترانس";
-"nutrition.fats.cholesterol" = "کلسترول";
-"nutrition.carbohydrate" = "کربوهیدرات";
-"nutrition.carbohydrate.sugars" = "قندها";
-"nutrition.carbohydrate.sucrose" = "ساکارز";
-"nutrition.carbohydrate.glucose" = "گلوکز";
-"nutrition.carbohydrate.fructose" = "فروکتوز";
-"nutrition.carbohydrate.lactose" = "لاکتوز";
-"nutrition.carbohydrate.maltose" = "مالتوز";
-"nutrition.carbohydrate.maltodextrins" = "مالتودکسترین";
-"nutrition.fiber" = "فیبر غذایی";
-"nutrition.proteins" = "پروتئین ها";
-"nutrition.proteins.casein" = "کازئین";
-"nutrition.proteins.serum-proteins" = "پروتئین های سرم";
-"nutrition.proteins.nucleotides" = "نوکلئوتید";
-"nutrition.salt" = "نمک";
-"nutrition.sodium" = "سدیم";
-"nutrition.alcohol" = "الکل";
-"nutrition.vitamins" = "ویتامین ها";
-"nutrition.vitamins.a" = "ویتامین A";
+"nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated fat";
+"nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
+"nutrition.fats.omega3" = "Omega 3";
+"nutrition.fats.omega6" = "Omega 6";
+"nutrition.fats.omega9" = "Omega 9";
+"nutrition.fats.trans-fat" = "Trans fat";
+"nutrition.fats.cholesterol" = "Cholesterol";
+"nutrition.carbohydrate" = "Carbohydrate";
+"nutrition.carbohydrate.sugars" = "Sugars";
+"nutrition.carbohydrate.sucrose" = "Sucrose";
+"nutrition.carbohydrate.glucose" = "Glucose";
+"nutrition.carbohydrate.fructose" = "Fructose";
+"nutrition.carbohydrate.lactose" = "Lactose";
+"nutrition.carbohydrate.maltose" = "Maltose";
+"nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
+"nutrition.fiber" = "Dietary fiber";
+"nutrition.proteins" = "Proteins";
+"nutrition.proteins.casein" = "Casein";
+"nutrition.proteins.serum-proteins" = "Serum Proteins";
+"nutrition.proteins.nucleotides" = "Nucleotides";
+"nutrition.salt" = "नुन";
+"nutrition.sodium" = "Sodium";
+"nutrition.alcohol" = "Alcohol";
+"nutrition.vitamins" = "Vitamins";
+"nutrition.vitamins.a" = "Vitamin A";
 "nutrition.vitamins.beta-carotene" = "Beta carotene";
 "nutrition.vitamins.d" = "Vitamin D";
 "nutrition.vitamins.e" = "Vitamin E";
 "nutrition.vitamins.k" = "Vitamin K";
-"nutrition.vitamins.c" = "ویتامین C";
-"nutrition.vitamins.b1" = "ویتامین B1";
-"nutrition.vitamins.b2" = "ویتامین B2";
-"nutrition.vitamins.pp" = "ویتامین اسفرزه";
-"nutrition.vitamins.b6" = "ویتامین B6";
-"nutrition.vitamins.b9" = "ویتامین B9";
-"nutrition.vitamins.b12" = "ویتامین B12";
-"nutrition.vitamins.biotin" = "بیوتین";
-"nutrition.vitamins.pantothenic-acid" = "اسید پانتوتنیک";
-"nutrition.minerals" = "مواد معدنی";
-"nutrition.minerals.silica" = "سیلیس";
-"nutrition.minerals.bicarbonate" = "بی کربنات";
-"nutrition.minerals.potassium" = "پتاسیم";
-"nutrition.minerals.chloride" = "کلرید";
-"nutrition.minerals.calcium" = "کلسیم";
-"nutrition.minerals.phosphorus" = "فسفر";
-"nutrition.minerals.iron" = "آهن";
-"nutrition.minerals.magnesium" = "منیزیم";
-"nutrition.minerals.zinc" = "روی";
-"nutrition.minerals.copper" = "مس";
-"nutrition.minerals.manganese" = "منگنز";
-"nutrition.minerals.fluoride" = "فلوئور";
-"nutrition.minerals.selenium" = "سلنیوم";
-"nutrition.minerals.chromium" = "کروم";
-"nutrition.minerals.molybdenum" = "مولیبدن";
-"nutrition.minerals.iodine" = "ید";
-"nutrition.minerals.caffeine" = "کافئین";
-"nutrition.minerals.taurine" = "تورین";
+"nutrition.vitamins.c" = "Vitamin C";
+"nutrition.vitamins.b1" = "भिटामिन बी 1";
+"nutrition.vitamins.b2" = "भिटामिन बी 2";
+"nutrition.vitamins.pp" = "Vitamin PP";
+"nutrition.vitamins.b6" = "भिटामिन बी 6";
+"nutrition.vitamins.b9" = "भिटामिन बी 9";
+"nutrition.vitamins.b12" = "भिटामिन बी 12";
+"nutrition.vitamins.biotin" = "Biotin";
+"nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
+"nutrition.minerals" = "Minerals";
+"nutrition.minerals.silica" = "Silica";
+"nutrition.minerals.bicarbonate" = "Bicarbonate";
+"nutrition.minerals.potassium" = "Potassium";
+"nutrition.minerals.chloride" = "Chloride";
+"nutrition.minerals.calcium" = "क्यालसियम";
+"nutrition.minerals.phosphorus" = "Phosphorus";
+"nutrition.minerals.iron" = "Iron";
+"nutrition.minerals.magnesium" = "Magnesium";
+"nutrition.minerals.zinc" = "Zinc";
+"nutrition.minerals.copper" = "Copper";
+"nutrition.minerals.manganese" = "Manganese";
+"nutrition.minerals.fluoride" = "Fluoride";
+"nutrition.minerals.selenium" = "Selenium";
+"nutrition.minerals.chromium" = "Chromium";
+"nutrition.minerals.molybdenum" = "Molybdenum";
+"nutrition.minerals.iodine" = "आयोडिन";
+"nutrition.minerals.caffeine" = "Caffeine";
+"nutrition.minerals.taurine" = "Taurine";
 "nutrition.minerals.ph" = "pH";
-"nutrition.minerals.fruits-vegetables-nuts" = "میوه ها، سبزیجات، آجیل";
-"nutrition.minerals.collagen-meat-protein-ratio" = "نسبت پروتئین گوشت کلاژن";
-"nutrition.minerals.cocoa" = "کاکائو";
-"nutrition.minerals.chlorophyl" = "سبزینه";
+"nutrition.minerals.fruits-vegetables-nuts" = "Fruits, vegetables, nuts";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
+"nutrition.minerals.cocoa" = "Cocoa";
+"nutrition.minerals.chlorophyl" = "Chlorophyl";
 
 // Call to action
 "call-to-action.summary" = "Take a photo of the front";
@@ -267,21 +267,21 @@
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
 
 // Settings storyboard
-"settings.tab-bar.item" = "تنظیمات";
+"settings.tab-bar.item" = "सेटिङ्हरू";
 "settings.allergies.title" = "Allergens alerts";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
 "settings.allergies.add-button" = "Add allergens";
-"settings.sections.information" = "اطلاعات";
-"settings.sections.discover" = "پیدا کردن";
+"settings.sections.information" = "Information";
+"settings.sections.discover" = "अन्वेषण गर्नुहोस्";
 "settings.sections.contribute" = "Contribute";
-"settings.sections.about" = "درباره ما";
+"settings.sections.about" = "बारेमा";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
 "settings.contact.message" = "Thank you for contacting us.";
 "settings.contact-alert.title" = "Could not send E-mail";
 "settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "پیدا کردن";
+"settings.sections.discover" = "अन्वेषण गर्नुहोस्";
 "settings.contribute.how-to-contribute" = "How To Contribute";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -292,11 +292,11 @@
 
 // User view
 /* Tab bar item */
-"user.tab-bar.item" = "کاربر";
+"user.tab-bar.item" = "User";
 "user.log-in" = "Log In";
 "user.log-out" = "Log Out";
-"user.username" = "Username";
-"user.password" = "گذرواژه";
+"user.username" = "प्रयोगकर्ता नाम";
+"user.password" = "पासवर्ड";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
@@ -317,7 +317,7 @@
 // Search history
 "history.title" = "Search history";
 "history.cell.privacy" = "Your search history is only stored on your device";
-"history.button.clear" = "پاک سازی";
+"history.button.clear" = "Clear";
 "history.clear.confirmation-title" = "Clear your history ?";
 "history.clear.confirmation-message" = "All your history will be deleted";
 "history.section-titles.last24h" = "Last 24 hours";
