@@ -169,12 +169,7 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
 
-    @IBAction func didTapSaveProductButton(_ sender: UIButton) {
-        self.view.endEditing(true)
-        saveProductInfosButton.isEnabled = false
-        self.showSavingIndication(label: lastSavedProductInfosLabel, key: "save-info")
-
-        // Set field values in product
+    fileprivate func fillProductFromInfosForm() {
         product.name = productNameField.text
         product.lang = languageValue
 
@@ -191,26 +186,9 @@ class ProductAddViewController: TakePictureViewController {
         }
 
         product.quantity = quantityField.text
-
-        dataManager.addProduct(product, onSuccess: { [weak self] in
-            DispatchQueue.main.async {
-                self?.showSavedSuccess(label: self?.lastSavedProductInfosLabel, key: "save-info")
-                self?.saveProductInfosButton.isEnabled = true
-                self?.refreshNovaScore()
-            }
-            }, onError: { [weak self] _ in
-                DispatchQueue.main.async {
-                    self?.showSavedError(label: self?.lastSavedProductInfosLabel, key: "save-info")
-                    self?.saveProductInfosButton.isEnabled = true
-                }
-        })
     }
 
-    @IBAction func didTapSaveNutrimentsButton(_ sender: Any) {
-        self.view.endEditing(true)
-        self.saveNutrimentsButton.isEnabled = false
-        self.showSavingIndication(label: lastSavedNutrimentsLabel, key: "save-nutriments")
-
+    fileprivate func fillProductFromNutriments() -> [RealmPendingUploadNutrimentItem] {
         if let servingSize = portionSizeInputView.inputTextField.text {
             product.servingSize = servingSize
         }
@@ -239,8 +217,44 @@ class ProductAddViewController: TakePictureViewController {
             }
         }
 
+        return nutriments
+    }
+
+    @IBAction func didTapSaveProductButton(_ sender: UIButton) {
+        self.view.endEditing(true)
+        saveProductInfosButton.isEnabled = false
+
+        self.showSavingIndication(label: lastSavedProductInfosLabel, key: "save-info")
+
+        fillProductFromInfosForm()
+
+        dataManager.addProduct(product, onSuccess: { [weak self] in
+            DispatchQueue.main.async {
+                self?.showSavedSuccess(label: self?.lastSavedProductInfosLabel, key: "save-info")
+                self?.saveProductInfosButton.isEnabled = true
+                self?.refreshNovaScore()
+            }
+            }, onError: { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.showSavedError(label: self?.lastSavedProductInfosLabel, key: "save-info")
+                    self?.saveProductInfosButton.isEnabled = true
+                }
+        })
+    }
+
+    @IBAction func didTapSaveNutrimentsButton(_ sender: Any) {
+        self.view.endEditing(true)
+        self.saveNutrimentsButton.isEnabled = false
+
+        self.showSavingIndication(label: lastSavedProductInfosLabel, key: "save-info")
+        self.showSavingIndication(label: lastSavedNutrimentsLabel, key: "save-nutriments")
+
+        fillProductFromInfosForm()
+        let nutriments = fillProductFromNutriments()
+
         dataManager.addProductNutritionTable(product, nutritionTable: nutriments, onSuccess: { [weak self] in
             DispatchQueue.main.async {
+                self?.showSavedSuccess(label: self?.lastSavedProductInfosLabel, key: "save-info")
                 self?.showSavedSuccess(label: self?.lastSavedNutrimentsLabel, key: "save-nutriments")
                 self?.saveNutrimentsButton.isEnabled = true
 
@@ -248,8 +262,48 @@ class ProductAddViewController: TakePictureViewController {
             }
             }, onError: { [weak self] _ in
                 DispatchQueue.main.async {
+                    self?.showSavedError(label: self?.lastSavedProductInfosLabel, key: "save-info")
                     self?.showSavedError(label: self?.lastSavedNutrimentsLabel, key: "save-nutriments")
                     self?.saveNutrimentsButton.isEnabled = true
+                }
+        })
+    }
+
+    @IBAction func didTapIgnoreIngredientsButton(_ sender: Any) {
+        self.ingredientsTextField.text = nil
+        self.lastSavedIngredientsLabel.isHidden = true
+    }
+
+    @IBAction func didTapSaveIngredientsButton(_ sender: Any) {
+        self.view.endEditing(true)
+        self.ignoreIngredientsButton.isEnabled = false
+        self.saveIngredientsButton.isEnabled = false
+
+        self.showSavingIndication(label: lastSavedProductInfosLabel, key: "save-info")
+        self.showSavingIndication(label: lastSavedNutrimentsLabel, key: "save-nutriments")
+        self.showSavingIndication(label: lastSavedIngredientsLabel, key: "save-ingredients")
+
+        fillProductFromInfosForm()
+        let nutriments = fillProductFromNutriments()
+
+        self.product.ingredientsList = self.ingredientsTextField.text
+
+        dataManager.addProductNutritionTable(product, nutritionTable: nutriments, onSuccess: { [weak self] in
+            DispatchQueue.main.async {
+                self?.showSavedSuccess(label: self?.lastSavedProductInfosLabel, key: "save-info")
+                self?.showSavedSuccess(label: self?.lastSavedNutrimentsLabel, key: "save-nutriments")
+                self?.showSavedSuccess(label: self?.lastSavedIngredientsLabel, key: "save-ingredients")
+                self?.ignoreIngredientsButton.isEnabled = true
+                self?.saveIngredientsButton.isEnabled = true
+                self?.refreshNovaScore()
+            }
+            }, onError: { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.showSavedError(label: self?.lastSavedProductInfosLabel, key: "save-info")
+                    self?.showSavedError(label: self?.lastSavedNutrimentsLabel, key: "save-nutriments")
+                    self?.showSavedError(label: self?.lastSavedIngredientsLabel, key: "save-ingredients")
+                    self?.ignoreIngredientsButton.isEnabled = true
+                    self?.saveIngredientsButton.isEnabled = true
                 }
         })
     }
@@ -274,36 +328,7 @@ class ProductAddViewController: TakePictureViewController {
                     }
                 }
             }
-        }, onError: {_ in })
-    }
-
-    @IBAction func didTapIgnoreIngredientsButton(_ sender: Any) {
-        self.ingredientsTextField.text = nil
-        self.lastSavedIngredientsLabel.isHidden = true
-    }
-
-    @IBAction func didTapSaveIngredientsButton(_ sender: Any) {
-        self.view.endEditing(true)
-        self.ignoreIngredientsButton.isEnabled = false
-        self.saveIngredientsButton.isEnabled = false
-        self.showSavingIndication(label: lastSavedIngredientsLabel, key: "save-ingredients")
-
-        self.product.ingredientsList = self.ingredientsTextField.text
-
-        dataManager.addProduct(product, onSuccess: { [weak self] in
-            DispatchQueue.main.async {
-                self?.showSavedSuccess(label: self?.lastSavedIngredientsLabel, key: "save-ingredients")
-                self?.ignoreIngredientsButton.isEnabled = true
-                self?.saveIngredientsButton.isEnabled = true
-                self?.refreshNovaScore()
-            }
-            }, onError: { [weak self] _ in
-                DispatchQueue.main.async {
-                    self?.showSavedError(label: self?.lastSavedIngredientsLabel, key: "save-ingredients")
-                    self?.ignoreIngredientsButton.isEnabled = true
-                    self?.saveIngredientsButton.isEnabled = true
-                }
-        })
+            }, onError: {_ in })
     }
 
     @IBAction func addNutrimentButtonTapped(_ sender: Any) {
