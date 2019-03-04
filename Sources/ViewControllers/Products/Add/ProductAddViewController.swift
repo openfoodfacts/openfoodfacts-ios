@@ -228,7 +228,7 @@ class ProductAddViewController: TakePictureViewController {
 
             nutritiveValuesStackView.arrangedSubviews.forEach { (view: UIView) in
                 if let view = view as? EditNutritiveValueView {
-                    if let value = view.inputTextField.text, let doubleValue = Double(value) {
+                    if let doubleValue = view.getInputValue() {
                         nutriments.append(RealmPendingUploadNutrimentItem(value: [
                             "code": view.nutrimentCode,
                             "value": doubleValue,
@@ -634,7 +634,7 @@ extension ProductAddViewController: UITextFieldDelegate {
             showNotSavedIndication(label: lastSavedNutrimentsLabel, key: "save-nutriments")
 
             if let editNutritiveView = textField.superviewOfClassType(EditNutritiveValueView.self) as? EditNutritiveValueView {
-                if let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string), let doubleValue = Double(updatedString) {
+                if let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string).replacingOccurrences(of: ",", with: "."), let doubleValue = Double(updatedString) {
                     updateTooMuchLabel(inNutritiveView: editNutritiveView, forValue: doubleValue)
                     if editNutritiveView.nutrimentCode == "salt" {
                         computeSodiumFromSalt(salt: doubleValue, inUnit: editNutritiveView.selectedUnit)
@@ -735,7 +735,7 @@ extension ProductAddViewController: PickerViewDelegate {
 
 extension ProductAddViewController: EditNutritiveValueViewDelegate {
     func didChangeUnit(view: EditNutritiveValueView) {
-        if let value = view.inputTextField.text, let doubleValue = Double(value) {
+        if let doubleValue = view.getInputValue() {
             updateTooMuchLabel(inNutritiveView: view, forValue: doubleValue)
 
             if view.nutrimentCode == "salt" {
