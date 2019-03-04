@@ -1,1 +1,327 @@
-/* No Localized Strings */
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Skannaa viivakoodi";
+
+// Generic strings that could be useful anywhere.
+"generic.back" = "Takaisin";
+"generic.search" = "Etsi";
+"generic.cancel" = "Peruuta";
+"generic.save" = "Tallenna";
+"generic.cancel" = "Peruuta";
+"generic.ok" = "Ok";
+
+// Product Search
+
+"product-search.title" = "Etsi";
+"product-search.search-placeholder" = "Search by name or barcode";
+"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
+"product-search.error-view.title" = "Jotain meni pieleen";
+"product-search.error-view.subtitle" = "Ole hyvä ja yritä uudelleen";
+"product-search.initial-view.slogan" = "the free food products database";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "Lue tuotteen viivakoodi";
+"product-scanner.overlay.extended-user-help" = "Viivakoodia ei löydy.\nKeskitä viivakoodi näyttöön.\nVarmista, että viivakoodi on hyvin valaistu.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Skanneri";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "Viivakoodin luku epäonnistui. Yritä hetken kuluttua uudestaan.";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts tarvitsee kameran käyttöoikeuden";
+"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
+"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+
+"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
+"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "Poistu viivakoodinluvusta";
+
+"product-scanner.search.status" = "Loading product…";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "Uploading image…";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "Jotain meni pieleen";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "Yritä ottaa kuva uudelleen";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "Kuvan lataaminen onnistui";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "Tuotteen lisääminen onnistui. Kiitos!";
+"product-add.uploaded-image" = "Kuva ladattu, kiitos!";
+"product-add.save-error.title" = "Tuotteen tallentaminen epäonnistui";
+"product-add.save-error.message" = "Please try again later";
+"product-add.save-info.success" = "Information saved at";
+"product-add.save-info.error" = "Information not saved";
+"product-add.save-info.saving" = "Saving product information…";
+"product-add.save-info.not-yet" = "Information not saved yet";
+"product-add.save-ingredients.success" = "Ingredients saved at";
+"product-add.save-ingredients.error" = "Ingredients not saved";
+"product-add.save-ingredients.saving" = "Saving ingredients…";
+"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
+"product-add.save-nutriments.success" = "Nutriments saved at";
+"product-add.save-nutriments.error" = "Nutriments not saved";
+"product-add.save-nutriments.saving" = "Saving nutriments...";
+"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
+"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+
+"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
+"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
+"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
+"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+
+"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
+"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+
+"alert.action.ok" = "Ok";
+"product-add.language.toolbar-title" = "Valitse kieli";
+/* Product Add name text field */
+"product-add.placeholder.name" = "Tuotteen nimi";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "Tuotemerkki";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity" = "Määrä";
+
+"product-add.title" = "New product";
+"product-add.titles.barcode" = "Viivakoodi";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
+"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+
+"product-add.titles.product-info" = "Product information";
+"product-add.label.product-name" = "Nimi";
+"product-add.label.category" = "Kategoria";
+"product-add.label.quantity" = "Määrä";
+"product-add.details.category" = "Needed to compute the Nutri-Score";
+"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.language" = "Languages";
+
+"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.titles.nutritive" = "Nutrition Facts";
+"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.add-nutriment" = "Lisää ravintoaine";
+"product-add.nutritive.too-much" = "More than 100g ?";
+
+"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.titles.ingredients" = "Ainekset";
+"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
+"product-add.ingredients.button-delete" = "Too bad, Ignore";
+"product-add.ingredients.button-save" = "Looks good, Save";
+
+// Select Category
+"select-category.title" = "Kategoria";
+"select-category.search-placeholder" = "Search for a category";
+
+// Select nutrition
+"select-nutriment.title" = "Nutri-Score";
+"select-nutriment.search-placeholder" = "Search for a nutrient";
+
+// Select allergen
+"select-allergen.title" = "Allergeeni";
+"select-allergen.search-placeholder" = "Search for an allergen";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "Lisää uusi kuva";
+"product-detail.edit" = "Edit this product";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "Muista tallentaa muutoksesi";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "Yhteenveto";
+"product-detail.page-title.ingredients" = "Ainekset";
+"product-detail.page-title.nutrition" = "Nutri-Score";
+"product-detail.page-title.nutrition-table" = "Ravintosisältö";
+"product-detail.page-title.environment-impact" = "Ympäristö";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "Viivakoodi";
+"product-detail.summary.quantity" = "Määrä";
+"product-detail.summary.packaging" = "Pakkaus";
+"product-detail.summary.brands" = "Tuotemerkit";
+"product-detail.summary.manufacturing-places" = "Valmistus- tai käsittelypaikat";
+"product-detail.summary.origins" = "Alkuperä ainesosien";
+"product-detail.summary.categories" = "Luokat";
+"product-detail.summary.labels" = "Etiketit, sertifikaatit, palkinnot";
+"product-detail.summary.citiesTags" = "Kaupungin, valtion ja ostomaassa";
+"product-detail.summary.stores" = "Myymälät";
+"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.countries" = "Maat myyntiehdot";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "Ainesosat";
+"product-detail.ingredients.allergens-list" = "Allergioita tai intoleransseja aiheuttavat aineet ja tuotteet";
+"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.traces-list" = "Jäämät";
+"product-detail.ingredients.additives-list" = "Lisäaineet";
+"product-detail.ingredients.palm-oil-ingredients" = "Palmuöljyperäiset ainesosat";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Ainesosat, jotka voivat olla peräisin palmuöljystä";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "Palvelevat koko";
+"product-detail.nutrition.carbon-footprint" = "Hiilijalanjälki / CO2-päästöt";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "Ravintosisältö";
+"product-detail.nutrition-table.for-100g" = "100 g:ssa";
+"product-detail.nutrition-table.for-serving" = "Annosta kohti";
+"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.serving" = "serving";
+
+// Nutrition levels
+"nutrition-level.low" = "pieni määrä";
+"nutrition-level.moderate" = "kohtalainen määrä";
+"nutrition-level.high" = "suuri määrä";
+
+// Nutrition
+"nutrition.energy" = "Energia";
+"nutrition.fats" = "Rasvat";
+"nutrition.fats.saturated-fat" = "Tyydyttynyt rasva";
+"nutrition.fats.mono-unsaturated-fat" = "Kertatyydyttämätön rasva";
+"nutrition.fats.poly-unsaturated-fat" = "Monityydyttämätön rasva";
+"nutrition.fats.omega3" = "Omega 3";
+"nutrition.fats.omega6" = "Omega 6";
+"nutrition.fats.omega9" = "Omega 9";
+"nutrition.fats.trans-fat" = "Transrasva";
+"nutrition.fats.cholesterol" = "Kolesteroli";
+"nutrition.carbohydrate" = "Hiilihydraatti";
+"nutrition.carbohydrate.sugars" = "Sokerit";
+"nutrition.carbohydrate.sucrose" = "Sakkaroosi";
+"nutrition.carbohydrate.glucose" = "Glukoosi";
+"nutrition.carbohydrate.fructose" = "Fruktoosi";
+"nutrition.carbohydrate.lactose" = "Laktoosi";
+"nutrition.carbohydrate.maltose" = "Maltoosi";
+"nutrition.carbohydrate.maltodextrins" = "Maltodekstriinit";
+"nutrition.fiber" = "Ravintokuitu";
+"nutrition.proteins" = "Proteiinit";
+"nutrition.proteins.casein" = "Kaseiini";
+"nutrition.proteins.serum-proteins" = "Serum Proteins";
+"nutrition.proteins.nucleotides" = "Nukleotidit";
+"nutrition.salt" = "Suola";
+"nutrition.sodium" = "Natrium";
+"nutrition.alcohol" = "Alkoholi";
+"nutrition.vitamins" = "Vitamins";
+"nutrition.vitamins.a" = "A-vitamiini";
+"nutrition.vitamins.beta-carotene" = "Beetakaroteeni";
+"nutrition.vitamins.d" = "D-vitamiini";
+"nutrition.vitamins.e" = "E-vitamiini";
+"nutrition.vitamins.k" = "K-vitamiini";
+"nutrition.vitamins.c" = "C-vitamiini";
+"nutrition.vitamins.b1" = "B1-vitamiini";
+"nutrition.vitamins.b2" = "B2-vitamiini";
+"nutrition.vitamins.pp" = "Niasiini (B3-vitamiini)";
+"nutrition.vitamins.b6" = "B6-vitamiini";
+"nutrition.vitamins.b9" = "B9-vitamiini";
+"nutrition.vitamins.b12" = "B12-vitamiini";
+"nutrition.vitamins.biotin" = "Biotiini";
+"nutrition.vitamins.pantothenic-acid" = "Pantoteenihappo";
+"nutrition.minerals" = "Kivennäis- ja hivenaineet";
+"nutrition.minerals.silica" = "Piidioksidi";
+"nutrition.minerals.bicarbonate" = "Bikarbonaatti";
+"nutrition.minerals.potassium" = "Kalium";
+"nutrition.minerals.chloride" = "Kloridi";
+"nutrition.minerals.calcium" = "Kalsium";
+"nutrition.minerals.phosphorus" = "Fosfori";
+"nutrition.minerals.iron" = "Rauta";
+"nutrition.minerals.magnesium" = "Magnesium";
+"nutrition.minerals.zinc" = "Sinkki";
+"nutrition.minerals.copper" = "Kupari";
+"nutrition.minerals.manganese" = "Mangaani";
+"nutrition.minerals.fluoride" = "Fluoridi";
+"nutrition.minerals.selenium" = "Seleeni";
+"nutrition.minerals.chromium" = "Kromi";
+"nutrition.minerals.molybdenum" = "Molybdeeni";
+"nutrition.minerals.iodine" = "Jodi";
+"nutrition.minerals.caffeine" = "Kofeiini";
+"nutrition.minerals.taurine" = "Tauriini";
+"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.fruits-vegetables-nuts" = "Hedelmät, vihannekset, pähkinät";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
+"nutrition.minerals.cocoa" = "Kaakao";
+"nutrition.minerals.chlorophyl" = "Lehtivihreä";
+
+// Call to action
+"call-to-action.summary" = "Take a photo of the front";
+"call-to-action.ingredients" = "Take a photo of the ingredients";
+"call-to-action.nutrition" = "Take a photo of the nutrition facts";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.took-picture.front" = "Photo of the front ✅";
+"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
+"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+
+"product.images.take-picture.front" = "Photo of the front";
+"product.images.take-picture.ingredients" = "Photo of the ingredients";
+"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+
+// Settings storyboard
+"settings.tab-bar.item" = "Asetukset";
+"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.add-button" = "Add allergens";
+"settings.sections.information" = "Tietoja";
+"settings.sections.discover" = "Löydä";
+"settings.sections.contribute" = "Avusta";
+"settings.sections.about" = "Tietoja";
+"settings.user-profile" = "Your contributor account";
+"settings.credits.title" = "Tekijät";
+"settings.contact.message" = "Thank you for contacting us.";
+"settings.contact-alert.title" = "Could not send E-mail";
+"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
+"settings.scan-on-launch.title" = "Avaa viivakoodinluku sovelluksen käynnistyessä";
+"settings.sections.discover" = "Löydä";
+"settings.contribute.how-to-contribute" = "Miten voit auttaa";
+"settings.contribute.support-open-food-facts" = "Tue Open Food Factsia";
+"settings.contribute.translate-open-food-facts" = "Käännä Open Food Facts";
+"settings.about.contact" = "Yhteystiedot";
+"settings.about.frequently-asked-questions" = "Frequently Asked Questions";
+"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
+"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "Käyttäjä";
+"user.log-in" = "Kirjaudu sisään";
+"user.log-out" = "Kirjaudu ulos";
+"user.username" = "Käyttäjätunnus";
+"user.password" = "Salasana";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "View all your contributions";
+"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "Create an account";
+"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.alert.wrong-credentials.title" = "Kirjautuminen epäonnistui";
+"user.alert.wrong-credentials.subtitle" = "Tarkista käyttäjätunnuksesi ja salasanasi";
+"user.alert.generic-error.title" = "Virhe sisäänkirjautumisessa";
+"user.alert.generic-error.subtitle" = "Yritä uudelleen hetken kuluttua";
+"user.alert.logout-confirmation.title" = "Confirm Logout";
+"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
+"user.alert.username-missing" = "Käyttäjätunnus on pakollinen";
+"user.alert.password-missing" = "Salasana tarvitaan";
+"pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Lähetetään";
+
+// Search history
+"history.title" = "Search history";
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "Tyhjennä";
+"history.clear.confirmation-title" = "Clear your history ?";
+"history.clear.confirmation-message" = "All your history will be deleted";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "Muutama päivä sitten";
+"history.section-titles.fewWeeks" = "Muutama viikko sitten";
+"history.section-titles.fewMonths" = "Muutama kuukausi sitten";
+"history.section-titles.longTime" = "Kauan sitten";
