@@ -1,1 +1,327 @@
-/* No Localized Strings */
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "סריקת ברקוד";
+
+// Generic strings that could be useful anywhere.
+"generic.back" = "חזרה";
+"generic.search" = "חיפוש";
+"generic.cancel" = "ביטול";
+"generic.save" = "שמירה";
+"generic.cancel" = "ביטול";
+"generic.ok" = "אישור";
+
+// Product Search
+
+"product-search.title" = "חיפוש";
+"product-search.search-placeholder" = "חיפוש לפי שם או ברקוד";
+"product-search.no-results" = "אין תוצאות. ניתן להוסיף מוצר ל־Open Food Facts על ידי סריקתו.";
+"product-search.error-view.title" = "משהו השתבש";
+"product-search.error-view.subtitle" = "נא לנסות שוב";
+"product-search.initial-view.slogan" = "the free food products database";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "יש לסרוק את הברקוד של המוצר";
+"product-scanner.overlay.extended-user-help" = "לא ניתן למצוא ברקוד.\nיש להציב את הברקוד במרכז המסך.\nנא לוודא שהברקוד מואר כראוי.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "סורק";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "אירעה שגיאה בסריקת הברקוד. נא לנסות שוב בעוד מספר רגעים.";
+"product-scanner.barcode-notfound.manual-enter" = "לא נמצא ברקוד. ניתן להקליד אותו ידנית:";
+
+"product-scanner.permissions.noPermissions.title" = "ל־Open Food Facts נדרשות הרשאות למצלמה";
+"product-scanner.permissions.noPermissions.message" = "נא להעניק הרשאות לגשת למצלמה כדי לאפשר למצלמה לסרוק ברקודים";
+"product-scanner.permissions.noPermissions.action.title" = "פתיחת הגדרות";
+
+"product-scanner.permissions.failed.title" = "לא ניתן להפעיל סריקת ברקוד.";
+"product-scanner.permissions.failed.message" = "נא לוודא אם בהגדרות הפרטיות יש ל־Open Food Facts הרשאה להשתמש במצלמה";
+"product-scanner.permissions.failed.action.title" = "יציאה מסריקת הברקוד";
+
+"product-scanner.search.status" = "המוצר נטען…";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "התמונה נשלחת…";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "משהו השתבש";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "נא לנסות לצלם שוב";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "התמונה הועלתה בהצלחה";
+"product-add.image-save-success-banner.title" = "התמונה תועלה כשהחיבור לאינטרנט יחודש";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "המוצר נוסף בהצלחה. תודה!";
+"product-add.uploaded-image" = "התמונה הועלתה, תודה!";
+"product-add.save-error.title" = "שגיאה בעת שמירת המוצר";
+"product-add.save-error.message" = "נא לנסות שוב מאוחר יותר";
+"product-add.save-info.success" = "הפרטים נשמרו תחת";
+"product-add.save-info.error" = "הפרטים לא נשמרו";
+"product-add.save-info.saving" = "פרטי המוצר נשמרים…";
+"product-add.save-info.not-yet" = "הפרטים לא נשמרו עדיין";
+"product-add.save-ingredients.success" = "הרכיבים נשמרו תחת";
+"product-add.save-ingredients.error" = "הרכיבים לא נשמרו";
+"product-add.save-ingredients.saving" = "הרכיבים נשמרים…";
+"product-add.save-ingredients.not-yet" = "הרכיבים לא נשמרו עדיין";
+"product-add.save-nutriments.success" = "רכיבי ההזנה נשמרו תחת";
+"product-add.save-nutriments.error" = "רכיבי ההזנה לא נשמרו";
+"product-add.save-nutriments.saving" = "רכיבי ההזנה נשמרים…";
+"product-add.save-nutriments.not-yet" = "הרכיבים לא נשמרו עדיין";
+"product-add.no-nutrition" = "המפרט התזונתי אינו מופיע על המוצר";
+
+"product-add.ocr-ingredients.success" = "רכיבים נקראו מהתמונה שב־";
+"product-add.ocr-ingredients.error" = "לא ניתן לחלץ רכיבים מהתמונה";
+"product-add.ocr-ingredients.saving" = "הרכיבים מחולצים מהתמונה…";
+"product-add.ocr-ingredients.not-yet" = "בהמתנה לניתוח תמונת הרכיבים";
+
+"product-add.nutriscore-explaination" = "הציון התזונתי חושב מטבלת הערכים התזונתיים";
+"product-add.novagroup-explaination" = "קבוצת NOVA חושבה לפי רשימת הרכיבים";
+
+"alert.action.ok" = "אישור";
+"product-add.language.toolbar-title" = "בחירת שפה";
+/* Product Add name text field */
+"product-add.placeholder.name" = "שם המוצר";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "מותג";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity" = "כמות";
+
+"product-add.title" = "מוצר חדש";
+"product-add.titles.barcode" = "ברקוד";
+"product-add.titles.top-explainations" = "כל הכבוד! המוצר הזה עדיין לא מתועד ב־Open Food Facts. אפשר לבקש ממך לצלם מספר תמונות של המוצר, רשימת הרכיבים וטבלת הערכים התזונתיים שלו ולהוסיף אותן ל־Open Food Facts?\n\nתודה רבה מראש.";
+"product-add.titles.license-explaination" = "לתשומת לבך: התמונות שנשלחות מפורסמות תחת תנאי הרישיון Creative Commons Attribution & ShareAlike.";
+
+"product-add.titles.product-info" = "פרטי מוצר";
+"product-add.label.product-name" = "שם";
+"product-add.label.category" = "קטגוריה";
+"product-add.label.quantity" = "כמות";
+"product-add.details.category" = "נדרש לטובת חישוב הציון התזונתי";
+"product-add.label.quantity-example" = "25 ג׳, 10oz,‏ 5 מ״ל…";
+"product-add.label.language" = "שפות";
+
+"product-add.description.nutritive" = "יש להשלים את הערכים התזונתיים ואת קטגוריית המוצר כדי לקבל את הציון התזונתי";
+"product-add.titles.nutritive" = "מפרט תזונתי";
+"product-add.nutritive.choice.per-hundred-grams" = "ל־100 ג׳ / 100 מ״ל";
+"product-add.nutritive.choice.per-portion" = "למנה";
+"product-add.nutritive.add-nutriment" = "הוספת רכיב תזונתי";
+"product-add.nutritive.too-much" = "יותר מ־100 גרם?";
+
+"product-add.description.ingredients" = "יש להשלים את הרכיבים כדי לקבל קבוצת NOVA של מזון מעובד";
+"product-add.titles.ingredients" = "רכיבים";
+"product-add.ingredients.explaination" = "צילום של רשימת הרכיבים יחלץ את הרכיבים אוטומטית. יש לבדוק את התוצאות בקפידה ולא לשכוח לשמור את התוצאות.";
+"product-add.ingredients.button-delete" = "לא טוב, להתעלם";
+"product-add.ingredients.button-save" = "נראה אחלה, לשמור";
+
+// Select Category
+"select-category.title" = "קטגוריה";
+"select-category.search-placeholder" = "חיפוש קטגוריה";
+
+// Select nutrition
+"select-nutriment.title" = "תזונה";
+"select-nutriment.search-placeholder" = "חיפוש רכיב הזנה";
+
+// Select allergen
+"select-allergen.title" = "אלרגן";
+"select-allergen.search-placeholder" = "חיפוש מעורר רגישות";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "הוספת תמונה חדשה";
+"product-detail.edit" = "עריכת מוצר זה";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "מוטב לזכור לשמור את השינויים שלך";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "יש לגלול למטה לכפתור ‚שמירה’";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "תקציר";
+"product-detail.page-title.ingredients" = "רכיבים";
+"product-detail.page-title.nutrition" = "תזונה";
+"product-detail.page-title.nutrition-table" = "טבלת ערכים תזונתיים";
+"product-detail.page-title.environment-impact" = "סביבה";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "ברקוד";
+"product-detail.summary.quantity" = "כמות";
+"product-detail.summary.packaging" = "אריזה";
+"product-detail.summary.brands" = "מותגים";
+"product-detail.summary.manufacturing-places" = "מקומות הייצור או העיבוד";
+"product-detail.summary.origins" = "מקור הרכיבים";
+"product-detail.summary.categories" = "קטגוריות";
+"product-detail.summary.labels" = "תוויות, אישורים, פרסים";
+"product-detail.summary.citiesTags" = "עיר/מושב/קיבוץ/כפר בהם נרכש המוצר";
+"product-detail.summary.stores" = "חנויות";
+"product-detail.summary.embCodes" = "קוד מפעל אריזה";
+"product-detail.summary.countries" = "ארצות בהן נמכר";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "רשימת מרכיבים";
+"product-detail.ingredients.allergens-list" = "חומרים או מוצרים שגורמים לאלרגיות או לרגישויות";
+"product-detail.ingredients.allergens-alert.title" = "מכיל אלרגנים!";
+"product-detail.ingredients.allergens-list.missing-infos" = "למוצר זה אין רשימת רכיבים עדיין, כתוצאה מכך, לא ניתן להשלים איתור אלרגנים.";
+"product-detail.ingredients.traces-list" = "עקבות";
+"product-detail.ingredients.additives-list" = "תוספים";
+"product-detail.ingredients.palm-oil-ingredients" = "רכיבים משמן דקלים";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "רכיבים שעשויים להיות משמן דקלים";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "גודל ההגשה";
+"product-detail.nutrition.carbon-footprint" = "טביעת רגל פחמנית / פליטות פחמן דו־חמצני";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "מפרט תזונתי";
+"product-detail.nutrition-table.for-100g" = "ל־100 ג׳";
+"product-detail.nutrition-table.for-serving" = "להגשה";
+"product-detail.nutrition-table.100g" = "100 גרם";
+"product-detail.nutrition-table.serving" = "serving";
+
+// Nutrition levels
+"nutrition-level.low" = "בכמות נמוכה";
+"nutrition-level.moderate" = "בכמות מתונה";
+"nutrition-level.high" = "בכמות גדולה";
+
+// Nutrition
+"nutrition.energy" = "אנרגיה";
+"nutrition.fats" = "שומנים";
+"nutrition.fats.saturated-fat" = "שומן רווי";
+"nutrition.fats.mono-unsaturated-fat" = "שומן חד בלתי רווי";
+"nutrition.fats.poly-unsaturated-fat" = "שומן רב בלתי רווי";
+"nutrition.fats.omega3" = "אומגה 3";
+"nutrition.fats.omega6" = "אומגה 6";
+"nutrition.fats.omega9" = "אומגה 9";
+"nutrition.fats.trans-fat" = "שומן טרנס";
+"nutrition.fats.cholesterol" = "כולסטרול";
+"nutrition.carbohydrate" = "פחמימות";
+"nutrition.carbohydrate.sugars" = "סוכרים";
+"nutrition.carbohydrate.sucrose" = "סוכרוז";
+"nutrition.carbohydrate.glucose" = "גלוקוז";
+"nutrition.carbohydrate.fructose" = "פרוקטוז";
+"nutrition.carbohydrate.lactose" = "לקטוז";
+"nutrition.carbohydrate.maltose" = "מלטוז";
+"nutrition.carbohydrate.maltodextrins" = "מלטודקסטרין";
+"nutrition.fiber" = "סיבים תזונתיים";
+"nutrition.proteins" = "חלבון";
+"nutrition.proteins.casein" = "קזאין";
+"nutrition.proteins.serum-proteins" = "חלבון בסרום";
+"nutrition.proteins.nucleotides" = "נוקלאוטידים";
+"nutrition.salt" = "מלח";
+"nutrition.sodium" = "נתרן";
+"nutrition.alcohol" = "אלכוהול";
+"nutrition.vitamins" = "ויטמינים";
+"nutrition.vitamins.a" = "ויטמין A";
+"nutrition.vitamins.beta-carotene" = "בטא קרוטן";
+"nutrition.vitamins.d" = "ויטמין D";
+"nutrition.vitamins.e" = "ויטמין E";
+"nutrition.vitamins.k" = "ויטמין K";
+"nutrition.vitamins.c" = "ויטמין C";
+"nutrition.vitamins.b1" = "ויטמין B1";
+"nutrition.vitamins.b2" = "ויטמין B2";
+"nutrition.vitamins.pp" = "ויטמין PP";
+"nutrition.vitamins.b6" = "ויטמין B6";
+"nutrition.vitamins.b9" = "ויטמין B9";
+"nutrition.vitamins.b12" = "ויטמין B12";
+"nutrition.vitamins.biotin" = "ביוטין";
+"nutrition.vitamins.pantothenic-acid" = "חומצה פנטוטנית";
+"nutrition.minerals" = "מינרלים";
+"nutrition.minerals.silica" = "צורן דו חמצני";
+"nutrition.minerals.bicarbonate" = "ביקרבונט";
+"nutrition.minerals.potassium" = "אשלגן";
+"nutrition.minerals.chloride" = "כלוריד";
+"nutrition.minerals.calcium" = "סידן";
+"nutrition.minerals.phosphorus" = "זרחן";
+"nutrition.minerals.iron" = "ברזל";
+"nutrition.minerals.magnesium" = "מגנזיום";
+"nutrition.minerals.zinc" = "אבץ";
+"nutrition.minerals.copper" = "נחושת";
+"nutrition.minerals.manganese" = "מנגן";
+"nutrition.minerals.fluoride" = "פלואוריד";
+"nutrition.minerals.selenium" = "סלניום";
+"nutrition.minerals.chromium" = "כרומיום";
+"nutrition.minerals.molybdenum" = "מוליבדן";
+"nutrition.minerals.iodine" = "יוד";
+"nutrition.minerals.caffeine" = "קפאין";
+"nutrition.minerals.taurine" = "טאורין";
+"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.fruits-vegetables-nuts" = "פרות, ירקות, אגוזים";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
+"nutrition.minerals.cocoa" = "קקאו";
+"nutrition.minerals.chlorophyl" = "כלורופיל";
+
+// Call to action
+"call-to-action.summary" = "צילום תמונה של החזית";
+"call-to-action.ingredients" = "צילום תמונה של הרכיבים";
+"call-to-action.nutrition" = "צילום העובדות התזונתיות";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.took-picture.front" = "תמונה של החזית ✅";
+"product.images.took-picture.ingredients" = "תמונה של הרכיבים ✅";
+"product.images.took-picture.nutrition" = "תמונה של הטבלה התזונתית ✅";
+
+"product.images.take-picture.front" = "תמונה של החזית";
+"product.images.take-picture.ingredients" = "תמונה של הרכיבים";
+"product.images.take-picture.nutrition" = "תמונה של הטבלה התזונתית";
+
+// Settings storyboard
+"settings.tab-bar.item" = "הגדרות";
+"settings.allergies.title" = "אזהרות אלרגנים";
+"settings.allergies.description" = "ניתן להוסיף אלרגנים לרשימה זו כדי לקבל הודעה בעת סריקת מוצר שמכיל אותם.\nנא לשים לב שפירוט האלרגיות שלך לעולם לא יישלח אל השרת של Open Food Facts. כמו כן, כדאי להיזהר כיוון שהנתונים האלה אינן אמינים ב־100% והזיהוי עשוי להיות לקוי או חלקי. כדאי לבדוק עצמאית בנוסף!";
+"settings.allergies.add-button" = "הוספת אלרגנים";
+"settings.sections.information" = "פרטים";
+"settings.sections.discover" = "לגלות";
+"settings.sections.contribute" = "לתרום";
+"settings.sections.about" = "על אודות";
+"settings.user-profile" = "חשבון התרומה שלך";
+"settings.credits.title" = "תודות";
+"settings.contact.message" = "תודה שפנית אלינו.";
+"settings.contact-alert.title" = "לא ניתן לשלוח דוא״ל";
+"settings.contact-alert.message" = "למכשיר שלך אין אפשרות לשלוח דוא״ל. נא לבדוק את תצורת הדוא״ל שלך ולנסות שוב.";
+"settings.scan-on-launch.title" = "מעבר לסריקה עם הפעלת היישומון";
+"settings.sections.discover" = "לגלות";
+"settings.contribute.how-to-contribute" = "כיצד לתרום";
+"settings.contribute.support-open-food-facts" = "תמיכה ב־Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "תרגום Open Food Facts";
+"settings.about.contact" = "יצירת קשר";
+"settings.about.frequently-asked-questions" = "שאלות ותשובות נפוצות";
+"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
+"settings.credits.text" = "היישום שלנו מוגש לכם בזכות המתנדבים, התורמים ורבים אחרים שמשקיעים ב־ Open Food Facts ובוחרים ליצור ולהפיץ את פרי עמלם תחת רישיונות מתירניים.\n\nתחת Creative Commons By 3.0 ‏(https://creativecommons.org/licenses/by/3.0/‎):\n\nהסמלים „סריקת ברקוד” , „הגדרות” ו־„מבזק” עוצבו על ידי Madebyoliver‏ (https://www.flaticon.com/authors‎/madebyoliver)\nהסמל „צילום תמונה” עוצב על ידי Picol‏ (http://www.flaticon.com/authors/picol)\nהסמל „פרופיל” עוצב על ידי Smashicons‏ (https://www.flaticon.com/authors/smashicons)\nהסמל „Gregor Cresnar” עוצב על ידי Smashicons‏ (https://www.flaticon.com/authors/gregor-cresnar)\nהסמל „היסטוריית חיפוש” עוצב על ידי Hadrien‏ (https://www.flaticon.com/authors/hadrien)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "משתמש";
+"user.log-in" = "כניסה";
+"user.log-out" = "יציאה";
+"user.username" = "שם משתמש";
+"user.password" = "ססמה";
+"user.forgot-password" = "שכחת ססמה?";
+"user.check-your-contributions.button" = "הצגת כל התרומות שלך";
+"user.products-pending-upload.button" = "מוצרים שממתינים להעלאה אל Open Food Facts";
+"user.create-account.text" = "אם אין לך חשבון, יש ללחוץ על הקישור שלהלן כדי ליצור אחד.";
+"user.create-account.button" = "יצירת חשבון";
+"user.why-log-in.text" = "כניסה עם חשבון משלך תזכה אותך בעבור כל התרומות שלך לשקיפות המזון.";
+"user.alert.wrong-credentials.title" = "לא ניתן להיכנס";
+"user.alert.wrong-credentials.subtitle" = "יש לוודא ששם המשתמש והססמה שלך נכונים";
+"user.alert.generic-error.title" = "אירעה שגיאה בכניסה";
+"user.alert.generic-error.subtitle" = "נא לנסות שוב בעוד מספר רגעים";
+"user.alert.logout-confirmation.title" = "אימות יציאה";
+"user.alert.logout-confirmation.subtitle" = "לצאת?";
+"user.alert.username-missing" = "נדרש שם משתמש";
+"user.alert.password-missing" = "נדרשת ססמה";
+"pending-upload.info.text" = "אלו מוצרים שהוספת בזמן שלא היה לך חיבור לאינטרנט.\n\nהיישומון ינסה להעלות אותם אוטומטית עם חידוש החיבור או שבאפשרותך לנסות להעלות אותם ידנית באמצעות הכפתור שבפינה השמאלית העליונה.";
+"pending-upload.hud.status" = "מתבצעת העלאה";
+
+// Search history
+"history.title" = "היסטוריית חיפוש";
+"history.cell.privacy" = "היסטוריית החיפושים שלך מאוחסנת במכשיר שלך בלבד";
+"history.button.clear" = "פינוי";
+"history.clear.confirmation-title" = "למחוק את ההיסטוריה שלך?";
+"history.clear.confirmation-message" = "כל ההיסטוריה שלך תימחק";
+"history.section-titles.last24h" = "24 השעות האחרונות";
+"history.section-titles.fewDays" = "לפני מספר ימים";
+"history.section-titles.fewWeeks" = "לפני מספר שבועות";
+"history.section-titles.fewMonths" = "לפני מספר חודשים";
+"history.section-titles.longTime" = "לפני זמן רב";
