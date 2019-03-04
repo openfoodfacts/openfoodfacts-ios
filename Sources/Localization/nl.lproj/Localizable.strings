@@ -13,13 +13,13 @@
 "generic.back" = "Terug";
 "generic.search" = "Zoeken";
 "generic.cancel" = "Cancel";
-"generic.save" = "Bewaar";
+"generic.save" = "Opslaan";
 "generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 
 // Product Search
 
-"product-search.title" = "Zoek";
+"product-search.title" = "Zoeken";
 "product-search.search-placeholder" = "Search by name or barcode";
 "product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Er ging iets mis";
@@ -83,7 +83,7 @@
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
 
 "alert.action.ok" = "Ok";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Kies een taal";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Productnaam";
 /* Product Add brand text field */
@@ -92,30 +92,30 @@
 "product-add.placeholder.quantity" = "Hoeveelheid";
 
 "product-add.title" = "New product";
-"product-add.titles.barcode" = "Streepjescode";
+"product-add.titles.barcode" = "Barcode";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
-"product-add.label.product-name" = "Naam:";
+"product-add.label.product-name" = "Naam";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Hoeveelheid";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.label.language" = "Talen";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Voedingswaarden";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.choice.per-hundred-grams" = "voor 100g / 100 ml";
+"product-add.nutritive.choice.per-portion" = "per portie";
 "product-add.nutritive.add-nutriment" = "Voeg voedingsstof toe";
-"product-add.nutritive.too-much" = "More than 100g ?";
+"product-add.nutritive.too-much" = "Meer dan 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
 "product-add.titles.ingredients" = "Ingrediënten";
 "product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
 "product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.button-save" = "Ziet er goed uit, bewaar";
 
 // Select Category
 "select-category.title" = "Categorie";
@@ -145,7 +145,7 @@
 "product-detail.page-title.environment-impact" = "Environment";
 
 // Product detail summary info rows labels
-"product-detail.summary.barcode" = "Streepjescode";
+"product-detail.summary.barcode" = "Barcode";
 "product-detail.summary.quantity" = "Hoeveelheid";
 "product-detail.summary.packaging" = "Verpakking";
 "product-detail.summary.brands" = "Merken";
@@ -185,11 +185,11 @@
 "nutrition-level.high" = "grote hoeveelheid";
 
 // Nutrition
-"nutrition.energy" = "Energie";
+"nutrition.energy" = "Calorieën";
 "nutrition.fats" = "Vetten";
 "nutrition.fats.saturated-fat" = "Verzadigd vet";
-"nutrition.fats.mono-unsaturated-fat" = "Enkelvoudige onverzadigde vetzuren";
-"nutrition.fats.poly-unsaturated-fat" = "Meervoudig onvervaardigde vetzuren";
+"nutrition.fats.mono-unsaturated-fat" = "Monounsaturated fat";
+"nutrition.fats.poly-unsaturated-fat" = "Polyunsaturated fat";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
@@ -203,7 +203,7 @@
 "nutrition.carbohydrate.lactose" = "Lactose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrine";
-"nutrition.fiber" = "Voedingsvezels";
+"nutrition.fiber" = "Vezels";
 "nutrition.proteins" = "Eiwitten";
 "nutrition.proteins.casein" = "Caseïne";
 "nutrition.proteins.serum-proteins" = "Serumproteïnen";
@@ -211,7 +211,7 @@
 "nutrition.salt" = "Zout";
 "nutrition.sodium" = "Natrium";
 "nutrition.alcohol" = "Alcohol";
-"nutrition.vitamins" = "Vitaminen";
+"nutrition.vitamins" = "Vitamines en mineralen";
 "nutrition.vitamins.a" = "Vitamine A";
 "nutrition.vitamins.beta-carotene" = "Beta caroteen";
 "nutrition.vitamins.d" = "Vitamine D";
@@ -220,12 +220,12 @@
 "nutrition.vitamins.c" = "Vitamine C";
 "nutrition.vitamins.b1" = "Vitamine B1";
 "nutrition.vitamins.b2" = "Vitamine B2";
-"nutrition.vitamins.pp" = "Vitamine PP";
+"nutrition.vitamins.pp" = "Vitamine B3";
 "nutrition.vitamins.b6" = "Vitamine B6";
 "nutrition.vitamins.b9" = "Vitamine B6";
 "nutrition.vitamins.b12" = "Vitamine B12";
-"nutrition.vitamins.biotin" = "Biotine";
-"nutrition.vitamins.pantothenic-acid" = "Pantotheenzuur";
+"nutrition.vitamins.biotin" = "Vitamine B7";
+"nutrition.vitamins.pantothenic-acid" = "Vitamine B5";
 "nutrition.minerals" = "Mineralen";
 "nutrition.minerals.silica" = "Silicium";
 "nutrition.minerals.bicarbonate" = "Carbonaten";
@@ -247,7 +247,7 @@
 "nutrition.minerals.taurine" = "Taurine";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Fruit, groente, noten";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Collageen vleesproteïne verhouding";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen/Meat Protein Ratio";
 "nutrition.minerals.cocoa" = "Cacao";
 "nutrition.minerals.chlorophyl" = "Chlorofyl";
 
@@ -301,7 +301,7 @@
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
-"user.create-account.button" = "Create an account";
+"user.create-account.button" = "Maak een account aan";
 "user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
 "user.alert.wrong-credentials.title" = "Kan niet inloggen";
 "user.alert.wrong-credentials.subtitle" = "Controleer uw gebruikersnaam en wachtwoord";
@@ -312,16 +312,16 @@
 "user.alert.username-missing" = "Gebruikersnaam is vereist";
 "user.alert.password-missing" = "Wachtwoord is vereist";
 "pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"pending-upload.hud.status" = "Aan het uploaden";
 
 // Search history
-"history.title" = "Search history";
+"history.title" = "Zoekgeschiedenis";
 "history.cell.privacy" = "Your search history is only stored on your device";
 "history.button.clear" = "Wissen";
-"history.clear.confirmation-title" = "Clear your history ?";
-"history.clear.confirmation-message" = "All your history will be deleted";
-"history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
+"history.clear.confirmation-title" = "Geschiedenis wissen ?";
+"history.clear.confirmation-message" = "Je geschiedenis zal worden verwijderd";
+"history.section-titles.last24h" = "Afgelopen 24 uur";
+"history.section-titles.fewDays" = "Een paar dagen geleden";
+"history.section-titles.fewWeeks" = "Een paar weken geleden";
+"history.section-titles.fewMonths" = "Een paar maanden geleden";
+"history.section-titles.longTime" = "Lang geleden";
