@@ -22,6 +22,8 @@
 		30270C322226EAD000E6973D /* SummaryFooterCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30270C312226EAD000E6973D /* SummaryFooterCellController.xib */; };
 		30270C342226F4A000E6973D /* operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C332226F4A000E6973D /* operators.swift */; };
 		30270C37222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C36222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift */; };
+		3030EB81222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030EB7F222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.swift */; };
+		3030EB82222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3030EB80222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.xib */; };
 		303C279D2201AB6B00159961 /* ScanProductSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */; };
 		303C279F2201AB7B00159961 /* ScanProductSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */; };
 		303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */; };
@@ -307,6 +309,8 @@
 		30270C312226EAD000E6973D /* SummaryFooterCellController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryFooterCellController.xib; sourceTree = "<group>"; };
 		30270C332226F4A000E6973D /* operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = operators.swift; sourceTree = "<group>"; };
 		30270C36222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentImpactTableFormTableViewController.swift; sourceTree = "<group>"; };
+		3030EB7F222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailWebViewTableViewCell.swift; sourceTree = "<group>"; };
+		3030EB80222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailWebViewTableViewCell.xib; sourceTree = "<group>"; };
 		303C279C2201AB6B00159961 /* ScanProductSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProductSummaryView.swift; sourceTree = "<group>"; };
 		303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanProductSummaryView.xib; sourceTree = "<group>"; };
 		303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBarcodeInputView.swift; sourceTree = "<group>"; };
@@ -1242,6 +1246,8 @@
 				957CBEBF1F33B31F00A1B398 /* ProductDetailBaseCell.swift */,
 				957CBEB91F3312FB00A1B398 /* HostedViewCell.swift */,
 				956FF8A81F1FF0CA0069D678 /* ProductDetailViewController.storyboard */,
+				3030EB7F222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.swift */,
+				3030EB80222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -2149,6 +2155,7 @@
 				95C265191E96D55B004212EC /* Assets.xcassets in Resources */,
 				958F335C1F37809A005269C5 /* PictureCallToActionView.xib in Resources */,
 				956FF9421F1FF0CA0069D678 /* IngredientsHeaderCellController.xib in Resources */,
+				3030EB82222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.xib in Resources */,
 				958F33541F378076005269C5 /* InfoRowTableViewCell.xib in Resources */,
 				956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */,
 				95D060D91F6085320052012D /* LoadingCell.xib in Resources */,
@@ -2407,6 +2414,7 @@
 				307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */,
 				955BAFF91FF668B70046F419 /* PendingProductMergeProcessor.swift in Sources */,
 				951FA7881F50C0670096AC5A /* AccessibilityIdentifiers.swift in Sources */,
+				3030EB81222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.swift in Sources */,
 				95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */,
 				300085612207AC0700DC3896 /* Additive.swift in Sources */,
 				957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */,
