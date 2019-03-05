@@ -21,7 +21,7 @@
 
 "product-search.title" = "Cerca";
 "product-search.search-placeholder" = "Cerca per nome o codice a barre";
-"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
+"product-search.no-results" = "Nessun risultato. Puoi aggiungere un prodotto a Open Food Facts scannerizzandolo.";
 "product-search.error-view.title" = "Si è verificato un errore";
 "product-search.error-view.subtitle" = "Riprova di nuovo";
 "product-search.initial-view.slogan" = "the free food products database";
@@ -33,14 +33,14 @@
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Errore durante la scansione del codice a barre. Riprova tra qualche istante.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "Nessun codice a barre trovato. Puoi digitarlo manualmente:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts necessita del permesso per la fotocamera";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
+"product-scanner.permissions.noPermissions.message" = "Concedi l'autorizzazione per consentire alla fotocamera di scansionare i codici a barre";
 "product-scanner.permissions.noPermissions.action.title" = "Apri impostazioni";
 
 "product-scanner.permissions.failed.title" = "La scansione del codice a barre non può essere avviata.";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.message" = "Controlla le impostazioni sulla privacy e vedi se Open Food Facts ha il permesso di usare la fotocamera";
 "product-scanner.permissions.failed.action.title" = "Lascia la scansione del codice a barre";
 
 "product-scanner.search.status" = "Caricamento del prodotto…";
@@ -70,17 +70,17 @@
 "product-add.save-ingredients.not-yet" = "Ingredienti non ancora salvati";
 "product-add.save-nutriments.success" = "Nutrimenti salvati a";
 "product-add.save-nutriments.error" = "Nutrimenti non salvati";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
+"product-add.save-nutriments.saving" = "Salvataggio nutrimenti…";
 "product-add.save-nutriments.not-yet" = "I nutrimenti non sono ancora stati salvati";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.no-nutrition" = "I valori nutrizionali non sono mostrati sul prodotto";
 
 "product-add.ocr-ingredients.success" = "Ingredienti letti dalla foto a";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.error" = "Impossibile estrarre gli ingredienti dall'immagine";
+"product-add.ocr-ingredients.saving" = "Estrazione degli ingredienti dalla foto…";
+"product-add.ocr-ingredients.not-yet" = "In attesa di una foto ingrediente da analizzare";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "Il punteggio di nutrimento è stato appena calcolato dalla tabella nutrizionale";
+"product-add.novagroup-explaination" = "Il gruppo NOVA è stato appena calcolato sulla base della lista degli ingredienti";
 
 "alert.action.ok" = "Ok";
 "product-add.language.toolbar-title" = "Scegli la lingua";
@@ -93,8 +93,8 @@
 
 "product-add.title" = "Nuovo prodotto";
 "product-add.titles.barcode" = "Codice a Barre";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.top-explainations" = "Ben fatto! Questo prodotto non è ancora in Open Food Facts. Puoi fare alcune foto del prodotto, la lista degli ingredienti e i dati nutrizionali per aggiungerli a Open Food Facts? Grazie in anticipo.";
+"product-add.titles.license-explaination" = "Nota: le foto che invii sono pubblicate sotto licenza libera Creative Commons Attribuzione e Condividi allo stesso modo.";
 
 "product-add.titles.product-info" = "Informazioni sul prodotto";
 "product-add.label.product-name" = "Nome";
@@ -104,7 +104,7 @@
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Lingue";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.description.nutritive" = "Informazioni nutrizionali complete e la categoria di prodotto per ottenere il punteggio di nutrimento";
 "product-add.titles.nutritive" = "Informazioni nutrizionali";
 "product-add.nutritive.choice.per-hundred-grams" = "per 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "per porzione";
@@ -269,7 +269,7 @@
 // Settings storyboard
 "settings.tab-bar.item" = "Impostazioni";
 "settings.allergies.title" = "Allarmi sugli allergeni";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.description" = "Aggiungi allergeni a questo elenco per ricevere una notifica quando esegui la scansione di un prodotto che lo contiene. \nSi prega di notare che le informazioni sulle vostre allergie non saranno MAI inviate al server di Open Food Facts. Inoltre, fai attenzione che i dati ed il rilevamento potrebbero non essere affidabili al 100%. Assicurati di controllare anche tu!";
 "settings.allergies.add-button" = "Aggiungi allergeni";
 "settings.sections.information" = "Informazioni";
 "settings.sections.discover" = "Scopri";
@@ -279,7 +279,7 @@
 "settings.credits.title" = "Ringraziamenti";
 "settings.contact.message" = "Grazie per averci contattato.";
 "settings.contact-alert.title" = "Impossibile inviare e-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
+"settings.contact-alert.message" = "Il tuo dispositivo non ha potuto inviare l'email.   Controlla la configurazione della posta elettronica e riprova.";
 "settings.scan-on-launch.title" = "Mostra scansione all'avvio";
 "settings.sections.discover" = "Scopri";
 "settings.contribute.how-to-contribute" = "Come contribuire";
@@ -288,7 +288,7 @@
 "settings.about.contact" = "Contatta";
 "settings.about.frequently-asked-questions" = "Domande poste frequentemente";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
+"settings.credits.text" = "La nostra app è resa possibile dai volontari di Open Food Facts, dai contributori e anche da molti altri che scelgono di creare e pubblicare il loro lavoro sotto licenze libere.\n\nSotto Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\nLe icone \"Scansione codice a barre\", \"Impostazioni\" e \"Flash\" sono state disegnate da Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\nL'icona \"Scatta foto\" è stata disegnata da Picol (http://www.flaticon.com/authors/picol)\nL'icona \"Profilo\" è stata disegnata da Smashicons (https://www.flaticon.com/authors/smashicons)\nL'icona \"Gregor Cresnar\" è stata disegnata da Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\nL'icona \"Cerca nella cronologia\" è stata disegnata da Hadrien (https://www.flaticon.com/authors/Hadrien)";
 
 // User view
 /* Tab bar item */
@@ -302,7 +302,7 @@
 "user.products-pending-upload.button" = "Prodotti in attesa di caricamento su Open Food Facts";
 "user.create-account.text" = "Se non hai di un account, fare clic sul collegamento qui sotto per crearne uno.";
 "user.create-account.button" = "Crea un account";
-"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.why-log-in.text" = "Effettuare l'accesso con il tuo account ti darà credito per tutti i tuoi contributi alla trasparenza alimentare.";
 "user.alert.wrong-credentials.title" = "Non riesco ad accedere";
 "user.alert.wrong-credentials.subtitle" = "Controlla che nome utente e password siano corretti";
 "user.alert.generic-error.title" = "Errore di login";
@@ -311,7 +311,7 @@
 "user.alert.logout-confirmation.subtitle" = "Sicuro di voler uscire?";
 "user.alert.username-missing" = "Nome utente obbligatorio";
 "user.alert.password-missing" = "Password obbligatoria";
-"pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.info.text" = "Questi sono i prodotti che hai aggiunto mentre sei offline.\n\nL'app proverà a caricarli automaticamente quando torni online oppure puoi provare a caricarli manualmente toccando il pulsante nell'angolo in alto a destra.";
 "pending-upload.hud.status" = "Caricamento…";
 
 // Search history
