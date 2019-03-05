@@ -117,7 +117,7 @@ class ProductService: ProductApi {
         Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
         Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
 
-        /* aleene: disabled to get all fields, not only those specified
+        // aleene: disabled to get all fields, not only those specified
          // we cannot use the summary or the list as the tags are product and language dependent.
         if isSummary {
             // When we ask for a summary of the product, we specify to the server which fields we want (to make a smaller request). We would prefere to use the 'Parameter' normally used by Alamofire in this case, but this generates an url like
@@ -127,11 +127,22 @@ class ProductService: ProductApi {
             // and it seems the server does not handle that, and does not return any field
             // so we just append our fields directly to the url
 
-            url.append(contentsOf: "?fields=" + summaryFields.joined(separator: ","))
+            //var languageFields = [""]
+            //for code in Locale.preferredLanguageCodes {
+            //    languageFields.append(OFFJson.ProductNameKey + OFFJson.KeySeparator + code)
+            //}
+            //url.append(contentsOf: "?fields=" + summaryFields.joined(separator: OFFJson.FieldsSeparator) + OFFJson.FieldsSeparator + languageFields.joined(separator: OFFJson.FieldsSeparator))
+            url.append(contentsOf: "?fields=" + summaryFields.joined(separator: OFFJson.FieldsSeparator))
         } else {
-            url.append(contentsOf: "?fields=" + allFields)
+            var languageFields = [""]
+            for code in Locale.preferredLanguageCodes {
+                languageFields.append(OFFJson.ProductNameKey + OFFJson.KeySeparator + code)
+                languageFields.append(OFFJson.GenericNameKey + OFFJson.KeySeparator + code)
+                languageFields.append(OFFJson.IngredientsTextKey + OFFJson.KeySeparator + code)
+            }
+            url.append(contentsOf: "?fields=" + allFields + OFFJson.FieldsSeparator + languageFields.joined(separator: OFFJson.FieldsSeparator))
         }
- */
+ //
 
         let request: DataRequest = Alamofire.request(url)
         log.debug(request.debugDescription)

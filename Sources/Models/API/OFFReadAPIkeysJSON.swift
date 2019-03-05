@@ -274,6 +274,7 @@ struct OFFJson {
     static let IngredientsIdsDebugKey = "ingredients_ids_debug"
     static let EnvironmentInfoCardKey = "environment_infocard"
     static let EnvironmentImpactLevelTagsKey = "environment_impact_level_tags"
-
+    static let KeySeparator = "_"
+    static let FieldsSeparator = ","
     // swiftlint:enable identifier_name
 }
