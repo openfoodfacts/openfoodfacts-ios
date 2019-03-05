@@ -180,7 +180,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         if dataManager.listAllergies().isEmpty == false {
             if product.states?.contains("en:ingredients-to-be-completed") == true {
                 if product.allergens == nil || product.allergens?.isEmpty == true {
-                    createFormRow(with: &rows, item: "product-detail.ingredients.allergens-list.missing-infos".localized, label: "⚠️")
+                    createFormRow(with: &rows, item: "⚠️ " + "product-detail.ingredients.allergens-list.missing-infos".localized, label: InfoRowKey.allergens.localizedString)
                 }
             }
         }
@@ -268,12 +268,14 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     fileprivate func createNutritionTableRows(rows: inout [FormRow]) {
         // Header
         createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
-
-        // Nutrition table rows
-        let headerRow = NutritionTableRow(label: "",
-                                          perSizeValue: "product-detail.nutrition-table.100g".localized,
-                                          perServingValue: "product-detail.nutrition-table.serving".localized)
-        createFormRow(with: &rows, item: headerRow, cellType: NutritionTableRowTableViewCell.self)
+        
+        if product.nutriments != nil || product.servingSize != nil {
+            // Nutrition table rows
+            let headerRow = NutritionTableRow(label: "",
+                                              perSizeValue: "product-detail.nutrition-table.100g".localized,
+                                              perServingValue: "product-detail.nutrition-table.serving".localized)
+            createFormRow(with: &rows, item: headerRow, cellType: NutritionTableRowTableViewCell.self)
+        }
 
         if let energy = product.nutriments?.energy, let nutritionTableRow = energy.nutritionTableRow {
             createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)

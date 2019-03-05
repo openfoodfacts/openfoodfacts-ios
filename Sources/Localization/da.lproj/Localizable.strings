@@ -1,1 +1,327 @@
-/* No Localized Strings */
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Skan stregkode";
+
+// Generic strings that could be useful anywhere.
+"generic.back" = "Tilbage";
+"generic.search" = "Søg";
+"generic.cancel" = "Annullér";
+"generic.save" = "Gem";
+"generic.cancel" = "Annullér";
+"generic.ok" = "OK";
+
+// Product Search
+
+"product-search.title" = "Søg";
+"product-search.search-placeholder" = "Søg på navn eller stregkode";
+"product-search.no-results" = "Ingen resultater. Du kan føje et produkt til Open Food Facts ved at skanne det.";
+"product-search.error-view.title" = "Noget gik galt";
+"product-search.error-view.subtitle" = "Forsøg venligst igen";
+"product-search.initial-view.slogan" = "the free food products database";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "Skan produktstregkoden";
+"product-scanner.overlay.extended-user-help" = "Kan ikke finde en stregkode.\nCentrér stregkoden på skærmen.\nSørg for, at stregkoden er veloplyst.";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Skanner";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "Fejl under stregkodeskanning. Forsøg igen om et øjeblik.";
+"product-scanner.barcode-notfound.manual-enter" = "Ingen stregkode fundet. Du kan angive den manuelt:";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts behøver kamerarettighed";
+"product-scanner.permissions.noPermissions.message" = "Tildel rettigheden, for at lade kameraet skanne stregkoder";
+"product-scanner.permissions.noPermissions.action.title" = "Åbn indstillinger";
+
+"product-scanner.permissions.failed.title" = "Stregkodeskanning kunne ikke startes.";
+"product-scanner.permissions.failed.message" = "Tjek i Fortrolighedsindstillinger, om Open Food Facts har kamerarettighed";
+"product-scanner.permissions.failed.action.title" = "Forlad stregkodeskanning";
+
+"product-scanner.search.status" = "Indlæser produkt…";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "Uploader foto…";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "Noget gik galt";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "Forsøg at tage fotoet igen";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "Foto uploadet";
+"product-add.image-save-success-banner.title" = "Fotoet vil blive uploadet, når online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "Produkt tilføjet. Tak!";
+"product-add.uploaded-image" = "Foto uploadet, tak!";
+"product-add.save-error.title" = "Fejl under lagring af produkt";
+"product-add.save-error.message" = "Forsøg igen senere";
+"product-add.save-info.success" = "Oplysninger gemt på";
+"product-add.save-info.error" = "Oplysninger ikke gemt";
+"product-add.save-info.saving" = "Gemmer produktinformation…";
+"product-add.save-info.not-yet" = "Oplysninger ikke gemt endnu";
+"product-add.save-ingredients.success" = "Ingredienser gemt på";
+"product-add.save-ingredients.error" = "Ingredienser ikke gemt";
+"product-add.save-ingredients.saving" = "Gemme ingredienser…";
+"product-add.save-ingredients.not-yet" = "Ingredienser ikke gemt endnu";
+"product-add.save-nutriments.success" = "Næringsstoffer gemt på";
+"product-add.save-nutriments.error" = "Næringsstoffer ikke gemt";
+"product-add.save-nutriments.saving" = "Saving nutriments…";
+"product-add.save-nutriments.not-yet" = "Næringsstoffer ikke gemt endnu";
+"product-add.no-nutrition" = "Ernæringsdata ikke specificeret på produktet";
+
+"product-add.ocr-ingredients.success" = "Ingredienser læst fra fotoet på";
+"product-add.ocr-ingredients.error" = "Kunne ikke udtrække ingredienser fra fotoet";
+"product-add.ocr-ingredients.saving" = "Udtrækker ingredienser fra fotoet…";
+"product-add.ocr-ingredients.not-yet" = "Afventer et ingrediensfoto til analyse";
+
+"product-add.nutriscore-explaination" = "Nutri-score er netop blevet beregnet fra næringstabellen";
+"product-add.novagroup-explaination" = "NOVA-gruppen er netop blevet beregnet på baggrund af ingredienslisten";
+
+"alert.action.ok" = "OK";
+"product-add.language.toolbar-title" = "Vælg sprog";
+/* Product Add name text field */
+"product-add.placeholder.name" = "Produktnavn";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "Mærke";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity" = "Kvantitet";
+
+"product-add.title" = "Nyt produkt";
+"product-add.titles.barcode" = "Stregkode";
+"product-add.titles.top-explainations" = "Godt klaret ! Dette produkt er endnu ikke i Open Food Facts. Kan du tage nogle fotos af produktet, ingredienslisten og ernæringsfakta for at tilføje det på Open Food Facts? På forhånd tak.";
+"product-add.titles.license-explaination" = "Bemærk: Fotoene, du indsender, offentliggjøres under den gratis licens Creative Commons Attribution & ShareAlike.";
+
+"product-add.titles.product-info" = "Produktoplysninger";
+"product-add.label.product-name" = "Navn";
+"product-add.label.category" = "Kategori";
+"product-add.label.quantity" = "Kvantitet";
+"product-add.details.category" = "Nødvendig til beregning af Nutri-Score";
+"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.language" = "Sprog";
+
+"product-add.description.nutritive" = "Færdiggør ernæringsfakta og produktkategorien for at få Nutri-Score";
+"product-add.titles.nutritive" = "Ernæringsfakta";
+"product-add.nutritive.choice.per-hundred-grams" = "pr. 100 g/100 ml";
+"product-add.nutritive.choice.per-portion" = "pr. portion";
+"product-add.nutritive.add-nutriment" = "Tilføj et næringsstof";
+"product-add.nutritive.too-much" = "Flere end 100g?";
+
+"product-add.description.ingredients" = "Færdiggør ingredienserne for at få NOVA-gruppen til fødevareforarbejdning";
+"product-add.titles.ingredients" = "Ingredienser";
+"product-add.ingredients.explaination" = "Tag et foto af ingredienslisten for automatisk at udtrække ingredienserne. Tjek dem omhyggeligt og glem ikke at gemme dem.";
+"product-add.ingredients.button-delete" = "For dårligt, Ignorér";
+"product-add.ingredients.button-save" = "Ser godt ud, Gem";
+
+// Select Category
+"select-category.title" = "Kategori";
+"select-category.search-placeholder" = "Søg efter en kategori";
+
+// Select nutrition
+"select-nutriment.title" = "Ernæring";
+"select-nutriment.search-placeholder" = "Søg efter et næringsstof";
+
+// Select allergen
+"select-allergen.title" = "Allergen";
+"select-allergen.search-placeholder" = "Søg efter et allergen";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "Tilføj et nyt foto";
+"product-detail.edit" = "Redigér dette produkt";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "Husk at gemme dine ændringer";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "Rul ned til 'Gem'-knappen";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "Oversigt";
+"product-detail.page-title.ingredients" = "Ingredienser";
+"product-detail.page-title.nutrition" = "Ernæring";
+"product-detail.page-title.nutrition-table" = "Ernæringstabel";
+"product-detail.page-title.environment-impact" = "Miljø";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "Stregkode";
+"product-detail.summary.quantity" = "Kvantitet";
+"product-detail.summary.packaging" = "Emballage";
+"product-detail.summary.brands" = "Mærker";
+"product-detail.summary.manufacturing-places" = "Produktions- eller forarbejdningssteder";
+"product-detail.summary.origins" = "Oprindelse af ingredienser";
+"product-detail.summary.categories" = "Kategorier";
+"product-detail.summary.labels" = "Etiketter, certificeringer, priser";
+"product-detail.summary.citiesTags" = "By, stat og land, hvor det er købt";
+"product-detail.summary.stores" = "Butikker";
+"product-detail.summary.embCodes" = "Emballagekode";
+"product-detail.summary.countries" = "Lande, hvorfra der sælges";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "Ingrediensoversigt";
+"product-detail.ingredients.allergens-list" = "Stoffer, eller produkter, som forårsager allergi eller overfølsomhed";
+"product-detail.ingredients.allergens-alert.title" = "Indeholder allergener!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Dette produkt har endnu ikke en ingrediensliste, og derfor kan allergendetekteringen ikke færdiigøres.";
+"product-detail.ingredients.traces-list" = "Spor";
+"product-detail.ingredients.additives-list" = "Tilsætningsstoffer";
+"product-detail.ingredients.palm-oil-ingredients" = "Ingredienser fra palmeolie";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredienser, som kan være fra palmeolie";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "Portionsstørrelse";
+"product-detail.nutrition.carbon-footprint" = "CO2-udslip";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "Ernæringsfakta";
+"product-detail.nutrition-table.for-100g" = "Pr. 100 g";
+"product-detail.nutrition-table.for-serving" = "Pr. portion";
+"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.serving" = "servering";
+
+// Nutrition levels
+"nutrition-level.low" = "i lavt kvantum";
+"nutrition-level.moderate" = "i moderat kvantum";
+"nutrition-level.high" = "i højt kvantum";
+
+// Nutrition
+"nutrition.energy" = "Kalorier";
+"nutrition.fats" = "Fedt";
+"nutrition.fats.saturated-fat" = "Mættet fedt";
+"nutrition.fats.mono-unsaturated-fat" = "Monoumættet fedt";
+"nutrition.fats.poly-unsaturated-fat" = "Flerumættet fedt";
+"nutrition.fats.omega3" = "Omega 3";
+"nutrition.fats.omega6" = "Omega 6";
+"nutrition.fats.omega9" = "Omega 9";
+"nutrition.fats.trans-fat" = "Transfedt";
+"nutrition.fats.cholesterol" = "Kolesterol";
+"nutrition.carbohydrate" = "Kulhydrat";
+"nutrition.carbohydrate.sugars" = "Sukkertyper";
+"nutrition.carbohydrate.sucrose" = "Saccharose";
+"nutrition.carbohydrate.glucose" = "Glukose";
+"nutrition.carbohydrate.fructose" = "Fruktose";
+"nutrition.carbohydrate.lactose" = "Laktose";
+"nutrition.carbohydrate.maltose" = "Maltose";
+"nutrition.carbohydrate.maltodextrins" = "Maltodextriner";
+"nutrition.fiber" = "Kostfibre";
+"nutrition.proteins" = "Proteiner";
+"nutrition.proteins.casein" = "Kasein";
+"nutrition.proteins.serum-proteins" = "Serumproteiner";
+"nutrition.proteins.nucleotides" = "Nukleotider";
+"nutrition.salt" = "Salt";
+"nutrition.sodium" = "Natrium";
+"nutrition.alcohol" = "Alkohol";
+"nutrition.vitamins" = "Vitaminer";
+"nutrition.vitamins.a" = "Vitamin A";
+"nutrition.vitamins.beta-carotene" = "Betakaroten";
+"nutrition.vitamins.d" = "D-vitamin";
+"nutrition.vitamins.e" = "E-vitamin";
+"nutrition.vitamins.k" = "Vitamin K";
+"nutrition.vitamins.c" = "C-vitamin";
+"nutrition.vitamins.b1" = "Vitamin B1";
+"nutrition.vitamins.b2" = "Vitamin B2";
+"nutrition.vitamins.pp" = "Vitamin PP";
+"nutrition.vitamins.b6" = "Vitamin B6";
+"nutrition.vitamins.b9" = "Vitamin B9";
+"nutrition.vitamins.b12" = "Vitamin B12";
+"nutrition.vitamins.biotin" = "Biotin";
+"nutrition.vitamins.pantothenic-acid" = "Pantothensyre";
+"nutrition.minerals" = "Mineraler";
+"nutrition.minerals.silica" = "Silica";
+"nutrition.minerals.bicarbonate" = "Bikarbonat";
+"nutrition.minerals.potassium" = "Kalium";
+"nutrition.minerals.chloride" = "Chlorid";
+"nutrition.minerals.calcium" = "Calcium";
+"nutrition.minerals.phosphorus" = "Fosfor";
+"nutrition.minerals.iron" = "Jern";
+"nutrition.minerals.magnesium" = "Magnesium";
+"nutrition.minerals.zinc" = "Zink";
+"nutrition.minerals.copper" = "Kobber";
+"nutrition.minerals.manganese" = "Mangan";
+"nutrition.minerals.fluoride" = "Fluor";
+"nutrition.minerals.selenium" = "Selen";
+"nutrition.minerals.chromium" = "Chrom";
+"nutrition.minerals.molybdenum" = "Molybdæn";
+"nutrition.minerals.iodine" = "Jod";
+"nutrition.minerals.caffeine" = "Koffein";
+"nutrition.minerals.taurine" = "Taurin";
+"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.fruits-vegetables-nuts" = "Frugter, grøntsager, nødder";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Kollagenkødproteinforhold";
+"nutrition.minerals.cocoa" = "Kakao";
+"nutrition.minerals.chlorophyl" = "Chlorophyl";
+
+// Call to action
+"call-to-action.summary" = "Tag et foto af forsiden";
+"call-to-action.ingredients" = "Tag et foto af ingredienserne";
+"call-to-action.nutrition" = "Tag et foto af ernæringsfakta";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.took-picture.front" = "Tag et foto af forsiden ✅";
+"product.images.took-picture.ingredients" = "Tag et foto af ingredienserne ✅";
+"product.images.took-picture.nutrition" = "Foto af ernæringstabellen ✅";
+
+"product.images.take-picture.front" = "Foto af forsiden";
+"product.images.take-picture.ingredients" = "Foto af ingredienserne";
+"product.images.take-picture.nutrition" = "Foto af ernæringstabellen";
+
+// Settings storyboard
+"settings.tab-bar.item" = "Indstillinger";
+"settings.allergies.title" = "Allergenadvarsler";
+"settings.allergies.description" = "Føj allergener til denne liste for at blive notificeret, når du skanner et produkt med dette indehold. \nBemærk, at oplysninger om dine allergier aldrig vil blive tilsendt Open Food Facts-serveren. Vær også opmærksom på, at dataene ikke er 100% pålidelige, og at detektionen måske ikke er 100% korrekt. Husk derfor selv at tjekke det!";
+"settings.allergies.add-button" = "Tilføj allergener";
+"settings.sections.information" = "Information";
+"settings.sections.discover" = "Opdag";
+"settings.sections.contribute" = "Bidrag";
+"settings.sections.about" = "Om";
+"settings.user-profile" = "Din bidragsyderkonto";
+"settings.credits.title" = "Krediteringer";
+"settings.contact.message" = "Tak fordi du kontakter os.";
+"settings.contact-alert.title" = "Kunne ikke afsende e-mail";
+"settings.contact-alert.message" = "Enheden kan ikke afsende e-mailen. Tjek e-mailopsætningen og forsøg igen.";
+"settings.scan-on-launch.title" = "Vis Scan På App Launch";
+"settings.sections.discover" = "Opdag";
+"settings.contribute.how-to-contribute" = "Hvordan Man Bidrager";
+"settings.contribute.support-open-food-facts" = "Støt Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Oversæt Open Food Facts";
+"settings.about.contact" = "Kontakt";
+"settings.about.frequently-asked-questions" = "Ofte stillede spørgsmål";
+"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
+"settings.credits.text" = "Vores app er muliggjort af Open Food Facts frivillige, bidragydere og også mange andre, der vælger at oprette og frigive deres arbejde under gratis licenser.\n\nUnder Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\nIkonerne \"Stregkodeskan\", \"Indstillinger\" og \"Blitz\" designet af Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\nIkonet \"Tag foto\" designet af Picol (http://www.flaticon.com/authors/picol)\nIkonet \"Profil\" designet af Smashicons (https://www.flaticon.com/authors/smashicons)\nIkonet \"Gregor Cresnar\" designet af Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\nIkonet \"Søgehistorik\" designet af Hadrien (https://www.flaticon.com/authors/hadrien)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "Bruger";
+"user.log-in" = "Log Ind";
+"user.log-out" = "Log ud";
+"user.username" = "Brugernavn";
+"user.password" = "Adgangskode";
+"user.forgot-password" = "Glemt adgangskode?";
+"user.check-your-contributions.button" = "Se alle dine bidrag";
+"user.products-pending-upload.button" = "Produkter afventende upload til Open Food Facts";
+"user.create-account.text" = "Har du ikke en konto, så tryk på linket nedenfor for at oprette én.";
+"user.create-account.button" = "Opret en konto";
+"user.why-log-in.text" = "Indlogning med din konto vil give dig kredit for alle dine bidrag til fødevaregennemsigtighed.";
+"user.alert.wrong-credentials.title" = "Kan ikke logge ind";
+"user.alert.wrong-credentials.subtitle" = "Tjek, at dit brugernavn og din adgangskode er korrekte";
+"user.alert.generic-error.title" = "Der opstod en fejl ved at logge ind";
+"user.alert.generic-error.subtitle" = "Forsøg venligst igen om et øjeblik";
+"user.alert.logout-confirmation.title" = "Bekræft Log ud";
+"user.alert.logout-confirmation.subtitle" = "Sikker på, at du vil logge ud?";
+"user.alert.username-missing" = "Brugernavn er påkrævet";
+"user.alert.password-missing" = "Adgangskode er påkrævet";
+"pending-upload.info.text" = "Disse er produkter tilføjede af dig offline.\n\nApp'en vil forsæge at uploade dem automatisk, når du atter er online. Du kan også forsøge at uploade dem manuelt ved at trykke på knappen øverst til højre.";
+"pending-upload.hud.status" = "Uploader";
+
+// Search history
+"history.title" = "Søgehistorik";
+"history.cell.privacy" = "Din søgehistorik gemmes kun på din enhed";
+"history.button.clear" = "Ryd";
+"history.clear.confirmation-title" = "Ryd historikken?";
+"history.clear.confirmation-message" = "Al historik blive slettet";
+"history.section-titles.last24h" = "Seneste 24 timer";
+"history.section-titles.fewDays" = "For få dage siden";
+"history.section-titles.fewWeeks" = "For få uger siden";
+"history.section-titles.fewMonths" = "For få måneder siden";
+"history.section-titles.longTime" = "For langt tid siden";

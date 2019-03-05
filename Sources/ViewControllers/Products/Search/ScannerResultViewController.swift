@@ -11,6 +11,7 @@ import UIKit
 enum ScannerResultStatusEnum {
     case waitingForScan
     case loading(barcode: String)
+    case hasOfflineData(product: RealmOfflineProduct)
     case hasSummary(product: Product)
     case hasProduct(product: Product, dataManager: DataManagerProtocol)
     case manualBarcode
@@ -56,6 +57,9 @@ class ScannerResultViewController: UIViewController {
             statusIndicatorLabel.text = barcode + "\n" + "product-scanner.search.status".localized
             statusIndicatorLabel.isHidden = false
 
+        case .hasOfflineData(let product):
+            updateSummaryVisibility(forProduct: product)
+
         case .hasSummary(let product):
             updateSummaryVisibility(forProduct: product)
 
@@ -67,6 +71,11 @@ class ScannerResultViewController: UIViewController {
             manualBarcodeInputView.barcodeTextField.text = nil
             manualBarcodeInputView.isHidden = false
         }
+    }
+
+    fileprivate func updateSummaryVisibility(forProduct product: RealmOfflineProduct) {
+        topSummaryView.fillIn(product: product)
+        topSummaryView.isHidden = false
     }
 
     fileprivate func updateSummaryVisibility(forProduct product: Product) {
