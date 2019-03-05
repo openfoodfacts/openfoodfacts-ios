@@ -33,6 +33,43 @@ class ScanProductSummaryView: UIView {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 
+    func fillIn(product: RealmOfflineProduct) {
+        productImageView.isHidden = true
+        environmentImpactImageView.isHidden = true
+
+        titleLabel.text = product.name
+
+        brandsLabel.text = nil
+        if let brands = product.brands, !brands.isEmpty {
+            brandsLabel.text = brands
+            brandsLabel.isHidden = false
+        } else {
+            brandsLabel.isHidden = true
+        }
+
+        if let quantity = product.quantity, !quantity.isEmpty {
+            quantityLabel.text = quantity
+            quantityLabel.isHidden = false
+        } else {
+            quantityLabel.isHidden = true
+        }
+
+        if let nutriscoreValue = product.nutritionGrade, let score = NutriScoreView.Score(rawValue: nutriscoreValue) {
+            nutriScoreView.currentScore = score
+            nutriScoreView.isHidden = false
+        } else {
+            nutriScoreView.isHidden = true
+        }
+
+        if let novaGroupValue = product.novaGroup, let novaIntValue = Double(novaGroupValue),
+            let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(Int(novaIntValue))") {
+            novaGroupView.novaGroup = novaGroup
+            novaGroupView.isHidden = false
+        } else {
+            novaGroupView.isHidden = true
+        }
+    }
+
     func fillIn(product: Product) {
         titleLabel.text = product.name
 

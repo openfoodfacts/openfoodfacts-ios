@@ -19,6 +19,8 @@ protocol DataManagerProtocol {
                     isSummary: Bool,
                     onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
 
+    func getOfflineProduct(forCode: String) -> RealmOfflineProduct?
+
     // User
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
 
@@ -36,6 +38,9 @@ protocol DataManagerProtocol {
     func getHistory() -> [Age: [HistoryItem]]
     func addHistoryItem(_ product: Product)
     func clearHistory()
+
+    // offline
+    func offlineProductStatus() -> RealmOfflineProductStatus?
 
     // Settings
     func addAllergy(toAllergen: Allergen)
@@ -92,6 +97,10 @@ class DataManager: DataManagerProtocol {
                 onError(error)
             }
         })
+    }
+
+    func getOfflineProduct(forCode: String) -> RealmOfflineProduct? {
+        return persistenceManager.getOfflineProduct(forCode: forCode)
     }
 
     // MARK: - User
@@ -173,6 +182,10 @@ class DataManager: DataManagerProtocol {
 
     func clearHistory() {
         persistenceManager.clearHistory()
+    }
+
+    func offlineProductStatus() -> RealmOfflineProductStatus? {
+        return persistenceManager.offlineProductStatus()
     }
 
     // MARK: - Product Add

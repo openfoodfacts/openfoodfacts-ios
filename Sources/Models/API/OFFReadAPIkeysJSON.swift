@@ -36,7 +36,7 @@ struct OFFJson {
     static let TracesTagsKey = "traces_tags"
     static let LangKey = "lang"
     static let DebugParamSortedLangsKey = "debug_param_sorted_langs"
-    static let LanguagesHierarchy = "languages_hierarchy"
+    static let LanguagesHierarchyKey = "languages_hierarchy"
     static let PhotographersKey = "photographers"
     static let GenericNameKey = "generic_name"
     static let IngredientsThatMayBeFromPalmOilTagsKey = "ingredients_that_may_be_from_palm_oil_tags"
@@ -44,7 +44,7 @@ struct OFFJson {
     static let KeywordsKey = "_keywords"
     static let RevKey = "rev"
     // added for decoding of languages
-                            static let LanguageCodes = "languages_codes"
+                            static let LanguageCodesKey = "languages_codes"
     static let EditorsKey = "editors"
     static let InterfaceVersionCreatedKey = "interface_version_created"
     static let EmbCodesKey = "emb_codes"
@@ -244,38 +244,148 @@ struct OFFJson {
     static let ServingQuantityKey = "serving_quantity"
     static let OriginsTagsKey = "origins_tags"
     static let ManufacturingPlacesTagsKey = "manufacturing_places_tags"
-    static let NutritionDataPerKey = "nutrition_data_per"
-    static let LabelsKey = "labels"
-    static let CitiesTagsKey = "cities_tags"
-    static let EmbCodes20141016Key = "emb_codes_20141016"
-    static let CategoriesTagsKey = "categories_tags"
-    static let QuantityKey = "quantity"
-    static let LabelsPrevHierarchyKey = "labels_prev_hierarchy"
-    static let ExpirationDateKey = "expiration_date"
-    static let StatesHierarchyKey = "states_hierarchy"
-    static let AllergensKey = "allergens"
-    static let AllergensTagsKey = "allergens_tags"
-    static let IngredientsThatMayBeFromPalmOilNKey = "ingredients_that_may_be_from_palm_oil_n"
-    static let ImageIngredientsThumbUrlKey = "image_ingredients_thumb_url"
-    static let IngredientsFromPalmOilNKey = "ingredients_from_palm_oil_n"
-    static let ImageUrlKey = "image_url"
-    static let ImageSmallUrlKey = "image_small_url"
-    static let IngredientsKey = "ingredients_text"
-    static let IngredientsElementTextKey = "text"
-    static let IngredientsElementRankKey = "rank"
-    static let IngredientsElementIdKey = "id"
-    static let LcKey = "lc"
-    static let IngredientsDebugKey = "ingredients_debug"
-    static let PnnsGroups1TagsKey = "pnns_groups_1_tags"
-    static let CheckersKey = "checkers"
+    
     static let AdditivesKey = "additives"
-    static let CompleteKey = "complete"
     static let AdditivesDebugTagsKey = "additives_debug_tags"
-    static let IngredientsIdsDebugKey = "ingredients_ids_debug"
+    static let AminoAcidTagsKey = "amino_acids_tags"
+    static let AllergensKey = "allergens"
+    static let AllergensHierarchyKey = "allergens_hierarchy"
+    static let AllergensTagsKey = "allergens_tags"
+    static let CategoriesTagsKey = "categories_tags"
+    static let CheckersKey = "checkers"
+    static let CitiesTagsKey = "cities_tags"
+    static let CompleteKey = "complete"
+    static let ConservationConditionsKey = "conservation_conditions"
+    static let CustomerServiceKey = "customer_service"
+    static let EmbCodes20141016Key = "emb_codes_20141016"
     static let EnvironmentInfoCardKey = "environment_infocard"
     static let EnvironmentImpactLevelTagsKey = "environment_impact_level_tags"
+    static let ExpirationDateKey = "expiration_date"
+    static let ImageIngredientsThumbUrlKey = "image_ingredients_thumb_url"
+    static let ImageSmallUrlKey = "image_small_url"
+    static let ImageUrlKey = "image_url"
+    static let IngredientsKey = "ingredients_text"
+    static let IngredientsDebugKey = "ingredients_debug"
+    static let IngredientsElementIdKey = "id"
+    static let IngredientsElementRankKey = "rank"
+    static let IngredientsElementTextKey = "text"
+    static let IngredientsFromPalmOilNKey = "ingredients_from_palm_oil_n"
+    static let IngredientsIdsDebugKey = "ingredients_ids_debug"
+    static let IngredientsThatMayBeFromPalmOilNKey = "ingredients_that_may_be_from_palm_oil_n"
+    static let LabelsKey = "labels"
+    static let LabelsPrevHierarchyKey = "labels_prev_hierarchy"
+    static let LcKey = "lc"
+    static let MineralsTagsKey = "minerals_tags"
+    static let NovagroupsKey = "nova_groups"
+    static let NucleotidesTagsKey = "nucleotides_tags"
+    static let NutritionDataPerKey = "nutrition_data_per"
+    static let OtherInformationKey = "other_information"
+    static let OtherNutritionalSubstancesTagsKey = "other_nutritional_substances_tags"
+    static let PnnsGroups1TagsKey = "pnns_groups_1_tags"
+    static let QuantityKey = "quantity"
+    static let RecyclingInstructionsToDiscard = "recycling_instructions_to_discard"
+    static let RecyclingInstructionsToRecycle = "recycling_instructions_to_recycle"
+    static let SelectedImagesKey = "selected_images"
+    static let StatesHierarchyKey = "states_hierarchy"
+    static let UrlKey = "url"
+    static let VitaminsTagsKey = "vitamins_tags"
+    static let WarningKey = "warning"
+
+    static let KeySeparator = "_"
+    static let FieldsSeparator = ","
     // to read images in the various languages
     static let SelectedImages = "selected_images"
-    
     // swiftlint:enable identifier_name
+
+    static var summaryFields: [String] {
+        return [
+            OFFJson.BrandsKey,
+            OFFJson.CodeKey,
+            OFFJson.EnvironmentImpactLevelTagsKey,
+            OFFJson.ImageFrontUrlKey,
+            OFFJson.ImageFrontSmallUrlKey,
+            OFFJson.ImageSmallUrlKey,
+            OFFJson.ImageUrlKey,
+            OFFJson.NovaGroupKey,
+            OFFJson.NutritionGradesKey,
+            OFFJson.ProductNameKey,
+            OFFJson.QuantityKey]
+    }
+
+    static var allFields: [String] {
+        return [
+            OFFJson.AdditivesTagsKey,
+            OFFJson.AllergensKey,
+            OFFJson.AllergensHierarchyKey,
+            OFFJson.AllergensTagsKey,
+            OFFJson.AminoAcidTagsKey,
+            OFFJson.BrandsKey,
+            OFFJson.BrandsTagsKey,
+            OFFJson.CategoriesTagsKey,
+            OFFJson.CitiesTagsKey,
+            OFFJson.CodeKey,
+            OFFJson.ConservationConditionsKey,
+            OFFJson.CountriesKey,
+            OFFJson.CountriesTagsKey,
+            OFFJson.CreatedTKey,
+            OFFJson.CreatorKey,
+            OFFJson.CustomerServiceKey,
+            OFFJson.EditorsTagsKey,
+            OFFJson.EmbCodesTagsKey,
+            OFFJson.EnvironmentImpactLevelTagsKey,
+            OFFJson.EnvironmentInfoCardKey,
+            OFFJson.GenericNameKey,
+            OFFJson.ImageFrontUrlKey,
+            OFFJson.ImageIngredientsUrlKey,
+            OFFJson.ImageNutritionUrlKey,
+            OFFJson.ImageSmallUrlKey,
+            OFFJson.ImageUrlKey,
+            OFFJson.IngredientsFromPalmOilNKey,
+            OFFJson.IngredientsFromPalmOilTagsKey,
+            OFFJson.IngredientsFromOrThatMayBeFromPalmOilNKey,
+            OFFJson.IngredientsTextKey,
+            OFFJson.IngredientsThatMayBeFromPalmOilTagsKey,
+            OFFJson.LabelsHierarchyKey,
+            OFFJson.LabelsTagsKey,
+            OFFJson.LangKey,
+            OFFJson.LanguageCodesKey,
+            OFFJson.LastModifiedByKey,
+            OFFJson.LastModifiedTKey,
+            OFFJson.LinkKey,
+            OFFJson.ManufacturingPlacesKey,
+            OFFJson.MineralsTagsKey,
+            OFFJson.NoNutritionDataKey,
+            OFFJson.NovaGroupKey,
+            OFFJson.NovagroupsKey,
+            OFFJson.NucleotidesTagsKey,
+            OFFJson.NutrientLevelsKey,
+            OFFJson.NutrimentsKey,
+            OFFJson.NutritionDataPerKey,
+            OFFJson.NutritionGradeFrKey,
+            OFFJson.NutritionGradesKey,
+            OFFJson.OriginsKey,
+            OFFJson.OtherInformationKey,
+            OFFJson.OtherNutritionalSubstancesTagsKey,
+            OFFJson.PackagingKey,
+            OFFJson.ProductNameKey,
+            OFFJson.PurchasePlacesKey,
+            OFFJson.RecyclingInstructionsToDiscard,
+            OFFJson.RecyclingInstructionsToRecycle,
+            OFFJson.QuantityKey,
+            OFFJson.SelectedImagesKey,
+            OFFJson.ServingSizeKey,
+            OFFJson.StatesTagsKey,
+            OFFJson.StoresKey,
+            OFFJson.TracesKey,
+            OFFJson.TracesTagsKey,
+            OFFJson.UrlKey,
+            OFFJson.VitaminsTagsKey,
+            OFFJson.WarningKey
+        ]
+    }
+
+    static var languageCodes: String {
+        // &lc=ja,nl,de,fr,it,es
+        return "&lc=" + Locale.preferredLanguageCodes.joined(separator: OFFJson.FieldsSeparator)
+    }
 }
