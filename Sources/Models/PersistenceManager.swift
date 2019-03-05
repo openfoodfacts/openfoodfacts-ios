@@ -34,6 +34,12 @@ protocol PersistenceManagerProtocol {
     func save(additives: [Additive])
     func additive(forCode: String) -> Additive?
 
+    // Offline
+    func save(offlineProducts: [RealmOfflineProduct])
+    func getOfflineProduct(forCode: String) -> RealmOfflineProduct?
+    func updateOfflineProductStatus(percent: Double, savedProductsCount: Int)
+    func offlineProductStatus() -> RealmOfflineProductStatus?
+
     // allergies settings
     func addAllergy(toAllergen: Allergen)
     func removeAllergy(toAllergen: Allergen)
@@ -52,14 +58,13 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     fileprivate func saveOrUpdate(objects: [Object]) {
         let realm = getRealm()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
 
         do {
             try realm.write {
                 realm.add(objects, update: true)
             }
         } catch let error as NSError {
-            log.error(error)
+            log.error("ERROR SAVING INTO REALM \(error)")
             Crashlytics.sharedInstance().recordError(error)
         }
     }
@@ -178,12 +183,23 @@ class PersistenceManager: PersistenceManagerProtocol {
         return getRealm().object(ofType: Additive.self, forPrimaryKey: code)
     }
 
+    func save(offlineProducts: [RealmOfflineProduct]) {
+        saveOrUpdate(objects: offlineProducts)
+    }
+
+    func getOfflineProduct(forCode: String) -> RealmOfflineProduct? {
+        return getRealm().object(ofType: RealmOfflineProduct.self, forPrimaryKey: forCode)
+    }
+
     // MARK: User Preferences
     fileprivate func getRealmUserPreferences() -> RealmUserPreferences {
         if let prefs = getRealm().objects(RealmUserPreferences.self).first {
             return prefs
         }
         let prefs = RealmUserPreferences()
+        if prefs.offlineStatus == nil {
+            prefs.offlineStatus = RealmOfflineProductStatus()
+        }
         do {
             let realm = getRealm()
             try realm.write {
@@ -225,6 +241,27 @@ class PersistenceManager: PersistenceManagerProtocol {
             log.error(error)
             Crashlytics.sharedInstance().recordError(error)
         }
+    }
+
+    func updateOfflineProductStatus(percent: Double, savedProductsCount: Int) {
+        let settings = getRealmUserPreferences()
+        let realm = getRealm()
+        do {
+            try realm.write {
+                if settings.offlineStatus == nil {
+                    settings.offlineStatus = RealmOfflineProductStatus()
+                }
+                settings.offlineStatus?.percent = percent
+                settings.offlineStatus?.savedProductsCount = savedProductsCount
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+
+    func offlineProductStatus() -> RealmOfflineProductStatus? {
+        return getRealmUserPreferences().offlineStatus
     }
 
     func listAllergies() -> Results<Allergen> {

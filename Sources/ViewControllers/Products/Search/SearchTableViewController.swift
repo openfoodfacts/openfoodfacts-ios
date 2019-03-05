@@ -10,6 +10,7 @@ import UIKit
 import CoreGraphics
 import Fabric
 import Crashlytics
+import RealmSwift
 
 // MARK: - UIViewController
 
@@ -34,8 +35,7 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
     weak var delegate: SearchViewControllerDelegate?
 
     // Background views
-    // swiftlint:disable:next force_cast
-    lazy var initialView = Bundle.main.loadNibNamed("InitialView", owner: self, options: nil)!.first as! UIView
+    lazy var initialView: InitialView = InitialView(frame: self.view.bounds)
     lazy var loadingView: UIView = LoadingView(frame: self.view.bounds)
     lazy var emptyView: UIView = EmptyView(frame: self.view.bounds)
     lazy var errorView: UIView = ErrorView(frame: self.view.bounds)
@@ -45,6 +45,9 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
      This boolean breaks that loop. */
     fileprivate var wasSearchBarEdited = false
 
+    fileprivate var offlineStatus: RealmOfflineProductStatus!
+    fileprivate var observeNotificationToken: NotificationToken?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,6 +56,28 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
         configureTableView()
         configureSearchController()
         configureGestureRecognizers()
+
+        self.offlineStatus = self.dataManager.offlineProductStatus()
+        self.observeNotificationToken = self.offlineStatus.observe { (_) in
+            self.updateInitialView()
+        }
+        self.updateInitialView()
+    }
+
+    fileprivate func updateInitialView() {
+        initialView.loadingProgressView.setProgress(Float(offlineStatus.percent/100), animated: true)
+        initialView.loadingTitleLabel.text = String.localizedStringWithFormat(NSLocalizedString("product-search.initial-view.offline.title-loading", comment: ""), Int(offlineStatus.percent))
+        initialView.loadingSubtitleLabel.text = String.localizedStringWithFormat(NSLocalizedString("product-search.initial-view.offline.subtitle", comment: ""), offlineStatus.savedProductsCount)
+
+        if offlineStatus.percent <= 0 || offlineStatus.percent >= 100 || offlineStatus.savedProductsCount <= 0 {
+            initialView.loadingProgressView.isHidden = true
+            initialView.loadingTitleLabel.isHidden = true
+        } else {
+            initialView.loadingProgressView.isHidden = false
+            initialView.loadingTitleLabel.isHidden = false
+        }
+
+        initialView.loadingSubtitleLabel.isHidden = offlineStatus.savedProductsCount <= 0
     }
 
     fileprivate func configureTableView() {
@@ -159,7 +184,7 @@ extension SearchTableViewController: UISearchResultsUpdating {
             if !query.isEmpty {
                 if wasSearchBarEdited {
                     state = .loading
-                    
+
                     let request = DispatchWorkItem { [weak self] in
                         self?.getProducts(page: 1, withQuery: query)
                     }
