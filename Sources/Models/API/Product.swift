@@ -111,6 +111,7 @@ struct Product: Mappable {
     var states: [String]?
     var environmentInfoCard: String?
     var environmentImpactLevelTags: [EnvironmentImpact]?
+    var nutritionTableHtml: String?
     // new variables for local languages
     var languageCodes: [String : Int]?
     var names: [String:String] = [:]
@@ -271,6 +272,7 @@ struct Product: Mappable {
         lang <- map[OFFJson.LangKey]
         environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
+        nutritionTableHtml <- map[OFFJson.NutritionTableHtml]
 
         // try to extract all language specific fields
 

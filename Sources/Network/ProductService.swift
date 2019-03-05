@@ -79,9 +79,6 @@ class ProductService: ProductApi {
         self.lastGetProductsRequest = request
     }
 
-
-    // swiftlint:disable:next line_length
-
     func getProduct(byBarcode barcode: String, isScanning: Bool, isSummary: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
 
         var url: String

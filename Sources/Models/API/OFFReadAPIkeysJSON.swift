@@ -260,6 +260,7 @@ struct OFFJson {
     static let EmbCodes20141016Key = "emb_codes_20141016"
     static let EnvironmentInfoCardKey = "environment_infocard"
     static let EnvironmentImpactLevelTagsKey = "environment_impact_level_tags"
+    static let NutritionTableHtml = "nutrition_table_html"
     static let ExpirationDateKey = "expiration_date"
     static let ImageIngredientsThumbUrlKey = "image_ingredients_thumb_url"
     static let ImageSmallUrlKey = "image_small_url"
@@ -380,7 +381,8 @@ struct OFFJson {
             OFFJson.TracesTagsKey,
             OFFJson.UrlKey,
             OFFJson.VitaminsTagsKey,
-            OFFJson.WarningKey
+            OFFJson.WarningKey,
+            OFFJson.NutritionTableHtml
         ]
     }
 
