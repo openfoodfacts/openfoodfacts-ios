@@ -13,18 +13,20 @@
 "generic.back" = "Terug";
 "generic.search" = "Zoeken";
 "generic.cancel" = "Cancel";
-"generic.save" = "Opslaan";
+"generic.save" = "Bewaar";
 "generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 
 // Product Search
 
-"product-search.title" = "Zoeken";
+"product-search.title" = "Zoek";
 "product-search.search-placeholder" = "Zoek op naam of streepjescode";
 "product-search.no-results" = "Geen resultaten. U kunt een product toevoegen aan Open Food Facts door het te scannen.";
 "product-search.error-view.title" = "Er ging iets mis";
 "product-search.error-view.subtitle" = "Probeer het opnieuw";
 "product-search.initial-view.slogan" = "the free food products database";
+"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
+"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scan de barcode van het product";
@@ -92,12 +94,12 @@
 "product-add.placeholder.quantity" = "Hoeveelheid";
 
 "product-add.title" = "Nieuw product";
-"product-add.titles.barcode" = "Barcode";
+"product-add.titles.barcode" = "Streepjescode";
 "product-add.titles.top-explainations" = "Goed gedaan ! Dit product is nog niet in Open Food Facts. Kun je wat foto's maken van het product, de ingrediëntenlijst en voedingswaarden om aan Open Food Facts toe te voegen?\n\nBij voorbaat dank.";
 "product-add.titles.license-explaination" = "Nb: de foto's die je upload, worden gepubliceerd onder de vrije licentie Creative Commons Attribution and ShareAlike.";
 
 "product-add.titles.product-info" = "Productinformatie";
-"product-add.label.product-name" = "Naam";
+"product-add.label.product-name" = "Naam:";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Hoeveelheid";
 "product-add.details.category" = "Nodig om de Nutri-Score te berekenen";
@@ -145,7 +147,7 @@
 "product-detail.page-title.environment-impact" = "Environment";
 
 // Product detail summary info rows labels
-"product-detail.summary.barcode" = "Barcode";
+"product-detail.summary.barcode" = "Streepjescode";
 "product-detail.summary.quantity" = "Hoeveelheid";
 "product-detail.summary.packaging" = "Verpakking";
 "product-detail.summary.brands" = "Merken";
@@ -163,6 +165,7 @@
 "product-detail.ingredients.allergens-list" = "Stoffen of producten die allergieën of intoleranties veroorzaken";
 "product-detail.ingredients.allergens-alert.title" = "Bevat allergenen!";
 "product-detail.ingredients.allergens-list.missing-infos" = "Dit product heeft nog geen ingrediëntenlijst en daardoor konden geen allergenen gedetecteerd worden.";
+"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Sporen";
 "product-detail.ingredients.additives-list" = "Additieven";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
@@ -188,8 +191,8 @@
 "nutrition.energy" = "Calorieën";
 "nutrition.fats" = "Vetten";
 "nutrition.fats.saturated-fat" = "Verzadigd vet";
-"nutrition.fats.mono-unsaturated-fat" = "Monounsaturated fat";
-"nutrition.fats.poly-unsaturated-fat" = "Polyunsaturated fat";
+"nutrition.fats.mono-unsaturated-fat" = "Enkelvoudige onverzadigde vetzuren";
+"nutrition.fats.poly-unsaturated-fat" = "Meervoudig onvervaardigde vetzuren";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
