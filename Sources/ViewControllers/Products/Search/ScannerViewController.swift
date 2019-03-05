@@ -70,7 +70,6 @@ class ScannerViewController: UIViewController, DataManagerClient {
         configureFlashView()
         configureTapToFocus()
 
-        floatingLabel.text = "⚠️ " + "product-detail.ingredients.allergens-list.missing-infos".localized
         floatingLabel.textAlignment = .center
         floatingLabel.numberOfLines = 0
         floatingLabel.textColor = .white
@@ -307,28 +306,43 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         scannerFloatingPanelLayout.canShowDetails = false
         DispatchQueue.main.async {
             self.floatingPanelController.move(to: .tip, animated: true)
-            self.scannerResultController.status = .loading(barcode: barcode)
-        }
 
-        dataManager.getProduct(byBarcode: barcode, isScanning: true, isSummary: isSummary, onSuccess: { [weak self] response in
-            self?.handleGetProductSuccess(barcode, response, isSummary: isSummary, createIfNeeded: createIfNeeded)
+            var hasOfflineSave = false
 
-            if response != nil, isSummary {
-                self?.getProduct(barcode: barcode, isSummary: false)
-            }
-
-        }, onError: { [weak self] error in
-            if isOffline(errorCode: (error as NSError).code) {
-                // Assume product does not exist and store locally for later upload
-                self?.handleGetProductSuccess(barcode, nil, isSummary: isSummary, createIfNeeded: createIfNeeded)
-            } else {
-                DispatchQueue.main.async {
-                    StatusBarNotificationBanner(title: "product-scanner.barcode.error".localized, style: .danger).show()
-                    self?.scannerResultController.status = .waitingForScan
+            if isSummary {
+                if let offlineProduct = self.dataManager.getOfflineProduct(forCode: barcode) {
+                    self.scannerResultController.status = .hasOfflineData(product: offlineProduct)
+                    self.showAllergensFloatingLabelIfNeeded()
+                    hasOfflineSave = true
                 }
-                self?.lastCodeScanned = nil
             }
-        })
+
+            if isSummary && !hasOfflineSave {
+                self.scannerResultController.status = .loading(barcode: barcode)
+            }
+
+            self.dataManager.getProduct(byBarcode: barcode, isScanning: true, isSummary: isSummary, onSuccess: { [weak self] response in
+                self?.handleGetProductSuccess(barcode, response, isSummary: isSummary, createIfNeeded: createIfNeeded)
+
+                if response != nil, isSummary {
+                    self?.getProduct(barcode: barcode, isSummary: false)
+                }
+
+                }, onError: { [weak self] error in
+                    if isOffline(errorCode: (error as NSError).code) {
+                        if hasOfflineSave == false {
+                            // Assume product does not exist and store locally for later upload
+                            self?.handleGetProductSuccess(barcode, nil, isSummary: isSummary, createIfNeeded: createIfNeeded)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            StatusBarNotificationBanner(title: "product-scanner.barcode.error".localized, style: .danger).show()
+                            self?.scannerResultController.status = .waitingForScan
+                        }
+                        self?.lastCodeScanned = nil
+                    }
+            })
+        }
     }
 
     fileprivate func showAllergenAlertIfNeeded(forProduct product: Product) {
@@ -382,8 +396,16 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
 
     fileprivate func showAllergensFloatingLabelIfNeeded() {
+        if dataManager.listAllergies().isEmpty {
+            self.floatingLabelContainer.isHidden = true
+            return
+        }
         switch scannerResultController.status {
+        case .hasOfflineData:
+            self.floatingLabel.text = "⚠️ " + "product-detail.ingredients.allergens-list.offline-product".localized
+            self.floatingLabelContainer.isHidden = false
         case .hasProduct(let product, _):
+            self.floatingLabel.text = "⚠️ " + "product-detail.ingredients.allergens-list.missing-infos".localized
             if product.states?.contains("en:ingredients-to-be-completed") == true {
                 self.floatingLabelContainer.isHidden = self.floatingPanelController.position != .tip
             } else {

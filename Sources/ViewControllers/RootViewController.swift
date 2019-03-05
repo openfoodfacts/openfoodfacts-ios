@@ -34,6 +34,10 @@ class RootViewController: UIViewController {
         taxonomiesApi.persistenceManager = persistenceManager
         taxonomiesApi.refreshTaxonomiesFromServerIfNeeded()
 
+        let offlineProductsService = OfflineProductsService()
+        offlineProductsService.persistenceManager = persistenceManager
+        offlineProductsService.refreshOfflineProductsFromServerIfNeeded()
+
         let dataManager = DataManager()
         dataManager.productApi = productApi
         dataManager.taxonomiesApi = taxonomiesApi
