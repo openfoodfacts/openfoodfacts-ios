@@ -233,7 +233,7 @@ struct Product: Mappable {
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
-        languageCodes <- map[OFFJson.LanguageCodes]
+        languageCodes <- map[OFFJson.LanguageCodesKey]
         nameDecoded <- map[OFFJson.ProductNameKey]
         brands <- (map[OFFJson.BrandsKey], ArrayTransform())
         _quantity <- map[OFFJson.QuantityKey]
