@@ -25,6 +25,8 @@
 "product-search.error-view.title" = "Valami hiba történt";
 "product-search.error-view.subtitle" = "Kérem, próbálja újra";
 "product-search.initial-view.slogan" = "the free food products database";
+"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
+"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "A termék vonalkódjának beolvasása";
@@ -163,6 +165,7 @@
 "product-detail.ingredients.allergens-list" = "Allergiás vagy intoleranciás reakciót okozó anyagok, termékek";
 "product-detail.ingredients.allergens-alert.title" = "Allergéneket tartalmaz!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Nyomokban";
 "product-detail.ingredients.additives-list" = "Adalékanyagok";
 "product-detail.ingredients.palm-oil-ingredients" = "Összetevők pálmaolajból";
