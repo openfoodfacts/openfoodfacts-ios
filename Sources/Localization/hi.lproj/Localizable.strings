@@ -1,1 +1,327 @@
-/* No Localized Strings */
+/*
+ Localizable.strings
+ OpenFoodFacts
+ 
+ Created by Andrés Pizá Bückmann on 27/04/2017.
+ Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+ */
+// App Shortcuts
+
+"shortcuts.scan" = "Scan barcode";
+
+// Generic strings that could be useful anywhere.
+"generic.back" = "Back";
+"generic.search" = "ढूंढें";
+"generic.cancel" = "Cancel";
+"generic.save" = "सेव़";
+"generic.cancel" = "Cancel";
+"generic.ok" = "ठीक";
+
+// Product Search
+
+"product-search.title" = "ढूंढें";
+"product-search.search-placeholder" = "Search by name or barcode";
+"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
+"product-search.error-view.title" = "कुछ गड़बड़ हुई है।";
+"product-search.error-view.subtitle" = "कृपया फिर प्रयास करें";
+"product-search.initial-view.slogan" = "the free food products database";
+
+// Product Scanner
+"product-scanner.overlay.user-help" = "उत्पाद के बारकोड को स्कैन करें";
+"product-scanner.overlay.extended-user-help" = "बारकोड नहीं मिल रहा। बारकोड स्क्रीन के केंद्र में रखे। सुनिश्चित करें कि बारकोड अच्छी तरह से ज्योतिर्मय है।";
+/* Title of the view controller in which user can scan. Keep it short. */
+"product-scanner.view-title" = "Scanner";
+/* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
+"product-scanner.barcode.error" = "बारकोड स्कैनिंग में त्रुटि । कृपया कुछ क्षणों में पुन: प्रयास करें ।";
+"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
+"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+
+"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
+"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.action.title" = "बारकोड स्कैनिंग छोड़ें";
+
+"product-scanner.search.status" = "Loading product…";
+
+// Product Add
+/* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
+"product-add.uploading-image-banner.title" = "Uploading image…";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.title" = "कुछ गड़बड़ हुई है।";
+/* Displayed when an image taken by the user during the product creation process fails to upload */
+"product-add.image-upload-error-banner.subtitle" = "कृपया फिर से तस्वीर लेने का प्रयास करें";
+/* Displayed when an image taken by the user during the product creation process uploads successfully */
+"product-add.image-upload-success-banner.title" = "छवि सफलतापूर्वक अपलोड की गई";
+"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+/* Displayed when a product was successfully added to the products database */
+"product-add.product-add-success-banner.title" = "उत्पाद सफलतापूर्वक डाला गया। धन्यवाद!";
+"product-add.uploaded-image" = "छवि अपलोड की गई, धन्यवाद!";
+"product-add.save-error.title" = "उत्पाद को सेव करने के दौरान त्रुटि";
+"product-add.save-error.message" = "Please try again later";
+"product-add.save-info.success" = "Information saved at";
+"product-add.save-info.error" = "Information not saved";
+"product-add.save-info.saving" = "Saving product information…";
+"product-add.save-info.not-yet" = "Information not saved yet";
+"product-add.save-ingredients.success" = "Ingredients saved at";
+"product-add.save-ingredients.error" = "Ingredients not saved";
+"product-add.save-ingredients.saving" = "Saving ingredients…";
+"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
+"product-add.save-nutriments.success" = "Nutriments saved at";
+"product-add.save-nutriments.error" = "Nutriments not saved";
+"product-add.save-nutriments.saving" = "Saving nutriments…";
+"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
+"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+
+"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
+"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
+"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
+"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+
+"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
+"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+
+"alert.action.ok" = "ठीक";
+"product-add.language.toolbar-title" = "Select a language";
+/* Product Add name text field */
+"product-add.placeholder.name" = "Product name";
+/* Product Add brand text field */
+"product-add.placeholder.brand" = "ब्रांड";
+/* Product Add quantity text field */
+"product-add.placeholder.quantity" = "मात्रा";
+
+"product-add.title" = "New product";
+"product-add.titles.barcode" = "बारकोड";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
+"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+
+"product-add.titles.product-info" = "Product information";
+"product-add.label.product-name" = "नाम";
+"product-add.label.category" = "श्रेणी";
+"product-add.label.quantity" = "मात्रा";
+"product-add.details.category" = "Needed to compute the Nutri-Score";
+"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.language" = "Languages";
+
+"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.titles.nutritive" = "पोषण तथ्य";
+"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.add-nutriment" = "Add a nutrient";
+"product-add.nutritive.too-much" = "More than 100g ?";
+
+"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.titles.ingredients" = "सामग्री";
+"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
+"product-add.ingredients.button-delete" = "Too bad, Ignore";
+"product-add.ingredients.button-save" = "Looks good, Save";
+
+// Select Category
+"select-category.title" = "श्रेणी";
+"select-category.search-placeholder" = "Search for a category";
+
+// Select nutrition
+"select-nutriment.title" = "पोषण";
+"select-nutriment.search-placeholder" = "Search for a nutrient";
+
+// Select allergen
+"select-allergen.title" = "Allergen";
+"select-allergen.search-placeholder" = "Search for an allergen";
+
+// Product Detail
+"product-detail.header.add-new-picture" = "एक नई तस्वीर डालें";
+"product-detail.edit" = "Edit this product";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.title" = "अपने परिवर्तनों को सहेजना याद रखें";
+/* Keep this text as short as possible */
+"product-detail.edit-alert.subtitle" = "'सहेजें' बटन तक नीचे स्क्रॉल करें";
+
+// Product detail page titles
+"product-detail.page-title.summary" = "संग्रह";
+"product-detail.page-title.ingredients" = "सामग्री";
+"product-detail.page-title.nutrition" = "पोषण";
+"product-detail.page-title.nutrition-table" = "पोषण सूची";
+"product-detail.page-title.environment-impact" = "Environment";
+
+// Product detail summary info rows labels
+"product-detail.summary.barcode" = "बारकोड";
+"product-detail.summary.quantity" = "मात्रा";
+"product-detail.summary.packaging" = "पैकेजिंग";
+"product-detail.summary.brands" = "ब्रांड";
+"product-detail.summary.manufacturing-places" = "विनिर्माण या प्रसंस्करण स्थान";
+"product-detail.summary.origins" = "सामग्री की उत्पत्ति";
+"product-detail.summary.categories" = "श्रेणियाँ";
+"product-detail.summary.labels" = "लेबल, प्रमाणपत्र, पुरस्कार";
+"product-detail.summary.citiesTags" = "शहर, राज्य और देश जहाँ इसे खरीदा गया";
+"product-detail.summary.stores" = "दुकाने";
+"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.countries" = "जिन देशों में बिकता है";
+
+// Product detail ingredients info row labels
+"product-detail.ingredients.ingredients-list" = "सामग्री की तालिका";
+"product-detail.ingredients.allergens-list" = "पदार्थों या उत्पादों के कारण एलर्जी या असहिष्णुता";
+"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.traces-list" = "अवशेष";
+"product-detail.ingredients.additives-list" = "योगशील";
+"product-detail.ingredients.palm-oil-ingredients" = "ताड़ के तेल से सामग्री";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "सामग्री जो ताड़ के तेल से हो सकती है";
+
+// Product detail nutrition info row labels
+"product-detail.nutrition.serving-size" = "सेवारत माप";
+"product-detail.nutrition.carbon-footprint" = "कार्बन पदचिह्न / कार्बन डाईऑक्साइड उत्सर्जन";
+
+// Product detail nutrition table labels
+"product-detail.nutrition-table.nutritional-table-header" = "पोषण तथ्य";
+"product-detail.nutrition-table.for-100g" = "१०० g के लिए";
+"product-detail.nutrition-table.for-serving" = "प्रत्येक हिस्सा";
+"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.serving" = "serving";
+
+// Nutrition levels
+"nutrition-level.low" = "कम मात्रा में";
+"nutrition-level.moderate" = "मध्यम मात्रा में";
+"nutrition-level.high" = "अधिक मात्रा में";
+
+// Nutrition
+"nutrition.energy" = "ऊर्जा";
+"nutrition.fats" = "वसा";
+"nutrition.fats.saturated-fat" = "संतृप्त वसा";
+"nutrition.fats.mono-unsaturated-fat" = "एक-संतृप्त वसा";
+"nutrition.fats.poly-unsaturated-fat" = "बहुसंतृप्त वसा";
+"nutrition.fats.omega3" = "ओमेगा 3";
+"nutrition.fats.omega6" = "ओमेगा 6";
+"nutrition.fats.omega9" = "ओमेगा 9";
+"nutrition.fats.trans-fat" = "ट्रांस वसा";
+"nutrition.fats.cholesterol" = "कोलेस्ट्रॉल";
+"nutrition.carbohydrate" = "कार्बोहाइड्रेट";
+"nutrition.carbohydrate.sugars" = "शुगर्स";
+"nutrition.carbohydrate.sucrose" = "सुक्रोज";
+"nutrition.carbohydrate.glucose" = "शर्करा";
+"nutrition.carbohydrate.fructose" = "फ्रुक्टोज";
+"nutrition.carbohydrate.lactose" = "लैक्टोज";
+"nutrition.carbohydrate.maltose" = "माल्टोज़";
+"nutrition.carbohydrate.maltodextrins" = "माल्टोडेक्सट्रिन्स";
+"nutrition.fiber" = "फाइबर आहार";
+"nutrition.proteins" = "प्रोटीन";
+"nutrition.proteins.casein" = "कैसिइन";
+"nutrition.proteins.serum-proteins" = "सीरम प्रोटीन";
+"nutrition.proteins.nucleotides" = "न्यूक्लियोटाइड";
+"nutrition.salt" = "नमक";
+"nutrition.sodium" = "सोडियम";
+"nutrition.alcohol" = "अल्कोहॉल";
+"nutrition.vitamins" = "विटामिन";
+"nutrition.vitamins.a" = "विटामिन ए";
+"nutrition.vitamins.beta-carotene" = "बीटा कैरोटीन";
+"nutrition.vitamins.d" = "विटामिन डी";
+"nutrition.vitamins.e" = "विटामिन ई";
+"nutrition.vitamins.k" = "विटामिन के";
+"nutrition.vitamins.c" = "विटामिन सी";
+"nutrition.vitamins.b1" = "विटामिन बी 1";
+"nutrition.vitamins.b2" = "विटामिन बी 2";
+"nutrition.vitamins.pp" = "विटामिन पीपी";
+"nutrition.vitamins.b6" = "विटामिन बी 6";
+"nutrition.vitamins.b9" = "विटामिन बी 9";
+"nutrition.vitamins.b12" = "विटामिन बी 12";
+"nutrition.vitamins.biotin" = "बायोटिन";
+"nutrition.vitamins.pantothenic-acid" = "पैंटोथैनिक एसिड";
+"nutrition.minerals" = "खनिज";
+"nutrition.minerals.silica" = "सिलिका";
+"nutrition.minerals.bicarbonate" = "बिकारबोनिट";
+"nutrition.minerals.potassium" = "पोटेशियम";
+"nutrition.minerals.chloride" = "क्लोराइड";
+"nutrition.minerals.calcium" = "केल्शियम";
+"nutrition.minerals.phosphorus" = "फॉस्फोरस";
+"nutrition.minerals.iron" = "लोहा";
+"nutrition.minerals.magnesium" = "मैग्नीशियम";
+"nutrition.minerals.zinc" = "ज़िंक";
+"nutrition.minerals.copper" = "तांबा";
+"nutrition.minerals.manganese" = "मैंगनीज़";
+"nutrition.minerals.fluoride" = "फ्लोराइड";
+"nutrition.minerals.selenium" = "सेलेनियम";
+"nutrition.minerals.chromium" = "क्रोमियम";
+"nutrition.minerals.molybdenum" = "मॉलीब्डेनम";
+"nutrition.minerals.iodine" = "आयोडीन";
+"nutrition.minerals.caffeine" = "कैफीन";
+"nutrition.minerals.taurine" = "टौरीने";
+"nutrition.minerals.ph" = "पीएच";
+"nutrition.minerals.fruits-vegetables-nuts" = "फल, सब्जियां, दाने";
+"nutrition.minerals.collagen-meat-protein-ratio" = "कोलेजन मांस प्रोटीन अनुपात";
+"nutrition.minerals.cocoa" = "कोकोआ";
+"nutrition.minerals.chlorophyl" = "क्लोरोफिल";
+
+// Call to action
+"call-to-action.summary" = "Take a photo of the front";
+"call-to-action.ingredients" = "Take a photo of the ingredients";
+"call-to-action.nutrition" = "Take a photo of the nutrition facts";
+
+// Product images
+/* To be used with another string, like 'Take a picture of the product's ingredients` */
+"product.images.took-picture.front" = "Photo of the front ✅";
+"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
+"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+
+"product.images.take-picture.front" = "Photo of the front";
+"product.images.take-picture.ingredients" = "Photo of the ingredients";
+"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+
+// Settings storyboard
+"settings.tab-bar.item" = "सेटिंग्स";
+"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.add-button" = "Add allergens";
+"settings.sections.information" = "जानकारी";
+"settings.sections.discover" = "तलाश करें";
+"settings.sections.contribute" = "Contribute";
+"settings.sections.about" = "जानकारी";
+"settings.user-profile" = "Your contributor account";
+"settings.credits.title" = "क्रेडिट्स";
+"settings.contact.message" = "Thank you for contacting us.";
+"settings.contact-alert.title" = "Could not send E-mail";
+"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
+"settings.scan-on-launch.title" = "ऐप लॉंच पर स्कैन दिखाएं";
+"settings.sections.discover" = "तलाश करें";
+"settings.contribute.how-to-contribute" = "योगदान कैसे करें";
+"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.about.contact" = "संपर्क";
+"settings.about.frequently-asked-questions" = "अक्सर पूछे जाने वाले सवाल";
+"settings.promotion.open-beauty-facts" = "ओपन ब्यूटी फैक्ट्स";
+"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
+
+// User view
+/* Tab bar item */
+"user.tab-bar.item" = "उपयोगकर्ता";
+"user.log-in" = "लॉग इन करें";
+"user.log-out" = "लॉग आउट करें";
+"user.username" = "उपयोगकर्ता नाम";
+"user.password" = "पासवर्ड";
+"user.forgot-password" = "Forgot Password?";
+"user.check-your-contributions.button" = "View all your contributions";
+"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
+"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.button" = "Create an account";
+"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.alert.wrong-credentials.title" = "लॉग इन करने में असमर्थ";
+"user.alert.wrong-credentials.subtitle" = "अपने उपयोगकर्ता नाम और पासवर्ड की जांच कीजिये";
+"user.alert.generic-error.title" = "प्रवेश करने में कोई त्रुटि थी";
+"user.alert.generic-error.subtitle" = "कृपया कुछ क्षणों में पुन: प्रयास करें";
+"user.alert.logout-confirmation.title" = "लॉगआउट करें?";
+"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
+"user.alert.username-missing" = "उपयोगकर्ता नाम आवश्यक है";
+"user.alert.password-missing" = "पासवर्ड आवश्यक है";
+"pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.hud.status" = "Uploading";
+
+// Search history
+"history.title" = "Search history";
+"history.cell.privacy" = "Your search history is only stored on your device";
+"history.button.clear" = "खाली करें";
+"history.clear.confirmation-title" = "Clear your history ?";
+"history.clear.confirmation-message" = "All your history will be deleted";
+"history.section-titles.last24h" = "Last 24 hours";
+"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewWeeks" = "A few weeks ago";
+"history.section-titles.fewMonths" = "A few months ago";
+"history.section-titles.longTime" = "A long time ago";

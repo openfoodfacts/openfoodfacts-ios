@@ -113,6 +113,13 @@ class EditNutritiveValueView: UIView {
         }
     }
 
+    func getInputValue() -> Double? {
+        if let txt = inputTextField.text?.replacingOccurrences(of: ",", with: ".") {
+            return Double(txt)
+        }
+        return nil
+    }
+
     func getSelectedUnit() -> String? {
         return selectedUnit
     }

@@ -276,5 +276,7 @@ struct OFFJson {
     static let EnvironmentImpactLevelTagsKey = "environment_impact_level_tags"
     static let KeySeparator = "_"
     static let FieldsSeparator = ","
+    // to read images in the various languages
+    static let SelectedImages = "selected_images"
     // swiftlint:enable identifier_name
 }
