@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Сканировать штрих-код";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Назад";
@@ -25,15 +25,17 @@
 "product-search.error-view.title" = "Упс... что-то пошло не так";
 "product-search.error-view.subtitle" = "Попробуйте еще раз";
 "product-search.initial-view.slogan" = "the free food products database";
+"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
+"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Сканирование штрих-кода продукта";
 "product-scanner.overlay.extended-user-help" = "Не удается найти штрих-код.\nОтцентрируйте штрих-код на экране.\nУбедитесь, что штрих-код хорошо освещен.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Сканер";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Ошибка сканирования штрих-кода. Попробуйте снова через пару минут.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "Штрих-код не найден. Вы можете ввести его вручную:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Предоставьте разрешение разрешение на использование камеры для сканирования штрих-кодов";
@@ -61,9 +63,9 @@
 "product-add.save-error.title" = "Ошибка при сохранении продукта";
 "product-add.save-error.message" = "Повторите попытку позже";
 "product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
+"product-add.save-info.error" = "Информация не сохранена";
+"product-add.save-info.saving" = "Сохранение информации о продукте…";
+"product-add.save-info.not-yet" = "Информация еще не сохранена";
 "product-add.save-ingredients.success" = "Ingredients saved at";
 "product-add.save-ingredients.error" = "Ingredients not saved";
 "product-add.save-ingredients.saving" = "Saving ingredients…";
@@ -83,7 +85,7 @@
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
 
 "alert.action.ok" = "Ок";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Выберите язык";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Название продукта";
 /* Product Add brand text field */
@@ -91,7 +93,7 @@
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Количество";
 
-"product-add.title" = "New product";
+"product-add.title" = "Новый продукт";
 "product-add.titles.barcode" = "Штрих-код";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
@@ -101,21 +103,21 @@
 "product-add.label.category" = "Категория";
 "product-add.label.quantity" = "Количество";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.label.quantity-example" = "25 г, 10 унций, 5 мл…";
+"product-add.label.language" = "Языки";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Пищевая ценность";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.choice.per-hundred-grams" = "в 100 г/100 мл";
+"product-add.nutritive.choice.per-portion" = "на порцию";
 "product-add.nutritive.add-nutriment" = "Добавить питательное вещество";
-"product-add.nutritive.too-much" = "More than 100g ?";
+"product-add.nutritive.too-much" = "Более 100 г?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
 "product-add.titles.ingredients" = "Ингредиенты";
 "product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
 "product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.button-save" = "Выглядит хорошо, сохранить";
 
 // Select Category
 "select-category.title" = "Категория";
@@ -155,14 +157,15 @@
 "product-detail.summary.labels" = "Маркировка, сертификаты, награды";
 "product-detail.summary.citiesTags" = "Город, область и страна покупки";
 "product-detail.summary.stores" = "Магазины";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "Код упаковщика";
 "product-detail.summary.countries" = "Страны продажи";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Список ингредиентов";
 "product-detail.ingredients.allergens-list" = "Вещества или продукты, вызывающие аллергию или непереносимость";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-alert.title" = "Содержит аллергены!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Следы";
 "product-detail.ingredients.additives-list" = "Добавки";
 "product-detail.ingredients.palm-oil-ingredients" = "Ингредиенты из пальмового масла";
@@ -176,7 +179,7 @@
 "product-detail.nutrition-table.nutritional-table-header" = "Пищевая и энергетическая ценность";
 "product-detail.nutrition-table.for-100g" = "На 100 г";
 "product-detail.nutrition-table.for-serving" = "На порцию";
-"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.100g" = "100г";
 "product-detail.nutrition-table.serving" = "порция";
 
 // Nutrition levels
@@ -283,8 +286,8 @@
 "settings.scan-on-launch.title" = "Запуск сканирования при запуске приложения";
 "settings.sections.discover" = "О проекте";
 "settings.contribute.how-to-contribute" = "Как принять участие";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.contribute.support-open-food-facts" = "Поддержать Open Food Facts Support";
+"settings.contribute.translate-open-food-facts" = "Перевести Open Food Facts";
 "settings.about.contact" = "Связаться с нами";
 "settings.about.frequently-asked-questions" = "Часто задаваемые вопросы";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
@@ -297,10 +300,10 @@
 "user.log-out" = "Выйти";
 "user.username" = "Имя пользователя";
 "user.password" = "Пароль";
-"user.forgot-password" = "Forgot Password?";
+"user.forgot-password" = "Забыли пароль?";
 "user.check-your-contributions.button" = "Проверить ваш вклад";
 "user.products-pending-upload.button" = "Products pending upload";
-"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.create-account.text" = "Если у вас нет учетной записи, нажмите ссылку ниже, чтобы создать ее.";
 "user.create-account.button" = "Создать учетную запись";
 "user.why-log-in.text" = "Войдите в свою учетную запись чтобы ассоциировать ваш вклад с вашей учетной записью.";
 "user.alert.wrong-credentials.title" = "Не удалось авторизоваться";
@@ -308,20 +311,20 @@
 "user.alert.generic-error.title" = "Ошибка при входе в систему";
 "user.alert.generic-error.subtitle" = "Попробуйте еще раз чуть позже";
 "user.alert.logout-confirmation.title" = "Подтвердить выход";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
+"user.alert.logout-confirmation.subtitle" = "Вы уверены, что хотите выйти?";
 "user.alert.username-missing" = "Требуется имя пользователя";
 "user.alert.password-missing" = "Требуется пароль";
 "pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"pending-upload.hud.status" = "Передача";
 
 // Search history
-"history.title" = "Search history";
+"history.title" = "История поиска";
 "history.cell.privacy" = "Your search history is only stored on your device";
 "history.button.clear" = "Очистить";
-"history.clear.confirmation-title" = "Clear your history ?";
+"history.clear.confirmation-title" = "Очистить историю?";
 "history.clear.confirmation-message" = "All your history will be deleted";
-"history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
+"history.section-titles.last24h" = "За последние 24 часа";
+"history.section-titles.fewDays" = "Несколько дней назад";
+"history.section-titles.fewWeeks" = "Несколько недель назад";
+"history.section-titles.fewMonths" = "Несколько месяцев назад";
+"history.section-titles.longTime" = "Очень давно";
