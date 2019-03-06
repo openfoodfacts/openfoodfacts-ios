@@ -15,9 +15,9 @@ enum NutritionDataPer: String {
 }
 
 enum EnvironmentImpact: String {
-    case low = "en-low"
-    case medium = "en-medium"
-    case high = "en-high"
+    case low = "en:low"
+    case medium = "en:medium"
+    case high = "en:high"
 
     var image: UIImage {
         switch self {
