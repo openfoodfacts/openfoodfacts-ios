@@ -310,7 +310,9 @@ struct OFFJson {
             OFFJson.NovaGroupKey,
             OFFJson.NutritionGradesKey,
             OFFJson.ProductNameKey,
-            OFFJson.QuantityKey]
+            OFFJson.QuantityKey,
+            OFFJson.StatesKey
+        ]
     }
 
     static var allFields: [String] {
@@ -375,6 +377,7 @@ struct OFFJson {
             OFFJson.QuantityKey,
             OFFJson.SelectedImagesKey,
             OFFJson.ServingSizeKey,
+            OFFJson.StatesKey,
             OFFJson.StatesTagsKey,
             OFFJson.StoresKey,
             OFFJson.TracesKey,
