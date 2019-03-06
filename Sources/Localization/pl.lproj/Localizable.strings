@@ -25,6 +25,8 @@
 "product-search.error-view.title" = "Coś poszło nie tak";
 "product-search.error-view.subtitle" = "Proszę spróbować ponownie";
 "product-search.initial-view.slogan" = "the free food products database";
+"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
+"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Zeskanuj kod kreskowy produktu";
@@ -163,6 +165,7 @@
 "product-detail.ingredients.allergens-list" = "Substancje lub produkty powodujące alergie lub reakcje nietolerancji";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Ślady";
 "product-detail.ingredients.additives-list" = "Dodatki";
 "product-detail.ingredients.palm-oil-ingredients" = "Składniki z oleju palmowego";
