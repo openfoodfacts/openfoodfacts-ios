@@ -97,7 +97,7 @@ struct Product: Mappable {
     var countries: [String]?
     private var ingredientsImageUrlDecoded: String?
     var allergens: [Tag]?
-    var traces: String?
+    var traces: [Tag]?
     var additives: [Tag]?
     var palmOilIngredients: [String]?
     var possiblePalmOilIngredients: [String]?
@@ -258,7 +258,7 @@ struct Product: Mappable {
         ingredientsImageUrlDecoded <- map[OFFJson.ImageIngredientsUrlKey]
         ingredientsListDecoded <- map[OFFJson.IngredientsKey]
         allergens <- (map[OFFJson.AllergensTagsKey], TagTransform())
-        traces <- map[OFFJson.TracesKey]
+        traces <- (map[OFFJson.TracesTagsKey], TagTransform())
         additives <- (map[OFFJson.AdditivesTagsKey], TagTransform())
         palmOilIngredients <- map[OFFJson.IngredientsFromPalmOilTagsKey]
         possiblePalmOilIngredients <- map[OFFJson.IngredientsThatMayBeFromPalmOilTagsKey]
