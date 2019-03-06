@@ -404,6 +404,13 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         case .hasOfflineData:
             self.floatingLabel.text = "⚠️ " + "product-detail.ingredients.allergens-list.offline-product".localized
             self.floatingLabelContainer.isHidden = false
+        case .hasSummary(let product):
+            self.floatingLabel.text = "⚠️ " + "product-detail.ingredients.allergens-list.missing-infos".localized
+            if product.states?.contains("en:ingredients-to-be-completed") == true {
+                self.floatingLabelContainer.isHidden = self.floatingPanelController.position != .tip
+            } else {
+                self.floatingLabelContainer.isHidden = true
+            }
         case .hasProduct(let product, _):
             self.floatingLabel.text = "⚠️ " + "product-detail.ingredients.allergens-list.missing-infos".localized
             if product.states?.contains("en:ingredients-to-be-completed") == true {
