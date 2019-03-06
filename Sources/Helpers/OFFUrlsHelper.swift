@@ -25,6 +25,24 @@ class OFFUrlsHelper: NSObject {
         return URL(string: "\(baseUrl)/allergen/\(allergen.code)")!
     }
 
+    static func url(forMineral mineral: Mineral) -> URL {
+        return URL(string: "\(baseUrl)/mineral/\(mineral.code)")!
+    }
+
+    static func url(forVitamin vitamin: Vitamin) -> URL {
+        return URL(string: "\(baseUrl)/vitamin/\(vitamin.code)")!
+    }
+
+    static func url(forNucleotide nucleotide: Nucleotide) -> URL {
+        return URL(string: "\(baseUrl)/nucleotide/\(nucleotide.code)")!
+    }
+
+    // Not sure if there is a taxonomy for this
+    /*
+     static func url(forOther other: OtherNutritionalSubstance) -> URL {
+     return URL(string: "\(baseUrl)/other/\(other.code)")!
+     }
+     */
     static func url(forEmbCodeTag tag: String) -> URL {
         return URL(string: "\(baseUrl)/packager-code/\(tag)")!
     }

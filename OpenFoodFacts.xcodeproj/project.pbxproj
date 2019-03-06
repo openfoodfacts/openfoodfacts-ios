@@ -47,6 +47,10 @@
 		30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77D9B22088F0F00B180E9 /* Allergen.swift */; };
 		30DB17F522122E4A0010EE6F /* TOCropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB17F422122E4A0010EE6F /* TOCropViewController.framework */; };
 		30E43D78220895B100D7A906 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E43D77220895B100D7A906 /* Category.swift */; };
+		514EFA8C2230215F008FFD2A /* Vitamin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA8B2230215F008FFD2A /* Vitamin.swift */; };
+		514EFA8E22302183008FFD2A /* Mineral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA8D22302183008FFD2A /* Mineral.swift */; };
+		514EFA90223021A1008FFD2A /* Nucleotide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA8F223021A1008FFD2A /* Nucleotide.swift */; };
+		514EFA92223021C0008FFD2A /* OtherNutritionalSubstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA91223021C0008FFD2A /* OtherNutritionalSubstance.swift */; };
 		7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437FBA42036F1F800D107B6 /* CreditsViewController.swift */; };
 		74C59E8B203FB9E2006C456F /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C59E8A203FB9E2006C456F /* SharingManager.swift */; };
 		74CB633920373B6D008FC48D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 74CB633820373B6C008FC48D /* Credits.html */; };
@@ -341,6 +345,10 @@
 		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		512702DF21F0B076002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		512702E021F0B077002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		514EFA8B2230215F008FFD2A /* Vitamin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vitamin.swift; sourceTree = "<group>"; };
+		514EFA8D22302183008FFD2A /* Mineral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mineral.swift; sourceTree = "<group>"; };
+		514EFA8F223021A1008FFD2A /* Nucleotide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nucleotide.swift; sourceTree = "<group>"; };
+		514EFA91223021C0008FFD2A /* OtherNutritionalSubstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherNutritionalSubstance.swift; sourceTree = "<group>"; };
 		7437FBA42036F1F800D107B6 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		74C59E8A203FB9E2006C456F /* SharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
 		74CB633820373B6C008FC48D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
@@ -957,6 +965,10 @@
 			children = (
 				300085602207AC0700DC3896 /* Additive.swift */,
 				30D77D9B22088F0F00B180E9 /* Allergen.swift */,
+				514EFA8B2230215F008FFD2A /* Vitamin.swift */,
+				514EFA8D22302183008FFD2A /* Mineral.swift */,
+				514EFA8F223021A1008FFD2A /* Nucleotide.swift */,
+				514EFA91223021C0008FFD2A /* OtherNutritionalSubstance.swift */,
 				30E43D77220895B100D7A906 /* Category.swift */,
 				30412DDA220F089700C485DD /* Nutriment.swift */,
 			);
@@ -2420,6 +2432,7 @@
 				303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */,
 				30412DD7220EF36500C485DD /* EditNutritiveValueView.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
+				514EFA8E22302183008FFD2A /* Mineral.swift in Sources */,
 				95D1D29A1FFC32E400595EA1 /* DeepLinkManager.swift in Sources */,
 				956FF9661F1FF0FD0069D678 /* SearchTableViewControllerState.swift in Sources */,
 				95DB3BE81FDD923300E83B76 /* DataManager.swift in Sources */,
@@ -2430,6 +2443,7 @@
 				958F33531F378076005269C5 /* InfoRowTableViewCell.swift in Sources */,
 				95A566181FD6037800C997C8 /* LocalizableUISearchBar.swift in Sources */,
 				30412DDE220F104900C485DD /* SelectNutrimentViewController.swift in Sources */,
+				514EFA90223021A1008FFD2A /* Nucleotide.swift in Sources */,
 				957094AF1EA124E800268236 /* ProductService.swift in Sources */,
 				307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */,
 				955BAFF91FF668B70046F419 /* PendingProductMergeProcessor.swift in Sources */,
@@ -2439,6 +2453,7 @@
 				300085612207AC0700DC3896 /* Additive.swift in Sources */,
 				957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */,
 				957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */,
+				514EFA92223021C0008FFD2A /* OtherNutritionalSubstance.swift in Sources */,
 				957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */,
 				74C59E8B203FB9E2006C456F /* SharingManager.swift in Sources */,
 				3030EB8A222E9202005A6169 /* RealmOfflineProduct.swift in Sources */,
@@ -2452,6 +2467,7 @@
 				95E9F0471EC8D7D900BA20B0 /* Nutriments.swift in Sources */,
 				95F14C891EDB6CDD00D99115 /* UIImage.swift in Sources */,
 				95D1D2981FFC30D900595EA1 /* RootViewController.swift in Sources */,
+				514EFA8C2230215F008FFD2A /* Vitamin.swift in Sources */,
 				302525F32223145000C2C830 /* AllergensAddTableViewCell.swift in Sources */,
 				95781BC21EC3A898003E3256 /* ArrayTransform.swift in Sources */,
 				956FF95C1F1FF0CA0069D678 /* StateView.swift in Sources */,

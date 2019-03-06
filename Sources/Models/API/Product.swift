@@ -118,7 +118,11 @@ struct Product: Mappable {
     var genericNames: [String:String] = [:]
     var ingredients: [String:String] = [:]
     var ingredientsListDecoded: String?
-    
+    var vitamins: [Tag]?
+    var minerals: [Tag]?
+    var nucleotides: [Tag]?
+    var otherNutrients: [Tag]?
+
     private var selectedImages: [String:Any] = [:]
     private var images: [ImageTypeCategory:[ImageSizeCategory:[String:String]]] = [:]
     
@@ -234,52 +238,55 @@ struct Product: Mappable {
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
-        languageCodes <- map[OFFJson.LanguageCodesKey]
-        nameDecoded <- map[OFFJson.ProductNameKey]
-        brands <- (map[OFFJson.BrandsKey], ArrayTransform())
-        _quantity <- map[OFFJson.QuantityKey]
-        frontImageUrlDecoded <- map[OFFJson.ImageFrontUrlKey]
-        frontImageSmallUrlDecoded <- map[OFFJson.ImageFrontSmallUrlKey]
-        imageUrl <- map[OFFJson.ImageUrlKey]
-        imageSmallUrl <- map[OFFJson.ImageSmallUrlKey]
+        additives <- (map[OFFJson.AdditivesTagsKey], TagTransform())
+        allergens <- (map[OFFJson.AllergensTagsKey], TagTransform())
         barcode <- map[OFFJson.CodeKey]
-        packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
+        brands <- (map[OFFJson.BrandsKey], ArrayTransform())
         categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
         categoriesTags <- (map[OFFJson.CategoriesTagsKey])
-        nutriscore <- map[OFFJson.NutritionGradesKey]
-        novaGroup <- map[OFFJson.NovaGroupKey]
-        manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
-        origins <- map[OFFJson.OriginsKey]
-        labels <- (map[OFFJson.LabelsKey], ArrayTransform())
         citiesTags <- map[OFFJson.CitiesTagsKey]
-        embCodesTags <- map[OFFJson.EmbCodesTagsKey]
-        stores <- (map[OFFJson.StoresKey], ArrayTransform())
         countries <- (map[OFFJson.CountriesKey], ArrayTransform())
+        embCodesTags <- map[OFFJson.EmbCodesTagsKey]
+        environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
+        environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
+        frontImageSmallUrlDecoded <- map[OFFJson.ImageFrontSmallUrlKey]
+        frontImageUrlDecoded <- map[OFFJson.ImageFrontUrlKey]
+        imageSmallUrl <- map[OFFJson.ImageSmallUrlKey]
+        imageUrl <- map[OFFJson.ImageUrlKey]
         ingredientsImageUrlDecoded <- map[OFFJson.ImageIngredientsUrlKey]
         ingredientsListDecoded <- map[OFFJson.IngredientsKey]
-        allergens <- (map[OFFJson.AllergensTagsKey], TagTransform())
-        traces <- (map[OFFJson.TracesTagsKey], TagTransform())
-        additives <- (map[OFFJson.AdditivesTagsKey], TagTransform())
+        labels <- (map[OFFJson.LabelsKey], ArrayTransform())
+        lang <- map[OFFJson.LangKey]
+        languageCodes <- map[OFFJson.LanguageCodesKey]
+        manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
+        minerals <- (map[OFFJson.MineralsTagsKey], TagTransform())
+        nameDecoded <- map[OFFJson.ProductNameKey]
+        noNutritionData <- map[OFFJson.NoNutritionDataKey]
+        novaGroup <- map[OFFJson.NovaGroupKey]
+        nucleotides <- (map[OFFJson.NucleotidesTagsKey], TagTransform())
+        nutriments <- map[OFFJson.NutrimentsKey]
+        nutriscore <- map[OFFJson.NutritionGradesKey]
+        nutritionDataPer <- map[OFFJson.NutritionDataPerKey]
+        nutritionLevels <- map[OFFJson.NutrientLevelsKey]
+        nutritionTableImageDecoded <- map[OFFJson.ImageNutritionUrlKey]
+        nutritionTableHtml <- map[OFFJson.NutritionTableHtml]
+        origins <- map[OFFJson.OriginsKey]
+        otherNutrients <- (map[OFFJson.OtherNutritionalSubstancesTagsKey], TagTransform())
+        packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
         palmOilIngredients <- map[OFFJson.IngredientsFromPalmOilTagsKey]
         possiblePalmOilIngredients <- map[OFFJson.IngredientsThatMayBeFromPalmOilTagsKey]
         servingSize <- map[OFFJson.ServingSizeKey]
-        noNutritionData <- map[OFFJson.NoNutritionDataKey]
-        nutritionLevels <- map[OFFJson.NutrientLevelsKey]
-        nutriments <- map[OFFJson.NutrimentsKey]
-        nutritionDataPer <- map[OFFJson.NutritionDataPerKey]
-        nutritionTableImageDecoded <- map[OFFJson.ImageNutritionUrlKey]
         states <- (map[OFFJson.StatesKey], ArrayTransform())
-        lang <- map[OFFJson.LangKey]
-        environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
-        environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
-        nutritionTableHtml <- map[OFFJson.NutritionTableHtml]
+        stores <- (map[OFFJson.StoresKey], ArrayTransform())
+        traces <- (map[OFFJson.TracesTagsKey], TagTransform())
+        vitamins <- (map[OFFJson.VitaminsTagsKey], TagTransform())
+        _quantity <- map[OFFJson.QuantityKey]
 
         // try to extract all language specific fields
 
         // guard let validLanguageCodes = languageCodes else { return }
 
         for languageCode in Locale.preferredLanguageCodes {
-
             names[languageCode] <- map[OFFJson.ProductNameKey + OFFJson.KeySeparator + languageCode]
             genericNames[languageCode] <- map[OFFJson.GenericNameKey + OFFJson.KeySeparator + languageCode]
             ingredients[languageCode] <- map[OFFJson.IngredientsTextKey + OFFJson.KeySeparator + languageCode]
