@@ -111,6 +111,7 @@ struct Product: Mappable {
     var states: [String]?
     var environmentInfoCard: String?
     var environmentImpactLevelTags: [EnvironmentImpact]?
+    var nutritionTableHtml: String?
     // new variables for local languages
     var languageCodes: [String : Int]?
     var names: [String:String] = [:]
@@ -148,8 +149,10 @@ struct Product: Mappable {
 
     var ingredientsList: String? {
         get {
-            if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
-                return ingredients[validCode]
+            if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes),
+                let ingredient = ingredients[validCode],
+                !ingredient.isEmpty {
+                return ingredient
             } else {
                 return ingredientsListDecoded
             }
@@ -161,8 +164,10 @@ struct Product: Mappable {
 
     var name: String? {
         get {
-            if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
-                return names[validCode]
+            if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes),
+                let name = names[validCode],
+                !name.isEmpty {
+                return name
             } else {
                 return nameDecoded
             }
@@ -229,7 +234,7 @@ struct Product: Mappable {
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
-        languageCodes <- map[OFFJson.LanguageCodes]
+        languageCodes <- map[OFFJson.LanguageCodesKey]
         nameDecoded <- map[OFFJson.ProductNameKey]
         brands <- (map[OFFJson.BrandsKey], ArrayTransform())
         _quantity <- map[OFFJson.QuantityKey]
@@ -267,24 +272,20 @@ struct Product: Mappable {
         lang <- map[OFFJson.LangKey]
         environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
-
-        selectedImages <- map[OFFJson.SelectedImages]
+        nutritionTableHtml <- map[OFFJson.NutritionTableHtml]
 
         // try to extract all language specific fields
 
-        guard let validLanguageCodes = languageCodes else { return }
+        // guard let validLanguageCodes = languageCodes else { return }
 
-        for (languageCode,_) in validLanguageCodes {
+        for languageCode in Locale.preferredLanguageCodes {
 
-            names[languageCode] <- map[KeyPreFix.ProductName + languageCode]
-            genericNames[languageCode] <- map[KeyPreFix.GenericName + languageCode]
-            ingredients[languageCode] <- map[KeyPreFix.IngredientsText + languageCode]
+            names[languageCode] <- map[OFFJson.ProductNameKey + OFFJson.KeySeparator + languageCode]
+            genericNames[languageCode] <- map[OFFJson.GenericNameKey + OFFJson.KeySeparator + languageCode]
+            ingredients[languageCode] <- map[OFFJson.IngredientsTextKey + OFFJson.KeySeparator + languageCode]
         }
-        
-        decodeImages(selectedImages)
+    }
 
-        }
-    
     func matchedLanguageCode(codes:[String]) -> String? {
         guard let validLanguageCodes = languageCodes else { return nil }
         for code in codes {
@@ -360,6 +361,7 @@ extension Locale {
 
     static var preferredLanguageCodes:[String] {
         return Locale.preferredLanguages[0].split(separator:"-").map(String.init)
+
     }
 
     static var preferredLanguageCode: String {

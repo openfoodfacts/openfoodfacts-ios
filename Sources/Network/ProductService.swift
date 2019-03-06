@@ -79,23 +79,6 @@ class ProductService: ProductApi {
         self.lastGetProductsRequest = request
     }
 
-    let summaryFields: [String] = [
-        OFFJson.CodeKey,
-        OFFJson.ImageFrontUrlKey,
-        OFFJson.ImageFrontSmallUrlKey,
-        OFFJson.ImageUrlKey,
-        OFFJson.ImageSmallUrlKey,
-        OFFJson.BrandsKey,
-        OFFJson.ProductNameKey,
-        OFFJson.QuantityKey,
-        OFFJson.NutritionGradesKey,
-        OFFJson.NovaGroupKey,
-        OFFJson.EnvironmentImpactLevelTagsKey
-    ]
-
-    // swiftlint:disable:next line_length
-    let allFields: String = "image_small_url,vitamins_tags,minerals_tags,amino_acids_tags,other_nutritional_substances_tags,image_front_url,image_ingredients_url,image_nutrition_url,url,code,traces_tags,ingredients_that_may_be_from_palm_oil_tags,additives_tags,allergens_hierarchy,manufacturing_places,nutriments,ingredients_from_palm_oil_tags,brands_tags,traces,categories_tags,ingredients_text,product_name,generic_name,ingredients_from_or_that_may_be_from_palm_oil_n,serving_size,allergens_tags,allergens,origins,stores,nutrition_grade_fr,nutrient_levels,countries,countries_tags,brands,packaging,labels_tags,labels_hierarchy,cities_tags,quantity,ingredients_from_palm_oil_n,image_url,link,emb_codes_tags,nutrition_grades,states_tags,creator,created_t,last_modified_t,last_modified_by,editors_tags,nova_group,nova_groups,lang,languages_codes,purchase_places,nutrition_data_per,no_nutrition_data,other_information,conservation_conditions,recycling_instructions_to_discard,recycling_instructions_to_recycle,warning,customer_service,environment_infocard,environment_impact_level_tags"
-
     func getProduct(byBarcode barcode: String, isScanning: Bool, isSummary: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void) {
 
         var url: String
@@ -117,7 +100,7 @@ class ProductService: ProductApi {
         Crashlytics.sharedInstance().setObjectValue(barcode, forKey: "product_search_barcode")
         Crashlytics.sharedInstance().setObjectValue("by_barcode", forKey: "product_search_type")
 
-        /* aleene: disabled to get all fields, not only those specified
+        // aleene: disabled to get all fields, not only those specified
          // we cannot use the summary or the list as the tags are product and language dependent.
         if isSummary {
             // When we ask for a summary of the product, we specify to the server which fields we want (to make a smaller request). We would prefere to use the 'Parameter' normally used by Alamofire in this case, but this generates an url like
@@ -127,11 +110,16 @@ class ProductService: ProductApi {
             // and it seems the server does not handle that, and does not return any field
             // so we just append our fields directly to the url
 
-            url.append(contentsOf: "?fields=" + summaryFields.joined(separator: ","))
+            //var languageFields = [""]
+            //for code in Locale.preferredLanguageCodes {
+            //    languageFields.append(OFFJson.ProductNameKey + OFFJson.KeySeparator + code)
+            //}
+            //url.append(contentsOf: "?fields=" + summaryFields.joined(separator: OFFJson.FieldsSeparator) + OFFJson.FieldsSeparator + languageFields.joined(separator: OFFJson.FieldsSeparator))
+            url.append(contentsOf: "?fields=" + OFFJson.summaryFields.joined(separator: OFFJson.FieldsSeparator))
         } else {
-            url.append(contentsOf: "?fields=" + allFields)
+            url.append(contentsOf: "?fields=" + OFFJson.allFields.joined(separator: OFFJson.FieldsSeparator) + OFFJson.languageCodes)
         }
- */
+ //
 
         let request: DataRequest = Alamofire.request(url)
         log.debug(request.debugDescription)

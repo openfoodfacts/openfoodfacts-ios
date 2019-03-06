@@ -239,7 +239,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createNutrientsRows(rows: &rows)
 
-        createNutritionTableRows(rows: &rows)
+        createNutritionTableWebViewRow(rows: &rows)
+        //createNutritionTableRows(rows: &rows)
 
         if rows.isEmpty {
             return nil
@@ -253,6 +254,14 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         if product.nutritionLevels != nil {
             createFormRow(with: &rows, item: product, cellType: NutritionLevelsTableViewCell.self)
         }
+    }
+
+    fileprivate func createNutritionTableWebViewRow(rows: inout [FormRow]) {
+        guard let html = product.nutritionTableHtml else {
+            return
+        }
+        createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+        createFormRow(with: &rows, item: html, label: nil, cellType: ProductDetailWebViewTableViewCell.self, isCopiable: false)
     }
 
     // swiftlint:disable:next cyclomatic_complexity

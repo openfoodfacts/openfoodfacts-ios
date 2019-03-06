@@ -25,6 +25,8 @@
 "product-search.error-view.title" = "Something went wrong";
 "product-search.error-view.subtitle" = "Please try again";
 "product-search.initial-view.slogan" = "the free food products database";
+"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
+"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scan the barcode of the product";
@@ -163,6 +165,7 @@
 "product-detail.ingredients.allergens-list" = "Productes o substancies que causen intoleràncies o al·lèrgies";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Rastres";
 "product-detail.ingredients.additives-list" = "Additius";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients de l'oli de palma";

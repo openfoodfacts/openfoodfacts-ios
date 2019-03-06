@@ -25,6 +25,8 @@
 "product-search.error-view.title" = "Er ging iets mis";
 "product-search.error-view.subtitle" = "Probeer het opnieuw";
 "product-search.initial-view.slogan" = "the free food products database";
+"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
+"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scan de barcode van het product";
@@ -70,17 +72,17 @@
 "product-add.save-ingredients.not-yet" = "Ingrediënten nog niet bewaard";
 "product-add.save-nutriments.success" = "Voedingswaarden bewaard op";
 "product-add.save-nutriments.error" = "Voedingswaarden niet bewaard";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.save-nutriments.saving" = "Bewaren voedingswaarden…";
+"product-add.save-nutriments.not-yet" = "Voedingswaarden nog niet bewaard";
+"product-add.no-nutrition" = "De voedingswaarden zijn niet op het product vermeld";
 
-"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.success" = "Ingrediënten van de foto gelezen op";
+"product-add.ocr-ingredients.error" = "Kon ingrediënten niet uit de afbeelding halen";
+"product-add.ocr-ingredients.saving" = "Ingrediënten uit de afbeelding halen…";
+"product-add.ocr-ingredients.not-yet" = "Wacht op een ingrediëntenfoto om te analyseren";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "De Nutri-Score is zojuist berekend uit de voedingswaardentabel";
+"product-add.novagroup-explaination" = "De NOVA-groep is zojuist berekend op basis van de ingrediëntenlijst";
 
 "alert.action.ok" = "Ok";
 "product-add.language.toolbar-title" = "Kies een taal";
@@ -91,47 +93,47 @@
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Hoeveelheid";
 
-"product-add.title" = "New product";
+"product-add.title" = "Nieuw product";
 "product-add.titles.barcode" = "Barcode";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.top-explainations" = "Goed gedaan ! Dit product is nog niet in Open Food Facts. Kun je wat foto's maken van het product, de ingrediëntenlijst en voedingswaarden om aan Open Food Facts toe te voegen?\n\nBij voorbaat dank.";
+"product-add.titles.license-explaination" = "Nb: de foto's die je upload, worden gepubliceerd onder de vrije licentie Creative Commons Attribution and ShareAlike.";
 
-"product-add.titles.product-info" = "Product information";
+"product-add.titles.product-info" = "Productinformatie";
 "product-add.label.product-name" = "Naam";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Hoeveelheid";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.details.category" = "Nodig om de Nutri-Score te berekenen";
+"product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
 "product-add.label.language" = "Talen";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.description.nutritive" = "Completeer de voedingswaarden en de productcategorie om de Nutri-Score te verkrijgen";
 "product-add.titles.nutritive" = "Voedingswaarden";
 "product-add.nutritive.choice.per-hundred-grams" = "voor 100g / 100 ml";
 "product-add.nutritive.choice.per-portion" = "per portie";
 "product-add.nutritive.add-nutriment" = "Voeg voedingsstof toe";
 "product-add.nutritive.too-much" = "Meer dan 100g?";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "Voltooi de ingrediënten om de NOVA-groep voor voedselverwerking te krijgen";
 "product-add.titles.ingredients" = "Ingrediënten";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
-"product-add.ingredients.button-delete" = "Too bad, Ignore";
+"product-add.ingredients.explaination" = "Neem een foto van de ingrediënten om deze er automatisch uit te halen. Controleer het resultaat zorgvuldig en vergeet niet te bewaren.";
+"product-add.ingredients.button-delete" = "Jammer, negeer";
 "product-add.ingredients.button-save" = "Ziet er goed uit, bewaar";
 
 // Select Category
 "select-category.title" = "Categorie";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Zoek een categorie";
 
 // Select nutrition
 "select-nutriment.title" = "Voedingswaarde";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Zoek naar een viedingswaarde";
 
 // Select allergen
 "select-allergen.title" = "Allergen";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "Zoek naar een allergeen";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Voeg een nieuwe foto toe";
-"product-detail.edit" = "Edit this product";
+"product-detail.edit" = "Product aanpassen";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "Vergeet niet om uw wijzigingen op te slaan";
 /* Keep this text as short as possible */
@@ -155,14 +157,15 @@
 "product-detail.summary.labels" = "Keurmerken, certificaten, prijzen";
 "product-detail.summary.citiesTags" = "Stad en land van aankoop";
 "product-detail.summary.stores" = "Winkels";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "Verpakkerscode";
 "product-detail.summary.countries" = "Land";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Lijst van ingrediënten";
 "product-detail.ingredients.allergens-list" = "Stoffen of producten die allergieën of intoleranties veroorzaken";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-alert.title" = "Bevat allergenen!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Dit product heeft nog geen ingrediëntenlijst en daardoor konden geen allergenen gedetecteerd worden.";
+"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Sporen";
 "product-detail.ingredients.additives-list" = "Additieven";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
@@ -247,39 +250,39 @@
 "nutrition.minerals.taurine" = "Taurine";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Fruit, groente, noten";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen/Meat Protein Ratio";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collageen vleesproteïne verhouding";
 "nutrition.minerals.cocoa" = "Cacao";
 "nutrition.minerals.chlorophyl" = "Chlorofyl";
 
 // Call to action
-"call-to-action.summary" = "Take a photo of the front";
-"call-to-action.ingredients" = "Take a photo of the ingredients";
-"call-to-action.nutrition" = "Take a photo of the nutrition facts";
+"call-to-action.summary" = "Maak een foto van de voorkant";
+"call-to-action.ingredients" = "Maak een foto van de ingrediënten";
+"call-to-action.nutrition" = "Neem een foto van de voedingswaardentabel";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.took-picture.front" = "Photo of the front ✅";
-"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.front" = "Foto van de voorkant ✅";
+"product.images.took-picture.ingredients" = "Foto van de ingrediënten ✅";
+"product.images.took-picture.nutrition" = "Foto van de voedingswaardentabel ✅";
 
-"product.images.take-picture.front" = "Photo of the front";
+"product.images.take-picture.front" = "Foto van de voorkant";
 "product.images.take-picture.ingredients" = "Foto van de ingrediënten";
 "product.images.take-picture.nutrition" = "Foto van de voedingswaardentabel";
 
 // Settings storyboard
 "settings.tab-bar.item" = "Instellingen";
 "settings.allergies.title" = "Allergenen waarschuwing";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.description" = "Je krijgt een waarschuwing als een gescand product allergenen bevat, die je op deze lijst hebt toegevoegd.\nLet op: informatie over uw allergieën wordt NOOIT verzonden naar Open Food Facts-server. Let goed op dat de gegevens mogelijk niet 100% betrouwbaar zijn en dat detectie mogelijk niet 100% nauwkeurig is. Controleer de gegevens ook ZELF!";
 "settings.allergies.add-button" = "Voeg allergenen toe";
 "settings.sections.information" = "Opmerking";
 "settings.sections.discover" = "Ontdek";
 "settings.sections.contribute" = "Bijdragen";
 "settings.sections.about" = "Informatie";
-"settings.user-profile" = "Your contributor account";
+"settings.user-profile" = "Je account";
 "settings.credits.title" = "Credits";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
+"settings.contact.message" = "Bedankt dat je contact met ons hebt opgenomen.";
+"settings.contact-alert.title" = "Kon geen e-mail versturen";
+"settings.contact-alert.message" = "Je apparaat kon de e-mail niet versturen.  Controleer de e-mail instellingen en probeer het opnieuw.";
 "settings.scan-on-launch.title" = "Scan Op App Launch Weergeven";
 "settings.sections.discover" = "Ontdek";
 "settings.contribute.how-to-contribute" = "Hoe kan je bijdragen";
@@ -288,7 +291,7 @@
 "settings.about.contact" = "Contact";
 "settings.about.frequently-asked-questions" = "Veelgestelde Vragen";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
+"settings.credits.text" = "Onze app is mogelijk gemaakt door de Open Food Facts-vrijwilligers, -donateurs en ook vele anderen die ervoor kiezen te maken en verspreiden van hun werk onder open vergunningen.\n\nBeschikbaar onder Creative Commons door 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\", \"Instellingen\" en \"Flash\" pictogrammen ontworpen door Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" pictogram ontworpen door Picol (http://www.flaticon.com/authors/picol)\n\"Profiel\" pictogram door Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" pictogram ontworpen door Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n'Zoekgeschiedenis' pictogram ontworpen door Hadrien (https://www.flaticon.com/authors/hadrien ontworpen)";
 
 // User view
 /* Tab bar item */
@@ -297,26 +300,26 @@
 "user.log-out" = "Uitloggen";
 "user.username" = "Gebruikersnaam";
 "user.password" = "Wachtwoord";
-"user.forgot-password" = "Forgot Password?";
-"user.check-your-contributions.button" = "View all your contributions";
-"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
-"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.forgot-password" = "Wachtwoord vergeten?";
+"user.check-your-contributions.button" = "Bekijk al je bijdragen";
+"user.products-pending-upload.button" = "Producten in afwachting van upload naar Open Food Facts";
+"user.create-account.text" = "Als je nog geen account hebt, klik dan op de onderstaande link om er een te maken.";
 "user.create-account.button" = "Maak een account aan";
-"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.why-log-in.text" = "Als je je aanmeldt met je account, dan krijg je krediet voor al je bijdragen aan het transparant maken van ons voedsel.";
 "user.alert.wrong-credentials.title" = "Kan niet inloggen";
 "user.alert.wrong-credentials.subtitle" = "Controleer uw gebruikersnaam en wachtwoord";
 "user.alert.generic-error.title" = "Er is een fout opgetreden bij het inloggen";
 "user.alert.generic-error.subtitle" = "Probeer het opnieuw in een ogenblik";
 "user.alert.logout-confirmation.title" = "Confirm Logout";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
+"user.alert.logout-confirmation.subtitle" = "Weet je zeker dat je wilt uitloggen?";
 "user.alert.username-missing" = "Gebruikersnaam is vereist";
 "user.alert.password-missing" = "Wachtwoord is vereist";
-"pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.info.text" = "Dit zijn producten die u offline hebt toegevoegd.\n\nDe app zal proberen ze automatisch te uploaden wanneer je weer online bent of je kunt ze handmatig proberen te uploaden door op de knop in de rechterbovenhoek te tikken.";
 "pending-upload.hud.status" = "Aan het uploaden";
 
 // Search history
 "history.title" = "Zoekgeschiedenis";
-"history.cell.privacy" = "Your search history is only stored on your device";
+"history.cell.privacy" = "Je zoekgeschiedenis is alleen opgeslagen op je apparaat";
 "history.button.clear" = "Wissen";
 "history.clear.confirmation-title" = "Geschiedenis wissen ?";
 "history.clear.confirmation-message" = "Je geschiedenis zal worden verwijderd";

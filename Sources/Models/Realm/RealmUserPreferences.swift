@@ -9,7 +9,14 @@
 import Foundation
 import RealmSwift
 
+class RealmOfflineProductStatus: Object {
+    @objc dynamic var percent: Double = 0
+    @objc dynamic var savedProductsCount: Int = 0
+}
+
 class RealmUserPreferences: Object {
+
+    @objc dynamic var offlineStatus: RealmOfflineProductStatus? = RealmOfflineProductStatus()
 
     let allergens = List<Allergen>()
 
