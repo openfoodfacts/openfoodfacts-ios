@@ -8,7 +8,6 @@
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/openfoodfacts/localized.svg)](https://crowdin.com/project/openfoodfacts)
 <br>
 <p align="center">  
-  <a href=https://geo.itunes.apple.com/mg/app/open-food-facts/id588797948?mt=8>
   <img src="https://static.openfoodfacts.org/images/misc/openfoodfacts-logo-en-178x150.png" >
   </a>
 </p>
