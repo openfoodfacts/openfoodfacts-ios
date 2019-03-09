@@ -51,9 +51,10 @@ https://translate.openfoodfacts.org
 
 ## Images
 
-<img src="https://user-images.githubusercontent.com/1689815/37554229-dde0ecb6-29d5-11e8-82e1-918ee97cecd1.png" height="300"><img src="https://user-images.githubusercontent.com/1689815/37554225-ce5822c8-29d5-11e8-92e9-5c667be57a56.png" height="300"><img src="https://user-images.githubusercontent.com/1689815/37554236-f82dea42-29d5-11e8-89d5-4ca6416581d9.png" height="300"><img src="https://user-images.githubusercontent.com/1689815/37554231-e3689670-29d5-11e8-876f-c8d4055f7484.png" height="300"><img src="https://user-images.githubusercontent.com/1689815/37554234-eb159e18-29d5-11e8-8a75-3656742c1efa.png" height="300"><img src="https://user-images.githubusercontent.com/1689815/37554235-f01690fc-29d5-11e8-8319-1aa338708ebb.png" height="300">
+<img src="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/e7/18/27/e71827cd-1fd4-5b81-b52e-2668feed9700/pr_source.png/230x0w.png" height="300"><img src="https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/98/11/48/9811480a-d2a7-0050-f094-7f22809d532d/pr_source.png/230x0w.png" height="300"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/d0/f6/45/d0f64585-caec-2201-43e1-098ce809f1cc/pr_source.png/230x0w.png" height="300"><img src="https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/4b/29/e9/4b29e937-ac81-ec04-218c-3747e6e041a2/pr_source.png/460x0w.png" height="300">
 
 
+<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/9f/cc/76/9fcc763c-5abf-d01a-6397-16a35599099a/pr_source.png/690x0w.png" height="300">
 ## Building
 
 ### Dependencies
