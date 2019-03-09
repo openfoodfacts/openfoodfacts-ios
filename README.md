@@ -14,20 +14,20 @@
 
 <p align="center">  
   <a href=https://geo.itunes.apple.com/mg/app/open-food-facts/id588797948?mt=8>
-  <img alt="Download on the app store" src="https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png" width=160>
+  <img alt="Download on the App Store" src="https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png" width=160>
   </a>
 </p>
 
 
 ## What is Open Food Facts?
 
-[Open Food Facts](http://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.
+[Open Food Facts](https://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.
 
 
 ### Translate Open Food Facts in your language
 
 You can help translate Open Food Facts and the app at (no technical knowledge required, takes a minute to signup): <br>
-https://crowdin.com/project/openfoodfacts
+https://translate.openfoodfacts.org
 
 ## Features implemented
 
