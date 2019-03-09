@@ -29,26 +29,25 @@
 You can help translate Open Food Facts and the app at (no technical knowledge required, takes a minute to signup): <br>
 https://translate.openfoodfacts.org
 
-## Features implemented
+## Features
 
-- [x] Barcode scanning
+- [x] (Offline) Barcode scanning
 - [x] Product search
-- [x] Product list
-- [x] Product detail
+- [x] Allergen alert
+- [x] Product details
 - [x] Image upload
-
+- [x] Handle multilingual products (view)
+- [x] Handle multilingual products (data addition)
+- [x] On-the-fly OCR of ingredients and labels for new product addition
+- [x] Internationalised user interface
 
 ## Roadmap
-- [ ] On-the-fly OCR of ingredients and labels for new product addition
-- [ ] Internationalised user interface
-- [ ] Support for Open Beauty Facts, Open Pet Food Facts and Open Product Facts
 - [ ] Native editing
-- [ ] On-device Product cache
-- [ ] ARKit overlay
-- [ ] Handle multilingual products (view)
-- [ ] Handle multilingual products (data addition)
 - [ ] Add support for the new JSON taxonomy system (multilingual, and data augmentation from Wikipedia/Wikidata)
+- [ ] Support for Open Beauty Facts, Open Pet Food Facts and Open Product Facts
+- [ ] On-device Product cache
 - [ ] Add a food category browser
+- [ ] ARKit overlay
 
 ## Images
 
