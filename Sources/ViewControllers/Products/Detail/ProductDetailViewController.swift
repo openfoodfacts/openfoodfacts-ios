@@ -268,7 +268,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     fileprivate func createNutritionTableRows(rows: inout [FormRow]) {
         // Header
         createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
-        
         if product.nutriments != nil || product.servingSize != nil {
             // Nutrition table rows
             let headerRow = NutritionTableRow(label: "",

@@ -18,7 +18,6 @@ class SearchViewController: UIViewController, DataManagerClient {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "product-search.title".localized
 
         if self.rootNavigationController == nil {

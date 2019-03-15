@@ -244,7 +244,6 @@ struct OFFJson {
     static let ServingQuantityKey = "serving_quantity"
     static let OriginsTagsKey = "origins_tags"
     static let ManufacturingPlacesTagsKey = "manufacturing_places_tags"
-    
     static let AdditivesKey = "additives"
     static let AdditivesDebugTagsKey = "additives_debug_tags"
     static let AminoAcidTagsKey = "amino_acids_tags"

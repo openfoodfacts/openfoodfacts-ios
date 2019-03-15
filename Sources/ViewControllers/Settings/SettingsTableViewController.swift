@@ -18,7 +18,6 @@ enum SettingsSection: Int {
 
 class SettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, DataManagerClient {
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
-    
     var dataManager: DataManagerProtocol!
 
     private let allergensAlertsIndexPath = IndexPath(row: 2, section: 0)
@@ -79,7 +78,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-  
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destVC = segue.destination as? UserViewController {
             destVC.dataManager = self.dataManager
