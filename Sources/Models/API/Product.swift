@@ -247,7 +247,7 @@ struct Product: Mappable {
         categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
         categoriesTags <- (map[OFFJson.CategoriesTagsKey])
         nutriscore <- map[OFFJson.NutritionGradesKey]
-        novaGroup <- map[OFFJson.NovaGroupKey]
+        novaGroup <- (map[OFFJson.NovaGroupKey], IntTransform())
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
         origins <- map[OFFJson.OriginsKey]
         labels <- (map[OFFJson.LabelsKey], ArrayTransform())

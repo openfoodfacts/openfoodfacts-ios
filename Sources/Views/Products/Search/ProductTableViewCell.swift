@@ -80,7 +80,7 @@ class ProductTableViewCell: UITableViewCell {
             nutriscoreView.isHidden = true
         }
 
-        if let novaGroupValue = historyItem.novagroup.value,
+        if let novaGroupValue = historyItem.novaGroup.value,
             let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
             novaGroupView.isHidden = false
             novaGroupView.novaGroup = novaGroup

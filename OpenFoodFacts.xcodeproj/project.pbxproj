@@ -10,6 +10,7 @@
 		3000855E2207A3A500DC3896 /* TaxonomiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000855D2207A3A500DC3896 /* TaxonomiesService.swift */; };
 		300085612207AC0700DC3896 /* Additive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085602207AC0700DC3896 /* Additive.swift */; };
 		300085632208777900DC3896 /* OFFUrlsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085622208777900DC3896 /* OFFUrlsHelper.swift */; };
+		3006E07E2264934900618FB6 /* IntTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006E07D2264934900618FB6 /* IntTransform.swift */; };
 		3010E25F222EF42B00313ADB /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3010E25E222EF42B00313ADB /* InitialView.swift */; };
 		302525E92223044E00C2C830 /* AllergensAlertsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302525E72223044E00C2C830 /* AllergensAlertsTableViewController.swift */; };
 		302525EC222307A200C2C830 /* RealmUserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302525EB222307A200C2C830 /* RealmUserPreferences.swift */; };
@@ -302,6 +303,7 @@
 		3000855D2207A3A500DC3896 /* TaxonomiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomiesService.swift; sourceTree = "<group>"; };
 		300085602207AC0700DC3896 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
 		300085622208777900DC3896 /* OFFUrlsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFUrlsHelper.swift; sourceTree = "<group>"; };
+		3006E07D2264934900618FB6 /* IntTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTransform.swift; sourceTree = "<group>"; };
 		3010E25E222EF42B00313ADB /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		302525E72223044E00C2C830 /* AllergensAlertsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergensAlertsTableViewController.swift; sourceTree = "<group>"; };
 		302525EB222307A200C2C830 /* RealmUserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUserPreferences.swift; sourceTree = "<group>"; };
@@ -1390,6 +1392,7 @@
 				95781BB71EC3A898003E3256 /* ArrayTransform.swift */,
 				95781BB81EC3A898003E3256 /* DoubleTransform.swift */,
 				95781BB91EC3A898003E3256 /* TagTransform.swift */,
+				3006E07D2264934900618FB6 /* IntTransform.swift */,
 			);
 			path = Transforms;
 			sourceTree = "<group>";
@@ -2341,6 +2344,7 @@
 				7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */,
 				95781BBD1EC3A898003E3256 /* OFFWriteAPI.swift in Sources */,
 				958F33421F36196D005269C5 /* IngredientsFormTableViewController.swift in Sources */,
+				3006E07E2264934900618FB6 /* IntTransform.swift in Sources */,
 				957CBEBE1F33B2FE00A1B398 /* Form.swift in Sources */,
 				958F334B1F3777D7005269C5 /* NutritionTableFormTableViewController.swift in Sources */,
 				95F14C8B1EDCADD600D99115 /* RotatingProcessor.swift in Sources */,
