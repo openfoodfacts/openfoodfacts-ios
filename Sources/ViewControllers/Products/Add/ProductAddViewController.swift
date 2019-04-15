@@ -15,6 +15,7 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var barcodeTitleLabel: UILabel!
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var topExplainationText: UILabel!
+    @IBOutlet weak var picturesContainerView: UIView!
 
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -78,6 +79,14 @@ class ProductAddViewController: TakePictureViewController {
     override var barcode: String! {
         didSet {
             product.barcode = barcode
+        }
+    }
+
+    var productToEdit: Product? {
+        didSet {
+            if let barcode = productToEdit?.barcode {
+                self.barcode = barcode
+            }
         }
     }
 
@@ -158,12 +167,11 @@ class ProductAddViewController: TakePictureViewController {
         configureLanguageField()
         configureDelegates()
         configureNotifications()
-    }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        barcodeLabel.text = barcode
-
+        if let productToEdit = self.productToEdit {
+            self.product = productToEdit
+            fillForm(withProduct: productToEdit)
+        }
         if let barcode = self.barcode, let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode) {
             fillForm(withPendingUploadItem: pendingUploadItem)
         }
@@ -320,7 +328,7 @@ class ProductAddViewController: TakePictureViewController {
                         self?.nutriscoreStackView.isHidden = true
                     }
 
-                    if let novaGroupString = distantProduct.novaGroup, let novaGroup = NovaGroupView.NovaGroup(rawValue: novaGroupString) {
+                    if let novaGroupString = distantProduct.novaGroup, let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
                         self?.novaGroupView.novaGroup = novaGroup
                         self?.novaGroupStackView.isHidden = false
                     } else {
@@ -366,6 +374,7 @@ class ProductAddViewController: TakePictureViewController {
             destination.delegate = self
             destination.barcode = barcode
             destination.dataManager = dataManager
+            destination.productToEdit = productToEdit
         }
     }
 
@@ -477,6 +486,62 @@ class ProductAddViewController: TakePictureViewController {
         label?.isHidden = false
     }
 
+    private func fillForm(withProduct product: Product) {
+        topExplainationText.isHidden = true
+
+        productNameField.text = product.name
+        brandsField.text = product.brands?.joined(separator: ", ")
+
+        if let categorieTag = product.categoriesTags?.first {
+            if let categorie = dataManager.category(forTag: categorieTag) {
+                productCategoryField.text = categorie.names.chooseForCurrentLanguage()?.value ?? categorieTag
+            } else {
+                productCategoryField.text = categorieTag
+            }
+        }
+
+        quantityField.text = product.quantity
+        ingredientsTextField.text = product.ingredientsList
+
+        noNutritionDataSwitch.isOn = product.noNutritionData == "on"
+        updateNoNutritionDataSwitchVisibility(animated: false)
+
+        portionSizeInputView.inputTextField.text = product.servingSize
+
+        if let nutritionDataPer = product.nutritionDataPer {
+            switch nutritionDataPer {
+            case .hundredGrams: nutritivePortionSegmentedControl.selectedSegmentIndex = 0
+            case .serving: nutritivePortionSegmentedControl.selectedSegmentIndex = 1
+            }
+        }
+
+        if let allNutriments = product.nutriments?.allItems() {
+            for nutriment in allNutriments {
+                add(nutrimentCode: nutriment.nameKey)
+                if let view = editNutrimentView(forCode: nutriment.nameKey) {
+                    if let value = nutriment.value {
+                        view.inputTextField.text = "\(value)"
+                    } else {
+                        view.inputTextField.text = nil
+                    }
+                    view.selectedUnit = nutriment.unit
+                }
+            }
+        }
+
+        if let lang = product.lang {
+            didGetSelection(value: Language(code: lang, name: Locale.current.localizedString(forIdentifier: lang) ?? lang))
+        }
+
+        lastSavedProductInfosLabel.isHidden = true
+        lastSavedNutrimentsLabel.isHidden = true
+        lastSavedIngredientsLabel.isHidden = true
+        lastSavedIngredientsOCRLabel.isHidden = true
+
+        refreshNovaScore()
+    }
+
+    // swiftlint:disable cyclomatic_complexity
     private func fillForm(withPendingUploadItem pendingUploadItem: PendingUploadItem) {
         if let productName = pendingUploadItem.productName {
             productNameField.text = productName

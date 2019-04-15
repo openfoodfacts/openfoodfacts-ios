@@ -87,7 +87,7 @@ struct Product: Mappable {
     var categories: [String]?
     var categoriesTags: [String]?
     var nutriscore: String?
-    var novaGroup: String?
+    var novaGroup: Int?
     var manufacturingPlaces: String?
     var origins: String?
     var labels: [String]?

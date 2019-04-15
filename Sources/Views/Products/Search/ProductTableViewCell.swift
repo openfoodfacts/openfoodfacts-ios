@@ -40,7 +40,7 @@ class ProductTableViewCell: UITableViewCell {
         }
 
         if let novaGroupValue = product.novaGroup,
-            let novaGroup = NovaGroupView.NovaGroup(rawValue: novaGroupValue) {
+            let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
             novaGroupView.novaGroup = novaGroup
         } else {
             novaGroupView.isHidden = true
@@ -80,8 +80,8 @@ class ProductTableViewCell: UITableViewCell {
             nutriscoreView.isHidden = true
         }
 
-        if let novaGroupValue = historyItem.novagroup,
-            let novaGroup = NovaGroupView.NovaGroup(rawValue: novaGroupValue) {
+        if let novaGroupValue = historyItem.novagroup.value,
+            let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
             novaGroupView.isHidden = false
             novaGroupView.novaGroup = novaGroup
         } else {

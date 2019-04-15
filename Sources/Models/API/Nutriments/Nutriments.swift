@@ -115,4 +115,17 @@ struct Nutriments: Mappable {
         carbonFootprintUnit <- map[OFFJson.CarbonFootprintUnitKey]
     }
     // swiftlint:enable function_body_length
+
+    func allItems() -> [NutrimentItem] {
+        var results: [NutrimentItem?] = [NutrimentItem?]()
+        results.append(energy)
+        results.append(contentsOf: fats)
+        results.append(contentsOf: carbohydrates)
+        results.append(fiber)
+        results.append(contentsOf: proteins)
+        results.append(contentsOf: [salt, sodium, alcohol])
+        results.append(contentsOf: vitamins)
+        results.append(contentsOf: minerals)
+        return results.compactMap { $0 }
+    }
 }
