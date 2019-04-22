@@ -23,6 +23,8 @@
 		30270C322226EAD000E6973D /* SummaryFooterCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30270C312226EAD000E6973D /* SummaryFooterCellController.xib */; };
 		30270C342226F4A000E6973D /* operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C332226F4A000E6973D /* operators.swift */; };
 		30270C37222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30270C36222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift */; };
+		302D0969225D125D00D733B4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
+		302D096A225D125D00D733B4 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */; };
 		3030EB81222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030EB7F222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.swift */; };
 		3030EB82222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3030EB80222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.xib */; };
 		3030EB84222E8290005A6169 /* OfflineProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030EB83222E8290005A6169 /* OfflineProductsService.swift */; };
@@ -91,7 +93,6 @@
 		953498FC1F77AFF900568C35 /* ProductDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953498FB1F77AFF900568C35 /* ProductDetailViewControllerTests.swift */; };
 		953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953664F41ECA212100D6D398 /* NutrimentItem.swift */; };
 		95387C741F93646D00EF3380 /* CredentialsControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95387C731F93646D00EF3380 /* CredentialsControllerTests.swift */; };
-		953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C2BE31E9EC22200FD99D4 /* Alamofire.framework */; };
 		953CDD591F929C680096C428 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CDD581F929C680096C428 /* LoggedInViewController.swift */; };
 		953CDD5B1F92A12A0096C428 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CDD5A1F92A12A0096C428 /* UserViewController.swift */; };
 		9540778A1FEDA3B70058E15B /* PersistenceManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954077881FEDA39A0058E15B /* PersistenceManagerMock.swift */; };
@@ -215,7 +216,6 @@
 		95C265191E96D55B004212EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C265181E96D55B004212EC /* Assets.xcassets */; };
 		95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C265241E96D5C2004212EC /* AVFoundation.framework */; };
 		95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C2652C1E96DE6D004212EC /* MobileCoreServices.framework */; };
-		95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C3680D1E9FD356008BB582 /* AlamofireObjectMapper.framework */; };
 		95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C368091E9ECC0C008BB582 /* ObjectMapper.framework */; };
 		95C54A7A1F8BFDB90008B5D8 /* PictureTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C54A791F8BFDB90008B5D8 /* PictureTableViewControllerTests.swift */; };
 		95C54A7C1F8C0E8B0008B5D8 /* CameraControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C54A7B1F8C0E8B0008B5D8 /* CameraControllerMock.swift */; };
@@ -917,14 +917,14 @@
 				9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */,
 				957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */,
 				957094B11EA163CF00268236 /* Kingfisher.framework in Frameworks */,
-				95C3680E1E9FD356008BB582 /* AlamofireObjectMapper.framework in Frameworks */,
 				95C3680F1E9FD35B008BB582 /* ObjectMapper.framework in Frameworks */,
 				95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */,
 				95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */,
 				95DDAF581F24FB160096B74E /* ObjcExceptionBridging.framework in Frameworks */,
 				95DDAF591F24FB160096B74E /* XCGLogger.framework in Frameworks */,
-				953C2BE41E9EC22200FD99D4 /* Alamofire.framework in Frameworks */,
 				9501634B1F2CE9A20057B8D5 /* MarqueeLabelSwift.framework in Frameworks */,
+				302D0969225D125D00D733B4 /* Alamofire.framework in Frameworks */,
+				302D096A225D125D00D733B4 /* AlamofireObjectMapper.framework in Frameworks */,
 				9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */,
 				951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */,
 				959530081F91408F00979613 /* IQKeyboardManagerSwift.framework in Frameworks */,
@@ -1971,6 +1971,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				Base,
 				en,
 				aa,
