@@ -169,6 +169,7 @@ class ProductAddViewController: TakePictureViewController {
         configureNotifications()
 
         if let productToEdit = self.productToEdit {
+            self.title = "product-add.title-edit".localized
             self.product = productToEdit
             fillForm(withProduct: productToEdit)
         }
