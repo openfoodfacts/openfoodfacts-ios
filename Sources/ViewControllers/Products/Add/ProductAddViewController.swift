@@ -521,7 +521,8 @@ class ProductAddViewController: TakePictureViewController {
                 add(nutrimentCode: nutriment.nameKey)
                 if let view = editNutrimentView(forCode: nutriment.nameKey) {
                     if let value = nutriment.value {
-                        view.inputTextField.text = "\(value)"
+                        let modifier = nutriment.modifier ?? ""
+                        view.inputTextField.text = "\(modifier) \(value)".trimmingCharacters(in: .whitespaces)
                     } else {
                         view.inputTextField.text = nil
                     }
