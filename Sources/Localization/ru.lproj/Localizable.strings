@@ -37,7 +37,7 @@
 "product-scanner.barcode.error" = "Ошибка сканирования штрих-кода. Попробуйте снова через пару минут.";
 "product-scanner.barcode-notfound.manual-enter" = "Штрих-код не найден. Вы можете ввести его вручную:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts требуется разрешения на использование камеры";
 "product-scanner.permissions.noPermissions.message" = "Предоставьте разрешение разрешение на использование камеры для сканирования штрих-кодов";
 "product-scanner.permissions.noPermissions.action.title" = "Открыть настройки";
 
@@ -67,9 +67,9 @@
 "product-add.save-info.saving" = "Сохранение информации о продукте…";
 "product-add.save-info.not-yet" = "Информация еще не сохранена";
 "product-add.save-ingredients.success" = "Ingredients saved at";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
+"product-add.save-ingredients.error" = "Состав не сохранен";
+"product-add.save-ingredients.saving" = "Сохранение состава…";
+"product-add.save-ingredients.not-yet" = "Состав еще не сохранен";
 "product-add.save-nutriments.success" = "Nutriments saved at";
 "product-add.save-nutriments.error" = "Nutriments not saved";
 "product-add.save-nutriments.saving" = "Saving nutriments…";
@@ -129,11 +129,11 @@
 
 // Select allergen
 "select-allergen.title" = "Аллерген";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "Поиск аллергена";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Добавить новое изображение";
-"product-detail.edit" = "Edit this product";
+"product-detail.edit" = "Изменить этот продукт";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "Не забудьте сохранить изменения";
 /* Keep this text as short as possible */
@@ -262,7 +262,7 @@
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
 "product.images.took-picture.front" = "Photo of the front ✅";
-"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
+"product.images.took-picture.ingredients" = "Фото ингредиентов ✅";
 "product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
 
 "product.images.take-picture.front" = "Photo of the front";
@@ -322,7 +322,7 @@
 "history.cell.privacy" = "Your search history is only stored on your device";
 "history.button.clear" = "Очистить";
 "history.clear.confirmation-title" = "Очистить историю?";
-"history.clear.confirmation-message" = "All your history will be deleted";
+"history.clear.confirmation-message" = "Вся ваша история будет удалена";
 "history.section-titles.last24h" = "За последние 24 часа";
 "history.section-titles.fewDays" = "Несколько дней назад";
 "history.section-titles.fewWeeks" = "Несколько недель назад";

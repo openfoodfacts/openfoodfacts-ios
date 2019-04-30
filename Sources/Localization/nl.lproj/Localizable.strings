@@ -12,21 +12,21 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Terug";
 "generic.search" = "Zoeken";
-"generic.cancel" = "Cancel";
-"generic.save" = "Bewaar";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Annuleer";
+"generic.save" = "Opslaan";
+"generic.cancel" = "Annuleer";
 "generic.ok" = "Ok";
 
 // Product Search
 
-"product-search.title" = "Zoek";
+"product-search.title" = "Zoeken";
 "product-search.search-placeholder" = "Zoek op naam of streepjescode";
 "product-search.no-results" = "Geen resultaten. U kunt een product toevoegen aan Open Food Facts door het te scannen.";
 "product-search.error-view.title" = "Er ging iets mis";
 "product-search.error-view.subtitle" = "Probeer het opnieuw";
 "product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.offline.title-loading" = "Producten offline opslaan: %d%%";
+"product-search.initial-view.offline.subtitle" = "Meer dan %d producten zijn scan-baar";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scan de barcode van het product";
@@ -99,7 +99,7 @@
 "product-add.titles.license-explaination" = "Nb: de foto's die je upload, worden gepubliceerd onder de vrije licentie Creative Commons Attribution and ShareAlike.";
 
 "product-add.titles.product-info" = "Productinformatie";
-"product-add.label.product-name" = "Naam:";
+"product-add.label.product-name" = "Naam";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Hoeveelheid";
 "product-add.details.category" = "Nodig om de Nutri-Score te berekenen";
@@ -128,7 +128,7 @@
 "select-nutriment.search-placeholder" = "Zoek naar een viedingswaarde";
 
 // Select allergen
-"select-allergen.title" = "Allergen";
+"select-allergen.title" = "Allergeen";
 "select-allergen.search-placeholder" = "Zoek naar een allergeen";
 
 // Product Detail
@@ -144,7 +144,7 @@
 "product-detail.page-title.ingredients" = "Ingrediënten";
 "product-detail.page-title.nutrition" = "Voedingswaarde";
 "product-detail.page-title.nutrition-table" = "Voedingstabel";
-"product-detail.page-title.environment-impact" = "Environment";
+"product-detail.page-title.environment-impact" = "Milieu";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Streepjescode";
@@ -165,7 +165,7 @@
 "product-detail.ingredients.allergens-list" = "Stoffen of producten die allergieën of intoleranties veroorzaken";
 "product-detail.ingredients.allergens-alert.title" = "Bevat allergenen!";
 "product-detail.ingredients.allergens-list.missing-infos" = "Dit product heeft nog geen ingrediëntenlijst en daardoor konden geen allergenen gedetecteerd worden.";
-"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-list.offline-product" = "Dit product heeft nog geen ingrediëntenlijst en daardoor konden geen allergenen gedetecteerd worden.";
 "product-detail.ingredients.traces-list" = "Sporen";
 "product-detail.ingredients.additives-list" = "Additieven";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
@@ -191,8 +191,8 @@
 "nutrition.energy" = "Calorieën";
 "nutrition.fats" = "Vetten";
 "nutrition.fats.saturated-fat" = "Verzadigd vet";
-"nutrition.fats.mono-unsaturated-fat" = "Enkelvoudige onverzadigde vetzuren";
-"nutrition.fats.poly-unsaturated-fat" = "Meervoudig onvervaardigde vetzuren";
+"nutrition.fats.mono-unsaturated-fat" = "Enkelvoudig onverzadigde vetten";
+"nutrition.fats.poly-unsaturated-fat" = "Enkelvoudige onverzadigde vetzuren";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
@@ -277,7 +277,7 @@
 "settings.sections.information" = "Opmerking";
 "settings.sections.discover" = "Ontdek";
 "settings.sections.contribute" = "Bijdragen";
-"settings.sections.about" = "Informatie";
+"settings.sections.about" = "Over";
 "settings.user-profile" = "Je account";
 "settings.credits.title" = "Credits";
 "settings.contact.message" = "Bedankt dat je contact met ons hebt opgenomen.";
@@ -310,7 +310,7 @@
 "user.alert.wrong-credentials.subtitle" = "Controleer uw gebruikersnaam en wachtwoord";
 "user.alert.generic-error.title" = "Er is een fout opgetreden bij het inloggen";
 "user.alert.generic-error.subtitle" = "Probeer het opnieuw in een ogenblik";
-"user.alert.logout-confirmation.title" = "Confirm Logout";
+"user.alert.logout-confirmation.title" = "Afmelden bevestigen";
 "user.alert.logout-confirmation.subtitle" = "Weet je zeker dat je wilt uitloggen?";
 "user.alert.username-missing" = "Gebruikersnaam is vereist";
 "user.alert.password-missing" = "Wachtwoord is vereist";
