@@ -97,7 +97,6 @@ class ProductAddViewController: TakePictureViewController {
 
     private var languagePickerController: PickerViewController?
     private var languagePickerToolbarController: PickerToolbarViewController?
-    private var languageValue: String = "en" // Use English as default
 
     private var productCategory: Category?
     private var productCategoryCustomName: String?
@@ -180,7 +179,6 @@ class ProductAddViewController: TakePictureViewController {
 
     fileprivate func fillProductFromInfosForm() {
         product.name = productNameField.text
-        product.lang = languageValue
 
         if let brand = brandsField.text {
             product.brands = [brand]
@@ -418,7 +416,10 @@ class ProductAddViewController: TakePictureViewController {
     private func configureLanguageField() {
         let languages = dataManager.getLanguages()
 
-        let defaultValue: Int? = languages.index(where: { $0.code == self.languageValue })
+        let languageValue = product.lang ?? Locale.current.languageCode ?? "en"
+        self.product.lang = languageValue
+
+        let defaultValue: Int? = languages.index(where: { $0.code == languageValue })
 
         self.languagePickerController = PickerViewController(data: languages, defaultValue: defaultValue, delegate: self)
         self.languagePickerToolbarController = PickerToolbarViewController(title: "product-add.language.toolbar-title".localized, delegate: self)
@@ -431,12 +432,7 @@ class ProductAddViewController: TakePictureViewController {
             self.languageField.inputAccessoryView = toolbarView
         }
 
-        // Set current language as default
-        if let languageCode = Locale.current.languageCode {
-            self.languageValue = languageCode
-        }
-
-        self.languageField.text = Locale.current.localizedString(forIdentifier: self.languageValue)
+        self.languageField.text = Locale.current.localizedString(forIdentifier: languageValue)
 
         // Hide blinking cursor
         self.languageField.tintColor = .clear
@@ -810,7 +806,7 @@ extension ProductAddViewController: PickerViewDelegate {
     func didGetSelection(value: Pickable) {
         switch value {
         case let language as Language:
-            self.languageValue = language.code
+            self.product.lang = language.code
             self.languageField.text = language.name
         default:
             // Do nothing
