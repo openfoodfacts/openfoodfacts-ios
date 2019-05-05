@@ -213,12 +213,13 @@ class ProductAddViewController: TakePictureViewController {
 
             nutritiveValuesStackView.arrangedSubviews.forEach { (view: UIView) in
                 if let view = view as? EditNutritiveValueView {
-                    if let doubleValue = view.getInputValue() {
-                        nutriments.append(RealmPendingUploadNutrimentItem(value: [
-                            "code": view.nutrimentCode,
-                            "value": doubleValue,
-                            "unit": view.selectedUnit ?? ""
-                            ]))
+                    if let inputValue = view.getInputValue() {
+                        let pendingItem = RealmPendingUploadNutrimentItem()
+                        pendingItem.code = view.nutrimentCode
+                        pendingItem.modifier = inputValue.modifier
+                        pendingItem.value = inputValue.value
+                        pendingItem.unit = view.selectedUnit ?? ""
+                        nutriments.append(pendingItem)
                     }
                 }
             }
@@ -381,7 +382,7 @@ class ProductAddViewController: TakePictureViewController {
         while nutritiveValuesStackView.arrangedSubviews.count < displayedNutrimentItems.count {
             let newView = EditNutritiveValueView(frame: CGRect(x: 0, y: 0, width: nutritiveValuesStackView.frame.width, height: 44))
             newView.inputTextField.delegate = self
-            newView.inputTextField.keyboardType = .decimalPad
+            newView.inputTextField.keyboardType = .numbersAndPunctuation
             nutritiveValuesStackView.addArrangedSubview(newView)
         }
         while nutritiveValuesStackView.arrangedSubviews.count > displayedNutrimentItems.count, let last = nutritiveValuesStackView.arrangedSubviews.last {
@@ -518,7 +519,7 @@ class ProductAddViewController: TakePictureViewController {
                 if let view = editNutrimentView(forCode: nutriment.nameKey) {
                     if let value = nutriment.value {
                         let modifier = nutriment.modifier ?? ""
-                        view.inputTextField.text = "\(modifier) \(value)".trimmingCharacters(in: .whitespaces)
+                        view.inputTextField.text = "\(modifier)\(value)".trimmingCharacters(in: .whitespaces)
                     } else {
                         view.inputTextField.text = nil
                     }
@@ -654,7 +655,7 @@ extension ProductAddViewController: UITextFieldDelegate {
         return true
     }
 
-    fileprivate func computeSaltFromSodium(sodium: Double, inUnit: String?) {
+    fileprivate func computeSaltFromSodium(sodium: Double, inUnit: String?, withModifier modifier: String?) {
         let unit = inUnit ?? "g"
 
         var sodiumMG = sodium
@@ -669,13 +670,14 @@ extension ProductAddViewController: UITextFieldDelegate {
         for arrangedSubview in nutritiveValuesStackView.arrangedSubviews {
             if let arrangedSubview = arrangedSubview as? EditNutritiveValueView, arrangedSubview.nutrimentCode == "salt" {
                 arrangedSubview.selectedUnit = "g"
-                arrangedSubview.inputTextField.text = "\(saltG)"
+                let modif = modifier ?? ""
+                arrangedSubview.inputTextField.text = "\(modif)\(saltG)"
                 break
             }
         }
     }
 
-    fileprivate func computeSodiumFromSalt(salt: Double, inUnit: String?) {
+    fileprivate func computeSodiumFromSalt(salt: Double, inUnit: String?, withModifier modifier: String?) {
         let unit = inUnit ?? "g"
 
         var saltG = salt
@@ -690,7 +692,8 @@ extension ProductAddViewController: UITextFieldDelegate {
         for arrangedSubview in nutritiveValuesStackView.arrangedSubviews {
             if let arrangedSubview = arrangedSubview as? EditNutritiveValueView, arrangedSubview.nutrimentCode == "sodium" {
                 arrangedSubview.selectedUnit = "mg"
-                arrangedSubview.inputTextField.text = "\(sodiumMG)"
+                let modif = modifier ?? ""
+                arrangedSubview.inputTextField.text = "\(modif)\(sodiumMG)"
                 break
             }
         }
@@ -720,12 +723,18 @@ extension ProductAddViewController: UITextFieldDelegate {
             showNotSavedIndication(label: lastSavedNutrimentsLabel, key: "save-nutriments")
 
             if let editNutritiveView = textField.superviewOfClassType(EditNutritiveValueView.self) as? EditNutritiveValueView {
-                if let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string).replacingOccurrences(of: ",", with: "."), let doubleValue = Double(updatedString) {
-                    updateTooMuchLabel(inNutritiveView: editNutritiveView, forValue: doubleValue)
-                    if editNutritiveView.nutrimentCode == "salt" {
-                        computeSodiumFromSalt(salt: doubleValue, inUnit: editNutritiveView.selectedUnit)
-                    } else if editNutritiveView.nutrimentCode == "sodium" {
-                        computeSaltFromSodium(sodium: doubleValue, inUnit: editNutritiveView.selectedUnit)
+                if let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) {
+                    if updatedString.matches(for: "^[<>~]{0,1}[0-9]*[.,]{0,1}[0-9]*$").isEmpty {
+                        //do not allow input of non authorized chars
+                        return false
+                    }
+                    if let inputValue = editNutritiveView.getInputValue(fromString: updatedString) {
+                        updateTooMuchLabel(inNutritiveView: editNutritiveView, forValue: inputValue.value)
+                        if editNutritiveView.nutrimentCode == "salt" {
+                            computeSodiumFromSalt(salt: inputValue.value, inUnit: editNutritiveView.selectedUnit, withModifier: inputValue.modifier)
+                        } else if editNutritiveView.nutrimentCode == "sodium" {
+                            computeSaltFromSodium(sodium: inputValue.value, inUnit: editNutritiveView.selectedUnit, withModifier: inputValue.modifier)
+                        }
                     }
                 }
             }
@@ -821,13 +830,13 @@ extension ProductAddViewController: PickerViewDelegate {
 
 extension ProductAddViewController: EditNutritiveValueViewDelegate {
     func didChangeUnit(view: EditNutritiveValueView) {
-        if let doubleValue = view.getInputValue() {
-            updateTooMuchLabel(inNutritiveView: view, forValue: doubleValue)
+        if let inputValue = view.getInputValue() {
+            updateTooMuchLabel(inNutritiveView: view, forValue: inputValue.value)
 
             if view.nutrimentCode == "salt" {
-                self.computeSodiumFromSalt(salt: doubleValue, inUnit: view.selectedUnit)
+                self.computeSodiumFromSalt(salt: inputValue.value, inUnit: view.selectedUnit, withModifier: inputValue.modifier)
             } else if view.nutrimentCode == "sodium" {
-                self.computeSaltFromSodium(sodium: doubleValue, inUnit: view.selectedUnit)
+                self.computeSaltFromSodium(sodium: inputValue.value, inUnit: view.selectedUnit, withModifier: inputValue.modifier)
             }
         }
     }
