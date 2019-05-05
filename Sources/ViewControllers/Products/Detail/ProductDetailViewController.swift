@@ -13,8 +13,13 @@ import Crashlytics
 class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient {
 
     var hideSummary: Bool = false
-    var product: Product!
+    var product: Product! {
+        didSet {
+            self.allergenAlertShown = false
+        }
+    }
     var dataManager: DataManagerProtocol!
+    var allergenAlertShown: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +41,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             buttons.insert(shareButton, at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
+        self.showAllergenAlertIfNeeded()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,6 +69,15 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
 
         return vcs
+    }
+
+    private func showAllergenAlertIfNeeded() {
+        if !allergenAlertShown {
+            if let alert = AllergensHelper.allergenAlertControllerIfNeeded(forProduct: product, inDataManager: dataManager) {
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        self.allergenAlertShown = true
     }
 
     fileprivate func getSummaryVC() -> UIViewController {

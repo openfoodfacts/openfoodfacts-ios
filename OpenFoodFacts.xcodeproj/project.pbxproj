@@ -46,6 +46,7 @@
 		30412DE1220F111400C485DD /* SelectTaxonomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */; };
 		307BBEB921FA16B100E2DF9D /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */; };
 		307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */; };
+		307BDC6C227F809200C516C9 /* AllergensHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BDC6B227F809200C516C9 /* AllergensHelper.swift */; };
 		30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77D9B22088F0F00B180E9 /* Allergen.swift */; };
 		30DB17F522122E4A0010EE6F /* TOCropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB17F422122E4A0010EE6F /* TOCropViewController.framework */; };
 		30E43D78220895B100D7A906 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E43D77220895B100D7A906 /* Category.swift */; };
@@ -336,6 +337,7 @@
 		30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTaxonomyViewController.swift; sourceTree = "<group>"; };
 		307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerResultViewController.swift; sourceTree = "<group>"; };
+		307BDC6B227F809200C516C9 /* AllergensHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergensHelper.swift; sourceTree = "<group>"; };
 		30D77D9B22088F0F00B180E9 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
 		30DB17F422122E4A0010EE6F /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
 		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -1118,6 +1120,7 @@
 				74C59E8A203FB9E2006C456F /* SharingManager.swift */,
 				300085622208777900DC3896 /* OFFUrlsHelper.swift */,
 				30270C332226F4A000E6973D /* operators.swift */,
+				307BDC6B227F809200C516C9 /* AllergensHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2440,6 +2443,7 @@
 				300085612207AC0700DC3896 /* Additive.swift in Sources */,
 				957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */,
 				957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */,
+				307BDC6C227F809200C516C9 /* AllergensHelper.swift in Sources */,
 				957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */,
 				74C59E8B203FB9E2006C456F /* SharingManager.swift in Sources */,
 				3030EB8A222E9202005A6169 /* RealmOfflineProduct.swift in Sources */,
