@@ -9,6 +9,7 @@
 import UIKit
 import NotificationBanner
 
+// swiftlint:disable:next type_body_length
 class ProductAddViewController: TakePictureViewController {
     // IBOutlets
 
@@ -484,10 +485,23 @@ class ProductAddViewController: TakePictureViewController {
         label?.isHidden = false
     }
 
+    private func refreshProductTranslatedValuesFromLang() {
+        if let lang = product.lang {
+            productNameField.text = product.names[lang]
+            ingredientsTextField.text = product.ingredients[lang]
+        } else {
+            productNameField.text = product.name
+            ingredientsTextField.text = product.ingredientsList
+        }
+    }
+
     private func fillForm(withProduct product: Product) {
         topExplainationText.isHidden = true
 
-        productNameField.text = product.name
+        self.refreshProductTranslatedValuesFromLang()
+
+        barcodeLabel.text = product.barcode
+        
         brandsField.text = product.brands?.joined(separator: ", ")
 
         if let categorieTag = product.categoriesTags?.first {
@@ -817,6 +831,7 @@ extension ProductAddViewController: PickerViewDelegate {
         case let language as Language:
             self.product.lang = language.code
             self.languageField.text = language.name
+            self.refreshProductTranslatedValuesFromLang()
         default:
             // Do nothing
             return

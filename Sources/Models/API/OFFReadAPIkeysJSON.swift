@@ -44,7 +44,10 @@ struct OFFJson {
     static let KeywordsKey = "_keywords"
     static let RevKey = "rev"
     // added for decoding of languages
-                            static let LanguageCodesKey = "languages_codes"
+    static let LanguageCodesKey = "languages_codes"
+    static let ProductNameLanguagesKey = "product_name_languages"
+    static let GenericNameLanguagesKey = "generic_name_languages"
+    static let IngredientsLanguagesKey = "ingredients_text_languages"
     static let EditorsKey = "editors"
     static let InterfaceVersionCreatedKey = "interface_version_created"
     static let EmbCodesKey = "emb_codes"
@@ -351,6 +354,9 @@ struct OFFJson {
             OFFJson.LabelsHierarchyKey,
             OFFJson.LabelsTagsKey,
             OFFJson.LangKey,
+            OFFJson.ProductNameLanguagesKey,
+            OFFJson.GenericNameLanguagesKey,
+            OFFJson.IngredientsLanguagesKey,
             OFFJson.LanguageCodesKey,
             OFFJson.LastModifiedByKey,
             OFFJson.LastModifiedTKey,

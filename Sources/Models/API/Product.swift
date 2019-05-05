@@ -276,14 +276,9 @@ struct Product: Mappable {
 
         // try to extract all language specific fields
 
-        // guard let validLanguageCodes = languageCodes else { return }
-
-        for languageCode in Locale.preferredLanguageCodes {
-
-            names[languageCode] <- map[OFFJson.ProductNameKey + OFFJson.KeySeparator + languageCode]
-            genericNames[languageCode] <- map[OFFJson.GenericNameKey + OFFJson.KeySeparator + languageCode]
-            ingredients[languageCode] <- map[OFFJson.IngredientsTextKey + OFFJson.KeySeparator + languageCode]
-        }
+        names <- map[OFFJson.ProductNameLanguagesKey]
+        genericNames <- map[OFFJson.GenericNameLanguagesKey]
+        ingredients <- map[OFFJson.IngredientsLanguagesKey]
     }
 
     func matchedLanguageCode(codes:[String]) -> String? {
