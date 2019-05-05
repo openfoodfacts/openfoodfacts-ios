@@ -21,7 +21,7 @@
 
 "product-search.title" = "Suchen";
 "product-search.search-placeholder" = "Nach Name oder E-Mail-Adresse suchen";
-"product-search.no-results" = "Keine Ergebnisse. Sie können ein Produkt zu Open Food Facts hinzufügen, indem Sie es scannen.";
+"product-search.no-results" = "Keine Ergebnisse. Sie können ein Produkt zu Open Food Facts hinzufügen, indem Sie es einlesen.";
 "product-search.error-view.title" = "Ein Problem ist aufgetreten ";
 "product-search.error-view.subtitle" = "Bitte versuchen Sie es erneut";
 "product-search.initial-view.slogan" = "die freie Lebensmitteldatenbank";
@@ -34,15 +34,15 @@
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Ein Fehler ist beim Einlesen des Strichcodes aufgetreten. Bitte versuchen Sie es nach einer kurzen Weile erneut.";
-"product-scanner.barcode-notfound.manual-enter" = "Kein Barcode gefunden. Sie können ihn manuell eingeben:";
+"product-scanner.barcode.error" = "Fehler beim Einlesen des Strichcodes. Bitte versuchen Sie es in wenigen Augenblicken erneut";
+"product-scanner.barcode-notfound.manual-enter" = "Kein Strichcode gefunden. Sie können ihn manuell eingeben:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts benötigt die Berechtigung, die Kamera verwenden zu dürfen";
-"product-scanner.permissions.noPermissions.message" = "Bitte erteilen Sie die Erlaubnis, die Kamera Barcodes scannen zu lassen";
+"product-scanner.permissions.noPermissions.message" = "Bitte erteilen Sie die Erlaubnis, dass die Kamera Strichcodes einlesen darf";
 "product-scanner.permissions.noPermissions.action.title" = "Einstellungen öffnen";
 
-"product-scanner.permissions.failed.title" = "Barcode-Scan konnte nicht gestartet werden.";
-"product-scanner.permissions.failed.message" = "Stellen Sie in den Datenschutzeinstellungen sicher, dass Open Food Facts die Berechtigung, die Kamera verwenden zu dürfen, hat";
+"product-scanner.permissions.failed.title" = "Das Einlesen von Strichcodes konnte nicht gestartet werden.";
+"product-scanner.permissions.failed.message" = "Stellen Sie in den Datenschutzeinstellungen sicher, dass Open Food Facts die Berechtigung hat, die Kamera verwenden zu dürfen";
 "product-scanner.permissions.failed.action.title" = "Einlesen von Strichcodes beenden";
 
 "product-scanner.search.status" = "Produkt wird geladen…";
