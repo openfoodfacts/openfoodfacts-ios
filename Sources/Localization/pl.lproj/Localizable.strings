@@ -125,15 +125,15 @@
 
 // Select nutrition
 "select-nutriment.title" = "Odżywianie";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Wyszukaj składnik odżywczy";
 
 // Select allergen
 "select-allergen.title" = "Alergeny";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "Wyszukaj alergen";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Dodaj nowe zdjęcie";
-"product-detail.edit" = "Edit this product";
+"product-detail.edit" = "Edytuj ten produkt";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "Pamiętaj, aby zapisać zmiany";
 /* Keep this text as short as possible */
@@ -163,7 +163,7 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Lista składników";
 "product-detail.ingredients.allergens-list" = "Substancje lub produkty powodujące alergie lub reakcje nietolerancji";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-alert.title" = "Zawiera alergeny!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Ślady";
@@ -179,7 +179,7 @@
 "product-detail.nutrition-table.nutritional-table-header" = "Wartości odżywcze";
 "product-detail.nutrition-table.for-100g" = "Na 100 g";
 "product-detail.nutrition-table.for-serving" = "Na porcję";
-"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.100g" = "100 g";
 "product-detail.nutrition-table.serving" = "porcja";
 
 // Nutrition levels
@@ -261,19 +261,19 @@
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.took-picture.front" = "Photo of the front ✅";
-"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.front" = "Główne zdjęcie produktu ✅";
+"product.images.took-picture.ingredients" = "Zdjęcie listy składników ✅";
+"product.images.took-picture.nutrition" = "Zdjęcie informacji o wartości odżywczej ✅";
 
-"product.images.take-picture.front" = "Photo of the front";
-"product.images.take-picture.ingredients" = "Photo of the ingredients";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.front" = "Główne zdjęcie produktu";
+"product.images.take-picture.ingredients" = "Zdjęcie listy składników";
+"product.images.take-picture.nutrition" = "Zdjęcie informacji o wartości odżywczej";
 
 // Settings storyboard
 "settings.tab-bar.item" = "Ustawienia";
-"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.title" = "Ostrzeżenie o alergenach";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
+"settings.allergies.add-button" = "Dodaj alergeny";
 "settings.sections.information" = "Informacje";
 "settings.sections.discover" = "Odkryj";
 "settings.sections.contribute" = "Wnieś wkład";
