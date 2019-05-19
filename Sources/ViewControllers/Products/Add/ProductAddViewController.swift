@@ -179,7 +179,11 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     fileprivate func fillProductFromInfosForm() {
-        product.name = productNameField.text
+        if let lang = product.lang {
+            product.names[lang] = productNameField.text
+        } else {
+            product.name = productNameField.text
+        }
 
         if let brand = brandsField.text {
             product.brands = [brand]
@@ -295,7 +299,11 @@ class ProductAddViewController: TakePictureViewController {
         fillProductFromInfosForm()
         let nutriments = fillProductFromNutriments()
 
-        self.product.ingredientsList = self.ingredientsTextField.text
+        if let lang = product.lang {
+            self.product.ingredients[lang] = self.ingredientsTextField.text
+        } else {
+            self.product.ingredientsList = self.ingredientsTextField.text
+        }
 
         dataManager.addProductNutritionTable(product, nutritionTable: nutriments, onSuccess: { [weak self] in
             DispatchQueue.main.async {
@@ -501,7 +509,7 @@ class ProductAddViewController: TakePictureViewController {
         self.refreshProductTranslatedValuesFromLang()
 
         barcodeLabel.text = product.barcode
-        
+
         brandsField.text = product.brands?.joined(separator: ", ")
 
         if let categorieTag = product.categoriesTags?.first {
