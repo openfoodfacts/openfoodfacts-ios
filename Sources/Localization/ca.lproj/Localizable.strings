@@ -22,19 +22,19 @@
 "product-search.title" = "Cerca";
 "product-search.search-placeholder" = "Cerca per nom o codi de barres";
 "product-search.no-results" = "Sense resultats. Podeu afegir un producte a Open Food Facts escanejant-lo.";
-"product-search.error-view.title" = "Something went wrong";
-"product-search.error-view.subtitle" = "Please try again";
+"product-search.error-view.title" = "Alguna cosa ha anat malament";
+"product-search.error-view.subtitle" = "Torneu-ho a provar, si us plau";
 "product-search.initial-view.slogan" = "the free food products database";
 "product-search.initial-view.offline.title-loading" = "Desant productes fora de línia: %d%%";
 "product-search.initial-view.offline.subtitle" = "Més de %d productes disponibles per a l’escanejat instantani";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.user-help" = "Escanegeu el codi de barres del producte";
+"product-scanner.overlay.extended-user-help" = "No es troba cap codi de barres.\nCentreu el codi de barres a la pantalla.\nAssegureu-vos que el codi de barres està ben il·luminat.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Escàner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
+"product-scanner.barcode.error" = "S'ha produït un error en escanejar el codi de barres. Torneu-ho a provar en uns instants.";
 "product-scanner.barcode-notfound.manual-enter" = "No s’ha trobat cap codi de barres. Podeu escriure'l manualment:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts necessita permisos de la càmera";
@@ -43,7 +43,7 @@
 
 "product-scanner.permissions.failed.title" = "No s’ha pogut iniciar l’escaneig de codis de barres.";
 "product-scanner.permissions.failed.message" = "Assegureu-vos que en Configuració de la privadesa, Open Food Facts té permís per utilitzar la càmera";
-"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+"product-scanner.permissions.failed.action.title" = "Deixar d'escannejar codis de barres";
 
 "product-scanner.search.status" = "Carregant el producte…";
 
@@ -51,16 +51,16 @@
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Pujant la imatge…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "Alguna cosa ha anat malament";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+"product-add.image-upload-error-banner.subtitle" = "Proveu de tornar a fer la fotografia";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
+"product-add.image-upload-success-banner.title" = "La imatge s'ha pujat correctament";
 "product-add.image-save-success-banner.title" = "Es carregarà la imatge quan estigui en línia";
 /* Displayed when a product was successfully added to the products database */
-"product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
-"product-add.uploaded-image" = "Image uploaded, thanks!";
-"product-add.save-error.title" = "Error while saving product";
+"product-add.product-add-success-banner.title" = "El producte s'ha afegit correctament. Gràcies!";
+"product-add.uploaded-image" = "La imatge s'ha carregat, gràcies!";
+"product-add.save-error.title" = "S'ha produït un error en desar el producte";
 "product-add.save-error.message" = "Si us plau, proveu-ho més tard";
 "product-add.save-info.success" = "Informació desada a";
 "product-add.save-info.error" = "Informació no desada";
@@ -94,6 +94,7 @@
 "product-add.placeholder.quantity" = "Quantitat";
 
 "product-add.title" = "Producte nou";
+"product-add.title-edit" = "Edita el producte";
 "product-add.titles.barcode" = "Codi de barres";
 "product-add.titles.top-explainations" = "Ben fet! Aquest producte encara no es troba a Open Food Facts. Podeu fer algunes fotos del producte, de la llista d’ingredients i de la taula nutricional per afegir-lo a dades sobre menjar obert? Gràcies per endavant.";
 "product-add.titles.license-explaination" = "Nota: les imatges que envieu són distribuïdes sota la llicència lliure Creative Commons Atribució i Compartir Igual.";
@@ -132,18 +133,18 @@
 "select-allergen.search-placeholder" = "Cerqueu un al·lergen";
 
 // Product Detail
-"product-detail.header.add-new-picture" = "Add a new picture";
+"product-detail.header.add-new-picture" = "Afegiu una imatge nova";
 "product-detail.edit" = "Editeu aquest producte";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.title" = "Remember to save your changes";
+"product-detail.edit-alert.title" = "Recordeu-vos de desar les modificacions";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
+"product-detail.edit-alert.subtitle" = "Desplaceu-vos avall fins el botó \"Desa\"";
 
 // Product detail page titles
 "product-detail.page-title.summary" = "Resum";
 "product-detail.page-title.ingredients" = "Ingredients";
 "product-detail.page-title.nutrition" = "Nutrició";
-"product-detail.page-title.nutrition-table" = "Nutrition table";
+"product-detail.page-title.nutrition-table" = "Informació nutricional";
 "product-detail.page-title.environment-impact" = "Entorn";
 
 // Product detail summary info rows labels
@@ -161,7 +162,7 @@
 "product-detail.summary.countries" = "Països on es va vendre";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.ingredients-list" = "List of ingredients";
+"product-detail.ingredients.ingredients-list" = "Llistat d'ingredients";
 "product-detail.ingredients.allergens-list" = "Productes o substancies que causen intoleràncies o al·lèrgies";
 "product-detail.ingredients.allergens-alert.title" = "Conté al·lèrgens!";
 "product-detail.ingredients.allergens-list.missing-infos" = "Aquest producte encara no té una llista d’ingredients i, per tant, no s’ha pogut completar la detecció d’al·lèrgens.";
@@ -173,7 +174,7 @@
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Mida de la porció";
-"product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2 emissions";
+"product-detail.nutrition.carbon-footprint" = "Empremta de carboni / emissions de CO₂";
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Informació nutricional";
@@ -217,9 +218,9 @@
 "nutrition.vitamins" = "Vitamines i minerals";
 "nutrition.vitamins.a" = "Vitamina A";
 "nutrition.vitamins.beta-carotene" = "Beta carotè";
-"nutrition.vitamins.d" = "Vitamin D";
-"nutrition.vitamins.e" = "Vitamin E";
-"nutrition.vitamins.k" = "Vitamin K";
+"nutrition.vitamins.d" = "Vitamina D";
+"nutrition.vitamins.e" = "Vitamina E";
+"nutrition.vitamins.k" = "Vitamina K";
 "nutrition.vitamins.c" = "Vitamina C";
 "nutrition.vitamins.b1" = "Vitamina B1";
 "nutrition.vitamins.b2" = "Vitamina B2";
@@ -279,13 +280,13 @@
 "settings.sections.contribute" = "Contribuir";
 "settings.sections.about" = "Quant a";
 "settings.user-profile" = "El vostre compte de col·laborador";
-"settings.credits.title" = "Credits";
+"settings.credits.title" = "Crèdits";
 "settings.contact.message" = "Gràcies per contactar amb nosaltres.";
 "settings.contact-alert.title" = "No s’ha pogut enviar el correu electrònic";
 "settings.contact-alert.message" = "El vostre dispositiu no ha pogut enviar un correu electrònic. Comproveu la configuració del vostre correu electrònic i torneu-ho a provar.";
-"settings.scan-on-launch.title" = "Show Scan On App Launch";
+"settings.scan-on-launch.title" = "Mostra l'escànner en obrir l'App";
 "settings.sections.discover" = "Descobrir";
-"settings.contribute.how-to-contribute" = "How To Contribute";
+"settings.contribute.how-to-contribute" = "Com contribuir";
 "settings.contribute.support-open-food-facts" = "Doneu suport a Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Traduïu Open Food Facts";
 "settings.about.contact" = "Contact";
@@ -308,12 +309,12 @@
 "user.why-log-in.text" = "Si inicieu la sessió amb el vostre compte, s’acreditaran totes les vostres contribucions a la transparència dels aliments.";
 "user.alert.wrong-credentials.title" = "No es pot iniciar la sessió";
 "user.alert.wrong-credentials.subtitle" = "Comproveu que l'identificador i la contrasenya siguin correctes";
-"user.alert.generic-error.title" = "There was an error logging in";
-"user.alert.generic-error.subtitle" = "Please try again in a few moments";
+"user.alert.generic-error.title" = "Hi ha hagut una errada iniciant la sessió";
+"user.alert.generic-error.subtitle" = "Si us plau torneu-ho a intentar en uns instants";
 "user.alert.logout-confirmation.title" = "Confirmeu que voleu sortir";
 "user.alert.logout-confirmation.subtitle" = "Segur que voleu tancar la sessió?";
-"user.alert.username-missing" = "Username is required";
-"user.alert.password-missing" = "Password is required";
+"user.alert.username-missing" = "L'identificador és obligatori";
+"user.alert.password-missing" = "La contrasenya és necessaria";
 "pending-upload.info.text" = "Aquests són productes que heu afegit fora de línia.\n\nL'aplicació intentarà pujar-los automàticament quan torneu a connectar-vos a la xarxa o podeu provar de carregar-los manualment tocant el botó de la cantonada superior dreta.";
 "pending-upload.hud.status" = "Pujant";
 
