@@ -14,6 +14,7 @@ import RealmSwift
 
 internal class RealmPendingUploadNutrimentItem: Object {
     @objc dynamic var code: String = ""
+    @objc dynamic var modifier: String? = nil
     @objc dynamic var value: Double = 0
     @objc dynamic var unit: String = ""
 }

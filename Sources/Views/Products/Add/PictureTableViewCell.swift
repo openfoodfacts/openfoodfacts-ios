@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PictureTableViewCell: UITableViewCell {
     @IBOutlet weak var dataStackView: UIStackView!
@@ -39,6 +40,12 @@ class PictureTableViewCell: UITableViewCell {
                 pictureView.isHidden = false
                 pictureButton.isHidden = true
                 pictureLabel.isHidden = false
+                pictureLabel.text = viewModel.uploadedPictureText
+            } else if let imageUrl = viewModel.imageUrl, let url = URL(string: imageUrl) {
+                pictureView.kf.setImage(with: url)
+                pictureView.isHidden = false
+                pictureButton.isHidden = false
+                pictureLabel.isHidden = true
                 pictureLabel.text = viewModel.uploadedPictureText
             } else {
                 pictureView.isHidden = true

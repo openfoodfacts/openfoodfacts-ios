@@ -9,12 +9,14 @@
 import UIKit
 import NotificationBanner
 
+// swiftlint:disable:next type_body_length
 class ProductAddViewController: TakePictureViewController {
     // IBOutlets
 
     @IBOutlet weak var barcodeTitleLabel: UILabel!
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var topExplainationText: UILabel!
+    @IBOutlet weak var picturesContainerView: UIView!
 
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -78,6 +80,14 @@ class ProductAddViewController: TakePictureViewController {
     override var barcode: String! {
         didSet {
             product.barcode = barcode
+        }
+    }
+
+    var productToEdit: Product? {
+        didSet {
+            if let barcode = productToEdit?.barcode {
+                self.barcode = barcode
+            }
         }
     }
 
@@ -157,19 +167,23 @@ class ProductAddViewController: TakePictureViewController {
         configureLanguageField()
         configureDelegates()
         configureNotifications()
-    }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        barcodeLabel.text = barcode
-
+        if let productToEdit = self.productToEdit {
+            self.title = "product-add.title-edit".localized
+            self.product = productToEdit
+            fillForm(withProduct: productToEdit)
+        }
         if let barcode = self.barcode, let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode) {
             fillForm(withPendingUploadItem: pendingUploadItem)
         }
     }
 
     fileprivate func fillProductFromInfosForm() {
-        product.name = productNameField.text
+        if let lang = product.lang {
+            product.names[lang] = productNameField.text
+        } else {
+            product.name = productNameField.text
+        }
 
         if let brand = brandsField.text {
             product.brands = [brand]
@@ -204,12 +218,13 @@ class ProductAddViewController: TakePictureViewController {
 
             nutritiveValuesStackView.arrangedSubviews.forEach { (view: UIView) in
                 if let view = view as? EditNutritiveValueView {
-                    if let doubleValue = view.getInputValue() {
-                        nutriments.append(RealmPendingUploadNutrimentItem(value: [
-                            "code": view.nutrimentCode,
-                            "value": doubleValue,
-                            "unit": view.selectedUnit ?? ""
-                            ]))
+                    if let inputValue = view.getInputValue() {
+                        let pendingItem = RealmPendingUploadNutrimentItem()
+                        pendingItem.code = view.nutrimentCode
+                        pendingItem.modifier = inputValue.modifier
+                        pendingItem.value = inputValue.value
+                        pendingItem.unit = view.selectedUnit ?? ""
+                        nutriments.append(pendingItem)
                     }
                 }
             }
@@ -284,7 +299,11 @@ class ProductAddViewController: TakePictureViewController {
         fillProductFromInfosForm()
         let nutriments = fillProductFromNutriments()
 
-        self.product.ingredientsList = self.ingredientsTextField.text
+        if let lang = product.lang {
+            self.product.ingredients[lang] = self.ingredientsTextField.text
+        } else {
+            self.product.ingredientsList = self.ingredientsTextField.text
+        }
 
         dataManager.addProductNutritionTable(product, nutritionTable: nutriments, onSuccess: { [weak self] in
             DispatchQueue.main.async {
@@ -318,7 +337,7 @@ class ProductAddViewController: TakePictureViewController {
                         self?.nutriscoreStackView.isHidden = true
                     }
 
-                    if let novaGroupString = distantProduct.novaGroup, let novaGroup = NovaGroupView.NovaGroup(rawValue: novaGroupString) {
+                    if let novaGroupString = distantProduct.novaGroup, let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
                         self?.novaGroupView.novaGroup = novaGroup
                         self?.novaGroupStackView.isHidden = false
                     } else {
@@ -364,6 +383,7 @@ class ProductAddViewController: TakePictureViewController {
             destination.delegate = self
             destination.barcode = barcode
             destination.dataManager = dataManager
+            destination.productToEdit = productToEdit
         }
     }
 
@@ -371,7 +391,7 @@ class ProductAddViewController: TakePictureViewController {
         while nutritiveValuesStackView.arrangedSubviews.count < displayedNutrimentItems.count {
             let newView = EditNutritiveValueView(frame: CGRect(x: 0, y: 0, width: nutritiveValuesStackView.frame.width, height: 44))
             newView.inputTextField.delegate = self
-            newView.inputTextField.keyboardType = .decimalPad
+            newView.inputTextField.keyboardType = .numbersAndPunctuation
             nutritiveValuesStackView.addArrangedSubview(newView)
         }
         while nutritiveValuesStackView.arrangedSubviews.count > displayedNutrimentItems.count, let last = nutritiveValuesStackView.arrangedSubviews.last {
@@ -473,6 +493,76 @@ class ProductAddViewController: TakePictureViewController {
         label?.isHidden = false
     }
 
+    private func refreshProductTranslatedValuesFromLang() {
+        if let lang = product.lang {
+            productNameField.text = product.names[lang]
+            ingredientsTextField.text = product.ingredients[lang]
+        } else {
+            productNameField.text = product.name
+            ingredientsTextField.text = product.ingredientsList
+        }
+    }
+
+    private func fillForm(withProduct product: Product) {
+        topExplainationText.isHidden = true
+
+        self.refreshProductTranslatedValuesFromLang()
+
+        barcodeLabel.text = product.barcode
+
+        brandsField.text = product.brands?.joined(separator: ", ")
+
+        if let categorieTag = product.categoriesTags?.first {
+            if let categorie = dataManager.category(forTag: categorieTag) {
+                productCategoryField.text = categorie.names.chooseForCurrentLanguage()?.value ?? categorieTag
+            } else {
+                productCategoryField.text = categorieTag
+            }
+        }
+
+        quantityField.text = product.quantity
+        ingredientsTextField.text = product.ingredientsList
+
+        noNutritionDataSwitch.isOn = product.noNutritionData == "on"
+        updateNoNutritionDataSwitchVisibility(animated: false)
+
+        portionSizeInputView.inputTextField.text = product.servingSize
+
+        if let nutritionDataPer = product.nutritionDataPer {
+            switch nutritionDataPer {
+            case .hundredGrams: nutritivePortionSegmentedControl.selectedSegmentIndex = 0
+            case .serving: nutritivePortionSegmentedControl.selectedSegmentIndex = 1
+            }
+        }
+
+        if let allNutriments = product.nutriments?.allItems() {
+            for nutriment in allNutriments {
+                add(nutrimentCode: nutriment.nameKey)
+                if let view = editNutrimentView(forCode: nutriment.nameKey) {
+                    if let value = nutriment.value {
+                        let modifier = nutriment.modifier ?? ""
+                        view.inputTextField.text = "\(modifier)\(value)".trimmingCharacters(in: .whitespaces)
+                    } else {
+                        view.inputTextField.text = nil
+                    }
+                    view.selectedUnit = nutriment.unit
+                }
+            }
+        }
+
+        if let lang = product.lang {
+            didGetSelection(value: Language(code: lang, name: Locale.current.localizedString(forIdentifier: lang) ?? lang))
+        }
+
+        lastSavedProductInfosLabel.isHidden = true
+        lastSavedNutrimentsLabel.isHidden = true
+        lastSavedIngredientsLabel.isHidden = true
+        lastSavedIngredientsOCRLabel.isHidden = true
+
+        refreshNovaScore()
+    }
+
+    // swiftlint:disable cyclomatic_complexity
     private func fillForm(withPendingUploadItem pendingUploadItem: PendingUploadItem) {
         if let productName = pendingUploadItem.productName {
             productNameField.text = productName
@@ -587,7 +677,7 @@ extension ProductAddViewController: UITextFieldDelegate {
         return true
     }
 
-    fileprivate func computeSaltFromSodium(sodium: Double, inUnit: String?) {
+    fileprivate func computeSaltFromSodium(sodium: Double, inUnit: String?, withModifier modifier: String?) {
         let unit = inUnit ?? "g"
 
         var sodiumMG = sodium
@@ -602,13 +692,14 @@ extension ProductAddViewController: UITextFieldDelegate {
         for arrangedSubview in nutritiveValuesStackView.arrangedSubviews {
             if let arrangedSubview = arrangedSubview as? EditNutritiveValueView, arrangedSubview.nutrimentCode == "salt" {
                 arrangedSubview.selectedUnit = "g"
-                arrangedSubview.inputTextField.text = "\(saltG)"
+                let modif = modifier ?? ""
+                arrangedSubview.inputTextField.text = "\(modif)\(saltG)"
                 break
             }
         }
     }
 
-    fileprivate func computeSodiumFromSalt(salt: Double, inUnit: String?) {
+    fileprivate func computeSodiumFromSalt(salt: Double, inUnit: String?, withModifier modifier: String?) {
         let unit = inUnit ?? "g"
 
         var saltG = salt
@@ -623,7 +714,8 @@ extension ProductAddViewController: UITextFieldDelegate {
         for arrangedSubview in nutritiveValuesStackView.arrangedSubviews {
             if let arrangedSubview = arrangedSubview as? EditNutritiveValueView, arrangedSubview.nutrimentCode == "sodium" {
                 arrangedSubview.selectedUnit = "mg"
-                arrangedSubview.inputTextField.text = "\(sodiumMG)"
+                let modif = modifier ?? ""
+                arrangedSubview.inputTextField.text = "\(modif)\(sodiumMG)"
                 break
             }
         }
@@ -653,12 +745,18 @@ extension ProductAddViewController: UITextFieldDelegate {
             showNotSavedIndication(label: lastSavedNutrimentsLabel, key: "save-nutriments")
 
             if let editNutritiveView = textField.superviewOfClassType(EditNutritiveValueView.self) as? EditNutritiveValueView {
-                if let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string).replacingOccurrences(of: ",", with: "."), let doubleValue = Double(updatedString) {
-                    updateTooMuchLabel(inNutritiveView: editNutritiveView, forValue: doubleValue)
-                    if editNutritiveView.nutrimentCode == "salt" {
-                        computeSodiumFromSalt(salt: doubleValue, inUnit: editNutritiveView.selectedUnit)
-                    } else if editNutritiveView.nutrimentCode == "sodium" {
-                        computeSaltFromSodium(sodium: doubleValue, inUnit: editNutritiveView.selectedUnit)
+                if let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) {
+                    if updatedString.matches(for: "^[<>~]{0,1}[0-9]*[.,]{0,1}[0-9]*$").isEmpty {
+                        //do not allow input of non authorized chars
+                        return false
+                    }
+                    if let inputValue = editNutritiveView.getInputValue(fromString: updatedString) {
+                        updateTooMuchLabel(inNutritiveView: editNutritiveView, forValue: inputValue.value)
+                        if editNutritiveView.nutrimentCode == "salt" {
+                            computeSodiumFromSalt(salt: inputValue.value, inUnit: editNutritiveView.selectedUnit, withModifier: inputValue.modifier)
+                        } else if editNutritiveView.nutrimentCode == "sodium" {
+                            computeSaltFromSodium(sodium: inputValue.value, inUnit: editNutritiveView.selectedUnit, withModifier: inputValue.modifier)
+                        }
                     }
                 }
             }
@@ -741,6 +839,7 @@ extension ProductAddViewController: PickerViewDelegate {
         case let language as Language:
             self.product.lang = language.code
             self.languageField.text = language.name
+            self.refreshProductTranslatedValuesFromLang()
         default:
             // Do nothing
             return
@@ -754,13 +853,13 @@ extension ProductAddViewController: PickerViewDelegate {
 
 extension ProductAddViewController: EditNutritiveValueViewDelegate {
     func didChangeUnit(view: EditNutritiveValueView) {
-        if let doubleValue = view.getInputValue() {
-            updateTooMuchLabel(inNutritiveView: view, forValue: doubleValue)
+        if let inputValue = view.getInputValue() {
+            updateTooMuchLabel(inNutritiveView: view, forValue: inputValue.value)
 
             if view.nutrimentCode == "salt" {
-                self.computeSodiumFromSalt(salt: doubleValue, inUnit: view.selectedUnit)
+                self.computeSodiumFromSalt(salt: inputValue.value, inUnit: view.selectedUnit, withModifier: inputValue.modifier)
             } else if view.nutrimentCode == "sodium" {
-                self.computeSaltFromSodium(sodium: doubleValue, inUnit: view.selectedUnit)
+                self.computeSaltFromSodium(sodium: inputValue.value, inUnit: view.selectedUnit, withModifier: inputValue.modifier)
             }
         }
     }
