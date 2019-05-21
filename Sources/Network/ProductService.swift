@@ -231,6 +231,18 @@ extension ProductService {
     func postProduct(_ product: Product, rawParameters: [String: Any]?, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         var params = product.toJSON()
 
+        // handle translated fields
+        if let lang = product.lang {
+            if let productName = product.names[lang] {
+                params["product_name"] = nil
+                params["product_name_\(lang)"] = productName
+            }
+            if let productIngredients = product.ingredients[lang] {
+                params["ingredients_text"] = nil
+                params["ingredients_text_\(lang)"] = productIngredients
+            }
+        }
+
         if let rawParameters = rawParameters {
             params.merge(rawParameters) { $1 }
         }

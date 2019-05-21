@@ -213,7 +213,7 @@ class DataManager: DataManagerProtocol {
 
         var params = [String: Any]()
         nutritionTable.forEach { (item) in
-            params["nutriment_\(item.code)"] = item.value
+            params["nutriment_\(item.code)"] = (item.modifier ?? "") + "\(item.value)"
             params["nutriment_\(item.code)_unit"] = item.unit
         }
 

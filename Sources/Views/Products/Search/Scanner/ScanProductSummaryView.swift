@@ -98,7 +98,7 @@ class ScanProductSummaryView: UIView {
         }
 
         if let novaGroupValue = product.novaGroup,
-            let novaGroup = NovaGroupView.NovaGroup(rawValue: novaGroupValue) {
+            let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
             novaGroupView.novaGroup = novaGroup
             novaGroupView.isHidden = false
         } else {
