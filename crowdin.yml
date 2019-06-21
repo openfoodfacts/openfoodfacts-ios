@@ -2,7 +2,12 @@ files:
 
   - source: /Sources/en.lproj/Localizable.strings
     translation: /Sources/Localization/%two_letters_code%.lproj/Localizable.strings
-    
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
   - source: /fastlane/metadata/en-US/description.txt
     translation: /fastlane/metadata/%two_letters_code%/description.txt
 
