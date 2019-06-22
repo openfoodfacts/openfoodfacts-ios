@@ -116,7 +116,7 @@
 
 "product-add.description.ingredients" = "Aby określić poziom przetworzenia żywności - NOVA, uzupełnij listę składników produktu";
 "product-add.titles.ingredients" = "Składniki";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
+"product-add.ingredients.explaination" = "Proszę zrobić zdjęcie listy składników. Składniki produktu zostaną wyodrębnione automatycznie. Wyodrębniony tekst należy sprawdzić pod kątem błędów językowych i jeśli wygląda w porządku zapisać.";
 "product-add.ingredients.button-delete" = "Wygląda źle, Pomiń";
 "product-add.ingredients.button-save" = "Wygląda dobrze, Zapisz";
 
@@ -165,8 +165,8 @@
 "product-detail.ingredients.ingredients-list" = "Lista składników";
 "product-detail.ingredients.allergens-list" = "Substancje lub produkty powodujące alergie lub reakcje nietolerancji";
 "product-detail.ingredients.allergens-alert.title" = "Zawiera alergeny!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-list.missing-infos" = "Lista składników tego produkt nie jest jeszcze znana, w związku z czym nie można ukończyć wykrywania alergenów.";
+"product-detail.ingredients.allergens-list.offline-product" = "Ten produkt został odczytany lokalnie w trybie offline, w wyniku czego wykrywanie alergenów nie mogło zostać zakończone.";
 "product-detail.ingredients.traces-list" = "Ślady";
 "product-detail.ingredients.additives-list" = "Dodatki";
 "product-detail.ingredients.palm-oil-ingredients" = "Składniki z oleju palmowego";
@@ -184,6 +184,7 @@
 "product-detail.nutrition-table.serving" = "porcja";
 
 // Nutrition levels
+"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "mała zawartość";
 "nutrition-level.moderate" = "umiarkowana zawartość";
 "nutrition-level.high" = "wysoka zawartość";
@@ -273,7 +274,7 @@
 // Settings storyboard
 "settings.tab-bar.item" = "Ustawienia";
 "settings.allergies.title" = "Ostrzeżenie o alergenach";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.description" = "Dodaj alergeny do tej listy, aby otrzymywać powiadomienie podczas skanowania produktu.\nNależy pamiętać, że informacje o alergiach NIGDY nie zostaną wysłane na serwer Open Food Facts. Należy być ostrożnym, gdyż dane produktu mogą nie być w 100% wiarygodne, a automatyczne wykrywanie może nie być w 100% dokładne. Sprawdź kontrolnie sam!";
 "settings.allergies.add-button" = "Dodaj alergeny";
 "settings.sections.information" = "Informacje";
 "settings.sections.discover" = "Odkryj";
