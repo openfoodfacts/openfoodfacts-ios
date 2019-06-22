@@ -296,7 +296,9 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
                 resetOverlay()
                 allergenAlertShown = false
-                floatingLabelContainer.isHidden = true
+                DispatchQueue.main.async {
+                    self.floatingLabelContainer.isHidden = true
+                }
                 lastCodeScanned = barcode
                 getProduct(barcode: barcode, isSummary: true)
             }
