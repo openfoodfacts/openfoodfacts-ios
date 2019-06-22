@@ -231,9 +231,11 @@ class ScannerViewController: UIViewController, DataManagerClient {
     }
 
     fileprivate func resetOverlay() {
-        overlay.setText("product-scanner.overlay.user-help".localized)
-        showHelpInOverlayTask?.cancel()
-        showScanHelpInstructions()
+        DispatchQueue.main.async {
+            self.overlay.setText("product-scanner.overlay.user-help".localized)
+            self.showHelpInOverlayTask?.cancel()
+            self.showScanHelpInstructions()
+        }
     }
 
     fileprivate func showScanHelpInstructions() {
