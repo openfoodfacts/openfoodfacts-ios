@@ -54,6 +54,7 @@ https://translate.openfoodfacts.org
 
 
 <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/9f/cc/76/9fcc763c-5abf-d01a-6397-16a35599099a/pr_source.png/690x0w.png" height="300">
+
 ## Building
 
 ### Dependencies
