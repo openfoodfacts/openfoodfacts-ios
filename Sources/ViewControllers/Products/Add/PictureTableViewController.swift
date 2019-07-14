@@ -16,6 +16,7 @@ class PictureTableViewController: TakePictureViewController {
     @IBOutlet weak var tableView: UITableView!
     var pictures = [PictureViewModel]()
     weak var delegate: PictureTableViewControllerDelegate?
+    var productToEdit: Product?
 
     override func viewDidLoad() {
         tableView.isScrollEnabled = false
@@ -24,6 +25,9 @@ class PictureTableViewController: TakePictureViewController {
         pictures.append(PictureViewModel(imageType: .ingredients))
         pictures.append(PictureViewModel(imageType: .nutrition))
 
+        if let product = self.productToEdit {
+            fillForm(withProduct: product)
+        }
         if let barcode = self.barcode, let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode) {
             fillForm(withPendingUploadItem: pendingUploadItem)
         }
@@ -33,6 +37,27 @@ class PictureTableViewController: TakePictureViewController {
         return pictures.firstIndex(where: { (pic: PictureViewModel) -> Bool in
             return pic.imageType == type
         })
+    }
+
+    fileprivate func fillForm(withProduct product: Product) {
+        if let image = product.frontImageSmallUrl ?? product.frontImageUrl {
+            if let index = index(forImageType: .front) {
+                pictures[index].imageUrl = image
+                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
+        }
+        if let image = product.ingredientsImageUrl {
+            if let index = index(forImageType: .ingredients) {
+                pictures[index].imageUrl = image
+                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
+        }
+        if let image = product.nutritionTableImage {
+            if let index = index(forImageType: .nutrition) {
+                pictures[index].imageUrl = image
+                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
+        }
     }
 
     fileprivate func fillForm(withPendingUploadItem pendingUploadItem: PendingUploadItem) {

@@ -98,8 +98,6 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: nil)
-        } else {
-            self.showSendMailErrorAlert()
         }
     }
     func configuredMailComposeViewController() -> MFMailComposeViewController {
@@ -107,15 +105,10 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         mailComposerViewController.mailComposeDelegate = self
         mailComposerViewController.setToRecipients(["contact@openfoodfacts.org"])
         mailComposerViewController.setSubject("Open Food Facts: ")
-        mailComposerViewController.setMessageBody("settings.contact.message".localized, isHTML: false)
+        mailComposerViewController.setMessageBody("", isHTML: false)
         return mailComposerViewController
     }
-    func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertController(title: "settings.contact-alert.title".localized, message: "settings.contact-alert.message".localized, preferredStyle: .alert)
-        let yesAction = UIAlertAction(title: "alert.action.ok".localized, style: .default)
-        sendMailErrorAlert.addAction(yesAction)
-        self.present(sendMailErrorAlert, animated: true, completion: nil)
-    }
+
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }

@@ -22,19 +22,19 @@
 "product-search.title" = "Tìm kiếm";
 "product-search.search-placeholder" = "Search for a product by name or barcode";
 "product-search.no-results" = "No Results";
-"product-search.error-view.title" = "Something went wrong";
+"product-search.error-view.title" = "Đã xảy ra lỗi";
 "product-search.error-view.subtitle" = "Vui lòng thử lại";
 "product-search.initial-view.slogan" = "the free food products database";
 "product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
 "product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.user-help" = "Quét mã vạch của sản phẩm";
+"product-scanner.overlay.extended-user-help" = "Không thể tìm thấy mã vạch.\nCăn chỉnh mã vạch vào giữa màn hình.\nĐảm bảo mã vạch rõ nét, đủ ánh sáng.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
+"product-scanner.barcode.error" = "Lỗi quét mã vạch. Xin vui lòng thử lại sau ít phút.";
 "product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
@@ -43,7 +43,7 @@
 
 "product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
-"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+"product-scanner.permissions.failed.action.title" = "Rời khỏi chức năng quét mã vạch";
 
 "product-scanner.search.status" = "Loading product...";
 
@@ -51,16 +51,16 @@
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Uploading image...";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "Đã xảy ra lỗi";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+"product-add.image-upload-error-banner.subtitle" = "Hãy thử để chụp ảnh một lần nữa";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
+"product-add.image-upload-success-banner.title" = "Hình ảnh đã được tải lên thành công";
 "product-add.image-save-success-banner.title" = "Image will be uploaded when online";
 /* Displayed when a product was successfully added to the products database */
-"product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
-"product-add.uploaded-image" = "Image uploaded, thanks!";
-"product-add.save-error.title" = "Error while saving product";
+"product-add.product-add-success-banner.title" = "Sản phẩm được thêm vào thành công. Cảm ơn bạn!";
+"product-add.uploaded-image" = "Hình ảnh được tải lên, cảm ơn!";
+"product-add.save-error.title" = "Lỗi trong khi lưu sản phẩm";
 "product-add.save-error.message" = "Try again later";
 "product-add.save-info.success" = "Information saved at";
 "product-add.save-info.error" = "Information not saved";
@@ -94,7 +94,8 @@
 "product-add.placeholder.quantity" = "Số lượng";
 
 "product-add.title" = "New product";
-"product-add.titles.barcode" = "Barcode";
+"product-add.title-edit" = "Chỉnh sửa sản phẩm";
+"product-add.titles.barcode" = "Mã vạch";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
@@ -132,48 +133,48 @@
 "select-allergen.search-placeholder" = "Search for an allergen";
 
 // Product Detail
-"product-detail.header.add-new-picture" = "Add a new picture";
+"product-detail.header.add-new-picture" = "Thêm một hình ảnh";
 "product-detail.edit" = "Edit this product";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.title" = "Remember to save your changes";
+"product-detail.edit-alert.title" = "Hãy nhớ lưu các thay đổi của bạn";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
+"product-detail.edit-alert.subtitle" = "Kéo xuống tới nút “Lưu\"";
 
 // Product detail page titles
 "product-detail.page-title.summary" = "Tổng quan";
 "product-detail.page-title.ingredients" = "Thành phần";
 "product-detail.page-title.nutrition" = "Dinh dưỡng";
-"product-detail.page-title.nutrition-table" = "Nutrition table";
+"product-detail.page-title.nutrition-table" = "Bảng giá trị Dinh dưỡng";
 "product-detail.page-title.environment-impact" = "Environment";
 
 // Product detail summary info rows labels
-"product-detail.summary.barcode" = "Barcode";
+"product-detail.summary.barcode" = "Mã vạch";
 "product-detail.summary.quantity" = "Số lượng";
 "product-detail.summary.packaging" = "Bao bì";
 "product-detail.summary.brands" = "Thương hiệu";
-"product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
+"product-detail.summary.manufacturing-places" = "Địa điểm sản xuất, chế biến";
 "product-detail.summary.origins" = "Nguồn gốc của các thành phần";
 "product-detail.summary.categories" = "Thể loại";
-"product-detail.summary.labels" = "Labels, certifications, awards";
+"product-detail.summary.labels" = "Nhãn, chứng nhận, giải thưởng";
 "product-detail.summary.citiesTags" = "Thành phố, tiểu bang và quốc gia mua hàng";
-"product-detail.summary.stores" = "Stores";
+"product-detail.summary.stores" = "Cửa hàng";
 "product-detail.summary.embCodes" = "Packager code";
 "product-detail.summary.countries" = "Các quốc gia bán";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.ingredients-list" = "List of ingredients";
-"product-detail.ingredients.allergens-list" = "Substances or products causing allergies or intolerances";
+"product-detail.ingredients.ingredients-list" = "Danh sách các thành phần";
+"product-detail.ingredients.allergens-list" = "Các chất hoặc sản phẩm gây dị ứng hoặc không dung nạp";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.traces-list" = "Traces";
-"product-detail.ingredients.additives-list" = "Additives";
-"product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
-"product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients that may be from palm oil";
+"product-detail.ingredients.traces-list" = "Trace";
+"product-detail.ingredients.additives-list" = "Chất phụ gia";
+"product-detail.ingredients.palm-oil-ingredients" = "Thành phần từ dầu cọ";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Thành phần có thể có nguồn gốc từ dầu cọ";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Kích thước phục vụ";
-"product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2 emissions";
+"product-detail.nutrition.carbon-footprint" = "Lượng khí thải carbon / lượng khí thải CO2";
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Giá trị dinh dưỡng";
@@ -183,6 +184,7 @@
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
+"nutrition-level.title" = "Mức dinh dưỡng trên 100 g / 100mL";
 "nutrition-level.low" = "hơi ít quá";
 "nutrition-level.moderate" = "vừa phải rồi";
 "nutrition-level.high" = "nhiều quá đấy";
@@ -207,16 +209,16 @@
 "nutrition.carbohydrate.maltose" = "Mạch nha";
 "nutrition.carbohydrate.maltodextrins" = "Bột tinh";
 "nutrition.fiber" = "Dietary fiber";
-"nutrition.proteins" = "Proteins";
+"nutrition.proteins" = "Chất đạm";
 "nutrition.proteins.casein" = "Casein";
-"nutrition.proteins.serum-proteins" = "Serum Proteins";
-"nutrition.proteins.nucleotides" = "Nucleotides";
+"nutrition.proteins.serum-proteins" = "Protein huyết thanh";
+"nutrition.proteins.nucleotides" = "Nucleotides (nu-clê-ô-tit)";
 "nutrition.salt" = "Muối";
-"nutrition.sodium" = "Sodium";
+"nutrition.sodium" = "Natri";
 "nutrition.alcohol" = "Cồn";
 "nutrition.vitamins" = "Vitamins";
 "nutrition.vitamins.a" = "Vitamin A";
-"nutrition.vitamins.beta-carotene" = "Beta carotene";
+"nutrition.vitamins.beta-carotene" = "Beta carotene (β-Carotene)";
 "nutrition.vitamins.d" = "Vitamin D";
 "nutrition.vitamins.e" = "Vitamin E";
 "nutrition.vitamins.k" = "Vitamin K";
@@ -238,7 +240,7 @@
 "nutrition.minerals.phosphorus" = "Phốt pho";
 "nutrition.minerals.iron" = "Sắt";
 "nutrition.minerals.magnesium" = "Magiê";
-"nutrition.minerals.zinc" = "Zinc";
+"nutrition.minerals.zinc" = "Kẽm";
 "nutrition.minerals.copper" = "Đồng";
 "nutrition.minerals.manganese" = "Mangan";
 "nutrition.minerals.fluoride" = "Flo";
@@ -280,9 +282,6 @@
 "settings.sections.about" = "Giới thiệu";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Đóng góp";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Hiển thị Quét khi khởi động";
 "settings.sections.discover" = "Khám phá";
 "settings.contribute.how-to-contribute" = "Làm cách nào để đóng góp";

@@ -89,18 +89,19 @@
 /* Product Add name text field */
 "product-add.placeholder.name" = "Product name";
 /* Product Add brand text field */
-"product-add.placeholder.brand" = "Brand";
+"product-add.placeholder.brand" = "బ్రాండ్";
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Quantity";
 
 "product-add.title" = "New product";
+"product-add.title-edit" = "ఉత్పత్తిని సవరించండి";
 "product-add.titles.barcode" = "Barcode";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
 "product-add.label.product-name" = "Name";
-"product-add.label.category" = "Category";
+"product-add.label.category" = "విభాగాలు";
 "product-add.label.quantity" = "Quantity";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
@@ -120,7 +121,7 @@
 "product-add.ingredients.button-save" = "Looks good, Save";
 
 // Select Category
-"select-category.title" = "Category";
+"select-category.title" = "విభాగాలు";
 "select-category.search-placeholder" = "Search for a category";
 
 // Select nutrition
@@ -183,6 +184,7 @@
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
+"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "in low quantity";
 "nutrition-level.moderate" = "in moderate quantity";
 "nutrition-level.high" = "in high quantity";
@@ -280,9 +282,6 @@
 "settings.sections.about" = "గురించి";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
 "settings.sections.discover" = "కనుగొనండి";
 "settings.contribute.how-to-contribute" = "How To Contribute";
@@ -310,7 +309,7 @@
 "user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
 "user.alert.generic-error.title" = "There was an error logging in";
 "user.alert.generic-error.subtitle" = "Please try again in a few moments";
-"user.alert.logout-confirmation.title" = "Confirm Logout";
+"user.alert.logout-confirmation.title" = "లాగ్ అవుట్ను నిర్ధారించండి";
 "user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
 "user.alert.username-missing" = "Username is required";
 "user.alert.password-missing" = "Password is required";
@@ -320,7 +319,7 @@
 // Search history
 "history.title" = "Search history";
 "history.cell.privacy" = "Your search history is only stored on your device";
-"history.button.clear" = "Clear";
+"history.button.clear" = "తొలగింపు పూర్తయింది";
 "history.clear.confirmation-title" = "Clear your history ?";
 "history.clear.confirmation-message" = "All your history will be deleted";
 "history.section-titles.last24h" = "Last 24 hours";

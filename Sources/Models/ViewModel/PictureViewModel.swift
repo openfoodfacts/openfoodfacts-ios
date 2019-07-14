@@ -12,6 +12,7 @@ struct PictureViewModel {
     let imageType: ImageType
     let text: String?
     var image: UIImage?
+    var imageUrl: String?
     let uploadedPictureText: String?
     var isUploading: Bool = false
 }
@@ -32,6 +33,6 @@ extension PictureViewModel {
             uploadedPictureText = "product.images.took-picture.nutrition".localized
         }
 
-        self.init(imageType: imageType, text: text, image: nil, uploadedPictureText: uploadedPictureText, isUploading: false)
+        self.init(imageType: imageType, text: text, image: nil, imageUrl: nil, uploadedPictureText: uploadedPictureText, isUploading: false)
     }
 }

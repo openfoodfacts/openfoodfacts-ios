@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol SearchViewControllerDelegate: class {
     func showProductDetails(product: Product)
@@ -38,6 +39,20 @@ class SearchViewController: UIViewController, DataManagerClient {
 extension SearchViewController: SearchViewControllerDelegate {
 
     func showProductDetails(product: Product) {
+        guard let barcode = product.barcode else { return }
+        //fetching full product to have all needed data
+        SVProgressHUD.show()
+        dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { fetchedProduct in
+            if let product = fetchedProduct {
+                self.presentProductDetails(product: product)
+            }
+            SVProgressHUD.dismiss()
+        }, onError: { _ in
+            SVProgressHUD.dismiss()
+        })
+    }
+
+    private func presentProductDetails(product: Product) {
         let productDetailsVC = ProductDetailViewController.loadFromStoryboard() as ProductDetailViewController
         productDetailsVC.product = product
         productDetailsVC.dataManager = dataManager
