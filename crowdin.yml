@@ -69,3 +69,21 @@ files:
         pt-PT: pt-PT
         nl-BE: nl-BE
         nl: nl
+
+  - source: /fastlane/metadata/en-US/promotional_text.txt
+    translation: /fastlane/metadata/%two_letters_code%/promotional_text.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+
+  - source: /fastlane/metadata/en-US/subtitle.txt
+    translation: /fastlane/metadata/%two_letters_code%/subtitle.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
