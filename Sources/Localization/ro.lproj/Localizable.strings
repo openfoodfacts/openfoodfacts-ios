@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Scaneaza codul";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Înapoi";
@@ -22,20 +22,20 @@
 "product-search.title" = "Caută";
 "product-search.search-placeholder" = "Search for a product by name or barcode";
 "product-search.no-results" = "Niciun rezultat";
-"product-search.error-view.title" = "Something went wrong";
-"product-search.error-view.subtitle" = "Please try again";
+"product-search.error-view.title" = "Ceva nu a funcţionat corect";
+"product-search.error-view.subtitle" = "Vă rugăm să încercați din nou";
 "product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.offline.title-loading" = "Salvarea produselor offline: %d%%";
+"product-search.initial-view.offline.subtitle" = "Mai mult de %d produse disponibile pentru scanare instantanee";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.user-help" = "Scanați codul de bare al produsului";
+"product-scanner.overlay.extended-user-help" = "Nu se poate găsi un cod de bare.\nCentrează codul de bare pe ecran.\nAsigurați-vă că codul de bare este bine iluminat.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode.error" = "Eroare la scanarea codului de bare. Încercați din nou în câteva momente.";
+"product-scanner.barcode-notfound.manual-enter" = "Nu a fost găsit cod de bare. Îl puteți tasta manual:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
@@ -51,7 +51,7 @@
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Uploading image...";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "Ceva nu a funcţionat corect";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
@@ -314,16 +314,16 @@
 "user.alert.username-missing" = "Username is required";
 "user.alert.password-missing" = "Password is required";
 "pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"pending-upload.hud.status" = "Se încarcă";
 
 // Search history
-"history.title" = "Search history";
-"history.cell.privacy" = "Your search history is only stored on your device";
+"history.title" = "Istoricul căutărilor";
+"history.cell.privacy" = "Istoricul căutărilor este stocat numai pe dispozitiv";
 "history.button.clear" = "Ștergeți";
 "history.clear.confirmation-title" = "Clear your history ?";
 "history.clear.confirmation-message" = "All your history will be deleted";
-"history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
+"history.section-titles.last24h" = "În ultimele 24 de ore";
+"history.section-titles.fewDays" = "Cu câteva zile în urmă";
+"history.section-titles.fewWeeks" = "Acum cateva saptamani";
+"history.section-titles.fewMonths" = "Acum cateva luni";
+"history.section-titles.longTime" = "Acum mult timp";
