@@ -35,33 +35,33 @@
 "product-scanner.view-title" = "扫描仪";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "扫描条形码出错，请稍候再次尝试";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "找不到条形码，请手动输入：";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
-"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts 需要相机权限";
+"product-scanner.permissions.noPermissions.message" = "请允许相机扫描条形码";
+"product-scanner.permissions.noPermissions.action.title" = "打开权限设置";
 
-"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.title" = "无法启动条形码扫描。";
+"product-scanner.permissions.failed.message" = "请确保手机权限设置中 Open Food Facts 可以使用相机";
 "product-scanner.permissions.failed.action.title" = "留下条形码";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "正在加载产品…";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image…";
+"product-add.uploading-image-banner.title" = "正在上传图片…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "出错";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.subtitle" = "请尝试再一次拍照";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
 "product-add.image-upload-success-banner.title" = "图片上传成功";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-save-success-banner.title" = "图像将在联网后上传";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "产品添加成功，谢谢";
 "product-add.uploaded-image" = "图片已上传，谢谢！";
 "product-add.save-error.title" = "保存课程时出错";
-"product-add.save-error.message" = "Please try again later";
+"product-add.save-error.message" = "请稍后再试";
 "product-add.save-info.success" = "Information saved at";
 "product-add.save-info.error" = "Information not saved";
 "product-add.save-info.saving" = "Saving product information…";
