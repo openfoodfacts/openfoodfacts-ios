@@ -25,17 +25,17 @@
 "product-search.error-view.title" = "Ceva nu a funcţionat corect";
 "product-search.error-view.subtitle" = "Vă rugăm să încercați din nou";
 "product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Salvarea produselor offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "Mai mult de %d produse disponibile pentru scanare instantanee";
+"product-search.initial-view.offline.title-loading" = "Înregistrarea produselor offline: %d%%";
+"product-search.initial-view.offline.subtitle" = "Peste %d produse disponibile pentru scanare instantanee";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scanați codul de bare al produsului";
-"product-scanner.overlay.extended-user-help" = "Nu se poate găsi un cod de bare.\nCentrează codul de bare pe ecran.\nAsigurați-vă că codul de bare este bine iluminat.";
+"product-scanner.overlay.extended-user-help" = "Nu se poate găsi un cod de bare.\nCentrați codul de bare pe ecran.\nAsigurați-vă că codul de bare este bine iluminat.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Eroare la scanarea codului de bare. Încercați din nou în câteva momente.";
-"product-scanner.barcode-notfound.manual-enter" = "Nu a fost găsit cod de bare. Îl puteți tasta manual:";
+"product-scanner.barcode-notfound.manual-enter" = "Codul de bare nu a putut fi identificat. Îl puteți tasta manual:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts necesită permisiuni pentru acces la camera foto";
 "product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
@@ -78,14 +78,14 @@
 
 "product-add.ocr-ingredients.success" = "Ingredientele au fost citite de pe imagine la";
 "product-add.ocr-ingredients.error" = "Nu s-au putut extrage ingredientele din imagine";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.saving" = "Extragerea ingredientelor din imagine…";
+"product-add.ocr-ingredients.not-yet" = "Se așteaptă o imagine a ingredientelor pentru analiză";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "Nutri-score-ul tocmai a fost calculat pe baza tabelului nutrițional";
+"product-add.novagroup-explaination" = "Grupul NOVA tocmai a fost calculat pe baza listei de ingrediente";
 
 "alert.action.ok" = "OK";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Selectaţi o limbă";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Numele produsului";
 /* Product Add brand text field */
@@ -93,58 +93,58 @@
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Cantitate";
 
-"product-add.title" = "New product";
+"product-add.title" = "Produs nou";
 "product-add.title-edit" = "Modificare produs";
 "product-add.titles.barcode" = "Cod de bare";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.top-explainations" = "Felicitări, tocmai ați scanat un produs care nu se află în baza de date Open Food Facts, dar îl puteți adăuga dumneavoastră! Puteți face câteva fotografii ale produsului, a listei de ingrediente de pe ambalaj și a informațiilor sale nutriționale pentru a-l adăuga în baza de date? \nVă mulțumim anticipat.";
+"product-add.titles.license-explaination" = "Notă: fotografiile trimise sunt publicate sub o licență liberă Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Product information";
+"product-add.titles.product-info" = "Informații produs";
 "product-add.label.product-name" = "Nume";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Cantitate";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
+"product-add.details.category" = "Necesar pentru calcularea Nutri-Score-ului";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.label.language" = "Limbi";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.description.nutritive" = "Completați informațiile nutriționale și categoria produsului pentru a obține Nutri-Score-ul";
 "product-add.titles.nutritive" = "Valori nutriționale";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.choice.per-hundred-grams" = "pentru 100 g / 100 ml";
+"product-add.nutritive.choice.per-portion" = "per porție";
 "product-add.nutritive.add-nutriment" = "Adăugați un nutrient";
-"product-add.nutritive.too-much" = "More than 100g ?";
+"product-add.nutritive.too-much" = "Mai mult de 100g?";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "Completați ingredientele pentru a obține grupul NOVA (referitor la procesarea produselor alimentare)";
 "product-add.titles.ingredients" = "Ingrediente";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
-"product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.explaination" = "Faceți o fotografie a listei ingredientelor pentru a extrage automat ingredientele. Verificați-o cu atenție și nu uitați să o înregistrați.";
+"product-add.ingredients.button-delete" = "Rezultatul nu este satisfăcător, ignoră";
+"product-add.ingredients.button-save" = "Arată bine, înregistrează";
 
 // Select Category
 "select-category.title" = "Categorie";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Căutați categorie";
 
 // Select nutrition
 "select-nutriment.title" = "Informații nutriționale";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Căutați un nutrient";
 
 // Select allergen
 "select-allergen.title" = "Alergeni";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "Căutați un alergen";
 
 // Product Detail
-"product-detail.header.add-new-picture" = "Add a new picture";
-"product-detail.edit" = "Edit this product";
+"product-detail.header.add-new-picture" = "Adăugați o nouă imagine";
+"product-detail.edit" = "Modificați produsul";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.title" = "Remember to save your changes";
+"product-detail.edit-alert.title" = "Nu uitați să vă înregistrați modificările";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
+"product-detail.edit-alert.subtitle" = "Derulați în jos până la butonul „Înregistrare”";
 
 // Product detail page titles
 "product-detail.page-title.summary" = "Continut";
 "product-detail.page-title.ingredients" = "Ingrediente";
 "product-detail.page-title.nutrition" = "Informații nutriționale";
-"product-detail.page-title.nutrition-table" = "Nutrition table";
+"product-detail.page-title.nutrition-table" = "Tabel nutrițional";
 "product-detail.page-title.environment-impact" = "Mediu";
 
 // Product detail summary info rows labels
