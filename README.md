@@ -39,14 +39,18 @@ https://translate.openfoodfacts.org
 - [x] Handle multilingual products (data addition)
 - [x] On-the-fly OCR of ingredients and labels for new product addition
 - [x] Internationalised user interface
+- [x] Native editing
 
 ## Roadmap
-- [ ] Native editing
+
 - [ ] Add support for the new JSON taxonomy system (multilingual, and data augmentation from Wikipedia/Wikidata)
 - [ ] Support for Open Beauty Facts, Open Pet Food Facts and Open Product Facts
 - [ ] On-device Product cache
 - [ ] Add a food category browser
-- [ ] ARKit overlay
+- [ ] Additives evaluation (already ready server side and on Android)
+- [ ] Product lists (to buy, eaten…)
+- [ ] Compare Mode
+- [ ] Vegan/vegetarian/palm oil (ready server side)
 
 ## Images
 
