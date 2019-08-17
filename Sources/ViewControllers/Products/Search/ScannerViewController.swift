@@ -485,7 +485,9 @@ extension ScannerViewController {
 
         let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
         if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
-            addProductVC.barcode = barcode
+            var newProduct = Product()
+            newProduct.barcode = barcode
+            addProductVC.productToEdit = newProduct
             addProductVC.dataManager = dataManager
             self.barcodeToOpenAtStartup = barcode
             self.navigationController?.pushViewController(addProductVC, animated: true)
