@@ -125,10 +125,13 @@ class ScannerViewController: UIViewController, DataManagerClient {
         super.viewWillDisappear(animated)
 
         self.navigationController?.isNavigationBarHidden = false
-        self.lastCodeScanned = nil
 
         session.stopRunning()
         showHelpInOverlayTask?.cancel()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        self.lastCodeScanned = nil
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
