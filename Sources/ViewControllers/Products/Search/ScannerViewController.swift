@@ -125,10 +125,13 @@ class ScannerViewController: UIViewController, DataManagerClient {
         super.viewWillDisappear(animated)
 
         self.navigationController?.isNavigationBarHidden = false
-        self.lastCodeScanned = nil
 
         session.stopRunning()
         showHelpInOverlayTask?.cancel()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        self.lastCodeScanned = nil
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -485,7 +488,9 @@ extension ScannerViewController {
 
         let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
         if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
-            addProductVC.barcode = barcode
+            var newProduct = Product()
+            newProduct.barcode = barcode
+            addProductVC.productToEdit = newProduct
             addProductVC.dataManager = dataManager
             self.barcodeToOpenAtStartup = barcode
             self.navigationController?.pushViewController(addProductVC, animated: true)
