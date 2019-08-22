@@ -188,7 +188,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
 
-        createAdditivesRows(with: &rows, product: product, inLine: true)
+        createAdditivesRows(with: &rows, product: product, inLine: false)
 
         createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
         createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
