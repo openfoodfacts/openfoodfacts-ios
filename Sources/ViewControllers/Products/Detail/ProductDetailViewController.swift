@@ -123,7 +123,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         rows.append(FormRow(value: product, cellType: SummaryHeaderCell.self))
 
         createNutrientsRows(rows: &rows)
-        createAdditivesRows(with: &rows, product: product, inLine: false)
+        createAdditivesRows(with: &rows, product: product)
 
         // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
@@ -188,7 +188,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
 
-        createAdditivesRows(with: &rows, product: product, inLine: false)
+        createAdditivesRows(with: &rows, product: product)
 
         createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
         createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
@@ -198,15 +198,13 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         return Form(title: summaryTitle, rows: rows)
     }
 
-    fileprivate func createAdditivesRows(with rows: inout [FormRow], product: Product, inLine: Bool = true) {
+    fileprivate func createAdditivesRows(with rows: inout [FormRow], product: Product) {
         guard let additives = product.additives, additives.isEmpty == false else {
             return
         }
 
         var items: [Any] = []
-        if inLine == false {
-            items.append(NSAttributedString(string: " "))    //to have the first carriage return from the join with separator
-        }
+        items.append(NSAttributedString(string: " "))    //to have the first carriage return from the join with separator
         items.append(contentsOf: additives.map({ (additive: Tag) -> NSAttributedString in
             if let additive = dataManager.additive(forTag: additive) {
                 if let name = Tag.choose(inTags: Array(additive.names)) {
@@ -217,8 +215,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: additive.value.uppercased())
         }))
 
-        let separator = inLine ? ", " : "\n "
-        createFormRow(with: &rows, item: items, label: InfoRowKey.additives.localizedString, separator: separator)
+        createFormRow(with: &rows, item: items, label: InfoRowKey.additives.localizedString, separator: "\n ")
     }
 
     private func createNutritionForm() -> Form? {
