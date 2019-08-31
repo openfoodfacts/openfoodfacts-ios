@@ -50,6 +50,10 @@
 		30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77D9B22088F0F00B180E9 /* Allergen.swift */; };
 		30DB17F522122E4A0010EE6F /* TOCropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB17F422122E4A0010EE6F /* TOCropViewController.framework */; };
 		30E43D78220895B100D7A906 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E43D77220895B100D7A906 /* Category.swift */; };
+		483E2FC22314762B008B0573 /* Snapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E2FC12314762B008B0573 /* Snapshots.swift */; };
+		483E2FCB231478A7008B0573 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E2FCA231478A7008B0573 /* SnapshotHelper.swift */; };
+		483E2FDB23148C07008B0573 /* SnapshotConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E2FDA23148C07008B0573 /* SnapshotConfiguration.swift */; };
+		48E0E4F4231AB88E0006EF81 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FA7871F50C0670096AC5A /* AccessibilityIdentifiers.swift */; };
 		7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437FBA42036F1F800D107B6 /* CreditsViewController.swift */; };
 		74C59E8B203FB9E2006C456F /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C59E8A203FB9E2006C456F /* SharingManager.swift */; };
 		74CB633920373B6D008FC48D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 74CB633820373B6C008FC48D /* Credits.html */; };
@@ -283,6 +287,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		483E2FC42314762B008B0573 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95C265061E96D55B004212EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95C2650D1E96D55B004212EC;
+			remoteInfo = OpenFoodFacts;
+		};
 		951FA7721F4E22790096AC5A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95C265061E96D55B004212EC /* Project object */;
@@ -341,9 +352,13 @@
 		30D77D9B22088F0F00B180E9 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
 		30DB17F422122E4A0010EE6F /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
 		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		483E2FBF2314762B008B0573 /* OpenFoodFactsSnapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenFoodFactsSnapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		483E2FC12314762B008B0573 /* Snapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshots.swift; sourceTree = "<group>"; };
+		483E2FC32314762B008B0573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		483E2FCA231478A7008B0573 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		483E2FDA23148C07008B0573 /* SnapshotConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotConfiguration.swift; sourceTree = "<group>"; };
 		512702DF21F0B076002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		512702E021F0B077002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		51707DE722BE7D2D007FF823 /* OpenFoodFacts copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "OpenFoodFacts copy-Info.plist"; path = "/Users/arnaud/Programming/openfoodfacts-ios/OpenFoodFacts copy-Info.plist"; sourceTree = "<absolute>"; };
 		7437FBA42036F1F800D107B6 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		74C59E8A203FB9E2006C456F /* SharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
 		74CB633820373B6C008FC48D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
@@ -902,6 +917,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		483E2FBC2314762B008B0573 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		951FA76A1F4E22790096AC5A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -983,6 +1005,17 @@
 				303C27A22201AC1800159961 /* ManualBarcodeInputView.xib */,
 			);
 			path = Scanner;
+			sourceTree = "<group>";
+		};
+		483E2FC02314762B008B0573 /* Snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				483E2FCA231478A7008B0573 /* SnapshotHelper.swift */,
+				483E2FC12314762B008B0573 /* Snapshots.swift */,
+				483E2FC32314762B008B0573 /* Info.plist */,
+				483E2FDA23148C07008B0573 /* SnapshotConfiguration.swift */,
+			);
+			path = Snapshots;
 			sourceTree = "<group>";
 		};
 		950163061F2CE9780057B8D5 /* Build */ = {
@@ -1618,13 +1651,13 @@
 			isa = PBXGroup;
 			children = (
 				95F2B04F1F52DDC7004F8AF9 /* README.md */,
+				483E2FC02314762B008B0573 /* Snapshots */,
 				95C265231E96D5C2004212EC /* Frameworks */,
 				95C265101E96D55B004212EC /* Sources */,
 				95F31BEB1F38F71D00B8AF90 /* Tests */,
 				951FA76E1F4E22790096AC5A /* UITests */,
 				95F1848B1F655BB500A544C2 /* TestResources */,
 				95C2650F1E96D55B004212EC /* Products */,
-				51707DE722BE7D2D007FF823 /* OpenFoodFacts copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1634,6 +1667,7 @@
 				95C2650E1E96D55B004212EC /* OpenFoodFacts.app */,
 				95F31BEA1F38F71D00B8AF90 /* OpenFoodFactsTests.xctest */,
 				951FA76D1F4E22790096AC5A /* OpenFoodFactsUITests.xctest */,
+				483E2FBF2314762B008B0573 /* OpenFoodFactsSnapshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1881,6 +1915,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		483E2FBE2314762B008B0573 /* OpenFoodFactsSnapshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 483E2FC92314762B008B0573 /* Build configuration list for PBXNativeTarget "OpenFoodFactsSnapshots" */;
+			buildPhases = (
+				483E2FBB2314762B008B0573 /* Sources */,
+				483E2FBC2314762B008B0573 /* Frameworks */,
+				483E2FBD2314762B008B0573 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				483E2FC52314762B008B0573 /* PBXTargetDependency */,
+			);
+			name = OpenFoodFactsSnapshots;
+			productName = Snapshots;
+			productReference = 483E2FBF2314762B008B0573 /* OpenFoodFactsSnapshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		951FA76C1F4E22790096AC5A /* OpenFoodFactsUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 951FA7741F4E22790096AC5A /* Build configuration list for PBXNativeTarget "OpenFoodFactsUITests" */;
@@ -1945,10 +1997,15 @@
 		95C265061E96D55B004212EC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Andrés Pizá Bückmann";
 				TargetAttributes = {
+					483E2FBE2314762B008B0573 = {
+						CreatedOnToolsVersion = 10.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 95C2650D1E96D55B004212EC;
+					};
 					951FA76C1F4E22790096AC5A = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = JVHN2X67GT;
@@ -2118,11 +2175,19 @@
 				95C2650D1E96D55B004212EC /* OpenFoodFacts */,
 				95F31BE91F38F71D00B8AF90 /* OpenFoodFactsTests */,
 				951FA76C1F4E22790096AC5A /* OpenFoodFactsUITests */,
+				483E2FBE2314762B008B0573 /* OpenFoodFactsSnapshots */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		483E2FBD2314762B008B0573 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		951FA76B1F4E22790096AC5A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2325,6 +2390,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		483E2FBB2314762B008B0573 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				483E2FC22314762B008B0573 /* Snapshots.swift in Sources */,
+				483E2FCB231478A7008B0573 /* SnapshotHelper.swift in Sources */,
+				483E2FDB23148C07008B0573 /* SnapshotConfiguration.swift in Sources */,
+				48E0E4F4231AB88E0006EF81 /* AccessibilityIdentifiers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		951FA7691F4E22790096AC5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2532,6 +2608,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		483E2FC52314762B008B0573 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95C2650D1E96D55B004212EC /* OpenFoodFacts */;
+			targetProxy = 483E2FC42314762B008B0573 /* PBXContainerItemProxy */;
+		};
 		951FA7731F4E22790096AC5A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 95C2650D1E96D55B004212EC /* OpenFoodFacts */;
@@ -2825,6 +2906,70 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		483E2FC62314762B008B0573 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Snapshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.Snapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenFoodFacts;
+			};
+			name = Debug;
+		};
+		483E2FC72314762B008B0573 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Snapshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.Snapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenFoodFacts;
+			};
+			name = Testing;
+		};
+		483E2FC82314762B008B0573 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Snapshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.Snapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenFoodFacts;
+			};
+			name = Release;
+		};
 		951FA7751F4E22790096AC5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3221,6 +3366,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		483E2FC92314762B008B0573 /* Build configuration list for PBXNativeTarget "OpenFoodFactsSnapshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				483E2FC62314762B008B0573 /* Debug */,
+				483E2FC72314762B008B0573 /* Testing */,
+				483E2FC82314762B008B0573 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		951FA7741F4E22790096AC5A /* Build configuration list for PBXNativeTarget "OpenFoodFactsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
