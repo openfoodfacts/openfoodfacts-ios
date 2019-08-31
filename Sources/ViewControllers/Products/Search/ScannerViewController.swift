@@ -63,13 +63,17 @@ class ScannerViewController: UIViewController, DataManagerClient {
         lastCodeScanned = nil
         allergenAlertShown = false
 
-        checkCameraPermissions()
-        configureVideoView()
-        configureSession()
-        configureOverlay()
-        configureFlashView()
-        configureTapToFocus()
-
+        if !CommandLine.arguments.contains("debug") {
+            checkCameraPermissions()
+            configureVideoView()
+            configureSession()
+            configureOverlay()
+            configureFlashView()
+            configureTapToFocus()
+        } else {
+            configureOverlay()
+        }
+        
         floatingLabel.textAlignment = .center
         floatingLabel.numberOfLines = 0
         floatingLabel.textColor = .white
@@ -97,17 +101,21 @@ class ScannerViewController: UIViewController, DataManagerClient {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configureVideoPreviewLayer()
+        // Disable the scanner when launching in debug mode
+        if !CommandLine.arguments.contains("debug") {
+            configureVideoPreviewLayer()
+            resetOverlay()
 
-        resetOverlay()
-
-        switch configResult {
-        case .success:
-            session.startRunning()
-        case .noPermissions:
-            requestPermissions()
-        case .failed:
-            returnToRootController()
+            switch configResult {
+            case .success:
+                session.startRunning()
+            case .noPermissions:
+                requestPermissions()
+            case .failed:
+                returnToRootController()
+            }
+        } else {
+            resetOverlay()
         }
 
         if let barcodeToOpenAtStartup = barcodeToOpenAtStartup {
@@ -210,6 +218,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
 
     fileprivate func configureOverlay() {
         self.view.addSubview(overlay)
+        overlay.accessibilityIdentifier = AccessibilityIdentifiers.Scan.overlayView
 
         var constraints = [NSLayoutConstraint]()
         constraints.append(NSLayoutConstraint(item: overlay, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0))
@@ -255,8 +264,14 @@ class ScannerViewController: UIViewController, DataManagerClient {
             }
         }
 
+        // Wait 10 seconds before showing some help content and the possibility to input a barcode manually.
+        // In debug mode, we will do that instantly
         self.showHelpInOverlayTask = task
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: task)
+        if CommandLine.arguments.contains("debug") {
+            DispatchQueue.main.asyncAfter(deadline: .now(), execute: task)
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: task)
+        }
     }
 
     fileprivate func configureTapToFocus() {

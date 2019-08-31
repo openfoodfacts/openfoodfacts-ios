@@ -84,6 +84,7 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
         tableView.backgroundView = initialView // State.initial background view
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ProductTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: LoadingCell.self), bundle: nil), forCellReuseIdentifier: String(describing: LoadingCell.self))
+        tableView.accessibilityIdentifier = AccessibilityIdentifiers.Search.resultTable
 
         tableView.rowHeight = 100
     }
@@ -106,7 +107,7 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
 
         let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField
         searchField?.isAccessibilityElement = true
-        searchField?.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
+        searchField?.accessibilityIdentifier = AccessibilityIdentifiers.Search.inputField
     }
 
     fileprivate func configureGestureRecognizers() {

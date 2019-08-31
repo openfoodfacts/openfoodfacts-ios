@@ -40,6 +40,8 @@ class ManualBarcodeInputView: UIView {
     override func awakeFromNib() {
         instructionsLabel.text = "product-scanner.barcode-notfound.manual-enter".localized
         confirmButton.setTitle("generic.search".localized, for: .normal)
+        confirmButton.accessibilityIdentifier = AccessibilityIdentifiers.Scan.manualBarcodeConfirmButton
+        barcodeTextField.accessibilityIdentifier = AccessibilityIdentifiers.Scan.manualBarcodeInputField
     }
 
     @IBAction func editingDidBegin(_ sender: Any) {
