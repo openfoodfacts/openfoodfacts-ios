@@ -63,7 +63,8 @@ class ScannerViewController: UIViewController, DataManagerClient {
         lastCodeScanned = nil
         allergenAlertShown = false
 
-        if !CommandLine.arguments.contains("debug") {
+        // If running for a snapshot, don’t initialize the camera
+        if !UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
             checkCameraPermissions()
             configureVideoView()
             configureSession()
@@ -101,8 +102,8 @@ class ScannerViewController: UIViewController, DataManagerClient {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Disable the scanner when launching in debug mode
-        if !CommandLine.arguments.contains("debug") {
+        // Disable the scanner when launching in snapshot mode
+        if !UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
             configureVideoPreviewLayer()
             resetOverlay()
 
@@ -265,9 +266,9 @@ class ScannerViewController: UIViewController, DataManagerClient {
         }
 
         // Wait 10 seconds before showing some help content and the possibility to input a barcode manually.
-        // In debug mode, we will do that instantly
+        // In snapshot mode, we will do that instantly
         self.showHelpInOverlayTask = task
-        if CommandLine.arguments.contains("debug") {
+        if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
             DispatchQueue.main.asyncAfter(deadline: .now(), execute: task)
         } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: task)

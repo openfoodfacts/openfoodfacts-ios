@@ -15,9 +15,6 @@ class Snapshots: XCTestCase {
         // Initialize fastlane screenshot utility
         let app = XCUIApplication()
         setupSnapshot(app)
-        
-        // Start the application in "debug" mode, in order to ease the snapshots using the scanner
-        app.launchArguments += ["debug"]
         app.launch()
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
