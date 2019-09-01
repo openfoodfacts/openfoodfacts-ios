@@ -15,6 +15,8 @@ class Snapshots: XCTestCase {
         // Initialize fastlane screenshot utility
         let app = XCUIApplication()
         setupSnapshot(app)
+        
+        // Start the application in "debug" mode, in order to ease the snapshots using the scanner
         app.launchArguments += ["debug"]
         app.launch()
         
@@ -33,18 +35,20 @@ class Snapshots: XCTestCase {
             sc.locale == locale
         }.first
         
+        // We only perform a snapshot for a locale that has an already existing configuration
         if let config = snapshotConfiguration {
-            performSnapshotTest(withConfiguration: config)
+            let app = XCUIApplication()
+            let tabBar = app.tabBars.firstMatch
+            
+            performScannerSnapshots(with: config, app: app, tabBar: tabBar)
+            performHistorySnapshots(with: config, app: app, tabBar: tabBar)
+            performSearchSnapshots(with: config, app: app, tabBar: tabBar)
         }
     }
-
-    func performSnapshotTest(withConfiguration config: SnapshotConfiguration) {
-        let app = XCUIApplication()
-        let tabBar = app.tabBars.firstMatch
-        
+    
+    func performScannerSnapshots(with config: SnapshotConfiguration, app: XCUIApplication, tabBar: XCUIElement) {
         // TODO: Go to the allergen section
         // TODO: Define an allergen
-        // Go back to home
         for (index, productCode) in config.productCodes.enumerated() {
             // Get the search field, and type in the product code
             // Switch to the Scanner view
@@ -97,20 +101,30 @@ class Snapshots: XCTestCase {
             let searchButton = tabBar.buttons.element(boundBy: 0)
             searchButton.tap()
         }
-        
+    }
+    
+    func performHistorySnapshots(with config: SnapshotConfiguration, app: XCUIApplication, tabBar: XCUIElement) {
         // Switch to the History tab and take a screenshot after all the products have been loaded
         let historyButton = tabBar.buttons.element(boundBy: 2)
         historyButton.tap()
         snapshot("03-History")
-        
-        // Switch to the search tab and take a screenshot with the results of a specific keyword
-        let searchButton = tabBar.buttons.element(boundBy: 0)
-        searchButton.tap()
-        // TODO add  in the right place (already in accessibility identifiers)
-        //confirmButton.accessibilityIdentifier = AccessibilityIdentifiers.manualSearchInputConfirmButton
-        //barcodeTextField.accessibilityIdentifier = AccessibilityIdentifiers.manualSearchInputField
-        snapshot("04-SearchScreen-" + queryName)
-        
-        sleep(2)
+    }
+    
+    func performSearchSnapshots(with config: SnapshotConfiguration, app: XCUIApplication, tabBar: XCUIElement) {
+        // Only perform snapshots of the search functionality when we have
+        if let searchKeyword = config.searchKeyword {
+            // Switch to the search tab and take a screenshot with the results of a specific keyword
+            let searchButton = tabBar.buttons.element(boundBy: 0)
+            searchButton.tap()
+            
+            let searchField = app.searchFields[AccessibilityIdentifiers.Search.inputField]
+            searchField.tap()
+            searchField.typeText(searchKeyword + "\n")
+            
+            // Wait for the results to display
+            sleep(1)
+            
+            snapshot("04-Search")
+        }
     }
 }
