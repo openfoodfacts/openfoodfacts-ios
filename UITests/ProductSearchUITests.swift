@@ -21,7 +21,7 @@ class ProductSearchUITests: UITestCase {
     }
 
     func testResultCellExists() {
-        let searchField = app.searchFields[AccessibilityIdentifiers.productSearchBar]
+        let searchField = app.searchFields[AccessibilityIdentifiers.Search.inputField]
         XCTAssert(searchField.exists)
         searchField.tap()
         searchField.typeText(searchQuery)
@@ -32,7 +32,7 @@ class ProductSearchUITests: UITestCase {
     }
 
     func testCancellingASearchDisplaysInitialView() {
-        let searchField = app.searchFields[AccessibilityIdentifiers.productSearchBar]
+        let searchField = app.searchFields[AccessibilityIdentifiers.Search.inputField]
         XCTAssert(searchField.exists)
         searchField.tap()
         searchField.typeText(searchQuery)
@@ -50,14 +50,14 @@ class ProductSearchUITests: UITestCase {
             return true
         }
 
-        app.buttons[AccessibilityIdentifiers.scanButton].tap()
+        app.tabBars.firstMatch.buttons.element(boundBy: 1).tap()
         app.tap()
     }
 
     func testResponseWithErrorShowsErrorView() {
         dynamicStubs.setupErrorStub(url: "/cgi/search.pl")
 
-        let searchField = app.searchFields[AccessibilityIdentifiers.productSearchBar]
+        let searchField = app.searchFields[AccessibilityIdentifiers.Search.inputField]
         XCTAssert(searchField.exists)
         searchField.tap()
         searchField.typeText(searchQueryForError)
