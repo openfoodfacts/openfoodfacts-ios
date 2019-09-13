@@ -11,6 +11,7 @@ import Foundation
 struct URLs {
     static let codeLang = Bundle.main.preferredLocalizations.first ?? "en"
     static let baseUrl = "https://world-\(codeLang).openfoodfacts.org"
+    static let staticBaseUrl = "https://static.openfoodfacts.org"
     
     static let Discover = "\(baseUrl)/discover"
     static let HowToContribute = "\(baseUrl)/contribute"
@@ -23,6 +24,9 @@ struct URLs {
     static let SupportOpenFoodFacts = "https://www.helloasso.com/associations/open-food-facts/formulaires/1/widget/en"
     static let TranslateOpenFoodFacts = "https://crowdin.com/project/openfoodfacts"
     static let FrequentlyAskedQuestions = "\(baseUrl)/faq"
+    
+    static let MockBarcode = "\(staticBaseUrl)/files/presskit/PressKit/barcodes/"
+    
     static let ProductBaseURL: String = {
         return ProductBaseURLWithLanguagePlaceholder.replacingOccurrences(of: "LANGUAGE", with: Locale.current.languageCode!)
     }()

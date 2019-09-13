@@ -72,6 +72,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
             configureFlashView()
             configureTapToFocus()
         } else {
+            configureVideoView()
             configureOverlay()
         }
         
@@ -116,6 +117,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
                 returnToRootController()
             }
         } else {
+            configureFakePreviewLayer()
             resetOverlay()
         }
 
@@ -169,6 +171,16 @@ class ScannerViewController: UIViewController, DataManagerClient {
 
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[videoPreviewView]-0-|", options: .directionLeadingToTrailing, metrics: nil, views: ["videoPreviewView": videoPreviewView]))
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[videoPreviewView]-0-|", options: .directionLeadingToTrailing, metrics: nil, views: ["videoPreviewView": videoPreviewView]))
+    }
+
+    // Display this layer when performing snapshot tests : it will display an image from OpenFoodFacts.org static reposistory
+    private func configureFakePreviewLayer() {
+        self.dataManager.getMockBarcodeImage(forLocale: Locale.current, onSuccess: { [weak self] image in
+            let imageView = UIImageView(image: image)
+            self?.videoPreviewView.addSubview(imageView)
+            }, onError: { error in
+            Crashlytics.sharedInstance().recordError(error)
+        })
     }
 
     private func configureVideoPreviewLayer() {
