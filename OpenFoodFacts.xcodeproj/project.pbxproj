@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AA94319234990D3001158A5 /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950163391F2CE9780057B8D5 /* MarqueeLabel.framework */; };
+		2AA9431A234990D3001158A5 /* MarqueeLabel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 950163391F2CE9780057B8D5 /* MarqueeLabel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3000855E2207A3A500DC3896 /* TaxonomiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000855D2207A3A500DC3896 /* TaxonomiesService.swift */; };
 		300085612207AC0700DC3896 /* Additive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085602207AC0700DC3896 /* Additive.swift */; };
 		300085632208777900DC3896 /* OFFUrlsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085622208777900DC3896 /* OFFUrlsHelper.swift */; };
@@ -298,6 +300,20 @@
 			remoteInfo = OpenFoodFacts;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2AA9431B234990D3001158A5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2AA9431A234990D3001158A5 /* MarqueeLabel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3000855D2207A3A500DC3896 /* TaxonomiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomiesService.swift; sourceTree = "<group>"; };
@@ -924,6 +940,7 @@
 				95C2652D1E96DE6D004212EC /* MobileCoreServices.framework in Frameworks */,
 				95C265251E96D5C2004212EC /* AVFoundation.framework in Frameworks */,
 				95DDAF581F24FB160096B74E /* ObjcExceptionBridging.framework in Frameworks */,
+				2AA94319234990D3001158A5 /* MarqueeLabel.framework in Frameworks */,
 				95DDAF591F24FB160096B74E /* XCGLogger.framework in Frameworks */,
 				9501634B1F2CE9A20057B8D5 /* MarqueeLabelSwift.framework in Frameworks */,
 				302D0969225D125D00D733B4 /* Alamofire.framework in Frameworks */,
@@ -1910,6 +1927,7 @@
 				95C368081E9EC999008BB582 /* Carthage */,
 				95CE24DE1ED5508500EF3D79 /* Fabric */,
 				9581C5A91F1D48A2006250A3 /* SwiftLint */,
+				2AA9431B234990D3001158A5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2262,6 +2280,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TOCropViewController.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Zip.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MarqueeLabel.framework",
 			);
 			name = Carthage;
 			outputPaths = (
