@@ -273,7 +273,7 @@ struct Product: Mappable {
         environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
         nutritionTableHtml <- map[OFFJson.NutritionTableHtml]
-
+        selectedImages <- map[OFFJson.SelectedImages]
         // try to extract all language specific fields
 
         names <- map[OFFJson.ProductNameLanguagesKey]
