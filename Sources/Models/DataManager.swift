@@ -33,6 +33,8 @@ protocol DataManagerProtocol {
     func additive(forTag: Tag) -> Additive?
     func nutriment(forTag: String) -> Nutriment?
     func nutrimentSearch(query: String?) -> Results<Nutriment>
+    func ingredientsAnalysis(forTag tag: String) -> IngredientsAnalysis?
+    func ingredientsAnalysisSearch(query: String?) -> Results<IngredientsAnalysis>
 
     // Search history
     func getHistory() -> [Age: [HistoryItem]]
@@ -144,6 +146,14 @@ class DataManager: DataManagerProtocol {
 
     func nutrimentSearch(query: String?) -> Results<Nutriment> {
         return persistenceManager.nutrimentSearch(query: query)
+    }
+    
+    func ingredientsAnalysis(forTag tag: String) -> IngredientsAnalysis? {
+        return persistenceManager.ingredientsAnalysis(forCode: tag)
+    }
+    
+    func ingredientsAnalysisSearch(query: String?) -> Results<IngredientsAnalysis> {
+        return persistenceManager.ingredientsAnalysisSearch(query: query)
     }
 
     // MARK: - Settings

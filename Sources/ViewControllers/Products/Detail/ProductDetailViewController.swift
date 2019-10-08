@@ -80,7 +80,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         return ingredientsFormTableVC
     }
 
-   
     fileprivate func getNutritionVC() -> UIViewController? {
         guard let form = createNutritionForm() else { return nil }
         let nutritionTableFormTableVC = NutritionTableFormTableViewController(with: form, dataManager: dataManager)
@@ -122,6 +121,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Header
         rows.append(FormRow(value: product, cellType: SummaryHeaderCell.self))
 
+        createIngredientsAnalysisRows(rows: &rows)
         createNutrientsRows(rows: &rows)
         createAdditivesRows(with: &rows, product: product)
 
@@ -241,6 +241,20 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
 
         return Form(title: "product-detail.page-title.nutrition".localized, rows: rows)
+    }
+    
+    fileprivate func createIngredientsAnalysisRows(rows: inout [FormRow]) {
+        // Nutrition levels
+        if product.ingredientsAnalysisTags != nil {
+            createFormRow(with: &rows, item: product.ingredientsAnalysisTags?.map({ (ingredientsAnalysisTag: String) -> NSAttributedString in
+                if let ingredientsAnalysis = dataManager.ingredientsAnalysis(forTag: ingredientsAnalysisTag) {
+                    if let name = Tag.choose(inTags: Array(ingredientsAnalysis.names)) {
+                        return NSAttributedString(string: name.value)
+                    }
+                }
+                return NSAttributedString(string: ingredientsAnalysisTag)
+            }), label: InfoRowKey.categories.localizedString)
+        }
     }
 
     fileprivate func createNutrientsRows(rows: inout [FormRow]) {

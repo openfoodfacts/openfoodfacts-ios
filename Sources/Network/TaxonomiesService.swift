@@ -11,7 +11,7 @@ import AlamofireObjectMapper
 import Crashlytics
 
 enum TaxonomiesRouter: URLRequestConvertible {
-    case getAllergens, getAdditives, getCategories, getNutriments
+    case getAllergens, getAdditives, getCategories, getNutriments, getIngredientsAnalysis
 
     var path: String {
         switch self {
@@ -19,6 +19,7 @@ enum TaxonomiesRouter: URLRequestConvertible {
         case .getAdditives: return "additives.json"
         case .getCategories: return "categories.json"
         case .getNutriments: return "nutrients.json"
+        case .getIngredientsAnalysis: return "ingredients_analysis.json"
         }
     }
 
@@ -159,6 +160,33 @@ class TaxonomiesService: TaxonomiesApi {
         }
     }
 
+    fileprivate func refreshIngredientsAnalysis(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getIngredientsAnalysis)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let ingredientsAnalysis = json.compactMap({ (ingredientAnalysisCode: String, value: Any) -> IngredientsAnalysis? in
+                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                return nil
+                            }
+                            let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return IngredientsAnalysis(code: ingredientAnalysisCode, names: names)
+                        })
+                        self.persistenceManager.save(ingredientsAnalysis: ingredientsAnalysis)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+                
+                callback(success)
+        }
+    }
+
     // swiftlint:disable identifier_name
 
     /// increment last number each time you want to force a refresh. Useful if you add a new refresh method or a new field
@@ -198,6 +226,12 @@ class TaxonomiesService: TaxonomiesApi {
 
                 group.enter()
                 self.refreshAdditives({ (success) in
+                    allSuccess = allSuccess && success
+                    group.leave()
+                })
+                
+                group.enter()
+                self.refreshIngredientsAnalysis({ (success) in
                     allSuccess = allSuccess && success
                     group.leave()
                 })

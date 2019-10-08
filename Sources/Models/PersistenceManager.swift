@@ -33,6 +33,10 @@ protocol PersistenceManagerProtocol {
 
     func save(additives: [Additive])
     func additive(forCode: String) -> Additive?
+    
+    func save(ingredientsAnalysis: [IngredientsAnalysis])
+    func ingredientsAnalysis(forCode: String) -> IngredientsAnalysis?
+    func ingredientsAnalysisSearch(query: String?) -> Results<IngredientsAnalysis>
 
     // Offline
     func save(offlineProducts: [RealmOfflineProduct])
@@ -181,6 +185,24 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     func additive(forCode code: String) -> Additive? {
         return getRealm().object(ofType: Additive.self, forPrimaryKey: code)
+    }
+    
+    func save(ingredientsAnalysis: [IngredientsAnalysis]) {
+        saveOrUpdate(objects: ingredientsAnalysis)
+        log.info("Saved \(ingredientsAnalysis.count) ingredients analysis in taxonomies database")
+    }
+    
+    func ingredientsAnalysis(forCode code: String) -> IngredientsAnalysis? {
+        var tmp = getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code);
+        return getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code)
+    }
+    
+    func ingredientsAnalysisSearch(query: String?) -> Results<IngredientsAnalysis> {
+        var results = getRealm().objects(IngredientsAnalysis.self)
+        if let query = query, !query.isEmpty {
+            results = results.filter("indexedNames CONTAINS[cd] %@", query)
+        }
+        return results.sorted(byKeyPath: "mainName", ascending: true)
     }
 
     func save(offlineProducts: [RealmOfflineProduct]) {
