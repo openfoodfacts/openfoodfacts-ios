@@ -61,7 +61,7 @@ class PersistenceManager: PersistenceManagerProtocol {
 
         do {
             try realm.write {
-                realm.add(objects, update: true)
+                realm.add(objects, update: .all)
             }
         } catch let error as NSError {
             log.error("ERROR SAVING INTO REALM \(error)")
@@ -98,7 +98,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 }
 
                 try realm.write {
-                    realm.add(item, update: true)
+                    realm.add(item, update: .all)
                 }
             } catch let error as NSError {
                 log.error(error)
@@ -313,7 +313,7 @@ class PersistenceManager: PersistenceManagerProtocol {
         do {
             let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
             try realm.write {
-                realm.add(realmItem, update: true)
+                realm.add(realmItem, update: .all)
             }
 
             let count = getItemsPendingUpload().count
@@ -342,7 +342,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
 
                 try realm.write {
-                    realm.add(realmItem, update: true)
+                    realm.add(realmItem, update: .all)
                 }
             } catch let error as NSError {
                 log.error(error)
@@ -382,7 +382,7 @@ class PersistenceManager: PersistenceManagerProtocol {
             do {
                 let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
                 try realm.write {
-                    realm.add(realmItem, update: true)
+                    realm.add(realmItem, update: .all)
                 }
             } catch let error as NSError {
                 log.error(error)
