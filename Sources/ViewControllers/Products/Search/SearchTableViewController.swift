@@ -103,11 +103,14 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
         } else {
             tableView.tableHeaderView = searchController.searchBar
         }
-
-        //let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField
-        let searchField = searchController.searchBar.searchTextField
-        searchField.isAccessibilityElement = true
-        searchField.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
+        
+        if searchController.searchBar.responds(to: #selector(getter: UISearchBar.searchTextField)) {
+            searchController.searchBar.searchTextField.isAccessibilityElement = true
+            searchController.searchBar.searchTextField.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
+        } else if let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField {
+            searchField.isAccessibilityElement = true
+            searchField.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
+        }
     }
 
     fileprivate func configureGestureRecognizers() {
