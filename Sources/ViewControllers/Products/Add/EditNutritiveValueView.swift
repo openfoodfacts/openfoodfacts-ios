@@ -113,9 +113,17 @@ class EditNutritiveValueView: UIView {
         }
     }
 
-    func getInputValue() -> Double? {
-        if let txt = inputTextField.text?.replacingOccurrences(of: ",", with: ".") {
-            return Double(txt)
+    /// if fromString is nil, then it will use inputTextField.text
+    func getInputValue(fromString: String? = nil) -> (modifier: String?, value: Double)? {
+        let text = fromString ?? inputTextField.text
+
+        var modifier: String?
+        if let firstChar = text?.first, ["<", ">", "~"].contains(firstChar) {
+            modifier = "\(firstChar)"
+        }
+        if let txt = text?.replacingOccurrences(of: "[<>~]", with: "", options: .regularExpression).replacingOccurrences(of: ",", with: "."),
+            let doubleValue = Double(txt) {
+            return (modifier, doubleValue)
         }
         return nil
     }

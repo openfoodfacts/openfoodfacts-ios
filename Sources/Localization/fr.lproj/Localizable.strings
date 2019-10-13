@@ -20,7 +20,7 @@
 // Product Search
 
 "product-search.title" = "Rechercher";
-"product-search.search-placeholder" = "Rechercher par nom ou code-barres";
+"product-search.search-placeholder" = "Recherche par nom ou code-barres";
 "product-search.no-results" = "Aucun résultat";
 "product-search.error-view.title" = "Une erreur s'est produite";
 "product-search.error-view.subtitle" = "Veuillez réessayer";
@@ -41,7 +41,7 @@
 "product-scanner.permissions.noPermissions.message" = "Veuillez accorder la permission d'utiliser l'appareil photo pour pouvoir scanner les codes à barres";
 "product-scanner.permissions.noPermissions.action.title" = "Ouvrir les paramètres";
 
-"product-scanner.permissions.failed.title" = "Impossible de démarrer la lecture de codes à barres";
+"product-scanner.permissions.failed.title" = "Le scanner de codes à barres n'a pas pu être lancé.";
 "product-scanner.permissions.failed.message" = "Assurez-vous que, dans les paramètres de confidentialité, Open Food Facts est autorisé à utiliser l'appareil photo.";
 "product-scanner.permissions.failed.action.title" = "Quitter le scan du code-barre";
 
@@ -77,12 +77,12 @@
 "product-add.no-nutrition" = "Les informations nutritionnelles ne sont pas mentionnées sur le produit";
 
 "product-add.ocr-ingredients.success" = "Ingrédients lus depuis la photo à";
-"product-add.ocr-ingredients.error" = "Impossible de lire les ingrédients depuis la photo";
+"product-add.ocr-ingredients.error" = "Impossible d'extraire les ingrédients de la photo";
 "product-add.ocr-ingredients.saving" = "Extraction des ingrédients depuis la photo…";
 "product-add.ocr-ingredients.not-yet" = "En attente d'une photo d'ingrédients à analyser";
 
-"product-add.nutriscore-explaination" = "Nutriscore calculé sur la base des informations nutritionnelles fournies";
-"product-add.novagroup-explaination" = "Groupe NOVA calculé sur la base des ingrédients renseignés";
+"product-add.nutriscore-explaination" = "Le Nutri-Score vient d'être calculé sur la base des informations nutritionnelles fournies";
+"product-add.novagroup-explaination" = "Le groupe NOVA vient d’être calculé à partir de la liste des ingrédients.";
 
 "alert.action.ok" = "Ok";
 "product-add.language.toolbar-title" = "Sélectionnez la langue";
@@ -94,6 +94,7 @@
 "product-add.placeholder.quantity" = "Quantité";
 
 "product-add.title" = "Nouveau produit";
+"product-add.title-edit" = "Modifier le produit";
 "product-add.titles.barcode" = "Code barre";
 "product-add.titles.top-explainations" = "Ce produit n'est pas encore dans la base de données Open Food Facts. Pourriez-vous prendre quelques photos du produit, de son code-barre, de la liste des ingrédients et des informations nutritionnelles afin de l'ajouter à la base ?   Merci par avance.";
 "product-add.titles.license-explaination" = "Note : les photos que vous envoyées sont publiées sous la license libre Creative Commons Attribution and ShareAlike.";
@@ -183,6 +184,7 @@
 "product-detail.nutrition-table.serving" = "portion";
 
 // Nutrition levels
+"nutrition-level.title" = "Repères nutritionnels pour 100 g/100 mL";
 "nutrition-level.low" = "en faible quantité";
 "nutrition-level.moderate" = "en quantité modérée";
 "nutrition-level.high" = "en quantité élevée";
@@ -278,11 +280,8 @@
 "settings.sections.discover" = "Découvrir";
 "settings.sections.contribute" = "Contribuer";
 "settings.sections.about" = "À propos";
-"settings.user-profile" = "Votre compte de contributeur";
+"settings.user-profile" = "Votre compte contributeur";
 "settings.credits.title" = "Remerciements";
-"settings.contact.message" = "Merci de nous avoir contacté.";
-"settings.contact-alert.title" = "Impossible d'envoyer l'e-mail";
-"settings.contact-alert.message" = "Votre appareil n'a pas pu envoyer d'e-mail. Veuillez vérifier votre configuration e-mail et réessayer.";
 "settings.scan-on-launch.title" = "Afficher le scan au lancement de l'application";
 "settings.sections.discover" = "Découvrir";
 "settings.contribute.how-to-contribute" = "Comment contribuer";
@@ -291,7 +290,7 @@
 "settings.about.contact" = "Contact";
 "settings.about.frequently-asked-questions" = "Foire Aux Questions";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "Notre application est rendue possible par les volontaires Open Food Facts, les contributeurs et beaucoup d'autres qui choisissent de créer et de publier leurs travaux sous des licences libres.\n\nSous Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\nIcônes \"Barcode scan\", \"Settings\" et \"Flash\" conçues par Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\nIcône \"Take picture\" conçue par Picol (http://www.flaticon.com/authors/picol)\nIcône \"Profile\" conçue par Smashicons (https://www.flaticon.com/authors/smashicons)\nIcône \"Gregor Cresnar\" conçue par Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\nIcône \"Search history\" conçue par Hadrien (https://www.flaticon.com/authors / hadrien)";
+"settings.credits.text" = "Notre application est rendue possible par les volontaires Open Food Facts, les contributeurs et beaucoup d'autres qui choisissent de créer et de publier leurs travaux sous des licences libres.\n\nSous Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\nIcônes \"Barcode scan\", \"Settings\" et \"Flash\" conçues par Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\nIcône \"Take picture\" conçue par Picol (http://www.flaticon.com/authors/picol)\nIcône \"Profile\" conçue par Smashicons (https://www.flaticon.com/authors/smashicons)\nIcône \"Gregor Cresnar\" conçue par Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\nIcône \"Search history\" conçue par Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
@@ -305,7 +304,7 @@
 "user.products-pending-upload.button" = "Produits en attente d'envoi à Open Food Facts";
 "user.create-account.text" = "Si vous n'avez pas de compte, cliquez sur le lien ci-dessous pour en créer un.";
 "user.create-account.button" = "Créer un compte";
-"user.why-log-in.text" = "En vous connectant avec votre compte, vous serez crédité(e) pour toutes vos contributions à la transparence alimentaire.";
+"user.why-log-in.text" = "En vous connectant avec votre compte Open Food Facts, vous serez crédité(e) pour toutes vos contributions à la transparence alimentaire.";
 "user.alert.wrong-credentials.title" = "Échec de connexion";
 "user.alert.wrong-credentials.subtitle" = "Vérifiez que votre nom d'utilisateur et mot de passe sont corrects";
 "user.alert.generic-error.title" = "Il y a eu un problème lors de la connexion";
@@ -314,12 +313,12 @@
 "user.alert.logout-confirmation.subtitle" = "Êtes-vous sûr(e) de vouloir vous déconnecter ?";
 "user.alert.username-missing" = "Le nom d'utilisateur est requis";
 "user.alert.password-missing" = "Le mot de passe est requis";
-"pending-upload.info.text" = "Voici les produits que vous avez ajoutés en mode hors ligne. \n\nL'application essaiera de les envoyer automatiquement lorsque vous serez de nouveau en ligne ou vous pourrez essayer de les envoyer manuellement en appuyant sur le bouton situé dans le coin supérieur droit.";
+"pending-upload.info.text" = "Voici les produits que vous avez ajoutés en mode hors ligne.\n\nL'application essaiera de les envoyer automatiquement lorsque vous serez de nouveau en ligne ou vous pourrez essayer de les envoyer manuellement en appuyant sur le bouton situé dans le coin supérieur droit.";
 "pending-upload.hud.status" = "Envoi en cours";
 
 // Search history
-"history.title" = "Historique";
-"history.cell.privacy" = "Votre historique de recherche est sauvegardé uniquement sur votre appareil";
+"history.title" = "Historique de recherche";
+"history.cell.privacy" = "Votre historique de recherche est uniquement stocké sur votre appareil";
 "history.button.clear" = "Effacer";
 "history.clear.confirmation-title" = "Effacer ?";
 "history.clear.confirmation-message" = "Tout votre historique sera effacé";

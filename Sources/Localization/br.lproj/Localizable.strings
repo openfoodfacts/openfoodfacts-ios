@@ -10,16 +10,16 @@
 "shortcuts.scan" = "Scan barcode";
 
 // Generic strings that could be useful anywhere.
-"generic.back" = "Back";
-"generic.search" = "Search";
+"generic.back" = "Distro";
+"generic.search" = "Klask";
 "generic.cancel" = "Cancel";
-"generic.save" = "Save";
+"generic.save" = "Enrollañ";
 "generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 
 // Product Search
 
-"product-search.title" = "Search";
+"product-search.title" = "Klask";
 "product-search.search-placeholder" = "Search by name or barcode";
 "product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Something went wrong";
@@ -87,24 +87,25 @@
 "alert.action.ok" = "Ok";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
-"product-add.placeholder.name" = "Product name";
+"product-add.placeholder.name" = "Anv ar produ";
 /* Product Add brand text field */
-"product-add.placeholder.brand" = "Brand";
+"product-add.placeholder.brand" = "Merk";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity" = "Quantity";
+"product-add.placeholder.quantity" = "Kementad";
 
-"product-add.title" = "New product";
-"product-add.titles.barcode" = "Barcode";
+"product-add.title" = "Produ nevez";
+"product-add.title-edit" = "Edit product";
+"product-add.titles.barcode" = "Kod barrennoù";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
-"product-add.label.product-name" = "Name";
+"product-add.label.product-name" = "Anv";
 "product-add.label.category" = "Category";
-"product-add.label.quantity" = "Quantity";
+"product-add.label.quantity" = "Kementad";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.label.language" = "Yezhoù";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Nutrition Facts";
@@ -147,22 +148,22 @@
 "product-detail.page-title.environment-impact" = "Environment";
 
 // Product detail summary info rows labels
-"product-detail.summary.barcode" = "Barcode";
-"product-detail.summary.quantity" = "Quantity";
+"product-detail.summary.barcode" = "Kod barrennoù";
+"product-detail.summary.quantity" = "Kementad";
 "product-detail.summary.packaging" = "Packaging";
-"product-detail.summary.brands" = "Brands";
+"product-detail.summary.brands" = "Merkoù";
 "product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
-"product-detail.summary.origins" = "Origin of ingredients";
-"product-detail.summary.categories" = "Categories";
+"product-detail.summary.origins" = "Orin an aozennoù";
+"product-detail.summary.categories" = "Rummadoù";
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
 "product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Country";
+"product-detail.summary.countries" = "Bro";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
-"product-detail.ingredients.allergens-list" = "Substances or products causing allergies or intolerances";
+"product-detail.ingredients.allergens-list" = "Danvez pe produ a zo abeg allergiezhioù pe dic'houzañvioù";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
@@ -183,13 +184,14 @@
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
+"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "in low quantity";
 "nutrition-level.moderate" = "in moderate quantity";
 "nutrition-level.high" = "in high quantity";
 
 // Nutrition
 "nutrition.energy" = "Energy";
-"nutrition.fats" = "Fats";
+"nutrition.fats" = "Druzonioù";
 "nutrition.fats.saturated-fat" = "Saturated fat";
 "nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated fat";
 "nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
@@ -211,7 +213,7 @@
 "nutrition.proteins.casein" = "Casein";
 "nutrition.proteins.serum-proteins" = "Serum Proteins";
 "nutrition.proteins.nucleotides" = "Nucleotides";
-"nutrition.salt" = "Salt";
+"nutrition.salt" = "Holen";
 "nutrition.sodium" = "Sodium";
 "nutrition.alcohol" = "Alcohol";
 "nutrition.vitamins" = "Vitamins";
@@ -270,42 +272,39 @@
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
 
 // Settings storyboard
-"settings.tab-bar.item" = "Settings";
+"settings.tab-bar.item" = "Arventennoù";
 "settings.allergies.title" = "Allergens alerts";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
-"settings.sections.information" = "Information";
-"settings.sections.discover" = "Discover";
-"settings.sections.contribute" = "Contribute";
-"settings.sections.about" = "About";
+"settings.allergies.add-button" = "Ouzhpennañ allergenoù";
+"settings.sections.information" = "Titouroù";
+"settings.sections.discover" = "Dizoleiñ";
+"settings.sections.contribute" = "Kenoberiañ";
+"settings.sections.about" = "A-zivout";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "Discover";
-"settings.contribute.how-to-contribute" = "How To Contribute";
+"settings.sections.discover" = "Dizoleiñ";
+"settings.contribute.how-to-contribute" = "Penaos kenoberiañ";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
-"settings.about.contact" = "Contact";
+"settings.about.contact" = "Darempred";
 "settings.about.frequently-asked-questions" = "Frequently Asked Questions";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
 "settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
-"user.tab-bar.item" = "User";
+"user.tab-bar.item" = "Implijer";
 "user.log-in" = "Log In";
 "user.log-out" = "Log Out";
-"user.username" = "Username";
-"user.password" = "Password";
+"user.username" = "Anv arveriad";
+"user.password" = "Ger-tremen";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
-"user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.create-account.button" = "Krouiñ ur gont";
+"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
 "user.alert.wrong-credentials.title" = "Unable to log in";
 "user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
 "user.alert.generic-error.title" = "There was an error logging in";

@@ -15,9 +15,9 @@ enum NutritionDataPer: String {
 }
 
 enum EnvironmentImpact: String {
-    case low = "en-low"
-    case medium = "en-medium"
-    case high = "en-high"
+    case low = "en:low"
+    case medium = "en:medium"
+    case high = "en:high"
 
     var image: UIImage {
         switch self {
@@ -87,7 +87,7 @@ struct Product: Mappable {
     var categories: [String]?
     var categoriesTags: [String]?
     var nutriscore: String?
-    var novaGroup: String?
+    var novaGroup: Int?
     var manufacturingPlaces: String?
     var origins: String?
     var labels: [String]?
@@ -244,6 +244,11 @@ struct Product: Mappable {
         brands <- (map[OFFJson.BrandsKey], ArrayTransform())
         categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
         categoriesTags <- (map[OFFJson.CategoriesTagsKey])
+        nutriscore <- map[OFFJson.NutritionGradesKey]
+        novaGroup <- (map[OFFJson.NovaGroupKey], IntTransform())
+        manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
+        origins <- map[OFFJson.OriginsKey]
+        labels <- (map[OFFJson.LabelsKey], ArrayTransform())
         citiesTags <- map[OFFJson.CitiesTagsKey]
         countries <- (map[OFFJson.CountriesKey], ArrayTransform())
         embCodesTags <- map[OFFJson.EmbCodesTagsKey]

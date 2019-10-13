@@ -125,10 +125,13 @@ class ScannerViewController: UIViewController, DataManagerClient {
         super.viewWillDisappear(animated)
 
         self.navigationController?.isNavigationBarHidden = false
-        self.lastCodeScanned = nil
 
         session.stopRunning()
         showHelpInOverlayTask?.cancel()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        self.lastCodeScanned = nil
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -231,9 +234,11 @@ class ScannerViewController: UIViewController, DataManagerClient {
     }
 
     fileprivate func resetOverlay() {
-        overlay.setText("product-scanner.overlay.user-help".localized)
-        showHelpInOverlayTask?.cancel()
-        showScanHelpInstructions()
+        DispatchQueue.main.async {
+            self.overlay.setText("product-scanner.overlay.user-help".localized)
+            self.showHelpInOverlayTask?.cancel()
+            self.showScanHelpInstructions()
+        }
     }
 
     fileprivate func showScanHelpInstructions() {
@@ -294,7 +299,9 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
                 resetOverlay()
                 allergenAlertShown = false
-                floatingLabelContainer.isHidden = true
+                DispatchQueue.main.async {
+                    self.floatingLabelContainer.isHidden = true
+                }
                 lastCodeScanned = barcode
                 getProduct(barcode: barcode, isSummary: true)
             }
@@ -481,7 +488,9 @@ extension ScannerViewController {
 
         let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
         if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
-            addProductVC.barcode = barcode
+            var newProduct = Product()
+            newProduct.barcode = barcode
+            addProductVC.productToEdit = newProduct
             addProductVC.dataManager = dataManager
             self.barcodeToOpenAtStartup = barcode
             self.navigationController?.pushViewController(addProductVC, animated: true)

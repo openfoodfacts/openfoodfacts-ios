@@ -12,10 +12,10 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Назад";
 "generic.search" = "Пошук";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Скасувати";
 "generic.save" = "Зберегти";
-"generic.cancel" = "Cancel";
-"generic.ok" = "Ok";
+"generic.cancel" = "Скасувати";
+"generic.ok" = "Гаразд";
 
 // Product Search
 
@@ -84,7 +84,7 @@
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
 
-"alert.action.ok" = "Ok";
+"alert.action.ok" = "Гаразд";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Product name";
@@ -94,6 +94,7 @@
 "product-add.placeholder.quantity" = "Quantity";
 
 "product-add.title" = "New product";
+"product-add.title-edit" = "Редагувати товар";
 "product-add.titles.barcode" = "Код товару";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
@@ -128,7 +129,7 @@
 "select-nutriment.search-placeholder" = "Search for a nutrient";
 
 // Select allergen
-"select-allergen.title" = "Allergen";
+"select-allergen.title" = "Алерген";
 "select-allergen.search-placeholder" = "Search for an allergen";
 
 // Product Detail
@@ -144,7 +145,7 @@
 "product-detail.page-title.ingredients" = "Інгредієнти";
 "product-detail.page-title.nutrition" = "Харчова цінність";
 "product-detail.page-title.nutrition-table" = "Nutrition table";
-"product-detail.page-title.environment-impact" = "Environment";
+"product-detail.page-title.environment-impact" = "Середовище";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Код товару";
@@ -183,13 +184,14 @@
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
+"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "мала кількість";
 "nutrition-level.moderate" = "помірна кількість";
 "nutrition-level.high" = "велика кількість";
 
 // Nutrition
 "nutrition.energy" = "Енергетична цінність";
-"nutrition.fats" = "Fats";
+"nutrition.fats" = "Жири";
 "nutrition.fats.saturated-fat" = "Насичені жири";
 "nutrition.fats.mono-unsaturated-fat" = "Мононенасичені жири";
 "nutrition.fats.poly-unsaturated-fat" = "Поліненасичені жири";
@@ -280,9 +282,6 @@
 "settings.sections.about" = "Про додаток";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
 "settings.sections.discover" = "Дізнатись більше";
 "settings.contribute.how-to-contribute" = "How To Contribute";
@@ -305,12 +304,12 @@
 "user.products-pending-upload.button" = "Products pending upload";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Create An Account";
-"user.why-log-in.text" = "Login in with your account will associate all your contributions to your account.";
+"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
 "user.alert.wrong-credentials.title" = "Unable to log in";
 "user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
 "user.alert.generic-error.title" = "There was an error logging in";
 "user.alert.generic-error.subtitle" = "Please try again in a few moments";
-"user.alert.logout-confirmation.title" = "Confirm Logout";
+"user.alert.logout-confirmation.title" = "Підтвердити вихід";
 "user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
 "user.alert.username-missing" = "Username is required";
 "user.alert.password-missing" = "Password is required";

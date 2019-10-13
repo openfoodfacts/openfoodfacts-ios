@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 import NotificationBanner
 
 struct HistoryCellId {
@@ -147,13 +148,17 @@ extension HistoryTableViewController {
     }
 
     func showItem(_ item: HistoryItem, onError: @escaping () -> Void) {
+        SVProgressHUD.show()
         dataManager.getProduct(byBarcode: item.barcode, isScanning: false, isSummary: false, onSuccess: { product in
             if let product = product {
                 self.showProductDetails(product: product)
+                SVProgressHUD.dismiss()
             } else {
+                SVProgressHUD.dismiss()
                 onError()
             }
         }, onError: { _ in
+            SVProgressHUD.dismiss()
             onError()
         })
     }

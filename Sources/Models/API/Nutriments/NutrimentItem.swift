@@ -14,15 +14,12 @@ struct NutrimentItem {
     var per100g: Double?
     var perServing: Double?
     var unit: String?
+    var modifier: String?
     var value: Double?
     var isMainItem: Bool // Whether this item is the main item in a group, used to hightlight. Like Fat in the Fats group.
 
     // Json keys
     let nameKey: String
-    let per100gKey: String
-    let servingKey: String
-    let unitKey: String
-    let valueKey: String
 
     let localized: InfoRowKey
 
@@ -40,16 +37,13 @@ struct NutrimentItem {
 
     init?(nameKey: String, map: Map, localized: InfoRowKey, isMainItem mainItem: Bool = false) {
         self.nameKey = nameKey
-        self.per100gKey = "\(nameKey)_100g"
-        self.servingKey = "\(nameKey)_serving"
-        self.unitKey = "\(nameKey)_unit"
-        self.valueKey = "\(nameKey)_value"
 
         self.total <- (map[nameKey], DoubleTransform())
-        self.per100g <- (map[per100gKey], DoubleTransform())
-        self.perServing <- (map[servingKey], DoubleTransform())
-        self.unit <- map[unitKey]
-        self.value <- (map[valueKey], DoubleTransform())
+        self.per100g <- (map["\(nameKey)_100g"], DoubleTransform())
+        self.perServing <- (map["\(nameKey)_serving"], DoubleTransform())
+        self.unit <- map["\(nameKey)_unit"]
+        self.modifier <- map["\(nameKey)_modifier"]
+        self.value <- (map["\(nameKey)_value"], DoubleTransform())
         self.isMainItem = mainItem
 
         self.localized = localized
@@ -62,10 +56,6 @@ struct NutrimentItem {
 
     init?(nameKey: String, localized: InfoRowKey) {
         self.nameKey = nameKey
-        self.per100gKey = "\(nameKey)_100g"
-        self.servingKey = "\(nameKey)_serving"
-        self.unitKey = "\(nameKey)_unit"
-        self.valueKey = "\(nameKey)_value"
         self.isMainItem = false
 
         self.localized = localized

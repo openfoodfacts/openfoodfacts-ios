@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,20 +19,32 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="flg-jd-0qN">
-                        <rect key="frame" x="18" y="18" width="284" height="255.5"/>
+                        <rect key="frame" x="26" y="19" width="268" height="252"/>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vog-BP-3EJ">
+                        <rect key="frame" x="13" y="11" width="281" height="0.0"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="nutrition-level.title"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Vog-BP-3EJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="5xf-k9-QQh"/>
                     <constraint firstAttribute="bottomMargin" secondItem="flg-jd-0qN" secondAttribute="bottom" constant="10" id="AHT-Sv-Rtv"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Vog-BP-3EJ" secondAttribute="trailing" constant="10" id="WHJ-Wo-vVP"/>
+                    <constraint firstItem="flg-jd-0qN" firstAttribute="top" secondItem="Vog-BP-3EJ" secondAttribute="bottom" constant="8" id="XHM-hK-0t0"/>
                     <constraint firstAttribute="trailingMargin" secondItem="flg-jd-0qN" secondAttribute="trailing" constant="10" id="YgR-de-cSp"/>
+                    <constraint firstItem="Vog-BP-3EJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-3" id="gPA-jn-AJ2"/>
                     <constraint firstItem="flg-jd-0qN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="jdr-bK-NVW"/>
-                    <constraint firstItem="flg-jd-0qN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="k0t-TI-Rpj"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="stackView" destination="flg-jd-0qN" id="23x-L3-P7G"/>
             </connections>
-            <point key="canvasLocation" x="34" y="179"/>
+            <point key="canvasLocation" x="33.600000000000001" y="178.11094452773614"/>
         </tableViewCell>
     </objects>
 </document>

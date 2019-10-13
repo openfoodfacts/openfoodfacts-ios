@@ -46,11 +46,17 @@ extension Array where Element: Tag {
     func chooseForCurrentLanguage(defaultToFirst: Bool = false) -> Tag? {
         return Tag.choose(inTags: self, forLanguageCode: nil, defaultToFirst: defaultToFirst)
     }
+    func choose(forLanguageCode: String, defaultToFirst: Bool = false) -> Tag? {
+        return Tag.choose(inTags: self, forLanguageCode: forLanguageCode, defaultToFirst: defaultToFirst)
+    }
 }
 
 extension List where Element: Tag {
     func chooseForCurrentLanguage(defaultToFirst: Bool = false) -> Tag? {
         return Array(self).chooseForCurrentLanguage(defaultToFirst: defaultToFirst)
+    }
+    func choose(forLanguageCode: String, defaultToFirst: Bool = false) -> Tag? {
+        return Array(self).choose(forLanguageCode: forLanguageCode, defaultToFirst: defaultToFirst)
     }
 }
 

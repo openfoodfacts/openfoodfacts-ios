@@ -15,7 +15,7 @@
 "generic.cancel" = "Cancel";
 "generic.save" = "Запис";
 "generic.cancel" = "Cancel";
-"generic.ok" = "Ok";
+"generic.ok" = "Добре";
 
 // Product Search
 
@@ -84,7 +84,7 @@
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
 
-"alert.action.ok" = "Ok";
+"alert.action.ok" = "Добре";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Product name";
@@ -94,6 +94,7 @@
 "product-add.placeholder.quantity" = "Quantity";
 
 "product-add.title" = "New product";
+"product-add.title-edit" = "Редактирай продукт";
 "product-add.titles.barcode" = "Баркод";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
@@ -144,7 +145,7 @@
 "product-detail.page-title.ingredients" = "Съставки";
 "product-detail.page-title.nutrition" = "Хранене";
 "product-detail.page-title.nutrition-table" = "Nutrition table";
-"product-detail.page-title.environment-impact" = "Environment";
+"product-detail.page-title.environment-impact" = "Околна среда";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Баркод";
@@ -153,7 +154,7 @@
 "product-detail.summary.brands" = "Марки";
 "product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
 "product-detail.summary.origins" = "Origin of ingredients";
-"product-detail.summary.categories" = "Categories";
+"product-detail.summary.categories" = "Категории";
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
@@ -183,14 +184,15 @@
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
+"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "в ниско количество";
 "nutrition-level.moderate" = "в умерено количество";
 "nutrition-level.high" = "във високо количество";
 
 // Nutrition
 "nutrition.energy" = "Енергия";
-"nutrition.fats" = "Fats";
-"nutrition.fats.saturated-fat" = "Saturated fat";
+"nutrition.fats" = "Мазнини";
+"nutrition.fats.saturated-fat" = "Наситени мазнини";
 "nutrition.fats.mono-unsaturated-fat" = "Мононенаситени мазнини";
 "nutrition.fats.poly-unsaturated-fat" = "Полиненаситени мазнини";
 "nutrition.fats.omega3" = "Омега 3";
@@ -216,10 +218,10 @@
 "nutrition.alcohol" = "Алкохол";
 "nutrition.vitamins" = "Витамини";
 "nutrition.vitamins.a" = "Витамин А";
-"nutrition.vitamins.beta-carotene" = "Beta carotene";
-"nutrition.vitamins.d" = "Vitamin D";
-"nutrition.vitamins.e" = "Vitamin E";
-"nutrition.vitamins.k" = "Vitamin K";
+"nutrition.vitamins.beta-carotene" = "Бета каротин";
+"nutrition.vitamins.d" = "Витамин D";
+"nutrition.vitamins.e" = "Витамин Е";
+"nutrition.vitamins.k" = "Витамин К";
 "nutrition.vitamins.c" = "Витамин C";
 "nutrition.vitamins.b1" = "Витамин В1";
 "nutrition.vitamins.b2" = "Витамин В2";
@@ -280,9 +282,6 @@
 "settings.sections.about" = "Относно";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
 "settings.sections.discover" = "Открийте";
 "settings.contribute.how-to-contribute" = "How To Contribute";
@@ -305,7 +304,7 @@
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
 "user.alert.wrong-credentials.title" = "Unable to log in";
 "user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
 "user.alert.generic-error.title" = "There was an error logging in";

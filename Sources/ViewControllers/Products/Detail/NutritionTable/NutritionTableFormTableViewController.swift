@@ -21,21 +21,21 @@ class NutritionTableFormTableViewController: FormTableViewController {
 
     override func getCell(for formRow: FormRow) -> UITableViewCell {
         if formRow.cellType is HostedViewCell.Type, let product = formRow.value as? Product {
-            let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
-            cell.configure(with: formRow, in: self)
+            if let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as? HostedViewCell {
+                cell.configure(with: formRow, in: self)
 
-            let nutritionTableHeaderCellController = NutritionTableHeaderCellController(with: product, dataManager: dataManager)
-            nutritionTableHeaderCellController.delegate = self
-            cell.hostedView = nutritionTableHeaderCellController.view
-            self.nutritionTableHeaderCellController = nutritionTableHeaderCellController
+                let nutritionTableHeaderCellController = NutritionTableHeaderCellController(with: product, dataManager: dataManager)
+                nutritionTableHeaderCellController.delegate = self
+                cell.hostedView = nutritionTableHeaderCellController.view
+                self.nutritionTableHeaderCellController = nutritionTableHeaderCellController
 
-            self.addChildViewController(nutritionTableHeaderCellController)
-            nutritionTableHeaderCellController.didMove(toParentViewController: self)
+                self.addChildViewController(nutritionTableHeaderCellController)
+                nutritionTableHeaderCellController.didMove(toParentViewController: self)
 
-            return cell
-        } else {
-            return super.getCell(for: formRow)
+                return cell
+            }
         }
+        return super.getCell(for: formRow)
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

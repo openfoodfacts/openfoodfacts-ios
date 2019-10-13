@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Vonalkód beolvasása";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Vissza";
@@ -32,7 +32,7 @@
 "product-scanner.overlay.user-help" = "A termék vonalkódjának beolvasása";
 "product-scanner.overlay.extended-user-help" = "Vonalkód nem található.\nHelyezze a vonalkódot a képernyőn középre.\nGyőződjön meg róla, hogy a vonalkód jól megvilágított.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Szkenner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Hiba történt a vonalkód beolvasása közben. Kérem, próbálja meg néhány pillanat múlva.";
 "product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
@@ -94,6 +94,7 @@
 "product-add.placeholder.quantity" = "Mennyiség";
 
 "product-add.title" = "Új termék";
+"product-add.title-edit" = "Termék szerkesztése";
 "product-add.titles.barcode" = "Vonalkód";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
@@ -183,6 +184,7 @@
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
+"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "kis mennyiségben";
 "nutrition-level.moderate" = "mérsékelt mennyiségben";
 "nutrition-level.high" = "nagy mennyiségben";
@@ -280,9 +282,6 @@
 "settings.sections.about" = "Névjegy";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Köszönet";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Mutassa a beolvasást az alkalmazás indításakor";
 "settings.sections.discover" = "Felfedezés";
 "settings.contribute.how-to-contribute" = "Hogyan járulhat hozzá";
@@ -305,7 +304,7 @@
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
 "user.alert.wrong-credentials.title" = "Sikertelen bejelentkezés";
 "user.alert.wrong-credentials.subtitle" = "Ellenőrizze a felhasználói név és jelszó helyességét";
 "user.alert.generic-error.title" = "Hiba történt a bejelentkezéskor";

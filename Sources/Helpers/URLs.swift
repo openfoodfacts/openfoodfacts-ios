@@ -26,7 +26,7 @@ struct URLs {
     static let ProductBaseURL: String = {
         return ProductBaseURLWithLanguagePlaceholder.replacingOccurrences(of: "LANGUAGE", with: Locale.current.languageCode!)
     }()
-
+//
     static func urlForProduct(with code: String?) -> String {
         guard let code = code else {
             return Discover

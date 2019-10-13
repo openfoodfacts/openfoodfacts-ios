@@ -94,6 +94,7 @@
 "product-add.placeholder.quantity" = "Kvantitet";
 
 "product-add.title" = "New product";
+"product-add.title-edit" = "Redigera produkt";
 "product-add.titles.barcode" = "Streckkod";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
@@ -144,7 +145,7 @@
 "product-detail.page-title.ingredients" = "Ingredienser";
 "product-detail.page-title.nutrition" = "Näring";
 "product-detail.page-title.nutrition-table" = "Näringstabell";
-"product-detail.page-title.environment-impact" = "Environment";
+"product-detail.page-title.environment-impact" = "Miljö";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Streckkod";
@@ -173,7 +174,7 @@
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Portionsstorlek";
-"product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2 emissions";
+"product-detail.nutrition.carbon-footprint" = "Koldioxidutsläpp";
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Näringsfakta";
@@ -183,6 +184,7 @@
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
+"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "i låg kvantitet";
 "nutrition-level.moderate" = "i måttlig mängd";
 "nutrition-level.high" = "i hög kvantitet";
@@ -279,11 +281,8 @@
 "settings.sections.contribute" = "Bidra";
 "settings.sections.about" = "Om";
 "settings.user-profile" = "Your contributor account";
-"settings.credits.title" = "Credits";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
-"settings.scan-on-launch.title" = "Show Scan On App Launch";
+"settings.credits.title" = "Medverkande";
+"settings.scan-on-launch.title" = "Visa streckkodsscanner vid start";
 "settings.sections.discover" = "Upptäck";
 "settings.contribute.how-to-contribute" = "Hur man bidrar";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
@@ -305,11 +304,11 @@
 "user.products-pending-upload.button" = "Products pending upload";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Skapa ett konto";
-"user.why-log-in.text" = "Login in with your account will associate all your contributions to your account.";
+"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
 "user.alert.wrong-credentials.title" = "Inloggning misslyckades";
-"user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
-"user.alert.generic-error.title" = "There was an error logging in";
-"user.alert.generic-error.subtitle" = "Please try again in a few moments";
+"user.alert.wrong-credentials.subtitle" = "Kontrollera att ditt användarnamn och lösenord är korrekta";
+"user.alert.generic-error.title" = "Det gick inte att logga in";
+"user.alert.generic-error.subtitle" = "Var god och försök igen om en stund";
 "user.alert.logout-confirmation.title" = "Bekräfta utloggning";
 "user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
 "user.alert.username-missing" = "Användarnamn krävs";

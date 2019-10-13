@@ -43,26 +43,35 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
             loginVC.delegate = self
 
             let navVC = UINavigationController(rootViewController: loginVC)
-            loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissLoginVC))
+            loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
 
             self.present(navVC, animated: true)
 
             return
         }
 
-        if let barcode = self.product?.barcode, let url = URL(string: URLs.Edit + barcode) {
-            openUrlInApp(url, showAlert: true)
+        if let product = self.product {
+            let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
+            if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
+                addProductVC.productToEdit = product
+                addProductVC.dataManager = dataManager
+
+                let navVC = UINavigationController(rootViewController: addProductVC)
+                addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
+
+                self.present(navVC, animated: true)
+            }
         }
     }
 
-    @objc func dismissLoginVC() {
+    @objc func dismissVC() {
         dismiss(animated: true, completion: nil)
     }
 }
 
 extension SummaryFooterCellController: UserViewControllerDelegate {
     func dismiss() {
-        dismissLoginVC()
+        dismissVC()
     }
 
     func showProductsPendingUpload() {
