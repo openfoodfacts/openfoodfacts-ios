@@ -80,14 +80,18 @@ class ProductAddViewController: TakePictureViewController {
     override var barcode: String! {
         didSet {
             product.barcode = barcode
+            if productToEdit == nil {
+                productToEdit = Product.init()
+                productToEdit?.barcode = barcode
+            }
         }
     }
 
     var productToEdit: Product? {
         didSet {
-            if let barcode = productToEdit?.barcode {
-                self.barcode = barcode
-            }
+            //if let barcode = productToEdit?.barcode {
+            //    self.barcode = barcode
+            //}
         }
     }
 
@@ -167,14 +171,24 @@ class ProductAddViewController: TakePictureViewController {
         configureLanguageField()
         configureDelegates()
         configureNotifications()
-
+        // Issue #325
+        // The app seems to try first a locally stored product and then a realm stored product
+        // Both were nil however, and nothing happens
+        // As there is a new barcode, there should be a local product,
+        // but it is nowhere created
+        // solutio is to create productToEdit, when the barcode is set
+        // and assign the barcode to productToEdit
+        
         if let productToEdit = self.productToEdit {
             self.title = "product-add.title-edit".localized
             self.product = productToEdit
             fillForm(withProduct: productToEdit)
         }
-        if let barcode = self.barcode, let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode) {
-            fillForm(withPendingUploadItem: pendingUploadItem)
+        if let barcode = self.barcode {
+        let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode)
+        if pendingUploadItem != nil {
+            fillForm(withPendingUploadItem: pendingUploadItem!)
+        }
         }
     }
 
@@ -564,6 +578,7 @@ class ProductAddViewController: TakePictureViewController {
 
     // swiftlint:disable cyclomatic_complexity
     private func fillForm(withPendingUploadItem pendingUploadItem: PendingUploadItem) {
+        
         if let productName = pendingUploadItem.productName {
             productNameField.text = productName
         }
