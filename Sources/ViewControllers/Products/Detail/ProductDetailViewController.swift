@@ -80,6 +80,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         return ingredientsFormTableVC
     }
 
+   
     fileprivate func getNutritionVC() -> UIViewController? {
         guard let form = createNutritionForm() else { return nil }
         let nutritionTableFormTableVC = NutritionTableFormTableViewController(with: form, dataManager: dataManager)
@@ -229,10 +230,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
 
         // Info rows
-        if product.servingSize != nil {
-            createFormRow(with: &rows, item: product.servingSize, label: InfoRowKey.servingSize.localizedString)
-        }
-
         if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
             createFormRow(with: &rows, item: "\(carbonFootprint) \(unit)", label: InfoRowKey.carbonFootprint.localizedString)
         }

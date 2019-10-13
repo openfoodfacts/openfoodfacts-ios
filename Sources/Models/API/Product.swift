@@ -87,7 +87,7 @@ struct Product: Mappable {
     var categories: [String]?
     var categoriesTags: [String]?
     var nutriscore: String?
-    var novaGroup: String?
+    var novaGroup: Int?
     var manufacturingPlaces: String?
     var origins: String?
     var labels: [String]?
@@ -247,7 +247,7 @@ struct Product: Mappable {
         categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
         categoriesTags <- (map[OFFJson.CategoriesTagsKey])
         nutriscore <- map[OFFJson.NutritionGradesKey]
-        novaGroup <- map[OFFJson.NovaGroupKey]
+        novaGroup <- (map[OFFJson.NovaGroupKey], IntTransform())
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
         origins <- map[OFFJson.OriginsKey]
         labels <- (map[OFFJson.LabelsKey], ArrayTransform())
@@ -276,14 +276,9 @@ struct Product: Mappable {
         selectedImages <- map[OFFJson.SelectedImages]
         // try to extract all language specific fields
 
-        // guard let validLanguageCodes = languageCodes else { return }
-
-        for languageCode in Locale.preferredLanguageCodes {
-
-            names[languageCode] <- map[OFFJson.ProductNameKey + OFFJson.KeySeparator + languageCode]
-            genericNames[languageCode] <- map[OFFJson.GenericNameKey + OFFJson.KeySeparator + languageCode]
-            ingredients[languageCode] <- map[OFFJson.IngredientsTextKey + OFFJson.KeySeparator + languageCode]
-        }
+        names <- map[OFFJson.ProductNameLanguagesKey]
+        genericNames <- map[OFFJson.GenericNameLanguagesKey]
+        ingredients <- map[OFFJson.IngredientsLanguagesKey]
     }
 
     func matchedLanguageCode(codes:[String]) -> String? {

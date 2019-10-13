@@ -94,6 +94,7 @@
 "product-add.placeholder.quantity" = "Quantity";
 
 "product-add.title" = "New product";
+"product-add.title-edit" = "Edit product";
 "product-add.titles.barcode" = "Barcode";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
@@ -124,7 +125,7 @@
 "select-category.search-placeholder" = "Search for a category";
 
 // Select nutrition
-"select-nutriment.title" = "Nutrition";
+"select-nutriment.title" = "ஊட்டச்சத்து";
 "select-nutriment.search-placeholder" = "Search for a nutrient";
 
 // Select allergen
@@ -140,9 +141,9 @@
 "product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
 
 // Product detail page titles
-"product-detail.page-title.summary" = "Summary";
+"product-detail.page-title.summary" = "சுருக்கம்";
 "product-detail.page-title.ingredients" = "Ingredients";
-"product-detail.page-title.nutrition" = "Nutrition";
+"product-detail.page-title.nutrition" = "ஊட்டச்சத்து";
 "product-detail.page-title.nutrition-table" = "Nutrition table";
 "product-detail.page-title.environment-impact" = "Environment";
 
@@ -183,6 +184,7 @@
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
+"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "in low quantity";
 "nutrition-level.moderate" = "in moderate quantity";
 "nutrition-level.high" = "in high quantity";
@@ -197,18 +199,18 @@
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
 "nutrition.fats.trans-fat" = "Trans fat";
-"nutrition.fats.cholesterol" = "Cholesterol";
+"nutrition.fats.cholesterol" = "இரத்தக்கொழுப்பு";
 "nutrition.carbohydrate" = "Carbohydrate";
 "nutrition.carbohydrate.sugars" = "Sugars";
 "nutrition.carbohydrate.sucrose" = "Sucrose";
-"nutrition.carbohydrate.glucose" = "Glucose";
-"nutrition.carbohydrate.fructose" = "Fructose";
+"nutrition.carbohydrate.glucose" = "குளுக்கோஸ்";
+"nutrition.carbohydrate.fructose" = "ஃப்ரூக்டோஸ்";
 "nutrition.carbohydrate.lactose" = "Lactose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
 "nutrition.fiber" = "Dietary fiber";
 "nutrition.proteins" = "Proteins";
-"nutrition.proteins.casein" = "Casein";
+"nutrition.proteins.casein" = "கேசீன்";
 "nutrition.proteins.serum-proteins" = "Serum Proteins";
 "nutrition.proteins.nucleotides" = "Nucleotides";
 "nutrition.salt" = "Salt";
@@ -231,22 +233,22 @@
 "nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
 "nutrition.minerals" = "Minerals";
 "nutrition.minerals.silica" = "Silica";
-"nutrition.minerals.bicarbonate" = "Bicarbonate";
+"nutrition.minerals.bicarbonate" = "பைகார்பனேட்";
 "nutrition.minerals.potassium" = "Potassium";
-"nutrition.minerals.chloride" = "Chloride";
-"nutrition.minerals.calcium" = "Calcium";
+"nutrition.minerals.chloride" = "குளோரைடு";
+"nutrition.minerals.calcium" = "கால்சியம்";
 "nutrition.minerals.phosphorus" = "Phosphorus";
 "nutrition.minerals.iron" = "Iron";
 "nutrition.minerals.magnesium" = "Magnesium";
 "nutrition.minerals.zinc" = "Zinc";
-"nutrition.minerals.copper" = "Copper";
+"nutrition.minerals.copper" = "செம்பு";
 "nutrition.minerals.manganese" = "Manganese";
-"nutrition.minerals.fluoride" = "Fluoride";
+"nutrition.minerals.fluoride" = "புளூரைடு";
 "nutrition.minerals.selenium" = "Selenium";
-"nutrition.minerals.chromium" = "Chromium";
+"nutrition.minerals.chromium" = "குரோமியம்";
 "nutrition.minerals.molybdenum" = "Molybdenum";
 "nutrition.minerals.iodine" = "Iodine";
-"nutrition.minerals.caffeine" = "Caffeine";
+"nutrition.minerals.caffeine" = "காஃபின்";
 "nutrition.minerals.taurine" = "Taurine";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Fruits, vegetables, nuts";
@@ -270,7 +272,7 @@
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
 
 // Settings storyboard
-"settings.tab-bar.item" = "Settings";
+"settings.tab-bar.item" = "அமைப்புகள்";
 "settings.allergies.title" = "Allergens alerts";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
 "settings.allergies.add-button" = "Add allergens";
@@ -280,9 +282,6 @@
 "settings.sections.about" = "இதைப் பற்றி";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
 "settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "How To Contribute";

@@ -20,11 +20,11 @@
 // Product Search
 
 "product-search.title" = "Buscar";
-"product-search.search-placeholder" = "Search by name or barcode";
-"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
+"product-search.search-placeholder" = "Buscar por nombre o código de barras";
+"product-search.no-results" = "No hay resultados. Puede agregar un producto a Open Food Facts escaneandolo.";
 "product-search.error-view.title" = "Algo ha salido mal";
 "product-search.error-view.subtitle" = "Por favor intente de nuevo";
-"product-search.initial-view.slogan" = "the free food products database";
+"product-search.initial-view.slogan" = "la base de datos libre sobre productos alimenticios";
 "product-search.initial-view.offline.title-loading" = "Guardando productos sin conexión: %d%%";
 "product-search.initial-view.offline.subtitle" = "Más de %d productos disponibles para el escaneo instantáneo";
 
@@ -35,21 +35,21 @@
 "product-scanner.view-title" = "Escáner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Error al escanear código de barras. Por favor inténtelo de nuevo en unos momentos.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "No se encontró el código de barras. Puedes escribirlo manualmente:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts necesita permisos de cámara";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
-"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+"product-scanner.permissions.noPermissions.message" = "Por favor, conceda el permiso para permitir que la cámara escanee los códigos de barras";
+"product-scanner.permissions.noPermissions.action.title" = "Abrir la configuración";
 
-"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.title" = "No se pudo iniciar el escaneo de códigos de barras.";
+"product-scanner.permissions.failed.message" = "Asegúrese de que en los ajustes de privacidad Open Food Facts tenga permiso para usar la cámara";
 "product-scanner.permissions.failed.action.title" = "Dejar escaneo de código de barras";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Cargando producto…";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image…";
+"product-add.uploading-image-banner.title" = "Cargando imagen…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Algo ha salido mal";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
@@ -61,28 +61,28 @@
 "product-add.product-add-success-banner.title" = "Producto se ha agregado correctamente. ¡Gracias!";
 "product-add.uploaded-image" = "Imagen cargada, ¡gracias!";
 "product-add.save-error.title" = "Error mientras se guardaba el producto";
-"product-add.save-error.message" = "Please try again later";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
-"product-add.save-ingredients.success" = "Ingredients saved at";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
+"product-add.save-error.message" = "Por favor, inténtalo más tarde";
+"product-add.save-info.success" = "Información guardada en";
+"product-add.save-info.error" = "Información no guardada";
+"product-add.save-info.saving" = "Guardando información del producto…";
+"product-add.save-info.not-yet" = "Información aún no guardada";
+"product-add.save-ingredients.success" = "Ingredientes guardados en";
+"product-add.save-ingredients.error" = "Ingredientes no guardados";
+"product-add.save-ingredients.saving" = "Guardando ingredientes…";
+"product-add.save-ingredients.not-yet" = "Ingredientes aún no guardados";
+"product-add.save-nutriments.success" = "Nutrientes guardados en";
+"product-add.save-nutriments.error" = "Nutrientes no guardados";
 "product-add.save-nutriments.saving" = "Ahorro de nutrimentos…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.save-nutriments.not-yet" = "Nutrientes no guardados todavía";
+"product-add.no-nutrition" = "El producto no lleva información nutricional";
 
-"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.success" = "Ingredientes leídos de la imagen en";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
+"product-add.ocr-ingredients.saving" = "Extrayendo los ingredientes de la imagen…";
+"product-add.ocr-ingredients.not-yet" = "Esperando a que se analice una imagen de ingredientes";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "El Nutri-Score se acaba de calcular a partir de la tabla de nutrición";
+"product-add.novagroup-explaination" = "El grupo NOVA se acaba de calcular basándose en la lista de ingredientes";
 
 "alert.action.ok" = "Ok";
 "product-add.language.toolbar-title" = "Seleccione un Idioma";
@@ -93,47 +93,48 @@
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Cantidad";
 
-"product-add.title" = "New product";
+"product-add.title" = "Nuevo producto";
+"product-add.title-edit" = "Editar producto";
 "product-add.titles.barcode" = "Código de barras";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.top-explainations" = "Bien hecho ! Este producto aún no está en Open Food Facts. ¿Puede tomar algunas fotos del producto, la lista de ingredientes y la información nutricional para agregarla a Open Food Facts? Gracias por adelantado.";
+"product-add.titles.license-explaination" = "Nota: las imagenes que envías son publicadas bajo la licencia libre Creative Commons Attribution y ShareAlike.";
 
-"product-add.titles.product-info" = "Product information";
+"product-add.titles.product-info" = "Información del producto";
 "product-add.label.product-name" = "Nombre";
 "product-add.label.category" = "Categoría";
 "product-add.label.quantity" = "Cantidad";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
+"product-add.details.category" = "Necesario para calcular el Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.label.language" = "Idiomas";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.description.nutritive" = "Completa los datos nutricionales y la categoría de producto para obtener el Nutri-Score";
 "product-add.titles.nutritive" = "Información nutricional";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.choice.per-hundred-grams" = "por 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "por porción";
 "product-add.nutritive.add-nutriment" = "Añade un nutriente";
-"product-add.nutritive.too-much" = "More than 100g ?";
+"product-add.nutritive.too-much" = "Más de 100g ?";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "Completa los ingredientes para conseguir el grupo NOVA sobre el procesamiento de alimentos";
 "product-add.titles.ingredients" = "Ingredientes";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
-"product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.explaination" = "Toma una foto de la lista de ingredientes para extraer automáticamente los ingredientes. Compruébalo cuidadosamente y no olvides guardarlo.";
+"product-add.ingredients.button-delete" = "Demasiado malo, Ignorar";
+"product-add.ingredients.button-save" = "Parece bueno, Guardar";
 
 // Select Category
 "select-category.title" = "Categoría";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Buscar una categoría";
 
 // Select nutrition
 "select-nutriment.title" = "Nutrición";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Buscar un nutriente";
 
 // Select allergen
 "select-allergen.title" = "Alérgenos";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "Buscar un alergeno";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Añadir una nueva imagen";
-"product-detail.edit" = "Edit this product";
+"product-detail.edit" = "Editar este producto";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "Recuerde guardar sus cambios";
 /* Keep this text as short as possible */
@@ -163,8 +164,8 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.ingredients-list" = "Lista de Ingredientes";
 "product-detail.ingredients.allergens-list" = "Sustancias o productos que causan alergias o intolerancias";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-alert.title" = "Contiene alérgenos!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Este producto aún no tiene una lista de ingredientes y, como resultado, no se pudo completar la detección de alérgenos.";
 "product-detail.ingredients.allergens-list.offline-product" = "Este producto ha sido cargado de la base de datos offline, y como resultado, no se pudo completar la detección de alergénicos.";
 "product-detail.ingredients.traces-list" = "Trazas";
 "product-detail.ingredients.additives-list" = "Aditivos";
@@ -183,6 +184,7 @@
 "product-detail.nutrition-table.serving" = "servir";
 
 // Nutrition levels
+"nutrition-level.title" = "Niveles nutricionales por 100g/100mL";
 "nutrition-level.low" = "En bajas cantidades";
 "nutrition-level.moderate" = "En cantidades moderadadas";
 "nutrition-level.high" = "En altas cantidades";
@@ -193,9 +195,9 @@
 "nutrition.fats.saturated-fat" = "Grasa saturada";
 "nutrition.fats.mono-unsaturated-fat" = "Grasas mono insaturadas";
 "nutrition.fats.poly-unsaturated-fat" = "Grasas polisaturadas";
-"nutrition.fats.omega3" = "Omega 3";
-"nutrition.fats.omega6" = "Omega 6";
-"nutrition.fats.omega9" = "Omega 9";
+"nutrition.fats.omega3" = "Omega-3";
+"nutrition.fats.omega6" = "Omega-6";
+"nutrition.fats.omega9" = "Omega-9";
 "nutrition.fats.trans-fat" = "Grasa trans";
 "nutrition.fats.cholesterol" = "Colesterol";
 "nutrition.carbohydrate" = "Carbohidratos";
@@ -255,34 +257,31 @@
 "nutrition.minerals.chlorophyl" = "Clorofila";
 
 // Call to action
-"call-to-action.summary" = "Take a photo of the front";
-"call-to-action.ingredients" = "Take a photo of the ingredients";
-"call-to-action.nutrition" = "Take a photo of the nutrition facts";
+"call-to-action.summary" = "Toma una foto de la parte frontal";
+"call-to-action.ingredients" = "Toma una foto de los ingredientes";
+"call-to-action.nutrition" = "Haz una foto de los datos nutricionales";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.took-picture.front" = "Photo of the front ✅";
-"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.front" = "Toma una foto de la parte frontal ✅";
+"product.images.took-picture.ingredients" = "Foto de los ingredientes ✅";
+"product.images.took-picture.nutrition" = "Foto de la tabla nutricional ✅";
 
-"product.images.take-picture.front" = "Photo of the front";
-"product.images.take-picture.ingredients" = "Photo of the ingredients";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.front" = "Foto del frente";
+"product.images.take-picture.ingredients" = "Foto de los ingredientes";
+"product.images.take-picture.nutrition" = "Foto de la tabla nutricional";
 
 // Settings storyboard
 "settings.tab-bar.item" = "Configuración";
-"settings.allergies.title" = "Allergens alerts";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
+"settings.allergies.title" = "Alerta de alérgenos";
+"settings.allergies.description" = "Agregue alérgenos a esta lista para recibir una notificación cuando escanee un producto que lo contiene. \nTenga en cuenta que la información sobre sus alergias NUNCA se enviará al servidor de Open Food Facts. Además, tenga cuidado de que los datos no sean 100% confiables y que la detección no sea 100% precisa. Asegúrate de comprobar por ti mismo también!";
+"settings.allergies.add-button" = "Añadir un alérgeno";
 "settings.sections.information" = "Información";
 "settings.sections.discover" = "Descubrir";
 "settings.sections.contribute" = "Contribuir";
 "settings.sections.about" = "Acerca de";
-"settings.user-profile" = "Your contributor account";
+"settings.user-profile" = "Tu cuenta de colaborador";
 "settings.credits.title" = "Créditos";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Mostrar escanear en el inicio de la aplicación";
 "settings.sections.discover" = "Descubrir";
 "settings.contribute.how-to-contribute" = "Cómo contribuir";
@@ -291,7 +290,7 @@
 "settings.about.contact" = "Contacto";
 "settings.about.frequently-asked-questions" = "Preguntas frecuentes";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
+"settings.credits.text" = "Nuestra aplicación es posible gracias a los voluntarios, colaboradores y muchos otros que eligen crear y liberar su trabajo bajo licencias libres para Open Food Facts, .\n\nBajo el Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\nIconos \"Escaneo de código de barras\", \"Configuración\" y \"Flash\" diseñados por Madebyoliver (https: //www.flaticon. com / autor / madebyoliver)\nÍcono \"Take picture\" diseñado por Picol (http://www.flaticon.com/authors/picol)\nÍcono \"Profile\" diseñado por Smashicons (https://www.flaticon.com/authors / smashicons)\nÍcono \"Gregor Cresnar\" diseñado por Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\nÍcono \"Historial de búsqueda\" diseñado por Hadrien (https://www.flaticon.com/authors / hadrien)";
 
 // User view
 /* Tab bar item */
@@ -301,28 +300,28 @@
 "user.username" = "Usuario";
 "user.password" = "Contraseña";
 "user.forgot-password" = "Olvidé mi contraseña?";
-"user.check-your-contributions.button" = "View all your contributions";
-"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
+"user.check-your-contributions.button" = "Ver todas tus contribuciones";
+"user.products-pending-upload.button" = "Productos pendientes de subir a Open Food Facts";
 "user.create-account.text" = "Si no tiene una cuenta, haga clic en el siguiente enlace para crear una.";
-"user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.create-account.button" = "Crear una cuenta";
+"user.why-log-in.text" = "Iniciar sesión con su cuenta te dará crédito por todas tus contribuciones a la transparencia de los alimentos.";
 "user.alert.wrong-credentials.title" = "Falla al iniciar sesión";
 "user.alert.wrong-credentials.subtitle" = "Verifique que su nombre de usuario y contraseña sean correctos";
 "user.alert.generic-error.title" = "Hubo un error al iniciar sesión";
 "user.alert.generic-error.subtitle" = "Por favor intente de nuevamente en algunos momentos";
 "user.alert.logout-confirmation.title" = "Confirmar el cierre de sesión";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
+"user.alert.logout-confirmation.subtitle" = "¿Está seguro de que desea cerrar sesión?";
 "user.alert.username-missing" = "Usuario es requerido";
 "user.alert.password-missing" = "Contraseña es requerida";
-"pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.info.text" = "Estos son productos que añadiste mientras no estás conectado.\n\nLa aplicación intentará subirlos automáticamente cuando estés en línea o puedes intentar subirlos manualmente pulsando el botón en la esquina superior derecha.";
 "pending-upload.hud.status" = "Subiendo";
 
 // Search history
-"history.title" = "Search history";
+"history.title" = "Historial de búsquedas";
 "history.cell.privacy" = "Su historial de búsqueda solo se almacena en su dispositivo";
 "history.button.clear" = "Limpiar";
-"history.clear.confirmation-title" = "Clear your history ?";
-"history.clear.confirmation-message" = "All your history will be deleted";
+"history.clear.confirmation-title" = "¿Borrar tu historial?";
+"history.clear.confirmation-message" = "Todo tu historial será eliminado";
 "history.section-titles.last24h" = "Últimas 24 horas";
 "history.section-titles.fewDays" = "Hace unos días";
 "history.section-titles.fewWeeks" = "Hace unas semanas";

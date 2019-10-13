@@ -15,7 +15,7 @@
 "generic.cancel" = "Скасувати";
 "generic.save" = "Зберегти";
 "generic.cancel" = "Скасувати";
-"generic.ok" = "Ok";
+"generic.ok" = "Гаразд";
 
 // Product Search
 
@@ -84,7 +84,7 @@
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
 
-"alert.action.ok" = "Ok";
+"alert.action.ok" = "Гаразд";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Product name";
@@ -94,6 +94,7 @@
 "product-add.placeholder.quantity" = "Quantity";
 
 "product-add.title" = "New product";
+"product-add.title-edit" = "Редагувати товар";
 "product-add.titles.barcode" = "Код товару";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
@@ -183,13 +184,14 @@
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
+"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "мала кількість";
 "nutrition-level.moderate" = "помірна кількість";
 "nutrition-level.high" = "велика кількість";
 
 // Nutrition
 "nutrition.energy" = "Енергетична цінність";
-"nutrition.fats" = "Fats";
+"nutrition.fats" = "Жири";
 "nutrition.fats.saturated-fat" = "Насичені жири";
 "nutrition.fats.mono-unsaturated-fat" = "Мононенасичені жири";
 "nutrition.fats.poly-unsaturated-fat" = "Поліненасичені жири";
@@ -280,9 +282,6 @@
 "settings.sections.about" = "Про додаток";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
-"settings.contact.message" = "Thank you for contacting us.";
-"settings.contact-alert.title" = "Could not send E-mail";
-"settings.contact-alert.message" = "Your device could not send an E-mail.  Please check your E-mail configuration and try again.";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
 "settings.sections.discover" = "Дізнатись більше";
 "settings.contribute.how-to-contribute" = "How To Contribute";

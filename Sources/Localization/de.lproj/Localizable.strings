@@ -21,7 +21,7 @@
 
 "product-search.title" = "Suchen";
 "product-search.search-placeholder" = "Nach Name oder E-Mail-Adresse suchen";
-"product-search.no-results" = "Keine Ergebnisse. Sie können ein Produkt zu Open Food Facts hinzufügen, indem Sie es scannen.";
+"product-search.no-results" = "Keine Ergebnisse. Sie können ein Produkt zu Open Food Facts hinzufügen, indem Sie es einlesen.";
 "product-search.error-view.title" = "Ein Problem ist aufgetreten ";
 "product-search.error-view.subtitle" = "Bitte versuchen Sie es erneut";
 "product-search.initial-view.slogan" = "die freie Lebensmitteldatenbank";
@@ -34,29 +34,29 @@
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Ein Fehler ist beim Einlesen des Strichcodes aufgetreten. Bitte versuchen Sie es nach einer kurzen Weile erneut.";
-"product-scanner.barcode-notfound.manual-enter" = "Kein Barcode gefunden. Sie können ihn manuell eingeben:";
+"product-scanner.barcode.error" = "Fehler beim Einlesen des Strichcodes. Bitte versuchen Sie es in wenigen Augenblicken erneut";
+"product-scanner.barcode-notfound.manual-enter" = "Kein Strichcode gefunden. Sie können ihn manuell eingeben:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts benötigt die Berechtigung, die Kamera verwenden zu dürfen";
-"product-scanner.permissions.noPermissions.message" = "Bitte erteilen Sie die Erlaubnis, die Kamera Barcodes scannen zu lassen";
+"product-scanner.permissions.noPermissions.message" = "Bitte erteilen Sie die Erlaubnis, dass die Kamera Strichcodes einlesen darf";
 "product-scanner.permissions.noPermissions.action.title" = "Einstellungen öffnen";
 
-"product-scanner.permissions.failed.title" = "Barcode-Scan konnte nicht gestartet werden.";
-"product-scanner.permissions.failed.message" = "Stellen Sie in den Datenschutzeinstellungen sicher, dass Open Food Facts die Berechtigung, die Kamera verwenden zu dürfen, hat";
+"product-scanner.permissions.failed.title" = "Das Einlesen von Strichcodes konnte nicht gestartet werden.";
+"product-scanner.permissions.failed.message" = "Stellen Sie in den Datenschutzeinstellungen sicher, dass Open Food Facts die Berechtigung hat, die Kamera verwenden zu dürfen";
 "product-scanner.permissions.failed.action.title" = "Einlesen von Strichcodes beenden";
 
-"product-scanner.search.status" = "Produkt wird geladen…";
+"product-scanner.search.status" = "Produkt wird geladen …";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Foto wird hochgeladen…";
+"product-add.uploading-image-banner.title" = "Foto wird hochgeladen …";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Ein Problem ist aufgetreten ";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Versuchen, das Foto erneut aufzunehmen";
+"product-add.image-upload-error-banner.subtitle" = "Bitte versuchen Sie, das Foto erneut aufzunehmen";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
 "product-add.image-upload-success-banner.title" = "Foto wurde erfolgreich hochgeladen";
-"product-add.image-save-success-banner.title" = "Das Bild wird hochgeladen, wenn Sie online sind";
+"product-add.image-save-success-banner.title" = "Das Foto wird hochgeladen, sobald es online sind";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "Das Produkt wurde erfolgreich hinzugefügt. Vielen Dank!";
 "product-add.uploaded-image" = "Foto wurde hochgeladen. Vielen Dank!";
@@ -64,7 +64,7 @@
 "product-add.save-error.message" = "Bitte versuchen Sie es später noch einmal";
 "product-add.save-info.success" = "Informationen gespeichert am";
 "product-add.save-info.error" = "Informationen nicht gespeichert";
-"product-add.save-info.saving" = "Produktinformation werden gespeichert…";
+"product-add.save-info.saving" = "Produktinformation werden gespeichert …";
 "product-add.save-info.not-yet" = "Informationen noch nicht gespeichert";
 "product-add.save-ingredients.success" = "Zutaten gespeichert am";
 "product-add.save-ingredients.error" = "Zutaten nicht gespeichert";
@@ -74,12 +74,12 @@
 "product-add.save-nutriments.error" = "Nährstoffe nicht gespeichert";
 "product-add.save-nutriments.saving" = "Nährstoffe werden gespeichert …";
 "product-add.save-nutriments.not-yet" = "Nährstoffe sind noch nicht gespeichert";
-"product-add.no-nutrition" = "Die Nährwertdaten werden nicht auf dem Produkt angezeigt";
+"product-add.no-nutrition" = "Keine Nährwertangaben auf dem Produkt vorhanden";
 
-"product-add.ocr-ingredients.success" = "Aus dem Bild gelesene Zutaten am";
-"product-add.ocr-ingredients.error" = "Konnte Zutaten aus dem Bild nicht extrahieren";
-"product-add.ocr-ingredients.saving" = "Zutaten werden aus dem Bild extrahiert…";
-"product-add.ocr-ingredients.not-yet" = "Warten auf ein Zutatenbild, das analysiert werden soll";
+"product-add.ocr-ingredients.success" = "Zutaten aus dem Foto gelesen am";
+"product-add.ocr-ingredients.error" = "Zutaten konnten nicht aus dem Foto gelesen werden";
+"product-add.ocr-ingredients.saving" = "Zutaten werden aus dem Foto gelesen …";
+"product-add.ocr-ingredients.not-yet" = "Warten auf das zu analysierend Foto der Zutatenliste";
 
 "product-add.nutriscore-explaination" = "Der Nutri-Score wurde gerade aus der Nährstofftabelle berechnet";
 "product-add.novagroup-explaination" = "Die NOVA-Gruppe wurde gerade basierend auf der Zutatenliste berechnet";
@@ -94,6 +94,7 @@
 "product-add.placeholder.quantity" = "Mengenangabe";
 
 "product-add.title" = "Neues Produkt";
+"product-add.title-edit" = "Produkt bearbeiten";
 "product-add.titles.barcode" = "Strichcode";
 "product-add.titles.top-explainations" = "Gut gemacht! Dieses Produkt ist noch nicht in Open Food Facts enthalten. Können Sie bitte einige Fotos des Produkts, der Zutatenliste und der Nährwertangaben machen, um es zu Open Food Facts hinzuzufügen.";
 "product-add.titles.license-explaination" = "Hinweis: die von Ihnen eingesandten Fotos werden unter der freien Lizenz „Creative Commons Attribution und ShareAlike” veröffentlicht.";
@@ -114,7 +115,7 @@
 "product-add.nutritive.too-much" = "Mehr als 100 g?";
 
 "product-add.description.ingredients" = "Vervollständigen Sie die Zutaten, um die NOVA-Gruppe über die Lebensmittelverarbeitung zu gewinnen";
-"product-add.titles.ingredients" = "Inhaltsstoffe";
+"product-add.titles.ingredients" = "Zutaten";
 "product-add.ingredients.explaination" = "Machen Sie ein Foto von der Zutatenliste, um die Zutaten automatisch zu extrahieren. Überprüfen Sie es sorgfältig und vergessen Sie nicht, es zu speichern.";
 "product-add.ingredients.button-delete" = "Zu schlecht, ignorieren";
 "product-add.ingredients.button-save" = "Sieht gut aus, speichern";
@@ -183,6 +184,7 @@
 "product-detail.nutrition-table.serving" = "Portionen";
 
 // Nutrition levels
+"nutrition-level.title" = "Nährstoffgehalt je 100g/100ml";
 "nutrition-level.low" = "in geringer Menge";
 "nutrition-level.moderate" = "in mäßiger Menge";
 "nutrition-level.high" = "in großen Mengen";
@@ -280,9 +282,6 @@
 "settings.sections.about" = "Über";
 "settings.user-profile" = "Ihr Beitragskonto";
 "settings.credits.title" = "Danksagungen";
-"settings.contact.message" = "Vielen Dank für die Kontaktaufnahme.";
-"settings.contact-alert.title" = "Nachricht konnte nicht gesendet werden";
-"settings.contact-alert.message" = "Ihr Gerät konnte keine Nachricht senden.  Bitte überprüfen Sie die E-Mail-Einstellungen und versuche Sie es erneut.";
 "settings.scan-on-launch.title" = "Erfassung direkt beim Start anzeigen";
 "settings.sections.discover" = "Entdecken";
 "settings.contribute.how-to-contribute" = "Wie Sie mitwirken können";
