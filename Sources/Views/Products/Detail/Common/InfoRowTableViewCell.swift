@@ -48,12 +48,12 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
         }
         var regular: [NSAttributedStringKey:Any] = [:]
         if #available(iOS 13.0, *) {
-            regular = [NSAttributedStringKey.foregroundColor: UIColor.systemBackground, NSAttributedStringKey.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
+            regular = [NSAttributedStringKey.foregroundColor: UIColor.label, NSAttributedStringKey.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
         } else {
             regular = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
         }
         highlightedText.addAttributes(regular, range: originalText.string.nsrange)
-
+ 
         do {
             let regex = try NSRegularExpression(pattern: boldWordsPattern)
             let matches = regex.matches(in: originalText.string, range: originalText.string.nsrange)
