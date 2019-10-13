@@ -53,7 +53,7 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
             regular = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
         }
         highlightedText.addAttributes(regular, range: originalText.string.nsrange)
-
+ 
         do {
             let regex = try NSRegularExpression(pattern: boldWordsPattern)
             let matches = regex.matches(in: originalText.string, range: originalText.string.nsrange)
