@@ -20,8 +20,16 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         super.viewDidLoad()
 
         buttonBarView.register(UINib(nibName: "ButtonBarView", bundle: nil), forCellWithReuseIdentifier: "Cell")
-        buttonBarView.backgroundColor = .white
-        settings.style.selectedBarBackgroundColor = .white
+        if #available(iOS 13.0, *) {
+            buttonBarView.backgroundColor = .systemBackground
+        } else {
+            buttonBarView.backgroundColor = .white
+        }
+        if #available(iOS 13.0, *) {
+            settings.style.selectedBarBackgroundColor = .secondarySystemBackground
+        } else {
+            settings.style.selectedBarBackgroundColor = .white
+        }
         buttonBarView.selectedBar.backgroundColor = self.view.tintColor
     }
 
