@@ -23,7 +23,11 @@ class PictureTableViewCell: UITableViewCell {
     }
 
     func configure(viewModel: PictureViewModel) {
-        activityIndicator.color = UIColor.black
+        if #available(iOS 13.0, *) {
+            activityIndicator.color = UIColor.label
+        } else {
+            activityIndicator.color = UIColor.black
+        }
 
         if viewModel.isUploading {
             UIView.animate(withDuration: 0.2) {
