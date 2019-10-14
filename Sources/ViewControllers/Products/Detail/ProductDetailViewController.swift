@@ -185,8 +185,53 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
         }
+        createFormRow(with: &rows, item: product.traces?.map({ (trace: Tag) -> NSAttributedString in
+            if let trace = dataManager.allergen(forTag: trace) {
+                if let name = Tag.choose(inTags: Array(trace.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forAllergen: trace)])
+                }
+            }
+            return NSAttributedString(string: trace.value.capitalized)
+        }), label: InfoRowKey.traces.localizedString)
+        
+        createFormRow(with: &rows, item: product.vitamins?.map({ (vitamin: Tag) -> NSAttributedString in
+            if let vitamin = dataManager.vitamin(forTag: vitamin) {
+                if let name = Tag.choose(inTags: Array(vitamin.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forVitamin: vitamin)])
+                }
+            }
+            return NSAttributedString(string: vitamin.value.capitalized)
+        }), label: InfoRowKey.vitamins.localizedString)
+        
+        createFormRow(with: &rows, item: product.minerals?.map({ (mineral: Tag) -> NSAttributedString in
+            if let mineral = dataManager.mineral(forTag: mineral) {
+                if let name = Tag.choose(inTags: Array(mineral.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forMineral: mineral)])
+                }
+            }
+            return NSAttributedString(string: mineral.value.capitalized)
+        }), label: InfoRowKey.minerals.localizedString)
+        
+        createFormRow(with: &rows, item: product.nucleotides?.map({ (nucleotide: Tag) -> NSAttributedString in
+            if let nucleotide = dataManager.nucleotide(forTag: nucleotide) {
+                if let name = Tag.choose(inTags: Array(nucleotide.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forNucleotide: nucleotide)])
+                }
+            }
+            return NSAttributedString(string: nucleotide.value.capitalized)
+        }), label: InfoRowKey.nucleotidesList.localizedString)
 
-        createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
+        createFormRow(with: &rows, item: product.otherNutrients?.map({ (other: Tag) -> NSAttributedString in
+            if let other = dataManager.allergen(forTag: other) {
+                if let name = Tag.choose(inTags: Array(other.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: URL(string:"https:world-en.openfoodfacts.org")!])
+                }
+            }
+            return NSAttributedString(string: other.value.capitalized)
+        }), label: InfoRowKey.otherNutritionalSubstances.localizedString)
+
+        
+        //createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
 
         createAdditivesRows(with: &rows, product: product)
 
