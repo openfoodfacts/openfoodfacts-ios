@@ -107,16 +107,16 @@
 "product-add.label.quantity-example" = "25 г, 10 унций, 5 мл…";
 "product-add.label.language" = "Языки";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.description.nutritive" = "Для оценки питательности продукта (Nutri-Score), укажите его категорию и данные по пищевой и энергетической ценности";
 "product-add.titles.nutritive" = "Пищевая ценность";
 "product-add.nutritive.choice.per-hundred-grams" = "в 100 г/100 мл";
 "product-add.nutritive.choice.per-portion" = "на порцию";
 "product-add.nutritive.add-nutriment" = "Добавить питательное вещество";
 "product-add.nutritive.too-much" = "Более 100 г?";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "Для определения степени обработки продукта по классификации NOVA, укажите состав продукта";
 "product-add.titles.ingredients" = "Ингредиенты";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
+"product-add.ingredients.explaination" = "Чтобы автоматически заполнить данные по ингредиентам, сфотографируйте список ингредиентов. Внимательно проверьте список и не забудьте сохранить.";
 "product-add.ingredients.button-delete" = "Слишком плохо, игнорировать";
 "product-add.ingredients.button-save" = "Выглядит хорошо, сохранить";
 
@@ -165,8 +165,8 @@
 "product-detail.ingredients.ingredients-list" = "Список ингредиентов";
 "product-detail.ingredients.allergens-list" = "Вещества или продукты, вызывающие аллергию или непереносимость";
 "product-detail.ingredients.allergens-alert.title" = "Содержит аллергены!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-list.missing-infos" = "У этого продукта еще не указаны ингредиенты, поэтому определить аллерген невозможно.";
+"product-detail.ingredients.allergens-list.offline-product" = "Этот продукт загружен без подключения к Интернету, поэтому определить аллерген невозможно.";
 "product-detail.ingredients.traces-list" = "Следы";
 "product-detail.ingredients.additives-list" = "Добавки";
 "product-detail.ingredients.palm-oil-ingredients" = "Ингредиенты из пальмового масла";
@@ -184,7 +184,7 @@
 "product-detail.nutrition-table.serving" = "порция";
 
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
+"nutrition-level.title" = "Пищевая ценность на 100 г/100 мл";
 "nutrition-level.low" = "в малом количестве";
 "nutrition-level.moderate" = "в умеренном количестве";
 "nutrition-level.high" = "в большом количестве";
@@ -263,13 +263,13 @@
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.took-picture.front" = "Photo of the front ✅";
+"product.images.took-picture.front" = "Фото лицевой стороны";
 "product.images.took-picture.ingredients" = "Фото ингредиентов ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.nutrition" = "Фото таблицы пищевой и энергетической ценности";
 
-"product.images.take-picture.front" = "Photo of the front";
+"product.images.take-picture.front" = "Фото лицевой стороны";
 "product.images.take-picture.ingredients" = "Фото ингредиентов";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.nutrition" = "Фото таблицы пищевой и энергетической ценности";
 
 // Settings storyboard
 "settings.tab-bar.item" = "Настройки";
