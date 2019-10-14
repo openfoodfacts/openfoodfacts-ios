@@ -29,7 +29,7 @@ enum InfoRowKey: LocalizedString {
     case ingredientsList = "product-detail.ingredients.ingredients-list"
     case allergens = "product-detail.ingredients.allergens-list"
     case traces = "product-detail.ingredients.traces-list"
-    case vitamins = "product-detail.ingredients.vitmins-list"
+    case vitamins = "product-detail.ingredients.vitamins-list"
     case minerals = "product-detail.ingredients.minerals-list"
     case nucleotidesList = "product-detail.ingredients.nucleotides-list"
     case otherNutritionalSubstances = "product-detail.ingredients.otherNutritionalSubstances-list"
