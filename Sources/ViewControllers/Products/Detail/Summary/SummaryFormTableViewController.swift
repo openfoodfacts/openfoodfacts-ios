@@ -31,8 +31,8 @@ class SummaryFormTableViewController: FormTableViewController {
             cell.hostedView = summaryHeaderCellController.view
             self.summaryHeaderCellController = summaryHeaderCellController
 
-            self.addChildViewController(summaryHeaderCellController)
-            summaryHeaderCellController.didMove(toParentViewController: self)
+            self.addChild(summaryHeaderCellController)
+            summaryHeaderCellController.didMove(toParent: self)
 
             return cell
         } else if formRow.cellType is SummaryFooterCell.Type, let product = formRow.value as? Product {
@@ -43,8 +43,8 @@ class SummaryFormTableViewController: FormTableViewController {
             cell.hostedView = summaryFooterCellController.view
             self.summaryFooterCellController = summaryFooterCellController
 
-            self.addChildViewController(summaryFooterCellController)
-            summaryFooterCellController.didMove(toParentViewController: self)
+            self.addChild(summaryFooterCellController)
+            summaryFooterCellController.didMove(toParent: self)
 
             return cell
         } else {
@@ -54,23 +54,23 @@ class SummaryFormTableViewController: FormTableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell is SummaryHeaderCell, let summaryHeaderCellController = summaryHeaderCellController {
-            self.addChildViewController(summaryHeaderCellController)
-            summaryHeaderCellController.didMove(toParentViewController: self)
+            self.addChild(summaryHeaderCellController)
+            summaryHeaderCellController.didMove(toParent: self)
         } else if cell is SummaryFooterCell, let summaryFooterCellController = summaryFooterCellController {
-            self.addChildViewController(summaryFooterCellController)
-            summaryFooterCellController.didMove(toParentViewController: self)
+            self.addChild(summaryFooterCellController)
+            summaryFooterCellController.didMove(toParent: self)
         }
     }
 
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell is SummaryHeaderCell {
             self.summaryHeaderCellController?.view.removeFromSuperview()
-            self.summaryHeaderCellController?.willMove(toParentViewController: nil)
-            self.summaryHeaderCellController?.removeFromParentViewController()
+            self.summaryHeaderCellController?.willMove(toParent: nil)
+            self.summaryHeaderCellController?.removeFromParent()
         } else if cell is SummaryFooterCell {
             self.summaryFooterCellController?.view.removeFromSuperview()
-            self.summaryFooterCellController?.willMove(toParentViewController: nil)
-            self.summaryFooterCellController?.removeFromParentViewController()
+            self.summaryFooterCellController?.willMove(toParent: nil)
+            self.summaryFooterCellController?.removeFromParent()
         }
     }
 }

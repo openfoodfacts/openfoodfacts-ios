@@ -44,8 +44,8 @@ class CameraControllerImpl: NSObject, CameraController {
 }
 
 extension CameraControllerImpl: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             if imageType == .ingredients {
                 dismiss()
                 let cropViewController = TOCropViewController(image: image)

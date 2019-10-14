@@ -13,8 +13,8 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
 
     @IBOutlet weak var textView: UITextView!
     private static let textSize: CGFloat = 17
-    private let bold = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: textSize)]
-    private let regular = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: textSize)]
+    private let bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: textSize)]
+    private let regular = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: textSize)]
     private let boldWordsPattern = "(_\\w+_)"
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
