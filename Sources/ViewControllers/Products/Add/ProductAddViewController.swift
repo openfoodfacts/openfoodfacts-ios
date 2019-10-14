@@ -89,9 +89,10 @@ class ProductAddViewController: TakePictureViewController {
 
     var productToEdit: Product? {
         didSet {
-            //if let barcode = productToEdit?.barcode {
-            //    self.barcode = barcode
-            //}
+            // has a barcode been passed on from the scanner?
+            if let barcode = productToEdit?.barcode {
+                self.barcode = barcode
+            }
         }
     }
 
