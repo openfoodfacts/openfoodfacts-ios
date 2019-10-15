@@ -20,11 +20,11 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let rowLabel = formRow.label else { return }
         guard let value = formRow.getValueAsAttributedString() else { return }
-        var bold: [NSAttributedStringKey:Any] = [:]
+        var bold: [NSAttributedString.Key:Any] = [:]
         if #available(iOS 13.0, *) {
-            bold = [NSAttributedStringKey.foregroundColor: UIColor.label, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
         } else {
-            bold = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
         }
 
         let combination = NSMutableAttributedString()
@@ -42,17 +42,17 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
     /// - Returns: NSAttributedString with highlighted words
     private func makeWordsBold(for originalText: NSAttributedString) -> NSAttributedString {
         let highlightedText = NSMutableAttributedString(attributedString: originalText)
-        var bold: [NSAttributedStringKey:Any] = [:]
+        var bold: [NSAttributedString.Key:Any] = [:]
         if #available(iOS 13.0, *) {
-            bold = [NSAttributedStringKey.foregroundColor: UIColor.label, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
         } else {
-            bold = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
         }
-        var regular: [NSAttributedStringKey:Any] = [:]
+        var regular: [NSAttributedString.Key:Any] = [:]
         if #available(iOS 13.0, *) {
-            regular = [NSAttributedStringKey.foregroundColor: UIColor.label, NSAttributedStringKey.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
+            regular = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
         } else {
-            regular = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
+            regular = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
         }
         highlightedText.addAttributes(regular, range: originalText.string.nsrange)
  
