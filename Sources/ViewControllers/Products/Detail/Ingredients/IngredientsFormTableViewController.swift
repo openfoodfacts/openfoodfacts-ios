@@ -29,8 +29,8 @@ class IngredientsFormTableViewController: FormTableViewController {
             cell.hostedView = ingredientsHeaderCellController.view
             self.ingredientsHeaderCellController = ingredientsHeaderCellController
 
-            self.addChildViewController(ingredientsHeaderCellController)
-            ingredientsHeaderCellController.didMove(toParentViewController: self)
+            self.addChild(ingredientsHeaderCellController)
+            ingredientsHeaderCellController.didMove(toParent: self)
 
             return cell
         } else {
@@ -40,16 +40,16 @@ class IngredientsFormTableViewController: FormTableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell is HostedViewCell, let ingredientsHeaderCellController = ingredientsHeaderCellController {
-            self.addChildViewController(ingredientsHeaderCellController)
-            ingredientsHeaderCellController.didMove(toParentViewController: self)
+            self.addChild(ingredientsHeaderCellController)
+            ingredientsHeaderCellController.didMove(toParent: self)
         }
     }
 
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell is HostedViewCell {
             self.ingredientsHeaderCellController?.view.removeFromSuperview()
-            self.ingredientsHeaderCellController?.willMove(toParentViewController: nil)
-            self.ingredientsHeaderCellController?.removeFromParentViewController()
+            self.ingredientsHeaderCellController?.willMove(toParent: nil)
+            self.ingredientsHeaderCellController?.removeFromParent()
         }
     }
 }

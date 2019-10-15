@@ -346,8 +346,6 @@
 		30D77D9B22088F0F00B180E9 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
 		30DB17F422122E4A0010EE6F /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
 		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		512702DF21F0B076002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		512702E021F0B077002EC65C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		514EFA8B2230215F008FFD2A /* Vitamin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vitamin.swift; sourceTree = "<group>"; };
 		514EFA8D22302183008FFD2A /* Mineral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mineral.swift; sourceTree = "<group>"; };
 		514EFA8F223021A1008FFD2A /* Nucleotide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nucleotide.swift; sourceTree = "<group>"; };
@@ -1637,7 +1635,6 @@
 				951FA76E1F4E22790096AC5A /* UITests */,
 				95F1848B1F655BB500A544C2 /* TestResources */,
 				95C2650F1E96D55B004212EC /* Products */,
-				51707DE722BE7D2D007FF823 /* OpenFoodFacts copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3022,7 +3019,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -3050,7 +3047,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -3140,7 +3137,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};

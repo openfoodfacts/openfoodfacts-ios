@@ -10,16 +10,16 @@ import UIKit
 
 extension UIImage {
     func rotateRight() -> UIImage? {
-        var orientation = UIImageOrientation.up
+        var orientation = UIImage.Orientation.up
         switch self.imageOrientation {
         case .up:
-            orientation = UIImageOrientation.right
+            orientation = UIImage.Orientation.right
         case .right:
-            orientation = UIImageOrientation.down
+            orientation = UIImage.Orientation.down
         case .down:
-            orientation = UIImageOrientation.left
+            orientation = UIImage.Orientation.left
         case .left:
-            orientation = UIImageOrientation.up
+            orientation = UIImage.Orientation.up
         default:
             break
         }
@@ -28,16 +28,16 @@ extension UIImage {
     }
 
     func rotateLeft() -> UIImage? {
-        var orientation = UIImageOrientation.up
+        var orientation = UIImage.Orientation.up
         switch self.imageOrientation {
         case .up:
-            orientation = UIImageOrientation.left
+            orientation = UIImage.Orientation.left
         case .left:
-            orientation = UIImageOrientation.down
+            orientation = UIImage.Orientation.down
         case .down:
-            orientation = UIImageOrientation.right
+            orientation = UIImage.Orientation.right
         case .right:
-            orientation = UIImageOrientation.up
+            orientation = UIImage.Orientation.up
         default:
             break
         }
