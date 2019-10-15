@@ -23,10 +23,14 @@ class CreditsViewController: UIViewController {
 
     private func setupWebView() {
         webView = UIWebView(frame: .zero)
-        webView.backgroundColor = .red
+        if #available(iOS 13.0, *) {
+            webView.backgroundColor = .systemBackground
+        } else {
+            webView.backgroundColor = .white
+        }
         webView.clipsToBounds = true
         webView.delegate = self
-        webView.scrollView.indicatorStyle = .white
+        webView.scrollView.indicatorStyle = .default
         self.view.addSubview(webView)
         webView.snp.makeConstraints { (make) in
             if #available(iOS 11.0, *) {
