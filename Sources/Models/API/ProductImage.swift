@@ -54,7 +54,7 @@ struct ProductImage {
     }
 
     private func saveImage(_ image: UIImage) -> String? {
-        guard let data = UIImageJPEGRepresentation(image, 1.0) else {
+        guard let data = image.jpegData(compressionQuality: 1.0) else {
             let error = NSError(domain: Errors.domain, code: Errors.codes.generic.rawValue, userInfo: [
                 "imageType": type.rawValue,
                 "fileName": fileName,

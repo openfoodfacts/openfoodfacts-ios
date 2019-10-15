@@ -38,8 +38,8 @@ class SelectTaxonomyViewController<T: Object>: UIViewController, UISearchBarDele
         super.viewWillAppear(animated)
 
         let center = NotificationCenter.default
-        center.addObserver(self, selector: #selector(keyboardWillBeShown(note:)), name: .UIKeyboardWillShow, object: nil)
-        center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: .UIKeyboardWillHide, object: nil)
+        center.addObserver(self, selector: #selector(keyboardWillBeShown(note:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         searchBar.becomeFirstResponder()
 
@@ -50,8 +50,8 @@ class SelectTaxonomyViewController<T: Object>: UIViewController, UISearchBarDele
         observeToken = nil
 
         let center = NotificationCenter.default
-        center.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        center.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        center.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        center.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
 
         super.viewWillDisappear(animated)
     }
@@ -59,7 +59,7 @@ class SelectTaxonomyViewController<T: Object>: UIViewController, UISearchBarDele
     @objc func keyboardWillBeShown(note: Notification) {
         let userInfo = note.userInfo
         // swiftlint:disable:next force_cast
-        let keyboardFrame = userInfo?[UIKeyboardFrameEndUserInfoKey] as! CGRect
+        let keyboardFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
         let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
         tableView.contentInset = contentInset
         tableView.scrollIndicatorInsets = contentInset

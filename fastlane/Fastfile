@@ -6,7 +6,7 @@ default_platform :ios
 
 desc "Run all the tests"
 lane :test do
-  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true, use_binaries: false)
   if !is_ci
     sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool no")
   end
