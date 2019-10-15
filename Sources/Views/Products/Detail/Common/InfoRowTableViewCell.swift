@@ -20,6 +20,12 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let rowLabel = formRow.label else { return }
         guard let value = formRow.getValueAsAttributedString() else { return }
+        var bold: [NSAttributedStringKey:Any] = [:]
+        if #available(iOS 13.0, *) {
+            bold = [NSAttributedStringKey.foregroundColor: UIColor.label, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+        } else {
+            bold = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+        }
 
         let combination = NSMutableAttributedString()
         combination.append(NSAttributedString(string: rowLabel + ": ", attributes: bold))
@@ -36,8 +42,20 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
     /// - Returns: NSAttributedString with highlighted words
     private func makeWordsBold(for originalText: NSAttributedString) -> NSAttributedString {
         let highlightedText = NSMutableAttributedString(attributedString: originalText)
+        var bold: [NSAttributedStringKey:Any] = [:]
+        if #available(iOS 13.0, *) {
+            bold = [NSAttributedStringKey.foregroundColor: UIColor.label, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+        } else {
+            bold = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+        }
+        var regular: [NSAttributedStringKey:Any] = [:]
+        if #available(iOS 13.0, *) {
+            regular = [NSAttributedStringKey.foregroundColor: UIColor.label, NSAttributedStringKey.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
+        } else {
+            regular = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
+        }
         highlightedText.addAttributes(regular, range: originalText.string.nsrange)
-
+ 
         do {
             let regex = try NSRegularExpression(pattern: boldWordsPattern)
             let matches = regex.matches(in: originalText.string, range: originalText.string.nsrange)
