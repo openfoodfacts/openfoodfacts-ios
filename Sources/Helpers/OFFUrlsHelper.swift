@@ -44,6 +44,6 @@ class OFFUrlsHelper: NSObject {
      }
      */
     static func url(forEmbCodeTag tag: String) -> URL {
-        return URL(string: "\(baseUrl)/packager-code/\(tag)")!
+        return URL(string: "\(baseUrl)/packager-code/\(tag)") ?? URL(string: "\(baseUrl)/packager-codes/") ?? URL(string: "\(baseUrl)/")!
     }
 }
