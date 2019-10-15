@@ -23,7 +23,7 @@ class CreditsViewController: UIViewController {
 
     private func setupWebView() {
         webView = UIWebView(frame: .zero)
-        webView.backgroundColor = .white
+        webView.backgroundColor = .red
         webView.clipsToBounds = true
         webView.delegate = self
         webView.scrollView.indicatorStyle = .white
