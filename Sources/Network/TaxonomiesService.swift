@@ -15,14 +15,15 @@ enum TaxonomiesRouter: URLRequestConvertible {
 
     var path: String {
         switch self {
-        case .getAllergens: return "/allergens.json"
-        case .getAdditives: return "/additives.json"
-        case .getCategories: return "/categories.json"
-        case .getNutriments: return "/nutrients.json"
-        case .getVitamins: return "/vitamins.json"
-        case .getMinerals: return "/minerals.json"
-        case .getNucleotides: return "/nucleotides.json"
-        // case .getOtherNutritionalSubstances: return "/otherNutritionalSubstances.json"
+        case .getAllergens: return "allergens.json"
+        case .getAdditives: return "additives.json"
+        case .getCategories: return "categories.json"
+        case .getNutriments: return "nutrients.json"
+        case .getVitamins: return "vitamins.json"
+        case .getMinerals: return "minerals.json"
+        case .getNucleotides: return "nucleotides.json"
+            // what is up with this url?
+        // case .getOtherNutritionalSubstances: return "otherNutritionalSubstances.json"
         }
     }
 
