@@ -11,7 +11,7 @@ import NotificationBanner
 
 class TakePictureViewController: UIViewController {
     var dataManager: DataManagerProtocol!
-    var barcode: String!
+    var barcode: String?
     var imageType: ImageType = .front
     var cameraController: CameraController?
 
@@ -68,7 +68,7 @@ extension TakePictureViewController: CameraControllerDelegate {
         // For now, images will be always uploaded with type front
         showUploadingImage(forType: imageType)
 
-        guard let productImage = ProductImage(barcode: barcode, image: image, type: imageType ?? .front) else {
+        guard let validBarcode = barcode, let productImage = ProductImage(barcode: validBarcode, image: image, type: imageType ?? .front) else {
             showErrorUploadingImage(forType: imageType)
             return
         }
