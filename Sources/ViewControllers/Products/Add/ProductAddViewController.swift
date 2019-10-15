@@ -89,9 +89,10 @@ class ProductAddViewController: TakePictureViewController {
 
     var productToEdit: Product? {
         didSet {
-            //if let barcode = productToEdit?.barcode {
-            //    self.barcode = barcode
-            //}
+            // has a barcode been passed on from the scanner?
+            if let barcode = productToEdit?.barcode {
+                self.barcode = barcode
+            }
         }
     }
 
@@ -476,8 +477,8 @@ class ProductAddViewController: TakePictureViewController {
 
     private func configureNotifications() {
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
@@ -647,7 +648,7 @@ extension ProductAddViewController {
     @objc func keyboardWillShow(notification: Notification) {
         let userInfo = notification.userInfo
         // swiftlint:disable:next force_cast
-        let keyboardFrame = userInfo?[UIKeyboardFrameEndUserInfoKey] as! CGRect
+        let keyboardFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
         let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
         scrollView.contentInset = contentInset
         scrollView.scrollIndicatorInsets = contentInset

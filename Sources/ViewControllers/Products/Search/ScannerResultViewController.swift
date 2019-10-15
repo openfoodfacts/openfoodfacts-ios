@@ -91,7 +91,7 @@ class ScannerResultViewController: UIViewController {
         productDetailVC.dataManager = dataManager
         productDetailVC.hideSummary = true
 
-        self.addChildViewController(productDetailVC)
+        self.addChild(productDetailVC)
         self.productDetailsContainer.addSubview(productDetailVC.view)
 
         productDetailVC.view.translatesAutoresizingMaskIntoConstraints = false
@@ -104,7 +104,7 @@ class ScannerResultViewController: UIViewController {
         productDetailVC.view.trailingAnchor
             .constraint(equalTo: productDetailsContainer.trailingAnchor).isActive = true
 
-        productDetailVC.didMove(toParentViewController: self)
+        productDetailVC.didMove(toParent: self)
 
         self.productDetailsContainer.isHidden = false
     }

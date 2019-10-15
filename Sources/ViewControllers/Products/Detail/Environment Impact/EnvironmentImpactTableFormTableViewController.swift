@@ -25,6 +25,8 @@ class EnvironmentImpactTableFormTableViewController: UIViewController {
 
         webView.backgroundColor = UIColor.white
         webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.delegate = self
+        
         self.view.addSubview(webView)
 
         self.view.addConstraints([
@@ -57,4 +59,10 @@ extension EnvironmentImpactTableFormTableViewController: IndicatorInfoProvider {
         return IndicatorInfo(title: "product-detail.page-title.environment-impact".localized)
     }
 
+}
+
+extension EnvironmentImpactTableFormTableViewController: UIWebViewDelegate {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.fontFamily =\"-apple-system\"")
+    }
 }

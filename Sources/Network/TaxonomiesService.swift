@@ -11,7 +11,7 @@ import AlamofireObjectMapper
 import Crashlytics
 
 enum TaxonomiesRouter: URLRequestConvertible {
-    case getAllergens, getAdditives, getCategories, getNutriments
+    case getAllergens, getAdditives, getCategories, getNutriments, getVitamins, getMinerals, getNucleotides // get OtherNutritionalSubstances
 
     var path: String {
         switch self {
@@ -19,6 +19,11 @@ enum TaxonomiesRouter: URLRequestConvertible {
         case .getAdditives: return "additives.json"
         case .getCategories: return "categories.json"
         case .getNutriments: return "nutrients.json"
+        case .getVitamins: return "vitamins.json"
+        case .getMinerals: return "minerals.json"
+        case .getNucleotides: return "nucleotides.json"
+            // what is up with this url?
+        // case .getOtherNutritionalSubstances: return "otherNutritionalSubstances.json"
         }
     }
 
@@ -102,6 +107,88 @@ class TaxonomiesService: TaxonomiesApi {
         }
     }
 
+    fileprivate func refreshVitamins(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getVitamins)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let vitamins = json.compactMap({ (vitaminCode: String, value: Any) -> Vitamin? in
+                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                return nil
+                            }
+                            let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return Vitamin(code: vitaminCode, names: names)
+                        })
+                        self.persistenceManager.save(vitamins: vitamins)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+                
+                callback(success)
+        }
+    }
+
+    fileprivate func refreshMinerals(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getMinerals)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let minerals = json.compactMap({ (mineralCode: String, value: Any) -> Mineral? in
+                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                return nil
+                            }
+                            let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return Mineral(code: mineralCode, names: names)
+                        })
+                        self.persistenceManager.save(minerals: minerals)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+
+                callback(success)
+        }
+    }
+
+    fileprivate func refreshNucleotides(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getNucleotides)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let nucleotides = json.compactMap({ (nucleotideCode: String, value: Any) -> Nucleotide? in
+                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                return nil
+                            }
+                            let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return Nucleotide(code: nucleotideCode, names: names)
+                        })
+                        self.persistenceManager.save(nucleotides: nucleotides)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+                
+                callback(success)
+        }
+    }
+
+    
     fileprivate func refreshNutriments(_ callback: @escaping (_: Bool) -> Void) {
         Alamofire.request(TaxonomiesRouter.getNutriments)
             .responseJSON { (response) in
@@ -186,6 +273,24 @@ class TaxonomiesService: TaxonomiesApi {
 
                 group.enter()
                 self.refreshAllergens({ (success) in
+                    allSuccess = allSuccess && success
+                    group.leave()
+                })
+
+                group.enter()
+                self.refreshVitamins({ (success) in
+                    allSuccess = allSuccess && success
+                    group.leave()
+                })
+
+                group.enter()
+                self.refreshMinerals({ (success) in
+                    allSuccess = allSuccess && success
+                    group.leave()
+                })
+
+                group.enter()
+                self.refreshNucleotides({ (success) in
                     allSuccess = allSuccess && success
                     group.leave()
                 })
