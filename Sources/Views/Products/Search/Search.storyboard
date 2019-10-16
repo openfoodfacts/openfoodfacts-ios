@@ -53,9 +53,10 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4X-gX-yB6">
                                 <rect key="frame" x="8" y="128" width="359" height="531"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nRK-pZ-yFo" firstAttribute="bottom" secondItem="Y4X-gX-yB6" secondAttribute="bottom" constant="8" id="3jB-Vj-JAA"/>
                             <constraint firstItem="nRK-pZ-yFo" firstAttribute="trailing" secondItem="Y4X-gX-yB6" secondAttribute="trailing" constant="8" id="4qB-78-YUB"/>
