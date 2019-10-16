@@ -23,7 +23,11 @@ class EnvironmentImpactTableFormTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        webView.backgroundColor = UIColor.white
+        if #available(iOS 13.0, *) {
+            webView.backgroundColor = UIColor.systemBackground
+        } else {
+            webView.backgroundColor = UIColor.white
+        }
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.delegate = self
         
