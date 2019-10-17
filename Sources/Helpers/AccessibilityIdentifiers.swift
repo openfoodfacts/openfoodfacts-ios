@@ -14,7 +14,6 @@ struct AccessibilityIdentifiers {
         static let detailIngredientsView = "productDetailIngredientsView"
         static let detailNutritionView = "productDetailNutritionView"
     }
-    
     struct Scan {
         static let manualBarcodeInputField = "scanManualBarcodeInputField"
         static let manualBarcodeConfirmButton = "scanManualBarcodeConfirmButton"
