@@ -19,7 +19,7 @@ class PictureTableViewControllerTests: XCTestCase {
 
     override func setUp() {
         let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: Bundle.main)
-        viewController = storyboard.instantiateViewController(withIdentifier: String(describing: PictureTableViewController.self)) as! PictureTableViewController
+        viewController = storyboard.instantiateViewController(withIdentifier: String(describing: PictureTableViewController.self)) as? PictureTableViewController
         navigationController = UINavigationControllerMock(rootViewController: viewController)
 
         dataManager = DataManagerMock()

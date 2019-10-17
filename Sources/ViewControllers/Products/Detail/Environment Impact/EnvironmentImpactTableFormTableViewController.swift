@@ -26,7 +26,7 @@ class EnvironmentImpactTableFormTableViewController: UIViewController {
         webView.backgroundColor = UIColor.white
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.delegate = self
-        
+
         self.view.addSubview(webView)
 
         self.view.addConstraints([

@@ -105,7 +105,6 @@ class AllergensAlertsTableViewController: UITableViewController {
     }
 }
 
-
 extension AllergensAlertsTableViewController: AllergensAddTableViewCellDelegate {
     func didTapAddButton() {
         let searchAllergenVC = SelectAllergenViewController(nibName: "SelectAllergenViewController", bundle: nil)

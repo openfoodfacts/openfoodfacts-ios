@@ -51,6 +51,7 @@
 		30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77D9B22088F0F00B180E9 /* Allergen.swift */; };
 		30DB17F522122E4A0010EE6F /* TOCropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB17F422122E4A0010EE6F /* TOCropViewController.framework */; };
 		30E43D78220895B100D7A906 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E43D77220895B100D7A906 /* Category.swift */; };
+		4CDF89802357F296007BA0A5 /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF897F2357F296007BA0A5 /* ProductTests.swift */; };
 		514EFA8C2230215F008FFD2A /* Vitamin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA8B2230215F008FFD2A /* Vitamin.swift */; };
 		514EFA8E22302183008FFD2A /* Mineral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA8D22302183008FFD2A /* Mineral.swift */; };
 		514EFA90223021A1008FFD2A /* Nucleotide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA8F223021A1008FFD2A /* Nucleotide.swift */; };
@@ -346,6 +347,7 @@
 		30D77D9B22088F0F00B180E9 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
 		30DB17F422122E4A0010EE6F /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
 		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		4CDF897F2357F296007BA0A5 /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
 		514EFA8B2230215F008FFD2A /* Vitamin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vitamin.swift; sourceTree = "<group>"; };
 		514EFA8D22302183008FFD2A /* Mineral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mineral.swift; sourceTree = "<group>"; };
 		514EFA8F223021A1008FFD2A /* Nucleotide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nucleotide.swift; sourceTree = "<group>"; };
@@ -1559,6 +1561,7 @@
 				954077881FEDA39A0058E15B /* PersistenceManagerMock.swift */,
 				9534360C1FFAA3E000B9BBB0 /* PendingProductMergeProcessorSpec.swift */,
 				958082AC1FFACD960076D926 /* ProductImageSpec.swift */,
+				4CDF897F2357F296007BA0A5 /* ProductTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1962,7 +1965,7 @@
 					951FA76C1F4E22790096AC5A = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = JVHN2X67GT;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 95C2650D1E96D55B004212EC;
 					};
@@ -1975,7 +1978,7 @@
 					95F31BE91F38F71D00B8AF90 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = JVHN2X67GT;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Manual;
 						TestTargetID = 95C2650D1E96D55B004212EC;
 					};
@@ -2534,6 +2537,7 @@
 				957D9C3C1F672CC9005C5AE0 /* UIImageTests.swift in Sources */,
 				9596B5131F45FAFB0076F52C /* SearchTableViewControllerTests.swift in Sources */,
 				957E5F401F768EAF00465BED /* ProductAddViewControllerTests.swift in Sources */,
+				4CDF89802357F296007BA0A5 /* ProductTests.swift in Sources */,
 				95387C741F93646D00EF3380 /* CredentialsControllerTests.swift in Sources */,
 				9534360E1FFAA4D700B9BBB0 /* PendingProductMergeProcessorSpec.swift in Sources */,
 				9523E7D81F817F3500622922 /* ArrayTests.swift in Sources */,
@@ -2855,7 +2859,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = OpenFoodFacts;
 			};
 			name = Debug;
@@ -2876,7 +2880,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = OpenFoodFacts;
 			};
 			name = Release;
@@ -3160,7 +3164,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenFoodFacts.app/OpenFoodFacts";
 			};
 			name = Testing;
@@ -3181,7 +3185,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = OpenFoodFacts;
 			};
 			name = Testing;
@@ -3204,7 +3208,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenFoodFacts.app/OpenFoodFacts";
 			};
 			name = Debug;
@@ -3227,7 +3231,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenFoodFacts.app/OpenFoodFacts";
 			};
 			name = Release;

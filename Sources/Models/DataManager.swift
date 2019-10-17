@@ -138,7 +138,7 @@ class DataManager: DataManagerProtocol {
     func allergen(forTag tag: Tag) -> Allergen? {
         return persistenceManager.allergen(forCode: tag.languageCode + ":" + tag.value)
     }
-    
+
     func trace(forTag tag: Tag) -> Allergen? {
         return persistenceManager.trace(forCode: tag.languageCode + ":" + tag.value)
     }

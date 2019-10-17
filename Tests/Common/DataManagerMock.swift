@@ -205,4 +205,33 @@ class DataManagerMock: DataManagerProtocol {
         getLanguagesCalled = true
         return [Language(code: "en", name: "English")]
     }
+
+    func getOfflineProduct(forCode: String) -> RealmOfflineProduct? {
+        return nil
+    }
+
+    func trace(forTag: Tag) -> Allergen? {
+        return nil
+    }
+
+    func vitamin(forTag: Tag) -> Vitamin? {
+        return nil
+    }
+
+    func mineral(forTag: Tag) -> Mineral? {
+        return nil
+    }
+
+    func nucleotide(forTag: Tag) -> Nucleotide? {
+        return nil
+    }
+
+    func other(forTag: Tag) -> OtherNutritionalSubstance? {
+        return nil
+    }
+
+    func offlineProductStatus() -> RealmOfflineProductStatus? {
+        return nil
+    }
+
 }

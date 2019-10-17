@@ -129,7 +129,7 @@ class TaxonomiesService: TaxonomiesApi {
                 case .failure(let error):
                     Crashlytics.sharedInstance().recordError(error)
                 }
-                
+
                 callback(success)
         }
     }
@@ -183,12 +183,11 @@ class TaxonomiesService: TaxonomiesApi {
                 case .failure(let error):
                     Crashlytics.sharedInstance().recordError(error)
                 }
-                
+
                 callback(success)
         }
     }
 
-    
     fileprivate func refreshNutriments(_ callback: @escaping (_: Bool) -> Void) {
         Alamofire.request(TaxonomiesRouter.getNutriments)
             .responseJSON { (response) in
@@ -260,64 +259,68 @@ class TaxonomiesService: TaxonomiesApi {
         let shouldDownload = lastDownload == 0 || (Date().timeIntervalSince1970 - TaxonomiesService.LAST_DOWNLOAD_DELAY) > lastDownload
 
         if shouldDownload {
-            DispatchQueue.global(qos: .utility).async {
-                let group = DispatchGroup()
-
-                var allSuccess = true
-
-                group.enter()
-                self.refreshCategories({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
-
-                group.enter()
-                self.refreshAllergens({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
-
-                group.enter()
-                self.refreshVitamins({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
-
-                group.enter()
-                self.refreshMinerals({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
-
-                group.enter()
-                self.refreshNucleotides({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
-
-                group.enter()
-                self.refreshNutriments({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
-
-                group.enter()
-                self.refreshAdditives({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
-
-                group.wait()
-
-                if allSuccess {
-                    log.debug("Taxonomies downloaded !")
-                    UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: TaxonomiesService.USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD)
-                } else {
-                    log.debug("It seems that there was some problem downloading one kind of taxonomy ? !")
-                }
-            }
+            downloadTaxonomies()
         } else {
             log.debug("Do not download taxonomies, we already have them !")
+        }
+    }
+
+    private func downloadTaxonomies() {
+        DispatchQueue.global(qos: .utility).async {
+            let group = DispatchGroup()
+
+            var allSuccess = true
+
+            group.enter()
+            self.refreshCategories({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshAllergens({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshVitamins({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshMinerals({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshNucleotides({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshNutriments({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshAdditives({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.wait()
+
+            if allSuccess {
+                log.debug("Taxonomies downloaded !")
+                UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: TaxonomiesService.USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD)
+            } else {
+                log.debug("It seems that there was some problem downloading one kind of taxonomy ? !")
+            }
         }
     }
 }
