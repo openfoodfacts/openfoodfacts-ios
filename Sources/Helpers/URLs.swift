@@ -23,7 +23,7 @@ struct URLs {
     static let TranslateOpenFoodFacts = "https://crowdin.com/project/openfoodfacts"
     static let FrequentlyAskedQuestions = "\(baseUrl)/faq"
     
-    static let MockBarcode = "\(staticBaseUrl)/files/presskit/PressKit/barcodes/"
+    static let MockBarcode = "\(baseUrl)/files/presskit/PressKit/barcodes/"
     
     static let ProductBaseURL: String = {
         return ProductBaseURLWithLanguagePlaceholder.replacingOccurrences(of: "LANGUAGE", with: Locale.current.languageCode!)

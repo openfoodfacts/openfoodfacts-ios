@@ -940,7 +940,6 @@
 				95D3559B1FDC63EA008961B1 /* RealmSwift.framework in Frameworks */,
 				95D3559C1FDC63EA008961B1 /* Realm.framework in Frameworks */,
 				9501634D1F2CEE700057B8D5 /* SnapKit.framework in Frameworks */,
-				48483BCF23284B7500693D3A /* MarqueeLabel.framework in Frameworks */,
 				9543129D1EEC57A1009F0621 /* ImageViewer.framework in Frameworks */,
 				957094BA1EA24DFC00268236 /* XLPagerTabStrip.framework in Frameworks */,
 				957094B11EA163CF00268236 /* Kingfisher.framework in Frameworks */,
@@ -953,7 +952,6 @@
 				302D0969225D125D00D733B4 /* Alamofire.framework in Frameworks */,
 				302D096A225D125D00D733B4 /* AlamofireObjectMapper.framework in Frameworks */,
 				9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */,
-				48221A3F2327FBFC00A324E2 /* AlamofireImage.framework in Frameworks */,
 				951D609F1F71C12D008E4BCC /* SVProgressHUD.framework in Frameworks */,
 				959530081F91408F00979613 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				9518681C1F93537000416226 /* KeychainAccess.framework in Frameworks */,
@@ -1014,21 +1012,9 @@
 			path = Scanner;
 			sourceTree = "<group>";
 		};
-		483E2FC02314762B008B0573 /* Snapshots */ = {
-			isa = PBXGroup;
-			children = (
-				483E2FCA231478A7008B0573 /* SnapshotHelper.swift */,
-				483E2FC12314762B008B0573 /* Snapshots.swift */,
-				483E2FC32314762B008B0573 /* Info.plist */,
-				483E2FDA23148C07008B0573 /* SnapshotConfiguration.swift */,
-			);
-			path = Snapshots;
-			sourceTree = "<group>";
-		};
 		48CEEE5D232588C100278640 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				48CEEE602325897100278640 /* BarcodeService.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -1683,7 +1669,6 @@
 				95C2650E1E96D55B004212EC /* OpenFoodFacts.app */,
 				95F31BEA1F38F71D00B8AF90 /* OpenFoodFactsTests.xctest */,
 				951FA76D1F4E22790096AC5A /* OpenFoodFactsUITests.xctest */,
-				483E2FBF2314762B008B0573 /* OpenFoodFactsSnapshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1713,8 +1698,6 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				48483BCE23284B7400693D3A /* MarqueeLabel.framework */,
-				48221A3E2327FBFC00A324E2 /* AlamofireImage.framework */,
 				3030EB85222E8A08005A6169 /* Zip.framework */,
 				30DB17F422122E4A0010EE6F /* TOCropViewController.framework */,
 				307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */,
@@ -1948,7 +1931,6 @@
 			);
 			name = OpenFoodFactsSnapshots;
 			productName = Snapshots;
-			productReference = 483E2FBF2314762B008B0573 /* OpenFoodFactsSnapshots.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		951FA76C1F4E22790096AC5A /* OpenFoodFactsUITests */ = {
@@ -2414,10 +2396,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				483E2FC22314762B008B0573 /* Snapshots.swift in Sources */,
-				483E2FCB231478A7008B0573 /* SnapshotHelper.swift in Sources */,
-				483E2FDB23148C07008B0573 /* SnapshotConfiguration.swift in Sources */,
-				48E0E4F4231AB88E0006EF81 /* AccessibilityIdentifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2490,7 +2468,6 @@
 				956FF95D1F1FF0CA0069D678 /* TapToFocusView.swift in Sources */,
 				956FF95E1F1FF0CA0069D678 /* TextOverlay.swift in Sources */,
 				95A5661A1FD6037800C997C8 /* LocalizableUIBarItem.swift in Sources */,
-				48CEEE612325897100278640 /* BarcodeService.swift in Sources */,
 				95A566191FD6037800C997C8 /* LocalizableLabel.swift in Sources */,
 				956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */,
 				953CDD5B1F92A12A0096C428 /* UserViewController.swift in Sources */,
@@ -3160,7 +3137,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3189,7 +3166,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3278,7 +3255,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
