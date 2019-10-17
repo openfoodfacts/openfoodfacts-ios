@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import AlamofireImage
 import Crashlytics
 import UIKit
 
@@ -71,12 +72,15 @@ protocol DataManagerProtocol {
 
     // Misc
     func getLanguages() -> [Language]
+    // Get a default image to use when faking the scanner UI
+    func getMockBarcodeImage(forLocale locale: Locale, onSuccess: @escaping (UIImage) -> Void, onError: @escaping (Error) -> Void)
 }
 
 class DataManager: DataManagerProtocol {
     var productApi: ProductApi!
     var taxonomiesApi: TaxonomiesApi!
     var persistenceManager: PersistenceManagerProtocol!
+    var mockBarcodeApi: MockBarcodeApi!
 
     // MARK: - Search
 
@@ -479,5 +483,18 @@ class DataManager: DataManagerProtocol {
             Crashlytics.sharedInstance().recordError(error)
         }
         fatalError("Could not get Realm instance")
+    }
+
+    func getMockBarcodeImage(forLocale locale: Locale, onSuccess: @escaping (UIImage) -> Void, onError: @escaping (Error) -> Void) {
+
+        mockBarcodeApi.getGenericBarcodeImage(forLocale: locale, onSuccess: { image in
+            DispatchQueue.main.async {
+                onSuccess(image)
+            }
+        }, onError: { error in
+            DispatchQueue.main.async {
+                onError(error)
+            }
+        })
     }
 }

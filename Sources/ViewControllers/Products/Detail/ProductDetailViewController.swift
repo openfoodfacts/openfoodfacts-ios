@@ -31,6 +31,19 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             settings.style.selectedBarBackgroundColor = .white
         }
         buttonBarView.selectedBar.backgroundColor = self.view.tintColor
+
+        if let tbc = tabBarController {
+            if let items = tbc.tabBar.items {
+                for (index, item) in items.enumerated() {
+                    switch index {
+                    case 0: item.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailSummaryView
+                    case 1: item.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailIngredientsView
+                    case 2: item.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailNutritionView
+                    default: break
+                    }
+                }
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -112,9 +125,15 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         for (index, viewController) in viewControllers.enumerated() {
             if let vc0 = viewController as? FormTableViewController {
                 switch index {
-                case 0: vc0.form = createSummaryForm()
-                case 1: vc0.form = createIngredientsForm()
-                case 2: vc0.form = createNutritionForm()
+                case 0:
+                    vc0.form = createSummaryForm()
+                    vc0.view.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailSummaryView
+                case 1:
+                    vc0.form = createIngredientsForm()
+                    vc0.view.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailIngredientsView
+                case 2:
+                    vc0.form = createNutritionForm()
+                    vc0.view.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailNutritionView
                 default: break
                 }
             } else if let vc1 = viewController as? EnvironmentImpactTableFormTableViewController {

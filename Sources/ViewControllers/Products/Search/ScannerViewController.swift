@@ -63,13 +63,19 @@ class ScannerViewController: UIViewController, DataManagerClient {
         lastCodeScanned = nil
         allergenAlertShown = false
 
-        checkCameraPermissions()
-        configureVideoView()
-        configureSession()
-        configureOverlay()
-        configureFlashView()
-        configureTapToFocus()
-
+        // If running for a snapshot, don’t initialize the camera
+        if !UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
+            checkCameraPermissions()
+            configureVideoView()
+            configureSession()
+            configureOverlay()
+            configureFlashView()
+            configureTapToFocus()
+        } else {
+            configureVideoView()
+            configureOverlay()
+        }
+        
         floatingLabel.textAlignment = .center
         floatingLabel.numberOfLines = 0
         floatingLabel.textColor = .white
@@ -97,17 +103,22 @@ class ScannerViewController: UIViewController, DataManagerClient {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configureVideoPreviewLayer()
+        // Disable the scanner when launching in snapshot mode
+        if !UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
+            configureVideoPreviewLayer()
+            resetOverlay()
 
-        resetOverlay()
-
-        switch configResult {
-        case .success:
-            session.startRunning()
-        case .noPermissions:
-            requestPermissions()
-        case .failed:
-            returnToRootController()
+            switch configResult {
+            case .success:
+                session.startRunning()
+            case .noPermissions:
+                requestPermissions()
+            case .failed:
+                returnToRootController()
+            }
+        } else {
+            configureFakePreviewLayer()
+            resetOverlay()
         }
 
         if let barcodeToOpenAtStartup = barcodeToOpenAtStartup {
@@ -162,6 +173,16 @@ class ScannerViewController: UIViewController, DataManagerClient {
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[videoPreviewView]-0-|", options: .directionLeadingToTrailing, metrics: nil, views: ["videoPreviewView": videoPreviewView]))
     }
 
+    // Display this layer when performing snapshot tests : it will display an image from OpenFoodFacts.org static reposistory
+    private func configureFakePreviewLayer() {
+        self.dataManager.getMockBarcodeImage(forLocale: Locale.current, onSuccess: { [weak self] image in
+            let imageView = UIImageView(image: image)
+            self?.videoPreviewView.addSubview(imageView)
+            }, onError: { error in
+            Crashlytics.sharedInstance().recordError(error)
+        })
+    }
+
     private func configureVideoPreviewLayer() {
         let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
         videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
@@ -210,6 +231,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
 
     fileprivate func configureOverlay() {
         self.view.addSubview(overlay)
+        overlay.accessibilityIdentifier = AccessibilityIdentifiers.Scan.overlayView
 
         var constraints = [NSLayoutConstraint]()
         constraints.append(NSLayoutConstraint(item: overlay, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0))
@@ -255,8 +277,14 @@ class ScannerViewController: UIViewController, DataManagerClient {
             }
         }
 
+        // Wait 10 seconds before showing some help content and the possibility to input a barcode manually.
+        // In snapshot mode, we will do that instantly
         self.showHelpInOverlayTask = task
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: task)
+        if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
+            DispatchQueue.main.asyncAfter(deadline: .now(), execute: task)
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: task)
+        }
     }
 
     fileprivate func configureTapToFocus() {

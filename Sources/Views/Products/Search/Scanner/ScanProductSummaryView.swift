@@ -28,6 +28,7 @@ class ScanProductSummaryView: UIView {
 
     private func commonInit() {
         Bundle.main.loadNibNamed(String(describing: ScanProductSummaryView.self), owner: self, options: nil)
+        accessibilityIdentifier = AccessibilityIdentifiers.Scan.productSummaryView
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

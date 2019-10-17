@@ -54,7 +54,7 @@ class ProductDetailUITests: UITestCase {
     private func showDetailsOfProduct(in filename: String) {
         dynamicStubs.setupStub(url: "/cgi/search.pl", filename: filename, method: .GET)
 
-        let searchField = app.searchFields[AccessibilityIdentifiers.productSearchBar]
+        let searchField = app.searchFields[AccessibilityIdentifiers.Search.inputField]
         searchField.tap()
         searchField.typeText(searchQuery)
 
