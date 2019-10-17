@@ -39,6 +39,7 @@ class ProductDetailWebViewTableViewCell: ProductDetailBaseCell {
 extension ProductDetailWebViewTableViewCell: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         webViewHeightConstraint.constant = webView.scrollView.contentSize.height
+        webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.fontFamily =\"-apple-system\"")
 
         // to force redraw of cell height
         tableView?.beginUpdates()

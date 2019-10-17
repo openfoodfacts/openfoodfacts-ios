@@ -11,7 +11,6 @@ import Foundation
 // JSON keys
 
 struct OFFJson {
-    // swiftlint:disable identifier_name
 
     // Used in class ProductsResponse.swift
     static let CountKey = "count"
@@ -21,14 +20,13 @@ struct OFFJson {
     //static let StatusKey = "status"
     //static let StatusVerboseKey = "status_verbose"
     static let ProductKey = "product"
-    
+
     // used in class NutritionLevelTransform.swift
     static let NutrientLevelsSaltKey = "salt"
     static let NutrientLevelsFatKey = "fat"
     static let NutrientLevelsSugarsKey = "sugars"
     static let NutrientLevelsSaturatedFatKey = "saturated-fat"
 
-    
     // Used in class Product.swift
     static let CodeKey = "code"
     //static let LastEditDatesTagsKey = "last_edit_dates_tags"
@@ -76,7 +74,7 @@ struct OFFJson {
     //static let LinkKey = "link"
     //static let IngredientsNKey = "ingredients_n"
     static let NutrimentsKey = "nutriments"
-    
+
     static let SodiumKey = "sodium"
     static let SaltKey = "salt"
     static let Salt100gKey = "salt_100g"
@@ -254,7 +252,7 @@ struct OFFJson {
     //static let ServingQuantityKey = "serving_quantity"
     //static let OriginsTagsKey = "origins_tags"
     //static let ManufacturingPlacesTagsKey = "manufacturing_places_tags"
-    
+
     //static let AdditivesKey = "additives"
     //static let AdditivesDebugTagsKey = "additives_debug_tags"
     //static let AminoAcidTagsKey = "amino_acids_tags"
@@ -286,20 +284,21 @@ struct OFFJson {
     static let LabelsKey = "labels"
     //static let LabelsPrevHierarchyKey = "labels_prev_hierarchy"
     //static let LcKey = "lc"
-    //static let MineralsTagsKey = "minerals_tags"
+    static let MineralsTagsKey = "minerals_tags"
     //static let NovagroupsKey = "nova_groups"
-    //static let NucleotidesTagsKey = "nucleotides_tags"
+    static let NucleotidesTagsKey = "nucleotides_tags"
     static let NutritionDataPerKey = "nutrition_data_per"
     //static let OtherInformationKey = "other_information"
-    //static let OtherNutritionalSubstancesTagsKey = "other_nutritional_substances_tags"
+    static let OtherNutritionalSubstancesTagsKey = "other_nutritional_substances_tags"
     //static let PnnsGroups1TagsKey = "pnns_groups_1_tags"
     static let QuantityKey = "quantity"
     //static let RecyclingInstructionsToDiscard = "recycling_instructions_to_discard"
     //static let RecyclingInstructionsToRecycle = "recycling_instructions_to_recycle"
     static let SelectedImagesKey = "selected_images"
     //static let StatesHierarchyKey = "states_hierarchy"
+    static let TracesTagsKey = "traces_tags"
     //static let UrlKey = "url"
-    //static let VitaminsTagsKey = "vitamins_tags"
+    static let VitaminsTagsKey = "vitamins_tags"
     //static let WarningKey = "warning"
 
     static let KeySeparator = "_"
@@ -369,19 +368,20 @@ struct OFFJson {
             // OFFJson.LastModifiedTKey,
             // OFFJson.LinkKey,
             OFFJson.ManufacturingPlacesKey,
-            // OFFJson.MineralsTagsKey,
+            OFFJson.MineralsTagsKey,
             OFFJson.NoNutritionDataKey,
             OFFJson.NovaGroupKey,
             // OFFJson.NovagroupsKey,
-            // OFFJson.NucleotidesTagsKey,
+            OFFJson.NucleotidesTagsKey,
             OFFJson.NutrientLevelsKey,
             OFFJson.NutrimentsKey,
             OFFJson.NutritionDataPerKey,
             // OFFJson.NutritionGradeFrKey,
             OFFJson.NutritionGradesKey,
+            OFFJson.NutritionTableHtml,
             OFFJson.OriginsKey,
             // OFFJson.OtherInformationKey,
-            // OFFJson.OtherNutritionalSubstancesTagsKey,
+            OFFJson.OtherNutritionalSubstancesTagsKey,
             OFFJson.PackagingKey,
             OFFJson.ProductNameKey,
             // OFFJson.PurchasePlacesKey,
@@ -396,9 +396,8 @@ struct OFFJson {
             OFFJson.TracesKey,
             // OFFJson.TracesTagsKey,
             // OFFJson.UrlKey,
-            // OFFJson.VitaminsTagsKey,
+            OFFJson.VitaminsTagsKey
             // OFFJson.WarningKey,
-            OFFJson.NutritionTableHtml
         ]
     }
 

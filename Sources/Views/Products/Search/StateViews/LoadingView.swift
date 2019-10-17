@@ -14,7 +14,7 @@ class LoadingView: StateView {
 
         self.frame = super.frame
 
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator.startAnimating()
         activityIndicator.center = super.center
 

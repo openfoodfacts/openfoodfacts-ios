@@ -17,7 +17,7 @@ class SettingsTableViewControllerTests: XCTestCase {
     override func setUp() {
         let storyboard = UIStoryboard(name: "Settings", bundle: Bundle.main)
         let navController = storyboard.instantiateInitialViewController() as! UINavigationController
-        viewController = navController.topViewController as! SettingsTableViewController
+        viewController = navController.topViewController as? SettingsTableViewController
 
         UIApplication.shared.keyWindow!.rootViewController = viewController
 

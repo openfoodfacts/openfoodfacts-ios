@@ -24,7 +24,7 @@ class TestHelper {
         return UIImage(data: data)!
     }
 
-    func getTestImageWith(orientation: UIImageOrientation) -> UIImage {
+    func getTestImageWith(orientation: UIImage.Orientation) -> UIImage {
         let testImage = getTestImage()
         return UIImage(cgImage: testImage.cgImage!, scale: 1.0, orientation: orientation)
     }

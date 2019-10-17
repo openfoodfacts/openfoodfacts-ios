@@ -20,8 +20,16 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         super.viewDidLoad()
 
         buttonBarView.register(UINib(nibName: "ButtonBarView", bundle: nil), forCellWithReuseIdentifier: "Cell")
-        buttonBarView.backgroundColor = .white
-        settings.style.selectedBarBackgroundColor = .white
+        if #available(iOS 13.0, *) {
+            buttonBarView.backgroundColor = .systemBackground
+        } else {
+            buttonBarView.backgroundColor = .white
+        }
+        if #available(iOS 13.0, *) {
+            settings.style.selectedBarBackgroundColor = .secondarySystemBackground
+        } else {
+            settings.style.selectedBarBackgroundColor = .white
+        }
         buttonBarView.selectedBar.backgroundColor = self.view.tintColor
     }
 
@@ -80,7 +88,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         return ingredientsFormTableVC
     }
 
-   
     fileprivate func getNutritionVC() -> UIViewController? {
         guard let form = createNutritionForm() else { return nil }
         let nutritionTableFormTableVC = NutritionTableFormTableViewController(with: form, dataManager: dataManager)
@@ -120,7 +127,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         var rows = [FormRow]()
 
         // Header
-        rows.append(FormRow(value: product, cellType: SummaryHeaderCell.self))
+        rows.append(FormRow(value: product as Any, cellType: SummaryHeaderCell.self))
 
         createNutrientsRows(rows: &rows)
         createAdditivesRows(with: &rows, product: product)
@@ -134,7 +141,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product.categoriesTags?.map({ (categoryTag: String) -> NSAttributedString in
             if let category = dataManager.category(forTag: categoryTag) {
                 if let name = Tag.choose(inTags: Array(category.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forCategory: category)])
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forCategory: category)])
                 }
             }
             return NSAttributedString(string: categoryTag)
@@ -145,25 +152,26 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createFormRow(with: &rows, item: product.embCodesTags?.map({ (tag: String) -> NSAttributedString in
             return NSAttributedString(string: tag.uppercased().replacingOccurrences(of: "-", with: " "),
-                                      attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forEmbCodeTag: tag)])
+                                      attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forEmbCodeTag: tag)])
         }), label: InfoRowKey.embCodes.localizedString)
 
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
         createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
 
         // Footer
-        rows.append(FormRow(value: product, cellType: SummaryFooterCell.self))
+        rows.append(FormRow(value: product as Any, cellType: SummaryFooterCell.self))
 
         let summaryTitle = "product-detail.page-title.summary".localized
 
         return Form(title: summaryTitle, rows: rows)
     }
 
+    // swiftlint:disable function_body_length
     private func createIngredientsForm() -> Form {
         var rows = [FormRow]()
 
         // Header
-        rows.append(FormRow(value: product, cellType: HostedViewCell.self))
+        rows.append(FormRow(value: product as Any, cellType: HostedViewCell.self))
 
         // Rows
         if let ingredientsList = product.ingredientsList {
@@ -172,7 +180,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product.allergens?.map({ (allergen: Tag) -> NSAttributedString in
             if let allergen = dataManager.allergen(forTag: allergen) {
                 if let name = Tag.choose(inTags: Array(allergen.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forAllergen: allergen)])
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forAllergen: allergen)])
                 }
             }
             return NSAttributedString(string: allergen.value.capitalized)
@@ -185,8 +193,52 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
         }
+        createFormRow(with: &rows, item: product.traces?.map({ (trace: Tag) -> NSAttributedString in
+            if let trace = dataManager.allergen(forTag: trace) {
+                if let name = Tag.choose(inTags: Array(trace.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forAllergen: trace)])
+                }
+            }
+            return NSAttributedString(string: trace.value.capitalized)
+        }), label: InfoRowKey.traces.localizedString)
 
-        createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
+        createFormRow(with: &rows, item: product.vitamins?.map({ (vitamin: Tag) -> NSAttributedString in
+            if let vitamin = dataManager.vitamin(forTag: vitamin) {
+                if let name = Tag.choose(inTags: Array(vitamin.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forVitamin: vitamin)])
+                }
+            }
+            return NSAttributedString(string: vitamin.value.capitalized)
+        }), label: InfoRowKey.vitamins.localizedString)
+
+        createFormRow(with: &rows, item: product.minerals?.map({ (mineral: Tag) -> NSAttributedString in
+            if let mineral = dataManager.mineral(forTag: mineral) {
+                if let name = Tag.choose(inTags: Array(mineral.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forMineral: mineral)])
+                }
+            }
+            return NSAttributedString(string: mineral.value.capitalized)
+        }), label: InfoRowKey.minerals.localizedString)
+
+        createFormRow(with: &rows, item: product.nucleotides?.map({ (nucleotide: Tag) -> NSAttributedString in
+            if let nucleotide = dataManager.nucleotide(forTag: nucleotide) {
+                if let name = Tag.choose(inTags: Array(nucleotide.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forNucleotide: nucleotide)])
+                }
+            }
+            return NSAttributedString(string: nucleotide.value.capitalized)
+        }), label: InfoRowKey.nucleotidesList.localizedString)
+
+        createFormRow(with: &rows, item: product.otherNutrients?.map({ (other: Tag) -> NSAttributedString in
+            if let other = dataManager.allergen(forTag: other) {
+                if let name = Tag.choose(inTags: Array(other.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: URL(string: "https:world-en.openfoodfacts.org")!])
+                }
+            }
+            return NSAttributedString(string: other.value.capitalized)
+        }), label: InfoRowKey.otherNutritionalSubstances.localizedString)
+
+        //createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
 
         createAdditivesRows(with: &rows, product: product)
 
@@ -197,6 +249,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         return Form(title: summaryTitle, rows: rows)
     }
+    // swiftlint:enable function_body_length
 
     fileprivate func createAdditivesRows(with rows: inout [FormRow], product: Product) {
         guard let additives = product.additives, additives.isEmpty == false else {
@@ -208,7 +261,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         items.append(contentsOf: additives.map({ (additive: Tag) -> NSAttributedString in
             if let additive = dataManager.additive(forTag: additive) {
                 if let name = Tag.choose(inTags: Array(additive.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedStringKey.link: OFFUrlsHelper.url(forAdditive: additive)])
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forAdditive: additive)])
                 }
             }
 
@@ -262,7 +315,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     fileprivate func createNutritionTableRows(rows: inout [FormRow]) {
         // Header
         createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
-        
+
         if product.nutriments != nil || product.servingSize != nil {
             // Nutrition table rows
             let headerRow = NutritionTableRow(label: "",

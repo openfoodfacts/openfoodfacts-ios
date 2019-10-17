@@ -74,7 +74,7 @@ class ProductImageSpec: QuickSpec {
     private func saveTestImage() -> String? {
         let fileName = "test_image.jpg"
         do {
-            guard let data = UIImageJPEGRepresentation(TestHelper.sharedInstance.getTestImage(), 1.0) else {
+            guard let data = TestHelper.sharedInstance.getTestImage().jpegData(compressionQuality: 1.0) else {
                 XCTFail("Failed to get test image representation")
                 return nil
             }

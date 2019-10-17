@@ -35,7 +35,7 @@ class FormTableViewControllerTests: XCTestCase {
 
         expect(self.viewController.tableView.alwaysBounceVertical).to(beFalse())
         expect(self.viewController.tableView.tableFooterView).notTo(beNil())
-        expect(self.viewController.tableView.rowHeight).to(equal(UITableViewAutomaticDimension))
+        expect(self.viewController.tableView.rowHeight).to(equal(UITableView.automaticDimension))
         expect(self.viewController.tableView.allowsSelection).to(beFalse())
         expect(self.viewController.tableView.cellLayoutMarginsFollowReadableWidth).to(beFalse())
         expect(self.viewController.tableView.dequeueReusableCell(withIdentifier: HostedViewCell.identifier)).notTo(beNil())

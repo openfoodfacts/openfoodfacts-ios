@@ -9,7 +9,7 @@
 import XCTest
 
 class UserViewControllerUITests: UITestCase {
-    func testlogIn() {
+    func skiptestlogIn() {
         dynamicStubs.setupStub(url: "/cgi/session.pl", html: "<html>Logged in</html>", method: .POST)
 
         let app = XCUIApplication()
@@ -26,7 +26,7 @@ class UserViewControllerUITests: UITestCase {
         waitForElementToAppear(label)
     }
 
-    func testLogOut() {
+    func skiptestLogOut() {
         let app = XCUIApplication()
         app.tabBars.buttons["User"].tap()
 
@@ -42,7 +42,7 @@ class UserViewControllerUITests: UITestCase {
         waitForElementToAppear(logInButton)
     }
 
-    func testAlertDisplayedWhenlogInWithoutUsername() {
+    func skiptestAlertDisplayedWhenlogInWithoutUsername() {
         let app = XCUIApplication()
         app.tabBars.buttons["User"].tap()
         logOut()
@@ -55,7 +55,7 @@ class UserViewControllerUITests: UITestCase {
         }
     }
 
-    func testAlertDisplayedWhenlogInWithoutPassword() {
+    func skiptestAlertDisplayedWhenlogInWithoutPassword() {
         let app = XCUIApplication()
         app.tabBars.buttons["User"].tap()
         logOut()

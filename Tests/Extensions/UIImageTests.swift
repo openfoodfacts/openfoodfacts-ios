@@ -12,41 +12,41 @@ import XCTest
 class UIImageTests: XCTestCase {
     func testRotateRightShouldRotateImageRightWhenInitialOrientationIsUp() {
         let image = TestHelper.sharedInstance.getTestImageWith(orientation: .up)
-        XCTAssertEqual(UIImageOrientation.right, image.rotateRight()?.imageOrientation)
+        XCTAssertEqual(UIImage.Orientation.right, image.rotateRight()?.imageOrientation)
     }
 
     func testRotateRightShouldRotateImageDownWhenInitialOrientationIsRight() {
         let image = TestHelper.sharedInstance.getTestImageWith(orientation: .right)
-        XCTAssertEqual(UIImageOrientation.down, image.rotateRight()?.imageOrientation)
+        XCTAssertEqual(UIImage.Orientation.down, image.rotateRight()?.imageOrientation)
     }
 
     func testRotateRightShouldRotateImageLeftWhenInitialOrientationIsDown() {
         let image = TestHelper.sharedInstance.getTestImageWith(orientation: .down)
-        XCTAssertEqual(UIImageOrientation.left, image.rotateRight()?.imageOrientation)
+        XCTAssertEqual(UIImage.Orientation.left, image.rotateRight()?.imageOrientation)
     }
 
     func testRotateRightShouldRotateImageUpWhenInitialOrientationIsLeft() {
         let image = TestHelper.sharedInstance.getTestImageWith(orientation: .left)
-        XCTAssertEqual(UIImageOrientation.up, image.rotateRight()?.imageOrientation)
+        XCTAssertEqual(UIImage.Orientation.up, image.rotateRight()?.imageOrientation)
     }
 
     func testRotateLeftShouldRotateImageLeftWhenInitialOrientationIsUp() {
         let image = TestHelper.sharedInstance.getTestImageWith(orientation: .up)
-        XCTAssertEqual(UIImageOrientation.left, image.rotateLeft()?.imageOrientation)
+        XCTAssertEqual(UIImage.Orientation.left, image.rotateLeft()?.imageOrientation)
     }
 
     func testRotateLeftShouldRotateImageDownWhenInitialOrientationIsLeft() {
         let image = TestHelper.sharedInstance.getTestImageWith(orientation: .left)
-        XCTAssertEqual(UIImageOrientation.down, image.rotateLeft()?.imageOrientation)
+        XCTAssertEqual(UIImage.Orientation.down, image.rotateLeft()?.imageOrientation)
     }
 
     func testRotateLeftShouldRotateImageRightWhenInitialOrientationIsDown() {
         let image = TestHelper.sharedInstance.getTestImageWith(orientation: .down)
-        XCTAssertEqual(UIImageOrientation.right, image.rotateLeft()?.imageOrientation)
+        XCTAssertEqual(UIImage.Orientation.right, image.rotateLeft()?.imageOrientation)
     }
 
     func testRotateLeftShouldRotateImageUpWhenInitialOrientationIsLeft() {
         let image = TestHelper.sharedInstance.getTestImageWith(orientation: .right)
-        XCTAssertEqual(UIImageOrientation.up, image.rotateLeft()?.imageOrientation)
+        XCTAssertEqual(UIImage.Orientation.up, image.rotateLeft()?.imageOrientation)
     }
 }
