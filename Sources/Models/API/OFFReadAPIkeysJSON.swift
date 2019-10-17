@@ -11,7 +11,6 @@ import Foundation
 // JSON keys
 
 struct OFFJson {
-    // swiftlint:disable identifier_name
 
     // Used in class ProductsResponse.swift
     static let CountKey = "count"
@@ -21,14 +20,13 @@ struct OFFJson {
     //static let StatusKey = "status"
     //static let StatusVerboseKey = "status_verbose"
     static let ProductKey = "product"
-    
+
     // used in class NutritionLevelTransform.swift
     static let NutrientLevelsSaltKey = "salt"
     static let NutrientLevelsFatKey = "fat"
     static let NutrientLevelsSugarsKey = "sugars"
     static let NutrientLevelsSaturatedFatKey = "saturated-fat"
 
-    
     // Used in class Product.swift
     static let CodeKey = "code"
     //static let LastEditDatesTagsKey = "last_edit_dates_tags"
@@ -76,7 +74,7 @@ struct OFFJson {
     //static let LinkKey = "link"
     //static let IngredientsNKey = "ingredients_n"
     static let NutrimentsKey = "nutriments"
-    
+
     static let SodiumKey = "sodium"
     static let SaltKey = "salt"
     static let Salt100gKey = "salt_100g"
@@ -254,7 +252,7 @@ struct OFFJson {
     //static let ServingQuantityKey = "serving_quantity"
     //static let OriginsTagsKey = "origins_tags"
     //static let ManufacturingPlacesTagsKey = "manufacturing_places_tags"
-    
+
     //static let AdditivesKey = "additives"
     //static let AdditivesDebugTagsKey = "additives_debug_tags"
     //static let AminoAcidTagsKey = "amino_acids_tags"

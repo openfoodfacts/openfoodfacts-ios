@@ -70,6 +70,6 @@ extension SummaryHeaderCellController {
 
 extension SummaryHeaderCellController: IconButtonViewDelegate {
     func didTap() {
-        didTapTakePictureButton(callToActionView)
+        didTapTakePictureButton(callToActionView as Any)
     }
 }

@@ -21,7 +21,7 @@ class CameraHelper: CameraHelperProtocol {
 
     func getImagePickerForTaking(_ mediaType: MediaType) -> UIImagePickerController? {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else { return nil }
-        guard UIImagePickerController.availableMediaTypes(for: .camera)?.index(of: mediaType.rawValue) != nil else { return nil }
+        guard UIImagePickerController.availableMediaTypes(for: .camera)?.firstIndex(of: mediaType.rawValue) != nil else { return nil }
 
         let picker = UIImagePickerController()
         picker.sourceType = .camera

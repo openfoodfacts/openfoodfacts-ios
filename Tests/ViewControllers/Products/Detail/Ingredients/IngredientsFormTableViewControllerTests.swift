@@ -42,7 +42,7 @@ class IngredientsFormTableViewControllerTests: XCTestCase {
         let cell = viewController.getCell(for: headerFormRow)
 
         expect(self.viewController.ingredientsHeaderCellController).notTo(beNil())
-        expect(self.viewController.childViewControllers[0]).to(equal(self.viewController.ingredientsHeaderCellController))
+        expect(self.viewController.children[0]).to(equal(self.viewController.ingredientsHeaderCellController))
         expect(cell is HostedViewCell).to(beTrue())
     }
 
@@ -50,7 +50,7 @@ class IngredientsFormTableViewControllerTests: XCTestCase {
         let cell = viewController.getCell(for: infoFormRow)
 
         expect(self.viewController.ingredientsHeaderCellController).to(beNil())
-        expect(self.viewController.childViewControllers.count).to(equal(0))
+        expect(self.viewController.children.count).to(equal(0))
         expect(cell is InfoRowTableViewCell).to(beTrue())
     }
 
@@ -61,20 +61,20 @@ class IngredientsFormTableViewControllerTests: XCTestCase {
 
         viewController.tableView(self.viewController.tableView, willDisplay: HostedViewCell(), forRowAt: IndexPath(row: 0, section: 0))
 
-        expect(self.viewController.childViewControllers[0]).to(equal(ingredientsHeaderCellController))
+        expect(self.viewController.children[0]).to(equal(ingredientsHeaderCellController))
     }
 
     // MARK: - didEndDisplaying
     func testDidEndDisplayingRemovesHeaderControllerFromVC() {
         let ingredientsHeaderCellController = IngredientsHeaderCellController(with: Product(), dataManager: dataManager)
         viewController.ingredientsHeaderCellController = ingredientsHeaderCellController
-        viewController.addChildViewController(ingredientsHeaderCellController)
-        ingredientsHeaderCellController.didMove(toParentViewController: viewController)
+        viewController.addChild(ingredientsHeaderCellController)
+        ingredientsHeaderCellController.didMove(toParent: viewController)
         viewController.view.addSubview(ingredientsHeaderCellController.view)
 
         viewController.tableView(self.viewController.tableView, didEndDisplaying: HostedViewCell(), forRowAt: IndexPath(row: 0, section: 0))
 
         expect(ingredientsHeaderCellController.view.superview).to(beNil())
-        expect(self.viewController.childViewControllers.count).to(equal(0))
+        expect(self.viewController.children.count).to(equal(0))
     }
 }

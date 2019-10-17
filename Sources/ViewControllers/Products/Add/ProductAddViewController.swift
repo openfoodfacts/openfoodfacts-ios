@@ -124,6 +124,7 @@ class ProductAddViewController: TakePictureViewController {
     ]
     fileprivate var displayedNutrimentItems = displayedNutrimentItemsByDefault
 
+    // swiftlint:disable function_body_length
     override func viewDidLoad() {
         self.title = "product-add.title".localized
 
@@ -179,7 +180,7 @@ class ProductAddViewController: TakePictureViewController {
         // but it is nowhere created
         // solutio is to create productToEdit, when the barcode is set
         // and assign the barcode to productToEdit
-        
+
         if let productToEdit = self.productToEdit {
             self.title = "product-add.title-edit".localized
             self.product = productToEdit
@@ -192,6 +193,7 @@ class ProductAddViewController: TakePictureViewController {
         }
         }
     }
+    // swiftlint:enable function_body_length
 
     fileprivate func fillProductFromInfosForm() {
         if let lang = product.lang {
@@ -444,7 +446,7 @@ class ProductAddViewController: TakePictureViewController {
         let languageValue = product.lang ?? Locale.current.languageCode ?? "en"
         self.product.lang = languageValue
 
-        let defaultValue: Int? = languages.index(where: { $0.code == languageValue })
+        let defaultValue: Int? = languages.firstIndex(where: { $0.code == languageValue })
 
         self.languagePickerController = PickerViewController(data: languages, defaultValue: defaultValue, delegate: self)
         self.languagePickerToolbarController = PickerToolbarViewController(title: "product-add.language.toolbar-title".localized, delegate: self)
@@ -579,7 +581,7 @@ class ProductAddViewController: TakePictureViewController {
 
     // swiftlint:disable cyclomatic_complexity
     private func fillForm(withPendingUploadItem pendingUploadItem: PendingUploadItem) {
-        
+
         if let productName = pendingUploadItem.productName {
             productNameField.text = productName
         }

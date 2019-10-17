@@ -30,7 +30,7 @@ class EnvironmentImpactTableFormTableViewController: UIViewController {
         }
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.delegate = self
-        
+
         self.view.addSubview(webView)
 
         self.view.addConstraints([

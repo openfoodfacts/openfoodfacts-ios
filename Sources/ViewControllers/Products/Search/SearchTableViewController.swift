@@ -103,7 +103,7 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
         } else {
             tableView.tableHeaderView = searchController.searchBar
         }
-        
+
         // The selector searchTextField is obliged under IOS 13, but does not exist before that version.
         if searchController.searchBar.responds(to: #selector(getter: UISearchBar.searchTextField)) {
             searchController.searchBar.searchTextField.isAccessibilityElement = true
