@@ -18,6 +18,7 @@
                 <subviews>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="n5q-En-6pB">
                         <rect key="frame" x="158.5" y="21" width="58" height="58"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="n5q-En-6pB" secondAttribute="height" multiplier="1:1" id="y7g-ej-0je"/>
                         </constraints>
