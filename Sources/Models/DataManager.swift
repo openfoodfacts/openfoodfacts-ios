@@ -31,6 +31,11 @@ protocol DataManagerProtocol {
     func category(forTag: String) -> Category?
     func categorySearch(query: String?) -> Results<Category>
     func allergen(forTag: Tag) -> Allergen?
+    func trace(forTag: Tag) -> Allergen?
+    func vitamin(forTag: Tag) -> Vitamin?
+    func mineral(forTag: Tag) -> Mineral?
+    func nucleotide(forTag: Tag) -> Nucleotide?
+    func other(forTag: Tag) -> OtherNutritionalSubstance?
     func additive(forTag: Tag) -> Additive?
     func nutriment(forTag: String) -> Nutriment?
     func nutrimentSearch(query: String?) -> Results<Nutriment>
@@ -136,6 +141,26 @@ class DataManager: DataManagerProtocol {
 
     func allergen(forTag tag: Tag) -> Allergen? {
         return persistenceManager.allergen(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func trace(forTag tag: Tag) -> Allergen? {
+        return persistenceManager.trace(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func vitamin(forTag tag: Tag) -> Vitamin? {
+        return persistenceManager.vitamin(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func mineral(forTag tag: Tag) -> Mineral? {
+        return persistenceManager.mineral(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func nucleotide(forTag tag: Tag) -> Nucleotide? {
+        return persistenceManager.nucleotide(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func other(forTag tag: Tag) -> OtherNutritionalSubstance? {
+        return persistenceManager.otherNutritionalSubstance(forCode: tag.languageCode + ":" + tag.value)
     }
 
     func additive(forTag tag: Tag) -> Additive? {

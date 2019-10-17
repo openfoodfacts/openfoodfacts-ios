@@ -1,10 +1,11 @@
 language: objective-c
-osx_image: xcode10.1
+osx_image: xcode11
 cache:
+  timeout: 5000
   directories:
   - Carthage
 before_install:
-  - gem install fastlane --no-rdoc --no-ri --no-document --quiet
+  - gem install fastlane --no-document --quiet
 script:
   - fastlane test
 notifications:

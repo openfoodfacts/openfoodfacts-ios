@@ -89,7 +89,7 @@ class PickerViewControllerSpec: QuickSpec {
             var picker: UIPickerView!
 
             beforeEach {
-                picker = viewController.view as! UIPickerView
+                picker = viewController.view as? UIPickerView
             }
 
             describe("numberOfComponents") {
@@ -110,7 +110,7 @@ class PickerViewControllerSpec: QuickSpec {
             let component = 0
 
             beforeEach {
-                picker = viewController.view as! UIPickerView
+                picker = viewController.view as? UIPickerView
             }
 
             describe("titleForRow") {

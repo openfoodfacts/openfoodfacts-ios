@@ -29,8 +29,8 @@ class NutritionTableFormTableViewController: FormTableViewController {
                 cell.hostedView = nutritionTableHeaderCellController.view
                 self.nutritionTableHeaderCellController = nutritionTableHeaderCellController
 
-                self.addChildViewController(nutritionTableHeaderCellController)
-                nutritionTableHeaderCellController.didMove(toParentViewController: self)
+                self.addChild(nutritionTableHeaderCellController)
+                nutritionTableHeaderCellController.didMove(toParent: self)
 
                 return cell
             }
@@ -40,16 +40,16 @@ class NutritionTableFormTableViewController: FormTableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell is HostedViewCell, let nutritionTableHeaderCellController = nutritionTableHeaderCellController {
-            self.addChildViewController(nutritionTableHeaderCellController)
-            nutritionTableHeaderCellController.didMove(toParentViewController: self)
+            self.addChild(nutritionTableHeaderCellController)
+            nutritionTableHeaderCellController.didMove(toParent: self)
         }
     }
 
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell is HostedViewCell {
             self.nutritionTableHeaderCellController?.view.removeFromSuperview()
-            self.nutritionTableHeaderCellController?.willMove(toParentViewController: nil)
-            self.nutritionTableHeaderCellController?.removeFromParentViewController()
+            self.nutritionTableHeaderCellController?.willMove(toParent: nil)
+            self.nutritionTableHeaderCellController?.removeFromParent()
         }
     }
 }

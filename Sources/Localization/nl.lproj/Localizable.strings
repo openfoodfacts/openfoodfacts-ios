@@ -24,17 +24,17 @@
 "product-search.no-results" = "Geen resultaten. U kunt een product toevoegen aan Open Food Facts door het te scannen.";
 "product-search.error-view.title" = "Er ging iets mis";
 "product-search.error-view.subtitle" = "Probeer het opnieuw";
-"product-search.initial-view.slogan" = "de gratis database met levensmiddelen";
+"product-search.initial-view.slogan" = "de gratis database met voedingsmiddelen";
 "product-search.initial-view.offline.title-loading" = "Producten offline opslaan: %d%%";
 "product-search.initial-view.offline.subtitle" = "Meer dan %d producten zijn scan-baar";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scan de barcode van het product";
-"product-scanner.overlay.extended-user-help" = "Kan streepjescode niet vinden.\nCentreer de streepjescode op het scherm.\nZorg ervoor dat de streepjescode goed verlicht is.";
+"product-scanner.overlay.extended-user-help" = "Kan streepjescode niet vinden.\nCentreer de streepjescode in het scherm.\nZorg ervoor dat de streepjescode goed verlicht is.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Fout bij het scannen van streepjescode. Probeer het over een paar seconden opnieuw.";
+"product-scanner.barcode.error" = "Fout bij scannen streepjescode. Probeer het over enkele ogenblikken opnieuw.";
 "product-scanner.barcode-notfound.manual-enter" = "Geen barcode gevonden. Je kunt het handmatig intypen:";
 
 "product-scanner.permissions.noPermissions.title" = "OpenFoodFacts heeft cameratoestemming nodig";
@@ -43,13 +43,13 @@
 
 "product-scanner.permissions.failed.title" = "Barcode scannen kon niet gestart worden.";
 "product-scanner.permissions.failed.message" = "Zorg ervoor dat in Privacy-instellingen Open Food Facts toestemming heeft om de camera te gebruiken";
-"product-scanner.permissions.failed.action.title" = "Laat barcode scannen";
+"product-scanner.permissions.failed.action.title" = "Verlaat streepjescode scannen";
 
 "product-scanner.search.status" = "Product wordt geladen...";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "De foto wordt verzonden...";
+"product-add.uploading-image-banner.title" = "Afbeelding uploaden…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Er ging iets mis";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
@@ -58,22 +58,22 @@
 "product-add.image-upload-success-banner.title" = "Afbeelding is succesvol geüpload";
 "product-add.image-save-success-banner.title" = "Afbeelding wordt geüpload wanneer je online bent";
 /* Displayed when a product was successfully added to the products database */
-"product-add.product-add-success-banner.title" = "Product succesvol toegevoegd. Dankjewel!";
+"product-add.product-add-success-banner.title" = "Product succesvol toegevoegd. Dank u!";
 "product-add.uploaded-image" = "Afbeelding geüpload, bedankt!";
 "product-add.save-error.title" = "Fout tijdens opslaan van product";
 "product-add.save-error.message" = "Probeer het later nog eens";
 "product-add.save-info.success" = "Informatie bewaard op";
 "product-add.save-info.error" = "Informatie niet bewaard";
-"product-add.save-info.saving" = "Productinformatie bewaren…";
+"product-add.save-info.saving" = "Productinformatie opslaan…";
 "product-add.save-info.not-yet" = "Informatie nog niet bewaard";
 "product-add.save-ingredients.success" = "Ingrediënten bewaard op";
 "product-add.save-ingredients.error" = "Ingrediënten niet bewaard";
-"product-add.save-ingredients.saving" = "Ingrediënten bewaren…";
-"product-add.save-ingredients.not-yet" = "Ingrediënten nog niet bewaard";
-"product-add.save-nutriments.success" = "Voedingswaarden bewaard op";
-"product-add.save-nutriments.error" = "Voedingswaarden niet bewaard";
-"product-add.save-nutriments.saving" = "Bewaren voedingswaarden…";
-"product-add.save-nutriments.not-yet" = "Voedingswaarden nog niet bewaard";
+"product-add.save-ingredients.saving" = "Ingrediënten opslaan…";
+"product-add.save-ingredients.not-yet" = "Ingrediënten nog niet opgeslagen";
+"product-add.save-nutriments.success" = "Voedingsstoffen opgeslagen op";
+"product-add.save-nutriments.error" = "Voedingsstoffen niet opgeslagen";
+"product-add.save-nutriments.saving" = "Voedingsstoffen opslagen…";
+"product-add.save-nutriments.not-yet" = "Voedingsstoffen nog niet opgeslagen";
 "product-add.no-nutrition" = "De voedingswaarden zijn niet op het product vermeld";
 
 "product-add.ocr-ingredients.success" = "Ingrediënten van de foto gelezen op";

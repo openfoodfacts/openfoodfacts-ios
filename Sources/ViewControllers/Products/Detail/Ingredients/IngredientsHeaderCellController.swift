@@ -73,6 +73,6 @@ extension IngredientsHeaderCellController {
 
 extension IngredientsHeaderCellController: IconButtonViewDelegate {
     func didTap() {
-        didTapTakePictureButton(callToActionView)
+        didTapTakePictureButton(callToActionView as Any)
     }
 }

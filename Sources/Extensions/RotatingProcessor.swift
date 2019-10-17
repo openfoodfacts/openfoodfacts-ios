@@ -12,7 +12,7 @@ import Kingfisher
 struct RotatingProcessor: ImageProcessor {
     // Rotate image
 
-    func process(item: ImageProcessItem, options: KingfisherParsedOptionsInfo) -> Image? {
+    func process(item: ImageProcessItem, options: KingfisherParsedOptionsInfo) -> KFCrossPlatformImage? {
         switch item {
         case .image(let image):
             switch image.imageOrientation {
