@@ -1245,14 +1245,10 @@
 				956FF8821F1FF0740069D678 /* ProductAddViewController.swift */,
 				9587DF6D1F82CCD60069F0A6 /* PictureTableViewController.swift */,
 				30412DD6220EF36500C485DD /* EditNutritiveValueView.swift */,
-				30412DD8220EF46300C485DD /* EditNutritiveValueView.xib */,
 				30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */,
 				30412DDC220F104900C485DD /* SelectNutrimentViewController.swift */,
-				30412DDD220F104900C485DD /* SelectNutrimentViewController.xib */,
 				30412DD0220E19BF00C485DD /* SelectCategoryViewController.swift */,
-				30412DD4220E2AF100C485DD /* SelectCategoryViewController.xib */,
 				302525ED222311A000C2C830 /* SelectAllergenViewController.swift */,
-				302525EE222311A000C2C830 /* SelectAllergenViewController.xib */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -1283,8 +1279,12 @@
 		956FF88E1F1FF0CA0069D678 /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				302525EE222311A000C2C830 /* SelectAllergenViewController.xib */,
+				30412DD8220EF46300C485DD /* EditNutritiveValueView.xib */,
 				95E3ADE11F21433D00CD61D9 /* ProductAddViewController.storyboard */,
 				9587DF6F1F83F6580069F0A6 /* PictureTableViewCell.swift */,
+				30412DD4220E2AF100C485DD /* SelectCategoryViewController.xib */,
+				30412DDD220F104900C485DD /* SelectNutrimentViewController.xib */,
 			);
 			path = Add;
 			sourceTree = "<group>";
