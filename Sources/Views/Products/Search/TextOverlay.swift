@@ -22,7 +22,8 @@ import UIKit
     }
 
     fileprivate func configureView() {
-        self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        // Note this should be the same in normal and dark mode
+        self.backgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textLabel)
 
@@ -34,7 +35,7 @@ import UIKit
     fileprivate func configureTextLabel() {
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.textAlignment = .center
-        textLabel.textColor = .white
+        textLabel.textColor = .lightGray
         textLabel.numberOfLines = 3
     }
 

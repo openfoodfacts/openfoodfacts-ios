@@ -24,6 +24,7 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-add-button" translatesAutoresizingMaskIntoConstraints="NO" id="aSF-lk-3hz">
                             <rect key="frame" x="0.0" y="16" width="24" height="24"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="aSF-lk-3hz" secondAttribute="height" multiplier="1:1" id="JH8-q6-PmV"/>
                                 <constraint firstAttribute="height" constant="24" id="dnu-mG-ner"/>
@@ -31,6 +32,7 @@
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="take a picture !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OH0-PK-L1q">
                             <rect key="frame" x="32" y="18" width="113.5" height="20.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -39,8 +41,10 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </stackView>
             </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5hf-ea-qjf" secondAttribute="trailing" constant="8" id="GUS-rl-77X"/>
                 <constraint firstItem="5hf-ea-qjf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ma1-aL-CHt"/>

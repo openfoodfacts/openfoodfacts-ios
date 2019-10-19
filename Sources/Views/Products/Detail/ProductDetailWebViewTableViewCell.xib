@@ -25,6 +25,7 @@
                         </constraints>
                     </webView>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="hdR-3r-BPY" secondAttribute="bottom" constant="8" id="KqU-ih-PrF"/>
                     <constraint firstItem="hdR-3r-BPY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="TjO-ns-3yR"/>
@@ -32,6 +33,7 @@
                     <constraint firstAttribute="trailing" secondItem="hdR-3r-BPY" secondAttribute="trailing" constant="8" id="wr7-1X-9fZ"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="webView" destination="hdR-3r-BPY" id="LCM-2W-9j9"/>

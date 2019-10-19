@@ -25,17 +25,21 @@
                     <subviews>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCJ-ji-73B" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="398" height="0.0"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <view contentMode="scaleToFill" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="JWp-qa-rIS" customClass="ScanProductSummaryView" customModule="OpenFoodFacts" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="398" height="100"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="l8p-xf-w84"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKD-W6-pMm" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="108" width="398" height="40"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

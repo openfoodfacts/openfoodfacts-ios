@@ -75,12 +75,19 @@ class ScannerViewController: UIViewController, DataManagerClient {
             configureVideoView()
             configureOverlay()
         }
-        
         floatingLabel.textAlignment = .center
         floatingLabel.numberOfLines = 0
-        floatingLabel.textColor = .white
+        if #available(iOS 13.0, *) {
+            floatingLabel.textColor = .label
+        } else {
+            floatingLabel.textColor = .white
+        }
 
-        floatingLabelContainer.backgroundColor = UIColor.black.withAlphaComponent(0.66)
+        if #available(iOS 13.0, *) {
+            floatingLabelContainer.backgroundColor = UIColor.systemBackground.withAlphaComponent(0.66)
+        } else {
+            floatingLabelContainer.backgroundColor = UIColor.black.withAlphaComponent(0.66)
+        }
         floatingLabelContainer.addSubview(floatingLabel)
         floatingLabelContainer.isHidden = true
 
