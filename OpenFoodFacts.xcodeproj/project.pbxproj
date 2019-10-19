@@ -59,7 +59,6 @@
 		514EFA92223021C0008FFD2A /* OtherNutritionalSubstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA91223021C0008FFD2A /* OtherNutritionalSubstance.swift */; };
 		7437FBA52036F1F800D107B6 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437FBA42036F1F800D107B6 /* CreditsViewController.swift */; };
 		74C59E8B203FB9E2006C456F /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C59E8A203FB9E2006C456F /* SharingManager.swift */; };
-		74CB633920373B6D008FC48D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 74CB633820373B6C008FC48D /* Credits.html */; };
 		9501634C1F2CE9A20057B8D5 /* NotificationBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9501633D1F2CE9780057B8D5 /* NotificationBanner.framework */; };
 		9501634D1F2CEE700057B8D5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950163431F2CE9780057B8D5 /* SnapKit.framework */; };
 		950163741F2D1EF20057B8D5 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950163731F2D1EF20057B8D5 /* TakePictureViewController.swift */; };
@@ -363,7 +362,6 @@
 		514EFA91223021C0008FFD2A /* OtherNutritionalSubstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherNutritionalSubstance.swift; sourceTree = "<group>"; };
 		7437FBA42036F1F800D107B6 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		74C59E8A203FB9E2006C456F /* SharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
-		74CB633820373B6C008FC48D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		950163071F2CE9780057B8D5 /* .Alamofire.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .Alamofire.version; sourceTree = "<group>"; };
 		950163081F2CE9780057B8D5 /* .AlamofireObjectMapper.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .AlamofireObjectMapper.version; sourceTree = "<group>"; };
 		950163091F2CE9780057B8D5 /* .ImageViewer.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .ImageViewer.version; sourceTree = "<group>"; };
@@ -1911,7 +1909,6 @@
 				302525E72223044E00C2C830 /* AllergensAlertsTableViewController.swift */,
 				302525F12223145000C2C830 /* AllergensAddTableViewCell.swift */,
 				302525F22223145000C2C830 /* AllergensAddTableViewCell.xib */,
-				74CB633820373B6C008FC48D /* Credits.html */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -2249,7 +2246,6 @@
 				958F33541F378076005269C5 /* InfoRowTableViewCell.xib in Resources */,
 				956FF93D1F1FF0CA0069D678 /* ButtonBarView.xib in Resources */,
 				95D060D91F6085320052012D /* LoadingCell.xib in Resources */,
-				74CB633920373B6D008FC48D /* Credits.html in Resources */,
 				956FF9511F1FF0CA0069D678 /* ProductDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
