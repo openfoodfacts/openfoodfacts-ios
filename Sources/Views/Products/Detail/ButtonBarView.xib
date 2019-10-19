@@ -15,11 +15,13 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCB-2X-EAF">
                     <rect key="frame" x="19" y="9.5" width="42" height="21"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="kCB-2X-EAF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HhO-H1-FWb"/>
                 <constraint firstItem="kCB-2X-EAF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KXP-kl-Uc3"/>

@@ -18,18 +18,21 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILT-h2-ajx" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
                         <rect key="frame" x="51.5" y="21" width="217" height="88"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ILT-h2-ajx" secondAttribute="height" multiplier="310:126" id="Prl-xk-rf4"/>
                             <constraint firstAttribute="height" constant="88" id="lOF-qt-vyf"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="ILT-h2-ajx" secondAttribute="bottom" constant="10" id="2o1-On-aVq"/>
                     <constraint firstItem="ILT-h2-ajx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="xwT-iZ-6R6"/>
                     <constraint firstItem="ILT-h2-ajx" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="yqm-sC-FAD"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <connections>
                 <outlet property="nutriscoreView" destination="ILT-h2-ajx" id="XNV-td-WmX"/>
             </connections>

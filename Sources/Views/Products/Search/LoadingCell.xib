@@ -25,12 +25,14 @@
                         <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </activityIndicatorView>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
                     <constraint firstItem="n5q-En-6pB" firstAttribute="centerX" secondItem="9aP-gw-qG1" secondAttribute="centerX" id="XUh-Cb-noq"/>
                     <constraint firstItem="n5q-En-6pB" firstAttribute="top" secondItem="9aP-gw-qG1" secondAttribute="topMargin" constant="10" id="ZSs-kW-Bzn"/>
                     <constraint firstAttribute="bottomMargin" secondItem="n5q-En-6pB" secondAttribute="bottom" constant="10" id="cjD-Fu-KVD"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <connections>
                 <outlet property="activityIndicator" destination="n5q-En-6pB" id="J8m-Bj-ReN"/>
             </connections>

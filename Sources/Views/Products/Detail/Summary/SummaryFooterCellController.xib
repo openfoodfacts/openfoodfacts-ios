@@ -21,8 +21,10 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5K-4v-vKu" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="16" width="375" height="95"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
             </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="C5K-4v-vKu" secondAttribute="bottom" constant="16" id="IoK-Pz-pNT"/>
                 <constraint firstItem="C5K-4v-vKu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="WlN-EU-fRw"/>
