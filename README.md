@@ -86,4 +86,4 @@ brew install swiftlint
 
 ## Support
 
-OpenFoodFacts has a Slack team, join the #iOS and #iOS-alerts channels. Click [here](https://slack.openfoodfacts.org/) to join.
+OpenFoodFacts has a Slack team where we chat, discuss and support each other, join the #iOS and #iOS-alerts channels. [Click here to join.](https://slack.openfoodfacts.org/)
