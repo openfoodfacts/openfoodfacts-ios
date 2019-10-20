@@ -6,7 +6,7 @@ cache:
 before_install:
   - gem install fastlane --no-document --quiet
 script:
-  - travis_wait 30 fastlane test
+  - travis_wait 180 fastlane test
 notifications:
   slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
 env:
