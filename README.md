@@ -33,16 +33,17 @@ You can help translate Open Food Facts and the app at (no technical knowledge re
 - [x] Internationalised user interface
 - [x] Native editing
 
-## Roadmap
-
-- [ ] Add support for the new JSON taxonomy system (multilingual, and data augmentation from Wikipedia/Wikidata)
-- [ ] Support for Open Beauty Facts, Open Pet Food Facts and Open Product Facts
-- [ ] On-device Product cache
-- [ ] Add a food category browser
-- [ ] Additives evaluation (already ready server side and on Android)
-- [ ] Product lists (to buy, eaten…)
+## Priority roadmap
 - [ ] Compare Mode
 - [ ] Vegan/vegetarian/palm oil (ready server side)
+- [ ] Additives evaluation (already ready server side and on Android)
+- [ ] Product lists (to buy, eaten…)
+
+## Secondary roadmap
+- [ ] On-device Product cache
+- [ ] Add a food category browser
+- [ ] Add support for the new JSON taxonomy system (multilingual, and data augmentation from Wikipedia/Wikidata)
+- [ ] Support for Open Beauty Facts, Open Pet Food Facts and Open Product Facts
 
 ## Images
 
