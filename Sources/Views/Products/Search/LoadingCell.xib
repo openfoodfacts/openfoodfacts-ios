@@ -16,23 +16,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="n5q-En-6pB">
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="n5q-En-6pB">
                         <rect key="frame" x="158.5" y="21" width="58" height="58"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="n5q-En-6pB" secondAttribute="height" multiplier="1:1" id="y7g-ej-0je"/>
                         </constraints>
-                        <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </activityIndicatorView>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
                     <constraint firstItem="n5q-En-6pB" firstAttribute="centerX" secondItem="9aP-gw-qG1" secondAttribute="centerX" id="XUh-Cb-noq"/>
                     <constraint firstItem="n5q-En-6pB" firstAttribute="top" secondItem="9aP-gw-qG1" secondAttribute="topMargin" constant="10" id="ZSs-kW-Bzn"/>
                     <constraint firstAttribute="bottomMargin" secondItem="n5q-En-6pB" secondAttribute="bottom" constant="10" id="cjD-Fu-KVD"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <connections>
                 <outlet property="activityIndicator" destination="n5q-En-6pB" id="J8m-Bj-ReN"/>
             </connections>
