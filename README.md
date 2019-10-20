@@ -10,7 +10,7 @@ Note: Xcode's limited Markdown support means this file is best viewed on GitHub.
 
 ![Open Food Facts icon](https://static.openfoodfacts.org/images/misc/openfoodfacts-logo-en-178x150.png)
 
-[![Download on the App Store](https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png)](https://geo.itunes.apple.com/mg/app/open-food-facts/id588797948?mt=8)
+[![Download on the App Store](https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png)](https://apps.apple.com/app/open-food-facts/id588797948)
 
 ## What is Open Food Facts?
 
