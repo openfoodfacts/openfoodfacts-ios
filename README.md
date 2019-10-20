@@ -32,6 +32,7 @@ You can help translate Open Food Facts and the app at (no technical knowledge re
 - [x] On-the-fly OCR of ingredients and labels for new product addition
 - [x] Internationalised user interface
 - [x] Native editing
+- [x] Night mode
 
 ## Priority roadmap
 - [ ] Vegan/vegetarian/palm oil (ready server side) [issue #321](https://github.com/openfoodfacts/openfoodfacts-ios/issues/321)
