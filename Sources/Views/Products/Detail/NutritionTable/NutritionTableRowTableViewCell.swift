@@ -18,8 +18,9 @@ class NutritionTableRowTableViewCell: ProductDetailBaseCell {
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let nutritionTableRow = formRow.value as? NutritionTableRow else { return }
-
-        let attributes = [NSAttributedString.Key.font: nutritionTableRow.highlight ? UIFont.TextStyle.headline : UIFont.TextStyle.body]
+        let body = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize)
+        let headline = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline).pointSize)
+        let attributes = [NSAttributedString.Key.font: nutritionTableRow.highlight ? headline : body]
 
         rowLabel.attributedText = NSAttributedString(string: nutritionTableRow.label, attributes: attributes)
         valuePer100g.attributedText = NSAttributedString(string: nutritionTableRow.perSizeValue, attributes: attributes)
