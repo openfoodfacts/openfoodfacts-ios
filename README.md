@@ -34,9 +34,9 @@ You can help translate Open Food Facts and the app at (no technical knowledge re
 - [x] Native editing
 
 ## Priority roadmap
-- [ ] Compare Mode
-- [ ] Vegan/vegetarian/palm oil (ready server side)
-- [ ] Additives evaluation (already ready server side and on Android)
+- [ ] Vegan/vegetarian/palm oil (ready server side) [issue #321](https://github.com/openfoodfacts/openfoodfacts-ios/issues/321)
+- [ ] Additives evaluation (already ready server side and on Android) [issue #173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
+- [ ] Compare Mode [issue #153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
 - [ ] Product lists (to buy, eaten…)
 
 ## Secondary roadmap
