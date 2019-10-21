@@ -74,12 +74,14 @@ class ScannerResultViewController: UIViewController {
     }
 
     fileprivate func updateSummaryVisibility(forProduct product: RealmOfflineProduct) {
-        topSummaryView.fillIn(product: product)
+        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: product)
+        topSummaryView.setup(with: adaptor)
         topSummaryView.isHidden = false
     }
 
     fileprivate func updateSummaryVisibility(forProduct product: Product) {
-        topSummaryView.fillIn(product: product)
+        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: product)
+        topSummaryView.setup(with: adaptor)
         topSummaryView.isHidden = false
     }
 
