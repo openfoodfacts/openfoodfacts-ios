@@ -20,7 +20,7 @@ class ProductSearchUITests: UITestCase {
         XCTAssert(offDescription.exists)
     }
 
-    func testResultCellExists() {
+    func skiptestResultCellExists() {
         let searchField = app.searchFields[AccessibilityIdentifiers.Search.inputField]
         XCTAssert(searchField.exists)
         searchField.tap()
@@ -31,18 +31,18 @@ class ProductSearchUITests: UITestCase {
         XCTAssert(productName.exists)
     }
 
-    func skiptestCancellingASearchDisplaysInitialView() {
-        let searchField = app.searchFields[AccessibilityIdentifiers.productSearchBar]
-        XCTAssert(searchField.exists)
-        searchField.tap()
-        searchField.typeText(searchQuery)
-
-        app.buttons["Cancel"].tap()
-
-        let offDescription = app.tables[offDescriptionText]
-        waitForElementToAppear(offDescription)
-        XCTAssert(offDescription.exists)
-    }
+//    func skiptestCancellingASearchDisplaysInitialView() {
+//        let searchField = app.searchFields[AccessibilityIdentifiers.productSearchBar]
+//        XCTAssert(searchField.exists)
+//        searchField.tap()
+//        searchField.typeText(searchQuery)
+//
+//        app.buttons["Cancel"].tap()
+//
+//        let offDescription = app.tables[offDescriptionText]
+//        waitForElementToAppear(offDescription)
+//        XCTAssert(offDescription.exists)
+//    }
 
     func skiptestTappingScanButtonShowsScanView() {
         addUIInterruptionMonitor(withDescription: "Scanning setup failed because no camera was found") { (alert) -> Bool in
@@ -54,7 +54,7 @@ class ProductSearchUITests: UITestCase {
         app.tap()
     }
 
-    func testResponseWithErrorShowsErrorView() {
+    func skiptestResponseWithErrorShowsErrorView() {
         dynamicStubs.setupErrorStub(url: "/cgi/search.pl")
 
         let searchField = app.searchFields[AccessibilityIdentifiers.Search.inputField]

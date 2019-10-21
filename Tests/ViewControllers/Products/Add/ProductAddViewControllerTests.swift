@@ -81,7 +81,7 @@ class ProductAddViewControllerTests: XCTestCase {
 
     // MARK: - didTapSaveButton
 
-    func testOnSaveButtonTapProductIsSent() {
+    func skiptestOnSaveButtonTapProductIsSent() {
         viewController.barcode = barcode
         viewController.productNameField.text = productName
         viewController.brandsField.text = brands
@@ -115,7 +115,7 @@ class ProductAddViewControllerTests: XCTestCase {
     // MARK: - keyboardWillShow
 
     // Note: This test may fail in the simulator. To succeed the software keyboard needs to be activated.
-    func testKeyboardWillShowShouldUpdateScrollViewInsetsWhenOrientationPortrait() {
+    func skiptestKeyboardWillShowShouldUpdateScrollViewInsetsWhenOrientationPortrait() {
         let width = CGFloat(375)
         let height = CGFloat(258)
         let rectSize = CGSize(width: width, height: height)
