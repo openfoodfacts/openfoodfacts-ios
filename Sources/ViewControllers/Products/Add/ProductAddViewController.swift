@@ -511,13 +511,14 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     private func refreshProductTranslatedValuesFromLang() {
-        if let lang = product.lang {
-            productNameField.text = product.names[lang]
-            ingredientsTextField.text = product.ingredients[lang]
-        } else {
+        //if let lang = product.lang {
+            //productNameField.text = product.names[lang]
+            //ingredientsTextField.text = product.ingredients[lang]
+        //} else {
             productNameField.text = product.name
             ingredientsTextField.text = product.ingredientsList
-        }
+        //}
+
     }
 
     private func fillForm(withProduct product: Product) {
