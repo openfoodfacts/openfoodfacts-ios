@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Lao-9p-WaM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="L1V-v9-X54">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcz-Dc-5OG">
@@ -48,6 +48,7 @@
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXu-MT-2XN">
                                                         <rect key="frame" x="0.0" y="31.5" width="355" height="142.5"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <string key="text">This product is not yet in the Open Food Facts database. Could you please take some pictures of the product, barcode, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -306,9 +307,9 @@
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="saved at XXX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufa-14-PlP">
                                                         <rect key="frame" x="0.0" y="1192" width="355" height="16"/>
-                                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VpN-nl-ZOe">
