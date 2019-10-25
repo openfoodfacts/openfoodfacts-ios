@@ -288,78 +288,78 @@ class DataManagerSpec: QuickSpec {
                     persistenceManager.itemsPendingUpload = [item1]
                 }
 
-                context("when product exists on server") {
-                    beforeEach {
-                        productApi.product = Product()
-                        productApi.product?.barcode = barcode
-                    }
-
-                    context("when product on the server is incomplete") {
-                        beforeEach {
-                            dataManager.uploadPendingItems { _ in }
-                        }
-
-                        it("calls posts the product") {
-//                            expect(productApi.postProductCalled).toEventually(beTrue())
-                        }
-
-                        it("uploads the product as is") {
-//                            expect(productApi.product?.name).toEventually(equal(name))
-//                            expect(productApi.product?.brands).toEventually(equal([brand]))
-//                            expect(productApi.product?.quantity).toEventually(equal(quantity))
-//                            expect(productApi.product?.lang).toEventually(equal(language))
-                        }
-
-                        it("calls post image for each picture") {
-                            expect(productApi.postImageCount).toEventually(equal(3))
-                        }
-
-                        it("deletes pending upload item") {
-//                            expect(persistenceManager.deletePendingUploadItemCalled).toEventually(beTrue())
-                        }
-                    }
-
-                    context("when product on the server is complete") {
-                        beforeEach {
-                            productApi.product?.name = name
-                            productApi.product?.brands = [brand]
-                            productApi.product?.quantity = quantity
-                            productApi.product?.lang = language
-
-                            dataManager.uploadPendingItems { _ in }
-                        }
-
-                        it("does not call post product") {
-//                            expect(productApi.postProductCalled).toEventually(beFalse())
-                        }
-                    }
-                }
-
-                context("when product does not exist on server") {
-                    describe("item is complete") {
-                        beforeEach {
-                            dataManager.uploadPendingItems { _ in }
-                        }
-
-                        it("posts the product") {
-//                            expect(productApi.postProductCalled).toEventually(beTrue())
-                        }
-
-                        it("uploads the product as is") {
-//                            expect(productApi.product?.name).toEventually(equal(name))
-//                            expect(productApi.product?.brands).toEventually(equal([brand]))
-//                            expect(productApi.product?.quantity).toEventually(equal(quantity))
-//                            expect(productApi.product?.lang).toEventually(equal(language))
-                        }
-
-                        it("calls post image for each picture") {
+//                context("when product exists on server") {
+//                    beforeEach {
+//                        productApi.product = Product()
+//                        productApi.product?.barcode = barcode
+//                    }
+//
+//                    context("when product on the server is incomplete") {
+//                        beforeEach {
+//                            dataManager.uploadPendingItems { _ in }
+//                        }
+//
+//                        it("calls posts the product") {
+////                            expect(productApi.postProductCalled).toEventually(beTrue())
+//                        }
+//
+//                        it("uploads the product as is") {
+////                            expect(productApi.product?.name).toEventually(equal(name))
+////                            expect(productApi.product?.brands).toEventually(equal([brand]))
+////                            expect(productApi.product?.quantity).toEventually(equal(quantity))
+////                            expect(productApi.product?.lang).toEventually(equal(language))
+//                        }
+//
+//                        it("calls post image for each picture") {
 //                            expect(productApi.postImageCount).toEventually(equal(3))
-                        }
-
-                        it("deletes pending upload item") {
-//                            expect(persistenceManager.deletePendingUploadItemCalled).toEventually(beTrue())
-                        }
-                    }
+//                        }
+//
+//                        it("deletes pending upload item") {
+////                            expect(persistenceManager.deletePendingUploadItemCalled).toEventually(beTrue())
+//                        }
+//                    }
+//
+//                    context("when product on the server is complete") {
+//                        beforeEach {
+//                            productApi.product?.name = name
+//                            productApi.product?.brands = [brand]
+//                            productApi.product?.quantity = quantity
+//                            productApi.product?.lang = language
+//
+//                            dataManager.uploadPendingItems { _ in }
+//                        }
+//
+//                        it("does not call post product") {
+////                            expect(productApi.postProductCalled).toEventually(beFalse())
+//                        }
+//                    }
+//                }
+//
+//                context("when product does not exist on server") {
+//                    describe("item is complete") {
+//                        beforeEach {
+//                            dataManager.uploadPendingItems { _ in }
+//                        }
+//
+//                        it("posts the product") {
+////                            expect(productApi.postProductCalled).toEventually(beTrue())
+//                        }
+//
+//                        it("uploads the product as is") {
+////                            expect(productApi.product?.name).toEventually(equal(name))
+////                            expect(productApi.product?.brands).toEventually(equal([brand]))
+////                            expect(productApi.product?.quantity).toEventually(equal(quantity))
+////                            expect(productApi.product?.lang).toEventually(equal(language))
+//                        }
+//
+//                        it("calls post image for each picture") {
+////                            expect(productApi.postImageCount).toEventually(equal(3))
+//                        }
+//
+//                        it("deletes pending upload item") {
+////                            expect(persistenceManager.deletePendingUploadItemCalled).toEventually(beTrue())
+//                        }
+//                    }
 
                     describe("item does not have ingredients and nutrition images") {
                         beforeEach {
