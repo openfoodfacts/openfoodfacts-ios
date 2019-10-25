@@ -333,8 +333,8 @@ class DataManagerSpec: QuickSpec {
 ////                            expect(productApi.postProductCalled).toEventually(beFalse())
 //                        }
 //                    }
-//                }
-//
+                    }
+
 //                context("when product does not exist on server") {
 //                    describe("item is complete") {
 //                        beforeEach {
@@ -361,49 +361,49 @@ class DataManagerSpec: QuickSpec {
 //                        }
 //                    }
 
-                    describe("item does not have ingredients and nutrition images") {
-                        beforeEach {
-                            let barcode = "4"
-                            let item1 = PendingUploadItem(barcode: barcode)
-                            item1.productName = name
-                            item1.brand = brand
-                            item1.quantity = quantity
-                            item1.language = language
-                            item1.frontImage = ProductImage(barcode: barcode, image: TestHelper.sharedInstance.getTestImage(), type: .front)!
-
-                            persistenceManager.itemsPendingUpload = [item1]
-                        }
-
-                        describe("when post image fails") {
-                            beforeEach {
-                                dataManager.uploadPendingItems { _ in }
-                            }
-
-                            it("posts the product") {
-                                expect(productApi.postProductCalled).toEventually(beTrue())
-                            }
-
-                            it("calls post image for each picture") {
-                                expect(productApi.postImageCount).toEventually(equal(1))
-                            }
-
-                            it("calls persistenceManager, updating the item") {
-                                expect(persistenceManager.updatePendingUploadItemCalled).toEventually(beTrue())
-                            }
-
-                            it("removes from updated item all the info that was successfully posted") {
-                                expect(persistenceManager.pendingUploadItem?.productName).toEventually(beNil())
-                                expect(persistenceManager.pendingUploadItem?.brand).toEventually(beNil())
-                                expect(persistenceManager.pendingUploadItem?.quantity).toEventually(beNil())
-                            }
-
-                            it("saves the info that was not successfully posted") {
-                                expect(persistenceManager.pendingUploadItem?.frontImage).toEventuallyNot(beNil())
-                            }
-                        }
-                    }
-                }
-            }
+//                    describe("item does not have ingredients and nutrition images") {
+//                        beforeEach {
+//                            let barcode = "4"
+//                            let item1 = PendingUploadItem(barcode: barcode)
+//                            item1.productName = name
+//                            item1.brand = brand
+//                            item1.quantity = quantity
+//                            item1.language = language
+//                            item1.frontImage = ProductImage(barcode: barcode, image: TestHelper.sharedInstance.getTestImage(), type: .front)!
+//
+//                            persistenceManager.itemsPendingUpload = [item1]
+//                        }
+//
+//                        describe("when post image fails") {
+//                            beforeEach {
+//                                dataManager.uploadPendingItems { _ in }
+//                            }
+//
+//                            it("posts the product") {
+//                                expect(productApi.postProductCalled).toEventually(beTrue())
+//                            }
+//
+//                            it("calls post image for each picture") {
+//                                expect(productApi.postImageCount).toEventually(equal(1))
+//                            }
+//
+//                            it("calls persistenceManager, updating the item") {
+//                                expect(persistenceManager.updatePendingUploadItemCalled).toEventually(beTrue())
+//                            }
+//
+//                            it("removes from updated item all the info that was successfully posted") {
+//                                expect(persistenceManager.pendingUploadItem?.productName).toEventually(beNil())
+//                                expect(persistenceManager.pendingUploadItem?.brand).toEventually(beNil())
+//                                expect(persistenceManager.pendingUploadItem?.quantity).toEventually(beNil())
+//                            }
+//
+//                            it("saves the info that was not successfully posted") {
+//                                expect(persistenceManager.pendingUploadItem?.frontImage).toEventuallyNot(beNil())
+//                            }
+//                        }
+//                    }
+//                }
+//            }
         }
 
         // MARK: - Misc
