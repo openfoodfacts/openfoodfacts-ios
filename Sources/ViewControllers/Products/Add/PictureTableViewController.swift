@@ -20,6 +20,7 @@ class PictureTableViewController: TakePictureViewController {
 
     override func viewDidLoad() {
         tableView.isScrollEnabled = false
+        reloadAllData()
         pictures = [PictureViewModel]()
         pictures.append(PictureViewModel(imageType: .front))
         pictures.append(PictureViewModel(imageType: .ingredients))
@@ -31,8 +32,13 @@ class PictureTableViewController: TakePictureViewController {
         if let barcode = self.barcode, let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode) {
             fillForm(withPendingUploadItem: pendingUploadItem)
         }
+        self.tableView.reloadData()
     }
 
+    func reloadAllData() {
+        self.tableView.reloadData()
+    }
+    
     fileprivate func index(forImageType type: ImageType) -> Int? {
         return pictures.firstIndex(where: { (pic: PictureViewModel) -> Bool in
             return pic.imageType == type
@@ -138,7 +144,7 @@ extension PictureTableViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PictureTableViewCell.self)) as? PictureTableViewCell else {
-            fatalError("The cell is missing. No cell, no table.")
+            fatalError("Cell Not Found")
         }
         cell.configure(viewModel: pictures[indexPath.row])
         return cell

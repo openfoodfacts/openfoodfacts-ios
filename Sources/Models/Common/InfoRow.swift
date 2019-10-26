@@ -128,11 +128,11 @@ struct InfoRow {
     init(label: InfoRowKey, value: String) {
         self.label = label
         self.value = value
-        self.secondaryValue = nil
+        self.secondaryValue = ""
         self.highlight = false
     }
 
-    init(label: InfoRowKey, value: String, secondaryValue: String?, highlight: Bool = false) {
+    init(label: InfoRowKey, value: String, secondaryValue: String?, highlight: Bool) {
         self.label = label
         self.value = value
         self.secondaryValue = secondaryValue

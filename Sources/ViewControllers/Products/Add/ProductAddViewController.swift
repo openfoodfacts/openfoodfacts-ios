@@ -192,6 +192,7 @@ class ProductAddViewController: TakePictureViewController {
             fillForm(withPendingUploadItem: pendingUploadItem!)
         }
         }
+        
     }
     // swiftlint:enable function_body_length
 

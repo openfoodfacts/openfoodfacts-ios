@@ -14,10 +14,10 @@ struct NutritionTableRow {
     let perServingValue: String?
     let highlight: Bool
 
-    init(label: String, perSizeValue: String, perServingValue: String? = nil, highlight: Bool = false) {
+    init(label: String, perSizeValue: String, perServingValue: String, highlight: Bool = false) {
         self.label = label
         self.perSizeValue = perSizeValue
-        self.perServingValue = perServingValue
+        self.perServingValue = ""
         self.highlight = highlight
     }
 }
