@@ -65,7 +65,7 @@ You can install [Carthage](https://github.com/Carthage/Carthage) with Homebrew:
 ```
 brew install carthage
 ```
-
+If installing Carthage this way fails, the GitHub project [provides](https://github.com/Carthage/Carthage/releases) .pkg files.
 ### Fastlane
 
 Currently there are two lanes, one for running the tests (`fastlane test`) and one for uploading a new beta to TestFlight (`fastlane beta`).
