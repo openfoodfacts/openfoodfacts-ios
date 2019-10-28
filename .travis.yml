@@ -7,7 +7,7 @@ cache:
 before_install:
   - gem install fastlane --no-document --quiet
 script:
-  - travis_wait 45 carthage update --platform ios
+  - travis_wait 90 carthage update --platform ios
   - fastlane test
 notifications:
   slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
