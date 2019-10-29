@@ -12,7 +12,6 @@ class SummaryFormTableViewController: FormTableViewController {
     var hideSummary: Bool = false
 
     var summaryHeaderCellController: SummaryHeaderCellController?
-    var summaryFooterCellController: SummaryFooterCellController?
 
     override init(with form: Form, dataManager: DataManagerProtocol) {
         super.init(with: form, dataManager: dataManager)
@@ -35,18 +34,6 @@ class SummaryFormTableViewController: FormTableViewController {
             summaryHeaderCellController.didMove(toParent: self)
 
             return cell
-        } else if formRow.cellType is SummaryFooterCell.Type, let product = formRow.value as? Product {
-            let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
-            cell.configure(with: formRow, in: self)
-
-            let summaryFooterCellController = SummaryFooterCellController(with: product, dataManager: dataManager)
-            cell.hostedView = summaryFooterCellController.view
-            self.summaryFooterCellController = summaryFooterCellController
-
-            self.addChild(summaryFooterCellController)
-            summaryFooterCellController.didMove(toParent: self)
-
-            return cell
         } else {
             return super.getCell(for: formRow)
         }
@@ -56,9 +43,6 @@ class SummaryFormTableViewController: FormTableViewController {
         if cell is SummaryHeaderCell, let summaryHeaderCellController = summaryHeaderCellController {
             self.addChild(summaryHeaderCellController)
             summaryHeaderCellController.didMove(toParent: self)
-        } else if cell is SummaryFooterCell, let summaryFooterCellController = summaryFooterCellController {
-            self.addChild(summaryFooterCellController)
-            summaryFooterCellController.didMove(toParent: self)
         }
     }
 
@@ -67,10 +51,6 @@ class SummaryFormTableViewController: FormTableViewController {
             self.summaryHeaderCellController?.view.removeFromSuperview()
             self.summaryHeaderCellController?.willMove(toParent: nil)
             self.summaryHeaderCellController?.removeFromParent()
-        } else if cell is SummaryFooterCell {
-            self.summaryFooterCellController?.view.removeFromSuperview()
-            self.summaryFooterCellController?.willMove(toParent: nil)
-            self.summaryFooterCellController?.removeFromParent()
         }
     }
 }
