@@ -1,13 +1,12 @@
 language: objective-c
 osx_image: xcode11
 cache:
-  timeout: 5000
   directories:
   - Carthage
 before_install:
   - gem install fastlane --no-document --quiet
 script:
-  - fastlane test
+  - travis_wait 180 fastlane test
 notifications:
   slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
 env:

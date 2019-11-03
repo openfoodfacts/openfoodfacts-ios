@@ -9,6 +9,7 @@
 @testable import OpenFoodFacts
 import Foundation
 import RealmSwift
+import UIKit
 
 class DataManagerMock: DataManagerProtocol {
 
@@ -234,4 +235,6 @@ class DataManagerMock: DataManagerProtocol {
         return nil
     }
 
+    func getMockBarcodeImage(forLocale locale: Locale, onSuccess: @escaping (UIImage) -> Void, onError: @escaping (Error) -> Void) {
+    }
 }
