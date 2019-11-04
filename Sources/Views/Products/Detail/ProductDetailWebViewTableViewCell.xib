@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdR-3r-BPY">
+                    <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdR-3r-BPY">
                         <rect key="frame" x="8" y="8" width="304" height="164"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -25,7 +25,6 @@
                         </constraints>
                     </webView>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="hdR-3r-BPY" secondAttribute="bottom" constant="8" id="KqU-ih-PrF"/>
                     <constraint firstItem="hdR-3r-BPY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="TjO-ns-3yR"/>

@@ -6,6 +6,7 @@
 //  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
 //
 
+import IBLocalizable
 import UIKit
 
 class LoggedInViewController: UIViewController, DataManagerClient {
