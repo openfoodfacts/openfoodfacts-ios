@@ -10,7 +10,7 @@ import Foundation
 
 struct URLs {
     static let codeLang = Bundle.main.preferredLocalizations.first ?? "en"
-    static let baseUrl = "https://world.openfoodfacts.org"
+    static let baseUrl = "https://world-\(codeLang).openfoodfacts.org"
     static let Discover = "\(baseUrl)/discover"
     static let HowToContribute = "\(baseUrl)/contribute"
     static let CreateAccount = "\(baseUrl)/cgi/user.pl"
