@@ -9,8 +9,7 @@
 import Foundation
 
 struct URLs {
-    static let codeLang = Bundle.main.preferredLocalizations.first ?? "en"
-    static let baseUrl = "https://world-\(codeLang).openfoodfacts.org"
+    static let baseUrl = "https://world\(codeLang).openfoodfacts.org"
     static let Discover = "\(baseUrl)/discover"
     static let HowToContribute = "\(baseUrl)/contribute"
     static let CreateAccount = "\(baseUrl)/cgi/user.pl"
@@ -29,6 +28,15 @@ struct URLs {
         return ProductBaseURLWithLanguagePlaceholder.replacingOccurrences(of: "LANGUAGE", with: Locale.current.languageCode!)
     }()
 //
+    static var codeLang: String {
+        // This is a solution for the (wrong) redirects of OFF.
+        // All these links would redirect to the discover page.
+        if let lang = Bundle.main.preferredLocalizations.first, lang != "en" {
+            return "-" + lang
+        }
+        return ""
+    }
+
     static func urlForProduct(with code: String?) -> String {
         guard let code = code else {
             return Discover
