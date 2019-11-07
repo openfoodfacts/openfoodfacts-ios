@@ -17,7 +17,7 @@ struct URLs {
     static let Edit = "\(baseUrl)/cgi/product.pl?type=edit&code="
     static let YourContributions = "\(baseUrl)/contributor/"
     static let ProductBaseURLWithLanguagePlaceholder = "\(baseUrl)/product/"
-    static let OpenBeautyFacts = "itms-apps://apps.apple.com/us/app/open-beauty-facts/id1122926380?mt=8"
+    static let OpenBeautyFacts = "itms-apps://apps.apple.com/us/app/open-beauty-facts/id1122926380"
     static let SupportOpenFoodFacts = "https://donate.openfoodfacts.org"
     static let TranslateOpenFoodFacts = "https://translate.openfoodfacts.org"
     static let FrequentlyAskedQuestions = "\(baseUrl)/faq"
