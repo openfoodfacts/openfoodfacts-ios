@@ -10,6 +10,7 @@ import UIKit
 
 extension Notification.Name {
     static let pendingUploadBadgeChange = Notification.Name("pending-upload-change")
+    static let requestScanning = Notification.Name("request-scanning")
 }
 
 struct NotificationUserInfoKey {
