@@ -310,6 +310,12 @@ class ScannerViewController: UIViewController, DataManagerClient {
         floatingPanelController.surfaceView.backgroundColor = .clear
         floatingPanelController.surfaceView.cornerRadius = 9.0
         floatingPanelController.surfaceView.shadowHidden = false
+        // Add a gesture to hide the summaryView
+        let gestureDown = UISwipeGestureRecognizer(target: self, action: #selector(self.hideSummaryView(_:)))
+        gestureDown.numberOfTouchesRequired = 1
+        gestureDown.direction = .down
+        floatingPanelController.surfaceView.addGestureRecognizer(gestureDown)
+        floatingPanelController.surfaceView.isUserInteractionEnabled = true
 
         floatingPanelController.addPanel(toParent: self)
 
@@ -618,6 +624,7 @@ extension ScannerViewController: FloatingPanelControllerDelegate {
         }
         self.showAllergensFloatingLabelIfNeeded()
     }
+    
 }
 
 // MARK: - ManualBarcodeInput delegate
@@ -665,4 +672,13 @@ class ScannerFloatingPanelLayout: FloatingPanelLayout {
         default: return nil
         }
     }
+}
+
+// MARK: - Gesture recognizers
+extension ScannerViewController {
+
+    @objc func hideSummaryView(_ sender: UISwipeGestureRecognizer) {
+        floatingPanelController.move(to: FloatingPanelPosition.hidden, animated: true)
+    }
+
 }

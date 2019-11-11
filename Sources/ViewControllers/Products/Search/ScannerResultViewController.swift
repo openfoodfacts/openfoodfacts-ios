@@ -58,9 +58,11 @@ class ScannerResultViewController: UIViewController {
             statusIndicatorLabel.isHidden = false
 
         case .hasOfflineData(let product):
+            // reset the view visibility after succesful scan
             updateSummaryVisibility(forProduct: product)
 
         case .hasSummary(let product):
+            // reset the view visibility after succesful scan
             updateSummaryVisibility(forProduct: product)
 
         case .hasProduct(let product, let dataManager):
@@ -110,4 +112,5 @@ class ScannerResultViewController: UIViewController {
 
         self.productDetailsContainer.isHidden = false
     }
+
 }
