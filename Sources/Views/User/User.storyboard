@@ -71,6 +71,9 @@
                                                         <rect key="frame" x="99" y="163" width="137" height="33"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Forgot password?"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.forgot-password"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="didTapForgotPassword:" destination="1d0-rW-cUw" eventType="touchUpInside" id="rVC-0b-zgV"/>
                                                         </connections>
@@ -153,7 +156,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="f4X-3w-q39" secondAttribute="bottom" id="FQr-Pe-bUp"/>
                             <constraint firstItem="ENg-Sa-koP" firstAttribute="width" secondItem="zgC-XY-W8S" secondAttribute="width" id="WZp-Ty-iSX"/>
