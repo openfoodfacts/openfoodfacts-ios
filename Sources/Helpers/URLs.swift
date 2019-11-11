@@ -15,7 +15,7 @@ struct URLs {
     static let CreateAccount = "\(baseUrl)/cgi/user.pl"
     static let ForgotPassword = "\(baseUrl)/cgi/reset_password.pl"
     static let Edit = "\(baseUrl)/cgi/product.pl?type=edit&code="
-    static let YourContributions = "\(baseLocalizedUrl)/contributor/"
+    static let YourContributions = "\(baseUrl)/contributor/"
     static let ProductBaseURLWithLanguagePlaceholder = "\(baseUrl)/product/"
     static let OpenBeautyFacts = "itms-apps://apps.apple.com/us/app/open-beauty-facts/id1122926380"
     static let SupportOpenFoodFacts = "https://donate.openfoodfacts.org"
