@@ -85,15 +85,15 @@ internal class RealmPendingUploadItem: Object {
         pendingUploadItem.nutriments.append(objectsIn: self.nutriments)
 
         if let imageName = self.frontImageName {
-            pendingUploadItem.frontImage = ProductImage(barcode: barcode, fileName: imageName, type: .front)
+            pendingUploadItem.frontImage = ProductImage(barcode: barcode, fileName: imageName, type: .front, languageCode:self.language)
         }
 
         if let imageName = self.ingredientsImageName {
-            pendingUploadItem.ingredientsImage = ProductImage(barcode: barcode, fileName: imageName, type: .ingredients)
+            pendingUploadItem.ingredientsImage = ProductImage(barcode: barcode, fileName: imageName, type: .ingredients, languageCode:self.language)
         }
 
         if let imageName = self.nutritionImageName {
-            pendingUploadItem.nutritionImage = ProductImage(barcode: barcode, fileName: imageName, type: .nutrition)
+            pendingUploadItem.nutritionImage = ProductImage(barcode: barcode, fileName: imageName, type: .nutrition, languageCode:self.language)
         }
 
         return pendingUploadItem

@@ -26,7 +26,12 @@ class ProductDetailWebViewTableViewCell: ProductDetailBaseCell {
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         if let html = formRow.getValueAsString() {
-            webView.loadHTMLString(html, baseURL: nil)
+            let font = UIFont.preferredFont(forTextStyle: .body)
+            if #available(iOS 13.0, *) {
+                webView.loadHTMLString(html.htmlFormattedString(font: font, color: .label), baseURL: nil)
+            } else {
+                webView.loadHTMLString(html.htmlFormattedString(font: font, color: .black), baseURL: nil)
+            }
             webView.isHidden = false
         } else {
             webView.isHidden = true
@@ -45,4 +50,28 @@ extension ProductDetailWebViewTableViewCell: UIWebViewDelegate {
         tableView?.beginUpdates()
         tableView?.endUpdates()
     }
+}
+
+extension String {
+
+func htmlFormattedString( font: UIFont, color: UIColor) -> String {
+    let colorComponents = color.cgColor.components ?? []
+
+    var colorHexString = ""
+    if color.cgColor.numberOfComponents == 4 {
+        let red = colorComponents[0] * 255
+        let green = colorComponents[1] * 255
+        let blue = colorComponents[2] * 255
+
+        colorHexString = NSString(format: "%02X%02X%02X", Int(red), Int(green), Int(blue)) as String
+    } else if color.cgColor.numberOfComponents == 2 {
+        let white = colorComponents[0] * 255
+
+        colorHexString = NSString(format: "%02X%02X%02X", Int(white), Int(white), Int(white)) as String
+    } else {
+        return "htmlFormattedString:Color format noch supported"
+    }
+
+    return String(format: "<html>\n <head>\n <style type=\"text/css\">\n body {font-family: \"%@\"; font-size: %@; color:#%@;}\n </style>\n </head>\n <body>%@</body>\n </html>", font.familyName, String(describing: font.pointSize), colorHexString, self) as String
+}
 }

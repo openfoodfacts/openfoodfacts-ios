@@ -1,6 +1,6 @@
 # Open Food Facts iOS app
 
-Note: Xcode's limited Markdown support means this file is best viewed on GitHub.
+Note: Xcode's limited Markdown support means this file is best viewed on GitHub. Not seeing this as a formatted file in Xcode? Check out [the Build section](https://github.com/openfoodfacts/openfoodfacts-ios/wiki/Build) of the project wiki on GitHub for troubleshooting tips.
 
 [![Build Status](https://travis-ci.org/openfoodfacts/openfoodfacts-ios.svg?branch=master)](https://travis-ci.org/openfoodfacts/openfoodfacts-ios)
 [![Project Status](http://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
@@ -65,7 +65,16 @@ You can install [Carthage](https://github.com/Carthage/Carthage) with Homebrew:
 ```
 brew install carthage
 ```
+#### Dependency troubleshooting
+If you see an error `dyld: Library not loaded:` [...] `Reason: image not found`:
+1. Go to the OpenFoodFacts project file in Xcode, select Build Phases, and open the Carthage phase. Make sure `$(SRCROOT)/Carthage/Build/iOS/<YourMissingFramework>.framework` appears as an input to the `/usr/local/bin/carthage copy-frameworks`.
+1. Next, select General and make sure the missing library/framework appears in the Frameworks, Libraries, and Embedded Content list. If it doesn't, drag and drop it from the Carthage/Build/iOS folder (found inside the project folder) into this list. (If you do not have a Carthage folder, run `carthage update`; see Carthage resources.)
 
+#### Carthage resources
+New to Carthage? Others have found the following resources helpful:
+* [Ray Wenderlich's Carthage Tutorial](https://www.raywenderlich.com/416-carthage-tutorial-getting-started)
+* [Chris Mendez's Carthage cheat sheet](https://www.chrisjmendez.com/2016/10/30/carthage-cheat-sheet/)
+  
 ### Fastlane
 
 Currently there are two lanes, one for running the tests (`fastlane test`) and one for uploading a new beta to TestFlight (`fastlane beta`).

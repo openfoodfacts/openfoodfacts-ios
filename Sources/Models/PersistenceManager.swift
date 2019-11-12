@@ -380,6 +380,8 @@ class PersistenceManager: PersistenceManagerProtocol {
                     item.ingredientsImage = productImage
                 case .nutrition:
                     item.nutritionImage = productImage
+                default:
+                    break
                 }
 
                 let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
