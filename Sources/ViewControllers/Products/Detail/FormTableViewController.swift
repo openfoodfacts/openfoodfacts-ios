@@ -44,7 +44,7 @@ class FormTableViewController: UITableViewController {
 
         tableView.alwaysBounceVertical = false // prevent scroll when table view fits in screen
         tableView.tableFooterView = UIView(frame: CGRect.zero) // Hide empty rows
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false
         tableView.cellLayoutMarginsFollowReadableWidth = false
 

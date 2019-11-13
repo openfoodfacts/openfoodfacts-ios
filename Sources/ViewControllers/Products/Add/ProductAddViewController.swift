@@ -80,11 +80,16 @@ class ProductAddViewController: TakePictureViewController {
     override var barcode: String! {
         didSet {
             product.barcode = barcode
+            if productToEdit == nil {
+                productToEdit = Product.init()
+                productToEdit?.barcode = barcode
+            }
         }
     }
 
     var productToEdit: Product? {
         didSet {
+            // has a barcode been passed on from the scanner?
             if let barcode = productToEdit?.barcode {
                 self.barcode = barcode
             }
@@ -119,6 +124,7 @@ class ProductAddViewController: TakePictureViewController {
     ]
     fileprivate var displayedNutrimentItems = displayedNutrimentItemsByDefault
 
+    // swiftlint:disable function_body_length
     override func viewDidLoad() {
         self.title = "product-add.title".localized
 
@@ -167,16 +173,27 @@ class ProductAddViewController: TakePictureViewController {
         configureLanguageField()
         configureDelegates()
         configureNotifications()
+        // Issue #325
+        // The app seems to try first a locally stored product and then a realm stored product
+        // Both were nil however, and nothing happens
+        // As there is a new barcode, there should be a local product,
+        // but it is nowhere created
+        // solutio is to create productToEdit, when the barcode is set
+        // and assign the barcode to productToEdit
 
         if let productToEdit = self.productToEdit {
             self.title = "product-add.title-edit".localized
             self.product = productToEdit
             fillForm(withProduct: productToEdit)
         }
-        if let barcode = self.barcode, let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode) {
-            fillForm(withPendingUploadItem: pendingUploadItem)
+        if let barcode = self.barcode {
+        let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode)
+        if pendingUploadItem != nil {
+            fillForm(withPendingUploadItem: pendingUploadItem!)
+        }
         }
     }
+    // swiftlint:enable function_body_length
 
     fileprivate func fillProductFromInfosForm() {
         if let lang = product.lang {
@@ -429,7 +446,7 @@ class ProductAddViewController: TakePictureViewController {
         let languageValue = product.lang ?? Locale.current.languageCode ?? "en"
         self.product.lang = languageValue
 
-        let defaultValue: Int? = languages.index(where: { $0.code == languageValue })
+        let defaultValue: Int? = languages.firstIndex(where: { $0.code == languageValue })
 
         self.languagePickerController = PickerViewController(data: languages, defaultValue: defaultValue, delegate: self)
         self.languagePickerToolbarController = PickerToolbarViewController(title: "product-add.language.toolbar-title".localized, delegate: self)
@@ -462,8 +479,8 @@ class ProductAddViewController: TakePictureViewController {
 
     private func configureNotifications() {
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
@@ -494,13 +511,14 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     private func refreshProductTranslatedValuesFromLang() {
-        if let lang = product.lang {
-            productNameField.text = product.names[lang]
-            ingredientsTextField.text = product.ingredients[lang]
-        } else {
+        //if let lang = product.lang {
+            //productNameField.text = product.names[lang]
+            //ingredientsTextField.text = product.ingredients[lang]
+        //} else {
             productNameField.text = product.name
             ingredientsTextField.text = product.ingredientsList
-        }
+        //}
+
     }
 
     private func fillForm(withProduct product: Product) {
@@ -564,6 +582,7 @@ class ProductAddViewController: TakePictureViewController {
 
     // swiftlint:disable cyclomatic_complexity
     private func fillForm(withPendingUploadItem pendingUploadItem: PendingUploadItem) {
+
         if let productName = pendingUploadItem.productName {
             productNameField.text = productName
         }
@@ -632,7 +651,7 @@ extension ProductAddViewController {
     @objc func keyboardWillShow(notification: Notification) {
         let userInfo = notification.userInfo
         // swiftlint:disable:next force_cast
-        let keyboardFrame = userInfo?[UIKeyboardFrameEndUserInfoKey] as! CGRect
+        let keyboardFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
         let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
         scrollView.contentInset = contentInset
         scrollView.scrollIndicatorInsets = contentInset

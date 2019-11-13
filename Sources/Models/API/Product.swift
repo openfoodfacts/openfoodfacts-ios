@@ -58,7 +58,7 @@ enum ImageSizeCategory {
     case small
     case display
     case unknown
-    
+
     var description: String {
         switch self {
         case .thumb:
@@ -97,7 +97,7 @@ struct Product: Mappable {
     var countries: [String]?
     private var ingredientsImageUrlDecoded: String?
     var allergens: [Tag]?
-    var traces: String?
+    var traces: [Tag]?
     var additives: [Tag]?
     var palmOilIngredients: [String]?
     var possiblePalmOilIngredients: [String]?
@@ -113,22 +113,26 @@ struct Product: Mappable {
     var environmentImpactLevelTags: [EnvironmentImpact]?
     var nutritionTableHtml: String?
     // new variables for local languages
-    var languageCodes: [String : Int]?
-    var names: [String:String] = [:]
-    var genericNames: [String:String] = [:]
-    var ingredients: [String:String] = [:]
+    var languageCodes: [String: Int]?
+    var names: [String: String] = [:]
+    var genericNames: [String: String] = [:]
+    var ingredients: [String: String] = [:]
     var ingredientsListDecoded: String?
-    
-    private var selectedImages: [String:Any] = [:]
-    private var images: [ImageTypeCategory:[ImageSizeCategory:[String:String]]] = [:]
-    
+    var vitamins: [Tag]?
+    var minerals: [Tag]?
+    var nucleotides: [Tag]?
+    var otherNutrients: [Tag]?
+
+    private var selectedImages: [String: Any] = [:]
+    private var images: [ImageTypeCategory: [ImageSizeCategory: [String: String]]] = [:]
+
     private struct KeyPreFix {
         static let ProductName = "product_name_"
         static let GenericName = "generic_name_"
         static let IngredientsText = "ingredients_text_"
         static let IngredientsTextWithAllergens = "ingredients_text_with_allergens_"
     }
-    
+
     // These are not in any json response, but we will use them internally for all products we create as they are easier to work with
     var quantity: String? {
         get {
@@ -176,7 +180,7 @@ struct Product: Mappable {
             nameDecoded = newValue
         }
     }
-    
+
     var frontImageUrl: String? {
         if let frontImages = images[.front] {
             if let displayFrontImages = frontImages[.display] {
@@ -229,21 +233,15 @@ struct Product: Mappable {
         return nutritionTableImageDecoded
     }
 
-    
     init() {}
     init?(map: Map) {}
 
+    // swiftlint:disable function_body_length
     mutating func mapping(map: Map) {
-        languageCodes <- map[OFFJson.LanguageCodesKey]
-        nameDecoded <- map[OFFJson.ProductNameKey]
-        brands <- (map[OFFJson.BrandsKey], ArrayTransform())
-        _quantity <- map[OFFJson.QuantityKey]
-        frontImageUrlDecoded <- map[OFFJson.ImageFrontUrlKey]
-        frontImageSmallUrlDecoded <- map[OFFJson.ImageFrontSmallUrlKey]
-        imageUrl <- map[OFFJson.ImageUrlKey]
-        imageSmallUrl <- map[OFFJson.ImageSmallUrlKey]
+        additives <- (map[OFFJson.AdditivesTagsKey], TagTransform())
+        allergens <- (map[OFFJson.AllergensTagsKey], TagTransform())
         barcode <- map[OFFJson.CodeKey]
-        packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
+        brands <- (map[OFFJson.BrandsKey], ArrayTransform())
         categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
         categoriesTags <- (map[OFFJson.CategoriesTagsKey])
         nutriscore <- map[OFFJson.NutritionGradesKey]
@@ -252,46 +250,64 @@ struct Product: Mappable {
         origins <- map[OFFJson.OriginsKey]
         labels <- (map[OFFJson.LabelsKey], ArrayTransform())
         citiesTags <- map[OFFJson.CitiesTagsKey]
-        embCodesTags <- map[OFFJson.EmbCodesTagsKey]
-        stores <- (map[OFFJson.StoresKey], ArrayTransform())
         countries <- (map[OFFJson.CountriesKey], ArrayTransform())
+        embCodesTags <- map[OFFJson.EmbCodesTagsKey]
+        environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
+        environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
+        frontImageSmallUrlDecoded <- map[OFFJson.ImageFrontSmallUrlKey]
+        frontImageUrlDecoded <- map[OFFJson.ImageFrontUrlKey]
+        imageSmallUrl <- map[OFFJson.ImageSmallUrlKey]
+        imageUrl <- map[OFFJson.ImageUrlKey]
         ingredientsImageUrlDecoded <- map[OFFJson.ImageIngredientsUrlKey]
         ingredientsListDecoded <- map[OFFJson.IngredientsKey]
-        allergens <- (map[OFFJson.AllergensTagsKey], TagTransform())
-        traces <- map[OFFJson.TracesKey]
-        additives <- (map[OFFJson.AdditivesTagsKey], TagTransform())
+        labels <- (map[OFFJson.LabelsKey], ArrayTransform())
+        lang <- map[OFFJson.LangKey]
+        languageCodes <- map[OFFJson.LanguageCodesKey]
+        manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
+        minerals <- (map[OFFJson.MineralsTagsKey], TagTransform())
+        nameDecoded <- map[OFFJson.ProductNameKey]
+        noNutritionData <- map[OFFJson.NoNutritionDataKey]
+        novaGroup <- map[OFFJson.NovaGroupKey]
+        nucleotides <- (map[OFFJson.NucleotidesTagsKey], TagTransform())
+        nutriments <- map[OFFJson.NutrimentsKey]
+        nutriscore <- map[OFFJson.NutritionGradesKey]
+        nutritionDataPer <- map[OFFJson.NutritionDataPerKey]
+        nutritionLevels <- map[OFFJson.NutrientLevelsKey]
+        nutritionTableImageDecoded <- map[OFFJson.ImageNutritionUrlKey]
+        nutritionTableHtml <- map[OFFJson.NutritionTableHtml]
+        origins <- map[OFFJson.OriginsKey]
+        otherNutrients <- (map[OFFJson.OtherNutritionalSubstancesTagsKey], TagTransform())
+        packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
         palmOilIngredients <- map[OFFJson.IngredientsFromPalmOilTagsKey]
         possiblePalmOilIngredients <- map[OFFJson.IngredientsThatMayBeFromPalmOilTagsKey]
         servingSize <- map[OFFJson.ServingSizeKey]
-        noNutritionData <- map[OFFJson.NoNutritionDataKey]
-        nutritionLevels <- map[OFFJson.NutrientLevelsKey]
-        nutriments <- map[OFFJson.NutrimentsKey]
-        nutritionDataPer <- map[OFFJson.NutritionDataPerKey]
-        nutritionTableImageDecoded <- map[OFFJson.ImageNutritionUrlKey]
         states <- (map[OFFJson.StatesKey], ArrayTransform())
-        lang <- map[OFFJson.LangKey]
-        environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
-        environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
-        nutritionTableHtml <- map[OFFJson.NutritionTableHtml]
+        stores <- (map[OFFJson.StoresKey], ArrayTransform())
+        traces <- (map[OFFJson.TracesTagsKey], TagTransform())
+        vitamins <- (map[OFFJson.VitaminsTagsKey], TagTransform())
+        _quantity <- map[OFFJson.QuantityKey]
 
         // try to extract all language specific fields
 
-        names <- map[OFFJson.ProductNameLanguagesKey]
-        genericNames <- map[OFFJson.GenericNameLanguagesKey]
-        ingredients <- map[OFFJson.IngredientsLanguagesKey]
-    }
+        // guard let validLanguageCodes = languageCodes else { return }
 
-    func matchedLanguageCode(codes:[String]) -> String? {
+        for languageCode in Locale.preferredLanguageCodes {
+            names[languageCode] <- map[OFFJson.ProductNameKey + OFFJson.KeySeparator + languageCode]
+            genericNames[languageCode] <- map[OFFJson.GenericNameKey + OFFJson.KeySeparator + languageCode]
+            ingredients[languageCode] <- map[OFFJson.IngredientsTextKey + OFFJson.KeySeparator + languageCode]
+        }
+    }
+    // swiftlint:enable function-body-length
+
+    func matchedLanguageCode(codes: [String]) -> String? {
         guard let validLanguageCodes = languageCodes else { return nil }
-        for code in codes {
-            if validLanguageCodes[code] != nil {
-                return code
-            }
+        for code in codes where validLanguageCodes[code] != nil {
+            return code
         }
         return lang
     }
 
-    private mutating func decodeImages(_ selectedImages: [String:Any]) {
+    private mutating func decodeImages(_ selectedImages: [String: Any]) {
         for imageTypes in selectedImages {
             if let validImages = decodeTypes(imageTypes.key, value: imageTypes.value, for: .front) {
                 images[.front] = [validImages.0: validImages.1]
@@ -305,23 +321,23 @@ struct Product: Mappable {
         }
     }
 
-    private func decodeTypes(_ key: String, value: Any, for sizeCategory: ImageTypeCategory) -> (ImageSizeCategory, [String:String])? {
-        var imageSizes: (ImageSizeCategory, [String:String])? = nil
+    private func decodeTypes(_ key: String, value: Any, for sizeCategory: ImageTypeCategory) -> (ImageSizeCategory, [String: String])? {
+        var imageSizes: (ImageSizeCategory, [String: String])?
         if key == sizeCategory.description {
-            if let imageTypesSizes = value as? [String:Any] {
+            if let imageTypesSizes = value as? [String: Any] {
                 for imageTypeSize in imageTypesSizes {
                     var image = decodeTypeSizes(imageTypeSize.key, value: imageTypeSize.value, for: .display)
                     if let validImage = image {
-                        imageSizes = (.display, [validImage.0:validImage.1])
+                        imageSizes = (.display, [validImage.0: validImage.1])
                     }
                     image = decodeTypeSizes(imageTypeSize.key, value: imageTypeSize.value, for: .small)
                     if let validImage = image {
-                        imageSizes = (.small, [validImage.0:validImage.1])
+                        imageSizes = (.small, [validImage.0: validImage.1])
                     }
 
                     image = decodeTypeSizes(imageTypeSize.key, value: imageTypeSize.value, for: .thumb)
                     if let validImage = image {
-                        imageSizes = (.thumb, [validImage.0:validImage.1])
+                        imageSizes = (.thumb, [validImage.0: validImage.1])
                     }
 
                 }
@@ -331,9 +347,9 @@ struct Product: Mappable {
     }
 
     private func decodeTypeSizes(_ key: String, value: Any, for sizeCategory: ImageSizeCategory) -> (String, String)? {
-        var image: (String,String)? = nil
+        var image: (String, String)?
         if key == sizeCategory.description {
-            if let imageTypeSizeSet = value as? [String:String] {
+            if let imageTypeSizeSet = value as? [String: String] {
                 for languageImage in imageTypeSizeSet {
                     image = (languageImage.key, languageImage.value)
                 }
@@ -346,16 +362,16 @@ struct Product: Mappable {
 
 extension Locale {
 
-    static var interfaceLanguageCode:String {
-        return Locale.preferredLanguages[0].split(separator:"-").map(String.init)[0]
+    static var interfaceLanguageCode: String {
+        return Locale.preferredLanguages[0].split(separator: "-").map(String.init)[0]
     }
 
-    static var countryCode:String {
-        return Locale.current.identifier.split(separator:"_").map(String.init)[1]
+    static var countryCode: String {
+        return Locale.current.identifier.split(separator: "_").map(String.init)[1]
     }
 
-    static var preferredLanguageCodes:[String] {
-        return Locale.preferredLanguages[0].split(separator:"-").map(String.init)
+    static var preferredLanguageCodes: [String] {
+        return Locale.preferredLanguages[0].split(separator: "-").map(String.init)
 
     }
 

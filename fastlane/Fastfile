@@ -6,12 +6,18 @@ default_platform :ios
 
 desc "Run all the tests"
 lane :test do
-  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true, use_binaries: false)
   if !is_ci
     sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool no")
   end
   scan(
-    scheme: "OpenFoodFacts",
+    scheme: "OpenFoodFactsTests",
+    devices: ["iPhone 8"],
+    output_types: "html",
+    skip_build: true
+  )
+  scan(
+    scheme: "OpenFoodFactsUITests",
     devices: ["iPhone 8"],
     output_types: "html",
     skip_build: true

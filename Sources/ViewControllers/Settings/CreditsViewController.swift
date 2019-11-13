@@ -8,55 +8,97 @@
 
 import Foundation
 import UIKit
-import SnapKit
 
 class CreditsViewController: UIViewController {
 
-    private let creditsHTMLFile = (name: "Credits", type: "html")
+    private var tableView: UITableView!
 
-    private var webView: UIWebView!
+    private let contributors = ContributorsFactory.getContributors()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupWebView()
+        setupTableView()
     }
 
-    private func setupWebView() {
-        webView = UIWebView(frame: .zero)
-        webView.backgroundColor = .white
-        webView.clipsToBounds = true
-        webView.delegate = self
-        webView.scrollView.indicatorStyle = .white
-        self.view.addSubview(webView)
-        webView.snp.makeConstraints { (make) in
-            if #available(iOS 11.0, *) {
-                make.edges.equalTo(self.view.safeAreaLayoutGuide)
-            } else {
-                make.edges.equalToSuperview()
-            }
-        }
-        loadHTMLForWebView()
-    }
+    private func setupTableView() {
+        tableView = UITableView(frame: view.frame)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.allowsSelection = false
+        tableView.tableFooterView = UIView()
 
-    private func loadHTMLForWebView() {
-        guard let htmlCreditsFilePath = Bundle.main.path(forResource: creditsHTMLFile.name, ofType: creditsHTMLFile.type),
-            let htmlContent = try? String(contentsOfFile: htmlCreditsFilePath) else {
-                return
-        }
-        webView.loadHTMLString(htmlContent, baseURL: Bundle.main.bundleURL)
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: tableView.topAnchor, constant: 0.0),
+            view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 0.0),
+            view.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 0.0),
+            view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 0.0)
+        ])
+        view.layoutIfNeeded()
     }
 
 }
 
-extension CreditsViewController: UIWebViewDelegate {
-
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
-        if navigationType == .linkClicked, let requestURL = request.url {
-            UIApplication.shared.open(requestURL, options: [:], completionHandler: nil)
-            return false
-        }
-
-        return true
+extension CreditsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contributors.count
     }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let contributer = contributors[indexPath.row]
+        cell.textLabel?.attributedText = contributer.attributedText
+        cell.textLabel?.numberOfLines = 0
+        if contributer.urlString != nil {
+            cell.accessoryType = .detailButton
+        }
+        return cell
+    }
+
+}
+
+extension CreditsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let contributer = contributors[indexPath.row]
+        if let url = URL(string: contributer.urlString ?? "") {
+            openUrlInApp(url)
+        }
+    }
+}
+
+struct ContributorsFactory {
+    static func getContributors() -> [Contributor] {
+        return [
+            Contributor(mainText: "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by ",
+                        name: "Madebyoliver",
+                        urlString: nil),
+            Contributor(mainText: "\"Take picture\" icon made by ",
+                        name: "Picol",
+                        urlString: nil),
+            Contributor(mainText: "\"Profile\" icon, \"Gregor Cresnar\" icon, and \"Search history\" icon made by ",
+                        name: "Smashicons",
+                        urlString: "http://www.flaticon.com/authors/smashicons")
+        ]
+    }
+    struct Contributor {
+        private static let licensedBy = " is licensed by CC 3.0 BY"
+
+        let mainText: String
+        let name: String
+        let urlString: String?
+
+        var attributedText: NSAttributedString {
+            let main = NSAttributedString(string: mainText)
+            let licensedBy = NSAttributedString(string: Contributor.licensedBy)
+
+            if urlString == nil {
+                let nameString = NSAttributedString(string: name)
+                return main + nameString + licensedBy
+            } else {
+                let hyperlink = NSAttributedString(string: name, attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
+                return main + hyperlink + licensedBy
+            }
+        }
+    }
 }

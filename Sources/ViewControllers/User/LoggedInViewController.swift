@@ -6,6 +6,7 @@
 //  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
 //
 
+import IBLocalizable
 import UIKit
 
 class LoggedInViewController: UIViewController, DataManagerClient {
@@ -30,7 +31,7 @@ class LoggedInViewController: UIViewController, DataManagerClient {
             self.delegate?.dismiss()
         }
         let noAction = UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil)
-        
+
         logoutAlert.addAction(noAction)
         logoutAlert.addAction(yesAction)
         self.present(logoutAlert, animated: true, completion: nil)

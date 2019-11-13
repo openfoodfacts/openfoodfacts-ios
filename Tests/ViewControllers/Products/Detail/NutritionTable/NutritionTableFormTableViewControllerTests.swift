@@ -42,7 +42,7 @@ class NutritionTableFormTableViewControllerTests: XCTestCase {
         let cell = viewController.getCell(for: headerFormRow)
 
         expect(self.viewController.nutritionTableHeaderCellController).notTo(beNil())
-        expect(self.viewController.childViewControllers[0]).to(equal(self.viewController.nutritionTableHeaderCellController))
+        expect(self.viewController.children[0]).to(equal(self.viewController.nutritionTableHeaderCellController))
         expect(cell is HostedViewCell).to(beTrue())
     }
 
@@ -50,7 +50,7 @@ class NutritionTableFormTableViewControllerTests: XCTestCase {
         let cell = viewController.getCell(for: infoFormRow)
 
         expect(self.viewController.nutritionTableHeaderCellController).to(beNil())
-        expect(self.viewController.childViewControllers.count).to(equal(0))
+        expect(self.viewController.children.count).to(equal(0))
         expect(cell is InfoRowTableViewCell).to(beTrue())
     }
 
@@ -61,20 +61,20 @@ class NutritionTableFormTableViewControllerTests: XCTestCase {
 
         viewController.tableView(self.viewController.tableView, willDisplay: HostedViewCell(), forRowAt: IndexPath(row: 0, section: 0))
 
-        expect(self.viewController.childViewControllers[0]).to(equal(nutritionTableHeaderCellController))
+        expect(self.viewController.children[0]).to(equal(nutritionTableHeaderCellController))
     }
 
     // MARK: - didEndDisplaying
     func testDidEndDisplayingRemovesHeaderControllerFromVC() {
         let nutritionTableHeaderCellController = NutritionTableHeaderCellController(with: Product(), dataManager: dataManager)
         viewController.nutritionTableHeaderCellController = nutritionTableHeaderCellController
-        viewController.addChildViewController(nutritionTableHeaderCellController)
-        nutritionTableHeaderCellController.didMove(toParentViewController: viewController)
+        viewController.addChild(nutritionTableHeaderCellController)
+        nutritionTableHeaderCellController.didMove(toParent: viewController)
         viewController.view.addSubview(nutritionTableHeaderCellController.view)
 
         viewController.tableView(self.viewController.tableView, didEndDisplaying: HostedViewCell(), forRowAt: IndexPath(row: 0, section: 0))
 
         expect(nutritionTableHeaderCellController.view.superview).to(beNil())
-        expect(self.viewController.childViewControllers.count).to(equal(0))
+        expect(self.viewController.children.count).to(equal(0))
     }
 }

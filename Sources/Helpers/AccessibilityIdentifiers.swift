@@ -9,7 +9,21 @@
 import Foundation
 
 struct AccessibilityIdentifiers {
-    static let productSearchBar = "Product Search Bar"
-    static let scanButton = "Scan Button"
-    static let historyButton = "Search history button"
+    struct Product {
+        static let detailSummaryView = "productDetailSummaryView"
+        static let detailIngredientsView = "productDetailIngredientsView"
+        static let detailNutritionView = "productDetailNutritionView"
+    }
+    struct Scan {
+        static let manualBarcodeInputField = "scanManualBarcodeInputField"
+        static let manualBarcodeConfirmButton = "scanManualBarcodeConfirmButton"
+
+        static let overlayView = "scanOverlayView"
+        static let productSummaryView = "scanProductSummaryView"
+    }
+
+    struct Search {
+        static let inputField = "searchInputField"
+        static let resultTable = "searchResultsTable"
+    }
 }

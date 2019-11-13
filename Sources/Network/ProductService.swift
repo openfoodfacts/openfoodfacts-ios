@@ -172,7 +172,7 @@ extension ProductService {
                 multipartFormData: { multipartFormData in
                     multipartFormData.append(barcode, withName: Params.code)
                     multipartFormData.append(fileURL, withName: "imgupload_\(productImage.type.rawValue)")
-                    let lang = Bundle.main.preferredLocalizations.first ?? "en"
+                    let lang = productImage.languageCode
                     multipartFormData.append(("\(productImage.type.rawValue)_\(lang)").data(using: .utf8)!, withName: Params.imagefield)
 
                     if let credentials = CredentialsController.shared.getCredentials(),

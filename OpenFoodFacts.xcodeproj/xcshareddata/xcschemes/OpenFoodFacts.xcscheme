@@ -26,8 +26,17 @@
       buildConfiguration = "Testing"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "95C2650D1E96D55B004212EC"
+            BuildableName = "OpenFoodFacts.app"
+            BlueprintName = "OpenFoodFacts"
+            ReferencedContainer = "container:OpenFoodFacts.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -49,18 +58,17 @@
                ReferencedContainer = "container:OpenFoodFacts.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "483E2FBE2314762B008B0573"
+               BuildableName = "OpenFoodFactsSnapshots"
+               BlueprintName = "OpenFoodFactsSnapshots"
+               ReferencedContainer = "container:OpenFoodFacts.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95C2650D1E96D55B004212EC"
-            BuildableName = "OpenFoodFacts.app"
-            BlueprintName = "OpenFoodFacts"
-            ReferencedContainer = "container:OpenFoodFacts.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -84,8 +92,6 @@
             ReferencedContainer = "container:OpenFoodFacts.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

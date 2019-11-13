@@ -12,7 +12,7 @@ import Crashlytics
 
 class CredentialsController: NSObject {
     static let shared = CredentialsController()
-
+//
     // Keychain access
     private static let serviceIdentifier = "org.openfoodfacts.openfoodfacts"
     let keychain = Keychain(service: serviceIdentifier)

@@ -13,13 +13,19 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
 
     @IBOutlet weak var textView: UITextView!
     private static let textSize: CGFloat = 17
-    private let bold = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: textSize)]
-    private let regular = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: textSize)]
+    private let bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: textSize)]
+    private let regular = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: textSize)]
     private let boldWordsPattern = "(_\\w+_)"
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let rowLabel = formRow.label else { return }
         guard let value = formRow.getValueAsAttributedString() else { return }
+        var bold: [NSAttributedString.Key: Any] = [:]
+        if #available(iOS 13.0, *) {
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+        } else {
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+        }
 
         let combination = NSMutableAttributedString()
         combination.append(NSAttributedString(string: rowLabel + ": ", attributes: bold))
@@ -36,6 +42,18 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
     /// - Returns: NSAttributedString with highlighted words
     private func makeWordsBold(for originalText: NSAttributedString) -> NSAttributedString {
         let highlightedText = NSMutableAttributedString(attributedString: originalText)
+        var bold: [NSAttributedString.Key: Any] = [:]
+        if #available(iOS 13.0, *) {
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+        } else {
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+        }
+        var regular: [NSAttributedString.Key: Any] = [:]
+        if #available(iOS 13.0, *) {
+            regular = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
+        } else {
+            regular = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
+        }
         highlightedText.addAttributes(regular, range: originalText.string.nsrange)
 
         do {

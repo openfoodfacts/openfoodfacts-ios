@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import AlamofireImage
 import Crashlytics
 import UIKit
 
@@ -30,6 +31,11 @@ protocol DataManagerProtocol {
     func category(forTag: String) -> Category?
     func categorySearch(query: String?) -> Results<Category>
     func allergen(forTag: Tag) -> Allergen?
+    func trace(forTag: Tag) -> Allergen?
+    func vitamin(forTag: Tag) -> Vitamin?
+    func mineral(forTag: Tag) -> Mineral?
+    func nucleotide(forTag: Tag) -> Nucleotide?
+    func other(forTag: Tag) -> OtherNutritionalSubstance?
     func additive(forTag: Tag) -> Additive?
     func nutriment(forTag: String) -> Nutriment?
     func nutrimentSearch(query: String?) -> Results<Nutriment>
@@ -66,12 +72,15 @@ protocol DataManagerProtocol {
 
     // Misc
     func getLanguages() -> [Language]
+    // Get a default image to use when faking the scanner UI
+    func getMockBarcodeImage(forLocale locale: Locale, onSuccess: @escaping (UIImage) -> Void, onError: @escaping (Error) -> Void)
 }
 
 class DataManager: DataManagerProtocol {
     var productApi: ProductApi!
     var taxonomiesApi: TaxonomiesApi!
     var persistenceManager: PersistenceManagerProtocol!
+    var mockBarcodeApi: MockBarcodeApi!
 
     // MARK: - Search
 
@@ -132,6 +141,26 @@ class DataManager: DataManagerProtocol {
 
     func allergen(forTag tag: Tag) -> Allergen? {
         return persistenceManager.allergen(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func trace(forTag tag: Tag) -> Allergen? {
+        return persistenceManager.trace(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func vitamin(forTag tag: Tag) -> Vitamin? {
+        return persistenceManager.vitamin(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func mineral(forTag tag: Tag) -> Mineral? {
+        return persistenceManager.mineral(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func nucleotide(forTag tag: Tag) -> Nucleotide? {
+        return persistenceManager.nucleotide(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func other(forTag tag: Tag) -> OtherNutritionalSubstance? {
+        return persistenceManager.otherNutritionalSubstance(forCode: tag.languageCode + ":" + tag.value)
     }
 
     func additive(forTag tag: Tag) -> Additive? {
@@ -454,5 +483,18 @@ class DataManager: DataManagerProtocol {
             Crashlytics.sharedInstance().recordError(error)
         }
         fatalError("Could not get Realm instance")
+    }
+
+    func getMockBarcodeImage(forLocale locale: Locale, onSuccess: @escaping (UIImage) -> Void, onError: @escaping (Error) -> Void) {
+
+        mockBarcodeApi.getGenericBarcodeImage(forLocale: locale, onSuccess: { image in
+            DispatchQueue.main.async {
+                onSuccess(image)
+            }
+        }, onError: { error in
+            DispatchQueue.main.async {
+                onError(error)
+            }
+        })
     }
 }

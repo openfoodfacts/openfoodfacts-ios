@@ -10,7 +10,6 @@ import Foundation
 
 struct OFFWriteAPI {
     static let Server = "http://world.openfoodfacts.org/"
-    static let SecureServer = "https://ssl-api.openfoodfacts.org/"
     static let PostPrefix = "cgi/product_jqm2.pl?"
     static let Barcode = "code="
     static let UserId = "user_id="

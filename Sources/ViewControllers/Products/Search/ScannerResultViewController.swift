@@ -58,9 +58,11 @@ class ScannerResultViewController: UIViewController {
             statusIndicatorLabel.isHidden = false
 
         case .hasOfflineData(let product):
+            // reset the view visibility after succesful scan
             updateSummaryVisibility(forProduct: product)
 
         case .hasSummary(let product):
+            // reset the view visibility after succesful scan
             updateSummaryVisibility(forProduct: product)
 
         case .hasProduct(let product, let dataManager):
@@ -74,12 +76,14 @@ class ScannerResultViewController: UIViewController {
     }
 
     fileprivate func updateSummaryVisibility(forProduct product: RealmOfflineProduct) {
-        topSummaryView.fillIn(product: product)
+        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: product)
+        topSummaryView.setup(with: adaptor)
         topSummaryView.isHidden = false
     }
 
     fileprivate func updateSummaryVisibility(forProduct product: Product) {
-        topSummaryView.fillIn(product: product)
+        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: product)
+        topSummaryView.setup(with: adaptor)
         topSummaryView.isHidden = false
     }
 
@@ -91,7 +95,7 @@ class ScannerResultViewController: UIViewController {
         productDetailVC.dataManager = dataManager
         productDetailVC.hideSummary = true
 
-        self.addChildViewController(productDetailVC)
+        self.addChild(productDetailVC)
         self.productDetailsContainer.addSubview(productDetailVC.view)
 
         productDetailVC.view.translatesAutoresizingMaskIntoConstraints = false
@@ -104,8 +108,9 @@ class ScannerResultViewController: UIViewController {
         productDetailVC.view.trailingAnchor
             .constraint(equalTo: productDetailsContainer.trailingAnchor).isActive = true
 
-        productDetailVC.didMove(toParentViewController: self)
+        productDetailVC.didMove(toParent: self)
 
         self.productDetailsContainer.isHidden = false
     }
+
 }

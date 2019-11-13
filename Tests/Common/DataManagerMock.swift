@@ -9,6 +9,7 @@
 @testable import OpenFoodFacts
 import Foundation
 import RealmSwift
+import UIKit
 
 class DataManagerMock: DataManagerProtocol {
 
@@ -204,5 +205,36 @@ class DataManagerMock: DataManagerProtocol {
     func getLanguages() -> [Language] {
         getLanguagesCalled = true
         return [Language(code: "en", name: "English")]
+    }
+
+    func getOfflineProduct(forCode: String) -> RealmOfflineProduct? {
+        return nil
+    }
+
+    func trace(forTag: Tag) -> Allergen? {
+        return nil
+    }
+
+    func vitamin(forTag: Tag) -> Vitamin? {
+        return nil
+    }
+
+    func mineral(forTag: Tag) -> Mineral? {
+        return nil
+    }
+
+    func nucleotide(forTag: Tag) -> Nucleotide? {
+        return nil
+    }
+
+    func other(forTag: Tag) -> OtherNutritionalSubstance? {
+        return nil
+    }
+
+    func offlineProductStatus() -> RealmOfflineProductStatus? {
+        return nil
+    }
+
+    func getMockBarcodeImage(forLocale locale: Locale, onSuccess: @escaping (UIImage) -> Void, onError: @escaping (Error) -> Void) {
     }
 }
