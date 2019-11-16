@@ -153,6 +153,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
+        createFormRow(with: &rows, item: product.genericName, label: InfoRowKey.genericName.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
