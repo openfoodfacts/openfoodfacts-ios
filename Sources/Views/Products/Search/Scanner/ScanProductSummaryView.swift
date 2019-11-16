@@ -15,7 +15,7 @@ class ScanProductSummaryView: UIView {
     @IBOutlet weak var novaGroupView: NovaGroupView!
     @IBOutlet weak var environmentImpactImageView: UIImageView!
     @IBOutlet weak var productImageView: UIImageView!
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -33,7 +33,7 @@ class ScanProductSummaryView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
-    
+
     func setup(with adaptor: ScanProductSummaryViewAdaptor) {
         titleLabel.text = adaptor.title
         setQuantity(quantity: adaptor.quantityText)

@@ -624,7 +624,7 @@ extension ScannerViewController: FloatingPanelControllerDelegate {
         }
         self.showAllergensFloatingLabelIfNeeded()
     }
-    
+
 }
 
 // MARK: - ManualBarcodeInput delegate

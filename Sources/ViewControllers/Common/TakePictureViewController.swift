@@ -45,7 +45,7 @@ class TakePictureViewController: UIViewController {
         cameraController.delegate = self
         //let kjadfh = self.product.lang
         cameraController.languageCode = languageCode
-        
+
         if let vcs = self as? SummaryHeaderCellController {
             cameraController.imageType = .front
             cameraController.languageCode = vcs.product.lang

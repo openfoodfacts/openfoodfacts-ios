@@ -8,16 +8,31 @@
 
 import UIKit
 
+protocol NutritionHeaderTableViewCellDelegate: class {
+    func nutritionHeaderTableViewCellDelegate(_ sender: NutritionHeaderTableViewCell, receivedTapOn button: UIButton)
+}
+
 class NutritionHeaderTableViewCell: ProductDetailBaseCell {
+
+    @IBOutlet weak var nutriscoreLearnMoreButton: UIButton!
+
+    @IBAction func nutritionscoreLearMoreButtonTapped(_ sender: UIButton) {
+        delegate?.nutritionHeaderTableViewCellDelegate(self, receivedTapOn: nutriscoreLearnMoreButton)
+    }
 
     @IBOutlet weak var nutriscoreView: NutriScoreView!
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
-        if let nutriscore = formRow.value as? String, let score = NutriScoreView.Score(rawValue: nutriscore) {
+        guard let nutriscoreTableRow = formRow.value as? NutritionScoreTableRow else { return }
+
+        if let nutriscore = nutriscoreTableRow.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscore) {
             nutriscoreView.isHidden = false
             nutriscoreView.currentScore = score
         } else {
             nutriscoreView.isHidden = true
         }
+        self.delegate = nutriscoreTableRow.delegate as? NutritionHeaderTableViewCellDelegate
     }
+
+    public weak var delegate: NutritionHeaderTableViewCellDelegate?
 }

@@ -21,6 +21,7 @@ struct URLs {
     static let SupportOpenFoodFacts = "https://donate.openfoodfacts.org"
     static let TranslateOpenFoodFacts = "https://translate.openfoodfacts.org"
     static let FrequentlyAskedQuestions = "\(baseUrl)/faq"
+    static let NutriScore = "\(baseUrl)/nutriscore"
 
     static let MockBarcode = "\(baseUrl)/files/presskit/PressKit/barcodes/"
 
