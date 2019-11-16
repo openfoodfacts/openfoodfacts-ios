@@ -67,6 +67,6 @@ extension EnvironmentImpactTableFormTableViewController: IndicatorInfoProvider {
 
 extension EnvironmentImpactTableFormTableViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.fontFamily =\"-apple-system\"")
+        webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.fontFamily =\"-apple-system-body\"")
     }
 }
