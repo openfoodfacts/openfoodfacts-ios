@@ -51,9 +51,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
 
-        navigationController?.navigationBar.isTranslucent = false
-        if var buttons = navigationItem.rightBarButtonItems, buttons.count == 1 {
+        if let parentVc = parent as? UINavigationController {
+
+            parentVc.navigationBar.isTranslucent = false
+
             let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShareButton(_:)))
+            var buttons: [UIBarButtonItem] = navigationItem.rightBarButtonItems ?? []
             buttons.insert(shareButton, at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
@@ -63,7 +66,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         super.viewWillDisappear(animated)
 
         navigationController?.navigationBar.isTranslucent = true
-        if var buttons = navigationItem.rightBarButtonItems, buttons.count == 2 {
+        if var buttons = navigationItem.rightBarButtonItems, !buttons.isEmpty {
             buttons.remove(at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
@@ -420,7 +423,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     // MARK: - Nav bar button
 
     @objc func didTapShareButton(_ sender: UIBarButtonItem) {
-        SharingManager.shared.shareLink(string: URLs.urlForProduct(with: product.barcode), sender: self)
+        SharingManager.shared.shareLink(string: URLs.urlForProduct(with: product.barcode), sender: sender, presenter: self)
     }
 }
 
