@@ -295,7 +295,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         // Nutriscore cell
         if product.nutriscore != nil {
-            createFormRow(with: &rows, item: product.nutriscore, cellType: NutritionHeaderTableViewCell.self)
+            // created to pass on the delegate with the nutriscore
+            let headerRow = NutritionScoreTableRow(delegate, nutriscore:product.nutriscore)
+            createFormRow(with: &rows, item: headerRow, cellType: NutritionHeaderTableViewCell.self)
         }
 
         // Info rows
@@ -443,4 +445,20 @@ extension ProductDetailViewController: ProductDetailRefreshDelegate {
 
         completion()
     }
+}
+
+extension ProductDetailViewController : NutritionHeaderTableViewCellDelegate {
+
+    // function to let the delegate know that the switch changed
+    //func tagListViewAddImageTableViewCell(_ sender: TagListViewAddImageTableViewCell, receivedDoubleTapOn tagListView:TagListView)
+    public func nutritionHeaderTableViewCellDelegate(_ sender: NutritionHeaderTableViewCell, receivedTapOn button: UIButton) {
+
+        if let url = URL(string: URLs.NutriScore) {
+            openUrlInApp(url)
+        } else if let url = URL(string: URLs.SupportOpenFoodFacts) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+
+    }
+
 }

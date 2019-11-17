@@ -19,7 +19,7 @@ protocol CameraController {
 }
 
 protocol CameraControllerDelegate: class {
-    func didGetImage(image: UIImage, forImageType imageType: ImageType?, languageCode:String?)
+    func didGetImage(image: UIImage, forImageType imageType: ImageType?, languageCode: String?)
 }
 
 class CameraControllerImpl: NSObject, CameraController {

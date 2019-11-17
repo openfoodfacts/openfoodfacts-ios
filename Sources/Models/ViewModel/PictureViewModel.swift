@@ -18,7 +18,7 @@ struct PictureViewModel {
     var isUploading: Bool = false
 }
 // Should the languageCode of the picture be added?
- 
+
 extension PictureViewModel {
     init(imageType: ImageType) {
         var text: String?

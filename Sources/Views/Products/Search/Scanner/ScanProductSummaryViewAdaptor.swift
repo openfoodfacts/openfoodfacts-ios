@@ -29,7 +29,7 @@ struct ScanProductSummaryViewAdaptorFactory {
                                              novaGroup: getNovaGroup(from: product),
                                              environmentalImage: nil)
     }
-    
+
     static func makeAdaptor(from product: Product) -> ScanProductSummaryViewAdaptor {
         return ScanProductSummaryViewAdaptor(title: product.name,
                                              quantityText: getQuantity(from: product),
@@ -122,4 +122,3 @@ private func getNovaGroup(from product: RealmOfflineProduct) -> NovaGroupView.No
     }
     return novaGroup
 }
-
