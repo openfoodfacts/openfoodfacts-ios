@@ -36,7 +36,7 @@ struct ProductImage {
         self.fileName = "\(UUID().uuidString).jpg"
         self.type = type
         self.languageCode = languageCode
-        
+
         guard saveImage(image) != nil else { return nil }
     }
 
