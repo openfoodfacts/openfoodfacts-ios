@@ -76,6 +76,7 @@ enum ImageSizeCategory {
 struct Product: Mappable {
     // var name: String?
     private var nameDecoded: String?
+    private var genericNameDecoded: String?
     var brands: [String]?
     private var _quantity: String?
     var imageUrl: String?
@@ -181,6 +182,21 @@ struct Product: Mappable {
         }
     }
 
+    var genericName: String? {
+        get {
+            if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes),
+                let name = genericNames[validCode],
+                !name.isEmpty {
+                return name
+            } else {
+                return genericNameDecoded
+            }
+        }
+        set {
+            genericNameDecoded = newValue
+        }
+    }
+
     var frontImageUrl: String? {
         if let frontImages = images[.front] {
             if let displayFrontImages = frontImages[.display] {
@@ -256,6 +272,7 @@ struct Product: Mappable {
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
         frontImageSmallUrlDecoded <- map[OFFJson.ImageFrontSmallUrlKey]
         frontImageUrlDecoded <- map[OFFJson.ImageFrontUrlKey]
+        genericNameDecoded <- map[OFFJson.GenericNameKey]
         imageSmallUrl <- map[OFFJson.ImageSmallUrlKey]
         imageUrl <- map[OFFJson.ImageUrlKey]
         ingredientsImageUrlDecoded <- map[OFFJson.ImageIngredientsUrlKey]
