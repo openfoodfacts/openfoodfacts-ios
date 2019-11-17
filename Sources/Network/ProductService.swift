@@ -53,6 +53,7 @@ class ProductService: ProductApi {
             Crashlytics.sharedInstance().setObjectValue(query, forKey: "product_search_barcode")
         } else {
             url += "/cgi/search.pl?search_terms=\(encodeParameters(query))&search_simple=1&action=process&json=1&page=\(page)"
+            url.append(contentsOf: "&fields=" + OFFJson.summaryFields.joined(separator: OFFJson.FieldsSeparator))
             searchType = "by_product"
             Crashlytics.sharedInstance().setObjectValue(query, forKey: "product_search_name")
         }
