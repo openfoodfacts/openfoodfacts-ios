@@ -19,6 +19,7 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
     var dataManager: DataManagerProtocol!
     var items = [PendingUploadItem]() {
         didSet {
+            uploadButton?.isEnabled = !items.isEmpty
             self.tableView.reloadData()
         }
     }
@@ -28,11 +29,8 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
 
         items = dataManager.getItemsPendingUpload()
 
-        if items.isEmpty {
-            uploadButton?.isEnabled = false
-        } else {
-            uploadButton?.isEnabled = true
-        }
+        uploadButton?.isEnabled = !items.isEmpty
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
