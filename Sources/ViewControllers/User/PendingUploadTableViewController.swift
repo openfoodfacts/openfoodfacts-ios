@@ -29,9 +29,9 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
         items = dataManager.getItemsPendingUpload()
 
         if items.isEmpty {
-            uploadButton.isEnabled = false
+            uploadButton?.isEnabled = false
         } else {
-            uploadButton.isEnabled = true
+            uploadButton?.isEnabled = true
         }
     }
 
