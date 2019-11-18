@@ -137,8 +137,9 @@ extension HistoryTableViewController {
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // Last section is the privacy info
-        guard !isPrivacySection(section) else { return nil }
-        guard let age = items.key(forIndex: section) else { return nil }
+        guard !isPrivacySection(section),
+            !isSectionEmpty(section),
+            let age = items.key(forIndex: section) else { return nil }
 
         switch age {
         case .last24h:
@@ -162,6 +163,11 @@ extension HistoryTableViewController {
         guard let sectionAge = items.key(forIndex: indexPath.section) else { return nil }
         return items[sectionAge]?[indexPath.row]
     }
+
+    private func isSectionEmpty(_ section: Int) -> Bool {
+        guard let section = items.key(forIndex: section) else { return true }
+        return items[section]?.isEmpty ?? true
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -173,6 +179,26 @@ extension HistoryTableViewController {
 
         showItem(item) {
             self.showDetailsBanner.show()
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let section = items.key(forIndex: indexPath.section),
+                let historyItem = items[section]?[indexPath.row] else { return }
+
+            items[section]?.remove(at: indexPath.row)
+            dataManager.removeHistroyItem(historyItem)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+
+            if isSectionEmpty(indexPath.section) {
+                // Will remove section header if the section is empty
+                tableView.reloadSections([indexPath.section], with: .fade)
+
+                if dataManager.getHistory().isEmpty {
+                    configureEmptyState()
+                }
+            }
         }
     }
 

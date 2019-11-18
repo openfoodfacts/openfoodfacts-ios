@@ -22,6 +22,9 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
     // addHistoryItem
     var addHistoryItemCalled = false
 
+    // removeHistoryItem
+    var removeHistoryItemCalled = false
+
     // clearHistory
     var clearHistoryCalled = false
 
@@ -54,6 +57,11 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
     func addHistoryItem(_ product: Product) {
         addHistoryItemCalled = true
         self.product = product
+    }
+
+    func removeHistroyItem(_ item: HistoryItem) {
+        self.removeHistoryItemCalled = true
+        self.product = nil
     }
 
     func clearHistory() {

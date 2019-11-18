@@ -113,6 +113,20 @@ class DataManagerSpec: QuickSpec {
             }
         }
 
+        describe("removeHistoryItem()") {
+            it("removes a HistoryItem") {
+                let historyItem = HistoryItem()
+                historyItem.barcode = "1"
+                historyItem.timestamp = Date(timeIntervalSinceNow: -1 * 60 * 60 * 24 * 29)
+                persistenceManager.history = [historyItem]
+
+                dataManager.removeHistroyItem(historyItem)
+
+                expect(persistenceManager.removeHistoryItemCalled).to(beTrue())
+                expect(dataManager.getHistory()).to(beEmpty())
+            }
+        }
+
         describe("clearHistory()") {
             it("deletes all HistoryItem") {
                 dataManager.clearHistory()
