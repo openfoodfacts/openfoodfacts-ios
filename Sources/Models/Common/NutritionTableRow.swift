@@ -20,13 +20,13 @@ struct NutritionTableRow {
         self.perServingValue = perServingValue
         self.highlight = highlight
     }
-    
+
 }
 
 struct NutritionScoreTableRow {
     let delegate: Any?
     let nutriscore: String?
-    
+
     init(_ delegate: Any?, nutriscore: String?) {
         self.delegate = delegate
         self.nutriscore = nutriscore

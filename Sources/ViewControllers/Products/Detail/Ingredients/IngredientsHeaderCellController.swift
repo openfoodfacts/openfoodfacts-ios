@@ -15,6 +15,26 @@ class IngredientsHeaderCellController: TakePictureViewController {
     @IBOutlet weak var callToActionView: PictureCallToActionView!
     @IBOutlet weak var takePictureButtonView: IconButtonView!
 
+    @IBOutlet weak var novagroupView: NovaGroupView!
+    @IBOutlet weak var novagroupExplanationLabel: UILabel!
+    @IBOutlet weak var novagroupInfoButton: UIButton! {
+        didSet {
+            if #available(iOS 13.0, *) {
+                novagroupInfoButton.setImage(UIImage.init(systemName: "questionmark.circle"), for: .normal)
+            } else {
+                novagroupInfoButton.setImage(UIImage.init(named: "question"), for: .normal)
+            }
+        }
+    }
+
+    @IBAction func novagroupInfoButtonTapped(_ sender: UIButton) {
+        if let url = URL(string: URLs.Nova) {
+            openUrlInApp(url)
+        } else if let url = URL(string: URLs.SupportOpenFoodFacts) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+
     weak var delegate: FormTableViewControllerDelegate?
 
     convenience init(with product: Product, dataManager: DataManagerProtocol) {
@@ -59,7 +79,33 @@ class IngredientsHeaderCellController: TakePictureViewController {
             callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
             takePictureButtonView.isHidden = true
         }
+        if let novaGroupValue = product.novaGroup,
+            let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
+            setNovaGroup(novaGroup: novaGroup)
+        } else {
+            setNovaGroup(novaGroup: nil)
+        }
     }
+
+    private func setNovaGroup(novaGroup: NovaGroupView.NovaGroup?) {
+        if let novaGroup = novaGroup {
+            novagroupView?.novaGroup = novaGroup
+            switch novaGroup {
+            case .one:
+                novagroupExplanationLabel.text = "product-detail.ingredients.nova.1".localized
+            case .two:
+                novagroupExplanationLabel.text = "product-detail.ingredients.nova.2".localized
+            case .three:
+                novagroupExplanationLabel.text = "product-detail.ingredients.nova.3".localized
+            case .four:
+                novagroupExplanationLabel.text = "product-detail.ingredients.nova.4".localized
+            }
+            novagroupView?.isHidden = false
+        } else {
+            novagroupView?.isHidden = true
+        }
+    }
+
 }
 
 // MARK: - Gesture recognizers
