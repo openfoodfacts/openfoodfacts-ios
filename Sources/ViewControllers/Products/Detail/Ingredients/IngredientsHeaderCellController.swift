@@ -20,9 +20,9 @@ class IngredientsHeaderCellController: TakePictureViewController {
     @IBOutlet weak var novagroupInfoButton: UIButton! {
         didSet {
             if #available(iOS 13.0, *) {
-                novagroupInfoButton.setImage(UIImage.init(systemName: "questionmark.circle"), for: .normal)
+                novagroupInfoButton.setImage(UIImage.init(systemName: "info.circle"), for: .normal)
             } else {
-                novagroupInfoButton.setImage(UIImage.init(named: "question"), for: .normal)
+                novagroupInfoButton.setImage(UIImage.init(named: "circle-info"), for: .normal)
             }
         }
     }

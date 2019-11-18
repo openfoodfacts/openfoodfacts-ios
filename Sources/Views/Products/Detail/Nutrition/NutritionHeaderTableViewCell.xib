@@ -17,8 +17,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Il-Ln-6ZO">
-                        <rect key="frame" x="292.5" y="54" width="25" height="22"/>
-                        <state key="normal" image="question"/>
+                        <rect key="frame" x="292.5" y="54" width="24" height="22"/>
+                        <state key="normal" image="circle-info"/>
                         <connections>
                             <action selector="nutritionscoreLearMoreButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3Nh-mi-JTB"/>
                         </connections>
@@ -50,6 +50,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="question" width="25" height="25"/>
+        <image name="circle-info" width="24" height="24"/>
     </resources>
 </document>

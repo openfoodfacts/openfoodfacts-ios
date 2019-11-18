@@ -70,7 +70,7 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f61-gC-kYe">
                                     <rect key="frame" x="213.5" y="0.0" width="106.5" height="44"/>
-                                    <state key="normal" title="Button" image="question"/>
+                                    <state key="normal" title="Button" image="circle-info"/>
                                     <connections>
                                         <action selector="novagroupInfoButtonTapped:" destination="-1" eventType="touchUpInside" id="umr-Od-Yxj"/>
                                     </connections>
@@ -97,6 +97,6 @@
         </view>
     </objects>
     <resources>
-        <image name="question" width="25" height="25"/>
+        <image name="circle-info" width="24" height="24"/>
     </resources>
 </document>
