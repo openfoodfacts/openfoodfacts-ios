@@ -41,7 +41,6 @@ struct OFFJson {
     //static let LabelsTagsKey = "labels_tags"
     //static let ProductCodeKey = "code"
     //static let AdditivesTagsNKey = "additives_tags_n"
-    //static let TracesTagsKey = "traces_tags"
     static let LangKey = "lang"
     //static let DebugParamSortedLangsKey = "debug_param_sorted_langs"
     //static let LanguagesHierarchyKey = "languages_hierarchy"
@@ -194,7 +193,7 @@ struct OFFJson {
     //static let PurchasePlacesKey = "purchase_places"
     //static let PnnsGroups2Key = "pnns_groups_2"
     //static let CountriesHierarchyKey = "countries_hierarchy"
-    static let TracesKey = "traces"
+    //static let TracesKey = "traces"
     //static let AdditivesOldTagsKey = "additives_old_tags"
     static let ImageNutritionUrlKey = "image_nutrition_url"
     static let CategoriesKey = "categories"
@@ -393,8 +392,8 @@ struct OFFJson {
             OFFJson.StatesKey,
             // OFFJson.StatesTagsKey,
             OFFJson.StoresKey,
-            OFFJson.TracesKey,
-            // OFFJson.TracesTagsKey,
+            // OFFJson.TracesKey,
+            OFFJson.TracesTagsKey,
             // OFFJson.UrlKey,
             OFFJson.VitaminsTagsKey
             // OFFJson.WarningKey,
