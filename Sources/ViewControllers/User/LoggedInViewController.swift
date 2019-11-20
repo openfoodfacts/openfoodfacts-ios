@@ -38,8 +38,11 @@ class LoggedInViewController: UIViewController, DataManagerClient {
     }
 
     @IBAction func didTapYourContributionsButton(_ sender: UIButton) {
-        if let username = CredentialsController.shared.getUsername(), let url = URL(string: URLs.YourContributions + username) {
-            openUrlInApp(url)
+        if let username = CredentialsController.shared.getUsername() {
+            let parts = username.split(separator: "@")
+            if !parts.isEmpty, let url = URL(string: URLs.YourContributions + parts[0]) {
+                openUrlInApp(url)
+            }
         }
     }
 
