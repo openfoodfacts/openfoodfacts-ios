@@ -13,9 +13,18 @@ import NotificationBanner
 class ProductAddViewController: TakePictureViewController {
     // IBOutlets
 
-    @IBOutlet weak var barcodeTitleLabel: UILabel!
+    @IBOutlet weak var barcodeTitleLabel: UILabel! {
+        didSet {
+            barcodeTitleLabel?.text = "product-add.titles.barcode".localized
+        }
+    }
+    
     @IBOutlet weak var barcodeLabel: UILabel!
-    @IBOutlet weak var topExplainationText: UILabel!
+    @IBOutlet weak var topExplainationText: UILabel! {
+        didSet {
+            topExplainationText?.text = "product-add.titles.top-explainations".localized
+        }
+    }
     @IBOutlet weak var picturesContainerView: UIView!
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -127,9 +136,7 @@ class ProductAddViewController: TakePictureViewController {
     // swiftlint:disable function_body_length
     override func viewDidLoad() {
         self.title = "product-add.title".localized
-
-        barcodeTitleLabel.text = "product-add.titles.barcode".localized
-        topExplainationText.text = "product-add.titles.top-explainations".localized
+        
 
         productSectionTitle.text = "product-add.titles.product-info".localized
         productNameTitleLabel.text = "product-add.label.product-name".localized
@@ -250,7 +257,7 @@ class ProductAddViewController: TakePictureViewController {
         return nutriments
     }
 
-    @IBAction func didTapSaveProductButton(_ sender: UIButton) {
+    @objc func save() {
         self.view.endEditing(true)
         saveProductInfosButton.isEnabled = false
 
@@ -270,6 +277,10 @@ class ProductAddViewController: TakePictureViewController {
                     self?.saveProductInfosButton.isEnabled = true
                 }
         })
+    }
+
+    @IBAction func didTapSaveProductButton(_ sender: UIButton) {
+        save()
     }
 
     @IBAction func didTapSaveNutrimentsButton(_ sender: Any) {
