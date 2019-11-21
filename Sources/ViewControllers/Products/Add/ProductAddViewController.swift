@@ -845,7 +845,7 @@ extension ProductAddViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         productHasBeenEdited = true
     }

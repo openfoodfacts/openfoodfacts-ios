@@ -58,7 +58,7 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
 
                 let navVC = UINavigationController(rootViewController: addProductVC)
                 addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
-                addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: addProductVC, action: #selector(ProductAddViewController.save))
+                addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.save))
                 navVC.modalPresentationStyle = .fullScreen
 
                 self.present(navVC, animated: true)
