@@ -18,7 +18,6 @@ class ProductAddViewController: TakePictureViewController {
             barcodeTitleLabel?.text = "product-add.titles.barcode".localized
         }
     }
-    
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var topExplainationText: UILabel! {
         didSet {
@@ -29,15 +28,43 @@ class ProductAddViewController: TakePictureViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
 
-    @IBOutlet weak var productSectionTitle: UILabel!
-    @IBOutlet weak var productNameTitleLabel: UILabel!
+    @IBOutlet weak var productSectionTitle: UILabel! {
+        didSet {
+            productSectionTitle?.text = "product-add.titles.product-info".localized
+        }
+    }
+    @IBOutlet weak var productNameTitleLabel: UILabel! {
+        didSet {
+            productNameTitleLabel?.text = "product-add.label.product-name".localized
+        }
+    }
     @IBOutlet weak var productNameField: UITextField!
-    @IBOutlet weak var productCategoryTitleLabel: UILabel!
-    @IBOutlet weak var productCategoryField: UITextField!
-    @IBOutlet weak var brandsTitleLabel: UILabel!
+    @IBOutlet weak var productCategoryTitleLabel: UILabel! {
+        didSet {
+            productCategoryTitleLabel?.text = "product-add.label.category".localized
+        }
+    }
+    @IBOutlet weak var productCategoryField: UITextField! {
+        didSet {
+            productCategoryField?.placeholder = "product-add.label.category".localized
+        }
+    }
+    @IBOutlet weak var brandsTitleLabel: UILabel! {
+        didSet {
+            brandsTitleLabel?.text = "product-add.placeholder.brand".localized
+        }
+    }
     @IBOutlet weak var brandsField: UITextField!
-    @IBOutlet weak var quantityTitleLabel: UILabel!
-    @IBOutlet weak var quantityExampleLabel: UILabel!
+    @IBOutlet weak var quantityTitleLabel: UILabel! {
+        didSet {
+            quantityTitleLabel?.text = "product-add.label.quantity".localized
+        }
+    }
+    @IBOutlet weak var quantityExampleLabel: UILabel! {
+        didSet {
+            quantityExampleLabel?.text = "product-add.label.quantity-example".localized
+        }
+    }
     @IBOutlet weak var quantityField: UITextField!
     @IBOutlet weak var languageTitleLabel: UILabel!
     @IBOutlet weak var languageField: UITextField!
@@ -48,7 +75,11 @@ class ProductAddViewController: TakePictureViewController {
 
     @IBOutlet weak var noNutritionDataSwitch: UISwitch!
     @IBOutlet weak var nutritiveSectionTitle: UILabel!
-    @IBOutlet weak var nutriscoreStackView: UIStackView!
+    @IBOutlet weak var nutriscoreStackView: UIStackView! {
+        didSet {
+            nutriscoreStackView?.isHidden = true
+        }
+    }
     @IBOutlet weak var nutriScoreView: NutriScoreView!
     @IBOutlet weak var portionSizeInputView: EditNutritiveValueView!
     @IBOutlet weak var nutritivePortionSegmentedControl: UISegmentedControl!
@@ -58,13 +89,41 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var lastSavedNutrimentsLabel: UILabel!
 
     @IBOutlet weak var ingredientsSectionTitle: UILabel!
-    @IBOutlet weak var novaGroupStackView: UIStackView!
+    @IBOutlet weak var novaGroupStackView: UIStackView! {
+        didSet {
+            novaGroupStackView?.isHidden = true
+        }
+    }
     @IBOutlet weak var novaGroupView: NovaGroupView!
-    @IBOutlet weak var ingredientsExplainationLabel: UILabel!
-    @IBOutlet weak var ingredientsTextField: UITextView!
-    @IBOutlet weak var ignoreIngredientsButton: UIButton!
-    @IBOutlet weak var saveIngredientsButton: UIButton!
-    @IBOutlet weak var lastSavedIngredientsLabel: UILabel!
+    @IBOutlet weak var ingredientsExplainationLabel: UILabel! {
+        didSet {
+            ingredientsExplainationLabel?.text = "product-add.ingredients.explaination".localized
+        }
+    }
+    @IBOutlet weak var ingredientsTextField: UITextView! {
+        didSet {
+            ingredientsTextField?.text = ""
+        }
+    }
+    @IBOutlet weak var ignoreIngredientsButton: UIButton! {
+        didSet {
+            ignoreIngredientsButton?.setTitle("product-add.ingredients.button-delete".localized, for: .normal)
+            ignoreIngredientsButton?.titleLabel?.lineBreakMode = .byWordWrapping
+            ignoreIngredientsButton?.titleLabel?.numberOfLines = 2
+        }
+    }
+    @IBOutlet weak var saveIngredientsButton: UIButton! {
+        didSet {
+            saveIngredientsButton?.setTitle("product-add.ingredients.button-save".localized, for: .normal)
+            saveIngredientsButton?.titleLabel?.lineBreakMode = .byWordWrapping
+            saveIngredientsButton?.titleLabel?.numberOfLines = 2
+        }
+    }
+    @IBOutlet weak var lastSavedIngredientsLabel: UILabel! {
+        didSet {
+            lastSavedIngredientsLabel?.isHidden = true
+        }
+    }
     @IBOutlet weak var lastSavedIngredientsOCRLabel: UILabel!
 
     @IBOutlet var saveButtons: [UIButton]!
@@ -105,6 +164,12 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
 
+    private var productHasBeenEdited = false {
+        didSet {
+            navigationItem.rightBarButtonItem?.isEnabled = productHasBeenEdited
+        }
+    }
+
     // Private vars
 
     fileprivate var activeField: UIView?
@@ -136,15 +201,7 @@ class ProductAddViewController: TakePictureViewController {
     // swiftlint:disable function_body_length
     override func viewDidLoad() {
         self.title = "product-add.title".localized
-        
-
-        productSectionTitle.text = "product-add.titles.product-info".localized
-        productNameTitleLabel.text = "product-add.label.product-name".localized
-        productCategoryTitleLabel.text = "product-add.label.category".localized
-        productCategoryField.placeholder = "product-add.label.category".localized
-        brandsTitleLabel.text = "product-add.placeholder.brand".localized
-        quantityTitleLabel.text = "product-add.label.quantity".localized
-        quantityExampleLabel.text = "product-add.label.quantity-example".localized
+        productHasBeenEdited = false
         languageTitleLabel.text = "product-add.label.language".localized
         saveButtons.forEach { (button: UIButton) in
             button.setTitle("generic.save".localized, for: .normal)
@@ -152,7 +209,6 @@ class ProductAddViewController: TakePictureViewController {
         lastSavedProductInfosLabel.isHidden = true
 
         nutritiveSectionTitle.text = "product-add.titles.nutritive".localized
-        nutriscoreStackView.isHidden = true
         nutritivePortionSegmentedControl.setTitle("product-add.nutritive.choice.per-hundred-grams".localized, forSegmentAt: 0)
         nutritivePortionSegmentedControl.setTitle("product-add.nutritive.choice.per-portion".localized, forSegmentAt: 1)
         portionSizeInputView.titleLabel.text = "product-detail.nutrition.serving-size".localized
@@ -163,17 +219,7 @@ class ProductAddViewController: TakePictureViewController {
         refreshNutritiveInputsViews()
 
         ingredientsSectionTitle.text = "product-add.titles.ingredients".localized
-        ingredientsExplainationLabel.text = "product-add.ingredients.explaination".localized
-        novaGroupStackView.isHidden = true
-        ingredientsTextField.text = ""
-        ignoreIngredientsButton.setTitle("product-add.ingredients.button-delete".localized, for: .normal)
-        saveIngredientsButton.setTitle("product-add.ingredients.button-save".localized, for: .normal)
-        lastSavedIngredientsLabel.isHidden = true
 
-        ignoreIngredientsButton.titleLabel?.lineBreakMode = .byWordWrapping
-        ignoreIngredientsButton.titleLabel?.numberOfLines = 2
-        saveIngredientsButton.titleLabel?.lineBreakMode = .byWordWrapping
-        saveIngredientsButton.titleLabel?.numberOfLines = 2
 
         showNotSavedIndication(label: lastSavedIngredientsOCRLabel, key: "ocr-ingredients")
 
@@ -194,10 +240,10 @@ class ProductAddViewController: TakePictureViewController {
             fillForm(withProduct: productToEdit)
         }
         if let barcode = self.barcode {
-        let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode)
-        if pendingUploadItem != nil {
-            fillForm(withPendingUploadItem: pendingUploadItem!)
-        }
+            let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode)
+            if pendingUploadItem != nil {
+                fillForm(withPendingUploadItem: pendingUploadItem!)
+            }
         }
     }
     // swiftlint:enable function_body_length
@@ -258,6 +304,7 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     @objc func save() {
+        productHasBeenEdited = false
         self.view.endEditing(true)
         saveProductInfosButton.isEnabled = false
 
@@ -798,6 +845,10 @@ extension ProductAddViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        productHasBeenEdited = true
+    }
 }
 
 extension ProductAddViewController: UITextViewDelegate {
@@ -810,6 +861,10 @@ extension ProductAddViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         showNotSavedIndication(label: lastSavedIngredientsLabel, key: "save-ingredients")
         return true
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        productHasBeenEdited = true
     }
 }
 
@@ -837,6 +892,7 @@ extension ProductAddViewController: SelectCategoryDelegate {
         self.productCategoryCustomName = nil
         self.navigationController?.popToViewController(self, animated: true)
         showNotSavedIndication(label: lastSavedProductInfosLabel, key: "save-info")
+        productHasBeenEdited = true
     }
 
     func didSelect(customCategory: String) {
@@ -845,6 +901,7 @@ extension ProductAddViewController: SelectCategoryDelegate {
         self.productCategoryCustomName = customCategory
         self.navigationController?.popToViewController(self, animated: true)
         showNotSavedIndication(label: lastSavedProductInfosLabel, key: "save-info")
+        productHasBeenEdited = true
     }
 }
 
@@ -859,6 +916,7 @@ extension ProductAddViewController: SelectNutrimentDelegate {
         if !displayedNutrimentItems.contains(nutrimentCode) {
             displayedNutrimentItems.append(nutrimentCode)
             refreshNutritiveInputsViews()
+            productHasBeenEdited = true
         }
     }
 }
@@ -891,6 +949,7 @@ extension ProductAddViewController: EditNutritiveValueViewDelegate {
             } else if view.nutrimentCode == "sodium" {
                 self.computeSaltFromSodium(sodium: inputValue.value, inUnit: view.selectedUnit, withModifier: inputValue.modifier)
             }
+            productHasBeenEdited = true
         }
     }
 }
