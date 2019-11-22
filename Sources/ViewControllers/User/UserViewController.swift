@@ -52,6 +52,7 @@ class UserViewController: UIViewController, DataManagerClient {
         let loginVC = LoginViewController.loadFromStoryboard(named: .user) as LoginViewController
         loginVC.dataManager = dataManager
         loginVC.delegate = self
+        title = "user.log-in".localized
         return loginVC
     }
 }

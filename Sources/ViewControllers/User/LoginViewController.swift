@@ -16,7 +16,6 @@ class LoginViewController: UIViewController, DataManagerClient {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var scrollView: UIScrollView!
 
     var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
 
@@ -35,6 +34,7 @@ class LoginViewController: UIViewController, DataManagerClient {
     }()
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().shouldToolbarUsesTextFieldTintColor = true
     }
@@ -42,8 +42,21 @@ class LoginViewController: UIViewController, DataManagerClient {
     override func viewWillDisappear(_ animated: Bool) {
         IQKeyboardManager.sharedManager().shouldToolbarUsesTextFieldTintColor = false
         IQKeyboardManager.sharedManager().enable = false
+        super.viewWillDisappear(animated)
+    }
+    @IBOutlet weak var createAnAccountButton: UIButton! {
+        didSet {
+            createAnAccountButton?.setTitle("user.create-account.button".localized, for: .normal)
+            createAnAccountButton?.titleLabel?.lineBreakMode = .byWordWrapping
+        }
     }
 
+    @IBOutlet weak var forgotPasswordButton: UIButton! {
+        didSet {
+            forgotPasswordButton?.setTitle("user.forgot-password".localized, for: .normal)
+            forgotPasswordButton?.titleLabel?.lineBreakMode = .byWordWrapping
+        }
+    }
     @IBAction func didTapForgotPassword(_ sender: UIButton) {
         if let url = URL(string: URLs.ForgotPassword) {
             openUrlInApp(url)
