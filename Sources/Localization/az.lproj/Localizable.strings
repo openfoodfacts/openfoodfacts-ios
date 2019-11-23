@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Barkod";
+"product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "Quantity";
 "product-detail.summary.packaging" = "Packaging";
 "product-detail.summary.brands" = "Brands";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "Countries where sold";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
+"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
+"product-detail.ingredients.nova.3" = "Processed foods";
+"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Substances or products causing allergies or intolerances";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
@@ -303,6 +309,8 @@
 "user.log-out" = "Log Out";
 "user.username" = "Username";
 "user.password" = "Şifrə";
+"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";

@@ -96,7 +96,7 @@
 "product-add.title" = "New product";
 "product-add.title-edit" = "Edit product";
 "product-add.titles.barcode" = "Barcode";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
@@ -112,7 +112,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "per portion";
 "product-add.nutritive.add-nutriment" = "Add a nutrient";
-"product-add.nutritive.too-much" = "More than 100g ?";
+"product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
 "product-add.titles.ingredients" = "Ingredients";
@@ -163,6 +163,11 @@
 "product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
+"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
+"product-detail.ingredients.nova.3" = "Processed foods";
+"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Substances or products causing allergies or intolerances";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
@@ -304,6 +309,8 @@
 "user.log-out" = "Log Out";
 "user.username" = "Username";
 "user.password" = "Password";
+"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";

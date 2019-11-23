@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "ברקוד";
+"product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "כמות";
 "product-detail.summary.packaging" = "אריזה";
 "product-detail.summary.brands" = "מותגים";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "ארצות בהן נמכר";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "מזון עם עיבוד מזערי או נטול";
+"product-detail.ingredients.nova.2" = "רכיבים קולינריים מעובדים";
+"product-detail.ingredients.nova.3" = "מזון מעובד";
+"product-detail.ingredients.nova.4" = "מוצרי מזון ושתייה מעובדים ביותר";
+"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "רשימת מרכיבים";
 "product-detail.ingredients.allergens-list" = "חומרים או מוצרים שגורמים לאלרגיות או לרגישויות";
 "product-detail.ingredients.allergens-alert.title" = "מכיל אלרגנים!";
@@ -171,7 +177,7 @@
 "product-detail.ingredients.additives-list" = "תוספים";
 "product-detail.ingredients.palm-oil-ingredients" = "רכיבים משמן דקלים";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "רכיבים שעשויים להיות משמן דקלים";
-"product-detail.ingredients.vitamins-list" = "ויטמינים";
+"product-detail.ingredients.vitamins-list" = "ויטמינים ומינרלים";
 "product-detail.ingredients.minerals-list" = "מינרלים";
 "product-detail.ingredients.nucleotides-list" = "נוקלאוטידים";
 "product-detail.ingredients.otherNutritionalSubstances-list" = "מרכיבים תזונתיים טבעיים אחרים";
@@ -303,6 +309,8 @@
 "user.log-out" = "יציאה";
 "user.username" = "שם משתמש";
 "user.password" = "ססמה";
+"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.forgot-password" = "שכחת ססמה?";
 "user.check-your-contributions.button" = "הצגת כל התרומות שלך";
 "user.products-pending-upload.button" = "מוצרים שממתינים להעלאה אל Open Food Facts";

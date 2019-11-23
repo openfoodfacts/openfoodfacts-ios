@@ -154,27 +154,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fv5-cW-Fpw">
-                                <rect key="frame" x="0.0" y="232" width="375" height="203.5"/>
+                                <rect key="frame" x="0.0" y="230" width="375" height="207"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6T-SP-ooO">
-                                        <rect key="frame" x="77" y="0.0" width="221" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbS-h9-3OE">
-                                                <rect key="frame" x="0.0" y="0.0" width="76" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=", you are logged in." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjm-dC-Jai">
-                                                <rect key="frame" x="76" y="0.0" width="145" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbS-h9-3OE">
+                                        <rect key="frame" x="144.5" y="0.0" width="86.5" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhP-dP-H6B">
-                                        <rect key="frame" x="0.0" y="28.5" width="375" height="61"/>
+                                        <rect key="frame" x="0.0" y="32" width="375" height="61"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All the products you add and the product photos you upload will be credited to your account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omn-rL-TWm">
                                                 <rect key="frame" x="8" y="0.0" width="359" height="61"/>
@@ -192,7 +181,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wr-Gt-sDG">
-                                        <rect key="frame" x="99.5" y="97.5" width="176" height="30"/>
+                                        <rect key="frame" x="99.5" y="101" width="176" height="30"/>
                                         <state key="normal" title="Check Your Contributions"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.check-your-contributions.button"/>
@@ -202,7 +191,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZd-sP-yxN">
-                                        <rect key="frame" x="101.5" y="135.5" width="172" height="30"/>
+                                        <rect key="frame" x="101.5" y="139" width="172" height="30"/>
                                         <state key="normal" title="Products pending upload"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.products-pending-upload.button"/>
@@ -212,7 +201,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9L-mX-Jom">
-                                        <rect key="frame" x="160" y="173.5" width="55" height="30"/>
+                                        <rect key="frame" x="160" y="177" width="55" height="30"/>
                                         <state key="normal" title="Log Out"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="user.log-out"/>
@@ -231,7 +220,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cYJ-kR-q53"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="explanationLabel" destination="Omn-rL-TWm" id="ubx-Rw-KIe"/>
                         <outlet property="usernameLabel" destination="vbS-h9-3OE" id="opf-z7-ve3"/>
                     </connections>
                 </viewController>
