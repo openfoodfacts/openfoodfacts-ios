@@ -17,9 +17,17 @@ class LoggedInViewController: UIViewController, DataManagerClient {
 
     override func viewDidLoad() {
         if let username = CredentialsController.shared.getUsername() {
-            usernameLabel.text = username
+            usernameLabel.text = String(format: "user.logged-in.label".localized, username)
+            // "%@, you are logged in"
         } else {
             delegate?.dismiss()
+        }
+    }
+
+    @IBOutlet weak var explanationLabel: UILabel! {
+        didSet {
+            explanationLabel.text = "user.logged-in-explanation.label".localized
+            // All the products you add and the product photos you upload will be credited to your account"
         }
     }
 
