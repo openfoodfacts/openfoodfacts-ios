@@ -74,7 +74,11 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var lastSavedProductInfosLabel: UILabel!
 
     @IBOutlet weak var noNutritionDataSwitch: UISwitch!
-    @IBOutlet weak var nutritiveSectionTitle: UILabel!
+    @IBOutlet weak var nutritiveSectionTitle: UILabel! {
+        didSet {
+            nutritiveSectionTitle?.text = "product-add.titles.nutritive".localized
+        }
+    }
     @IBOutlet weak var nutriscoreStackView: UIStackView! {
         didSet {
             nutriscoreStackView?.isHidden = true
@@ -208,7 +212,6 @@ class ProductAddViewController: TakePictureViewController {
         }
         lastSavedProductInfosLabel.isHidden = true
 
-        nutritiveSectionTitle.text = "product-add.titles.nutritive".localized
         nutritivePortionSegmentedControl.setTitle("product-add.nutritive.choice.per-hundred-grams".localized, forSegmentAt: 0)
         nutritivePortionSegmentedControl.setTitle("product-add.nutritive.choice.per-portion".localized, forSegmentAt: 1)
         portionSizeInputView.titleLabel.text = "product-detail.nutrition.serving-size".localized
@@ -304,7 +307,6 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     @objc func save() {
-        productHasBeenEdited = false
         self.view.endEditing(true)
         saveProductInfosButton.isEnabled = false
 
@@ -547,6 +549,7 @@ class ProductAddViewController: TakePictureViewController {
     fileprivate func showNotSavedIndication(label: UILabel?, key: String) {
         label?.text = "⚠️ " + "product-add.\(key).not-yet".localized
         label?.isHidden = false
+        productHasBeenEdited = true
     }
 
     fileprivate func showSavingIndication(label: UILabel?, key: String) {
@@ -558,7 +561,7 @@ class ProductAddViewController: TakePictureViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-
+        productHasBeenEdited = false
         label?.text = "💾 " + "product-add.\(key).success".localized + " " + dateFormatter.string(from: Date())
         label?.isHidden = false
     }
@@ -846,9 +849,6 @@ extension ProductAddViewController: UITextFieldDelegate {
         return false
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        productHasBeenEdited = true
-    }
 }
 
 extension ProductAddViewController: UITextViewDelegate {
@@ -863,9 +863,6 @@ extension ProductAddViewController: UITextViewDelegate {
         return true
     }
 
-    func textViewDidEndEditing(_ textView: UITextView) {
-        productHasBeenEdited = true
-    }
 }
 
 extension ProductAddViewController: PictureTableViewControllerDelegate {
@@ -892,7 +889,6 @@ extension ProductAddViewController: SelectCategoryDelegate {
         self.productCategoryCustomName = nil
         self.navigationController?.popToViewController(self, animated: true)
         showNotSavedIndication(label: lastSavedProductInfosLabel, key: "save-info")
-        productHasBeenEdited = true
     }
 
     func didSelect(customCategory: String) {
@@ -901,7 +897,6 @@ extension ProductAddViewController: SelectCategoryDelegate {
         self.productCategoryCustomName = customCategory
         self.navigationController?.popToViewController(self, animated: true)
         showNotSavedIndication(label: lastSavedProductInfosLabel, key: "save-info")
-        productHasBeenEdited = true
     }
 }
 
@@ -916,7 +911,6 @@ extension ProductAddViewController: SelectNutrimentDelegate {
         if !displayedNutrimentItems.contains(nutrimentCode) {
             displayedNutrimentItems.append(nutrimentCode)
             refreshNutritiveInputsViews()
-            productHasBeenEdited = true
         }
     }
 }
@@ -949,7 +943,6 @@ extension ProductAddViewController: EditNutritiveValueViewDelegate {
             } else if view.nutrimentCode == "sodium" {
                 self.computeSaltFromSodium(sodium: inputValue.value, inUnit: view.selectedUnit, withModifier: inputValue.modifier)
             }
-            productHasBeenEdited = true
         }
     }
 }
