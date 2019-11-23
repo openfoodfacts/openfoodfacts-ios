@@ -17,7 +17,11 @@ class IngredientsHeaderCellController: TakePictureViewController {
 
     @IBOutlet weak var novaStackView: UIStackView!
     @IBOutlet weak var novagroupView: NovaGroupView!
-    @IBOutlet weak var novagroupExplanationLabel: UILabel!
+    @IBOutlet weak var novagroupExplanationLabel: UILabel! {
+        didSet {
+            novagroupExplanationLabel?.text = "product-detail.ingredients.nova.incite".localized
+        }
+    }
     @IBOutlet weak var novagroupInfoButton: UIButton! {
         didSet {
             if #available(iOS 13.0, *) {
@@ -93,17 +97,18 @@ class IngredientsHeaderCellController: TakePictureViewController {
             novagroupView?.novaGroup = novaGroup
             switch novaGroup {
             case .one:
-                novagroupExplanationLabel.text = "product-detail.ingredients.nova.1".localized
+                novagroupExplanationLabel?.text = "product-detail.ingredients.nova.1".localized
             case .two:
-                novagroupExplanationLabel.text = "product-detail.ingredients.nova.2".localized
+                novagroupExplanationLabel?.text = "product-detail.ingredients.nova.2".localized
             case .three:
-                novagroupExplanationLabel.text = "product-detail.ingredients.nova.3".localized
+                novagroupExplanationLabel?.text = "product-detail.ingredients.nova.3".localized
             case .four:
-                novagroupExplanationLabel.text = "product-detail.ingredients.nova.4".localized
+                novagroupExplanationLabel?.text = "product-detail.ingredients.nova.4".localized
             }
-            novaStackView?.isHidden = false
+            novagroupView?.isHidden = false
         } else {
-            novaStackView?.isHidden = true
+            novagroupExplanationLabel?.text = "product-detail.ingredients.nova.incite".localized
+            novagroupView?.isHidden = false
         }
     }
 
