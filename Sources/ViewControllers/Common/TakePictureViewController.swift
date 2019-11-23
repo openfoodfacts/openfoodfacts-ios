@@ -13,6 +13,7 @@ class TakePictureViewController: UIViewController {
     var dataManager: DataManagerProtocol!
     var barcode: String?
     var imageType: ImageType = .front
+    var languageCode: String = "xx"
     var cameraController: CameraController?
 
     // Feedback banners
@@ -42,7 +43,21 @@ class TakePictureViewController: UIViewController {
         }
         guard var cameraController = self.cameraController else { return }
         cameraController.delegate = self
-        cameraController.imageType = imageType
+        //let kjadfh = self.product.lang
+        cameraController.languageCode = languageCode
+
+        if let vcs = self as? SummaryHeaderCellController {
+            cameraController.imageType = .front
+            cameraController.languageCode = vcs.product.lang
+        } else if let vcs = self as? IngredientsHeaderCellController {
+            cameraController.imageType = .ingredients
+            cameraController.languageCode = vcs.product.lang
+        } else if let vcs = self as? NutritionTableHeaderCellController {
+            cameraController.imageType = .nutrition
+            cameraController.languageCode = vcs.product.lang
+        } else {
+            cameraController.imageType = .general
+        }
         cameraController.show()
     }
 
@@ -64,11 +79,12 @@ class TakePictureViewController: UIViewController {
 }
 
 extension TakePictureViewController: CameraControllerDelegate {
-    func didGetImage(image: UIImage, forImageType imageType: ImageType?) {
+
+    func didGetImage(image: UIImage, forImageType imageType: ImageType?, languageCode: String?) {
         // For now, images will be always uploaded with type front
         showUploadingImage(forType: imageType)
-
-        guard let validBarcode = barcode, let productImage = ProductImage(barcode: validBarcode, image: image, type: imageType ?? .front) else {
+        self.languageCode = languageCode ?? "ww"
+        guard let validBarcode = barcode, let productImage = ProductImage(barcode: validBarcode, image: image, type: imageType ?? .general, languageCode: self.languageCode) else {
             showErrorUploadingImage(forType: imageType)
             return
         }

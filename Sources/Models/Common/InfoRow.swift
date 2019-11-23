@@ -13,6 +13,7 @@ enum InfoRowKey: LocalizedString {
 
     // Summary
     case barcode = "product-detail.summary.barcode"
+    case genericName = "product-detail.summary.generic-name"
     case quantity = "product-detail.summary.quantity"
     case packaging = "product-detail.summary.packaging"
     case brands = "product-detail.summary.brands"

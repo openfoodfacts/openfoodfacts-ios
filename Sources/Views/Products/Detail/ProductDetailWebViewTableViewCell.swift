@@ -44,7 +44,7 @@ class ProductDetailWebViewTableViewCell: ProductDetailBaseCell {
 extension ProductDetailWebViewTableViewCell: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         webViewHeightConstraint.constant = webView.scrollView.contentSize.height
-        webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.fontFamily =\"-apple-system\"")
+        //webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.fontFamily =\"-apple-system-body\"")
 
         // to force redraw of cell height
         tableView?.beginUpdates()
@@ -55,23 +55,25 @@ extension ProductDetailWebViewTableViewCell: UIWebViewDelegate {
 extension String {
 
 func htmlFormattedString( font: UIFont, color: UIColor) -> String {
-    let colorComponents = color.cgColor.components ?? []
 
-    var colorHexString = ""
-    if color.cgColor.numberOfComponents == 4 {
-        let red = colorComponents[0] * 255
-        let green = colorComponents[1] * 255
-        let blue = colorComponents[2] * 255
+    func colorHexString(color: UIColor) -> String {
+        let colorComponents = color.cgColor.components ?? []
+        if color.cgColor.numberOfComponents == 4 {
+            let red = colorComponents[0] * 255
+            let green = colorComponents[1] * 255
+            let blue = colorComponents[2] * 255
 
-        colorHexString = NSString(format: "%02X%02X%02X", Int(red), Int(green), Int(blue)) as String
-    } else if color.cgColor.numberOfComponents == 2 {
-        let white = colorComponents[0] * 255
+            return NSString(format: "%02X%02X%02X", Int(red), Int(green), Int(blue)) as String
+        } else if color.cgColor.numberOfComponents == 2 {
+            let white = colorComponents[0] * 255
 
-        colorHexString = NSString(format: "%02X%02X%02X", Int(white), Int(white), Int(white)) as String
-    } else {
-        return "htmlFormattedString:Color format noch supported"
+            return NSString(format: "%02X%02X%02X", Int(white), Int(white), Int(white)) as String
+        } else {
+            return "htmlFormattedString:Color format not supported"
+        }
+    }
+    // The table contains returns /n in strange places. Just to be sure they are removed.
+    return String(format: "<html><head><style>table {font-family: -apple-system; font-size: %@; color:#%@;}</style></head><body>%@</body></html>", String(describing: font.pointSize), colorHexString(color: color), self.replacingOccurrences(of: "\n", with: ""))
     }
 
-    return String(format: "<html>\n <head>\n <style type=\"text/css\">\n body {font-family: \"%@\"; font-size: %@; color:#%@;}\n </style>\n </head>\n <body>%@</body>\n </html>", font.familyName, String(describing: font.pointSize), colorHexString, self) as String
-}
 }

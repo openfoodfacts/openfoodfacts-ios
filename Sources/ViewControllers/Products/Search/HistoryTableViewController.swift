@@ -36,7 +36,46 @@ class HistoryTableViewController: UITableViewController, DataManagerClient {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         items = dataManager.getHistory()
+        if items.isEmpty {
+            configureEmptyState()
+        } else {
+            configureRegularState()
+        }
+
         tableView.reloadData()
+    }
+
+    private func configureEmptyState() {
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        tableView.separatorStyle = .none
+
+        let buttonContainerView = UIView()
+        buttonContainerView.translatesAutoresizingMaskIntoConstraints = false
+
+        let firstScanButton = UIButton.init(type: .system)
+        firstScanButton.translatesAutoresizingMaskIntoConstraints = false
+        firstScanButton.setTitle("Scan your first product", for: .normal)
+        firstScanButton.addTarget(self, action: #selector(requestScan), for: .touchUpInside)
+
+        buttonContainerView.addSubview(firstScanButton)
+        tableView.tableFooterView = buttonContainerView
+
+        NSLayoutConstraint.activate([
+            buttonContainerView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            buttonContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.75),
+            firstScanButton.centerYAnchor.constraint(equalTo: buttonContainerView.centerYAnchor),
+            firstScanButton.centerXAnchor.constraint(equalTo: buttonContainerView.centerXAnchor)
+        ])
+    }
+
+    private func configureRegularState() {
+        navigationItem.rightBarButtonItem?.isEnabled = true
+        tableView.separatorStyle = .singleLine
+        tableView.tableFooterView = nil
+    }
+
+    @objc private func requestScan() {
+        NotificationCenter.default.post(name: .requestScanning, object: nil, userInfo: nil)
     }
 
     @IBAction func clearHistory(_ sender: UIBarButtonItem) {
@@ -44,6 +83,7 @@ class HistoryTableViewController: UITableViewController, DataManagerClient {
         let clearAction = UIAlertAction(title: "history.button.clear".localized, style: .destructive) { (_) -> Void in
             self.dataManager.clearHistory()
             self.items.removeAll()
+            self.configureEmptyState()
             self.tableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "generic.cancel".localized, style: .default) { (_) -> Void in }

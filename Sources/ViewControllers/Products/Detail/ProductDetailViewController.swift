@@ -51,9 +51,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
 
-        navigationController?.navigationBar.isTranslucent = false
-        if var buttons = navigationItem.rightBarButtonItems, buttons.count == 1 {
+        if let parentVc = parent as? UINavigationController {
+
+            parentVc.navigationBar.isTranslucent = false
+
             let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShareButton(_:)))
+            var buttons: [UIBarButtonItem] = navigationItem.rightBarButtonItems ?? []
             buttons.insert(shareButton, at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
@@ -63,7 +66,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         super.viewWillDisappear(animated)
 
         navigationController?.navigationBar.isTranslucent = true
-        if var buttons = navigationItem.rightBarButtonItems, buttons.count == 2 {
+        if var buttons = navigationItem.rightBarButtonItems, !buttons.isEmpty {
             buttons.remove(at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
@@ -153,6 +156,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
+        createFormRow(with: &rows, item: product.genericName, label: InfoRowKey.genericName.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
@@ -295,7 +299,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         // Nutriscore cell
         if product.nutriscore != nil {
-            createFormRow(with: &rows, item: product.nutriscore, cellType: NutritionHeaderTableViewCell.self)
+            // created to pass on the delegate with the nutriscore
+            let headerRow = NutritionScoreTableRow(delegate, nutriscore:product.nutriscore)
+            createFormRow(with: &rows, item: headerRow, cellType: NutritionHeaderTableViewCell.self)
         }
 
         // Info rows
@@ -417,7 +423,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     // MARK: - Nav bar button
 
     @objc func didTapShareButton(_ sender: UIBarButtonItem) {
-        SharingManager.shared.shareLink(string: URLs.urlForProduct(with: product.barcode), sender: self)
+        SharingManager.shared.shareLink(string: URLs.urlForProduct(with: product.barcode), sender: sender, presenter: self)
     }
 }
 
@@ -443,4 +449,20 @@ extension ProductDetailViewController: ProductDetailRefreshDelegate {
 
         completion()
     }
+}
+
+extension ProductDetailViewController: NutritionHeaderTableViewCellDelegate {
+
+    // function to let the delegate know that the switch changed
+    //func tagListViewAddImageTableViewCell(_ sender: TagListViewAddImageTableViewCell, receivedDoubleTapOn tagListView:TagListView)
+    public func nutritionHeaderTableViewCellDelegate(_ sender: NutritionHeaderTableViewCell, receivedTapOn button: UIButton) {
+
+        if let url = URL(string: URLs.NutriScore) {
+            openUrlInApp(url)
+        } else if let url = URL(string: URLs.SupportOpenFoodFacts) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+
+    }
+
 }

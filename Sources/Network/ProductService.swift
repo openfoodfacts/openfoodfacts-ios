@@ -53,6 +53,7 @@ class ProductService: ProductApi {
             Crashlytics.sharedInstance().setObjectValue(query, forKey: "product_search_barcode")
         } else {
             url += "/cgi/search.pl?search_terms=\(encodeParameters(query))&search_simple=1&action=process&json=1&page=\(page)"
+            url.append(contentsOf: "&fields=" + OFFJson.summaryFields.joined(separator: OFFJson.FieldsSeparator))
             searchType = "by_product"
             Crashlytics.sharedInstance().setObjectValue(query, forKey: "product_search_name")
         }
@@ -172,7 +173,7 @@ extension ProductService {
                 multipartFormData: { multipartFormData in
                     multipartFormData.append(barcode, withName: Params.code)
                     multipartFormData.append(fileURL, withName: "imgupload_\(productImage.type.rawValue)")
-                    let lang = Bundle.main.preferredLocalizations.first ?? "en"
+                    let lang = productImage.languageCode
                     multipartFormData.append(("\(productImage.type.rawValue)_\(lang)").data(using: .utf8)!, withName: Params.imagefield)
 
                     if let credentials = CredentialsController.shared.getCredentials(),

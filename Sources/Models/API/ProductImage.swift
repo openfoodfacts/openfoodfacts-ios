@@ -13,6 +13,7 @@ enum ImageType: String {
     case front
     case ingredients
     case nutrition
+    case general
 }
 
 struct ProductImage {
@@ -20,6 +21,7 @@ struct ProductImage {
     let image: UIImage
     let fileName: String
     let type: ImageType
+    let languageCode: String
 
     /// Save image locally.
     /// Init will fail when the image could not be saved.
@@ -28,11 +30,12 @@ struct ProductImage {
     ///   - barcode: product's barcode
     ///   - image: image to save
     ///   - type: type of product image
-    init?(barcode: String, image: UIImage, type: ImageType) {
+    init?(barcode: String, image: UIImage, type: ImageType, languageCode: String) {
         self.barcode = barcode
         self.image = image
         self.fileName = "\(UUID().uuidString).jpg"
         self.type = type
+        self.languageCode = languageCode
 
         guard saveImage(image) != nil else { return nil }
     }
@@ -44,11 +47,11 @@ struct ProductImage {
     ///   - barcode: product's barcode
     ///   - fileName: Image's file name. It should be created as follows: "\(UUID().uuidString).jpg". It is done internally, using the other initializer.
     ///   - type: type of product image
-    init?(barcode: String, fileName: String, type: ImageType) {
+    init?(barcode: String, fileName: String, type: ImageType, languageCode: String) {
         self.barcode = barcode
         self.fileName = fileName
         self.type = type
-
+        self.languageCode = languageCode
         guard let image = ProductImage.loadImage(fileName) else { return nil }
         self.image = image
     }

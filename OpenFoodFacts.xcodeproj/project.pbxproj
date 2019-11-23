@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		152048F7235F48BD0053814A /* ScanProductSummaryViewAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152048F6235F48BD0053814A /* ScanProductSummaryViewAdaptor.swift */; };
 		2AA94319234990D3001158A5 /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950163391F2CE9780057B8D5 /* MarqueeLabel.framework */; };
 		3000855E2207A3A500DC3896 /* TaxonomiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000855D2207A3A500DC3896 /* TaxonomiesService.swift */; };
 		300085612207AC0700DC3896 /* Additive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300085602207AC0700DC3896 /* Additive.swift */; };
@@ -303,7 +304,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A798638235027590020821E /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		152048F6235F48BD0053814A /* ScanProductSummaryViewAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProductSummaryViewAdaptor.swift; sourceTree = "<group>"; };
+		2A798638235027590020821E /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; name = README.md; path = ../../Desktop/README.md; sourceTree = "<group>"; };
 		3000855D2207A3A500DC3896 /* TaxonomiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomiesService.swift; sourceTree = "<group>"; };
 		300085602207AC0700DC3896 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
 		300085622208777900DC3896 /* OFFUrlsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFUrlsHelper.swift; sourceTree = "<group>"; };
@@ -988,6 +990,7 @@
 				303C279E2201AB7B00159961 /* ScanProductSummaryView.xib */,
 				303C27A02201ABC300159961 /* ManualBarcodeInputView.swift */,
 				303C27A22201AC1800159961 /* ManualBarcodeInputView.xib */,
+				152048F6235F48BD0053814A /* ScanProductSummaryViewAdaptor.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -1372,6 +1375,7 @@
 		957094DC1EA3D00500268236 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				302525F22223145000C2C830 /* AllergensAddTableViewCell.xib */,
 				9581B3E41F900E490036AC7C /* Settings.storyboard */,
 			);
 			path = Settings;
@@ -1844,7 +1848,6 @@
 				7437FBA42036F1F800D107B6 /* CreditsViewController.swift */,
 				302525E72223044E00C2C830 /* AllergensAlertsTableViewController.swift */,
 				302525F12223145000C2C830 /* AllergensAddTableViewCell.swift */,
-				302525F22223145000C2C830 /* AllergensAddTableViewCell.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1966,10 +1969,9 @@
 			};
 			buildConfigurationList = 95C265091E96D55B004212EC /* Build configuration list for PBXProject "OpenFoodFacts" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				Base,
 				en,
 				aa,
@@ -2432,6 +2434,7 @@
 				95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */,
 				954587941F730C2D00269E71 /* CameraHelper.swift in Sources */,
 				303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */,
+				152048F7235F48BD0053814A /* ScanProductSummaryViewAdaptor.swift in Sources */,
 				30412DD7220EF36500C485DD /* EditNutritiveValueView.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
 				514EFA8E22302183008FFD2A /* Mineral.swift in Sources */,
@@ -3067,7 +3070,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3078,6 +3081,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -3096,7 +3100,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3106,6 +3110,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -3185,7 +3190,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3196,6 +3201,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

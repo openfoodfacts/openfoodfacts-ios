@@ -58,9 +58,11 @@ class ScannerResultViewController: UIViewController {
             statusIndicatorLabel.isHidden = false
 
         case .hasOfflineData(let product):
+            // reset the view visibility after succesful scan
             updateSummaryVisibility(forProduct: product)
 
         case .hasSummary(let product):
+            // reset the view visibility after succesful scan
             updateSummaryVisibility(forProduct: product)
 
         case .hasProduct(let product, let dataManager):
@@ -74,12 +76,14 @@ class ScannerResultViewController: UIViewController {
     }
 
     fileprivate func updateSummaryVisibility(forProduct product: RealmOfflineProduct) {
-        topSummaryView.fillIn(product: product)
+        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: product)
+        topSummaryView.setup(with: adaptor)
         topSummaryView.isHidden = false
     }
 
     fileprivate func updateSummaryVisibility(forProduct product: Product) {
-        topSummaryView.fillIn(product: product)
+        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: product)
+        topSummaryView.setup(with: adaptor)
         topSummaryView.isHidden = false
     }
 
@@ -108,4 +112,5 @@ class ScannerResultViewController: UIViewController {
 
         self.productDetailsContainer.isHidden = false
     }
+
 }

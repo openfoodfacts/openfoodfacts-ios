@@ -10,12 +10,14 @@ import UIKit
 
 struct PictureViewModel {
     let imageType: ImageType
+    // let languageCode: String
     let text: String?
     var image: UIImage?
     var imageUrl: String?
     let uploadedPictureText: String?
     var isUploading: Bool = false
 }
+// Should the languageCode of the picture be added?
 
 extension PictureViewModel {
     init(imageType: ImageType) {
@@ -31,6 +33,9 @@ extension PictureViewModel {
         case .nutrition:
             text = "product.images.take-picture.nutrition".localized
             uploadedPictureText = "product.images.took-picture.nutrition".localized
+        case .general:
+            text = "product.images.take-picture.general".localized
+            uploadedPictureText = "product.images.took-picture.general".localized
         }
 
         self.init(imageType: imageType, text: text, image: nil, imageUrl: nil, uploadedPictureText: uploadedPictureText, isUploading: false)

@@ -12,19 +12,19 @@ import Crashlytics
 class InfoRowTableViewCell: ProductDetailBaseCell {
 
     @IBOutlet weak var textView: UITextView!
-    private static let textSize: CGFloat = 17
-    private let bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: textSize)]
-    private let regular = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: textSize)]
+    //private static let textSize: CGFloat = 17
     private let boldWordsPattern = "(_\\w+_)"
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
+        let headline = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline).pointSize)
+
         guard let rowLabel = formRow.label else { return }
         guard let value = formRow.getValueAsAttributedString() else { return }
         var bold: [NSAttributedString.Key: Any] = [:]
         if #available(iOS 13.0, *) {
-            bold = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: headline]
         } else {
-            bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: headline]
         }
 
         let combination = NSMutableAttributedString()
@@ -41,18 +41,20 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
     /// - Parameter originalText: Original text with words to be made bold surrounded by '_'
     /// - Returns: NSAttributedString with highlighted words
     private func makeWordsBold(for originalText: NSAttributedString) -> NSAttributedString {
+        let body = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize)
+        let headline = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline).pointSize)
         let highlightedText = NSMutableAttributedString(attributedString: originalText)
         var bold: [NSAttributedString.Key: Any] = [:]
         if #available(iOS 13.0, *) {
-            bold = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: headline]
         } else {
-            bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: InfoRowTableViewCell.textSize)]
+            bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: headline]
         }
         var regular: [NSAttributedString.Key: Any] = [:]
         if #available(iOS 13.0, *) {
-            regular = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
+            regular = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: body]
         } else {
-            regular = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: InfoRowTableViewCell.textSize)]
+            regular = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: body]
         }
         highlightedText.addAttributes(regular, range: originalText.string.nsrange)
 
