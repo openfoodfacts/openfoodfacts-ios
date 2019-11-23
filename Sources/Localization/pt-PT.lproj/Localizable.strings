@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Código de barras";
+"product-detail.summary.generic-name" = "Nome de exemplo";
 "product-detail.summary.quantity" = "Quantidade";
 "product-detail.summary.packaging" = "Embalagem";
 "product-detail.summary.brands" = "Marcas";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "País";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Alimentos não processados ​​ou minimamente processados";
+"product-detail.ingredients.nova.2" = "Ingredientes culinários processados";
+"product-detail.ingredients.nova.3" = "Ingredientes culinários processados";
+"product-detail.ingredients.nova.4" = "Ingredientes culinários processados ";
+"product-detail.ingredients.nova.incite" = "Adicione ingredientes e / ou categorias para calcular o NOVA.";
 "product-detail.ingredients.ingredients-list" = "Lista de ingredientes";
 "product-detail.ingredients.allergens-list" = "Produtos ou substâncias que provocam alergias ou intolerâncias";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
@@ -303,12 +309,14 @@
 "user.log-out" = "Terminar Sessão";
 "user.username" = "Nome de Utilizador";
 "user.password" = "Palavra-passe";
+"user.logged-in.label" = "%@, você fez o login";
+"user.logged-in-explanation.label" = "Todos os produtos adicionados e as fotos que você enviar serão creditados à sua conta";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.why-log-in.text" = "Ao fazer login na sua conta, você será creditado por todas as suas contribuições para a transparência alimentar.";
 "user.alert.wrong-credentials.title" = "Falha ao iniciar sessão";
 "user.alert.wrong-credentials.subtitle" = "Verifique se seu nome de usuário e senha estão corretos";
 "user.alert.generic-error.title" = "Houve um erro ao fazer login";
