@@ -451,7 +451,7 @@ extension ProductDetailViewController: ProductDetailRefreshDelegate {
     }
 }
 
-extension ProductDetailViewController : NutritionHeaderTableViewCellDelegate {
+extension ProductDetailViewController: NutritionHeaderTableViewCellDelegate {
 
     // function to let the delegate know that the switch changed
     //func tagListViewAddImageTableViewCell(_ sender: TagListViewAddImageTableViewCell, receivedDoubleTapOn tagListView:TagListView)
