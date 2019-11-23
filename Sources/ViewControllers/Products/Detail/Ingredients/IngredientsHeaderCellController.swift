@@ -108,7 +108,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
             novagroupView?.isHidden = false
         } else {
             novagroupExplanationLabel?.text = "product-detail.ingredients.nova.incite".localized
-            novagroupView?.isHidden = false
+            novagroupView?.isHidden = true
         }
     }
 
