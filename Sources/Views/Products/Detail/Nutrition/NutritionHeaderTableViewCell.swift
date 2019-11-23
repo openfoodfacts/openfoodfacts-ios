@@ -14,7 +14,15 @@ protocol NutritionHeaderTableViewCellDelegate: class {
 
 class NutritionHeaderTableViewCell: ProductDetailBaseCell {
 
-    @IBOutlet weak var nutriscoreLearnMoreButton: UIButton!
+    @IBOutlet weak var nutriscoreLearnMoreButton: UIButton! {
+        didSet {
+            if #available(iOS 13.0, *) {
+                nutriscoreLearnMoreButton.setImage(UIImage.init(systemName: "info.circle"), for: .normal)
+            } else {
+                nutriscoreLearnMoreButton.setImage(UIImage.init(named: "circle-info"), for: .normal)
+            }
+        }
+    }
 
     @IBAction func nutritionscoreLearMoreButtonTapped(_ sender: UIButton) {
         delegate?.nutritionHeaderTableViewCellDelegate(self, receivedTapOn: nutriscoreLearnMoreButton)
