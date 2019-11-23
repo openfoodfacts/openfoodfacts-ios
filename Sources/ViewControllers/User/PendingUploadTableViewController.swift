@@ -15,10 +15,18 @@ struct PendingUploadCellIds {
 }
 
 class PendingUploadTableViewController: UITableViewController, DataManagerClient {
-    @IBOutlet weak var uploadButton: UIBarButtonItem!
+
+    @IBOutlet weak var uploadButton: UIBarButtonItem! {
+        didSet {
+            uploadButton?.isEnabled = !items.isEmpty
+        }
+    }
+
     var dataManager: DataManagerProtocol!
+
     var items = [PendingUploadItem]() {
         didSet {
+            uploadButton?.isEnabled = !items.isEmpty
             self.tableView.reloadData()
         }
     }
@@ -28,20 +36,15 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
 
         items = dataManager.getItemsPendingUpload()
 
-        if items.isEmpty {
-            uploadButton.isEnabled = false
-        } else {
-            uploadButton.isEnabled = true
-        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "upload")!, style: .plain, target: self, action: #selector(PendingUploadTableViewController.uploadButtonTapped(_:)))
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "upload")!, style: .plain, target: self, action: #selector(PendingUploadTableViewController.uploadButtonTapped(_:)))
     }
 
     @IBAction func uploadButtonTapped(_ sender: UIBarButtonItem) {
+        guard !items.isEmpty else { return }
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.showProgress(0.0, status: "pending-upload.hud.status".localized)
 
