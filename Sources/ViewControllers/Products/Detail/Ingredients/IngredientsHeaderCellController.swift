@@ -15,6 +15,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
     @IBOutlet weak var callToActionView: PictureCallToActionView!
     @IBOutlet weak var takePictureButtonView: IconButtonView!
 
+    @IBOutlet weak var novaStackView: UIStackView!
     @IBOutlet weak var novagroupView: NovaGroupView!
     @IBOutlet weak var novagroupExplanationLabel: UILabel!
     @IBOutlet weak var novagroupInfoButton: UIButton! {
@@ -100,9 +101,9 @@ class IngredientsHeaderCellController: TakePictureViewController {
             case .four:
                 novagroupExplanationLabel.text = "product-detail.ingredients.nova.4".localized
             }
-            novagroupView?.isHidden = false
+            novaStackView?.isHidden = false
         } else {
-            novagroupView?.isHidden = true
+            novaStackView?.isHidden = true
         }
     }
 
