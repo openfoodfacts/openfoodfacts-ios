@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Ar";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "عودة";
@@ -20,8 +20,8 @@
 // Product Search
 
 "product-search.title" = "بحث";
-"product-search.search-placeholder" = "Search by name or barcode";
-"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
+"product-search.search-placeholder" = "ابحث باستخدام الاسم أو المعرّف";
+"product-search.no-results" = "لا نتائج. يمكنك إضافة منتج إلى Open Food Facts عن طريق مسحه ضوئيًا.";
 "product-search.error-view.title" = "حدث خطأ ما";
 "product-search.error-view.subtitle" = "من فضلك حاول مرة أخرى";
 "product-search.initial-view.slogan" = "the free food products database";
@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "الرمز الشريطي";
+"product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "كمية";
 "product-detail.summary.packaging" = "التعبئة والتغليف";
 "product-detail.summary.brands" = "العلامات التجارية";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "بلدان بيع";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
+"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
+"product-detail.ingredients.nova.3" = "Processed culinary ingredients";
+"product-detail.ingredients.nova.4" = "Processed culinary ingredients ";
+"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "قائمة المكونات";
 "product-detail.ingredients.allergens-list" = "مستأرج";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
@@ -303,6 +309,8 @@
 "user.log-out" = "تسجيل الخروج";
 "user.username" = "اسم المستخدم";
 "user.password" = "كلمة المرور";
+"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
