@@ -5,7 +5,7 @@
 //  Created by Andrés Pizá Bückmann on 13/10/2017.
 //  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
 //
-
+/*
 import UIKit
 import IQKeyboardManagerSwift
 import NotificationBanner
@@ -106,3 +106,4 @@ class LoginViewController: UIViewController, DataManagerClient {
         }
     }
 }
+*/

@@ -38,9 +38,9 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
 
     func didTap() {
         if CredentialsController.shared.getUsername() == nil {
-            let loginVC = LoginViewController.loadFromStoryboard(named: .user) as LoginViewController
+            let loginVC = UserViewController.loadFromStoryboard(named: .user) as UserViewController
             loginVC.dataManager = dataManager
-            loginVC.delegate = self
+            //loginVC.delegate = self
 
             let navVC = UINavigationController(rootViewController: loginVC)
             loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
@@ -69,12 +69,9 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
         dismiss(animated: true, completion: nil)
     }
 }
-
-extension SummaryFooterCellController: UserViewControllerDelegate {
-    func dismiss() {
-        dismissVC()
-    }
-
-    func showProductsPendingUpload() {
-    }
-}
+//
+//extension SummaryFooterCellController: UserViewControllerDelegate {
+//    func dismiss() {
+//        setupInterface()
+//    }
+//}
