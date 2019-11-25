@@ -25,7 +25,15 @@ protocol PersistenceManagerProtocol {
     func categorySearch(query: String?) -> Results<Category>
 
     func save(allergens: [Allergen])
+    func save(minerals: [Mineral])
+    func save(vitamins: [Vitamin])
+    func save(nucleotides: [Nucleotide])
     func allergen(forCode: String) -> Allergen?
+    func trace(forCode: String) -> Allergen?
+    func vitamin(forCode: String) -> Vitamin?
+    func mineral(forCode: String) -> Mineral?
+    func nucleotide(forCode: String) -> Nucleotide?
+    func otherNutritionalSubstance(forCode: String) -> OtherNutritionalSubstance?
 
     func save(nutriments: [Nutriment])
     func nutriment(forCode: String) -> Nutriment?
@@ -65,7 +73,7 @@ class PersistenceManager: PersistenceManagerProtocol {
 
         do {
             try realm.write {
-                realm.add(objects, update: true)
+                realm.add(objects, update: .all)
             }
         } catch let error as NSError {
             log.error("ERROR SAVING INTO REALM \(error)")
@@ -102,7 +110,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 }
 
                 try realm.write {
-                    realm.add(item, update: true)
+                    realm.add(item, update: .all)
                 }
             } catch let error as NSError {
                 log.error(error)
@@ -157,8 +165,43 @@ class PersistenceManager: PersistenceManagerProtocol {
         log.info("Saved \(allergens.count) allergens in taxonomies database")
     }
 
+    func save(vitamins: [Vitamin]) {
+        saveOrUpdate(objects: vitamins)
+        log.info("Saved \(vitamins.count) vitamins in taxonomies database")
+    }
+
+    func save(minerals: [Mineral]) {
+        saveOrUpdate(objects: minerals)
+        log.info("Saved \(minerals.count) minerals in taxonomies database")
+    }
+
+    func save(nucleotides: [Nucleotide]) {
+        saveOrUpdate(objects: nucleotides)
+        log.info("Saved \(nucleotides.count) nucleotides in taxonomies database")
+    }
+
     func allergen(forCode code: String) -> Allergen? {
         return getRealm().object(ofType: Allergen.self, forPrimaryKey: code)
+    }
+
+    func trace(forCode code: String) -> Allergen? {
+        return getRealm().object(ofType: Allergen.self, forPrimaryKey: code)
+    }
+
+    func vitamin(forCode code: String) -> Vitamin? {
+        return getRealm().object(ofType: Vitamin.self, forPrimaryKey: code)
+    }
+
+    func mineral(forCode code: String) -> Mineral? {
+        return getRealm().object(ofType: Mineral.self, forPrimaryKey: code)
+    }
+
+    func nucleotide(forCode code: String) -> Nucleotide? {
+        return getRealm().object(ofType: Nucleotide.self, forPrimaryKey: code)
+    }
+
+    func otherNutritionalSubstance(forCode code: String) -> OtherNutritionalSubstance? {
+        return getRealm().object(ofType: OtherNutritionalSubstance.self, forPrimaryKey: code)
     }
 
     func save(nutriments: [Nutriment]) {
@@ -335,7 +378,7 @@ class PersistenceManager: PersistenceManagerProtocol {
         do {
             let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
             try realm.write {
-                realm.add(realmItem, update: true)
+                realm.add(realmItem, update: .all)
             }
 
             let count = getItemsPendingUpload().count
@@ -359,12 +402,14 @@ class PersistenceManager: PersistenceManagerProtocol {
                     item.ingredientsImage = productImage
                 case .nutrition:
                     item.nutritionImage = productImage
+                default:
+                    break
                 }
 
                 let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
 
                 try realm.write {
-                    realm.add(realmItem, update: true)
+                    realm.add(realmItem, update: .all)
                 }
             } catch let error as NSError {
                 log.error(error)
@@ -404,7 +449,7 @@ class PersistenceManager: PersistenceManagerProtocol {
             do {
                 let realmItem = RealmPendingUploadItem().fromPendingUploadItem(item)
                 try realm.write {
-                    realm.add(realmItem, update: true)
+                    realm.add(realmItem, update: .all)
                 }
             } catch let error as NSError {
                 log.error(error)

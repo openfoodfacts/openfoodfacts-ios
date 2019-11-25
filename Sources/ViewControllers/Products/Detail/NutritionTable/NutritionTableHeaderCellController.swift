@@ -81,6 +81,6 @@ extension NutritionTableHeaderCellController {
 
 extension NutritionTableHeaderCellController: IconButtonViewDelegate {
     func didTap() {
-        didTapTakePictureButton(callToActionView)
+        didTapTakePictureButton(callToActionView as Any)
     }
 }

@@ -96,7 +96,7 @@
 "product-add.title" = "Nowy produkt";
 "product-add.title-edit" = "Edytuj produkt";
 "product-add.titles.barcode" = "Kod kreskowy";
-"product-add.titles.top-explainations" = "Brawo ! Ten produkt nie jest jeszcze dostępny w Open Food Facts. Czy możesz zrobić mu kilka zdjęć: główne zdjęcie produktu, listy składników oraz wartości odżywczej, a następnie umieścić w Open Food Fact?\n\nZ góry dziękuję.";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Uwaga: Wysłane przez ciebie zdjęcia są publikowane na wolnej licencji \"Creative Commons Attribution & ShareAlike\".";
 
 "product-add.titles.product-info" = "Informacje o produkcie";
@@ -112,7 +112,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "w 100 g / 100 ml";
 "product-add.nutritive.choice.per-portion" = "w porcji";
 "product-add.nutritive.add-nutriment" = "Dodaj składnik odżywczy";
-"product-add.nutritive.too-much" = "Więcej niż 100 g ?";
+"product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Aby określić poziom przetworzenia żywności - NOVA, uzupełnij listę składników produktu";
 "product-add.titles.ingredients" = "Składniki";
@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Kod kreskowy";
+"product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "Ilość";
 "product-detail.summary.packaging" = "Opakowania";
 "product-detail.summary.brands" = "Marki";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "Kraje sprzedaży";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Żywność nieprzetworzona lub minimalnie przetworzona";
+"product-detail.ingredients.nova.2" = "Przetworzone składniki kulinarne";
+"product-detail.ingredients.nova.3" = "Żywność przetworzona";
+"product-detail.ingredients.nova.4" = "Bardzo przetworzone produkty spożywcze i napoje";
+"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "Lista składników";
 "product-detail.ingredients.allergens-list" = "Substancje lub produkty powodujące alergie lub reakcje nietolerancji";
 "product-detail.ingredients.allergens-alert.title" = "Zawiera alergeny!";
@@ -171,6 +177,10 @@
 "product-detail.ingredients.additives-list" = "Dodatki";
 "product-detail.ingredients.palm-oil-ingredients" = "Składniki z oleju palmowego";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Składniki które mogą pochodzić z oleju palmowego";
+"product-detail.ingredients.vitamins-list" = "Witaminy";
+"product-detail.ingredients.minerals-list" = "Minerały";
+"product-detail.ingredients.nucleotides-list" = "Nukleotydy";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Wielkość porcji";
@@ -299,6 +309,8 @@
 "user.log-out" = "Wyloguj się";
 "user.username" = "Nazwa użytkownika";
 "user.password" = "Hasło";
+"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.forgot-password" = "Zapomniałeś hasła?";
 "user.check-your-contributions.button" = "Sprawdź swoje kontrybucję";
 "user.products-pending-upload.button" = "Produkty oczekujące na przesłanie";

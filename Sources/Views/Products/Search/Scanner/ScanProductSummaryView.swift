@@ -28,88 +28,62 @@ class ScanProductSummaryView: UIView {
 
     private func commonInit() {
         Bundle.main.loadNibNamed(String(describing: ScanProductSummaryView.self), owner: self, options: nil)
+        accessibilityIdentifier = AccessibilityIdentifiers.Scan.productSummaryView
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 
-    func fillIn(product: RealmOfflineProduct) {
-        productImageView.isHidden = true
-        environmentImpactImageView.isHidden = true
+    func setup(with adaptor: ScanProductSummaryViewAdaptor) {
+        titleLabel.text = adaptor.title
+        setQuantity(quantity: adaptor.quantityText)
+        setProductImageView(imageURL: adaptor.productImageURL)
+        setBrands(brands: adaptor.brands)
+        setNutriScore(nutriscore: adaptor.nutriScore)
+        setNovaGroup(novaGroup: adaptor.novaGroup)
+        setEnvironmentImpactImageView(image: adaptor.environmentalImage)
+    }
 
-        titleLabel.text = product.name
+    private func setEnvironmentImpactImageView(image: UIImage?) {
+        environmentImpactImageView.image = image
+        environmentImpactImageView.isHidden = (image == nil)
+    }
 
-        brandsLabel.text = nil
-        if let brands = product.brands, !brands.isEmpty {
-            brandsLabel.text = brands
-            brandsLabel.isHidden = false
-        } else {
-            brandsLabel.isHidden = true
+    private func setProductImageView(imageURL: URL?) {
+        guard let url = imageURL else {
+            productImageView.isHidden = true
+            return
         }
+        productImageView.kf.indicatorType = .activity
+        productImageView.kf.setImage(with: url)
+        productImageView.isHidden = false
+    }
 
-        if let quantity = product.quantity, !quantity.isEmpty {
-            quantityLabel.text = quantity
-            quantityLabel.isHidden = false
-        } else {
-            quantityLabel.isHidden = true
-        }
+    private func setQuantity(quantity: String?) {
+        quantityLabel.text = quantity
+        quantityLabel.isHidden = (quantity == nil)
+    }
 
-        if let nutriscoreValue = product.nutritionGrade, let score = NutriScoreView.Score(rawValue: nutriscoreValue) {
+    private func setBrands(brands: String?) {
+        brandsLabel.text = brands
+        brandsLabel.isHidden = (brands == nil)
+    }
+
+    private func setNutriScore(nutriscore: NutriScoreView.Score?) {
+        if let score = nutriscore {
             nutriScoreView.currentScore = score
             nutriScoreView.isHidden = false
         } else {
             nutriScoreView.isHidden = true
-        }
-
-        if let novaGroupValue = product.novaGroup, let novaIntValue = Double(novaGroupValue),
-            let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(Int(novaIntValue))") {
-            novaGroupView.novaGroup = novaGroup
-            novaGroupView.isHidden = false
-        } else {
-            novaGroupView.isHidden = true
         }
     }
 
-    func fillIn(product: Product) {
-        titleLabel.text = product.name
-
-        if let imageUrl = product.frontImageSmallUrl ?? product.imageSmallUrl ??  product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
-            productImageView.kf.indicatorType = .activity
-            productImageView.kf.setImage(with: url)
-            productImageView.isHidden = false
-        } else {
-            productImageView.isHidden = true
-        }
-
-        brandsLabel.text = nil
-        if let brands = product.brands, !brands.isEmpty {
-            brandsLabel.text = brands.joined(separator: ", ")
-        }
-        quantityLabel.text = nil
-        if let quantity = product.quantity, !quantity.isEmpty {
-            quantityLabel.text = quantity
-        }
-
-        if let nutriscoreValue = product.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue) {
-            nutriScoreView.currentScore = score
-            nutriScoreView.isHidden = false
-        } else {
-            nutriScoreView.isHidden = true
-        }
-
-        if let novaGroupValue = product.novaGroup,
-            let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
+    private func setNovaGroup(novaGroup: NovaGroupView.NovaGroup?) {
+        if let novaGroup = novaGroup {
             novaGroupView.novaGroup = novaGroup
             novaGroupView.isHidden = false
         } else {
             novaGroupView.isHidden = true
-        }
-
-        if let co2Impact = product.environmentImpactLevelTags?.first {
-            environmentImpactImageView.image = co2Impact.image
-            environmentImpactImageView.isHidden = false
-        } else {
-            environmentImpactImageView.isHidden = true
         }
     }
 

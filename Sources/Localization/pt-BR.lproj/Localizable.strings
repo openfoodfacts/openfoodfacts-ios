@@ -96,7 +96,7 @@
 "product-add.title" = "Novo produto";
 "product-add.title-edit" = "Modificar produto";
 "product-add.titles.barcode" = "Código de barras";
-"product-add.titles.top-explainations" = "Bem feito ! Este produto ainda não está em Open Food Facts. Você pode tirar algumas fotos do produto, lista de ingredientes e informações nutricionais para adicioná-lo ao Open Food Facts? Desde já, obrigado.";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Nota: as imagens que você envia são publicadas sob a licença libra Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Informação do produto";
@@ -112,7 +112,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "para 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "por porção";
 "product-add.nutritive.add-nutriment" = "Adicionar um nutriente";
-"product-add.nutritive.too-much" = "Mais de 100g?";
+"product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Complete os ingredientes para obter o grupo NOVA no processamento de alimentos";
 "product-add.titles.ingredients" = "Ingredientes";
@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Código de barras";
+"product-detail.summary.generic-name" = "Nome de exemplo";
 "product-detail.summary.quantity" = "Quantidade";
 "product-detail.summary.packaging" = "Embalagem";
 "product-detail.summary.brands" = "Marcas";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "País";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Comidas não processadas ou minimamente processadas";
+"product-detail.ingredients.nova.2" = "Ingredientes culinários processados";
+"product-detail.ingredients.nova.3" = "Comidas Processadas";
+"product-detail.ingredients.nova.4" = "Produtos ultra-processados e bebidas";
+"product-detail.ingredients.nova.incite" = "Adicione ingredientes e / ou categorias para calcular o NOVA.";
 "product-detail.ingredients.ingredients-list" = "Lista de ingredientes";
 "product-detail.ingredients.allergens-list" = "Produtos ou substâncias que provocam alergias ou intolerâncias";
 "product-detail.ingredients.allergens-alert.title" = "Contém alérgenos!";
@@ -171,6 +177,10 @@
 "product-detail.ingredients.additives-list" = "Aditivos";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredientes que derivam do óleo de palma";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredientes que podem derivar de óleo de palma";
+"product-detail.ingredients.vitamins-list" = "Vitaminas";
+"product-detail.ingredients.minerals-list" = "Minerais";
+"product-detail.ingredients.nucleotides-list" = "Nucleótidos";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Tamanho da porção";
@@ -299,6 +309,8 @@
 "user.log-out" = "Terminar Sessão";
 "user.username" = "Nome de Utilizador";
 "user.password" = "Palavra-passe";
+"user.logged-in.label" = "%@, você fez o login";
+"user.logged-in-explanation.label" = "Todos os produtos adicionados e as fotos que você enviar serão creditados à sua conta";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "Verifique as suas contribuições";
 "user.products-pending-upload.button" = "Products pending upload";

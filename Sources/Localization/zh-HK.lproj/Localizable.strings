@@ -96,7 +96,7 @@
 "product-add.title" = "New product";
 "product-add.title-edit" = "編輯產品";
 "product-add.titles.barcode" = "條碼";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
@@ -112,7 +112,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "per portion";
 "product-add.nutritive.add-nutriment" = "新增營養";
-"product-add.nutritive.too-much" = "More than 100g ?";
+"product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
 "product-add.titles.ingredients" = "成分";
@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "條碼";
+"product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "數量";
 "product-detail.summary.packaging" = "包裝套件";
 "product-detail.summary.brands" = "品牌";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "國家";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
+"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
+"product-detail.ingredients.nova.3" = "Processed foods";
+"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "成分列表";
 "product-detail.ingredients.allergens-list" = "物品造成過敏";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
@@ -171,6 +177,10 @@
 "product-detail.ingredients.additives-list" = "添加劑";
 "product-detail.ingredients.palm-oil-ingredients" = "成分為棕櫚油";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "也許有棕櫚油成分";
+"product-detail.ingredients.vitamins-list" = "维生素";
+"product-detail.ingredients.minerals-list" = "礦物質";
+"product-detail.ingredients.nucleotides-list" = "核苷酸";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "份量";
@@ -299,6 +309,8 @@
 "user.log-out" = "登出";
 "user.username" = "用戶名";
 "user.password" = "密碼";
+"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";

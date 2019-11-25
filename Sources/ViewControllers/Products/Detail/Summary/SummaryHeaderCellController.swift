@@ -37,7 +37,8 @@ class SummaryHeaderCellController: TakePictureViewController {
     }
 
     fileprivate func setupViews() {
-        scanProductSummaryView.fillIn(product: product)
+        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: product)
+        scanProductSummaryView.setup(with: adaptor)
 
         scanProductSummaryView.isHidden = hideSummary
 
@@ -70,6 +71,6 @@ extension SummaryHeaderCellController {
 
 extension SummaryHeaderCellController: IconButtonViewDelegate {
     func didTap() {
-        didTapTakePictureButton(callToActionView)
+        didTapTakePictureButton(callToActionView as Any)
     }
 }

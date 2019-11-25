@@ -96,7 +96,7 @@
 "product-add.title" = "Producte nou";
 "product-add.title-edit" = "Edita el producte";
 "product-add.titles.barcode" = "Codi de barres";
-"product-add.titles.top-explainations" = "Ben fet! Aquest producte encara no es troba a Open Food Facts. Podeu fer algunes fotos del producte, de la llista d’ingredients i de la taula nutricional per afegir-lo a dades sobre menjar obert? Gràcies per endavant.";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Nota: les imatges que envieu són distribuïdes sota la llicència lliure Creative Commons Atribució i Compartir Igual.";
 
 "product-add.titles.product-info" = "Informació del producte";
@@ -112,7 +112,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "per 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "per ració";
 "product-add.nutritive.add-nutriment" = "Afegir un nutrient";
-"product-add.nutritive.too-much" = "Més de 100g?";
+"product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Completeu els ingredients per obtenir el grup NOVA en processament d'aliments";
 "product-add.titles.ingredients" = "Ingredients";
@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Codi de barres";
+"product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "Quantitat";
 "product-detail.summary.packaging" = "Empaquetament";
 "product-detail.summary.brands" = "Marques";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "Països on es va vendre";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Aliments no processats o mínimament processats";
+"product-detail.ingredients.nova.2" = "Ingredients culinaris processats";
+"product-detail.ingredients.nova.3" = "Aliments processats";
+"product-detail.ingredients.nova.4" = "Productes alimentaris i begudes ultraprocessades";
+"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "Llistat d'ingredients";
 "product-detail.ingredients.allergens-list" = "Productes o substancies que causen intoleràncies o al·lèrgies";
 "product-detail.ingredients.allergens-alert.title" = "Conté al·lèrgens!";
@@ -171,6 +177,10 @@
 "product-detail.ingredients.additives-list" = "Additius";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients de l'oli de palma";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients que poden ser d'oli de palma";
+"product-detail.ingredients.vitamins-list" = "Vitamines";
+"product-detail.ingredients.minerals-list" = "Minerals";
+"product-detail.ingredients.nucleotides-list" = "Nucleòtids";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Mida de la porció";
@@ -299,6 +309,8 @@
 "user.log-out" = "Tanca la sessió";
 "user.username" = "Identificador";
 "user.password" = "Contrasenya";
+"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.forgot-password" = "Heu oblidat la contrasenya?";
 "user.check-your-contributions.button" = "Vegeu totes les vostres contribucions";
 "user.products-pending-upload.button" = "Productes pendents de pujar a Open Food Facts";

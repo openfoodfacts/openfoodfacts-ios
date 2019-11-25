@@ -14,7 +14,7 @@
 "generic.search" = "ค้นหา";
 "generic.cancel" = "ยกเลิก";
 "generic.save" = "บันทึก";
-"generic.cancel" = "ยกเลิก";
+"generic.cancel" = "Cancel";
 "generic.ok" = "ตกลง";
 
 // Product Search
@@ -96,7 +96,7 @@
 "product-add.title" = "สินค้าใหม่";
 "product-add.title-edit" = "แก้ไขสินค้า";
 "product-add.titles.barcode" = "บาร์โค้ด";
-"product-add.titles.top-explainations" = "ไม่มีผลิตภํณฑ์นี้ใน Open Food Facts คุณสามารถถ่ายรูปผลิตภัณฑ์ ส่วนผสม และ ฉลากโภชนาการ เพื่อเพิ่มในฐานข้อมูลของ Open Food Facts ได้\n\nขอบคุณล่วงหน้า";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "หมายเหตุ: รูปภาพที่คุณส่งจะได้รับการเผยแพร่ภายใต้สัญญาอนุญาต Creative Commons Attribution และ ShareAlike ที่ให้สิทธิ์ใช้งานฟรี";
 
 "product-add.titles.product-info" = "ข้อมูลผลิตภัณฑ์";
@@ -112,7 +112,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "ต่อ 100 กรัม / 100 มิลลิลิตร";
 "product-add.nutritive.choice.per-portion" = "ต่อหน่วยบริโภค";
 "product-add.nutritive.add-nutriment" = "เพิ่มสารอาหารอื่นๆ";
-"product-add.nutritive.too-much" = "มากกว่า 100 กรัม";
+"product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "เพิ่มข้อมูลส่วนผสมให้ครบถ้วน เพื่อคำนวณ NOVA Score";
 "product-add.titles.ingredients" = "ส่วนผสม";
@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "บาร์โค้ด";
+"product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "ปริมาณ";
 "product-detail.summary.packaging" = "บรรจุภัณฑ์";
 "product-detail.summary.brands" = "ยี่ห้อสินค้า";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "ประเทศที่ขาย";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
+"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
+"product-detail.ingredients.nova.3" = "Processed foods";
+"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "รายชื่อส่วนผสม";
 "product-detail.ingredients.allergens-list" = "สารหรือผลิตภัณฑ์ที่ก่อให้เกิดอาการแพ้หรือแพ้";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
@@ -171,6 +177,10 @@
 "product-detail.ingredients.additives-list" = "สารเติมแต่ง";
 "product-detail.ingredients.palm-oil-ingredients" = "ส่วนผสมจากน้ำมันปาล์ม";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "อาจมีส่วนผสมที่มาจากน้ำมันปาล์ม";
+"product-detail.ingredients.vitamins-list" = "วิตามิน";
+"product-detail.ingredients.minerals-list" = "แร่ธาตุ";
+"product-detail.ingredients.nucleotides-list" = "นิวคลีโอ";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "หน่วยบริโภค";
@@ -299,6 +309,8 @@
 "user.log-out" = "ออกจากระบบ";
 "user.username" = "ชื่อผู้ใช้";
 "user.password" = "รหัสผ่าน";
+"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "ตรวจสอบการบริจาคของคุณ";
 "user.products-pending-upload.button" = "Products pending upload";

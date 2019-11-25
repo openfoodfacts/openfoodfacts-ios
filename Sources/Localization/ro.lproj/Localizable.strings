@@ -96,7 +96,7 @@
 "product-add.title" = "Produs nou";
 "product-add.title-edit" = "Modificare produs";
 "product-add.titles.barcode" = "Cod de bare";
-"product-add.titles.top-explainations" = "Felicitări, tocmai ați scanat un produs care nu se află în baza de date Open Food Facts, dar îl puteți adăuga dumneavoastră! Puteți face câteva fotografii ale produsului, a listei de ingrediente de pe ambalaj și a informațiilor sale nutriționale pentru a-l adăuga în baza de date? \nVă mulțumim anticipat.";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Notă: fotografiile trimise sunt publicate sub o licență liberă Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Informații produs";
@@ -112,7 +112,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "pentru 100 g / 100 ml";
 "product-add.nutritive.choice.per-portion" = "per porție";
 "product-add.nutritive.add-nutriment" = "Adăugați un nutrient";
-"product-add.nutritive.too-much" = "Mai mult de 100g?";
+"product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Completați ingredientele pentru a obține grupul NOVA (referitor la procesarea produselor alimentare)";
 "product-add.titles.ingredients" = "Ingrediente";
@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Cod de bare";
+"product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "Cantitate";
 "product-detail.summary.packaging" = "Ambalare";
 "product-detail.summary.brands" = "Mărci";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "Țările unde se vinde";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
+"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
+"product-detail.ingredients.nova.3" = "Processed foods";
+"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Substanțe sau produse care cauzează alergii sau intoleranțe";
 "product-detail.ingredients.allergens-alert.title" = "Conține alergeni!";
@@ -171,6 +177,10 @@
 "product-detail.ingredients.additives-list" = "Aditivi";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingrediente din ulei de palmier";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ingrediente care ar putea proveni din ulei de palmier";
+"product-detail.ingredients.vitamins-list" = "Vitamine";
+"product-detail.ingredients.minerals-list" = "Minerale";
+"product-detail.ingredients.nucleotides-list" = "Nucleotide";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Cantitatea unei porții";
@@ -184,7 +194,7 @@
 "product-detail.nutrition-table.serving" = "serving";
 
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
+"nutrition-level.title" = "Informații nutriționale pentru 100g";
 "nutrition-level.low" = "în cantitate mică";
 "nutrition-level.moderate" = "în cantitate moderată";
 "nutrition-level.high" = "în cantitate ridicată";
@@ -299,12 +309,14 @@
 "user.log-out" = "Deconectare";
 "user.username" = "Nume de utilizator";
 "user.password" = "Parolă";
+"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.forgot-password" = "Aţi uitat parola?";
 "user.check-your-contributions.button" = "Check Your Contributions";
 "user.products-pending-upload.button" = "Products pending upload";
 "user.create-account.text" = "Dacă nu aveți un cont, urmați linkul de mai jos pentru a crea unul.";
 "user.create-account.button" = "Create An Account";
-"user.why-log-in.text" = "Login in with your account will associate all your contributions to your account.";
+"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
 "user.alert.wrong-credentials.title" = "Autentificare eșuată";
 "user.alert.wrong-credentials.subtitle" = "Verificaţi numele de utilizator şi parola";
 "user.alert.generic-error.title" = "A apărut o eroare la conectare";

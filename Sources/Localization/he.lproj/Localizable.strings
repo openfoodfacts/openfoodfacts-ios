@@ -96,7 +96,7 @@
 "product-add.title" = "מוצר חדש";
 "product-add.title-edit" = "עריכת מוצר";
 "product-add.titles.barcode" = "ברקוד";
-"product-add.titles.top-explainations" = "כל הכבוד! המוצר הזה עדיין לא מתועד ב־Open Food Facts. אפשר לבקש ממך לצלם מספר תמונות של המוצר, רשימת הרכיבים וטבלת הערכים התזונתיים שלו ולהוסיף אותן ל־Open Food Facts?\n\nתודה רבה מראש.";
+"product-add.titles.top-explainations" = "כל הכבוד! המוצר הזה עדיין לא מתועד ב־Open Food Facts. אפשר לבקש ממך לצלם מספר תמונות של המוצר, רשימת הרכיבים וטבלת הערכים התזונתיים שלו ולהוסיף אותן ל־Open Food Facts?\n\nתודה מראש.";
 "product-add.titles.license-explaination" = "לתשומת לבך: התמונות שנשלחות מפורסמות תחת תנאי הרישיון Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "פרטי מוצר";
@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "ברקוד";
+"product-detail.summary.generic-name" = "שם גנרי";
 "product-detail.summary.quantity" = "כמות";
 "product-detail.summary.packaging" = "אריזה";
 "product-detail.summary.brands" = "מותגים";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "ארצות בהן נמכר";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "מזון עם עיבוד מזערי או נטול";
+"product-detail.ingredients.nova.2" = "רכיבים קולינריים מעובדים";
+"product-detail.ingredients.nova.3" = "מזון מעובד";
+"product-detail.ingredients.nova.4" = "מוצרי מזון ושתייה מעובדים ביותר";
+"product-detail.ingredients.nova.incite" = "יש להוסיף מרכיבים ו/או קטגוריות כדי לחשב NOVA.";
 "product-detail.ingredients.ingredients-list" = "רשימת מרכיבים";
 "product-detail.ingredients.allergens-list" = "חומרים או מוצרים שגורמים לאלרגיות או לרגישויות";
 "product-detail.ingredients.allergens-alert.title" = "מכיל אלרגנים!";
@@ -171,6 +177,10 @@
 "product-detail.ingredients.additives-list" = "תוספים";
 "product-detail.ingredients.palm-oil-ingredients" = "רכיבים משמן דקלים";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "רכיבים שעשויים להיות משמן דקלים";
+"product-detail.ingredients.vitamins-list" = "ויטמינים ומינרלים";
+"product-detail.ingredients.minerals-list" = "מינרלים";
+"product-detail.ingredients.nucleotides-list" = "נוקלאוטידים";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "מרכיבים תזונתיים טבעיים אחרים";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "גודל ההגשה";
@@ -299,6 +309,8 @@
 "user.log-out" = "יציאה";
 "user.username" = "שם משתמש";
 "user.password" = "ססמה";
+"user.logged-in.label" = "%@, נכנסת למערכת";
+"user.logged-in-explanation.label" = "כל המוצרים שיתווספו על ידיך ותמונות המוצרים שיועלו על ידיך יתועדו לטובת חשבונך";
 "user.forgot-password" = "שכחת ססמה?";
 "user.check-your-contributions.button" = "הצגת כל התרומות שלך";
 "user.products-pending-upload.button" = "מוצרים שממתינים להעלאה אל Open Food Facts";

@@ -13,6 +13,7 @@ enum InfoRowKey: LocalizedString {
 
     // Summary
     case barcode = "product-detail.summary.barcode"
+    case genericName = "product-detail.summary.generic-name"
     case quantity = "product-detail.summary.quantity"
     case packaging = "product-detail.summary.packaging"
     case brands = "product-detail.summary.brands"
@@ -29,6 +30,10 @@ enum InfoRowKey: LocalizedString {
     case ingredientsList = "product-detail.ingredients.ingredients-list"
     case allergens = "product-detail.ingredients.allergens-list"
     case traces = "product-detail.ingredients.traces-list"
+    case vitamins = "product-detail.ingredients.vitamins-list"
+    case minerals = "product-detail.ingredients.minerals-list"
+    case nucleotidesList = "product-detail.ingredients.nucleotides-list"
+    case otherNutritionalSubstances = "product-detail.ingredients.otherNutritionalSubstances-list"
     case additives = "product-detail.ingredients.additives-list"
     case palmOilIngredients = "product-detail.ingredients.palm-oil-ingredients"
     case possiblePalmOilIngredients = "product-detail.ingredients.possible-palm-oil-ingredients"

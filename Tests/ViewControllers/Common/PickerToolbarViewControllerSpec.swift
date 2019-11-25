@@ -49,6 +49,6 @@ class PickerToolbarViewControllerSpec: QuickSpec {
     }
 }
 
-extension UIBarButtonSystemItem: Equatable {
+extension UIBarButtonItem.SystemItem: Equatable {
 
 }

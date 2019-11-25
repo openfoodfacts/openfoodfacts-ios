@@ -45,6 +45,8 @@ class RootViewController: UIViewController {
 
         setupViewControllers(tabBarVC, dataManager)
 
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showScan), name: .requestScanning, object: nil)
+
         transition(to: tabBarVC) { _ in
             let count = dataManager.getItemsPendingUpload().count
             NotificationCenter.default.post(name: .pendingUploadBadgeChange, object: nil, userInfo: [NotificationUserInfoKey.pendingUploadItemCount: count])
@@ -83,11 +85,17 @@ class RootViewController: UIViewController {
         }
     }
 
-    private func showScan() {
+    @objc func showScan() {
         for child in tabBarVC.viewControllers ?? [] {
-            if let _ = child as? ScannerViewController {
+            let hasScanner = !child.children.filter {$0 is ScannerViewController}.isEmpty
+            if hasScanner {
+                guard let navigationController = child as? UINavigationController else { return }
+
                 tabBarVC.selectedIndex = tabBarVC.viewControllers?.firstIndex(of: child) ?? 0
-                break
+
+                if !(navigationController.visibleViewController is ScannerViewController) {
+                    navigationController.popToRootViewController(animated: false)
+                }
             }
         }
     }

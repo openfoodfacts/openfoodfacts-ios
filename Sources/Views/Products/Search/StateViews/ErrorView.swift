@@ -24,20 +24,20 @@ class ErrorView: StateView {
         mainLabel.translatesAutoresizingMaskIntoConstraints = false
         mainLabel.sizeToFit()
 
-        let secondayLabel = UILabel()
-        secondayLabel.text = "product-search.error-view.subtitle".localized
-        secondayLabel.textAlignment = .center
-        secondayLabel.textColor = textColor
-        secondayLabel.font = mainLabel.font.withSize(18)
-        secondayLabel.translatesAutoresizingMaskIntoConstraints = false
-        secondayLabel.sizeToFit()
+        let secondaryLabel = UILabel()
+        secondaryLabel.text = "product-search.error-view.subtitle".localized
+        secondaryLabel.textAlignment = .center
+        secondaryLabel.textColor = textColor
+        secondaryLabel.font = mainLabel.font.withSize(18)
+        secondaryLabel.translatesAutoresizingMaskIntoConstraints = false
+        secondaryLabel.sizeToFit()
 
         let stack = UIStackView(frame: self.bounds)
         stack.axis = .vertical
         stack.spacing = 8
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.addArrangedSubview(mainLabel)
-        stack.addArrangedSubview(secondayLabel)
+        stack.addArrangedSubview(secondaryLabel)
         stack.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         let centerHorizontally = NSLayoutConstraint(item: stack, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)

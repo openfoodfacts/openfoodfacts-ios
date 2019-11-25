@@ -10,6 +10,7 @@
 import RealmSwift
 
 class PersistenceManagerMock: PersistenceManagerProtocol {
+
     // Common
     var product: Product?
     var pendingUploadItem: PendingUploadItem?
@@ -148,5 +149,48 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
     func updatePendingUploadItem(_ item: PendingUploadItem) {
         updatePendingUploadItemCalled = true
         pendingUploadItem = item
+    }
+
+    func save(minerals: [Mineral]) {
+    }
+
+    func save(vitamins: [Vitamin]) {
+    }
+
+    func save(nucleotides: [Nucleotide]) {
+    }
+
+    func trace(forCode: String) -> Allergen? {
+        return nil
+    }
+
+    func vitamin(forCode: String) -> Vitamin? {
+        return nil
+    }
+
+    func mineral(forCode: String) -> Mineral? {
+        return nil
+    }
+
+    func nucleotide(forCode: String) -> Nucleotide? {
+        return nil
+    }
+
+    func otherNutritionalSubstance(forCode: String) -> OtherNutritionalSubstance? {
+        return nil
+    }
+
+    func save(offlineProducts: [RealmOfflineProduct]) {
+    }
+
+    func getOfflineProduct(forCode: String) -> RealmOfflineProduct? {
+        return nil
+    }
+
+    func updateOfflineProductStatus(percent: Double, savedProductsCount: Int) {
+    }
+
+    func offlineProductStatus() -> RealmOfflineProductStatus? {
+        return nil
     }
 }

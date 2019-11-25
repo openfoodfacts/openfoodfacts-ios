@@ -96,7 +96,7 @@
 "product-add.title" = "New product";
 "product-add.title-edit" = "उत्पाद संपादित करें";
 "product-add.titles.barcode" = "बारकोड";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts?   Thanks in advance.";
+"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
@@ -112,7 +112,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "per portion";
 "product-add.nutritive.add-nutriment" = "Add a nutrient";
-"product-add.nutritive.too-much" = "More than 100g ?";
+"product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
 "product-add.titles.ingredients" = "सामग्री";
@@ -149,6 +149,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "बारकोड";
+"product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "मात्रा";
 "product-detail.summary.packaging" = "पैकेजिंग";
 "product-detail.summary.brands" = "ब्रांड";
@@ -162,6 +163,11 @@
 "product-detail.summary.countries" = "जिन देशों में बिकता है";
 
 // Product detail ingredients info row labels
+"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
+"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
+"product-detail.ingredients.nova.3" = "Processed foods";
+"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "सामग्री की तालिका";
 "product-detail.ingredients.allergens-list" = "पदार्थों या उत्पादों के कारण एलर्जी या असहिष्णुता";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
@@ -171,6 +177,10 @@
 "product-detail.ingredients.additives-list" = "योगशील";
 "product-detail.ingredients.palm-oil-ingredients" = "ताड़ के तेल से सामग्री";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "सामग्री जो ताड़ के तेल से हो सकती है";
+"product-detail.ingredients.vitamins-list" = "विटामिन";
+"product-detail.ingredients.minerals-list" = "खनिज";
+"product-detail.ingredients.nucleotides-list" = "न्यूक्लियोटाइड";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "सेवारत माप";
@@ -299,12 +309,14 @@
 "user.log-out" = "लॉग आउट करें";
 "user.username" = "उपयोगकर्ता नाम";
 "user.password" = "पासवर्ड";
+"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
+"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
 "user.alert.wrong-credentials.title" = "लॉग इन करने में असमर्थ";
 "user.alert.wrong-credentials.subtitle" = "अपने उपयोगकर्ता नाम और पासवर्ड की जांच कीजिये";
 "user.alert.generic-error.title" = "प्रवेश करने में कोई त्रुटि थी";

@@ -11,7 +11,7 @@ import AlamofireObjectMapper
 import Crashlytics
 
 enum TaxonomiesRouter: URLRequestConvertible {
-    case getAllergens, getAdditives, getCategories, getNutriments, getIngredientsAnalysis
+    case getAllergens, getAdditives, getCategories, getNutriments, getIngredientsAnalysis, getVitamins, getMinerals, getNucleotides // get OtherNutritionalSubstances
 
     var path: String {
         switch self {
@@ -20,6 +20,11 @@ enum TaxonomiesRouter: URLRequestConvertible {
         case .getCategories: return "categories.json"
         case .getNutriments: return "nutrients.json"
         case .getIngredientsAnalysis: return "ingredients_analysis.json"
+        case .getVitamins: return "vitamins.json"
+        case .getMinerals: return "minerals.json"
+        case .getNucleotides: return "nucleotides.json"
+            // what is up with this url?
+        // case .getOtherNutritionalSubstances: return "otherNutritionalSubstances.json"
         }
     }
 
@@ -93,6 +98,87 @@ class TaxonomiesService: TaxonomiesApi {
                             return Allergen(code: allergenCode, names: names)
                         })
                         self.persistenceManager.save(allergens: allergens)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+
+                callback(success)
+        }
+    }
+
+    fileprivate func refreshVitamins(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getVitamins)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let vitamins = json.compactMap({ (vitaminCode: String, value: Any) -> Vitamin? in
+                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                return nil
+                            }
+                            let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return Vitamin(code: vitaminCode, names: names)
+                        })
+                        self.persistenceManager.save(vitamins: vitamins)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+
+                callback(success)
+        }
+    }
+
+    fileprivate func refreshMinerals(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getMinerals)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let minerals = json.compactMap({ (mineralCode: String, value: Any) -> Mineral? in
+                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                return nil
+                            }
+                            let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return Mineral(code: mineralCode, names: names)
+                        })
+                        self.persistenceManager.save(minerals: minerals)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+
+                callback(success)
+        }
+    }
+
+    fileprivate func refreshNucleotides(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getNucleotides)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let nucleotides = json.compactMap({ (nucleotideCode: String, value: Any) -> Nucleotide? in
+                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                return nil
+                            }
+                            let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return Nucleotide(code: nucleotideCode, names: names)
+                        })
+                        self.persistenceManager.save(nucleotides: nucleotides)
                         success = true
                     }
                 case .failure(let error):
@@ -201,52 +287,74 @@ class TaxonomiesService: TaxonomiesApi {
         let shouldDownload = lastDownload == 0 || (Date().timeIntervalSince1970 - TaxonomiesService.LAST_DOWNLOAD_DELAY) > lastDownload
 
         if shouldDownload {
-            DispatchQueue.global(qos: .utility).async {
-                let group = DispatchGroup()
+            downloadTaxonomies()
+        } else {
+            log.debug("Do not download taxonomies, we already have them !")
+        }
+    }
 
-                var allSuccess = true
+    private func downloadTaxonomies() {
+        DispatchQueue.global(qos: .utility).async {
+            let group = DispatchGroup()
 
-                group.enter()
-                self.refreshCategories({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
+            var allSuccess = true
 
-                group.enter()
-                self.refreshAllergens({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
+            group.enter()
+            self.refreshCategories({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
 
-                group.enter()
-                self.refreshNutriments({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
+            group.enter()
+            self.refreshAllergens({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
 
-                group.enter()
-                self.refreshAdditives({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
-                
-                group.enter()
+            group.enter()
+            self.refreshVitamins({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshMinerals({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshNucleotides({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshNutriments({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshAdditives({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
                 self.refreshIngredientsAnalysis({ (success) in
                     allSuccess = allSuccess && success
                     group.leave()
                 })
 
-                group.wait()
+            group.wait()
 
-                if allSuccess {
-                    log.debug("Taxonomies downloaded !")
-                    UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: TaxonomiesService.USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD)
-                } else {
-                    log.debug("It seems that there was some problem downloading one kind of taxonomy ? !")
-                }
+            if allSuccess {
+                log.debug("Taxonomies downloaded !")
+                UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: TaxonomiesService.USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD)
+            } else {
+                log.debug("It seems that there was some problem downloading one kind of taxonomy ? !")
             }
-        } else {
-            log.debug("Do not download taxonomies, we already have them !")
         }
     }
 }

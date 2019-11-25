@@ -84,6 +84,7 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
         tableView.backgroundView = initialView // State.initial background view
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ProductTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: LoadingCell.self), bundle: nil), forCellReuseIdentifier: String(describing: LoadingCell.self))
+        tableView.accessibilityIdentifier = AccessibilityIdentifiers.Search.resultTable
 
         tableView.rowHeight = 100
     }
@@ -104,9 +105,14 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
             tableView.tableHeaderView = searchController.searchBar
         }
 
-        let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField
-        searchField?.isAccessibilityElement = true
-        searchField?.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
+        // The selector searchTextField is obliged under IOS 13, but does not exist before that version.
+        if searchController.searchBar.responds(to: #selector(getter: UISearchBar.searchTextField)) {
+            searchController.searchBar.searchTextField.isAccessibilityElement = true
+            //searchController.searchBar.searchTextField.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
+        } else if let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField {
+            searchField.isAccessibilityElement = true
+            //searchField.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
+        }
     }
 
     fileprivate func configureGestureRecognizers() {

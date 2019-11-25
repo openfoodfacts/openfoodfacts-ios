@@ -87,7 +87,7 @@ class AllergensAlertsTableViewController: UITableViewController {
         return indexPath.section == 0
     }
 
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         switch indexPath.section {
         case 0: return .delete
         default: return .none
@@ -95,7 +95,7 @@ class AllergensAlertsTableViewController: UITableViewController {
     }
 
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let allergy = allergies[indexPath.row]
             dataManager.removeAllergy(toAllergen: allergy)
@@ -104,7 +104,6 @@ class AllergensAlertsTableViewController: UITableViewController {
         }
     }
 }
-
 
 extension AllergensAlertsTableViewController: AllergensAddTableViewCellDelegate {
     func didTapAddButton() {

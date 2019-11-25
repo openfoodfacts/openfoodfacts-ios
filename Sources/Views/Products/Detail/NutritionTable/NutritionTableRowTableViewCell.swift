@@ -14,12 +14,13 @@ class NutritionTableRowTableViewCell: ProductDetailBaseCell {
     @IBOutlet weak var valuePer100g: UILabel!
     @IBOutlet weak var valuePerServing: UILabel!
 
-    fileprivate let fontSize: CGFloat = 16
+    //fileprivate let fontSize: CGFloat = 16
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let nutritionTableRow = formRow.value as? NutritionTableRow else { return }
-
-        let attributes = [NSAttributedStringKey.font: nutritionTableRow.highlight ? UIFont.boldSystemFont(ofSize: fontSize) : UIFont.systemFont(ofSize: fontSize)]
+        let body = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize)
+        let headline = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline).pointSize)
+        let attributes = [NSAttributedString.Key.font: nutritionTableRow.highlight ? headline : body]
 
         rowLabel.attributedText = NSAttributedString(string: nutritionTableRow.label, attributes: attributes)
         valuePer100g.attributedText = NSAttributedString(string: nutritionTableRow.perSizeValue, attributes: attributes)
