@@ -396,7 +396,7 @@ struct OFFJson {
             // OFFJson.TracesKey,
             OFFJson.TracesTagsKey,
             OFFJson.VitaminsTagsKey,
-            OFFJson.IngredientsAnalysisTags
+            OFFJson.IngredientsAnalysisTags,
             // OFFJson.UrlKey,
             OFFJson.VitaminsTagsKey
             // OFFJson.WarningKey,

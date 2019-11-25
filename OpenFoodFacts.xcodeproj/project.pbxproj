@@ -277,6 +277,7 @@
 		95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */; };
 		95F7DB3A1F98DDAC00428208 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F7DB391F98DDAC00428208 /* SettingsTableViewController.swift */; };
 		95F7DB3E1F98E42500428208 /* UserDefaultsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */; };
+		FB1348DD238BE5B000D92CBB /* IngredientsAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1348DC238BE5B000D92CBB /* IngredientsAnalysis.swift */; };
 		FBB261C0235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB261BE235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift */; };
 		FBB261C1235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB261BF235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -899,6 +900,7 @@
 		95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceTests.swift; sourceTree = "<group>"; };
 		95F7DB391F98DDAC00428208 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsConstants.swift; sourceTree = "<group>"; };
+		FB1348DC238BE5B000D92CBB /* IngredientsAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysis.swift; sourceTree = "<group>"; };
 		FBB261BE235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisTableViewCell.swift; sourceTree = "<group>"; };
 		FBB261BF235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsAnalysisTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -967,6 +969,7 @@
 		3000855F2207ABF800DC3896 /* Taxonomies */ = {
 			isa = PBXGroup;
 			children = (
+				FB1348DC238BE5B000D92CBB /* IngredientsAnalysis.swift */,
 				300085602207AC0700DC3896 /* Additive.swift */,
 				30D77D9B22088F0F00B180E9 /* Allergen.swift */,
 				514EFA8B2230215F008FFD2A /* Vitamin.swift */,
@@ -2386,6 +2389,7 @@
 				95F7DB3A1F98DDAC00428208 /* SettingsTableViewController.swift in Sources */,
 				957CBEBA1F3312FB00A1B398 /* HostedViewCell.swift in Sources */,
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
+				FB1348DD238BE5B000D92CBB /* IngredientsAnalysis.swift in Sources */,
 				956FF9591F1FF0CA0069D678 /* ErrorView.swift in Sources */,
 				956FF9641F1FF0FD0069D678 /* ScannerViewController.swift in Sources */,
 				95D1D29E1FFC36C900595EA1 /* TabBarNotificationController.swift in Sources */,
@@ -3090,7 +3094,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.2;
-				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner.tim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3119,7 +3123,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.2;
-				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner.tim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3210,7 +3214,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.2;
-				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openfoodfacts.scanner.tim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
