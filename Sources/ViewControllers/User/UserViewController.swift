@@ -155,7 +155,8 @@ class UserViewController: UIViewController, DataManagerClient {
             self.present(self.alert, animated: true, completion: nil)
             return
         }
-
+        loginOrOutButton.setTitle("user.logging-in".localized, for: .normal)
+        loginOrOutButton.isEnabled = false
         dataManager.logIn(username: username, password: password, onSuccess: {
             self.setupInterface()
         }, onError: { error in
