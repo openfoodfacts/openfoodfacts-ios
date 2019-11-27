@@ -96,6 +96,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 item.barcode = barcode
                 item.productName = product.name
                 item.quantity = product.quantity
+                item.packaging = product.packaging?.compactMap {$0}.joined(separator: ", ")
                 item.imageUrl = product.imageUrl
                 item.nutriscore = product.nutriscore
                 item.novaGroup.value = product.novaGroup
@@ -322,6 +323,9 @@ class PersistenceManager: PersistenceManagerProtocol {
         }
         if let quantity = product.quantity {
             item.quantity = quantity
+        }
+        if let packaging = product.packaging {
+            item.packaging = packaging.compactMap {$0}.joined(separator: ", ")
         }
         if let categories = product.categories {
             item.categories = categories

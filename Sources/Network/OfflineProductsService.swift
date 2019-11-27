@@ -106,6 +106,7 @@ class OfflineProductsService: OfflineProductsApi {
                                             product.barcode = barcode
                                             product.name = raw["product_name"]
                                             product.quantity = raw["quantity"]
+                                            product.packaging = raw["packaging"]
                                             product.brands = raw["brands"]
                                             product.nutritionGrade = raw["nutrition_grade_fr"]
                                             product.novaGroup = raw["nova_group"]
