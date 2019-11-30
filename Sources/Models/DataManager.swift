@@ -43,6 +43,7 @@ protocol DataManagerProtocol {
     // Search history
     func getHistory() -> [Age: [HistoryItem]]
     func addHistoryItem(_ product: Product)
+    func removeHistroyItem(_ item: HistoryItem)
     func clearHistory()
 
     // offline
@@ -209,6 +210,10 @@ class DataManager: DataManagerProtocol {
         persistenceManager.addHistoryItem(product)
     }
 
+    func removeHistroyItem(_ item: HistoryItem) {
+        persistenceManager.removeHistroyItem(item)
+    }
+
     func clearHistory() {
         persistenceManager.clearHistory()
     }
@@ -371,6 +376,7 @@ class DataManager: DataManagerProtocol {
                     item.productName = nil
                     item.brand = nil
                     item.quantity = nil
+                    item.packaging = nil
                     item.categories = nil
                     item.ingredientsList = nil
                     item.nutriments.removeAll()

@@ -15,6 +15,7 @@ protocol PersistenceManagerProtocol {
     // Search history
     func getHistory() -> [HistoryItem]
     func addHistoryItem(_ product: Product)
+    func removeHistroyItem(_ item: HistoryItem)
     func clearHistory()
 
     // taxonomies
@@ -63,6 +64,18 @@ protocol PersistenceManagerProtocol {
 }
 
 class PersistenceManager: PersistenceManagerProtocol {
+    func removeHistroyItem(_ item: HistoryItem) {
+        let realm = self.getRealm()
+
+        do {
+            try realm.write {
+                realm.delete(item)
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
 
     fileprivate func saveOrUpdate(objects: [Object]) {
         let realm = getRealm()
@@ -96,6 +109,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 item.barcode = barcode
                 item.productName = product.name
                 item.quantity = product.quantity
+                item.packaging = product.packaging?.compactMap {$0}.joined(separator: ", ")
                 item.imageUrl = product.imageUrl
                 item.nutriscore = product.nutriscore
                 item.novaGroup.value = product.novaGroup
@@ -322,6 +336,9 @@ class PersistenceManager: PersistenceManagerProtocol {
         }
         if let quantity = product.quantity {
             item.quantity = quantity
+        }
+        if let packaging = product.packaging {
+            item.packaging = packaging.compactMap {$0}.joined(separator: ", ")
         }
         if let categories = product.categories {
             item.categories = categories

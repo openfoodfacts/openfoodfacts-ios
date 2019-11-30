@@ -37,7 +37,7 @@ final class SharingManager {
         // This is necessary for the iPad
         let presCon = activityViewController.popoverPresentationController
         presCon?.barButtonItem = sender
-            
+
         presenter.present(activityViewController, animated: true, completion: success)
 
     }

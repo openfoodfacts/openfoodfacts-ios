@@ -15,6 +15,7 @@ class PendingUploadItem {
     var productName: String?
     var brand: String?
     var quantity: String?
+    var packaging: String?
     var ingredientsList: String?
     var language = "en"
     var frontImage: ProductImage?
@@ -37,6 +38,7 @@ class PendingUploadItem {
         product.barcode = barcode
         product.name = productName
         product.quantity = quantity
+        product.packaging = packaging?.split(separator: ",").compactMap {String($0)}
         product.lang = language
         product.categories = categories
         product.ingredientsList = ingredientsList
