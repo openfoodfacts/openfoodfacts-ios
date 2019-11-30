@@ -15,6 +15,7 @@ protocol PersistenceManagerProtocol {
     // Search history
     func getHistory() -> [HistoryItem]
     func addHistoryItem(_ product: Product)
+    func removeHistroyItem(_ item: HistoryItem)
     func clearHistory()
 
     // taxonomies
@@ -63,6 +64,18 @@ protocol PersistenceManagerProtocol {
 }
 
 class PersistenceManager: PersistenceManagerProtocol {
+    func removeHistroyItem(_ item: HistoryItem) {
+        let realm = self.getRealm()
+
+        do {
+            try realm.write {
+                realm.delete(item)
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
 
     fileprivate func saveOrUpdate(objects: [Object]) {
         let realm = getRealm()
