@@ -66,6 +66,8 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
     @IBOutlet weak var quantityField: UITextField!
+    @IBOutlet weak var packagingTitleLabel: UILabel!
+    @IBOutlet weak var packagingField: UITextField!
     @IBOutlet weak var languageTitleLabel: UILabel!
     @IBOutlet weak var languageField: UITextField!
     @IBOutlet weak var productTextSection: UIView!
@@ -271,6 +273,10 @@ class ProductAddViewController: TakePictureViewController {
         }
 
         product.quantity = quantityField.text
+        if let validPackingText = packagingField.text {
+            let array = validPackingText.split(separator: ",")
+            product.packaging = array.compactMap {String($0)}
+        }
     }
 
     fileprivate func fillProductFromNutriments() -> [RealmPendingUploadNutrimentItem] {
@@ -530,6 +536,7 @@ class ProductAddViewController: TakePictureViewController {
         brandsField.delegate = self
         productCategoryField.delegate = self
         quantityField.delegate = self
+        packagingField.delegate = self
         languageField.delegate = self
 
         portionSizeInputView.displayedUnit = .none
@@ -599,7 +606,8 @@ class ProductAddViewController: TakePictureViewController {
             }
         }
 
-        quantityField.text = product.quantity
+        quantityField?.text = product.quantity
+        packagingField?.text = product.packaging?.compactMap {$0}.joined(separator: ", ")
         ingredientsTextField.text = product.ingredientsList
 
         noNutritionDataSwitch.isOn = product.noNutritionData == "on"
@@ -662,6 +670,10 @@ class ProductAddViewController: TakePictureViewController {
 
         if let quantity = pendingUploadItem.quantity {
             quantityField.text = quantity
+        }
+
+        if let packaging = pendingUploadItem.packaging {
+            packagingField.text = packaging
         }
 
         if let ingredientsList = pendingUploadItem.ingredientsList {
