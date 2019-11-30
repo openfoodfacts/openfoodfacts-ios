@@ -5,7 +5,7 @@
 //  Created by Andrés Pizá Bückmann on 14/10/2017.
 //  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
 //
-
+/*
 import IBLocalizable
 import UIKit
 
@@ -58,3 +58,4 @@ class LoggedInViewController: UIViewController, DataManagerClient {
         delegate?.showProductsPendingUpload()
     }
 }
+*/
