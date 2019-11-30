@@ -56,9 +56,9 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
                 SVProgressHUD.dismiss()
                 SVProgressHUD.setDefaultMaskType(.none)
                 self.items = self.dataManager.getItemsPendingUpload()
-                self.tableView.reloadData()
                 self.tabBarController?.tabBar.selectedItem?.badgeValue = self.items.isEmpty ? nil : "\(self.items.count)"
             }
+            self.tableView.reloadData()
         }
     }
 }
