@@ -532,16 +532,16 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     private func configureDelegates() {
-        productNameField.delegate = self
-        brandsField.delegate = self
-        productCategoryField.delegate = self
-        quantityField.delegate = self
-        packagingField.delegate = self
-        languageField.delegate = self
+        productNameField?.delegate = self
+        brandsField?.delegate = self
+        productCategoryField?.delegate = self
+        quantityField?.delegate = self
+        packagingField?.delegate = self
+        languageField?.delegate = self
 
-        portionSizeInputView.displayedUnit = .none
-        portionSizeInputView.inputTextField.delegate = self
-        ingredientsTextField.delegate = self
+        portionSizeInputView?.displayedUnit = .none
+        portionSizeInputView?.inputTextField.delegate = self
+        ingredientsTextField?.delegate = self
     }
 
     private func configureNotifications() {
