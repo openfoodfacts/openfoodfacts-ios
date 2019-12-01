@@ -38,12 +38,14 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
 
     func didTap() {
         if CredentialsController.shared.getUsername() == nil {
-            let loginVC = UserViewController.loadFromStoryboard(named: .user) as UserViewController
+            guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
+                return }
             loginVC.dataManager = dataManager
             //loginVC.delegate = self
 
             let navVC = UINavigationController(rootViewController: loginVC)
             loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
+            loginVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(SummaryFooterCellController.dismissVC))
 
             self.present(navVC, animated: true)
 
