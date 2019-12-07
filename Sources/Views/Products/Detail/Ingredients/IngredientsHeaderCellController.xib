@@ -68,9 +68,9 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f61-gC-kYe">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f61-gC-kYe">
                                     <rect key="frame" x="213.5" y="0.0" width="106.5" height="44"/>
-                                    <state key="normal" title="Button" image="circle-info"/>
+                                    <state key="normal" image="circle-info"/>
                                     <connections>
                                         <action selector="novagroupInfoButtonTapped:" destination="-1" eventType="touchUpInside" id="umr-Od-Yxj"/>
                                     </connections>
