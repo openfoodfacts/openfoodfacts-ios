@@ -225,7 +225,6 @@ class ProductAddViewController: TakePictureViewController {
 
         ingredientsSectionTitle.text = "product-add.titles.ingredients".localized
 
-
         showNotSavedIndication(label: lastSavedIngredientsOCRLabel, key: "ocr-ingredients")
 
         configureLanguageField()
@@ -250,7 +249,23 @@ class ProductAddViewController: TakePictureViewController {
                 fillForm(withPendingUploadItem: pendingUploadItem!)
             }
         }
+        setUserAgent()
     }
+    
+    private func setUserAgent() {
+        var userAgentString = ""
+        if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
+            userAgentString = validAppName
+        }
+        if let validVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            userAgentString += "; version " + validVersion
+        }
+
+        if let validBuild = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String {
+            userAgentString += "; build " +  validBuild + " - add"
+        }
+        UserDefaults.standard.register(defaults: ["UserAgent": userAgentString])    }
+
     // swiftlint:enable function_body_length
 
     fileprivate func fillProductFromInfosForm() {

@@ -35,25 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
 
-        // set the useragent for all URL calls from this app
-        setUserAgent()
-
         return true
     }
 
-    private func setUserAgent() {
-        var userAgentString = ""
-        if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
-            userAgentString = validAppName
-        }
-        if let validVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-            userAgentString += "; version " + validVersion
-        }
-
-        if let validBuild = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String {
-            userAgentString += "; build " +  validBuild
-        }
-        UserDefaults.standard.register(defaults: ["UserAgent": userAgentString])    }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         DeepLinkManager.shared.checkDeepLink()

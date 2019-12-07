@@ -97,6 +97,9 @@ class ScannerViewController: UIViewController, DataManagerClient {
 
         configureFloatingPanel()
 
+        // set the useragent for the scan URL calls from this app
+        setUserAgent()
+
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: floatingLabelContainer, attribute: .bottom, relatedBy: .equal, toItem: floatingPanelController.surfaceView, attribute: .top, multiplier: 1, constant: 8),
             NSLayoutConstraint(item: floatingLabelContainer, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0),
@@ -170,6 +173,21 @@ class ScannerViewController: UIViewController, DataManagerClient {
         default:
             return .portrait
         }
+    }
+
+    private func setUserAgent() {
+        var userAgentString = ""
+        if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
+            userAgentString = validAppName
+        }
+        if let validVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            userAgentString += "; version " + validVersion
+        }
+
+        if let validBuild = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String {
+            userAgentString += "; build " +  validBuild + " - scan"
+        }
+        UserDefaults.standard.register(defaults: ["UserAgent": userAgentString])
     }
 
     fileprivate func configureVideoView() {

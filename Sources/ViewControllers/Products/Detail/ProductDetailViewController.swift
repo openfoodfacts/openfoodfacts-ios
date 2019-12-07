@@ -44,6 +44,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
         }
+        setUserAgent()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +71,21 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             buttons.remove(at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
+    }
+    
+    private func setUserAgent() {
+        var userAgentString = ""
+        if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
+            userAgentString = validAppName
+        }
+        if let validVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            userAgentString += "; version " + validVersion
+        }
+
+        if let validBuild = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String {
+            userAgentString += "; build " +  validBuild + " - product"
+        }
+        UserDefaults.standard.register(defaults: ["UserAgent": userAgentString])
     }
 
     // MARK: - Product pages
