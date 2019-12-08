@@ -1,5 +1,6 @@
 language: objective-c
 osx_image: xcode11
+xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
 cache:
   directories:
   - Carthage
