@@ -7,7 +7,7 @@ before_install:
   - carthage bootstrap --platform iOS --cache-builds
 xcode_project: OpenFoodFacts.xcodeproj # path to your xcodeproj folder
 xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone 11
-xcode_scheme: OpenFoodFacts
+xcode_scheme: OpenFoodFactsUITests
 cache:
   directories:
   - Carthage
