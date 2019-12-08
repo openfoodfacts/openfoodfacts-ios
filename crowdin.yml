@@ -1,17 +1,153 @@
-language: swift
-osx_image: xcode11
-before_install:
-  - brew update
-  - brew upgrade xctool
-  - brew list carthage &>/dev/null || brew install carthag
-  - carthage bootstrap --platform iOS --cache-builds
-xcode_project: OpenFoodFacts.xcodeproj # path to your xcodeproj folder
-xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone 11
-cache:
-  directories:
-  - Carthage
-notifications:
-  slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
-env:
-  global:
-    secure: TzLeh5qKxmFNlP/LpwsBPdjmXu7UpyKIe6SQdHDQm/bQ9+fSu89Lp8Db9dTPyWXEgKcC3i5X0TeaRcEzvYBk3eZdevd3Axx6dA+xM31FRtGVmZdJ62tUZbQsLNHJo5lAe+K6gQBfiJd983s2goEwrNHNnRaGrmv7xSPPJW4DCeCFW9S/jC0cRCcSZwdrmR986DjnIr7aTiWaSd+XMms60rmBCb7jZbCxYAOPU64uOqRdc0Og2mi8q1XHZzWi7b2OkAdpOwrWzcd4K2XTxfbEIbfhOkAg9bZ2h3+z7VMpWcUYwV7aIOo4ra2u/QkzNK6jZ4Q3h3TLK0e4ilj6vNCWsCqYScDU/BzgZCfhenWcD75Zz5CO0rdAlyQ3gMaxvIsntEyiCpUknYi+i1lMfH/mFwnb323qYdIXJ/BEBLnycqZqZksl43DUoKjmxMElNKKJ8g+TKp+M7FXKBKCd/zPejycLsq4/Z50OKPHPa+q7SLoo1Iryir5IRlD9uZ1EWQq2II2ACUZRuf0gA6GUm7aZEJNWk8QrunI0G75TlKmu9l7gsie5NVMcqZeETfU3vIxuFKJtbV/k2Viw/sQ6h2pr4hUf/VRrfzZCAljTs7ZgKP1sweMRGgU/U2T/Kw2/wB7no8eZ9KdrEcxe1xid0yKyTIWBkeP+7Yvjcu2y2GtYao0=
+files:
+
+  - source: /Sources/Localization/en.lproj/Localizable.strings
+    translation: /Sources/Localization/%two_letters_code%.lproj/Localizable.strings
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+  - source: /fastlane/metadata/en-US/description.txt
+    translation: /fastlane/metadata/%two_letters_code%/description.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+  - source: /fastlane/metadata/en-US/keywords.txt
+    translation: /fastlane/metadata/%two_letters_code%/keywords.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+        
+  - source: /fastlane/metadata/en-US/marketing_url.txt
+    translation: /fastlane/metadata/%two_letters_code%/marketing_url.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+        
+  - source: /fastlane/metadata/en-US/name.txt
+    translation: /fastlane/metadata/%two_letters_code%/name.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+        
+  - source: /fastlane/metadata/en-US/privacy_url.txt
+    translation: /fastlane/metadata/%two_letters_code%/privacy_url.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+        
+  - source: /fastlane/metadata/en-US/release_notes.txt
+    translation: /fastlane/metadata/%two_letters_code%/release_notes.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+        
+  - source: /fastlane/metadata/en-US/support_url.txt
+    translation: /fastlane/metadata/%two_letters_code%/support_url.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+
+  - source: /fastlane/metadata/en-US/promotional_text.txt
+    translation: /fastlane/metadata/%two_letters_code%/promotional_text.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+
+  - source: /fastlane/metadata/en-US/subtitle.txt
+    translation: /fastlane/metadata/%two_letters_code%/subtitle.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+        
+  - source: /fastlane/metadata/en-US/screenshots_text.txt
+    translation: /fastlane/metadata/%two_letters_code%/screenshots_text.txt
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
