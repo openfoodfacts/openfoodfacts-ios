@@ -5,6 +5,8 @@ before_install:
   - brew upgrade xctool
   - brew list carthage &>/dev/null || brew install carthag
   - carthage bootstrap --platform iOS --cache-builds
+xcode_project: OpenFoodFacts.xcodeproj # path to your xcodeproj folder
+xcode_scheme: Tests
 xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
 cache:
   directories:
