@@ -4,10 +4,6 @@ osx_image: xcode11.2
 cache:
   directories:
   - Carthage
-before_install:
-  - gem install fastlane --no-document --quiet
-script:
-  - travis_wait 180 fastlane test
 notifications:
   slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
 env:
