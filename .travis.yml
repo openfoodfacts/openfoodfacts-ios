@@ -1,5 +1,8 @@
 language: objective-c
 osx_image: xcode11
+before_install:
+  - brew update
+  - brew upgrade xctool
 xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
 cache:
   directories:
