@@ -37,6 +37,16 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKD-W6-pMm" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="108" width="398" height="40"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="dKD-W6-pMm" secondAttribute="height" multiplier="1:1" id="E61-td-O6U"/>
+                                <constraint firstAttribute="height" constant="44" id="hWE-Zh-nui"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="E61-td-O6U"/>
+                                    <exclude reference="hWE-Zh-nui"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
