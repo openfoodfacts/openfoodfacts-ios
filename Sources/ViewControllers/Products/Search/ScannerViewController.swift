@@ -37,7 +37,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
     fileprivate var allergenAlertShown = false
     fileprivate var showHelpInOverlayTask: DispatchWorkItem?
 
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
     var configResult: SessionConfigResult = .success
 
     fileprivate var floatingPanelController: FloatingPanelController!
@@ -46,7 +46,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
     fileprivate let floatingLabelContainer = UIView()
     fileprivate let floatingLabel = UILabel()
 
-    init(dataManager: DataManagerProtocol) {
+    init(dataManager: DataManagerProtocol?) {
         self.dataManager = dataManager
         super.init(nibName: nil, bundle: nil)
     }
@@ -200,7 +200,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
 
     // Display this layer when performing snapshot tests : it will display an image from OpenFoodFacts.org static reposistory
     private func configureFakePreviewLayer() {
-        self.dataManager.getMockBarcodeImage(forLocale: Locale.current, onSuccess: { [weak self] image in
+        self.dataManager?.getMockBarcodeImage(forLocale: Locale.current, onSuccess: { [weak self] image in
             let imageView = UIImageView(image: image)
             self?.videoPreviewView.addSubview(imageView)
             }, onError: { error in
@@ -376,7 +376,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             var hasOfflineSave = false
 
             if isSummary {
-                if let offlineProduct = self.dataManager.getOfflineProduct(forCode: barcode) {
+                if let offlineProduct = self.dataManager?.getOfflineProduct(forCode: barcode) {
                     self.scannerResultController.status = .hasOfflineData(product: offlineProduct)
                     self.showAllergensFloatingLabelIfNeeded()
                     hasOfflineSave = true
@@ -387,7 +387,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                 self.scannerResultController.status = .loading(barcode: barcode)
             }
 
-            self.dataManager.getProduct(byBarcode: barcode, isScanning: true, isSummary: isSummary, onSuccess: { [weak self] response in
+            self.dataManager?.getProduct(byBarcode: barcode, isScanning: true, isSummary: isSummary, onSuccess: { [weak self] response in
                 self?.handleGetProductSuccess(barcode, response, isSummary: isSummary, createIfNeeded: createIfNeeded)
 
                 if response != nil, isSummary {
@@ -416,7 +416,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             return
         }
 
-        let allergensAlerts = dataManager.listAllergies()
+        guard let allergensAlerts = dataManager?.listAllergies() else { return }
         let allergens = allergensAlerts.map { $0 }.filter { (allergen: Allergen) -> Bool in
             for productAllergen in productAllergens where productAllergen.languageCode + ":" + productAllergen.value == allergen.code {
                 return true
@@ -442,7 +442,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     self.scannerResultController.status = .hasSummary(product: product)
                 } else {
                     self.scannerFloatingPanelLayout.canShowDetails = true
-                    self.dataManager.addHistoryItem(product)
+                    self.dataManager?.addHistoryItem(product)
                     self.scannerResultController.status = .hasProduct(product: product, dataManager: self.dataManager)
                     if self.allergenAlertShown == false {
                         self.allergenAlertShown = true
@@ -462,7 +462,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
 
     fileprivate func showAllergensFloatingLabelIfNeeded() {
-        if dataManager.listAllergies().isEmpty {
+        if let validDataManager = dataManager, validDataManager.listAllergies().isEmpty {
             self.floatingLabelContainer.isHidden = true
             return
         }

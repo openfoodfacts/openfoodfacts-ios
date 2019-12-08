@@ -11,7 +11,7 @@ import RealmSwift
 
 class SelectTaxonomyViewController<T: Object>: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
 
     var results: Results<T>?
     var resultsWithEmptyNames: Results<T>?
@@ -72,7 +72,7 @@ class SelectTaxonomyViewController<T: Object>: UIViewController, UISearchBarDele
     }
 
     func search(query: String?) -> Results<T>? {
-        return dataManager.objectSearch(forQuery: query, ofClass: T.self)
+        return dataManager?.objectSearch(forQuery: query, ofClass: T.self)
     }
 
     func refreshResults(query: String? = nil) {

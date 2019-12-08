@@ -21,12 +21,12 @@ class FormTableViewController: UITableViewController {
             }
         }
     }
-    let dataManager: DataManagerProtocol
+    let dataManager: DataManagerProtocol?
     weak var delegate: ProductDetailRefreshDelegate?
 
     fileprivate let localizedTitle: String
 
-    init(with form: Form, dataManager: DataManagerProtocol) {
+    init(with form: Form, dataManager: DataManagerProtocol?) {
         self.form = form
         self.dataManager = dataManager
         localizedTitle = form.title

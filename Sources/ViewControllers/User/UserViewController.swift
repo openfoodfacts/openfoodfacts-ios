@@ -34,7 +34,7 @@ class UserViewController: UIViewController, DataManagerClient {
 
 // MARK: Public functions
 
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
 
     private var isLoggedIn: Bool {
         CredentialsController.shared.getUsername() != nil
@@ -157,7 +157,7 @@ class UserViewController: UIViewController, DataManagerClient {
         }
         loginOrOutButton.setTitle("user.logging-in".localized, for: .normal)
         loginOrOutButton.isEnabled = false
-        dataManager.logIn(username: username, password: password, onSuccess: {
+        dataManager?.logIn(username: username, password: password, onSuccess: {
             self.setupInterface()
         }, onError: { error in
             let title: String

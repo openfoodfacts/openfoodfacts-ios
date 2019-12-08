@@ -13,7 +13,7 @@ enum ScannerResultStatusEnum {
     case loading(barcode: String)
     case hasOfflineData(product: RealmOfflineProduct)
     case hasSummary(product: Product)
-    case hasProduct(product: Product, dataManager: DataManagerProtocol)
+    case hasProduct(product: Product, dataManager: DataManagerProtocol?)
     case manualBarcode
 }
 
@@ -87,7 +87,7 @@ class ScannerResultViewController: UIViewController {
         topSummaryView.isHidden = false
     }
 
-    fileprivate func updateDetailsVisibility(forProduct product: Product, withDataManager dataManager: DataManagerProtocol) {
+    fileprivate func updateDetailsVisibility(forProduct product: Product, withDataManager dataManager: DataManagerProtocol?) {
         let storyboard = UIStoryboard(name: String(describing: ProductDetailViewController.self), bundle: nil)
         // swiftlint:disable:next force_cast
         let productDetailVC = storyboard.instantiateInitialViewController() as! ProductDetailViewController

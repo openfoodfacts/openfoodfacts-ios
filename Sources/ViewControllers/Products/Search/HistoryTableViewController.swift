@@ -16,7 +16,7 @@ struct HistoryCellId {
 }
 
 class HistoryTableViewController: UITableViewController, DataManagerClient {
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
     lazy var items = [Age: [HistoryItem]]()
 
     var showDetailsBanner: NotificationBanner!
@@ -35,7 +35,9 @@ class HistoryTableViewController: UITableViewController, DataManagerClient {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        items = dataManager.getHistory()
+        if let validDataManager = dataManager {
+            items = validDataManager.getHistory()
+        }
         if items.isEmpty {
             configureEmptyState()
         } else {
@@ -81,7 +83,7 @@ class HistoryTableViewController: UITableViewController, DataManagerClient {
     @IBAction func clearHistory(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "history.clear.confirmation-title".localized, message: "history.clear.confirmation-message".localized, preferredStyle: .alert)
         let clearAction = UIAlertAction(title: "history.button.clear".localized, style: .destructive) { (_) -> Void in
-            self.dataManager.clearHistory()
+            self.dataManager?.clearHistory()
             self.items.removeAll()
             self.configureEmptyState()
             self.tableView.reloadData()
@@ -188,14 +190,14 @@ extension HistoryTableViewController {
                 let historyItem = items[section]?[indexPath.row] else { return }
 
             items[section]?.remove(at: indexPath.row)
-            dataManager.removeHistroyItem(historyItem)
+            dataManager?.removeHistroyItem(historyItem)
             tableView.deleteRows(at: [indexPath], with: .fade)
 
             if isSectionEmpty(indexPath.section) {
                 // Will remove section header if the section is empty
                 tableView.reloadSections([indexPath.section], with: .fade)
 
-                if dataManager.getHistory().isEmpty {
+                if let validDataManager = dataManager, validDataManager.getHistory().isEmpty {
                     configureEmptyState()
                 }
             }
@@ -208,14 +210,14 @@ extension HistoryTableViewController {
         productDetailsVC.dataManager = dataManager
 
         // Store product in search history
-        dataManager.addHistoryItem(product)
+        dataManager?.addHistoryItem(product)
 
         self.navigationController?.pushViewController(productDetailsVC, animated: true)
     }
 
     func showItem(_ item: HistoryItem, onError: @escaping () -> Void) {
         SVProgressHUD.show()
-        dataManager.getProduct(byBarcode: item.barcode, isScanning: false, isSummary: false, onSuccess: { product in
+        dataManager?.getProduct(byBarcode: item.barcode, isScanning: false, isSummary: false, onSuccess: { product in
             if let product = product {
                 self.showProductDetails(product: product)
                 SVProgressHUD.dismiss()

@@ -14,7 +14,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
     var hideSummary: Bool = false
     var product: Product!
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +72,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             navigationItem.rightBarButtonItems = buttons
         }
     }
-    
+
     private func setUserAgent() {
         var userAgentString = ""
         if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
@@ -178,7 +178,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
         createFormRow(with: &rows, item: product.categoriesTags?.map({ (categoryTag: String) -> NSAttributedString in
-            if let category = dataManager.category(forTag: categoryTag) {
+            if let category = dataManager?.category(forTag: categoryTag) {
                 if let name = Tag.choose(inTags: Array(category.names)) {
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forCategory: category)])
                 }
@@ -217,7 +217,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             createFormRow(with: &rows, item: "\n" + ingredientsList, label: InfoRowKey.ingredientsList.localizedString)
         }
         createFormRow(with: &rows, item: product.allergens?.map({ (allergen: Tag) -> NSAttributedString in
-            if let allergen = dataManager.allergen(forTag: allergen) {
+            if let allergen = dataManager?.allergen(forTag: allergen) {
                 if let name = Tag.choose(inTags: Array(allergen.names)) {
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forAllergen: allergen)])
                 }
@@ -225,7 +225,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: allergen.value.capitalized)
         }), label: InfoRowKey.allergens.localizedString)
 
-        if dataManager.listAllergies().isEmpty == false {
+        if dataManager?.listAllergies().isEmpty == false {
             if product.states?.contains("en:ingredients-to-be-completed") == true {
                 if product.allergens == nil || product.allergens?.isEmpty == true {
                     createFormRow(with: &rows, item: "⚠️ " + "product-detail.ingredients.allergens-list.missing-infos".localized, label: InfoRowKey.allergens.localizedString)
@@ -233,7 +233,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             }
         }
         createFormRow(with: &rows, item: product.traces?.map({ (trace: Tag) -> NSAttributedString in
-            if let trace = dataManager.allergen(forTag: trace) {
+            if let trace = dataManager?.allergen(forTag: trace) {
                 if let name = Tag.choose(inTags: Array(trace.names)) {
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forAllergen: trace)])
                 }
@@ -242,7 +242,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }), label: InfoRowKey.traces.localizedString)
 
         createFormRow(with: &rows, item: product.vitamins?.map({ (vitamin: Tag) -> NSAttributedString in
-            if let vitamin = dataManager.vitamin(forTag: vitamin) {
+            if let vitamin = dataManager?.vitamin(forTag: vitamin) {
                 if let name = Tag.choose(inTags: Array(vitamin.names)) {
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forVitamin: vitamin)])
                 }
@@ -251,7 +251,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }), label: InfoRowKey.vitamins.localizedString)
 
         createFormRow(with: &rows, item: product.minerals?.map({ (mineral: Tag) -> NSAttributedString in
-            if let mineral = dataManager.mineral(forTag: mineral) {
+            if let mineral = dataManager?.mineral(forTag: mineral) {
                 if let name = Tag.choose(inTags: Array(mineral.names)) {
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forMineral: mineral)])
                 }
@@ -260,7 +260,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }), label: InfoRowKey.minerals.localizedString)
 
         createFormRow(with: &rows, item: product.nucleotides?.map({ (nucleotide: Tag) -> NSAttributedString in
-            if let nucleotide = dataManager.nucleotide(forTag: nucleotide) {
+            if let nucleotide = dataManager?.nucleotide(forTag: nucleotide) {
                 if let name = Tag.choose(inTags: Array(nucleotide.names)) {
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forNucleotide: nucleotide)])
                 }
@@ -269,7 +269,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }), label: InfoRowKey.nucleotidesList.localizedString)
 
         createFormRow(with: &rows, item: product.otherNutrients?.map({ (other: Tag) -> NSAttributedString in
-            if let other = dataManager.allergen(forTag: other) {
+            if let other = dataManager?.allergen(forTag: other) {
                 if let name = Tag.choose(inTags: Array(other.names)) {
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: URL(string: "https:world-en.openfoodfacts.org")!])
                 }
@@ -298,7 +298,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         var items: [Any] = []
         items.append(NSAttributedString(string: " "))    //to have the first carriage return from the join with separator
         items.append(contentsOf: additives.map({ (additive: Tag) -> NSAttributedString in
-            if let additive = dataManager.additive(forTag: additive) {
+            if let additive = dataManager?.additive(forTag: additive) {
                 if let name = Tag.choose(inTags: Array(additive.names)) {
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forAdditive: additive)])
                 }
@@ -452,7 +452,7 @@ protocol ProductDetailRefreshDelegate: class {
 extension ProductDetailViewController: ProductDetailRefreshDelegate {
     func refreshProduct(completion: () -> Void) {
         if let barcode = product.barcode {
-            dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { response in
+            dataManager?.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { response in
                 if let updatedProduct = response {
                     self.updateForms(with: updatedProduct)
                 }

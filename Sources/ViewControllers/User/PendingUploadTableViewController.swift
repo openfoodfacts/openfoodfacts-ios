@@ -22,7 +22,11 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
         }
     }
 
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol? {
+        didSet {
+            setupItems()
+        }
+    }
 
     var items = [PendingUploadItem]() {
         didSet {
@@ -33,8 +37,7 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        items = dataManager.getItemsPendingUpload()
+        setupItems()
 
     }
 
@@ -43,19 +46,25 @@ class PendingUploadTableViewController: UITableViewController, DataManagerClient
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "upload")!, style: .plain, target: self, action: #selector(PendingUploadTableViewController.uploadButtonTapped(_:)))
     }
 
+    private func setupItems() {
+        if let validDataManager = dataManager {
+            items = validDataManager.getItemsPendingUpload()
+        }
+    }
+
     @IBAction func uploadButtonTapped(_ sender: UIBarButtonItem) {
         guard !items.isEmpty else { return }
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.showProgress(0.0, status: "pending-upload.hud.status".localized)
 
-        dataManager.uploadPendingItems(mergeProcessor: PendingProductMergeProcessor()) { progress in
+        dataManager?.uploadPendingItems(mergeProcessor: PendingProductMergeProcessor()) { progress in
             if progress < 1.0 {
                 SVProgressHUD.showProgress(progress, status: "pending-upload.hud.status".localized)
             } else {
                 SVProgressHUD.showProgress(1.0, status: "pending-upload.hud.status".localized)
                 SVProgressHUD.dismiss()
                 SVProgressHUD.setDefaultMaskType(.none)
-                self.items = self.dataManager.getItemsPendingUpload()
+                self.items = self.dataManager!.getItemsPendingUpload()
                 self.tabBarController?.tabBar.selectedItem?.badgeValue = self.items.isEmpty ? nil : "\(self.items.count)"
             }
             self.tableView.reloadData()

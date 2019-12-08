@@ -22,7 +22,7 @@ class SummaryHeaderCellController: TakePictureViewController {
 
     @IBOutlet weak var takePictureButtonView: IconButtonView!
 
-    convenience init(with product: Product, dataManager: DataManagerProtocol, hideSummary: Bool) {
+    convenience init(with product: Product, dataManager: DataManagerProtocol?, hideSummary: Bool) {
         self.init(nibName: String(describing: SummaryHeaderCellController.self), bundle: nil)
         self.product = product
         self.hideSummary = hideSummary

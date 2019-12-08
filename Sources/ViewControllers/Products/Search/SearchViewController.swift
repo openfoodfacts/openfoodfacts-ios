@@ -14,7 +14,7 @@ protocol SearchViewControllerDelegate: class {
 }
 
 class SearchViewController: UIViewController, DataManagerClient {
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
     var rootNavigationController: UINavigationController!
 
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ extension SearchViewController: SearchViewControllerDelegate {
         guard let barcode = product.barcode else { return }
         //fetching full product to have all needed data
         SVProgressHUD.show()
-        dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { fetchedProduct in
+        dataManager?.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { fetchedProduct in
             if let product = fetchedProduct {
                 self.presentProductDetails(product: product)
             }
@@ -58,7 +58,7 @@ extension SearchViewController: SearchViewControllerDelegate {
         productDetailsVC.dataManager = dataManager
 
         // Store product in search history
-        dataManager.addHistoryItem(product)
+        dataManager?.addHistoryItem(product)
 
         self.rootNavigationController.pushViewController(productDetailsVC, animated: true)
     }

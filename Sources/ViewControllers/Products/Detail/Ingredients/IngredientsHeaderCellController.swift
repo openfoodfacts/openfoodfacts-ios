@@ -42,7 +42,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
 
     weak var delegate: FormTableViewControllerDelegate?
 
-    convenience init(with product: Product, dataManager: DataManagerProtocol) {
+    convenience init(with product: Product, dataManager: DataManagerProtocol?) {
         self.init(nibName: String(describing: IngredientsHeaderCellController.self), bundle: nil)
         self.product = product
         super.barcode = product.barcode

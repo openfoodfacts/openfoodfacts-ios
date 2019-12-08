@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DataManagerClient {
-    var dataManager: DataManagerProtocol! { get set }
+    var dataManager: DataManagerProtocol? { get set }
 }

@@ -28,7 +28,9 @@ class PictureTableViewController: TakePictureViewController {
         if let product = self.productToEdit {
             fillForm(withProduct: product)
         }
-        if let barcode = self.barcode, let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode) {
+        if let barcode = self.barcode,
+            let validDataManager = dataManager,
+            let pendingUploadItem = validDataManager.getItemPendingUpload(forBarcode: barcode) {
             fillForm(withPendingUploadItem: pendingUploadItem)
         }
     }

@@ -243,8 +243,9 @@ class ProductAddViewController: TakePictureViewController {
             self.product = productToEdit
             fillForm(withProduct: productToEdit)
         }
-        if let barcode = self.barcode {
-            let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode)
+        if let barcode = self.barcode,
+            let validDataManager = dataManager {
+            let pendingUploadItem = validDataManager.getItemPendingUpload(forBarcode: barcode)
             if pendingUploadItem != nil {
                 fillForm(withPendingUploadItem: pendingUploadItem!)
             }
@@ -335,7 +336,7 @@ class ProductAddViewController: TakePictureViewController {
 
         fillProductFromInfosForm()
 
-        dataManager.addProduct(product, onSuccess: { [weak self] in
+        dataManager?.addProduct(product, onSuccess: { [weak self] in
             DispatchQueue.main.async {
                 self?.showSavedSuccess(label: self?.lastSavedProductInfosLabel, key: "save-info")
                 self?.saveProductInfosButton.isEnabled = true
@@ -363,7 +364,7 @@ class ProductAddViewController: TakePictureViewController {
         fillProductFromInfosForm()
         let nutriments = fillProductFromNutriments()
 
-        dataManager.addProductNutritionTable(product, nutritionTable: nutriments, onSuccess: { [weak self] in
+        dataManager?.addProductNutritionTable(product, nutritionTable: nutriments, onSuccess: { [weak self] in
             DispatchQueue.main.async {
                 self?.showSavedSuccess(label: self?.lastSavedProductInfosLabel, key: "save-info")
                 self?.showSavedSuccess(label: self?.lastSavedNutrimentsLabel, key: "save-nutriments")
@@ -403,7 +404,7 @@ class ProductAddViewController: TakePictureViewController {
             self.product.ingredientsList = self.ingredientsTextField.text
         }
 
-        dataManager.addProductNutritionTable(product, nutritionTable: nutriments, onSuccess: { [weak self] in
+        dataManager?.addProductNutritionTable(product, nutritionTable: nutriments, onSuccess: { [weak self] in
             DispatchQueue.main.async {
                 self?.showSavedSuccess(label: self?.lastSavedProductInfosLabel, key: "save-info")
                 self?.showSavedSuccess(label: self?.lastSavedNutrimentsLabel, key: "save-nutriments")
@@ -425,7 +426,7 @@ class ProductAddViewController: TakePictureViewController {
 
     fileprivate func refreshNovaScore() {
         guard let barcode = product.barcode else { return }
-        dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: true, onSuccess: { [weak self] (distantProduct: Product?) in
+        dataManager?.getProduct(byBarcode: barcode, isScanning: false, isSummary: true, onSuccess: { [weak self] (distantProduct: Product?) in
             DispatchQueue.main.async {
                 if let distantProduct = distantProduct {
                     if let nutriscoreString = distantProduct.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreString) {
@@ -498,8 +499,9 @@ class ProductAddViewController: TakePictureViewController {
         }
 
         displayedNutrimentItems.enumerated().forEach { (index: Int, element: String) in
-            if let view = nutritiveValuesStackView.arrangedSubviews[index] as? EditNutritiveValueView {
-                let nutriment = dataManager.nutriment(forTag: element)
+            if let view = nutritiveValuesStackView.arrangedSubviews[index] as? EditNutritiveValueView,
+                let validDataManager = dataManager {
+                let nutriment = validDataManager.nutriment(forTag: element)
                 let nutrimentName = nutriment?.names.chooseForCurrentLanguage()?.value ?? element
 
                 view.nutrimentCode = element
@@ -522,7 +524,8 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     private func configureLanguageField() {
-        let languages = dataManager.getLanguages()
+        guard let validDataManager = dataManager else { return }
+        let languages = validDataManager.getLanguages()
 
         let languageValue = product.lang ?? Locale.current.languageCode ?? "en"
         self.product.lang = languageValue
@@ -613,8 +616,9 @@ class ProductAddViewController: TakePictureViewController {
 
         brandsField.text = product.brands?.joined(separator: ", ")
 
-        if let categorieTag = product.categoriesTags?.first {
-            if let categorie = dataManager.category(forTag: categorieTag) {
+        if let categorieTag = product.categoriesTags?.first,
+            let validDataManager = dataManager {
+            if let categorie = validDataManager.category(forTag: categorieTag) {
                 productCategoryField.text = categorie.names.chooseForCurrentLanguage()?.value ?? categorieTag
             } else {
                 productCategoryField.text = categorieTag
@@ -676,7 +680,7 @@ class ProductAddViewController: TakePictureViewController {
         }
 
         if let categorieTag = pendingUploadItem.categories?.first {
-            if let categorie = dataManager.category(forTag: categorieTag) {
+            if let categorie = dataManager?.category(forTag: categorieTag) {
                 productCategoryField.text = categorie.names.chooseForCurrentLanguage()?.value ?? categorieTag
             } else {
                 productCategoryField.text = categorieTag
@@ -895,7 +899,7 @@ extension ProductAddViewController: UITextViewDelegate {
 extension ProductAddViewController: PictureTableViewControllerDelegate {
     func didPostIngredientImage() {
         showSavingIndication(label: lastSavedIngredientsOCRLabel, key: "ocr-ingredients")
-        dataManager.getIngredientsOCR(forBarcode: barcode, productLanguageCode: Bundle.main.preferredLocalizations.first ?? "en") { [weak self] (ingredients: String?, _: Error?) in
+        dataManager?.getIngredientsOCR(forBarcode: barcode, productLanguageCode: Bundle.main.preferredLocalizations.first ?? "en") { [weak self] (ingredients: String?, _: Error?) in
             DispatchQueue.main.async {
                 if let ingredients = ingredients, !ingredients.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty {
                     self?.ingredientsTextField.text = ingredients

@@ -15,7 +15,7 @@ import RealmSwift
 // MARK: - UIViewController
 
 class SearchTableViewController: UITableViewController, DataManagerClient {
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
 
     var searchController: UISearchController!
     var queryRequestWorkItem: DispatchWorkItem?
@@ -57,7 +57,9 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
         configureSearchController()
         configureGestureRecognizers()
 
-        self.offlineStatus = self.dataManager.offlineProductStatus()
+        if let validDataManager = dataManager {
+            self.offlineStatus = validDataManager.offlineProductStatus()
+        }
         self.observeNotificationToken = self.offlineStatus.observe { (_) in
             self.updateInitialView()
         }
@@ -234,7 +236,8 @@ extension SearchTableViewController: UISearchBarDelegate {
 
 extension SearchTableViewController {
     func getProducts(page: Int, withQuery query: String) {
-        dataManager.getProducts(for: query, page: page, onSuccess: { response in
+        guard let validDatamanager = dataManager else { return }
+        validDatamanager.getProducts(for: query, page: page, onSuccess: { response in
             switch self.state {
             case .content(let oldResponse) where oldResponse.query == query: // Append new products to existing response
                 oldResponse.products.append(contentsOf: response.products)

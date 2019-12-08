@@ -19,7 +19,7 @@ enum SettingsSection: Int {
 class SettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, DataManagerClient {
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
 
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
 
     private let allergensAlertsIndexPath = IndexPath(row: 2, section: 0)
 

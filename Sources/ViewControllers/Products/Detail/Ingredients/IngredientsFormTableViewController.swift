@@ -11,7 +11,7 @@ import UIKit
 class IngredientsFormTableViewController: FormTableViewController {
     var ingredientsHeaderCellController: IngredientsHeaderCellController?
 
-    override init(with form: Form, dataManager: DataManagerProtocol) {
+    override init(with form: Form, dataManager: DataManagerProtocol?) {
         super.init(with: form, dataManager: dataManager)
     }
 

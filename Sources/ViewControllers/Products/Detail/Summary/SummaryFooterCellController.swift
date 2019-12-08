@@ -15,11 +15,11 @@ class SummaryFooterCell: HostedViewCell {
 class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
 
     var product: Product!
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
 
     @IBOutlet weak var editButtonView: IconButtonView!
 
-    convenience init(with product: Product, dataManager: DataManagerProtocol) {
+    convenience init(with product: Product, dataManager: DataManagerProtocol?) {
         self.init(nibName: String(describing: SummaryFooterCellController.self), bundle: nil)
         self.product = product
         self.dataManager = dataManager

@@ -14,7 +14,7 @@ class SummaryFormTableViewController: FormTableViewController {
     var summaryHeaderCellController: SummaryHeaderCellController?
     var summaryFooterCellController: SummaryFooterCellController?
 
-    override init(with form: Form, dataManager: DataManagerProtocol) {
+    override init(with form: Form, dataManager: DataManagerProtocol?) {
         super.init(with: form, dataManager: dataManager)
     }
 

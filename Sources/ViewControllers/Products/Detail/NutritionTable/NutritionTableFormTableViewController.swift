@@ -11,7 +11,7 @@ import UIKit
 class NutritionTableFormTableViewController: FormTableViewController {
     var nutritionTableHeaderCellController: NutritionTableHeaderCellController?
 
-    override init(with form: Form, dataManager: DataManagerProtocol) {
+    override init(with form: Form, dataManager: DataManagerProtocol?) {
         super.init(with: form, dataManager: dataManager)
     }
 

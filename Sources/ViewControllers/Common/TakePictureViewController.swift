@@ -10,7 +10,7 @@ import UIKit
 import NotificationBanner
 
 class TakePictureViewController: UIViewController {
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
     var barcode: String?
     var imageType: ImageType = .front
     var languageCode: String = "xx"
@@ -89,7 +89,7 @@ extension TakePictureViewController: CameraControllerDelegate {
             return
         }
 
-        dataManager.postImage(productImage, onSuccess: { [weak self] isOffline in
+        dataManager?.postImage(productImage, onSuccess: { [weak self] isOffline in
             if isOffline {
                 self?.uploadingImageSuccessBanner.titleLabel?.text = "product-add.image-save-success-banner.title".localized
             } else {

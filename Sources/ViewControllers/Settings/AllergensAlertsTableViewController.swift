@@ -13,7 +13,7 @@ class AllergensAlertsTableViewController: UITableViewController {
 
     fileprivate static let AllergenCellIdentifier = "ALLERGEN_CELL_IDENTIFIER"
 
-    var dataManager: DataManagerProtocol!
+    var dataManager: DataManagerProtocol?
     var allergies: Results<Allergen>!
     var observeToken: NotificationToken?
 
@@ -27,7 +27,7 @@ class AllergensAlertsTableViewController: UITableViewController {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: AllergensAlertsTableViewController.AllergenCellIdentifier)
         self.tableView.register(UINib(nibName: "AllergensAddTableViewCell", bundle: nil), forCellReuseIdentifier: "AllergensAddTableViewCellReuseIdentifier")
 
-        allergies = dataManager.listAllergies()
+        allergies = dataManager?.listAllergies()
         observeToken = allergies.observe { [weak self] (changes) in
             switch changes {
             case .initial: self?.tableView.reloadData()
@@ -98,7 +98,7 @@ class AllergensAlertsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let allergy = allergies[indexPath.row]
-            dataManager.removeAllergy(toAllergen: allergy)
+            dataManager?.removeAllergy(toAllergen: allergy)
         } else if editingStyle == .insert {
             self.didTapAddButton()
         }
@@ -116,7 +116,7 @@ extension AllergensAlertsTableViewController: AllergensAddTableViewCellDelegate 
 
 extension AllergensAlertsTableViewController: SelectAllergenDelegate {
     func didSelect(allergen: Allergen) {
-        dataManager.addAllergy(toAllergen: allergen)
+        dataManager?.addAllergy(toAllergen: allergen)
         self.navigationController?.popToViewController(self, animated: true)
     }
 }
