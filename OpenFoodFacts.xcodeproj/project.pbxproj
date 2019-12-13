@@ -54,6 +54,7 @@
 		30E43D78220895B100D7A906 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E43D77220895B100D7A906 /* Category.swift */; };
 		4CDF89802357F296007BA0A5 /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF897F2357F296007BA0A5 /* ProductTests.swift */; };
 		510F174D23A3A5240037832E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510F174C23A3A5240037832E /* Country.swift */; };
+		510F174F23A3CD890037832E /* OFFReadAPIKeysJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510F174E23A3CD880037832E /* OFFReadAPIKeysJSON.swift */; };
 		5138F169235871830043FC10 /* BarcodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5138F168235871830043FC10 /* BarcodeService.swift */; };
 		514EFA8C2230215F008FFD2A /* Vitamin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA8B2230215F008FFD2A /* Vitamin.swift */; };
 		514EFA8E22302183008FFD2A /* Mineral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA8D22302183008FFD2A /* Mineral.swift */; };
@@ -147,7 +148,6 @@
 		9576DC831FE94B6200DD58EF /* HistoryTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956939051FE9483B003A50DA /* HistoryTableViewControllerSpec.swift */; };
 		95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B131EBE4E5C003E3256 /* UITableViewCell.swift */; };
 		95781B9B1EC26B24003E3256 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B9A1EC26B24003E3256 /* Double.swift */; };
-		95781BBC1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */; };
 		95781BBD1EC3A898003E3256 /* OFFWriteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */; };
 		95781BBE1EC3A898003E3256 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB11EC3A898003E3256 /* Product.swift */; };
 		95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB21EC3A898003E3256 /* ProductsResponse.swift */; };
@@ -349,7 +349,8 @@
 		30DB17F422122E4A0010EE6F /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
 		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4CDF897F2357F296007BA0A5 /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
-		510F174C23A3A5240037832E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Country.swift; path = Sources/Models/API/Taxonomies/Country.swift; sourceTree = "<group>"; };
+		510F174C23A3A5240037832E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		510F174E23A3CD880037832E /* OFFReadAPIKeysJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OFFReadAPIKeysJSON.swift; path = Sources/Models/API/OFFReadAPIKeysJSON.swift; sourceTree = SOURCE_ROOT; };
 		5138F168235871830043FC10 /* BarcodeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeService.swift; sourceTree = "<group>"; };
 		514EFA8B2230215F008FFD2A /* Vitamin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vitamin.swift; sourceTree = "<group>"; };
 		514EFA8D22302183008FFD2A /* Mineral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mineral.swift; sourceTree = "<group>"; };
@@ -509,7 +510,6 @@
 		957094B91EA24DFC00268236 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		95781B131EBE4E5C003E3256 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		95781B9A1EC26B24003E3256 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFFReadAPIKeysJSON.swift; sourceTree = "<group>"; };
 		95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFFWriteAPI.swift; sourceTree = "<group>"; };
 		95781BB11EC3A898003E3256 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		95781BB21EC3A898003E3256 /* ProductsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsResponse.swift; sourceTree = "<group>"; };
@@ -967,11 +967,12 @@
 			children = (
 				300085602207AC0700DC3896 /* Additive.swift */,
 				30D77D9B22088F0F00B180E9 /* Allergen.swift */,
+				30E43D77220895B100D7A906 /* Category.swift */,
+				510F174C23A3A5240037832E /* Country.swift */,
 				514EFA8B2230215F008FFD2A /* Vitamin.swift */,
 				514EFA8D22302183008FFD2A /* Mineral.swift */,
 				514EFA8F223021A1008FFD2A /* Nucleotide.swift */,
 				514EFA91223021C0008FFD2A /* OtherNutritionalSubstance.swift */,
-				30E43D77220895B100D7A906 /* Category.swift */,
 				30412DDA220F089700C485DD /* Nutriment.swift */,
 			);
 			path = Taxonomies;
@@ -1388,8 +1389,8 @@
 			children = (
 				3000855F2207ABF800DC3896 /* Taxonomies */,
 				95E9F0421EC8D7AB00BA20B0 /* Nutriments */,
-				95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */,
 				95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */,
+				510F174E23A3CD880037832E /* OFFReadAPIKeysJSON.swift */,
 				95781BB11EC3A898003E3256 /* Product.swift */,
 				95781BB21EC3A898003E3256 /* ProductsResponse.swift */,
 				95DDAF651F2916D30096B74E /* ProductImage.swift */,
@@ -1596,7 +1597,6 @@
 		95C265051E96D55B004212EC = {
 			isa = PBXGroup;
 			children = (
-				510F174C23A3A5240037832E /* Country.swift */,
 				2A798638235027590020821E /* README.md */,
 				95C265231E96D5C2004212EC /* Frameworks */,
 				95C265101E96D55B004212EC /* Sources */,
@@ -2395,7 +2395,6 @@
 				3010E25F222EF42B00313ADB /* InitialView.swift in Sources */,
 				3030EB84222E8290005A6169 /* OfflineProductsService.swift in Sources */,
 				9587DF731F84056F0069F0A6 /* PictureViewModel.swift in Sources */,
-				95781BBC1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift in Sources */,
 				5138F169235871830043FC10 /* BarcodeService.swift in Sources */,
 				30270C37222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift in Sources */,
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
@@ -2414,6 +2413,7 @@
 				953CDD5B1F92A12A0096C428 /* UserViewController.swift in Sources */,
 				30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */,
 				956FF9471F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift in Sources */,
+				510F174F23A3CD890037832E /* OFFReadAPIKeysJSON.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
 				955BAFFB1FF7C63A0046F419 /* ErrorCodes.swift in Sources */,
 				95D060DB1F6094D30052012D /* UITableView.swift in Sources */,
