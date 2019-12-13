@@ -96,6 +96,7 @@ struct Product: Mappable {
     var embCodesTags: [String]?
     var stores: [String]?
     var countries: [String]?
+    var countriesTags: [String]?
     private var ingredientsImageUrlDecoded: String?
     var allergens: [Tag]?
     var traces: [Tag]?
@@ -267,6 +268,7 @@ struct Product: Mappable {
         labels <- (map[OFFJson.LabelsKey], ArrayTransform())
         citiesTags <- map[OFFJson.CitiesTagsKey]
         countries <- (map[OFFJson.CountriesKey], ArrayTransform())
+        countriesTags <- map[OFFJson.CountriesTagsKey]
         embCodesTags <- map[OFFJson.EmbCodesTagsKey]
         environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]

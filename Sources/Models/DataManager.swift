@@ -136,6 +136,10 @@ class DataManager: DataManagerProtocol {
         return persistenceManager.category(forCode: tag)
     }
 
+    func Country(forTag tag: String) -> Country? {
+        return persistenceManager.country(forCode: tag)
+    }
+
     func categorySearch(query: String?) -> Results<Category> {
         return persistenceManager.categorySearch(query: query)
     }
