@@ -24,6 +24,8 @@ protocol PersistenceManagerProtocol {
     func save(categories: [Category])
     func category(forCode: String) -> Category?
     func categorySearch(query: String?) -> Results<Category>
+    func country(forCode: String) -> Country?
+    func save(countries: [Country])
 
     func save(allergens: [Allergen])
     func save(minerals: [Mineral])
@@ -64,6 +66,7 @@ protocol PersistenceManagerProtocol {
 }
 
 class PersistenceManager: PersistenceManagerProtocol {
+
     func removeHistroyItem(_ item: HistoryItem) {
         let realm = self.getRealm()
 
@@ -160,6 +163,15 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     func category(forCode code: String) -> Category? {
         return getRealm().object(ofType: Category.self, forPrimaryKey: code)
+    }
+
+    func country(forCode code: String) -> Country? {
+                return getRealm().object(ofType: Country.self, forPrimaryKey: code)
+    }
+
+    func save(countries: [Country]) {
+        saveOrUpdate(objects: countries)
+        log.info("Saved \(countries.count) countries in taxonomy database")
     }
 
     func categorySearch(query: String? = nil) -> Results<Category> {

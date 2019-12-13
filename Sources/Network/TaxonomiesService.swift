@@ -11,13 +11,14 @@ import AlamofireObjectMapper
 import Crashlytics
 
 enum TaxonomiesRouter: URLRequestConvertible {
-    case getAllergens, getAdditives, getCategories, getNutriments, getVitamins, getMinerals, getNucleotides // get OtherNutritionalSubstances
+    case getAllergens, getAdditives, getCategories, getCountries, getNutriments, getVitamins, getMinerals, getNucleotides // get OtherNutritionalSubstances
 
     var path: String {
         switch self {
         case .getAllergens: return "allergens.json"
         case .getAdditives: return "additives.json"
         case .getCategories: return "categories.json"
+        case .getCountries: return "countries.json"
         case .getNutriments: return "nutrients.json"
         case .getVitamins: return "vitamins.json"
         case .getMinerals: return "minerals.json"
@@ -70,6 +71,36 @@ class TaxonomiesService: TaxonomiesApi {
                                             names: names)
                         })
                         self.persistenceManager.save(categories: categories)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+
+                callback(success)
+        }
+    }
+
+    fileprivate func refreshCountries(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getCountries)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let countries = json.compactMap({ (countryCode: String, value: Any) -> Country? in
+                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                return nil
+                            }
+                            let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return Country(code: countryCode,
+                                            parents: value["parents"] as? [String] ?? [String](),
+                                            children: value["children"] as? [String] ?? [String](),
+                                            names: names)
+                        })
+                        self.persistenceManager.save(countries: countries)
                         success = true
                     }
                 case .failure(let error):
@@ -261,7 +292,7 @@ class TaxonomiesService: TaxonomiesApi {
         if shouldDownload {
             downloadTaxonomies()
         } else {
-            log.debug("Do not download taxonomies, we already have them !")
+            log.debug("TaxonomiesService: Do not download taxonomies, we already have them !")
         }
     }
 
@@ -273,6 +304,12 @@ class TaxonomiesService: TaxonomiesApi {
 
             group.enter()
             self.refreshCategories({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshCountries({ (success) in
                 allSuccess = allSuccess && success
                 group.leave()
             })

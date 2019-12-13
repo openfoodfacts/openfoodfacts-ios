@@ -30,6 +30,7 @@ protocol DataManagerProtocol {
 
     func category(forTag: String) -> Category?
     func categorySearch(query: String?) -> Results<Category>
+    func country(forTag: String) -> Country?
     func allergen(forTag: Tag) -> Allergen?
     func trace(forTag: Tag) -> Allergen?
     func vitamin(forTag: Tag) -> Vitamin?
@@ -136,7 +137,7 @@ class DataManager: DataManagerProtocol {
         return persistenceManager.category(forCode: tag)
     }
 
-    func Country(forTag tag: String) -> Country? {
+    func country(forTag tag: String) -> Country? {
         return persistenceManager.country(forCode: tag)
     }
 

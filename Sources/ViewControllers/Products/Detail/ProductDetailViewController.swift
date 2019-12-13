@@ -199,7 +199,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product.countriesTags?.map({ (tag: String) -> NSAttributedString in
             if let country = dataManager.country(forTag: tag) {
                 if let name = Tag.choose(inTags: Array(country.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forCountry: country)])
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(for: country)])
                 }
             }
             return NSAttributedString(string: tag)
