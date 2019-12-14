@@ -117,6 +117,10 @@ class DataManager: DataManagerProtocol {
     // MARK: - User
 
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        if let originalUserAgent = UIWebView().stringByEvaluatingJavaScript(from: "navigator.userAgent") {
+            UserDefaults.standard.register(defaults: ["UserAgent": originalUserAgent])
+        }
+
         productApi.logIn(username: username, password: password, onSuccess: {
             DispatchQueue.main.async {
                 onSuccess()
