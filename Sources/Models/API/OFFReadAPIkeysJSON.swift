@@ -337,7 +337,7 @@ struct OFFJson {
             OFFJson.CodeKey,
             // OFFJson.ConservationConditionsKey,
             // OFFJson.CountriesKey,
-            // OFFJson.CountriesTagsKey,
+            OFFJson.CountriesTagsKey,
             // OFFJson.CreatedTKey,
             // OFFJson.CreatorKey,
             // OFFJson.CustomerServiceKey,
