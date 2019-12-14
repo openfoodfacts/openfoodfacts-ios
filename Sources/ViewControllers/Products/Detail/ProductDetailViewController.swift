@@ -195,7 +195,15 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }), label: InfoRowKey.embCodes.localizedString)
 
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
-        createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
+        // createFormRow(with: &rows, item: product.countriesTags, label: InfoRowKey.countries.localizedString)
+        createFormRow(with: &rows, item: product.countriesTags?.map({ (tag: String) -> NSAttributedString in
+            if let country = dataManager.country(forTag: tag) {
+                if let name = Tag.choose(inTags: Array(country.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(for: country)])
+                }
+            }
+            return NSAttributedString(string: tag)
+        }), label: InfoRowKey.countries.localizedString)
 
         // Footer
         rows.append(FormRow(value: product as Any, cellType: SummaryFooterCell.self))
