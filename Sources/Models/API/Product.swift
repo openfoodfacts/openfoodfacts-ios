@@ -88,7 +88,17 @@ struct Product: Mappable {
     var categories: [String]?
     var categoriesTags: [String]?
     var nutriscore: String?
-    var novaGroup: Int?
+    var novaGroup: Int? {
+        if novaGroupAsInt != nil {
+            return novaGroupAsInt
+        }
+        if novaGroupAsString != nil {
+            return Int(novaGroupAsString!)
+        }
+        return nil
+    }
+    private var novaGroupAsInt: Int?
+    private var novaGroupAsString: String?
     var manufacturingPlaces: String?
     var origins: String?
     var labels: [String]?
@@ -262,7 +272,9 @@ struct Product: Mappable {
         categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
         categoriesTags <- (map[OFFJson.CategoriesTagsKey])
         nutriscore <- map[OFFJson.NutritionGradesKey]
-        novaGroup <- (map[OFFJson.NovaGroupKey], IntTransform())
+        // novaGroup should be Int, but might be String
+        novaGroupAsInt <- (map[OFFJson.NovaGroupKey], IntTransform())
+        novaGroupAsString <- map[OFFJson.NovaGroupKey]
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
         origins <- map[OFFJson.OriginsKey]
         labels <- (map[OFFJson.LabelsKey], ArrayTransform())
@@ -286,7 +298,6 @@ struct Product: Mappable {
         minerals <- (map[OFFJson.MineralsTagsKey], TagTransform())
         nameDecoded <- map[OFFJson.ProductNameKey]
         noNutritionData <- map[OFFJson.NoNutritionDataKey]
-        novaGroup <- map[OFFJson.NovaGroupKey]
         nucleotides <- (map[OFFJson.NucleotidesTagsKey], TagTransform())
         nutriments <- map[OFFJson.NutrimentsKey]
         nutriscore <- map[OFFJson.NutritionGradesKey]
