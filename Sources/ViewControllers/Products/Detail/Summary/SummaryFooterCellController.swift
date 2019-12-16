@@ -38,12 +38,14 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
 
     func didTap() {
         if CredentialsController.shared.getUsername() == nil {
-            let loginVC = LoginViewController.loadFromStoryboard(named: .user) as LoginViewController
+            guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
+                return }
             loginVC.dataManager = dataManager
-            loginVC.delegate = self
+            //loginVC.delegate = self
 
             let navVC = UINavigationController(rootViewController: loginVC)
             loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
+            loginVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(SummaryFooterCellController.dismissVC))
 
             self.present(navVC, animated: true)
 
@@ -58,6 +60,7 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
 
                 let navVC = UINavigationController(rootViewController: addProductVC)
                 addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
+                addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.save))
                 navVC.modalPresentationStyle = .fullScreen
 
                 self.present(navVC, animated: true)
@@ -69,12 +72,9 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
         dismiss(animated: true, completion: nil)
     }
 }
-
-extension SummaryFooterCellController: UserViewControllerDelegate {
-    func dismiss() {
-        dismissVC()
-    }
-
-    func showProductsPendingUpload() {
-    }
-}
+//
+//extension SummaryFooterCellController: UserViewControllerDelegate {
+//    func dismiss() {
+//        setupInterface()
+//    }
+//}

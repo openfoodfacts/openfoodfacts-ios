@@ -15,6 +15,7 @@ protocol PersistenceManagerProtocol {
     // Search history
     func getHistory() -> [HistoryItem]
     func addHistoryItem(_ product: Product)
+    func removeHistroyItem(_ item: HistoryItem)
     func clearHistory()
 
     // taxonomies
@@ -23,17 +24,23 @@ protocol PersistenceManagerProtocol {
     func save(categories: [Category])
     func category(forCode: String) -> Category?
     func categorySearch(query: String?) -> Results<Category>
+    func country(forCode: String) -> Country?
+    func save(countries: [Country])
 
     func save(allergens: [Allergen])
     func save(minerals: [Mineral])
     func save(vitamins: [Vitamin])
     func save(nucleotides: [Nucleotide])
+    func save(ingredientsAnalysis: [IngredientsAnalysis])
+    func save(ingredientsAnalysisConfig: [IngredientsAnalysisConfig])
     func allergen(forCode: String) -> Allergen?
     func trace(forCode: String) -> Allergen?
     func vitamin(forCode: String) -> Vitamin?
     func mineral(forCode: String) -> Mineral?
     func nucleotide(forCode: String) -> Nucleotide?
     func otherNutritionalSubstance(forCode: String) -> OtherNutritionalSubstance?
+    func ingredientsAnalysis(forCode: String) -> IngredientsAnalysis?
+    func ingredientsAnalysisConfig(forCode: String) -> IngredientsAnalysisConfig?
 
     func save(nutriments: [Nutriment])
     func nutriment(forCode: String) -> Nutriment?
@@ -41,10 +48,6 @@ protocol PersistenceManagerProtocol {
 
     func save(additives: [Additive])
     func additive(forCode: String) -> Additive?
-    
-    func save(ingredientsAnalysis: [IngredientsAnalysis])
-    func ingredientsAnalysis(forCode: String) -> IngredientsAnalysis?
-    func ingredientsAnalysisSearch(query: String?) -> Results<IngredientsAnalysis>
 
     // Offline
     func save(offlineProducts: [RealmOfflineProduct])
@@ -67,6 +70,19 @@ protocol PersistenceManagerProtocol {
 }
 
 class PersistenceManager: PersistenceManagerProtocol {
+
+    func removeHistroyItem(_ item: HistoryItem) {
+        let realm = self.getRealm()
+
+        do {
+            try realm.write {
+                realm.delete(item)
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
 
     fileprivate func saveOrUpdate(objects: [Object]) {
         let realm = getRealm()
@@ -100,6 +116,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 item.barcode = barcode
                 item.productName = product.name
                 item.quantity = product.quantity
+                item.packaging = product.packaging?.compactMap {$0}.joined(separator: ", ")
                 item.imageUrl = product.imageUrl
                 item.nutriscore = product.nutriscore
                 item.novaGroup.value = product.novaGroup
@@ -150,6 +167,15 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     func category(forCode code: String) -> Category? {
         return getRealm().object(ofType: Category.self, forPrimaryKey: code)
+    }
+
+    func country(forCode code: String) -> Country? {
+                return getRealm().object(ofType: Country.self, forPrimaryKey: code)
+    }
+
+    func save(countries: [Country]) {
+        saveOrUpdate(objects: countries)
+        log.info("Saved \(countries.count) countries in taxonomy database")
     }
 
     func categorySearch(query: String? = nil) -> Results<Category> {
@@ -235,17 +261,19 @@ class PersistenceManager: PersistenceManagerProtocol {
         log.info("Saved \(ingredientsAnalysis.count) ingredients analysis in taxonomies database")
     }
     
+    func save(ingredientsAnalysisConfig: [IngredientsAnalysisConfig]) {
+        saveOrUpdate(objects: ingredientsAnalysisConfig)
+        log.info("Saved \(ingredientsAnalysisConfig.count) ingredients analysis configs in files database")
+    }
+    
     func ingredientsAnalysis(forCode code: String) -> IngredientsAnalysis? {
         var tmp = getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code);
         return getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code)
     }
     
-    func ingredientsAnalysisSearch(query: String?) -> Results<IngredientsAnalysis> {
-        var results = getRealm().objects(IngredientsAnalysis.self)
-        if let query = query, !query.isEmpty {
-            results = results.filter("indexedNames CONTAINS[cd] %@", query)
-        }
-        return results.sorted(byKeyPath: "mainName", ascending: true)
+    func ingredientsAnalysisConfig(forCode code: String) -> IngredientsAnalysisConfig? {
+        var tmp = getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code);
+        return getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code)
     }
 
     func save(offlineProducts: [RealmOfflineProduct]) {
@@ -344,6 +372,9 @@ class PersistenceManager: PersistenceManagerProtocol {
         }
         if let quantity = product.quantity {
             item.quantity = quantity
+        }
+        if let packaging = product.packaging {
+            item.packaging = packaging.compactMap {$0}.joined(separator: ", ")
         }
         if let categories = product.categories {
             item.categories = categories

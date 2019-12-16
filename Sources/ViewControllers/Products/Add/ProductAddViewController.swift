@@ -13,23 +13,61 @@ import NotificationBanner
 class ProductAddViewController: TakePictureViewController {
     // IBOutlets
 
-    @IBOutlet weak var barcodeTitleLabel: UILabel!
+    @IBOutlet weak var barcodeTitleLabel: UILabel! {
+        didSet {
+            barcodeTitleLabel?.text = "product-add.titles.barcode".localized
+        }
+    }
     @IBOutlet weak var barcodeLabel: UILabel!
-    @IBOutlet weak var topExplainationText: UILabel!
+    @IBOutlet weak var topExplainationText: UILabel! {
+        didSet {
+            topExplainationText?.text = "product-add.titles.top-explainations".localized
+        }
+    }
     @IBOutlet weak var picturesContainerView: UIView!
 
     @IBOutlet weak var scrollView: UIScrollView!
 
-    @IBOutlet weak var productSectionTitle: UILabel!
-    @IBOutlet weak var productNameTitleLabel: UILabel!
+    @IBOutlet weak var productSectionTitle: UILabel! {
+        didSet {
+            productSectionTitle?.text = "product-add.titles.product-info".localized
+        }
+    }
+    @IBOutlet weak var productNameTitleLabel: UILabel! {
+        didSet {
+            productNameTitleLabel?.text = "product-add.label.product-name".localized
+        }
+    }
     @IBOutlet weak var productNameField: UITextField!
-    @IBOutlet weak var productCategoryTitleLabel: UILabel!
-    @IBOutlet weak var productCategoryField: UITextField!
-    @IBOutlet weak var brandsTitleLabel: UILabel!
+    @IBOutlet weak var productCategoryTitleLabel: UILabel! {
+        didSet {
+            productCategoryTitleLabel?.text = "product-add.label.category".localized
+        }
+    }
+    @IBOutlet weak var productCategoryField: UITextField! {
+        didSet {
+            productCategoryField?.placeholder = "product-add.label.category".localized
+        }
+    }
+    @IBOutlet weak var brandsTitleLabel: UILabel! {
+        didSet {
+            brandsTitleLabel?.text = "product-add.placeholder.brand".localized
+        }
+    }
     @IBOutlet weak var brandsField: UITextField!
-    @IBOutlet weak var quantityTitleLabel: UILabel!
-    @IBOutlet weak var quantityExampleLabel: UILabel!
+    @IBOutlet weak var quantityTitleLabel: UILabel! {
+        didSet {
+            quantityTitleLabel?.text = "product-add.label.quantity".localized
+        }
+    }
+    @IBOutlet weak var quantityExampleLabel: UILabel! {
+        didSet {
+            quantityExampleLabel?.text = "product-add.label.quantity-example".localized
+        }
+    }
     @IBOutlet weak var quantityField: UITextField!
+    @IBOutlet weak var packagingTitleLabel: UILabel!
+    @IBOutlet weak var packagingField: UITextField!
     @IBOutlet weak var languageTitleLabel: UILabel!
     @IBOutlet weak var languageField: UITextField!
     @IBOutlet weak var productTextSection: UIView!
@@ -38,8 +76,16 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var lastSavedProductInfosLabel: UILabel!
 
     @IBOutlet weak var noNutritionDataSwitch: UISwitch!
-    @IBOutlet weak var nutritiveSectionTitle: UILabel!
-    @IBOutlet weak var nutriscoreStackView: UIStackView!
+    @IBOutlet weak var nutritiveSectionTitle: UILabel! {
+        didSet {
+            nutritiveSectionTitle?.text = "product-add.titles.nutritive".localized
+        }
+    }
+    @IBOutlet weak var nutriscoreStackView: UIStackView! {
+        didSet {
+            nutriscoreStackView?.isHidden = true
+        }
+    }
     @IBOutlet weak var nutriScoreView: NutriScoreView!
     @IBOutlet weak var portionSizeInputView: EditNutritiveValueView!
     @IBOutlet weak var nutritivePortionSegmentedControl: UISegmentedControl!
@@ -49,13 +95,41 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var lastSavedNutrimentsLabel: UILabel!
 
     @IBOutlet weak var ingredientsSectionTitle: UILabel!
-    @IBOutlet weak var novaGroupStackView: UIStackView!
+    @IBOutlet weak var novaGroupStackView: UIStackView! {
+        didSet {
+            novaGroupStackView?.isHidden = true
+        }
+    }
     @IBOutlet weak var novaGroupView: NovaGroupView!
-    @IBOutlet weak var ingredientsExplainationLabel: UILabel!
-    @IBOutlet weak var ingredientsTextField: UITextView!
-    @IBOutlet weak var ignoreIngredientsButton: UIButton!
-    @IBOutlet weak var saveIngredientsButton: UIButton!
-    @IBOutlet weak var lastSavedIngredientsLabel: UILabel!
+    @IBOutlet weak var ingredientsExplainationLabel: UILabel! {
+        didSet {
+            ingredientsExplainationLabel?.text = "product-add.ingredients.explaination".localized
+        }
+    }
+    @IBOutlet weak var ingredientsTextField: UITextView! {
+        didSet {
+            ingredientsTextField?.text = ""
+        }
+    }
+    @IBOutlet weak var ignoreIngredientsButton: UIButton! {
+        didSet {
+            ignoreIngredientsButton?.setTitle("product-add.ingredients.button-delete".localized, for: .normal)
+            ignoreIngredientsButton?.titleLabel?.lineBreakMode = .byWordWrapping
+            ignoreIngredientsButton?.titleLabel?.numberOfLines = 2
+        }
+    }
+    @IBOutlet weak var saveIngredientsButton: UIButton! {
+        didSet {
+            saveIngredientsButton?.setTitle("product-add.ingredients.button-save".localized, for: .normal)
+            saveIngredientsButton?.titleLabel?.lineBreakMode = .byWordWrapping
+            saveIngredientsButton?.titleLabel?.numberOfLines = 2
+        }
+    }
+    @IBOutlet weak var lastSavedIngredientsLabel: UILabel! {
+        didSet {
+            lastSavedIngredientsLabel?.isHidden = true
+        }
+    }
     @IBOutlet weak var lastSavedIngredientsOCRLabel: UILabel!
 
     @IBOutlet var saveButtons: [UIButton]!
@@ -96,6 +170,12 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
 
+    private var productHasBeenEdited = false {
+        didSet {
+            navigationItem.rightBarButtonItem?.isEnabled = productHasBeenEdited
+        }
+    }
+
     // Private vars
 
     fileprivate var activeField: UIView?
@@ -127,25 +207,13 @@ class ProductAddViewController: TakePictureViewController {
     // swiftlint:disable function_body_length
     override func viewDidLoad() {
         self.title = "product-add.title".localized
-
-        barcodeTitleLabel.text = "product-add.titles.barcode".localized
-        topExplainationText.text = "product-add.titles.top-explainations".localized
-
-        productSectionTitle.text = "product-add.titles.product-info".localized
-        productNameTitleLabel.text = "product-add.label.product-name".localized
-        productCategoryTitleLabel.text = "product-add.label.category".localized
-        productCategoryField.placeholder = "product-add.label.category".localized
-        brandsTitleLabel.text = "product-add.placeholder.brand".localized
-        quantityTitleLabel.text = "product-add.label.quantity".localized
-        quantityExampleLabel.text = "product-add.label.quantity-example".localized
+        productHasBeenEdited = false
         languageTitleLabel.text = "product-add.label.language".localized
         saveButtons.forEach { (button: UIButton) in
             button.setTitle("generic.save".localized, for: .normal)
         }
         lastSavedProductInfosLabel.isHidden = true
 
-        nutritiveSectionTitle.text = "product-add.titles.nutritive".localized
-        nutriscoreStackView.isHidden = true
         nutritivePortionSegmentedControl.setTitle("product-add.nutritive.choice.per-hundred-grams".localized, forSegmentAt: 0)
         nutritivePortionSegmentedControl.setTitle("product-add.nutritive.choice.per-portion".localized, forSegmentAt: 1)
         portionSizeInputView.titleLabel.text = "product-detail.nutrition.serving-size".localized
@@ -156,17 +224,6 @@ class ProductAddViewController: TakePictureViewController {
         refreshNutritiveInputsViews()
 
         ingredientsSectionTitle.text = "product-add.titles.ingredients".localized
-        ingredientsExplainationLabel.text = "product-add.ingredients.explaination".localized
-        novaGroupStackView.isHidden = true
-        ingredientsTextField.text = ""
-        ignoreIngredientsButton.setTitle("product-add.ingredients.button-delete".localized, for: .normal)
-        saveIngredientsButton.setTitle("product-add.ingredients.button-save".localized, for: .normal)
-        lastSavedIngredientsLabel.isHidden = true
-
-        ignoreIngredientsButton.titleLabel?.lineBreakMode = .byWordWrapping
-        ignoreIngredientsButton.titleLabel?.numberOfLines = 2
-        saveIngredientsButton.titleLabel?.lineBreakMode = .byWordWrapping
-        saveIngredientsButton.titleLabel?.numberOfLines = 2
 
         showNotSavedIndication(label: lastSavedIngredientsOCRLabel, key: "ocr-ingredients")
 
@@ -187,12 +244,28 @@ class ProductAddViewController: TakePictureViewController {
             fillForm(withProduct: productToEdit)
         }
         if let barcode = self.barcode {
-        let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode)
-        if pendingUploadItem != nil {
-            fillForm(withPendingUploadItem: pendingUploadItem!)
+            let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode)
+            if pendingUploadItem != nil {
+                fillForm(withPendingUploadItem: pendingUploadItem!)
+            }
         }
-        }
+        setUserAgent()
     }
+    
+    private func setUserAgent() {
+        var userAgentString = ""
+        if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
+            userAgentString = validAppName
+        }
+        if let validVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            userAgentString += "; version " + validVersion
+        }
+
+        if let validBuild = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String {
+            userAgentString += "; build " +  validBuild + " - add"
+        }
+        UserDefaults.standard.register(defaults: ["UserAgent": userAgentString])    }
+
     // swiftlint:enable function_body_length
 
     fileprivate func fillProductFromInfosForm() {
@@ -215,6 +288,10 @@ class ProductAddViewController: TakePictureViewController {
         }
 
         product.quantity = quantityField.text
+        if let validPackingText = packagingField.text {
+            let array = validPackingText.split(separator: ",")
+            product.packaging = array.compactMap {String($0)}
+        }
     }
 
     fileprivate func fillProductFromNutriments() -> [RealmPendingUploadNutrimentItem] {
@@ -250,7 +327,7 @@ class ProductAddViewController: TakePictureViewController {
         return nutriments
     }
 
-    @IBAction func didTapSaveProductButton(_ sender: UIButton) {
+    @objc func save() {
         self.view.endEditing(true)
         saveProductInfosButton.isEnabled = false
 
@@ -270,6 +347,10 @@ class ProductAddViewController: TakePictureViewController {
                     self?.saveProductInfosButton.isEnabled = true
                 }
         })
+    }
+
+    @IBAction func didTapSaveProductButton(_ sender: UIButton) {
+        save()
     }
 
     @IBAction func didTapSaveNutrimentsButton(_ sender: Any) {
@@ -466,15 +547,16 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     private func configureDelegates() {
-        productNameField.delegate = self
-        brandsField.delegate = self
-        productCategoryField.delegate = self
-        quantityField.delegate = self
-        languageField.delegate = self
+        productNameField?.delegate = self
+        brandsField?.delegate = self
+        productCategoryField?.delegate = self
+        quantityField?.delegate = self
+        packagingField?.delegate = self
+        languageField?.delegate = self
 
-        portionSizeInputView.displayedUnit = .none
-        portionSizeInputView.inputTextField.delegate = self
-        ingredientsTextField.delegate = self
+        portionSizeInputView?.displayedUnit = .none
+        portionSizeInputView?.inputTextField.delegate = self
+        ingredientsTextField?.delegate = self
     }
 
     private func configureNotifications() {
@@ -489,6 +571,7 @@ class ProductAddViewController: TakePictureViewController {
     fileprivate func showNotSavedIndication(label: UILabel?, key: String) {
         label?.text = "⚠️ " + "product-add.\(key).not-yet".localized
         label?.isHidden = false
+        productHasBeenEdited = true
     }
 
     fileprivate func showSavingIndication(label: UILabel?, key: String) {
@@ -500,7 +583,7 @@ class ProductAddViewController: TakePictureViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-
+        productHasBeenEdited = false
         label?.text = "💾 " + "product-add.\(key).success".localized + " " + dateFormatter.string(from: Date())
         label?.isHidden = false
     }
@@ -538,7 +621,8 @@ class ProductAddViewController: TakePictureViewController {
             }
         }
 
-        quantityField.text = product.quantity
+        quantityField?.text = product.quantity
+        packagingField?.text = product.packaging?.compactMap {$0}.joined(separator: ", ")
         ingredientsTextField.text = product.ingredientsList
 
         noNutritionDataSwitch.isOn = product.noNutritionData == "on"
@@ -601,6 +685,10 @@ class ProductAddViewController: TakePictureViewController {
 
         if let quantity = pendingUploadItem.quantity {
             quantityField.text = quantity
+        }
+
+        if let packaging = pendingUploadItem.packaging {
+            packagingField.text = packaging
         }
 
         if let ingredientsList = pendingUploadItem.ingredientsList {
@@ -787,6 +875,7 @@ extension ProductAddViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
+
 }
 
 extension ProductAddViewController: UITextViewDelegate {
@@ -800,6 +889,7 @@ extension ProductAddViewController: UITextViewDelegate {
         showNotSavedIndication(label: lastSavedIngredientsLabel, key: "save-ingredients")
         return true
     }
+
 }
 
 extension ProductAddViewController: PictureTableViewControllerDelegate {

@@ -20,13 +20,13 @@
 // Product Search
 
 "product-search.title" = "Keres";
-"product-search.search-placeholder" = "Search by name or barcode";
-"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
+"product-search.search-placeholder" = "Keresés név, vagy vonalkód alapján";
+"product-search.no-results" = "Nincs találat. A termék beolvasásával hozzáadhatja az Open Food Facts adatbázishoz.";
 "product-search.error-view.title" = "Valami hiba történt";
 "product-search.error-view.subtitle" = "Kérem, próbálja újra";
-"product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.slogan" = "a szabad élelmiszer adatbázis";
+"product-search.initial-view.offline.title-loading" = "Termékek mentése offline használatra: %d%%";
+"product-search.initial-view.offline.subtitle" = "Több, mint %d termék érhető el azonnali beolvasásra";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "A termék vonalkódjának beolvasása";
@@ -35,21 +35,21 @@
 "product-scanner.view-title" = "Szkenner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Hiba történt a vonalkód beolvasása közben. Kérem, próbálja meg néhány pillanat múlva.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "Vonalkód nem található. Beírhatja kézzel:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
-"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+"product-scanner.permissions.noPermissions.title" = "Az Open Food Factsnek kamera engedélyre van szüksége";
+"product-scanner.permissions.noPermissions.message" = "Kérem adjon engedélyt, hogy a kamera beolvashassa a vonalkódokat";
+"product-scanner.permissions.noPermissions.action.title" = "Beállítások megnyitása";
 
-"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
+"product-scanner.permissions.failed.title" = "A vonalkód beolvasást nem lehet elindítani.";
 "product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Vonalkód beolvasás elhagyása";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Termék betöltése…";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image…";
+"product-add.uploading-image-banner.title" = "Kép feltöltése…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Valami hiba történt";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
@@ -68,13 +68,13 @@
 "product-add.save-info.not-yet" = "Az adatok még nem lettek mentve";
 "product-add.save-ingredients.success" = "Összetevők mentve";
 "product-add.save-ingredients.error" = "Az összetevők nincsenek mentve";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
+"product-add.save-ingredients.saving" = "Összetevők mentése…";
 "product-add.save-ingredients.not-yet" = "Az összetevők még nincsenek mentve";
 "product-add.save-nutriments.success" = "Tápanyagtáblázat mentve";
 "product-add.save-nutriments.error" = "A tápanyagtáblázat nincs mentve";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
+"product-add.save-nutriments.saving" = "Tápanyagok mentése…";
 "product-add.save-nutriments.not-yet" = "A tápanyagtáblázat nincs mentve";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.no-nutrition" = "Nincsenek megadva tápértékadatok a terméken";
 
 "product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
 "product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
@@ -82,10 +82,10 @@
 "product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
 
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.novagroup-explaination" = "A NOVA csoport épp most lett kiszámítva az összetevőlista alapján";
 
 "alert.action.ok" = "Ok";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Nyelv kiválasztása";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Termék neve";
 /* Product Add brand text field */
@@ -103,6 +103,7 @@
 "product-add.label.product-name" = "Név";
 "product-add.label.category" = "Kategória";
 "product-add.label.quantity" = "Mennyiség";
+"product-add.label.packaging" = "Csomagolás";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Nyelvek";
@@ -112,13 +113,13 @@
 "product-add.nutritive.choice.per-hundred-grams" = "100 g / 100 ml-ben";
 "product-add.nutritive.choice.per-portion" = "adagonként";
 "product-add.nutritive.add-nutriment" = "Tápanyag hozzáadása";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Több mint 100g?";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "Töltse fel az összetevőket, hogy megtudja az élelmiszer feldolgozottság NOVA csoportját";
 "product-add.titles.ingredients" = "Összetevők";
 "product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
-"product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.button-delete" = "Túl rossz, Figyelmen kívül hagyás";
+"product-add.ingredients.button-save" = "Jónak tűnik, Mentés";
 
 // Select Category
 "select-category.title" = "Kategória";
@@ -126,7 +127,7 @@
 
 // Select nutrition
 "select-nutriment.title" = "Tápanyag";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Tápanyag keresése";
 
 // Select allergen
 "select-allergen.title" = "Allergén";
@@ -149,7 +150,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Vonalkód";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Általános név";
 "product-detail.summary.quantity" = "Mennyiség";
 "product-detail.summary.packaging" = "Csomagolás";
 "product-detail.summary.brands" = "Márkanevek";
@@ -159,7 +160,7 @@
 "product-detail.summary.labels" = "Címkék, tanúsítványok, díjak";
 "product-detail.summary.citiesTags" = "Vásárlás helye (város, állam és ország)";
 "product-detail.summary.stores" = "Boltok";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "Üzemkód";
 "product-detail.summary.countries" = "Országok, ahol kapható";
 
 // Product detail ingredients info row labels
@@ -167,7 +168,7 @@
 "product-detail.ingredients.nova.2" = "Feldolgozott összetevők";
 "product-detail.ingredients.nova.3" = "Feldolgozott élelmiszerek";
 "product-detail.ingredients.nova.4" = "Többszörösen feldolgozott élelmiszer- és italtermékek";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.incite" = "Adjon hozzá összetevőket és/vagy kategóriákat a NOVA kiszámításához.";
 "product-detail.ingredients.ingredients-list" = "Összetevők listája";
 "product-detail.ingredients.allergens-list" = "Allergiás vagy intoleranciás reakciót okozó anyagok, termékek";
 "product-detail.ingredients.allergens-alert.title" = "Allergéneket tartalmaz!";
@@ -311,9 +312,11 @@
 "user.password" = "Jelszó";
 "user.logged-in.label" = "%@, you are logged in";
 "user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
+"user.not-logged-in" = "Not logged in";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
+"user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Create an account";
 "user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";

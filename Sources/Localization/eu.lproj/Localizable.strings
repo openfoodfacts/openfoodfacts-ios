@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Eskaneatu barra-kodea";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Atzera";
@@ -20,7 +20,7 @@
 // Product Search
 
 "product-search.title" = "Bilatu";
-"product-search.search-placeholder" = "Search by name or barcode";
+"product-search.search-placeholder" = "Bilatu izenaren edo barra-kodearen arabera";
 "product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Something went wrong";
 "product-search.error-view.subtitle" = "Saiatu berriro";
@@ -32,7 +32,7 @@
 "product-scanner.overlay.user-help" = "Scan the barcode of the product";
 "product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Eskaner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
 "product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
@@ -103,6 +103,7 @@
 "product-add.label.product-name" = "Izena";
 "product-add.label.category" = "Kategoria";
 "product-add.label.quantity" = "Kopurua";
+"product-add.label.packaging" = "Ontziratzea";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Languages";
@@ -145,7 +146,7 @@
 "product-detail.page-title.ingredients" = "Osagaiak";
 "product-detail.page-title.nutrition" = "Elikadura";
 "product-detail.page-title.nutrition-table" = "Nutrition table";
-"product-detail.page-title.environment-impact" = "Environment";
+"product-detail.page-title.environment-impact" = "Ingurumena";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Barra-kodea";
@@ -163,10 +164,10 @@
 "product-detail.summary.countries" = "Countries where sold";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
-"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
-"product-detail.ingredients.nova.3" = "Processed foods";
-"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.1" = "Prozesatu gabeko edo ahalik eta gutxien prozesatutako elikagaiak";
+"product-detail.ingredients.nova.2" = "Sukaldaritzako osagaiak prozesatu";
+"product-detail.ingredients.nova.3" = "Prozesatutako jakiak";
+"product-detail.ingredients.nova.4" = "Ultra-prozesatutako jakiak eta edariak";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Alergiak edo intolerantziak eragiten dituzten substantziak edo produktuak";
@@ -311,9 +312,11 @@
 "user.password" = "Pasahitza";
 "user.logged-in.label" = "%@, you are logged in";
 "user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
+"user.not-logged-in" = "Saioa hasi gabe";
 "user.forgot-password" = "Forgot Password?";
 "user.check-your-contributions.button" = "View all your contributions";
 "user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
+"user.products-pending-upload-none.button" = "Open Food Facts-era igotzeko zain dauden produktuak (bat ere ez)";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Create an account";
 "user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";

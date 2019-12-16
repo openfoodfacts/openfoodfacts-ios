@@ -96,13 +96,14 @@
 "product-add.title" = "Nouveau produit";
 "product-add.title-edit" = "Modifier le produit";
 "product-add.titles.barcode" = "Code barre";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
+"product-add.titles.top-explainations" = "Bien joué ! Ce produit n'est pas encore dans la base de données Open Food Facts. Pourriez-vous prendre quelques photos du produit, de son code-barre, de la liste des ingrédients et des informations nutritionnelles afin de l'ajouter à la base ?\n\nMerci par avance.";
 "product-add.titles.license-explaination" = "Note : les photos que vous envoyées sont publiées sous la license libre Creative Commons Attribution and ShareAlike.";
 
 "product-add.titles.product-info" = "Informations sur le produit";
 "product-add.label.product-name" = "Nom";
 "product-add.label.category" = "Catégorie";
 "product-add.label.quantity" = "Quantité";
+"product-add.label.packaging" = "Conditionnement";
 "product-add.details.category" = "Nécessaire pour calculer le Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Langue";
@@ -112,7 +113,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "pour 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "par portion";
 "product-add.nutritive.add-nutriment" = "Ajouter un nutriment";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Plus de 100g ?";
 
 "product-add.description.ingredients" = "Complétez les ingrédients pour obtenir le Groupe Nova sur la transformation des aliments";
 "product-add.titles.ingredients" = "Ingrédients";
@@ -311,9 +312,11 @@
 "user.password" = "Mot de passe";
 "user.logged-in.label" = "%@, vous êtes connecté";
 "user.logged-in-explanation.label" = "Tous les produits que vous ajoutez et toutes les photos de produits que vous téléchargez seront attribuées à votre compte";
+"user.not-logged-in" = "Non connecté";
 "user.forgot-password" = "Mot de passe oublié?";
 "user.check-your-contributions.button" = "Vérifiez vos contributions";
 "user.products-pending-upload.button" = "Produits en attente d'envoi à Open Food Facts";
+"user.products-pending-upload-none.button" = "Produits en attente d'envoi à Open Food Facts (aucun)";
 "user.create-account.text" = "Si vous n'avez pas de compte, cliquez sur le lien ci-dessous pour en créer un.";
 "user.create-account.button" = "Créer un compte";
 "user.why-log-in.text" = "En vous connectant avec votre compte Open Food Facts, vous serez crédité(e) pour toutes vos contributions à la transparence alimentaire.";

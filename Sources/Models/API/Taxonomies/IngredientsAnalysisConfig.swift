@@ -1,8 +1,8 @@
 //
-//  IngredientsAnalysis.swift
+//  IngredientsAnalysisConfig.swift
 //  OpenFoodFacts
 //
-//  Created by matotim on 02/10/2019.
+//  Created by Timothee MATO on 16/12/2019.
 //  Copyright © 2019 Andrés Pizá Bückmann. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import ObjectMapper
 
-class IngredientsAnalysis: Object {
+class IngredientsAnalysisConfig: Object {
     @objc dynamic var code = ""
     let names = List<Tag>()
 

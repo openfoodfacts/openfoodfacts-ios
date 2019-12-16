@@ -35,6 +35,7 @@ class DataManagerMock: DataManagerProtocol {
     var historyToReturn: [Age: [HistoryItem]]?
     var addHistoyItemCalled = false
     var addHistoryItemProduct: Product?
+    var removeHistoryItemCalled = false
     var clearHistoryCalled = false
     var getLanguagesCalled = false
 
@@ -156,6 +157,10 @@ class DataManagerMock: DataManagerProtocol {
     func addHistoryItem(_ product: Product) {
         addHistoyItemCalled = true
         addHistoryItemProduct = product
+    }
+
+    func removeHistroyItem(_ item: HistoryItem) {
+        removeHistoryItemCalled = true
     }
 
     func clearHistory() {

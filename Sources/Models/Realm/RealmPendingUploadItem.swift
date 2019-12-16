@@ -24,6 +24,7 @@ internal class RealmPendingUploadItem: Object {
     @objc dynamic var productName: String?
     @objc dynamic var brand: String?
     @objc dynamic var quantity: String?
+    @objc dynamic var packaging: String?
     @objc dynamic var language = "en"
     @objc dynamic var frontImageName: String?
     @objc dynamic var ingredientsImageName: String?
@@ -49,6 +50,7 @@ internal class RealmPendingUploadItem: Object {
         self.productName = pendingUploadItem.productName
         self.brand = pendingUploadItem.brand
         self.quantity = pendingUploadItem.quantity
+        self.packaging = pendingUploadItem.packaging
         self.language = pendingUploadItem.language
         self.frontImageName = pendingUploadItem.frontImage?.fileName
         self.ingredientsImageName = pendingUploadItem.ingredientsImage?.fileName
@@ -74,6 +76,7 @@ internal class RealmPendingUploadItem: Object {
         pendingUploadItem.productName = self.productName
         pendingUploadItem.brand = self.brand
         pendingUploadItem.quantity = self.quantity
+        pendingUploadItem.packaging = self.packaging
         pendingUploadItem.language = self.language
         pendingUploadItem.categories = self.categories.map { $0 }
         pendingUploadItem.ingredientsList = self.ingredientsList

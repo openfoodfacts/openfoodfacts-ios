@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+
     func applicationDidBecomeActive(_ application: UIApplication) {
         DeepLinkManager.shared.checkDeepLink()
     }
@@ -61,11 +62,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func configureRealm() {
+        // https://stackoverflow.com/questions/33363508/rlmexception-migration-is-required-for-object-type
         let config = Realm.Configuration(
-            schemaVersion: 29
-        )
+            schemaVersion: 30,
+          // Set the block which will be called automatically when opening a Realm with
+          // a schema version lower than the one set above
+          migrationBlock: { migration, oldSchemaVersion in
+            // Whenever your scheme changes your have to increase the schemaVersion in the migration block and update the needed migration within the block.
+            if oldSchemaVersion < 30 {
+              // Nothing to do!
+              // Realm will automatically detect new properties and removed properties
+              // And will update the schema on disk automatically
+            }
+          })
 
+        // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
+
+        // Now that we've told Realm how to handle the schema change, opening the file
+        // will automatically perform the migration
+        do {
+            _ = try Realm(configuration: config)
+            print("AppDelegate: Database Path : \(config.fileURL!)")
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 

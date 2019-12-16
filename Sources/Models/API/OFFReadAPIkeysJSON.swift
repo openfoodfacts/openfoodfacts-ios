@@ -186,7 +186,7 @@ struct OFFJson {
     //static let ProteinsUnitKey = "proteins_unit"
     //static let NutritionScoreFrKey = "nutrition-score-fr"
     //static let NutritionScoreUk100gKey = "nutrition-score-uk_100g"
-    //static let CountriesTagsKey = "countries_tags"
+    static let CountriesTagsKey = "countries_tags"
     static let IngredientsFromPalmOilTagsKey = "ingredients_from_palm_oil_tags"
     static let EmbCodesTagsKey = "emb_codes_tags"
     //static let BrandsTagsKey = "brands_tags"
@@ -223,7 +223,7 @@ struct OFFJson {
     //static let AdditivesPrevKey = "additives_prev"
     //static let StoresTagsKey = "stores_tags"
     //static let IdKey = "id"
-    static let CountriesKey = "countries"
+    //static let CountriesKey = "countries"
     //static let ImageFrontThumbUrlKey = "image_front_thumb_url"
     //static let PurchasePlacesTagsKey = "purchase_places_tags"
     //static let TracesHierarchyKey = "traces_hierarchy"
@@ -337,8 +337,8 @@ struct OFFJson {
             OFFJson.CitiesTagsKey,
             OFFJson.CodeKey,
             // OFFJson.ConservationConditionsKey,
-            OFFJson.CountriesKey,
-            // OFFJson.CountriesTagsKey,
+            // OFFJson.CountriesKey,
+            OFFJson.CountriesTagsKey,
             // OFFJson.CreatedTKey,
             // OFFJson.CreatorKey,
             // OFFJson.CustomerServiceKey,

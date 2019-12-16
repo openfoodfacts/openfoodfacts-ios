@@ -22,6 +22,7 @@ class HistoryItem: Object {
     @objc dynamic var productName: String?
     @objc dynamic var brand: String?
     @objc dynamic var quantity: String?
+    @objc dynamic var packaging: String?
     @objc dynamic var imageUrl: String?
     @objc dynamic var timestamp = Date()
     @objc dynamic var nutriscore: String?

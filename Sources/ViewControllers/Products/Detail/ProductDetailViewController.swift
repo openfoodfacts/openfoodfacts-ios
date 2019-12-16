@@ -44,6 +44,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
         }
+        setUserAgent()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +71,21 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             buttons.remove(at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
+    }
+    
+    private func setUserAgent() {
+        var userAgentString = ""
+        if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
+            userAgentString = validAppName
+        }
+        if let validVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            userAgentString += "; version " + validVersion
+        }
+
+        if let validBuild = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String {
+            userAgentString += "; build " +  validBuild + " - product"
+        }
+        UserDefaults.standard.register(defaults: ["UserAgent": userAgentString])
     }
 
     // MARK: - Product pages
@@ -180,7 +196,15 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }), label: InfoRowKey.embCodes.localizedString)
 
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
-        createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
+        // createFormRow(with: &rows, item: product.countriesTags, label: InfoRowKey.countries.localizedString)
+        createFormRow(with: &rows, item: product.countriesTags?.map({ (tag: String) -> NSAttributedString in
+            if let country = dataManager.country(forTag: tag) {
+                if let name = Tag.choose(inTags: Array(country.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(for: country)])
+                }
+            }
+            return NSAttributedString(string: tag)
+        }), label: InfoRowKey.countries.localizedString)
 
         // Footer
         rows.append(FormRow(value: product as Any, cellType: SummaryFooterCell.self))
@@ -301,7 +325,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Nutriscore cell
         if product.nutriscore != nil {
             // created to pass on the delegate with the nutriscore
-            let headerRow = NutritionScoreTableRow(delegate, nutriscore:product.nutriscore)
+            let headerRow = NutritionScoreTableRow(delegate, nutriscore: product.nutriscore)
             createFormRow(with: &rows, item: headerRow, cellType: NutritionHeaderTableViewCell.self)
         }
 
@@ -326,13 +350,22 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Nutrition levels
         if product.ingredientsAnalysisTags != nil {
             createFormRow(with: &rows, item: product.ingredientsAnalysisTags?.map({ (ingredientsAnalysisTag: String) -> NSAttributedString in
+                if let ingredientsAnalysisConfig = dataManager.ingredientsAnalysisConfig(forTag: ingredientsAnalysisTag) {
+                    let test = Array(ingredientsAnalysisConfig.names)
+                    for tag in test {
+                        print(tag.languageCode)
+                        print(tag.value)
+                    }
+                }
                 if let ingredientsAnalysis = dataManager.ingredientsAnalysis(forTag: ingredientsAnalysisTag) {
+                    let test = Array(ingredientsAnalysis.names)
                     if let name = Tag.choose(inTags: Array(ingredientsAnalysis.names)) {
                         return NSAttributedString(string: name.value)
                     }
                 }
                 return NSAttributedString(string: ingredientsAnalysisTag)
             }), label: InfoRowKey.categories.localizedString)
+            //createFormRow(with: &rows, item: product, cellType: IngredientsAnalysisTableViewCell.self)
         }
     }
 

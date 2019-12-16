@@ -1,8 +1,8 @@
 //
-//  IngredientsAnalysis.swift
+//  Country.swift
 //  OpenFoodFacts
 //
-//  Created by matotim on 02/10/2019.
+//  Created by arnaud on 13/12/2019.
 //  Copyright © 2019 Andrés Pizá Bückmann. All rights reserved.
 //
 
@@ -10,16 +10,26 @@ import Foundation
 import RealmSwift
 import ObjectMapper
 
-class IngredientsAnalysis: Object {
+class Country: Object {
+
     @objc dynamic var code = ""
+
+    let parents = List<String>()
+    let children = List<String>()
     let names = List<Tag>()
 
     @objc dynamic var mainName = "" // name in the language of the app, for sorting
     @objc dynamic var indexedNames = "" // all names concatenated, for search
 
-    convenience init(code: String, names: [Tag]) {
+    convenience init(code: String, parents: [String], children: [String], names: [Tag]) {
         self.init()
         self.code = code
+
+        self.parents.removeAll()
+        self.parents.append(objectsIn: parents)
+
+        self.children.removeAll()
+        self.children.append(objectsIn: children)
 
         self.names.removeAll()
         self.names.append(objectsIn: names)

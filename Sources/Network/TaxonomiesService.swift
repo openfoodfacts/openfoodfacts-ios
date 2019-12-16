@@ -11,15 +11,17 @@ import AlamofireObjectMapper
 import Crashlytics
 
 enum TaxonomiesRouter: URLRequestConvertible {
-    case getAllergens, getAdditives, getCategories, getNutriments, getIngredientsAnalysis, getVitamins, getMinerals, getNucleotides // get OtherNutritionalSubstances
+    case getAllergens, getAdditives, getCategories, getCountries, getNutriments, getVitamins, getMinerals, getNucleotides, getIngredientsAnalysis, getIngredientsAnalysisConfig // get OtherNutritionalSubstances
 
     var path: String {
         switch self {
         case .getAllergens: return "allergens.json"
         case .getAdditives: return "additives.json"
         case .getCategories: return "categories.json"
+        case .getCountries: return "countries.json"
         case .getNutriments: return "nutrients.json"
         case .getIngredientsAnalysis: return "ingredients_analysis.json"
+        case .getIngredientsAnalysisConfig: return "/files/app/ingredients-analysis.json"
         case .getVitamins: return "vitamins.json"
         case .getMinerals: return "minerals.json"
         case .getNucleotides: return "nucleotides.json"
@@ -31,7 +33,12 @@ enum TaxonomiesRouter: URLRequestConvertible {
     // MARK: URLRequestConvertible
 
     func asURLRequest() throws -> URLRequest {
-        let urlStr = Endpoint.get + "/data/taxonomies/" + self.path
+        var urlStr = ""
+        if self != .getIngredientsAnalysisConfig {
+            urlStr = Endpoint.get + "/data/taxonomies/" + self.path
+        } else {
+            urlStr = Endpoint.get + self.path
+        }
         guard let url = URL(string: urlStr) else {
             throw NSError(domain: "Taxonomies url could not be constructed", code: Errors.codes.generic.rawValue, userInfo: ["path": self.path])
         }
@@ -71,6 +78,36 @@ class TaxonomiesService: TaxonomiesApi {
                                             names: names)
                         })
                         self.persistenceManager.save(categories: categories)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+
+                callback(success)
+        }
+    }
+
+    fileprivate func refreshCountries(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getCountries)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let countries = json.compactMap({ (countryCode: String, value: Any) -> Country? in
+                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                return nil
+                            }
+                            let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return Country(code: countryCode,
+                                            parents: value["parents"] as? [String] ?? [String](),
+                                            children: value["children"] as? [String] ?? [String](),
+                                            names: names)
+                        })
+                        self.persistenceManager.save(countries: countries)
                         success = true
                     }
                 case .failure(let error):
@@ -272,6 +309,33 @@ class TaxonomiesService: TaxonomiesApi {
                 callback(success)
         }
     }
+    
+    fileprivate func refreshIngredientsAnalysisConfig(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getIngredientsAnalysisConfig)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let ingredientsAnalysisConfig = json.compactMap({ (ingredientAnalysisConfigCode: String, value: Any) -> IngredientsAnalysisConfig? in
+                            guard let value = value as? [String: String] else {
+                                return nil
+                            }
+                            let values = value.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return IngredientsAnalysisConfig(code: ingredientAnalysisConfigCode, names: values)
+                        })
+                        self.persistenceManager.save(ingredientsAnalysisConfig: ingredientsAnalysisConfig)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+                
+                callback(success)
+        }
+    }
 
     // swiftlint:disable identifier_name
 
@@ -285,12 +349,13 @@ class TaxonomiesService: TaxonomiesApi {
         let lastDownload = UserDefaults.standard.double(forKey: TaxonomiesService.USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD)
 
         let shouldDownload = lastDownload == 0 || (Date().timeIntervalSince1970 - TaxonomiesService.LAST_DOWNLOAD_DELAY) > lastDownload
+        
 
-        if shouldDownload {
+//        if shouldDownload {
             downloadTaxonomies()
-        } else {
-            log.debug("Do not download taxonomies, we already have them !")
-        }
+//        } else {
+//            log.debug("TaxonomiesService: Do not download taxonomies, we already have them !")
+//        }
     }
 
     private func downloadTaxonomies() {
@@ -301,6 +366,12 @@ class TaxonomiesService: TaxonomiesApi {
 
             group.enter()
             self.refreshCategories({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshCountries({ (success) in
                 allSuccess = allSuccess && success
                 group.leave()
             })
@@ -342,10 +413,16 @@ class TaxonomiesService: TaxonomiesApi {
             })
 
             group.enter()
-                self.refreshIngredientsAnalysis({ (success) in
-                    allSuccess = allSuccess && success
-                    group.leave()
-                })
+            self.refreshIngredientsAnalysis({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshIngredientsAnalysisConfig({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
 
             group.wait()
 

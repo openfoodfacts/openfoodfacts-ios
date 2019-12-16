@@ -30,6 +30,7 @@ protocol DataManagerProtocol {
 
     func category(forTag: String) -> Category?
     func categorySearch(query: String?) -> Results<Category>
+    func country(forTag: String) -> Country?
     func allergen(forTag: Tag) -> Allergen?
     func trace(forTag: Tag) -> Allergen?
     func vitamin(forTag: Tag) -> Vitamin?
@@ -40,11 +41,12 @@ protocol DataManagerProtocol {
     func nutriment(forTag: String) -> Nutriment?
     func nutrimentSearch(query: String?) -> Results<Nutriment>
     func ingredientsAnalysis(forTag tag: String) -> IngredientsAnalysis?
-    func ingredientsAnalysisSearch(query: String?) -> Results<IngredientsAnalysis>
+    func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig?
 
     // Search history
     func getHistory() -> [Age: [HistoryItem]]
     func addHistoryItem(_ product: Product)
+    func removeHistroyItem(_ item: HistoryItem)
     func clearHistory()
 
     // offline
@@ -117,6 +119,10 @@ class DataManager: DataManagerProtocol {
     // MARK: - User
 
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        if let originalUserAgent = UIWebView().stringByEvaluatingJavaScript(from: "navigator.userAgent") {
+            UserDefaults.standard.register(defaults: ["UserAgent": originalUserAgent])
+        }
+
         productApi.logIn(username: username, password: password, onSuccess: {
             DispatchQueue.main.async {
                 onSuccess()
@@ -135,6 +141,10 @@ class DataManager: DataManagerProtocol {
 
     func category(forTag tag: String) -> Category? {
         return persistenceManager.category(forCode: tag)
+    }
+
+    func country(forTag tag: String) -> Country? {
+        return persistenceManager.country(forCode: tag)
     }
 
     func categorySearch(query: String?) -> Results<Category> {
@@ -181,8 +191,8 @@ class DataManager: DataManagerProtocol {
         return persistenceManager.ingredientsAnalysis(forCode: tag)
     }
     
-    func ingredientsAnalysisSearch(query: String?) -> Results<IngredientsAnalysis> {
-        return persistenceManager.ingredientsAnalysisSearch(query: query)
+    func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig? {
+        return persistenceManager.ingredientsAnalysisConfig(forCode: tag)
     }
 
     // MARK: - Settings
@@ -217,6 +227,10 @@ class DataManager: DataManagerProtocol {
 
     func addHistoryItem(_ product: Product) {
         persistenceManager.addHistoryItem(product)
+    }
+
+    func removeHistroyItem(_ item: HistoryItem) {
+        persistenceManager.removeHistroyItem(item)
     }
 
     func clearHistory() {
@@ -381,6 +395,7 @@ class DataManager: DataManagerProtocol {
                     item.productName = nil
                     item.brand = nil
                     item.quantity = nil
+                    item.packaging = nil
                     item.categories = nil
                     item.ingredientsList = nil
                     item.nutriments.removeAll()

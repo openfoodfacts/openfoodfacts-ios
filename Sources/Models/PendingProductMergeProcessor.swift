@@ -39,6 +39,10 @@ struct PendingProductMergeProcessor: ProductMergeProcessor {
             modified = true
             result.quantity = quantity
         }
+        if target.packaging == nil, let packaging = source.packaging {
+            modified = true
+            result.packaging = packaging.split(separator: ",").compactMap {String($0)}
+        }
 
         if target.noNutritionData == nil, let noNutritionData = source.noNutritionData {
             modified = true

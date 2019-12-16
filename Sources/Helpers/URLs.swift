@@ -23,6 +23,7 @@ struct URLs {
     static let FrequentlyAskedQuestions = "\(baseUrl)/faq"
     static let NutriScore = "\(baseUrl)/nutriscore"
     static let Nova = "\(baseUrl)/nova"
+    static let IngredientsAnalysisIcons = "https://ssl-api.openfoodfacts.org/files/app/ingredients-analysis.json"
 
     static let MockBarcode = "\(baseUrl)/files/presskit/PressKit/barcodes/"
 

@@ -96,13 +96,14 @@
 "product-add.title" = "Nuovo prodotto";
 "product-add.title-edit" = "Modifica prodotto";
 "product-add.titles.barcode" = "Codice a Barre";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
+"product-add.titles.top-explainations" = "Ben fatto ! Questo prodotto non è ancora in Open Food Facts. Potresti fare alcune foto del prodotto, della lista degli ingredienti e dei dati nutrizionali per aggiungerlo su Open Food Facts? \n\nGrazie in anticipo.";
 "product-add.titles.license-explaination" = "Nota: le foto che invii sono pubblicate sotto licenza libera Creative Commons Attribuzione e Condividi allo stesso modo.";
 
 "product-add.titles.product-info" = "Informazioni sul prodotto";
 "product-add.label.product-name" = "Nome";
 "product-add.label.category" = "Categoria";
 "product-add.label.quantity" = "Quantità";
+"product-add.label.packaging" = "Confezionamento";
 "product-add.details.category" = "Necessario per calcolare il punteggio-Nutri";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Lingue";
@@ -112,7 +113,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "per 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "per porzione";
 "product-add.nutritive.add-nutriment" = "Aggiungi un nutriente";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Più di 100gr?";
 
 "product-add.description.ingredients" = "Completa gli ingredienti per ottenere il gruppo NOVA sulla trasformazione dei prodotti alimentari";
 "product-add.titles.ingredients" = "Ingredienti";
@@ -149,7 +150,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Codice a Barre";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Nome generico";
 "product-detail.summary.quantity" = "Quantità";
 "product-detail.summary.packaging" = "Confezionamento";
 "product-detail.summary.brands" = "Marche";
@@ -167,7 +168,7 @@
 "product-detail.ingredients.nova.2" = "Ingredienti culinari elaborati";
 "product-detail.ingredients.nova.3" = "Alimenti trasformati";
 "product-detail.ingredients.nova.4" = "Prodotti alimentari e bevande ultra-elaborati";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.incite" = "Aggiungi ingredienti e/o categorie per calcolare il NOVA.";
 "product-detail.ingredients.ingredients-list" = "Lista degli ingredienti";
 "product-detail.ingredients.allergens-list" = "Sostanze o prodotti che provocano allergie o intolleranze";
 "product-detail.ingredients.allergens-alert.title" = "Contiene allergeni!";
@@ -309,11 +310,13 @@
 "user.log-out" = "Esci";
 "user.username" = "Nome utente";
 "user.password" = "Password";
-"user.logged-in.label" = "%@, you are logged in";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
+"user.logged-in.label" = "%@, sei connesso";
+"user.logged-in-explanation.label" = "Tutti i prodotti che aggiungi e le foto del prodotto che carichi saranno accreditate al tuo profilo";
+"user.not-logged-in" = "Non connesso";
 "user.forgot-password" = "Password dimenticata?";
 "user.check-your-contributions.button" = "Visualizza tutti i tuoi contributi";
 "user.products-pending-upload.button" = "Prodotti in attesa di caricamento su Open Food Facts";
+"user.products-pending-upload-none.button" = "Prodotti in attesa di caricamento ad Open Food Facts (nessuno)";
 "user.create-account.text" = "Se non hai di un account, fare clic sul collegamento qui sotto per crearne uno.";
 "user.create-account.button" = "Crea un account";
 "user.why-log-in.text" = "Effettuare l'accesso con il tuo account ti darà credito per tutti i tuoi contributi alla trasparenza alimentare.";

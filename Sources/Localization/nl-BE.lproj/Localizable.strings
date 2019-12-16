@@ -96,13 +96,14 @@
 "product-add.title" = "Nieuw product";
 "product-add.title-edit" = "Bewerk product";
 "product-add.titles.barcode" = "Streepjescode";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
+"product-add.titles.top-explainations" = "Goed gedaan ! Dit product is nog niet in Open Food Facts. Kun je wat foto's maken van het product, de ingrediëntenlijst en voedingswaarden om aan Open Food Facts toe te voegen?\n\nBij voorbaat dank.";
 "product-add.titles.license-explaination" = "Nb: de foto's die je upload, worden gepubliceerd onder de vrije licentie Creative Commons Attribution and ShareAlike.";
 
 "product-add.titles.product-info" = "Productinformatie";
 "product-add.label.product-name" = "Naam:";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Hoeveelheid";
+"product-add.label.packaging" = "Verpakking";
 "product-add.details.category" = "Nodig om de Nutri-Score te berekenen";
 "product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
 "product-add.label.language" = "Talen";
@@ -112,7 +113,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "voor 100g / 100 ml";
 "product-add.nutritive.choice.per-portion" = "per portie";
 "product-add.nutritive.add-nutriment" = "Voeg voedingsstof toe";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Meer dan 100 g?";
 
 "product-add.description.ingredients" = "Voltooi de ingrediënten om de NOVA-groep voor voedselverwerking te krijgen";
 "product-add.titles.ingredients" = "Ingrediënten";
@@ -149,7 +150,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Streepjescode";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Generieke naam";
 "product-detail.summary.quantity" = "Hoeveelheid";
 "product-detail.summary.packaging" = "Verpakking";
 "product-detail.summary.brands" = "Merken";
@@ -167,7 +168,7 @@
 "product-detail.ingredients.nova.2" = "Berwerkte ingrediënten";
 "product-detail.ingredients.nova.3" = "Bewerkte levensmiddelen";
 "product-detail.ingredients.nova.4" = "Ultra-bewerkte levensmiddelen en dranken";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.incite" = "Voeg ingrediënten en / of categorieën toe om NOVA te berekenen.";
 "product-detail.ingredients.ingredients-list" = "Lijst van ingrediënten";
 "product-detail.ingredients.allergens-list" = "Stoffen of producten die allergieën of intoleranties veroorzaken";
 "product-detail.ingredients.allergens-alert.title" = "Bevat allergenen!";
@@ -309,11 +310,13 @@
 "user.log-out" = "Uitloggen";
 "user.username" = "Gebruikersnaam";
 "user.password" = "Wachtwoord";
-"user.logged-in.label" = "%@, you are logged in";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
+"user.logged-in.label" = "%@, je bent ingelogd";
+"user.logged-in-explanation.label" = "Alle producten die je toevoegt en de productfoto's die je uploadt, worden bijgeschreven op je account";
+"user.not-logged-in" = "Niet ingelogd";
 "user.forgot-password" = "Wachtwoord vergeten?";
 "user.check-your-contributions.button" = "Bekijk al je bijdragen";
 "user.products-pending-upload.button" = "Producten in afwachting van upload naar Open Food Facts";
+"user.products-pending-upload-none.button" = "Producten in afwachting van upload naar Open Food Facts (geen)";
 "user.create-account.text" = "Als je nog geen account hebt, klik dan op de onderstaande link om er een te maken.";
 "user.create-account.button" = "Maak een account aan";
 "user.why-log-in.text" = "Als je je aanmeldt met je account, dan krijg je krediet voor al je bijdragen aan het transparant maken van ons voedsel.";
