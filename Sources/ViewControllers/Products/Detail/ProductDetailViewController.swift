@@ -72,7 +72,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             navigationItem.rightBarButtonItems = buttons
         }
     }
-    
+
     private func setUserAgent() {
         var userAgentString = ""
         if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
@@ -335,8 +335,14 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createNutrientsRows(rows: &rows)
 
-        createNutritionTableWebViewRow(rows: &rows)
-        //createNutritionTableRows(rows: &rows)
+        if let validStates = product.states,
+            validStates.contains("en:nutrition-facts-completed") {
+            createNutritionTableWebViewRow(rows: &rows)
+            //createNutritionTableRows(rows: &rows)
+        } else {
+            createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+            createFormRow(with: &rows, item: "product-detail.nutrition-table.missing".localized, label: InfoRowKey.nutritionalTableHeader.localizedString, isCopiable: true)
+        }
 
         if rows.isEmpty {
             return nil
