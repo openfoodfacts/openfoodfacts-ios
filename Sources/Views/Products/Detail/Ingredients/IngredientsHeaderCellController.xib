@@ -71,6 +71,9 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbX-TQ-FYc" customClass="NovaGroupView" customModule="OpenFoodFacts" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="106.5" height="27"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="aP4-VA-fJ0"/>
+                                    </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLO-G9-z26">
                                     <rect key="frame" x="106.5" y="0.0" width="107" height="27"/>
