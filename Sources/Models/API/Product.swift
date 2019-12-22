@@ -125,6 +125,7 @@ struct Product: Mappable {
     var environmentImpactLevelTags: [EnvironmentImpact]?
     var nutritionTableHtml: String?
     var ingredientsAnalysisTags: [String]?
+    var ingredientsAnalysisDetails: [IngredientsAnalysisDetail]?
     // new variables for local languages
     var languageCodes: [String: Int]?
     var names: [String: String] = [:]

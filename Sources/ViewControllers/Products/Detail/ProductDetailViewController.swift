@@ -349,23 +349,31 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     fileprivate func createIngredientsAnalysisRows(rows: inout [FormRow]) {
         // Nutrition levels
         if product.ingredientsAnalysisTags != nil {
-            createFormRow(with: &rows, item: product.ingredientsAnalysisTags?.map({ (ingredientsAnalysisTag: String) -> NSAttributedString in
-                if let ingredientsAnalysisConfig = dataManager.ingredientsAnalysisConfig(forTag: ingredientsAnalysisTag) {
-                    let test = Array(ingredientsAnalysisConfig.names)
-                    for tag in test {
-                        print(tag.languageCode)
-                        print(tag.value)
+            var ingredientsAnalysisDetails = [IngredientsAnalysisDetail]()
+            
+            for analysisTag in product.ingredientsAnalysisTags! {
+                if let ingredientsAnalysisConfig = dataManager.ingredientsAnalysisConfig(forTag: analysisTag) {
+                    let tmp = Array(ingredientsAnalysisConfig.names)
+                    let detail = IngredientsAnalysisDetail()
+                    for detailTag in tmp {
+                        switch detailTag.languageCode {
+                        case "type":
+                            detail.type = IngredientsAnalysisType(rawValue: detailTag.value) ?? IngredientsAnalysisType.other
+                        case "icon":
+                            detail.icon = URLs.IngredientsAnalysisIconPathPrefix + detailTag.value + URLs.IngredientsAnalysisIconPathSuffix
+                        case "color":
+                            detail.color = UIColor(hex: detailTag.value) ?? UIColor.gray
+                        default:
+                            break
+                        }
+                        print("\(detailTag.languageCode) \(detailTag.value)")
                     }
+                    ingredientsAnalysisDetails.append(detail)
                 }
-                if let ingredientsAnalysis = dataManager.ingredientsAnalysis(forTag: ingredientsAnalysisTag) {
-                    let test = Array(ingredientsAnalysis.names)
-                    if let name = Tag.choose(inTags: Array(ingredientsAnalysis.names)) {
-                        return NSAttributedString(string: name.value)
-                    }
-                }
-                return NSAttributedString(string: ingredientsAnalysisTag)
-            }), label: InfoRowKey.categories.localizedString)
-            //createFormRow(with: &rows, item: product, cellType: IngredientsAnalysisTableViewCell.self)
+            }
+            
+            product.ingredientsAnalysisDetails = ingredientsAnalysisDetails
+            createFormRow(with: &rows, item: product, cellType: IngredientsAnalysisTableViewCell.self)
         }
     }
 
