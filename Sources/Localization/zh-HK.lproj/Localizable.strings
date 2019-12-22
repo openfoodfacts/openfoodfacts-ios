@@ -63,22 +63,22 @@
 "product-add.save-error.title" = "儲存檔案時發生錯誤";
 "product-add.save-error.message" = "請稍後再試";
 "product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
+"product-add.save-info.error" = "沒有儲存資料";
+"product-add.save-info.saving" = "正在儲存產品資料……";
+"product-add.save-info.not-yet" = "未儲存資料";
 "product-add.save-ingredients.success" = "Ingredients saved at";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
+"product-add.save-ingredients.error" = "沒有儲存成分";
+"product-add.save-ingredients.saving" = "正在儲存成分……";
+"product-add.save-ingredients.not-yet" = "未儲存成分";
 "product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.save-nutriments.error" = "沒有儲存營養素";
+"product-add.save-nutriments.saving" = "正在儲存營養素……";
+"product-add.save-nutriments.not-yet" = "未儲存營養素";
+"product-add.no-nutrition" = "產品不列出營養素";
 
 "product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
 "product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
+"product-add.ocr-ingredients.saving" = "摘錄圖片中的成分";
 "product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
 
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
@@ -119,23 +119,23 @@
 "product-add.titles.ingredients" = "成分";
 "product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
 "product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.button-save" = "看來不錯，儲存";
 
 // Select Category
 "select-category.title" = "分類";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "搜尋分類";
 
 // Select nutrition
 "select-nutriment.title" = "營養素";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "搜尋營養素";
 
 // Select allergen
-"select-allergen.title" = "Allergen";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.title" = "過敏原";
+"select-allergen.search-placeholder" = "搜尋過敏原";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "新增圖片";
-"product-detail.edit" = "Edit this product";
+"product-detail.edit" = "編輯此產品";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "請記住儲存更改";
 /* Keep this text as short as possible */
@@ -145,12 +145,12 @@
 "product-detail.page-title.summary" = "總覽";
 "product-detail.page-title.ingredients" = "成分";
 "product-detail.page-title.nutrition" = "營養素";
-"product-detail.page-title.nutrition-table" = "營養成分表";
+"product-detail.page-title.nutrition-table" = "營養素表";
 "product-detail.page-title.environment-impact" = "環境";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "條碼";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "通用名";
 "product-detail.summary.quantity" = "數量";
 "product-detail.summary.packaging" = "包裝";
 "product-detail.summary.brands" = "品牌";
@@ -171,7 +171,7 @@
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "成分列表";
 "product-detail.ingredients.allergens-list" = "可致敏或不適的成分或產品";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-alert.title" = "含過敏原！";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "含少量";
@@ -181,19 +181,19 @@
 "product-detail.ingredients.vitamins-list" = "維他命和礦物質";
 "product-detail.ingredients.minerals-list" = "礦物質";
 "product-detail.ingredients.nucleotides-list" = "核苷酸";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "其他營養素";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "份量";
 "product-detail.nutrition.carbon-footprint" = "碳足跡 / CO2 排放量︰";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutritional-table-header" = "營養成分";
-"product-detail.nutrition-table.for-100g" = "每 100 公克";
+"product-detail.nutrition-table.nutritional-table-header" = "營養素表";
+"product-detail.nutrition-table.for-100g" = "每100克";
 "product-detail.nutrition-table.for-serving" = "每份";
-"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.100g" = "100克";
 "product-detail.nutrition-table.serving" = "serving";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.missing" = "未設營養素";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -277,11 +277,11 @@
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
 "product.images.took-picture.front" = "產品正面照片✅";
 "product.images.took-picture.ingredients" = "成分照片✅";
-"product.images.took-picture.nutrition" = "營養標籤照片✅";
+"product.images.took-picture.nutrition" = "營養素表照片✅";
 
 "product.images.take-picture.front" = "產品正面照片";
 "product.images.take-picture.ingredients" = "成分照片";
-"product.images.take-picture.nutrition" = "營養標籤照片";
+"product.images.take-picture.nutrition" = "營養素表照片";
 
 // Settings storyboard
 "settings.tab-bar.item" = "設定";
@@ -329,7 +329,7 @@
 "user.alert.logout-confirmation.title" = "確認登出";
 "user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
 "user.alert.username-missing" = "請輸入用戶名";
-"user.alert.password-missing" = "需要密碼";
+"user.alert.password-missing" = "請輸入密碼";
 "pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
 "pending-upload.hud.status" = "上載中";
 
