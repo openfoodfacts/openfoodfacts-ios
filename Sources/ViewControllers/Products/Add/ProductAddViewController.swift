@@ -204,7 +204,6 @@ class ProductAddViewController: TakePictureViewController {
     ]
     fileprivate var displayedNutrimentItems = displayedNutrimentItemsByDefault
 
-    // swiftlint:disable function_body_length
     override func viewDidLoad() {
         self.title = "product-add.title".localized
         productHasBeenEdited = false
@@ -251,7 +250,7 @@ class ProductAddViewController: TakePictureViewController {
         }
         setUserAgent()
     }
-    
+
     private func setUserAgent() {
         var userAgentString = ""
         if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {

@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-
     func applicationDidBecomeActive(_ application: UIApplication) {
         DeepLinkManager.shared.checkDeepLink()
     }
@@ -67,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             schemaVersion: 30,
           // Set the block which will be called automatically when opening a Realm with
           // a schema version lower than the one set above
-          migrationBlock: { migration, oldSchemaVersion in
+          migrationBlock: { _, oldSchemaVersion in
             // Whenever your scheme changes your have to increase the schemaVersion in the migration block and update the needed migration within the block.
             if oldSchemaVersion < 30 {
               // Nothing to do!
