@@ -345,16 +345,15 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         return Form(title: "product-detail.page-title.nutrition".localized, rows: rows)
     }
-    
+
     fileprivate func createIngredientsAnalysisRows(rows: inout [FormRow]) {
-        // Nutrition levels
         if product.ingredientsAnalysisTags != nil {
             var ingredientsAnalysisDetails = [IngredientsAnalysisDetail]()
-            
             for analysisTag in product.ingredientsAnalysisTags! {
+                let detail = IngredientsAnalysisDetail()
+                detail.tag = analysisTag
                 if let ingredientsAnalysisConfig = dataManager.ingredientsAnalysisConfig(forTag: analysisTag) {
                     let tmp = Array(ingredientsAnalysisConfig.names)
-                    let detail = IngredientsAnalysisDetail()
                     for detailTag in tmp {
                         switch detailTag.languageCode {
                         case "type":
@@ -366,12 +365,16 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                         default:
                             break
                         }
-                        print("\(detailTag.languageCode) \(detailTag.value)")
                     }
-                    ingredientsAnalysisDetails.append(detail)
                 }
+                if let ingredientsAnalysis = dataManager.ingredientsAnalysis(forTag: analysisTag) {
+                    if let name = Tag.choose(inTags: Array(ingredientsAnalysis.names)) {
+                        detail.title = name.value
+                    }
+                }
+                ingredientsAnalysisDetails.append(detail)
+
             }
-            
             product.ingredientsAnalysisDetails = ingredientsAnalysisDetails
             createFormRow(with: &rows, item: product, cellType: IngredientsAnalysisTableViewCell.self)
         }

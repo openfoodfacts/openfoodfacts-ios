@@ -279,6 +279,10 @@
 		95F7DB3A1F98DDAC00428208 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F7DB391F98DDAC00428208 /* SettingsTableViewController.swift */; };
 		95F7DB3E1F98E42500428208 /* UserDefaultsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */; };
 		FB1348DD238BE5B000D92CBB /* IngredientsAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1348DC238BE5B000D92CBB /* IngredientsAnalysis.swift */; };
+		FB87477E23B1223D007E0848 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87477D23B1223D007E0848 /* Ingredient.swift */; };
+		FB93CB3E23AFB59F00FF23E2 /* IngredientsAnalysisView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB93CB3D23AFB59F00FF23E2 /* IngredientsAnalysisView.xib */; };
+		FB93CB4023AFB5E100FF23E2 /* IngredientsAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB93CB3F23AFB5E100FF23E2 /* IngredientsAnalysisView.swift */; };
+		FB93CB4223AFC25500FF23E2 /* IngredientsAnalysisDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB93CB4123AFC25500FF23E2 /* IngredientsAnalysisDetail.swift */; };
 		FBAC030A23A7ABC3002DEE58 /* IngredientsAnalysisConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAC030923A7ABC3002DEE58 /* IngredientsAnalysisConfig.swift */; };
 		FBB261C0235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB261BE235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift */; };
 		FBB261C1235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB261BF235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib */; };
@@ -904,6 +908,10 @@
 		95F7DB391F98DDAC00428208 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsConstants.swift; sourceTree = "<group>"; };
 		FB1348DC238BE5B000D92CBB /* IngredientsAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysis.swift; sourceTree = "<group>"; };
+		FB87477D23B1223D007E0848 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		FB93CB3D23AFB59F00FF23E2 /* IngredientsAnalysisView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsAnalysisView.xib; sourceTree = "<group>"; };
+		FB93CB3F23AFB5E100FF23E2 /* IngredientsAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisView.swift; sourceTree = "<group>"; };
+		FB93CB4123AFC25500FF23E2 /* IngredientsAnalysisDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisDetail.swift; sourceTree = "<group>"; };
 		FBAC030923A7ABC3002DEE58 /* IngredientsAnalysisConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisConfig.swift; sourceTree = "<group>"; };
 		FBB261BE235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisTableViewCell.swift; sourceTree = "<group>"; };
 		FBB261BF235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsAnalysisTableViewCell.xib; sourceTree = "<group>"; };
@@ -1407,6 +1415,7 @@
 				95781BB21EC3A898003E3256 /* ProductsResponse.swift */,
 				95DDAF651F2916D30096B74E /* ProductImage.swift */,
 				95AA2AFE1FDABB2D00EE3A14 /* Language.swift */,
+				FB87477D23B1223D007E0848 /* Ingredient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1418,6 +1427,7 @@
 				95781BB51EC3A898003E3256 /* LocalizedString.swift */,
 				957CBEBD1F33B2FE00A1B398 /* Form.swift */,
 				958F334E1F377B07005269C5 /* NutritionTableRow.swift */,
+				FB93CB4123AFC25500FF23E2 /* IngredientsAnalysisDetail.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1525,6 +1535,8 @@
 				958F335A1F37809A005269C5 /* PictureCallToActionView.xib */,
 				30270C2B2226DE3100E6973D /* IconButtonView.swift */,
 				30270C2D2226DE3C00E6973D /* IconButtonView.xib */,
+				FB93CB3D23AFB59F00FF23E2 /* IngredientsAnalysisView.xib */,
+				FB93CB3F23AFB5E100FF23E2 /* IngredientsAnalysisView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -2191,6 +2203,7 @@
 				30412DD9220EF46300C485DD /* EditNutritiveValueView.xib in Resources */,
 				95890AB51F967E6300085B20 /* InitialView.xib in Resources */,
 				956FF94C1F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib in Resources */,
+				FB93CB3E23AFB59F00FF23E2 /* IngredientsAnalysisView.xib in Resources */,
 				30270C322226EAD000E6973D /* SummaryFooterCellController.xib in Resources */,
 				956FF9481F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib in Resources */,
 				95C265191E96D55B004212EC /* Assets.xcassets in Resources */,
@@ -2407,6 +2420,7 @@
 				956FF9551F1FF0CA0069D678 /* ProductTableViewCell.swift in Sources */,
 				95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */,
 				3010E25F222EF42B00313ADB /* InitialView.swift in Sources */,
+				FB93CB4023AFB5E100FF23E2 /* IngredientsAnalysisView.swift in Sources */,
 				3030EB84222E8290005A6169 /* OfflineProductsService.swift in Sources */,
 				9587DF731F84056F0069F0A6 /* PictureViewModel.swift in Sources */,
 				5138F169235871830043FC10 /* BarcodeService.swift in Sources */,
@@ -2421,6 +2435,7 @@
 				956FF9541F1FF0CA0069D678 /* FlashButton.swift in Sources */,
 				958F33571F378086005269C5 /* NutriScoreView.swift in Sources */,
 				302525EC222307A200C2C830 /* RealmUserPreferences.swift in Sources */,
+				FB87477E23B1223D007E0848 /* Ingredient.swift in Sources */,
 				956FF95D1F1FF0CA0069D678 /* TapToFocusView.swift in Sources */,
 				956FF95E1F1FF0CA0069D678 /* TextOverlay.swift in Sources */,
 				956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */,
@@ -2434,6 +2449,7 @@
 				95D060DB1F6094D30052012D /* UITableView.swift in Sources */,
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
 				30412DD2220E19BF00C485DD /* SelectCategoryViewController.swift in Sources */,
+				FB93CB4223AFC25500FF23E2 /* IngredientsAnalysisDetail.swift in Sources */,
 				300085632208777900DC3896 /* OFFUrlsHelper.swift in Sources */,
 				30270C2C2226DE3100E6973D /* IconButtonView.swift in Sources */,
 				95513BC31FEAD6CA0027C198 /* PendingUploadItemCell.swift in Sources */,

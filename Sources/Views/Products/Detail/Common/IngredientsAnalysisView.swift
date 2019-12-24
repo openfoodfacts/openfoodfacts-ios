@@ -13,12 +13,15 @@ import AlamofireImage
 @IBDesignable class IngredientsAnalysisView: UIView {
 
     @IBOutlet weak var iconImageView: UIImageView!
+    var title: String = ""
+    var detail: IngredientsAnalysisDetail = IngredientsAnalysisDetail()
 
-    func configure(imageURL: String, color: UIColor) {
-        self.backgroundColor = color
+    func configure(detail: IngredientsAnalysisDetail) {
+        self.backgroundColor = detail.color
         self.layer.cornerRadius = 5
-        
-        guard let url = URL(string: imageURL) else { return }
+        self.title = detail.title
+        self.detail = detail
+        guard let url = URL(string: detail.icon) else { return }
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
@@ -29,7 +32,7 @@ import AlamofireImage
             }
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

@@ -19,4 +19,6 @@ class IngredientsAnalysisDetail {
     var type: IngredientsAnalysisType = IngredientsAnalysisType.other
     var color: UIColor = UIColor.gray
     var icon: String = ""
+    var title: String = ""
+    var tag: String = ""
 }
