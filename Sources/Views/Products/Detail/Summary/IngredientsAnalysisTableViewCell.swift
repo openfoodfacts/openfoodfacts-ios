@@ -72,54 +72,15 @@ class IngredientsAnalysisTableViewCell: ProductDetailBaseCell {
         var message = view.title
         if view != palmOilView {
             if view.detail.tag.contains("non") || view.detail.tag.contains("maybe") {
-                message = String(format: "ingredients-analysis.ingredients_in_this_product".localized, view.title.lowercased())
+                message = String(format: InfoRowKey.ingredientsInThisProduct.localizedString, view.title.lowercased())
                 message += self.getListIngredients(status: view.detail.tag.contains("non") ? "no" : "maybe", view: view)
             } else if view.detail.tag.contains("unknown") {
-                message = String(format: "ingredients-analysis.unknown_status".localized, view.title.lowercased())
+                message = String(format: InfoRowKey.ingredientsUnknownStatus.localizedString, view.title.lowercased())
             } else {
-                message = String(format: "ingredients-analysis.ingredients_in_this_product_are".localized, view.title.lowercased())
+                message = String(format: InfoRowKey.ingredientsInThisProductAre.localizedString, view.title.lowercased())
             }
         }
         let alertController = UIAlertController(title: view.title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(action)
-        viewController?.present(alertController, animated: true, completion: nil)
-    }
-
-    @objc func didTapPalmOil() {
-        let alertController = UIAlertController(title: palmOilView.title, message: palmOilView.title, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(action)
-        viewController?.present(alertController, animated: true, completion: nil)
-    }
-
-    @objc func didTapVegetarian() {
-        var message = ""
-        if vegetarianView.detail.tag.contains("non") || vegetarianView.detail.tag.contains("maybe") {
-            message = String(format: "ingredients-analysis.ingredients_in_this_product".localized, vegetarianView.title.lowercased())
-            message += self.getListIngredients(status: vegetarianView.detail.tag.contains("non") ? "no" : "maybe", view: vegetarianView)
-        } else if vegetarianView.detail.tag.contains("unknown") {
-            message = String(format: "ingredients-analysis.unknown_status".localized, vegetarianView.title.lowercased())
-        } else {
-            message = String(format: "ingredients-analysis.ingredients_in_this_product_are".localized, vegetarianView.title.lowercased())
-        }
-        let alertController = UIAlertController(title: vegetarianView.title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(action)
-        viewController?.present(alertController, animated: true, completion: nil)
-    }
-
-    @objc func didTapVegan() {
-        var message = ""
-        if vegetarianView.detail.tag.contains("non") || vegetarianView.detail.tag.contains("maybe") {
-            message = String(format: "ingredients-analysis.ingredients_in_this_product".localized, veganView.title.lowercased())
-            message += self.getListIngredients(status: veganView.detail.tag.contains("non") ? "no" : "maybe", view: veganView)
-        } else if vegetarianView.detail.tag.contains("unknown") {
-            message = String(format: "ingredients-analysis.unknown_status".localized, veganView.title.lowercased())
-        } else {
-            message = String(format: "ingredients-analysis.ingredients_in_this_product_are".localized, veganView.title.lowercased())
-        }
-        let alertController = UIAlertController(title: veganView.title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(action)
         viewController?.present(alertController, animated: true, completion: nil)
