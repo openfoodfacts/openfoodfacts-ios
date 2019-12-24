@@ -46,7 +46,7 @@ struct FormRow {
         if let value = value as? String {
             return value
         } else if let value = value as? [String] {
-            return value.joined(separator: separator)
+            return value.joined(separator: separator) + " "
         }
 
         return nil

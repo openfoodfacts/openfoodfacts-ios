@@ -554,7 +554,7 @@ extension ScannerViewController {
             self.barcodeToOpenAtStartup = barcode
             let navVC = UINavigationController(rootViewController: addProductVC)
             addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
-            addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.save))
+            addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.saveAll))
             navVC.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(addProductVC, animated: true)
         }
