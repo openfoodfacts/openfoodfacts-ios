@@ -351,11 +351,11 @@ class TaxonomiesService: TaxonomiesApi {
         let shouldDownload = lastDownload == 0 || (Date().timeIntervalSince1970 - TaxonomiesService.LAST_DOWNLOAD_DELAY) > lastDownload
         
 
-//        if shouldDownload {
+        if shouldDownload {
             downloadTaxonomies()
-//        } else {
-//            log.debug("TaxonomiesService: Do not download taxonomies, we already have them !")
-//        }
+        } else {
+            log.debug("TaxonomiesService: Do not download taxonomies, we already have them !")
+        }
     }
 
     private func downloadTaxonomies() {
