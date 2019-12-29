@@ -128,7 +128,6 @@ extension FormTableViewController: FormTableViewControllerDelegate {
 
 extension FormTableViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        print("textView:", textView.text, textView.text.count, characterRange)
         // only open the external page when the actual text has been tapped.
         if characterRange.location + characterRange.length < textView.text.count {
             openUrlInApp(URL)
