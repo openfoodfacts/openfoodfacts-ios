@@ -186,11 +186,11 @@ class DataManager: DataManagerProtocol {
     func nutrimentSearch(query: String?) -> Results<Nutriment> {
         return persistenceManager.nutrimentSearch(query: query)
     }
-    
+
     func ingredientsAnalysis(forTag tag: String) -> IngredientsAnalysis? {
         return persistenceManager.ingredientsAnalysis(forCode: tag)
     }
-    
+
     func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig? {
         return persistenceManager.ingredientsAnalysisConfig(forCode: tag)
     }

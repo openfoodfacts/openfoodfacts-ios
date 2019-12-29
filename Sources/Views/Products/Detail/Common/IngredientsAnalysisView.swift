@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireImage
+import Kingfisher
 
 @IBDesignable class IngredientsAnalysisView: UIView {
 
@@ -22,15 +21,7 @@ import AlamofireImage
         self.title = detail.title
         self.detail = detail
         guard let url = URL(string: detail.icon) else { return }
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.iconImageView.image = image
-                    }
-                }
-            }
-        }
+        iconImageView.kf.setImage(with: url)
     }
 
     override func awakeFromNib() {

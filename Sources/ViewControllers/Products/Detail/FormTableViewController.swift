@@ -111,6 +111,12 @@ extension FormTableViewController {
         UIPasteboard.general.string = value
         UIMenuController.shared.setMenuVisible(false, animated: true)
     }
+
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let ingredientsAnalysisTableViewCell = cell as? IngredientsAnalysisTableViewCell {
+            ingredientsAnalysisTableViewCell.dismiss()
+        }
+    }
 }
 
 extension FormTableViewController: IndicatorInfoProvider {

@@ -128,11 +128,11 @@ class DataManagerMock: DataManagerProtocol {
     func additive(forTag: Tag) -> Additive? {
         return nil
     }
-    
+
     func ingredientsAnalysis(forTag: String) -> IngredientsAnalysis? {
         return nil
     }
-    
+
     func ingredientsAnalysisSearch(query: String?) -> Results<IngredientsAnalysis> {
         return realm().objects(OpenFoodFacts.IngredientsAnalysis.self)
     }

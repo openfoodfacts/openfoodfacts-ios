@@ -15,6 +15,9 @@ class IngredientsAnalysisTableViewCell: ProductDetailBaseCell {
     @IBOutlet weak var veganView: IngredientsAnalysisView!
     var viewController: FormTableViewController?
     var ingredientList: [Ingredient]?
+    var palmOilViewGesture: UITapGestureRecognizer?
+    var vegetarianViewGesture: UITapGestureRecognizer?
+    var veganViewGesture: UITapGestureRecognizer?
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let product = formRow.value as? Product else { return }
@@ -36,14 +39,23 @@ class IngredientsAnalysisTableViewCell: ProductDetailBaseCell {
             }
         }
 
-        palmOilView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
-        palmOilView.isUserInteractionEnabled = true
+        palmOilViewGesture = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        if palmOilViewGesture != nil {
+            palmOilView.addGestureRecognizer(palmOilViewGesture!)
+            palmOilView.isUserInteractionEnabled = true
+        }
 
-        vegetarianView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
-        vegetarianView.isUserInteractionEnabled = true
+        vegetarianViewGesture = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        if vegetarianViewGesture != nil {
+            vegetarianView.addGestureRecognizer(vegetarianViewGesture!)
+            vegetarianView.isUserInteractionEnabled = true
+        }
 
-        veganView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
-        veganView.isUserInteractionEnabled = true
+        veganViewGesture = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        if veganViewGesture != nil {
+            veganView.addGestureRecognizer(veganViewGesture!)
+            veganView.isUserInteractionEnabled = true
+        }
 
         self.viewController = viewController
     }
@@ -65,6 +77,21 @@ class IngredientsAnalysisTableViewCell: ProductDetailBaseCell {
             }
         }
         return text
+    }
+
+    func dismiss() {
+        if let validGesture = palmOilViewGesture {
+            palmOilView?.removeGestureRecognizer(validGesture)
+            palmOilViewGesture = nil
+        }
+        if let validGesture = vegetarianViewGesture {
+            vegetarianView?.removeGestureRecognizer(validGesture)
+            vegetarianViewGesture = nil
+        }
+        if let validGesture = veganViewGesture {
+            veganView?.removeGestureRecognizer(validGesture)
+            veganViewGesture = nil
+        }
     }
 
     @objc func didTap(_ sender: UITapGestureRecognizer) {

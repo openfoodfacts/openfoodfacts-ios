@@ -273,7 +273,7 @@ struct OFFJson {
     //static let ImageIngredientsThumbUrlKey = "image_ingredients_thumb_url"
     static let ImageSmallUrlKey = "image_small_url"
     static let ImageUrlKey = "image_url"
-    static let IngredientsAnalysisTags = "ingredients_analysis_tags";
+    static let IngredientsAnalysisTags = "ingredients_analysis_tags"
     static let IngredientsKey = "ingredients_text"
     static let IngredientsElementKey = "ingredients"
     //static let IngredientsDebugKey = "ingredients_debug"
@@ -402,7 +402,6 @@ struct OFFJson {
             OFFJson.VitaminsTagsKey,
             OFFJson.IngredientsAnalysisTags,
             // OFFJson.UrlKey,
-            OFFJson.VitaminsTagsKey,
             OFFJson.IngredientsElementKey
             // OFFJson.WarningKey,
         ]

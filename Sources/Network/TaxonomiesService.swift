@@ -305,11 +305,11 @@ class TaxonomiesService: TaxonomiesApi {
                 case .failure(let error):
                     Crashlytics.sharedInstance().recordError(error)
                 }
-                
+
                 callback(success)
         }
     }
-    
+
     fileprivate func refreshIngredientsAnalysisConfig(_ callback: @escaping (_: Bool) -> Void) {
         Alamofire.request(TaxonomiesRouter.getIngredientsAnalysisConfig)
             .responseJSON { (response) in
@@ -332,7 +332,7 @@ class TaxonomiesService: TaxonomiesApi {
                 case .failure(let error):
                     Crashlytics.sharedInstance().recordError(error)
                 }
-                
+
                 callback(success)
         }
     }
@@ -349,7 +349,6 @@ class TaxonomiesService: TaxonomiesApi {
         let lastDownload = UserDefaults.standard.double(forKey: TaxonomiesService.USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD)
 
         let shouldDownload = lastDownload == 0 || (Date().timeIntervalSince1970 - TaxonomiesService.LAST_DOWNLOAD_DELAY) > lastDownload
-        
 
         if shouldDownload {
             downloadTaxonomies()
