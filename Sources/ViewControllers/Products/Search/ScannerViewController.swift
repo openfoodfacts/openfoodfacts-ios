@@ -553,11 +553,15 @@ extension ScannerViewController {
             addProductVC.dataManager = dataManager
             self.barcodeToOpenAtStartup = barcode
             let navVC = UINavigationController(rootViewController: addProductVC)
-            addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
+            addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ScannerViewController.dismissVC))
             addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.saveAll))
             navVC.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(addProductVC, animated: true)
         }
+    }
+
+    @objc func dismissVC() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     fileprivate func turnOffFlash() {
