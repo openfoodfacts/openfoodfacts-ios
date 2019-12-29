@@ -31,12 +31,16 @@ protocol PersistenceManagerProtocol {
     func save(minerals: [Mineral])
     func save(vitamins: [Vitamin])
     func save(nucleotides: [Nucleotide])
+    func save(ingredientsAnalysis: [IngredientsAnalysis])
+    func save(ingredientsAnalysisConfig: [IngredientsAnalysisConfig])
     func allergen(forCode: String) -> Allergen?
     func trace(forCode: String) -> Allergen?
     func vitamin(forCode: String) -> Vitamin?
     func mineral(forCode: String) -> Mineral?
     func nucleotide(forCode: String) -> Nucleotide?
     func otherNutritionalSubstance(forCode: String) -> OtherNutritionalSubstance?
+    func ingredientsAnalysis(forCode: String) -> IngredientsAnalysis?
+    func ingredientsAnalysisConfig(forCode: String) -> IngredientsAnalysisConfig?
 
     func save(nutriments: [Nutriment])
     func nutriment(forCode: String) -> Nutriment?
@@ -250,6 +254,26 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     func additive(forCode code: String) -> Additive? {
         return getRealm().object(ofType: Additive.self, forPrimaryKey: code)
+    }
+    
+    func save(ingredientsAnalysis: [IngredientsAnalysis]) {
+        saveOrUpdate(objects: ingredientsAnalysis)
+        log.info("Saved \(ingredientsAnalysis.count) ingredients analysis in taxonomies database")
+    }
+    
+    func save(ingredientsAnalysisConfig: [IngredientsAnalysisConfig]) {
+        saveOrUpdate(objects: ingredientsAnalysisConfig)
+        log.info("Saved \(ingredientsAnalysisConfig.count) ingredients analysis configs in files database")
+    }
+    
+    func ingredientsAnalysis(forCode code: String) -> IngredientsAnalysis? {
+        var tmp = getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code);
+        return getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code)
+    }
+    
+    func ingredientsAnalysisConfig(forCode code: String) -> IngredientsAnalysisConfig? {
+        var tmp = getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code);
+        return getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code)
     }
 
     func save(offlineProducts: [RealmOfflineProduct]) {

@@ -38,6 +38,11 @@ enum InfoRowKey: LocalizedString {
     case palmOilIngredients = "product-detail.ingredients.palm-oil-ingredients"
     case possiblePalmOilIngredients = "product-detail.ingredients.possible-palm-oil-ingredients"
 
+    // Ingredients Analysis
+    case ingredientsInThisProduct = "ingredients-analysis.ingredients_in_this_product"
+    case ingredientsInThisProductAre = "ingredients-analysis.ingredients_in_this_product_are"
+    case ingredientsUnknownStatus = "ingredients-analysis.unknown_status"
+
     // Nutrition
     case energy = "nutrition.energy"
     case fats = "nutrition.fats"

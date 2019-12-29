@@ -124,12 +124,15 @@ struct Product: Mappable {
     var environmentInfoCard: String?
     var environmentImpactLevelTags: [EnvironmentImpact]?
     var nutritionTableHtml: String?
+    var ingredientsAnalysisTags: [String]?
+    var ingredientsAnalysisDetails: [IngredientsAnalysisDetail]?
     // new variables for local languages
     var languageCodes: [String: Int]?
     var names: [String: String] = [:]
     var genericNames: [String: String] = [:]
     var ingredients: [String: String] = [:]
     var ingredientsListDecoded: String?
+    var ingredientsListAnalysis: [Ingredient]?
     var vitamins: [Tag]?
     var minerals: [Tag]?
     var nucleotides: [Tag]?
@@ -305,6 +308,8 @@ struct Product: Mappable {
         nutritionLevels <- map[OFFJson.NutrientLevelsKey]
         nutritionTableImageDecoded <- map[OFFJson.ImageNutritionUrlKey]
         nutritionTableHtml <- map[OFFJson.NutritionTableHtml]
+        ingredientsAnalysisTags <- map[OFFJson.IngredientsAnalysisTags]
+        ingredientsListAnalysis <- map[OFFJson.IngredientsElementKey]
         origins <- map[OFFJson.OriginsKey]
         otherNutrients <- (map[OFFJson.OtherNutritionalSubstancesTagsKey], TagTransform())
         packaging <- (map[OFFJson.PackagingKey], ArrayTransform())

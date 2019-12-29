@@ -73,6 +73,7 @@ struct OFFJson {
     //static let LinkKey = "link"
     //static let IngredientsNKey = "ingredients_n"
     static let NutrimentsKey = "nutriments"
+    static let IngredientsDetailKey = "ingredients"
 
     static let SodiumKey = "sodium"
     static let SaltKey = "salt"
@@ -272,11 +273,15 @@ struct OFFJson {
     //static let ImageIngredientsThumbUrlKey = "image_ingredients_thumb_url"
     static let ImageSmallUrlKey = "image_small_url"
     static let ImageUrlKey = "image_url"
+    static let IngredientsAnalysisTags = "ingredients_analysis_tags";
     static let IngredientsKey = "ingredients_text"
+    static let IngredientsElementKey = "ingredients"
     //static let IngredientsDebugKey = "ingredients_debug"
-    //static let IngredientsElementIdKey = "id"
-    //static let IngredientsElementRankKey = "rank"
-    //static let IngredientsElementTextKey = "text"
+    static let IngredientsElementIdKey = "id"
+    static let IngredientsElementRankKey = "rank"
+    static let IngredientsElementTextKey = "text"
+    static let IngredientsElementVeganKey = "vegan"
+    static let IngredientsElementVegetarianKey = "vegetarian"
     //static let IngredientsFromPalmOilNKey = "ingredients_from_palm_oil_n"
     //static let IngredientsIdsDebugKey = "ingredients_ids_debug"
     //static let IngredientsThatMayBeFromPalmOilNKey = "ingredients_that_may_be_from_palm_oil_n"
@@ -394,8 +399,11 @@ struct OFFJson {
             OFFJson.StoresKey,
             // OFFJson.TracesKey,
             OFFJson.TracesTagsKey,
+            OFFJson.VitaminsTagsKey,
+            OFFJson.IngredientsAnalysisTags,
             // OFFJson.UrlKey,
-            OFFJson.VitaminsTagsKey
+            OFFJson.VitaminsTagsKey,
+            OFFJson.IngredientsElementKey
             // OFFJson.WarningKey,
         ]
     }

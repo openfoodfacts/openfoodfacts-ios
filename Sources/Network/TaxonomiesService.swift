@@ -11,7 +11,7 @@ import AlamofireObjectMapper
 import Crashlytics
 
 enum TaxonomiesRouter: URLRequestConvertible {
-    case getAllergens, getAdditives, getCategories, getCountries, getNutriments, getVitamins, getMinerals, getNucleotides // get OtherNutritionalSubstances
+    case getAllergens, getAdditives, getCategories, getCountries, getNutriments, getVitamins, getMinerals, getNucleotides, getIngredientsAnalysis, getIngredientsAnalysisConfig // get OtherNutritionalSubstances
 
     var path: String {
         switch self {
@@ -20,6 +20,8 @@ enum TaxonomiesRouter: URLRequestConvertible {
         case .getCategories: return "categories.json"
         case .getCountries: return "countries.json"
         case .getNutriments: return "nutrients.json"
+        case .getIngredientsAnalysis: return "ingredients_analysis.json"
+        case .getIngredientsAnalysisConfig: return "/files/app/ingredients-analysis.json"
         case .getVitamins: return "vitamins.json"
         case .getMinerals: return "minerals.json"
         case .getNucleotides: return "nucleotides.json"
@@ -31,7 +33,12 @@ enum TaxonomiesRouter: URLRequestConvertible {
     // MARK: URLRequestConvertible
 
     func asURLRequest() throws -> URLRequest {
-        let urlStr = Endpoint.get + "/data/taxonomies/" + self.path
+        var urlStr = ""
+        if self != .getIngredientsAnalysisConfig {
+            urlStr = Endpoint.get + "/data/taxonomies/" + self.path
+        } else {
+            urlStr = Endpoint.get + self.path
+        }
         guard let url = URL(string: urlStr) else {
             throw NSError(domain: "Taxonomies url could not be constructed", code: Errors.codes.generic.rawValue, userInfo: ["path": self.path])
         }
@@ -276,6 +283,60 @@ class TaxonomiesService: TaxonomiesApi {
         }
     }
 
+    fileprivate func refreshIngredientsAnalysis(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getIngredientsAnalysis)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let ingredientsAnalysis = json.compactMap({ (ingredientAnalysisCode: String, value: Any) -> IngredientsAnalysis? in
+                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                return nil
+                            }
+                            let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return IngredientsAnalysis(code: ingredientAnalysisCode, names: names)
+                        })
+                        self.persistenceManager.save(ingredientsAnalysis: ingredientsAnalysis)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+                
+                callback(success)
+        }
+    }
+    
+    fileprivate func refreshIngredientsAnalysisConfig(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getIngredientsAnalysisConfig)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String: Any] {
+                        let ingredientsAnalysisConfig = json.compactMap({ (ingredientAnalysisConfigCode: String, value: Any) -> IngredientsAnalysisConfig? in
+                            guard let value = value as? [String: String] else {
+                                return nil
+                            }
+                            let values = value.map({ (languageCode: String, value: String) -> Tag in
+                                return Tag(languageCode: languageCode, value: value)
+                            })
+                            return IngredientsAnalysisConfig(code: ingredientAnalysisConfigCode, names: values)
+                        })
+                        self.persistenceManager.save(ingredientsAnalysisConfig: ingredientsAnalysisConfig)
+                        success = true
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+                
+                callback(success)
+        }
+    }
+
     // swiftlint:disable identifier_name
 
     /// increment last number each time you want to force a refresh. Useful if you add a new refresh method or a new field
@@ -288,6 +349,7 @@ class TaxonomiesService: TaxonomiesApi {
         let lastDownload = UserDefaults.standard.double(forKey: TaxonomiesService.USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD)
 
         let shouldDownload = lastDownload == 0 || (Date().timeIntervalSince1970 - TaxonomiesService.LAST_DOWNLOAD_DELAY) > lastDownload
+        
 
         if shouldDownload {
             downloadTaxonomies()
@@ -346,6 +408,18 @@ class TaxonomiesService: TaxonomiesApi {
 
             group.enter()
             self.refreshAdditives({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshIngredientsAnalysis({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
+
+            group.enter()
+            self.refreshIngredientsAnalysisConfig({ (success) in
                 allSuccess = allSuccess && success
                 group.leave()
             })

@@ -167,6 +167,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Header
         rows.append(FormRow(value: product as Any, cellType: SummaryHeaderCell.self))
 
+        createIngredientsAnalysisRows(rows: &rows)
         createNutrientsRows(rows: &rows)
         createAdditivesRows(with: &rows, product: product)
 
@@ -348,6 +349,40 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
 
         return Form(title: "product-detail.page-title.nutrition".localized, rows: rows)
+    }
+
+    fileprivate func createIngredientsAnalysisRows(rows: inout [FormRow]) {
+        if product.ingredientsAnalysisTags != nil {
+            var ingredientsAnalysisDetails = [IngredientsAnalysisDetail]()
+            for analysisTag in product.ingredientsAnalysisTags! {
+                let detail = IngredientsAnalysisDetail()
+                detail.tag = analysisTag
+                if let ingredientsAnalysisConfig = dataManager.ingredientsAnalysisConfig(forTag: analysisTag) {
+                    let tmp = Array(ingredientsAnalysisConfig.names)
+                    for detailTag in tmp {
+                        switch detailTag.languageCode {
+                        case "type":
+                            detail.type = IngredientsAnalysisType(rawValue: detailTag.value) ?? IngredientsAnalysisType.other
+                        case "icon":
+                            detail.icon = URLs.IngredientsAnalysisIconPathPrefix + detailTag.value + URLs.IngredientsAnalysisIconPathSuffix
+                        case "color":
+                            detail.color = UIColor(hex: detailTag.value) ?? UIColor.gray
+                        default:
+                            break
+                        }
+                    }
+                }
+                if let ingredientsAnalysis = dataManager.ingredientsAnalysis(forTag: analysisTag) {
+                    if let name = Tag.choose(inTags: Array(ingredientsAnalysis.names)) {
+                        detail.title = name.value
+                    }
+                }
+                ingredientsAnalysisDetails.append(detail)
+
+            }
+            product.ingredientsAnalysisDetails = ingredientsAnalysisDetails
+            createFormRow(with: &rows, item: product, cellType: IngredientsAnalysisTableViewCell.self)
+        }
     }
 
     fileprivate func createNutrientsRows(rows: inout [FormRow]) {
