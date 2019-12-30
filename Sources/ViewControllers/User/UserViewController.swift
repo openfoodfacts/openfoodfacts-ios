@@ -49,7 +49,7 @@ class UserViewController: UIViewController, DataManagerClient {
         } else {
             hideLogInViews(false)
             title = "user.not-logged-in".localized
-            loginOrOutButton.isEnabled = loginDataIsAvalaible
+            loginOrOutButton.isEnabled = true // loginDataIsAvalaible
         }
         setButtonTitle()
     }
@@ -156,7 +156,7 @@ class UserViewController: UIViewController, DataManagerClient {
             return
         }
         loginOrOutButton.setTitle("user.logging-in".localized, for: .normal)
-        loginOrOutButton.isEnabled = false
+        // loginOrOutButton.isEnabled = false
         dataManager.logIn(username: username, password: password, onSuccess: {
             self.setupInterface()
         }, onError: { error in
@@ -259,6 +259,6 @@ class UserViewController: UIViewController, DataManagerClient {
 extension UserViewController: UITextFieldDelegate {
 
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        loginOrOutButton.isEnabled = loginDataIsAvalaible
+        // loginOrOutButton.isEnabled = loginDataIsAvalaible
     }
 }
