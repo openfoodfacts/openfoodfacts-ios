@@ -23,31 +23,43 @@ protocol PersistenceManagerProtocol {
 
     func save(categories: [Category])
     func category(forCode: String) -> Category?
+    var categoriesIsEmpty: Bool { get }
     func categorySearch(query: String?) -> Results<Category>
     func country(forCode: String) -> Country?
+    var countriesIsEmpty: Bool { get }
     func save(countries: [Country])
 
     func save(allergens: [Allergen])
+    var allergensIsEmpty: Bool { get }
     func save(minerals: [Mineral])
+    var mineralsIsEmpty: Bool { get }
     func save(vitamins: [Vitamin])
+    var vitaminsIsEmpty: Bool { get }
     func save(nucleotides: [Nucleotide])
+    var nucleotidesIsEmpty: Bool { get }
     func save(ingredientsAnalysis: [IngredientsAnalysis])
+    var ingredientsAnalysisIsEmpty: Bool { get }
     func save(ingredientsAnalysisConfig: [IngredientsAnalysisConfig])
+    var ingredientsAnalysisConfigIsEmpty: Bool { get }
     func allergen(forCode: String) -> Allergen?
     func trace(forCode: String) -> Allergen?
     func vitamin(forCode: String) -> Vitamin?
     func mineral(forCode: String) -> Mineral?
     func nucleotide(forCode: String) -> Nucleotide?
     func otherNutritionalSubstance(forCode: String) -> OtherNutritionalSubstance?
+    var otherNutritionalSubstancesIsEmpty: Bool { get }
+    func save(otherNutritionalSubstance: [OtherNutritionalSubstance])
     func ingredientsAnalysis(forCode: String) -> IngredientsAnalysis?
     func ingredientsAnalysisConfig(forCode: String) -> IngredientsAnalysisConfig?
 
     func save(nutriments: [Nutriment])
     func nutriment(forCode: String) -> Nutriment?
+    var nutrimentsIsEmpty: Bool { get }
     func nutrimentSearch(query: String?) -> Results<Nutriment>
 
     func save(additives: [Additive])
     func additive(forCode: String) -> Additive?
+    var additivesIsEmpty: Bool { get }
 
     // Offline
     func save(offlineProducts: [RealmOfflineProduct])
@@ -69,7 +81,7 @@ protocol PersistenceManagerProtocol {
     func updatePendingUploadItem(_ item: PendingUploadItem)
 }
 
-class PersistenceManager: PersistenceManagerProtocol {
+class PersistenceManager: PersistenceManagerProtocol {    
 
     func removeHistroyItem(_ item: HistoryItem) {
         let realm = self.getRealm()
@@ -165,6 +177,10 @@ class PersistenceManager: PersistenceManagerProtocol {
         log.info("Saved \(categories.count) categories in taxonomies database")
     }
 
+    var categoriesIsEmpty : Bool {
+        getRealm().objects(Category.self).isEmpty
+    }
+
     func category(forCode code: String) -> Category? {
         return getRealm().object(ofType: Category.self, forPrimaryKey: code)
     }
@@ -176,6 +192,10 @@ class PersistenceManager: PersistenceManagerProtocol {
     func save(countries: [Country]) {
         saveOrUpdate(objects: countries)
         log.info("Saved \(countries.count) countries in taxonomy database")
+    }
+
+    var countriesIsEmpty : Bool {
+        getRealm().objects(Country.self).isEmpty
     }
 
     func categorySearch(query: String? = nil) -> Results<Category> {
@@ -191,19 +211,35 @@ class PersistenceManager: PersistenceManagerProtocol {
         log.info("Saved \(allergens.count) allergens in taxonomies database")
     }
 
+    var allergensIsEmpty: Bool {
+        getRealm().objects(Allergen.self).isEmpty
+    }
+
     func save(vitamins: [Vitamin]) {
         saveOrUpdate(objects: vitamins)
         log.info("Saved \(vitamins.count) vitamins in taxonomies database")
+    }
+
+    var vitaminsIsEmpty: Bool {
+        getRealm().objects(Vitamin.self).isEmpty
     }
 
     func save(minerals: [Mineral]) {
         saveOrUpdate(objects: minerals)
         log.info("Saved \(minerals.count) minerals in taxonomies database")
     }
+    
+    var mineralsIsEmpty: Bool {
+        getRealm().objects(Mineral.self).isEmpty
+    }
 
     func save(nucleotides: [Nucleotide]) {
         saveOrUpdate(objects: nucleotides)
         log.info("Saved \(nucleotides.count) nucleotides in taxonomies database")
+    }
+    
+    var nucleotidesIsEmpty: Bool {
+        getRealm().objects(Nucleotide.self).isEmpty
     }
 
     func allergen(forCode code: String) -> Allergen? {
@@ -226,8 +262,17 @@ class PersistenceManager: PersistenceManagerProtocol {
         return getRealm().object(ofType: Nucleotide.self, forPrimaryKey: code)
     }
 
+    func save(otherNutritionalSubstance: [OtherNutritionalSubstance]) {
+        saveOrUpdate(objects: otherNutritionalSubstance)
+        log.info("Saved \(otherNutritionalSubstance.count) otherNutritionalSubstance in taxonomies database")
+    }
+
     func otherNutritionalSubstance(forCode code: String) -> OtherNutritionalSubstance? {
         return getRealm().object(ofType: OtherNutritionalSubstance.self, forPrimaryKey: code)
+    }
+
+    var otherNutritionalSubstancesIsEmpty: Bool {
+        getRealm().objects(OtherNutritionalSubstance.self).isEmpty
     }
 
     func save(nutriments: [Nutriment]) {
@@ -237,6 +282,10 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     func nutriment(forCode code: String) -> Nutriment? {
         return getRealm().object(ofType: Nutriment.self, forPrimaryKey: code)
+    }
+
+    var nutrimentsIsEmpty: Bool {
+        getRealm().objects(Nutriment.self).isEmpty
     }
 
     func nutrimentSearch(query: String?) -> Results<Nutriment> {
@@ -251,6 +300,10 @@ class PersistenceManager: PersistenceManagerProtocol {
         saveOrUpdate(objects: additives)
         log.info("Saved \(additives.count) additives in taxonomies database")
     }
+    
+    var additivesIsEmpty: Bool {
+        getRealm().objects(Additive.self).isEmpty
+    }
 
     func additive(forCode code: String) -> Additive? {
         return getRealm().object(ofType: Additive.self, forPrimaryKey: code)
@@ -261,18 +314,26 @@ class PersistenceManager: PersistenceManagerProtocol {
         log.info("Saved \(ingredientsAnalysis.count) ingredients analysis in taxonomies database")
     }
 
+    var ingredientsAnalysisIsEmpty: Bool {
+        getRealm().objects(IngredientsAnalysis.self).isEmpty
+    }
+
     func save(ingredientsAnalysisConfig: [IngredientsAnalysisConfig]) {
         saveOrUpdate(objects: ingredientsAnalysisConfig)
         log.info("Saved \(ingredientsAnalysisConfig.count) ingredients analysis configs in files database")
     }
+    
+    var ingredientsAnalysisConfigIsEmpty: Bool {
+        getRealm().objects(IngredientsAnalysisConfig.self).isEmpty
+    }
 
     func ingredientsAnalysis(forCode code: String) -> IngredientsAnalysis? {
-        var tmp = getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code)
+        //var tmp = getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code)
         return getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code)
     }
 
     func ingredientsAnalysisConfig(forCode code: String) -> IngredientsAnalysisConfig? {
-        var tmp = getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code)
+        //var tmp = getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code)
         return getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code)
     }
 
