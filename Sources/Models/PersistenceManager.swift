@@ -45,9 +45,12 @@ protocol PersistenceManagerProtocol {
     func save(nutriments: [Nutriment])
     func nutriment(forCode: String) -> Nutriment?
     func nutrimentSearch(query: String?) -> Results<Nutriment>
-
+    
     func save(additives: [Additive])
     func additive(forCode: String) -> Additive?
+    
+    func save(tagLine: Tagline)
+    func tagLine() -> Tagline?
 
     // Offline
     func save(offlineProducts: [RealmOfflineProduct])
@@ -254,6 +257,15 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     func additive(forCode code: String) -> Additive? {
         return getRealm().object(ofType: Additive.self, forPrimaryKey: code)
+    }
+    
+    func save(tagLine: Tagline) {
+        tagLine.id = "unique"
+        saveOrUpdate(objects: [tagLine])
+    }
+    
+    func tagLine() -> Tagline? {
+        return getRealm().object(ofType: Tagline.self, forPrimaryKey: "unique")
     }
 
     func save(ingredientsAnalysis: [IngredientsAnalysis]) {

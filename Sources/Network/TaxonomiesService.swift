@@ -11,7 +11,7 @@ import AlamofireObjectMapper
 import Crashlytics
 
 enum TaxonomiesRouter: URLRequestConvertible {
-    case getAllergens, getAdditives, getCategories, getCountries, getNutriments, getVitamins, getMinerals, getNucleotides, getIngredientsAnalysis, getIngredientsAnalysisConfig // get OtherNutritionalSubstances
+    case getAllergens, getAdditives, getCategories, getCountries, getNutriments, getVitamins, getMinerals, getNucleotides, getIngredientsAnalysis  // get OtherNutritionalSubstances
 
     var path: String {
         switch self {
@@ -21,7 +21,6 @@ enum TaxonomiesRouter: URLRequestConvertible {
         case .getCountries: return "countries.json"
         case .getNutriments: return "nutrients.json"
         case .getIngredientsAnalysis: return "ingredients_analysis.json"
-        case .getIngredientsAnalysisConfig: return "/files/app/ingredients-analysis.json"
         case .getVitamins: return "vitamins.json"
         case .getMinerals: return "minerals.json"
         case .getNucleotides: return "nucleotides.json"
@@ -33,12 +32,8 @@ enum TaxonomiesRouter: URLRequestConvertible {
     // MARK: URLRequestConvertible
 
     func asURLRequest() throws -> URLRequest {
-        var urlStr = ""
-        if self != .getIngredientsAnalysisConfig {
-            urlStr = Endpoint.get + "/data/taxonomies/" + self.path
-        } else {
-            urlStr = Endpoint.get + self.path
-        }
+        let urlStr = Endpoint.get + "/data/taxonomies/" + self.path
+        
         guard let url = URL(string: urlStr) else {
             throw NSError(domain: "Taxonomies url could not be constructed", code: Errors.codes.generic.rawValue, userInfo: ["path": self.path])
         }
@@ -50,7 +45,37 @@ enum TaxonomiesRouter: URLRequestConvertible {
     }
 }
 
+enum FilesRouter: URLRequestConvertible {
+    case getIngredientsAnalysisConfig, getTagline
+    
+    var path: String {
+        switch self {
+        case .getIngredientsAnalysisConfig:
+            return "app/ingredients-analysis.json"
+        case .getTagline:
+            return "app/tagline/tagline-off-ios.json"
+        }
+    }
+    
+    // MARK: URRequestConvertible
+    
+    func asURLRequest() throws -> URLRequest {
+        let urlStr = Endpoint.get + "/files/" + self.path
+        
+        guard let url = URL(string: urlStr) else {
+            throw NSError(domain: "Taxonomies file url could not be constructed", code: Errors.codes.generic.rawValue, userInfo: ["path": self.path])
+        }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = HTTPMethod.get.rawValue
+
+        return urlRequest
+    }
+}
+
 protocol TaxonomiesApi {
+    /// get the tagline, from the local cache then from the api. callback can be callled 0, once or twice.
+    func getTagline(_ callback: @escaping (_: Tagline?) -> Void)
     /// if the time delta since last refresh is passed, we download all taxonomies from the server and store them locally for future use
     func refreshTaxonomiesFromServerIfNeeded()
 }
@@ -311,7 +336,7 @@ class TaxonomiesService: TaxonomiesApi {
     }
 
     fileprivate func refreshIngredientsAnalysisConfig(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getIngredientsAnalysisConfig)
+        Alamofire.request(FilesRouter.getIngredientsAnalysisConfig)
             .responseJSON { (response) in
                 var success = false
                 switch response.result {
@@ -334,6 +359,37 @@ class TaxonomiesService: TaxonomiesApi {
                 }
 
                 callback(success)
+        }
+    }
+
+    func getTagline(_ callback: @escaping (_: Tagline?) -> Void) {
+        if let cachedTagline = self.persistenceManager.tagLine() {
+            callback(cachedTagline)
+        }
+        Alamofire.request(FilesRouter.getTagline)
+            .responseJSON { (response) in
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [[String: Any]] {
+                        let userLanguage = NSLocale.autoupdatingCurrent.identifier
+                        let item = json.first { $0["language"] as? String == userLanguage} ??
+                            json.first { ($0["language"] as? String)?.hasPrefix(userLanguage.split(separator: "_")[0] + "_") == true } ??
+                            json.first { $0["language"] as? String == "fallback" }
+
+                        if let data = item?["data"] as? [String: String] {
+                            if let url = data["url"], let message = data["message"] {
+                                let tagLine = Tagline(url: url, message: message)
+                                self.persistenceManager.save(tagLine: tagLine)
+                                callback(tagLine)
+                                return
+                            }
+                        }
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+
+                callback(nil)
         }
     }
 

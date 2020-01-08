@@ -71,7 +71,7 @@ class OfflineProductsService: OfflineProductsApi {
 
         Alamofire.request(OfflineRouter.getAllProductsInfos)
             .responseJSON { (res: DataResponse<Any>) in
-                var totalProductsCount: Int = 800000
+                var totalProductsCount: Int = 1200000
                 if let json = res.result.value as? [String: Any] {
                     totalProductsCount = json["count"] as? Int ?? totalProductsCount
                 }
