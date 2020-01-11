@@ -99,7 +99,7 @@ class OfflineProductsService: OfflineProductsApi {
                                     if let streamReader = TypedCSVStreamReader<RealmOfflineProduct>(url: firstFileURL, csvDelimiter: "\t") {
                                         var totalCount = 0
 
-                                        streamReader.batchStreamCSV(batchSize: 10000, parse: { (raw: [String : String]) -> RealmOfflineProduct? in
+                                        streamReader.batchStreamCSV(batchSize: 10000, parse: { (raw: [String: String]) -> RealmOfflineProduct? in
                                             guard let barcode = raw["code"] else { return nil }
 
                                             let product = RealmOfflineProduct()

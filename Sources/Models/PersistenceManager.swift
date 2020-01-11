@@ -59,7 +59,7 @@ protocol PersistenceManagerProtocol {
     func nutriment(forCode: String) -> Nutriment?
     var nutrimentsIsEmpty: Bool { get }
     func nutrimentSearch(query: String?) -> Results<Nutriment>
-    
+
     func save(additives: [Additive])
     func additive(forCode: String) -> Additive?
     func save(tagLine: Tagline)
@@ -86,7 +86,7 @@ protocol PersistenceManagerProtocol {
     func updatePendingUploadItem(_ item: PendingUploadItem)
 }
 
-class PersistenceManager: PersistenceManagerProtocol {    
+class PersistenceManager: PersistenceManagerProtocol {
 
     func removeHistroyItem(_ item: HistoryItem) {
         let realm = self.getRealm()
@@ -182,7 +182,7 @@ class PersistenceManager: PersistenceManagerProtocol {
         log.info("Saved \(categories.count) categories in taxonomies database")
     }
 
-    var categoriesIsEmpty : Bool {
+    var categoriesIsEmpty: Bool {
         getRealm().objects(Category.self).isEmpty
     }
 
@@ -199,7 +199,7 @@ class PersistenceManager: PersistenceManagerProtocol {
         log.info("Saved \(countries.count) countries in taxonomy database")
     }
 
-    var countriesIsEmpty : Bool {
+    var countriesIsEmpty: Bool {
         getRealm().objects(Country.self).isEmpty
     }
 
@@ -233,7 +233,7 @@ class PersistenceManager: PersistenceManagerProtocol {
         saveOrUpdate(objects: minerals)
         log.info("Saved \(minerals.count) minerals in taxonomies database")
     }
-    
+
     var mineralsIsEmpty: Bool {
         getRealm().objects(Mineral.self).isEmpty
     }
@@ -242,7 +242,7 @@ class PersistenceManager: PersistenceManagerProtocol {
         saveOrUpdate(objects: nucleotides)
         log.info("Saved \(nucleotides.count) nucleotides in taxonomies database")
     }
-    
+
     var nucleotidesIsEmpty: Bool {
         getRealm().objects(Nucleotide.self).isEmpty
     }
@@ -327,7 +327,7 @@ class PersistenceManager: PersistenceManagerProtocol {
         saveOrUpdate(objects: additives)
         log.info("Saved \(additives.count) additives in taxonomies database")
     }
-    
+
     var additivesIsEmpty: Bool {
         getRealm().objects(Additive.self).isEmpty
     }
@@ -335,12 +335,12 @@ class PersistenceManager: PersistenceManagerProtocol {
     func additive(forCode code: String) -> Additive? {
         return getRealm().object(ofType: Additive.self, forPrimaryKey: code)
     }
-    
+
     func save(tagLine: Tagline) {
         tagLine.id = "unique"
         saveOrUpdate(objects: [tagLine])
     }
-    
+
     func tagLine() -> Tagline? {
         return getRealm().object(ofType: Tagline.self, forPrimaryKey: "unique")
     }
@@ -358,7 +358,7 @@ class PersistenceManager: PersistenceManagerProtocol {
         saveOrUpdate(objects: ingredientsAnalysisConfig)
         log.info("Saved \(ingredientsAnalysisConfig.count) ingredients analysis configs in files database")
     }
-    
+
     var ingredientsAnalysisConfigIsEmpty: Bool {
         getRealm().objects(IngredientsAnalysisConfig.self).isEmpty
     }

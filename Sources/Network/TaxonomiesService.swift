@@ -53,7 +53,7 @@ enum TaxonomiesRouter: URLRequestConvertible {
 
 enum FilesRouter: URLRequestConvertible {
     case getIngredientsAnalysisConfig, getTagline
-    
+
     var path: String {
         switch self {
         case .getIngredientsAnalysisConfig:
@@ -62,12 +62,12 @@ enum FilesRouter: URLRequestConvertible {
             return "app/tagline/tagline-off-ios.json"
         }
     }
-    
+
     // MARK: URRequestConvertible
-    
+
     func asURLRequest() throws -> URLRequest {
         let urlStr = Endpoint.get + "/files/" + self.path
-        
+
         guard let url = URL(string: urlStr) else {
             throw NSError(domain: "Taxonomies file url could not be constructed", code: Errors.codes.generic.rawValue, userInfo: ["path": self.path])
         }
@@ -372,6 +372,7 @@ class TaxonomiesService: TaxonomiesApi {
         if let cachedTagline = self.persistenceManager.tagLine() {
             callback(cachedTagline)
         }
+
         Alamofire.request(FilesRouter.getTagline)
             .responseJSON { (response) in
                 switch response.result {
@@ -390,6 +391,15 @@ class TaxonomiesService: TaxonomiesApi {
                                 return
                             }
                         }
+                    }
+                case .failure(let error):
+                    Crashlytics.sharedInstance().recordError(error)
+                }
+
+            callback(nil)
+        }
+    }
+
     fileprivate func refreshInvalidBarcodes(_ callback: @escaping (_: Bool) -> Void) {
         Alamofire.request(TaxonomiesRouter.getInvalidBarcodes)
             .responseJSON { (response) in
@@ -508,6 +518,7 @@ class TaxonomiesService: TaxonomiesApi {
             })
 
             group.enter()
+
             self.refreshInvalidBarcodes { (success) in
                 allSuccess = allSuccess && success
                 group.leave()

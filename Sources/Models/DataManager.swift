@@ -201,7 +201,7 @@ class DataManager: DataManagerProtocol {
     func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig? {
         return persistenceManager.ingredientsAnalysisConfig(forCode: tag)
     }
-    
+
     func getTagline(_ callback: @escaping (Tagline?) -> Void) {
         taxonomiesApi.getTagline(callback)
     }

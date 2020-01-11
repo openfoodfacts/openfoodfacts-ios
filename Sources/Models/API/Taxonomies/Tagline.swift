@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class Tagline: Object {
-    
+
     @objc dynamic var id: String = ""
     @objc dynamic var url: String = ""
     @objc dynamic var message: String = ""
