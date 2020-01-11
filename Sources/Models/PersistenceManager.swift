@@ -41,6 +41,9 @@ protocol PersistenceManagerProtocol {
     var ingredientsAnalysisIsEmpty: Bool { get }
     func save(ingredientsAnalysisConfig: [IngredientsAnalysisConfig])
     var ingredientsAnalysisConfigIsEmpty: Bool { get }
+    func clearInvalidBarcodes()
+    func save(invalidBarcodes: [InvalidBarcode])
+    func invalidBarcode(forBarcode: String) -> InvalidBarcode?
     func allergen(forCode: String) -> Allergen?
     func trace(forCode: String) -> Allergen?
     func vitamin(forCode: String) -> Vitamin?
@@ -246,6 +249,28 @@ class PersistenceManager: PersistenceManagerProtocol {
         return getRealm().object(ofType: Allergen.self, forPrimaryKey: code)
     }
 
+    func clearInvalidBarcodes() {
+        let realm = self.getRealm()
+        do {
+            let barcodes = realm.objects(InvalidBarcode.self)
+            try realm.write {
+                realm.delete(barcodes)
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+
+    func save(invalidBarcodes: [InvalidBarcode]) {
+        saveOrUpdate(objects: invalidBarcodes)
+        log.info("Saved \(invalidBarcodes.count) invalid barcodes database")
+    }
+
+    func invalidBarcode(forBarcode barcode: String) -> InvalidBarcode? {
+        return getRealm().object(ofType: InvalidBarcode.self, forPrimaryKey: barcode)
+    }
+
     func trace(forCode code: String) -> Allergen? {
         return getRealm().object(ofType: Allergen.self, forPrimaryKey: code)
     }
@@ -328,12 +353,10 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     func ingredientsAnalysis(forCode code: String) -> IngredientsAnalysis? {
-        //var tmp = getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code)
         return getRealm().object(ofType: IngredientsAnalysis.self, forPrimaryKey: code)
     }
 
     func ingredientsAnalysisConfig(forCode code: String) -> IngredientsAnalysisConfig? {
-        //var tmp = getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code)
         return getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code)
     }
 
