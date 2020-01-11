@@ -369,8 +369,19 @@ class TaxonomiesService: TaxonomiesApi {
     func refreshTaxonomiesFromServerIfNeeded() {
         let lastDownload = UserDefaults.standard.double(forKey: TaxonomiesService.USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD)
 
-        let shouldDownload = lastDownload == 0 || (Date().timeIntervalSince1970 - TaxonomiesService.LAST_DOWNLOAD_DELAY) > lastDownload
-
+        let shouldDownload = lastDownload == 0 ||
+            (Date().timeIntervalSince1970 - TaxonomiesService.LAST_DOWNLOAD_DELAY) > lastDownload ||
+        // check if there are taxonomies that are empty,
+        // i.e. not yet downloaded
+            persistenceManager.categoriesIsEmpty ||
+            persistenceManager.countriesIsEmpty ||
+            persistenceManager.allergensIsEmpty ||
+            persistenceManager.mineralsIsEmpty ||
+            persistenceManager.vitaminsIsEmpty ||
+            persistenceManager.nucleotidesIsEmpty ||
+            // persistenceManager.otherNutritionalSubstancesIsEmpty ||
+            persistenceManager.ingredientsAnalysisIsEmpty ||
+            persistenceManager.ingredientsAnalysisConfigIsEmpty
         if shouldDownload {
             downloadTaxonomies()
         } else {
