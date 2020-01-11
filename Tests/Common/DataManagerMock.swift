@@ -178,6 +178,18 @@ class DataManagerMock: DataManagerProtocol {
     func clearHistory() {
         clearHistoryCalled = true
     }
+    
+    func country(forTag: String) -> Country? {
+        return nil
+    }
+    
+    func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig? {
+        return nil
+    }
+    
+    func getTagline(_ callback: @escaping (Tagline?) -> Void) {
+        callback(nil)
+    }
 
     // MARK: - Product - Add
     func addProduct(_ product: Product, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {

@@ -49,6 +49,7 @@
 		30412DE1220F111400C485DD /* SelectTaxonomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */; };
 		307BBEB921FA16B100E2DF9D /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */; };
 		307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */; };
+		309690CE23C5B73C006CF923 /* Tagline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309690CD23C5B73C006CF923 /* Tagline.swift */; };
 		30B425E823C7C99A001B2476 /* InvalidBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B425E723C7C99A001B2476 /* InvalidBarcode.swift */; };
 		30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77D9B22088F0F00B180E9 /* Allergen.swift */; };
 		30DB17F522122E4A0010EE6F /* TOCropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB17F422122E4A0010EE6F /* TOCropViewController.framework */; };
@@ -315,7 +316,7 @@
 
 /* Begin PBXFileReference section */
 		152048F6235F48BD0053814A /* ScanProductSummaryViewAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProductSummaryViewAdaptor.swift; sourceTree = "<group>"; };
-		2A798638235027590020821E /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; name = README.md; path = ../../Desktop/README.md; sourceTree = "<group>"; };
+		2A798638235027590020821E /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3000855D2207A3A500DC3896 /* TaxonomiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomiesService.swift; sourceTree = "<group>"; };
 		300085602207AC0700DC3896 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
 		300085622208777900DC3896 /* OFFUrlsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFUrlsHelper.swift; sourceTree = "<group>"; };
@@ -354,6 +355,7 @@
 		30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTaxonomyViewController.swift; sourceTree = "<group>"; };
 		307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerResultViewController.swift; sourceTree = "<group>"; };
+		309690CD23C5B73C006CF923 /* Tagline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagline.swift; sourceTree = "<group>"; };
 		30B425E723C7C99A001B2476 /* InvalidBarcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidBarcode.swift; sourceTree = "<group>"; };
 		30D77D9B22088F0F00B180E9 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
 		30DB17F422122E4A0010EE6F /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
@@ -994,6 +996,7 @@
 				514EFA91223021C0008FFD2A /* OtherNutritionalSubstance.swift */,
 				30412DDA220F089700C485DD /* Nutriment.swift */,
 				FBAC030923A7ABC3002DEE58 /* IngredientsAnalysisConfig.swift */,
+				309690CD23C5B73C006CF923 /* Tagline.swift */,
 				30B425E723C7C99A001B2476 /* InvalidBarcode.swift */,
 			);
 			path = Taxonomies;
@@ -2431,6 +2434,7 @@
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
 				510F174D23A3A5240037832E /* Country.swift in Sources */,
 				9528560B1F78512300863FC6 /* Array.swift in Sources */,
+				309690CE23C5B73C006CF923 /* Tagline.swift in Sources */,
 				956FF9581F1FF0CA0069D678 /* EmptyView.swift in Sources */,
 				95DB3BE61FDD8F2300E83B76 /* HistoryItem.swift in Sources */,
 				95513BC71FEAD9980027C198 /* PendingUploadItem.swift in Sources */,

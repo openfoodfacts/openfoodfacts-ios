@@ -44,6 +44,8 @@ protocol DataManagerProtocol {
     func ingredientsAnalysis(forTag tag: String) -> IngredientsAnalysis?
     func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig?
 
+    func getTagline(_ callback: @escaping (_: Tagline?) -> Void)
+
     // Search history
     func getHistory() -> [Age: [HistoryItem]]
     func addHistoryItem(_ product: Product)
@@ -198,6 +200,10 @@ class DataManager: DataManagerProtocol {
 
     func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig? {
         return persistenceManager.ingredientsAnalysisConfig(forCode: tag)
+    }
+    
+    func getTagline(_ callback: @escaping (Tagline?) -> Void) {
+        taxonomiesApi.getTagline(callback)
     }
 
     // MARK: - Settings
