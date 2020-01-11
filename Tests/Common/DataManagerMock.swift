@@ -12,7 +12,7 @@ import RealmSwift
 import UIKit
 
 class DataManagerMock: DataManagerProtocol {
-
+    
     // Search
     var query: String?
     var page: Int?
@@ -135,6 +135,18 @@ class DataManagerMock: DataManagerProtocol {
 
     func ingredientsAnalysisSearch(query: String?) -> Results<IngredientsAnalysis> {
         return realm().objects(OpenFoodFacts.IngredientsAnalysis.self)
+    }
+
+    func country(forTag: String) -> Country? {
+        return nil
+    }
+
+    func isInvalid(barcode: String) -> Bool {
+        return false
+    }
+
+    func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig? {
+        return nil
     }
 
     // MARK: - Allergens settings

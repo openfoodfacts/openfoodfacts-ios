@@ -32,6 +32,7 @@ protocol DataManagerProtocol {
     func categorySearch(query: String?) -> Results<Category>
     func country(forTag: String) -> Country?
     func allergen(forTag: Tag) -> Allergen?
+    func isInvalid(barcode: String) -> Bool
     func trace(forTag: Tag) -> Allergen?
     func vitamin(forTag: Tag) -> Vitamin?
     func mineral(forTag: Tag) -> Mineral?
@@ -155,6 +156,10 @@ class DataManager: DataManagerProtocol {
 
     func allergen(forTag tag: Tag) -> Allergen? {
         return persistenceManager.allergen(forCode: tag.languageCode + ":" + tag.value)
+    }
+
+    func isInvalid(barcode: String) -> Bool {
+        return persistenceManager.invalidBarcode(forBarcode: barcode) != nil
     }
 
     func trace(forTag tag: Tag) -> Allergen? {

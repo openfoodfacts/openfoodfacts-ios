@@ -355,6 +355,12 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
 
         if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
+
+            if self.dataManager.isInvalid(barcode: barcode) {
+                // barcode is invalid, we just ignore as if nothing was scanned
+                return
+            }
+
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
                 resetOverlay()
                 allergenAlertShown = false

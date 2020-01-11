@@ -11,19 +11,21 @@ import AlamofireObjectMapper
 import Crashlytics
 
 enum TaxonomiesRouter: URLRequestConvertible {
-    case getAllergens, getAdditives, getCategories, getCountries, getNutriments, getVitamins, getMinerals, getNucleotides, getIngredientsAnalysis  // get OtherNutritionalSubstances
+    case getAllergens, getAdditives, getCategories, getCountries, getNutriments, getVitamins, getMinerals, getNucleotides, getIngredientsAnalysis, getIngredientsAnalysisConfig, getInvalidBarcodes // get OtherNutritionalSubstances
 
     var path: String {
         switch self {
-        case .getAllergens: return "allergens.json"
-        case .getAdditives: return "additives.json"
-        case .getCategories: return "categories.json"
-        case .getCountries: return "countries.json"
-        case .getNutriments: return "nutrients.json"
-        case .getIngredientsAnalysis: return "ingredients_analysis.json"
-        case .getVitamins: return "vitamins.json"
-        case .getMinerals: return "minerals.json"
-        case .getNucleotides: return "nucleotides.json"
+        case .getAllergens: return "taxonomies/allergens.json"
+        case .getAdditives: return "taxonomies/additives.json"
+        case .getCategories: return "taxonomies/categories.json"
+        case .getCountries: return "taxonomies/countries.json"
+        case .getNutriments: return "taxonomies/nutrients.json"
+        case .getIngredientsAnalysis: return "taxonomies/ingredients_analysis.json"
+        case .getIngredientsAnalysisConfig: return "/files/app/ingredients-analysis.json"
+        case .getVitamins: return "taxonomies/vitamins.json"
+        case .getMinerals: return "taxonomies/minerals.json"
+        case .getNucleotides: return "taxonomies/nucleotides.json"
+        case .getInvalidBarcodes: return "invalid-barcodes.json"
             // what is up with this url?
         // case .getOtherNutritionalSubstances: return "otherNutritionalSubstances.json"
         }
@@ -32,8 +34,12 @@ enum TaxonomiesRouter: URLRequestConvertible {
     // MARK: URLRequestConvertible
 
     func asURLRequest() throws -> URLRequest {
-        let urlStr = Endpoint.get + "/data/taxonomies/" + self.path
-        
+        var urlStr = ""
+        if self != .getIngredientsAnalysisConfig {
+            urlStr = Endpoint.get + "/data/" + self.path
+        } else {
+            urlStr = Endpoint.get + self.path
+        }
         guard let url = URL(string: urlStr) else {
             throw NSError(domain: "Taxonomies url could not be constructed", code: Errors.codes.generic.rawValue, userInfo: ["path": self.path])
         }
@@ -334,7 +340,7 @@ class TaxonomiesService: TaxonomiesApi {
                 callback(success)
         }
     }
-
+    
     fileprivate func refreshIngredientsAnalysisConfig(_ callback: @escaping (_: Bool) -> Void) {
         Alamofire.request(FilesRouter.getIngredientsAnalysisConfig)
             .responseJSON { (response) in
@@ -384,19 +390,30 @@ class TaxonomiesService: TaxonomiesApi {
                                 return
                             }
                         }
+    fileprivate func refreshInvalidBarcodes(_ callback: @escaping (_: Bool) -> Void) {
+        Alamofire.request(TaxonomiesRouter.getInvalidBarcodes)
+            .responseJSON { (response) in
+                var success = false
+                switch response.result {
+                case .success(let responseBody):
+                    if let json = responseBody as? [String] {
+                        let values = json.map { InvalidBarcode(barcode: $0) }
+                        self.persistenceManager.clearInvalidBarcodes()
+                        self.persistenceManager.save(invalidBarcodes: values)
+                        success = true
                     }
                 case .failure(let error):
                     Crashlytics.sharedInstance().recordError(error)
                 }
 
-                callback(nil)
+            callback(success)
         }
     }
 
     // swiftlint:disable identifier_name
 
     /// increment last number each time you want to force a refresh. Useful if you add a new refresh method or a new field
-    static fileprivate let USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD = "USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD__10"
+    static fileprivate let USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD = "USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD__13"
     static fileprivate let LAST_DOWNLOAD_DELAY: Double = 60 * 60 * 24 * 31 // 1 month
 
     // swiftlint:enable identifier_name
@@ -404,8 +421,19 @@ class TaxonomiesService: TaxonomiesApi {
     func refreshTaxonomiesFromServerIfNeeded() {
         let lastDownload = UserDefaults.standard.double(forKey: TaxonomiesService.USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD)
 
-        let shouldDownload = lastDownload == 0 || (Date().timeIntervalSince1970 - TaxonomiesService.LAST_DOWNLOAD_DELAY) > lastDownload
-
+        let shouldDownload = lastDownload == 0 ||
+            (Date().timeIntervalSince1970 - TaxonomiesService.LAST_DOWNLOAD_DELAY) > lastDownload ||
+        // check if there are taxonomies that are empty,
+        // i.e. not yet downloaded
+            persistenceManager.categoriesIsEmpty ||
+            persistenceManager.countriesIsEmpty ||
+            persistenceManager.allergensIsEmpty ||
+            persistenceManager.mineralsIsEmpty ||
+            persistenceManager.vitaminsIsEmpty ||
+            persistenceManager.nucleotidesIsEmpty ||
+            // persistenceManager.otherNutritionalSubstancesIsEmpty ||
+            persistenceManager.ingredientsAnalysisIsEmpty ||
+            persistenceManager.ingredientsAnalysisConfigIsEmpty
         if shouldDownload {
             downloadTaxonomies()
         } else {
@@ -478,6 +506,12 @@ class TaxonomiesService: TaxonomiesApi {
                 allSuccess = allSuccess && success
                 group.leave()
             })
+
+            group.enter()
+            self.refreshInvalidBarcodes { (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            }
 
             group.wait()
 
