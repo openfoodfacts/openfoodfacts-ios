@@ -10,4 +10,7 @@ import Foundation
 
 struct UserDefaultsConstants {
     static let scanningOnLaunch = "scanningOnLaunch"
+    static let disableDisplayPalmOilStatus = "disableDisplayPalmOilStatus"
+    static let disableDisplayVegetarianStatus = "disableDisplayVegetarianStatus"
+    static let disableDisplayVeganStatus = "disableDisplayVeganStatus"
 }

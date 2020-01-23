@@ -129,6 +129,10 @@ class DataManagerMock: DataManagerProtocol {
         return nil
     }
 
+    func ingredientsAnalysis(forProduct: Product) -> [IngredientsAnalysisDetail] {
+        return []
+    }
+
     func ingredientsAnalysis(forTag: String) -> IngredientsAnalysis? {
         return nil
     }
@@ -177,14 +181,6 @@ class DataManagerMock: DataManagerProtocol {
 
     func clearHistory() {
         clearHistoryCalled = true
-    }
-
-    func country(forTag: String) -> Country? {
-        return nil
-    }
-
-    func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig? {
-        return nil
     }
 
     func getTagline(_ callback: @escaping (Tagline?) -> Void) {

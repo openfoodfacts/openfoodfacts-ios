@@ -360,6 +360,7 @@
 		30D77D9B22088F0F00B180E9 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
 		30DB17F422122E4A0010EE6F /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
 		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		30ECBDD823DA2B59005955AF /* BLTNBoard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BLTNBoard.framework; path = Carthage/Build/iOS/BLTNBoard.framework; sourceTree = "<group>"; };
 		4CDF897F2357F296007BA0A5 /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
 		510F174C23A3A5240037832E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		510F174E23A3CD880037832E /* OFFReadAPIKeysJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OFFReadAPIKeysJSON.swift; path = Sources/Models/API/OFFReadAPIKeysJSON.swift; sourceTree = SOURCE_ROOT; };
@@ -1672,6 +1673,7 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30ECBDD823DA2B59005955AF /* BLTNBoard.framework */,
 				3030EB85222E8A08005A6169 /* Zip.framework */,
 				30DB17F422122E4A0010EE6F /* TOCropViewController.framework */,
 				307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */,
@@ -2301,6 +2303,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MarqueeLabel.framework",
 				"$(SRCROOT)/Carthage/Build/IOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IBLocalizable.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BLTNBoard.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -2326,6 +2330,8 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AlamofireImage.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MarqueeLabel.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IBLocalizable.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BLTNBoard.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cartography.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
