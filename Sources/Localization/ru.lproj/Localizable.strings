@@ -193,12 +193,22 @@
 "product-detail.nutrition-table.for-serving" = "На порцию";
 "product-detail.nutrition-table.100g" = "100г";
 "product-detail.nutrition-table.serving" = "порция";
+"product-detail.nutrition-table.missing" = "No nutrients have been set.";
 
 // Nutrition levels
 "nutrition-level.title" = "Пищевая ценность на 100 г/100 мл";
 "nutrition-level.low" = "в малом количестве";
 "nutrition-level.moderate" = "в умеренном количестве";
 "nutrition-level.high" = "в большом количестве";
+
+// Ingredients Analysis
+"ingredients-analysis.ingredients_in_this_product" = "Ингредиенты в этом продукте, которые %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Ингредиенты в этом продукте %@s.";
+"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
+"ingredients-analysis.display" = "Display %@ status";
+"ingredients-analysis.settings.display.palmOil" = "Display palm oil status";
+"ingredients-analysis.settings.display.vegetarian" = "Display vegetarian status";
+"ingredients-analysis.settings.display.vegan" = "Display vegan status";
 
 // Nutrition
 "nutrition.energy" = "Энергетическая ценность";
@@ -307,6 +317,7 @@
 /* Tab bar item */
 "user.tab-bar.item" = "Пользователь";
 "user.log-in" = "Войти";
+"user.logging-in" = "Logging in";
 "user.log-out" = "Выйти";
 "user.username" = "Имя пользователя";
 "user.password" = "Пароль";

@@ -18,6 +18,9 @@ enum SettingsSection: Int {
 
 class SettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, DataManagerClient {
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
+    @IBOutlet weak var disableDisplayVegetarianStatusSwitch: UISwitch!
+    @IBOutlet weak var disableDisplayVeganStatusSwitch: UISwitch!
+    @IBOutlet weak var disableDisplayPalmOilnStatusSwitch: UISwitch!
 
     var dataManager: DataManagerProtocol!
 
@@ -33,8 +36,18 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "settings.tab-bar.item".localized
-        scanOnLaunchSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsConstants.scanningOnLaunch)
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        scanOnLaunchSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsConstants.scanningOnLaunch)
+
+        disableDisplayPalmOilnStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayPalmOilStatus)
+        disableDisplayVegetarianStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVegetarianStatus)
+        disableDisplayVeganStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVeganStatus)
+    }
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let settings = SettingsSection(rawValue: section) else { return "" }
         switch settings {
@@ -87,7 +100,15 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     }
 
     @IBAction func didSwitchScanOnLaunch(_ sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsConstants.scanningOnLaunch)
+        if sender == scanOnLaunchSwitch {
+            UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsConstants.scanningOnLaunch)
+        } else if sender == disableDisplayPalmOilnStatusSwitch {
+            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayPalmOilStatus)
+        } else if sender == disableDisplayVegetarianStatusSwitch {
+            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayVegetarianStatus)
+        } else if sender == disableDisplayVeganStatusSwitch {
+            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayVeganStatus)
+        }
     }
     fileprivate func openAllergensAlerts() {
         let alertsVC = AllergensAlertsTableViewController()

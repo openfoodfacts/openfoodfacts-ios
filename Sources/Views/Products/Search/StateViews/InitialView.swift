@@ -14,6 +14,13 @@ class InitialView: UIView {
     @IBOutlet weak var loadingTitleLabel: UILabel!
     @IBOutlet weak var loadingSubtitleLabel: UILabel!
     @IBOutlet weak var loadingProgressView: UIProgressView!
+    @IBOutlet weak var taglineButton: UIButton!
+
+    var tagline: Tagline? {
+        didSet {
+            refreshTaglineButton()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,5 +37,24 @@ class InitialView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        taglineButton.titleLabel?.numberOfLines = 0
+        taglineButton.titleLabel?.textAlignment = .center
+        taglineButton.isHidden = true
+    }
+
+    fileprivate func refreshTaglineButton() {
+        if let tagline = tagline {
+            self.taglineButton.setTitle(tagline.message, for: .normal)
+            self.taglineButton.isHidden = false
+        } else {
+            self.taglineButton.isHidden = true
+        }
+    }
+
+    @IBAction func onTaglineButtonTapped() {
+        if let tagline = tagline, let url = URL(string: tagline.url) {
+            self.viewController()?.openUrlInApp(url)
+        }
     }
 }

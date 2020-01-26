@@ -24,13 +24,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MWo-ER-ApE">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MWo-ER-ApE">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuw-2U-tN7">
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuw-2U-tN7">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-UT-33y">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-UT-33y">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
@@ -47,41 +47,48 @@
                             <constraints>
                                 <constraint firstItem="Rqb-UT-33y" firstAttribute="height" secondItem="cuw-2U-tN7" secondAttribute="height" id="gOB-RJ-3is"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="gOB-RJ-3is"/>
+                                </mask>
+                            </variation>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-S9-0pp" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="97" width="320" height="22"/>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-S9-0pp" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="97" width="320" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="kV1-Ct-FR1"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="kV1-Ct-FR1"/>
+                                </mask>
+                            </variation>
                         </view>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dY2-j0-Cye">
-                            <rect key="frame" x="0.0" y="127" width="320" height="55"/>
+                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dY2-j0-Cye">
+                            <rect key="frame" x="0.0" y="155" width="320" height="27"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbX-TQ-FYc" customClass="NovaGroupView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="55"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="27"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="55" id="uYe-Rp-rhK"/>
+                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="aP4-VA-fJ0"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLO-G9-z26">
-                                    <rect key="frame" x="106.5" y="0.0" width="107" height="55"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                    <rect key="frame" x="106.5" y="0.0" width="107" height="27"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f61-gC-kYe">
-                                    <rect key="frame" x="213.5" y="0.0" width="106.5" height="55"/>
-                                    <state key="normal" title="Button" image="circle-info"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f61-gC-kYe">
+                                    <rect key="frame" x="213.5" y="0.0" width="106.5" height="27"/>
+                                    <state key="normal" image="circle-info"/>
                                     <connections>
                                         <action selector="novagroupInfoButtonTapped:" destination="-1" eventType="touchUpInside" id="umr-Od-Yxj"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="yLO-G9-z26" firstAttribute="height" secondItem="dY2-j0-Cye" secondAttribute="height" id="cZf-K5-4pP"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

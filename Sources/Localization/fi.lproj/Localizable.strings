@@ -96,7 +96,7 @@
 "product-add.title" = "Uusi tuote";
 "product-add.title-edit" = "Muokkaa tuotetta";
 "product-add.titles.barcode" = "Viivakoodi";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
+"product-add.titles.top-explainations" = "Hyvin tehty! Tätä tuotetta ei vielä ole Open Food Factsissa. Voitko ottaa kuvia tuotteesta, ainesosaluettelosta ja ravintosisällöstä lisätäksesi sen Open Food Factsiin? \n\nKiitos etukäteen.";
 "product-add.titles.license-explaination" = "Huomaa: lähettämäsi kuvat julkaistaan Creative Commons Attribution and ShareAlike -lisenssillä.";
 
 "product-add.titles.product-info" = "Tuotetiedot";
@@ -113,7 +113,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "100 g / 100 ml kohden";
 "product-add.nutritive.choice.per-portion" = "annosta kohti";
 "product-add.nutritive.add-nutriment" = "Lisää ravintoaine";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Yli 100 g?";
 
 "product-add.description.ingredients" = "Täydennä ainesosat saadaksesi ruoan jalostusasteen NOVA-ryhmän";
 "product-add.titles.ingredients" = "Ainesosat";
@@ -150,7 +150,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Viivakoodi";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Yleisnimi";
 "product-detail.summary.quantity" = "Määrä";
 "product-detail.summary.packaging" = "Pakkaus";
 "product-detail.summary.brands" = "Tuotemerkit";
@@ -168,7 +168,7 @@
 "product-detail.ingredients.nova.2" = "Jalostetut ainesosat";
 "product-detail.ingredients.nova.3" = "Jalostetut elintarvikkeet";
 "product-detail.ingredients.nova.4" = "Ultrajalostetut elintarvikkeet";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.incite" = "Lisää ainesosat ja/tai tuoteluokat NOVA-ryhmän laskemiseksi.";
 "product-detail.ingredients.ingredients-list" = "Ainesosaluettelo";
 "product-detail.ingredients.allergens-list" = "Allergioita tai intoleransseja aiheuttavat aineet ja tuotteet";
 "product-detail.ingredients.allergens-alert.title" = "Sisältää allergeeneja!";
@@ -193,12 +193,22 @@
 "product-detail.nutrition-table.for-serving" = "Annosta kohti";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "annos";
+"product-detail.nutrition-table.missing" = "Ravintoaineita ei ole asetettu.";
 
 // Nutrition levels
 "nutrition-level.title" = "Ravintoarvot per 100 g / 100 ml";
 "nutrition-level.low" = "pieni määrä";
 "nutrition-level.moderate" = "kohtalainen määrä";
 "nutrition-level.high" = "suuri määrä";
+
+// Ingredients Analysis
+"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
+"ingredients-analysis.unknown_status" = "Emme voineet arvioida tuotteen tilaa.";
+"ingredients-analysis.display" = "Display %@ status";
+"ingredients-analysis.settings.display.palmOil" = "Display palm oil status";
+"ingredients-analysis.settings.display.vegetarian" = "Display vegetarian status";
+"ingredients-analysis.settings.display.vegan" = "Display vegan status";
 
 // Nutrition
 "nutrition.energy" = "Kalorit";
@@ -307,16 +317,17 @@
 /* Tab bar item */
 "user.tab-bar.item" = "Käyttäjä";
 "user.log-in" = "Kirjaudu sisään";
+"user.logging-in" = "Kirjaudutaan sisään";
 "user.log-out" = "Kirjaudu ulos";
 "user.username" = "Käyttäjätunnus";
 "user.password" = "Salasana";
-"user.logged-in.label" = "%@, you are logged in";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
-"user.not-logged-in" = "Not logged in";
+"user.logged-in.label" = "%@, olet kirjautunut sisään";
+"user.logged-in-explanation.label" = "Tilisi saa tunnustuksen kaikista lisäämistäsi tuotteista ja lähettämistäsi tuotekuvista";
+"user.not-logged-in" = "Ei sisäänkirjautuneena";
 "user.forgot-password" = "Salasana unohtunut?";
 "user.check-your-contributions.button" = "Tarkastele kaikkia osallistumisiasi";
 "user.products-pending-upload.button" = "Tuotteita, jotka odottavat lähetystä Open Food Factsiin";
-"user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
+"user.products-pending-upload-none.button" = "Tuotteet, jotka odottavat lähetystä Open Food Factsiin (ei yhtään)";
 "user.create-account.text" = "Jos sinulla ei ole tiliä, voit luoda sen napsauttamalla alla olevaa linkkiä.";
 "user.create-account.button" = "Luo tili";
 "user.why-log-in.text" = "Kirjaudu sisään osallistujatilillesi, saadaksesi tunnustuksen osallistumisistasi Open Food Factsiin.";

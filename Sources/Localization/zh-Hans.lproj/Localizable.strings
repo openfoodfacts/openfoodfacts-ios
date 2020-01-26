@@ -166,8 +166,8 @@
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
-"product-detail.ingredients.nova.3" = "Processed foods";
-"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.3" = "加工食品";
+"product-detail.ingredients.nova.4" = "超加工食品和饮料";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "成分列表";
 "product-detail.ingredients.allergens-list" = "成分或产品可能导致过敏或不耐受";
@@ -193,12 +193,22 @@
 "product-detail.nutrition-table.for-serving" = "每份";
 "product-detail.nutrition-table.100g" = "100 克";
 "product-detail.nutrition-table.serving" = "serving";
+"product-detail.nutrition-table.missing" = "No nutrients have been set.";
 
 // Nutrition levels
 "nutrition-level.title" = "每百克或每百毫升含有的营养成分";
 "nutrition-level.low" = "较少含量";
 "nutrition-level.moderate" = "中等含量";
 "nutrition-level.high" = "较高含量";
+
+// Ingredients Analysis
+"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
+"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
+"ingredients-analysis.display" = "Display %@ status";
+"ingredients-analysis.settings.display.palmOil" = "Display palm oil status";
+"ingredients-analysis.settings.display.vegetarian" = "Display vegetarian status";
+"ingredients-analysis.settings.display.vegan" = "Display vegan status";
 
 // Nutrition
 "nutrition.energy" = "卡路里";
@@ -307,12 +317,13 @@
 /* Tab bar item */
 "user.tab-bar.item" = "用户";
 "user.log-in" = "登陆";
+"user.logging-in" = "登录中";
 "user.log-out" = "推出";
 "user.username" = "用户名";
 "user.password" = "密码";
-"user.logged-in.label" = "%@, you are logged in";
+"user.logged-in.label" = "%@，您已登录";
 "user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
-"user.not-logged-in" = "Not logged in";
+"user.not-logged-in" = "未登录";
 "user.forgot-password" = "忘记密码?";
 "user.check-your-contributions.button" = "查看您的全部贡献";
 "user.products-pending-upload.button" = "等待上传到 Open Food Facts 的产品";

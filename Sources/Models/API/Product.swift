@@ -88,14 +88,25 @@ struct Product: Mappable {
     var categories: [String]?
     var categoriesTags: [String]?
     var nutriscore: String?
-    var novaGroup: Int?
+    var novaGroup: Int? {
+        if novaGroupAsInt != nil {
+            return novaGroupAsInt
+        }
+        if novaGroupAsString != nil {
+            return Int(novaGroupAsString!)
+        }
+        return nil
+    }
+    private var novaGroupAsInt: Int?
+    private var novaGroupAsString: String?
     var manufacturingPlaces: String?
     var origins: String?
     var labels: [String]?
     var citiesTags: [String]?
     var embCodesTags: [String]?
     var stores: [String]?
-    var countries: [String]?
+    // var countries: [String]?
+    var countriesTags: [String]?
     private var ingredientsImageUrlDecoded: String?
     var allergens: [Tag]?
     var traces: [Tag]?
@@ -113,12 +124,15 @@ struct Product: Mappable {
     var environmentInfoCard: String?
     var environmentImpactLevelTags: [EnvironmentImpact]?
     var nutritionTableHtml: String?
+    var ingredientsAnalysisTags: [String]?
+    var ingredientsAnalysisDetails: [IngredientsAnalysisDetail]?
     // new variables for local languages
     var languageCodes: [String: Int]?
     var names: [String: String] = [:]
     var genericNames: [String: String] = [:]
     var ingredients: [String: String] = [:]
     var ingredientsListDecoded: String?
+    var ingredientsListAnalysis: [Ingredient]?
     var vitamins: [Tag]?
     var minerals: [Tag]?
     var nucleotides: [Tag]?
@@ -261,12 +275,15 @@ struct Product: Mappable {
         categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
         categoriesTags <- (map[OFFJson.CategoriesTagsKey])
         nutriscore <- map[OFFJson.NutritionGradesKey]
-        novaGroup <- (map[OFFJson.NovaGroupKey], IntTransform())
+        // novaGroup should be Int, but might be String
+        novaGroupAsInt <- (map[OFFJson.NovaGroupKey], IntTransform())
+        novaGroupAsString <- map[OFFJson.NovaGroupKey]
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
         origins <- map[OFFJson.OriginsKey]
         labels <- (map[OFFJson.LabelsKey], ArrayTransform())
         citiesTags <- map[OFFJson.CitiesTagsKey]
-        countries <- (map[OFFJson.CountriesKey], ArrayTransform())
+        // countries <- (map[OFFJson.CountriesKey], ArrayTransform())
+        countriesTags <- map[OFFJson.CountriesTagsKey]
         embCodesTags <- map[OFFJson.EmbCodesTagsKey]
         environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
@@ -284,7 +301,6 @@ struct Product: Mappable {
         minerals <- (map[OFFJson.MineralsTagsKey], TagTransform())
         nameDecoded <- map[OFFJson.ProductNameKey]
         noNutritionData <- map[OFFJson.NoNutritionDataKey]
-        novaGroup <- map[OFFJson.NovaGroupKey]
         nucleotides <- (map[OFFJson.NucleotidesTagsKey], TagTransform())
         nutriments <- map[OFFJson.NutrimentsKey]
         nutriscore <- map[OFFJson.NutritionGradesKey]
@@ -292,6 +308,8 @@ struct Product: Mappable {
         nutritionLevels <- map[OFFJson.NutrientLevelsKey]
         nutritionTableImageDecoded <- map[OFFJson.ImageNutritionUrlKey]
         nutritionTableHtml <- map[OFFJson.NutritionTableHtml]
+        ingredientsAnalysisTags <- map[OFFJson.IngredientsAnalysisTags]
+        ingredientsListAnalysis <- map[OFFJson.IngredientsElementKey]
         origins <- map[OFFJson.OriginsKey]
         otherNutrients <- (map[OFFJson.OtherNutritionalSubstancesTagsKey], TagTransform())
         packaging <- (map[OFFJson.PackagingKey], ArrayTransform())

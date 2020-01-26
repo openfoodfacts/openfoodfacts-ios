@@ -73,6 +73,7 @@ struct OFFJson {
     //static let LinkKey = "link"
     //static let IngredientsNKey = "ingredients_n"
     static let NutrimentsKey = "nutriments"
+    static let IngredientsDetailKey = "ingredients"
 
     static let SodiumKey = "sodium"
     static let SaltKey = "salt"
@@ -186,7 +187,7 @@ struct OFFJson {
     //static let ProteinsUnitKey = "proteins_unit"
     //static let NutritionScoreFrKey = "nutrition-score-fr"
     //static let NutritionScoreUk100gKey = "nutrition-score-uk_100g"
-    //static let CountriesTagsKey = "countries_tags"
+    static let CountriesTagsKey = "countries_tags"
     static let IngredientsFromPalmOilTagsKey = "ingredients_from_palm_oil_tags"
     static let EmbCodesTagsKey = "emb_codes_tags"
     //static let BrandsTagsKey = "brands_tags"
@@ -223,7 +224,7 @@ struct OFFJson {
     //static let AdditivesPrevKey = "additives_prev"
     //static let StoresTagsKey = "stores_tags"
     //static let IdKey = "id"
-    static let CountriesKey = "countries"
+    //static let CountriesKey = "countries"
     //static let ImageFrontThumbUrlKey = "image_front_thumb_url"
     //static let PurchasePlacesTagsKey = "purchase_places_tags"
     //static let TracesHierarchyKey = "traces_hierarchy"
@@ -272,11 +273,15 @@ struct OFFJson {
     //static let ImageIngredientsThumbUrlKey = "image_ingredients_thumb_url"
     static let ImageSmallUrlKey = "image_small_url"
     static let ImageUrlKey = "image_url"
+    static let IngredientsAnalysisTags = "ingredients_analysis_tags"
     static let IngredientsKey = "ingredients_text"
+    static let IngredientsElementKey = "ingredients"
     //static let IngredientsDebugKey = "ingredients_debug"
-    //static let IngredientsElementIdKey = "id"
-    //static let IngredientsElementRankKey = "rank"
-    //static let IngredientsElementTextKey = "text"
+    static let IngredientsElementIdKey = "id"
+    static let IngredientsElementRankKey = "rank"
+    static let IngredientsElementTextKey = "text"
+    static let IngredientsElementVeganKey = "vegan"
+    static let IngredientsElementVegetarianKey = "vegetarian"
     //static let IngredientsFromPalmOilNKey = "ingredients_from_palm_oil_n"
     //static let IngredientsIdsDebugKey = "ingredients_ids_debug"
     //static let IngredientsThatMayBeFromPalmOilNKey = "ingredients_that_may_be_from_palm_oil_n"
@@ -336,8 +341,8 @@ struct OFFJson {
             OFFJson.CitiesTagsKey,
             OFFJson.CodeKey,
             // OFFJson.ConservationConditionsKey,
-            OFFJson.CountriesKey,
-            // OFFJson.CountriesTagsKey,
+            // OFFJson.CountriesKey,
+            OFFJson.CountriesTagsKey,
             // OFFJson.CreatedTKey,
             // OFFJson.CreatorKey,
             // OFFJson.CustomerServiceKey,
@@ -394,8 +399,10 @@ struct OFFJson {
             OFFJson.StoresKey,
             // OFFJson.TracesKey,
             OFFJson.TracesTagsKey,
+            OFFJson.VitaminsTagsKey,
+            OFFJson.IngredientsAnalysisTags,
             // OFFJson.UrlKey,
-            OFFJson.VitaminsTagsKey
+            OFFJson.IngredientsElementKey
             // OFFJson.WarningKey,
         ]
     }

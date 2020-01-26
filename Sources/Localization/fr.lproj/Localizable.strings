@@ -193,12 +193,22 @@
 "product-detail.nutrition-table.for-serving" = "Par portion";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "portion";
+"product-detail.nutrition-table.missing" = "Aucun nutriment n'a été défini.";
 
 // Nutrition levels
 "nutrition-level.title" = "Repères nutritionnels pour 100 g/100 mL";
 "nutrition-level.low" = "en faible quantité";
 "nutrition-level.moderate" = "en quantité modérée";
 "nutrition-level.high" = "en quantité élevée";
+
+// Ingredients Analysis
+"ingredients-analysis.ingredients_in_this_product" = "Ingrédients de ce produit qui sont %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Les ingrédients de ce produit sont %@s.";
+"ingredients-analysis.unknown_status" = "Nous n'avons pas pu évaluer les caractéristiques du produit.";
+"ingredients-analysis.display" = "Display %@ status";
+"ingredients-analysis.settings.display.palmOil" = "Display palm oil status";
+"ingredients-analysis.settings.display.vegetarian" = "Display vegetarian status";
+"ingredients-analysis.settings.display.vegan" = "Display vegan status";
 
 // Nutrition
 "nutrition.energy" = "Énergie";
@@ -307,6 +317,7 @@
 /* Tab bar item */
 "user.tab-bar.item" = "Utilisateur";
 "user.log-in" = "Se Connecter";
+"user.logging-in" = "Authentification en cours";
 "user.log-out" = "Se Déconnecter";
 "user.username" = "Nom d'utilisateur";
 "user.password" = "Mot de passe";

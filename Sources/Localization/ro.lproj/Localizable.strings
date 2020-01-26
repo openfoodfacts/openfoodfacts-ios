@@ -164,10 +164,10 @@
 "product-detail.summary.countries" = "Țările unde se vinde";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
-"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
-"product-detail.ingredients.nova.3" = "Processed foods";
-"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.1" = "Alimente neprocesate sau procesate minim";
+"product-detail.ingredients.nova.2" = "Ingrediente culinare prelucrate";
+"product-detail.ingredients.nova.3" = "Hrană procesată";
+"product-detail.ingredients.nova.4" = "Produse ultra-procesate pentru alimente și băuturi";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Substanțe sau produse care cauzează alergii sau intoleranțe";
@@ -193,12 +193,22 @@
 "product-detail.nutrition-table.for-serving" = "Per porție";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
+"product-detail.nutrition-table.missing" = "No nutrients have been set.";
 
 // Nutrition levels
 "nutrition-level.title" = "Informații nutriționale pentru 100g";
 "nutrition-level.low" = "în cantitate mică";
 "nutrition-level.moderate" = "în cantitate moderată";
 "nutrition-level.high" = "în cantitate ridicată";
+
+// Ingredients Analysis
+"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
+"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
+"ingredients-analysis.display" = "Display %@ status";
+"ingredients-analysis.settings.display.palmOil" = "Display palm oil status";
+"ingredients-analysis.settings.display.vegetarian" = "Display vegetarian status";
+"ingredients-analysis.settings.display.vegan" = "Display vegan status";
 
 // Nutrition
 "nutrition.energy" = "Valoare energetică";
@@ -307,6 +317,7 @@
 /* Tab bar item */
 "user.tab-bar.item" = "Utilizator";
 "user.log-in" = "Conectare";
+"user.logging-in" = "Logging in";
 "user.log-out" = "Deconectare";
 "user.username" = "Nume de utilizator";
 "user.password" = "Parolă";

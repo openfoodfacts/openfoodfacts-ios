@@ -23,6 +23,9 @@ struct URLs {
     static let FrequentlyAskedQuestions = "\(baseUrl)/faq"
     static let NutriScore = "\(baseUrl)/nutriscore"
     static let Nova = "\(baseUrl)/nova"
+    static let IngredientsAnalysisIcons = "https://ssl-api.openfoodfacts.org/files/app/ingredients-analysis.json"
+    static let IngredientsAnalysisIconPathPrefix = "https://static.openfoodfacts.org/images/icons/"
+    static let IngredientsAnalysisIconPathSuffix = ".white.96x96.png"
 
     static let MockBarcode = "\(baseUrl)/files/presskit/PressKit/barcodes/"
 

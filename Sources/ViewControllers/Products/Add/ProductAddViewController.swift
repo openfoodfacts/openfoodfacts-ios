@@ -204,7 +204,6 @@ class ProductAddViewController: TakePictureViewController {
     ]
     fileprivate var displayedNutrimentItems = displayedNutrimentItemsByDefault
 
-    // swiftlint:disable function_body_length
     override func viewDidLoad() {
         self.title = "product-add.title".localized
         productHasBeenEdited = false
@@ -251,7 +250,7 @@ class ProductAddViewController: TakePictureViewController {
         }
         setUserAgent()
     }
-    
+
     private func setUserAgent() {
         var userAgentString = ""
         if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
@@ -327,7 +326,7 @@ class ProductAddViewController: TakePictureViewController {
         return nutriments
     }
 
-    @objc func save() {
+    @objc func saveAll() {
         self.view.endEditing(true)
         saveProductInfosButton.isEnabled = false
 
@@ -347,10 +346,11 @@ class ProductAddViewController: TakePictureViewController {
                     self?.saveProductInfosButton.isEnabled = true
                 }
         })
+        saveNutriments()
     }
 
     @IBAction func didTapSaveProductButton(_ sender: UIButton) {
-        save()
+        saveAll()
     }
 
     @IBAction func didTapSaveNutrimentsButton(_ sender: Any) {
@@ -358,6 +358,10 @@ class ProductAddViewController: TakePictureViewController {
         self.saveNutrimentsButton.isEnabled = false
 
         self.showSavingIndication(label: lastSavedProductInfosLabel, key: "save-info")
+        saveNutriments()
+    }
+
+    func saveNutriments() {
         self.showSavingIndication(label: lastSavedNutrimentsLabel, key: "save-nutriments")
 
         fillProductFromInfosForm()

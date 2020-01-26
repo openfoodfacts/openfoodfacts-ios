@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3HE-mz-dYL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3HE-mz-dYL">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,12 +56,12 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4X-gX-yB6">
                                 <rect key="frame" x="8" y="128" width="359" height="531"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="nRK-pZ-yFo" firstAttribute="bottom" secondItem="Y4X-gX-yB6" secondAttribute="bottom" constant="8" id="3jB-Vj-JAA"/>
+                            <constraint firstItem="nRK-pZ-yFo" firstAttribute="bottom" secondItem="Y4X-gX-yB6" secondAttribute="bottom" priority="999" constant="8" id="3jB-Vj-JAA"/>
                             <constraint firstItem="nRK-pZ-yFo" firstAttribute="trailing" secondItem="Y4X-gX-yB6" secondAttribute="trailing" constant="8" id="4qB-78-YUB"/>
                             <constraint firstItem="Ni7-US-URl" firstAttribute="centerX" secondItem="uwy-Oa-yWz" secondAttribute="centerX" id="5WY-gV-jdC"/>
                             <constraint firstItem="lIB-Y7-ek4" firstAttribute="bottom" secondItem="uwy-Oa-yWz" secondAttribute="bottom" id="9B7-oA-7Q8"/>

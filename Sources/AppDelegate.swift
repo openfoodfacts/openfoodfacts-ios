@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-
     func applicationDidBecomeActive(_ application: UIApplication) {
         DeepLinkManager.shared.checkDeepLink()
     }
@@ -64,12 +63,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configureRealm() {
         // https://stackoverflow.com/questions/33363508/rlmexception-migration-is-required-for-object-type
         let config = Realm.Configuration(
-            schemaVersion: 30,
+            schemaVersion: 32,
           // Set the block which will be called automatically when opening a Realm with
           // a schema version lower than the one set above
-          migrationBlock: { migration, oldSchemaVersion in
+          migrationBlock: { _, oldSchemaVersion in
             // Whenever your scheme changes your have to increase the schemaVersion in the migration block and update the needed migration within the block.
-            if oldSchemaVersion < 30 {
+            if oldSchemaVersion < 32 {
               // Nothing to do!
               // Realm will automatically detect new properties and removed properties
               // And will update the schema on disk automatically

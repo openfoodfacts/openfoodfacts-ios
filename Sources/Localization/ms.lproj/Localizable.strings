@@ -153,11 +153,11 @@
 "product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "Quantity";
 "product-detail.summary.packaging" = "Packaging";
-"product-detail.summary.brands" = "Brands";
+"product-detail.summary.brands" = "Jenama";
 "product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
 "product-detail.summary.origins" = "Origin of ingredients";
-"product-detail.summary.categories" = "Categories";
-"product-detail.summary.labels" = "Labels, certifications, awards";
+"product-detail.summary.categories" = "Kategori-kategori";
+"product-detail.summary.labels" = "Label, pensijilan, anugerah";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
 "product-detail.summary.embCodes" = "Packager code";
@@ -193,12 +193,22 @@
 "product-detail.nutrition-table.for-serving" = "Per serving";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
+"product-detail.nutrition-table.missing" = "No nutrients have been set.";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "in low quantity";
 "nutrition-level.moderate" = "in moderate quantity";
 "nutrition-level.high" = "in high quantity";
+
+// Ingredients Analysis
+"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
+"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
+"ingredients-analysis.display" = "Display %@ status";
+"ingredients-analysis.settings.display.palmOil" = "Display palm oil status";
+"ingredients-analysis.settings.display.vegetarian" = "Display vegetarian status";
+"ingredients-analysis.settings.display.vegan" = "Display vegan status";
 
 // Nutrition
 "nutrition.energy" = "Energy";
@@ -307,6 +317,7 @@
 /* Tab bar item */
 "user.tab-bar.item" = "User";
 "user.log-in" = "Log In";
+"user.logging-in" = "Logging in";
 "user.log-out" = "Log Out";
 "user.username" = "Username";
 "user.password" = "Kata laluan";

@@ -72,7 +72,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             navigationItem.rightBarButtonItems = buttons
         }
     }
-    
+
     private func setUserAgent() {
         var userAgentString = ""
         if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
@@ -167,6 +167,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Header
         rows.append(FormRow(value: product as Any, cellType: SummaryHeaderCell.self))
 
+        createIngredientsAnalysisRows(rows: &rows)
         createNutrientsRows(rows: &rows)
         createAdditivesRows(with: &rows, product: product)
 
@@ -195,7 +196,14 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }), label: InfoRowKey.embCodes.localizedString)
 
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
-        createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
+        createFormRow(with: &rows, item: product.countriesTags?.map({ (tag: String) -> NSAttributedString in
+            if let country = dataManager.country(forTag: tag) {
+                if let name = Tag.choose(inTags: Array(country.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(for: country)])
+                }
+            }
+            return NSAttributedString(string: tag)
+        }), label: InfoRowKey.countries.localizedString)
 
         // Footer
         rows.append(FormRow(value: product as Any, cellType: SummaryFooterCell.self))
@@ -327,14 +335,28 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createNutrientsRows(rows: &rows)
 
-        createNutritionTableWebViewRow(rows: &rows)
-        //createNutritionTableRows(rows: &rows)
+        if let validStates = product.states,
+            validStates.contains("en:nutrition-facts-completed") {
+            createNutritionTableWebViewRow(rows: &rows)
+            //createNutritionTableRows(rows: &rows)
+        } else {
+            createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+            createFormRow(with: &rows, item: "product-detail.nutrition-table.missing".localized, label: InfoRowKey.nutritionalTableHeader.localizedString, isCopiable: true)
+        }
 
         if rows.isEmpty {
             return nil
         }
 
         return Form(title: "product-detail.page-title.nutrition".localized, rows: rows)
+    }
+
+    fileprivate func createIngredientsAnalysisRows(rows: inout [FormRow]) {
+        let analysisDetails = self.dataManager.ingredientsAnalysis(forProduct: product)
+        if !analysisDetails.isEmpty {
+            product.ingredientsAnalysisDetails = analysisDetails
+            createFormRow(with: &rows, item: product, cellType: IngredientsAnalysisTableViewCell.self)
+        }
     }
 
     fileprivate func createNutrientsRows(rows: inout [FormRow]) {

@@ -64,6 +64,14 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
         self.updateInitialView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.dataManager.getTagline { [weak self] (tagline: Tagline?) in
+            self?.initialView.tagline = tagline
+        }
+    }
+
     fileprivate func updateInitialView() {
         initialView.loadingProgressView.setProgress(Float(offlineStatus.percent/100), animated: true)
         initialView.loadingTitleLabel.text = String.localizedStringWithFormat(NSLocalizedString("product-search.initial-view.offline.title-loading", comment: ""), Int(offlineStatus.percent))

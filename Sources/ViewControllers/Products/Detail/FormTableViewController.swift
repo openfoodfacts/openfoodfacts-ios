@@ -111,6 +111,12 @@ extension FormTableViewController {
         UIPasteboard.general.string = value
         UIMenuController.shared.setMenuVisible(false, animated: true)
     }
+
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let ingredientsAnalysisTableViewCell = cell as? IngredientsAnalysisTableViewCell {
+            ingredientsAnalysisTableViewCell.dismiss()
+        }
+    }
 }
 
 extension FormTableViewController: IndicatorInfoProvider {
@@ -128,7 +134,10 @@ extension FormTableViewController: FormTableViewControllerDelegate {
 
 extension FormTableViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        openUrlInApp(URL)
+        // only open the external page when the actual text has been tapped.
+        if characterRange.location + characterRange.length < textView.text.count {
+            openUrlInApp(URL)
+        }
         return false
     }
 }

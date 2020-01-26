@@ -193,12 +193,22 @@
 "product-detail.nutrition-table.for-serving" = "인분";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
+"product-detail.nutrition-table.missing" = "No nutrients have been set.";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "소량일시";
 "nutrition-level.moderate" = "적당량";
 "nutrition-level.high" = "대량일시";
+
+// Ingredients Analysis
+"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
+"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
+"ingredients-analysis.display" = "Display %@ status";
+"ingredients-analysis.settings.display.palmOil" = "Display palm oil status";
+"ingredients-analysis.settings.display.vegetarian" = "Display vegetarian status";
+"ingredients-analysis.settings.display.vegan" = "Display vegan status";
 
 // Nutrition
 "nutrition.energy" = "에너지";
@@ -300,13 +310,14 @@
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
 "settings.about.contact" = "Contact";
 "settings.about.frequently-asked-questions" = "자주 묻는 질문";
-"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
+"settings.promotion.open-beauty-facts" = "공개되어 있는 아름다움에 대한 진실들";
 "settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
 "user.tab-bar.item" = "사용자";
 "user.log-in" = "Log In";
+"user.logging-in" = "Logging in";
 "user.log-out" = "Log Out";
 "user.username" = "Username";
 "user.password" = "암호";

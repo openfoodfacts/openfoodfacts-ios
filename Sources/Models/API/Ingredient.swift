@@ -1,0 +1,29 @@
+//
+//  Ingredient.swift
+//  OpenFoodFacts
+//
+//  Created by Timothee MATO on 23/12/2019.
+//  Copyright © 2019 Andrés Pizá Bückmann. All rights reserved.
+//
+
+import Foundation
+import ObjectMapper
+
+struct Ingredient: Mappable {
+    var vegan: String?
+    var vegetarian: String?
+    var text: String?
+    var id: String?
+    var rank: String?
+
+    init() {}
+    init?(map: Map) {}
+
+    mutating func mapping(map: Map) {
+        vegan <- map[OFFJson.IngredientsElementVeganKey]
+        vegetarian <- map[OFFJson.IngredientsElementVegetarianKey]
+        text <- map[OFFJson.IngredientsElementTextKey]
+        id <- map[OFFJson.IngredientsElementIdKey]
+        rank <- map[OFFJson.IngredientsElementRankKey]
+    }
+}

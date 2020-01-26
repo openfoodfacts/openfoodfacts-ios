@@ -46,6 +46,10 @@ class ScannerViewController: UIViewController, DataManagerClient {
     fileprivate let floatingLabelContainer = UIView()
     fileprivate let floatingLabel = UILabel()
 
+    /** view used to stack informations above the floating panel. Will contain vegan / vegetarian / palm and alerts regarding non complete products */
+    fileprivate let floatingTopContainer = UIStackView()
+    fileprivate let ingredientsAnalysisFloatingContainer = UIStackView()
+
     init(dataManager: DataManagerProtocol) {
         self.dataManager = dataManager
         super.init(nibName: nil, bundle: nil)
@@ -91,6 +95,13 @@ class ScannerViewController: UIViewController, DataManagerClient {
         floatingLabelContainer.addSubview(floatingLabel)
         floatingLabelContainer.isHidden = true
 
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: floatingLabel, attribute: .bottom, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .bottom, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: floatingLabel, attribute: .top, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .top, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: floatingLabel, attribute: .leading, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .leading, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: floatingLabel, attribute: .trailing, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .trailing, multiplier: 1, constant: 8)
+        ])
+
         self.view.addSubview(floatingLabelContainer)
         floatingLabelContainer.translatesAutoresizingMaskIntoConstraints = false
         floatingLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -100,15 +111,25 @@ class ScannerViewController: UIViewController, DataManagerClient {
         // set the useragent for the scan URL calls from this app
         setUserAgent()
 
+        ingredientsAnalysisFloatingContainer.distribution = .fill
+        ingredientsAnalysisFloatingContainer.spacing = 8
+        ingredientsAnalysisFloatingContainer.axis = .horizontal
+        ingredientsAnalysisFloatingContainer.isHidden = true
+        ingredientsAnalysisFloatingContainer.translatesAutoresizingMaskIntoConstraints = false
+
+        floatingTopContainer.distribution = .fillProportionally
+        floatingTopContainer.axis = .vertical
+        floatingTopContainer.addArrangedSubview(floatingLabelContainer)
+        floatingTopContainer.addArrangedSubview(ingredientsAnalysisFloatingContainer)
+
+        self.view.addSubview(floatingTopContainer)
+        floatingTopContainer.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: floatingLabelContainer, attribute: .bottom, relatedBy: .equal, toItem: floatingPanelController.surfaceView, attribute: .top, multiplier: 1, constant: 8),
-            NSLayoutConstraint(item: floatingLabelContainer, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: floatingLabelContainer, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: floatingLabel, attribute: .bottom, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .bottom, multiplier: 1, constant: -16),
-            NSLayoutConstraint(item: floatingLabel, attribute: .top, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .top, multiplier: 1, constant: 8),
-            NSLayoutConstraint(item: floatingLabel, attribute: .leading, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .leading, multiplier: 1, constant: 8),
-            NSLayoutConstraint(item: floatingLabel, attribute: .trailing, relatedBy: .equal, toItem: floatingLabelContainer, attribute: .trailing, multiplier: 1, constant: -8)
-            ])
+            NSLayoutConstraint(item: floatingTopContainer, attribute: .bottom, relatedBy: .equal, toItem: floatingPanelController.surfaceView, attribute: .top, multiplier: 1, constant: -16),
+            NSLayoutConstraint(item: floatingTopContainer, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 16),
+            NSLayoutConstraint(item: floatingTopContainer, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: -16)
+        ])
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -140,6 +161,21 @@ class ScannerViewController: UIViewController, DataManagerClient {
         }
 
         self.navigationController?.isNavigationBarHidden = true
+
+        #if DEBUG
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+                let barcode = "3564700459447"
+                if self.lastCodeScanned == nil || (self.lastCodeScanned != nil && self.lastCodeScanned != barcode) {
+                    self.resetOverlay()
+                    self.allergenAlertShown = false
+                    DispatchQueue.main.async {
+                        self.floatingLabelContainer.isHidden = true
+                    }
+                    self.lastCodeScanned = barcode
+                    self.getProduct(barcode: barcode, isSummary: true)
+                }
+            }
+        #endif
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -317,8 +353,25 @@ class ScannerViewController: UIViewController, DataManagerClient {
     }
 
     fileprivate func configureFloatingPanel() {
+
         floatingPanelController = FloatingPanelController()
         floatingPanelController.delegate = self
+        floatingPanelController.contentMode = .fitToBounds
+
+        // Add the floating panel view to the controller's view on top of other views.
+        self.view.addSubview(floatingPanelController.view)
+        floatingPanelController.view.frame = self.view.bounds
+
+        // In addition, Auto Layout constraints are highly recommended.
+        // Constraint the fpc.view to all four edges of your controller's view.
+        // It makes the layout more robust on trait collection change.
+        floatingPanelController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+          floatingPanelController.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0.0),
+          floatingPanelController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0.0),
+          floatingPanelController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0.0),
+          floatingPanelController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0.0)
+        ])
 
         let storyboard = UIStoryboard(name: "Search", bundle: nil)
         // swiftlint:disable:next force_cast
@@ -355,6 +408,12 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
 
         if let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject, supportedBarcodes.contains(metadataObject.type), let barcode = metadataObject.stringValue {
+
+            if self.dataManager.isInvalid(barcode: barcode) {
+                // barcode is invalid, we just ignore as if nothing was scanned
+                return
+            }
+
             if lastCodeScanned == nil || (lastCodeScanned != nil && lastCodeScanned != barcode) {
                 resetOverlay()
                 allergenAlertShown = false
@@ -449,14 +508,15 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                         self.showAllergenAlertIfNeeded(forProduct: product)
                     }
                 }
-
                 self.showAllergensFloatingLabelIfNeeded()
-
+                self.showIngredientsAnalysisFloatingIfNeeded()
             } else {
                 if createIfNeeded == true {
                     self.addNewProduct(barcode)
                 }
                 self.scannerResultController.status = .waitingForScan
+                self.floatingLabelContainer.isHidden = true
+                self.ingredientsAnalysisFloatingContainer.isHidden = true
             }
         }
     }
@@ -486,6 +546,36 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             }
         default:
             self.floatingLabelContainer.isHidden = true
+        }
+    }
+
+    fileprivate func showIngredientsAnalysisFloatingIfNeeded() {
+        self.ingredientsAnalysisFloatingContainer.arrangedSubviews.forEach {
+            if let view = $0 as? IngredientsAnalysisView {
+                view.removeGestureRecognizer()
+            }
+        }
+        self.ingredientsAnalysisFloatingContainer.removeAllViews()
+        self.ingredientsAnalysisFloatingContainer.isHidden = true
+
+        switch scannerResultController.status {
+        case .hasSummary(let product), .hasProduct(let product, _):
+            let analysisDetails = dataManager.ingredientsAnalysis(forProduct: product)
+
+            if !analysisDetails.isEmpty {
+                analysisDetails.forEach { (iad: IngredientsAnalysisDetail) in
+                    let analysisView = IngredientsAnalysisView.loadFromNib()
+                    analysisView.configure(detail: iad, ingredientsList: product.ingredientsListAnalysis)
+                    analysisView.configureGestureRecognizer()
+                    self.ingredientsAnalysisFloatingContainer.addArrangedSubview(analysisView)
+                }
+                self.ingredientsAnalysisFloatingContainer.addArrangedSubview(UIView())
+                self.ingredientsAnalysisFloatingContainer.isHidden = false
+            } else {
+                self.ingredientsAnalysisFloatingContainer.isHidden = true
+            }
+        default:
+            self.ingredientsAnalysisFloatingContainer.isHidden = true
         }
     }
 }
@@ -553,11 +643,15 @@ extension ScannerViewController {
             addProductVC.dataManager = dataManager
             self.barcodeToOpenAtStartup = barcode
             let navVC = UINavigationController(rootViewController: addProductVC)
-            addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
-            addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.save))
+            addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ScannerViewController.dismissVC))
+            addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.saveAll))
             navVC.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(addProductVC, animated: true)
         }
+    }
+
+    @objc func dismissVC() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     fileprivate func turnOffFlash() {
@@ -629,7 +723,9 @@ extension ScannerViewController {
             self.navigationController?.popToRootViewController(animated: true)
         }))
 
-        self.present(alert, animated: true, completion: nil)
+        #if !DEBUG
+            self.present(alert, animated: true, completion: nil)
+        #endif
     }
 }
 
@@ -641,6 +737,12 @@ extension ScannerViewController: FloatingPanelControllerDelegate {
     }
 
     func floatingPanelDidChangePosition(_ floatingPanelVC: FloatingPanelController) {
+        let isTip = floatingPanelVC.position == .tip
+
+        UIView.animate(withDuration: 0.2) {
+            self.floatingTopContainer.alpha = isTip ? 1 : 0
+        }
+
         if floatingPanelVC.position != .full {
             self.view.endEditing(true)
         }

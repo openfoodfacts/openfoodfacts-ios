@@ -71,7 +71,7 @@ class OfflineProductsService: OfflineProductsApi {
 
         Alamofire.request(OfflineRouter.getAllProductsInfos)
             .responseJSON { (res: DataResponse<Any>) in
-                var totalProductsCount: Int = 800000
+                var totalProductsCount: Int = 1200000
                 if let json = res.result.value as? [String: Any] {
                     totalProductsCount = json["count"] as? Int ?? totalProductsCount
                 }
@@ -99,7 +99,7 @@ class OfflineProductsService: OfflineProductsApi {
                                     if let streamReader = TypedCSVStreamReader<RealmOfflineProduct>(url: firstFileURL, csvDelimiter: "\t") {
                                         var totalCount = 0
 
-                                        streamReader.batchStreamCSV(batchSize: 10000, parse: { (raw: [String : String]) -> RealmOfflineProduct? in
+                                        streamReader.batchStreamCSV(batchSize: 10000, parse: { (raw: [String: String]) -> RealmOfflineProduct? in
                                             guard let barcode = raw["code"] else { return nil }
 
                                             let product = RealmOfflineProduct()

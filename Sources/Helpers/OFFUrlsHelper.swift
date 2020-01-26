@@ -17,6 +17,10 @@ class OFFUrlsHelper: NSObject {
         return URL(string: "\(baseUrl)/category/\(category.code)")!
     }
 
+    static func url(for country: Country) -> URL {
+        return URL(string: "\(baseUrl)/country/\(country.code)")!
+    }
+
     static func url(forAdditive additive: Additive) -> URL {
         return URL(string: "\(baseUrl)/additive/\(additive.code)")!
     }

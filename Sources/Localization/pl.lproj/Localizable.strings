@@ -113,7 +113,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "w 100 g / 100 ml";
 "product-add.nutritive.choice.per-portion" = "w porcji";
 "product-add.nutritive.add-nutriment" = "Dodaj składnik odżywczy";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Więcej niż 100 g?";
 
 "product-add.description.ingredients" = "Aby określić poziom przetworzenia żywności - NOVA, uzupełnij listę składników produktu";
 "product-add.titles.ingredients" = "Składniki";
@@ -150,7 +150,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Kod kreskowy";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Nazwa ogólna";
 "product-detail.summary.quantity" = "Ilość";
 "product-detail.summary.packaging" = "Opakowania";
 "product-detail.summary.brands" = "Marki";
@@ -193,12 +193,22 @@
 "product-detail.nutrition-table.for-serving" = "W porcji";
 "product-detail.nutrition-table.100g" = "100 g";
 "product-detail.nutrition-table.serving" = "porcja";
+"product-detail.nutrition-table.missing" = "No nutrients have been set.";
 
 // Nutrition levels
 "nutrition-level.title" = "Wartość odżywcza w 100 g/ml";
 "nutrition-level.low" = "mała zawartość";
 "nutrition-level.moderate" = "umiarkowana zawartość";
 "nutrition-level.high" = "wysoka zawartość";
+
+// Ingredients Analysis
+"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
+"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
+"ingredients-analysis.display" = "Display %@ status";
+"ingredients-analysis.settings.display.palmOil" = "Display palm oil status";
+"ingredients-analysis.settings.display.vegetarian" = "Display vegetarian status";
+"ingredients-analysis.settings.display.vegan" = "Display vegan status";
 
 // Nutrition
 "nutrition.energy" = "Energia";
@@ -307,6 +317,7 @@
 /* Tab bar item */
 "user.tab-bar.item" = "Użytkownik";
 "user.log-in" = "Zaloguj się";
+"user.logging-in" = "Logging in";
 "user.log-out" = "Wyloguj się";
 "user.username" = "Nazwa użytkownika";
 "user.password" = "Hasło";

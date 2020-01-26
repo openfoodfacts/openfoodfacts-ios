@@ -49,10 +49,14 @@
 		30412DE1220F111400C485DD /* SelectTaxonomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */; };
 		307BBEB921FA16B100E2DF9D /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */; };
 		307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */; };
+		309690CE23C5B73C006CF923 /* Tagline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309690CD23C5B73C006CF923 /* Tagline.swift */; };
+		30B425E823C7C99A001B2476 /* InvalidBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B425E723C7C99A001B2476 /* InvalidBarcode.swift */; };
 		30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77D9B22088F0F00B180E9 /* Allergen.swift */; };
 		30DB17F522122E4A0010EE6F /* TOCropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB17F422122E4A0010EE6F /* TOCropViewController.framework */; };
 		30E43D78220895B100D7A906 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E43D77220895B100D7A906 /* Category.swift */; };
 		4CDF89802357F296007BA0A5 /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF897F2357F296007BA0A5 /* ProductTests.swift */; };
+		510F174D23A3A5240037832E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510F174C23A3A5240037832E /* Country.swift */; };
+		510F174F23A3CD890037832E /* OFFReadAPIKeysJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510F174E23A3CD880037832E /* OFFReadAPIKeysJSON.swift */; };
 		5138F169235871830043FC10 /* BarcodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5138F168235871830043FC10 /* BarcodeService.swift */; };
 		514EFA8C2230215F008FFD2A /* Vitamin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA8B2230215F008FFD2A /* Vitamin.swift */; };
 		514EFA8E22302183008FFD2A /* Mineral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514EFA8D22302183008FFD2A /* Mineral.swift */; };
@@ -146,7 +150,6 @@
 		9576DC831FE94B6200DD58EF /* HistoryTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956939051FE9483B003A50DA /* HistoryTableViewControllerSpec.swift */; };
 		95781B141EBE4E5C003E3256 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B131EBE4E5C003E3256 /* UITableViewCell.swift */; };
 		95781B9B1EC26B24003E3256 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781B9A1EC26B24003E3256 /* Double.swift */; };
-		95781BBC1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */; };
 		95781BBD1EC3A898003E3256 /* OFFWriteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */; };
 		95781BBE1EC3A898003E3256 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB11EC3A898003E3256 /* Product.swift */; };
 		95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95781BB21EC3A898003E3256 /* ProductsResponse.swift */; };
@@ -277,6 +280,14 @@
 		95F31C111F3A45CF00B8AF90 /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */; };
 		95F7DB3A1F98DDAC00428208 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F7DB391F98DDAC00428208 /* SettingsTableViewController.swift */; };
 		95F7DB3E1F98E42500428208 /* UserDefaultsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */; };
+		FB1348DD238BE5B000D92CBB /* IngredientsAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1348DC238BE5B000D92CBB /* IngredientsAnalysis.swift */; };
+		FB87477E23B1223D007E0848 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87477D23B1223D007E0848 /* Ingredient.swift */; };
+		FB93CB3E23AFB59F00FF23E2 /* IngredientsAnalysisView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB93CB3D23AFB59F00FF23E2 /* IngredientsAnalysisView.xib */; };
+		FB93CB4023AFB5E100FF23E2 /* IngredientsAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB93CB3F23AFB5E100FF23E2 /* IngredientsAnalysisView.swift */; };
+		FB93CB4223AFC25500FF23E2 /* IngredientsAnalysisDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB93CB4123AFC25500FF23E2 /* IngredientsAnalysisDetail.swift */; };
+		FBAC030A23A7ABC3002DEE58 /* IngredientsAnalysisConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAC030923A7ABC3002DEE58 /* IngredientsAnalysisConfig.swift */; };
+		FBB261C0235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB261BE235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift */; };
+		FBB261C1235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB261BF235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -305,7 +316,7 @@
 
 /* Begin PBXFileReference section */
 		152048F6235F48BD0053814A /* ScanProductSummaryViewAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanProductSummaryViewAdaptor.swift; sourceTree = "<group>"; };
-		2A798638235027590020821E /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; name = README.md; path = ../../Desktop/README.md; sourceTree = "<group>"; };
+		2A798638235027590020821E /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3000855D2207A3A500DC3896 /* TaxonomiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxonomiesService.swift; sourceTree = "<group>"; };
 		300085602207AC0700DC3896 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
 		300085622208777900DC3896 /* OFFUrlsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFUrlsHelper.swift; sourceTree = "<group>"; };
@@ -344,10 +355,15 @@
 		30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTaxonomyViewController.swift; sourceTree = "<group>"; };
 		307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerResultViewController.swift; sourceTree = "<group>"; };
+		309690CD23C5B73C006CF923 /* Tagline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagline.swift; sourceTree = "<group>"; };
+		30B425E723C7C99A001B2476 /* InvalidBarcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidBarcode.swift; sourceTree = "<group>"; };
 		30D77D9B22088F0F00B180E9 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
 		30DB17F422122E4A0010EE6F /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
 		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		30ECBDD823DA2B59005955AF /* BLTNBoard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BLTNBoard.framework; path = Carthage/Build/iOS/BLTNBoard.framework; sourceTree = "<group>"; };
 		4CDF897F2357F296007BA0A5 /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
+		510F174C23A3A5240037832E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		510F174E23A3CD880037832E /* OFFReadAPIKeysJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OFFReadAPIKeysJSON.swift; path = Sources/Models/API/OFFReadAPIKeysJSON.swift; sourceTree = SOURCE_ROOT; };
 		5138F168235871830043FC10 /* BarcodeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeService.swift; sourceTree = "<group>"; };
 		514EFA8B2230215F008FFD2A /* Vitamin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vitamin.swift; sourceTree = "<group>"; };
 		514EFA8D22302183008FFD2A /* Mineral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mineral.swift; sourceTree = "<group>"; };
@@ -507,7 +523,6 @@
 		957094B91EA24DFC00268236 /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
 		95781B131EBE4E5C003E3256 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		95781B9A1EC26B24003E3256 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFFReadAPIKeysJSON.swift; sourceTree = "<group>"; };
 		95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFFWriteAPI.swift; sourceTree = "<group>"; };
 		95781BB11EC3A898003E3256 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		95781BB21EC3A898003E3256 /* ProductsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsResponse.swift; sourceTree = "<group>"; };
@@ -897,6 +912,14 @@
 		95F31C101F3A45CF00B8AF90 /* ProductServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductServiceTests.swift; sourceTree = "<group>"; };
 		95F7DB391F98DDAC00428208 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		95F7DB3D1F98E42500428208 /* UserDefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsConstants.swift; sourceTree = "<group>"; };
+		FB1348DC238BE5B000D92CBB /* IngredientsAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysis.swift; sourceTree = "<group>"; };
+		FB87477D23B1223D007E0848 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		FB93CB3D23AFB59F00FF23E2 /* IngredientsAnalysisView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsAnalysisView.xib; sourceTree = "<group>"; };
+		FB93CB3F23AFB5E100FF23E2 /* IngredientsAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisView.swift; sourceTree = "<group>"; };
+		FB93CB4123AFC25500FF23E2 /* IngredientsAnalysisDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisDetail.swift; sourceTree = "<group>"; };
+		FBAC030923A7ABC3002DEE58 /* IngredientsAnalysisConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisConfig.swift; sourceTree = "<group>"; };
+		FBB261BE235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisTableViewCell.swift; sourceTree = "<group>"; };
+		FBB261BF235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsAnalysisTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -963,14 +986,19 @@
 		3000855F2207ABF800DC3896 /* Taxonomies */ = {
 			isa = PBXGroup;
 			children = (
+				FB1348DC238BE5B000D92CBB /* IngredientsAnalysis.swift */,
 				300085602207AC0700DC3896 /* Additive.swift */,
 				30D77D9B22088F0F00B180E9 /* Allergen.swift */,
+				30E43D77220895B100D7A906 /* Category.swift */,
+				510F174C23A3A5240037832E /* Country.swift */,
 				514EFA8B2230215F008FFD2A /* Vitamin.swift */,
 				514EFA8D22302183008FFD2A /* Mineral.swift */,
 				514EFA8F223021A1008FFD2A /* Nucleotide.swift */,
 				514EFA91223021C0008FFD2A /* OtherNutritionalSubstance.swift */,
-				30E43D77220895B100D7A906 /* Category.swift */,
 				30412DDA220F089700C485DD /* Nutriment.swift */,
+				FBAC030923A7ABC3002DEE58 /* IngredientsAnalysisConfig.swift */,
+				309690CD23C5B73C006CF923 /* Tagline.swift */,
+				30B425E723C7C99A001B2476 /* InvalidBarcode.swift */,
 			);
 			path = Taxonomies;
 			sourceTree = "<group>";
@@ -1323,6 +1351,8 @@
 		956FF8A91F1FF0CA0069D678 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
+				FBB261BE235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift */,
+				FBB261BF235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib */,
 				95902B451F2E284700A72EF7 /* SummaryHeaderCellController.xib */,
 				30270C312226EAD000E6973D /* SummaryFooterCellController.xib */,
 			);
@@ -1386,12 +1416,13 @@
 			children = (
 				3000855F2207ABF800DC3896 /* Taxonomies */,
 				95E9F0421EC8D7AB00BA20B0 /* Nutriments */,
-				95781BAF1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift */,
 				95781BB01EC3A898003E3256 /* OFFWriteAPI.swift */,
+				510F174E23A3CD880037832E /* OFFReadAPIKeysJSON.swift */,
 				95781BB11EC3A898003E3256 /* Product.swift */,
 				95781BB21EC3A898003E3256 /* ProductsResponse.swift */,
 				95DDAF651F2916D30096B74E /* ProductImage.swift */,
 				95AA2AFE1FDABB2D00EE3A14 /* Language.swift */,
+				FB87477D23B1223D007E0848 /* Ingredient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1403,6 +1434,7 @@
 				95781BB51EC3A898003E3256 /* LocalizedString.swift */,
 				957CBEBD1F33B2FE00A1B398 /* Form.swift */,
 				958F334E1F377B07005269C5 /* NutritionTableRow.swift */,
+				FB93CB4123AFC25500FF23E2 /* IngredientsAnalysisDetail.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1510,6 +1542,8 @@
 				958F335A1F37809A005269C5 /* PictureCallToActionView.xib */,
 				30270C2B2226DE3100E6973D /* IconButtonView.swift */,
 				30270C2D2226DE3C00E6973D /* IconButtonView.xib */,
+				FB93CB3D23AFB59F00FF23E2 /* IngredientsAnalysisView.xib */,
+				FB93CB3F23AFB5E100FF23E2 /* IngredientsAnalysisView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1639,6 +1673,7 @@
 		95C265231E96D5C2004212EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30ECBDD823DA2B59005955AF /* BLTNBoard.framework */,
 				3030EB85222E8A08005A6169 /* Zip.framework */,
 				30DB17F422122E4A0010EE6F /* TOCropViewController.framework */,
 				307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */,
@@ -2172,9 +2207,11 @@
 				956FF9461F1FF0CA0069D678 /* NutritionHeaderTableViewCell.xib in Resources */,
 				956FF9561F1FF0CA0069D678 /* ProductTableViewCell.xib in Resources */,
 				95C216491FDC8A5900EC5BCB /* Search.storyboard in Resources */,
+				FBB261C1235498A70042CEAF /* IngredientsAnalysisTableViewCell.xib in Resources */,
 				30412DD9220EF46300C485DD /* EditNutritiveValueView.xib in Resources */,
 				95890AB51F967E6300085B20 /* InitialView.xib in Resources */,
 				956FF94C1F1FF0CA0069D678 /* NutritionTableHeaderCellController.xib in Resources */,
+				FB93CB3E23AFB59F00FF23E2 /* IngredientsAnalysisView.xib in Resources */,
 				30270C322226EAD000E6973D /* SummaryFooterCellController.xib in Resources */,
 				956FF9481F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib in Resources */,
 				95C265191E96D55B004212EC /* Assets.xcassets in Resources */,
@@ -2266,6 +2303,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MarqueeLabel.framework",
 				"$(SRCROOT)/Carthage/Build/IOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IBLocalizable.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BLTNBoard.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -2291,6 +2330,8 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AlamofireImage.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MarqueeLabel.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IBLocalizable.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BLTNBoard.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cartography.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2379,6 +2420,7 @@
 				95F7DB3A1F98DDAC00428208 /* SettingsTableViewController.swift in Sources */,
 				957CBEBA1F3312FB00A1B398 /* HostedViewCell.swift in Sources */,
 				953664F51ECA212100D6D398 /* NutrimentItem.swift in Sources */,
+				FB1348DD238BE5B000D92CBB /* IngredientsAnalysis.swift in Sources */,
 				956FF9591F1FF0CA0069D678 /* ErrorView.swift in Sources */,
 				956FF9641F1FF0FD0069D678 /* ScannerViewController.swift in Sources */,
 				95D1D29E1FFC36C900595EA1 /* TabBarNotificationController.swift in Sources */,
@@ -2390,31 +2432,38 @@
 				956FF9551F1FF0CA0069D678 /* ProductTableViewCell.swift in Sources */,
 				95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */,
 				3010E25F222EF42B00313ADB /* InitialView.swift in Sources */,
+				FB93CB4023AFB5E100FF23E2 /* IngredientsAnalysisView.swift in Sources */,
 				3030EB84222E8290005A6169 /* OfflineProductsService.swift in Sources */,
 				9587DF731F84056F0069F0A6 /* PictureViewModel.swift in Sources */,
-				95781BBC1EC3A898003E3256 /* OFFReadAPIKeysJSON.swift in Sources */,
 				5138F169235871830043FC10 /* BarcodeService.swift in Sources */,
 				30270C37222743D200E6973D /* EnvironmentImpactTableFormTableViewController.swift in Sources */,
 				95781BBF1EC3A898003E3256 /* ProductsResponse.swift in Sources */,
+				510F174D23A3A5240037832E /* Country.swift in Sources */,
 				9528560B1F78512300863FC6 /* Array.swift in Sources */,
+				309690CE23C5B73C006CF923 /* Tagline.swift in Sources */,
 				956FF9581F1FF0CA0069D678 /* EmptyView.swift in Sources */,
 				95DB3BE61FDD8F2300E83B76 /* HistoryItem.swift in Sources */,
 				95513BC71FEAD9980027C198 /* PendingUploadItem.swift in Sources */,
 				9587DF701F83F6580069F0A6 /* PictureTableViewCell.swift in Sources */,
 				956FF9541F1FF0CA0069D678 /* FlashButton.swift in Sources */,
 				958F33571F378086005269C5 /* NutriScoreView.swift in Sources */,
+				30B425E823C7C99A001B2476 /* InvalidBarcode.swift in Sources */,
 				302525EC222307A200C2C830 /* RealmUserPreferences.swift in Sources */,
+				FB87477E23B1223D007E0848 /* Ingredient.swift in Sources */,
 				956FF95D1F1FF0CA0069D678 /* TapToFocusView.swift in Sources */,
 				956FF95E1F1FF0CA0069D678 /* TextOverlay.swift in Sources */,
 				956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */,
 				953CDD5B1F92A12A0096C428 /* UserViewController.swift in Sources */,
 				30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */,
 				956FF9471F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift in Sources */,
+				FBAC030A23A7ABC3002DEE58 /* IngredientsAnalysisConfig.swift in Sources */,
+				510F174F23A3CD890037832E /* OFFReadAPIKeysJSON.swift in Sources */,
 				95C265121E96D55B004212EC /* AppDelegate.swift in Sources */,
 				955BAFFB1FF7C63A0046F419 /* ErrorCodes.swift in Sources */,
 				95D060DB1F6094D30052012D /* UITableView.swift in Sources */,
 				9525708C1EE9BC91002FC40D /* CellImageTapable.swift in Sources */,
 				30412DD2220E19BF00C485DD /* SelectCategoryViewController.swift in Sources */,
+				FB93CB4223AFC25500FF23E2 /* IngredientsAnalysisDetail.swift in Sources */,
 				300085632208777900DC3896 /* OFFUrlsHelper.swift in Sources */,
 				30270C2C2226DE3100E6973D /* IconButtonView.swift in Sources */,
 				95513BC31FEAD6CA0027C198 /* PendingUploadItemCell.swift in Sources */,
@@ -2457,6 +2506,7 @@
 				300085612207AC0700DC3896 /* Additive.swift in Sources */,
 				957CBEC51F33B36400A1B398 /* SummaryHeaderCellController.swift in Sources */,
 				957CBEAC1F323B1F00A1B398 /* FormTableViewController.swift in Sources */,
+				FBB261C0235498A70042CEAF /* IngredientsAnalysisTableViewCell.swift in Sources */,
 				514EFA92223021C0008FFD2A /* OtherNutritionalSubstance.swift in Sources */,
 				957CBEC41F33B36400A1B398 /* SummaryFormTableViewController.swift in Sources */,
 				74C59E8B203FB9E2006C456F /* SharingManager.swift in Sources */,
@@ -3070,7 +3120,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 38;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3100,7 +3150,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3190,7 +3240,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 38;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZC9CYWD334;
 				FRAMEWORK_SEARCH_PATHS = (
