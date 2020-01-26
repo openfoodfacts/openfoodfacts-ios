@@ -41,6 +41,7 @@ protocol DataManagerProtocol {
     func additive(forTag: Tag) -> Additive?
     func nutriment(forTag: String) -> Nutriment?
     func nutrimentSearch(query: String?) -> Results<Nutriment>
+    func ingredientsAnalysis(forProduct product: Product) -> [IngredientsAnalysisDetail]
     func ingredientsAnalysis(forTag tag: String) -> IngredientsAnalysis?
     func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig?
 
@@ -192,6 +193,56 @@ class DataManager: DataManagerProtocol {
 
     func nutrimentSearch(query: String?) -> Results<Nutriment> {
         return persistenceManager.nutrimentSearch(query: query)
+    }
+
+    func ingredientsAnalysis(forProduct product: Product) -> [IngredientsAnalysisDetail] {
+        guard let ingredientsAnalysisTags = product.ingredientsAnalysisTags else {
+            return []
+        }
+
+        var ingredientsAnalysisDetails = [IngredientsAnalysisDetail]()
+
+        for analysisTag in ingredientsAnalysisTags {
+            let detail = IngredientsAnalysisDetail()
+            detail.tag = analysisTag
+            if let ingredientsAnalysisConfig = self.ingredientsAnalysisConfig(forTag: analysisTag) {
+                let tmp = Array(ingredientsAnalysisConfig.names)
+                for detailTag in tmp {
+                    switch detailTag.languageCode {
+                    case "type":
+                        detail.type = IngredientsAnalysisType(rawValue: detailTag.value) ?? IngredientsAnalysisType.other
+                    case "icon":
+                        detail.icon = URLs.IngredientsAnalysisIconPathPrefix + detailTag.value + URLs.IngredientsAnalysisIconPathSuffix
+                    case "color":
+                        detail.color = UIColor(hex: detailTag.value) ?? UIColor.gray
+                    default:
+                        break
+                    }
+                }
+            }
+            if let ingredientsAnalysis = self.ingredientsAnalysis(forTag: analysisTag) {
+                if let name = Tag.choose(inTags: Array(ingredientsAnalysis.names)) {
+                    detail.title = name.value
+                }
+            }
+            switch detail.type {
+            case .palmOil:
+                if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayPalmOilStatus) {
+                    ingredientsAnalysisDetails.append(detail)
+                }
+            case .vegan:
+                if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVeganStatus) {
+                    ingredientsAnalysisDetails.append(detail)
+                }
+            case .vegetarian:
+                if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVegetarianStatus) {
+                    ingredientsAnalysisDetails.append(detail)
+                }
+            default:
+                ingredientsAnalysisDetails.append(detail)
+            }
+        }
+        return ingredientsAnalysisDetails
     }
 
     func ingredientsAnalysis(forTag tag: String) -> IngredientsAnalysis? {
