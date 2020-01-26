@@ -51,6 +51,13 @@ import Cartography
 
     var bulletinManager: BLTNItemManager!
 
+    deinit {
+        if bulletinManager != nil {
+            bulletinManager.dismissBulletin(animated: true)
+            bulletinManager = nil
+        }
+    }
+
     @objc func didTap(_ sender: UITapGestureRecognizer) {
         guard let detail = detail else {
             return
@@ -69,7 +76,11 @@ import Cartography
             item.manager?.dismissBulletin()
         }
 
-        self.bulletinManager = BLTNItemManager(rootItem: page)
+        if bulletinManager != nil {
+            bulletinManager.dismissBulletin(animated: false)
+        }
+
+        bulletinManager = BLTNItemManager(rootItem: page)
         bulletinManager.showBulletin(in: UIApplication.shared)
 
         page.imageView?.backgroundColor = self.backgroundColor
