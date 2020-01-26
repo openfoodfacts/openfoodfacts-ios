@@ -423,6 +423,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                 if let offlineProduct = self.dataManager.getOfflineProduct(forCode: barcode) {
                     self.scannerResultController.status = .hasOfflineData(product: offlineProduct)
                     self.showAllergensFloatingLabelIfNeeded()
+                    self.showIngredientsAnalysisFloatingIfNeeded()
                     hasOfflineSave = true
                 }
             }
