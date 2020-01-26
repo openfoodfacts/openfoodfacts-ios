@@ -19,14 +19,18 @@ class IngredientsAnalysisTableViewCell: ProductDetailBaseCell {
 
         guard let ingredientsAnalysisDetails = product.ingredientsAnalysisDetails else { return }
 
+        self.viewController = viewController
+
         for detail in ingredientsAnalysisDetails {
             let analysisView = IngredientsAnalysisView.loadFromNib()
-            analysisView.configure(detail: detail, ingredientsList: product.ingredientsListAnalysis)
+            analysisView.configure(detail: detail, missingIngredients: product.states?.contains("en:ingredients-to-be-completed") == true, ingredientsList: product.ingredientsListAnalysis)
             analysisView.configureGestureRecognizer()
             stackView.addArrangedSubview(analysisView)
-        }
 
-        self.viewController = viewController
+            analysisView.openProductEditHandler = { [weak self] in
+                self?.viewController?.goToEditProduct(product: product)
+            }
+        }
     }
 
     func dismiss() {

@@ -15,13 +15,16 @@ import Cartography
 
     @IBOutlet weak var iconImageView: UIImageView!
     var detail: IngredientsAnalysisDetail?
+    var missingIngredients: Bool = false
     fileprivate var gestureRecognizer: UITapGestureRecognizer?
     fileprivate var ingredientsList: [Ingredient]?
+    var openProductEditHandler: (() -> Void)?
 
-    func configure(detail: IngredientsAnalysisDetail, ingredientsList: [Ingredient]?) {
+    func configure(detail: IngredientsAnalysisDetail, missingIngredients: Bool, ingredientsList: [Ingredient]?) {
         self.backgroundColor = detail.color
         self.layer.cornerRadius = 5
         self.detail = detail
+        self.missingIngredients = missingIngredients
         self.ingredientsList = ingredientsList
         guard let url = URL(string: detail.icon) else { return }
         iconImageView.kf.setImage(with: url)
@@ -64,8 +67,6 @@ import Cartography
         }
         let page = AnalysisIconBLTPageItem(title: detail.title)
 
-        page.requiresCloseButton = false
-
         page.detail = detail
         page.ingredientsList = ingredientsList
         page.iconImageBackgroundColor = self.detail?.color
@@ -74,6 +75,47 @@ import Cartography
         page.actionButtonTitle = "generic.ok".localized
         page.actionHandler = { item in
             item.manager?.dismissBulletin()
+        }
+
+        let showHelpTranslate = detail.tag.contains("unknown")
+        let showHelpExtract = showHelpTranslate && missingIngredients
+
+        if showHelpExtract {
+            page.alternativeButtonTitle = "ingredients-analysis.missing-ingredients.title".localized
+            page.alternativeHandler = { item in
+                let newPage = BLTNPageItem()
+                newPage.descriptionText = "ingredients-analysis.missing-ingredients.description".localized
+
+                newPage.actionButtonTitle = "generic.ok".localized
+                newPage.actionHandler = { item in
+                    item.manager?.dismissBulletin(animated: true)
+                    self.openProductEditHandler?()
+                }
+
+                newPage.alternativeButtonTitle = "ingredients-analysis.back-to-scan".localized
+                newPage.alternativeHandler = { item in item.manager?.dismissBulletin() }
+
+                item.manager?.push(item: newPage)
+            }
+        } else if showHelpTranslate {
+            page.alternativeButtonTitle = "ingredients-analysis.help-translate.title".localized
+            page.alternativeHandler = { item in
+                let newPage = BLTNPageItem()
+                newPage.descriptionText = "ingredients-analysis.help-translate.description".localized
+
+                newPage.actionButtonTitle = "ingredients-analysis.help-translate.button".localized
+                newPage.actionHandler = { item in
+                    if let url = URL(string: OFFUrlsHelper.baseUrl + "/ingredients?translate=1") {
+                        self.viewController()?.openUrlInApp(url)
+                    }
+                    item.manager?.dismissBulletin(animated: true)
+                }
+
+                newPage.alternativeButtonTitle = "ingredients-analysis.back-to-scan".localized
+                newPage.alternativeHandler = { item in item.manager?.dismissBulletin() }
+
+                item.manager?.push(item: newPage)
+            }
         }
 
         bulletinManager = BLTNItemManager(rootItem: page)
@@ -161,6 +203,9 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
 
                 if !ingredientsText.isEmpty {
                     descriptionLabel.text = ingredientsText
+                    views.append(descriptionLabel)
+                } else if detail.tag.contains("unknown") {
+                    descriptionLabel.text = "ingredients-analysis.unknown_status".localized
                     views.append(descriptionLabel)
                 }
             }
