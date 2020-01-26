@@ -161,21 +161,6 @@ class ScannerViewController: UIViewController, DataManagerClient {
         }
 
         self.navigationController?.isNavigationBarHidden = true
-
-        #if DEBUG
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-                let barcode = "3564700459447"
-                if self.lastCodeScanned == nil || (self.lastCodeScanned != nil && self.lastCodeScanned != barcode) {
-                    self.resetOverlay()
-                    self.allergenAlertShown = false
-                    DispatchQueue.main.async {
-                        self.floatingLabelContainer.isHidden = true
-                    }
-                    self.lastCodeScanned = barcode
-                    self.getProduct(barcode: barcode, isSummary: true)
-                }
-            }
-        #endif
     }
 
     override func viewWillDisappear(_ animated: Bool) {
