@@ -43,9 +43,9 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
         scanOnLaunchSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsConstants.scanningOnLaunch)
 
-        disableDisplayPalmOilnStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayPalmOilStatus)
-        disableDisplayVegetarianStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVegetarianStatus)
-        disableDisplayVeganStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVeganStatus)
+        disableDisplayPalmOilnStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(IngredientsAnalysisType.palmOil.rawValue))
+        disableDisplayVegetarianStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(IngredientsAnalysisType.vegetarian.rawValue))
+        disableDisplayVeganStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(IngredientsAnalysisType.vegan.rawValue))
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -103,11 +103,11 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         if sender == scanOnLaunchSwitch {
             UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsConstants.scanningOnLaunch)
         } else if sender == disableDisplayPalmOilnStatusSwitch {
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayPalmOilStatus)
+            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(IngredientsAnalysisType.palmOil.rawValue))
         } else if sender == disableDisplayVegetarianStatusSwitch {
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayVegetarianStatus)
+            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(IngredientsAnalysisType.vegetarian.rawValue))
         } else if sender == disableDisplayVeganStatusSwitch {
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayVeganStatus)
+            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(IngredientsAnalysisType.vegan.rawValue))
         }
     }
     fileprivate func openAllergensAlerts() {

@@ -115,14 +115,9 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
         }
 
         let deactivateSwitch = UISwitch()
-        switch detail?.type {
-        case .palmOil:
-            deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayPalmOilStatus)
-        case .vegan:
-            deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVeganStatus)
-        case .vegetarian:
-            deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVegetarianStatus)
-        default:
+        if let detail = detail {
+            deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type.rawValue))
+        } else {
             deactivateSwitch.isHidden = true
         }
         deactivateSwitch.addTarget(self, action: #selector(changeSwitch(sender:)), for: .valueChanged)
@@ -193,15 +188,8 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
     }
 
     @objc func changeSwitch(sender: UISwitch) {
-        switch detail?.type {
-        case .palmOil:
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayPalmOilStatus)
-        case .vegan:
-        UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayVeganStatus)
-        case .vegetarian:
-        UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayVegetarianStatus)
-        default:
-            break
+        if let detail = detail {
+            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type.rawValue))
         }
     }
 

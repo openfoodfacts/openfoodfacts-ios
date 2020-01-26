@@ -225,20 +225,7 @@ class DataManager: DataManagerProtocol {
                     detail.title = name.value
                 }
             }
-            switch detail.type {
-            case .palmOil:
-                if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayPalmOilStatus) {
-                    ingredientsAnalysisDetails.append(detail)
-                }
-            case .vegan:
-                if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVeganStatus) {
-                    ingredientsAnalysisDetails.append(detail)
-                }
-            case .vegetarian:
-                if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVegetarianStatus) {
-                    ingredientsAnalysisDetails.append(detail)
-                }
-            default:
+            if(!UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type.rawValue))){
                 ingredientsAnalysisDetails.append(detail)
             }
         }
