@@ -8,17 +8,14 @@
 
 import UIKit
 
-enum IngredientsAnalysisType: String {
-    case palmOil = "from_palm_oil"
-    case vegan = "vegan"
-    case vegetarian = "vegetarian"
-    case other = "other"
-}
-
 class IngredientsAnalysisDetail {
-    var type: IngredientsAnalysisType = IngredientsAnalysisType.other
+    var type: String = ""
     var color: UIColor = UIColor.gray
     var icon: String = ""
     var title: String = ""
     var tag: String = ""
+
+    /// name of type (vegan, vegetarian, palm oil" translated in the user language
+    var typeDisplayName: String?
+    var showIngredientsTag: String?
 }

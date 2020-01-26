@@ -76,10 +76,6 @@ import Cartography
             item.manager?.dismissBulletin()
         }
 
-        if bulletinManager != nil {
-            bulletinManager.dismissBulletin(animated: false)
-        }
-
         bulletinManager = BLTNItemManager(rootItem: page)
         bulletinManager.showBulletin(in: UIApplication.shared)
 
@@ -116,7 +112,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
 
         let deactivateSwitch = UISwitch()
         if let detail = detail {
-            deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type.rawValue))
+            deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type))
         } else {
             deactivateSwitch.isHidden = true
         }
@@ -125,7 +121,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
         let switchLabel = UILabel()
         switchLabel.textAlignment = .right
         switchLabel.numberOfLines = 2
-        switchLabel.text = String(format: "ingredients-analysis.display".localized, detail?.title.lowercased() ?? "")
+        switchLabel.text = String(format: "ingredients-analysis.display".localized, detail?.typeDisplayName ?? "")
 
         let switchStackView = UIView()
         switchStackView.addSubview(ivc)
@@ -156,29 +152,15 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
             titleLabel.font = UIFont.systemFont(ofSize: 14)
             titleLabel.numberOfLines = 0
 
-            let descriptionLabel = UILabel()
-            descriptionLabel.numberOfLines = 0
-            descriptionLabel.font = UIFont.boldSystemFont(ofSize: 14)
+            if let showIngredientsTag = detail.showIngredientsTag {
+                let descriptionLabel = UILabel()
+                descriptionLabel.numberOfLines = 0
+                descriptionLabel.font = UIFont.boldSystemFont(ofSize: 14)
 
-            if detail.type == .palmOil {
-                if detail.tag.contains("status-unknown") {
-                    descriptionLabel.text = String(format: InfoRowKey.ingredientsUnknownStatus.localizedString, detail.title.lowercased())
-                    views.append(descriptionLabel)
-                }
-            } else {
-                if detail.tag.contains("non") || detail.tag.contains("maybe") || detail.tag.contains("may-contain") {
-                    titleLabel.text = String(format: InfoRowKey.ingredientsInThisProduct.localizedString, detail.title.lowercased())
-                    descriptionLabel.text = self.getListIngredients(status: detail.tag.contains("non") ? "no" : "maybe")
+                let ingredientsText = self.getListIngredients(showIngredientsTags: showIngredientsTag)
 
-                    let verticalStackView = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
-                    verticalStackView.axis = .vertical
-                    verticalStackView.spacing = 4
-                    views.append(verticalStackView)
-                } else if detail.tag.contains("status-unknown") {
-                    descriptionLabel.text = String(format: InfoRowKey.ingredientsUnknownStatus.localizedString, detail.title.lowercased())
-                    views.append(descriptionLabel)
-                } else {
-                    descriptionLabel.text = String(format: InfoRowKey.ingredientsInThisProductAre.localizedString, detail.title.lowercased())
+                if !ingredientsText.isEmpty {
+                    descriptionLabel.text = ingredientsText
                     views.append(descriptionLabel)
                 }
             }
@@ -189,24 +171,20 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
 
     @objc func changeSwitch(sender: UISwitch) {
         if let detail = detail {
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type.rawValue))
+            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type))
         }
     }
 
-    func getListIngredients(status: String) -> String {
-        guard let detail = detail else {
-            return ""
-        }
-
+    func getListIngredients(showIngredientsTags: String) -> String {
         guard let list = self.ingredientsList else {
             return ""
         }
+
+        let key = String(showIngredientsTags.split(separator: ":")[0])
+        let yesNoMaybe = String(showIngredientsTags.split(separator: ":")[1])
+
         return list.compactMap { ingredient in
-            if detail.type == .vegetarian {
-                if ingredient.vegetarian != nil && ingredient.vegetarian == status {
-                    return ingredient.text?.replacingOccurrences(of: "_", with: "")
-                }
-            } else if ingredient.vegan != nil && ingredient.vegan == status {
+            if (ingredient.rawJson?[key] as? String) == yesNoMaybe {
                 return ingredient.text?.replacingOccurrences(of: "_", with: "")
             }
             return nil

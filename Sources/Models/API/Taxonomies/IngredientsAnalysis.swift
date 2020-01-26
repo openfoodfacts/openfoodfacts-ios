@@ -12,14 +12,17 @@ import ObjectMapper
 
 class IngredientsAnalysis: Object {
     @objc dynamic var code = ""
+    @objc dynamic var showIngredientsTag: String?
+
     let names = List<Tag>()
 
     @objc dynamic var mainName = "" // name in the language of the app, for sorting
     @objc dynamic var indexedNames = "" // all names concatenated, for search
 
-    convenience init(code: String, names: [Tag]) {
+    convenience init(code: String, names: [Tag], showIngredientsTag: String?) {
         self.init()
         self.code = code
+        self.showIngredientsTag = showIngredientsTag
 
         self.names.removeAll()
         self.names.append(objectsIn: names)
