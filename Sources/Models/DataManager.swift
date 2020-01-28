@@ -206,39 +206,20 @@ class DataManager: DataManagerProtocol {
             let detail = IngredientsAnalysisDetail()
             detail.tag = analysisTag
             if let ingredientsAnalysisConfig = self.ingredientsAnalysisConfig(forTag: analysisTag) {
-                let tmp = Array(ingredientsAnalysisConfig.names)
-                for detailTag in tmp {
-                    switch detailTag.languageCode {
-                    case "type":
-                        detail.type = IngredientsAnalysisType(rawValue: detailTag.value) ?? IngredientsAnalysisType.other
-                    case "icon":
-                        detail.icon = URLs.IngredientsAnalysisIconPathPrefix + detailTag.value + URLs.IngredientsAnalysisIconPathSuffix
-                    case "color":
-                        detail.color = UIColor(hex: detailTag.value) ?? UIColor.gray
-                    default:
-                        break
-                    }
+                detail.type = ingredientsAnalysisConfig.type
+                detail.icon = URLs.IngredientsAnalysisIconPathPrefix + ingredientsAnalysisConfig.icon + URLs.IngredientsAnalysisIconPathSuffix
+                detail.color = UIColor(hex: ingredientsAnalysisConfig.color) ?? UIColor.gray
+                if let mainIngredientsAnalysisTags = self.ingredientsAnalysis(forTag: "en:" + ingredientsAnalysisConfig.type) {
+                    detail.typeDisplayName = Tag.choose(inTags: Array(mainIngredientsAnalysisTags.names))?.value
                 }
             }
             if let ingredientsAnalysis = self.ingredientsAnalysis(forTag: analysisTag) {
+                detail.showIngredientsTag = ingredientsAnalysis.showIngredientsTag
                 if let name = Tag.choose(inTags: Array(ingredientsAnalysis.names)) {
                     detail.title = name.value
                 }
             }
-            switch detail.type {
-            case .palmOil:
-                if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayPalmOilStatus) {
-                    ingredientsAnalysisDetails.append(detail)
-                }
-            case .vegan:
-                if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVeganStatus) {
-                    ingredientsAnalysisDetails.append(detail)
-                }
-            case .vegetarian:
-                if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVegetarianStatus) {
-                    ingredientsAnalysisDetails.append(detail)
-                }
-            default:
+            if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type)) {
                 ingredientsAnalysisDetails.append(detail)
             }
         }

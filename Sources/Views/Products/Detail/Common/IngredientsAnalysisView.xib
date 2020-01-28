@@ -9,30 +9,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" ambiguous="YES" id="iN0-l3-epB" customClass="IngredientsAnalysisView" customModule="OpenFoodFacts" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IngredientsAnalysisView" customModule="OpenFoodFacts" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="81" height="82"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LqK-Dw-exc">
-                    <rect key="frame" x="10" y="10" width="34" height="34"/>
+                    <rect key="frame" x="8" y="8" width="66" height="66"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="34" id="4Nc-22-PXD"/>
                         <constraint firstAttribute="width" constant="34" id="Aop-jb-oAZ"/>
+                        <constraint firstAttribute="width" secondItem="LqK-Dw-exc" secondAttribute="height" multiplier="1:1" id="s4h-nQ-NJK"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="LqK-Dw-exc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="4Zp-CI-oO3"/>
-                <constraint firstAttribute="trailing" secondItem="LqK-Dw-exc" secondAttribute="trailing" constant="10" id="8Ub-ui-lmR"/>
-                <constraint firstAttribute="bottom" secondItem="LqK-Dw-exc" secondAttribute="bottom" constant="10" id="Ibr-no-2g8"/>
-                <constraint firstItem="LqK-Dw-exc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ln3-TY-mw0"/>
+                <constraint firstAttribute="trailing" secondItem="LqK-Dw-exc" secondAttribute="trailing" constant="8" id="Nmt-hz-S3l"/>
+                <constraint firstItem="LqK-Dw-exc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="OPI-0e-kWf"/>
+                <constraint firstItem="LqK-Dw-exc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="pKv-If-dTo"/>
+                <constraint firstAttribute="bottom" secondItem="LqK-Dw-exc" secondAttribute="bottom" constant="8" id="pUc-p5-iHf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="iconImageView" destination="LqK-Dw-exc" id="5cd-kK-kHz"/>
             </connections>
-            <point key="canvasLocation" x="138.40579710144928" y="126.89732142857142"/>
+            <point key="canvasLocation" x="112.31884057971016" y="130.58035714285714"/>
         </view>
     </objects>
 </document>
