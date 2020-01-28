@@ -31,7 +31,7 @@ public class Tag: Object {
         }
 
         if lang != "en" {
-            return choose(inTags: tags, forLanguageCode: "en")
+            return choose(inTags: tags, forLanguageCode: "en", defaultToFirst: defaultToFirst)
         }
 
         if defaultToFirst {

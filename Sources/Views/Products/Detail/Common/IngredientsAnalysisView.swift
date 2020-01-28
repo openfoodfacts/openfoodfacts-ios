@@ -15,13 +15,16 @@ import Cartography
 
     @IBOutlet weak var iconImageView: UIImageView!
     var detail: IngredientsAnalysisDetail?
+    var missingIngredients: Bool = false
     fileprivate var gestureRecognizer: UITapGestureRecognizer?
     fileprivate var ingredientsList: [Ingredient]?
+    var openProductEditHandler: (() -> Void)?
 
-    func configure(detail: IngredientsAnalysisDetail, ingredientsList: [Ingredient]?) {
+    func configure(detail: IngredientsAnalysisDetail, missingIngredients: Bool, ingredientsList: [Ingredient]?) {
         self.backgroundColor = detail.color
         self.layer.cornerRadius = 5
         self.detail = detail
+        self.missingIngredients = missingIngredients
         self.ingredientsList = ingredientsList
         guard let url = URL(string: detail.icon) else { return }
         iconImageView.kf.setImage(with: url)
@@ -51,13 +54,18 @@ import Cartography
 
     var bulletinManager: BLTNItemManager!
 
+    deinit {
+        if bulletinManager != nil {
+            bulletinManager.dismissBulletin(animated: true)
+            bulletinManager = nil
+        }
+    }
+
     @objc func didTap(_ sender: UITapGestureRecognizer) {
         guard let detail = detail else {
             return
         }
         let page = AnalysisIconBLTPageItem(title: detail.title)
-
-        page.requiresCloseButton = false
 
         page.detail = detail
         page.ingredientsList = ingredientsList
@@ -69,7 +77,48 @@ import Cartography
             item.manager?.dismissBulletin()
         }
 
-        self.bulletinManager = BLTNItemManager(rootItem: page)
+        let showHelpTranslate = detail.tag.contains("unknown")
+        let showHelpExtract = showHelpTranslate && missingIngredients
+
+        if showHelpExtract {
+            page.alternativeButtonTitle = "ingredients-analysis.missing-ingredients.title".localized
+            page.alternativeHandler = { item in
+                let newPage = BLTNPageItem()
+                newPage.descriptionText = "ingredients-analysis.missing-ingredients.description".localized
+
+                newPage.actionButtonTitle = "generic.ok".localized
+                newPage.actionHandler = { item in
+                    item.manager?.dismissBulletin(animated: true)
+                    self.openProductEditHandler?()
+                }
+
+                newPage.alternativeButtonTitle = "ingredients-analysis.back-to-scan".localized
+                newPage.alternativeHandler = { item in item.manager?.dismissBulletin() }
+
+                item.manager?.push(item: newPage)
+            }
+        } else if showHelpTranslate {
+            page.alternativeButtonTitle = "ingredients-analysis.help-translate.title".localized
+            page.alternativeHandler = { item in
+                let newPage = BLTNPageItem()
+                newPage.descriptionText = "ingredients-analysis.help-translate.description".localized
+
+                newPage.actionButtonTitle = "ingredients-analysis.help-translate.button".localized
+                newPage.actionHandler = { item in
+                    if let url = URL(string: OFFUrlsHelper.baseUrl + "/ingredients?translate=1") {
+                        self.viewController()?.openUrlInApp(url)
+                    }
+                    item.manager?.dismissBulletin(animated: true)
+                }
+
+                newPage.alternativeButtonTitle = "ingredients-analysis.back-to-scan".localized
+                newPage.alternativeHandler = { item in item.manager?.dismissBulletin() }
+
+                item.manager?.push(item: newPage)
+            }
+        }
+
+        bulletinManager = BLTNItemManager(rootItem: page)
         bulletinManager.showBulletin(in: UIApplication.shared)
 
         page.imageView?.backgroundColor = self.backgroundColor
@@ -104,14 +153,9 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
         }
 
         let deactivateSwitch = UISwitch()
-        switch detail?.type {
-        case .palmOil:
-            deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayPalmOilStatus)
-        case .vegan:
-            deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVeganStatus)
-        case .vegetarian:
-            deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVegetarianStatus)
-        default:
+        if let detail = detail {
+            deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type))
+        } else {
             deactivateSwitch.isHidden = true
         }
         deactivateSwitch.addTarget(self, action: #selector(changeSwitch(sender:)), for: .valueChanged)
@@ -119,7 +163,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
         let switchLabel = UILabel()
         switchLabel.textAlignment = .right
         switchLabel.numberOfLines = 2
-        switchLabel.text = String(format: "ingredients-analysis.display".localized, detail?.title.lowercased() ?? "")
+        switchLabel.text = String(format: "ingredients-analysis.display".localized, detail?.typeDisplayName ?? "")
 
         let switchStackView = UIView()
         switchStackView.addSubview(ivc)
@@ -150,29 +194,18 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
             titleLabel.font = UIFont.systemFont(ofSize: 14)
             titleLabel.numberOfLines = 0
 
-            let descriptionLabel = UILabel()
-            descriptionLabel.numberOfLines = 0
-            descriptionLabel.font = UIFont.boldSystemFont(ofSize: 14)
+            if let showIngredientsTag = detail.showIngredientsTag {
+                let descriptionLabel = UILabel()
+                descriptionLabel.numberOfLines = 0
+                descriptionLabel.font = UIFont.boldSystemFont(ofSize: 14)
 
-            if detail.type == .palmOil {
-                if detail.tag.contains("status-unknown") {
-                    descriptionLabel.text = String(format: InfoRowKey.ingredientsUnknownStatus.localizedString, detail.title.lowercased())
-                    views.append(descriptionLabel)
-                }
-            } else {
-                if detail.tag.contains("non") || detail.tag.contains("maybe") || detail.tag.contains("may-contain") {
-                    titleLabel.text = String(format: InfoRowKey.ingredientsInThisProduct.localizedString, detail.title.lowercased())
-                    descriptionLabel.text = self.getListIngredients(status: detail.tag.contains("non") ? "no" : "maybe")
+                let ingredientsText = self.getListIngredients(showIngredientsTags: showIngredientsTag)
 
-                    let verticalStackView = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
-                    verticalStackView.axis = .vertical
-                    verticalStackView.spacing = 4
-                    views.append(verticalStackView)
-                } else if detail.tag.contains("status-unknown") {
-                    descriptionLabel.text = String(format: InfoRowKey.ingredientsUnknownStatus.localizedString, detail.title.lowercased())
+                if !ingredientsText.isEmpty {
+                    descriptionLabel.text = ingredientsText
                     views.append(descriptionLabel)
-                } else {
-                    descriptionLabel.text = String(format: InfoRowKey.ingredientsInThisProductAre.localizedString, detail.title.lowercased())
+                } else if detail.tag.contains("unknown") {
+                    descriptionLabel.text = "ingredients-analysis.unknown_status".localized
                     views.append(descriptionLabel)
                 }
             }
@@ -182,32 +215,21 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
     }
 
     @objc func changeSwitch(sender: UISwitch) {
-        switch detail?.type {
-        case .palmOil:
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayPalmOilStatus)
-        case .vegan:
-        UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayVeganStatus)
-        case .vegetarian:
-        UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayVegetarianStatus)
-        default:
-            break
+        if let detail = detail {
+            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type))
         }
     }
 
-    func getListIngredients(status: String) -> String {
-        guard let detail = detail else {
-            return ""
-        }
-
+    func getListIngredients(showIngredientsTags: String) -> String {
         guard let list = self.ingredientsList else {
             return ""
         }
+
+        let key = String(showIngredientsTags.split(separator: ":")[0])
+        let yesNoMaybe = String(showIngredientsTags.split(separator: ":")[1])
+
         return list.compactMap { ingredient in
-            if detail.type == .vegetarian {
-                if ingredient.vegetarian != nil && ingredient.vegetarian == status {
-                    return ingredient.text?.replacingOccurrences(of: "_", with: "")
-                }
-            } else if ingredient.vegan != nil && ingredient.vegan == status {
+            if (ingredient.rawJson?[key] as? String) == yesNoMaybe {
                 return ingredient.text?.replacingOccurrences(of: "_", with: "")
             }
             return nil

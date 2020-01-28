@@ -18,13 +18,11 @@ enum SettingsSection: Int {
 
 class SettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, DataManagerClient {
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
-    @IBOutlet weak var disableDisplayVegetarianStatusSwitch: UISwitch!
-    @IBOutlet weak var disableDisplayVeganStatusSwitch: UISwitch!
-    @IBOutlet weak var disableDisplayPalmOilnStatusSwitch: UISwitch!
 
     var dataManager: DataManagerProtocol!
 
     private let allergensAlertsIndexPath = IndexPath(row: 2, section: 0)
+    private let ingredientAnalysisAlertsIndexPath = IndexPath(row: 3, section: 0)
 
     private let frequentlyAskedQuestionsIndexPath = IndexPath(row: 0, section: 1)
 
@@ -43,9 +41,6 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
         scanOnLaunchSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsConstants.scanningOnLaunch)
 
-        disableDisplayPalmOilnStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayPalmOilStatus)
-        disableDisplayVegetarianStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVegetarianStatus)
-        disableDisplayVeganStatusSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableDisplayVeganStatus)
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -83,6 +78,8 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
             url = URL(string: URLs.FrequentlyAskedQuestions)
         case allergensAlertsIndexPath:
             openAllergensAlerts()
+        case ingredientAnalysisAlertsIndexPath:
+            openIngredientsAnalysisAlerts()
         default:
             break
         }
@@ -102,16 +99,15 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     @IBAction func didSwitchScanOnLaunch(_ sender: UISwitch) {
         if sender == scanOnLaunchSwitch {
             UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsConstants.scanningOnLaunch)
-        } else if sender == disableDisplayPalmOilnStatusSwitch {
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayPalmOilStatus)
-        } else if sender == disableDisplayVegetarianStatusSwitch {
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayVegetarianStatus)
-        } else if sender == disableDisplayVeganStatusSwitch {
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayVeganStatus)
         }
     }
     fileprivate func openAllergensAlerts() {
         let alertsVC = AllergensAlertsTableViewController()
+        alertsVC.dataManager = dataManager
+        self.navigationController?.pushViewController(alertsVC, animated: true)
+    }
+    fileprivate func openIngredientsAnalysisAlerts() {
+        let alertsVC = IngredientsAnalysisSettingsTableViewController()
         alertsVC.dataManager = dataManager
         self.navigationController?.pushViewController(alertsVC, animated: true)
     }

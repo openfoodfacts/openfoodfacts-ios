@@ -47,6 +47,9 @@
 		30412DDE220F104900C485DD /* SelectNutrimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30412DDC220F104900C485DD /* SelectNutrimentViewController.swift */; };
 		30412DDF220F104900C485DD /* SelectNutrimentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30412DDD220F104900C485DD /* SelectNutrimentViewController.xib */; };
 		30412DE1220F111400C485DD /* SelectTaxonomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */; };
+		3055E1C523DE46850074EB99 /* IngredientsAnalysisSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3055E1C423DE46850074EB99 /* IngredientsAnalysisSettingsTableViewController.swift */; };
+		3055E1C823DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3055E1C623DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.swift */; };
+		3055E1C923DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3055E1C723DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.xib */; };
 		307BBEB921FA16B100E2DF9D /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */; };
 		307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */; };
 		309690CE23C5B73C006CF923 /* Tagline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309690CD23C5B73C006CF923 /* Tagline.swift */; };
@@ -353,6 +356,9 @@
 		30412DDC220F104900C485DD /* SelectNutrimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNutrimentViewController.swift; sourceTree = "<group>"; };
 		30412DDD220F104900C485DD /* SelectNutrimentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectNutrimentViewController.xib; sourceTree = "<group>"; };
 		30412DE0220F111400C485DD /* SelectTaxonomyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTaxonomyViewController.swift; sourceTree = "<group>"; };
+		3055E1C423DE46850074EB99 /* IngredientsAnalysisSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisSettingsTableViewController.swift; sourceTree = "<group>"; };
+		3055E1C623DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAnalysisSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		3055E1C723DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsAnalysisSettingsTableViewCell.xib; sourceTree = "<group>"; };
 		307BBEB821FA16B100E2DF9D /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		307BBEBA21FA1CA700E2DF9D /* ScannerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerResultViewController.swift; sourceTree = "<group>"; };
 		309690CD23C5B73C006CF923 /* Tagline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagline.swift; sourceTree = "<group>"; };
@@ -1883,6 +1889,9 @@
 				7437FBA42036F1F800D107B6 /* CreditsViewController.swift */,
 				302525E72223044E00C2C830 /* AllergensAlertsTableViewController.swift */,
 				302525F12223145000C2C830 /* AllergensAddTableViewCell.swift */,
+				3055E1C423DE46850074EB99 /* IngredientsAnalysisSettingsTableViewController.swift */,
+				3055E1C623DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.swift */,
+				3055E1C723DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -2216,6 +2225,7 @@
 				956FF9481F1FF0CA0069D678 /* NutritionLevelsTableViewCell.xib in Resources */,
 				95C265191E96D55B004212EC /* Assets.xcassets in Resources */,
 				958F335C1F37809A005269C5 /* PictureCallToActionView.xib in Resources */,
+				3055E1C923DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.xib in Resources */,
 				956FF9421F1FF0CA0069D678 /* IngredientsHeaderCellController.xib in Resources */,
 				3030EB82222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.xib in Resources */,
 				958F33541F378076005269C5 /* InfoRowTableViewCell.xib in Resources */,
@@ -2430,6 +2440,7 @@
 				9587DF6E1F82CCD60069F0A6 /* PictureTableViewController.swift in Sources */,
 				958F33441F361A9D005269C5 /* IngredientsHeaderCellController.swift in Sources */,
 				956FF9551F1FF0CA0069D678 /* ProductTableViewCell.swift in Sources */,
+				3055E1C523DE46850074EB99 /* IngredientsAnalysisSettingsTableViewController.swift in Sources */,
 				95781BC31EC3A898003E3256 /* DoubleTransform.swift in Sources */,
 				3010E25F222EF42B00313ADB /* InitialView.swift in Sources */,
 				FB93CB4023AFB5E100FF23E2 /* IngredientsAnalysisView.swift in Sources */,
@@ -2485,6 +2496,7 @@
 				303C27A12201ABC300159961 /* ManualBarcodeInputView.swift in Sources */,
 				152048F7235F48BD0053814A /* ScanProductSummaryViewAdaptor.swift in Sources */,
 				30412DD7220EF36500C485DD /* EditNutritiveValueView.swift in Sources */,
+				3055E1C823DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.swift in Sources */,
 				95781BBE1EC3A898003E3256 /* Product.swift in Sources */,
 				514EFA8E22302183008FFD2A /* Mineral.swift in Sources */,
 				95D1D29A1FFC32E400595EA1 /* DeepLinkManager.swift in Sources */,

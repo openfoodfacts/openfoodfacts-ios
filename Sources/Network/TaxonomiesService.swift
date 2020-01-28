@@ -328,7 +328,12 @@ class TaxonomiesService: TaxonomiesApi {
                             let names = name.map({ (languageCode: String, value: String) -> Tag in
                                 return Tag(languageCode: languageCode, value: value)
                             })
-                            return IngredientsAnalysis(code: ingredientAnalysisCode, names: names)
+
+                            let showIngredientsTag = (value["show_ingredients"] as? [String: String])?["en"]
+
+                            return IngredientsAnalysis(code: ingredientAnalysisCode,
+                                                       names: names,
+                                                       showIngredientsTag: showIngredientsTag)
                         })
                         self.persistenceManager.save(ingredientsAnalysis: ingredientsAnalysis)
                         success = true
@@ -340,7 +345,7 @@ class TaxonomiesService: TaxonomiesApi {
                 callback(success)
         }
     }
-    
+
     fileprivate func refreshIngredientsAnalysisConfig(_ callback: @escaping (_: Bool) -> Void) {
         Alamofire.request(FilesRouter.getIngredientsAnalysisConfig)
             .responseJSON { (response) in
@@ -352,10 +357,13 @@ class TaxonomiesService: TaxonomiesApi {
                             guard let value = value as? [String: String] else {
                                 return nil
                             }
-                            let values = value.map({ (languageCode: String, value: String) -> Tag in
-                                return Tag(languageCode: languageCode, value: value)
-                            })
-                            return IngredientsAnalysisConfig(code: ingredientAnalysisConfigCode, names: values)
+                            guard let type = value["type"], let icon = value["icon"], let color = value["color"] else {
+                                return nil
+                            }
+                            return IngredientsAnalysisConfig(code: ingredientAnalysisConfigCode,
+                                                             type: type,
+                                                             icon: icon,
+                                                             color: color)
                         })
                         self.persistenceManager.save(ingredientsAnalysisConfig: ingredientsAnalysisConfig)
                         success = true
@@ -423,7 +431,7 @@ class TaxonomiesService: TaxonomiesApi {
     // swiftlint:disable identifier_name
 
     /// increment last number each time you want to force a refresh. Useful if you add a new refresh method or a new field
-    static fileprivate let USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD = "USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD__13"
+    static fileprivate let USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD = "USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD__15"
     static fileprivate let LAST_DOWNLOAD_DELAY: Double = 60 * 60 * 24 * 31 // 1 month
 
     // swiftlint:enable identifier_name

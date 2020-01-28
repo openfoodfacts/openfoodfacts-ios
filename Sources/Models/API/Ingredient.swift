@@ -10,20 +10,21 @@ import Foundation
 import ObjectMapper
 
 struct Ingredient: Mappable {
-    var vegan: String?
-    var vegetarian: String?
     var text: String?
     var id: String?
     var rank: String?
+
+    /// used to get dynamic ingredients properties
+    var rawJson: [String: Any]?
 
     init() {}
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
-        vegan <- map[OFFJson.IngredientsElementVeganKey]
-        vegetarian <- map[OFFJson.IngredientsElementVegetarianKey]
         text <- map[OFFJson.IngredientsElementTextKey]
         id <- map[OFFJson.IngredientsElementIdKey]
         rank <- map[OFFJson.IngredientsElementRankKey]
+
+        rawJson = map.JSON
     }
 }

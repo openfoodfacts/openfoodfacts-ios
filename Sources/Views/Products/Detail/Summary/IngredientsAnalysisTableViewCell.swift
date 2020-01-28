@@ -10,9 +10,8 @@ import UIKit
 
 class IngredientsAnalysisTableViewCell: ProductDetailBaseCell {
 
-    @IBOutlet weak var palmOilView: IngredientsAnalysisView!
-    @IBOutlet weak var vegetarianView: IngredientsAnalysisView!
-    @IBOutlet weak var veganView: IngredientsAnalysisView!
+    @IBOutlet weak var stackView: UIStackView!
+
     var viewController: FormTableViewController?
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
@@ -20,36 +19,26 @@ class IngredientsAnalysisTableViewCell: ProductDetailBaseCell {
 
         guard let ingredientsAnalysisDetails = product.ingredientsAnalysisDetails else { return }
 
-        palmOilView.isHidden = true
-        vegetarianView.isHidden = true
-        veganView.isHidden = true
+        self.viewController = viewController
 
         for detail in ingredientsAnalysisDetails {
-            switch detail.type {
-            case IngredientsAnalysisType.palmOil:
-                palmOilView.isHidden = false
-                palmOilView.configure(detail: detail, ingredientsList: product.ingredientsListAnalysis)
-            case IngredientsAnalysisType.vegetarian:
-                vegetarianView.isHidden = false
-                vegetarianView.configure(detail: detail, ingredientsList: product.ingredientsListAnalysis)
-            case IngredientsAnalysisType.vegan:
-                veganView.isHidden = false
-                veganView.configure(detail: detail, ingredientsList: product.ingredientsListAnalysis)
-            default:
-                break
+            let analysisView = IngredientsAnalysisView.loadFromNib()
+            analysisView.configure(detail: detail, missingIngredients: product.states?.contains("en:ingredients-to-be-completed") == true, ingredientsList: product.ingredientsListAnalysis)
+            analysisView.configureGestureRecognizer()
+            stackView.addArrangedSubview(analysisView)
+
+            analysisView.openProductEditHandler = { [weak self] in
+                self?.viewController?.goToEditProduct(product: product)
             }
         }
-
-        palmOilView.configureGestureRecognizer()
-        vegetarianView.configureGestureRecognizer()
-        veganView.configureGestureRecognizer()
-
-        self.viewController = viewController
     }
 
     func dismiss() {
-        palmOilView.removeGestureRecognizer()
-        vegetarianView.removeGestureRecognizer()
-        veganView.removeGestureRecognizer()
+        stackView.arrangedSubviews.forEach {
+            if let view = $0 as? IngredientsAnalysisView {
+                view.removeGestureRecognizer()
+            }
+        }
+        stackView.removeAllViews()
     }
 }

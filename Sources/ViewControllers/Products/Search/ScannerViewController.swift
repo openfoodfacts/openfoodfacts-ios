@@ -161,21 +161,6 @@ class ScannerViewController: UIViewController, DataManagerClient {
         }
 
         self.navigationController?.isNavigationBarHidden = true
-
-        #if DEBUG
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-                let barcode = "3564700459447"
-                if self.lastCodeScanned == nil || (self.lastCodeScanned != nil && self.lastCodeScanned != barcode) {
-                    self.resetOverlay()
-                    self.allergenAlertShown = false
-                    DispatchQueue.main.async {
-                        self.floatingLabelContainer.isHidden = true
-                    }
-                    self.lastCodeScanned = barcode
-                    self.getProduct(barcode: barcode, isSummary: true)
-                }
-            }
-        #endif
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -438,6 +423,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                 if let offlineProduct = self.dataManager.getOfflineProduct(forCode: barcode) {
                     self.scannerResultController.status = .hasOfflineData(product: offlineProduct)
                     self.showAllergensFloatingLabelIfNeeded()
+                    self.showIngredientsAnalysisFloatingIfNeeded()
                     hasOfflineSave = true
                 }
             }
@@ -565,7 +551,10 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             if !analysisDetails.isEmpty {
                 analysisDetails.forEach { (iad: IngredientsAnalysisDetail) in
                     let analysisView = IngredientsAnalysisView.loadFromNib()
-                    analysisView.configure(detail: iad, ingredientsList: product.ingredientsListAnalysis)
+                    analysisView.configure(detail: iad, missingIngredients: product.states?.contains("en:ingredients-to-be-completed") == true, ingredientsList: product.ingredientsListAnalysis)
+                    analysisView.openProductEditHandler = { [weak self] in
+                        self?.goToEditProduct(product: product)
+                    }
                     analysisView.configureGestureRecognizer()
                     self.ingredientsAnalysisFloatingContainer.addArrangedSubview(analysisView)
                 }
@@ -647,6 +636,40 @@ extension ScannerViewController {
             addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.saveAll))
             navVC.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(addProductVC, animated: true)
+        }
+    }
+
+    func goToEditProduct(product: Product) {
+        if CredentialsController.shared.getUsername() == nil {
+            guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
+                return }
+            loginVC.dataManager = dataManager
+            //loginVC.delegate = self
+
+            let navVC = UINavigationController(rootViewController: loginVC)
+            loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ScannerViewController.dismissVC))
+            loginVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(ScannerViewController.dismissVC))
+
+            self.present(navVC, animated: true)
+
+            return
+        }
+
+        let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
+        if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
+            addProductVC.productToEdit = product
+            addProductVC.dataManager = dataManager
+
+            let navVC = UINavigationController(rootViewController: addProductVC)
+            if self.responds(to: #selector(ScannerViewController.dismissVC)) {
+                addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ScannerViewController.dismissVC))
+            }
+            if addProductVC.responds(to: #selector(ProductAddViewController.saveAll)) {
+                addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.saveAll))
+            }
+            navVC.modalPresentationStyle = .fullScreen
+
+            self.present(navVC, animated: true)
         }
     }
 

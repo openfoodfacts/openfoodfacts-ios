@@ -68,6 +68,44 @@ class FormTableViewController: UITableViewController {
         self.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
     }
+
+    func goToEditProduct(product: Product) {
+        if CredentialsController.shared.getUsername() == nil {
+            guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
+                return }
+            loginVC.dataManager = dataManager
+            //loginVC.delegate = self
+
+            let navVC = UINavigationController(rootViewController: loginVC)
+            loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(FormTableViewController.dismissVC))
+            loginVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(FormTableViewController.dismissVC))
+
+            self.present(navVC, animated: true)
+
+            return
+        }
+
+        let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
+        if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
+            addProductVC.productToEdit = product
+            addProductVC.dataManager = dataManager
+
+            let navVC = UINavigationController(rootViewController: addProductVC)
+            if self.responds(to: #selector(FormTableViewController.dismissVC)) {
+                addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(FormTableViewController.dismissVC))
+            }
+            if addProductVC.responds(to: #selector(ProductAddViewController.saveAll)) {
+                addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.saveAll))
+            }
+            navVC.modalPresentationStyle = .fullScreen
+
+            self.present(navVC, animated: true)
+        }
+    }
+
+    @objc func dismissVC() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - TableView Data Source
