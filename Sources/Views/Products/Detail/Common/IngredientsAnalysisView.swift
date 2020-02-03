@@ -72,8 +72,8 @@ import Cartography
         page.iconImageBackgroundColor = self.detail?.color
         page.iconImage = self.iconImageView.image
 
-        page.actionButtonTitle = "generic.ok".localized
-        page.actionHandler = { item in
+        page.alternativeButtonTitle = "generic.ok".localized
+        page.alternativeHandler = { item in
             item.manager?.dismissBulletin()
         }
 
@@ -81,8 +81,10 @@ import Cartography
         let showHelpExtract = showHelpTranslate && missingIngredients
 
         if showHelpExtract {
-            page.alternativeButtonTitle = "ingredients-analysis.missing-ingredients.title".localized
-            page.alternativeHandler = { item in
+            page.alternativeButtonTitle = "generic.close".localized
+
+            page.actionButtonTitle = "ingredients-analysis.missing-ingredients.title".localized
+            page.actionHandler = { item in
                 let newPage = BLTNPageItem()
                 newPage.descriptionText = "ingredients-analysis.missing-ingredients.description".localized
 
@@ -98,8 +100,10 @@ import Cartography
                 item.manager?.push(item: newPage)
             }
         } else if showHelpTranslate {
-            page.alternativeButtonTitle = "ingredients-analysis.help-translate.title".localized
-            page.alternativeHandler = { item in
+            page.alternativeButtonTitle = "generic.close".localized
+
+            page.actionButtonTitle = "ingredients-analysis.help-translate.title".localized
+            page.actionHandler = { item in
                 let newPage = BLTNPageItem()
                 newPage.descriptionText = "ingredients-analysis.help-translate.description".localized
 
@@ -148,7 +152,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
         constrain(ivv, ivb, ivc) { (ivv, ivb, ivc) in
             ivc.width == 44
             ivc.height == 44
-            ivv.edges == ivb.edges.inseted(by: 10)
+            ivv.edges == ivb.edges.inseted(by: 8)
             ivb.edges == ivc.edges
         }
 
@@ -171,18 +175,18 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
         switchStackView.addSubview(deactivateSwitch)
 
         constrain(switchStackView, ivc, switchLabel, deactivateSwitch) { (switchStackView, ivc, switchLabel, deactivateSwitch) in
-            ivc.leading == switchStackView.leading + 8
+            ivc.leading == switchStackView.leading + 0
             ivc.centerY == switchStackView.centerY
             ivc.top >= switchStackView.top + 8
             ivc.bottom >= switchStackView.bottom - 8
 
-            switchLabel.leading == ivc.trailing + 8
+            switchLabel.leading == ivc.trailing + 0
             switchLabel.centerY == ivc.centerY
             switchLabel.top >= switchStackView.top + 8
             switchLabel.bottom >= switchStackView.bottom - 8
 
             deactivateSwitch.leading == switchLabel.trailing + 8
-            deactivateSwitch.trailing == switchStackView.trailing - 8
+            deactivateSwitch.trailing == switchStackView.trailing + 8
             deactivateSwitch.centerY == ivc.centerY
         }
 
@@ -190,24 +194,24 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
 
         if let detail = detail {
 
-            let titleLabel = UILabel()
-            titleLabel.font = UIFont.systemFont(ofSize: 14)
-            titleLabel.numberOfLines = 0
+            let descriptionLabel = UILabel()
+            descriptionLabel.numberOfLines = 0
+            descriptionLabel.textAlignment = .center
+            descriptionLabel.font = UIFont.boldSystemFont(ofSize: 17)
 
             if let showIngredientsTag = detail.showIngredientsTag {
-                let descriptionLabel = UILabel()
-                descriptionLabel.numberOfLines = 0
-                descriptionLabel.font = UIFont.boldSystemFont(ofSize: 14)
-
                 let ingredientsText = self.getListIngredients(showIngredientsTags: showIngredientsTag)
 
                 if !ingredientsText.isEmpty {
                     descriptionLabel.text = ingredientsText
                     views.append(descriptionLabel)
-                } else if detail.tag.contains("unknown") {
+                } else if detail.tag.contains("unknown") {
                     descriptionLabel.text = "ingredients-analysis.unknown_status".localized
                     views.append(descriptionLabel)
                 }
+            } else if detail.tag.contains("unknown") {
+                descriptionLabel.text = "ingredients-analysis.unknown_status".localized
+                views.append(descriptionLabel)
             }
         }
 
