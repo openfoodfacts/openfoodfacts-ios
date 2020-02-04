@@ -196,11 +196,16 @@ class DataManager: DataManagerProtocol {
     }
 
     func ingredientsAnalysis(forProduct product: Product) -> [IngredientsAnalysisDetail] {
-        guard let ingredientsAnalysisTags = product.ingredientsAnalysisTags else {
-            return []
-        }
 
         var ingredientsAnalysisDetails = [IngredientsAnalysisDetail]()
+
+        var ingredientsAnalysisTags = product.ingredientsAnalysisTags ?? [String]()
+
+        if ingredientsAnalysisTags.isEmpty && (product.states?.contains("en:ingredients-to-be-completed") == true || product.ingredientsImageUrl == nil) {
+            if let allIngredientsAnalysis = self.objectSearch(forQuery: nil, ofClass: IngredientsAnalysisConfig.self) {
+                ingredientsAnalysisTags = allIngredientsAnalysis.compactMap { $0.code.hasSuffix("-unknown") ? $0.code : nil }
+            }
+        }
 
         for analysisTag in ingredientsAnalysisTags {
             let detail = IngredientsAnalysisDetail()
