@@ -180,7 +180,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
             ivc.top >= switchStackView.top + 8
             ivc.bottom >= switchStackView.bottom - 8
 
-            switchLabel.leading == ivc.trailing + 0
+            switchLabel.leading == ivc.trailing + 0 
             switchLabel.centerY == ivc.centerY
             switchLabel.top >= switchStackView.top + 8
             switchLabel.bottom >= switchStackView.bottom - 8
