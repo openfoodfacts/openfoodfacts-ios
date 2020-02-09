@@ -12,6 +12,10 @@ import AlamofireImage
 import Crashlytics
 import UIKit
 
+extension Notification.Name {
+    static let productChangesUploaded = Notification.Name("product-changes-uploaded")
+}
+
 protocol DataManagerProtocol {
     // Search
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
@@ -295,6 +299,9 @@ class DataManager: DataManagerProtocol {
         productApi.postProduct(product, rawParameters: nil, onSuccess: {
             DispatchQueue.main.async {
                 onSuccess()
+                if let barcode = product.barcode {
+                    NotificationCenter.default.post(name: .productChangesUploaded, object: nil, userInfo: ["barcode": barcode])
+                }
             }
         }, onError: { error in
             if isOffline(errorCode: (error as NSError).code) {

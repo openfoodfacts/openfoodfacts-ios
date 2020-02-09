@@ -347,6 +347,8 @@ class ProductAddViewController: TakePictureViewController {
                 }
         })
         saveNutriments()
+
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func didTapSaveProductButton(_ sender: UIButton) {
