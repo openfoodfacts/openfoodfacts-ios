@@ -45,6 +45,16 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             }
         }
         setUserAgent()
+
+
+        NotificationCenter.default.addObserver(forName: .productChangesUploaded, object: nil, queue: .main) { [weak self] notif in
+            guard let barcode = notif.userInfo?["barcode"] as? String else {
+                return
+            }
+            if barcode == self?.product.barcode {
+                self?.refreshProduct {}
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

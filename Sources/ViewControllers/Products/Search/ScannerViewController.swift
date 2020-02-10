@@ -647,8 +647,8 @@ extension ScannerViewController {
             //loginVC.delegate = self
 
             let navVC = UINavigationController(rootViewController: loginVC)
-            loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ScannerViewController.dismissVC))
-            loginVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(ScannerViewController.dismissVC))
+            loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ScannerViewController.dismissModalVC))
+            loginVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(ScannerViewController.dismissModalVC))
 
             self.present(navVC, animated: true)
 
@@ -675,6 +675,10 @@ extension ScannerViewController {
 
     @objc func dismissVC() {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    @objc func dismissModalVC() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     fileprivate func turnOffFlash() {
