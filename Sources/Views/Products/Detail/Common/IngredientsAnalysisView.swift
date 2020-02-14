@@ -67,8 +67,18 @@ import Cartography
         }
         let page = AnalysisIconBLTPageItem(title: detail.title)
 
+        let maybeIngredients = ingredientsList?.compactMap({ (ing: Ingredient) -> Ingredient? in
+            if let json = ing.rawJson {
+                if json[detail.type] as? String == "maybe" {
+                    return ing
+                }
+            }
+            return nil
+        }) ?? []
+
         page.detail = detail
         page.ingredientsList = ingredientsList
+        page.maybeIngredients = maybeIngredients
         page.iconImageBackgroundColor = self.detail?.color
         page.iconImage = self.iconImageView.image
 
@@ -77,7 +87,7 @@ import Cartography
             item.manager?.dismissBulletin()
         }
 
-        let showHelpTranslate = detail.tag.contains("unknown")
+        let showHelpTranslate = maybeIngredients.isEmpty && detail.tag.contains("unknown")
         let showHelpExtract = showHelpTranslate && missingIngredients
 
         if showHelpExtract {
@@ -98,6 +108,9 @@ import Cartography
                 newPage.alternativeHandler = { item in item.manager?.dismissBulletin() }
 
                 item.manager?.push(item: newPage)
+                
+                newPage.actionButton?.titleLabel?.numberOfLines = 2
+                newPage.actionButton?.titleLabel?.textAlignment = .center
             }
         } else if showHelpTranslate {
             page.alternativeButtonTitle = "generic.close".localized
@@ -119,12 +132,17 @@ import Cartography
                 newPage.alternativeHandler = { item in item.manager?.dismissBulletin() }
 
                 item.manager?.push(item: newPage)
+
+                newPage.actionButton?.titleLabel?.numberOfLines = 2
+                newPage.actionButton?.titleLabel?.textAlignment = .center
             }
         }
 
         bulletinManager = BLTNItemManager(rootItem: page)
         bulletinManager.showBulletin(in: UIApplication.shared)
 
+        page.actionButton?.titleLabel?.numberOfLines = 2
+        page.actionButton?.titleLabel?.textAlignment = .center
         page.imageView?.backgroundColor = self.backgroundColor
     }
 }
@@ -132,6 +150,7 @@ import Cartography
 class AnalysisIconBLTPageItem: BLTNPageItem {
 
     var ingredientsList: [Ingredient]?
+    var maybeIngredients: [Ingredient] = []
     var detail: IngredientsAnalysisDetail?
     var iconImageBackgroundColor: UIColor?
     var iconImage: UIImage?
@@ -212,6 +231,14 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
             } else if detail.tag.contains("unknown") {
                 descriptionLabel.text = "ingredients-analysis.unknown_status".localized
                 views.append(descriptionLabel)
+            }
+
+            if detail.tag.contains("unknown") && !maybeIngredients.isEmpty {
+                let maybeIngredientsDescriptionLabel = UILabel()
+                maybeIngredientsDescriptionLabel.numberOfLines = 0
+                //maybeIngredientsDescriptionLabel.font = UIFont.systemFont(ofSize: 15)
+                maybeIngredientsDescriptionLabel.text = String(format: "ingredients-analysis.ambiguous".localized, maybeIngredients.map { $0.text ?? "" }.joined(separator: ", "))
+                views.append(maybeIngredientsDescriptionLabel)
             }
         }
 
