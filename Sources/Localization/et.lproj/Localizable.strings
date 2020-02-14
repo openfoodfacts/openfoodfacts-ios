@@ -21,10 +21,10 @@
 // Product Search
 
 "product-search.title" = "Otsi";
-"product-search.search-placeholder" = "Search by name or barcode";
+"product-search.search-placeholder" = "Otsi nime või vöötkoodi järgi";
 "product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
-"product-search.error-view.title" = "Something went wrong";
-"product-search.error-view.subtitle" = "Please try again";
+"product-search.error-view.title" = "Midagi läks valesti";
+"product-search.error-view.subtitle" = "Palun proovi uuesti";
 "product-search.initial-view.slogan" = "the free food products database";
 "product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
 "product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
@@ -33,26 +33,26 @@
 "product-scanner.overlay.user-help" = "Scan the barcode of the product";
 "product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Skänner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
 "product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
-"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+"product-scanner.permissions.noPermissions.action.title" = "Ava seaded";
 
 "product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
 "product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Toote laadimine…";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image…";
+"product-add.uploading-image-banner.title" = "Pildi üleslaadimine…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "Midagi läks valesti";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
@@ -60,14 +60,14 @@
 "product-add.image-save-success-banner.title" = "Image will be uploaded when online";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
-"product-add.uploaded-image" = "Image uploaded, thanks!";
-"product-add.save-error.title" = "Error while saving product";
-"product-add.save-error.message" = "Please try again later";
-"product-add.save-info.success" = "Information saved at";
+"product-add.uploaded-image" = "Pilt üles laaditud, aitäh!";
+"product-add.save-error.title" = "Viga toote salvestamisel";
+"product-add.save-error.message" = "Palun proovi hiljem uuesti";
+"product-add.save-info.success" = "Informatsioon salvestatud";
 "product-add.save-info.error" = "Information not saved";
 "product-add.save-info.saving" = "Saving product information…";
 "product-add.save-info.not-yet" = "Information not saved yet";
-"product-add.save-ingredients.success" = "Ingredients saved at";
+"product-add.save-ingredients.success" = "Koostisosad salvestatud";
 "product-add.save-ingredients.error" = "Ingredients not saved";
 "product-add.save-ingredients.saving" = "Saving ingredients…";
 "product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
@@ -107,12 +107,12 @@
 "product-add.label.packaging" = "Packaging";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.label.language" = "Keeled";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Nutrition Facts";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.choice.per-hundred-grams" = "100 g / 100 ml kohta";
+"product-add.nutritive.choice.per-portion" = "portsjoni kohta";
 "product-add.nutritive.add-nutriment" = "Add a nutrient";
 "product-add.nutritive.too-much" = "More than 100g?";
 
@@ -124,7 +124,7 @@
 
 // Select Category
 "select-category.title" = "Category";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Otsi kategooriat";
 
 // Select nutrition
 "select-nutriment.title" = "Nutrition";
@@ -135,8 +135,8 @@
 "select-allergen.search-placeholder" = "Search for an allergen";
 
 // Product Detail
-"product-detail.header.add-new-picture" = "Add a new picture";
-"product-detail.edit" = "Edit this product";
+"product-detail.header.add-new-picture" = "Lisa uus pilt";
+"product-detail.edit" = "Muuda toodet";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "Remember to save your changes";
 /* Keep this text as short as possible */
@@ -147,7 +147,7 @@
 "product-detail.page-title.ingredients" = "Ingredients";
 "product-detail.page-title.nutrition" = "Nutrition";
 "product-detail.page-title.nutrition-table" = "Nutrition table";
-"product-detail.page-title.environment-impact" = "Environment";
+"product-detail.page-title.environment-impact" = "Keskkond";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Triipkood";
@@ -161,7 +161,7 @@
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "Pakendaja kood";
 "product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
@@ -172,15 +172,15 @@
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Allergiat või talumatust tekitavad ained või tooted";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-alert.title" = "Sisaldab allergeene!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Traces";
-"product-detail.ingredients.additives-list" = "Additives";
+"product-detail.ingredients.additives-list" = "Lisandid";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients that may be from palm oil";
 "product-detail.ingredients.vitamins-list" = "Vitamins";
-"product-detail.ingredients.minerals-list" = "Minerals";
+"product-detail.ingredients.minerals-list" = "Mineraalid";
 "product-detail.ingredients.nucleotides-list" = "Nucleotides";
 "product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
@@ -191,13 +191,13 @@
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
-"product-detail.nutrition-table.for-serving" = "Per serving";
-"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.for-serving" = "Portsjoni kohta";
+"product-detail.nutrition-table.100g" = "100 g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
 
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
+"nutrition-level.title" = "100 g/100mL toitainete sisaldus";
 "nutrition-level.low" = "in low quantity";
 "nutrition-level.moderate" = "in moderate quantity";
 "nutrition-level.high" = "in high quantity";
@@ -242,43 +242,43 @@
 "nutrition.sodium" = "Sodium";
 "nutrition.alcohol" = "Alcohol";
 "nutrition.vitamins" = "Vitamins";
-"nutrition.vitamins.a" = "Vitamin A";
+"nutrition.vitamins.a" = "A-vitamiin";
 "nutrition.vitamins.beta-carotene" = "Beta carotene";
-"nutrition.vitamins.d" = "Vitamin D";
-"nutrition.vitamins.e" = "Vitamin E";
-"nutrition.vitamins.k" = "Vitamin K";
-"nutrition.vitamins.c" = "Vitamin C";
-"nutrition.vitamins.b1" = "Vitamin B1";
-"nutrition.vitamins.b2" = "Vitamin B2";
+"nutrition.vitamins.d" = "D-vitamiin";
+"nutrition.vitamins.e" = "E-vitamiin";
+"nutrition.vitamins.k" = "K-vitamiin";
+"nutrition.vitamins.c" = "C-vitamiin";
+"nutrition.vitamins.b1" = "B1-vitamiin";
+"nutrition.vitamins.b2" = "B2-vitamiin";
 "nutrition.vitamins.pp" = "Vitamin PP";
-"nutrition.vitamins.b6" = "Vitamin B6";
-"nutrition.vitamins.b9" = "Vitamin B9";
-"nutrition.vitamins.b12" = "Vitamin B12";
+"nutrition.vitamins.b6" = "B6-vitamiin";
+"nutrition.vitamins.b9" = "B9-vitamiin";
+"nutrition.vitamins.b12" = "B12-vitamiin";
 "nutrition.vitamins.biotin" = "Biotin";
 "nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
-"nutrition.minerals" = "Minerals";
+"nutrition.minerals" = "Mineraalid";
 "nutrition.minerals.silica" = "Silica";
-"nutrition.minerals.bicarbonate" = "Bicarbonate";
-"nutrition.minerals.potassium" = "Potassium";
-"nutrition.minerals.chloride" = "Chloride";
-"nutrition.minerals.calcium" = "Calcium";
-"nutrition.minerals.phosphorus" = "Phosphorus";
-"nutrition.minerals.iron" = "Iron";
-"nutrition.minerals.magnesium" = "Magnesium";
-"nutrition.minerals.zinc" = "Zinc";
-"nutrition.minerals.copper" = "Copper";
-"nutrition.minerals.manganese" = "Manganese";
-"nutrition.minerals.fluoride" = "Fluoride";
-"nutrition.minerals.selenium" = "Selenium";
-"nutrition.minerals.chromium" = "Chromium";
-"nutrition.minerals.molybdenum" = "Molybdenum";
-"nutrition.minerals.iodine" = "Iodine";
-"nutrition.minerals.caffeine" = "Caffeine";
-"nutrition.minerals.taurine" = "Taurine";
+"nutrition.minerals.bicarbonate" = "Bikarbonaat";
+"nutrition.minerals.potassium" = "Kaalium";
+"nutrition.minerals.chloride" = "Kloriid";
+"nutrition.minerals.calcium" = "Kaltsium";
+"nutrition.minerals.phosphorus" = "Fosfor";
+"nutrition.minerals.iron" = "Raud";
+"nutrition.minerals.magnesium" = "Magneesium";
+"nutrition.minerals.zinc" = "Tsink";
+"nutrition.minerals.copper" = "Vask";
+"nutrition.minerals.manganese" = "Mangaan";
+"nutrition.minerals.fluoride" = "Fluoriid";
+"nutrition.minerals.selenium" = "Seleen";
+"nutrition.minerals.chromium" = "Kroom";
+"nutrition.minerals.molybdenum" = "Molübdeen";
+"nutrition.minerals.iodine" = "Jood";
+"nutrition.minerals.caffeine" = "Kofeiin";
+"nutrition.minerals.taurine" = "Tauriin";
 "nutrition.minerals.ph" = "pH";
-"nutrition.minerals.fruits-vegetables-nuts" = "Fruits, vegetables, nuts";
+"nutrition.minerals.fruits-vegetables-nuts" = "Puuviljad, köögiviljad, pähklid";
 "nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
-"nutrition.minerals.cocoa" = "Cocoa";
+"nutrition.minerals.cocoa" = "Kakao";
 "nutrition.minerals.chlorophyl" = "Chlorophyl";
 
 // Call to action
@@ -297,15 +297,15 @@
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
 
 // Settings storyboard
-"settings.tab-bar.item" = "Settings";
+"settings.tab-bar.item" = "Seaded";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Allergens alerts";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
 "settings.allergies.add-button" = "Add allergens";
-"settings.sections.information" = "Information";
+"settings.sections.information" = "Informatsioon";
 "settings.sections.discover" = "Discover";
 "settings.sections.contribute" = "Contribute";
-"settings.sections.about" = "About";
+"settings.sections.about" = "Info";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
