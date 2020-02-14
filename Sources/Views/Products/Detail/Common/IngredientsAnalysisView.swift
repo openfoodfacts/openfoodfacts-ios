@@ -111,6 +111,8 @@ import Cartography
                 
                 newPage.actionButton?.titleLabel?.numberOfLines = 2
                 newPage.actionButton?.titleLabel?.textAlignment = .center
+                newPage.alternativeButton?.titleLabel?.numberOfLines = 2
+                newPage.alternativeButton?.titleLabel?.textAlignment = .center
             }
         } else if showHelpTranslate {
             page.alternativeButtonTitle = "generic.close".localized
@@ -135,6 +137,8 @@ import Cartography
 
                 newPage.actionButton?.titleLabel?.numberOfLines = 2
                 newPage.actionButton?.titleLabel?.textAlignment = .center
+                newPage.alternativeButton?.titleLabel?.numberOfLines = 2
+                newPage.alternativeButton?.titleLabel?.textAlignment = .center
             }
         }
 
@@ -143,6 +147,8 @@ import Cartography
 
         page.actionButton?.titleLabel?.numberOfLines = 2
         page.actionButton?.titleLabel?.textAlignment = .center
+        page.alternativeButton?.titleLabel?.numberOfLines = 2
+        page.alternativeButton?.titleLabel?.textAlignment = .center
         page.imageView?.backgroundColor = self.backgroundColor
     }
 }
