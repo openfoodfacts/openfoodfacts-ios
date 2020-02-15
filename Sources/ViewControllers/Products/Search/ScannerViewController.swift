@@ -629,7 +629,10 @@ extension ScannerViewController {
         if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
             var newProduct = Product()
             newProduct.barcode = barcode
+            // set the main language of the product to the language of the device
+            newProduct.lang = Locale.current.languageCode ?? "en"
             addProductVC.productToEdit = newProduct
+
             addProductVC.dataManager = dataManager
             self.barcodeToOpenAtStartup = barcode
             let navVC = UINavigationController(rootViewController: addProductVC)
