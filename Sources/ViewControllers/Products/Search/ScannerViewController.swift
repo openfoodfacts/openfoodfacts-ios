@@ -318,6 +318,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
                 self?.scannerFloatingPanelLayout.canShowDetails = true
                 self?.scannerResultController.status = .manualBarcode
                 self?.floatingPanelController.move(to: .tip, animated: true)
+                self?.showIngredientsAnalysisFloatingIfNeeded()
             } else {
                 self?.showScanHelpInstructions()
             }
