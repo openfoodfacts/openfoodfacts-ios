@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Skeniraj črtno kodo";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Nazaj";
@@ -26,19 +26,19 @@
 "product-search.error-view.title" = "Nekaj je šlo narobe";
 "product-search.error-view.subtitle" = "Prosimo, poskusite znova";
 "product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
+"product-search.initial-view.offline.title-loading" = "Shranjevanje izdelkov brez povezave: %d%%";
 "product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skenirajte črtno kodo izdelka";
 "product-scanner.overlay.extended-user-help" = "Črtne kode ni mogoče najti.\nSredišče črtne kode na zaslonu.\nPrepričajte se, da je črtna koda dobro osvetljena.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Skener";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Napaka pri skeniranju črtne kode. Poskusite znova čez nekaj trenutkov.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "Črtne kode ni mogoče najti. Lahko jo vtipkate ročno:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.title" = "Open food facts potrebuje dovoljenja za kamero";
 "product-scanner.permissions.noPermissions.message" = "Prosimo, podelite dovoljenje za uporabo fotoaparata, s katerim lahko skenirate črtne kode";
 "product-scanner.permissions.noPermissions.action.title" = "Odpri nastavitve";
 
@@ -57,36 +57,36 @@
 "product-add.image-upload-error-banner.subtitle" = "Poskusite znova posneti sliko";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
 "product-add.image-upload-success-banner.title" = "Slika je bila uspešno prenesena";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-save-success-banner.title" = "Slika bo naložena, ko bo na voljo povezava";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "Izdelek je bil uspešno dodan. Hvala vam!";
 "product-add.uploaded-image" = "Prenesena slika, hvala!";
 "product-add.save-error.title" = "Napaka med shranjevanjem izdelka";
 "product-add.save-error.message" = "Poskusite znova kasneje";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
+"product-add.save-info.success" = "Informacije shranjene ob";
+"product-add.save-info.error" = "Podatki niso shranjeni";
+"product-add.save-info.saving" = "Shranjevanje informacij o izdelku…";
+"product-add.save-info.not-yet" = "Podatki še niso shranjeni";
 "product-add.save-ingredients.success" = "Sestavine shranjene v";
 "product-add.save-ingredients.error" = "Sestavine niso shranjene";
 "product-add.save-ingredients.saving" = "Shranjevanje sestavin…";
 "product-add.save-ingredients.not-yet" = "Sestavine še niso shranjene";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.save-nutriments.success" = "Hranila, shranjena ob";
+"product-add.save-nutriments.error" = "Hranila niso shranjena";
+"product-add.save-nutriments.saving" = "Shranjevanje hranil…";
+"product-add.save-nutriments.not-yet" = "Hranila še niso shranjena";
+"product-add.no-nutrition" = "Podatki o prehrani niso prikazani na izdelku";
 
 "product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.error" = "Iz slike ni mogoče prebrati sestavin";
+"product-add.ocr-ingredients.saving" = "Prebiram sestavine s slike…";
+"product-add.ocr-ingredients.not-yet" = "Čakam na analizo slike sestavin";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "Nutri-score je pravkar izračunan iz prehranske tabele";
+"product-add.novagroup-explaination" = "Skupina NOVA je pravkar izračunana na podlagi seznama sestavin";
 
 "alert.action.ok" = "V redu";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Izberite jezik";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Ime izdelka";
 /* Product Add brand text field */
@@ -94,49 +94,49 @@
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Količina";
 
-"product-add.title" = "New product";
+"product-add.title" = "Nov izdelek";
 "product-add.title-edit" = "Uredi izdelek";
 "product-add.titles.barcode" = "Črtna koda";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Product information";
+"product-add.titles.product-info" = "Informacije o izdelku";
 "product-add.label.product-name" = "Ime";
 "product-add.label.category" = "Kategorijo";
 "product-add.label.quantity" = "Količina";
 "product-add.label.packaging" = "Pakiranje";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
+"product-add.details.category" = "Potrebno za izračun Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.label.language" = "Jeziki";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Dejstva o hranilni vrednosti";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.choice.per-hundred-grams" = "na 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "na porcijo";
 "product-add.nutritive.add-nutriment" = "Dodaj hranilo";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Več kot 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
 "product-add.titles.ingredients" = "Sestavine";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
+"product-add.ingredients.explaination" = "Fotografirajte seznam sestavin, da sestavine samodejno izvlečete. Previdno ga preverite in ne pozabite ga shraniti.";
 "product-add.ingredients.button-delete" = "Preveč slabo, prezri";
 "product-add.ingredients.button-save" = "Izgleda dobro, shrani";
 
 // Select Category
 "select-category.title" = "Kategorija";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Poišči kategorijo";
 
 // Select nutrition
 "select-nutriment.title" = "Prehrana";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Poišči hranilo";
 
 // Select allergen
 "select-allergen.title" = "Alergen";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "Poišči alergen";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Dodaj novo sliko";
-"product-detail.edit" = "Edit this product";
+"product-detail.edit" = "Uredi ta izdelek";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "Ne pozabite shraniti sprememb";
 /* Keep this text as short as possible */
@@ -206,7 +206,7 @@
 "ingredients-analysis.ingredients_in_this_product" = "Sestavine tega izdelka, ki so %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Sestavine tega izdelka so %@s.";
 "ingredients-analysis.unknown_status" = "Stanja izdelka ni bilo mogoče oceniti.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
+"ingredients-analysis.ambiguous" = "Dvoumne sestavine: %@";
 "ingredients-analysis.display" = "Display %@ status";
 "ingredients-analysis.missing-ingredients.title" = "Izpolnite manjkajoče sestavine";
 "ingredients-analysis.missing-ingredients.description" = "Za ta izdelek še nimamo sestavin. Nam jih lahko pomagate dodati?";
@@ -291,29 +291,29 @@
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
 "product.images.took-picture.front" = "Fotografija sprednje strani ✅";
 "product.images.took-picture.ingredients" = "Fotografija sestavin ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.nutrition" = "Fotografija prehranske tabele ✅";
 
-"product.images.take-picture.front" = "Photo of the front";
+"product.images.take-picture.front" = "Fotografija spredaj";
 "product.images.take-picture.ingredients" = "Fotografija sestavin";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.nutrition" = "Fotografija prehranske tabele";
 
 // Settings storyboard
 "settings.tab-bar.item" = "Nastavitve";
 "settings.ingredientsAnalysis.title" = "Opozorila o analizi sestavin";
-"settings.allergies.title" = "Allergens alerts";
+"settings.allergies.title" = "Opozorilo na alergene";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
+"settings.allergies.add-button" = "Dodaj alergene";
 "settings.sections.information" = "Informacije";
 "settings.sections.discover" = "Odkritje";
 "settings.sections.contribute" = "Prispevaj";
 "settings.sections.about" = "O programu";
-"settings.user-profile" = "Your contributor account";
+"settings.user-profile" = "Vaš račun sodelavca";
 "settings.credits.title" = "Zasluge";
 "settings.scan-on-launch.title" = "Pokaži skeniranje pri zagonu aplikacije";
 "settings.sections.discover" = "Odkritje";
 "settings.contribute.how-to-contribute" = "Kako prispevati";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.contribute.support-open-food-facts" = "Podprite Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Prevedi Open Products Facts";
 "settings.about.contact" = "Stik";
 "settings.about.frequently-asked-questions" = "Pogosto zastavljena vprašanja";
 "settings.promotion.open-beauty-facts" = "Odpri dejstva lepote";
@@ -323,18 +323,18 @@
 /* Tab bar item */
 "user.tab-bar.item" = "Uporabnik";
 "user.log-in" = "Prijava";
-"user.logging-in" = "Logging in";
+"user.logging-in" = "Prijavljanje";
 "user.log-out" = "Odjava";
 "user.username" = "Uporabniško ime";
 "user.password" = "Geslo";
 "user.logged-in.label" = "%@, prijavljeni ste";
 "user.logged-in-explanation.label" = "Vsi izdelki, ki jih dodate, fotografije izdelkov, ki jih naložite, bodo povezani na vaš račun";
-"user.not-logged-in" = "Not logged in";
-"user.forgot-password" = "Forgot Password?";
+"user.not-logged-in" = "Niste prijavljeni";
+"user.forgot-password" = "Ste pozabili geslo?";
 "user.check-your-contributions.button" = "Preverite svoje prispevke";
 "user.products-pending-upload.button" = "Products pending upload";
-"user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
-"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.products-pending-upload-none.button" = "Izdelki čakajo na prenos v Open Food Facts (noben)";
+"user.create-account.text" = "Če nimate računa, kliknite spodnjo povezavo, da ga ustvarite.";
 "user.create-account.button" = "Ustvari račun";
 "user.why-log-in.text" = "Prijava z vašim računom bo povezala vse vaše prispevke v svoj račun.";
 "user.alert.wrong-credentials.title" = "Prijava ni mogoča";
@@ -342,20 +342,20 @@
 "user.alert.generic-error.title" = "Pri prijavi je prišlo do napake";
 "user.alert.generic-error.subtitle" = "Poskusite znova čez nekaj trenutkov";
 "user.alert.logout-confirmation.title" = "Potrdi odjavo";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
+"user.alert.logout-confirmation.subtitle" = "Ali ste prepričani, da se želite odjaviti?";
 "user.alert.username-missing" = "Potrebno je uporabniško ime";
 "user.alert.password-missing" = "Zahtevano je geslo";
 "pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"pending-upload.hud.status" = "Nalaganje";
 
 // Search history
-"history.title" = "Search history";
-"history.cell.privacy" = "Your search history is only stored on your device";
+"history.title" = "Zgodovina iskanja";
+"history.cell.privacy" = "Zgodovina iskanja je shranjena samo v vaši napravi";
 "history.button.clear" = "Počisti";
-"history.clear.confirmation-title" = "Clear your history ?";
-"history.clear.confirmation-message" = "All your history will be deleted";
-"history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
+"history.clear.confirmation-title" = "Počistim zgodovino?";
+"history.clear.confirmation-message" = "Izbrisana bo vsa vaša zgodovina";
+"history.section-titles.last24h" = "Zadnjih 24 ur";
+"history.section-titles.fewDays" = "Pred nekaj dnevi";
+"history.section-titles.fewWeeks" = "Pred nekaj tedni";
+"history.section-titles.fewMonths" = "Pred nekaj meseci";
+"history.section-titles.longTime" = "Dolgo časa nazaj";
