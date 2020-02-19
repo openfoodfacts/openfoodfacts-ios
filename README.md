@@ -52,15 +52,30 @@ Open Food Facts on iPhone and iPad has 0,5M users and 1M products. Each contribu
 
 ### Issues
 Here are issues and feature requests you can work on:
+
+#### Search issues
 - [Disable search as you type: it does not work and causes performance issues on the server P1 bug search](https://github.com/openfoodfacts/openfoodfacts-ios/issues/553)
-- [Offline scans are not added to your history](https://github.com/openfoodfacts/openfoodfacts-ios/issues/267)
-- [Add a prompt to extract Ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171)
-- [Storyboardify app](https://github.com/openfoodfacts/openfoodfacts-ios/issues/403)
-- [Add a dynamic changelog](https://github.com/openfoodfacts/openfoodfacts-ios/issues/335)
-- [Traces are not translated](https://github.com/openfoodfacts/openfoodfacts-ios/issues/245)
+
+#### Scan issues
 - [Card is completely blank if no name/brand/quantity/image is selected](https://github.com/openfoodfacts/openfoodfacts-ios/issues/180)
-- [Try to support iOS 9 again](https://github.com/openfoodfacts/openfoodfacts-ios/issues/115)
-- [Allow to export the product history](https://github.com/openfoodfacts/openfoodfacts-ios/issues/53)
+
+#### History issues
+- [ ]  [Offline scans are not added to your history](https://github.com/openfoodfacts/openfoodfacts-ios/issues/267)
+- [ ]  [Allow to export the product history](https://github.com/openfoodfacts/openfoodfacts-ios/issues/53)
+
+#### Product editing issues
+- [ ]  [Add a prompt to extract Ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171)
+
+#### Refactoring issues
+- [ ]  [Storyboardify app](https://github.com/openfoodfacts/openfoodfacts-ios/issues/403)
+- [ ]  [Try to support iOS 9 again](https://github.com/openfoodfacts/openfoodfacts-ios/issues/115)
+
+#### Onboarding new users
+- [ ]  [Add a dynamic changelog](https://github.com/openfoodfacts/openfoodfacts-ios/issues/335)
+
+#### Viewing products
+- [ ]  [Traces are not translated](https://github.com/openfoodfacts/openfoodfacts-ios/issues/245)
+
 
 ## Images
 
