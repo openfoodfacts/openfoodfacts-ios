@@ -52,8 +52,6 @@ Open Food Facts on iPhone and iPad has 0,5M users and 1M products. Each contribu
 
 ### Issues
 Here are issues and feature requests you can work on:
-- [Very high impact issues](https://github.com/openfoodfacts/openfoodfacts-ios/labels/very%20high%20impact)
-- [Priority issues](https://github.com/openfoodfacts/openfoodfacts-ios/labels/priority)
 - [Disable search as you type: it does not work and causes performance issues on the server P1 bug search](https://github.com/openfoodfacts/openfoodfacts-ios/issues/553)
 - [Offline scans are not added to your history](https://github.com/openfoodfacts/openfoodfacts-ios/issues/267)
 - [Add a prompt to extract Ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171)
