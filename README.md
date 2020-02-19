@@ -54,6 +54,15 @@ Open Food Facts on iPhone and iPad has 0,5M users and 1M products. Each contribu
 Here are issues and feature requests you can work on:
 - [Very high impact issues](https://github.com/openfoodfacts/openfoodfacts-ios/labels/very%20high%20impact)
 - [Priority issues](https://github.com/openfoodfacts/openfoodfacts-ios/labels/priority)
+- [Disable search as you type: it does not work and causes performance issues on the server P1 bug search](https://github.com/openfoodfacts/openfoodfacts-ios/issues/553)
+- [Offline scans are not added to your history](https://github.com/openfoodfacts/openfoodfacts-ios/issues/267)
+- [Add a prompt to extract Ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171)
+- [Storyboardify app](https://github.com/openfoodfacts/openfoodfacts-ios/issues/403)
+- [Add a dynamic changelog](https://github.com/openfoodfacts/openfoodfacts-ios/issues/335)
+- [Traces are not translated](https://github.com/openfoodfacts/openfoodfacts-ios/issues/245)
+- [Card is completely blank if no name/brand/quantity/image is selected](https://github.com/openfoodfacts/openfoodfacts-ios/issues/180)
+- [Try to support iOS 9 again](https://github.com/openfoodfacts/openfoodfacts-ios/issues/115)
+- [Allow to export the product history](https://github.com/openfoodfacts/openfoodfacts-ios/issues/53)
 
 ## Images
 
