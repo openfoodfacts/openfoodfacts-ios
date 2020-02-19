@@ -1,3 +1,5 @@
+<img height='175' src="https://static.openfoodfacts.org/images/misc/openfoodfacts-logo-en-178x150.png" align="left" hspace="1" vspace="1">
+
 # Open Food Facts iOS app
 
 Note: Xcode's limited Markdown support means this file is best viewed on GitHub. Not seeing this as a formatted file in Xcode? Check out [the Build section](https://github.com/openfoodfacts/openfoodfacts-ios/wiki/Build) of the project wiki on GitHub for troubleshooting tips.
@@ -8,21 +10,19 @@ Note: Xcode's limited Markdown support means this file is best viewed on GitHub.
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/openfoodfacts/openfoodfacts-ios.svg)](https://isitmaintained.com/project/openfoodfacts/openfoodfacts-ios "Percentage of issues still open")
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/openfoodfacts/localized.svg)](https://crowdin.com/project/openfoodfacts)
 
-![Open Food Facts icon](https://static.openfoodfacts.org/images/misc/openfoodfacts-logo-en-178x150.png)
-
 [![Download on the App Store](https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png)](https://apps.apple.com/app/open-food-facts/id588797948)
 
 ## What is Open Food Facts?
 
 [Open Food Facts](https://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.
 
-### Translate Open Food Facts in your language
+### Help translate Open Food Facts in your language
 
 You can help translate Open Food Facts and the app at (no technical knowledge required, takes a minute to signup): [translate.openfoodfacts.org](https://translate.openfoodfacts.org)
 
 ## Features
 
-- [x] (Offline) Barcode scanning
+- [x] Offline barcode scanning
 - [x] Product search
 - [x] Allergen alert
 - [x] Product details
@@ -32,15 +32,19 @@ You can help translate Open Food Facts and the app at (no technical knowledge re
 - [x] On-the-fly OCR of ingredients and labels for new product addition
 - [x] Internationalised user interface
 - [x] Native editing
+- [x] Product addition
 - [x] Night mode
 
-## Priority roadmap
-- [ ] Vegan/vegetarian/palm oil (ready server side) [issue #321](https://github.com/openfoodfacts/openfoodfacts-ios/issues/321)
+## What can I work on ?
+
+Open Food Facts on iPhone and iPad has 0,5M users and 1M products. Each contribution you make will have a large impact on food transparency worldwide. Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the #android channel before you start work, and to document what you intend to code.
+
+### Priority roadmap
 - [ ] Additives evaluation (already ready server side and on Android) [issue #173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
 - [ ] Compare Mode [issue #153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
 - [ ] Product lists (to buy, eaten…)
 
-## Secondary roadmap
+### Secondary roadmap
 - [ ] On-device Product cache
 - [ ] Add a food category browser
 - [ ] Add support for the new JSON taxonomy system (multilingual, and data augmentation from Wikipedia/Wikidata)
