@@ -161,11 +161,17 @@ class ProductService: ProductApi {
 
     func postRobotoffAnswer(forInsightId insightId: String, withAnnotation: Int) {
         let url = Endpoint.robotoff + "/api/v1/insights/annotate"
+
+        guard let credentials = CredentialsController.shared.getCredentials() else { return }
+
+        let credentialData = "\(credentials.username):\(credentials.password)".data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
+        let base64Credentials = credentialData.base64EncodedString()
+
         Alamofire.request(url, method: .post, parameters: [
             "insight_id": insightId,
             "annotation": withAnnotation,
             "update": 1
-        ]).response { (response: DefaultDataResponse) in
+        ], headers: ["Authorization": "Basic \(base64Credentials)"]).response { (response: DefaultDataResponse) in
             log.debug("Answer from post to robotoff: \(response)")
         }
     }
