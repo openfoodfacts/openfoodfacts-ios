@@ -57,6 +57,9 @@
 		30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77D9B22088F0F00B180E9 /* Allergen.swift */; };
 		30DB17F522122E4A0010EE6F /* TOCropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB17F422122E4A0010EE6F /* TOCropViewController.framework */; };
 		30E43D78220895B100D7A906 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E43D77220895B100D7A906 /* Category.swift */; };
+		30F30EEB23FD444D00272268 /* RobotoffResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F30EEA23FD444D00272268 /* RobotoffResponse.swift */; };
+		30F30EEE23FD4EC600272268 /* RobotoffQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F30EEC23FD4EC600272268 /* RobotoffQuestionTableViewCell.swift */; };
+		30F30EEF23FD4EC600272268 /* RobotoffQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F30EED23FD4EC600272268 /* RobotoffQuestionTableViewCell.xib */; };
 		4CDF89802357F296007BA0A5 /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF897F2357F296007BA0A5 /* ProductTests.swift */; };
 		510F174D23A3A5240037832E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510F174C23A3A5240037832E /* Country.swift */; };
 		510F174F23A3CD890037832E /* OFFReadAPIKeysJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510F174E23A3CD880037832E /* OFFReadAPIKeysJSON.swift */; };
@@ -367,6 +370,9 @@
 		30DB17F422122E4A0010EE6F /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
 		30E43D77220895B100D7A906 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		30ECBDD823DA2B59005955AF /* BLTNBoard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BLTNBoard.framework; path = Carthage/Build/iOS/BLTNBoard.framework; sourceTree = "<group>"; };
+		30F30EEA23FD444D00272268 /* RobotoffResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotoffResponse.swift; sourceTree = "<group>"; };
+		30F30EEC23FD4EC600272268 /* RobotoffQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotoffQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		30F30EED23FD4EC600272268 /* RobotoffQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RobotoffQuestionTableViewCell.xib; sourceTree = "<group>"; };
 		4CDF897F2357F296007BA0A5 /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
 		510F174C23A3A5240037832E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		510F174E23A3CD880037832E /* OFFReadAPIKeysJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OFFReadAPIKeysJSON.swift; path = Sources/Models/API/OFFReadAPIKeysJSON.swift; sourceTree = SOURCE_ROOT; };
@@ -1326,6 +1332,8 @@
 			isa = PBXGroup;
 			children = (
 				956FF8971F1FF0CA0069D678 /* IngredientsHeaderCellController.xib */,
+				30F30EEC23FD4EC600272268 /* RobotoffQuestionTableViewCell.swift */,
+				30F30EED23FD4EC600272268 /* RobotoffQuestionTableViewCell.xib */,
 			);
 			path = Ingredients;
 			sourceTree = "<group>";
@@ -1426,6 +1434,7 @@
 				510F174E23A3CD880037832E /* OFFReadAPIKeysJSON.swift */,
 				95781BB11EC3A898003E3256 /* Product.swift */,
 				95781BB21EC3A898003E3256 /* ProductsResponse.swift */,
+				30F30EEA23FD444D00272268 /* RobotoffResponse.swift */,
 				95DDAF651F2916D30096B74E /* ProductImage.swift */,
 				95AA2AFE1FDABB2D00EE3A14 /* Language.swift */,
 				FB87477D23B1223D007E0848 /* Ingredient.swift */,
@@ -2226,6 +2235,7 @@
 				95C265191E96D55B004212EC /* Assets.xcassets in Resources */,
 				958F335C1F37809A005269C5 /* PictureCallToActionView.xib in Resources */,
 				3055E1C923DE48600074EB99 /* IngredientsAnalysisSettingsTableViewCell.xib in Resources */,
+				30F30EEF23FD4EC600272268 /* RobotoffQuestionTableViewCell.xib in Resources */,
 				956FF9421F1FF0CA0069D678 /* IngredientsHeaderCellController.xib in Resources */,
 				3030EB82222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.xib in Resources */,
 				958F33541F378076005269C5 /* InfoRowTableViewCell.xib in Resources */,
@@ -2464,6 +2474,7 @@
 				956FF95D1F1FF0CA0069D678 /* TapToFocusView.swift in Sources */,
 				956FF95E1F1FF0CA0069D678 /* TextOverlay.swift in Sources */,
 				956FF88A1F1FF0740069D678 /* ProductDetailViewController.swift in Sources */,
+				30F30EEB23FD444D00272268 /* RobotoffResponse.swift in Sources */,
 				953CDD5B1F92A12A0096C428 /* UserViewController.swift in Sources */,
 				30D77D9C22088F0F00B180E9 /* Allergen.swift in Sources */,
 				956FF9471F1FF0CA0069D678 /* NutritionLevelsTableViewCell.swift in Sources */,
@@ -2512,6 +2523,7 @@
 				957094AF1EA124E800268236 /* ProductService.swift in Sources */,
 				307BBEBC21FA1CA700E2DF9D /* ScannerResultViewController.swift in Sources */,
 				955BAFF91FF668B70046F419 /* PendingProductMergeProcessor.swift in Sources */,
+				30F30EEE23FD4EC600272268 /* RobotoffQuestionTableViewCell.swift in Sources */,
 				951FA7881F50C0670096AC5A /* AccessibilityIdentifiers.swift in Sources */,
 				3030EB81222D7A1E005A6169 /* ProductDetailWebViewTableViewCell.swift in Sources */,
 				95CB99A71EA55BF900CBDDF9 /* String.swift in Sources */,

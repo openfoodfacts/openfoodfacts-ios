@@ -69,19 +69,21 @@ class FormTableViewController: UITableViewController {
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
     }
 
+    func showLogin() {
+        guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
+            return }
+        loginVC.dataManager = dataManager
+
+        let navVC = UINavigationController(rootViewController: loginVC)
+        loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(FormTableViewController.dismissVC))
+        loginVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(FormTableViewController.dismissVC))
+
+        self.present(navVC, animated: true)
+    }
+
     func goToEditProduct(product: Product) {
         if CredentialsController.shared.getUsername() == nil {
-            guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
-                return }
-            loginVC.dataManager = dataManager
-            //loginVC.delegate = self
-
-            let navVC = UINavigationController(rootViewController: loginVC)
-            loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(FormTableViewController.dismissVC))
-            loginVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(FormTableViewController.dismissVC))
-
-            self.present(navVC, animated: true)
-
+            self.showLogin()
             return
         }
 
@@ -151,7 +153,7 @@ extension FormTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let ingredientsAnalysisTableViewCell = cell as? IngredientsAnalysisTableViewCell {
+        if let ingredientsAnalysisTableViewCell = cell as? ProductDetailBaseCell {
             ingredientsAnalysisTableViewCell.dismiss()
         }
     }

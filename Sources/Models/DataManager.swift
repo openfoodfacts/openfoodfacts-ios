@@ -26,6 +26,9 @@ protocol DataManagerProtocol {
 
     func getOfflineProduct(forCode: String) -> RealmOfflineProduct?
 
+    func getLatestRobotoffQuestion(forBarcode: String, onSuccess: @escaping (RobotoffQuestion?) -> Void)
+    func postRobotoffAnswer(forInsightId: String, withAnnotation: Int)
+
     // User
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
 
@@ -118,6 +121,14 @@ class DataManager: DataManagerProtocol {
                 onError(error)
             }
         })
+    }
+
+    func getLatestRobotoffQuestion(forBarcode: String, onSuccess: @escaping (RobotoffQuestion?) -> Void) {
+        productApi.getLatestRobotoffQuestion(forBarcode: forBarcode, onSuccess: onSuccess) { (_) in }
+    }
+
+    func postRobotoffAnswer(forInsightId: String, withAnnotation: Int) {
+        productApi.postRobotoffAnswer(forInsightId: forInsightId, withAnnotation: withAnnotation)
     }
 
     func getOfflineProduct(forCode: String) -> RealmOfflineProduct? {

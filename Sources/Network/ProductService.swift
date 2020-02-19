@@ -15,6 +15,8 @@ import UIKit
 protocol ProductApi {
     func getProducts(for query: String, page: Int, onSuccess: @escaping (ProductsResponse) -> Void, onError: @escaping (Error) -> Void)
     func getProduct(byBarcode barcode: String, isScanning: Bool, isSummary: Bool, onSuccess: @escaping (Product?) -> Void, onError: @escaping (Error) -> Void)
+    func getLatestRobotoffQuestion(forBarcode barcode: String, onSuccess: @escaping (RobotoffQuestion?) -> Void, onError: @escaping (Error) -> Void)
+    func postRobotoffAnswer(forInsightId insightId: String, withAnnotation: Int)
     func postImage(_ productImage: ProductImage, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func postProduct(_ product: Product, rawParameters: [String: Any]?, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
@@ -25,6 +27,7 @@ struct Endpoint {
     static let get = Bundle.main.infoDictionary?["GET_ENDPOINT"] as! String // swiftlint:disable:this force_cast
     static let post = Bundle.main.infoDictionary?["POST_ENDPOINT"] as! String // swiftlint:disable:this force_cast
     static let login = Bundle.main.infoDictionary?["LOGIN_ENDPOINT"] as! String // swiftlint:disable:this force_cast
+    static let robotoff = Bundle.main.infoDictionary?["ROBOTOFF_ENDPOINT"] as! String // swiftlint:disable:this force_cast
 }
 
 struct Params {
@@ -140,6 +143,30 @@ class ProductService: ProductApi {
                 Crashlytics.sharedInstance().recordError(error)
                 onError(error)
             }
+        }
+    }
+
+    func getLatestRobotoffQuestion(forBarcode barcode: String, onSuccess: @escaping (RobotoffQuestion?) -> Void, onError: @escaping (Error) -> Void) {
+        let url = Endpoint.robotoff + "/api/v1/questions/\(barcode)?lang=\(Locale.interfaceLanguageCode)&count=3"
+        Alamofire.request(url).responseObject { (response: DataResponse<RobotoffResponse>) in
+            switch response.result {
+            case .success(let robotoffResponse):
+                onSuccess(robotoffResponse.questions.filter({ $0.type == "add-binary" }).first)
+            case .failure(let error):
+                Crashlytics.sharedInstance().recordError(error)
+                onError(error)
+            }
+        }
+    }
+
+    func postRobotoffAnswer(forInsightId insightId: String, withAnnotation: Int) {
+        let url = Endpoint.robotoff + "/api/v1/insights/annotate"
+        Alamofire.request(url, method: .post, parameters: [
+            "insight_id": insightId,
+            "annotation": withAnnotation,
+            "update": 1
+        ]).response { (response: DefaultDataResponse) in
+            log.debug("Answer from post to robotoff: \(response)")
         }
     }
 

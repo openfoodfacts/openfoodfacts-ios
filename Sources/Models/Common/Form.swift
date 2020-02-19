@@ -13,17 +13,18 @@ struct Form {
     var rows: [FormRow]
 
     func getCellTypes() -> [ProductDetailBaseCell.Type] {
-        var array = [ProductDetailBaseCell.Type]()
-        var identifiers = Set<String>()
-
-        for row in rows {
-            if !identifiers.contains(row.cellType.identifier) {
-                identifiers.insert(row.cellType.identifier)
-                array.append(row.cellType)
-            }
-        }
-
-        return array
+        return [
+            InfoRowTableViewCell.self,
+            IngredientsAnalysisTableViewCell.self,
+            RobotoffQuestionTableViewCell.self,
+            NutritionHeaderTableViewCell.self,
+            NutritionLevelsTableViewCell.self,
+            NutritionTableRowTableViewCell.self,
+            ProductDetailWebViewTableViewCell.self,
+            SummaryHeaderCell.self,
+            SummaryFooterCell.self,
+            HostedViewCell.self
+        ]
     }
 }
 

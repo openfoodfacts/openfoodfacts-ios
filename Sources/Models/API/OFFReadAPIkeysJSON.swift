@@ -12,6 +12,16 @@ import Foundation
 
 struct OFFJson {
 
+    // Used in class RobotoffResponse.swift
+    static let QuestionsKey = "questions"
+    static let BarcodeKey = "barcode"
+    static let TypeKey = "type"
+    static let ValueKey = "value"
+    static let QuestionKey = "question"
+    static let InsightIdKey = "insight_id"
+    static let InsightTypeKey = "insight_type"
+    static let SourceImageUrlKey = "source_image_url"
+
     // Used in class ProductsResponse.swift
     static let CountKey = "count"
     static let PageKey = "page"

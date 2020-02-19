@@ -11,4 +11,5 @@ import Foundation
 struct UserDefaultsConstants {
     static let scanningOnLaunch = "scanningOnLaunch"
     static let disableDisplayIngredientAnalysisStatus = { (type: String) -> String in return "disableDisplayAnalysisStatus_" + type}
+    static let disableOffWhenNotLggedIn = "disableOffWhenNotLggedIn"
 }
