@@ -183,9 +183,9 @@ struct Product: Mappable {
             if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes),
                 let name = names[validCode],
                 !name.isEmpty {
-                return name
+                return name.htmlDecoded
             } else {
-                return nameDecoded
+                return nameDecoded?.htmlDecoded
             }
         }
         set {
