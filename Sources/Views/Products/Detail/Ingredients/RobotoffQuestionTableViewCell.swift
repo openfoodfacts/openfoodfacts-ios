@@ -9,6 +9,7 @@
 import UIKit
 import BLTNBoard
 import Cartography
+import NotificationBanner
 
 class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
 
@@ -29,10 +30,13 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
     fileprivate var noTapGesture: UITapGestureRecognizer?
     fileprivate var notSureTapGesture: UITapGestureRecognizer?
 
-    fileprivate var question: RobotoffQuestion?
+    fileprivate var questions: [RobotoffQuestion] = []
+    fileprivate var questionIndex = 0
     fileprivate var viewController: FormTableViewController?
 
     fileprivate var bulletinManager: BLTNItemManager!
+
+    lazy var successBanner = StatusBarNotificationBanner(title: "robotoff.answer-saved".localized, style: .success)
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,15 +58,27 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
         imageViews.forEach { $0.isUserInteractionEnabled = true }
     }
 
+    fileprivate func displayQuestion() {
+        if self.questions.count > self.questionIndex {
+            let question = questions[self.questionIndex]
+            questionLabel.text = question.question
+            questionSuggestionLabel.text = question.value
+
+            setImageSelected(forAnnotation: -3)
+        } else {
+            if let barcode = questions.first?.barcode {
+                NotificationCenter.default.post(name: .productChangesUploaded, object: nil, userInfo: ["barcode": barcode])
+            }
+        }
+    }
+
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         self.viewController = viewController
 
-        if let question = formRow.value as? RobotoffQuestion {
-            self.question = question
-            log.debug("robotoff we should configure the cell \(question)")
-
-            questionLabel.text = question.question
-            questionSuggestionLabel.text = question.value
+        if let questions = formRow.value as? [RobotoffQuestion] {
+            self.questions = questions
+            self.questionIndex = 0
+            self.displayQuestion()
         }
 
         self.yesTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapYes))
@@ -76,8 +92,6 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
         self.notSureTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapNotSure))
         notSureImageView.addGestureRecognizer(notSureTapGesture!)
         notSureButton.addTarget(self, action: #selector(self.tapNotSure), for: .touchUpInside)
-
-        setImageSelected(forAnnotation: -3)
     }
 
     override func dismiss() {
@@ -109,9 +123,7 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
     }
 
     fileprivate func postAnswer(withAnnotation: Int) {
-        guard let insightId = question?.insightId else {
-            return
-        }
+        let insightId = questions[questionIndex].insightId
 
         if CredentialsController.shared.getUsername() == nil {
 
@@ -134,8 +146,23 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
             return
         }
 
+        buttons.forEach { $0.isEnabled = false }
+        imageViews.forEach { $0.isUserInteractionEnabled = false }
+
         setImageSelected(forAnnotation: withAnnotation)
-        self.viewController?.dataManager.postRobotoffAnswer(forInsightId: insightId, withAnnotation: withAnnotation)
+        self.viewController?.dataManager.postRobotoffAnswer(forInsightId: insightId, withAnnotation: withAnnotation) { [weak self] in
+            guard let zelf = self else {
+                return
+            }
+
+            zelf.successBanner.show()
+
+            zelf.buttons.forEach { $0.isEnabled = true }
+            zelf.imageViews.forEach { $0.isUserInteractionEnabled = true }
+
+            zelf.questionIndex += 1
+            zelf.displayQuestion()
+        }
     }
 
     @objc

@@ -26,8 +26,8 @@ protocol DataManagerProtocol {
 
     func getOfflineProduct(forCode: String) -> RealmOfflineProduct?
 
-    func getLatestRobotoffQuestion(forBarcode: String, onSuccess: @escaping (RobotoffQuestion?) -> Void)
-    func postRobotoffAnswer(forInsightId: String, withAnnotation: Int)
+    func getLatestRobotoffQuestions(forBarcode: String, onSuccess: @escaping ([RobotoffQuestion]) -> Void)
+    func postRobotoffAnswer(forInsightId: String, withAnnotation: Int, onDone: @escaping () -> Void)
 
     // User
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
@@ -123,12 +123,12 @@ class DataManager: DataManagerProtocol {
         })
     }
 
-    func getLatestRobotoffQuestion(forBarcode: String, onSuccess: @escaping (RobotoffQuestion?) -> Void) {
-        productApi.getLatestRobotoffQuestion(forBarcode: forBarcode, onSuccess: onSuccess) { (_) in }
+    func getLatestRobotoffQuestions(forBarcode: String, onSuccess: @escaping ([RobotoffQuestion]) -> Void) {
+        productApi.getLatestRobotoffQuestions(forBarcode: forBarcode, onSuccess: onSuccess) { (_) in }
     }
 
-    func postRobotoffAnswer(forInsightId: String, withAnnotation: Int) {
-        productApi.postRobotoffAnswer(forInsightId: forInsightId, withAnnotation: withAnnotation)
+    func postRobotoffAnswer(forInsightId: String, withAnnotation: Int, onDone: @escaping () -> Void) {
+        productApi.postRobotoffAnswer(forInsightId: forInsightId, withAnnotation: withAnnotation, onDone: onDone)
     }
 
     func getOfflineProduct(forCode: String) -> RealmOfflineProduct? {
