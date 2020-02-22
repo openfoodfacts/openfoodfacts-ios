@@ -193,7 +193,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Header
         rows.append(FormRow(value: product as Any, cellType: SummaryHeaderCell.self))
 
-        if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableOffWhenNotLggedIn), !latestRobotoffQuestions.isEmpty {
+        if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableRobotoffWhenNotLoggedIn), !latestRobotoffQuestions.isEmpty {
             createFormRow(with: &rows, item: latestRobotoffQuestions, cellType: RobotoffQuestionTableViewCell.self)
         }
 

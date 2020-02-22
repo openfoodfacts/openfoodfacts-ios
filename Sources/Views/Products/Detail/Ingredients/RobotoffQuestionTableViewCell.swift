@@ -193,7 +193,7 @@ class LoginToContributeRobotoffBLTPageItem: BLTNPageItem {
     override func makeViewsUnderTitle(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? {
 
         let deactivateSwitch = UISwitch()
-        deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableOffWhenNotLggedIn)
+        deactivateSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableRobotoffWhenNotLoggedIn)
         deactivateSwitch.addTarget(self, action: #selector(changeSwitch(sender:)), for: .valueChanged)
 
         let switchLabel = UILabel()
@@ -227,6 +227,6 @@ class LoginToContributeRobotoffBLTPageItem: BLTNPageItem {
     }
 
     @objc func changeSwitch(sender: UISwitch) {
-        UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableOffWhenNotLggedIn)
+        UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableRobotoffWhenNotLoggedIn)
     }
 }
