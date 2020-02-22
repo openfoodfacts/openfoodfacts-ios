@@ -40,7 +40,8 @@ class IngredientsAnalysisTableViewCell: ProductDetailBaseCell {
         }
     }
 
-    func dismiss() {
+    override func dismiss() {
+        super.dismiss()
         stackView.arrangedSubviews.forEach {
             if let view = $0 as? IngredientsAnalysisView {
                 view.removeGestureRecognizer()

@@ -14,6 +14,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
     var hideSummary: Bool = false
     var product: Product!
+    var latestRobotoffQuestions: [RobotoffQuestion] = []
     var dataManager: DataManagerProtocol!
 
     override func viewDidLoad() {
@@ -46,7 +47,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
         setUserAgent()
 
-
         NotificationCenter.default.addObserver(forName: .productChangesUploaded, object: nil, queue: .main) { [weak self] notif in
             guard let barcode = notif.userInfo?["barcode"] as? String else {
                 return
@@ -71,6 +71,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             buttons.insert(shareButton, at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
+
+        self.refreshLatestRobotoffQuestion()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -80,6 +82,20 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         if var buttons = navigationItem.rightBarButtonItems, !buttons.isEmpty {
             buttons.remove(at: 0)
             navigationItem.rightBarButtonItems = buttons
+        }
+    }
+
+    fileprivate func refreshLatestRobotoffQuestion() {
+        self.latestRobotoffQuestions = []
+
+        if let barcode = self.product.barcode {
+            dataManager.getLatestRobotoffQuestions(forBarcode: barcode) { [weak self] (questions: [RobotoffQuestion]) in
+                guard let zelf = self else {
+                    return
+                }
+                zelf.latestRobotoffQuestions = questions
+                zelf.updateForms(with: zelf.product)
+            }
         }
     }
 
@@ -176,6 +192,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         // Header
         rows.append(FormRow(value: product as Any, cellType: SummaryHeaderCell.self))
+
+        if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableRobotoffWhenNotLoggedIn), !latestRobotoffQuestions.isEmpty {
+            createFormRow(with: &rows, item: latestRobotoffQuestions, cellType: RobotoffQuestionTableViewCell.self)
+        }
 
         createIngredientsAnalysisRows(rows: &rows)
         createNutrientsRows(rows: &rows)
@@ -299,7 +319,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createAdditivesRows(with: &rows, product: product)
 
-        createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
         createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
 
         let summaryTitle = "product-detail.page-title.ingredients".localized
@@ -483,15 +502,16 @@ protocol ProductDetailRefreshDelegate: class {
 
 extension ProductDetailViewController: ProductDetailRefreshDelegate {
     func refreshProduct(completion: () -> Void) {
-        if let barcode = product.barcode {
-            dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { response in
+        if let barcode = self.product.barcode {
+            dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { [weak self] response in
                 if let updatedProduct = response {
-                    self.updateForms(with: updatedProduct)
+                    self?.updateForms(with: updatedProduct)
+                    self?.refreshLatestRobotoffQuestion()
                 }
-            }, onError: { error in
+            }, onError: { [weak self] error in
                 // No error should be thrown here, as the product was loaded previously
                 Crashlytics.sharedInstance().recordError(error)
-                self.navigationController?.popToRootViewController(animated: true)
+                self?.navigationController?.popToRootViewController(animated: true)
             })
         }
 
