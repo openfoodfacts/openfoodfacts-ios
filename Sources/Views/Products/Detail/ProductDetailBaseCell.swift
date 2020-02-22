@@ -14,4 +14,8 @@ class ProductDetailBaseCell: UITableViewCell {
     func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         // Override
     }
+
+    func dismiss() {
+        // Override
+    }
 }

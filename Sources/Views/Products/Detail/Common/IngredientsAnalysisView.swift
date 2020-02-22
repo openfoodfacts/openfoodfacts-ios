@@ -211,7 +211,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
             switchLabel.bottom >= switchStackView.bottom - 8
 
             deactivateSwitch.leading == switchLabel.trailing + 8
-            deactivateSwitch.trailing == switchStackView.trailing + 8
+            deactivateSwitch.trailing == switchStackView.trailing
             deactivateSwitch.centerY == ivc.centerY
         }
 

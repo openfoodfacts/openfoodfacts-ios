@@ -17,6 +17,7 @@ enum SettingsSection: Int {
 }
 
 class SettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, DataManagerClient {
+    @IBOutlet weak var displayRobotoffSwitch: UISwitch!
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
 
     var dataManager: DataManagerProtocol!
@@ -39,8 +40,8 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        displayRobotoffSwitch.isOn = !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableRobotoffWhenNotLoggedIn)
         scanOnLaunchSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsConstants.scanningOnLaunch)
-
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -96,6 +97,11 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         }
     }
 
+    @IBAction func didSwitchDisplayRobotoff(_ sender: UISwitch) {
+        if sender == displayRobotoffSwitch {
+            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableRobotoffWhenNotLoggedIn)
+        }
+    }
     @IBAction func didSwitchScanOnLaunch(_ sender: UISwitch) {
         if sender == scanOnLaunchSwitch {
             UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsConstants.scanningOnLaunch)
