@@ -193,6 +193,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
         switchLabel.textAlignment = .right
         switchLabel.numberOfLines = 2
         switchLabel.text = String(format: "ingredients-analysis.display".localized, detail?.typeDisplayName ?? "")
+        switchLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultLow, for: .horizontal)
 
         let switchStackView = UIView()
         switchStackView.addSubview(ivc)
@@ -205,7 +206,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
             ivc.top >= switchStackView.top + 8
             ivc.bottom >= switchStackView.bottom - 8
 
-            switchLabel.leading == ivc.trailing + 0 
+            switchLabel.leading == ivc.trailing + 8
             switchLabel.centerY == ivc.centerY
             switchLabel.top >= switchStackView.top + 8
             switchLabel.bottom >= switchStackView.bottom - 8
