@@ -20,6 +20,9 @@ class OFFUrlsHelper: NSObject {
     static func url(for country: Country) -> URL {
         return URL(string: "\(baseUrl)/country/\(country.code)")!
     }
+    static func urlCountry(for string: String) -> URL {
+        return URL(string: "\(baseUrl)/country/\(string)")!
+    }
 
     static func url(forAdditive additive: Additive) -> URL {
         return URL(string: "\(baseUrl)/additive/\(additive.code)")!
@@ -27,6 +30,10 @@ class OFFUrlsHelper: NSObject {
 
     static func url(forAllergen allergen: Allergen) -> URL {
         return URL(string: "\(baseUrl)/allergen/\(allergen.code)")!
+    }
+
+    static func urlAllergen(for string: String) -> URL {
+        return URL(string: "\(baseUrl)/allergen/\(string)")!
     }
 
     static func url(forMineral mineral: Mineral) -> URL {

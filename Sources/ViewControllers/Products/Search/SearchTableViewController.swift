@@ -73,19 +73,19 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
     }
 
     fileprivate func updateInitialView() {
-        initialView.loadingProgressView.setProgress(Float(offlineStatus.percent/100), animated: true)
-        initialView.loadingTitleLabel.text = String.localizedStringWithFormat(NSLocalizedString("product-search.initial-view.offline.title-loading", comment: ""), Int(offlineStatus.percent))
-        initialView.loadingSubtitleLabel.text = String.localizedStringWithFormat(NSLocalizedString("product-search.initial-view.offline.subtitle", comment: ""), offlineStatus.savedProductsCount)
+        initialView.loadingProgressView?.setProgress(Float(offlineStatus.percent/100), animated: true)
+        initialView.loadingTitleLabel?.text = String.localizedStringWithFormat(NSLocalizedString("product-search.initial-view.offline.title-loading", comment: ""), Int(offlineStatus.percent))
+        initialView.loadingSubtitleLabel?.text = String.localizedStringWithFormat(NSLocalizedString("product-search.initial-view.offline.subtitle", comment: ""), offlineStatus.savedProductsCount)
 
         if offlineStatus.percent <= 0 || offlineStatus.percent >= 100 || offlineStatus.savedProductsCount <= 0 {
-            initialView.loadingProgressView.isHidden = true
-            initialView.loadingTitleLabel.isHidden = true
+            initialView.loadingProgressView?.isHidden = true
+            initialView.loadingTitleLabel?.isHidden = true
         } else {
-            initialView.loadingProgressView.isHidden = false
-            initialView.loadingTitleLabel.isHidden = false
+            initialView.loadingProgressView?.isHidden = false
+            initialView.loadingTitleLabel?.isHidden = false
         }
 
-        initialView.loadingSubtitleLabel.isHidden = offlineStatus.savedProductsCount <= 0
+        initialView.loadingSubtitleLabel?.isHidden = offlineStatus.savedProductsCount <= 0
     }
 
     fileprivate func configureTableView() {
