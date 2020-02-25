@@ -48,7 +48,14 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
         buttons.forEach { (button: UIButton) in
             button.titleLabel?.textAlignment = .center
             button.titleLabel?.numberOfLines = 2
-            button.titleLabel?.textColor = UIColor.black
+            if #available(iOS 13.0, *) {
+                button.titleLabel?.textColor = UIColor.label
+                button.backgroundColor = UIColor.systemFill
+            } else {
+                button.titleLabel?.textColor = UIColor.black
+                button.backgroundColor = UIColor.darkGray
+            }
+
         }
 
         yesImageView.image = UIImage(named: "robotoff_yes")
