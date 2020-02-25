@@ -189,7 +189,9 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
 
     deinit {
         if bulletinManager != nil {
-            bulletinManager.dismissBulletin(animated: true)
+            if bulletinManager.isShowingBulletin {
+                bulletinManager.dismissBulletin(animated: true)
+            }
             bulletinManager = nil
         }
     }
