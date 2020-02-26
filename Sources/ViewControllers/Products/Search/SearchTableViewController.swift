@@ -58,18 +58,22 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
         configureGestureRecognizers()
 
         self.offlineStatus = self.dataManager.offlineProductStatus()
-        self.observeNotificationToken = self.offlineStatus.observe { (_) in
-            self.updateInitialView()
-        }
-        self.updateInitialView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        self.observeNotificationToken = self.offlineStatus.observe { (_) in
+            self.updateInitialView()
+        }
+        self.updateInitialView()
         self.dataManager.getTagline { [weak self] (tagline: Tagline?) in
             self?.initialView.tagline = tagline
         }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.observeNotificationToken?.invalidate()
+        super.viewWillDisappear(animated)
     }
 
     fileprivate func updateInitialView() {
