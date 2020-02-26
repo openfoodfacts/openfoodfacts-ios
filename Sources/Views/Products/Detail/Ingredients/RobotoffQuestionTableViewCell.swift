@@ -48,12 +48,12 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
         buttons.forEach { (button: UIButton) in
             button.titleLabel?.textAlignment = .center
             button.titleLabel?.numberOfLines = 2
+            button.titleLabel?.textColor = UIColor.blue
+            button.setTitleColor(.blue, for: .normal)
             if #available(iOS 13.0, *) {
-                button.titleLabel?.textColor = UIColor.label
-                button.backgroundColor = UIColor.systemFill
+                button.backgroundColor = UIColor.systemBackground
             } else {
-                button.titleLabel?.textColor = UIColor.black
-                button.backgroundColor = UIColor.darkGray
+                button.backgroundColor = UIColor.white
             }
 
         }
@@ -120,13 +120,15 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
 
     fileprivate func setImageSelected(forAnnotation: Int) {
         yesImageView.image = UIImage(named: "robotoff_yes" + (forAnnotation == 1 ? "_selected" : ""))
-        yesButton.titleLabel?.textColor = (forAnnotation == 1 ? UIColor(hex: "1876d2")! : UIColor.black)
+        yesButton.setTitleColor(forAnnotation == 1 ? .green : .blue, for: .normal)
+
+        //yesButton.titleLabel?.textColor = (forAnnotation == 1 ? .green : .blue)
 
         noImageView.image = UIImage(named: "robotoff_no" + (forAnnotation == -1 ? "_selected" : ""))
-        noButton.titleLabel?.textColor = (forAnnotation == -1 ? UIColor(hex: "1876d2")! : UIColor.black)
+        yesButton.setTitleColor(forAnnotation == 1 ? .green : .blue, for: .normal)
 
         notSureImageView.image = UIImage(named: "robotoff_question" + (forAnnotation == 0 ? "_selected" : ""))
-        notSureButton.titleLabel?.textColor = (forAnnotation == 0 ? UIColor(hex: "1876d2")! : UIColor.black)
+        yesButton.setTitleColor(forAnnotation == 1 ? .green : .blue, for: .normal)
     }
 
     fileprivate func postAnswer(withAnnotation: Int) {
