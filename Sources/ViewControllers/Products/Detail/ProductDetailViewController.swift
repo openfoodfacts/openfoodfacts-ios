@@ -490,7 +490,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     // MARK: - Nav bar button
 
     @objc func didTapShareButton(_ sender: UIBarButtonItem) {
-        SharingManager.shared.shareLink(string: URLs.urlForProduct(with: product.barcode), sender: sender, presenter: self)
+        SharingManager.shared.shareLink(name: product.name, string: URLs.urlForProduct(with: product.barcode), sender: sender, presenter: self)
     }
 }
 
