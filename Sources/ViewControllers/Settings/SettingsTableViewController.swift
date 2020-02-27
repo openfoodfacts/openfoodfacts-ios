@@ -20,18 +20,22 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     @IBOutlet weak var displayRobotoffSwitch: UISwitch!
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
 
+    @IBOutlet weak var userProfileCell: UITableViewCell!
+    @IBOutlet weak var allergenAlertCell: UITableViewCell!
+    @IBOutlet weak var ingredientAnalysisAlertCell: UITableViewCell!
+
+    @IBOutlet weak var frequentlyAskedQuestionsCell: UITableViewCell!
+    @IBOutlet weak var discoverCell: UITableViewCell!
+
+    @IBOutlet weak var contributeCell: UITableViewCell!
+    @IBOutlet weak var supportOffCell: UITableViewCell!
+    @IBOutlet weak var translateOffCell: UITableViewCell!
+
+    @IBOutlet weak var creditsCell: UITableViewCell!
+    @IBOutlet weak var contactCell: UITableViewCell!
+
     var dataManager: DataManagerProtocol!
 
-    private let allergensAlertsIndexPath = IndexPath(row: 2, section: 0)
-    private let ingredientAnalysisAlertsIndexPath = IndexPath(row: 3, section: 0)
-
-    private let frequentlyAskedQuestionsIndexPath = IndexPath(row: 0, section: 1)
-
-    private let discoverIndexPath = IndexPath(row: 1, section: 1)
-    private let howToContributeIndexPath = IndexPath(row: 0, section: 2)
-    private let supportOpenFoodFactsIndexPath = IndexPath(row: 1, section: 2)
-    private let translateOpenFoodFactsIndexPath = IndexPath(row: 2, section: 2)
-    private let contactTheTeamIndexPath = IndexPath(row: 1, section: 3)
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "settings.tab-bar.item".localized
@@ -61,34 +65,40 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         guard let url = URL(string: URLs.OpenBeautyFacts) else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var url: URL?
         var urlsupport: URL?
-        switch indexPath {
-        case discoverIndexPath:
-            url = URL(string: URLs.Discover)
-        case howToContributeIndexPath:
-            url = URL(string: URLs.HowToContribute)
-        case supportOpenFoodFactsIndexPath:
-            urlsupport = URL(string: URLs.SupportOpenFoodFacts)
-        case translateOpenFoodFactsIndexPath:
-            url = URL(string: URLs.TranslateOpenFoodFacts)
-        case contactTheTeamIndexPath:
-            contactTheTeam()
-        case frequentlyAskedQuestionsIndexPath:
-            url = URL(string: URLs.FrequentlyAskedQuestions)
-        case allergensAlertsIndexPath:
-            openAllergensAlerts()
-        case ingredientAnalysisAlertsIndexPath:
-            openIngredientsAnalysisAlerts()
-        default:
-            break
+
+        if let selectedCell = tableView.cellForRow(at: indexPath) {
+            switch selectedCell {
+            case discoverCell:
+                url = URL(string: URLs.Discover)
+            case contributeCell:
+                url = URL(string: URLs.HowToContribute)
+            case supportOffCell:
+                urlsupport = URL(string: URLs.SupportOpenFoodFacts)
+            case translateOffCell:
+                url = URL(string: URLs.TranslateOpenFoodFacts)
+            case contactCell:
+                contactTheTeam()
+            case frequentlyAskedQuestionsCell:
+                url = URL(string: URLs.FrequentlyAskedQuestions)
+            case allergenAlertCell:
+                openAllergensAlerts()
+            case ingredientAnalysisAlertCell:
+                openIngredientsAnalysisAlerts()
+            default:
+                break
+            }
         }
         if let url = url {
             openUrlInApp(url)
         } else if let url = urlsupport {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
