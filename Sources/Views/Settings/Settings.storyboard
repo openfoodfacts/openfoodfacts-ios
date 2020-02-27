@@ -61,7 +61,7 @@
                                             </segue>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CFf-xp-QGc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="CFf-xp-QGc">
                                         <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CFf-xp-QGc" id="EzV-HR-i90">
@@ -102,7 +102,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NFT-oc-2ME">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="NFT-oc-2ME">
                                         <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NFT-oc-2ME" id="OR8-58-ZxW">
@@ -359,8 +359,18 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="dLK-Qu-QrL"/>
                     <connections>
+                        <outlet property="allergenAlertCell" destination="12f-cv-3MG" id="tYD-vI-Yxn"/>
+                        <outlet property="contactCell" destination="1fj-yH-wi5" id="oRk-xf-8t3"/>
+                        <outlet property="contributeCell" destination="7oJ-uI-CaO" id="iC2-fa-ySZ"/>
+                        <outlet property="creditsCell" destination="Kmy-UN-53c" id="xia-Lw-kjV"/>
+                        <outlet property="discoverCell" destination="msv-59-RFY" id="FLl-Su-gaL"/>
                         <outlet property="displayRobotoffSwitch" destination="ezI-yn-4TM" id="s8S-LJ-rHl"/>
+                        <outlet property="frequentlyAskedQuestionsCell" destination="GaN-AF-dup" id="lUx-cU-pOZ"/>
+                        <outlet property="ingredientAnalysisAlertCell" destination="AWz-Ww-Ehg" id="Ldz-eb-x64"/>
                         <outlet property="scanOnLaunchSwitch" destination="1OZ-JC-5WL" id="wov-7t-CRn"/>
+                        <outlet property="supportOffCell" destination="tDV-ID-wP0" id="72K-2r-cpF"/>
+                        <outlet property="translateOffCell" destination="0ab-4U-53P" id="muo-VX-C1Q"/>
+                        <outlet property="userProfileCell" destination="Cjp-Oy-3Y5" id="X2V-Oh-60r"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRA-n6-xsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
