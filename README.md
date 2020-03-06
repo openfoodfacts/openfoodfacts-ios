@@ -87,7 +87,12 @@ Here are issues and feature requests you can work on:
 
 ## Building
 
-### Dependencies
+### Automatic setup
+The easiest way to setup the dependencies of the project and generate the Xcode project is to run `sh scripts/setup.sh` from the top of the repository.
+
+### Manual setup
+If you prefer to not use the `sh scripts/setup.sh` script and install the dependencies yourself, follow the instructions below.
+
 We use Carthage for dependency management.
 
 Run `carthage bootstrap --platform iOS --cache-builds` before opening the project in Xcode.
@@ -96,10 +101,9 @@ You can install [Carthage](https://github.com/Carthage/Carthage) with Homebrew:
 ```
 brew install carthage
 ```
-#### Dependency troubleshooting
-If you see an error `dyld: Library not loaded:` [...] `Reason: image not found`:
-1. Go to the OpenFoodFacts project file in Xcode, select Build Phases, and open the Carthage phase. Make sure `$(SRCROOT)/Carthage/Build/iOS/<YourMissingFramework>.framework` appears as an input to the `/usr/local/bin/carthage copy-frameworks`.
-1. Next, select General and make sure the missing library/framework appears in the Frameworks, Libraries, and Embedded Content list. If it doesn't, drag and drop it from the Carthage/Build/iOS folder (found inside the project folder) into this list. (If you do not have a Carthage folder, run `carthage update`; see Carthage resources.)
+
+To generate the Xcode project run `sh scripts/create-project.sh`.
+In order to generate the Xcode project we use [XcodeGen](https://www.github.com/yonaskolb/XcodeGen).
 
 #### Carthage resources
 New to Carthage? Others have found the following resources helpful:
