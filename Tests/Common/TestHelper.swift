@@ -39,14 +39,13 @@ class TestHelper {
     }
 
     func clearCredentials() {
-        let userDefaultsUsernameKey = "username"
         let keychainServiceIdentifier = "org.openfoodfacts.openfoodfacts"
         let keychain = Keychain(service: keychainServiceIdentifier)
 
-        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
-            if key == userDefaultsUsernameKey, let username = value as? String {
-                try! keychain.remove(username)
-            }
+        keychain.allKeys().forEach {
+            try! keychain.remove($0)
+        }
+        for (key, _) in UserDefaults.standard.dictionaryRepresentation() {
             UserDefaults.standard.removeObject(forKey: key)
         }
     }

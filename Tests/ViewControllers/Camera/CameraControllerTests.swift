@@ -60,7 +60,7 @@ class CameraControllerDelegateMock: NSObject, CameraControllerDelegate {
     var image: UIImage?
     var imageType: ImageType?
 
-    func didGetImage(image: UIImage, forImageType imageType: ImageType?) {
+    func didGetImage(image: UIImage, forImageType imageType: ImageType?, languageCode: String? = nil) {
         gotImage = true
         self.image = image
     }

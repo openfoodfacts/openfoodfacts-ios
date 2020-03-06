@@ -99,6 +99,9 @@ targets:
       - path: TestResources
     dependencies:
       - target: OpenFoodFacts
+      - carthage: Nimble
+      - carthage: Quick
+      - carthage: OHHTTPStubs
   
   OpenFoodFactsUITests:
     type: bundle.ui-testing
@@ -106,12 +109,17 @@ targets:
     sources: 
       - path: UITests
       - path: TestResources
+      - path: Sources/Helpers/AccessibilityIdentifiers.swift
     dependencies:
       - target: OpenFoodFacts
+      - carthage: Swifter
 
   OpenFoodFactsSnapshots:
     type: bundle.ui-testing
     platform: iOS
+    sources:
+      - path: Snapshots
+      - path: Sources/Helpers/AccessibilityIdentifiers.swift
     dependencies:
       - target: OpenFoodFacts
   
@@ -146,7 +154,7 @@ schemes:
         OpenFoodFactsUITests: all
     test:
       gatherCoverageData: true
-      targets: 
+      targets:
         - name: OpenFoodFactsUITests
           randomExecutionOrder: true
 

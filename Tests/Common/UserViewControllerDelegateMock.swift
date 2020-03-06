@@ -8,7 +8,7 @@
 
 @testable import OpenFoodFacts
 
-class UserViewControllerDelegateMock: UserViewControllerDelegate {
+class UserViewControllerDelegateMock {
     var dismissCalled = false
     var showProductsPendingUploadCalled = false
 

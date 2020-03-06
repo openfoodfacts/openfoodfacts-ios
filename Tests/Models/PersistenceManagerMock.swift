@@ -10,6 +10,74 @@
 import RealmSwift
 
 class PersistenceManagerMock: PersistenceManagerProtocol {
+    // =======------------------======= //
+    // TODO: implement code below if needed (for now only add the function/propety signatures, so it builds)
+    // =======------------------======= //
+
+    var categoriesIsEmpty: Bool = false
+
+    func country(forCode: String) -> Country? {
+        return nil
+    }
+
+    var countriesIsEmpty: Bool = false
+
+    func save(countries: [Country]) {
+    }
+
+    var allergensIsEmpty: Bool = false
+
+    var mineralsIsEmpty: Bool = false
+
+    var vitaminsIsEmpty: Bool = false
+
+    var nucleotidesIsEmpty: Bool = false
+
+    func save(ingredientsAnalysis: [IngredientsAnalysis]) {
+    }
+
+    var ingredientsAnalysisIsEmpty: Bool = false
+
+    func save(ingredientsAnalysisConfig: [IngredientsAnalysisConfig]) {
+    }
+
+    var ingredientsAnalysisConfigIsEmpty: Bool = false
+
+    func clearInvalidBarcodes() {
+    }
+
+    func save(invalidBarcodes: [InvalidBarcode]) {
+    }
+
+    func invalidBarcode(forBarcode: String) -> InvalidBarcode? {
+        return nil
+    }
+
+    var otherNutritionalSubstancesIsEmpty: Bool = false
+
+    func save(otherNutritionalSubstance: [OtherNutritionalSubstance]) {
+    }
+
+    func ingredientsAnalysis(forCode: String) -> IngredientsAnalysis? {
+        return nil
+    }
+
+    func ingredientsAnalysisConfig(forCode: String) -> IngredientsAnalysisConfig? {
+        return nil
+    }
+
+    var nutrimentsIsEmpty: Bool = false
+
+    func save(tagLine: Tagline) {
+    }
+
+    func tagLine() -> Tagline? {
+        return nil
+    }
+
+    var additivesIsEmpty: Bool = false
+
+    // =======------------------======= //
 
     // Common
     var product: Product?
@@ -61,7 +129,7 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
 
     func removeHistroyItem(_ item: HistoryItem) {
         self.removeHistoryItemCalled = true
-        self.product = nil
+        self.history = nil
     }
 
     func clearHistory() {

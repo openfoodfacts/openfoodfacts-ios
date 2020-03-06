@@ -12,7 +12,6 @@ import RealmSwift
 import UIKit
 
 class DataManagerMock: DataManagerProtocol {
-    
     // Search
     var query: String?
     var page: Int?
@@ -270,4 +269,13 @@ class DataManagerMock: DataManagerProtocol {
 
     func getMockBarcodeImage(forLocale locale: Locale, onSuccess: @escaping (UIImage) -> Void, onError: @escaping (Error) -> Void) {
     }
+
+    func getLatestRobotoffQuestions(forBarcode: String, onSuccess: @escaping ([RobotoffQuestion]) -> Void) {
+        // TODO: implement
+    }
+
+    func postRobotoffAnswer(forInsightId: String, withAnnotation: Int, onDone: @escaping () -> Void) {
+        // TODO: implement
+    }
+
 }
