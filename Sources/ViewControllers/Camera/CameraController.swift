@@ -35,7 +35,7 @@ class CameraControllerImpl: NSObject, CameraController {
         super.init()
     }
 
-    func show() {
+     func show() {
         guard let picker = cameraHelper.getImagePickerForTaking(.image) else { return }
         self.picker = picker
         picker.delegate = self
@@ -46,15 +46,15 @@ class CameraControllerImpl: NSObject, CameraController {
 extension CameraControllerImpl: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            if imageType == .ingredients {
+            //if imageType == .ingredients {
+            //    dismiss()
+            //    let cropViewController = TOCropViewController(image: image)
+            //    cropViewController.delegate = self
+            //    self.presentingViewController.present(cropViewController, animated: true, completion: nil)
+            //} else {
+                delegate?.didGetImage(image: image, forImageType: imageType, languageCode: languageCode ?? "CameraControllerImpl")
                 dismiss()
-                let cropViewController = TOCropViewController(image: image)
-                cropViewController.delegate = self
-                self.presentingViewController.present(cropViewController, animated: true, completion: nil)
-            } else {
-                delegate?.didGetImage(image: image, forImageType: imageType, languageCode: languageCode ?? "yy")
-                dismiss()
-            }
+            //}
         }
     }
 
@@ -69,7 +69,7 @@ extension CameraControllerImpl: UIImagePickerControllerDelegate, UINavigationCon
 
 extension CameraControllerImpl: TOCropViewControllerDelegate {
     func cropViewController(_ cropViewController: TOCropViewController, didCropTo image: UIImage, with cropRect: CGRect, angle: Int) {
-        delegate?.didGetImage(image: image, forImageType: imageType, languageCode: languageCode ?? "zz")
+        delegate?.didGetImage(image: image, forImageType: imageType, languageCode: languageCode ?? "CameraControllerImpl-2")
         dismiss()
     }
 

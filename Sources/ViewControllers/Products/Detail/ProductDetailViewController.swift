@@ -55,6 +55,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 self?.refreshProduct {}
             }
         }
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +84,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             buttons.remove(at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        super.viewDidDisappear(animated)
     }
 
     fileprivate func refreshLatestRobotoffQuestion() {
@@ -501,7 +507,7 @@ protocol ProductDetailRefreshDelegate: class {
 }
 
 extension ProductDetailViewController: ProductDetailRefreshDelegate {
-    func refreshProduct(completion: () -> Void) {
+    @objc func refreshProduct(completion: () -> Void) {
         if let barcode = self.product.barcode {
             dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { [weak self] response in
                 if let updatedProduct = response {

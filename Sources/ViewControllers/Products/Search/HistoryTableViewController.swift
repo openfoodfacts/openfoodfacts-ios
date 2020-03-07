@@ -219,11 +219,10 @@ extension HistoryTableViewController {
         dataManager.getProduct(byBarcode: item.barcode, isScanning: false, isSummary: false, onSuccess: { product in
             if let product = product {
                 self.showProductDetails(product: product)
-                SVProgressHUD.dismiss()
             } else {
-                SVProgressHUD.dismiss()
                 onError()
             }
+            SVProgressHUD.dismiss()
         }, onError: { _ in
             SVProgressHUD.dismiss()
             onError()

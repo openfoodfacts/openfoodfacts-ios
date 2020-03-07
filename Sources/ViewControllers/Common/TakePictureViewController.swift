@@ -13,7 +13,7 @@ class TakePictureViewController: UIViewController {
     var dataManager: DataManagerProtocol!
     var barcode: String?
     var imageType: ImageType = .front
-    var languageCode: String = "xx"
+    var languageCode: String = "TakePictureViewController"
     var cameraController: CameraController?
 
     // Feedback banners
@@ -83,7 +83,7 @@ extension TakePictureViewController: CameraControllerDelegate {
     func didGetImage(image: UIImage, forImageType imageType: ImageType?, languageCode: String?) {
         // For now, images will be always uploaded with type front
         showUploadingImage(forType: imageType)
-        self.languageCode = languageCode ?? "ww"
+        self.languageCode = languageCode ?? "TakePictureViewController2"
         guard let validBarcode = barcode, let productImage = ProductImage(barcode: validBarcode, image: image, type: imageType ?? .general, languageCode: self.languageCode) else {
             showErrorUploadingImage(forType: imageType)
             return

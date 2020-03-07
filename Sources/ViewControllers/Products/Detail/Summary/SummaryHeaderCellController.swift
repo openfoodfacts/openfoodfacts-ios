@@ -14,6 +14,7 @@ class SummaryHeaderCell: HostedViewCell {
 }
 
 class SummaryHeaderCellController: TakePictureViewController {
+
     var product: Product!
     var hideSummary: Bool = false
 
@@ -58,6 +59,19 @@ class SummaryHeaderCellController: TakePictureViewController {
             takePictureButtonView.isHidden = true
         }
     }
+
+    override func postImageSuccess(image: UIImage, forImageType imageType: ImageType) {
+        guard super.barcode != nil else { return }
+        guard imageType == .front else { return }
+        // The ultimate owner of this viewController should do the refresh
+        // Is the refresh in ProductDetailRefreshDelegate OK?
+        NotificationCenter.default.post(name: .FrontImageIsUpdated, object: nil, userInfo: nil)
+    }
+
+}
+
+extension Notification.Name {
+    static let FrontImageIsUpdated = Notification.Name("SummaryHeaderCellController.Notification.FrontImageIsUpdated")
 }
 
 // MARK: - Gesture recognizers
