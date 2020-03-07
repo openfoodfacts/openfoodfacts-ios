@@ -19,7 +19,7 @@ extension String {
 
         return !matches.isEmpty
     }
-    
+
     var htmlDecoded: String {
         let decoded: String? = nil
             //try? NSAttributedString(data: Data(utf8), options: [
@@ -29,7 +29,7 @@ extension String {
 
         return decoded ?? self
     }
-    
+
 }
 
 extension String: Pickable {

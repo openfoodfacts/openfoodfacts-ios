@@ -22,6 +22,7 @@ class TakePictureViewController: UIViewController {
         banner.autoDismiss = false
         return banner
     }()
+
     lazy var uploadingImageErrorBanner: NotificationBanner = {
         let banner = NotificationBanner(title: "product-add.image-upload-error-banner.title".localized,
                                         subtitle: "product-add.image-upload-error-banner.subtitle".localized,
@@ -32,6 +33,7 @@ class TakePictureViewController: UIViewController {
         let banner = NotificationBanner(title: "product-add.image-upload-success-banner.title".localized, style: .success)
         return banner
     }()
+
     lazy var productAddSuccessBanner: NotificationBanner = {
         let banner = NotificationBanner(title: "product-add.product-add-success-banner.title".localized, style: .success)
         return banner
@@ -63,7 +65,7 @@ class TakePictureViewController: UIViewController {
 
     func postImageSuccess(image: UIImage, forImageType imageType: ImageType) { /* Do nothing, overridable */ }
 
-    func showUploadingImage(forType: ImageType? = .front) {
+    func showUploadingImage(for type: ImageType? = .front) {
         uploadingImageBanner.show()
     }
 
@@ -82,13 +84,12 @@ extension TakePictureViewController: CameraControllerDelegate {
 
     func didGetImage(image: UIImage, forImageType imageType: ImageType?, languageCode: String?) {
         // For now, images will be always uploaded with type front
-        showUploadingImage(forType: imageType)
         self.languageCode = languageCode ?? "TakePictureViewController2"
-        guard let validBarcode = barcode, let productImage = ProductImage(barcode: validBarcode, image: image, type: imageType ?? .general, languageCode: self.languageCode) else {
+        guard let validBarcode = barcode,
+            let productImage = ProductImage(barcode: validBarcode, image: image, type: imageType ?? .general, languageCode: self.languageCode) else {
             showErrorUploadingImage(forType: imageType)
             return
         }
-
         dataManager.postImage(productImage, onSuccess: { [weak self] isOffline in
             if isOffline {
                 self?.uploadingImageSuccessBanner.titleLabel?.text = "product-add.image-save-success-banner.title".localized
@@ -100,5 +101,6 @@ extension TakePictureViewController: CameraControllerDelegate {
         }, onError: { [weak self] _ in
             self?.showErrorUploadingImage(forType: imageType)
         })
+        self.showUploadingImage(for: imageType)
     }
 }

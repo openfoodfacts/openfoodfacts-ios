@@ -22,6 +22,7 @@ class FormTableViewController: UITableViewController {
         }
     }
     let dataManager: DataManagerProtocol
+    
     weak var delegate: ProductDetailRefreshDelegate?
 
     fileprivate let localizedTitle: String
@@ -55,16 +56,19 @@ class FormTableViewController: UITableViewController {
                 tableView.register(cellType, forCellReuseIdentifier: cellType.identifier)
             }
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(ververs), name: .FrontImageIsUpdated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ververs), name: .IngredientsImageIsUpdated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ververs), name: .NutritionImageIsUpdated, object: nil)
     }
 
-    // The observer should be removed somewhere
-    //override func viewWillDisappear(_ animated: Bool) {
-    //    NotificationCenter.default.removeObserver(self)
-    //    super.viewWillDisappear(animated)
-    //}
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        super.viewWillDisappear(animated)
+    }
 
     func getCell(for formRow: FormRow) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! ProductDetailBaseCell // swiftlint:disable:this force_cast
@@ -117,6 +121,7 @@ class FormTableViewController: UITableViewController {
     @objc func dismissVC() {
         dismiss(animated: true, completion: nil)
     }
+
 }
 
 // MARK: - TableView Data Source

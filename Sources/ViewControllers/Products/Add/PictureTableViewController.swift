@@ -100,7 +100,7 @@ class PictureTableViewController: TakePictureViewController {
     }
 
     // we override but do NOT call super, because super will display the uploading banner, when we display the loading in the tableview
-    override func showUploadingImage(forType: ImageType?) {
+    override func showUploadingImage(for type: ImageType?) {
         guard let pictureIndex = index(forImageType: imageType) else { return }
         pictures[pictureIndex].isUploading = true
         tableView.reloadRows(at: [IndexPath(row: pictureIndex, section: 0)], with: .automatic)

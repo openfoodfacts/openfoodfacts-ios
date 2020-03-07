@@ -12,7 +12,7 @@ import RealmSwift
 import UIKit
 
 class DataManagerMock: DataManagerProtocol {
-    
+
     // Search
     var query: String?
     var page: Int?
