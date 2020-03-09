@@ -16,24 +16,28 @@ class ProductDetailWebViewTableViewCell: ProductDetailBaseCell {
         didSet {
             webView?.scrollView.bounces = false
             webView?.scrollView.isScrollEnabled = false
-            //webView?.navigationDelegate = self
+            webView?.navigationDelegate = self
         }
     }
 
-    var webViewHeightConstraint: NSLayoutConstraint?
-
-    weak var tableView: UITableView?
+    weak var tableView: UITableView? {
+        didSet {
+            guard tableView != nil else { return }
+            self.frame.size.width = tableView!.frame.size.width
+            self.webView?.frame.size.width = self.frame.size.width
+        }
+    }
 
     private struct Constant {
         static let Margin: CGFloat = 8.0
     }
-    @IBOutlet weak var containerView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        webView = WKWebView(frame: self.containerView.frame)
+        // The webView must be created in code, otherwise it will not work prior to IOS13
+        webView = WKWebView(frame: self.frame)
         if webView != nil {
-            self.containerView?.addSubview(webView!)
+            self.addSubview(webView!)
         }
     }
 
@@ -56,15 +60,15 @@ class ProductDetailWebViewTableViewCell: ProductDetailBaseCell {
 // MARK: WKNavigationDelegate
 extension ProductDetailWebViewTableViewCell: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webViewHeightConstraint?.constant = webView.scrollView.contentSize.height
+        webView.frame.size.height = webView.scrollView.contentSize.height
+        self.frame.size.height = webView.frame.size.height + 2 * Constant.Margin
         //webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.fontFamily =\"-apple-system-body\"")
 
         // to force redraw of cell height
-        tableView?.beginUpdates()
-        tableView?.endUpdates()
+        //tableView?.beginUpdates()
+        //tableView?.endUpdates()
     }
 }
-
 
 extension String {
 

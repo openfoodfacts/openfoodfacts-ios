@@ -10,30 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDetailWebViewTableViewCell" rowHeight="180" id="KGk-i7-Jjw" customClass="ProductDetailWebViewTableViewCell" customModule="OpenFoodFacts" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDetailWebViewTableViewCell" id="KGk-i7-Jjw" customClass="ProductDetailWebViewTableViewCell" customModule="OpenFoodFacts" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uel-qY-Hh5">
-                        <rect key="frame" x="15" y="11" width="290" height="159"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    </view>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="uel-qY-Hh5" secondAttribute="trailing" id="GM5-NL-TlM"/>
-                    <constraint firstItem="uel-qY-Hh5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="HL2-lB-RD2"/>
-                    <constraint firstItem="uel-qY-Hh5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="YfC-OE-9l7"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="uel-qY-Hh5" secondAttribute="bottom" id="unF-y4-a86"/>
-                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="containerView" destination="uel-qY-Hh5" id="reY-Nf-riJ"/>
-            </connections>
             <point key="canvasLocation" x="104" y="134"/>
         </tableViewCell>
     </objects>

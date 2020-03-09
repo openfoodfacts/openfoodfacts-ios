@@ -133,6 +133,16 @@ extension FormTableViewController {
         return cellType.estimatedHeight
     }
 
+    /*
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let currentCell = tableView.cellForRow(at: indexPath) {
+            return currentCell.frame.size.height
+        }
+        let cellType = form.rows[indexPath.row].cellType
+        return cellType.estimatedHeight
+    }
+ */
+
     override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
         return form.rows[indexPath.row].isCopiable
     }
