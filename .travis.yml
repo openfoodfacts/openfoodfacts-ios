@@ -1,16 +1,17 @@
 language: swift
 osx_image: xcode11
 before_install:
-  - brew update
-  - brew upgrade xctool
-  - brew list carthage &>/dev/null || brew install carthag
-  - carthage bootstrap --platform iOS --cache-builds
+  - FILE="/usr/local/bin/mint"; if [[ -d $FILE ]]; then rm -rf "$FILE"; fi # See https://stackoverflow.com/a/59186817
+  - sh scripts/setup.sh
+  - killall Xcode || true # Kill Xcode in case it is running, to prevent the "database is locked Possibly there are two concurrent builds running in the same filesystem location" error
 xcode_project: OpenFoodFacts.xcodeproj # path to your xcodeproj folder
 xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone 11
-xcode_scheme: OpenFoodFactsUITests
+xcode_scheme: OpenFoodFacts # Run all tests
 cache:
   directories:
   - Carthage
+  - /usr/local/lib/mint
+  - /usr/local/bin/mint
 notifications:
   slack: openfoodfacts:Pw0UOEvADDxNN90ugITF7PKC
 env:

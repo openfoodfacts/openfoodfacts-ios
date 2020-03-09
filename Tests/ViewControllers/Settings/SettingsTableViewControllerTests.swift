@@ -30,20 +30,20 @@ class SettingsTableViewControllerTests: XCTestCase {
     func testViewDidLoadShouldTurnScanOnLaunchSwitchOnWhenSettingIsTrue() {
         UserDefaults.standard.set(true, forKey: UserDefaultsConstants.scanningOnLaunch)
 
-        viewController.viewDidLoad()
+        viewController.viewWillAppear(true)
 
         expect(self.viewController.scanOnLaunchSwitch.isOn).to(beTrue())
     }
 
     func testViewDidLoadShouldNotTurnScanOnLaunchSwitchOnWhenSettingIsFalse() {
-        viewController.viewDidLoad()
+        viewController.viewWillAppear(true)
 
         expect(self.viewController.scanOnLaunchSwitch.isOn).to(beFalse())
     }
 
     // MARK: - didSwitchScanOnLaunch
     func testDidSwitchScanOnLaunchShouldUpdateSettingToTrueWhenSwitchedOn() {
-        let scanOnLaunchSwitch = UISwitch()
+        let scanOnLaunchSwitch = viewController.scanOnLaunchSwitch!
         scanOnLaunchSwitch.isOn = true
 
         viewController.didSwitchScanOnLaunch(scanOnLaunchSwitch)

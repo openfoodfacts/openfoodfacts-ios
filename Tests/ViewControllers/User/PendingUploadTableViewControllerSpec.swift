@@ -20,7 +20,7 @@ class PendingUploadTableViewControllerSpec: QuickSpec {
 
         beforeEach {
             dataManager = DataManagerMock()
-            viewController = PendingUploadTableViewController.loadFromStoryboard(named: .user) as PendingUploadTableViewController
+            viewController = PendingUploadTableViewController.loadFromStoryboard(named: .settings) as PendingUploadTableViewController
             viewController?.dataManager = dataManager
         }
 
@@ -77,6 +77,9 @@ class PendingUploadTableViewControllerSpec: QuickSpec {
         describe(".uploadButtonTapped") {
             context("when progress handler not called") {
                 beforeEach {
+                    dataManager?.items = [PendingUploadItem(barcode: "1")]
+                    viewController?.viewWillAppear(false)
+
                     viewController?.uploadButtonTapped(UIBarButtonItem())
                 }
 
@@ -102,6 +105,9 @@ class PendingUploadTableViewControllerSpec: QuickSpec {
 
             context("when progress handler called after processing items") {
                 beforeEach {
+                    dataManager?.items = [PendingUploadItem(barcode: "1")]
+                    viewController?.viewWillAppear(false)
+
                     dataManager?.progress = 1.0
                     viewController?.uploadButtonTapped(UIBarButtonItem())
                 }

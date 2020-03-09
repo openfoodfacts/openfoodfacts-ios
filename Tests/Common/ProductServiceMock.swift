@@ -11,7 +11,6 @@ import Foundation
 import ObjectMapper
 
 class ProductServiceMock: ProductApi {
-
     // Common
     var product: Product?
     let error = NSError(domain: NSURLErrorDomain, code: NSURLErrorNotConnectedToInternet, userInfo: nil)
@@ -101,5 +100,13 @@ class ProductServiceMock: ProductApi {
         loginCalled = true
         loginUsername = username
         loginPassword = password
+    }
+
+    func getLatestRobotoffQuestions(forBarcode barcode: String, onSuccess: @escaping ([RobotoffQuestion]) -> Void, onError: @escaping (Error) -> Void) {
+        // TODO: implement
+    }
+
+    func postRobotoffAnswer(forInsightId insightId: String, withAnnotation: Int, onDone: @escaping () -> Void) {
+        // TODO: implement
     }
 }
