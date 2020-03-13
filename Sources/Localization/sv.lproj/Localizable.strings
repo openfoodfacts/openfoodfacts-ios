@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Scanna streckkod";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Tillbaka";
@@ -25,20 +25,20 @@
 "product-search.no-results" = "Inga resultat";
 "product-search.error-view.title" = "Någonting gick fel";
 "product-search.error-view.subtitle" = "Försök igen";
-"product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.slogan" = "den öppna databasen för livsmedelsprodukter";
+"product-search.initial-view.offline.title-loading" = "Sparar produkter offline: %d%%";
+"product-search.initial-view.offline.subtitle" = "Mer än %d produkter tillgängliga för omedelbar skanning";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skanna streckkoden på produkten";
 "product-scanner.overlay.extended-user-help" = "Det går inte att hitta en streckkod.\nCentrera streckkoden på skärmen.\nKontrollera att streckkoden är väl synlig.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Skanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Fel inskannad streckkod. Vänligen försök igen om en stund.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "Ingen streckkod hittad. Skriv in den manuellt:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.title" = "OpenFoodFacts behöver tillstånd att använda kameran";
 "product-scanner.permissions.noPermissions.message" = "Vänligen ge tillstånd att använda kameran för att kunna skanna streckkoder";
 "product-scanner.permissions.noPermissions.action.title" = "Öppna inställningar";
 
@@ -57,36 +57,36 @@
 "product-add.image-upload-error-banner.subtitle" = "Vänligen försök ta bilden igen";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
 "product-add.image-upload-success-banner.title" = "Bilden har laddats upp";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-save-success-banner.title" = "Bilden kommer att laddas upp när du är online";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "Produkten har lagts till i databasen. Tack!";
 "product-add.uploaded-image" = "Bilden är uppladdad. Tack!";
 "product-add.save-error.title" = "Ett fel uppstod när du sparade produkten";
 "product-add.save-error.message" = "Försök igen senare";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
-"product-add.save-ingredients.success" = "Ingredients saved at";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
+"product-add.save-info.success" = "Information sparad";
+"product-add.save-info.error" = "Informationen kunde inte sparas";
+"product-add.save-info.saving" = "Sparar produktinformation…";
+"product-add.save-info.not-yet" = "Informationen har inte sparats ännu";
+"product-add.save-ingredients.success" = "Ingredienser sparade";
+"product-add.save-ingredients.error" = "Ingredienserna kunde inte sparas";
+"product-add.save-ingredients.saving" = "Sparar ingredienser…";
+"product-add.save-ingredients.not-yet" = "Ingredienserna har inte sparats ännu";
+"product-add.save-nutriments.success" = "Ingredienser sparade";
+"product-add.save-nutriments.error" = "Näringsämnen kunde inte sparas";
+"product-add.save-nutriments.saving" = "Sparar näringsämnen…";
 "product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.no-nutrition" = "Näringsfakta anges inte på produkten";
 
 "product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.error" = "Kunde inte extrahera ingredienser från bilden";
+"product-add.ocr-ingredients.saving" = "Extraherar ingredienser från bilden…";
+"product-add.ocr-ingredients.not-yet" = "Väntar på en ingrediensbild att analysera";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "Nutri-Score har just beräknats från näringsfakta";
+"product-add.novagroup-explaination" = "NOVA-gruppen har just beräknats baserat på ingredienslistan";
 
 "alert.action.ok" = "Ok";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Välj språk";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Produktnamn";
 /* Product Add brand text field */
@@ -94,24 +94,24 @@
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Kvantitet";
 
-"product-add.title" = "New product";
+"product-add.title" = "Lägg till produkt";
 "product-add.title-edit" = "Redigera produkt";
 "product-add.titles.barcode" = "Streckkod";
 "product-add.titles.top-explainations" = "Bra gjort ! Den här produkten finns ännu inte i Open Food Facts. Kan du ta några bilder på produkten, ingredienslistan och näringsfaktan för att lägga till den i Open Food Facts? \n\nTack i förväg.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.license-explaination" = "Obs: de bilder du skickar publiceras under den fria licensen Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Product information";
+"product-add.titles.product-info" = "Produktinformation";
 "product-add.label.product-name" = "Namn";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Kvantitet";
 "product-add.label.packaging" = "Förpackning";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.details.category" = "Behövs för att beräkna Nutri-Score";
+"product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
+"product-add.label.language" = "Språk";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
-"product-add.titles.nutritive" = "Nutrition Facts";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
+"product-add.description.nutritive" = "Slutför näringsfakta och produktkategori för att få Nutri-Score";
+"product-add.titles.nutritive" = "Näringsfakta";
+"product-add.nutritive.choice.per-hundred-grams" = "för 100 g / 100 ml";
 "product-add.nutritive.choice.per-portion" = "per portion";
 "product-add.nutritive.add-nutriment" = "Lägg till ett näringsämne";
 "product-add.nutritive.too-much" = "Mer än 100 g?";
