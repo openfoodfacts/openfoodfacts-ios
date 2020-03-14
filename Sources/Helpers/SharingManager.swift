@@ -30,7 +30,7 @@ final class SharingManager {
         }
 
         let activity = UIActivity()
-        
+
         let safariActivity = SafariActivity()
 
         let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: [activity, safariActivity])
