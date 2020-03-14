@@ -42,7 +42,7 @@ Open Food Facts on iPhone and iPad has 0,5M users and 1M products. Each contribu
 ### Priority roadmap
 - [ ] Additives evaluation (already ready server side and on Android) [issue #173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
 - [ ] Compare Mode [issue #153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
-- [ ] Product lists (to buy, eaten…)
+- [ ] Product lists (to buy, eaten…)  
 
 ### Secondary roadmap
 - [ ] On-device Product cache
