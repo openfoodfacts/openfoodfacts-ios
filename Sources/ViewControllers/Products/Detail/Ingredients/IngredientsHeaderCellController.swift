@@ -112,6 +112,17 @@ class IngredientsHeaderCellController: TakePictureViewController {
         }
     }
 
+    override func postImageSuccess(image: UIImage, forImageType imageType: ImageType) {
+        guard super.barcode != nil else { return }
+        guard imageType == .ingredients else { return }
+        // Notification is used by FormTableViewController
+        NotificationCenter.default.post(name: .IngredientsImageIsUpdated, object: nil, userInfo: nil)
+    }
+
+}
+
+extension Notification.Name {
+        static let IngredientsImageIsUpdated = Notification.Name("IngredientsHeaderCellController.Notification.IngredientsImageIsUpdated")
 }
 
 // MARK: - Gesture recognizers

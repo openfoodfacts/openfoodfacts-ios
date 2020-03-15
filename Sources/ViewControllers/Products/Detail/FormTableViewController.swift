@@ -57,6 +57,18 @@ class FormTableViewController: UITableViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(ververs), name: .FrontImageIsUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ververs), name: .IngredientsImageIsUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ververs), name: .NutritionImageIsUpdated, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        super.viewWillDisappear(animated)
+    }
+
     func getCell(for formRow: FormRow) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! ProductDetailBaseCell // swiftlint:disable:this force_cast
         cell.configure(with: formRow, in: self)
@@ -189,6 +201,14 @@ extension FormTableViewController {
         delegate?.refreshProduct {
             DispatchQueue.main.async {
                 refreshControl.endRefreshing()
+            }
+        }
+    }
+
+    @objc func ververs() {
+        delegate?.refreshProduct {
+            DispatchQueue.main.async {
+                // not sure something needs to be done
             }
         }
     }

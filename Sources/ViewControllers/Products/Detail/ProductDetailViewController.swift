@@ -85,6 +85,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        super.viewDidDisappear(animated)
+    }
+
     fileprivate func refreshLatestRobotoffQuestion() {
         self.latestRobotoffQuestions = []
 
