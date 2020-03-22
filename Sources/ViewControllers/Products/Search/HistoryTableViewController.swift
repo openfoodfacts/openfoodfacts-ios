@@ -209,8 +209,8 @@ extension HistoryTableViewController {
 
         // Store product in search history
         dataManager.addHistoryItem(product)
-        if let vc = self.navigationController {
-            vc.pushViewController(productDetailsVC, animated: true)
+        if let vcs = self.navigationController {
+            vcs.pushViewController(productDetailsVC, animated: true)
         }
     }
 

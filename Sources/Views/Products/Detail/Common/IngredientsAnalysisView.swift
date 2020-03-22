@@ -110,7 +110,7 @@ import Cartography
                 newPage.alternativeHandler = { item in item.manager?.dismissBulletin() }
 
                 item.manager?.push(item: newPage)
-                
+
                 newPage.actionButton?.titleLabel?.numberOfLines = 2
                 newPage.actionButton?.titleLabel?.textAlignment = .center
                 newPage.alternativeButton?.titleLabel?.numberOfLines = 2

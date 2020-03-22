@@ -68,8 +68,18 @@ class NutritionTableHeaderCellController: TakePictureViewController {
             servingSizeLabel.text = "\("product-detail.nutrition-table.for-serving".localized): \(servingSize)"
         }
     }
+
+    override func postImageSuccess(image: UIImage, forImageType imageType: ImageType) {
+            guard super.barcode != nil else { return }
+            guard imageType == .nutrition else { return }
+            NotificationCenter.default.post(name: .NutritionImageIsUpdated, object: nil, userInfo: nil)
+    }
+
 }
 
+extension Notification.Name {
+    static let NutritionImageIsUpdated = Notification.Name("NutritionTableHeaderCellController.Notification.NutritionImageIsUpdated")
+}
 // MARK: - Gesture recognizers
 extension NutritionTableHeaderCellController {
     @objc func didTapProductImage(_ sender: UITapGestureRecognizer) {
