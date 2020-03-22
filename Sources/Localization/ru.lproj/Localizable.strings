@@ -21,7 +21,7 @@
 // Product Search
 
 "product-search.title" = "Поиск";
-"product-search.search-placeholder" = "Поиск продукта по названию или штрих-коду";
+"product-search.search-placeholder" = "Поиск по названию или штрихкоду";
 "product-search.no-results" = "Ничего не найдено";
 "product-search.error-view.title" = "Упс... что-то пошло не так";
 "product-search.error-view.subtitle" = "Попробуйте еще раз";
@@ -114,7 +114,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "в 100 г/100 мл";
 "product-add.nutritive.choice.per-portion" = "на порцию";
 "product-add.nutritive.add-nutriment" = "Добавить питательное вещество";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Более 100 г?";
 
 "product-add.description.ingredients" = "Для определения степени обработки продукта по классификации NOVA, укажите состав продукта";
 "product-add.titles.ingredients" = "Ингредиенты";
@@ -151,7 +151,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Штрих-код";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Обычное название";
 "product-detail.summary.quantity" = "Количество";
 "product-detail.summary.packaging" = "Упаковка";
 "product-detail.summary.brands" = "Бренды";
@@ -169,7 +169,7 @@
 "product-detail.ingredients.nova.2" = "Переработанные кулинарные ингредиенты";
 "product-detail.ingredients.nova.3" = "Переработанные пищевые продукты";
 "product-detail.ingredients.nova.4" = "Ультра-обработанные продукты питания и напитки";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.incite" = "Добавить ингредиенты и/или категории для расчета NOVA.";
 "product-detail.ingredients.ingredients-list" = "Список ингредиентов";
 "product-detail.ingredients.allergens-list" = "Вещества или продукты, вызывающие аллергию или непереносимость";
 "product-detail.ingredients.allergens-alert.title" = "Содержит аллергены!";
@@ -194,7 +194,7 @@
 "product-detail.nutrition-table.for-serving" = "На порцию";
 "product-detail.nutrition-table.100g" = "100г";
 "product-detail.nutrition-table.serving" = "порция";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.missing" = "Питательные вещества не были установлены.";
 
 // Nutrition levels
 "nutrition-level.title" = "Пищевая ценность на 100 г/100 мл";
@@ -205,26 +205,26 @@
 // Ingredients Analysis
 "ingredients-analysis.ingredients_in_this_product" = "Ингредиенты в этом продукте, которые %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ингредиенты в этом продукте %@s.";
-"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
-"ingredients-analysis.display" = "Display %@ status";
-"ingredients-analysis.missing-ingredients.title" = "Fill in the missing ingredients";
-"ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
+"ingredients-analysis.unknown_status" = "Мы не смогли оценить состояние продукта.";
+"ingredients-analysis.ambiguous" = "Неоднозначные ингредиенты: %@";
+"ingredients-analysis.display" = "Отображение статуса %@";
+"ingredients-analysis.missing-ingredients.title" = "Заполните недостающие ингредиенты";
+"ingredients-analysis.missing-ingredients.description" = "У нас пока нет ингредиентов для этого продукта. Можете ли вы помочь завершить их?";
 "ingredients-analysis.help-translate.title" = "Помогите перевести ингредиенты на ваш язык";
-"ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
-"ingredients-analysis.help-translate.button" = "Help translate ingredients";
-"ingredients-analysis.back-to-scan" = "Back to scan";
+"ingredients-analysis.help-translate.description" = "Помогите перевести ингредиенты на ваш язык, чтобы сделать анализ ингредиентов возможным";
+"ingredients-analysis.help-translate.button" = "Помогите перевести ингредиенты";
+"ingredients-analysis.back-to-scan" = "Вернуться к сканированию";
 
 // Robotoff
 "robotoff.yes" = "Да";
 "robotoff.no" = "Нет";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "Я не уверен";
 "robotoff.contribute-incentive.title" = "Способствовать";
-"robotoff.settings.display-questions" = "Display questions";
+"robotoff.settings.display-questions" = "Показать вопросы";
 "robotoff.contribute-incentive.login" = "Имя пользователя";
-"robotoff.contribute-incentive.not-now" = "Not now";
-"robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
-"robotoff.answer-saved" = "Answer saved, thanks!";
+"robotoff.contribute-incentive.not-now" = "Позже";
+"robotoff.contribute-incentive.description" = "Ответьте на простые вопросы, чтобы обеспечить прозрачность питания!";
+"robotoff.answer-saved" = "Ответ сохранен, спасибо!";
 
 // Nutrition
 "nutrition.energy" = "Энергетическая ценность";
@@ -310,7 +310,7 @@
 
 // Settings storyboard
 "settings.tab-bar.item" = "Настройки";
-"settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
+"settings.ingredientsAnalysis.title" = "Оповещения об анализе ингредиентов";
 "settings.allergies.title" = "Предупреждения об аллергенах";
 "settings.allergies.description" = "Добавьте аллергены в этот список, чтобы получать оповещения при сканировании продукта, содержащего аллерген.\nОбратите внимание, что информация о вашей аллергии НИКОГДА не будет отправлена на сервер Open Food Facts. Будьте осторожны, данные не могут быть на 100% надёжными, а обнаружение не может быть на 100% точным. Обязательно проверяйте информацию самостоятельно!";
 "settings.allergies.add-button" = "Добавить аллергены";
@@ -334,17 +334,17 @@
 /* Tab bar item */
 "user.tab-bar.item" = "Пользователь";
 "user.log-in" = "Войти";
-"user.logging-in" = "Logging in";
+"user.logging-in" = "Происходит вход в систему";
 "user.log-out" = "Выйти";
 "user.username" = "Имя пользователя";
 "user.password" = "Пароль";
-"user.logged-in.label" = "%@, you are logged in";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
-"user.not-logged-in" = "Not logged in";
+"user.logged-in.label" = "%@, вы вошли в систему";
+"user.logged-in-explanation.label" = "Все добавленные вами товары и загруженные вами фотографии будут зачислены на ваш счет";
+"user.not-logged-in" = "Не авторизован";
 "user.forgot-password" = "Забыли пароль?";
 "user.check-your-contributions.button" = "Проверить ваш вклад";
 "user.products-pending-upload.button" = "Продукты, ожидающие загрузку в Open Food Facts";
-"user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
+"user.products-pending-upload-none.button" = "Продукты в ожидании загрузки в Open Food Facts (нет)";
 "user.create-account.text" = "Если у вас нет учетной записи, нажмите ссылку ниже, чтобы создать ее.";
 "user.create-account.button" = "Создать учетную запись";
 "user.why-log-in.text" = "Войдите в свою учетную запись чтобы ассоциировать ваш вклад с вашей учетной записью.";
