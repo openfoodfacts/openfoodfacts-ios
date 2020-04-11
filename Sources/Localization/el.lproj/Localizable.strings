@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Σάρωση γραμμωτού κώδικα";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Πίσω";
@@ -21,22 +21,22 @@
 // Product Search
 
 "product-search.title" = "Αναζήτηση";
-"product-search.search-placeholder" = "Search by name or barcode";
-"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
-"product-search.error-view.title" = "Something went wrong";
+"product-search.search-placeholder" = "Αναζήτηση με όνομα, SKU, barcode";
+"product-search.no-results" = "Χωρίς αποτέλεσμα. Μπορείτε να προσθέσετε ένα προϊόν στο Open Food Facts, αν το σαρώσετε.";
+"product-search.error-view.title" = "Κάτι πήγε στραβά";
 "product-search.error-view.subtitle" = "Παρακαλούμε δοκιμάστε ξανά";
-"product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.slogan" = "η ελεύθερη και ανοιχτή βάση δεδομένων για τρόφιμα";
+"product-search.initial-view.offline.title-loading" = "Αποθήκευση προϊόντων εκτός σύνδεσης: %d%%";
+"product-search.initial-view.offline.subtitle" = "Περισσότερα από %d διαθέσιμα προϊόντα για άμεση σάρωση";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.user-help" = "Σάρωσε τον γραμμικό κωδικός του προϊόντος";
+"product-scanner.overlay.extended-user-help" = "Δεν είναι δυνατή η εύρεση ενός γραμμωτού κώδικα.\nΚεντράρετε τον γραμμωτό κώδικα στην οθόνη.\nΒεβαιωθείτε ότι ο γραμμωτός κώδικας είναι καλά φωτισμένος.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Σαρωτής";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "Δεν βρέθηκε γραμμωτό κώδικα. Μπορείτε να το πληκτρολογήσετε χειροκίνητα:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
