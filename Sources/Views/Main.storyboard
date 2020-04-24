@@ -159,7 +159,7 @@
                                     <action selector="clearHistory:" destination="USd-NH-eQg" id="yGp-Jt-V3C"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" style="plain" id="qpZ-5c-7hP" userLabel="Share">
+                            <barButtonItem title="Share" image="square.and.arrow.down" catalog="system" style="plain" id="qpZ-5c-7hP" userLabel="Share">
                                 <connections>
                                     <action selector="exportHistory:" destination="USd-NH-eQg" id="5F1-Sh-xPk"/>
                                 </connections>
@@ -179,6 +179,6 @@
     </scenes>
     <resources>
         <image name="barcode" width="25" height="25"/>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
     </resources>
 </document>

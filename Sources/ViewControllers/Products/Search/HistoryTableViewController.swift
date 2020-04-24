@@ -88,8 +88,19 @@ class HistoryTableViewController: UITableViewController, DataManagerClient {
 
     @IBAction func exportHistory(_ sender: UIBarButtonItem) {
         let historyItems = Array(items.values.joined())
-        let history = ExportHelper().exportItemsToCSV(objects: historyItems)
-        let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [history], applicationActivities: nil)
+        guard let historyFileURL = ExportHelper().exportItemsToCSV(objects: historyItems) else {
+            let alert = UIAlertController(title: "product-search.error-view.title".localized,
+                                          message: nil,
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "alert.action.ok".localized,
+                                          style: .default,
+                                          handler: { _ in alert.dismiss(animated: true, completion: nil) }))
+
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+
+        let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [historyFileURL], applicationActivities: nil)
         activityViewController.popoverPresentationController?.barButtonItem = shareButton
         present(activityViewController, animated: true, completion: nil)
     }

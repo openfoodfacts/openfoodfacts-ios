@@ -18,8 +18,8 @@ class ExportHelperSpec: QuickSpec {
                 historyItem.timestamp = Date()
                 historyItem.brand = "Test Brand"
 
-                let exportedHistory = ExportHelper().exportItemsToCSV(objects: [historyItem])
-                expect(exportedHistory).notTo(beEmpty())
+                let exportedFile = ExportHelper().exportItemsToCSV(objects: [historyItem])
+                expect(exportedFile).notTo(beNil())
             }
         }
     }
