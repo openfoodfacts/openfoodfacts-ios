@@ -10,7 +10,7 @@
 "shortcuts.scan" = "Escanejar codi";
 
 // Generic strings that could be useful anywhere.
-"generic.back" = "Torna";
+"generic.back" = "Enrere";
 "generic.search" = "Cerca";
 "generic.cancel" = "Cancel·la";
 "generic.save" = "Desa";
@@ -194,7 +194,7 @@
 "product-detail.nutrition-table.for-serving" = "Per ració";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "porció";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.missing" = "No s'ha establert cap nutrient.";
 
 // Nutrition levels
 "nutrition-level.title" = "Nivells de nutrient per 100 g/100 ml";
@@ -203,10 +203,10 @@
 "nutrition-level.high" = "en grans quantitats";
 
 // Ingredients Analysis
-"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
-"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
+"ingredients-analysis.ingredients_in_this_product" = "Ingredients d'aquest producte que són %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients %@s en aquest producte.";
+"ingredients-analysis.unknown_status" = "No hem pogut valorar l'estat del producte.";
+"ingredients-analysis.ambiguous" = "Ingredients ambigus: %@";
 "ingredients-analysis.display" = "Mostra l'estat %@";
 "ingredients-analysis.missing-ingredients.title" = "Ompliu els ingredients que hi manquen";
 "ingredients-analysis.missing-ingredients.description" = "Aquest producte encara no té introduïts els ingredients. Podeu fer-ho?";
@@ -218,13 +218,13 @@
 // Robotoff
 "robotoff.yes" = "Si";
 "robotoff.no" = "No";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "No ho puc assegurar";
 "robotoff.contribute-incentive.title" = "Contribuir";
-"robotoff.settings.display-questions" = "Display questions";
+"robotoff.settings.display-questions" = "Veure preguntes";
 "robotoff.contribute-incentive.login" = "Nom d'usuari";
-"robotoff.contribute-incentive.not-now" = "Not now";
-"robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
-"robotoff.answer-saved" = "Answer saved, thanks!";
+"robotoff.contribute-incentive.not-now" = "Ara no";
+"robotoff.contribute-incentive.description" = "Responeu preguntes senzilles, feu possible la transparència alimentària!";
+"robotoff.answer-saved" = "Resposta desada, gràcies!";
 
 // Nutrition
 "nutrition.energy" = "Energia";
@@ -334,17 +334,17 @@
 /* Tab bar item */
 "user.tab-bar.item" = "Usuari";
 "user.log-in" = "Inicia la sessió";
-"user.logging-in" = "Logging in";
+"user.logging-in" = "Iniciant la sessió";
 "user.log-out" = "Tanca la sessió";
 "user.username" = "Identificador";
 "user.password" = "Contrasenya";
-"user.logged-in.label" = "%@, you are logged in";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
-"user.not-logged-in" = "Not logged in";
+"user.logged-in.label" = "%@, us heu connectat";
+"user.logged-in-explanation.label" = "Tots els productes que afegiu i les fotos que pengeu seran acreditades al vostre compte";
+"user.not-logged-in" = "No us heu connectat";
 "user.forgot-password" = "Heu oblidat la contrasenya?";
 "user.check-your-contributions.button" = "Vegeu totes les vostres contribucions";
 "user.products-pending-upload.button" = "Productes pendents de pujar a Open Food Facts";
-"user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
+"user.products-pending-upload-none.button" = "Productes pendents de pujar a Open Food Facts (cap)";
 "user.create-account.text" = "Si no teniu cap compte, feu clic al següent enllaç per crear-ne un.";
 "user.create-account.button" = "Crear un compte nou";
 "user.why-log-in.text" = "Si inicieu la sessió amb el vostre compte, s’acreditaran totes les vostres contribucions a la transparència dels aliments.";
