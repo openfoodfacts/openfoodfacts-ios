@@ -118,7 +118,10 @@ You can install [Fastlane](https://github.com/fastlane/fastlane) with Homebrew:
 ```
 brew cask install fastlane
 ```
-
+#### Generating screenshots
+```
+fastlane snapshot 
+```
 ### SwiftLint
 
 We have a script that runs when building the app, it executes SwiftLint to enforce a style and conventions to the code.
