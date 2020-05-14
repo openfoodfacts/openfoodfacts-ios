@@ -122,6 +122,16 @@ brew cask install fastlane
 ```
 fastlane snapshot 
 ```
+##### Roadmap on automatic screenshot generation:
+- [ ]  fixing the [non translatable scan product button](https://github.com/openfoodfacts/openfoodfacts-ios/issues/651) so that the screenshot and the app are fully translated
+- [ ]  fixing the Scan screenshot generation, and adding a way to set the background of the barcode scanner with an arbitrary image, per country
+- [ ]  fixing History screenshot population with products
+- [ ]  Adding the proposed fix to clean the top bar with 100% battery, and a fixed time
+- [ ]  Adding `fastlane frameit` to the Fastlane file, so that we can get versions wrapped in physical devices
+- [ ]  fixing Chinese screenshot generation
+- [ ]  Ensure we can generate for 1 of (iPhone 11 Pro Max, iPhone 11, iPhone XS Max, iPhone XR), 1 of (iPhone 6s Plus, iPhone 7 Plus, iPhone 8 Plus), 1 of (3rd generation iPad Pro)
+- [ ]  Extra: For debugging purposes, it would be great to have other screen resolutions (iPhone 11 Pro, iPhone X, iPhone XS) (iPhone 6, iPhone 6s, iPhone 7, iPhone 8) (iPhone SE) (iPhone 4s)
+
 ### SwiftLint
 
 We have a script that runs when building the app, it executes SwiftLint to enforce a style and conventions to the code.
