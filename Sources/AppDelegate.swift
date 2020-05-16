@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             UIApplication.shared.keyWindow?.layer.speed = 100
         }
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: .languageChanged, object: nil)
         Bundle.swizzleLocalization()
 
