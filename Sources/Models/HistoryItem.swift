@@ -57,7 +57,18 @@ extension HistoryItem: StringRepresentable {
         if let novaGroupValue = novaGroup.value {
             novaGroupString = String(novaGroupValue)
         }
-
-        return "\(barcode),\(productName ?? ""),\(brand ?? ""),\(quantity ?? ""),\(packaging ?? ""),\(imageUrl ?? ""),\(timestamp),\(nutriscore ?? ""),\(novaGroupString)"
+        var returnValue = "\"\(barcode)\"" + ","
+        print(returnValue)
+        returnValue += productName != nil ? "\"\(productName!)\"" + "," : ","
+        returnValue += brand != nil ? "\"\(brand!)\"" + "," : ","
+        returnValue += quantity != nil ? "\"\(quantity!)\"" + "," : ","
+        returnValue += packaging != nil ? "\"\(packaging!)\"" + "," : ","
+        returnValue += imageUrl != nil ? "\"\(imageUrl!)\"" + "," : ","
+        returnValue += "\"\(timestamp)\"" + ","
+        returnValue += nutriscore != nil ? "\"\(nutriscore!)\"" + "," : ","
+        returnValue += "\"\(novaGroupString)\""
+        //returnValue += "\( ?? ""),\( ?? ""),\( ?? ""),\( ?? ""),\(),\( ?? ""),\()"
+        print(returnValue)
+        return returnValue
     }
 }
