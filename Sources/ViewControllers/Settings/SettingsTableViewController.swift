@@ -21,6 +21,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     @IBOutlet weak var scanOnLaunchSwitch: UISwitch!
 
     @IBOutlet weak var userProfileCell: UITableViewCell!
+    @IBOutlet weak var languageCell: UITableViewCell!
     @IBOutlet weak var allergenAlertCell: UITableViewCell!
     @IBOutlet weak var ingredientAnalysisAlertCell: UITableViewCell!
 
@@ -72,6 +73,8 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
         if let selectedCell = tableView.cellForRow(at: indexPath) {
             switch selectedCell {
+            case languageCell:
+                navigationController?.pushViewController(LanguagesTableViewController(), animated: true)
             case discoverCell:
                 url = URL(string: URLs.Discover)
             case contributeCell:

@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.shared.keyWindow?.layer.speed = 100
         }
 
+        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: .languageChanged, object: nil)
+        Bundle.swizzleLocalization()
+
         ShortcutParser.shared.registerShortcuts()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = RootViewController()
@@ -97,5 +100,13 @@ extension AppDelegate {
 
     var rootViewController: RootViewController {
         return window!.rootViewController as! RootViewController
+    }
+}
+
+// MARK: - Switch localization at runtime
+
+extension AppDelegate {
+    @objc private func languageChanged() {
+        window?.rootViewController = RootViewController()
     }
 }

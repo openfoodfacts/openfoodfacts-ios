@@ -49,3 +49,15 @@ class HistoryItem: Object {
         return "barcode"
     }
 }
+
+extension HistoryItem: StringRepresentable {
+    // Returns CSV representation of HistoryItem values
+    func stringRepresentation() -> String {
+        var novaGroupString: String = ""
+        if let novaGroupValue = novaGroup.value {
+            novaGroupString = String(novaGroupValue)
+        }
+
+        return "\(barcode),\(productName ?? ""),\(brand ?? ""),\(quantity ?? ""),\(packaging ?? ""),\(imageUrl ?? ""),\(timestamp),\(nutriscore ?? ""),\(novaGroupString)"
+    }
+}

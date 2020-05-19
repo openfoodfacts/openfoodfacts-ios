@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -150,17 +150,27 @@
                     <tabBarItem key="tabBarItem" systemItem="history" id="QGk-eG-HaU"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="WR4-V6-0yF">
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="67c-ys-5bh">
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="history.button.clear"/>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="clearHistory:" destination="USd-NH-eQg" id="yGp-Jt-V3C"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Clear" id="67c-ys-5bh">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="history.button.clear"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clearHistory:" destination="USd-NH-eQg" id="yGp-Jt-V3C"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Share" image="square.and.arrow.down" catalog="system" style="plain" id="qpZ-5c-7hP" userLabel="Share">
+                                <connections>
+                                    <action selector="exportHistory:" destination="USd-NH-eQg" id="5F1-Sh-xPk"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="shareButton" destination="qpZ-5c-7hP" id="u5r-eh-RFh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeT-yh-SR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,5 +179,6 @@
     </scenes>
     <resources>
         <image name="barcode" width="25" height="25"/>
+        <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
     </resources>
 </document>

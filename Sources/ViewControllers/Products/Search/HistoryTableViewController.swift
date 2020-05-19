@@ -20,6 +20,7 @@ class HistoryTableViewController: UITableViewController, DataManagerClient {
     lazy var items = [Age: [HistoryItem]]()
 
     var showDetailsBanner: NotificationBanner!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +50,15 @@ class HistoryTableViewController: UITableViewController, DataManagerClient {
         navigationItem.rightBarButtonItem?.isEnabled = false
         tableView.separatorStyle = .none
 
+        shareButton.isEnabled = false
+        shareButton.tintColor = UIColor.clear
+
         let buttonContainerView = UIView()
         buttonContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         let firstScanButton = UIButton.init(type: .system)
         firstScanButton.translatesAutoresizingMaskIntoConstraints = false
-        firstScanButton.setTitle("Scan your first product", for: .normal)
+        firstScanButton.setTitle("history.first-scan.button.title".localized, for: .normal)
         firstScanButton.addTarget(self, action: #selector(requestScan), for: .touchUpInside)
 
         buttonContainerView.addSubview(firstScanButton)
@@ -70,12 +74,35 @@ class HistoryTableViewController: UITableViewController, DataManagerClient {
 
     private func configureRegularState() {
         navigationItem.rightBarButtonItem?.isEnabled = true
+
+        shareButton.isEnabled = true
+        shareButton.tintColor = navigationController?.navigationBar.tintColor
+
         tableView.separatorStyle = .singleLine
         tableView.tableFooterView = nil
     }
 
     @objc private func requestScan() {
         NotificationCenter.default.post(name: .requestScanning, object: nil, userInfo: nil)
+    }
+
+    @IBAction func exportHistory(_ sender: UIBarButtonItem) {
+        let historyItems = Array(items.values.joined())
+        guard let historyFileURL = ExportHelper().exportItemsToCSV(objects: historyItems) else {
+            let alert = UIAlertController(title: "product-search.error-view.title".localized,
+                                          message: nil,
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "alert.action.ok".localized,
+                                          style: .default,
+                                          handler: { _ in alert.dismiss(animated: true, completion: nil) }))
+
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+
+        let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [historyFileURL], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.barButtonItem = shareButton
+        present(activityViewController, animated: true, completion: nil)
     }
 
     @IBAction func clearHistory(_ sender: UIBarButtonItem) {
