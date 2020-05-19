@@ -63,24 +63,24 @@
 "product-add.uploaded-image" = "Bildet ble lastet opp, takk!";
 "product-add.save-error.title" = "Feil under lagring av produktet";
 "product-add.save-error.message" = "Try again later";
-"product-add.save-info.success" = "Information saved at";
+"product-add.save-info.success" = "Informasjon lagret kl";
 "product-add.save-info.error" = "Informasjonen er ikke lagret";
 "product-add.save-info.saving" = "Lagrer produktinformasjon…";
 "product-add.save-info.not-yet" = "Informasjonen er ikke lagret ennå";
-"product-add.save-ingredients.success" = "Ingredients saved at";
+"product-add.save-ingredients.success" = "Ingredienser lagret kl";
 "product-add.save-ingredients.error" = "Ingredienser ble ikke lagret";
 "product-add.save-ingredients.saving" = "Lagrer ingredienser…";
 "product-add.save-ingredients.not-yet" = "Ingredienser er ikke lagret ennå";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
+"product-add.save-nutriments.success" = "Næringsstoffer lagret kl";
+"product-add.save-nutriments.error" = "Næringsstoffer ble ikke lagret";
+"product-add.save-nutriments.saving" = "Lagrer næringsstoffer…";
+"product-add.save-nutriments.not-yet" = "Næringsstoffer er ikke lagret ennå";
 "product-add.no-nutrition" = "Nutrition data are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.success" = "Ingredienser lest fra bildet kl";
+"product-add.ocr-ingredients.error" = "Kunne ikke trekke ut ingredienser fra bildet";
+"product-add.ocr-ingredients.saving" = "Trekker ut ingredienser fra bildet…";
+"product-add.ocr-ingredients.not-yet" = "Venter på at et bilde av ingrediensene skal analyseres";
 
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
@@ -88,7 +88,7 @@
 "alert.action.ok" = "Ok";
 "product-add.language.toolbar-title" = "Velg språk";
 /* Product Add name text field */
-"product-add.placeholder.name" = "Product name";
+"product-add.placeholder.name" = "Produktnavn";
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Merke";
 /* Product Add quantity text field */
@@ -98,7 +98,7 @@
 "product-add.title-edit" = "Rediger produkt";
 "product-add.titles.barcode" = "Strekkode";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.license-explaination" = "Merk: Bildene du sender, blir publisert under gratislisensen Creative Commons Attribution og Sharealike.";
 
 "product-add.titles.product-info" = "Produktinformasjon";
 "product-add.label.product-name" = "Navn";
@@ -106,19 +106,19 @@
 "product-add.label.quantity" = "Mengde";
 "product-add.label.packaging" = "Emballasje";
 "product-add.details.category" = "Nødvendig for å beregne Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
 "product-add.label.language" = "Språk";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Nutrition Facts";
 "product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "per porsjon";
-"product-add.nutritive.add-nutriment" = "Add a nutrient";
+"product-add.nutritive.add-nutriment" = "Legg til et næringsstoff";
 "product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
 "product-add.titles.ingredients" = "Ingredienser";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
+"product-add.ingredients.explaination" = "Ta et bilde av ingredienslisten for automatisk å trekke ut ingrediensene. Sjekk den nøye, og ikke glem å lagre den.";
 "product-add.ingredients.button-delete" = "For dårlig, ignorer";
 "product-add.ingredients.button-save" = "Ser bra ut, lagre";
 
@@ -166,14 +166,14 @@
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
-"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
-"product-detail.ingredients.nova.3" = "Processed foods";
-"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.2" = "Bearbeidede kulinariske ingredienser";
+"product-detail.ingredients.nova.3" = "Bearbeidet mat";
+"product-detail.ingredients.nova.4" = "Ultrabearbeidet mat- og drikkeprodukter";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "Ingrediensliste";
 "product-detail.ingredients.allergens-list" = "Stoffer eller produkter som forårsaker allergi eller intoleranse";
 "product-detail.ingredients.allergens-alert.title" = "Inneholder allergener!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-list.missing-infos" = "Dette produktet har ikke en ingrediensliste ennå, og som et resultat kunne ikke allergendeteksjon fullføres.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Kan inneholde";
 "product-detail.ingredients.additives-list" = "Tilsetningsstoffer";
@@ -197,7 +197,7 @@
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
 
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
+"nutrition-level.title" = "Næringsstoffer per 100 g/100 mL";
 "nutrition-level.low" = "i liten mengde";
 "nutrition-level.moderate" = "i moderat mengde";
 "nutrition-level.high" = "i høy mengde";
@@ -370,3 +370,5 @@
 "history.section-titles.fewWeeks" = "For noen uker siden";
 "history.section-titles.fewMonths" = "For noen måneder siden";
 "history.section-titles.longTime" = "For lenge siden";
+"history.first-scan.button.title" = "Scan First Product";
+"API_CANCEL_TITLE" = "Cancel";

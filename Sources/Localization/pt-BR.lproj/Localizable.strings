@@ -182,7 +182,7 @@
 "product-detail.ingredients.vitamins-list" = "Vitaminas";
 "product-detail.ingredients.minerals-list" = "Minerais";
 "product-detail.ingredients.nucleotides-list" = "Nucleótidos";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Outras substâncias nutritivas";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Tamanho da porção";
@@ -194,37 +194,37 @@
 "product-detail.nutrition-table.for-serving" = "Por porção";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "dose";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.missing" = "Nenhum nutriente foi definido.";
 
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
+"nutrition-level.title" = "Valores nutricionais por 100 gr/100 ml";
 "nutrition-level.low" = "em quantidade baixa";
 "nutrition-level.moderate" = "em quantidade moderada";
 "nutrition-level.high" = "em quantidade elevada";
 
 // Ingredients Analysis
-"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
-"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
-"ingredients-analysis.display" = "Display %@ status";
-"ingredients-analysis.missing-ingredients.title" = "Fill in the missing ingredients";
-"ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
+"ingredients-analysis.ingredients_in_this_product" = "Ingredientes neste produto que são %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Os ingredientes deste produto são %@.";
+"ingredients-analysis.unknown_status" = "Não foi possível avaliar o status do produto.";
+"ingredients-analysis.ambiguous" = "Ingredientes ambíguos: %@";
+"ingredients-analysis.display" = "Exibir status de %@";
+"ingredients-analysis.missing-ingredients.title" = "Adicione os ingredientes que faltam";
+"ingredients-analysis.missing-ingredients.description" = "Ainda não temos os ingredientes para este produto. Você pode ajudar a completá-los?";
 "ingredients-analysis.help-translate.title" = "Ajude a traduzir os ingredientes no seu idioma";
-"ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
-"ingredients-analysis.help-translate.button" = "Help translate ingredients";
-"ingredients-analysis.back-to-scan" = "Back to scan";
+"ingredients-analysis.help-translate.description" = "Ajude a traduzir os ingredientes no seu idioma para possibilitar a análise";
+"ingredients-analysis.help-translate.button" = "Ajude a traduzir os ingredientes";
+"ingredients-analysis.back-to-scan" = "Voltar à leitura de código de barras";
 
 // Robotoff
 "robotoff.yes" = "Sim";
 "robotoff.no" = "Não";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "Não tenho certeza";
 "robotoff.contribute-incentive.title" = "Contribuir";
-"robotoff.settings.display-questions" = "Display questions";
+"robotoff.settings.display-questions" = "Exibir perguntas";
 "robotoff.contribute-incentive.login" = "Nome de Utilizador";
-"robotoff.contribute-incentive.not-now" = "Not now";
-"robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
-"robotoff.answer-saved" = "Answer saved, thanks!";
+"robotoff.contribute-incentive.not-now" = "Agora não";
+"robotoff.contribute-incentive.description" = "Responda a perguntas simples, promova a transparência alimentar!";
+"robotoff.answer-saved" = "Resposta salva, obrigado!";
 
 // Nutrition
 "nutrition.energy" = "Energia";
@@ -310,9 +310,9 @@
 
 // Settings storyboard
 "settings.tab-bar.item" = "Definições";
-"settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
+"settings.ingredientsAnalysis.title" = "Alertas de análise de ingredientes";
 "settings.allergies.title" = "Alertas de alérgenos";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.description" = "Adicione alérgenos a esta lista para ser notificado quando escanear um produto que o contém. \nInformações sobre suas alergias nunca serão enviadas ao servidor Open Food Facts. Além disso, esteja atento pois os dados podem não ser 100% confiáveis e a detecção pode não ser 100% precisa. Não deixe de fazer sua própria pesquisa!";
 "settings.allergies.add-button" = "Adicionar alérgenos";
 "settings.sections.information" = "Informação";
 "settings.sections.discover" = "Descubra";
@@ -323,7 +323,7 @@
 "settings.scan-on-launch.title" = "Mostrar varredura no lançamento da aplicação";
 "settings.sections.discover" = "Descubra";
 "settings.contribute.how-to-contribute" = "Como contribuir";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
+"settings.contribute.support-open-food-facts" = "Apoie o Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Traduzir Open Food Facts";
 "settings.about.contact" = "Contacto";
 "settings.about.frequently-asked-questions" = "Perguntas Frequentes";
@@ -334,14 +334,14 @@
 /* Tab bar item */
 "user.tab-bar.item" = "Utilizador";
 "user.log-in" = "Iniciar sessão";
-"user.logging-in" = "Logging in";
+"user.logging-in" = "Fazendo login";
 "user.log-out" = "Terminar Sessão";
 "user.username" = "Nome de Utilizador";
 "user.password" = "Palavra-passe";
 "user.logged-in.label" = "%@, você fez o login";
 "user.logged-in-explanation.label" = "Todos os produtos adicionados e as fotos que você enviar serão creditados à sua conta";
-"user.not-logged-in" = "Not logged in";
-"user.forgot-password" = "Forgot Password?";
+"user.not-logged-in" = "Você não está logado";
+"user.forgot-password" = "Esqueceu sua senha?";
 "user.check-your-contributions.button" = "Verifique as suas contribuições";
 "user.products-pending-upload.button" = "Products pending upload";
 "user.products-pending-upload-none.button" = "Produtos pendentes de envio ao Open Food Facts (nenhum)";
@@ -370,3 +370,5 @@
 "history.section-titles.fewWeeks" = "Algumas semanas atrás";
 "history.section-titles.fewMonths" = "Uns meses atrás";
 "history.section-titles.longTime" = "A muito tempo atrás";
+"history.first-scan.button.title" = "Escanear o primeiro produto";
+"API_CANCEL_TITLE" = "Cancelar";
