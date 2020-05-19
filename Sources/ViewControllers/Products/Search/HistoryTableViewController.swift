@@ -58,7 +58,7 @@ class HistoryTableViewController: UITableViewController, DataManagerClient {
 
         let firstScanButton = UIButton.init(type: .system)
         firstScanButton.translatesAutoresizingMaskIntoConstraints = false
-        firstScanButton.setTitle("Scan your first product", for: .normal)
+        firstScanButton.setTitle("history.first-scan.button.title".localized, for: .normal)
         firstScanButton.addTarget(self, action: #selector(requestScan), for: .touchUpInside)
 
         buttonContainerView.addSubview(firstScanButton)
