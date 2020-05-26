@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "바코드 스캔";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "돌아가기";
@@ -25,15 +25,15 @@
 "product-search.no-results" = "결과를 찾을 수 없습니다. 제품을 스캔하여 Open Food Facts에 제품을 추가하세요.";
 "product-search.error-view.title" = "문제가 발생했습니다";
 "product-search.error-view.subtitle" = "다시 시도해 주세요";
-"product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.slogan" = "무료 식제품 데이터베이스";
+"product-search.initial-view.offline.title-loading" = "오프라인으로 제품 저장 : %d%%";
+"product-search.initial-view.offline.subtitle" = "즉석 스캔에 사용할 수있는 %d 개 이상의 제품";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.user-help" = "제품의 바코드 스캔";
+"product-scanner.overlay.extended-user-help" = "바코드를 찾을 수 없습니다.\n바코드를 화면 중앙에 놓아주세요.\n바코드가 켜져 있는지 확인해주세요.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "스캐너";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "바코드 스캔 중 오류가 발생했습니다. 잠시 후 다시 시도하십시오.";
 "product-scanner.barcode-notfound.manual-enter" = "바코드를 찾을 수 없습니다. 바코드를 직접 입력할 수 있습니다.";
@@ -43,10 +43,10 @@
 "product-scanner.permissions.noPermissions.action.title" = "설정 열기";
 
 "product-scanner.permissions.failed.title" = "바코드 스캔을 시작할 수 없습니다.";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
-"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+"product-scanner.permissions.failed.message" = "개인 정보 설정에서 Open Food Facts에 카메라 사용 권한이 있는지 확인하십시오.";
+"product-scanner.permissions.failed.action.title" = "바코드 스캔 남기기";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "상품 불러오는 중...";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
