@@ -122,6 +122,10 @@ class FormTableViewController: UITableViewController {
     @objc func dismissVC() {
         dismiss(animated: true, completion: nil)
     }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 // MARK: - TableView Data Source
