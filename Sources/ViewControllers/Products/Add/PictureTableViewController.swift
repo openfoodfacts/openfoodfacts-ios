@@ -27,6 +27,7 @@ class PictureTableViewController: TakePictureViewController {
 
         if let product = self.productToEdit {
             fillForm(withProduct: product)
+            languageCode = productToEdit?.lang ?? "qq"
         }
         if let barcode = self.barcode, let pendingUploadItem = dataManager.getItemPendingUpload(forBarcode: barcode) {
             fillForm(withPendingUploadItem: pendingUploadItem)
