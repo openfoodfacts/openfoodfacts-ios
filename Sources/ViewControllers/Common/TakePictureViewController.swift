@@ -63,7 +63,7 @@ class TakePictureViewController: UIViewController {
 
     func postImageSuccess(image: UIImage, forImageType imageType: ImageType) { /* Do nothing, overridable */ }
 
-    func showUploadingImage(forType: ImageType? = .front) {
+    func showUploadingImage(forType: ImageType? = .front, progress: Double?) {
         uploadingImageBanner.show()
     }
 
@@ -83,6 +83,7 @@ extension TakePictureViewController: CameraControllerDelegate {
     func didGetImage(image: UIImage, forImageType imageType: ImageType?, languageCode: String?) {
         // For now, images will be always uploaded with type front
         self.languageCode = languageCode ?? "ww"
+        print("didGetImage - imageType", imageType)
         guard let validBarcode = barcode, let productImage = ProductImage(barcode: validBarcode, image: image, type: imageType ?? .general, languageCode: self.languageCode) else {
             showErrorUploadingImage(forType: imageType)
             return
@@ -99,6 +100,6 @@ extension TakePictureViewController: CameraControllerDelegate {
         }, onError: { [weak self] _ in
             self?.showErrorUploadingImage(forType: imageType)
         })
-        showUploadingImage(forType: imageType)
+        showUploadingImage(forType: imageType, progress: nil)
     }
 }

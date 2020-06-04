@@ -39,6 +39,14 @@ struct Params {
 }
 
 class ProductService: ProductApi {
+    
+    struct NotificationUserInfoKey {
+        static let ImageUploadFractionDouble = "image-upload-fraction-double"
+        static let ImageUploadBarcodeString = "image-upload-barcode-string"
+        static let ImageUploadTypeString = "image-upload-imageType-string"
+        static let ImageUploadLanguageString = "image-upload-language-string"
+    }
+    
     private var lastGetProductsRequest: DataRequest?
 
     private let utilityQueue = DispatchQueue.global(qos: .utility)
@@ -227,6 +235,18 @@ extension ProductService {
                                 upload.authenticate(user: "off", password: "off")
                             #endif
 
+                            // Post a notification on the image upload progress
+                            upload.uploadProgress { progress in
+                                DispatchQueue.main.async {
+                                    NotificationCenter.default.post(name: .imageUploadProgress,
+                                                                    object: nil,
+                                                                    userInfo: [NotificationUserInfoKey.ImageUploadFractionDouble: progress.fractionCompleted,
+                                                                               NotificationUserInfoKey.ImageUploadBarcodeString: productImage.barcode,
+                                                                               NotificationUserInfoKey.ImageUploadTypeString: productImage.type.rawValue,
+                                                                               NotificationUserInfoKey.ImageUploadLanguageString: productImage.languageCode ])
+                                }
+                            }
+
                             log.debug(upload.debugDescription)
                             upload.responseJSON { response in
                                 log.debug(response.debugDescription)
@@ -375,4 +395,7 @@ extension ProductService {
             }
         }
     }
+}
+extension Notification.Name {
+    static let imageUploadProgress = Notification.Name("image-upload-progress")
 }

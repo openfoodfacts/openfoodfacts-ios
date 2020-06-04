@@ -33,6 +33,29 @@ class PictureTableViewController: TakePictureViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.imageUploadProgress(_:)), name: .imageUploadProgress, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.removeObserver(self, name: .imageUploadProgress, object: nil)
+    }
+
+    @objc func imageUploadProgress(_ notification: NSNotification) {
+        guard let validBarcode = productToEdit?.barcode else { return }
+        guard let barcode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadBarcodeString] as? String else { return }
+        guard validBarcode == barcode else { return }
+        // guard let languageCode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadLanguageString] as? String else { return }
+        guard let progress = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadFractionDouble] as? Double else { return }
+        guard let imageTypeRaw = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
+        let imageType = ImageType(imageTypeRaw)
+        print(barcode, progress, imageType)
+        showUploadingImage(forType: imageType, progress: progress)
+
+    }
+
     fileprivate func index(forImageType type: ImageType) -> Int? {
         return pictures.firstIndex(where: { (pic: PictureViewModel) -> Bool in
             return pic.imageType == type
@@ -100,9 +123,10 @@ class PictureTableViewController: TakePictureViewController {
     }
 
     // we override but do NOT call super, because super will display the uploading banner, when we display the loading in the tableview
-    override func showUploadingImage(forType: ImageType?) {
+    override func showUploadingImage(forType: ImageType?, progress: Double?) {
         guard let pictureIndex = index(forImageType: imageType) else { return }
         pictures[pictureIndex].isUploading = true
+        pictures[pictureIndex].uploadProgress = progress
         tableView.reloadRows(at: [IndexPath(row: pictureIndex, section: 0)], with: .automatic)
     }
 
