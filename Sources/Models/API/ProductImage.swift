@@ -16,7 +16,6 @@ enum ImageType: String {
     case general
     
     init(_ value: String) {
-        print(value)
         switch value {
         case "front":
             self = .front

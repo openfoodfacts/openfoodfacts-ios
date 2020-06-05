@@ -82,7 +82,6 @@ extension TakePictureViewController: CameraControllerDelegate {
     func didGetImage(image: UIImage, forImageType imageType: ImageType?, languageCode: String?) {
         // For now, images will be always uploaded with type front
         self.languageCode = languageCode ?? "ww"
-        print("didGetImage - imageType", imageType)
         guard let validBarcode = barcode, let productImage = ProductImage(barcode: validBarcode, image: image, type: imageType ?? .general, languageCode: self.languageCode) else {
             showErrorUploadingImage(forType: imageType)
             return

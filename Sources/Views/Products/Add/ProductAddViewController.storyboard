@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A8v-Ao-FSs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A8v-Ao-FSs">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -550,10 +550,13 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxL-BE-Kxn">
                                             <rect key="frame" x="0.0" y="0.5" width="355" height="50"/>
                                             <subviews>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Hkx-Oc-o2Q">
-                                                    <rect key="frame" x="159" y="6.5" width="37" height="37"/>
-                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </activityIndicatorView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FzZ-t7-k6z" customClass="CircularProgressBar" customModule="OpenFoodFacts" customModuleProvider="target">
+                                                    <rect key="frame" x="157.5" y="5" width="40" height="40"/>
+                                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="FzZ-t7-k6z" secondAttribute="height" multiplier="1:1" id="l36-5E-668"/>
+                                                    </constraints>
+                                                </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zgt-kC-h8w">
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
                                                     <subviews>
@@ -584,12 +587,13 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstItem="FzZ-t7-k6z" firstAttribute="centerY" secondItem="KxL-BE-Kxn" secondAttribute="centerY" id="9OJ-hg-yrr"/>
                                                 <constraint firstAttribute="bottom" secondItem="zgt-kC-h8w" secondAttribute="bottom" id="Dg5-rq-EKu"/>
+                                                <constraint firstItem="FzZ-t7-k6z" firstAttribute="height" secondItem="KxL-BE-Kxn" secondAttribute="height" multiplier="0.8" id="Eqv-gK-MjS"/>
                                                 <constraint firstItem="zgt-kC-h8w" firstAttribute="leading" secondItem="KxL-BE-Kxn" secondAttribute="leading" id="GBt-9d-zaA"/>
                                                 <constraint firstAttribute="height" constant="50" id="e71-M3-xzP"/>
+                                                <constraint firstItem="FzZ-t7-k6z" firstAttribute="centerX" secondItem="KxL-BE-Kxn" secondAttribute="centerX" id="erY-dQ-qtE"/>
                                                 <constraint firstAttribute="trailing" secondItem="zgt-kC-h8w" secondAttribute="trailing" id="mhS-9Z-pYb"/>
-                                                <constraint firstItem="Hkx-Oc-o2Q" firstAttribute="centerX" secondItem="KxL-BE-Kxn" secondAttribute="centerX" id="piP-fk-4dd"/>
-                                                <constraint firstItem="Hkx-Oc-o2Q" firstAttribute="centerY" secondItem="KxL-BE-Kxn" secondAttribute="centerY" id="sSF-D6-Z8m"/>
                                                 <constraint firstItem="zgt-kC-h8w" firstAttribute="top" secondItem="KxL-BE-Kxn" secondAttribute="top" id="y3P-sH-Bwg"/>
                                             </constraints>
                                         </view>
@@ -601,11 +605,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="activityIndicator" destination="Hkx-Oc-o2Q" id="qIe-lJ-TZA"/>
                                     <outlet property="dataStackView" destination="zgt-kC-h8w" id="DhK-mY-UTj"/>
                                     <outlet property="pictureButton" destination="i64-h7-4Hc" id="yNM-s4-DHP"/>
                                     <outlet property="pictureLabel" destination="hk6-Rt-Izo" id="oCQ-7c-Jt7"/>
                                     <outlet property="pictureView" destination="WLV-FE-eZu" id="F1L-QX-pcz"/>
+                                    <outlet property="progressBar" destination="FzZ-t7-k6z" id="Ypl-Ik-Wpn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

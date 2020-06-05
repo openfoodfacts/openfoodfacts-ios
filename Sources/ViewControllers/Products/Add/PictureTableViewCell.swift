@@ -15,26 +15,25 @@ class PictureTableViewCell: UITableViewCell {
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var pictureButton: UIButton!
     @IBOutlet weak var pictureLabel: UILabel!
-
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var progressBar: CircularProgressBar!
 
     override func awakeFromNib() {
         pictureView.contentMode = .scaleAspectFit
     }
 
     func configure(viewModel: PictureViewModel) {
-        if #available(iOS 13.0, *) {
-            activityIndicator.color = UIColor.label
-        } else {
-            activityIndicator.color = UIColor.black
-        }
 
         if viewModel.isUploading {
-            UIView.animate(withDuration: 0.2) {
-                self.dataStackView.alpha = 0
-                self.activityIndicator.startAnimating()
+            progressBar.isHidden = false
+            pictureView.isHidden = true
+            pictureButton.isHidden = true
+            pictureLabel.isHidden = true
+
+            if let validProgress = viewModel.uploadProgress {
+                progressBar.setProgress(to: validProgress, withAnimation: false)
             }
         } else {
+            progressBar.isHidden = true
             if let text = viewModel.text {
                 pictureButton.setTitle(text, for: .normal)
             }
@@ -55,10 +54,6 @@ class PictureTableViewCell: UITableViewCell {
                 pictureView.isHidden = true
                 pictureButton.isHidden = false
                 pictureLabel.isHidden = true
-            }
-            UIView.animate(withDuration: 0.2) {
-                self.dataStackView.alpha = 1
-                self.activityIndicator.stopAnimating()
             }
         }
     }

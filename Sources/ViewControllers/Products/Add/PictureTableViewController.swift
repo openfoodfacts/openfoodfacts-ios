@@ -52,7 +52,6 @@ class PictureTableViewController: TakePictureViewController {
         guard let progress = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadFractionDouble] as? Double else { return }
         guard let imageTypeRaw = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
         let imageType = ImageType(imageTypeRaw)
-        print(barcode, progress, imageType)
         showUploadingImage(forType: imageType, progress: progress)
 
     }
