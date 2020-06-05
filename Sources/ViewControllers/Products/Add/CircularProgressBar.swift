@@ -106,7 +106,7 @@ class CircularProgressBar: UIView {
     }
 
     private var pathCenter: CGPoint {
-        get{ return self.convert(self.center, from:self.superview) }
+        self.convert(self.center, from:self.superview)
     }
 
     private func makeBar() {
