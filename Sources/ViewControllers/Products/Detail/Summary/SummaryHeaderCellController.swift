@@ -16,7 +16,7 @@ class SummaryHeaderCell: HostedViewCell {
 class SummaryHeaderCellController: TakePictureViewController {
     var product: Product!
     var hideSummary: Bool = false
-    
+
     private var imageIsUploading = false
 
     @IBOutlet weak var callToActionView: PictureCallToActionView!
@@ -37,7 +37,7 @@ class SummaryHeaderCellController: TakePictureViewController {
         super.viewDidLoad()
         setupViews()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.imageUploadProgress(_:)), name: .imageUploadProgress, object: nil)
@@ -47,18 +47,22 @@ class SummaryHeaderCellController: TakePictureViewController {
         super.viewWillAppear(animated)
         NotificationCenter.default.removeObserver(self, name: .imageUploadProgress, object: nil)
     }
-    
+
     @objc func imageUploadProgress(_ notification: NSNotification) {
         guard let validBarcode = product?.barcode else { return }
         guard let barcode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadBarcodeString] as? String else { return }
         guard validBarcode == barcode else { return }
         // guard let languageCode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadLanguageString] as? String else { return }
         guard let progress = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadFractionDouble] as? Double else { return }
-        //guard let imageTypeRaw = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
-        imageIsUploading = true
-        callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
-        setupViews()
-        self.callToActionView.setNeedsLayout()
+        guard let imageTypeString = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
+        switch ImageType(imageTypeString) {
+        case .front:
+            imageIsUploading = true
+            callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
+            setupViews()
+            self.callToActionView.setNeedsLayout()
+        default: return
+        }
     }
 
     fileprivate func setupViews() {

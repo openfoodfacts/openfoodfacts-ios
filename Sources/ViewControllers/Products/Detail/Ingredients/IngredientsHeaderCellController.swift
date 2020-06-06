@@ -73,11 +73,15 @@ class IngredientsHeaderCellController: TakePictureViewController {
         guard validBarcode == barcode else { return }
         // guard let languageCode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadLanguageString] as? String else { return }
         guard let progress = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadFractionDouble] as? Double else { return }
-        //guard let imageTypeRaw = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
-        imageIsUploading = true
-        callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
-        setupViews()
-        self.callToActionView.setNeedsLayout()
+        guard let imageTypeString = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
+        switch ImageType(imageTypeString) {
+        case .ingredients:
+            imageIsUploading = true
+            callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
+            setupViews()
+            self.callToActionView.setNeedsLayout()
+        default: return
+        }
     }
 
     fileprivate func setupViews() {

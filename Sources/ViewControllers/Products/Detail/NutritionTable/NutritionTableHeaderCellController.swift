@@ -18,7 +18,7 @@ class NutritionTableHeaderCellController: TakePictureViewController {
     @IBOutlet weak var takePictureButtonView: IconButtonView!
 
     weak var delegate: FormTableViewControllerDelegate?
-    
+
     private var imageIsUploading = false
 
     convenience init(with product: Product, dataManager: DataManagerProtocol) {
@@ -33,7 +33,7 @@ class NutritionTableHeaderCellController: TakePictureViewController {
         super.viewDidLoad()
         setupViews()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.imageUploadProgress(_:)), name: .imageUploadProgress, object: nil)
@@ -50,11 +50,15 @@ class NutritionTableHeaderCellController: TakePictureViewController {
         guard validBarcode == barcode else { return }
         // guard let languageCode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadLanguageString] as? String else { return }
         guard let progress = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadFractionDouble] as? Double else { return }
-        //guard let imageTypeRaw = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
-        imageIsUploading = true
-        callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
-        setupViews()
-        self.callToActionView.setNeedsLayout()
+        guard let imageTypeString = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
+        switch ImageType(imageTypeString) {
+        case .nutrition:
+            imageIsUploading = true
+            callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
+            setupViews()
+            self.callToActionView.setNeedsLayout()
+        default: return
+        }
     }
 
     fileprivate func setupViews() {
