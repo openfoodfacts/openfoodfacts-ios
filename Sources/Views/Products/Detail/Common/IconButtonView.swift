@@ -17,7 +17,7 @@ class IconButtonView: UIView {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var circularProgressBar: CircularProgressBar!
-    
+
     weak var delegate: IconButtonViewDelegate?
 
     override init(frame: CGRect) {

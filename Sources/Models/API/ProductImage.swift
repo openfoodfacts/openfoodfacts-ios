@@ -14,7 +14,7 @@ enum ImageType: String {
     case ingredients
     case nutrition
     case general
-    
+
     init(_ value: String) {
         switch value {
         case "front":

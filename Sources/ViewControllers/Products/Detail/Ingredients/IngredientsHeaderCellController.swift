@@ -19,7 +19,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
                callToActionView?.textLabel.isHidden = false
            }
        }
-    
+
     @IBOutlet weak var takePictureButtonView: IconButtonView! {
         didSet {
             takePictureButtonView?.circularProgressBar.isHidden = true

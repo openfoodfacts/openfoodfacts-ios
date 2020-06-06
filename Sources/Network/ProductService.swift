@@ -39,14 +39,14 @@ struct Params {
 }
 
 class ProductService: ProductApi {
-    
+
     struct NotificationUserInfoKey {
         static let ImageUploadFractionDouble = "image-upload-fraction-double"
         static let ImageUploadBarcodeString = "image-upload-barcode-string"
         static let ImageUploadTypeString = "image-upload-imageType-string"
         static let ImageUploadLanguageString = "image-upload-language-string"
     }
-    
+
     private var lastGetProductsRequest: DataRequest?
 
     private let utilityQueue = DispatchQueue.global(qos: .utility)

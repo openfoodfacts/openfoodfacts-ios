@@ -65,7 +65,9 @@ class FormTableViewController: UITableViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(self, name: .FrontImageIsUpdated, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .IngredientsImageIsUpdated, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .NutritionImageIsUpdated, object: nil)
         super.viewWillDisappear(animated)
     }
 

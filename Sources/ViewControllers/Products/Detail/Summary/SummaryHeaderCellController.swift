@@ -40,7 +40,7 @@ class SummaryHeaderCellController: TakePictureViewController {
             callToActionView?.textLabel.isHidden = false
         }
     }
-    
+
     @IBOutlet weak var scanProductSummaryView: ScanProductSummaryView!
 
     @IBOutlet weak var takePictureButtonView: IconButtonView! {

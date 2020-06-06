@@ -86,7 +86,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(self, name: .productChangesUploaded, object: nil)
         super.viewDidDisappear(animated)
     }
 
