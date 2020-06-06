@@ -17,7 +17,11 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
     var product: Product!
     var dataManager: DataManagerProtocol!
 
-    @IBOutlet weak var editButtonView: IconButtonView!
+    @IBOutlet weak var editButtonView: IconButtonView! {
+        didSet {
+            editButtonView?.circularProgressBar.isHidden = true
+        }
+    }
 
     convenience init(with product: Product, dataManager: DataManagerProtocol) {
         self.init(nibName: String(describing: SummaryFooterCellController.self), bundle: nil)

@@ -50,17 +50,17 @@ class IngredientsHeaderCellController: TakePictureViewController {
 
     private var newImageIsUploading = false {
         didSet {
-            callToActionView?.circularProgressBar.isHidden = newImageIsUploading ? false : true
-            callToActionView?.imageAddButton.isHidden = newImageIsUploading ? true : false
-            callToActionView?.textLabel.isHidden = newImageIsUploading ? true : false
+            callToActionView?.circularProgressBar.isHidden = !newImageIsUploading
+            callToActionView?.imageAddButton.isHidden = newImageIsUploading
+            callToActionView?.textLabel.isHidden = newImageIsUploading
         }
     }
 
     private var replacementImageIsUploading = false {
         didSet {
-            takePictureButtonView?.circularProgressBar.isHidden = replacementImageIsUploading ? false : true
-            takePictureButtonView?.iconImageView.isHidden = replacementImageIsUploading ? true : false
-            takePictureButtonView?.titleLabel.isHidden = replacementImageIsUploading ? true : false
+            takePictureButtonView?.circularProgressBar.isHidden = !replacementImageIsUploading
+            takePictureButtonView?.iconImageView.isHidden = replacementImageIsUploading
+            takePictureButtonView?.titleLabel.isHidden = replacementImageIsUploading
         }
     }
 
@@ -94,20 +94,17 @@ class IngredientsHeaderCellController: TakePictureViewController {
         // guard let languageCode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadLanguageString] as? String else { return }
         guard let progress = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadFractionDouble] as? Double else { return }
         guard let imageTypeString = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
-        switch ImageType(imageTypeString) {
-        case .ingredients:
-            if product.ingredientsImageUrl != nil {
-                replacementImageIsUploading = true
-                takePictureButtonView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
-                setupViews()
-                self.takePictureButtonView.setNeedsLayout()
-            } else {
-                newImageIsUploading = true
-                callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
-                setupViews()
-                self.callToActionView.setNeedsLayout()
-            }
-        default: return
+        guard ImageType(imageTypeString) == .ingredients else { return }
+        if product.ingredientsImageUrl != nil {
+            replacementImageIsUploading = true
+            takePictureButtonView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
+            setupViews()
+            self.takePictureButtonView.setNeedsLayout()
+        } else {
+            newImageIsUploading = true
+            callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
+            setupViews()
+            self.callToActionView.setNeedsLayout()
         }
     }
 
@@ -131,7 +128,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             ingredients.addGestureRecognizer(tap)
             ingredients.isUserInteractionEnabled = true
-            callToActionView.isHidden = true
+            callToActionView?.isHidden = true
             takePictureButtonView?.isHidden = false
         } else {
             ingredients.isHidden = true

@@ -15,11 +15,32 @@ class NutritionTableHeaderCellController: TakePictureViewController {
     @IBOutlet weak var servingSizeLabel: UILabel!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint?
     @IBOutlet weak var callToActionView: PictureCallToActionView!
-    @IBOutlet weak var takePictureButtonView: IconButtonView!
+
+    @IBOutlet weak var takePictureButtonView: IconButtonView! {
+           didSet {
+               takePictureButtonView?.circularProgressBar?.isHidden = true
+               takePictureButtonView?.iconImageView?.isHidden = false
+               takePictureButtonView?.titleLabel?.isHidden = false
+           }
+       }
 
     weak var delegate: FormTableViewControllerDelegate?
 
-    private var imageIsUploading = false
+    private var newImageIsUploading = false {
+        didSet {
+            callToActionView?.circularProgressBar.isHidden = !newImageIsUploading
+            callToActionView?.imageAddButton.isHidden = newImageIsUploading
+            callToActionView?.textLabel.isHidden = newImageIsUploading
+        }
+    }
+
+    private var replacementImageIsUploading = false {
+        didSet {
+            takePictureButtonView?.circularProgressBar.isHidden = !replacementImageIsUploading
+            takePictureButtonView?.iconImageView.isHidden = replacementImageIsUploading
+            takePictureButtonView?.titleLabel.isHidden = replacementImageIsUploading
+        }
+    }
 
     convenience init(with product: Product, dataManager: DataManagerProtocol) {
         self.init(nibName: String(describing: NutritionTableHeaderCellController.self), bundle: nil)
@@ -51,13 +72,18 @@ class NutritionTableHeaderCellController: TakePictureViewController {
         // guard let languageCode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadLanguageString] as? String else { return }
         guard let progress = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadFractionDouble] as? Double else { return }
         guard let imageTypeString = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
-        switch ImageType(imageTypeString) {
-        case .nutrition:
-            imageIsUploading = true
+        guard ImageType(imageTypeString) == .nutrition else { return }
+
+        if product.nutritionTableImage != nil {
+            replacementImageIsUploading = true
+            takePictureButtonView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
+            setupViews()
+            self.takePictureButtonView.setNeedsLayout()
+        } else {
+            newImageIsUploading = true
             callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
             setupViews()
             self.callToActionView.setNeedsLayout()
-        default: return
         }
     }
 
@@ -83,18 +109,15 @@ class NutritionTableHeaderCellController: TakePictureViewController {
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             nutritionTableImage.addGestureRecognizer(tap)
             nutritionTableImage.isUserInteractionEnabled = true
-            callToActionView.isHidden = true
-            takePictureButtonView.isHidden = false
+            callToActionView?.isHidden = true
+            takePictureButtonView?.isHidden = false
         } else {
             nutritionTableImage.isHidden = true
-            callToActionView.isHidden = false
-            takePictureButtonView.isHidden = true
-            callToActionView?.circularProgressBar.isHidden = imageIsUploading ? false : true
-            callToActionView?.imageAddButton.isHidden = imageIsUploading ? true : false
-            callToActionView?.textLabel.isHidden = imageIsUploading ? true : false
-            if !imageIsUploading {
-                callToActionView.textLabel.text = "call-to-action.nutrition".localized
-                callToActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
+            callToActionView?.isHidden = false
+            takePictureButtonView?.isHidden = true
+            if !newImageIsUploading {
+                callToActionView?.textLabel.text = "call-to-action.nutrition".localized
+                callToActionView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapTakePictureButton(_:))))
             }
         }
 
@@ -106,7 +129,11 @@ class NutritionTableHeaderCellController: TakePictureViewController {
     override func postImageSuccess(image: UIImage, forImageType imageType: ImageType) {
         guard super.barcode != nil else { return }
         guard imageType == .nutrition else { return }
-        imageIsUploading = false
+        if product.nutritionTableImage != nil {
+            replacementImageIsUploading = false
+        } else {
+            newImageIsUploading = false
+        }
         // Notification is used by FormTableViewController
         NotificationCenter.default.post(name: .NutritionImageIsUpdated, object: nil, userInfo: nil)
     }
