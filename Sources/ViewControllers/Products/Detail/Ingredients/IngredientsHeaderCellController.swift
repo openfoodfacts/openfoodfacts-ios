@@ -13,7 +13,13 @@ class IngredientsHeaderCellController: TakePictureViewController {
     var product: Product!
     @IBOutlet weak var ingredients: UIImageView!
     @IBOutlet weak var callToActionView: PictureCallToActionView!
-    @IBOutlet weak var takePictureButtonView: IconButtonView!
+    @IBOutlet weak var takePictureButtonView: IconButtonView! {
+        didSet {
+            takePictureButtonView?.circularProgressBar.isHidden = true
+            takePictureButtonView?.iconImageView.isHidden = false
+            takePictureButtonView?.titleLabel.isHidden = false
+        }
+    }
 
     @IBOutlet weak var novaStackView: UIStackView!
     @IBOutlet weak var novagroupView: NovaGroupView!
@@ -42,7 +48,21 @@ class IngredientsHeaderCellController: TakePictureViewController {
 
     weak var delegate: FormTableViewControllerDelegate?
 
-    private var imageIsUploading = false
+    private var newImageIsUploading = false {
+        didSet {
+            callToActionView?.circularProgressBar.isHidden = newImageIsUploading ? false : true
+            callToActionView?.imageAddButton.isHidden = newImageIsUploading ? true : false
+            callToActionView?.textLabel.isHidden = newImageIsUploading ? true : false
+        }
+    }
+
+    private var replacementImageIsUploading = false {
+        didSet {
+            takePictureButtonView?.circularProgressBar.isHidden = replacementImageIsUploading ? false : true
+            takePictureButtonView?.iconImageView.isHidden = replacementImageIsUploading ? true : false
+            takePictureButtonView?.titleLabel.isHidden = replacementImageIsUploading ? true : false
+        }
+    }
 
     convenience init(with product: Product, dataManager: DataManagerProtocol) {
         self.init(nibName: String(describing: IngredientsHeaderCellController.self), bundle: nil)
@@ -76,10 +96,17 @@ class IngredientsHeaderCellController: TakePictureViewController {
         guard let imageTypeString = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
         switch ImageType(imageTypeString) {
         case .ingredients:
-            imageIsUploading = true
-            callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
-            setupViews()
-            self.callToActionView.setNeedsLayout()
+            if product.ingredientsImageUrl != nil {
+                replacementImageIsUploading = true
+                takePictureButtonView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
+                setupViews()
+                self.takePictureButtonView.setNeedsLayout()
+            } else {
+                newImageIsUploading = true
+                callToActionView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
+                setupViews()
+                self.callToActionView.setNeedsLayout()
+            }
         default: return
         }
     }
@@ -105,18 +132,14 @@ class IngredientsHeaderCellController: TakePictureViewController {
             ingredients.addGestureRecognizer(tap)
             ingredients.isUserInteractionEnabled = true
             callToActionView.isHidden = true
-            takePictureButtonView.isHidden = false
+            takePictureButtonView?.isHidden = false
         } else {
             ingredients.isHidden = true
             callToActionView.isHidden = false
             takePictureButtonView.isHidden = true
-            callToActionView?.circularProgressBar.isHidden = imageIsUploading ? false : true
-            callToActionView?.imageAddButton.isHidden = imageIsUploading ? true : false
-            callToActionView?.textLabel.isHidden = imageIsUploading ? true : false
-            if !imageIsUploading {
+            if !newImageIsUploading {
                 callToActionView.textLabel.text = "call-to-action.ingredients".localized
                 callToActionView.addGestureRecognizer( UITapGestureRecognizer( target: self, action: #selector(didTapTakePictureButton(_:))))
-
             }
         }
         if let novaGroupValue = product.novaGroup,
@@ -150,7 +173,11 @@ class IngredientsHeaderCellController: TakePictureViewController {
     override func postImageSuccess(image: UIImage, forImageType imageType: ImageType) {
         guard super.barcode != nil else { return }
         guard imageType == .ingredients else { return }
-        imageIsUploading = false
+        if product.ingredientsImageUrl != nil {
+            replacementImageIsUploading = false
+        } else {
+            newImageIsUploading = false
+        }
         // Notification is used by FormTableViewController
         NotificationCenter.default.post(name: .IngredientsImageIsUpdated, object: nil, userInfo: nil)
     }
