@@ -14,7 +14,14 @@ class NutritionTableHeaderCellController: TakePictureViewController {
     @IBOutlet weak var nutritionTableImage: UIImageView!
     @IBOutlet weak var servingSizeLabel: UILabel!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint?
-    @IBOutlet weak var callToActionView: PictureCallToActionView!
+
+    @IBOutlet weak var callToActionView: PictureCallToActionView! {
+           didSet {
+               callToActionView?.circularProgressBar?.isHidden = true
+               callToActionView?.imageAddButton?.isHidden = false
+               callToActionView?.textLabel?.isHidden = false
+           }
+       }
 
     @IBOutlet weak var takePictureButtonView: IconButtonView! {
            didSet {

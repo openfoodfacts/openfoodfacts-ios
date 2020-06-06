@@ -33,16 +33,23 @@ class SummaryHeaderCellController: TakePictureViewController {
         }
     }
 
-    @IBOutlet weak var callToActionView: PictureCallToActionView!
+    @IBOutlet weak var callToActionView: PictureCallToActionView! {
+        didSet {
+            callToActionView?.circularProgressBar.isHidden = true
+            callToActionView?.imageAddButton.isHidden = false
+            callToActionView?.textLabel.isHidden = false
+        }
+    }
+    
     @IBOutlet weak var scanProductSummaryView: ScanProductSummaryView!
 
     @IBOutlet weak var takePictureButtonView: IconButtonView! {
-           didSet {
-               takePictureButtonView?.circularProgressBar.isHidden = true
-               takePictureButtonView?.iconImageView.isHidden = false
-               takePictureButtonView?.titleLabel.isHidden = false
-           }
-       }
+        didSet {
+            takePictureButtonView?.circularProgressBar.isHidden = true
+            takePictureButtonView?.iconImageView.isHidden = false
+            takePictureButtonView?.titleLabel.isHidden = false
+        }
+    }
 
     convenience init(with product: Product, dataManager: DataManagerProtocol, hideSummary: Bool) {
         self.init(nibName: String(describing: SummaryHeaderCellController.self), bundle: nil)

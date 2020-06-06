@@ -12,7 +12,14 @@ import ImageViewer
 class IngredientsHeaderCellController: TakePictureViewController {
     var product: Product!
     @IBOutlet weak var ingredients: UIImageView!
-    @IBOutlet weak var callToActionView: PictureCallToActionView!
+    @IBOutlet weak var callToActionView: PictureCallToActionView! {
+           didSet {
+               callToActionView?.circularProgressBar.isHidden = true
+               callToActionView?.imageAddButton.isHidden = false
+               callToActionView?.textLabel.isHidden = false
+           }
+       }
+    
     @IBOutlet weak var takePictureButtonView: IconButtonView! {
         didSet {
             takePictureButtonView?.circularProgressBar.isHidden = true
