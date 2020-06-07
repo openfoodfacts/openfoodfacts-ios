@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable class PictureCallToActionView: UIView {
 
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var circularProgressBar: CircularProgressBar!
+    @IBOutlet weak var imageAddButton: UIImageView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)

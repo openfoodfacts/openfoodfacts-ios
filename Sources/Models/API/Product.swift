@@ -48,6 +48,11 @@ enum ImageTypeCategory {
         }
     }
 
+    init(_ value: String) {
+        print(value)
+        self = .general
+    }
+
     static var list: [ImageTypeCategory] {
         return [.front, .ingredients, .nutrition]
     }

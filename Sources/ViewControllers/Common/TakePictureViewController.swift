@@ -62,7 +62,7 @@ class TakePictureViewController: UIViewController {
 
     func postImageSuccess(image: UIImage, forImageType imageType: ImageType) { /* Do nothing, overridable */ }
 
-    func showUploadingImage(forType: ImageType? = .front) {
+    func showUploadingImage(forType: ImageType? = .front, progress: Double?) {
         uploadingImageBanner.show()
     }
 
@@ -98,6 +98,6 @@ extension TakePictureViewController: CameraControllerDelegate {
         }, onError: { [weak self] _ in
             self?.showErrorUploadingImage(forType: imageType)
         })
-        showUploadingImage(forType: imageType)
+        showUploadingImage(forType: imageType, progress: nil)
     }
 }

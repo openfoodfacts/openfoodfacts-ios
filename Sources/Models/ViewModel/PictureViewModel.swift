@@ -16,6 +16,7 @@ struct PictureViewModel {
     var imageUrl: String?
     let uploadedPictureText: String?
     var isUploading: Bool = false
+    var uploadProgress: Double?
 }
 // Should the languageCode of the picture be added?
 

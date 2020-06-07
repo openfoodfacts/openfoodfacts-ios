@@ -14,6 +14,19 @@ enum ImageType: String {
     case ingredients
     case nutrition
     case general
+
+    init(_ value: String) {
+        switch value {
+        case "front":
+            self = .front
+        case "ingredients":
+            self = .ingredients
+        case "nutrition":
+            self = .nutrition
+        default:
+            self = .general
+        }
+    }
 }
 
 struct ProductImage {
