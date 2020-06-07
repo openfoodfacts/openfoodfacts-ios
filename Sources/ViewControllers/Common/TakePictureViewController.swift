@@ -43,7 +43,6 @@ class TakePictureViewController: UIViewController {
         }
         guard var cameraController = self.cameraController else { return }
         cameraController.delegate = self
-        //let kjadfh = self.product.lang
         cameraController.languageCode = languageCode
 
         if let vcs = self as? SummaryHeaderCellController {
@@ -56,7 +55,7 @@ class TakePictureViewController: UIViewController {
             cameraController.imageType = .nutrition
             cameraController.languageCode = vcs.product.lang
         } else {
-            cameraController.imageType = .general
+            cameraController.imageType = self.imageType
         }
         cameraController.show()
     }
