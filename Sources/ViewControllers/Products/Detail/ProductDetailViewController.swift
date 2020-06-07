@@ -16,6 +16,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     var product: Product!
     var latestRobotoffQuestions: [RobotoffQuestion] = []
     var dataManager: DataManagerProtocol!
+    private var notificationCentertoken: NotificationCenterToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +24,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         buttonBarView.register(UINib(nibName: "ButtonBarView", bundle: nil), forCellWithReuseIdentifier: "Cell")
         if #available(iOS 13.0, *) {
             buttonBarView.backgroundColor = .systemBackground
-        } else {
-            buttonBarView.backgroundColor = .white
-        }
-        if #available(iOS 13.0, *) {
             settings.style.selectedBarBackgroundColor = .secondarySystemBackground
         } else {
+            buttonBarView.backgroundColor = .white
             settings.style.selectedBarBackgroundColor = .white
         }
         buttonBarView.selectedBar.backgroundColor = self.view.tintColor
@@ -47,7 +45,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
         setUserAgent()
 
-        _ = NotificationCenter.default.observe(name: .productChangesUploaded, object: nil, queue: .main) { [weak self] notif in
+        notificationCentertoken = NotificationCenter.default.observe(
+            name: .productChangesUploaded,
+            object: nil,
+            queue: .main
+        ) { [weak self] notif in
             guard let barcode = notif.userInfo?["barcode"] as? String else {
                 return
             }
