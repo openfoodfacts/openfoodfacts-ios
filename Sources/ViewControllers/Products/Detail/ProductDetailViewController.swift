@@ -16,6 +16,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     var product: Product!
     var latestRobotoffQuestions: [RobotoffQuestion] = []
     var dataManager: DataManagerProtocol!
+    private var notificationCentertoken: NotificationCenterToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +24,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         buttonBarView.register(UINib(nibName: "ButtonBarView", bundle: nil), forCellWithReuseIdentifier: "Cell")
         if #available(iOS 13.0, *) {
             buttonBarView.backgroundColor = .systemBackground
-        } else {
-            buttonBarView.backgroundColor = .white
-        }
-        if #available(iOS 13.0, *) {
             settings.style.selectedBarBackgroundColor = .secondarySystemBackground
         } else {
+            buttonBarView.backgroundColor = .white
             settings.style.selectedBarBackgroundColor = .white
         }
         buttonBarView.selectedBar.backgroundColor = self.view.tintColor
@@ -47,7 +45,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
         setUserAgent()
 
-        NotificationCenter.default.addObserver(forName: .productChangesUploaded, object: nil, queue: .main) { [weak self] notif in
+        notificationCentertoken = NotificationCenter.default.observe(
+            name: .productChangesUploaded,
+            object: nil,
+            queue: .main
+        ) { [weak self] notif in
             guard let barcode = notif.userInfo?["barcode"] as? String else {
                 return
             }
@@ -83,11 +85,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             buttons.remove(at: 0)
             navigationItem.rightBarButtonItems = buttons
         }
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: .productChangesUploaded, object: nil)
-        super.viewDidDisappear(animated)
     }
 
     fileprivate func refreshLatestRobotoffQuestion() {
@@ -358,7 +355,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Nutriscore cell
         if product.nutriscore != nil {
             // created to pass on the delegate with the nutriscore
-            let headerRow = NutritionScoreTableRow(delegate, nutriscore: product.nutriscore)
+            let headerRow = NutritionScoreTableRow(delegate as? NutritionHeaderTableViewCellDelegate, nutriscore: product.nutriscore)
             createFormRow(with: &rows, item: headerRow, cellType: NutritionHeaderTableViewCell.self)
         }
 

@@ -10,45 +10,18 @@ import Alamofire
 import AlamofireObjectMapper
 import Crashlytics
 
-enum TaxonomiesRouter: URLRequestConvertible {
-    case getAllergens, getAdditives, getCategories, getCountries, getNutriments, getVitamins, getMinerals, getNucleotides, getIngredientsAnalysis, getIngredientsAnalysisConfig, getInvalidBarcodes // get OtherNutritionalSubstances
-
-    var path: String {
-        switch self {
-        case .getAllergens: return "taxonomies/allergens.json"
-        case .getAdditives: return "taxonomies/additives.json"
-        case .getCategories: return "taxonomies/categories.json"
-        case .getCountries: return "taxonomies/countries.json"
-        case .getNutriments: return "taxonomies/nutrients.json"
-        case .getIngredientsAnalysis: return "taxonomies/ingredients_analysis.json"
-        case .getIngredientsAnalysisConfig: return "/files/app/ingredients-analysis.json"
-        case .getVitamins: return "taxonomies/vitamins.json"
-        case .getMinerals: return "taxonomies/minerals.json"
-        case .getNucleotides: return "taxonomies/nucleotides.json"
-        case .getInvalidBarcodes: return "invalid-barcodes.json"
-            // what is up with this url?
-        // case .getOtherNutritionalSubstances: return "otherNutritionalSubstances.json"
-        }
-    }
-
-    // MARK: URLRequestConvertible
-
-    func asURLRequest() throws -> URLRequest {
-        var urlStr = ""
-        if self != .getIngredientsAnalysisConfig {
-            urlStr = Endpoint.get + "/data/" + self.path
-        } else {
-            urlStr = Endpoint.get + self.path
-        }
-        guard let url = URL(string: urlStr) else {
-            throw NSError(domain: "Taxonomies url could not be constructed", code: Errors.codes.generic.rawValue, userInfo: ["path": self.path])
-        }
-
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = HTTPMethod.get.rawValue
-
-        return urlRequest
-    }
+enum TaxonomiesRoute: String {
+    case getAllergens = "taxonomies/allergens.json"
+    case getAdditives = "taxonomies/additives.json"
+    case getCategories = "taxonomies/categories.json"
+    case getCountries = "taxonomies/countries.json"
+    case getNutriments = "taxonomies/nutrients.json"
+    case getIngredientsAnalysis = "taxonomies/ingredients_analysis.json"
+    case getIngredientsAnalysisConfig = "/files/app/ingredients-analysis.json"
+    case getVitamins = "taxonomies/vitamins.json"
+    case getMinerals = "taxonomies/minerals.json"
+    case getNucleotides = "taxonomies/nucleotides.json"
+    case getInvalidBarcodes = "invalid-barcodes.json"
 }
 
 enum FilesRouter: URLRequestConvertible {
@@ -88,261 +61,225 @@ protocol TaxonomiesApi {
 
 class TaxonomiesService: TaxonomiesApi {
     var persistenceManager: PersistenceManagerProtocol!
+    private let taxonomiesParser: TaxonomiesParserProtocol
+
+    init(taxonomiesParser: TaxonomiesParserProtocol) {
+        self.taxonomiesParser = taxonomiesParser
+    }
 
     fileprivate func refreshCategories(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getCategories)
-            .responseJSON { (response) in
-                var success = false
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String: Any] {
-                        let categories = json.compactMap({ (categoryCode: String, value: Any) -> Category? in
-                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
-                                return nil
-                            }
-                            let names = name.map({ (languageCode: String, value: String) -> Tag in
-                                return Tag(languageCode: languageCode, value: value)
-                            })
-                            return Category(code: categoryCode,
-                                            parents: value["parents"] as? [String] ?? [String](),
-                                            children: value["children"] as? [String] ?? [String](),
-                                            names: names)
-                        })
-                        self.persistenceManager.save(categories: categories)
-                        success = true
+        do {
+            let request = try TaxonomiesRequest(route: .getCategories, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String: Any] {
+                            let categories = self.taxonomiesParser.parseCategories(data: json)
+                            self.persistenceManager.save(categories: categories)
+                            callback(true)
+                        }
+                    case .failure(let error):
+                        Crashlytics.sharedInstance().recordError(error)
+                        callback(false)
                     }
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                }
-
-                callback(success)
+            }
+        } catch {
+            callback(false)
         }
     }
 
     fileprivate func refreshCountries(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getCountries)
-            .responseJSON { (response) in
-                var success = false
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String: Any] {
-                        let countries = json.compactMap({ (countryCode: String, value: Any) -> Country? in
-                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
-                                return nil
-                            }
-                            let names = name.map({ (languageCode: String, value: String) -> Tag in
-                                return Tag(languageCode: languageCode, value: value)
-                            })
-                            return Country(code: countryCode,
-                                            parents: value["parents"] as? [String] ?? [String](),
-                                            children: value["children"] as? [String] ?? [String](),
-                                            names: names)
-                        })
-                        self.persistenceManager.save(countries: countries)
-                        success = true
+        do {
+            let request = try TaxonomiesRequest(route: .getCountries, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    var success = false
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String: Any] {
+                            let countries = self.taxonomiesParser.parseCountries(data: json)
+                            self.persistenceManager.save(countries: countries)
+                            success = true
+                        }
+                    case .failure(let error):
+                        Crashlytics.sharedInstance().recordError(error)
                     }
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                }
 
-                callback(success)
+                    callback(success)
+            }
+        } catch {
+            callback(false)
         }
     }
 
     fileprivate func refreshAllergens(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getAllergens)
-            .responseJSON { (response) in
-                var success = false
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String: Any] {
-                        let allergens = json.compactMap({ (allergenCode: String, value: Any) -> Allergen? in
-                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
-                                return nil
-                            }
-                            let names = name.map({ (languageCode: String, value: String) -> Tag in
-                                return Tag(languageCode: languageCode, value: value)
-                            })
-                            return Allergen(code: allergenCode, names: names)
-                        })
-                        self.persistenceManager.save(allergens: allergens)
-                        success = true
+        do {
+            let request = try TaxonomiesRequest(route: .getAllergens, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    var success = false
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String: Any] {
+                            let allergens = self.taxonomiesParser.parseAllergens(data: json)
+                            self.persistenceManager.save(allergens: allergens)
+                            success = true
+                        }
+                    case .failure(let error):
+                        Crashlytics.sharedInstance().recordError(error)
                     }
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                }
-
-                callback(success)
+                    callback(success)
+            }
+        } catch {
+            callback(false)
         }
     }
 
     fileprivate func refreshVitamins(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getVitamins)
-            .responseJSON { (response) in
-                var success = false
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String: Any] {
-                        let vitamins = json.compactMap({ (vitaminCode: String, value: Any) -> Vitamin? in
-                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
-                                return nil
-                            }
-                            let names = name.map({ (languageCode: String, value: String) -> Tag in
-                                return Tag(languageCode: languageCode, value: value)
-                            })
-                            return Vitamin(code: vitaminCode, names: names)
-                        })
-                        self.persistenceManager.save(vitamins: vitamins)
-                        success = true
+        do {
+            let request = try TaxonomiesRequest(route: .getVitamins, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    var success = false
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String: Any] {
+                            let vitamins = self.taxonomiesParser.parseVitamins(data: json)
+                            self.persistenceManager.save(vitamins: vitamins)
+                            success = true
+                        }
+                    case .failure(let error):
+                        Crashlytics.sharedInstance().recordError(error)
                     }
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                }
-
-                callback(success)
+                    callback(success)
+            }
+        } catch {
+            callback(false)
         }
     }
 
     fileprivate func refreshMinerals(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getMinerals)
-            .responseJSON { (response) in
-                var success = false
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String: Any] {
-                        let minerals = json.compactMap({ (mineralCode: String, value: Any) -> Mineral? in
-                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
-                                return nil
-                            }
-                            let names = name.map({ (languageCode: String, value: String) -> Tag in
-                                return Tag(languageCode: languageCode, value: value)
-                            })
-                            return Mineral(code: mineralCode, names: names)
-                        })
-                        self.persistenceManager.save(minerals: minerals)
-                        success = true
+        do {
+            let request = try TaxonomiesRequest(route: .getMinerals, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    var success = false
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String: Any] {
+                            let minerals = self.taxonomiesParser.parseMinerals(data: json)
+                            self.persistenceManager.save(minerals: minerals)
+                            success = true
+                        }
+                    case .failure(let error):
+                        Crashlytics.sharedInstance().recordError(error)
                     }
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                }
-
-                callback(success)
+                    callback(success)
+            }
+        } catch {
+            callback(false)
         }
     }
 
     fileprivate func refreshNucleotides(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getNucleotides)
-            .responseJSON { (response) in
-                var success = false
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String: Any] {
-                        let nucleotides = json.compactMap({ (nucleotideCode: String, value: Any) -> Nucleotide? in
-                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
-                                return nil
-                            }
-                            let names = name.map({ (languageCode: String, value: String) -> Tag in
-                                return Tag(languageCode: languageCode, value: value)
+        do {
+            let request = try TaxonomiesRequest(route: .getNucleotides, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    var success = false
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String: Any] {
+                            let nucleotides = json.compactMap({ (nucleotideCode: String, value: Any) -> Nucleotide? in
+                                guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
+                                    return nil
+                                }
+                                let names = name.map({ (languageCode: String, value: String) -> Tag in
+                                    return Tag(languageCode: languageCode, value: value)
+                                })
+                                return Nucleotide(code: nucleotideCode, names: names)
                             })
-                            return Nucleotide(code: nucleotideCode, names: names)
-                        })
-                        self.persistenceManager.save(nucleotides: nucleotides)
-                        success = true
+                            self.persistenceManager.save(nucleotides: nucleotides)
+                            success = true
+                        }
+                    case .failure(let error):
+                        Crashlytics.sharedInstance().recordError(error)
                     }
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                }
-
-                callback(success)
+                    callback(success)
+            }
+        } catch {
+            callback(false)
         }
     }
 
     fileprivate func refreshNutriments(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getNutriments)
-            .responseJSON { (response) in
-                var success = false
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String: Any] {
-                        let nutriments = json.compactMap({ (nutrimentCode: String, value: Any) -> Nutriment? in
-                            guard let name = value as? [String: Any] else {
-                                return nil
-                            }
-                            let names = name.compactMap({ (languageCode: String, value: Any) -> Tag? in
-                                if let value = value as? String {
-                                    return Tag(languageCode: languageCode, value: value)
-                                }
-                                return nil
-                            })
-                            return Nutriment(code: nutrimentCode, names: names)
-                        })
-                        self.persistenceManager.save(nutriments: nutriments)
-                        success = true
+        do {
+            let request = try TaxonomiesRequest(route: .getNutriments, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    var success = false
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String: Any] {
+                            let nutriments = self.taxonomiesParser.parseNutriments(data: json)
+                            self.persistenceManager.save(nutriments: nutriments)
+                            success = true
+                        }
+                    case .failure(let error):
+                        Crashlytics.sharedInstance().recordError(error)
                     }
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                }
 
-                callback(success)
+                    callback(success)
+            }
+        } catch {
+            callback(false)
         }
     }
 
     fileprivate func refreshAdditives(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getAdditives)
-            .responseJSON { (response) in
-                var success = false
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String: Any] {
-                        let additives = json.compactMap({ (additiveCode: String, value: Any) -> Additive? in
-                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
-                                return nil
-                            }
-                            let names = name.map({ (languageCode: String, value: String) -> Tag in
-                                return Tag(languageCode: languageCode, value: value)
-                            })
-                            return Additive(code: additiveCode, names: names)
-                        })
-                        self.persistenceManager.save(additives: additives)
-                        success = true
+        do {
+            let request = try TaxonomiesRequest(route: .getAdditives, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    var success = false
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String: Any] {
+                            let additives = self.taxonomiesParser.parseAdditives(data: json)
+                            self.persistenceManager.save(additives: additives)
+                            success = true
+                        }
+                    case .failure(let error):
+                        Crashlytics.sharedInstance().recordError(error)
                     }
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                }
-
-                callback(success)
+                    callback(success)
+            }
+        } catch {
+            callback(false)
         }
     }
 
     fileprivate func refreshIngredientsAnalysis(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getIngredientsAnalysis)
-            .responseJSON { (response) in
-                var success = false
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String: Any] {
-                        let ingredientsAnalysis = json.compactMap({ (ingredientAnalysisCode: String, value: Any) -> IngredientsAnalysis? in
-                            guard let value = value as? [String: Any], let name = value["name"] as? [String: String] else {
-                                return nil
-                            }
-                            let names = name.map({ (languageCode: String, value: String) -> Tag in
-                                return Tag(languageCode: languageCode, value: value)
-                            })
-
-                            let showIngredientsTag = (value["show_ingredients"] as? [String: String])?["en"]
-
-                            return IngredientsAnalysis(code: ingredientAnalysisCode,
-                                                       names: names,
-                                                       showIngredientsTag: showIngredientsTag)
-                        })
-                        self.persistenceManager.save(ingredientsAnalysis: ingredientsAnalysis)
-                        success = true
+        do {
+            let request = try TaxonomiesRequest(route: .getIngredientsAnalysis, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    var success = false
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String: Any] {
+                            let ingredientsAnalysis = self.taxonomiesParser.parseIngredientsAnalysis(data: json)
+                            self.persistenceManager.save(ingredientsAnalysis: ingredientsAnalysis)
+                            success = true
+                        }
+                    case .failure(let error):
+                        Crashlytics.sharedInstance().recordError(error)
                     }
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                }
-
-                callback(success)
+                    callback(success)
+            }
+        } catch {
+            callback(false)
         }
     }
 
@@ -353,18 +290,7 @@ class TaxonomiesService: TaxonomiesApi {
                 switch response.result {
                 case .success(let responseBody):
                     if let json = responseBody as? [String: Any] {
-                        let ingredientsAnalysisConfig = json.compactMap({ (ingredientAnalysisConfigCode: String, value: Any) -> IngredientsAnalysisConfig? in
-                            guard let value = value as? [String: String] else {
-                                return nil
-                            }
-                            guard let type = value["type"], let icon = value["icon"], let color = value["color"] else {
-                                return nil
-                            }
-                            return IngredientsAnalysisConfig(code: ingredientAnalysisConfigCode,
-                                                             type: type,
-                                                             icon: icon,
-                                                             color: color)
-                        })
+                        let ingredientsAnalysisConfig = self.taxonomiesParser.parseIngredientsAnalysisConfig(data: json)
                         self.persistenceManager.save(ingredientsAnalysisConfig: ingredientsAnalysisConfig)
                         success = true
                     }
@@ -409,22 +335,26 @@ class TaxonomiesService: TaxonomiesApi {
     }
 
     fileprivate func refreshInvalidBarcodes(_ callback: @escaping (_: Bool) -> Void) {
-        Alamofire.request(TaxonomiesRouter.getInvalidBarcodes)
-            .responseJSON { (response) in
-                var success = false
-                switch response.result {
-                case .success(let responseBody):
-                    if let json = responseBody as? [String] {
-                        let values = json.map { InvalidBarcode(barcode: $0) }
-                        self.persistenceManager.clearInvalidBarcodes()
-                        self.persistenceManager.save(invalidBarcodes: values)
-                        success = true
+        do {
+            let request = try TaxonomiesRequest(route: .getInvalidBarcodes, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    var success = false
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String] {
+                            let values = json.map { InvalidBarcode(barcode: $0) }
+                            self.persistenceManager.clearInvalidBarcodes()
+                            self.persistenceManager.save(invalidBarcodes: values)
+                            success = true
+                        }
+                    case .failure(let error):
+                        Crashlytics.sharedInstance().recordError(error)
                     }
-                case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
-                }
-
-            callback(success)
+                callback(success)
+            }
+        } catch {
+             callback(false)
         }
     }
 
@@ -462,7 +392,6 @@ class TaxonomiesService: TaxonomiesApi {
     private func downloadTaxonomies() {
         DispatchQueue.global(qos: .utility).async {
             let group = DispatchGroup()
-
             var allSuccess = true
 
             group.enter()

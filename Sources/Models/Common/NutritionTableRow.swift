@@ -24,10 +24,10 @@ struct NutritionTableRow {
 }
 
 struct NutritionScoreTableRow {
-    let delegate: Any?
+    weak var delegate: NutritionHeaderTableViewCellDelegate?
     let nutriscore: String?
 
-    init(_ delegate: Any?, nutriscore: String?) {
+    init(_ delegate: NutritionHeaderTableViewCellDelegate?, nutriscore: String?) {
         self.delegate = delegate
         self.nutriscore = nutriscore
     }

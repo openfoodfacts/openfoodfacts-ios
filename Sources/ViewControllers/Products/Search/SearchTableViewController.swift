@@ -118,12 +118,14 @@ class SearchTableViewController: UITableViewController, DataManagerClient {
         }
 
         // The selector searchTextField is obliged under IOS 13, but does not exist before that version.
-        if searchController.searchBar.responds(to: #selector(getter: UISearchBar.searchTextField)) {
-            searchController.searchBar.searchTextField.isAccessibilityElement = true
-            //searchController.searchBar.searchTextField.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
-        } else if let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField {
-            searchField.isAccessibilityElement = true
-            //searchField.accessibilityIdentifier = AccessibilityIdentifiers.productSearchBar
+        if #available(iOS 13.0, *) {
+            if searchController.searchBar.responds(to: #selector(getter: UISearchBar.searchTextField)) {
+                searchController.searchBar.searchTextField.isAccessibilityElement = true
+            }
+        } else {
+            if let searchField = searchController.searchBar.value(forKey: "_searchField") as? UITextField {
+                searchField.isAccessibilityElement = true
+            }
         }
     }
 

@@ -30,7 +30,8 @@ class RootViewController: UIViewController {
         let productApi = ProductService()
         let persistenceManager = PersistenceManager()
 
-        let taxonomiesApi = TaxonomiesService()
+        let taxonomiesParser = TaxonomiesParser()
+        let taxonomiesApi = TaxonomiesService(taxonomiesParser: taxonomiesParser)
         taxonomiesApi.persistenceManager = persistenceManager
         taxonomiesApi.refreshTaxonomiesFromServerIfNeeded()
 
