@@ -22,7 +22,7 @@
 
 "product-search.title" = "Wyszukaj";
 "product-search.search-placeholder" = "Wyszukaj produktu według nazwy lub kodu kreskowego";
-"product-search.no-results" = "Brak wyników";
+"product-search.no-results" = "Brak wyników. Możesz dodać produkt do Open Food Facts skanując go.";
 "product-search.error-view.title" = "Coś poszło nie tak";
 "product-search.error-view.subtitle" = "Proszę spróbować ponownie";
 "product-search.initial-view.slogan" = "ogólnodostępna baza danych o produktach żywnościowych";
@@ -35,15 +35,15 @@
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Skaner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Błąd podczas skanowania kodu kreskowego. Spróbuj za kilka chwil.";
+"product-scanner.barcode.error" = "Błąd podczas skanowania kodu kreskowego. Spróbuj ponownie za chwilę.";
 "product-scanner.barcode-notfound.manual-enter" = "Nie znaleziono kodu kreskowego. Możesz wprowadzić go ręcznie:";
 
 "product-scanner.permissions.noPermissions.title" = "OpenFoodFacts wymaga dostępu do aparatu";
 "product-scanner.permissions.noPermissions.message" = "Proszę udziel uprawnienia aparatu, aby móc skanować kody kreskowe";
-"product-scanner.permissions.noPermissions.action.title" = "Otwórz ustawienia";
+"product-scanner.permissions.noPermissions.action.title" = "Ustawienia";
 
-"product-scanner.permissions.failed.title" = "Nie można skonfigurować skanowania kodów kreskowych";
-"product-scanner.permissions.failed.message" = "W celu sprawdzenia, czy Open Food Facts ma pozwolenie na korzystanie z aparatu, należy przejść do ustawień prywatności";
+"product-scanner.permissions.failed.title" = "Nie można rozpocząć skanowania kodów kreskowych.";
+"product-scanner.permissions.failed.message" = "Upewnij się w ustawieniach prywatności, że Open Food Facts ma pozwolenie na korzystanie z aparatu";
 "product-scanner.permissions.failed.action.title" = "Wyjdź ze skanowania kodów kreskowych";
 
 "product-scanner.search.status" = "Ładowanie produktu...";
