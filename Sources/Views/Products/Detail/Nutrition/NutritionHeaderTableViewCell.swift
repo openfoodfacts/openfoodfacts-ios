@@ -39,7 +39,7 @@ class NutritionHeaderTableViewCell: ProductDetailBaseCell {
         } else {
             nutriscoreView.isHidden = true
         }
-        self.delegate = nutriscoreTableRow.delegate as? NutritionHeaderTableViewCellDelegate
+        self.delegate = nutriscoreTableRow.delegate
     }
 
     public weak var delegate: NutritionHeaderTableViewCellDelegate?
