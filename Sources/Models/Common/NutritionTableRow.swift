@@ -26,9 +26,13 @@ struct NutritionTableRow {
 struct NutritionScoreTableRow {
     weak var delegate: NutritionHeaderTableViewCellDelegate?
     let nutriscore: String?
+    let noFiberWarning: Bool
+    let noFruitsVegetablesNutsWarning: Bool
 
-    init(_ delegate: NutritionHeaderTableViewCellDelegate?, nutriscore: String?) {
+    init(_ delegate: NutritionHeaderTableViewCellDelegate?, nutriscore: String?, noFiberWarning: Bool, noFruitsVegetablesNutsWarning: Bool) {
         self.delegate = delegate
         self.nutriscore = nutriscore
+        self.noFiberWarning = noFiberWarning
+        self.noFruitsVegetablesNutsWarning = noFruitsVegetablesNutsWarning
     }
 }

@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
             <connections>
+                <outlet property="disclaimerLabel" destination="V4x-Ze-ruc" id="1Md-xG-gtB"/>
                 <outlet property="imageView" destination="djc-QD-bVB" id="uZ2-1a-q6R"/>
                 <outlet property="view" destination="iN0-l3-epB" id="HtG-AS-8fB"/>
             </connections>
@@ -19,18 +20,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nutriscore-b" translatesAutoresizingMaskIntoConstraints="NO" id="djc-QD-bVB">
-                    <rect key="frame" x="38.5" y="0.0" width="233" height="126"/>
+                    <rect key="frame" x="44" y="0.0" width="222" height="120"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="djc-QD-bVB" secondAttribute="height" multiplier="389:210" id="Kqk-qw-rwm"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-Ze-ruc">
+                    <rect key="frame" x="0.0" y="116" width="310" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="xbh-8r-4wV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="djc-QD-bVB" firstAttribute="bottom" secondItem="V4x-Ze-ruc" secondAttribute="top" constant="4" id="VAV-mb-jzK"/>
                 <constraint firstItem="djc-QD-bVB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="X21-1X-ZfM"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="V4x-Ze-ruc" secondAttribute="bottom" id="X85-ks-a6w"/>
                 <constraint firstItem="djc-QD-bVB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" id="aKc-Oi-MCf"/>
-                <constraint firstItem="djc-QD-bVB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aVT-qJ-hlY"/>
+                <constraint firstItem="V4x-Ze-ruc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bHZ-PL-bhw"/>
                 <constraint firstItem="djc-QD-bVB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xVs-ck-1hk"/>
+                <constraint firstItem="V4x-Ze-ruc" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="yxj-OD-779"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

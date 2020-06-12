@@ -12,6 +12,16 @@ import UIKit
 
     @IBOutlet var view: UIView!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var noFruitsVegetablesNutsDisclaimerLabel: UILabel! {
+        didSet {
+            setNoFruitsVegetablesNutsDisclaimer()
+        }
+    }
+    @IBOutlet weak var noFiberDisclaimerLabel: UILabel! {
+        didSet {
+            setNoFiberDisclaimer()
+        }
+    }
 
     // swiftlint:disable identifier_name
     public enum Score: String {
@@ -34,8 +44,39 @@ import UIKit
         }
     }
 
+    public var noFiberWarning: Bool {
+        didSet {
+            setNoFiberDisclaimer()
+        }
+    }
+    
+    private func setNoFruitsVegetablesNutsDisclaimer() {
+        if noFiberWarning {
+            self.noFruitsVegetablesNutsDisclaimerLabel?.isHidden = true
+            self.noFruitsVegetablesNutsDisclaimerLabel?.text = "".localized
+        } else {
+            self.noFruitsVegetablesNutsDisclaimerLabel?.isHidden = false
+            self.noFruitsVegetablesNutsDisclaimerLabel?.text = nil
+        }
+    }
+
+    public var noFruitsVegetablesNutsWarning: Bool {
+        didSet {
+            setNoFiberDisclaimer()
+        }
+    }
+
+    private func setNoFiberDisclaimer() {
+        if noFiberWarning {
+            self.noFiberDisclaimerLabel?.isHidden = true
+            self.noFiberDisclaimerLabel?.text = "".localized
+        } else {
+            self.noFiberDisclaimerLabel?.isHidden = false
+            self.noFiberDisclaimerLabel?.text = nil
+        }
+    }
     //
-    // https://stackoverflow.com/questions/39816898/be-able-to-load-xib-from-both-storyboard-and-viewcontroller
+//https://stackoverflow.com/questions/39816898/be-able-to-load-xib-from-both-storyboard-and-viewcontroller
     //
     override init(frame: CGRect) {
         super.init(frame: frame)
