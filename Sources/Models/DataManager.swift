@@ -6,11 +6,11 @@
 //  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 import AlamofireImage
 import Crashlytics
 import UIKit
+import WebKit
 
 extension Notification.Name {
     static let productChangesUploaded = Notification.Name("product-changes-uploaded")
@@ -138,8 +138,11 @@ class DataManager: DataManagerProtocol {
     // MARK: - User
 
     func logIn(username: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        if let originalUserAgent = UIWebView().stringByEvaluatingJavaScript(from: "navigator.userAgent") {
-            UserDefaults.standard.register(defaults: ["UserAgent": originalUserAgent])
+        WKWebView().evaluateJavaScript("navigator.userAgent") { (result, error) in
+            if error != nil,
+                let userAgent = result as? String {
+                UserDefaults.standard.register(defaults: ["UserAgent": userAgent])
+            }
         }
 
         productApi.logIn(username: username, password: password, onSuccess: {
