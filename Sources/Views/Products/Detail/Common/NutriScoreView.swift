@@ -33,6 +33,7 @@ import UIKit
     }
     // swiftlint:enable identifier_name
 
+/// The NutriScore of the product.
     public var currentScore: Score? = nil {
         didSet {
             if let currentScore = currentScore {
@@ -44,37 +45,42 @@ import UIKit
         }
     }
 
-    public var noFiberWarning: Bool {
-        didSet {
-            setNoFiberDisclaimer()
-        }
-    }
-    
-    private func setNoFruitsVegetablesNutsDisclaimer() {
-        if noFiberWarning {
-            self.noFruitsVegetablesNutsDisclaimerLabel?.isHidden = true
-            self.noFruitsVegetablesNutsDisclaimerLabel?.text = "".localized
-        } else {
-            self.noFruitsVegetablesNutsDisclaimerLabel?.isHidden = false
-            self.noFruitsVegetablesNutsDisclaimerLabel?.text = nil
-        }
-    }
-
-    public var noFruitsVegetablesNutsWarning: Bool {
+/// The product has no fibers specified. The calculated NutriScore might be incorrect.
+    public var noFiberWarning: Bool = false {
         didSet {
             setNoFiberDisclaimer()
         }
     }
 
+/// Initialize the label, which shows the fiber disclaimer. If there is no warning, the disclaimer will be hidden.
     private func setNoFiberDisclaimer() {
         if noFiberWarning {
-            self.noFiberDisclaimerLabel?.isHidden = true
-            self.noFiberDisclaimerLabel?.text = "".localized
-        } else {
             self.noFiberDisclaimerLabel?.isHidden = false
+            self.noFiberDisclaimerLabel?.text = "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning".localized
+        } else {
+            self.noFiberDisclaimerLabel?.isHidden = true
             self.noFiberDisclaimerLabel?.text = nil
         }
     }
+
+/// The product has no fruits/vegetables/nuts ratio specified. The calculated NutriScore might be incorrect.
+    public var noFruitsVegetablesNutsWarning: Bool = false {
+        didSet {
+            setNoFruitsVegetablesNutsDisclaimer()
+        }
+    }
+
+    private func setNoFruitsVegetablesNutsDisclaimer() {
+        if noFruitsVegetablesNutsWarning {
+            self.noFruitsVegetablesNutsDisclaimerLabel?.isHidden = false
+            self.noFruitsVegetablesNutsDisclaimerLabel?.text = "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning".localized
+        } else {
+            self.noFruitsVegetablesNutsDisclaimerLabel?.isHidden = true
+            self.noFruitsVegetablesNutsDisclaimerLabel?.text = nil
+        }
+        self.noFruitsVegetablesNutsDisclaimerLabel?.preferredMaxLayoutWidth = self.bounds.size.width
+    }
+
     //
 //https://stackoverflow.com/questions/39816898/be-able-to-load-xib-from-both-storyboard-and-viewcontroller
     //

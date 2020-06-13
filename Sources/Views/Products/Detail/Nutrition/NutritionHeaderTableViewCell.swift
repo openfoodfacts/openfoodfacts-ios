@@ -33,7 +33,8 @@ class NutritionHeaderTableViewCell: ProductDetailBaseCell {
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let nutriscoreTableRow = formRow.value as? NutritionScoreTableRow else { return }
 
-        if let nutriscore = nutriscoreTableRow.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscore) {
+        if let nutriscore = nutriscoreTableRow.nutriscore,
+            let score = NutriScoreView.Score(rawValue: nutriscore) {
             nutriscoreView.isHidden = false
             nutriscoreView.currentScore = score
             nutriscoreView.noFiberWarning = nutriscoreTableRow.noFiberWarning
@@ -41,6 +42,10 @@ class NutritionHeaderTableViewCell: ProductDetailBaseCell {
         } else {
             nutriscoreView.isHidden = true
         }
+        print("fiber ", nutriscoreView.noFiberDisclaimerLabel.frame)
+        print("view ", nutriscoreView.view.frame)
+        print("nuts ", nutriscoreView.noFruitsVegetablesNutsDisclaimerLabel.frame)
+        print("image ", nutriscoreView.imageView.frame)
         self.delegate = nutriscoreTableRow.delegate
     }
 

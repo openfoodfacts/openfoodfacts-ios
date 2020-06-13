@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,18 +17,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Il-Ln-6ZO">
-                        <rect key="frame" x="292.5" y="54" width="24" height="22"/>
+                        <rect key="frame" x="331.5" y="54" width="24" height="22"/>
                         <state key="normal" image="circle-info"/>
                         <connections>
                             <action selector="nutritionscoreLearMoreButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3Nh-mi-JTB"/>
                         </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILT-h2-ajx" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                        <rect key="frame" x="67.5" y="10" width="217" height="88"/>
+                        <rect key="frame" x="28.5" y="10" width="295" height="120"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ILT-h2-ajx" secondAttribute="height" multiplier="310:126" id="Prl-xk-rf4"/>
-                            <constraint firstAttribute="height" constant="88" id="lOF-qt-vyf"/>
+                            <constraint firstAttribute="height" constant="120" id="lOF-qt-vyf"/>
                         </constraints>
                     </view>
                 </subviews>
