@@ -53,8 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
             let url = userActivity.webpageURL,
             let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return false }
-        
-        for queryItem in components.queryItems ?? [] {
+
+        for _ in components.queryItems ?? [] {
             // can I go directly to the barcode? and present the corresponding product?
             //searchBarcodeAndPresent(barcode)
             return true
@@ -62,11 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // should I open the url in the browser if previous fails?
         return true
     }
-    
+
     func searchBarcodeAndPresent(_ barcode: String) {
         // what is the best way to start the search?
     }
-    
+
     fileprivate func configureLog() {
         let systemDestination = AppleSystemLogDestination(identifier: "advancedLogger.systemDestination")
         systemDestination.outputLevel = .debug

@@ -97,6 +97,7 @@ struct OFFJson {
     static let SugarsUnitKey = "sugars_unit"
     static let SugarsValueKey = "sugars_value"
     static let EnergyKey = "energy"
+    static let EnergyKcalKey = "energy-kcal"
     static let ProteinsKey = "proteins"
     static let CaseinKey = "casein"
     static let SerumProteinsKey = "serum-proteins"

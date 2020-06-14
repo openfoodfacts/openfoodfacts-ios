@@ -11,11 +11,14 @@ import Foundation
 struct LocalizedString: ExpressibleByStringLiteral, Equatable {
 
     let localizedString: String
-
+    let key: String?
+    
     init(key: String) {
+        self.key = key
         self.localizedString = NSLocalizedString(key, comment: "")
     }
     init(localized: String) {
+        self.key = nil
         self.localizedString = localized
     }
     init(stringLiteral localizedString: String) {

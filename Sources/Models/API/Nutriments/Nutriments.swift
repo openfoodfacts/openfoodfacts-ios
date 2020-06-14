@@ -10,7 +10,8 @@ import Foundation
 import ObjectMapper
 
 struct Nutriments: Mappable {
-    var energy: NutrimentItem?
+    var energyKJ: NutrimentItem?
+    var energyKcal: NutrimentItem?
     var fats: [NutrimentItem]
     var carbohydrates: [NutrimentItem]
     var fiber: NutrimentItem?
@@ -33,7 +34,8 @@ struct Nutriments: Mappable {
 
     // swiftlint:disable function_body_length
     mutating func mapping(map: Map) {
-        energy = NutrimentItem(nameKey: OFFJson.EnergyKey, map: map, localized: .energy)
+        energyKJ = NutrimentItem(nameKey: OFFJson.EnergyKey, map: map, localized: .energyKJ)
+        energyKcal = NutrimentItem(nameKey: OFFJson.EnergyKcalKey, map: map, localized: .energyKcal)
 
         // Fats
         fats.append(NutrimentItem(nameKey: OFFJson.FatKey, map: map, localized: .fats, isMainItem: true))
@@ -118,7 +120,8 @@ struct Nutriments: Mappable {
 
     func allItems() -> [NutrimentItem] {
         var results: [NutrimentItem?] = [NutrimentItem?]()
-        results.append(energy)
+        results.append(energyKJ)
+        results.append(energyKcal)
         results.append(contentsOf: fats)
         results.append(contentsOf: carbohydrates)
         results.append(fiber)
