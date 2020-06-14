@@ -49,7 +49,6 @@ enum ImageTypeCategory {
     }
 
     init(_ value: String) {
-        print(value)
         self = .general
     }
 
@@ -93,6 +92,22 @@ struct Product: Mappable {
     var categories: [String]?
     var categoriesTags: [String]?
     var nutriscore: String?
+    private var nutriscoreWarningNoFruitsVegetablesNutsAsInt: Int?
+    private var nutriscoreWarningNoFiberAsInt: Int?
+    var nutriscoreWarningNoFruitsVegetablesNuts: Bool {
+        if let valid = nutriscoreWarningNoFruitsVegetablesNutsAsInt,
+            valid == 1 {
+            return true
+        }
+        return false
+    }
+    var nutriscoreWarningNoFiber: Bool {
+        if let valid = nutriscoreWarningNoFiberAsInt,
+            valid == 1 {
+            return true
+        }
+        return false
+    }
     var novaGroup: Int? {
         if novaGroupAsInt != nil {
             return novaGroupAsInt
@@ -280,6 +295,8 @@ struct Product: Mappable {
         categories <- (map[OFFJson.CategoriesKey], ArrayTransform())
         categoriesTags <- (map[OFFJson.CategoriesTagsKey])
         nutriscore <- map[OFFJson.NutritionGradesKey]
+        nutriscoreWarningNoFruitsVegetablesNutsAsInt <- map[OFFJson.NutritionScoreWarningNoFruitsVegetablesNutsKey]
+        nutriscoreWarningNoFiberAsInt <- map[OFFJson.NutritionScoreWarningNoFiberKey]
         // novaGroup should be Int, but might be String
         novaGroupAsInt <- (map[OFFJson.NovaGroupKey], IntTransform())
         novaGroupAsString <- map[OFFJson.NovaGroupKey]

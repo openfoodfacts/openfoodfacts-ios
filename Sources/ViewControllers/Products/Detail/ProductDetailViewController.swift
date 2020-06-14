@@ -355,7 +355,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Nutriscore cell
         if product.nutriscore != nil {
             // created to pass on the delegate with the nutriscore
-            let headerRow = NutritionScoreTableRow(delegate as? NutritionHeaderTableViewCellDelegate, nutriscore: product.nutriscore)
+            let headerRow = NutritionScoreTableRow(
+                delegate as? NutritionHeaderTableViewCellDelegate,
+                nutriscore: product.nutriscore,
+                noFiberWarning: product.nutriscoreWarningNoFiber,
+                noFruitsVegetablesNutsWarning: product.nutriscoreWarningNoFruitsVegetablesNuts)
             createFormRow(with: &rows, item: headerRow, cellType: NutritionHeaderTableViewCell.self)
         }
 

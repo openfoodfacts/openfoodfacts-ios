@@ -229,6 +229,8 @@ struct OFFJson {
     static let OriginsKey = "origins"
     static let StoresKey = "stores"
     static let NutritionGradesKey = "nutrition_grades"
+    static let NutritionScoreWarningNoFruitsVegetablesNutsKey = "nutrition_score_warning_no_fruits_vegetables_nuts"
+    static let NutritionScoreWarningNoFiberKey = "nutrition_score_warning_no_fiber"
     //static let NutritionGradeFrKey = "nutrition_grade_fr"
     static let NovaGroupKey = "nova_group"
     static let NutrientLevelsKey = "nutrient_levels"
@@ -393,6 +395,8 @@ struct OFFJson {
             OFFJson.NutritionDataPerKey,
             // OFFJson.NutritionGradeFrKey,
             OFFJson.NutritionGradesKey,
+            OFFJson.NutritionScoreWarningNoFruitsVegetablesNutsKey,
+            OFFJson.NutritionScoreWarningNoFiberKey,
             OFFJson.NutritionTableHtml,
             OFFJson.OriginsKey,
             // OFFJson.OtherInformationKey,
