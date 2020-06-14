@@ -6,7 +6,6 @@
 //  Copyright © 2019 Andrés Pizá Bückmann. All rights reserved.
 //
 
-import Crashlytics
 import Alamofire
 import AlamofireImage
 

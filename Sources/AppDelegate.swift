@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 import XCGLogger
 import RealmSwift
 
@@ -25,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if ProcessInfo().environment["UITesting"] == nil {
             configureLog()
-            Fabric.with([Crashlytics.self])
         } else {
             UIApplication.shared.keyWindow?.layer.speed = 100
         }

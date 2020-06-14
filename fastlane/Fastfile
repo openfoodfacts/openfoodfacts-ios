@@ -62,10 +62,10 @@ lane :beta do
   push_to_git_remote
 end
 
-desc "Upload dsyms to Fabric"
+desc "Upload dsyms to Sentry"
 lane :refresh_dsyms do
   download_dsyms                  # Download dSYM files from iTC
-  upload_symbols_to_crashlytics   # Upload them to Crashlytics
+  #TODO: upload them to sentry
   clean_build_artifacts           # Delete the local dSYM files
 end
 
