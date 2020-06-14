@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "تحذير: لم يتم تحديد كمية الألياف ، ولا يمكن أخذ مساهمتها الإيجابية المحتملة في التقدير.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "تحذير: كمية الفواكه والخضروات والمكسرات غير محددة على الملصق ، فقد قدرت من قائمة المكونات: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "تحذير: كمية الفواكه والخضروات والمكسرات غير محددة على الملصق ، تم تقديرها من فئة (%s) من المنتج: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -228,8 +232,8 @@
 
 // Nutrition
 "nutrition.energy" = "الطاقة";
-"nutrition.energy.kj" = "(kJ) الطاقة";
-"nutrition.energy.kcal" = "(kcal) الطاقة";
+"nutrition.energy.kj" = "Calories (kJ)";
+"nutrition.energy.kcal" = "Calories (kcal)";
 "nutrition.fats" = "الدهون";
 "nutrition.fats.saturated-fat" = "الدهون المشبعة";
 "nutrition.fats.mono-unsaturated-fat" = "الدهون غير المشبعة أحادية";
