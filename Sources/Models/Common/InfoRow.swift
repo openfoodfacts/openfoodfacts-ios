@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum InfoRowKey: LocalizedString {
+enum InfoRowKey: LocalizedString, CaseIterable {
     // swiftlint:disable identifier_name
 
     // Summary
@@ -44,7 +44,8 @@ enum InfoRowKey: LocalizedString {
     case ingredientsUnknownStatus = "ingredients-analysis.unknown_status"
 
     // Nutrition
-    case energy = "nutrition.energy"
+    case energyKJ = "nutrition.energy.kj"
+    case energyKcal = "nutrition.energy.kcal"
     case fats = "nutrition.fats"
     case saturatedFats = "nutrition.fats.saturated-fat"
     case monoUnsaturatedFat = "nutrition.fats.mono-unsaturated-fat"
@@ -118,6 +119,21 @@ enum InfoRowKey: LocalizedString {
 
     var localizedString: String {
         return self.rawValue.localizedString
+    }
+
+    // Used as key for saving data
+    var key: String {
+        self.rawValue.key ?? "InfoRowKey-key Is nil"
+    }
+
+    // Convert the save key to the enum
+    static func nutriment(for code: String) -> InfoRowKey? {
+        for value in self.allCases {
+            if value.key == code {
+                return value
+            }
+        }
+        return nil
     }
 
     init?(localizedString: String) {

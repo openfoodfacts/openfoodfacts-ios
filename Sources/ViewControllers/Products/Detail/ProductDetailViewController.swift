@@ -422,7 +422,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             createFormRow(with: &rows, item: headerRow, cellType: NutritionTableRowTableViewCell.self)
         }
 
-        if let energy = product.nutriments?.energy, let nutritionTableRow = energy.nutritionTableRow {
+        if let energy = product.nutriments?.energyKJ, let nutritionTableRow = energy.nutritionTableRow {
+            createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
+        }
+        if let energy = product.nutriments?.energyKcal, let nutritionTableRow = energy.nutritionTableRow {
             createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
         }
         if let fats = product.nutriments?.fats {

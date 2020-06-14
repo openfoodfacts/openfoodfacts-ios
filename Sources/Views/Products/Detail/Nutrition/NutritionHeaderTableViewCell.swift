@@ -42,10 +42,6 @@ class NutritionHeaderTableViewCell: ProductDetailBaseCell {
         } else {
             nutriscoreView.isHidden = true
         }
-        print("fiber ", nutriscoreView.noFiberDisclaimerLabel.frame)
-        print("view ", nutriscoreView.view.frame)
-        print("nuts ", nutriscoreView.noFruitsVegetablesNutsDisclaimerLabel.frame)
-        print("image ", nutriscoreView.imageView.frame)
         self.delegate = nutriscoreTableRow.delegate
     }
 

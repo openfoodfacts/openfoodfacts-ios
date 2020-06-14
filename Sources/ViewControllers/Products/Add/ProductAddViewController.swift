@@ -190,17 +190,19 @@ class ProductAddViewController: TakePictureViewController {
     fileprivate var saltUnitChangeObserver: NSKeyValueObservation?
     fileprivate var sodiumUnitChangeObserver: NSKeyValueObservation?
 
+    // These keys
     static let displayedNutrimentItemsByDefault = [
-        "energy",
-        "fat",
-        "saturated-fat",
-        "carbohydrates",
-        "sugars",
-        "fiber",
-        "proteins",
-        "salt",
-        "sodium",
-        "alcohol"
+        OFFJson.EnergyKey,
+        OFFJson.EnergyKcalKey,
+        OFFJson.FatKey,
+        OFFJson.SaturatedFatKey,
+        OFFJson.CarbohydratesKey,
+        OFFJson.SugarsKey,
+        OFFJson.FiberKey,
+        OFFJson.ProteinsKey,
+        OFFJson.SaltKey,
+        OFFJson.SodiumKey,
+        OFFJson.AlcoholKey
     ]
     fileprivate var displayedNutrimentItems = displayedNutrimentItemsByDefault
 
@@ -516,9 +518,10 @@ class ProductAddViewController: TakePictureViewController {
                 view.delegate = self
 
                 switch element {
-                case "energy": view.displayedUnit = .energy
-                case "alcohol": view.displayedUnit = .alcohol
-                case "ph": view.displayedUnit = .none
+                case OFFJson.EnergyKey: view.displayedUnit = .kJoule
+                case OFFJson.EnergyKcalKey: view.displayedUnit = .kcal
+                case OFFJson.AlcoholKey: view.displayedUnit = .alcohol
+                case OFFJson.PhKey: view.displayedUnit = .none
                 case let element where ProductAddViewController.displayedNutrimentItemsByDefault.contains(element):
                     view.displayedUnit = .units
                 default: view.displayedUnit = .allUnits
@@ -825,7 +828,7 @@ extension ProductAddViewController: UITextFieldDelegate {
 
         let sodiumMG = saltG * 1000 / 2.5
         for arrangedSubview in nutritiveValuesStackView.arrangedSubviews {
-            if let arrangedSubview = arrangedSubview as? EditNutritiveValueView, arrangedSubview.nutrimentCode == "sodium" {
+            if let arrangedSubview = arrangedSubview as? EditNutritiveValueView, arrangedSubview.nutrimentCode == OFFJson.SodiumKey {
                 arrangedSubview.selectedUnit = "mg"
                 let modif = modifier ?? ""
                 arrangedSubview.inputTextField.text = "\(modif)\(sodiumMG)"
@@ -865,9 +868,9 @@ extension ProductAddViewController: UITextFieldDelegate {
                     }
                     if let inputValue = editNutritiveView.getInputValue(fromString: updatedString) {
                         updateTooMuchLabel(inNutritiveView: editNutritiveView, forValue: inputValue.value)
-                        if editNutritiveView.nutrimentCode == "salt" {
+                        if editNutritiveView.nutrimentCode == OFFJson.SaltKey {
                             computeSodiumFromSalt(salt: inputValue.value, inUnit: editNutritiveView.selectedUnit, withModifier: inputValue.modifier)
-                        } else if editNutritiveView.nutrimentCode == "sodium" {
+                        } else if editNutritiveView.nutrimentCode == OFFJson.SodiumKey {
                             computeSaltFromSodium(sodium: inputValue.value, inUnit: editNutritiveView.selectedUnit, withModifier: inputValue.modifier)
                         }
                     }
@@ -971,9 +974,9 @@ extension ProductAddViewController: EditNutritiveValueViewDelegate {
         if let inputValue = view.getInputValue() {
             updateTooMuchLabel(inNutritiveView: view, forValue: inputValue.value)
 
-            if view.nutrimentCode == "salt" {
+            if view.nutrimentCode == OFFJson.SaltKey {
                 self.computeSodiumFromSalt(salt: inputValue.value, inUnit: view.selectedUnit, withModifier: inputValue.modifier)
-            } else if view.nutrimentCode == "sodium" {
+            } else if view.nutrimentCode == OFFJson.SodiumKey {
                 self.computeSaltFromSodium(sodium: inputValue.value, inUnit: view.selectedUnit, withModifier: inputValue.modifier)
             }
         }

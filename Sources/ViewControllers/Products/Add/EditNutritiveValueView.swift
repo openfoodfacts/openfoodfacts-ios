@@ -9,7 +9,8 @@
 import UIKit
 
 enum NutritiveUnits {
-    case energy
+    case kcal
+    case kJoule
     case units
     case allUnits
     case alcohol
@@ -17,9 +18,12 @@ enum NutritiveUnits {
 
     func unitsValues() -> [String] {
         switch self {
-        case .energy:
+        case .kcal:
             return [
-                "kcal",
+                "kcal"
+            ]
+        case .kJoule:
+            return [
                 "kJ"
             ]
         case .units:
