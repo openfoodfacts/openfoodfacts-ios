@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "annos";
 "product-detail.nutrition-table.missing" = "Ravintoaineita ei ole asetettu.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Varoitus: kuidun määrää ei ole määritelty, joten kuitujen mahdollista positiivista vaikutusta arvosanaan ei voitu ottaa huomioon.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Varoitus: hedelmien, vihannesten ja pähkinöiden määrää ei ole ilmoitettu etiketissä, vaan se arvioitiin ainesosaluettelosta: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Varoitus: hedelmien, vihannesten ja pähkinöiden määrää ei ole ilmoitettu etiketissä, vaan se arvioitiin luokasta (%s) johon tuote %d% kuuluu";
 
 // Nutrition levels
 "nutrition-level.title" = "Ravintoarvot per 100 g / 100 ml";
@@ -228,8 +232,8 @@
 
 // Nutrition
 "nutrition.energy" = "Kalorit";
-"nutrition.energy.kj" = "Kalorit (kJ)";
-"nutrition.energy.kcal" = "Kalorit (kcal)";
+"nutrition.energy.kj" = "Calories (kJ)";
+"nutrition.energy.kcal" = "Calories (kcal)";
 "nutrition.fats" = "Rasvat";
 "nutrition.fats.saturated-fat" = "Tyydyttynyt rasva";
 "nutrition.fats.mono-unsaturated-fat" = "Kertatyydyttämätön rasva";
