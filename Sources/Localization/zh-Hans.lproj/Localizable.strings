@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100 克";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "警告：未指定纤维数量，它们对营养等级可能的正向贡献或许不被考虑在内。";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "注意：标签上没有标明水果，蔬菜和坚果的数量，从成分列表中进行估算：%d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "警告：标签上没有标明水果、蔬菜或是坚果的数量，它们将从产品 %d% 的分类（%s）进行估算。";
 
 // Nutrition levels
 "nutrition-level.title" = "每百克或每百毫升含有的营养成分";
@@ -227,8 +231,9 @@
 "robotoff.answer-saved" = "答案已保存，谢谢参与！";
 
 // Nutrition
-"nutrition.energy.kj" = "卡路里 (kJ)";
-"nutrition.energy.kcal" = "卡路里 (kcal)";
+"nutrition.energy" = "卡路里";
+"nutrition.energy.kj" = "Calories (kJ)";
+"nutrition.energy.kcal" = "Calories (kcal)";
 "nutrition.fats" = "脂肪";
 "nutrition.fats.saturated-fat" = "饱和脂肪";
 "nutrition.fats.mono-unsaturated-fat" = "单元不饱和脂肪";
