@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="130" id="KGk-i7-Jjw" customClass="NutritionHeaderTableViewCell" customModule="OpenFoodFacts" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="NutritionHeaderTableViewCell" customModule="OpenFoodFacts" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="500" height="130"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -17,17 +17,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Il-Ln-6ZO">
-                        <rect key="frame" x="330" y="53" width="24" height="24"/>
+                        <rect key="frame" x="236.5" y="53" width="24" height="24"/>
                         <state key="normal" image="circle-info"/>
                         <connections>
                             <action selector="nutritionscoreLearMoreButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3Nh-mi-JTB"/>
                         </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILT-h2-ajx" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                        <rect key="frame" x="10" y="0.0" width="480" height="130"/>
+                        <rect key="frame" x="104" y="0.0" width="292.5" height="130"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="ILT-h2-ajx" secondAttribute="height" multiplier="480:130" id="Prl-xk-rf4"/>
+                            <constraint firstAttribute="width" secondItem="ILT-h2-ajx" secondAttribute="height" multiplier="360:160" id="qLr-4G-GxC"/>
                         </constraints>
                     </view>
                 </subviews>

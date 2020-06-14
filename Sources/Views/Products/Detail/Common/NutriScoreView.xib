@@ -17,32 +17,32 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="130"/>
+            <rect key="frame" x="0.0" y="0.0" width="360" height="160"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pgn-En-8pK">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="130"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pgn-En-8pK">
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="160"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="nutriscore-b" translatesAutoresizingMaskIntoConstraints="NO" id="djc-QD-bVB">
-                            <rect key="frame" x="119.5" y="0.0" width="241.00000000000011" height="130"/>
+                            <rect key="frame" x="115" y="0.0" width="130.00000000000011" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="I42-tn-Pqb"/>
                                 <constraint firstAttribute="width" secondItem="djc-QD-bVB" secondAttribute="height" multiplier="389:210" id="Kqk-qw-rwm"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-Ze-ruc">
-                            <rect key="frame" x="0.0" y="130" width="480" height="0.0"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-Ze-ruc">
+                            <rect key="frame" x="0.0" y="70" width="360" height="45"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="9ti-HF-mQQ"/>
+                                <constraint firstAttribute="height" constant="45" id="9ti-HF-mQQ"/>
                             </constraints>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Taj-VV-NDi">
-                            <rect key="frame" x="0.0" y="130" width="480" height="0.0"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Taj-VV-NDi">
+                            <rect key="frame" x="0.0" y="115" width="360" height="45"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="nuH-rZ-FOL"/>
+                                <constraint firstAttribute="height" constant="45" id="nuH-rZ-FOL"/>
                             </constraints>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                             <nil key="textColor"/>
