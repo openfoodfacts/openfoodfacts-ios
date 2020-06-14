@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "porció";
 "product-detail.nutrition-table.missing" = "No s'ha establert cap nutrient.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Atenció: la quantitat de fibra no s'especifica, no es tindrà en compte la seva possible contribució positiva en la qualificació.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Atenció: la quantitat de fruita, verdura i fruits secs no s'especifica a l'etiqueta però s'ha fet una estimació a partir de la llista d'ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Atenció: la quantitat de fruita, verdura i fruits secs no s'especifica a l'etiqueta, s'ha fet una estimació per la categoria (%s) del producte: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nivells de nutrient per 100 g/100 ml";
@@ -228,8 +232,8 @@
 
 // Nutrition
 "nutrition.energy" = "Energia";
-"nutrition.energy.kj" = "Energia (kJ)";
-"nutrition.energy.kcal" = "Energia (kcal)";
+"nutrition.energy.kj" = "Calories (kJ)";
+"nutrition.energy.kcal" = "Calories (kcal)";
 "nutrition.fats" = "Greixos";
 "nutrition.fats.saturated-fat" = "Greixos saturats";
 "nutrition.fats.mono-unsaturated-fat" = "Greixos monoinsaturats";
