@@ -16,32 +16,62 @@
                 <rect key="frame" x="0.0" y="0.0" width="500" height="130"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Il-Ln-6ZO">
-                        <rect key="frame" x="236.5" y="53" width="24" height="24"/>
-                        <state key="normal" image="circle-info"/>
-                        <connections>
-                            <action selector="nutritionscoreLearMoreButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3Nh-mi-JTB"/>
-                        </connections>
-                    </button>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILT-h2-ajx" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                        <rect key="frame" x="104" y="0.0" width="292.5" height="130"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YVn-5A-AJg">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="130"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RtK-4G-Yv2">
+                                <rect key="frame" x="126.5" y="0.0" width="247" height="104"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILT-h2-ajx" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="2" width="225" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Xbi-s7-mAc"/>
+                                            <constraint firstAttribute="width" secondItem="ILT-h2-ajx" secondAttribute="height" multiplier="360:160" id="qLr-4G-GxC"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Il-Ln-6ZO">
+                                        <rect key="frame" x="225" y="40" width="22" height="24"/>
+                                        <state key="normal" image="circle-info"/>
+                                        <connections>
+                                            <action selector="nutritionscoreLearMoreButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3Nh-mi-JTB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2m3-7A-3yY">
+                                <rect key="frame" x="0.0" y="104" width="500" height="13"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao4-u3-D7Y">
+                                <rect key="frame" x="0.0" y="117" width="500" height="13"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="ILT-h2-ajx" secondAttribute="height" multiplier="360:160" id="qLr-4G-GxC"/>
+                            <constraint firstItem="ao4-u3-D7Y" firstAttribute="leading" secondItem="YVn-5A-AJg" secondAttribute="leading" id="9i2-Es-4ZY"/>
+                            <constraint firstAttribute="trailing" secondItem="2m3-7A-3yY" secondAttribute="trailing" id="M3L-Nk-dFg"/>
+                            <constraint firstAttribute="trailing" secondItem="ao4-u3-D7Y" secondAttribute="trailing" id="Rsb-BG-kjZ"/>
+                            <constraint firstItem="2m3-7A-3yY" firstAttribute="leading" secondItem="YVn-5A-AJg" secondAttribute="leading" id="piH-Tm-79H"/>
                         </constraints>
-                    </view>
+                    </stackView>
                 </subviews>
                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
-                    <constraint firstItem="ILT-h2-ajx" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="50e-js-JlO"/>
-                    <constraint firstItem="6Il-Ln-6ZO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BHV-IF-kes"/>
-                    <constraint firstItem="ILT-h2-ajx" firstAttribute="trailing" secondItem="6Il-Ln-6ZO" secondAttribute="leading" constant="160" id="Kxg-FL-UZh"/>
-                    <constraint firstItem="ILT-h2-ajx" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="MVb-U0-CMF"/>
-                    <constraint firstItem="ILT-h2-ajx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SPv-ZV-5zM"/>
+                    <constraint firstAttribute="trailing" secondItem="YVn-5A-AJg" secondAttribute="trailing" id="3P3-3K-bo5"/>
+                    <constraint firstItem="YVn-5A-AJg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gCT-1q-qUV"/>
+                    <constraint firstItem="YVn-5A-AJg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gKI-pY-KgU"/>
+                    <constraint firstAttribute="bottom" secondItem="YVn-5A-AJg" secondAttribute="bottom" id="ifI-zi-qol"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <connections>
+                <outlet property="noFiberDisclaimerLabel" destination="ao4-u3-D7Y" id="5Gz-7r-etL"/>
+                <outlet property="noFruitsVegetablesNutsDisclaimerLabel" destination="2m3-7A-3yY" id="Ngr-Pw-NFY"/>
                 <outlet property="nutriscoreLearnMoreButton" destination="6Il-Ln-6ZO" id="aNa-hc-sRp"/>
                 <outlet property="nutriscoreView" destination="ILT-h2-ajx" id="XNV-td-WmX"/>
             </connections>
