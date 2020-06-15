@@ -6,19 +6,22 @@
 //
 
 import Foundation
+import Sentry
 
 class AnalyticsManager {
 
     static func log(_ value: String, forKey key: String) {
-        //TODO:
-    }
-
-    static func logEvent() {
-        //TODO:
+        SentrySDK.configureScope { (scope: Scope) in
+            scope.setValue(value, forKey: key)
+        }
     }
 
     static func record(error: Error, withAdditionalUserInfo: [String: String]? = nil) {
-        //TODO: send it to sentry
+        SentrySDK.capture(error: error) { (scope: Scope) in
+            if let withAdditionalUserInfo = withAdditionalUserInfo {
+                scope.setTags(withAdditionalUserInfo)
+            }
+        }
     }
 
 }

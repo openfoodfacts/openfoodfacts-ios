@@ -29,7 +29,7 @@ Build and send the beta to TestFlight
 ```
 fastlane refresh_dsyms
 ```
-Upload dsyms to Fabric
+Upload dsyms to Sentry
 ### metadata
 ```
 fastlane metadata
