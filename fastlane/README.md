@@ -24,12 +24,25 @@ Run all the tests
 ```
 fastlane beta
 ```
-Build and send the beta to TestFlight
+Build and send the beta to TestFlight. The script will perform the following actions: 
+- Fetch the latest version and build_number from AppStoreConnect
+- set the project version to either 'editVersion' or 'liveVersion + 0.0.1'
+- set the build number to build_number + 1
+- build and upload to AppStoreConnect
+- commit new version, tag and push
+- create a new release in sentry corresponding to the release we just uploaded
+
+If you want a specific version number (for example if you want to bump a major instead of patch by default), set it in the xcode project. It will be taken if it is greater than the version from the appstore. Same goes for the build number.
 ### refresh_dsyms
 ```
 fastlane refresh_dsyms
 ```
-Upload dsyms to Sentry
+Upload dsyms to Sentry. This lane needs to be launched when the build has been processed by the AppStoreConnect.
+### finalize_sentry_release
+```
+fastlane finalize_sentry_release
+```
+Mark the current live version on the app store as "finalized" on Sentry. This lane needs to be launched after a version is "ready for sale" on the AppStore
 ### metadata
 ```
 fastlane metadata
