@@ -8,6 +8,7 @@ xcode_project: OpenFoodFacts.xcodeproj # path to your xcodeproj folder
 xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone 11
 xcode_scheme: OpenFoodFacts # Run all tests
 cache:
+  bundler: true
   directories:
   - Carthage
   - /usr/local/lib/mint
@@ -17,3 +18,10 @@ notifications:
 env:
   global:
     secure: TzLeh5qKxmFNlP/LpwsBPdjmXu7UpyKIe6SQdHDQm/bQ9+fSu89Lp8Db9dTPyWXEgKcC3i5X0TeaRcEzvYBk3eZdevd3Axx6dA+xM31FRtGVmZdJ62tUZbQsLNHJo5lAe+K6gQBfiJd983s2goEwrNHNnRaGrmv7xSPPJW4DCeCFW9S/jC0cRCcSZwdrmR986DjnIr7aTiWaSd+XMms60rmBCb7jZbCxYAOPU64uOqRdc0Og2mi8q1XHZzWi7b2OkAdpOwrWzcd4K2XTxfbEIbfhOkAg9bZ2h3+z7VMpWcUYwV7aIOo4ra2u/QkzNK6jZ4Q3h3TLK0e4ilj6vNCWsCqYScDU/BzgZCfhenWcD75Zz5CO0rdAlyQ3gMaxvIsntEyiCpUknYi+i1lMfH/mFwnb323qYdIXJ/BEBLnycqZqZksl43DUoKjmxMElNKKJ8g+TKp+M7FXKBKCd/zPejycLsq4/Z50OKPHPa+q7SLoo1Iryir5IRlD9uZ1EWQq2II2ACUZRuf0gA6GUm7aZEJNWk8QrunI0G75TlKmu9l7gsie5NVMcqZeETfU3vIxuFKJtbV/k2Viw/sQ6h2pr4hUf/VRrfzZCAljTs7ZgKP1sweMRGgU/U2T/Kw2/wB7no8eZ9KdrEcxe1xid0yKyTIWBkeP+7Yvjcu2y2GtYao0=
+jobs:
+  include:
+    - stage: Deploy
+      name: Deploy to TestFlight
+      script:        
+        - bundle exec fastlane beta
+      if: branch =~ /^release\/.*$/

@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 import AlamofireImage
-import Crashlytics
 import UIKit
 
 extension Notification.Name {
@@ -570,8 +569,7 @@ class DataManager: DataManagerProtocol {
         do {
             return try Realm()
         } catch let error as NSError {
-            log.error(error)
-            Crashlytics.sharedInstance().recordError(error)
+            AnalyticsManager.record(error: error)
         }
         fatalError("Could not get Realm instance")
     }

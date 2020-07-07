@@ -8,7 +8,6 @@
 
 import UIKit
 import XLPagerTabStrip
-import Crashlytics
 
 class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient {
 
@@ -62,7 +61,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
+        //TODO: Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
 
         if let parentVc = parent as? UINavigationController {
 
@@ -519,7 +518,7 @@ extension ProductDetailViewController: ProductDetailRefreshDelegate {
                 }
             }, onError: { [weak self] error in
                 // No error should be thrown here, as the product was loaded previously
-                Crashlytics.sharedInstance().recordError(error)
+                AnalyticsManager.record(error: error)
                 self?.navigationController?.popToRootViewController(animated: true)
             })
         }
