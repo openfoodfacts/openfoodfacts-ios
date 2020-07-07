@@ -24,6 +24,8 @@ jobs:
   include:
   - stage: Deploy
     name: Deploy to TestFlight
+    install:
+    - bundle install
     script:
     - bundle exec fastlane beta
     if: branch =~ /^release\/.*$/
