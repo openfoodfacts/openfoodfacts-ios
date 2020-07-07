@@ -87,7 +87,7 @@ lane :beta do
   )
 
   # Upload to test flight
-  upload_to_testflight(
+  pilot(
     skip_submission: true,
     skip_waiting_for_build_processing: true,
   )
