@@ -52,7 +52,7 @@ lane :beta do
 
   # get the latest build number from the app store, and bump it
   BUILD_NUMBER_FROM_PROJECT = get_build_number(xcodeproj: "OpenFoodFacts.xcodeproj")
-  build_number = app_store_build_number(initial_build_number: 1, live: false).to_f.ceil + 1
+  build_number = app_store_build_number_with_connect_api().to_f.ceil + 1
   build_number = BUILD_NUMBER_FROM_PROJECT.to_f > build_number ? BUILD_NUMBER_FROM_PROJECT : build_number.to_s
 
   UI.important "Releasing #{APP_IDENTIFIER} v#{version} \##{build_number}"
