@@ -27,5 +27,5 @@ jobs:
     install:
     - bundle install
     script:
-    - bundle exec fastlane beta
+    - travis_wait bundle exec fastlane beta
     if: branch =~ /^release\/.*$/
