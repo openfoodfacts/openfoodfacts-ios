@@ -25,6 +25,7 @@ jobs:
   - stage: Deploy
     name: Deploy to TestFlight
     install:
+    - brew install getsentry/tools/sentry-cli
     - bundle install
     script:
     - travis_wait 40 bundle exec fastlane beta
