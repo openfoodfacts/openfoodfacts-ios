@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "servering";
 "product-detail.nutrition-table.missing" = "Ingen næringsstoffer opsat.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Advarsel: Mængden af ​​fiber er ikke specificeret, deres mulige positive bidrag til kvaliteten kunne ikke tages i betragtning.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Advarsel: Mængden af ​​frugt, grønsager og nødder er ikke specificeret. Deres mulige positive bidrag til kvaliteten kunne ikke tages i betragtning.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Næringsstofniveauer pr. 100 g /100 ml";
@@ -289,7 +293,7 @@
 "nutrition.minerals.iodine" = "Jod";
 "nutrition.minerals.caffeine" = "Koffein";
 "nutrition.minerals.taurine" = "Taurin";
-"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.ph" = "Ph";
 "nutrition.minerals.fruits-vegetables-nuts" = "Frugter, grøntsager, nødder";
 "nutrition.minerals.collagen-meat-protein-ratio" = "Kollagenkødproteinforhold";
 "nutrition.minerals.cocoa" = "Kakao";
@@ -314,7 +318,7 @@
 "settings.tab-bar.item" = "Indstillinger";
 "settings.ingredientsAnalysis.title" = "Ingrediensanalyseadvarsler";
 "settings.allergies.title" = "Allergenadvarsler";
-"settings.allergies.description" = "Føj allergener til denne liste for at blive notificeret, når du skanner et produkt med dette indehold. \nBemærk, at oplysninger om dine allergier aldrig vil blive tilsendt Open Food Facts-serveren. Vær også opmærksom på, at dataene ikke er 100% pålidelige, og at detektionen måske ikke er 100% korrekt. Husk derfor selv at tjekke det!";
+"settings.allergies.description" = "Føj allergener til denne liste for at blive notificeret, når du skanner et produkt med dette indehold. \nBemærk, at oplysninger om dine allergier aldrig vil blive tilsendt Open Food Facts-serveren. Vær også opmærksom på, at dataene ikke er 100% aålidelige, og at detektionen måske ikke er 100% korrekt. Husk derfor selv at tjekke det!";
 "settings.allergies.add-button" = "Tilføj allergener";
 "settings.sections.information" = "Information";
 "settings.sections.discover" = "Opdag";
@@ -373,7 +377,7 @@
 "history.section-titles.fewMonths" = "For få måneder siden";
 "history.section-titles.longTime" = "For langt tid siden";
 "history.first-scan.button.title" = "Skan første produkt";
-"API_CANCEL_TITLE" = "Annullér";
-"USE_PHOTO" = "Benyt foto";
 "API_CANCEL_TITLE" = "Afbryd";
+"USE_PHOTO" = "Benyt foto";
+"API_CANCEL_TITLE" = "Annullér";
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Redigér";
