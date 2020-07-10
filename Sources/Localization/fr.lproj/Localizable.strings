@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "portion";
 "product-detail.nutrition-table.missing" = "Aucun nutriment n'a été défini.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Avertissement : Le taux de fibres n'étant pas renseigné, leur éventuelle contribution positive à la note n'a pas pu être prise en compte.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Avertissement : Le taux de fruits, légumes et noix n'étant pas renseigné, leur éventuelle contribution positive à la note n'a pas pu être prise en compte.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Avertissement : Le taux de fruits, légumes et noix n'est pas indiqué sur l'étiquette, il a été estimé en fonction de la liste des ingrédients : %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Avertissement : Le taux de fruits, légumes et noix n'est pas indiqué sur l'étiquette, il a été estimé en fonction de la catégorie (%s) du produit : %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Repères nutritionnels pour 100 g/100 mL";
@@ -229,7 +233,7 @@
 // Nutrition
 "nutrition.energy" = "Énergie";
 "nutrition.energy.kj" = "Énergie (kJ)";
-"nutrition.energy.kcal" = "Énergie (kcal)";
+"nutrition.energy.kcal" = "Énergie (Kcal)";
 "nutrition.fats" = "Matières grasses";
 "nutrition.fats.saturated-fat" = "Graisses saturées";
 "nutrition.fats.mono-unsaturated-fat" = "Graisses mono-insaturées";

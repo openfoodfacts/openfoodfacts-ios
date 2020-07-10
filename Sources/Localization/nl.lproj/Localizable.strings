@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "portie";
 "product-detail.nutrition-table.missing" = "Er zijn geen voedingsstoffen vastgesteld.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Waarschuwing: de hoeveelheid vezels is niet gespecificeerd, hun mogelijke positieve bijdrage aan de klasse kan niet in aanmerking worden genomen.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Waarschuwing: de hoeveelheid fruit, groenten en noten staat niet op het etiket, maar werd geschat op basis van de ingrediëntenlijst: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Waarschuwing: de hoeveelheid fruit, groenten en noten staat niet op het etiket, deze is geschat op basis van de categorie (%s) van het product:%d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Voedingswaarden per 100 g";
@@ -227,8 +231,8 @@
 "robotoff.answer-saved" = "Antwoord bewaard, bedankt!";
 
 // Nutrition
-"nutrition.energy" = "Energy";
-"nutrition.energy.kj" = "Energy (kJ)";
+"nutrition.energy" = "Calorieën";
+"nutrition.energy.kj" = "Energie (kJ)";
 "nutrition.energy.kcal" = "Energy (kcal)";
 "nutrition.fats" = "Vetten";
 "nutrition.fats.saturated-fat" = "Verzadigd vet";
