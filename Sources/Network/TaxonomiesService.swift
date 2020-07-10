@@ -8,7 +8,6 @@
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
-import Crashlytics
 
 enum TaxonomiesRoute: String {
     case getAllergens = "taxonomies/allergens.json"
@@ -80,7 +79,7 @@ class TaxonomiesService: TaxonomiesApi {
                             callback(true)
                         }
                     case .failure(let error):
-                        Crashlytics.sharedInstance().recordError(error)
+                        AnalyticsManager.record(error: error)
                         callback(false)
                     }
             }
@@ -103,7 +102,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        Crashlytics.sharedInstance().recordError(error)
+                        AnalyticsManager.record(error: error)
                     }
 
                     callback(success)
@@ -127,7 +126,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        Crashlytics.sharedInstance().recordError(error)
+                        AnalyticsManager.record(error: error)
                     }
                     callback(success)
             }
@@ -150,7 +149,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        Crashlytics.sharedInstance().recordError(error)
+                        AnalyticsManager.record(error: error)
                     }
                     callback(success)
             }
@@ -173,7 +172,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        Crashlytics.sharedInstance().recordError(error)
+                        AnalyticsManager.record(error: error)
                     }
                     callback(success)
             }
@@ -204,7 +203,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        Crashlytics.sharedInstance().recordError(error)
+                        AnalyticsManager.record(error: error)
                     }
                     callback(success)
             }
@@ -227,7 +226,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        Crashlytics.sharedInstance().recordError(error)
+                        AnalyticsManager.record(error: error)
                     }
 
                     callback(success)
@@ -251,7 +250,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        Crashlytics.sharedInstance().recordError(error)
+                        AnalyticsManager.record(error: error)
                     }
                     callback(success)
             }
@@ -274,7 +273,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        Crashlytics.sharedInstance().recordError(error)
+                        AnalyticsManager.record(error: error)
                     }
                     callback(success)
             }
@@ -295,7 +294,7 @@ class TaxonomiesService: TaxonomiesApi {
                         success = true
                     }
                 case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
+                    AnalyticsManager.record(error: error)
                 }
 
                 callback(success)
@@ -327,7 +326,7 @@ class TaxonomiesService: TaxonomiesApi {
                         }
                     }
                 case .failure(let error):
-                    Crashlytics.sharedInstance().recordError(error)
+                    AnalyticsManager.record(error: error)
                 }
 
             callback(nil)
@@ -349,7 +348,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        Crashlytics.sharedInstance().recordError(error)
+                        AnalyticsManager.record(error: error)
                     }
                 callback(success)
             }

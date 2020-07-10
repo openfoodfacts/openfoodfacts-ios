@@ -51,8 +51,6 @@ targets:
     dependencies:
       - sdk: MobileCoreServices.framework
       - sdk: AVFoundation.framework
-      - framework: Sources/Frameworks/Crashlytics.framework
-      - framework: Sources/Frameworks/Fabric.framework
       - carthage: Alamofire
       - carthage: AlamofireImage
       - carthage: AlamofireObjectMapper
@@ -70,6 +68,7 @@ targets:
       - carthage: ObjectMapper
       - carthage: Realm
       - carthage: RealmSwift
+      - carthage: Sentry
       - carthage: SnapKit
       - carthage: SVProgressHUD
       - carthage: TOCropViewController
@@ -85,11 +84,6 @@ targets:
               echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
           fi
         name: SwiftLint
-    postBuildScripts:
-      - script: |
-          "${PROJECT_DIR}/Sources/Frameworks/Fabric.framework/run" 2a83bde9cbf98b48f34f2f27fdb7baa31cf9b5f8 8edbf06d5de27983cb0bf34ca9e266b949a15616bfd9e7a3f6ee013b97cc3d46
-        name: Fabric
-        runOnlyWhenInstalling: true
 
   OpenFoodFactsTests:
     type: bundle.unit-test
