@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Crashlytics
 import RealmSwift
 
 struct ExportHelper {
@@ -44,7 +43,7 @@ struct ExportHelper {
             try contents.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
         } catch {
             // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
-            Crashlytics.sharedInstance().recordError(error)
+            AnalyticsManager.record(error: error)
         }
     }
 

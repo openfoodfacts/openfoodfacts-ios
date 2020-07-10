@@ -111,8 +111,9 @@ New to Carthage? Others have found the following resources helpful:
 * [Chris Mendez's Carthage cheat sheet](https://www.chrisjmendez.com/2016/10/30/carthage-cheat-sheet/)
   
 ### Fastlane
+See the fastlane Readme for a list and description of all lanes: [fastlane/README.md](fastlane/README.md)
 
-Currently there are two lanes, one for running the tests (`fastlane test`) and one for uploading a new beta to TestFlight (`fastlane beta`).
+To launch a lane, you must have several env variable set. This can be done by creating a `.env` file in the `fastlane` folder, and fill it (see `.env.example`)
 
 You can install [Fastlane](https://github.com/fastlane/fastlane) with Homebrew:
 ```
