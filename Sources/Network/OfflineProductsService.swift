@@ -9,7 +9,6 @@
 import Zip
 import UIKit
 import Alamofire
-import Crashlytics
 
 protocol OfflineProductsApi {
     func refreshOfflineProductsFromServerIfNeeded(force: Bool)
@@ -131,7 +130,7 @@ class OfflineProductsService: OfflineProductsApi {
                                 OfflineProductsService.deleteFile(atURL: unzipedFolderPath)
                             } catch let error {
                                 log.error("[Offline_products] Error listing unzipped files! \(error)")
-                                Crashlytics.sharedInstance().recordError(error)
+                                AnalyticsManager.record(error: error)
                                 success = false
                             }
                             OfflineProductsService.deleteFile(atURL: localFilePath)

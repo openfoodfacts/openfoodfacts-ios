@@ -8,7 +8,6 @@
 
 import Foundation
 import KeychainAccess
-import Crashlytics
 
 class CredentialsController: NSObject {
     static let shared = CredentialsController()
@@ -31,7 +30,7 @@ class CredentialsController: NSObject {
         do {
             try keychain.remove(username)
         } catch let error {
-            Crashlytics.sharedInstance().recordError(error)
+            AnalyticsManager.record(error: error)
         }
     }
 

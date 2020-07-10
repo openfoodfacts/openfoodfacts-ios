@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Crashlytics
 
 enum ImageType: String {
     case front
@@ -76,7 +75,7 @@ struct ProductImage {
                 "fileName": fileName,
                 "message": "Unable to get UIImageJPEGRepresentation"
                 ])
-            Crashlytics.sharedInstance().recordError(error)
+            AnalyticsManager.record(error: error)
             return nil
         }
 
@@ -86,7 +85,7 @@ struct ProductImage {
             try data.write(to: imageURL)
             return fileName
         } catch let error {
-            Crashlytics.sharedInstance().recordError(error)
+            AnalyticsManager.record(error: error)
             return nil
         }
     }
@@ -98,7 +97,7 @@ struct ProductImage {
             let imageData = try Data(contentsOf: imageURL)
             return UIImage(data: imageData)
         } catch let error {
-            Crashlytics.sharedInstance().recordError(error)
+            AnalyticsManager.record(error: error)
             return nil
         }
     }
@@ -109,7 +108,7 @@ struct ProductImage {
             let imageURL = documentsURL.appendingPathComponent(fileName)
             try FileManager.default.removeItem(at: imageURL)
         } catch let error {
-            Crashlytics.sharedInstance().recordError(error)
+            AnalyticsManager.record(error: error)
         }
     }
 }

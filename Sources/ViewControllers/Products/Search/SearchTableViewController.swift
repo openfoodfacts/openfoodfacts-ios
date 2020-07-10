@@ -8,8 +8,6 @@
 
 import UIKit
 import CoreGraphics
-import Fabric
-import Crashlytics
 import RealmSwift
 
 // MARK: - UIViewController

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Crashlytics
 
 class InfoRowTableViewCell: ProductDetailBaseCell {
 
@@ -76,7 +75,7 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
             }
         } catch let error {
             let userInfo = ["bold_words_pattern": boldWordsPattern, "original_text": originalText.string]
-            Crashlytics.sharedInstance().recordError(error, withAdditionalUserInfo: userInfo)
+            AnalyticsManager.record(error: error, withAdditionalUserInfo: userInfo)
         }
 
         return highlightedText

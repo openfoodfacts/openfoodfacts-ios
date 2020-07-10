@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 import XCGLogger
 import RealmSwift
+import Sentry
 
 let log = XCGLogger(identifier: "advancedLogger", includeDefaultDestinations: false)
 
@@ -21,11 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        SentrySDK.start(options: [
+            "dsn": "https://6d047aa6fcff4c788d7e8db147eef179@o241488.ingest.sentry.io/5276492",
+            "debug": true, // Enabled debug when first installing is always helpful
+            "enableAutoSessionTracking": true
+        ])
+
         configureRealm()
 
         if ProcessInfo().environment["UITesting"] == nil {
             configureLog()
-            Fabric.with([Crashlytics.self])
         } else {
             UIApplication.shared.keyWindow?.layer.speed = 100
         }
