@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "servir";
 "product-detail.nutrition-table.missing" = "No se han establecido nutrientes.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Advertencia: la cantidad de fibra no está especificada, su posible contribución positiva al grado no se ha tenido en cuenta.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Niveles nutricionales por 100g/100mL";
@@ -289,7 +293,7 @@
 "nutrition.minerals.iodine" = "Yodo";
 "nutrition.minerals.caffeine" = "Cafeína";
 "nutrition.minerals.taurine" = "Taurina";
-"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.ph" = "Ph";
 "nutrition.minerals.fruits-vegetables-nuts" = "Frutas, vegetales, nueces";
 "nutrition.minerals.collagen-meat-protein-ratio" = "Proporción colágeno/proteína de carne";
 "nutrition.minerals.cocoa" = "Cacao";
@@ -314,7 +318,7 @@
 "settings.tab-bar.item" = "Configuración";
 "settings.ingredientsAnalysis.title" = "Alertas de análisis de ingredientes";
 "settings.allergies.title" = "Alerta de alérgenos";
-"settings.allergies.description" = "Agregue alérgenos a esta lista para recibir una notificación cuando escanee un producto que lo contiene. \nTenga en cuenta que la información sobre sus alergias NUNCA se enviará al servidor de Open Food Facts. Además, tenga cuidado de que los datos no sean 100% confiables y que la detección no sea 100% precisa. Asegúrate de comprobar por ti mismo también!";
+"settings.allergies.description" = "Agregue alérgenos a esta lista para recibir una notificación cuando escanee un producto que lo contiene. \nTenga en cuenta que la información sobre sus alergias NUNCA se enviará al servidor de Open Food Facts. Además, tenga cuidado de que los datos no sean 100% aonfiables y que la detección no sea 100[%s]recisa. Asegúrate de comprobar por ti mismo también!";
 "settings.allergies.add-button" = "Añadir un alérgeno";
 "settings.sections.information" = "Información";
 "settings.sections.discover" = "Descubrir";
