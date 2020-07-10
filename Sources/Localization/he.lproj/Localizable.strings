@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100 גרם";
 "product-detail.nutrition-table.serving" = "מנה";
 "product-detail.nutrition-table.missing" = "לא הוגדרו חומרים מזינים.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "אזהרה: כמות הסיבים לא צוינה, התרומה החיובית שלהם לציון לא ניתנת לחישוב.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "אזהרה: כמות הפירות, הירקות והאגוזים לא צוינה, התרומה החיובית שלהם לציון לא ניתנת לחישוב.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "אזהרה: כמות הפירות, הירקות והאגוזים לא צוינה, התבצעה הערכה על בסיס רשימת הרכיבים: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "אזהרה: כמות הפירות, הירקות והאגוזים לא צוינה, התבצעה הערכה על בסיס הקטגוריה (%s) של המוצר: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "רמות המרכיבים התזונתיים ל־100 גרם/100 מ״ל";
@@ -228,8 +232,8 @@
 
 // Nutrition
 "nutrition.energy" = "אנרגיה";
-"nutrition.energy.kj" =  "(kJ) אנרגיה";
-"nutrition.energy.kcal" = "(kcal) אנרגיה";
+"nutrition.energy.kj" = "אנרגיה (kJ)";
+"nutrition.energy.kcal" = "אנרגיה (kcal)";
 "nutrition.fats" = "שומנים";
 "nutrition.fats.saturated-fat" = "שומן רווי";
 "nutrition.fats.mono-unsaturated-fat" = "שומן חד בלתי רווי";
@@ -290,7 +294,7 @@
 "nutrition.minerals.caffeine" = "קפאין";
 "nutrition.minerals.taurine" = "טאורין";
 "nutrition.minerals.ph" = "pH";
-"nutrition.minerals.fruits-vegetables-nuts" = "פרות, ירקות, אגוזים";
+"nutrition.minerals.fruits-vegetables-nuts" = "פירות, ירקות, אגוזים";
 "nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
 "nutrition.minerals.cocoa" = "קקאו";
 "nutrition.minerals.chlorophyl" = "כלורופיל";
