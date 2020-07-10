@@ -14,7 +14,7 @@
 "generic.search" = "ᱥᱮᱸᱫᱽᱨᱟ";
 "generic.cancel" = "ᱵᱟᱫᱽ";
 "generic.save" = "ᱥᱟᱱᱪᱟᱣ";
-"generic.cancel" = "ᱵᱟᱫᱽ";
+"generic.cancel" = "Cancel";
 "generic.ok" = "ᱴᱷᱤ";
 "generic.close" = "Close";
 
@@ -85,7 +85,7 @@
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
 
-"alert.action.ok" = "Ok";
+"alert.action.ok" = "ᱴᱷᱤ";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Product name";
@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -289,7 +293,7 @@
 "nutrition.minerals.iodine" = "Iodine";
 "nutrition.minerals.caffeine" = "Caffeine";
 "nutrition.minerals.taurine" = "Taurine";
-"nutrition.minerals.ph" = "pH";
+"nutrition.minerals.ph" = "Ph";
 "nutrition.minerals.fruits-vegetables-nuts" = "Fruits, vegetables, nuts";
 "nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
 "nutrition.minerals.cocoa" = "Cocoa";
