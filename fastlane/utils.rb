@@ -15,7 +15,7 @@ def highest_app_version_number()
     liveVersion = nil
 
     if liveAppStoreVersion && liveAppStoreVersion.version_string
-        liveVersion = editAppStoreVersion.version_string
+        liveVersion = liveAppStoreVersion.version_string
     end
 
     if editAppStoreVersion && editAppStoreVersion.version_string && liveVersion.nil?
