@@ -266,6 +266,7 @@ class DataManager: DataManagerProtocol {
     // MARK: - Settings
     func addAllergy(toAllergen: Allergen) {
         persistenceManager.addAllergy(toAllergen: toAllergen)
+        AnalyticsManager.shared.track(event: Events.AllergenAlerts.alertCreated(forAllergen: toAllergen))
     }
 
     func removeAllergy(toAllergen: Allergen) {
@@ -586,7 +587,7 @@ class DataManager: DataManagerProtocol {
         do {
             return try Realm()
         } catch let error as NSError {
-            AnalyticsManager.record(error: error)
+            AnalyticsManager.shared.record(error: error)
         }
         fatalError("Could not get Realm instance")
     }

@@ -609,7 +609,7 @@ extension ProductDetailViewController: ProductDetailRefreshDelegate {
                 }
             }, onError: { [weak self] error in
                 // No error should be thrown here, as the product was loaded previously
-                AnalyticsManager.record(error: error)
+                AnalyticsManager.shared.record(error: error)
                 self?.navigationController?.popToRootViewController(animated: true)
             })
         }

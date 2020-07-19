@@ -30,7 +30,7 @@ class CredentialsController: NSObject {
         do {
             try keychain.remove(username)
         } catch let error {
-            AnalyticsManager.record(error: error)
+            AnalyticsManager.shared.record(error: error)
         }
     }
 

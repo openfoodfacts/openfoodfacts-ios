@@ -90,6 +90,10 @@ extension TakePictureViewController: CameraControllerDelegate {
             return
         }
 
+        if imageType == .ingredients {
+            AnalyticsManager.shared.track(event: Events.Products.editedIngredientsPicture(barcode: validBarcode))
+        }
+
         dataManager.postImage(productImage, onSuccess: { [weak self] isOffline in
             if isOffline {
                 self?.uploadingImageSuccessBanner.titleLabel?.text = "product-add.image-save-success-banner.title".localized

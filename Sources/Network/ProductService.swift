@@ -60,16 +60,16 @@ class ProductService: ProductApi {
             query = buildBarcodeQueryParameter(query)
             url += "/code/\(query).json"
             searchType = "by_barcode"
-            AnalyticsManager.log(query, forKey: "product_search_barcode")
+            AnalyticsManager.shared.log(query, forKey: "product_search_barcode")
         } else {
             url += "/cgi/search.pl?search_terms=\(encodeParameters(query))&search_simple=1&action=process&json=1&page=\(page)"
             url.append(contentsOf: "&fields=" + OFFJson.summaryFields.joined(separator: OFFJson.FieldsSeparator))
             searchType = "by_product"
-            AnalyticsManager.log(query, forKey: "product_search_name")
+            AnalyticsManager.shared.log(query, forKey: "product_search_name")
         }
 
-        AnalyticsManager.log(searchType, forKey: "product_search_type")
-        AnalyticsManager.log("\(page)", forKey: "product_search_page")
+        AnalyticsManager.shared.log(searchType, forKey: "product_search_type")
+        AnalyticsManager.shared.log("\(page)", forKey: "product_search_page")
         //Answers.logSearch(withQuery: query, customAttributes: ["file": String(describing: ProductService.self), "search_type": searchType])
 
         let request = Alamofire.SessionManager.default.request(url)
@@ -86,7 +86,7 @@ class ProductService: ProductApi {
                 productsResponse.query = query
                 onSuccess(productsResponse)
             case .failure(let error as NSError):
-                AnalyticsManager.record(error: error)
+                AnalyticsManager.shared.record(error: error)
                 onError(error)
             }
         }
@@ -112,8 +112,8 @@ class ProductService: ProductApi {
 
         url += "/api/v0/product/\(barcode).json"
 
-        AnalyticsManager.log(barcode, forKey: "product_search_barcode")
-        AnalyticsManager.log("by_barcode", forKey: "product_search_type")
+        AnalyticsManager.shared.log(barcode, forKey: "product_search_barcode")
+        AnalyticsManager.shared.log("by_barcode", forKey: "product_search_type")
 
         // aleene: disabled to get all fields, not only those specified
          // we cannot use the summary or the list as the tags are product and language dependent.
@@ -154,7 +154,7 @@ class ProductService: ProductApi {
                     onSuccess(product)
                 }
             case .failure(let error):
-                AnalyticsManager.record(error: error)
+                AnalyticsManager.shared.record(error: error)
                 onError(error)
             }
         }
@@ -167,7 +167,7 @@ class ProductService: ProductApi {
             case .success(let robotoffResponse):
                 onSuccess(robotoffResponse.questions.filter({ $0.type == "add-binary" }))
             case .failure(let error):
-                AnalyticsManager.record(error: error)
+                AnalyticsManager.shared.record(error: error)
                 onError(error)
             }
         }
@@ -266,16 +266,16 @@ extension ProductService {
                                             "fileName": productImage.fileName,
                                             "fileURL": fileURL
                                             ])
-                                        AnalyticsManager.record(error: error)
+                                        AnalyticsManager.shared.record(error: error)
                                         onError(error)
                                     }
                                 case .failure(let error):
-                                    AnalyticsManager.record(error: error)
+                                    AnalyticsManager.shared.record(error: error)
                                     onError(error)
                                 }
                             }
                         case .failure(let encodingError):
-                            AnalyticsManager.record(error: encodingError)
+                            AnalyticsManager.shared.record(error: encodingError)
                             onError(encodingError)
                         }
                     }
@@ -337,12 +337,12 @@ extension ProductService {
                     let userInfo = ["product": product.toJSONString() ?? "{\"error\": \"Could convert product to JSON\"}"]
                     let error = NSError(domain: Errors.domain, code: Errors.codes.generic.rawValue, userInfo: userInfo)
                     log.error(error)
-                    AnalyticsManager.record(error: error)
+                    AnalyticsManager.shared.record(error: error)
                     onError(error)
                 }
             case .failure(let error):
                 log.error(error)
-                AnalyticsManager.record(error: error)
+                AnalyticsManager.shared.record(error: error)
                 onError(error)
             }
         }
@@ -370,7 +370,7 @@ extension ProductService {
                 }
             case .failure(let error):
                 log.error(error)
-                AnalyticsManager.record(error: error)
+                AnalyticsManager.shared.record(error: error)
                 onDone(nil, error)
             }
         }
@@ -396,7 +396,7 @@ extension ProductService {
                 }
             case .failure(let error as NSError):
                 log.error(error)
-                AnalyticsManager.record(error: error)
+                AnalyticsManager.shared.record(error: error)
                 onError(error)
             }
         }

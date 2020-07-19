@@ -80,7 +80,7 @@ class TaxonomiesService: TaxonomiesApi {
                             callback(true)
                         }
                     case .failure(let error):
-                        AnalyticsManager.record(error: error)
+                        AnalyticsManager.shared.record(error: error)
                         callback(false)
                     }
             }
@@ -103,7 +103,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        AnalyticsManager.record(error: error)
+                        AnalyticsManager.shared.record(error: error)
                     }
 
                     callback(success)
@@ -127,7 +127,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        AnalyticsManager.record(error: error)
+                        AnalyticsManager.shared.record(error: error)
                     }
                     callback(success)
             }
@@ -150,7 +150,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        AnalyticsManager.record(error: error)
+                        AnalyticsManager.shared.record(error: error)
                     }
                     callback(success)
             }
@@ -173,7 +173,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        AnalyticsManager.record(error: error)
+                        AnalyticsManager.shared.record(error: error)
                     }
                     callback(success)
             }
@@ -204,7 +204,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        AnalyticsManager.record(error: error)
+                        AnalyticsManager.shared.record(error: error)
                     }
                     callback(success)
             }
@@ -227,7 +227,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        AnalyticsManager.record(error: error)
+                        AnalyticsManager.shared.record(error: error)
                     }
 
                     callback(success)
@@ -251,7 +251,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        AnalyticsManager.record(error: error)
+                        AnalyticsManager.shared.record(error: error)
                     }
                     callback(success)
             }
@@ -274,7 +274,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        AnalyticsManager.record(error: error)
+                        AnalyticsManager.shared.record(error: error)
                     }
                     callback(success)
             }
@@ -295,7 +295,7 @@ class TaxonomiesService: TaxonomiesApi {
                         success = true
                     }
                 case .failure(let error):
-                    AnalyticsManager.record(error: error)
+                    AnalyticsManager.shared.record(error: error)
                 }
 
                 callback(success)
@@ -327,7 +327,7 @@ class TaxonomiesService: TaxonomiesApi {
                         }
                     }
                 case .failure(let error):
-                    AnalyticsManager.record(error: error)
+                    AnalyticsManager.shared.record(error: error)
                 }
 
             callback(nil)
@@ -349,7 +349,7 @@ class TaxonomiesService: TaxonomiesApi {
                             success = true
                         }
                     case .failure(let error):
-                        AnalyticsManager.record(error: error)
+                        AnalyticsManager.shared.record(error: error)
                     }
                 callback(success)
             }

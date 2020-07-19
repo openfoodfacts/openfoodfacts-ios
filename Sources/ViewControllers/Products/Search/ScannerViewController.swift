@@ -171,6 +171,11 @@ class ScannerViewController: UIViewController, DataManagerClient {
         self.navigationController?.isNavigationBarHidden = true
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsManager.shared.track(view: Views.Scanner)
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
@@ -239,7 +244,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
             let imageView = UIImageView(image: image)
             self?.videoPreviewView.addSubview(imageView)
             }, onError: { error in
-            AnalyticsManager.record(error: error)
+            AnalyticsManager.shared.record(error: error)
         })
     }
 
@@ -284,7 +289,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
             captureMetadataOutput.metadataObjectTypes = supportedBarcodes
         } catch {
             configResult = .failed
-            AnalyticsManager.record(error: error)
+            AnalyticsManager.shared.record(error: error)
             return
         }
     }
@@ -395,7 +400,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
 
     private func handleNoCamera() {
         let error = NSError(domain: "ScannerViewControllerErrorDomain", code: 1, userInfo: ["errorType": "No camera found"])
-        AnalyticsManager.record(error: error)
+        AnalyticsManager.shared.record(error: error)
     }
 }
 
@@ -422,6 +427,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                 }
                 lastCodeScanned = barcode
                 getProduct(barcode: barcode, isSummary: true)
+                AnalyticsManager.shared.track(event: Events.Scanner.scanned(barcode: barcode))
             }
         }
     }
@@ -603,12 +609,12 @@ extension ScannerViewController {
                 do {
                     try device.setTorchModeOn(level: 1.0)
                 } catch {
-                    AnalyticsManager.record(error: error)
+                    AnalyticsManager.shared.record(error: error)
                 }
             }
             device.unlockForConfiguration()
         } catch {
-            AnalyticsManager.record(error: error)
+            AnalyticsManager.shared.record(error: error)
         }
     }
 
@@ -631,7 +637,7 @@ extension ScannerViewController {
                 device.focusMode = .continuousAutoFocus
                 device.unlockForConfiguration()
             } catch {
-                AnalyticsManager.record(error: error)
+                AnalyticsManager.shared.record(error: error)
             }
         }
     }
@@ -712,7 +718,7 @@ extension ScannerViewController {
                 device.torchMode = .off
                 device.unlockForConfiguration()
             } catch {
-                AnalyticsManager.record(error: error)
+                AnalyticsManager.shared.record(error: error)
             }
         }
     }
@@ -797,6 +803,10 @@ extension ScannerViewController: FloatingPanelControllerDelegate {
             self.view.endEditing(true)
         }
         self.showAllergensFloatingLabelIfNeeded()
+
+        if let latestBarcode = self.lastCodeScanned, floatingPanelVC.position == .full {
+            AnalyticsManager.shared.track(event: Events.Scanner.resultDidExpand(barcode: latestBarcode))
+        }
     }
 
 }

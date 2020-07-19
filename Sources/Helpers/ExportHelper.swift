@@ -43,7 +43,7 @@ struct ExportHelper {
             try contents.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
         } catch {
             // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
-            AnalyticsManager.record(error: error)
+            AnalyticsManager.shared.record(error: error)
         }
     }
 
