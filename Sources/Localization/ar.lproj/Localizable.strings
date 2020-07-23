@@ -12,9 +12,9 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "عودة";
 "generic.search" = "بحث";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "إلغاء";
 "generic.save" = "حفظ";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "إلغاء";
 "generic.ok" = "تم";
 "generic.close" = "إغلق";
 
@@ -26,8 +26,8 @@
 "product-search.error-view.title" = "حدث خطأ ما";
 "product-search.error-view.subtitle" = "من فضلك حاول مرة أخرى";
 "product-search.initial-view.slogan" = "قاعدة بيانات المنتجات الغذائية المجانية";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.offline.title-loading" = "حفظ المنتجات في وضع عدم الاتصال: %d%%";
+"product-search.initial-view.offline.subtitle" = "أكثر من %d منتج متاح للمسح الفوري";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "مسح باركود المنتج";
@@ -46,11 +46,11 @@
 "product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "اترك مسح الباركود";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "يتم تحميل المنتجات…";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image…";
+"product-add.uploading-image-banner.title" = "تحميل الصورة…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "حدث خطأ ما";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
@@ -62,17 +62,17 @@
 "product-add.product-add-success-banner.title" = "تمت إضافة المنتج بنجاح. شكراً!";
 "product-add.uploaded-image" = "تم تحميل الصورة ، شكرًا!";
 "product-add.save-error.title" = "خطأ أثناء حفظ المنتج";
-"product-add.save-error.message" = "Please try again later";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
-"product-add.save-ingredients.success" = "Ingredients saved at";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
+"product-add.save-error.message" = "الرجاء المحاولة مرة أخرى لاحقاً";
+"product-add.save-info.success" = "تم حفظ المعلومات في";
+"product-add.save-info.error" = "لم يتم حفظ المعلومات";
+"product-add.save-info.saving" = "حفظ معلومات المنتج…";
+"product-add.save-info.not-yet" = "لم يتم حفظ المعلومات بعد";
+"product-add.save-ingredients.success" = "المكونات المحفوظة في";
+"product-add.save-ingredients.error" = "المكونات لم يتم حفظها";
+"product-add.save-ingredients.saving" = "جارٍ حفظ المكونات…";
+"product-add.save-ingredients.not-yet" = "المكونات لم يتم حفظها بعد";
+"product-add.save-nutriments.success" = "Nutrições salvas em";
+"product-add.save-nutriments.error" = "Nutrições salvas em";
 "product-add.save-nutriments.saving" = "Saving nutriments…";
 "product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
 "product-add.no-nutrition" = "Nutrition data are not displayed on the product";
@@ -232,8 +232,8 @@
 
 // Nutrition
 "nutrition.energy" = "الطاقة";
-"nutrition.energy.kj" = "Energy (kJ)";
-"nutrition.energy.kcal" = "Energy (kcal)";
+"nutrition.energy.kj" = "(kJ) الطاقة";
+"nutrition.energy.kcal" = "(kcal) الطاقة";
 "nutrition.fats" = "الدهون";
 "nutrition.fats.saturated-fat" = "الدهون المشبعة";
 "nutrition.fats.mono-unsaturated-fat" = "الدهون غير المشبعة أحادية";
@@ -377,7 +377,7 @@
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
 "history.first-scan.button.title" = "مسح المنتج الأول";
-"API_CANCEL_TITLE" = "Cancel";
-"USE_PHOTO" = "استخدم الصورة";
 "API_CANCEL_TITLE" = "إلغاء";
+"USE_PHOTO" = "استخدم الصورة";
+"API_CANCEL_TITLE" = "Cancel";
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "تحرير";
