@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100克";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "未設營養素";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "警告: 纖維的數量沒有被指定, 他們可能的對等級的正面貢獻不可能被考慮在內。";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "警告：包裝沒有註明水果、蔬菜和堅果的數量，顯示的數量基於成分估算：%d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "警告：包裝沒有註明水果、蔬菜和堅果的數量，顯示的數量基於分類%s估算：%d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -227,8 +231,9 @@
 "robotoff.answer-saved" = "Answer saved, thanks!";
 
 // Nutrition
-"nutrition.energy.kj" = "能量 (kJ)";
-"nutrition.energy.kcal" = "能量 (kcal)";
+"nutrition.energy" = "能量";
+"nutrition.energy.kj" = "能量（kJ）";
+"nutrition.energy.kcal" = "Energy (kcal)";
 "nutrition.fats" = "脂肪";
 "nutrition.fats.saturated-fat" = "飽和脂肪";
 "nutrition.fats.mono-unsaturated-fat" = "單不飽和脂肪";
@@ -295,7 +300,7 @@
 "nutrition.minerals.chlorophyl" = "葉綠素";
 
 // Call to action
-"call-to-action.summary" = "Take a photo of the front";
+"call-to-action.summary" = "拍攝產品正面";
 "call-to-action.ingredients" = "Take a photo of the ingredients";
 "call-to-action.nutrition" = "Take a photo of the nutrition facts";
 

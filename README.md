@@ -1,7 +1,6 @@
 <img height='175' src="https://static.openfoodfacts.org/images/svg/openfoodfacts-logo-en.svg" align="left" hspace="1" vspace="1">
 
 # Open Food Facts iOS app
-
 Note: Xcode's limited Markdown support means this file is best viewed on GitHub. Not seeing this as a formatted file in Xcode? Check out [the Build section](https://github.com/openfoodfacts/openfoodfacts-ios/wiki/Build) of the project wiki on GitHub for troubleshooting tips.
 
 [![Build Status](https://travis-ci.org/openfoodfacts/openfoodfacts-ios.svg?branch=master)](https://travis-ci.org/openfoodfacts/openfoodfacts-ios)
@@ -12,52 +11,45 @@ Note: Xcode's limited Markdown support means this file is best viewed on GitHub.
 
 <a href="https://apps.apple.com/app/open-food-facts/id588797948"><img height="75" src="https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png" align="left" hspace="1" vspace="1"></a>
 
-## What is Open Food Facts?
+## What is Open Food Facts? What can I work on ?
 
 [Open Food Facts](https://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.
-
-### Help translate Open Food Facts in your language
-
-You can help translate Open Food Facts and the app at (no technical knowledge required, takes a minute to signup): [translate.openfoodfacts.org](https://translate.openfoodfacts.org)
-
-## Features
-
-- [x] Offline barcode scanning
-- [x] Product search
-- [x] Allergen alert
-- [x] Product details
-- [x] Image upload
-- [x] Handle multilingual products (view)
-- [x] Handle multilingual products (data addition)
-- [x] On-the-fly OCR of ingredients and labels for new product addition
-- [x] Internationalised user interface
-- [x] Native editing
-- [x] Product addition
-- [x] Night mode
-
-## What can I work on ?
-
 Open Food Facts on iPhone and iPad has 0,5M users and 1M products. Each contribution you make will have a large impact on food transparency worldwide. Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the #android channel before you start work, and to document what you intend to code.
 
 ### Priority roadmap
-- [ ] Additives evaluation (already ready server side and on Android) [issue #173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
-- [ ] Compare Mode [issue #153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
+- [ ] Additives evaluation (already ready server side and on Android) [#173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
+- [ ] Compare Mode [#153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
 - [ ] Product lists (to buy, eaten…)  
 
 ### Secondary roadmap
 - [ ] On-device Product cache
 - [ ] Add a food category browser
 - [ ] Add support for the new JSON taxonomy system (multilingual, and data augmentation from Wikipedia/Wikidata)
-- [ ] Support for Open Beauty Facts, Open Pet Food Facts and Open Product Facts
+- [ ] Support for Open Beauty Facts, Open Pet Food Facts and Open Products Facts [#687](https://github.com/openfoodfacts/openfoodfacts-ios/issues/687) and [#160](https://github.com/openfoodfacts/openfoodfacts-ios/issues/160)
+
+## Join the team !
+
+OpenFoodFacts has a Slack team where we chat, discuss and support each other, join the #iOS and #iOS-alerts channels. [Click here to join.](https://slack.openfoodfacts.org/)
+
+## Current features
+
+- [x] Offline barcode scanning
+- [x] View the details of a product
+- [x] Search for products
+- [x] Allergen alert
+- [x] Internationalised user interface & multilingual products handling (view & data addition)
+- [x] Product addition & editing (incl. on-the-fly OCR of ingredients and labels, plus integration of the OFF AI)
+- [x] Image upload
+- [x] Night mode
 
 ### Issues
 Here are issues and feature requests you can work on:
 
 #### Search issues
-- [Disable search as you type: it does not work and causes performance issues on the server P1 bug search](https://github.com/openfoodfacts/openfoodfacts-ios/issues/553)
+- [ ]  [Disable search as you type: it does not work and causes performance issues on the server P1 bug search](https://github.com/openfoodfacts/openfoodfacts-ios/issues/553)
 
 #### Scan issues
-- [Card is completely blank if no name/brand/quantity/image is selected](https://github.com/openfoodfacts/openfoodfacts-ios/issues/180)
+- [ ]  [Card is completely blank if no name/brand/quantity/image is selected](https://github.com/openfoodfacts/openfoodfacts-ios/issues/180)
 
 #### History issues
 - [ ]  [Offline scans are not added to your history](https://github.com/openfoodfacts/openfoodfacts-ios/issues/267)
@@ -76,7 +68,6 @@ Here are issues and feature requests you can work on:
 #### Viewing products
 - [ ]  [Traces are not translated](https://github.com/openfoodfacts/openfoodfacts-ios/issues/245)
 
-
 ## Images
 
 ![First App Store screenshot](https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/e7/18/27/e71827cd-1fd4-5b81-b52e-2668feed9700/pr_source.png/230x0w.png)
@@ -87,7 +78,7 @@ Here are issues and feature requests you can work on:
 
 ## Building
 
-### Automatic setup
+### Quick & automatic setup
 The easiest way to setup the dependencies of the project and generate the Xcode project is to run `sh scripts/setup.sh` from the top of the repository.
 
 ### Manual setup
@@ -142,6 +133,6 @@ You can install [SwiftLint](https://github.com/realm/SwiftLint/) with Homebrew:
 brew install swiftlint
 ```
 
-## Support
+### Help translate Open Food Facts in your language
 
-OpenFoodFacts has a Slack team where we chat, discuss and support each other, join the #iOS and #iOS-alerts channels. [Click here to join.](https://slack.openfoodfacts.org/)
+You can help translate Open Food Facts and the app at (no technical knowledge required, takes a minute to signup): [translate.openfoodfacts.org](https://translate.openfoodfacts.org)

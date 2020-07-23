@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "警告: 纖維的數量沒有被指定, 他們可能的對等級的正面貢獻不可能被考慮在內。";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "警告: 水果、蔬菜和堅果的數量沒有在標籤上注明, 它是從配料清單上估計的: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "警告: 水果, 蔬菜和堅果的數量沒有在標籤上注明, 它是從產品類別 (%s) 估計: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -227,6 +231,7 @@
 "robotoff.answer-saved" = "Answer saved, thanks!";
 
 // Nutrition
+"nutrition.energy" = "Calories";
 "nutrition.energy.kj" = "Energy (kJ)";
 "nutrition.energy.kcal" = "Energy (kcal)";
 "nutrition.fats" = "脂肪";

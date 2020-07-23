@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100г";
 "product-detail.nutrition-table.serving" = "порция";
 "product-detail.nutrition-table.missing" = "Питательные вещества не были установлены.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Предупреждение: количество питательных волокон не указано, их возможный положительный вклад в оценку не может быть учтен.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Предупреждение: количество фруктов, овощей и орехов не указано на этикетке, оно было определено из списка ингредиентов: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Предупреждение: количество фруктов, овощей и орехов не указано на этикетке, оно оценивалось по категории (%s) продукта: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Пищевая ценность на 100 г/100 мл";
@@ -228,8 +232,8 @@
 
 // Nutrition
 "nutrition.energy" = "Энергетическая ценность";
-"nutrition.energy.kj" = "Энергетическая ценность (kJ)";
-"nutrition.energy.kcal" = "Энергетическая ценность (kcal)";
+"nutrition.energy.kj" = "Энергия (кДж)";
+"nutrition.energy.kcal" = "Energy (kcal)";
 "nutrition.fats" = "Жиры";
 "nutrition.fats.saturated-fat" = "Насыщенные жиры";
 "nutrition.fats.mono-unsaturated-fat" = "Мононенасыщенные жирные кислоты";
