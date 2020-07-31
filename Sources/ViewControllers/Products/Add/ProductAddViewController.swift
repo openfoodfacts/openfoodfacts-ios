@@ -292,6 +292,11 @@ class ProductAddViewController: TakePictureViewController {
         setUserAgent()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsManager.shared.track(view: Views.Scanner)
+    }
+
     private func setUserAgent() {
         var userAgentString = ""
         if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {

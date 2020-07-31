@@ -13,12 +13,13 @@ public struct View {
 
 public struct Views {
     public static var Scanner = View(path: ["scanner"])
+    public static var ProductEdit = View(path: ["products", "edit"])
 }
 
 public struct Event {
     var category: String
     var action: String
-    var name: String
+    var name: String?
     var value: Float?
 }
 
