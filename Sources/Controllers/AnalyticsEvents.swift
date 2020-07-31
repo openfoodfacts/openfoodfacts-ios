@@ -51,4 +51,20 @@ public struct Events {
             return Event(category: "products", action: "edited-ingredients-picture", name: barcode, value: nil)
         }
     }
+    struct UserAccount {
+        static func login() -> Event {
+            return Event(category: "user-account", action: "login", name: nil, value: nil)
+        }
+        static func logout() -> Event {
+            return Event(category: "user-account", action: "logout", name: nil, value: nil)
+        }
+
+        static func robotoffLoginPrompt() -> Event {
+            return Event(category: "user-account", action: "login-prompt", name: "robotoff", value: nil)
+        }
+
+        static func robotoffLoggedInAfterPrompt() -> Event {
+            return Event(category: "user-account", action: "logged-in-after-prompt", name: "robotoff", value: nil)
+        }
+    }
 }

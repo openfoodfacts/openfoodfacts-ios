@@ -13,6 +13,10 @@ import IBLocalizable
 
 class UserViewController: UIViewController, DataManagerClient {
 
+    public enum LoginIncentive {
+        case robotoff
+    }
+
 // MARK: Generic interface elements
 
     @IBOutlet weak var loginOrOutButton: UIButton! {
@@ -34,6 +38,7 @@ class UserViewController: UIViewController, DataManagerClient {
 
 // MARK: Public functions
 
+    var incentive: LoginIncentive?
     var dataManager: DataManagerProtocol!
 
     private var isLoggedIn: Bool {
@@ -158,6 +163,10 @@ class UserViewController: UIViewController, DataManagerClient {
         loginOrOutButton.setTitle("user.logging-in".localized, for: .normal)
         // loginOrOutButton.isEnabled = false
         dataManager.logIn(username: username, password: password, onSuccess: {
+            AnalyticsManager.shared.track(event: Events.UserAccount.login())
+            if self.incentive == .robotoff {
+                AnalyticsManager.shared.track(event: Events.UserAccount.robotoffLoggedInAfterPrompt())
+            }
             self.setupInterface()
         }, onError: { error in
             let title: String
@@ -182,6 +191,7 @@ class UserViewController: UIViewController, DataManagerClient {
         let logoutAlert = UIAlertController(title: "user.alert.logout-confirmation.title".localized, message: "user.alert.logout-confirmation.subtitle".localized, preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "generic.ok".localized, style: .default) { (_) in
             CredentialsController.shared.clearCredentials()
+            AnalyticsManager.shared.track(event: Events.UserAccount.logout())
             self.setupInterface()
         }
         let noAction = UIAlertAction(title: "generic.cancel".localized, style: .cancel, handler: nil)
