@@ -67,4 +67,12 @@ public struct Events {
             return Event(category: "user-account", action: "logged-in-after-prompt", name: "robotoff", value: nil)
         }
     }
+    struct IngredientAnalysis {
+        static func enabled(name: String) -> Event {
+            return Event(category: "ingredient-analysis", action: "enabled", name: name, value: nil)
+        }
+        static func disabled(name: String) -> Event {
+            return Event(category: "ingredient-analysis", action: "disabled", name: name, value: nil)
+        }
+    }
 }

@@ -40,4 +40,13 @@ class IngredientsAnalysis: Object {
     override static func indexedProperties() -> [String] {
         return ["mainName", "indexedNames"]
     }
+
+    public static func setDisplayIngredientAnalysisStatus(disabled: Bool, forDetailsType detailType: String) {
+        UserDefaults.standard.set(disabled, forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detailType))
+        if disabled {
+            AnalyticsManager.shared.track(event: Events.IngredientAnalysis.disabled(name: detailType))
+        } else {
+            AnalyticsManager.shared.track(event: Events.IngredientAnalysis.enabled(name: detailType))
+        }
+    }
 }
