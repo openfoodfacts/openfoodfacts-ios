@@ -75,12 +75,12 @@
 "product-add.save-nutriments.error" = "Nutriments not saved";
 "product-add.save-nutriments.saving" = "Saving nutriments…";
 "product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.no-nutrition" = "ไม่มีข้อมูลทางโภชนาการแสดงสำหรับผลิตภัณฑ์นี้";
 
 "product-add.ocr-ingredients.success" = "ส่วนผสมที่อ่านจากภาพตอน";
 "product-add.ocr-ingredients.error" = "ไม่สามารถแยกส่วนผสมออกจากรูปภาพได้";
 "product-add.ocr-ingredients.saving" = "กำลังอ่านข้อมูลส่วนผสมจากรูปภาพ";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.not-yet" = "รอภาพส่วนผสมเพื่อทำการวิเคราะห์";
 
 "product-add.nutriscore-explaination" = "Nutri-Score คำนวณจากคุณค่าทางโภชนาการ";
 "product-add.novagroup-explaination" = "NOVA Score คำนวณจากรายการส่วนผสมและสารปรุงแต่งอาหาร";
@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100 กรัม";
 "product-detail.nutrition-table.serving" = "หน่วยบริโภค";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "ปริมาณสารอาหารต่อ 100 กรัม / 100 มล";
@@ -224,7 +228,7 @@
 "robotoff.contribute-incentive.login" = "ชื่อผู้ใช้";
 "robotoff.contribute-incentive.not-now" = "Not now";
 "robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
-"robotoff.answer-saved" = "Answer saved, thanks!";
+"robotoff.answer-saved" = "บันทึกคำตอบแล้ว ขอบคุณ";
 
 // Nutrition
 "nutrition.energy" = "แคลอรี";
@@ -364,7 +368,7 @@
 // Search history
 "history.title" = "Search history";
 "history.cell.privacy" = "Your search history is only stored on your device";
-"history.button.clear" = "Clear";
+"history.button.clear" = "ล้างข้อมูล";
 "history.clear.confirmation-title" = "Clear your history ?";
 "history.clear.confirmation-message" = "All your history will be deleted";
 "history.section-titles.last24h" = "Last 24 hours";
