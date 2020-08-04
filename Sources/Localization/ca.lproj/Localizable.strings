@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "porció";
 "product-detail.nutrition-table.missing" = "No s'ha establert cap nutrient.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Atenció: la quantitat de fibra no s'especifica, no es tindrà en compte la seva possible contribució positiva en la qualificació.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Atenció: no s'ha especificat la quantitat de fruites, verdures i fruits secs, no es té en compte la seva possible contribució positiva en la qualificació.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Atenció: la quantitat de fruita, verdura i fruits secs no s'especifica a l'etiqueta però s'ha fet una estimació a partir de la llista d'ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Atenció: la quantitat de fruita, verdura i fruits secs no s'especifica a l'etiqueta, s'ha fet una estimació per la categoria (%s) del producte: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nivells de nutrient per 100 g/100 ml";
@@ -314,7 +318,7 @@
 "settings.tab-bar.item" = "Preferències";
 "settings.ingredientsAnalysis.title" = "Alertes sobre l'anàlisi dels ingredients";
 "settings.allergies.title" = "Alertes sobre al·lèrgens";
-"settings.allergies.description" = "Afegiu al·lèrgens a aquesta llista per ser avisats quan escanegeu un producte que en contingui. \nSi us plau, teniu en compte que la informació sobre les vostres al·lèrgies no serà MAI enviada al servidor Open Food Facts. A més, aneu amb compte que és possible que les dades no siguin 100% fiables i que la detecció no sigui exacta al 100%. Assegureu-vos també de comprovar-ho!";
+"settings.allergies.description" = "Afegiu al·lèrgens a aquesta llista per ser avisats quan escanegeu un producte que en contingui. \nSi us plau, teniu en compte que la informació sobre les vostres al·lèrgies no serà MAI enviada al servidor Open Food Facts. A més, aneu amb compte que és possible que les dades no siguin 100% aiables i que la detecció no sigui exacta al 100%. Assegureu-vos també de comprovar-ho!";
 "settings.allergies.add-button" = "Afegiu al·lèrgens";
 "settings.sections.information" = "Informació";
 "settings.sections.discover" = "Descobrir";
@@ -374,6 +378,6 @@
 "history.section-titles.longTime" = "Fa molt de temps";
 "history.first-scan.button.title" = "Escanegeu el primer producte";
 "API_CANCEL_TITLE" = "Cancel·la";
-"USE_PHOTO" = "Use Photo";
+"USE_PHOTO" = "Utilitzeu la foto";
 "API_CANCEL_TITLE" = "Cancel·la";
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edita";
