@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Nasnímať čiarový kód";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Späť";
@@ -23,28 +23,28 @@
 "product-search.title" = "Vyhľadať";
 "product-search.search-placeholder" = "Search for a product by name or barcode";
 "product-search.no-results" = "No Results";
-"product-search.error-view.title" = "Something went wrong";
-"product-search.error-view.subtitle" = "Please try again";
-"product-search.initial-view.slogan" = "the free food products database";
+"product-search.error-view.title" = "Niečo sa pokazilo";
+"product-search.error-view.subtitle" = "Prosím, skúste znova";
+"product-search.initial-view.slogan" = "bezplatná databáza potravín";
 "product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
 "product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
+"product-scanner.overlay.user-help" = "Naskenujte čiarový kód produktu";
 "product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Skener";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode.error" = "Pri skenovaní čiarového kódu sa vyskytla chyba. Skúste to o chvíľu znova.";
+"product-scanner.barcode-notfound.manual-enter" = "Čiarový kód sa nenašiel. Môžete ho zadať ručne:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts vyžaduje povolenie použiť kameru";
 "product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Open Settings";
 
 "product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
-"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+"product-scanner.permissions.failed.action.title" = "Ukončiť skenovanie čiarových kódov";
 
 "product-scanner.search.status" = "Loading product...";
 
@@ -52,20 +52,20 @@
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Uploading image...";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "Niečo sa pokazilo";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+"product-add.image-upload-error-banner.subtitle" = "Skúste nasnímať fotografiu znova";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-upload-success-banner.title" = "Obrázok bol úspešne nahraný";
+"product-add.image-save-success-banner.title" = "Obrázok bude nahraný, keď budete online";
 /* Displayed when a product was successfully added to the products database */
-"product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
-"product-add.uploaded-image" = "Image uploaded, thanks!";
-"product-add.save-error.title" = "Error while saving product";
+"product-add.product-add-success-banner.title" = "Produkt bol úspešne pridaný. Ďakujeme!";
+"product-add.uploaded-image" = "Obrázok bol nahraný, vďaka!";
+"product-add.save-error.title" = "Pri ukladaní produktu došlo k chybe";
 "product-add.save-error.message" = "Try again later";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
+"product-add.save-info.success" = "Informácia uložená v";
+"product-add.save-info.error" = "Informácia sa neuložila";
+"product-add.save-info.saving" = "Ukladanie informácií o produkte…";
 "product-add.save-info.not-yet" = "Information not saved yet";
 "product-add.save-ingredients.success" = "Ingredients saved at";
 "product-add.save-ingredients.error" = "Ingredients not saved";
@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -250,24 +254,24 @@
 "nutrition.fiber" = "Dietary fiber";
 "nutrition.proteins" = "Bielkoviny";
 "nutrition.proteins.casein" = "Kazeín";
-"nutrition.proteins.serum-proteins" = "Serum Proteins";
+"nutrition.proteins.serum-proteins" = "Sérové ​​proteíny";
 "nutrition.proteins.nucleotides" = "Nukleotidy";
 "nutrition.salt" = "Soľ";
 "nutrition.sodium" = "Sodík";
-"nutrition.alcohol" = "Alcohol";
+"nutrition.alcohol" = "Alkohol";
 "nutrition.vitamins" = "Vitamins";
 "nutrition.vitamins.a" = "Vitamín A";
 "nutrition.vitamins.beta-carotene" = "Beta carotene";
 "nutrition.vitamins.d" = "Vitamín D";
 "nutrition.vitamins.e" = "Vitamín E";
 "nutrition.vitamins.k" = "Vitamín K";
-"nutrition.vitamins.c" = "Vitamin C";
-"nutrition.vitamins.b1" = "Vitamin B1";
-"nutrition.vitamins.b2" = "Vitamin B2";
+"nutrition.vitamins.c" = "Vitamín C";
+"nutrition.vitamins.b1" = "Vitamín B1";
+"nutrition.vitamins.b2" = "Vitamín B2";
 "nutrition.vitamins.pp" = "Vitamin PP";
-"nutrition.vitamins.b6" = "Vitamin B6";
-"nutrition.vitamins.b9" = "Vitamin B9";
-"nutrition.vitamins.b12" = "Vitamin B12";
+"nutrition.vitamins.b6" = "Vitamín B6";
+"nutrition.vitamins.b9" = "Vitamín B9";
+"nutrition.vitamins.b12" = "Vitamín B12";
 "nutrition.vitamins.biotin" = "Biotin";
 "nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
 "nutrition.minerals" = "Minerálne látky";
@@ -327,7 +331,7 @@
 "settings.contribute.how-to-contribute" = "How To Contribute";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
-"settings.about.contact" = "Contact";
+"settings.about.contact" = "Kontakt";
 "settings.about.frequently-asked-questions" = "Frequently Asked Questions";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
 "settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
