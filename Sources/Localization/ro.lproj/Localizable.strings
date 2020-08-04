@@ -25,7 +25,7 @@
 "product-search.no-results" = "Niciun rezultat";
 "product-search.error-view.title" = "Ceva nu a funcţionat corect";
 "product-search.error-view.subtitle" = "Vă rugăm să încercați din nou";
-"product-search.initial-view.slogan" = "the free food products database";
+"product-search.initial-view.slogan" = "baza de date gratuită a produselor alimentare";
 "product-search.initial-view.offline.title-loading" = "Înregistrarea produselor offline: %d%%";
 "product-search.initial-view.offline.subtitle" = "Peste %d produse disponibile pentru scanare instantanee";
 
@@ -114,7 +114,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "pentru 100 g / 100 ml";
 "product-add.nutritive.choice.per-portion" = "per porție";
 "product-add.nutritive.add-nutriment" = "Adăugați un nutrient";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Mai mult de 100g?";
 
 "product-add.description.ingredients" = "Completați ingredientele pentru a obține grupul NOVA (referitor la procesarea produselor alimentare)";
 "product-add.titles.ingredients" = "Ingrediente";
@@ -151,7 +151,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Cod de bare";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Nume generic";
 "product-detail.summary.quantity" = "Cantitate";
 "product-detail.summary.packaging" = "Ambalare";
 "product-detail.summary.brands" = "Mărci";
@@ -182,7 +182,7 @@
 "product-detail.ingredients.vitamins-list" = "Vitamine";
 "product-detail.ingredients.minerals-list" = "Minerale";
 "product-detail.ingredients.nucleotides-list" = "Nucleotide";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Alte substanțe nutriționale";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Cantitatea unei porții";
@@ -194,7 +194,11 @@
 "product-detail.nutrition-table.for-serving" = "Per porție";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.missing" = "Niciun nutrient nu a fost stabilit.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Avertisment: cantitatea de fructe, legume și nuci nu este specificată, contribuția lor pozitivă nu a putut fi luată în considerare.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Informații nutriționale pentru 100g";
