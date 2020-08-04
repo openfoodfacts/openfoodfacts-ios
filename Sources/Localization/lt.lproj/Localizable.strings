@@ -13,86 +13,86 @@
 "generic.back" = "Grįžti";
 "generic.search" = "Paieška";
 "generic.cancel" = "Cancel";
-"generic.save" = "Save";
+"generic.save" = "Išsaugoti";
 "generic.cancel" = "Cancel";
-"generic.ok" = "Ok";
+"generic.ok" = "Gerai";
 "generic.close" = "Uždaryti";
 
 // Product Search
 
 "product-search.title" = "Paieška";
-"product-search.search-placeholder" = "Search by name or barcode";
-"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
-"product-search.error-view.title" = "Something went wrong";
-"product-search.error-view.subtitle" = "Please try again";
-"product-search.initial-view.slogan" = "the free food products database";
+"product-search.search-placeholder" = "Ieškokite pagal pavadinimą arba brūkšninį kodą";
+"product-search.no-results" = "Jokių rezultatų. Produktą galite pridėti prie Open Food Facts jį nuskaitydami.";
+"product-search.error-view.title" = "Kažkas negerai nutiko";
+"product-search.error-view.subtitle" = "Bandykite dar kartą";
+"product-search.initial-view.slogan" = "nemokama maisto produktų duomenų bazė";
 "product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
 "product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
+"product-scanner.overlay.user-help" = "Nuskaitykite gaminio brūkšninį kodą";
 "product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Skaitytuvas";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode.error" = "Nuskaitant brūkšninį kodą įvyko klaida. Pabandykite dar kartą po kelių akimirkų.";
+"product-scanner.barcode-notfound.manual-enter" = "Nerastas brūkšninis kodas. Galite įvesti rankiniu būdu:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
-"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+"product-scanner.permissions.noPermissions.title" = "„Open Food Facts“ reikia kameros leidimo";
+"product-scanner.permissions.noPermissions.message" = "Suteikite leidimą leisti fotoaparatui nuskaityti brūkšninius kodus";
+"product-scanner.permissions.noPermissions.action.title" = "Atidaryti nustatymus";
 
-"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
-"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+"product-scanner.permissions.failed.title" = "Nepavyko pradėti brūkšninių kodų nuskaitymo.";
+"product-scanner.permissions.failed.message" = "Privatumo nustatymuose įsitikinkite, kad „Open Food Facts“ turi leidimą naudoti fotoaparatą";
+"product-scanner.permissions.failed.action.title" = "Palikti brūkšninio kodo nuskaitymą";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Įkeliamas produktas…";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image…";
+"product-add.uploading-image-banner.title" = "Įkeliamas vaizdas…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "Kažkas negerai nutiko";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+"product-add.image-upload-error-banner.subtitle" = "Pabandykite dar kartą nufotografuoti";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-upload-success-banner.title" = "Vaizdas buvo sėkmingai įkeltas";
+"product-add.image-save-success-banner.title" = "Vaizdas bus įkeltas prisijungus prie interneto";
 /* Displayed when a product was successfully added to the products database */
-"product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
-"product-add.uploaded-image" = "Image uploaded, thanks!";
-"product-add.save-error.title" = "Error while saving product";
-"product-add.save-error.message" = "Please try again later";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
-"product-add.save-ingredients.success" = "Ingredients saved at";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.product-add-success-banner.title" = "Produktas sėkmingai pridėtas. Ačiū!";
+"product-add.uploaded-image" = "Vaizdas įkeltas, ačiū!";
+"product-add.save-error.title" = "Išsaugant produktą, įvyko klaida";
+"product-add.save-error.message" = "Pabandykite dar kartą vėliau";
+"product-add.save-info.success" = "Informacija išsaugota";
+"product-add.save-info.error" = "Informacija neišsaugota";
+"product-add.save-info.saving" = "Informacijos apie gaminį išsaugojimas…";
+"product-add.save-info.not-yet" = "Informacija dar neišsaugota";
+"product-add.save-ingredients.success" = "Sudėtis išsaugota";
+"product-add.save-ingredients.error" = "Sudėtis neišsaugota";
+"product-add.save-ingredients.saving" = "Saugoma sudėtis…";
+"product-add.save-ingredients.not-yet" = "Sudėtis dar neišsaugota";
+"product-add.save-nutriments.success" = "Maistingumas išsaugotas";
+"product-add.save-nutriments.error" = "Maistingumas dar neišsaugotas";
+"product-add.save-nutriments.saving" = "Įkeliame maistingumą…";
+"product-add.save-nutriments.not-yet" = "Maistingumas dar neišsaugotas";
+"product-add.no-nutrition" = "Produkto maistingumas nenurodytas";
 
-"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.success" = "Ingredientai, skaitomi iš paveikslėlio, esančio";
+"product-add.ocr-ingredients.error" = "Nepavyko išgauti ingredientų iš paveikslėlio";
+"product-add.ocr-ingredients.saving" = "Ingredientų išgavimas iš paveikslėlio…";
+"product-add.ocr-ingredients.not-yet" = "Laukiama ingredientų nuotraukos analizei";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
+"product-add.nutriscore-explaination" = "„Nutri-Score“ ką tik buvo apskaičiuotas iš mitybos lentelės";
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
 
-"alert.action.ok" = "Ok";
+"alert.action.ok" = "Gerai";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
-"product-add.placeholder.name" = "Product name";
+"product-add.placeholder.name" = "Produkto pavadinimas";
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Brand";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity" = "Quantity";
+"product-add.placeholder.quantity" = "Kiekis";
 
 "product-add.title" = "New product";
 "product-add.title-edit" = "Edit product";
@@ -101,10 +101,10 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
-"product-add.label.product-name" = "Name";
+"product-add.label.product-name" = "Vardas";
 "product-add.label.category" = "Category";
-"product-add.label.quantity" = "Quantity";
-"product-add.label.packaging" = "Packaging";
+"product-add.label.quantity" = "Kiekis";
+"product-add.label.packaging" = "Pakuotė";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Languages";
@@ -113,7 +113,7 @@
 "product-add.titles.nutritive" = "Nutrition Facts";
 "product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "per portion";
-"product-add.nutritive.add-nutriment" = "Add a nutrient";
+"product-add.nutritive.add-nutriment" = "Pridėti maistinę medžiagą";
 "product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
@@ -152,17 +152,17 @@
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Barkodas";
 "product-detail.summary.generic-name" = "Generic name";
-"product-detail.summary.quantity" = "Quantity";
-"product-detail.summary.packaging" = "Packaging";
+"product-detail.summary.quantity" = "Kiekis";
+"product-detail.summary.packaging" = "Pakuotė";
 "product-detail.summary.brands" = "Prekės ženklai";
-"product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
-"product-detail.summary.origins" = "Origin of ingredients";
+"product-detail.summary.manufacturing-places" = "Gamybos ar perdirbimo vietos";
+"product-detail.summary.origins" = "Sudedamųjų dalių kilmė";
 "product-detail.summary.categories" = "Kategorijos";
-"product-detail.summary.labels" = "Labels, certifications, awards";
-"product-detail.summary.citiesTags" = "City, state and country where purchased";
-"product-detail.summary.stores" = "Stores";
+"product-detail.summary.labels" = "Žymėjimai, sertifikatai, apdovanojimai";
+"product-detail.summary.citiesTags" = "Miestas, valstija ir šalis, kur įsigyta";
+"product-detail.summary.stores" = "Parduotuvės";
 "product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Country";
+"product-detail.summary.countries" = "Šalis";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -175,7 +175,7 @@
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.traces-list" = "Traces";
+"product-detail.ingredients.traces-list" = "Pėdsakai";
 "product-detail.ingredients.additives-list" = "Additives";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients that may be from palm oil";
@@ -185,7 +185,7 @@
 "product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
 // Product detail nutrition info row labels
-"product-detail.nutrition.serving-size" = "Serving size";
+"product-detail.nutrition.serving-size" = "Porcijos dydis";
 "product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2 emissions";
 
 // Product detail nutrition table labels
@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Įspėjimas: skaidulinių medžiagų kiekis nenurodytas, neatsižvelgiama į galimą teigiamą jų indėlį į įvertinimą.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -216,10 +220,10 @@
 "ingredients-analysis.back-to-scan" = "Back to scan";
 
 // Robotoff
-"robotoff.yes" = "Yes";
-"robotoff.no" = "No";
+"robotoff.yes" = "Taip";
+"robotoff.no" = "Ne";
 "robotoff.not-sure" = "I'm not sure";
-"robotoff.contribute-incentive.title" = "Contribute";
+"robotoff.contribute-incentive.title" = "Prisidėti";
 "robotoff.settings.display-questions" = "Display questions";
 "robotoff.contribute-incentive.login" = "Username";
 "robotoff.contribute-incentive.not-now" = "Not now";
@@ -317,13 +321,13 @@
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
 "settings.allergies.add-button" = "Add allergens";
 "settings.sections.information" = "Information";
-"settings.sections.discover" = "Discover";
-"settings.sections.contribute" = "Contribute";
+"settings.sections.discover" = "Atrasti";
+"settings.sections.contribute" = "Prisidėti";
 "settings.sections.about" = "About";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Atrasti";
 "settings.contribute.how-to-contribute" = "How To Contribute";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -339,7 +343,7 @@
 "user.logging-in" = "Logging in";
 "user.log-out" = "Log Out";
 "user.username" = "Username";
-"user.password" = "Password";
+"user.password" = "Slaptažodis";
 "user.logged-in.label" = "%@, you are logged in";
 "user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.not-logged-in" = "Not logged in";
