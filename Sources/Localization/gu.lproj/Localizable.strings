@@ -96,7 +96,7 @@
 
 "product-add.title" = "New product";
 "product-add.title-edit" = "Edit product";
-"product-add.titles.barcode" = "Barcode";
+"product-add.titles.barcode" = "બારકોડ";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
@@ -150,15 +150,15 @@
 "product-detail.page-title.environment-impact" = "Environment";
 
 // Product detail summary info rows labels
-"product-detail.summary.barcode" = "Barcode";
+"product-detail.summary.barcode" = "બારકોડ";
 "product-detail.summary.generic-name" = "Generic name";
 "product-detail.summary.quantity" = "Quantity";
 "product-detail.summary.packaging" = "Packaging";
-"product-detail.summary.brands" = "Brands";
+"product-detail.summary.brands" = "બ્રાન્ડ";
 "product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
 "product-detail.summary.origins" = "Origin of ingredients";
-"product-detail.summary.categories" = "Categories";
-"product-detail.summary.labels" = "Labels, certifications, awards";
+"product-detail.summary.categories" = "શ્રેણીઓ";
+"product-detail.summary.labels" = "લેબલ્સ, પ્રમાણપત્રો, એવોર્ડ";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
 "product-detail.summary.embCodes" = "Packager code";
@@ -171,7 +171,7 @@
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
-"product-detail.ingredients.allergens-list" = "Substances or products causing allergies or intolerances";
+"product-detail.ingredients.allergens-list" = "એલર્જી અથવા અસહિષ્ણુતા પેદા કરનાર પદાર્થો અથવા ઉત્પાદનો";
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
