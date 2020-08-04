@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "dose";
 "product-detail.nutrition-table.missing" = "Nenhum nutriente foi definido.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Atenção: a quantidade de fibra não está especificada, a sua eventual contribuição positiva não pôde ser considerada para a classificação.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Aviso: a quantidade de frutas, vegetais e nozes não está especificada, sua possível contribuição positiva para a classe não podê ser levada em consideração.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Atenção: a quantidade de frutas, legumes e nozes não é especificada no rótulo, foi estimado da lista de ingredientes: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Atenção: a quantidade de frutas, legumes e nozes não é especificada no rótulo, foi estimado da categoria (%s) do produto: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Valores nutricionais por 100 gr/100 ml";
@@ -314,7 +318,7 @@
 "settings.tab-bar.item" = "Definições";
 "settings.ingredientsAnalysis.title" = "Alertas de análise de ingredientes";
 "settings.allergies.title" = "Alertas de alérgenos";
-"settings.allergies.description" = "Adicione alérgenos a esta lista para ser notificado quando escanear um produto que o contém. \nInformações sobre suas alergias nunca serão enviadas ao servidor Open Food Facts. Além disso, esteja atento pois os dados podem não ser 100% confiáveis e a detecção pode não ser 100% precisa. Não deixe de fazer sua própria pesquisa!";
+"settings.allergies.description" = "Adicione alérgenos a esta lista para ser notificado quando escanear um produto que o contém. \nInformações sobre suas alergias nunca serão enviadas ao servidor Open Food Facts. Além disso, esteja atento pois os dados podem não ser 100% aonfiáveis e a detecção pode não ser 100[%s]recisa. Não deixe de fazer sua própria pesquisa!";
 "settings.allergies.add-button" = "Adicionar alérgenos";
 "settings.sections.information" = "Informação";
 "settings.sections.discover" = "Descubra";
@@ -373,7 +377,7 @@
 "history.section-titles.fewMonths" = "Uns meses atrás";
 "history.section-titles.longTime" = "A muito tempo atrás";
 "history.first-scan.button.title" = "Escanear o primeiro produto";
-"API_CANCEL_TITLE" = "Cancelar";
-"USE_PHOTO" = "Use Foto";
 "API_CANCEL_TITLE" = "Cancele";
+"USE_PHOTO" = "Use Foto";
+"API_CANCEL_TITLE" = "Cancelar";
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edite";
