@@ -38,13 +38,13 @@
 "product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
 "product-scanner.barcode-notfound.manual-enter" = "Δεν βρέθηκε γραμμωτό κώδικα. Μπορείτε να το πληκτρολογήσετε χειροκίνητα:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
-"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+"product-scanner.permissions.noPermissions.title" = "Το Open Food Facts χρειάζεται δικαιώματα κάμερας";
+"product-scanner.permissions.noPermissions.message" = "Παραχωρήστε την άδεια να επιτρέψετε στην κάμερα να σαρώσει γραμμικούς κώδικες";
+"product-scanner.permissions.noPermissions.action.title" = "Ανοίξτε τις ρυθμίσεις";
 
-"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
-"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+"product-scanner.permissions.failed.title" = "Δεν ήταν δυνατή η έναρξη της σάρωσης γραμμωτού κώδικα.";
+"product-scanner.permissions.failed.message" = "Βεβαιωθείτε ότι στις Ρυθμίσεις απορρήτου ότι το Open Food Facts έχει άδεια χρήσης της κάμερας";
+"product-scanner.permissions.failed.action.title" = "Αφήστε τη σάρωση γραμμωτού κώδικα";
 
 "product-scanner.search.status" = "Loading product…";
 
@@ -52,7 +52,7 @@
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Uploading image…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "Κάτι πήγε στραβά";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
@@ -195,6 +195,10 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -327,7 +331,7 @@
 "settings.contribute.how-to-contribute" = "How To Contribute";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
-"settings.about.contact" = "Contact";
+"settings.about.contact" = "Επικοινωνία";
 "settings.about.frequently-asked-questions" = "Frequently Asked Questions";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
 "settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
