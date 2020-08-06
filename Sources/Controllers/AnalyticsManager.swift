@@ -12,7 +12,7 @@ class AnalyticsManager {
 
     static func log(_ value: String, forKey key: String) {
         SentrySDK.configureScope { (scope: Scope) in
-            scope.setValue(value, forKey: key)
+            scope.setTag(value: value, key: key)
         }
     }
 
