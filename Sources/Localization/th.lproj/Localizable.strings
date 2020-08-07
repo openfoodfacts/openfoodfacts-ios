@@ -71,11 +71,11 @@
 "product-add.save-ingredients.error" = "ไม่ได้บันทึกข้อมูลส่วนผสม";
 "product-add.save-ingredients.saving" = "กำลังบันทึกข้อมูลส่วนผสม";
 "product-add.save-ingredients.not-yet" = "ยังไม่ได้บันทึกส่วนผสม";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "ไม่มีข้อมูลทางโภชนาการแสดงสำหรับผลิตภัณฑ์นี้";
+"product-add.save-nutriments.success" = "บันทึกส่วนผสมแล้วตอน";
+"product-add.save-nutriments.error" = "ไม่ได้บันทึกสารอาหาร";
+"product-add.save-nutriments.saving" = "การประหยัดสารอาหาร…";
+"product-add.save-nutriments.not-yet" = "ไม่ได้บันทึกข้อมูลส่วนผสม";
+"product-add.no-nutrition" = "ข้อมูลโภชนาการไม่แสดงบนผลิตภัณฑ์";
 
 "product-add.ocr-ingredients.success" = "ส่วนผสมที่อ่านจากภาพตอน";
 "product-add.ocr-ingredients.error" = "ไม่สามารถแยกส่วนผสมออกจากรูปภาพได้";
@@ -114,7 +114,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "ต่อ 100 กรัม / 100 มิลลิลิตร";
 "product-add.nutritive.choice.per-portion" = "ต่อหน่วยบริโภค";
 "product-add.nutritive.add-nutriment" = "เพิ่มสารอาหารอื่นๆ";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "มากกว่า 100 กรัม";
 
 "product-add.description.ingredients" = "เพิ่มข้อมูลส่วนผสมให้ครบถ้วน เพื่อคำนวณ NOVA Score";
 "product-add.titles.ingredients" = "ส่วนผสม";
@@ -151,7 +151,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "บาร์โค้ด";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "ชื่อสามัญ";
 "product-detail.summary.quantity" = "ปริมาณ";
 "product-detail.summary.packaging" = "บรรจุภัณฑ์";
 "product-detail.summary.brands" = "ยี่ห้อสินค้า";
@@ -161,7 +161,7 @@
 "product-detail.summary.labels" = "ฉลากต่างๆ การรับรอง และรางวัล";
 "product-detail.summary.citiesTags" = "เมืองรัฐและประเทศที่ซื้อ";
 "product-detail.summary.stores" = "ร้านค้า";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "รหัสแพ็คเกจ";
 "product-detail.summary.countries" = "ประเทศที่ขาย";
 
 // Product detail ingredients info row labels
@@ -169,10 +169,10 @@
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
 "product-detail.ingredients.nova.3" = "Processed foods";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.incite" = "เพิ่มส่วนผสมและ / หรือหมวดหมู่เพื่อคำนวณ NOVA";
 "product-detail.ingredients.ingredients-list" = "รายชื่อส่วนผสม";
 "product-detail.ingredients.allergens-list" = "สารหรือผลิตภัณฑ์ที่ก่อให้เกิดอาการแพ้หรือแพ้";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-alert.title" = "มีสารก่อภูมิแพ้";
 "product-detail.ingredients.allergens-list.missing-infos" = "ผลิตภัณฑ์นี้ยังไม่มีรายการส่วนผสม ทำให้ไม่สามารถตรวจหาสารก่อภูมิแพ้ได้";
 "product-detail.ingredients.allergens-list.offline-product" = "ผลิตภัณฑ์นี้ถูกโหลดจากฐานข้อมูลออฟไลน์และทำให้ไม่สามารถตรวจพบสารก่อภูมิแพ้ได้";
 "product-detail.ingredients.traces-list" = "สารเจือปน";
@@ -182,7 +182,7 @@
 "product-detail.ingredients.vitamins-list" = "วิตามิน";
 "product-detail.ingredients.minerals-list" = "แร่ธาตุ";
 "product-detail.ingredients.nucleotides-list" = "นิวคลีโอ";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "สารอาหารอื่น ๆ";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "หน่วยบริโภค";
@@ -194,9 +194,9 @@
 "product-detail.nutrition-table.for-serving" = "ต่อหน่วยบริโภค";
 "product-detail.nutrition-table.100g" = "100 กรัม";
 "product-detail.nutrition-table.serving" = "หน่วยบริโภค";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.missing" = "ไม่มีการตั้งค่าสารอาหาร";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "คำเตือน: ไม่ได้ระบุปริมาณของเส้นใยไม่สามารถนำผลบวกที่เป็นไปได้มาสู่เกรด";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
@@ -209,25 +209,26 @@
 // Ingredients Analysis
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
-"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
+"ingredients-analysis.unknown_status" = "เราไม่สามารถประเมินสถานะของผลิตภัณฑ์ได้
+";
 "ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
 "ingredients-analysis.display" = "Display %@ status";
-"ingredients-analysis.missing-ingredients.title" = "Fill in the missing ingredients";
-"ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
-"ingredients-analysis.help-translate.title" = "Help translate the ingredients in your language";
-"ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
-"ingredients-analysis.help-translate.button" = "Help translate ingredients";
-"ingredients-analysis.back-to-scan" = "Back to scan";
+"ingredients-analysis.missing-ingredients.title" = "เติมส่วนผสมที่ขาดหายไป";
+"ingredients-analysis.missing-ingredients.description" = "เรายังไม่มีส่วนผสมสำหรับผลิตภัณฑ์นี้ คุณสามารถช่วยเติมเต็มพวกเขา?";
+"ingredients-analysis.help-translate.title" = "ช่วยแปลส่วนผสมในภาษาของคุณ";
+"ingredients-analysis.help-translate.description" = "ช่วยแปลส่วนผสมในภาษาของคุณเพื่อให้สามารถวิเคราะห์ส่วนผสมได้";
+"ingredients-analysis.help-translate.button" = "ช่วยแปลส่วนผสม";
+"ingredients-analysis.back-to-scan" = "กลับไปสแกน";
 
 // Robotoff
 "robotoff.yes" = "ถูกต้อง";
 "robotoff.no" = "ไม่ใช่";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "ฉันไม่แน่ใจ";
 "robotoff.contribute-incentive.title" = "สนับสนุน";
-"robotoff.settings.display-questions" = "Display questions";
+"robotoff.settings.display-questions" = "แสดงคำถาม";
 "robotoff.contribute-incentive.login" = "ชื่อผู้ใช้";
-"robotoff.contribute-incentive.not-now" = "Not now";
-"robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
+"robotoff.contribute-incentive.not-now" = "ไม่ใช่ตอนนี้";
+"robotoff.contribute-incentive.description" = "ตอบคำถามง่าย ๆ ทำให้อาหารโปร่งใสเกิดขึ้น!";
 "robotoff.answer-saved" = "บันทึกคำตอบแล้ว ขอบคุณ";
 
 // Nutrition
@@ -308,30 +309,30 @@
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
 "product.images.took-picture.front" = "ภาพถ่ายด้านหน้า✅";
 "product.images.took-picture.ingredients" = "ถ่ายภาพของส่วนผสม ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.nutrition" = "ถ่ายภาพของฉลากโภชนาการ ✅";
 
-"product.images.take-picture.front" = "Photo of the front";
-"product.images.take-picture.ingredients" = "Photo of the ingredients";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.front" = "ภาพถ่ายด้านหน้า✅";
+"product.images.take-picture.ingredients" = "ถ่ายภาพของส่วนผสม";
+"product.images.take-picture.nutrition" = "ถ่ายภาพของฉลากโภชนาการ";
 
 // Settings storyboard
 "settings.tab-bar.item" = "ตั้งค่า";
-"settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
-"settings.allergies.title" = "Allergens alerts";
+"settings.ingredientsAnalysis.title" = "การแจ้งเตือนการวิเคราะห์ส่วนผสม";
+"settings.allergies.title" = "การแจ้งเตือนสารก่อภูมิแพ้";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
+"settings.allergies.add-button" = "เพิ่มสารก่อภูมิแพ้";
 "settings.sections.information" = "ข้อมูล";
 "settings.sections.discover" = "ค้นพบ";
 "settings.sections.contribute" = "สนับสนุน";
 "settings.sections.about" = "About";
-"settings.user-profile" = "Your contributor account";
+"settings.user-profile" = "บัญชีผู้สนับสนุนของคุณ";
 "settings.credits.title" = "เครดิต";
 "settings.scan-on-launch.title" = "แสดงการสแกนเมื่อเปิดตัวแอป";
 "settings.sections.discover" = "ค้นพบ";
 "settings.contribute.how-to-contribute" = "วิธีการมีส่วนร่วม";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
-"settings.about.contact" = "Contact";
+"settings.contribute.support-open-food-facts" = "สนับสนุนข้อเท็จจริงอาหารเปิด";
+"settings.contribute.translate-open-food-facts" = "แปลข้อมูลอาหารเปิด";
+"settings.about.contact" = "รายชื่อผู้ติดต่อ";
 "settings.about.frequently-asked-questions" = "Frequently Asked Questions";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
 "settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
@@ -340,7 +341,7 @@
 /* Tab bar item */
 "user.tab-bar.item" = "ผู้ใช้งาน";
 "user.log-in" = "เข้าสู่ระบบ";
-"user.logging-in" = "Logging in";
+"user.logging-in" = "กำลังเข้าสู่ระบบ...";
 "user.log-out" = "ออกจากระบบ";
 "user.username" = "ชื่อผู้ใช้";
 "user.password" = "รหัสผ่าน";
