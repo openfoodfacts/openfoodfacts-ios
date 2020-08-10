@@ -9,5 +9,16 @@
 import Foundation
 
 func isOffline(errorCode: Int) -> Bool {
-    return errorCode == NSURLErrorNotConnectedToInternet || errorCode == NSURLErrorTimedOut
+    let offlineErrors = Set(
+                [NSURLErrorNotConnectedToInternet,
+                 NSURLErrorTimedOut,
+                 NSURLErrorCannotConnectToHost,
+                 NSURLErrorCannotFindHost,
+                 NSURLErrorNetworkConnectionLost,
+                 NSURLErrorDNSLookupFailed,
+                 NSURLErrorInternationalRoamingOff,
+                 NSURLErrorCallIsActive,
+                 NSURLErrorDataNotAllowed
+                ])
+    return offlineErrors.contains(errorCode)
 }
