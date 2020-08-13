@@ -12,18 +12,33 @@ def highest_app_version_number()
     liveAppStoreVersion = app.get_live_app_store_version()
     editAppStoreVersion = app.get_edit_app_store_version()
 
+    maxUploadedBuildVersion = app.get_builds(filter: nil, includes: "preReleaseVersion")
+        .select { |v| !v.pre_release_version.nil? }  # builds without pre_release_version crash when accessing .app_version
+        .sort_by { |v| Gem::Version.new(v.app_version) }
+        .last
+    
     liveVersion = nil
+    editVersion = nil
 
     if liveAppStoreVersion && liveAppStoreVersion.version_string
+        puts "considering version being live in app store connect: #{liveAppStoreVersion.version_string}"
         liveVersion = liveAppStoreVersion.version_string
     end
 
-    if editAppStoreVersion && editAppStoreVersion.version_string && liveVersion.nil?
+    if editAppStoreVersion && editAppStoreVersion.version_string
+        puts "considering version being edited in app store connect: #{editAppStoreVersion.version_string}"
         editVersion = editAppStoreVersion.version_string
-        return liveVersion, editVersion
-    else
-        return liveVersion, nil
     end
+
+    if maxUploadedBuildVersion && maxUploadedBuildVersion.pre_release_version
+        puts "considering max version of uploaded builds: #{maxUploadedBuildVersion.app_version}"
+        if(editVersion.nil? || Versionomy.parse(maxUploadedBuildVersion.app_version) > Versionomy.parse(editVersion))
+            puts "prefering max version of uploaded builds: #{maxUploadedBuildVersion.app_version}"
+            editVersion = maxUploadedBuildVersion.app_version        
+        end
+    end
+
+    return liveVersion, editVersion
 ensure
     puts "Live Version: #{liveVersion}\tEdit Version: #{editVersion}"
 end
