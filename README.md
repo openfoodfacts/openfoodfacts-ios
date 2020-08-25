@@ -134,6 +134,9 @@ You can install [SwiftLint](https://github.com/realm/SwiftLint/) with Homebrew:
 brew install swiftlint
 ```
 
+### Sentry
+[Track crashes](https://sentry.io/organizations/openfoodfacts/issues/?project=5276492)
+
 ### Help translate Open Food Facts in your language
 
 You can help translate Open Food Facts and the app at (no technical knowledge required, takes a minute to signup): [translate.openfoodfacts.org](https://translate.openfoodfacts.org)
