@@ -126,7 +126,7 @@ import Cartography
 
                 newPage.actionButtonTitle = "ingredients-analysis.help-translate.button".localized
                 newPage.actionHandler = { item in
-                    if let url = URL(string: OFFUrlsHelper.baseUrl + "/ingredients?translate=1") {
+                    if let url = URL(string: OFFUrlsHelper.baseUrl() + "/ingredients?translate=1") {
                         self.viewController()?.openUrlInApp(url)
                     }
                     item.manager?.dismissBulletin(animated: true)
