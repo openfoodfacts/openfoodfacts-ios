@@ -13,8 +13,8 @@ Note: Xcode's limited Markdown support means this file is best viewed on GitHub.
 
 ## What is Open Food Facts? What can I work on ?
 
-[Open Food Facts](https://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.
-Open Food Facts on iPhone and iPad has 0,5M users and 1M products. Each contribution you make will have a large impact on food transparency worldwide. Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the #android channel before you start work, and to document what you intend to code.
+**[Open Food Facts](https://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.**
+**Open Food Facts** on iPhone and iPad has **0,5M users** and **more than 1,1M products**. **_Each contribution you make will have a large impact on food transparency worldwide._** Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the **#android channel** before you start work, and to document what you intend to code.
 
 ### Priority roadmap
 - [ ] Display food labels (already assigned)
@@ -34,14 +34,14 @@ OpenFoodFacts has a Slack chat room where we discuss and support each other, joi
 
 ## Current features
 
-- [x] Offline barcode scanning
-- [x] View the details of a product
-- [x] Search for products
-- [x] Allergen alert
-- [x] Internationalised user interface & multilingual products handling (view & data addition)
-- [x] Product addition & editing (incl. on-the-fly OCR of ingredients and labels, plus integration of the OFF AI)
-- [x] Image upload
-- [x] Night mode
+- [x] **_Offline barcode scanning_**
+- [x] **_View the details of a product_**
+- [x] **_Search for products_**
+- [x] **_Allergen alert_**
+- [x] **_Internationalised user interface & multilingual products handling (view & data addition)_**
+- [x] **_Product addition & editing (incl. on-the-fly OCR of ingredients and labels, plus integration of the OFF AI)_**
+- [x] **_Image upload_**
+- [x] **_Night mode_**
 
 ### Issues
 Here are issues and feature requests you can work on:
