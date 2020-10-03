@@ -219,7 +219,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }), label: InfoRowKey.categories.localizedString)
 
         createFormRow(with: &rows, item: product.labels, label: InfoRowKey.labels.localizedString)
-        createFormRow(with: &rows, item: product.citiesTags, label: InfoRowKey.citiesTags.localizedString)
 
         createFormRow(with: &rows, item: product.embCodesTags?.map({ (tag: String) -> NSAttributedString in
             return NSAttributedString(string: tag.uppercased().replacingOccurrences(of: "-", with: " "),
