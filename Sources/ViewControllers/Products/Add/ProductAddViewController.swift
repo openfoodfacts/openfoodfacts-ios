@@ -508,7 +508,14 @@ class ProductAddViewController: TakePictureViewController {
         displayedNutrimentItems.enumerated().forEach { (index: Int, element: String) in
             if let view = nutritiveValuesStackView.arrangedSubviews[index] as? EditNutritiveValueView {
                 let nutriment = dataManager.nutriment(forTag: element)
-                let nutrimentName = nutriment?.names.chooseForCurrentLanguage()?.value ?? element
+                // The element seems to be the json-key (we should use the actual enum).
+                // Note that the translations come from the Nutriments taxonomy
+                var nutrimentName = nutriment?.names.chooseForCurrentLanguage()?.value ?? element
+
+                // This is a stopgap, pending this translation in the Nutriments taxonomy
+                if nutrimentName == "energy-kcal" {
+                    nutrimentName = "nutrition.energy.kcal".localized
+                }
 
                 view.nutrimentCode = element
                 view.titleLabel.text = nutrimentName
