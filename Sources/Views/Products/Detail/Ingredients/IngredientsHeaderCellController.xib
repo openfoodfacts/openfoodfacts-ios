@@ -46,39 +46,28 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="Rqb-UT-33y" firstAttribute="leading" secondItem="p0H-vx-8QQ" secondAttribute="leading" id="F5O-at-T4O"/>
-                                <constraint firstItem="Rqb-UT-33y" firstAttribute="height" secondItem="cuw-2U-tN7" secondAttribute="height" id="gOB-RJ-3is"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="gOB-RJ-3is"/>
-                                </mask>
-                            </variation>
                         </stackView>
-                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="751" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-S9-0pp" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="66.5" width="320" height="56.5"/>
+                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-S9-0pp" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="66.5" width="320" height="44"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="22" id="kV1-Ct-FR1"/>
+                                <constraint firstAttribute="height" constant="44" id="kV1-Ct-FR1"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="kV1-Ct-FR1"/>
-                                </mask>
-                            </variation>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="POW-1n-FnV">
-                            <rect key="frame" x="0.0" y="134" width="320" height="48"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POW-1n-FnV">
+                            <rect key="frame" x="0.0" y="121.5" width="320" height="60.5"/>
                             <subviews>
-                                <view contentMode="scaleToFill" horizontalCompressionResistancePriority="752" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbX-TQ-FYc" customClass="NovaGroupView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                    <rect key="frame" x="32.5" y="-1" width="47.5" height="50"/>
+                                <view contentMode="scaleToFill" horizontalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="fbX-TQ-FYc" customClass="NovaGroupView" customModule="OpenFoodFacts" customModuleProvider="target">
+                                    <rect key="frame" x="32.5" y="-9.5" width="47.5" height="80"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="MDO-fd-HuQ"/>
                                         <constraint firstAttribute="width" secondItem="fbX-TQ-FYc" secondAttribute="height" multiplier="131:220" id="Yce-8V-dwm"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLO-G9-z26">
-                                    <rect key="frame" x="80" y="9.5" width="159" height="13.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLO-G9-z26">
+                                    <rect key="frame" x="80" y="18.5" width="160" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="160" id="yzO-Kq-ysD"/>
                                     </constraints>
@@ -86,8 +75,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f61-gC-kYe">
-                                    <rect key="frame" x="242" y="-1" width="24" height="50"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f61-gC-kYe">
+                                    <rect key="frame" x="242" y="18.5" width="24" height="24"/>
                                     <state key="normal" image="circle-info"/>
                                     <connections>
                                         <action selector="novagroupInfoButtonTapped:" destination="-1" eventType="touchUpInside" id="umr-Od-Yxj"/>
