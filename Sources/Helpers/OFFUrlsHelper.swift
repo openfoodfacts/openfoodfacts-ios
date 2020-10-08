@@ -46,6 +46,10 @@ class OFFUrlsHelper: NSObject {
         return URL(string: "\(baseUrl())/nucleotide/\(nucleotide.code)")!
     }
 
+    static func url(forLabel label: Label) -> URL {
+        return URL(string: "\(baseUrl())/label/\(label.code)")!
+    }
+
     // Not sure if there is a taxonomy for this
     /*
      static func url(forOther other: OtherNutritionalSubstance) -> URL {
