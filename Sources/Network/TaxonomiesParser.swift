@@ -106,6 +106,19 @@ struct TaxonomiesParser: TaxonomiesParserProtocol {
         return ingredientsAnalysisConfig
     }
 
+    func parseLabels(data: [String: Any]) -> [Label] {
+        let labels = data.compactMap({ (labelCode: String, value: Any) -> Label? in
+            let tags = parseTags(value: value)
+            let parents = parseParents(value: value)
+            let children = parseChildren(value: value)
+            return Label(code: labelCode,
+                            parents: parents,
+                            children: children,
+                            names: tags)
+        })
+        return labels
+    }
+
     // MARK: - Private Helper Methods
 
     private func parseTags(value: Any) -> [Tag] {

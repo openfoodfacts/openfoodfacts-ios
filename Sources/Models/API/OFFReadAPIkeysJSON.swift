@@ -299,6 +299,7 @@ struct OFFJson {
     //static let IngredientsIdsDebugKey = "ingredients_ids_debug"
     //static let IngredientsThatMayBeFromPalmOilNKey = "ingredients_that_may_be_from_palm_oil_n"
     static let LabelsKey = "labels"
+    static let LabelsTagsKey = "labels_tags"
     //static let LabelsPrevHierarchyKey = "labels_prev_hierarchy"
     //static let LcKey = "lc"
     static let MineralsTagsKey = "minerals_tags"
@@ -375,7 +376,8 @@ struct OFFJson {
             OFFJson.IngredientsTextKey,
             OFFJson.IngredientsThatMayBeFromPalmOilTagsKey,
             // OFFJson.LabelsHierarchyKey,
-            // OFFJson.LabelsTagsKey,
+            OFFJson.LabelsKey,
+            OFFJson.LabelsTagsKey,
             OFFJson.LangKey,
             OFFJson.ProductNameLanguagesKey,
             OFFJson.GenericNameLanguagesKey,

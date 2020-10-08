@@ -65,6 +65,10 @@ protocol PersistenceManagerProtocol {
     func tagLine() -> Tagline?
     var additivesIsEmpty: Bool { get }
 
+    func save(labels: [Label])
+    func label(forCode: String) -> Label?
+    var labelsIsEmpty: Bool { get }
+
     // Offline
     func save(offlineProducts: [RealmOfflineProduct])
     func getOfflineProduct(forCode: String) -> RealmOfflineProduct?
@@ -365,6 +369,20 @@ class PersistenceManager: PersistenceManagerProtocol {
         return getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code)
     }
 
+    func save(labels: [Label]) {
+        saveOrUpdate(objects: labels)
+        log.info("Saved \(labels.count) labels in taxonomy database")
+    }
+
+    func label(forCode code: String) -> Label? {
+        return getRealm().object(ofType: Label.self, forPrimaryKey: code)
+    }
+
+    var labelsIsEmpty: Bool {
+        getRealm().objects(Label.self).isEmpty
+    }
+
+    // Offline Products
     func save(offlineProducts: [RealmOfflineProduct]) {
         saveOrUpdate(objects: offlineProducts)
     }
