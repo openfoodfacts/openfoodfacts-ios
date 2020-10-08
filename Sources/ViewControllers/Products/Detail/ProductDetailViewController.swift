@@ -227,8 +227,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: labelTag)
         }), label: InfoRowKey.labels.localizedString)
 
-        createFormRow(with: &rows, item: product.citiesTags, label: InfoRowKey.citiesTags.localizedString)
-
         createFormRow(with: &rows, item: product.embCodesTags?.map({ (tag: String) -> NSAttributedString in
             return NSAttributedString(string: tag.uppercased().replacingOccurrences(of: "-", with: " "),
                                       attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forEmbCodeTag: tag)])
