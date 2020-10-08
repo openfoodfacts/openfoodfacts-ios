@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,12 +12,21 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="bIw-c2-4ax" customClass="IngredientsAnalysisTableViewCell" customModule="OpenFoodFacts" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="352" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="bIw-c2-4ax" id="yh5-aY-H6h">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bIw-c2-4ax" id="yh5-aY-H6h">
                 <rect key="frame" x="0.0" y="0.0" width="352" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-nA-bEP">
+                        <rect key="frame" x="16" y="8" width="320" height="2"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="ingredients-analysis.title"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                     <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ss3-cQ-4Zi">
-                        <rect key="frame" x="16" y="8" width="320" height="54"/>
+                        <rect key="frame" x="16" y="18" width="320" height="54"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="54" id="jON-ox-viH"/>
                         </constraints>
@@ -25,10 +34,13 @@
                 </subviews>
                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="bzc-nA-bEP" secondAttribute="trailing" constant="16" id="8Wr-MW-sPn"/>
                     <constraint firstAttribute="bottom" secondItem="ss3-cQ-4Zi" secondAttribute="bottom" constant="8" id="NQs-2q-lt2"/>
+                    <constraint firstItem="ss3-cQ-4Zi" firstAttribute="top" secondItem="bzc-nA-bEP" secondAttribute="bottom" constant="8" id="TPh-z2-LyH"/>
+                    <constraint firstItem="bzc-nA-bEP" firstAttribute="top" secondItem="yh5-aY-H6h" secondAttribute="top" constant="8" id="frv-Gl-fUx"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ss3-cQ-4Zi" secondAttribute="trailing" constant="16" id="giI-pt-sSI"/>
+                    <constraint firstItem="bzc-nA-bEP" firstAttribute="leading" secondItem="yh5-aY-H6h" secondAttribute="leading" constant="16" id="pX3-az-DLH"/>
                     <constraint firstItem="ss3-cQ-4Zi" firstAttribute="leading" secondItem="yh5-aY-H6h" secondAttribute="leading" constant="16" id="yk9-1X-ERt"/>
-                    <constraint firstItem="ss3-cQ-4Zi" firstAttribute="top" secondItem="yh5-aY-H6h" secondAttribute="top" constant="8" id="zq9-mI-k5I"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -30,6 +30,8 @@ struct TaxonomiesRequest: URLRequestConvertible {
             return route.rawValue + "/data/" + Endpoint.get
         case (.post, _):
             return Endpoint.post + route.rawValue
+        case (.get, _):
+            return Endpoint.get + "/data/" + route.rawValue
         default:
             return ""
         }
