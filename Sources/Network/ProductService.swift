@@ -73,6 +73,10 @@ class ProductService: ProductApi {
         //Answers.logSearch(withQuery: query, customAttributes: ["file": String(describing: ProductService.self), "search_type": searchType])
 
         let request = Alamofire.SessionManager.default.request(url)
+        // following getProduct api call's debug mode authentication values
+        #if DEBUG
+            request.authenticate(user: "off", password: "off")
+        #endif
         log.debug(request.debugDescription)
         request.responseObject(queue: utilityQueue) { (response: DataResponse<ProductsResponse>) in
             log.debug(response.debugDescription)

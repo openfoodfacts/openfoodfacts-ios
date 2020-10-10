@@ -314,14 +314,14 @@ class DataManagerSpec: QuickSpec {
 //                        }
 //
 //                        it("calls posts the product") {
-////                            expect(productApi.postProductCalled).toEventually(beTrue())
+//                           expect(productApi.postProductCalled).toEventually(beTrue())
 //                        }
 //
 //                        it("uploads the product as is") {
-////                            expect(productApi.product?.name).toEventually(equal(name))
-////                            expect(productApi.product?.brands).toEventually(equal([brand]))
-////                            expect(productApi.product?.quantity).toEventually(equal(quantity))
-////                            expect(productApi.product?.lang).toEventually(equal(language))
+//                            expect(productApi.product?.name).toEventually(equal(name))
+//                            expect(productApi.product?.brands).toEventually(equal([brand]))
+//                            expect(productApi.product?.quantity).toEventually(equal(quantity))
+//                            expect(productApi.product?.lang).toEventually(equal(language))
 //                        }
 //
 //                        it("calls post image for each picture") {
@@ -329,7 +329,7 @@ class DataManagerSpec: QuickSpec {
 //                        }
 //
 //                        it("deletes pending upload item") {
-////                            expect(persistenceManager.deletePendingUploadItemCalled).toEventually(beTrue())
+//                            expect(persistenceManager.deletePendingUploadItemCalled).toEventually(beTrue())
 //                        }
 //                    }
 //
@@ -344,7 +344,7 @@ class DataManagerSpec: QuickSpec {
 //                        }
 //
 //                        it("does not call post product") {
-////                            expect(productApi.postProductCalled).toEventually(beFalse())
+//                            expect(productApi.postProductCalled).toEventually(beFalse())
 //                        }
 //                    }
                     }
@@ -356,22 +356,22 @@ class DataManagerSpec: QuickSpec {
 //                        }
 //
 //                        it("posts the product") {
-////                            expect(productApi.postProductCalled).toEventually(beTrue())
+//                            expect(productApi.postProductCalled).toEventually(beTrue())
 //                        }
 //
 //                        it("uploads the product as is") {
-////                            expect(productApi.product?.name).toEventually(equal(name))
-////                            expect(productApi.product?.brands).toEventually(equal([brand]))
-////                            expect(productApi.product?.quantity).toEventually(equal(quantity))
-////                            expect(productApi.product?.lang).toEventually(equal(language))
+//                            expect(productApi.product?.name).toEventually(equal(name))
+//                            expect(productApi.product?.brands).toEventually(equal([brand]))
+//                            expect(productApi.product?.quantity).toEventually(equal(quantity))
+//                           expect(productApi.product?.lang).toEventually(equal(language))
 //                        }
 //
 //                        it("calls post image for each picture") {
-////                            expect(productApi.postImageCount).toEventually(equal(3))
+//                            expect(productApi.postImageCount).toEventually(equal(3))
 //                        }
 //
 //                        it("deletes pending upload item") {
-////                            expect(persistenceManager.deletePendingUploadItemCalled).toEventually(beTrue())
+//                            expect(persistenceManager.deletePendingUploadItemCalled).toEventually(beTrue())
 //                        }
 //                    }
 
