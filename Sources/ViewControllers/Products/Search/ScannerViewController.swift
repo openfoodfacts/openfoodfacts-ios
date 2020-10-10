@@ -110,11 +110,6 @@ class ScannerViewController: UIViewController, DataManagerClient {
         // set the useragent for the scan URL calls from this app
         setUserAgent()
 
-        ingredientsAnalysisFloatingContainer.distribution = .fill
-        ingredientsAnalysisFloatingContainer.spacing = 8
-        ingredientsAnalysisFloatingContainer.axis = .horizontal
-        ingredientsAnalysisFloatingContainer.isHidden = true
-        ingredientsAnalysisFloatingContainer.translatesAutoresizingMaskIntoConstraints = false
 
         floatingTopContainer.distribution = .fillProportionally
         floatingTopContainer.axis = .vertical

@@ -17,4 +17,5 @@ protocol TaxonomiesParserProtocol {
     func parseAdditives(data: [String: Any]) -> [Additive]
     func parseIngredientsAnalysis(data: [String: Any]) -> [IngredientsAnalysis]
     func parseIngredientsAnalysisConfig(data: [String: Any]) -> [IngredientsAnalysisConfig]
+    func parseLabels(data: [String: Any]) -> [Label]
 }

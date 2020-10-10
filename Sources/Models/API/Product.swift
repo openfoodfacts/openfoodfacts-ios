@@ -122,6 +122,7 @@ struct Product: Mappable {
     var manufacturingPlaces: String?
     var origins: String?
     var labels: [String]?
+    var labelsTags: [String]?
     var citiesTags: [String]?
     var embCodesTags: [String]?
     var stores: [String]?
@@ -303,6 +304,7 @@ struct Product: Mappable {
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
         origins <- map[OFFJson.OriginsKey]
         labels <- (map[OFFJson.LabelsKey], ArrayTransform())
+        labelsTags <- map[OFFJson.LabelsTagsKey]
         citiesTags <- map[OFFJson.CitiesTagsKey]
         // countries <- (map[OFFJson.CountriesKey], ArrayTransform())
         countriesTags <- map[OFFJson.CountriesTagsKey]
@@ -316,7 +318,6 @@ struct Product: Mappable {
         imageUrl <- map[OFFJson.ImageUrlKey]
         ingredientsImageUrlDecoded <- map[OFFJson.ImageIngredientsUrlKey]
         ingredientsListDecoded <- map[OFFJson.IngredientsKey]
-        labels <- (map[OFFJson.LabelsKey], ArrayTransform())
         lang <- map[OFFJson.LangKey]
         languageCodes <- map[OFFJson.LanguageCodesKey]
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]

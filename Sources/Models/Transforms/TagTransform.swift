@@ -22,7 +22,7 @@ public class Tag: Object {
 
     /// choose the most appropriate tags based on the language passed in parameters, default to english if not found
     static func choose(inTags tags: [Tag], forLanguageCode languageCode: String? = nil, defaultToFirst: Bool = false) -> Tag? {
-        let lang = languageCode ?? Bundle.main.preferredLocalizations.first ?? "en"
+        let lang = languageCode ?? Bundle.main.currentLocalization
 
         if let tag = tags.first(where: { (tag: Tag) -> Bool in
             return tag.languageCode == lang
