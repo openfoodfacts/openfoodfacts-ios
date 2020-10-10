@@ -256,6 +256,13 @@ class PersistenceManagerMock: PersistenceManagerProtocol {
         return nil
     }
 
+    func save(labels: [Label]) {
+    }
+
+    func label(forCode: String) -> Label? {
+        return nil
+    }
+
     func save(offlineProducts: [RealmOfflineProduct]) {
     }
 
