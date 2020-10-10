@@ -218,8 +218,14 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: categoryTag)
         }), label: InfoRowKey.categories.localizedString)
 
-        createFormRow(with: &rows, item: product.labels, label: InfoRowKey.labels.localizedString)
-        createFormRow(with: &rows, item: product.citiesTags, label: InfoRowKey.citiesTags.localizedString)
+        createFormRow(with: &rows, item: product.labelsTags?.map({ (labelTag: String) -> NSAttributedString in
+            if let label = dataManager.label(forTag: labelTag) {
+                if let name = Tag.choose(inTags: Array(label.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link : OFFUrlsHelper.url(forLabel: label)])
+                }
+            }
+            return NSAttributedString(string: labelTag)
+        }), label: InfoRowKey.labels.localizedString)
 
         createFormRow(with: &rows, item: product.embCodesTags?.map({ (tag: String) -> NSAttributedString in
             return NSAttributedString(string: tag.uppercased().replacingOccurrences(of: "-", with: " "),
