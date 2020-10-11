@@ -132,7 +132,8 @@ class ScannerViewController: UIViewController, DataManagerClient {
         ingredientsAnalysisFloatingContainer.spacing = CGFloat(2.0)
 
         if #available(iOS 13.0, *) {
-            if let image = UIImage.init(systemName: "pencil.circle.fill" ) {
+            let configuration = UIImage.SymbolConfiguration(pointSize: 35)
+            if let image = UIImage.init(systemName: "square.and.pencil", withConfiguration: configuration ) {
                 ingredientAnalysisSettingsButton = UIButton.systemButton(with: image, target: self, action: #selector(self.showIngredientsSettings))
             }
         } else {
