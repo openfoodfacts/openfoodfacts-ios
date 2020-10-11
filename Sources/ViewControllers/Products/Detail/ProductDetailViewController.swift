@@ -8,13 +8,14 @@
 
 import UIKit
 import XLPagerTabStrip
-import Crashlytics
 
 class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient {
 
     var hideSummary: Bool = false
     var product: Product!
+    var latestRobotoffQuestions: [RobotoffQuestion] = []
     var dataManager: DataManagerProtocol!
+    private var notificationCentertoken: NotificationCenterToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,16 +23,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         buttonBarView.register(UINib(nibName: "ButtonBarView", bundle: nil), forCellWithReuseIdentifier: "Cell")
         if #available(iOS 13.0, *) {
             buttonBarView.backgroundColor = .systemBackground
-        } else {
-            buttonBarView.backgroundColor = .white
-        }
-        if #available(iOS 13.0, *) {
             settings.style.selectedBarBackgroundColor = .secondarySystemBackground
         } else {
+            buttonBarView.backgroundColor = .white
             settings.style.selectedBarBackgroundColor = .white
         }
         buttonBarView.selectedBar.backgroundColor = self.view.tintColor
-        addEditButton()
 
         if let tbc = tabBarController {
             if let items = tbc.tabBar.items {
@@ -45,20 +42,77 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
         }
+        setUserAgent()
+
+        notificationCentertoken = NotificationCenter.default.observe(
+            name: .productChangesUploaded,
+            object: nil,
+            queue: .main
+        ) { [weak self] notif in
+            guard let barcode = notif.userInfo?["barcode"] as? String else {
+                return
+            }
+            if barcode == self?.product.barcode {
+                self?.refreshProduct {}
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
+        //TODO: Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
 
-        navigationController?.navigationBar.isTranslucent = false
+        if let parentVc = parent as? UINavigationController {
+
+            parentVc.navigationBar.isTranslucent = false
+
+            let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShareButton(_:)))
+            var buttons: [UIBarButtonItem] = navigationItem.rightBarButtonItems ?? []
+            buttons.insert(shareButton, at: 0)
+            navigationItem.rightBarButtonItems = buttons
+        }
+
+        self.refreshLatestRobotoffQuestion()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         navigationController?.navigationBar.isTranslucent = true
+        if var buttons = navigationItem.rightBarButtonItems, !buttons.isEmpty {
+            buttons.remove(at: 0)
+            navigationItem.rightBarButtonItems = buttons
+        }
+    }
+
+    fileprivate func refreshLatestRobotoffQuestion() {
+        self.latestRobotoffQuestions = []
+
+        if let barcode = self.product.barcode {
+            dataManager.getLatestRobotoffQuestions(forBarcode: barcode) { [weak self] (questions: [RobotoffQuestion]) in
+                guard let zelf = self else {
+                    return
+                }
+                zelf.latestRobotoffQuestions = questions
+                zelf.updateForms(with: zelf.product)
+            }
+        }
+    }
+
+    private func setUserAgent() {
+        var userAgentString = ""
+        if let validAppName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String {
+            userAgentString = validAppName
+        }
+        if let validVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            userAgentString += "; version " + validVersion
+        }
+
+        if let validBuild = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String {
+            userAgentString += "; build " +  validBuild + " - product"
+        }
+        UserDefaults.standard.register(defaults: ["UserAgent": userAgentString])
     }
 
     // MARK: - Product pages
@@ -140,11 +194,17 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Header
         rows.append(FormRow(value: product as Any, cellType: SummaryHeaderCell.self))
 
+        if !UserDefaults.standard.bool(forKey: UserDefaultsConstants.disableRobotoffWhenNotLoggedIn), !latestRobotoffQuestions.isEmpty {
+            createFormRow(with: &rows, item: latestRobotoffQuestions, cellType: RobotoffQuestionTableViewCell.self)
+        }
+
+        createIngredientsAnalysisRows(rows: &rows)
         createNutrientsRows(rows: &rows)
         createAdditivesRows(with: &rows, product: product)
 
         // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
+        createFormRow(with: &rows, item: product.genericName, label: InfoRowKey.genericName.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
@@ -158,8 +218,14 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: categoryTag)
         }), label: InfoRowKey.categories.localizedString)
 
-        createFormRow(with: &rows, item: product.labels, label: InfoRowKey.labels.localizedString)
-        createFormRow(with: &rows, item: product.citiesTags, label: InfoRowKey.citiesTags.localizedString)
+        createFormRow(with: &rows, item: product.labelsTags?.map({ (labelTag: String) -> NSAttributedString in
+            if let label = dataManager.label(forTag: labelTag) {
+                if let name = Tag.choose(inTags: Array(label.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link : OFFUrlsHelper.url(forLabel: label)])
+                }
+            }
+            return NSAttributedString(string: labelTag)
+        }), label: InfoRowKey.labels.localizedString)
 
         createFormRow(with: &rows, item: product.embCodesTags?.map({ (tag: String) -> NSAttributedString in
             return NSAttributedString(string: tag.uppercased().replacingOccurrences(of: "-", with: " "),
@@ -167,7 +233,17 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }), label: InfoRowKey.embCodes.localizedString)
 
         createFormRow(with: &rows, item: product.stores, label: InfoRowKey.stores.localizedString)
-        createFormRow(with: &rows, item: product.countries, label: InfoRowKey.countries.localizedString)
+        createFormRow(with: &rows, item: product.countriesTags?.map({ (tag: String) -> NSAttributedString in
+            if let country = dataManager.country(forTag: tag) {
+                if let name = Tag.choose(inTags: Array(country.names)) {
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(for: country)])
+                }
+            }
+            return NSAttributedString(string: tag)
+        }), label: InfoRowKey.countries.localizedString)
+
+        // Footer
+        rows.append(FormRow(value: product as Any, cellType: SummaryFooterCell.self))
 
         let summaryTitle = "product-detail.page-title.summary".localized
 
@@ -250,7 +326,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createAdditivesRows(with: &rows, product: product)
 
-        createFormRow(with: &rows, item: product.palmOilIngredients, label: InfoRowKey.palmOilIngredients.localizedString)
         createFormRow(with: &rows, item: product.possiblePalmOilIngredients, label: InfoRowKey.possiblePalmOilIngredients.localizedString)
 
         let summaryTitle = "product-detail.page-title.ingredients".localized
@@ -284,7 +359,13 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         // Nutriscore cell
         if product.nutriscore != nil {
-            createFormRow(with: &rows, item: product.nutriscore, cellType: NutritionHeaderTableViewCell.self)
+            // created to pass on the delegate with the nutriscore
+            let headerRow = NutritionScoreTableRow(
+                delegate as? NutritionHeaderTableViewCellDelegate,
+                nutriscore: product.nutriscore,
+                noFiberWarning: product.nutriscoreWarningNoFiber,
+                noFruitsVegetablesNutsWarning: product.nutriscoreWarningNoFruitsVegetablesNuts)
+            createFormRow(with: &rows, item: headerRow, cellType: NutritionHeaderTableViewCell.self)
         }
 
         // Info rows
@@ -294,14 +375,28 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         createNutrientsRows(rows: &rows)
 
-        createNutritionTableWebViewRow(rows: &rows)
-        //createNutritionTableRows(rows: &rows)
+        if let validStates = product.states,
+            validStates.contains("en:nutrition-facts-completed") {
+            createNutritionTableWebViewRow(rows: &rows)
+            //createNutritionTableRows(rows: &rows)
+        } else {
+            createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+            createFormRow(with: &rows, item: "product-detail.nutrition-table.missing".localized, label: InfoRowKey.nutritionalTableHeader.localizedString, isCopiable: true)
+        }
 
         if rows.isEmpty {
             return nil
         }
 
         return Form(title: "product-detail.page-title.nutrition".localized, rows: rows)
+    }
+
+    fileprivate func createIngredientsAnalysisRows(rows: inout [FormRow]) {
+        let analysisDetails = self.dataManager.ingredientsAnalysis(forProduct: product)
+        if !analysisDetails.isEmpty {
+            product.ingredientsAnalysisDetails = analysisDetails
+            createFormRow(with: &rows, item: product, cellType: IngredientsAnalysisTableViewCell.self)
+        }
     }
 
     fileprivate func createNutrientsRows(rows: inout [FormRow]) {
@@ -332,7 +427,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             createFormRow(with: &rows, item: headerRow, cellType: NutritionTableRowTableViewCell.self)
         }
 
-        if let energy = product.nutriments?.energy, let nutritionTableRow = energy.nutritionTableRow {
+        if let energy = product.nutriments?.energyKJ, let nutritionTableRow = energy.nutritionTableRow {
+            createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
+        }
+        if let energy = product.nutriments?.energyKcal, let nutritionTableRow = energy.nutritionTableRow {
             createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
         }
         if let fats = product.nutriments?.fats {
@@ -405,35 +503,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
     // MARK: - Nav bar button
 
-    func addEditButton() {
-        let editButton: UIBarButtonItem = .init(barButtonSystemItem: .edit, target: self, action: #selector(edit))
-        navigationItem.rightBarButtonItem = editButton
-    }
-
-    @objc func edit() {
-        if CredentialsController.shared.getUsername() == nil {
-            let loginVC = LoginViewController.loadFromStoryboard(named: .user) as LoginViewController
-            loginVC.dataManager = dataManager
-            loginVC.delegate = self
-
-            let navVC = UINavigationController(rootViewController: loginVC)
-
-            self.present(navVC, animated: true)
-
-            return
-        }
-
-        if let product = self.product {
-            let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
-            if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
-                addProductVC.productToEdit = product
-                addProductVC.dataManager = dataManager
-
-                let navVC = UINavigationController(rootViewController: addProductVC)
-
-                self.present(navVC, animated: true)
-            }
-        }
+    @objc func didTapShareButton(_ sender: UIBarButtonItem) {
+        SharingManager.shared.shareLink(name: product.name, string: URLs.urlForProduct(with: product.barcode), sender: sender, presenter: self)
     }
 }
 
@@ -445,15 +516,16 @@ protocol ProductDetailRefreshDelegate: class {
 
 extension ProductDetailViewController: ProductDetailRefreshDelegate {
     func refreshProduct(completion: () -> Void) {
-        if let barcode = product.barcode {
-            dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { response in
+        if let barcode = self.product.barcode {
+            dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { [weak self] response in
                 if let updatedProduct = response {
-                    self.updateForms(with: updatedProduct)
+                    self?.updateForms(with: updatedProduct)
+                    self?.refreshLatestRobotoffQuestion()
                 }
-            }, onError: { error in
+            }, onError: { [weak self] error in
                 // No error should be thrown here, as the product was loaded previously
-                Crashlytics.sharedInstance().recordError(error)
-                self.navigationController?.popToRootViewController(animated: true)
+                AnalyticsManager.record(error: error)
+                self?.navigationController?.popToRootViewController(animated: true)
             })
         }
 
@@ -461,11 +533,18 @@ extension ProductDetailViewController: ProductDetailRefreshDelegate {
     }
 }
 
-extension ProductDetailViewController: UserViewControllerDelegate {
-    func showProductsPendingUpload() {
+extension ProductDetailViewController: NutritionHeaderTableViewCellDelegate {
+
+    // function to let the delegate know that the switch changed
+    //func tagListViewAddImageTableViewCell(_ sender: TagListViewAddImageTableViewCell, receivedDoubleTapOn tagListView:TagListView)
+    public func nutritionHeaderTableViewCellDelegate(_ sender: NutritionHeaderTableViewCell, receivedTapOn button: UIButton) {
+
+        if let url = URL(string: URLs.NutriScore) {
+            openUrlInApp(url)
+        } else if let url = URL(string: URLs.SupportOpenFoodFacts) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+
     }
 
-    func dismiss() {
-        dismiss(animated: true, completion: nil)
-    }
 }
