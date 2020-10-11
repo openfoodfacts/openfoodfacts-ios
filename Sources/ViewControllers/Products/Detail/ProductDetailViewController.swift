@@ -29,7 +29,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             settings.style.selectedBarBackgroundColor = .white
         }
         buttonBarView.selectedBar.backgroundColor = self.view.tintColor
-
+        addEditButton()
         if let tbc = tabBarController {
             if let items = tbc.tabBar.items {
                 for (index, item) in items.enumerated() {
@@ -506,6 +506,54 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     @objc func didTapShareButton(_ sender: UIBarButtonItem) {
         SharingManager.shared.shareLink(name: product.name, string: URLs.urlForProduct(with: product.barcode), sender: sender, presenter: self)
     }
+
+    // MARK: - edit button functions
+
+    func addEditButton() {
+         let editButton: UIBarButtonItem = .init(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+         navigationItem.rightBarButtonItem = editButton
+     }
+
+    @objc func edit() {
+         if CredentialsController.shared.getUsername() == nil {
+             guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
+                 return }
+             loginVC.dataManager = dataManager
+             //loginVC.delegate = self
+
+             let navVC = UINavigationController(rootViewController: loginVC)
+             loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ProductDetailViewController.dismissVC))
+             loginVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(ProductDetailViewController.dismissVC))
+
+             self.present(navVC, animated: true)
+
+             return
+         }
+
+         if let product = self.product {
+             let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
+             if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
+                 addProductVC.productToEdit = product
+                 addProductVC.dataManager = dataManager
+
+                 let navVC = UINavigationController(rootViewController: addProductVC)
+                 if self.responds(to: #selector(ProductDetailViewController.dismissVC)) {
+                     addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ProductDetailViewController.dismissVC))
+                 }
+                 if addProductVC.responds(to: #selector(ProductAddViewController.saveAll)) {
+                     addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.saveAll))
+                 }
+                 navVC.modalPresentationStyle = .fullScreen
+
+                 self.present(navVC, animated: true)
+             }
+         }
+    }
+
+    @objc func dismissVC() {
+        dismiss(animated: true, completion: nil)
+    }
+
 }
 
 // MARK: - Refresh delegate
