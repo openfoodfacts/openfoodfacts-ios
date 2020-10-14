@@ -17,27 +17,30 @@ struct ScanProductSummaryViewAdaptor {
     let nutriScore: NutriScoreView.Score? // NutriScore should be outside of NutriScoreView namespace/ scope???
     let novaGroup: NovaGroupView.NovaGroup? // NovaGroup should be outside of NovaGroupView namespace/scope???
     let environmentalImage: UIImage?
+    let delegate: ScanProductSummaryViewProtocol?
 }
 
 struct ScanProductSummaryViewAdaptorFactory {
-    static func makeAdaptor(from product: RealmOfflineProduct) -> ScanProductSummaryViewAdaptor {
+    static func makeAdaptor(from product: RealmOfflineProduct, delegate: ScanProductSummaryViewProtocol?) -> ScanProductSummaryViewAdaptor {
         return ScanProductSummaryViewAdaptor(title: product.name,
                                              quantityText: getQuantity(from: product),
                                              productImageURL: nil,
                                              brands: getBrands(from: product),
                                              nutriScore: getNutriScore(from: product),
                                              novaGroup: getNovaGroup(from: product),
-                                             environmentalImage: nil)
+                                             environmentalImage: nil,
+                                             delegate: delegate)
     }
 
-    static func makeAdaptor(from product: Product) -> ScanProductSummaryViewAdaptor {
+    static func makeAdaptor(from product: Product, delegate:ScanProductSummaryViewProtocol?) -> ScanProductSummaryViewAdaptor {
         return ScanProductSummaryViewAdaptor(title: product.name,
                                              quantityText: getQuantity(from: product),
                                              productImageURL: getImageURL(from: product),
                                              brands: getBrands(from: product),
                                              nutriScore: getNutriScore(from: product),
                                              novaGroup: getNovaGroup(from: product),
-                                             environmentalImage: getEnvironmentalImpaceImage(from: product))
+                                             environmentalImage: getEnvironmentalImpaceImage(from: product),
+                                             delegate: delegate)
     }
 }
 

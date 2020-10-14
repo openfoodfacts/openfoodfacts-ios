@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FloatingPanel
 
 enum ScannerResultStatusEnum {
     case waitingForScan
@@ -24,6 +25,8 @@ class ScannerResultViewController: UIViewController {
     @IBOutlet weak var topSummaryView: ScanProductSummaryView!
     @IBOutlet weak var manualBarcodeInputView: ManualBarcodeInputView!
     @IBOutlet weak var productDetailsContainer: UIView!
+
+    private var product: Product?
 
     var status: ScannerResultStatusEnum = .waitingForScan {
         didSet {
@@ -57,16 +60,18 @@ class ScannerResultViewController: UIViewController {
             statusIndicatorLabel.text = barcode + "\n" + "product-scanner.search.status".localized
             statusIndicatorLabel.isHidden = false
 
-        case .hasOfflineData(let product):
+        case .hasOfflineData(let realmProduct):
             // reset the view visibility after succesful scan
-            updateSummaryVisibility(forProduct: product)
+            updateSummaryVisibility(for: realmProduct)
 
         case .hasSummary(let product):
+            self.product = product
             // reset the view visibility after succesful scan
-            updateSummaryVisibility(forProduct: product)
+            updateSummaryVisibility(for: product)
 
         case .hasProduct(let product, let dataManager):
-            updateSummaryVisibility(forProduct: product)
+            self.product = product
+            updateSummaryVisibility(for: product)
             updateDetailsVisibility(forProduct: product, withDataManager: dataManager)
 
         case .manualBarcode:
@@ -75,14 +80,14 @@ class ScannerResultViewController: UIViewController {
         }
     }
 
-    fileprivate func updateSummaryVisibility(forProduct product: RealmOfflineProduct) {
-        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: product)
+    fileprivate func updateSummaryVisibility(for realmproduct: RealmOfflineProduct) {
+        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: realmproduct, delegate: self)
         topSummaryView.setup(with: adaptor)
         topSummaryView.isHidden = false
     }
 
-    fileprivate func updateSummaryVisibility(forProduct product: Product) {
-        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: product)
+    fileprivate func updateSummaryVisibility(for product: Product) {
+        let adaptor = ScanProductSummaryViewAdaptorFactory.makeAdaptor(from: product, delegate: self)
         topSummaryView.setup(with: adaptor)
         topSummaryView.isHidden = false
     }
@@ -113,4 +118,15 @@ class ScannerResultViewController: UIViewController {
         self.productDetailsContainer.isHidden = false
     }
 
+}
+
+extension ScannerResultViewController: ScanProductSummaryViewProtocol {
+
+    func scanProductSummaryViewButtonTapped(_ sender: ScanProductSummaryView, button: UIButton) {
+        if let parent = self.parent as? FloatingPanelController,
+            let svc = parent.delegate as? ScannerViewController,
+            let validProduct = product {
+                svc.goToEditProduct(product: validProduct)
+        }
+    }
 }
