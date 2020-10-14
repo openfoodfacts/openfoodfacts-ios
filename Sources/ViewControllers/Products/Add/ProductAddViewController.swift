@@ -49,6 +49,7 @@ class ProductAddViewController: TakePictureViewController {
             productCategoryField?.placeholder = "product-add.label.category".localized
         }
     }
+    @IBOutlet weak var productCategoryNutriScoreExplanationLabel: UILabel!
     @IBOutlet weak var brandsTitleLabel: UILabel! {
         didSet {
             brandsTitleLabel?.text = "product-add.placeholder.brand".localized
@@ -76,6 +77,7 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var lastSavedProductInfosLabel: UILabel!
 
     @IBOutlet weak var noNutritionDataSwitch: UISwitch!
+    @IBOutlet weak var nutritiveNutriScoreEXplanationLabel: UILabel!
     @IBOutlet weak var nutritiveSectionTitle: UILabel! {
         didSet {
             nutritiveSectionTitle?.text = "product-add.titles.nutritive".localized
@@ -101,11 +103,12 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
     @IBOutlet weak var novaGroupView: NovaGroupView!
-    @IBOutlet weak var ingredientsExplainationLabel: UILabel! {
+    @IBOutlet weak var ingredientsOCRExplanationLabel: UILabel! {
         didSet {
-            ingredientsExplainationLabel?.text = "product-add.ingredients.explaination".localized
+            ingredientsOCRExplanationLabel?.text = "product-add.ingredients.explaination".localized
         }
     }
+    @IBOutlet weak var ingredientsNovaExplanationLabel: UILabel!
     @IBOutlet weak var ingredientsTextField: UITextView! {
         didSet {
             ingredientsTextField?.text = ""
@@ -436,18 +439,27 @@ class ProductAddViewController: TakePictureViewController {
         dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: true, onSuccess: { [weak self] (distantProduct: Product?) in
             DispatchQueue.main.async {
                 if let distantProduct = distantProduct {
-                    if let nutriscoreString = distantProduct.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreString) {
+                    if let nutriscoreString = distantProduct.nutriscore,
+                        let score = NutriScoreView.Score(rawValue: nutriscoreString) {
                         self?.nutriScoreView.currentScore = score
                         self?.nutriscoreStackView.isHidden = false
+                        self?.productCategoryNutriScoreExplanationLabel.isHidden = true
+                        self?.nutritiveNutriScoreEXplanationLabel.isHidden = true
                     } else {
                         self?.nutriscoreStackView.isHidden = true
+                        self?.productCategoryNutriScoreExplanationLabel.isHidden = false
+                        self?.nutritiveNutriScoreEXplanationLabel.isHidden = false
+
                     }
 
-                    if let novaGroupString = distantProduct.novaGroup, let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
+                    if let novaGroupString = distantProduct.novaGroup,
+                        let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
                         self?.novaGroupView.novaGroup = novaGroup
                         self?.novaGroupStackView.isHidden = false
+                        self?.ingredientsNovaExplanationLabel.isHidden = true
                     } else {
                         self?.novaGroupStackView.isHidden = true
+                        self?.ingredientsNovaExplanationLabel.isHidden = false
                     }
                 }
             }
@@ -640,7 +652,7 @@ class ProductAddViewController: TakePictureViewController {
         quantityField?.text = product.quantity
         packagingField?.text = product.packaging?.compactMap {$0}.joined(separator: ", ")
         ingredientsTextField.text = product.ingredientsList
-
+        ingredientsOCRExplanationLabel.isHidden = product.ingredientsList != nil && !product.ingredientsList!.isEmpty
         noNutritionDataSwitch.isOn = product.noNutritionData == "on"
         updateNoNutritionDataSwitchVisibility(animated: false)
 
