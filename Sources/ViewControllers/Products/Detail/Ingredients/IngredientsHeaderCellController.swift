@@ -33,6 +33,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
     @IBOutlet weak var novagroupExplanationLabel: UILabel! {
         didSet {
             novagroupExplanationLabel?.text = "product-detail.ingredients.nova.incite".localized
+            novagroupExplanationLabel?.sizeToFit()
         }
     }
     @IBOutlet weak var novagroupInfoButton: UIButton! {
