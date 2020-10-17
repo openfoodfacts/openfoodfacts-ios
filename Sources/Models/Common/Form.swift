@@ -23,7 +23,8 @@ struct Form {
             ProductDetailWebViewTableViewCell.self,
             SummaryHeaderCell.self,
             SummaryFooterCell.self,
-            HostedViewCell.self
+            HostedViewCell.self,
+            AttributeTableViewCell.self
         ]
     }
 }

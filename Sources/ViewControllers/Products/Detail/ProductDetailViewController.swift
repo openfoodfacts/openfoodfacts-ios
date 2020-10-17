@@ -61,8 +61,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        //TODO: Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
-
         if let parentVc = parent as? UINavigationController {
 
             parentVc.navigationBar.isTranslucent = false
@@ -506,6 +504,23 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             for item in minerals {
                 if let nutritionTableRow = item.nutritionTableRow {
                     createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
+                }
+            }
+        }
+    }
+
+    private func createProductAttributeRows(rows: inout [FormRow]) {
+        if let attributeGroups = product.productAttributes?.attributeGroups {
+            for attrGroup in attributeGroups where attrGroup.id == "labels" {
+                if let attributes = attrGroup.attributes {
+                    for attribute in attributes {
+                        if let desc = attribute.descriptionShort ?? attribute.title,
+                            desc != "", let name = attribute.name, name != "" {
+                            createFormRow(with: &rows, item: attribute, label: attribute.name, cellType: AttributeTableViewCell.self)
+                        } else {
+                            continue
+                        }
+                    }
                 }
             }
         }
