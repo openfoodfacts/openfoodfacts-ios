@@ -94,6 +94,7 @@ struct Product: Mappable {
     var nutriscore: String?
     private var nutriscoreWarningNoFruitsVegetablesNutsAsInt: Int?
     private var nutriscoreWarningNoFiberAsInt: Int?
+
     var nutriscoreWarningNoFruitsVegetablesNuts: Bool {
         if let valid = nutriscoreWarningNoFruitsVegetablesNutsAsInt,
             valid == 1 {
@@ -158,6 +159,26 @@ struct Product: Mappable {
     var minerals: [Tag]?
     var nucleotides: [Tag]?
     var otherNutrients: [Tag]?
+    private var _productAttributes: ProductAttributes?
+    var productAttributes: ProductAttributes? {
+        //validate barcode before retrieving
+        get {
+            if _productAttributes?.barcode == barcode {
+                return _productAttributes
+            } else {
+                return nil
+            }
+        }
+
+        //validate barcode before setting
+        set {
+            if let productAttr = newValue, productAttr.barcode == self.barcode {
+                self._productAttributes = productAttr
+            } else {
+                return
+            }
+        }
+    }
 
     private var selectedImages: [String: Any] = [:]
     private var images: [ImageTypeCategory: [ImageSizeCategory: [String: String]]] = [:]
