@@ -26,8 +26,8 @@
 "product-search.error-view.title" = "Kažkas negerai nutiko";
 "product-search.error-view.subtitle" = "Bandykite dar kartą";
 "product-search.initial-view.slogan" = "nemokama maisto produktų duomenų bazė";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.offline.title-loading" = "Išsaugomi produktai neprisijungus: %d%%";
+"product-search.initial-view.offline.subtitle" = "Greitam nuskaitymui galima nuskaityti daugiau nei %d produktų";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Nuskaitykite gaminio brūkšninį kodą";
@@ -197,8 +197,8 @@
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Įspėjimas: skaidulinių medžiagų kiekis nenurodytas, neatsižvelgiama į galimą teigiamą jų indėlį į įvertinimą.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Įspėjimas: vaisių, daržovių ir riešutų kiekis nenurodytas etiketėje, jis buvo apskaičiuotas pagal sudėtį %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Įspėjimas: vaisių, daržovių ir riešutų kiekis nenurodytas etiketėje, jis buvo apskaičiuotas pagal kategoriją (%s) produkto: %d%";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -207,6 +207,7 @@
 "nutrition-level.high" = "in high quantity";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Sudėčių analizė";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
@@ -303,6 +304,7 @@
 "call-to-action.summary" = "Take a photo of the front";
 "call-to-action.ingredients" = "Take a photo of the ingredients";
 "call-to-action.nutrition" = "Take a photo of the nutrition facts";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -315,6 +317,9 @@
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Skaitytuvas";
+"history.tab-bar.item" = "History";
 "settings.tab-bar.item" = "Settings";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Allergens alerts";

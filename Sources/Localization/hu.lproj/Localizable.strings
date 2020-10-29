@@ -64,8 +64,8 @@
 "product-add.save-error.title" = "Hiba történt a termék mentése közben";
 "product-add.save-error.message" = "Kérem próbálkozzon később";
 "product-add.save-info.success" = "Információ elmentve a";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
+"product-add.save-info.error" = "Információ nincs mentve";
+"product-add.save-info.saving" = "Termék információ mentése…";
 "product-add.save-info.not-yet" = "Az adatok még nem lettek mentve";
 "product-add.save-ingredients.success" = "Összetevők mentve";
 "product-add.save-ingredients.error" = "Az összetevők nincsenek mentve";
@@ -77,10 +77,10 @@
 "product-add.save-nutriments.not-yet" = "A tápanyagtáblázat nincs mentve";
 "product-add.no-nutrition" = "Nincsenek megadva tápértékadatok a terméken";
 
-"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.success" = "Összetevők listája a képen";
+"product-add.ocr-ingredients.error" = "Az összetevők listája nem olvasható a képről";
+"product-add.ocr-ingredients.saving" = "Összetevők listázása a képről…";
+"product-add.ocr-ingredients.not-yet" = "Várunk az összetevők képének analizálása";
 
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
 "product-add.novagroup-explaination" = "A NOVA csoport épp most lett kiszámítva az összetevőlista alapján";
@@ -105,7 +105,7 @@
 "product-add.label.category" = "Kategória";
 "product-add.label.quantity" = "Mennyiség";
 "product-add.label.packaging" = "Csomagolás";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
+"product-add.details.category" = "Szükséges a Nutri-Score kiszámításához";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Nyelvek";
 
@@ -207,8 +207,9 @@
 "nutrition-level.high" = "nagy mennyiségben";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Összetevők elemzése";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
+"ingredients-analysis.ingredients_in_this_product_are" = "A termék összetevői %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
 "ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
 "ingredients-analysis.display" = "Display %@ status";
@@ -303,6 +304,7 @@
 "call-to-action.summary" = "Készíts egy képet az elejéről";
 "call-to-action.ingredients" = "Take a photo of the ingredients";
 "call-to-action.nutrition" = "Take a photo of the nutrition facts";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -315,6 +317,9 @@
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Szkenner";
+"history.tab-bar.item" = "Előzmények";
 "settings.tab-bar.item" = "Beállítások";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Allergének riasztása";

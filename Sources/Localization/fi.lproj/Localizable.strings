@@ -165,10 +165,10 @@
 "product-detail.summary.countries" = "Maa";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.nova.1" = "Jalostamattomat tai vähän jalostetut elintarvikkeet";
-"product-detail.ingredients.nova.2" = "Jalostetut ainesosat";
+"product-detail.ingredients.nova.1" = "Jalostamattomat tai vähän jalostetut ruoat";
+"product-detail.ingredients.nova.2" = "Jalostetut ruoanvalmistusaineet";
 "product-detail.ingredients.nova.3" = "Jalostetut elintarvikkeet";
-"product-detail.ingredients.nova.4" = "Ultrajalostetut elintarvikkeet";
+"product-detail.ingredients.nova.4" = "Ultrajalostetut ruoka- ja juomatuotteet";
 "product-detail.ingredients.nova.incite" = "Lisää ainesosat ja/tai tuoteluokat NOVA-ryhmän laskemiseksi.";
 "product-detail.ingredients.ingredients-list" = "Ainesosaluettelo";
 "product-detail.ingredients.allergens-list" = "Allergioita tai intoleransseja aiheuttavat aineet ja tuotteet";
@@ -207,6 +207,7 @@
 "nutrition-level.high" = "suuri määrä";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Ainesosa-analyysi";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
 "ingredients-analysis.unknown_status" = "Emme voineet arvioida tuotteen tilaa.";
@@ -303,6 +304,7 @@
 "call-to-action.summary" = "Ota kuva edestä";
 "call-to-action.ingredients" = "Ota kuva ainesosista";
 "call-to-action.nutrition" = "Ota kuva ravintosisällöstä";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -315,6 +317,9 @@
 "product.images.take-picture.nutrition" = "Kuva ravintosisällöstä";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Lukija";
+"history.tab-bar.item" = "Historia";
 "settings.tab-bar.item" = "Asetukset";
 "settings.ingredientsAnalysis.title" = "Ainesosa-analyysivaroitukset";
 "settings.allergies.title" = "Allergeenivaroitukset";

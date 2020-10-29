@@ -11,16 +11,16 @@
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Ori";
-"generic.search" = "Search";
+"generic.search" = "ⵔⵣⵓ";
 "generic.cancel" = "Cancel";
 "generic.save" = "Save";
 "generic.cancel" = "Cancel";
 "generic.ok" = "ⵡⴰⵅⵅⴰ";
-"generic.close" = "Close";
+"generic.close" = "ⵙⵙⵔ";
 
 // Product Search
 
-"product-search.title" = "Search";
+"product-search.title" = "ⵔⵣⵓ";
 "product-search.search-placeholder" = "ⵔⵣⵓ ⵙ ⵉⵙⵎ ⵏⵖ ⵓⵏⴳⴰⵍ ⵏ ⵉⴼⴳⴳⴰⴳⵏ";
 "product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Something went wrong";
@@ -101,7 +101,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product information";
-"product-add.label.product-name" = "Name";
+"product-add.label.product-name" = "ⵉⵙⵎ";
 "product-add.label.category" = "Category";
 "product-add.label.quantity" = "Quantity";
 "product-add.label.packaging" = "Packaging";
@@ -207,6 +207,7 @@
 "nutrition-level.high" = "in high quantity";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Ingredients analysis";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
@@ -220,8 +221,8 @@
 "ingredients-analysis.back-to-scan" = "Back to scan";
 
 // Robotoff
-"robotoff.yes" = "Yes";
-"robotoff.no" = "No";
+"robotoff.yes" = "ⵉⴰⵀ";
+"robotoff.no" = "ⵉⵀⵉ";
 "robotoff.not-sure" = "I'm not sure";
 "robotoff.contribute-incentive.title" = "Contribute";
 "robotoff.settings.display-questions" = "Display questions";
@@ -303,6 +304,7 @@
 "call-to-action.summary" = "Take a photo of the front";
 "call-to-action.ingredients" = "Take a photo of the ingredients";
 "call-to-action.nutrition" = "Take a photo of the nutrition facts";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -315,6 +317,9 @@
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Scanner";
+"history.tab-bar.item" = "History";
 "settings.tab-bar.item" = "Settings";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Allergens alerts";
