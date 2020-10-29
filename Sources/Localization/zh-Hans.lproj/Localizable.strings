@@ -97,7 +97,7 @@
 "product-add.title" = "新产品";
 "product-add.title-edit" = "编辑产品";
 "product-add.titles.barcode" = "条形码";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
+"product-add.titles.top-explainations" = "做得好 ！该产品尚未出现在食品成分鉴定软件中。请问您可以拍摄一些关于产品本身、它的成分表和营养成分的照片来将其添加到食品成分鉴定软件中吗？\n\n预先感谢。";
 "product-add.titles.license-explaination" = "注：您发布的照片将按照“知识共享许可协议”及“相同方式分享”授权。";
 
 "product-add.titles.product-info" = "产品信息";
@@ -151,7 +151,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "条形码";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "常规名称";
 "product-detail.summary.quantity" = "数量";
 "product-detail.summary.packaging" = "包装";
 "product-detail.summary.brands" = "品牌";
@@ -165,11 +165,11 @@
 "product-detail.summary.countries" = "国家";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
-"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
+"product-detail.ingredients.nova.1" = "未加工或最低限度加工的食物";
+"product-detail.ingredients.nova.2" = "处理过的烹饪原料";
 "product-detail.ingredients.nova.3" = "加工食品";
 "product-detail.ingredients.nova.4" = "超加工食品和饮料";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.incite" = "添加成分和/或进行分类来计算 NOVA";
 "product-detail.ingredients.ingredients-list" = "成分列表";
 "product-detail.ingredients.allergens-list" = "成分或产品可能导致过敏或不耐受";
 "product-detail.ingredients.allergens-alert.title" = "含有过敏原！";
@@ -193,7 +193,7 @@
 "product-detail.nutrition-table.for-100g" = "每 100 g";
 "product-detail.nutrition-table.for-serving" = "每份";
 "product-detail.nutrition-table.100g" = "100 克";
-"product-detail.nutrition-table.serving" = "serving";
+"product-detail.nutrition-table.serving" = "服务";
 "product-detail.nutrition-table.missing" = "没有营养成分数据";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "警告：未指定纤维数量，它们对营养等级可能的正向贡献或许不被考虑在内。";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "注意：由于缺乏水果、蔬菜及坚果的具体含量，无法把它们纳入健康考量。";
@@ -207,15 +207,16 @@
 "nutrition-level.high" = "较高含量";
 
 // Ingredients Analysis
-"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
-"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
-"ingredients-analysis.display" = "Display %@ status";
+"ingredients-analysis.title" = "分析成分";
+"ingredients-analysis.ingredients_in_this_product" = "该产品中的成分为 %@：";
+"ingredients-analysis.ingredients_in_this_product_are" = "该产品中的成分为 %@：";
+"ingredients-analysis.unknown_status" = "我们无法评估产品的状态。";
+"ingredients-analysis.ambiguous" = "不确定的成分：%@";
+"ingredients-analysis.display" = "显示 %@ 状态";
 "ingredients-analysis.missing-ingredients.title" = "填充缺失的成份";
 "ingredients-analysis.missing-ingredients.description" = "我们还未获得此产品的成份。请问您能帮忙完善成份表吗？";
 "ingredients-analysis.help-translate.title" = "帮助翻译您的语言中的成分";
-"ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
+"ingredients-analysis.help-translate.description" = "请用您使用的语言对成分进行翻译以便进行分析";
 "ingredients-analysis.help-translate.button" = "帮助翻译成份";
 "ingredients-analysis.back-to-scan" = "继续扫描";
 
@@ -303,6 +304,7 @@
 "call-to-action.summary" = "拍摄正面照片";
 "call-to-action.ingredients" = "拍摄配料照片";
 "call-to-action.nutrition" = "拍摄营养成分表";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -315,6 +317,9 @@
 "product.images.take-picture.nutrition" = "营养成分表照片";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "扫描仪";
+"history.tab-bar.item" = "历史记录";
 "settings.tab-bar.item" = "设置";
 "settings.ingredientsAnalysis.title" = "成分分析警告";
 "settings.allergies.title" = "过敏原警报";
@@ -345,7 +350,7 @@
 "user.username" = "用户名";
 "user.password" = "密码";
 "user.logged-in.label" = "%@，您已登录";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
+"user.logged-in-explanation.label" = "您添加的所有产品和您上传的产品照片都将记入您的帐号";
 "user.not-logged-in" = "未登录";
 "user.forgot-password" = "忘记密码?";
 "user.check-your-contributions.button" = "查看您的全部贡献";
