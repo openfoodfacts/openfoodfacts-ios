@@ -196,7 +196,7 @@
 "product-detail.nutrition-table.serving" = "porsiyon";
 "product-detail.nutrition-table.missing" = "Herhangi bir besin ögesi ayarlanmadı.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Uyarı: lif miktarı belirtilmediği için, olası olumlu katkı notuna dahil edilemedi.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Uyarı: Meyve, sebze ve sert kabuklu yemişlerin miktarı belirtilmemiştir, sınıfa olası olumlu katkıları dikkate alınmamıştır.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Uyarı: Meyve, sebze ve fındık miktarı etiket üzerinde belirtilmemiş, içerikler listesinden hesaplanmıştır: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Uyarı: Meyve, sebze ve fındık miktarı etiket üzerinde belirtilmemiş, (%s) kategorisinden %d% ürününe göre hesaplanmıştır";
 
@@ -207,6 +207,7 @@
 "nutrition-level.high" = "yüksek miktarda";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Malzeme analizi";
 "ingredients-analysis.ingredients_in_this_product" = "Bu ürünün içindeki %@s olan malzemeler:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Bu ürünün içindeki malzemeler %@s.";
 "ingredients-analysis.unknown_status" = "Ürünün durumunu değerlendiremedik.";
@@ -303,6 +304,7 @@
 "call-to-action.summary" = "Ön fotoğrafını çekin";
 "call-to-action.ingredients" = "Malzemelerin fotoğrafını çekin";
 "call-to-action.nutrition" = "Beslenme tablosunun resmini çekin";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -315,6 +317,9 @@
 "product.images.take-picture.nutrition" = "Besin değerleri tablosunun fotoğrafı";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Tarayıcı";
+"history.tab-bar.item" = "Geçmiş";
 "settings.tab-bar.item" = "Ayarlar";
 "settings.ingredientsAnalysis.title" = "İçerik analizi uyarıları";
 "settings.allergies.title" = "Alerjen uyarıları";
@@ -378,6 +383,6 @@
 "history.section-titles.longTime" = "Uzun zaman önce";
 "history.first-scan.button.title" = "İlk Ürünü Tara";
 "API_CANCEL_TITLE" = "İptal";
-"USE_PHOTO" = "Use Photo";
+"USE_PHOTO" = "Fotoğraf kullan";
 "API_CANCEL_TITLE" = "İptal";
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Düzenle";
