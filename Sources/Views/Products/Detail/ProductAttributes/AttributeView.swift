@@ -72,7 +72,7 @@ class AttributedStringFormatter: formatAttributedString {
     static var boldWordsPattern: String { return "(_\\w+_)" }
 
     static func formatAttributedText(label: String, description: String) -> NSMutableAttributedString? {
-        let headline = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.caption1).pointSize)
+        let headline = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize)
         var bold: [NSAttributedString.Key: Any] = [:]
         if #available(iOS 13.0, *) {
             bold = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: headline]
@@ -80,7 +80,7 @@ class AttributedStringFormatter: formatAttributedString {
             bold = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: headline]
         }
 
-        let body = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.caption2).pointSize)
+        let body = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize)
         var regular: [NSAttributedString.Key: Any] = [:]
         if #available(iOS 13.0, *) {
             regular = [NSAttributedString.Key.foregroundColor: UIColor.label, NSAttributedString.Key.font: body]

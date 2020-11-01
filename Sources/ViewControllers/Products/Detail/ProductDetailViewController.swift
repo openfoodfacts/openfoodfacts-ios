@@ -240,6 +240,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: tag)
         }), label: InfoRowKey.countries.localizedString)
 
+        createProductAttributeRows(rows: &rows)
+        
         // Footer
         rows.append(FormRow(value: product as Any, cellType: SummaryFooterCell.self))
 
