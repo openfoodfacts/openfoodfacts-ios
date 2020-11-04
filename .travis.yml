@@ -28,7 +28,5 @@ jobs:
     - brew install getsentry/tools/sentry-cli
     - bundle install
     script:
-    - echo "ok"
-    #temporary disabled 
-    #- 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then travis_wait 40 bundle exec fastlane beta; fi'
+    - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then travis_wait 50 bundle exec fastlane beta; fi'
     if: branch =~ /^release\/.*$/

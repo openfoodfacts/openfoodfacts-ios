@@ -43,6 +43,18 @@ ensure
     puts "Live Version: #{liveVersion}\tEdit Version: #{editVersion}"
 end
 
+def version_to_use_from_git_branch(gitBranch:, projectVersion:)
+    gitBranchVersion = gitBranch.split('release/')[1]
+    gitBranchVersionParsed = Versionomy.parse(gitBranchVersion)
+    projectVersionParsed = Versionomy.parse(projectVersion)
+
+    ourVersion = gitBranchVersionParsed > projectVersionParsed ? gitBranchVersionParsed.to_s : projectVersion
+    
+    puts "Using #{ourVersion} by comparing gitBranch=#{gitBranchVersion} and project version=#{projectVersion}"
+    
+    return ourVersion
+end
+
 def app_store_version_to_upload_to(projectVersion:)
     puts "fetching app_store_version_to_upload_to"
 
