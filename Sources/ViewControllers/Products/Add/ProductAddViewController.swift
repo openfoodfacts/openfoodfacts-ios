@@ -443,10 +443,12 @@ class ProductAddViewController: TakePictureViewController {
                         let score = NutriScoreView.Score(rawValue: nutriscoreString) {
                         self?.nutriScoreView.currentScore = score
                         self?.nutriscoreStackView.isHidden = false
+                        self?.productCategoryNutriScoreExplanationLabel.text = ""
                         self?.productCategoryNutriScoreExplanationLabel.isHidden = true
                         self?.nutritiveNutriScoreEXplanationLabel.isHidden = true
                     } else {
                         self?.nutriscoreStackView.isHidden = true
+                        self?.productCategoryNutriScoreExplanationLabel.text = "product-add.details.category".localized
                         self?.productCategoryNutriScoreExplanationLabel.isHidden = false
                         self?.nutritiveNutriScoreEXplanationLabel.isHidden = false
 
