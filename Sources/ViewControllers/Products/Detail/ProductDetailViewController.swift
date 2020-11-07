@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import FloatingPanel
 
 class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient {
 
@@ -16,6 +17,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     var latestRobotoffQuestions: [RobotoffQuestion] = []
     var dataManager: DataManagerProtocol!
     private var notificationCentertoken: NotificationCenterToken?
+
+    // for Product Attribute detail display
+    var floatingPanelController: FloatingPanelController!
+    var productAttributeFloatingPanelLayout = ProductAttributeFloatingPanelLayout()
+    var productAttributeController: ProductAttributeViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()

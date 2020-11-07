@@ -18,8 +18,6 @@ import Cartography
 
     var attribute: Attribute?
 
-    var openProductEditHandler: (() -> Void)?
-
     func configure(_ attribute: Attribute) {
         self.layer.cornerRadius = 5
         self.attribute = attribute

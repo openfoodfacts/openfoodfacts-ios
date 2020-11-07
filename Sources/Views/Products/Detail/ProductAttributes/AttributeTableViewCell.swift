@@ -11,12 +11,17 @@ import BLTNBoard
 import Kingfisher
 import Cartography
 
+protocol AttributeTableViewCellDelegate: class {
+    func attributeTableViewCellDelegate(_ sender: AttributeTableViewCell, receivedTapOn view: UIView)
+}
+
 class AttributeTableViewCell: ProductDetailBaseCell {
 
     @IBOutlet weak var stackView: UIStackView!
 
-    var viewController: FormTableViewController?
+
     var attribute: Attribute?
+    var showFloatingPanelHandler: ((AttributeView) -> Void)?
 
     fileprivate var gestureRecognizer: UITapGestureRecognizer?
     var bulletinManager: BLTNItemManager!
@@ -24,7 +29,6 @@ class AttributeTableViewCell: ProductDetailBaseCell {
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let attribute = formRow.value as? Attribute else { return }
         self.attribute = attribute
-        self.viewController = viewController
 
         removeGestureRecognizer()
         // 'circle "i"' infoImage is in xib, need to retrieve it and add it back later
@@ -38,6 +42,13 @@ class AttributeTableViewCell: ProductDetailBaseCell {
         stackView.addArrangedSubview(attributeView)
         if let iiv = infoImageView {
             stackView.addArrangedSubview(iiv)
+        }
+
+        // configure floating panel for the ProductAttribute rows
+        formViewController?.configureFloatingPanel(attributeView)
+        formViewController?.floatingPanelController.move(to: .hidden, animated: false)
+        showFloatingPanelHandler = { [weak self] attributeView in
+            self?.formViewController?.floatingPanelController.move(to: .full, animated: true)
         }
     }
 
@@ -71,26 +82,11 @@ class AttributeTableViewCell: ProductDetailBaseCell {
         guard let attribute = attribute else {
             return
         }
-        let page = AttributeBLTNPageItem()
-        page.isDismissable = true
-        page.requiresCloseButton = false
 
         let attributeView = AttributeView.loadFromNib()
         attributeView.configure(attribute)
-        page.attributeView = attributeView
-        page.attribute = attribute
 
-        page.iconImageBackgroundColor = self.backgroundColor
-        page.alternativeButtonTitle = "generic.ok".localized
-        page.alternativeHandler = { item in
-            item.manager?.dismissBulletin()
-        }
-
-        bulletinManager = BLTNItemManager(rootItem: page)
-        bulletinManager.showBulletin(in: UIApplication.shared)
-
-        page.alternativeButton?.titleLabel?.numberOfLines = 2
-        page.alternativeButton?.titleLabel?.textAlignment = .center
+        showFloatingPanelHandler?(attributeView)
     }
 }
 
