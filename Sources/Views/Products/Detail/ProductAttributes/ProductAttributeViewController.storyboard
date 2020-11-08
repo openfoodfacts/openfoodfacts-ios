@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d3Z-kw-o7T">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Product Attribute View Controller-->
+        <scene sceneID="c3g-OW-FhK">
+            <objects>
+                <viewController storyboardIdentifier="ProductAttributeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d3Z-kw-o7T" customClass="ProductAttributeViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hcD-ai-ryb"/>
+                        <viewControllerLayoutGuide type="bottom" id="gwe-ZE-54x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O6D-DT-fwP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="toY-y1-266">
+                                <rect key="frame" x="16" y="8" width="343" height="607"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="toY-y1-266" firstAttribute="top" secondItem="hcD-ai-ryb" secondAttribute="bottom" constant="8" id="AvC-UK-4LF"/>
+                            <constraint firstItem="gwe-ZE-54x" firstAttribute="top" secondItem="toY-y1-266" secondAttribute="bottom" constant="8" id="Rjl-O9-lLr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="toY-y1-266" secondAttribute="trailing" id="ezh-be-irM"/>
+                            <constraint firstItem="toY-y1-266" firstAttribute="leading" secondItem="O6D-DT-fwP" secondAttribute="leadingMargin" id="nhs-Wb-x9E"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="stackView" destination="toY-y1-266" id="uPi-Mi-6mz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEd-iw-kw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1368.8" y="104.7976011994003"/>
+        </scene>
+    </scenes>
+</document>

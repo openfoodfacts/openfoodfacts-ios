@@ -48,6 +48,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
         }
+
+        // set up floatingPanel
+        configureFloatingPanel()
+
         setUserAgent()
 
         notificationCentertoken = NotificationCenter.default.observe(
@@ -78,6 +82,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
 
         self.refreshLatestRobotoffQuestion()
+
+        // floatingPanel
+        self.floatingPanelController.move(to: .hidden, animated: false)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -524,7 +531,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                     for attribute in attributes {
                         if let desc = attribute.descriptionShort ?? attribute.title,
                             desc != "", let name = attribute.name, name != "" {
-                            createFormRow(with: &rows, item: attribute, label: attribute.name, cellType: AttributeTableViewCell.self)
+                            createFormRow(with: &rows, item: AttributeTableRow(self, attribute: attribute), label: attribute.name, cellType: AttributeTableViewCell.self)
                         } else {
                             continue
                         }

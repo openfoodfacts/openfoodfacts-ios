@@ -8,5 +8,6 @@
 import UIKit
 
 class ProductAttributeViewController: UIViewController {
+    @IBOutlet var stackView: UIStackView!
     
 }

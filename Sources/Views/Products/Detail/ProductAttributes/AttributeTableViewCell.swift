@@ -12,22 +12,24 @@ import Kingfisher
 import Cartography
 
 protocol AttributeTableViewCellDelegate: class {
-    func attributeTableViewCellDelegate(_ sender: AttributeTableViewCell, receivedTapOn view: UIView)
+    func attributeTableViewCellTapped(_ sender: AttributeTableViewCell, _ attributeView: AttributeView)
 }
 
 class AttributeTableViewCell: ProductDetailBaseCell {
 
     @IBOutlet weak var stackView: UIStackView!
 
-
+    public weak var delegate: AttributeTableViewCellDelegate?
     var attribute: Attribute?
-    var showFloatingPanelHandler: ((AttributeView) -> Void)?
 
     fileprivate var gestureRecognizer: UITapGestureRecognizer?
     var bulletinManager: BLTNItemManager!
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
-        guard let attribute = formRow.value as? Attribute else { return }
+        guard let attributeTableRow = formRow.value as? AttributeTableRow,
+              let attribute = attributeTableRow.attribute
+        else { return }
+
         self.attribute = attribute
 
         removeGestureRecognizer()
@@ -36,6 +38,7 @@ class AttributeTableViewCell: ProductDetailBaseCell {
         stackView.removeAllViews()
 
         let attributeView = AttributeView.loadFromNib()
+
         attributeView.configure(attribute)
 
         configureGestureRecognizer()
@@ -44,12 +47,7 @@ class AttributeTableViewCell: ProductDetailBaseCell {
             stackView.addArrangedSubview(iiv)
         }
 
-        // configure floating panel for the ProductAttribute rows
-        formViewController?.configureFloatingPanel(attributeView)
-        formViewController?.floatingPanelController.move(to: .hidden, animated: false)
-        showFloatingPanelHandler = { [weak self] attributeView in
-            self?.formViewController?.floatingPanelController.move(to: .full, animated: true)
-        }
+        delegate = attributeTableRow.delegate
     }
 
     override func dismiss() {
@@ -86,7 +84,7 @@ class AttributeTableViewCell: ProductDetailBaseCell {
         let attributeView = AttributeView.loadFromNib()
         attributeView.configure(attribute)
 
-        showFloatingPanelHandler?(attributeView)
+        delegate?.attributeTableViewCellTapped(self, attributeView)
     }
 }
 

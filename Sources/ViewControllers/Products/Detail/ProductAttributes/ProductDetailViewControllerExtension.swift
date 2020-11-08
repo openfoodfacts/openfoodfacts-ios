@@ -8,7 +8,7 @@ import FloatingPanel
 
 extension ProductDetailViewController {
     // MARK: - ProductAttributes FloatingPanel setup
-    func configureFloatingPanel(_ attributeView: AttributeView) {
+    func configureFloatingPanel() {
 
         floatingPanelController = FloatingPanelController()
         floatingPanelController.delegate = self
@@ -29,14 +29,13 @@ extension ProductDetailViewController {
           floatingPanelController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0.0)
         ])
 
-        productAttributeController = ProductAttributeViewController()
-        productAttributeController.view.addSubview(attributeView)
+        productAttributeController = ProductAttributeViewController.loadFromStoryboard() as ProductAttributeViewController
         floatingPanelController.set(contentViewController: productAttributeController)
 
         floatingPanelController.surfaceView.backgroundColor = .clear
         floatingPanelController.surfaceView.cornerRadius = 9.0
         floatingPanelController.surfaceView.shadowHidden = false
-        // Add a gesture to hide the summaryView
+        // Add a gesture to hide the floating panel
         let gestureDown = UISwipeGestureRecognizer(target: self, action: #selector(self.hideSummaryView(_:)))
         gestureDown.numberOfTouchesRequired = 1
         gestureDown.direction = .down
@@ -52,7 +51,7 @@ extension ProductDetailViewController {
     }
 
 }
-extension FormTableViewController: FloatingPanelControllerDelegate {
+extension ProductDetailViewController: FloatingPanelControllerDelegate {
 
     func floatingPanel(_ viewController: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         return productAttributeFloatingPanelLayout
@@ -88,7 +87,8 @@ class ProductAttributeFloatingPanelLayout: FloatingPanelLayout {
 }
 
 extension ProductDetailViewController: AttributeTableViewCellDelegate {
-    func attributeTableViewCellDelegate(_ sender: AttributeTableViewCell, receivedTapOn view: UIView) {
-        <#code#>
+    func attributeTableViewCellTapped(_ sender: AttributeTableViewCell, _ attributeView: AttributeView) {
+        productAttributeController.stackView.addArrangedSubview(attributeView)
+        floatingPanelController.move(to: FloatingPanelPosition.full, animated: true)
     }
 }
