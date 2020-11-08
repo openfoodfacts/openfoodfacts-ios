@@ -29,7 +29,9 @@ extension ProductDetailViewController {
           floatingPanelController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0.0)
         ])
 
-        productAttributeController = ProductAttributeViewController.loadFromStoryboard() as ProductAttributeViewController
+        let storyboard = UIStoryboard(name: "ProductAttributeViewController", bundle: nil)
+        // swiftlint:disable:next force_cast
+        productAttributeController = (storyboard.instantiateViewController(withIdentifier: "ProductAttributeViewController") as! ProductAttributeViewController)
         floatingPanelController.set(contentViewController: productAttributeController)
 
         floatingPanelController.surfaceView.backgroundColor = .clear
@@ -74,7 +76,7 @@ class ProductAttributeFloatingPanelLayout: FloatingPanelLayout {
     }
 
     public var supportedPositions: Set<FloatingPanelPosition> {
-        return canShowDetails ? [.full, .tip] : [.tip]
+        return canShowDetails ? [.full, .tip] : [.half]
     }
 
     public func insetFor(position: FloatingPanelPosition) -> CGFloat? {
@@ -88,7 +90,10 @@ class ProductAttributeFloatingPanelLayout: FloatingPanelLayout {
 
 extension ProductDetailViewController: AttributeTableViewCellDelegate {
     func attributeTableViewCellTapped(_ sender: AttributeTableViewCell, _ attributeView: AttributeView) {
+        productAttributeController.stackView.removeAllViews()
         productAttributeController.stackView.addArrangedSubview(attributeView)
+        productAttributeController.configureSubviews()
+        productAttributeFloatingPanelLayout.canShowDetails = true
         floatingPanelController.move(to: FloatingPanelPosition.full, animated: true)
     }
 }
