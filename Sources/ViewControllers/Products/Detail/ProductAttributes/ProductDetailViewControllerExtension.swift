@@ -9,7 +9,7 @@ import FloatingPanel
 extension ProductDetailViewController {
     // MARK: - ProductAttributes FloatingPanel setup
     func configureFloatingPanel() {
-
+        productAttributeController = ProductAttributeViewController()
         floatingPanelController = FloatingPanelController()
         floatingPanelController.delegate = self
         floatingPanelController.contentMode = .fitToBounds
@@ -29,9 +29,6 @@ extension ProductDetailViewController {
           floatingPanelController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0.0)
         ])
 
-        let storyboard = UIStoryboard(name: "ProductAttributeViewController", bundle: nil)
-        // swiftlint:disable:next force_cast
-        productAttributeController = (storyboard.instantiateViewController(withIdentifier: "ProductAttributeViewController") as! ProductAttributeViewController)
         floatingPanelController.set(contentViewController: productAttributeController)
 
         floatingPanelController.surfaceView.backgroundColor = .clear
@@ -56,6 +53,7 @@ extension ProductDetailViewController {
 extension ProductDetailViewController: FloatingPanelControllerDelegate {
 
     func floatingPanel(_ viewController: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        productAttributeFloatingPanelLayout.contentViewOffset = productAttributeController.totalHeight()
         return productAttributeFloatingPanelLayout
     }
 
@@ -69,20 +67,21 @@ extension ProductDetailViewController: FloatingPanelControllerDelegate {
 
 class ProductAttributeFloatingPanelLayout: FloatingPanelLayout {
 
-    fileprivate var canShowDetails: Bool = false
+    var contentViewOffset: CGFloat = 0.0
 
     public var initialPosition: FloatingPanelPosition {
         return .hidden
     }
 
     public var supportedPositions: Set<FloatingPanelPosition> {
-        return canShowDetails ? [.full, .tip] : [.half]
+        return [.full, .tip, .half]
     }
 
     public func insetFor(position: FloatingPanelPosition) -> CGFloat? {
         switch position {
         case .full: return 16.0
         case .tip: return 112.0 + 16.0
+        case .half: return 200 + 16.0 + contentViewOffset
         default: return nil
         }
     }
@@ -90,10 +89,9 @@ class ProductAttributeFloatingPanelLayout: FloatingPanelLayout {
 
 extension ProductDetailViewController: AttributeTableViewCellDelegate {
     func attributeTableViewCellTapped(_ sender: AttributeTableViewCell, _ attributeView: AttributeView) {
-        productAttributeController.stackView.removeAllViews()
-        productAttributeController.stackView.addArrangedSubview(attributeView)
-        productAttributeController.configureSubviews()
-        productAttributeFloatingPanelLayout.canShowDetails = true
-        floatingPanelController.move(to: FloatingPanelPosition.full, animated: true)
+        productAttributeController.configureSubviews(with: attributeView)
+        //productAttributeFloatingPanelLayout.canShowDetails = false
+        floatingPanelController.updateLayout()
+        floatingPanelController.move(to: FloatingPanelPosition.half, animated: true)
     }
 }

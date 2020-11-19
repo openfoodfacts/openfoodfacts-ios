@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BLTNBoard
 import Kingfisher
 import Cartography
 
@@ -36,8 +35,8 @@ import Cartography
     }
 
     func setIconImageView(imageURL: String?) {
-        guard let icon = imageURL,
-              let url = URL(string: icon)
+        guard let icon = imageURL, let attribute = attribute,
+            let url = URL(string: "https://static.openfoodfacts.org/images/icons/\(attribute.id!.contains("organic") ? "vegan-status-unknown" :  "nutrient-level-salt-medium").png")//DEBUG should be "icon"
         else {
             iconImageView.isHidden = false
             return
@@ -45,17 +44,6 @@ import Cartography
         iconImageView.kf.indicatorType = .activity
         iconImageView.kf.setImage(with: url)
         iconImageView.isHidden = false
-    }
-
-    var bulletinManager: BLTNItemManager!
-
-    deinit {
-        if bulletinManager != nil {
-            if bulletinManager.isShowingBulletin {
-                bulletinManager.dismissBulletin(animated: true)
-            }
-            bulletinManager = nil
-        }
     }
 }
 

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BLTNBoard
 import Kingfisher
 import Cartography
 
@@ -23,7 +22,6 @@ class AttributeTableViewCell: ProductDetailBaseCell {
     var attribute: Attribute?
 
     fileprivate var gestureRecognizer: UITapGestureRecognizer?
-    var bulletinManager: BLTNItemManager!
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let attributeTableRow = formRow.value as? AttributeTableRow,
@@ -76,7 +74,6 @@ class AttributeTableViewCell: ProductDetailBaseCell {
     }
 
     @objc func didTap(_ sender: UITapGestureRecognizer) {
-        print("Attribute tapped")
         guard let attribute = attribute else {
             return
         }
@@ -85,41 +82,5 @@ class AttributeTableViewCell: ProductDetailBaseCell {
         attributeView.configure(attribute)
 
         delegate?.attributeTableViewCellTapped(self, attributeView)
-    }
-}
-
-class AttributeBLTNPageItem: BLTNPageItem {
-    var attribute: Attribute?
-    var iconImageBackgroundColor: UIColor?
-    var attributeView: AttributeView?
-
-    override func makeHeaderViews(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? {
-        let containerA = UIView()
-        containerA.backgroundColor = iconImageBackgroundColor
-
-        if let attributeV = attributeView {
-            containerA.addSubview(attributeV)
-
-            constrain(attributeV, containerA) { (attributeV, containerA) in
-                containerA.width == attributeV.width
-                containerA.height == attributeV.height
-                attributeV.edges == containerA.edges
-
-            }
-
-            var views: [UIView] = [containerA]
-
-            if let attribute = attribute {
-                let descriptionLabel = UILabel()
-                descriptionLabel.numberOfLines = 0
-                descriptionLabel.textAlignment = .center
-                descriptionLabel.font = UIFont.boldSystemFont(ofSize: 17)
-
-                descriptionLabel.text = attribute.descriptionLong ?? attribute.descriptionShort ?? "empty description"
-                views.append(descriptionLabel)
-            }
-            return views
-        }
-        return nil
     }
 }
