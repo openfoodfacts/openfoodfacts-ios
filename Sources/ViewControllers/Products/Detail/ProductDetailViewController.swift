@@ -61,7 +61,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        //TODO: Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
+        // Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
 
         if let parentVc = parent as? UINavigationController {
 

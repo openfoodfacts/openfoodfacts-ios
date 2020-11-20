@@ -32,7 +32,7 @@ struct ScanProductSummaryViewAdaptorFactory {
                                              delegate: delegate)
     }
 
-    static func makeAdaptor(from product: Product, delegate:ScanProductSummaryViewProtocol?) -> ScanProductSummaryViewAdaptor {
+    static func makeAdaptor(from product: Product, delegate: ScanProductSummaryViewProtocol?) -> ScanProductSummaryViewAdaptor {
         return ScanProductSummaryViewAdaptor(title: product.name,
                                              quantityText: getQuantity(from: product),
                                              productImageURL: getImageURL(from: product),

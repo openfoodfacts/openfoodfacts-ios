@@ -467,6 +467,7 @@ class DataManager: DataManagerProtocol {
                     item.brand = nil
                     item.quantity = nil
                     item.packaging = nil
+                    item.labels = nil
                     item.categories = nil
                     item.ingredientsList = nil
                     item.nutriments.removeAll()
