@@ -25,7 +25,7 @@ class HistoryTableViewController: UITableViewController, DataManagerClient {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "history.title".localized
+        self.navigationItem.title = "history.title".localized
 
         tableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: HistoryCellId.item)
 
