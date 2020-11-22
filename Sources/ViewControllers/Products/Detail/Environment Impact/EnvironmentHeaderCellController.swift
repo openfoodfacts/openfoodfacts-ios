@@ -13,7 +13,7 @@ class EnvironmentHeaderCellController: TakePictureViewController {
     var product: Product!
 
     @IBOutlet weak var packaging: UIImageView!
-    
+
     @IBOutlet weak var callToActionView: PictureCallToActionView! {
         didSet {
             callToActionView?.circularProgressBar.isHidden = true

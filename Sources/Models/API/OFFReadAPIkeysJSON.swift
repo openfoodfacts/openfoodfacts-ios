@@ -79,6 +79,8 @@ struct OFFJson {
     static let CountriesTagsKey = "countries_tags"
     //static let DebugParamSortedLangsKey = "debug_param_sorted_langs"
     static let EcoscoreGradeKey = "ecoscore_grade"
+    // needed to get a response in the alpha phase
+    static let EcoscoreAlphaKey = "ecoscore_alpha"
     static let EditorsKey = "editors"
     //static let EditorsTagsKey = "editors_tags"
     static let EmbCodesKey = "emb_codes"
@@ -331,6 +333,7 @@ struct OFFJson {
         return [
             OFFJson.BrandsKey,
             OFFJson.CodeKey,
+            OFFJson.EcoscoreAlphaKey,
             OFFJson.EcoscoreGradeKey,
             OFFJson.EnvironmentImpactLevelTagsKey,
             OFFJson.ImageFrontUrlKey,
@@ -363,6 +366,7 @@ struct OFFJson {
             // OFFJson.CreatedTKey,
             // OFFJson.CreatorKey,
             // OFFJson.CustomerServiceKey,
+            OFFJson.EcoscoreAlphaKey,
             OFFJson.EcoscoreGradeKey,
             // OFFJson.EditorsTagsKey,
             OFFJson.EmbCodesTagsKey,
