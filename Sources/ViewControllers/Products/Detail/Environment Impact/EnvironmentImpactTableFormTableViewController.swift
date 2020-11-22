@@ -6,6 +6,9 @@
 //  Copyright © 2019 Andrés Pizá Bückmann. All rights reserved.
 //
 
+/*
+ Is replaced/incorporated by two other Environment view controllers (aleene)
+ 
 import UIKit
 import XLPagerTabStrip
 
@@ -70,3 +73,4 @@ extension EnvironmentImpactTableFormTableViewController: UIWebViewDelegate {
         webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.fontFamily =\"-apple-system-body\"")
     }
 }
+*/

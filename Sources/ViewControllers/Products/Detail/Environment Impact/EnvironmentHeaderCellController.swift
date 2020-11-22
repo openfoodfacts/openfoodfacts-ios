@@ -1,24 +1,26 @@
 //
-//  IngredientsHeaderCellController.swift
+//  EnvironmentHeaderCellController.swift
 //  OpenFoodFacts
 //
-//  Created by Andrés Pizá Bückmann on 05/08/2017.
-//  Copyright © 2017 Andrés Pizá Bückmann. All rights reserved.
+//  Created by arnaud on 21/11/2020.
 //
 
 import UIKit
 import ImageViewer
 
-class IngredientsHeaderCellController: TakePictureViewController {
+class EnvironmentHeaderCellController: TakePictureViewController {
+
     var product: Product!
-    @IBOutlet weak var ingredients: UIImageView!
+
+    @IBOutlet weak var packaging: UIImageView!
+    
     @IBOutlet weak var callToActionView: PictureCallToActionView! {
-           didSet {
-               callToActionView?.circularProgressBar.isHidden = true
-               callToActionView?.imageAddButton.isHidden = false
-               callToActionView?.textLabel.isHidden = false
-           }
-       }
+        didSet {
+            callToActionView?.circularProgressBar.isHidden = true
+            callToActionView?.imageAddButton.isHidden = false
+            callToActionView?.textLabel.isHidden = false
+        }
+    }
 
     @IBOutlet weak var takePictureButtonView: IconButtonView! {
         didSet {
@@ -28,24 +30,26 @@ class IngredientsHeaderCellController: TakePictureViewController {
         }
     }
 
-    @IBOutlet weak var novagroupView: NovaGroupView!
-    @IBOutlet weak var novagroupExplanationLabel: UILabel! {
+    @IBOutlet weak var ecoscoreImageView: EcoscoreImageView!
+    @IBOutlet weak var ecoscoreExplanationLabel: UILabel! {
         didSet {
-            novagroupExplanationLabel?.text = "product-detail.ingredients.nova.incite".localized
-            novagroupExplanationLabel?.sizeToFit()
+            ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.incite".localized
+            ecoscoreExplanationLabel?.sizeToFit()
         }
     }
-    @IBOutlet weak var novagroupInfoButton: UIButton! {
+    @IBOutlet weak var ecoscoreInfoButton: UIButton! {
         didSet {
             if #available(iOS 13.0, *) {
-                novagroupInfoButton.setImage(UIImage.init(systemName: "info.circle"), for: .normal)
+                ecoscoreInfoButton.setImage(UIImage.init(systemName: "info.circle"), for: .normal)
             } else {
-                novagroupInfoButton.setImage(UIImage.init(named: "circle-info"), for: .normal)
+                ecoscoreInfoButton.setImage(UIImage.init(named: "circle-info"), for: .normal)
             }
         }
     }
 
-    @IBAction func novagroupInfoButtonTapped(_ sender: UIButton) {
+    @IBOutlet weak var ecoScoreView: EcoscoreImageView!
+
+    @IBAction func ecoscoreInfoButtonTapped(_ sender: UIButton) {
         if let url = URL(string: URLs.Nova) {
             openUrlInApp(url)
         } else if let url = URL(string: URLs.SupportOpenFoodFacts) {
@@ -72,11 +76,11 @@ class IngredientsHeaderCellController: TakePictureViewController {
     }
 
     convenience init(with product: Product, dataManager: DataManagerProtocol) {
-        self.init(nibName: String(describing: IngredientsHeaderCellController.self), bundle: nil)
+        self.init(nibName: String(describing: EnvironmentHeaderCellController.self), bundle: nil)
         self.product = product
         super.barcode = product.barcode
         super.dataManager = dataManager
-        super.imageType = .ingredients
+        super.imageType = .packaging
     }
 
     override func viewDidLoad() {
@@ -98,10 +102,10 @@ class IngredientsHeaderCellController: TakePictureViewController {
         guard let validBarcode = product?.barcode else { return }
         guard let barcode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadBarcodeString] as? String else { return }
         guard validBarcode == barcode else { return }
-        // guard let languageCode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadLanguageString] as? String else { return }
+            // guard let languageCode = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadLanguageString] as? String else { return }
         guard let progress = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadFractionDouble] as? Double else { return }
         guard let imageTypeString = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
-        guard ImageType(imageTypeString) == .ingredients else { return }
+        guard ImageType(imageTypeString) == .packaging else { return }
         if product.ingredientsImageUrl != nil {
             replacementImageIsUploading = true
             takePictureButtonView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
@@ -118,9 +122,9 @@ class IngredientsHeaderCellController: TakePictureViewController {
     fileprivate func setupViews() {
         self.takePictureButtonView.delegate = self
 
-        if let imageUrl = product.ingredientsImageUrl, let url = URL(string: imageUrl) {
-            ingredients.kf.indicatorType = .activity
-            ingredients.kf.setImage(with: url, options: nil) { result in
+        if let imageUrl = product.packagingImageUrl, let url = URL(string: imageUrl) {
+            packaging.kf.indicatorType = .activity
+            packaging.kf.setImage(with: url, options: nil) { result in
                 switch result {
                 case .success(let value):
                     // When the image is not cached in memory, call delegate method to handle the cell's size change
@@ -133,67 +137,72 @@ class IngredientsHeaderCellController: TakePictureViewController {
             }
 
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
-            ingredients.addGestureRecognizer(tap)
-            ingredients.isUserInteractionEnabled = true
+            packaging.addGestureRecognizer(tap)
+            packaging.isUserInteractionEnabled = true
             callToActionView?.isHidden = true
             takePictureButtonView?.isHidden = false
         } else {
-            ingredients.isHidden = true
+            packaging.isHidden = true
             callToActionView.isHidden = false
             takePictureButtonView.isHidden = true
             if !newImageIsUploading {
-                callToActionView.textLabel.text = "call-to-action.ingredients".localized
+                callToActionView.textLabel.text = "call-to-action.environment".localized
                 callToActionView.addGestureRecognizer( UITapGestureRecognizer( target: self, action: #selector(didTapTakePictureButton(_:))))
             }
         }
-        if let novaGroupValue = product.novaGroup,
-            let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
-            setNovaGroup(novaGroup: novaGroup)
+        if let ecoscoreValue = product.ecoscore,
+            let ecoscore = EcoscoreImageView.Ecoscore(rawValue: "\(ecoscoreValue)") {
+            setEcoscore(ecoscore: ecoscore)
         } else {
-            setNovaGroup(novaGroup: nil)
+            setEcoscore(ecoscore: .unknown)
         }
     }
 
-    private func setNovaGroup(novaGroup: NovaGroupView.NovaGroup?) {
-        if let novaGroup = novaGroup {
-            novagroupView?.novaGroup = novaGroup
-            switch novaGroup {
-            case .one:
-                novagroupExplanationLabel?.text = "product-detail.ingredients.nova.1".localized
-            case .two:
-                novagroupExplanationLabel?.text = "product-detail.ingredients.nova.2".localized
-            case .three:
-                novagroupExplanationLabel?.text = "product-detail.ingredients.nova.3".localized
-            case .four:
-                novagroupExplanationLabel?.text = "product-detail.ingredients.nova.4".localized
-            }
-            novagroupView?.isHidden = false
+    private func setEcoscore(ecoscore: EcoscoreImageView.Ecoscore?) {
+            if let validEcoscore = ecoscore {
+                ecoscoreImageView?.ecoScore = validEcoscore
+                switch validEcoscore {
+                case .ecoscoreA:
+                    ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.a".localized
+                case .ecoscoreB:
+                    ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.b".localized
+                case .ecoscoreC:
+                    ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.c".localized
+                case .ecoscoreD:
+                    ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.d".localized
+                case .ecoscoreE:
+                    ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.e".localized
+                case .unknown:
+                    ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.unknown".localized
+                }
+                ecoscoreImageView?.isHidden = false
         } else {
-            novagroupExplanationLabel?.text = "product-detail.ingredients.nova.incite".localized
-            novagroupView?.isHidden = true
+            ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.incite".localized
+            ecoscoreImageView?.isHidden = true
         }
     }
 
     override func postImageSuccess(image: UIImage, forImageType imageType: ImageType) {
         guard super.barcode != nil else { return }
-        guard imageType == .ingredients else { return }
-        if product.ingredientsImageUrl != nil {
+        guard imageType == .packaging else { return }
+        if product.packagingImageUrl != nil {
             replacementImageIsUploading = false
         } else {
             newImageIsUploading = false
         }
         // Notification is used by FormTableViewController
-        NotificationCenter.default.post(name: .IngredientsImageIsUpdated, object: nil, userInfo: nil)
+        NotificationCenter.default.post(name: .PackagingImageIsUpdated, object: nil, userInfo: nil)
     }
 
 }
 
 extension Notification.Name {
-        static let IngredientsImageIsUpdated = Notification.Name("IngredientsHeaderCellController.Notification.IngredientsImageIsUpdated")
+    static let PackagingImageIsUpdated = Notification.Name("EnvironmentHeaderCellController.Notification.PackagingImageIsUpdated")
 }
 
 // MARK: - Gesture recognizers
-extension IngredientsHeaderCellController {
+
+extension EnvironmentHeaderCellController {
     @objc func didTapProductImage(_ sender: UITapGestureRecognizer) {
         if let imageView = sender.view as? UIImageView {
             ImageViewer.show(imageView, presentingVC: self)
@@ -201,7 +210,7 @@ extension IngredientsHeaderCellController {
     }
 }
 
-extension IngredientsHeaderCellController: IconButtonViewDelegate {
+extension EnvironmentHeaderCellController: IconButtonViewDelegate {
     func didTap() {
         didTapTakePictureButton(callToActionView as Any)
     }

@@ -33,6 +33,7 @@ enum ImageTypeCategory {
     case ingredients
     case nutrition
     case general
+    case packaging
 
     // These decriptions are used in the deselect/update API's to OFF
     var description: String {
@@ -43,6 +44,8 @@ enum ImageTypeCategory {
             return "ingredients"
         case .nutrition:
             return "nutrition"
+        case .packaging:
+            return "packaging"
         case .general:
             return "general"
         }
@@ -130,6 +133,7 @@ struct Product: Mappable {
     // var countries: [String]?
     var countriesTags: [String]?
     private var ingredientsImageUrlDecoded: String?
+    var ecoscore: String?
     var allergens: [Tag]?
     var traces: [Tag]?
     var additives: [Tag]?
@@ -150,6 +154,7 @@ struct Product: Mappable {
     var ingredientsAnalysisDetails: [IngredientsAnalysisDetail]?
     // new variables for local languages
     var languageCodes: [String: Int]?
+    private var packagingImageUrlDecoded: String?
     var names: [String: String] = [:]
     var genericNames: [String: String] = [:]
     var ingredients: [String: String] = [:]
@@ -303,6 +308,19 @@ struct Product: Mappable {
             }
         }
         return nutritionTableImageDecoded
+    }
+
+    var packagingImageUrl: String? {
+        if let packagingImages = images[.packaging] {
+            if let displayPackagingImages = packagingImages[.display] {
+                if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
+                    if let validImageURLString = displayPackagingImages[validCode] {
+                        return validImageURLString
+                    }
+                }
+            }
+        }
+        return packagingImageUrlDecoded
     }
 
     init() {}

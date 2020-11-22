@@ -34,6 +34,9 @@ extension PictureViewModel {
         case .nutrition:
             text = "product.images.take-picture.nutrition".localized
             uploadedPictureText = "product.images.took-picture.nutrition".localized
+        case .packaging:
+            text = "product.images.take-picture.packaging".localized
+            uploadedPictureText = "product.images.took-picture.packaging".localized
         case .general:
             text = "product.images.take-picture.general".localized
             uploadedPictureText = "product.images.took-picture.general".localized
