@@ -133,7 +133,11 @@ struct Product: Mappable {
     // var countries: [String]?
     var countriesTags: [String]?
     private var ingredientsImageUrlDecoded: String?
-    var ecoscore: String?
+    var ecoscore: String? {
+        didSet {
+            print("Product: \(ecoscore)")
+        }
+    }
     var allergens: [Tag]?
     var traces: [Tag]?
     var additives: [Tag]?
@@ -328,6 +332,7 @@ struct Product: Mappable {
 
     // swiftlint:disable function_body_length
     mutating func mapping(map: Map) {
+        let test = map[OFFJson.EcoscoreGradeKey]
         additives <- (map[OFFJson.AdditivesTagsKey], TagTransform())
         allergens <- (map[OFFJson.AllergensTagsKey], TagTransform())
         barcode <- map[OFFJson.CodeKey]
@@ -347,6 +352,7 @@ struct Product: Mappable {
         citiesTags <- map[OFFJson.CitiesTagsKey]
         // countries <- (map[OFFJson.CountriesKey], ArrayTransform())
         countriesTags <- map[OFFJson.CountriesTagsKey]
+        ecoscore <- map[OFFJson.EcoscoreGradeKey]
         embCodesTags <- map[OFFJson.EmbCodesTagsKey]
         environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
