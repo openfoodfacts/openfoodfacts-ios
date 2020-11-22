@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import FloatingPanel
 
 class ProductAttributeViewController: UIViewController {
     var stackView = UIStackView()
+    var attributeView: AttributeView?
+    var descriptionLabel: UILabel!
+    var totalStackViewHeight: CGFloat = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +34,20 @@ class ProductAttributeViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        //DEBUG
+    override func viewDidLayoutSubviews() {
+        let newHeight = getTotalHeight()
+        if newHeight != totalStackViewHeight, let floatingPanelVC = parent as? FloatingPanelController {
+            totalStackViewHeight = newHeight
+            floatingPanelVC.updateLayout()
+        }
     }
 
-    func configureSubviews(with attributeView: AttributeView) {
-        stackView.removeAllViews()
-        guard let attribute = attributeView.attribute else { return }
+    func configureSubviews() {
+        resetView()
+        guard let attributeView = attributeView,
+              let attribute = attributeView.attribute else { return }
         stackView.addArrangedSubview(attributeView)
-        let descriptionLabel = UILabel()
+        descriptionLabel = UILabel()
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .center
         descriptionLabel.font = UIFont.boldSystemFont(ofSize: 17)
@@ -53,7 +62,11 @@ class ProductAttributeViewController: UIViewController {
 
     }
 
-    func totalHeight() -> CGFloat {
+    func resetView() {
+        stackView.removeAllViews()
+    }
+
+    private func getTotalHeight() -> CGFloat {
         var total: CGFloat = 0.0
         for view in stackView.arrangedSubviews {
             total += view.frame.height

@@ -46,6 +46,8 @@ extension ProductDetailViewController {
 
     // MARK: - Gesture recognizers
     @objc func hideSummaryView(_ sender: UISwipeGestureRecognizer) {
+        productAttributeController.attributeView = nil
+        productAttributeController.resetView()
         floatingPanelController.move(to: FloatingPanelPosition.hidden, animated: true)
     }
 
@@ -53,7 +55,7 @@ extension ProductDetailViewController {
 extension ProductDetailViewController: FloatingPanelControllerDelegate {
 
     func floatingPanel(_ viewController: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
-        productAttributeFloatingPanelLayout.contentViewOffset = productAttributeController.totalHeight()
+        productAttributeFloatingPanelLayout.contentViewOffset = productAttributeController.totalStackViewHeight
         return productAttributeFloatingPanelLayout
     }
 
@@ -74,14 +76,14 @@ class ProductAttributeFloatingPanelLayout: FloatingPanelLayout {
     }
 
     public var supportedPositions: Set<FloatingPanelPosition> {
-        return [.full, .tip, .half]
+        return [.half]
     }
 
     public func insetFor(position: FloatingPanelPosition) -> CGFloat? {
         switch position {
         case .full: return 16.0
         case .tip: return 112.0 + 16.0
-        case .half: return 200 + 16.0 + contentViewOffset
+        case .half: return contentViewOffset + 24.0
         default: return nil
         }
     }
@@ -89,9 +91,8 @@ class ProductAttributeFloatingPanelLayout: FloatingPanelLayout {
 
 extension ProductDetailViewController: AttributeTableViewCellDelegate {
     func attributeTableViewCellTapped(_ sender: AttributeTableViewCell, _ attributeView: AttributeView) {
-        productAttributeController.configureSubviews(with: attributeView)
-        //productAttributeFloatingPanelLayout.canShowDetails = false
-        floatingPanelController.updateLayout()
+        productAttributeController.attributeView = attributeView
+        productAttributeController.configureSubviews()
         floatingPanelController.move(to: FloatingPanelPosition.half, animated: true)
     }
 }
