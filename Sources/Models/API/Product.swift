@@ -375,6 +375,7 @@ struct Product: Mappable {
         origins <- map[OFFJson.OriginsKey]
         otherNutrients <- (map[OFFJson.OtherNutritionalSubstancesTagsKey], TagTransform())
         packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
+        packagingImageUrlDecoded <- map[OFFJson.ImagePackagingUrlKey]
         palmOilIngredients <- map[OFFJson.IngredientsFromPalmOilTagsKey]
         possiblePalmOilIngredients <- map[OFFJson.IngredientsThatMayBeFromPalmOilTagsKey]
         servingSize <- map[OFFJson.ServingSizeKey]
@@ -414,6 +415,9 @@ struct Product: Mappable {
             }
             if let validImages = decodeTypes(imageTypes.key, value: imageTypes.value, for: .nutrition) {
                 images[.nutrition] = [validImages.0: validImages.1]
+            }
+            if let validImages = decodeTypes(imageTypes.key, value: imageTypes.value, for: .packaging) {
+                images[.packaging] = [validImages.0: validImages.1]
             }
         }
     }

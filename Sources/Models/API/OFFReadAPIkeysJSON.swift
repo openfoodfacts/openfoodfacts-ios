@@ -42,6 +42,7 @@ struct OFFJson {
     //static let LastEditDatesTagsKey = "last_edit_dates_tags"
     //static let LabelsHierarchyKey = "labels_hierarchy"
     static let ImageFrontSmallUrlKey = "image_front_small_url"
+    static let ImagePackagingSmallUrlKey = "image_packaging_small_url"
     //static let IIdKey = "_id"
     //static let LabelsDebugTagsKey = "labels_debug_tags"
     //static let CategoriesHierarchyKey = "categories_hierarchy"
@@ -262,6 +263,7 @@ struct OFFJson {
     //static let ImageIngredientsSmallUrlKey = "image_ingredients_small_url"
     //static let NutritionGradesTagsKey = "nutrition_grades_tags"
     static let PackagingKey = "packaging"
+    static let ImagePackagingUrlKey = "image_packaging_url"
     //static let ServingQuantityKey = "serving_quantity"
     //static let OriginsTagsKey = "origins_tags"
     //static let ManufacturingPlacesTagsKey = "manufacturing_places_tags"
@@ -368,6 +370,7 @@ struct OFFJson {
             OFFJson.ImageFrontUrlKey,
             OFFJson.ImageIngredientsUrlKey,
             OFFJson.ImageNutritionUrlKey,
+            OFFJson.ImagePackagingUrlKey,
             OFFJson.ImageSmallUrlKey,
             OFFJson.ImageUrlKey,
             // OFFJson.IngredientsFromPalmOilNKey,
