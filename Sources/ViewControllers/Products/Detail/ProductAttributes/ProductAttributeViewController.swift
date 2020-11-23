@@ -35,6 +35,7 @@ class ProductAttributeViewController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         let newHeight = getTotalHeight()
         if newHeight != totalStackViewHeight, let floatingPanelVC = parent as? FloatingPanelController {
             totalStackViewHeight = newHeight

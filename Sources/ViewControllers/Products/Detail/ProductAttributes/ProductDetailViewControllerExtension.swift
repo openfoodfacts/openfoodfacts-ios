@@ -46,6 +46,10 @@ extension ProductDetailViewController {
 
     // MARK: - Gesture recognizers
     @objc func hideSummaryView(_ sender: UISwipeGestureRecognizer) {
+        hideFloatingPanel()
+    }
+
+    func hideFloatingPanel() {
         productAttributeController.attributeView = nil
         productAttributeController.resetView()
         floatingPanelController.move(to: FloatingPanelPosition.hidden, animated: true)

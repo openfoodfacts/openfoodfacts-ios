@@ -49,7 +49,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             }
         }
 
-        // set up floatingPanel
+        // set up floatingPanel for ProductAttributes UI
         configureFloatingPanel()
 
         setUserAgent()
