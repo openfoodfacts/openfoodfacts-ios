@@ -155,12 +155,12 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     }
 
     fileprivate func getEnvironmentImpactVC() -> UIViewController? {
-        if product.environmentImpactLevelTags?.isEmpty == false, let infoCard = product.environmentInfoCard, infoCard.isEmpty == false {
+        //if product.environmentImpactLevelTags?.isEmpty == false, let infoCard = product.environmentInfoCard, infoCard.isEmpty == false {
             let environmentImpactFormTableVC = EnvironmentImpactTableFormTableViewController()
             environmentImpactFormTableVC.product = product
             return environmentImpactFormTableVC
-        }
-        return nil
+        //}
+        //return nil
     }
 
     // MARK: - Form creation methods
