@@ -32,7 +32,7 @@ struct ScanProductSummaryViewAdaptorFactory {
                                              delegate: delegate)
     }
 
-    static func makeAdaptor(from product: Product, delegate:ScanProductSummaryViewProtocol?) -> ScanProductSummaryViewAdaptor {
+    static func makeAdaptor(from product: Product, delegate: ScanProductSummaryViewProtocol?) -> ScanProductSummaryViewAdaptor {
         return ScanProductSummaryViewAdaptor(title: product.name,
                                              quantityText: getQuantity(from: product),
                                              productImageURL: getImageURL(from: product),
@@ -86,10 +86,14 @@ private func getNovaGroup(from product: Product) -> NovaGroupView.NovaGroup? {
 }
 
 private func getEnvironmentalImpaceImage(from product: Product) -> UIImage? {
-    guard let co2Impact = product.environmentImpactLevelTags?.first else {
+    //guard let co2Impact = product.environmentImpactLevelTags?.first else {
+    guard let ecoscore = product.ecoscore else {
         return nil
     }
-    return co2Impact.image
+    let imageView = EcoscoreImageView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
+    imageView.ecoScore = EcoscoreImageView.Ecoscore(rawValue: ecoscore) ?? .unknown
+    return imageView.image
+    
 }
 
 // MARK: - OfflineProduct
