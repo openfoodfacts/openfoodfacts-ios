@@ -18,6 +18,7 @@ class RealmOfflineProduct: Object {
     @objc dynamic var brands: String?
     @objc dynamic var nutritionGrade: String?
     @objc dynamic var novaGroup: String?
+    @objc dynamic var ecoscore: String?
 
     override static func primaryKey() -> String? {
         return "barcode"

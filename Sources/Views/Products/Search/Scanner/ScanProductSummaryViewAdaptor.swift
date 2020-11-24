@@ -28,7 +28,7 @@ struct ScanProductSummaryViewAdaptorFactory {
                                              brands: getBrands(from: product),
                                              nutriScore: getNutriScore(from: product),
                                              novaGroup: getNovaGroup(from: product),
-                                             environmentalImage: nil,
+                                             environmentalImage: getEcoscoreImage(from: product),
                                              delegate: delegate)
     }
 
@@ -39,7 +39,7 @@ struct ScanProductSummaryViewAdaptorFactory {
                                              brands: getBrands(from: product),
                                              nutriScore: getNutriScore(from: product),
                                              novaGroup: getNovaGroup(from: product),
-                                             environmentalImage: getEnvironmentalImpaceImage(from: product),
+                                             environmentalImage: getEcoscoreImage(from: product),
                                              delegate: delegate)
     }
 }
@@ -85,15 +85,14 @@ private func getNovaGroup(from product: Product) -> NovaGroupView.NovaGroup? {
     return novaGroup
 }
 
-private func getEnvironmentalImpaceImage(from product: Product) -> UIImage? {
+private func getEcoscoreImage(from product: Product) -> UIImage? {
     //guard let co2Impact = product.environmentImpactLevelTags?.first else {
     guard let ecoscore = product.ecoscore else {
         return nil
     }
-    let imageView = EcoscoreImageView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
+    let imageView = EcoscoreImageView(frame: CGRect(origin: .zero, size: CGSize(width: 118, height: 64)))
     imageView.ecoScore = EcoscoreImageView.Ecoscore(rawValue: ecoscore) ?? .unknown
     return imageView.image
-    
 }
 
 // MARK: - OfflineProduct
@@ -128,4 +127,15 @@ private func getNovaGroup(from product: RealmOfflineProduct) -> NovaGroupView.No
             return nil
     }
     return novaGroup
+}
+
+private func getEcoscoreImage(from product: RealmOfflineProduct) -> UIImage? {
+    //guard let co2Impact = product.environmentImpactLevelTags?.first else {
+    guard let ecoscore = product.ecoscore else {
+        return nil
+    }
+    
+    let imageView = EcoscoreImageView(frame: CGRect(origin: .zero, size: CGSize(width: 118, height: 64)))
+    imageView.ecoScore = EcoscoreImageView.Ecoscore(rawValue: ecoscore) ?? .unknown
+    return imageView.image
 }
