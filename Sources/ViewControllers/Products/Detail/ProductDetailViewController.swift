@@ -61,7 +61,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        // Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
+        //TODO: Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
 
         if let parentVc = parent as? UINavigationController {
 
@@ -221,7 +221,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product.labelsTags?.map({ (labelTag: String) -> NSAttributedString in
             if let label = dataManager.label(forTag: labelTag) {
                 if let name = Tag.choose(inTags: Array(label.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link : OFFUrlsHelper.url(forLabel: label)])
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forLabel: label)])
                 }
             }
             return NSAttributedString(string: labelTag)
