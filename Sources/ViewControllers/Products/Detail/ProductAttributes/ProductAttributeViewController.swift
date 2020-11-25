@@ -17,7 +17,7 @@ class ProductAttributeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .red//DEBUG
+        view.backgroundColor = .red// FIXME: coloring for UI DEBUG
         stackView.isHidden = true
 
         view.addSubview(stackView)
@@ -57,7 +57,7 @@ class ProductAttributeViewController: UIViewController {
         stackView.addArrangedSubview(descriptionLabel)
         stackView.isHidden = false
         for subView in stackView.arrangedSubviews {
-            subView.backgroundColor = .green//DEBUG
+            subView.backgroundColor = .green// FIXME: coloring for UI DEBUG
             subView.isHidden = false
         }
 

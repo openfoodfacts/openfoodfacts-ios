@@ -20,11 +20,14 @@ import Cartography
     func configure(_ attribute: Attribute) {
         self.layer.cornerRadius = 5
         self.attribute = attribute
+
         setIconImageView(imageURL: attribute.iconUrl)
         if let label = attribute.name, let description = attribute.descriptionShort ?? attribute.title {
-            let text = AttributedStringFormatter.formatAttributedText(label: label, description: description)
+            let text = AttributedStringFormatter.formatAttributedText(label: label, description1: description)
             descriptionShort.attributedText = text
         }
+
+
     }
 
     static func loadFromNib() -> AttributeView {
@@ -36,28 +39,57 @@ import Cartography
 
     func setIconImageView(imageURL: String?) {
         guard let icon = imageURL, let attribute = attribute,
-            let url = URL(string: "https://static.openfoodfacts.org/images/icons/\(attribute.id!.contains("organic") ? "vegan-status-unknown" :  "nutrient-level-salt-medium").png")//DEBUG should be "icon"
+            let url = URL(string: "https://static.openfoodfacts.org/images/icons/\(attribute.id!.contains("organic") ? "vegan-status-unknown" :  "nutrient-level-salt-medium").png")
+            // FIXME: DEBUG STAND IN VALUES, should be "icon" from attribute
         else {
             iconImageView.isHidden = false
             return
         }
         iconImageView.kf.indicatorType = .activity
-        iconImageView.kf.setImage(with: url)
+        iconImageView.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil) { [weak self] _ in
+            if let aspectRatioConstraint = self?.getIconAspectConstraint() {
+                self?.addConstraint(aspectRatioConstraint)
+            }
+
+            // wrap text around the image
+            self?.layoutIfNeeded()
+            let exclusionPathFrame = self?.convert((self?.iconImageView.frame)!, to: self?.descriptionShort)
+            let iconImagePath = UIBezierPath(rect: exclusionPathFrame!)
+            self?.descriptionShort.textContainer.exclusionPaths.append(iconImagePath)
+        }
         iconImageView.isHidden = false
+    }
+
+    func getIconAspectConstraint() -> NSLayoutConstraint? {
+        guard let imageView = iconImageView, let image = imageView.image else { return nil }
+        let height = image.size.width
+        let width = image.size.height
+        var scale: CGFloat = 1.0
+        if height > 100 || width > 100 {
+            scale = 0.25
+        }
+        var aspectRatio = width / height
+        aspectRatio *= scale
+
+        let aspectConstraint = NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: imageView, attribute: .height, multiplier: aspectRatio, constant: 0)
+
+        return aspectConstraint
     }
 }
 
 protocol formatAttributedString {
     static var boldWordsPattern: String {get}
 
-    static func formatAttributedText(label: String, description: String) -> NSMutableAttributedString?
+    static func formatAttributedText(label: String, description1: String) -> NSMutableAttributedString?
     static func makeWordsBold(for originalText: NSAttributedString) -> NSAttributedString
 }
 
 class AttributedStringFormatter: formatAttributedString {
     static var boldWordsPattern: String { return "(_\\w+_)" }
 
-    static func formatAttributedText(label: String, description: String) -> NSMutableAttributedString? {
+    static func formatAttributedText(label: String, description1: String) -> NSMutableAttributedString? {
+        // TODO: change description1 parameter back to description and remove below temp var 'description'
+        var description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         let headline = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize)
         var bold: [NSAttributedString.Key: Any] = [:]
         if #available(iOS 13.0, *) {
