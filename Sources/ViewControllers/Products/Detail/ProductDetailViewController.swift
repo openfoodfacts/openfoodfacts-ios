@@ -405,16 +405,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             createFormRow(with: &rows, item: "\(carbonFootprint) \(unit)", label: InfoRowKey.carbonFootprint.localizedString)
         }
 
-        /* ecoscore explanation stufff
-        if let validStates = product.states,
-            validStates.contains("en:nutrition-facts-completed") {
-            createNutritionTableWebViewRow(rows: &rows)
-            //createNutritionTableRows(rows: &rows)
-        } else {
-            createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
-            createFormRow(with: &rows, item: "product-detail.nutrition-table.missing".localized, label: InfoRowKey.nutritionalTableHeader.localizedString, isCopiable: true)
-        }
-         */
+        createEnvironmentTableWebViewRow(rows: &rows)
 
         if rows.isEmpty {
             return nil
@@ -531,6 +522,14 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable, separator: separator))
             }
         }
+    }
+
+    fileprivate func createEnvironmentTableWebViewRow(rows: inout [FormRow]) {
+        guard let html = product.environmentInfoCard else {
+            return
+        }
+        //createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+        createFormRow(with: &rows, item: html, label: nil, cellType: ProductDetailWebViewTableViewCell.self, isCopiable: false)
     }
 
     // MARK: - Nav bar button
