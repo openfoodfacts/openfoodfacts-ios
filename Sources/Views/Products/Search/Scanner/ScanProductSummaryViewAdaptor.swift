@@ -134,7 +134,7 @@ private func getEcoscoreImage(from product: RealmOfflineProduct) -> UIImage? {
     guard let ecoscore = product.ecoscore else {
         return nil
     }
-    
+
     let imageView = EcoscoreImageView(frame: CGRect(origin: .zero, size: CGSize(width: 118, height: 64)))
     imageView.ecoScore = EcoscoreImageView.Ecoscore(rawValue: ecoscore) ?? .unknown
     return imageView.image

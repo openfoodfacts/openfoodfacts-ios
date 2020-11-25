@@ -50,7 +50,7 @@ class EnvironmentHeaderCellController: TakePictureViewController {
     @IBOutlet weak var ecoScoreView: EcoscoreImageView!
 
     @IBAction func ecoscoreInfoButtonTapped(_ sender: UIButton) {
-        if let url = URL(string: URLs.Nova) {
+        if let url = URL(string: URLs.Ecoscore) {
             openUrlInApp(url)
         } else if let url = URL(string: URLs.SupportOpenFoodFacts) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
