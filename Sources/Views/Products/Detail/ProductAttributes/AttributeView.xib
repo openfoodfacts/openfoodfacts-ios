@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-Qh-YCj">
-                    <rect key="frame" x="8" y="8" width="284" height="47"/>
+                    <rect key="frame" x="8" y="8" width="284" height="44"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -23,19 +23,18 @@
                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                 </textView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ngw-Ux-P6K">
-                    <rect key="frame" x="5" y="5" width="50" height="50"/>
+                    <rect key="frame" x="11" y="5" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="8zT-lT-Z89"/>
                         <constraint firstAttribute="width" constant="50" id="AjX-k7-SJn"/>
-                        <constraint firstAttribute="width" secondItem="Ngw-Ux-P6K" secondAttribute="height" multiplier="1:1" id="BrP-mg-PQi"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Ngw-Ux-P6K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="1wK-l4-dZZ"/>
-                <constraint firstItem="Xda-Qh-YCj" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-5" id="8ny-AB-rDO"/>
-                <constraint firstItem="Ngw-Ux-P6K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="IRk-HK-GuK"/>
+                <constraint firstItem="Xda-Qh-YCj" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-8" id="8ny-AB-rDO"/>
+                <constraint firstItem="Ngw-Ux-P6K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="11" id="IRk-HK-GuK"/>
+                <constraint firstItem="Ngw-Ux-P6K" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ke1-rZ-9Xd"/>
                 <constraint firstAttribute="trailing" secondItem="Xda-Qh-YCj" secondAttribute="trailing" constant="8" id="fOX-tf-eHN"/>
                 <constraint firstItem="Xda-Qh-YCj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="pFd-l9-eHA"/>
                 <constraint firstItem="Xda-Qh-YCj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="yvr-9m-1xp"/>

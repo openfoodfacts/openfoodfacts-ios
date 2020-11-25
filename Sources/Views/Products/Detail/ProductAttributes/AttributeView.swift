@@ -26,8 +26,6 @@ import Cartography
             let text = AttributedStringFormatter.formatAttributedText(label: label, description1: description)
             descriptionShort.attributedText = text
         }
-
-
     }
 
     static func loadFromNib() -> AttributeView {
@@ -40,22 +38,23 @@ import Cartography
     func setIconImageView(imageURL: String?) {
         guard let icon = imageURL, let attribute = attribute,
             let url = URL(string: "https://static.openfoodfacts.org/images/icons/\(attribute.id!.contains("organic") ? "vegan-status-unknown" :  "nutrient-level-salt-medium").png")
-            // FIXME: DEBUG STAND IN VALUES, should be "icon" from attribute
+            // FIXME: DEBUG STAND IN VALUES, should be "icon" from attribute's imageURL
         else {
             iconImageView.isHidden = false
             return
         }
         iconImageView.kf.indicatorType = .activity
         iconImageView.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil) { [weak self] _ in
-            if let aspectRatioConstraint = self?.getIconAspectConstraint() {
-                self?.addConstraint(aspectRatioConstraint)
-            }
+//            if let aspectRatioConstraint = self?.getIconAspectConstraint() {
+//                self?.addConstraint(aspectRatioConstraint)
+//            }
 
             // wrap text around the image
             self?.layoutIfNeeded()
             let exclusionPathFrame = self?.convert((self?.iconImageView.frame)!, to: self?.descriptionShort)
             let iconImagePath = UIBezierPath(rect: exclusionPathFrame!)
             self?.descriptionShort.textContainer.exclusionPaths.append(iconImagePath)
+            self?.layoutSubviews()
         }
         iconImageView.isHidden = false
     }
@@ -64,12 +63,8 @@ import Cartography
         guard let imageView = iconImageView, let image = imageView.image else { return nil }
         let height = image.size.width
         let width = image.size.height
-        var scale: CGFloat = 1.0
-        if height > 100 || width > 100 {
-            scale = 0.25
-        }
-        var aspectRatio = width / height
-        aspectRatio *= scale
+
+        let aspectRatio = width / height
 
         let aspectConstraint = NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: imageView, attribute: .height, multiplier: aspectRatio, constant: 0)
 
