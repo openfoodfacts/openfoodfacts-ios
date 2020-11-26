@@ -141,7 +141,7 @@ class OfflineProductsService: OfflineProductsApi {
                     })
         }
     }
-    
+
     private var forceRefresh: Bool {
         // The last refresh date in seconds since 1970
         let currentOfflineProductsDate = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: OfflineProductsService.USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD))
@@ -156,7 +156,7 @@ class OfflineProductsService: OfflineProductsApi {
         dateComponents.calendar = Calendar(identifier: .gregorian)
         dateComponents.timeZone = TimeZone.init(secondsFromGMT: 0)
         if let refreshDate = dateComponents.date,
-            currentOfflineProductsDate.timeIntervalSince(refreshDate) < 0 {
+            currentOfflineProductsDate.timeIntervalSince(refreshDate) > 0 {
             return true
         } else {
             return false
