@@ -110,6 +110,7 @@ class OfflineProductsService: OfflineProductsApi {
                                             product.brands = raw["brands"]
                                             product.nutritionGrade = raw["nutrition_grade_fr"]
                                             product.novaGroup = raw["nova_group"]
+                                            product.ecoscore = raw["ecoscore"]
 
                                             return product
                                         }, treatBatch: { (products: [RealmOfflineProduct]) in
@@ -140,11 +141,33 @@ class OfflineProductsService: OfflineProductsApi {
                     })
         }
     }
+    
+    private var forceRefresh: Bool {
+        // The last refresh date in seconds since 1970
+        let currentOfflineProductsDate = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: OfflineProductsService.USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD))
+        // The refresh date to use 31-dec-2020 24h GMT gregorian
+        var dateComponents = DateComponents()
+        dateComponents.year = 2020
+        dateComponents.month = 12
+        dateComponents.day = 31
+        dateComponents.hour = 24
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        dateComponents.calendar = Calendar(identifier: .gregorian)
+        dateComponents.timeZone = TimeZone.init(secondsFromGMT: 0)
+        if let refreshDate = dateComponents.date,
+            currentOfflineProductsDate.timeIntervalSince(refreshDate) < 0 {
+            return true
+        } else {
+            return false
+        }
+    }
 
     func refreshOfflineProductsFromServerIfNeeded(force: Bool = false) {
         let lastDownload = UserDefaults.standard.double(forKey: OfflineProductsService.USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD)
-
-        let shouldDownload = lastDownload == 0 || (Date().timeIntervalSince1970 - OfflineProductsService.LAST_DOWNLOAD_DELAY) > lastDownload
+        let shouldDownload = forceRefresh
+            || lastDownload == 0
+            || (Date().timeIntervalSince1970 - OfflineProductsService.LAST_DOWNLOAD_DELAY) > lastDownload
 
         if shouldDownload {
 
