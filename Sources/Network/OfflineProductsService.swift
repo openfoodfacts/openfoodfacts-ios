@@ -44,7 +44,7 @@ class OfflineProductsService: OfflineProductsApi {
     // swiftlint:disable identifier_name
 
     /// increment last number each time you want to force a refresh. Useful if you add a new refresh method or a new field
-    static fileprivate let USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD = "USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD__13"
+    static fileprivate let USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD = "USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD__14"
     static fileprivate let LAST_DOWNLOAD_DELAY: Double = 60 * 60 * 24 * 31 // 1 month
 
     // swiftlint:enable identifier_name
@@ -142,32 +142,10 @@ class OfflineProductsService: OfflineProductsApi {
         }
     }
 
-    private var forceRefresh: Bool {
-        // The last refresh date in seconds since 1970
-        let currentOfflineProductsDate = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: OfflineProductsService.USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD))
-        // The refresh date to use 31-dec-2020 24h GMT gregorian
-        var dateComponents = DateComponents()
-        dateComponents.year = 2020
-        dateComponents.month = 12
-        dateComponents.day = 31
-        dateComponents.hour = 24
-        dateComponents.minute = 0
-        dateComponents.second = 0
-        dateComponents.calendar = Calendar(identifier: .gregorian)
-        dateComponents.timeZone = TimeZone.init(secondsFromGMT: 0)
-        if let refreshDate = dateComponents.date,
-            currentOfflineProductsDate.timeIntervalSince(refreshDate) > 0 {
-            return true
-        } else {
-            return false
-        }
-    }
-
     func refreshOfflineProductsFromServerIfNeeded(force: Bool = false) {
         let lastDownload = UserDefaults.standard.double(forKey: OfflineProductsService.USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD)
-        let shouldDownload = forceRefresh
-            || lastDownload == 0
-            || (Date().timeIntervalSince1970 - OfflineProductsService.LAST_DOWNLOAD_DELAY) > lastDownload
+
+        let shouldDownload = lastDownload == 0 || (Date().timeIntervalSince1970 - OfflineProductsService.LAST_DOWNLOAD_DELAY) > lastDownload
 
         if shouldDownload {
 

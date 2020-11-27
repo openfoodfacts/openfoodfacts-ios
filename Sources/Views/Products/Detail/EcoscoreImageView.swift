@@ -19,7 +19,7 @@ class EcoscoreImageView: UIImageView {
     }
 
     /// return the currently displayed nova group
-    public var ecoScore: Ecoscore = .ecoscoreA {
+    public var ecoScore: Ecoscore = .unknown {
         didSet {
             self.image = UIImage(named: "ecoscore-\(ecoScore.rawValue)")
         }
