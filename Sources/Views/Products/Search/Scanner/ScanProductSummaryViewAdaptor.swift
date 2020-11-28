@@ -17,7 +17,7 @@ struct ScanProductSummaryViewAdaptor {
     let nutriScore: NutriScoreView.Score? // NutriScore should be outside of NutriScoreView namespace/ scope???
     let novaGroup: NovaGroupView.NovaGroup? // NovaGroup should be outside of NovaGroupView namespace/scope???
     let environmentalImage: UIImage?
-    let delegate: ScanProductSummaryViewProtocol?
+    weak var delegate: ScanProductSummaryViewProtocol?
 }
 
 struct ScanProductSummaryViewAdaptorFactory {
@@ -85,16 +85,29 @@ private func getNovaGroup(from product: Product) -> NovaGroupView.NovaGroup? {
     return novaGroup
 }
 
-private func getEcoscoreImage(from product: Product) -> UIImage? {
+private func getEcoscoreImage(from product: Any) -> UIImage? {
+    //Do we want to show the co2Impact as backup?
     //guard let co2Impact = product.environmentImpactLevelTags?.first else {
-    guard let ecoscore = product.ecoscore else {
+    guard let ecoscore = (product as? Product)?.ecoscore
+            ?? (product as? RealmOfflineProduct)?.ecoscore else {
         return nil
     }
     let imageView = EcoscoreImageView(frame: CGRect(origin: .zero, size: CGSize(width: 118, height: 64)))
     imageView.ecoScore = EcoscoreImageView.Ecoscore(rawValue: ecoscore) ?? .unknown
     return imageView.image
 }
+/*
+private func getEcoscoreImage(from product: RealmOfflineProduct) -> UIImage? {
+    //guard let co2Impact = product.environmentImpactLevelTags?.first else {
+    guard let ecoscore = product.ecoscore else {
+        return nil
+    }
 
+    let imageView = EcoscoreImageView(frame: CGRect(origin: .zero, size: CGSize(width: 118, height: 64)))
+    imageView.ecoScore = EcoscoreImageView.Ecoscore(rawValue: ecoscore) ?? .unknown
+    return imageView.image
+}
+*/
 // MARK: - OfflineProduct
 private func getBrands(from product: RealmOfflineProduct) -> String? {
     guard let brands = product.brands,
@@ -129,13 +142,4 @@ private func getNovaGroup(from product: RealmOfflineProduct) -> NovaGroupView.No
     return novaGroup
 }
 
-private func getEcoscoreImage(from product: RealmOfflineProduct) -> UIImage? {
-    //guard let co2Impact = product.environmentImpactLevelTags?.first else {
-    guard let ecoscore = product.ecoscore else {
-        return nil
-    }
 
-    let imageView = EcoscoreImageView(frame: CGRect(origin: .zero, size: CGSize(width: 118, height: 64)))
-    imageView.ecoScore = EcoscoreImageView.Ecoscore(rawValue: ecoscore) ?? .unknown
-    return imageView.image
-}

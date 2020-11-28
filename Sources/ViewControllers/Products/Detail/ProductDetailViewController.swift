@@ -183,8 +183,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                     vc0.view.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailNutritionView
                 default: break
                 }
-            //} else if let vc1 = viewController as? EnvironmentFormTableViewController {
-             //   vc1.product = product
             }
         }
     }
@@ -206,8 +204,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.genericName, label: InfoRowKey.genericName.localizedString, isCopiable: true)
-        // packaging is moved to the environment tab
-        //createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
