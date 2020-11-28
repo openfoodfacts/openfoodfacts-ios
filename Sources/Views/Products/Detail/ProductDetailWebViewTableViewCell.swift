@@ -60,23 +60,6 @@ extension String {
 
 func htmlFormattedString(font: UIFont, color: UIColor) -> String {
 
-    func colorHexString(color: UIColor) -> String {
-        let colorComponents = color.cgColor.components ?? []
-        if color.cgColor.numberOfComponents == 4 {
-            let red = colorComponents[0] * 255
-            let green = colorComponents[1] * 255
-            let blue = colorComponents[2] * 255
-
-            let hexString = NSString(format: "%02X%02X%02X", Int(red), Int(green), Int(blue)) as String
-            return hexString
-        } else if color.cgColor.numberOfComponents == 2 {
-            let white = colorComponents[0] * 255
-
-            return NSString(format: "%02X%02X%02X", Int(white), Int(white), Int(white)) as String
-        } else {
-            return "htmlFormattedString:Color format not supported"
-        }
-    }
     // The table contains returns /n in strange places. Just to be sure they are removed.
     var htmlContent = "<html><head><style>"
     // add a table style for nutrition tabel
@@ -85,10 +68,9 @@ func htmlFormattedString(font: UIFont, color: UIColor) -> String {
     htmlContent += "</style></head>"
     htmlContent += "<body>%@</body>"
     htmlContent += "</html>"
-    let colorHex = colorHexString(color: color)
     let fontSize = String(describing: font.pointSize)
     let newHtml = self.replacingOccurrences(of: "\n", with: "")
-    return String(format: htmlContent, fontSize, colorHex, newHtml)
+    return String(format: htmlContent, fontSize, color.hexString, newHtml)
     }
 
 }

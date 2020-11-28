@@ -163,7 +163,7 @@ class OfflineProductsService: OfflineProductsApi {
                 UIApplication.shared.endBackgroundTask(backgroundTaskId)
             }
         } else {
-            log.debug("Do not download offline products, we already have them !")
+            log.debug("[Offline_products] Do not download, we already have them !")
         }
     }
 }
