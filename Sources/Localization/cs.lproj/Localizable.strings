@@ -170,7 +170,7 @@
 "product-detail.ingredients.nova.3" = "Běžně zpracované potraviny";
 "product-detail.ingredients.nova.4" = "Ultrazpracované potraviny a nápoje";
 "product-detail.ingredients.nova.incite" = "Přidejte přísady nebo kategorie pro výpočet NOVA.";
-"product-detail.ingredients.ingredients-list" = "List of ingredients";
+"product-detail.ingredients.ingredients-list" = "Složení";
 "product-detail.ingredients.allergens-list" = "Látky nebo produkty vyvolávající alergie nebo nesnášenlivost";
 "product-detail.ingredients.allergens-alert.title" = "Obsahuje alergeny!";
 "product-detail.ingredients.allergens-list.missing-infos" = "Tento produkt ještě nemá seznam přísad, a proto nelze detekci alergenu dokončit.";
@@ -193,12 +193,20 @@
 "product-detail.nutrition-table.for-100g" = "Ve 100g";
 "product-detail.nutrition-table.for-serving" = "V jedné porci";
 "product-detail.nutrition-table.100g" = "100 g";
-"product-detail.nutrition-table.serving" = "serving";
+"product-detail.nutrition-table.serving" = "porce";
 "product-detail.nutrition-table.missing" = "Nebyly stanoveny žádné živiny.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Varování: U výrobku není uvedeno množství vlákniny, proto její případný vliv na posun do lepší skupiny nemůže být započítán.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Upozornění: množství ovoce, zeleniny a ořechů není specifikováno, jejich možný pozitivní přínos k hodnocení nelze zohlednit.";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Upozornění: množství ovoce, zeleniny a ořechů není uvedeno na etiketě, bylo tedy odhadnuto ze složení: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+
+"product-detail.environment.ecoscore.a" = "Ecoscore A";
+"product-detail.environment.ecoscore.b" = "Ecoscore B";
+"product-detail.environment.ecoscore.c" = "Ecoscore C";
+"product-detail.environment.ecoscore.d" = "Ecoscore D";
+"product-detail.environment.ecoscore.e" = "Ecoscore E";
+"product-detail.environment.ecoscore.unknown" = "Ecoscore unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Ecoscore";
 
 // Nutrition levels
 "nutrition-level.title" = "Obsah živin na 100 g/100 ml";
@@ -274,7 +282,7 @@
 "nutrition.vitamins.b9" = "Vitamín B9";
 "nutrition.vitamins.b12" = "Vitamín B12";
 "nutrition.vitamins.biotin" = "Biotin";
-"nutrition.vitamins.pantothenic-acid" = "Kyselina pantothenová";
+"nutrition.vitamins.pantothenic-acid" = "Vitamín B5";
 "nutrition.minerals" = "Minerály";
 "nutrition.minerals.silica" = "Oxid křemičitý";
 "nutrition.minerals.bicarbonate" = "Jedlá soda";
@@ -332,7 +340,7 @@
 "settings.user-profile" = "Váš účet přispěvatele";
 "settings.credits.title" = "Autoři";
 "settings.scan-on-launch.title" = "Zobrazit skenování při spuštění aplikace";
-"settings.sections.discover" = "Zjistit víc";
+"settings.sections.discover" = "Objevit";
 "settings.contribute.how-to-contribute" = "Způsoby jak přispět";
 "settings.contribute.support-open-food-facts" = "Podpořte Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Přeložte Open Food Facts";
@@ -388,7 +396,7 @@
 // Camera localization API
 "API_CANCEL_TITLE" = "Zrušit";
 "USE_PHOTO" = "Použít fotografii";
-"PHOTO" = "PHOTO";
+"PHOTO" = "FOTO";
 "AEAF_LOCK_TEXT" = "AE/AF LOCK";
 "HDR_AUTO" = "Auto";
 "HDR_ON" = "On";
@@ -396,4 +404,4 @@
 "TIMER_OFF_TEXT" = "Off";
 "PHOTOS" = "Fotky";
 "CANCEL" = "Zrušit";
-"RETAKE" = "Retake";
+"RETAKE" = "Pořídit znovu";
