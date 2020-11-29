@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "หมายเหตุ: รูปภาพที่คุณส่งจะได้รับการเผยแพร่ภายใต้สัญญาอนุญาต Creative Commons Attribution และ ShareAlike ที่ให้สิทธิ์ใช้งานฟรี";
 
-"product-add.titles.product-info" = "ข้อมูลผลิตภัณฑ์";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "ชื่อ";
 "product-add.label.category" = "หมวดหมู่:";
 "product-add.label.quantity" = "ปริมาณ";
@@ -200,6 +200,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "ปริมาณสารอาหารต่อ 100 กรัม / 100 มล";
 "nutrition-level.low" = "มีปริมาณน้อย";
@@ -207,6 +215,7 @@
 "nutrition-level.high" = "มีปริมาณมาก";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Ingredients analysis";
 "ingredients-analysis.ingredients_in_this_product" = "ส่วนผสมในผลิตภัณฑ์นี้คือ %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "ส่วนผสมในผลิตภัณฑ์นี้คือ %@s.";
 "ingredients-analysis.unknown_status" = "เราไม่สามารถประเมินสถานะของผลิตภัณฑ์ได้";
@@ -331,7 +340,7 @@
 "settings.user-profile" = "บัญชีผู้สนับสนุนของคุณ";
 "settings.credits.title" = "เครดิต";
 "settings.scan-on-launch.title" = "แสดงการสแกนเมื่อเปิดตัวแอป";
-"settings.sections.discover" = "ค้นพบ";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "วิธีการมีส่วนร่วม";
 "settings.contribute.support-open-food-facts" = "สนับสนุนข้อเท็จจริงอาหารเปิด";
 "settings.contribute.translate-open-food-facts" = "แปลข้อมูลอาหารเปิด";
@@ -381,7 +390,18 @@
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
 "history.first-scan.button.title" = "Scan First Product";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "แก้ไข";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Cancel";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Cancel";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "แก้ไข";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

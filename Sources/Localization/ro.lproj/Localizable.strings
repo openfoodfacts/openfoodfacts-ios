@@ -14,7 +14,7 @@
 "generic.search" = "Caută";
 "generic.cancel" = "Anulare";
 "generic.save" = "Salvează";
-"generic.cancel" = "Anulare";
+"generic.cancel" = "Cancel";
 "generic.ok" = "OK";
 "generic.close" = "Închidere";
 
@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Notă: fotografiile trimise sunt publicate sub o licență liberă Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Informații produs";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "Nume";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Cantitate";
@@ -199,6 +199,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Avertisment: cantitatea de fructe, legume și nuci nu este specificată, contribuția lor pozitivă nu a putut fi luată în considerare.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Informații nutriționale pentru 100g";
@@ -332,7 +340,7 @@
 "settings.user-profile" = "Contul dvs. de contribuitor";
 "settings.credits.title" = "Contribuţii";
 "settings.scan-on-launch.title" = "Afișare scanner la lansarea aplicației";
-"settings.sections.discover" = "Descoperiți";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Cum să contribuiţi";
 "settings.contribute.support-open-food-facts" = "Susțineți Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Traduceți Open Food Facts";
@@ -382,7 +390,18 @@
 "history.section-titles.fewMonths" = "Acum câteva luni";
 "history.section-titles.longTime" = "Acum mult timp";
 "history.first-scan.button.title" = "Scanați primul produs";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Modificare";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Anulare";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Anulare";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Modificare";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

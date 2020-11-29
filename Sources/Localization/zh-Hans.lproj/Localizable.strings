@@ -14,7 +14,7 @@
 "generic.search" = "搜索";
 "generic.cancel" = "取消";
 "generic.save" = "保存";
-"generic.cancel" = "取消";
+"generic.cancel" = "Cancel";
 "generic.ok" = "确认";
 "generic.close" = "关闭";
 
@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "做得好 ！该产品尚未出现在食品成分鉴定软件中。请问您可以拍摄一些关于产品本身、它的成分表和营养成分的照片来将其添加到食品成分鉴定软件中吗？\n\n预先感谢。";
 "product-add.titles.license-explaination" = "注：您发布的照片将按照“知识共享许可协议”及“相同方式分享”授权。";
 
-"product-add.titles.product-info" = "产品信息";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "名称";
 "product-add.label.category" = "分类";
 "product-add.label.quantity" = "数量";
@@ -200,6 +200,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "注意：标签上没有标明水果，蔬菜和坚果的数量，从成分列表中进行估算：%d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "警告：标签上没有标明水果、蔬菜或是坚果的数量，它们将从产品 %s% 的分类（%d）进行估算。";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "每百克或每百毫升含有的营养成分";
 "nutrition-level.low" = "较少含量";
@@ -211,7 +219,7 @@
 "ingredients-analysis.ingredients_in_this_product" = "该产品中的成分为 %@s：";
 "ingredients-analysis.ingredients_in_this_product_are" = "该产品中的成分为 %@s：";
 "ingredients-analysis.unknown_status" = "我们无法评估产品的状态。";
-"ingredients-analysis.ambiguous" = "不确定的成分：%@s";
+"ingredients-analysis.ambiguous" = "不确定的成分：%@";
 "ingredients-analysis.display" = "显示 %@ 状态";
 "ingredients-analysis.missing-ingredients.title" = "填充缺失的成份";
 "ingredients-analysis.missing-ingredients.description" = "我们还未获得此产品的成份。请问您能帮忙完善成份表吗？";
@@ -332,7 +340,7 @@
 "settings.user-profile" = "您的贡献者帐户";
 "settings.credits.title" = "致谢";
 "settings.scan-on-launch.title" = "在应用程序启动时显示扫描";
-"settings.sections.discover" = "发现";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "如何参与";
 "settings.contribute.support-open-food-facts" = "支持 Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "翻译 Open Food Facts";
@@ -382,7 +390,18 @@
 "history.section-titles.fewMonths" = "几个月前";
 "history.section-titles.longTime" = "很久以前";
 "history.first-scan.button.title" = "扫描第一个产品";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "编辑";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "取消";
 "USE_PHOTO" = "使用照片";
-"API_CANCEL_TITLE" = "取消";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "编辑";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

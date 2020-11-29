@@ -14,7 +14,7 @@
 "generic.search" = "検索";
 "generic.cancel" = "取消";
 "generic.save" = "保存";
-"generic.cancel" = "取消";
+"generic.cancel" = "Cancel";
 "generic.ok" = "OK";
 "generic.close" = "閉じる";
 
@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Product information";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "名前";
 "product-add.label.category" = "カテゴリー";
 "product-add.label.quantity" = "数量";
@@ -199,6 +199,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "警告: 果物、野菜、ナッツの量はラベルに明記されていません。原材料のリストから推定されました: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "警告: 果物、野菜、ナッツの量はラベルに明記されていません。製品のカテゴリー (%s) から推定されました: %d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -332,7 +340,7 @@
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "クレジット";
 "settings.scan-on-launch.title" = "アプリ起動時にスキャンを表示";
-"settings.sections.discover" = "見つける";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "貢献するには";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -382,7 +390,18 @@
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
 "history.first-scan.button.title" = "最初の製品をスキャンします";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "編集";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "取消";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "取消";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "編集";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

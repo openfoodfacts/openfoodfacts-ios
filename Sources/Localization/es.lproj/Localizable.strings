@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Bien hecho! Este producto aún no se encuentra en Open Food Facts. ¿Puedes tomar algunas fotos del producto, la lista de ingredientes y la información nutricional para agregarlo en Open Food Facts? \n\nGracias de antemano.";
 "product-add.titles.license-explaination" = "Nota: las imagenes que envías son publicadas bajo la licencia libre Creative Commons Attribution y ShareAlike.";
 
-"product-add.titles.product-info" = "Información del producto";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "Nombre";
 "product-add.label.category" = "Categoría";
 "product-add.label.quantity" = "Cantidad";
@@ -199,6 +199,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Advertencia: la cantidad de frutas, verduras y nueces no está especificada; su posible contribución positiva respecto de su puntuación no se ha tenido en cuenta.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Advertencia: la cantidad de frutas, verduras y nueces no se especifica en la etiqueta, se ha calculado en base a la lista de ingredientes: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Advertencia: la cantidad de frutas, verduras y nueces no se especifica en la etiqueta, se ha calculado en base a la categoría (%s) del producto: %d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Niveles nutricionales por 100g/100mL";
@@ -382,7 +390,18 @@
 "history.section-titles.fewMonths" = "Hace unos meses";
 "history.section-titles.longTime" = "Hace mucho tiempo";
 "history.first-scan.button.title" = "Escanea tu primer producto";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Editar";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Cancelar";
 "USE_PHOTO" = "Usar foto";
-"API_CANCEL_TITLE" = "Cancelar";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Editar";
+"PHOTO" = "FOTO";
+"AEAF_LOCK_TEXT" = "BLOQUEO AE / AF";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Apagado";
+"PHOTOS" = "Fotos";
+"CANCEL" = "Cancelar";
+"RETAKE" = "Repetir foto";

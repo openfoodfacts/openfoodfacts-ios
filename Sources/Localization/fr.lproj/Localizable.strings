@@ -22,7 +22,7 @@
 
 "product-search.title" = "Rechercher";
 "product-search.search-placeholder" = "Recherche par nom ou code-barres";
-"product-search.no-results" = "Aucun résultat";
+"product-search.no-results" = "Aucun résultat. Vous pouvez ajouter un produit sur Open Food Facts en le scannant.";
 "product-search.error-view.title" = "Une erreur s'est produite";
 "product-search.error-view.subtitle" = "Veuillez réessayer";
 "product-search.initial-view.slogan" = "l'information alimentaire ouverte";
@@ -35,14 +35,14 @@
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Erreur lors de la lecture du code à barres. Merci de réessayer dans quelques instants.";
+"product-scanner.barcode.error" = "Erreur lors de la lecture du code-barres. Merci de réessayer dans quelques instants.";
 "product-scanner.barcode-notfound.manual-enter" = "Aucun code-barres trouvé. Vous pouvez le saisir manuellement :";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts a besoin de pouvoir utiliser l'appareil photo pour scanner";
-"product-scanner.permissions.noPermissions.message" = "Veuillez accorder la permission d'utiliser l'appareil photo pour pouvoir scanner les codes à barres";
+"product-scanner.permissions.noPermissions.message" = "Veuillez accorder la permission d'utiliser l'appareil photo pour pouvoir scanner les codes-barres";
 "product-scanner.permissions.noPermissions.action.title" = "Ouvrir les paramètres";
 
-"product-scanner.permissions.failed.title" = "Le scanner de codes à barres n'a pas pu être lancé.";
+"product-scanner.permissions.failed.title" = "La lecture du codes-barres n'a pas pu être lancée.";
 "product-scanner.permissions.failed.message" = "Assurez-vous que, dans les paramètres de confidentialité, Open Food Facts est autorisé à utiliser l'appareil photo.";
 "product-scanner.permissions.failed.action.title" = "Quitter le scan du code-barre";
 
@@ -100,13 +100,13 @@
 "product-add.titles.top-explainations" = "Bien joué ! Ce produit n'est pas encore dans la base de données Open Food Facts. Pourriez-vous prendre quelques photos du produit, de son code-barre, de la liste des ingrédients et des informations nutritionnelles afin de l'ajouter à la base ?\n\nMerci par avance.";
 "product-add.titles.license-explaination" = "Note : les photos que vous envoyées sont publiées sous la license libre Creative Commons Attribution and ShareAlike.";
 
-"product-add.titles.product-info" = "Informations sur le produit";
+"product-add.titles.product-info" = "Information produit";
 "product-add.label.product-name" = "Nom";
 "product-add.label.category" = "Catégorie";
 "product-add.label.quantity" = "Quantité";
 "product-add.label.packaging" = "Conditionnement";
 "product-add.details.category" = "Nécessaire pour calculer le Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.quantity-example" = "25 g, 283 g, 5 ml…";
 "product-add.label.language" = "Langue";
 
 "product-add.description.nutritive" = "Complétez les informations nutritionnelles et la catégorie pour calculer le Nutri-Score";
@@ -199,6 +199,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Avertissement : Le taux de fruits, légumes et noix n'étant pas renseigné, leur éventuelle contribution positive à la note n'a pas pu être prise en compte.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Avertissement : Le taux de fruits, légumes et noix n'est pas indiqué sur l'étiquette, il a été estimé en fonction de la liste des ingrédients : %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Avertissement : Le taux de fruits, légumes et noix n'est pas indiqué sur l'étiquette, il a été estimé en fonction de la catégorie (%s) du produit : %d%";
+
+"product-detail.environment.ecoscore.a" = "Éco-score A";
+"product-detail.environment.ecoscore.b" = "Éco-score B";
+"product-detail.environment.ecoscore.c" = "Éco-score C";
+"product-detail.environment.ecoscore.d" = "Éco-score D";
+"product-detail.environment.ecoscore.e" = "Éco-score E";
+"product-detail.environment.ecoscore.unknown" = "Éco-score inconnu";
+"product-detail.environment.ecoscore.incite" = "Merci d'ajouter les informations d'emballage, afin que nous puissions calculer l'Éco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Repères nutritionnels pour 100 g/100 mL";
@@ -304,7 +312,7 @@
 "call-to-action.summary" = "Prendre une photo de l’avant";
 "call-to-action.ingredients" = "Prendre une photo des ingrédients";
 "call-to-action.nutrition" = "Prendre une photo du tableau nutritionnel";
-"call-to-action.edit" = "Complete the product to get it scored";
+"call-to-action.edit" = "Complétez le produit pour le noter";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -382,7 +390,18 @@
 "history.section-titles.fewMonths" = "Il y a quelques mois";
 "history.section-titles.longTime" = "Il y a longtemps";
 "history.first-scan.button.title" = "Scannez votre premier produit";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Modifier";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Annuler";
 "USE_PHOTO" = "Utiliser la photo";
-"API_CANCEL_TITLE" = "Annuler";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Modifier";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "VERROUILLAGE AE/AF";
+"HDR_AUTO" = "Automatique";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Annuler";
+"RETAKE" = "Reprendre";
