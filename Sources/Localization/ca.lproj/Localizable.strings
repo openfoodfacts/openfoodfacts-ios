@@ -14,7 +14,7 @@
 "generic.search" = "Cerca";
 "generic.cancel" = "Cancel·la";
 "generic.save" = "Desa";
-"generic.cancel" = "Cancel·la";
+"generic.cancel" = "Cancel";
 "generic.ok" = "D'acord";
 "generic.close" = "Tanca";
 
@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Ben fet! Aquest producte encara no es troba a Open Food Facts. Pots prendre algunes fotografies del producte, de la llista ingredients i de la taula nutricional per afegir-les a Open Food Facts?.\n\nMoltes gràcies per endavant.";
 "product-add.titles.license-explaination" = "Nota: les imatges que envieu són distribuïdes sota la llicència lliure Creative Commons Atribució i Compartir Igual.";
 
-"product-add.titles.product-info" = "Informació del producte";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "Nom";
 "product-add.label.category" = "Categoria";
 "product-add.label.quantity" = "Quantitat";
@@ -199,6 +199,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Atenció: no s'ha especificat la quantitat de fruites, verdures i fruits secs, no es té en compte la seva possible contribució positiva en la qualificació.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Atenció: la quantitat de fruita, verdura i fruits secs no s'especifica a l'etiqueta però s'ha fet una estimació a partir de la llista d'ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Atenció: la quantitat de fruita, verdura i fruits secs no s'especifica a l'etiqueta, s'ha fet una estimació per la categoria (%s) del producte: %d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Nivells de nutrient per 100 g/100 ml";
@@ -332,7 +340,7 @@
 "settings.user-profile" = "El vostre compte de col·laborador";
 "settings.credits.title" = "Crèdits";
 "settings.scan-on-launch.title" = "Mostra l'escànner en obrir l'App";
-"settings.sections.discover" = "Descobrir";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Com contribuir";
 "settings.contribute.support-open-food-facts" = "Doneu suport a Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Traduïu Open Food Facts";
@@ -382,7 +390,18 @@
 "history.section-titles.fewMonths" = "Fa uns mesos";
 "history.section-titles.longTime" = "Fa molt de temps";
 "history.first-scan.button.title" = "Escanegeu el primer producte";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edita";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Cancel·la";
 "USE_PHOTO" = "Utilitzeu la foto";
-"API_CANCEL_TITLE" = "Cancel·la";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edita";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

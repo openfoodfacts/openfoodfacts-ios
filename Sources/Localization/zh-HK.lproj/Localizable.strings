@@ -14,7 +14,7 @@
 "generic.search" = "搜尋";
 "generic.cancel" = "取消";
 "generic.save" = "儲存";
-"generic.cancel" = "取消";
+"generic.cancel" = "Cancel";
 "generic.ok" = "確定";
 "generic.close" = "關閉";
 
@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "產品資料";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "名稱";
 "product-add.label.category" = "分類";
 "product-add.label.quantity" = "分量";
@@ -199,6 +199,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "警告：包裝沒有註明水果、蔬菜和堅果的數量，顯示的數量基於成分估算：%d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "警告：包裝沒有註明水果、蔬菜和堅果的數量，顯示的數量基於分類%s估算：%d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -332,7 +340,7 @@
 "settings.user-profile" = "您的貢獻者賬號";
 "settings.credits.title" = "鳴謝";
 "settings.scan-on-launch.title" = "應用程式啟動時顯示掃描器";
-"settings.sections.discover" = "探索";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "如何貢獻";
 "settings.contribute.support-open-food-facts" = "支持Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "翻譯Open Food Facts";
@@ -382,7 +390,18 @@
 "history.section-titles.fewMonths" = "幾個月前";
 "history.section-titles.longTime" = "很久以前";
 "history.first-scan.button.title" = "掃描您的第一個產品";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "編輯";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Cancel";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Cancel";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "編輯";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

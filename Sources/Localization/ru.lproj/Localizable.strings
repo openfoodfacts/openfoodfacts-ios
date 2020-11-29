@@ -14,7 +14,7 @@
 "generic.search" = "Поиск";
 "generic.cancel" = "Отмена";
 "generic.save" = "Сохранить";
-"generic.cancel" = "Отмена";
+"generic.cancel" = "Cancel";
 "generic.ok" = "Ок";
 "generic.close" = "Закрыть";
 
@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Примечание: отправленные фото публикуются под свободной лицензией Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Информация о продукте";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "Название";
 "product-add.label.category" = "Категория";
 "product-add.label.quantity" = "Количество";
@@ -199,6 +199,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Предупреждение: количество фруктов, овощей и орехов не указано, их возможный положительный вклад в оценку не может быть учтен.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Предупреждение: количество фруктов, овощей и орехов не указано на этикетке, оно было определено из списка ингредиентов: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Предупреждение: количество фруктов, овощей и орехов не указано на этикетке, оно оценивалось по категории (%s) продукта: %d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Пищевая ценность на 100 г/100 мл";
@@ -332,7 +340,7 @@
 "settings.user-profile" = "Ваш аккаунт участника";
 "settings.credits.title" = "Благодарности";
 "settings.scan-on-launch.title" = "Запуск сканирования при запуске приложения";
-"settings.sections.discover" = "О проекте";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Как принять участие";
 "settings.contribute.support-open-food-facts" = "Поддержать Open Food Facts Support";
 "settings.contribute.translate-open-food-facts" = "Перевести Open Food Facts";
@@ -382,7 +390,18 @@
 "history.section-titles.fewMonths" = "Несколько месяцев назад";
 "history.section-titles.longTime" = "Очень давно";
 "history.first-scan.button.title" = "Сканировать первый продукт";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Изменить";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Отмена";
 "USE_PHOTO" = "Использовать фото";
-"API_CANCEL_TITLE" = "Отмена";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Изменить";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

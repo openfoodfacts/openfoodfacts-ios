@@ -14,7 +14,7 @@
 "generic.search" = "Sök";
 "generic.cancel" = "Annulera";
 "generic.save" = "Spara";
-"generic.cancel" = "Annulera";
+"generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 "generic.close" = "Stäng";
 
@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Bra gjort ! Den här produkten finns ännu inte i Open Food Facts. Kan du ta några bilder på produkten, ingredienslistan och näringsfaktan för att lägga till den i Open Food Facts? \n\nTack i förväg.";
 "product-add.titles.license-explaination" = "Obs: de bilder du skickar publiceras under den fria licensen Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Produktinformation";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "Namn";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Kvantitet";
@@ -199,6 +199,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -332,7 +340,7 @@
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Medverkande";
 "settings.scan-on-launch.title" = "Visa streckkodsscanner vid start";
-"settings.sections.discover" = "Upptäck";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Hur man bidrar";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -382,7 +390,18 @@
 "history.section-titles.fewMonths" = "För några månader sedan";
 "history.section-titles.longTime" = "För länge sedan";
 "history.first-scan.button.title" = "Skanna första produkten";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Redigera";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Annulera";
 "USE_PHOTO" = "Använd foto";
-"API_CANCEL_TITLE" = "Annulera";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Redigera";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

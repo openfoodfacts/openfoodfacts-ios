@@ -80,7 +80,8 @@
 "product-add.ocr-ingredients.success" = "المكونات المقروءة من الصورة في";
 "product-add.ocr-ingredients.error" = "لا يمكن استخراج المكونات من الصورة";
 "product-add.ocr-ingredients.saving" = "استخراج المكونات من الصورة…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.not-yet" = "في انتظار تحليل صورة المكون";
+
 "product-add.nutriscore-explaination" = "تم حساب Nutri-Score للتو من جدول التغذية";
 "product-add.novagroup-explaination" = "تم حساب مجموعة NOVA على أساس قائمة المكونات";
 
@@ -99,7 +100,7 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "معلومات المنتج";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "اﻹسم";
 "product-add.label.category" = "Atassnifate";
 "product-add.label.quantity" = "كمية";
@@ -198,6 +199,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "تحذير: كمية الفواكه والخضروات والمكسرات غير محددة على الملصق ، فقد قدرت من قائمة المكونات: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "تحذير: كمية الفواكه والخضروات والمكسرات غير محددة على الملصق ، تم تقديرها من فئة (%s) من المنتج: %d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -331,7 +340,7 @@
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "إعتمادات";
 "settings.scan-on-launch.title" = "إظهار الماسح عند تشغيل التطبيق";
-"settings.sections.discover" = "إكتشف";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "كيفية المساهمة";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -381,7 +390,18 @@
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
 "history.first-scan.button.title" = "مسح المنتج الأول";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "تحرير";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "إلغاء";
 "USE_PHOTO" = "استخدم الصورة";
-"API_CANCEL_TITLE" = "Cancel";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "تحرير";
+"PHOTO" = "صورة";
+"AEAF_LOCK_TEXT" = "قفل التعويض الضوئي و/ أو التركيز البؤري";
+"HDR_AUTO" = "تلقائي";
+"HDR_ON" = "تشغيل";
+"HDR_OFF" = "إيقاف";
+"TIMER_OFF_TEXT" = "إيقاف";
+"PHOTOS" = "Photos";
+"CANCEL" = "إلغاء";
+"RETAKE" = "الإعادة";
