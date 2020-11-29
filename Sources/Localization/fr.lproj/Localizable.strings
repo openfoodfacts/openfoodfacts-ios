@@ -22,10 +22,10 @@
 
 "product-search.title" = "Rechercher";
 "product-search.search-placeholder" = "Recherche par nom ou code-barres";
-"product-search.no-results" = "Aucun résultat";
+"product-search.no-results" = "Aucun résultat. Vous pouvez ajouter un produit sur Open Food Facts en le scannant.";
 "product-search.error-view.title" = "Une erreur s'est produite";
 "product-search.error-view.subtitle" = "Veuillez réessayer";
-"product-search.initial-view.slogan" = "l'information alimentaire ouverte";
+"product-search.initial-view.slogan" = "la base de données gratuite pour les produits alimentaires";
 "product-search.initial-view.offline.title-loading" = "Sauvegarde des produits hors-ligne : %d%%";
 "product-search.initial-view.offline.subtitle" = "Plus de %d produits disponibles en scan instantané";
 
@@ -35,14 +35,14 @@
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Erreur lors de la lecture du code à barres. Merci de réessayer dans quelques instants.";
+"product-scanner.barcode.error" = "Erreur lors de la lecture du code-barres. Merci de réessayer dans quelques instants.";
 "product-scanner.barcode-notfound.manual-enter" = "Aucun code-barres trouvé. Vous pouvez le saisir manuellement :";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts a besoin de pouvoir utiliser l'appareil photo pour scanner";
-"product-scanner.permissions.noPermissions.message" = "Veuillez accorder la permission d'utiliser l'appareil photo pour pouvoir scanner les codes à barres";
+"product-scanner.permissions.noPermissions.message" = "Veuillez accorder la permission d'utiliser l'appareil photo pour pouvoir scanner les codes-barres";
 "product-scanner.permissions.noPermissions.action.title" = "Ouvrir les paramètres";
 
-"product-scanner.permissions.failed.title" = "Le scanner de codes à barres n'a pas pu être lancé.";
+"product-scanner.permissions.failed.title" = "La lecture du codes-barres n'a pas pu être lancée.";
 "product-scanner.permissions.failed.message" = "Assurez-vous que, dans les paramètres de confidentialité, Open Food Facts est autorisé à utiliser l'appareil photo.";
 "product-scanner.permissions.failed.action.title" = "Quitter le scan du code-barre";
 
@@ -106,7 +106,7 @@
 "product-add.label.quantity" = "Quantité";
 "product-add.label.packaging" = "Conditionnement";
 "product-add.details.category" = "Nécessaire pour calculer le Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.quantity-example" = "25 g, 283 g, 5 ml…";
 "product-add.label.language" = "Langue";
 
 "product-add.description.nutritive" = "Complétez les informations nutritionnelles et la catégorie pour calculer le Nutri-Score";
@@ -199,6 +199,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Avertissement : Le taux de fruits, légumes et noix n'étant pas renseigné, leur éventuelle contribution positive à la note n'a pas pu être prise en compte.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Avertissement : Le taux de fruits, légumes et noix n'est pas indiqué sur l'étiquette, il a été estimé en fonction de la liste des ingrédients : %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Avertissement : Le taux de fruits, légumes et noix n'est pas indiqué sur l'étiquette, il a été estimé en fonction de la catégorie (%s) du produit : %d%";
+
+"product-detail.environment.ecoscore.a" = "Ecoscore A";
+"product-detail.environment.ecoscore.b" = "Ecoscore B";
+"product-detail.environment.ecoscore.c" = "Ecoscore C";
+"product-detail.environment.ecoscore.d" = "Ecoscore D";
+"product-detail.environment.ecoscore.e" = "Ecoscore E";
+"product-detail.environment.ecoscore.unknown" = "Ecoscore unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Ecoscore";
 
 // Nutrition levels
 "nutrition-level.title" = "Repères nutritionnels pour 100 g/100 mL";
