@@ -71,6 +71,8 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var packagingField: UITextField!
     @IBOutlet weak var languageTitleLabel: UILabel!
     @IBOutlet weak var languageField: UITextField!
+    @IBOutlet weak var labelsTitleLabel: UILabel!
+    @IBOutlet weak var labelsField: UITextField!
     @IBOutlet weak var productTextSection: UIView!
     @IBOutlet weak var saveProductInfosButton: UIButton!
     @IBOutlet var productInformationsTextFields: [UITextField]!
@@ -296,6 +298,12 @@ class ProductAddViewController: TakePictureViewController {
             let array = validPackingText.split(separator: ",")
             product.packaging = array.compactMap {String($0)}
         }
+
+        if let validLabelsText = labelsField.text {
+            let array = validLabelsText.split(separator: ",")
+            product.labels = array.compactMap {String($0)}
+        }
+
     }
 
     fileprivate func fillProductFromNutriments() -> [RealmPendingUploadNutrimentItem] {
@@ -583,6 +591,7 @@ class ProductAddViewController: TakePictureViewController {
         quantityField?.delegate = self
         packagingField?.delegate = self
         languageField?.delegate = self
+        labelsField?.delegate = self
 
         portionSizeInputView?.displayedUnit = .none
         portionSizeInputView?.inputTextField.delegate = self
@@ -653,6 +662,8 @@ class ProductAddViewController: TakePictureViewController {
 
         quantityField?.text = product.quantity
         packagingField?.text = product.packaging?.compactMap {$0}.joined(separator: ", ")
+        labelsField?.text = product.labels?.compactMap {$0}.joined(separator: ", ")
+
         ingredientsTextField.text = product.ingredientsList
         ingredientsOCRExplanationLabel.isHidden = product.ingredientsList != nil && !product.ingredientsList!.isEmpty
         noNutritionDataSwitch.isOn = product.noNutritionData == "on"
@@ -719,6 +730,10 @@ class ProductAddViewController: TakePictureViewController {
 
         if let packaging = pendingUploadItem.packaging {
             packagingField.text = packaging
+        }
+
+        if let labels = pendingUploadItem.labels {
+            labelsField.text = labels
         }
 
         if let ingredientsList = pendingUploadItem.ingredientsList {

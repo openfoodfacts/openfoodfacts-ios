@@ -12,7 +12,7 @@ struct LocalizedString: ExpressibleByStringLiteral, Equatable {
 
     let localizedString: String
     let key: String?
-    
+
     init(key: String) {
         self.key = key
         self.localizedString = NSLocalizedString(key, comment: "")

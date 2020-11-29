@@ -62,12 +62,14 @@ class FormTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ververs), name: .FrontImageIsUpdated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ververs), name: .IngredientsImageIsUpdated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ververs), name: .NutritionImageIsUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ververs), name: .PackagingImageIsUpdated, object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: .FrontImageIsUpdated, object: nil)
         NotificationCenter.default.removeObserver(self, name: .IngredientsImageIsUpdated, object: nil)
         NotificationCenter.default.removeObserver(self, name: .NutritionImageIsUpdated, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .PackagingImageIsUpdated, object: nil)
         super.viewWillDisappear(animated)
     }
 

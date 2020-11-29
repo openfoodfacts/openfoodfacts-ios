@@ -115,7 +115,6 @@ class ScannerViewController: UIViewController, DataManagerClient {
         // set the useragent for the scan URL calls from this app
         setUserAgent()
 
-
         floatingTopContainer.distribution = .fillProportionally
         floatingTopContainer.axis = .vertical
         floatingTopContainer.addArrangedSubview(floatingLabelContainer)
@@ -573,7 +572,6 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     }
                     analysisView.configureGestureRecognizer()
                     self.ingredientsAnalysisFloatingContainer.addArrangedSubview(analysisView)
-                    
                 }
                 // add a button, which points to the ingredient analysis settings.
                 if let button = ingredientAnalysisSettingsButton {

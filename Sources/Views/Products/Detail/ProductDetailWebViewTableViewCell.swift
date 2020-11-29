@@ -24,14 +24,18 @@ class ProductDetailWebViewTableViewCell: ProductDetailBaseCell {
         webView.delegate = self
     }
 
+    private var color: UIColor = .black
+
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         if let html = formRow.getValueAsString() {
             let font = UIFont.preferredFont(forTextStyle: .body)
+
             if #available(iOS 13.0, *) {
-                webView.loadHTMLString(html.htmlFormattedString(font: font, color: .label), baseURL: nil)
+                color = traitCollection.userInterfaceStyle == .dark ? .white : .black
             } else {
-                webView.loadHTMLString(html.htmlFormattedString(font: font, color: .black), baseURL: nil)
+                color = .black
             }
+            webView.loadHTMLString(html.htmlFormattedString(font: font, color: color), baseURL: nil)
             webView.isHidden = false
         } else {
             webView.isHidden = true
@@ -54,26 +58,19 @@ extension ProductDetailWebViewTableViewCell: UIWebViewDelegate {
 
 extension String {
 
-func htmlFormattedString( font: UIFont, color: UIColor) -> String {
+func htmlFormattedString(font: UIFont, color: UIColor) -> String {
 
-    func colorHexString(color: UIColor) -> String {
-        let colorComponents = color.cgColor.components ?? []
-        if color.cgColor.numberOfComponents == 4 {
-            let red = colorComponents[0] * 255
-            let green = colorComponents[1] * 255
-            let blue = colorComponents[2] * 255
-
-            return NSString(format: "%02X%02X%02X", Int(red), Int(green), Int(blue)) as String
-        } else if color.cgColor.numberOfComponents == 2 {
-            let white = colorComponents[0] * 255
-
-            return NSString(format: "%02X%02X%02X", Int(white), Int(white), Int(white)) as String
-        } else {
-            return "htmlFormattedString:Color format not supported"
-        }
-    }
     // The table contains returns /n in strange places. Just to be sure they are removed.
-    return String(format: "<html><head><style>table {font-family: -apple-system; font-size: %@; color:#%@;}</style></head><body>%@</body></html>", String(describing: font.pointSize), colorHexString(color: color), self.replacingOccurrences(of: "\n", with: ""))
+    var htmlContent = "<html><head><style>"
+    // add a table style for nutrition tabel
+    // the rest is for carbon impact by Ademe
+    htmlContent += "table,h2,h3,p,li,ul {font-family: -apple-system; font-size: %@; color:#%@;}"
+    htmlContent += "</style></head>"
+    htmlContent += "<body>%@</body>"
+    htmlContent += "</html>"
+    let fontSize = String(describing: font.pointSize)
+    let newHtml = self.replacingOccurrences(of: "\n", with: "")
+    return String(format: htmlContent, fontSize, color.hexString, newHtml)
     }
 
 }
