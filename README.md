@@ -44,6 +44,7 @@ OpenFoodFacts has a Slack chat room where we discuss and support each other, joi
 - [x] Night mode
 
 
+
 ### Issues
 Here are issues and feature requests you can work on:
 
