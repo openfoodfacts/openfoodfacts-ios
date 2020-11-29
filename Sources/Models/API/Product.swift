@@ -33,6 +33,7 @@ enum ImageTypeCategory {
     case ingredients
     case nutrition
     case general
+    case packaging
 
     // These decriptions are used in the deselect/update API's to OFF
     var description: String {
@@ -43,6 +44,8 @@ enum ImageTypeCategory {
             return "ingredients"
         case .nutrition:
             return "nutrition"
+        case .packaging:
+            return "packaging"
         case .general:
             return "general"
         }
@@ -130,6 +133,7 @@ struct Product: Mappable {
     // var countries: [String]?
     var countriesTags: [String]?
     private var ingredientsImageUrlDecoded: String?
+    var ecoscore: String?
     var allergens: [Tag]?
     var traces: [Tag]?
     var additives: [Tag]?
@@ -150,6 +154,7 @@ struct Product: Mappable {
     var ingredientsAnalysisDetails: [IngredientsAnalysisDetail]?
     // new variables for local languages
     var languageCodes: [String: Int]?
+    private var packagingImageUrlDecoded: String?
     var names: [String: String] = [:]
     var genericNames: [String: String] = [:]
     var ingredients: [String: String] = [:]
@@ -305,6 +310,19 @@ struct Product: Mappable {
         return nutritionTableImageDecoded
     }
 
+    var packagingImageUrl: String? {
+        if let packagingImages = images[.packaging] {
+            if let displayPackagingImages = packagingImages[.display] {
+                if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
+                    if let validImageURLString = displayPackagingImages[validCode] {
+                        return validImageURLString
+                    }
+                }
+            }
+        }
+        return packagingImageUrlDecoded
+    }
+
     init() {}
     init?(map: Map) {}
 
@@ -329,6 +347,7 @@ struct Product: Mappable {
         citiesTags <- map[OFFJson.CitiesTagsKey]
         // countries <- (map[OFFJson.CountriesKey], ArrayTransform())
         countriesTags <- map[OFFJson.CountriesTagsKey]
+        ecoscore <- map[OFFJson.EcoscoreGradeKey]
         embCodesTags <- map[OFFJson.EmbCodesTagsKey]
         environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
@@ -357,6 +376,7 @@ struct Product: Mappable {
         origins <- map[OFFJson.OriginsKey]
         otherNutrients <- (map[OFFJson.OtherNutritionalSubstancesTagsKey], TagTransform())
         packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
+        packagingImageUrlDecoded <- map[OFFJson.ImagePackagingUrlKey]
         palmOilIngredients <- map[OFFJson.IngredientsFromPalmOilTagsKey]
         possiblePalmOilIngredients <- map[OFFJson.IngredientsThatMayBeFromPalmOilTagsKey]
         servingSize <- map[OFFJson.ServingSizeKey]
@@ -396,6 +416,9 @@ struct Product: Mappable {
             }
             if let validImages = decodeTypes(imageTypes.key, value: imageTypes.value, for: .nutrition) {
                 images[.nutrition] = [validImages.0: validImages.1]
+            }
+            if let validImages = decodeTypes(imageTypes.key, value: imageTypes.value, for: .packaging) {
+                images[.packaging] = [validImages.0: validImages.1]
             }
         }
     }

@@ -12,6 +12,7 @@ enum ImageType: String {
     case front
     case ingredients
     case nutrition
+    case packaging
     case general
 
     init(_ value: String) {
@@ -22,6 +23,8 @@ enum ImageType: String {
             self = .ingredients
         case "nutrition":
             self = .nutrition
+        case "packaging":
+            self = .packaging
         default:
             self = .general
         }

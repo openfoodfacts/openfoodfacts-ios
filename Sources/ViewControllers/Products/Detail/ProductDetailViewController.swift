@@ -155,12 +155,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     }
 
     fileprivate func getEnvironmentImpactVC() -> UIViewController? {
-        if product.environmentImpactLevelTags?.isEmpty == false, let infoCard = product.environmentInfoCard, infoCard.isEmpty == false {
-            let environmentImpactFormTableVC = EnvironmentImpactTableFormTableViewController()
-            environmentImpactFormTableVC.product = product
-            return environmentImpactFormTableVC
-        }
-        return nil
+        guard let form = createEnvironmentForm() else { return nil }
+        let environmentFormTableVC = EnvironmentFormTableViewController(with: form, dataManager: dataManager)
+        environmentFormTableVC.delegate = self
+        return environmentFormTableVC
     }
 
     // MARK: - Form creation methods
@@ -180,10 +178,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 case 2:
                     vc0.form = createNutritionForm()
                     vc0.view.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailNutritionView
+                case 3:
+                    vc0.form = createEnvironmentForm()
+                    vc0.view.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailNutritionView
                 default: break
                 }
-            } else if let vc1 = viewController as? EnvironmentImpactTableFormTableViewController {
-                vc1.product = product
             }
         }
     }
@@ -205,7 +204,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.genericName, label: InfoRowKey.genericName.localizedString, isCopiable: true)
-        createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
@@ -221,7 +219,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product.labelsTags?.map({ (labelTag: String) -> NSAttributedString in
             if let label = dataManager.label(forTag: labelTag) {
                 if let name = Tag.choose(inTags: Array(label.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link : OFFUrlsHelper.url(forLabel: label)])
+                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forLabel: label)])
                 }
             }
             return NSAttributedString(string: labelTag)
@@ -391,6 +389,27 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         return Form(title: "product-detail.page-title.nutrition".localized, rows: rows)
     }
 
+    private func createEnvironmentForm() -> Form? {
+        var rows = [FormRow]()
+        // Header
+        rows.append(FormRow(value: product as Any, cellType: HostedViewCell.self))
+
+        createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
+
+        // Info rows
+        if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
+            createFormRow(with: &rows, item: "\(carbonFootprint) \(unit)", label: InfoRowKey.carbonFootprint.localizedString)
+        }
+
+        createEnvironmentTableWebViewRow(rows: &rows)
+
+        if rows.isEmpty {
+            return nil
+        }
+
+        return Form(title: "product-detail.page-title.environment-impact".localized, rows: rows)
+    }
+
     fileprivate func createIngredientsAnalysisRows(rows: inout [FormRow]) {
         let analysisDetails = self.dataManager.ingredientsAnalysis(forProduct: product)
         if !analysisDetails.isEmpty {
@@ -499,6 +518,14 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 array.append(FormRow(label: label, value: value, cellType: cellType, isCopiable: isCopiable, separator: separator))
             }
         }
+    }
+
+    fileprivate func createEnvironmentTableWebViewRow(rows: inout [FormRow]) {
+        guard let html = product.environmentInfoCard else {
+            return
+        }
+        //createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+        createFormRow(with: &rows, item: html, label: nil, cellType: ProductDetailWebViewTableViewCell.self, isCopiable: false)
     }
 
     // MARK: - Nav bar button
