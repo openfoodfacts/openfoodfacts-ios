@@ -25,24 +25,7 @@ echo "✨ Installing mint dependencies"
 mint bootstrap -l
 
 echo "✨ Installing carthage dependencies"
-#carthage bootstrap --platform iOS --cache-builds
-
-CACHED_CARTFILE="/Users/travis/build/openfoodfacts/openfoodfacts-ios/Cartfile.resolved"
-
-if [ -e "$CACHED_CARTFILE" ]; then
-  OUTDATED_DEPENDENCIES=$(cartfilediff "$CACHED_CARTFILE" Cartfile.resolved)
-
-  if [ ! -z "$OUTDATED_DEPENDENCIES" ]
-  then
-    echo "Bootstrapping outdated dependencies: $OUTDATED_DEPENDENCIES"
-    carthage bootstrap --platform iOS "$OUTDATED_DEPENDENCIES"
-  else
-    echo "Cartfile.resolved matches cached, skipping bootstrap"
-  fi
-else
-  echo "Cached Cartfile.resolved not found, bootstrapping all dependencies"
-  carthage bootstrap --platform iOS --cache-builds
-fi
+carthage bootstrap --platform iOS --cache-builds
 
 echo "✨ Generating project"
 . $SCRIPTS_DIR/create-project.sh
