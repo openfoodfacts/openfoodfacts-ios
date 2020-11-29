@@ -106,7 +106,7 @@
 "product-add.label.quantity" = "Määrä";
 "product-add.label.packaging" = "Pakkaus";
 "product-add.details.category" = "Tarvitaan Nutri-Scoren laskemiseen";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
 "product-add.label.language" = "Kielet";
 
 "product-add.description.nutritive" = "Täydennä ravintosisältö ja tuoteluokka saadaksesi Nutri-Scoren";
@@ -200,6 +200,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Varoitus: hedelmien, vihannesten ja pähkinöiden määrää ei ole ilmoitettu etiketissä, vaan se arvioitiin ainesosaluettelosta: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Varoitus: hedelmien, vihannesten ja pähkinöiden määrää ei ole ilmoitettu etiketissä, vaan se arvioitiin luokasta (%s) johon tuote %d% kuuluu";
 
+"product-detail.environment.ecoscore.a" = "Ecoscore A";
+"product-detail.environment.ecoscore.b" = "Ecoscore B";
+"product-detail.environment.ecoscore.c" = "Ecoscore C";
+"product-detail.environment.ecoscore.d" = "Ecoscore D";
+"product-detail.environment.ecoscore.e" = "Ecoscore E";
+"product-detail.environment.ecoscore.unknown" = "Ecoscore unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Ecoscore";
+
 // Nutrition levels
 "nutrition-level.title" = "Ravintoarvot per 100 g / 100 ml";
 "nutrition-level.low" = "pieni määrä";
@@ -208,8 +216,8 @@
 
 // Ingredients Analysis
 "ingredients-analysis.title" = "Ainesosa-analyysi";
-"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
+"ingredients-analysis.ingredients_in_this_product" = "Tämän tuotteen ainesosat, jotka ovat %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Tämän tuotteen ainesosat ovat %@s.";
 "ingredients-analysis.unknown_status" = "Emme voineet arvioida tuotteen tilaa.";
 "ingredients-analysis.ambiguous" = "Monitulkinnaiset ainesosat: %@";
 "ingredients-analysis.display" = "Näytä %@ -tila";
