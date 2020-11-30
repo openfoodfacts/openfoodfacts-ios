@@ -27,6 +27,7 @@ jobs:
       - name: Run Fastlane beta lane
         run: bundle exec fastlane beta
         env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SPACESHIP_CONNECT_API_KEY_FILEPATH: envfiles/AuthKey_KDAUTTM76R.p8
           CI_RELEASE: true
