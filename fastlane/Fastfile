@@ -135,10 +135,14 @@ lane :finalize_sentry_release do
     sentry_finalize_release(
         org_slug: 'openfoodfacts',
         project_slug: 'openfoodfacts-ios',
-        version: 'openfoodfacts-ios@'+liveVersion.to_s+'.'+build_number.to_s,
+        version: 'openfoodfacts-ios@' + liveVersion.to_s + '.' + build_number.to_s,
         app_identifier: APP_IDENTIFIER
     )
     download_dsyms(min_version: liveVersion, output_directory: './ios/dSYMs') # Download dSYM files from iTC
+    sentry_upload_dsym(
+      org_slug: 'openfoodfacts',
+      project_slug: 'openfoodfacts-ios',
+    )
   end
 end
 
