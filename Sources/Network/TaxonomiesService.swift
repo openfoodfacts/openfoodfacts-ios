@@ -21,6 +21,7 @@ enum TaxonomiesRoute: String {
     case getMinerals = "taxonomies/minerals.json"
     case getNucleotides = "taxonomies/nucleotides.json"
     case getInvalidBarcodes = "invalid-barcodes.json"
+    case getLabels = "taxonomies/labels.json"
 }
 
 enum FilesRouter: URLRequestConvertible {
@@ -357,6 +358,27 @@ class TaxonomiesService: TaxonomiesApi {
         }
     }
 
+    fileprivate func refreshLabels(_ callback: @escaping (_: Bool) -> Void) {
+        do {
+            let request = try TaxonomiesRequest(route: .getLabels, requestType: .get).asURLRequest()
+            Alamofire.request(request)
+                .responseJSON { (response) in
+                    switch response.result {
+                    case .success(let responseBody):
+                        if let json = responseBody as? [String: Any] {
+                            let labels = self.taxonomiesParser.parseLabels(data: json)
+                            self.persistenceManager.save(labels: labels)
+                            callback(true)
+                        }
+                    case .failure(let error):
+                        AnalyticsManager.record(error: error)
+                        callback(false)
+                    }
+            }
+        } catch {
+            callback(false)
+        }
+    }
     // swiftlint:disable identifier_name
 
     /// increment last number each time you want to force a refresh. Useful if you add a new refresh method or a new field
@@ -380,7 +402,8 @@ class TaxonomiesService: TaxonomiesApi {
             persistenceManager.nucleotidesIsEmpty ||
             // persistenceManager.otherNutritionalSubstancesIsEmpty ||
             persistenceManager.ingredientsAnalysisIsEmpty ||
-            persistenceManager.ingredientsAnalysisConfigIsEmpty
+            persistenceManager.ingredientsAnalysisConfigIsEmpty ||
+            persistenceManager.labelsIsEmpty
         if shouldDownload {
             downloadTaxonomies()
         } else {
@@ -454,11 +477,16 @@ class TaxonomiesService: TaxonomiesApi {
             })
 
             group.enter()
-
             self.refreshInvalidBarcodes { (success) in
                 allSuccess = allSuccess && success
                 group.leave()
             }
+
+            group.enter()
+            self.refreshLabels({ (success) in
+                allSuccess = allSuccess && success
+                group.leave()
+            })
 
             group.wait()
 

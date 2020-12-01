@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Sehr gut! Dieses Produkt ist noch nicht in Open Food Facts enthalten. Könnten Sie einige Fotos von dem Produkt, der Zutatenliste und den Nährwertangaben aufnehmen, um diese bei Open Food Facts hinzuzufügen?";
 "product-add.titles.license-explaination" = "Hinweis: die von Ihnen eingesandten Fotos werden unter der freien Lizenz „Creative Commons Attribution und ShareAlike” veröffentlicht.";
 
-"product-add.titles.product-info" = "Produktinformationen";
+"product-add.titles.product-info" = "Produktinformation";
 "product-add.label.product-name" = "Name";
 "product-add.label.category" = "Kategorie";
 "product-add.label.quantity" = "Mengenangabe";
@@ -200,6 +200,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warnhinweis: Die Menge an Früchten, Gemüse und Nüssen ist auf dem Etikett nicht angegeben und wurde anhand der Zutatenliste geschätzt: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warnhinweis. Die Menge an Früchten, Gemüse und Nüssen ist auf dem Etikett nicht angegeben und wurde anhand der Kategorie (%s) des Produkts geschätzt: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "Nährstoffgehalt je 100g/100ml";
 "nutrition-level.low" = "in geringer Menge";
@@ -207,6 +215,7 @@
 "nutrition-level.high" = "in großen Mengen";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Analyse der Inhaltsstoffe";
 "ingredients-analysis.ingredients_in_this_product" = "Zutaten in diesem Produkt, die %@ sind:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Dieses Produkt enthält folgende Zutaten: %@s";
 "ingredients-analysis.unknown_status" = "Den Status des Produktes konnte nicht beurteilt werden.";
@@ -253,7 +262,7 @@
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrin";
 "nutrition.fiber" = "Ballaststoffe";
 "nutrition.proteins" = "Eiweiß";
-"nutrition.proteins.casein" = "Casein";
+"nutrition.proteins.casein" = "Kasein";
 "nutrition.proteins.serum-proteins" = "Serumproteine";
 "nutrition.proteins.nucleotides" = "Nukleotide";
 "nutrition.salt" = "Salz";
@@ -303,6 +312,7 @@
 "call-to-action.summary" = "Machen Sie ein Foto von der Vorderseite";
 "call-to-action.ingredients" = "Machen Sie ein Foto von den Zutaten";
 "call-to-action.nutrition" = "Machen Sie ein Foto von den Nährwertangaben";
+"call-to-action.edit" = "Vervollständigen Sie das Produkt, um es bewerten zu können";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -315,10 +325,13 @@
 "product.images.take-picture.nutrition" = "Foto der Ernährungstabelle";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Scanner";
+"history.tab-bar.item" = "Verlauf";
 "settings.tab-bar.item" = "Einstellungen";
 "settings.ingredientsAnalysis.title" = "Benachrichtigungen zur Analyse der Zutaten";
 "settings.allergies.title" = "Allergenwarnungen";
-"settings.allergies.description" = "Fügen Sie Allergene zu dieser Liste hinzu, um benachrichtigt zu werden, wenn Sie ein Produkt scannen, das diese enthält. \nBitte beachten Sie, dass Informationen zu Ihren Allergien NIEMALS an den Open Food Facts-Server gesendet werden. Achten Sie auch darauf, dass die Daten möglicherweise nicht zu 100% zuverlässig sind und dass die Erkennung möglicherweise nicht zu 100% genau ist. Überzeugen Sie sich bitte in jedem Fall auch selbst!";
+"settings.allergies.description" = "Fügen Sie Allergene zu dieser Liste hinzu, um benachrichtigt zu werden, wenn Sie ein Produkt scannen, das diese enthält. \nBitte beachten Sie, dass Informationen zu Ihren Allergien NIEMALS an den Open Food Facts-Server gesendet werden. Achten Sie auch darauf, dass die Daten möglicherweise nicht zu 100% averlässig sind und dass die Erkennung möglicherweise nicht zu 100[%f]enau ist. Überzeugen Sie sich bitte in jedem Fall auch selbst!";
 "settings.allergies.add-button" = "Allergene hinzufügen";
 "settings.sections.information" = "Informationen";
 "settings.sections.discover" = "Entdecken";
@@ -377,7 +390,18 @@
 "history.section-titles.fewMonths" = "Vor ein paar Monaten";
 "history.section-titles.longTime" = "Vor längerer Zeit";
 "history.first-scan.button.title" = "Erfassen Sie Ihr erstes Produkt";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Bearbeiten";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Abbrechen";
 "USE_PHOTO" = "Foto verwenden";
-"API_CANCEL_TITLE" = "Abbrechen";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Bearbeiten";
+"PHOTO" = "Foto";
+"AEAF_LOCK_TEXT" = "AE/AF-Sperre";
+"HDR_AUTO" = "Automatisch";
+"HDR_ON" = "Ein";
+"HDR_OFF" = "Aus";
+"TIMER_OFF_TEXT" = "Aus";
+"PHOTOS" = "Fotos";
+"CANCEL" = "Abbrechen";
+"RETAKE" = "Erneut aufnehmen";

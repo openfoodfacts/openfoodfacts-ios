@@ -33,6 +33,7 @@ enum ImageTypeCategory {
     case ingredients
     case nutrition
     case general
+    case packaging
 
     // These decriptions are used in the deselect/update API's to OFF
     var description: String {
@@ -43,6 +44,8 @@ enum ImageTypeCategory {
             return "ingredients"
         case .nutrition:
             return "nutrition"
+        case .packaging:
+            return "packaging"
         case .general:
             return "general"
         }
@@ -94,6 +97,7 @@ struct Product: Mappable {
     var nutriscore: String?
     private var nutriscoreWarningNoFruitsVegetablesNutsAsInt: Int?
     private var nutriscoreWarningNoFiberAsInt: Int?
+
     var nutriscoreWarningNoFruitsVegetablesNuts: Bool {
         if let valid = nutriscoreWarningNoFruitsVegetablesNutsAsInt,
             valid == 1 {
@@ -122,12 +126,14 @@ struct Product: Mappable {
     var manufacturingPlaces: String?
     var origins: String?
     var labels: [String]?
+    var labelsTags: [String]?
     var citiesTags: [String]?
     var embCodesTags: [String]?
     var stores: [String]?
     // var countries: [String]?
     var countriesTags: [String]?
     private var ingredientsImageUrlDecoded: String?
+    var ecoscore: String?
     var allergens: [Tag]?
     var traces: [Tag]?
     var additives: [Tag]?
@@ -148,6 +154,7 @@ struct Product: Mappable {
     var ingredientsAnalysisDetails: [IngredientsAnalysisDetail]?
     // new variables for local languages
     var languageCodes: [String: Int]?
+    private var packagingImageUrlDecoded: String?
     var names: [String: String] = [:]
     var genericNames: [String: String] = [:]
     var ingredients: [String: String] = [:]
@@ -157,6 +164,26 @@ struct Product: Mappable {
     var minerals: [Tag]?
     var nucleotides: [Tag]?
     var otherNutrients: [Tag]?
+    private var _productAttributes: ProductAttributes?
+    var productAttributes: ProductAttributes? {
+        //validate barcode before retrieving
+        get {
+            if _productAttributes?.barcode == barcode {
+                return _productAttributes
+            } else {
+                return nil
+            }
+        }
+
+        //validate barcode before setting
+        set {
+            if let productAttr = newValue, productAttr.barcode == self.barcode {
+                self._productAttributes = productAttr
+            } else {
+                return
+            }
+        }
+    }
 
     private var selectedImages: [String: Any] = [:]
     private var images: [ImageTypeCategory: [ImageSizeCategory: [String: String]]] = [:]
@@ -283,6 +310,19 @@ struct Product: Mappable {
         return nutritionTableImageDecoded
     }
 
+    var packagingImageUrl: String? {
+        if let packagingImages = images[.packaging] {
+            if let displayPackagingImages = packagingImages[.display] {
+                if let validCode = matchedLanguageCode(codes: Locale.preferredLanguageCodes) {
+                    if let validImageURLString = displayPackagingImages[validCode] {
+                        return validImageURLString
+                    }
+                }
+            }
+        }
+        return packagingImageUrlDecoded
+    }
+
     init() {}
     init?(map: Map) {}
 
@@ -303,9 +343,11 @@ struct Product: Mappable {
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
         origins <- map[OFFJson.OriginsKey]
         labels <- (map[OFFJson.LabelsKey], ArrayTransform())
+        labelsTags <- map[OFFJson.LabelsTagsKey]
         citiesTags <- map[OFFJson.CitiesTagsKey]
         // countries <- (map[OFFJson.CountriesKey], ArrayTransform())
         countriesTags <- map[OFFJson.CountriesTagsKey]
+        ecoscore <- map[OFFJson.EcoscoreGradeKey]
         embCodesTags <- map[OFFJson.EmbCodesTagsKey]
         environmentInfoCard <- map[OFFJson.EnvironmentInfoCardKey]
         environmentImpactLevelTags <- map[OFFJson.EnvironmentImpactLevelTagsKey]
@@ -316,7 +358,6 @@ struct Product: Mappable {
         imageUrl <- map[OFFJson.ImageUrlKey]
         ingredientsImageUrlDecoded <- map[OFFJson.ImageIngredientsUrlKey]
         ingredientsListDecoded <- map[OFFJson.IngredientsKey]
-        labels <- (map[OFFJson.LabelsKey], ArrayTransform())
         lang <- map[OFFJson.LangKey]
         languageCodes <- map[OFFJson.LanguageCodesKey]
         manufacturingPlaces <- map[OFFJson.ManufacturingPlacesKey]
@@ -335,6 +376,7 @@ struct Product: Mappable {
         origins <- map[OFFJson.OriginsKey]
         otherNutrients <- (map[OFFJson.OtherNutritionalSubstancesTagsKey], TagTransform())
         packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
+        packagingImageUrlDecoded <- map[OFFJson.ImagePackagingUrlKey]
         palmOilIngredients <- map[OFFJson.IngredientsFromPalmOilTagsKey]
         possiblePalmOilIngredients <- map[OFFJson.IngredientsThatMayBeFromPalmOilTagsKey]
         servingSize <- map[OFFJson.ServingSizeKey]
@@ -374,6 +416,9 @@ struct Product: Mappable {
             }
             if let validImages = decodeTypes(imageTypes.key, value: imageTypes.value, for: .nutrition) {
                 images[.nutrition] = [validImages.0: validImages.1]
+            }
+            if let validImages = decodeTypes(imageTypes.key, value: imageTypes.value, for: .packaging) {
+                images[.packaging] = [validImages.0: validImages.1]
             }
         }
     }

@@ -195,14 +195,16 @@ extension SearchTableViewController {
 
 // MARK: - UISearchResultsUpdating
 
+// This is only used for testing (3-oct-20)
+// But will be called during normal running
 extension SearchTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         queryRequestWorkItem?.cancel()
         if let query = searchController.searchBar.text {
             if !query.isEmpty {
                 if wasSearchBarEdited {
-                    state = .loading
                     if query.last! == " " {
+                        state = .loading
                         let request = DispatchWorkItem { [weak self] in
                             self?.getProducts(page: 1, withQuery: query)
                         }

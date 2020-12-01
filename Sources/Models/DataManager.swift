@@ -50,6 +50,7 @@ protocol DataManagerProtocol {
     func ingredientsAnalysis(forProduct product: Product) -> [IngredientsAnalysisDetail]
     func ingredientsAnalysis(forTag tag: String) -> IngredientsAnalysis?
     func ingredientsAnalysisConfig(forTag tag: String) -> IngredientsAnalysisConfig?
+    func label(forTag: String) -> Label?
 
     func getTagline(_ callback: @escaping (_: Tagline?) -> Void)
 
@@ -257,6 +258,11 @@ class DataManager: DataManagerProtocol {
         taxonomiesApi.getTagline(callback)
     }
 
+    func label(forTag tag: String) -> Label? {
+        let myLabel = persistenceManager.label(forCode: tag)
+        return myLabel
+    }
+
     // MARK: - Settings
     func addAllergy(toAllergen: Allergen) {
         persistenceManager.addAllergy(toAllergen: toAllergen)
@@ -461,6 +467,7 @@ class DataManager: DataManagerProtocol {
                     item.brand = nil
                     item.quantity = nil
                     item.packaging = nil
+                    item.labels = nil
                     item.categories = nil
                     item.ingredientsList = nil
                     item.nutriments.removeAll()

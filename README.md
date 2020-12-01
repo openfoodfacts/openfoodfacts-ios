@@ -17,19 +17,20 @@ Note: Xcode's limited Markdown support means this file is best viewed on GitHub.
 Open Food Facts on iPhone and iPad has 0,5M users and 1M products. Each contribution you make will have a large impact on food transparency worldwide. Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the #android channel before you start work, and to document what you intend to code.
 
 ### Priority roadmap
-- [ ] Additives evaluation (already ready server side and on Android) [#173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
-- [ ] Compare Mode [#153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
-- [ ] Product lists (to buy, eaten…)  
-
+- [ ] Display food labels (already assigned)
+- [ ] Show additives evaluation on cards (already ready server side and on Android) [#173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
+- [ ] Add a mode to compare 2 or more products [#153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
+- [ ] Add a basic product lists system (to buy, eaten…)  
 ### Secondary roadmap
-- [ ] On-device Product cache
+- [ ] Cache viewed products on-device so that they load fast and regardless of network
 - [ ] Add a food category browser
 - [ ] Add support for the new JSON taxonomy system (multilingual, and data augmentation from Wikipedia/Wikidata)
-- [ ] Support for Open Beauty Facts, Open Pet Food Facts and Open Products Facts [#687](https://github.com/openfoodfacts/openfoodfacts-ios/issues/687) and [#160](https://github.com/openfoodfacts/openfoodfacts-ios/issues/160)
+- [ ] Add support for cosmetics (Open Beauty Facts) and other products [#687](https://github.com/openfoodfacts/openfoodfacts-ios/issues/687) and [#160](https://github.com/openfoodfacts/openfoodfacts-ios/issues/160)
+- [ ] Use the server-side API to get taxonomized field values
 
 ## Join the team !
 
-OpenFoodFacts has a Slack team where we chat, discuss and support each other, join the #iOS and #iOS-alerts channels. [Click here to join.](https://slack.openfoodfacts.org/)
+OpenFoodFacts has a Slack chat room where we discuss and support each other, join the #iOS and #iOS-alerts channels. [Click here to join.](https://slack.openfoodfacts.org/)
 
 ## Current features
 
@@ -41,6 +42,8 @@ OpenFoodFacts has a Slack team where we chat, discuss and support each other, jo
 - [x] Product addition & editing (incl. on-the-fly OCR of ingredients and labels, plus integration of the OFF AI)
 - [x] Image upload
 - [x] Night mode
+
+
 
 ### Issues
 Here are issues and feature requests you can work on:
@@ -132,6 +135,9 @@ You can install [SwiftLint](https://github.com/realm/SwiftLint/) with Homebrew:
 ```
 brew install swiftlint
 ```
+
+### Sentry
+[Track crashes](https://sentry.io/organizations/openfoodfacts/issues/?project=5276492)
 
 ### Help translate Open Food Facts in your language
 

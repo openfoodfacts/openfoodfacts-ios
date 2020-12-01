@@ -14,7 +14,7 @@
 "generic.search" = "Caută";
 "generic.cancel" = "Anulare";
 "generic.save" = "Salvează";
-"generic.cancel" = "Anulare";
+"generic.cancel" = "Cancel";
 "generic.ok" = "OK";
 "generic.close" = "Închidere";
 
@@ -25,7 +25,7 @@
 "product-search.no-results" = "Niciun rezultat";
 "product-search.error-view.title" = "Ceva nu a funcţionat corect";
 "product-search.error-view.subtitle" = "Vă rugăm să încercați din nou";
-"product-search.initial-view.slogan" = "the free food products database";
+"product-search.initial-view.slogan" = "baza de date gratuită a produselor alimentare";
 "product-search.initial-view.offline.title-loading" = "Înregistrarea produselor offline: %d%%";
 "product-search.initial-view.offline.subtitle" = "Peste %d produse disponibile pentru scanare instantanee";
 
@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Notă: fotografiile trimise sunt publicate sub o licență liberă Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Informații produs";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "Nume";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Cantitate";
@@ -114,7 +114,7 @@
 "product-add.nutritive.choice.per-hundred-grams" = "pentru 100 g / 100 ml";
 "product-add.nutritive.choice.per-portion" = "per porție";
 "product-add.nutritive.add-nutriment" = "Adăugați un nutrient";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Mai mult de 100g?";
 
 "product-add.description.ingredients" = "Completați ingredientele pentru a obține grupul NOVA (referitor la procesarea produselor alimentare)";
 "product-add.titles.ingredients" = "Ingrediente";
@@ -151,7 +151,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Cod de bare";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Nume generic";
 "product-detail.summary.quantity" = "Cantitate";
 "product-detail.summary.packaging" = "Ambalare";
 "product-detail.summary.brands" = "Mărci";
@@ -169,7 +169,7 @@
 "product-detail.ingredients.nova.2" = "Ingrediente culinare prelucrate";
 "product-detail.ingredients.nova.3" = "Hrană procesată";
 "product-detail.ingredients.nova.4" = "Produse ultra-procesate pentru alimente și băuturi";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.incite" = "Adăugați ingrediente și / sau categorii pentru a calcula NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Substanțe sau produse care cauzează alergii sau intoleranțe";
 "product-detail.ingredients.allergens-alert.title" = "Conține alergeni!";
@@ -182,7 +182,7 @@
 "product-detail.ingredients.vitamins-list" = "Vitamine";
 "product-detail.ingredients.minerals-list" = "Minerale";
 "product-detail.ingredients.nucleotides-list" = "Nucleotide";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Alte substanțe nutriționale";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Cantitatea unei porții";
@@ -194,11 +194,19 @@
 "product-detail.nutrition-table.for-serving" = "Per porție";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.missing" = "Niciun nutrient nu a fost stabilit.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Avertisment: cantitatea de fructe, legume și nuci nu este specificată, contribuția lor pozitivă nu a putut fi luată în considerare.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Informații nutriționale pentru 100g";
@@ -207,7 +215,8 @@
 "nutrition-level.high" = "în cantitate ridicată";
 
 // Ingredients Analysis
-"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
+"ingredients-analysis.title" = "Analiza ingredientelor";
+"ingredients-analysis.ingredients_in_this_product" = "Ce faci";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
 "ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
@@ -232,8 +241,8 @@
 
 // Nutrition
 "nutrition.energy" = "Valoare energetică";
-"nutrition.energy.kj" = "Energy (kJ)";
-"nutrition.energy.kcal" = "Energy (kcal)";
+"nutrition.energy.kj" = "Valoare energetică (kJ)";
+"nutrition.energy.kcal" = "Valoare energetică (kcal)";
 "nutrition.fats" = "Grăsimi";
 "nutrition.fats.saturated-fat" = "Acizi grași saturați";
 "nutrition.fats.mono-unsaturated-fat" = "Grăsimi monosaturate";
@@ -303,6 +312,7 @@
 "call-to-action.summary" = "Faceți o poză frontală produsului";
 "call-to-action.ingredients" = "Faceți o poză ingredientelor";
 "call-to-action.nutrition" = "Faceți o poză tabelului cu informații nutriționale";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -315,6 +325,9 @@
 "product.images.take-picture.nutrition" = "Fotografia tabelului nutrițional";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Scaner";
+"history.tab-bar.item" = "Istoric";
 "settings.tab-bar.item" = "Configurări";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Alerte de alergeni";
@@ -327,7 +340,7 @@
 "settings.user-profile" = "Contul dvs. de contribuitor";
 "settings.credits.title" = "Contribuţii";
 "settings.scan-on-launch.title" = "Afișare scanner la lansarea aplicației";
-"settings.sections.discover" = "Descoperiți";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Cum să contribuiţi";
 "settings.contribute.support-open-food-facts" = "Susțineți Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Traduceți Open Food Facts";
@@ -377,7 +390,18 @@
 "history.section-titles.fewMonths" = "Acum câteva luni";
 "history.section-titles.longTime" = "Acum mult timp";
 "history.first-scan.button.title" = "Scanați primul produs";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Modificare";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Anulare";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Anulare";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Modificare";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

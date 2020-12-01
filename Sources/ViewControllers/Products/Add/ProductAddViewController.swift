@@ -49,6 +49,7 @@ class ProductAddViewController: TakePictureViewController {
             productCategoryField?.placeholder = "product-add.label.category".localized
         }
     }
+    @IBOutlet weak var productCategoryNutriScoreExplanationLabel: UILabel!
     @IBOutlet weak var brandsTitleLabel: UILabel! {
         didSet {
             brandsTitleLabel?.text = "product-add.placeholder.brand".localized
@@ -70,12 +71,15 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var packagingField: UITextField!
     @IBOutlet weak var languageTitleLabel: UILabel!
     @IBOutlet weak var languageField: UITextField!
+    @IBOutlet weak var labelsTitleLabel: UILabel!
+    @IBOutlet weak var labelsField: UITextField!
     @IBOutlet weak var productTextSection: UIView!
     @IBOutlet weak var saveProductInfosButton: UIButton!
     @IBOutlet var productInformationsTextFields: [UITextField]!
     @IBOutlet weak var lastSavedProductInfosLabel: UILabel!
 
     @IBOutlet weak var noNutritionDataSwitch: UISwitch!
+    @IBOutlet weak var nutritiveNutriScoreEXplanationLabel: UILabel!
     @IBOutlet weak var nutritiveSectionTitle: UILabel! {
         didSet {
             nutritiveSectionTitle?.text = "product-add.titles.nutritive".localized
@@ -101,11 +105,12 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
     @IBOutlet weak var novaGroupView: NovaGroupView!
-    @IBOutlet weak var ingredientsExplainationLabel: UILabel! {
+    @IBOutlet weak var ingredientsOCRExplanationLabel: UILabel! {
         didSet {
-            ingredientsExplainationLabel?.text = "product-add.ingredients.explaination".localized
+            ingredientsOCRExplanationLabel?.text = "product-add.ingredients.explaination".localized
         }
     }
+    @IBOutlet weak var ingredientsNovaExplanationLabel: UILabel!
     @IBOutlet weak var ingredientsTextField: UITextView! {
         didSet {
             ingredientsTextField?.text = ""
@@ -293,6 +298,12 @@ class ProductAddViewController: TakePictureViewController {
             let array = validPackingText.split(separator: ",")
             product.packaging = array.compactMap {String($0)}
         }
+
+        if let validLabelsText = labelsField.text {
+            let array = validLabelsText.split(separator: ",")
+            product.labels = array.compactMap {String($0)}
+        }
+
     }
 
     fileprivate func fillProductFromNutriments() -> [RealmPendingUploadNutrimentItem] {
@@ -436,18 +447,29 @@ class ProductAddViewController: TakePictureViewController {
         dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: true, onSuccess: { [weak self] (distantProduct: Product?) in
             DispatchQueue.main.async {
                 if let distantProduct = distantProduct {
-                    if let nutriscoreString = distantProduct.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreString) {
+                    if let nutriscoreString = distantProduct.nutriscore,
+                        let score = NutriScoreView.Score(rawValue: nutriscoreString) {
                         self?.nutriScoreView.currentScore = score
                         self?.nutriscoreStackView.isHidden = false
+                        self?.productCategoryNutriScoreExplanationLabel.text = ""
+                        self?.productCategoryNutriScoreExplanationLabel.isHidden = true
+                        self?.nutritiveNutriScoreEXplanationLabel.isHidden = true
                     } else {
                         self?.nutriscoreStackView.isHidden = true
+                        self?.productCategoryNutriScoreExplanationLabel.text = "product-add.details.category".localized
+                        self?.productCategoryNutriScoreExplanationLabel.isHidden = false
+                        self?.nutritiveNutriScoreEXplanationLabel.isHidden = false
+
                     }
 
-                    if let novaGroupString = distantProduct.novaGroup, let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
+                    if let novaGroupString = distantProduct.novaGroup,
+                        let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
                         self?.novaGroupView.novaGroup = novaGroup
                         self?.novaGroupStackView.isHidden = false
+                        self?.ingredientsNovaExplanationLabel.isHidden = true
                     } else {
                         self?.novaGroupStackView.isHidden = true
+                        self?.ingredientsNovaExplanationLabel.isHidden = false
                     }
                 }
             }
@@ -508,7 +530,14 @@ class ProductAddViewController: TakePictureViewController {
         displayedNutrimentItems.enumerated().forEach { (index: Int, element: String) in
             if let view = nutritiveValuesStackView.arrangedSubviews[index] as? EditNutritiveValueView {
                 let nutriment = dataManager.nutriment(forTag: element)
-                let nutrimentName = nutriment?.names.chooseForCurrentLanguage()?.value ?? element
+                // The element seems to be the json-key (we should use the actual enum).
+                // Note that the translations come from the Nutriments taxonomy
+                var nutrimentName = nutriment?.names.chooseForCurrentLanguage()?.value ?? element
+
+                // This is a stopgap, pending this translation in the Nutriments taxonomy
+                if nutrimentName == "energy-kcal" {
+                    nutrimentName = "nutrition.energy.kcal".localized
+                }
 
                 view.nutrimentCode = element
                 view.titleLabel.text = nutrimentName
@@ -562,6 +591,7 @@ class ProductAddViewController: TakePictureViewController {
         quantityField?.delegate = self
         packagingField?.delegate = self
         languageField?.delegate = self
+        labelsField?.delegate = self
 
         portionSizeInputView?.displayedUnit = .none
         portionSizeInputView?.inputTextField.delegate = self
@@ -632,8 +662,10 @@ class ProductAddViewController: TakePictureViewController {
 
         quantityField?.text = product.quantity
         packagingField?.text = product.packaging?.compactMap {$0}.joined(separator: ", ")
-        ingredientsTextField.text = product.ingredientsList
+        labelsField?.text = product.labels?.compactMap {$0}.joined(separator: ", ")
 
+        ingredientsTextField.text = product.ingredientsList
+        ingredientsOCRExplanationLabel.isHidden = product.ingredientsList != nil && !product.ingredientsList!.isEmpty
         noNutritionDataSwitch.isOn = product.noNutritionData == "on"
         updateNoNutritionDataSwitchVisibility(animated: false)
 
@@ -698,6 +730,10 @@ class ProductAddViewController: TakePictureViewController {
 
         if let packaging = pendingUploadItem.packaging {
             packagingField.text = packaging
+        }
+
+        if let labels = pendingUploadItem.labels {
+            labelsField.text = labels
         }
 
         if let ingredientsList = pendingUploadItem.ingredientsList {

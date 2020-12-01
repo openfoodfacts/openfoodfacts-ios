@@ -73,6 +73,10 @@ class ProductService: ProductApi {
         //Answers.logSearch(withQuery: query, customAttributes: ["file": String(describing: ProductService.self), "search_type": searchType])
 
         let request = Alamofire.SessionManager.default.request(url)
+        // following getProduct api call's debug mode authentication values
+        #if DEBUG
+            request.authenticate(user: "off", password: "off")
+        #endif
         log.debug(request.debugDescription)
         request.responseObject(queue: utilityQueue) { (response: DataResponse<ProductsResponse>) in
             log.debug(response.debugDescription)
@@ -128,7 +132,8 @@ class ProductService: ProductApi {
             //url.append(contentsOf: "?fields=" + summaryFields.joined(separator: OFFJson.FieldsSeparator) + OFFJson.FieldsSeparator + languageFields.joined(separator: OFFJson.FieldsSeparator))
             url.append(contentsOf: "?fields=" + OFFJson.summaryFields.joined(separator: OFFJson.FieldsSeparator))
         } else {
-            url.append(contentsOf: "?fields=" + OFFJson.allFields.joined(separator: OFFJson.FieldsSeparator) + OFFJson.languageCodes)
+            let allFieldsWithAttributeGroups = OFFJson.allFields + [ProductAttributesJson.attributeGroupsLang()]
+            url.append(contentsOf: "?fields=" + allFieldsWithAttributeGroups.joined(separator: OFFJson.FieldsSeparator) + OFFJson.languageCodes)
         }
  //
 
@@ -144,7 +149,9 @@ class ProductService: ProductApi {
             switch response.result {
             case .success(let productResponse):
                 DispatchQueue.global(qos: .background).async {
-                    onSuccess(productResponse.product)
+                    var product = productResponse.product
+                    product?.productAttributes = productResponse.productAttributes
+                    onSuccess(product)
                 }
             case .failure(let error):
                 AnalyticsManager.record(error: error)

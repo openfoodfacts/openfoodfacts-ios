@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vnh-CA-Eam">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,7 +32,11 @@
         <scene sceneID="ZHu-lx-vha">
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" id="VXh-yJ-52m" customClass="SearchViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="pO5-97-Stg"/>
+                    <tabBarItem key="tabBarItem" image="magnifyingglass" catalog="system" id="pO5-97-Stg">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="search.tab-bar.item"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="WLD-6O-Dco"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wqu-2N-7de" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,9 +47,9 @@
         <scene sceneID="EcN-lx-Z5L">
             <objects>
                 <navigationController id="2z5-iM-xjQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="barcode" id="OFe-yH-vbP">
+                    <tabBarItem key="tabBarItem" title="" image="barcode" selectedImage="barcode" id="OFe-yH-vbP">
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="product-scanner.view-title"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="scanner.tab-bar.item"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zWJ-cM-wEZ">
@@ -95,7 +99,11 @@
         <scene sceneID="DbU-91-5Ke">
             <objects>
                 <navigationController id="wWT-tg-702" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="MgE-9D-emK"/>
+                    <tabBarItem key="tabBarItem" image="clock" catalog="system" id="MgE-9D-emK">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="history.tab-bar.item"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L1G-SG-nSS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -147,11 +155,15 @@
                             <outlet property="delegate" destination="USd-NH-eQg" id="Dfz-mK-zsO"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="QGk-eG-HaU"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="QGk-eG-HaU">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="history.tab-bar.item"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="WR4-V6-0yF">
                         <rightBarButtonItems>
-                            <barButtonItem title="Clear" id="67c-ys-5bh">
+                            <barButtonItem style="plain" systemItem="trash" id="67c-ys-5bh">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="history.button.clear"/>
                                 </userDefinedRuntimeAttributes>
@@ -179,5 +191,7 @@
     </scenes>
     <resources>
         <image name="barcode" width="25" height="25"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>
 </document>

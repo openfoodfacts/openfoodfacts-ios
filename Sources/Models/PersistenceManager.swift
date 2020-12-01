@@ -65,6 +65,10 @@ protocol PersistenceManagerProtocol {
     func tagLine() -> Tagline?
     var additivesIsEmpty: Bool { get }
 
+    func save(labels: [Label])
+    func label(forCode: String) -> Label?
+    var labelsIsEmpty: Bool { get }
+
     // Offline
     func save(offlineProducts: [RealmOfflineProduct])
     func getOfflineProduct(forCode: String) -> RealmOfflineProduct?
@@ -131,6 +135,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 item.productName = product.name
                 item.quantity = product.quantity
                 item.packaging = product.packaging?.compactMap {$0}.joined(separator: ", ")
+                item.labels = product.labels?.compactMap {$0}.joined(separator: ", ")
                 item.imageUrl = product.imageUrl
                 item.nutriscore = product.nutriscore
                 item.novaGroup.value = product.novaGroup
@@ -365,6 +370,20 @@ class PersistenceManager: PersistenceManagerProtocol {
         return getRealm().object(ofType: IngredientsAnalysisConfig.self, forPrimaryKey: code)
     }
 
+    func save(labels: [Label]) {
+        saveOrUpdate(objects: labels)
+        log.info("Saved \(labels.count) labels in taxonomy database")
+    }
+
+    func label(forCode code: String) -> Label? {
+        return getRealm().object(ofType: Label.self, forPrimaryKey: code)
+    }
+
+    var labelsIsEmpty: Bool {
+        getRealm().objects(Label.self).isEmpty
+    }
+
+    // Offline Products
     func save(offlineProducts: [RealmOfflineProduct]) {
         saveOrUpdate(objects: offlineProducts)
     }
@@ -460,6 +479,9 @@ class PersistenceManager: PersistenceManagerProtocol {
         }
         if let packaging = product.packaging {
             item.packaging = packaging.compactMap {$0}.joined(separator: ", ")
+        }
+        if let labels = product.labels {
+            item.labels = labels.compactMap {$0}.joined(separator: ", ")
         }
         if let categories = product.categories {
             item.categories = categories

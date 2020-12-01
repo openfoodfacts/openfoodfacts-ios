@@ -7,14 +7,14 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Nasnímať čiarový kód";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Späť";
 "generic.search" = "Vyhľadať";
 "generic.cancel" = "Zrušiť";
 "generic.save" = "Uložiť";
-"generic.cancel" = "Zrušiť";
+"generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 "generic.close" = "Zatvoriť";
 
@@ -23,28 +23,28 @@
 "product-search.title" = "Vyhľadať";
 "product-search.search-placeholder" = "Search for a product by name or barcode";
 "product-search.no-results" = "No Results";
-"product-search.error-view.title" = "Something went wrong";
-"product-search.error-view.subtitle" = "Please try again";
-"product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.error-view.title" = "Niečo sa pokazilo";
+"product-search.error-view.subtitle" = "Prosím, skúste znova";
+"product-search.initial-view.slogan" = "bezplatná databáza potravín";
+"product-search.initial-view.offline.title-loading" = "Zápis produktov offline: %d%%";
+"product-search.initial-view.offline.subtitle" = "Na okamžité skenovanie je k dispozícii viac ako %d produktov";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
+"product-scanner.overlay.user-help" = "Naskenujte čiarový kód produktu";
 "product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Skener";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode.error" = "Pri skenovaní čiarového kódu sa vyskytla chyba. Skúste to o chvíľu znova.";
+"product-scanner.barcode-notfound.manual-enter" = "Čiarový kód sa nenašiel. Môžete ho zadať ručne:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts vyžaduje povolenie použiť kameru";
 "product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Open Settings";
 
 "product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
-"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+"product-scanner.permissions.failed.action.title" = "Ukončiť skenovanie čiarových kódov";
 
 "product-scanner.search.status" = "Loading product...";
 
@@ -52,20 +52,20 @@
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Uploading image...";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "Niečo sa pokazilo";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+"product-add.image-upload-error-banner.subtitle" = "Skúste nasnímať fotografiu znova";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-upload-success-banner.title" = "Obrázok bol úspešne nahraný";
+"product-add.image-save-success-banner.title" = "Obrázok bude nahraný, keď budete online";
 /* Displayed when a product was successfully added to the products database */
-"product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
-"product-add.uploaded-image" = "Image uploaded, thanks!";
-"product-add.save-error.title" = "Error while saving product";
+"product-add.product-add-success-banner.title" = "Produkt bol úspešne pridaný. Ďakujeme!";
+"product-add.uploaded-image" = "Obrázok bol nahraný, vďaka!";
+"product-add.save-error.title" = "Pri ukladaní produktu došlo k chybe";
 "product-add.save-error.message" = "Try again later";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
+"product-add.save-info.success" = "Informácia uložená v";
+"product-add.save-info.error" = "Informácia sa neuložila";
+"product-add.save-info.saving" = "Ukladanie informácií o produkte…";
 "product-add.save-info.not-yet" = "Information not saved yet";
 "product-add.save-ingredients.success" = "Ingredients saved at";
 "product-add.save-ingredients.error" = "Ingredients not saved";
@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Product information";
+"product-add.titles.product-info" = "Product Information";
 "product-add.label.product-name" = "Názov";
 "product-add.label.category" = "Kategória";
 "product-add.label.quantity" = "Quantity";
@@ -200,6 +200,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "v malom množstve";
@@ -207,6 +215,7 @@
 "nutrition-level.high" = "vo veľkom množstve";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Ingredients analysis";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
@@ -303,6 +312,7 @@
 "call-to-action.summary" = "Take a picture of the front";
 "call-to-action.ingredients" = "Take a picture of the ingredients";
 "call-to-action.nutrition" = "Take a picture of the nutrition table";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -315,6 +325,9 @@
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Skener";
+"history.tab-bar.item" = "História";
 "settings.tab-bar.item" = "Nastavenia";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Allergens alerts";
@@ -327,7 +340,7 @@
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "Objaviť";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "How To Contribute";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -377,7 +390,18 @@
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
 "history.first-scan.button.title" = "Scan First Product";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Upraviť";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Zrušiť";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Zrušiť";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Upraviť";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";
