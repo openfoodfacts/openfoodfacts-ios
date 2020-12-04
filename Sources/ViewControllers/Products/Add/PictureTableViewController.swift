@@ -24,6 +24,7 @@ class PictureTableViewController: TakePictureViewController {
         pictures.append(PictureViewModel(imageType: .front))
         pictures.append(PictureViewModel(imageType: .ingredients))
         pictures.append(PictureViewModel(imageType: .nutrition))
+        pictures.append(PictureViewModel(imageType: .packaging))
 
         if let product = self.productToEdit {
             fillForm(withProduct: product)
@@ -81,6 +82,12 @@ class PictureTableViewController: TakePictureViewController {
                 tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
             }
         }
+        if let image = product.packagingImageUrl {
+            if let index = index(forImageType: .packaging) {
+                pictures[index].imageUrl = image
+                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
+        }
     }
 
     fileprivate func fillForm(withPendingUploadItem pendingUploadItem: PendingUploadItem) {
@@ -98,6 +105,12 @@ class PictureTableViewController: TakePictureViewController {
         }
         if let image = pendingUploadItem.nutritionImage {
             if let index = index(forImageType: .nutrition) {
+                pictures[index].image = image.image
+                tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
+        }
+        if let image = pendingUploadItem.packagingImage {
+            if let index = index(forImageType: .packaging) {
                 pictures[index].image = image.image
                 tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
             }

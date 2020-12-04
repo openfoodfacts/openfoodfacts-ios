@@ -22,6 +22,7 @@ class PendingUploadItem {
     var frontImage: ProductImage?
     var ingredientsImage: ProductImage?
     var nutritionImage: ProductImage?
+    var packagingImage: ProductImage?
     var categories: [String]?
 
     var noNutritionData: String?
