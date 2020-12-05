@@ -1,24 +1,24 @@
-name: TestFlight release
-
+name: Testing
 on:
-  push:
+  pull_request:
     branches:
-      - 'release/*'
+    - '*'
 
 jobs:
-  testflight-release:
-    name: Build and deploy to TestFlight testers
+  test:
+    name: Test
     runs-on: macos-latest
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
-
       - uses: actions/cache@v2
         id: cache-carthage
         with:
           path: ~/Carthage
           key: ${{ runner.os }}-carthage-${{ hashFiles('Cartfile.resolved') }}
-
       - name: Prepare xcodeproj
         run: sh scripts/setup.sh
-
+      - name: Testing Swift package
+        run: exec scripts/test_swift_package.sh
+      - name: Testing iOS app
+        run: exec scripts/test_app.sh
