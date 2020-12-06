@@ -17,10 +17,10 @@ Note: Xcode's limited Markdown support means this file is best viewed on GitHub.
 Open Food Facts on iPhone and iPad has 0,5M users and 1M products. Each contribution you make will have a large impact on food transparency worldwide. Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the #android channel before you start work, and to document what you intend to code.
 
 ### Priority roadmap
-- [ ] Show additives evaluation on cards [#173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
-- [ ] Add a mode to compare 2 or more products [#153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
+- [ ] [Show additives evaluation on cards #173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
+- [ ] [Add a mode to compare 2 or more products #153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
 - [ ] Add a basic product lists system (shopping list, nutritional intake…)
-- [ ]  [Add a prompt to extract Ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171)
+- [ ] [Add a prompt to extract Ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171)
 ### Secondary roadmap
 - [ ] Cache viewed products on-device so that they load fast and regardless of network
 - [ ] Add a food category browser
@@ -42,8 +42,6 @@ OpenFoodFacts has a Slack chat room where we discuss and support each other, joi
 - [x] Product addition & editing (incl. on-the-fly OCR of ingredients and labels, plus integration of the OFF AI)
 - [x] Image upload
 - [x] Night mode
-
-
 
 ### Issues
 Here are issues and feature requests you can work on:
