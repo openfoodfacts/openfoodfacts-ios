@@ -143,7 +143,6 @@ struct OFFJson {
     //static let LabelsHierarchyKey = "labels_hierarchy"
     //static let LabelsPrevTagsKey = "labels_prev_tags"
     static let LabelsTagsKey = "labels_tags"
-    //static let LabelsTagsKey = "labels_tags"
     static let LangKey = "lang"
     static let LanguageCodesKey = "languages_codes"
     //static let LanguagesHierarchyKey = "languages_hierarchy"
@@ -177,7 +176,7 @@ struct OFFJson {
     static let OtherNutritionalSubstancesTagsKey = "other_nutritional_substances_tags"
     //static let PnnsGroups1TagsKey = "pnns_groups_1_tags"
     static let PackagingKey = "packaging"
-    //static let PackagingTagsKey = "packaging_tags"
+    static let PackagingTagsKey = "packaging_tags"
     //static let PhotographersKey = "photographers"
     //static let PnnsGroups1Key = "pnns_groups_1"
     //static let PhotographersTagsKey = "photographers_tags"
@@ -413,6 +412,7 @@ struct OFFJson {
             // OFFJson.OtherInformationKey,
             OFFJson.OtherNutritionalSubstancesTagsKey,
             OFFJson.PackagingKey,
+            OFFJson.PackagingTagsKey,
             OFFJson.ProductNameKey,
             // OFFJson.PurchasePlacesKey,
             // OFFJson.RecyclingInstructionsToDiscard,

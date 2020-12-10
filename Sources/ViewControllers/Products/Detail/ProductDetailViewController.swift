@@ -213,16 +213,19 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forCategory: category)])
                 }
             }
-            return NSAttributedString(string: categoryTag)
+            return NSAttributedString(string: categoryTag.localLanguageCodeRemoved, attributes: [NSAttributedString.Key.obliqueness: 0.2])
         }), label: InfoRowKey.categories.localizedString)
 
         createFormRow(with: &rows, item: product.labelsTags?.map({ (labelTag: String) -> NSAttributedString in
             if let label = dataManager.label(forTag: labelTag) {
                 if let name = Tag.choose(inTags: Array(label.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forLabel: label)])
+                    return NSAttributedString(string: name.value,
+                                              attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forLabel: label)])
                 }
             }
-            return NSAttributedString(string: labelTag)
+            // We should use Textstyle body, but that does not exist in italic
+            //let attributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 17.0)]
+            return NSAttributedString(string: labelTag.localLanguageCodeRemoved, attributes: [NSAttributedString.Key.obliqueness: 0.2])
         }), label: InfoRowKey.labels.localizedString)
 
         createFormRow(with: &rows, item: product.embCodesTags?.map({ (tag: String) -> NSAttributedString in
