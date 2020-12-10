@@ -24,10 +24,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="1956"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-bW-zl0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2047"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2098"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" verticalCompressionResistancePriority="753" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zwf-af-22Y">
-                                                <rect key="frame" x="10" y="10" width="355" height="2022"/>
+                                                <rect key="frame" x="10" y="10" width="355" height="2073"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Mu-dr-4FU">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="20.5"/>
@@ -55,28 +55,28 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <containerView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="355" placeholderIntrinsicHeight="150" translatesAutoresizingMaskIntoConstraints="NO" id="2H9-eV-Wcn">
-                                                        <rect key="frame" x="0.0" y="193" width="355" height="153"/>
+                                                        <rect key="frame" x="0.0" y="193" width="355" height="204"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="153" id="ddZ-T3-3vc"/>
+                                                            <constraint firstAttribute="height" constant="204" id="ddZ-T3-3vc"/>
                                                         </constraints>
                                                         <connections>
                                                             <segue destination="aa7-Yb-Tnr" kind="embed" identifier="TakePictureSegue" id="Rtl-CX-Rt1"/>
                                                         </connections>
                                                     </containerView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBN-2K-tY7">
-                                                        <rect key="frame" x="0.0" y="356" width="355" height="16"/>
+                                                        <rect key="frame" x="0.0" y="407" width="355" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="2NV-ur-DbH"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Products infos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFM-sN-BmR">
-                                                        <rect key="frame" x="0.0" y="382" width="355" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="433" width="355" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jld-cb-TZR">
-                                                        <rect key="frame" x="0.0" y="412.5" width="355" height="543"/>
+                                                        <rect key="frame" x="0.0" y="463.5" width="355" height="543"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tr3-9d-gXI">
                                                                 <rect key="frame" x="0.0" y="8" width="355" height="18"/>
@@ -267,19 +267,19 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYI-Av-uws">
-                                                        <rect key="frame" x="0.0" y="965.5" width="355" height="16"/>
+                                                        <rect key="frame" x="0.0" y="1016.5" width="355" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="TTU-FQ-EPn"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutritives composition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9c-Xs-jvO">
-                                                        <rect key="frame" x="0.0" y="991.5" width="355" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="1042.5" width="355" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wby-6n-fjh">
-                                                        <rect key="frame" x="0.0" y="1022" width="355" height="75"/>
+                                                        <rect key="frame" x="0.0" y="1073" width="355" height="75"/>
                                                         <subviews>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1PH-pf-X1W">
                                                                 <rect key="frame" x="306" y="22" width="51" height="31"/>
@@ -312,7 +312,7 @@
                                                         </constraints>
                                                     </view>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rXU-B8-lr0">
-                                                        <rect key="frame" x="0.0" y="1107" width="355" height="32"/>
+                                                        <rect key="frame" x="0.0" y="1158" width="355" height="32"/>
                                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <segments>
                                                             <segment title="for 100g / 100ml"/>
@@ -320,21 +320,21 @@
                                                         </segments>
                                                     </segmentedControl>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMl-Gd-UeJ" customClass="EditNutritiveValueView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1148" width="355" height="59"/>
+                                                        <rect key="frame" x="0.0" y="1199" width="355" height="59"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="59" placeholder="YES" id="aag-4S-RmW"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="757" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="lZ1-Wl-zBh">
-                                                        <rect key="frame" x="0.0" y="1217" width="355" height="40"/>
+                                                        <rect key="frame" x="0.0" y="1268" width="355" height="40"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" placeholder="YES" id="aes-Po-x1C"/>
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete nutrition facts and the product category to get the Nutri-Score" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDi-6S-CG5">
-                                                        <rect key="frame" x="0.0" y="1267" width="355" height="38"/>
+                                                        <rect key="frame" x="0.0" y="1318" width="355" height="38"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -343,7 +343,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDR-CO-R4S">
-                                                        <rect key="frame" x="0.0" y="1315" width="355" height="30"/>
+                                                        <rect key="frame" x="0.0" y="1366" width="355" height="30"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <state key="normal" title="add nutriment &gt;"/>
@@ -352,7 +352,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJB-St-aGE">
-                                                        <rect key="frame" x="0.0" y="1355" width="355" height="30"/>
+                                                        <rect key="frame" x="0.0" y="1406" width="355" height="30"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <state key="normal" title="Save nutriments"/>
@@ -361,14 +361,14 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="saved at XXX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufa-14-PlP">
-                                                        <rect key="frame" x="0.0" y="1395" width="355" height="16"/>
+                                                        <rect key="frame" x="0.0" y="1446" width="355" height="16"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                         <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VpN-nl-ZOe">
-                                                        <rect key="frame" x="0.0" y="1421" width="355" height="144"/>
+                                                        <rect key="frame" x="0.0" y="1472" width="355" height="144"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jl-Ef-Ii0" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="70"/>
@@ -389,20 +389,20 @@
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thj-lP-51G">
-                                                        <rect key="frame" x="0.0" y="1575" width="355" height="16"/>
+                                                        <rect key="frame" x="0.0" y="1626" width="355" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="1rY-HW-wxu"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5N6-mR-h5y">
-                                                        <rect key="frame" x="0.0" y="1601" width="355" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="1652" width="355" height="20.5"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fIn-7J-yg2">
-                                                        <rect key="frame" x="0.0" y="1631.5" width="355" height="60"/>
+                                                        <rect key="frame" x="0.0" y="1682.5" width="355" height="60"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M0X-Xs-gMJ" customClass="NovaGroupView" customModule="OpenFoodFacts" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="175.5" height="60"/>
@@ -422,13 +422,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ingredients explainations about OCR (please input an image above blahblahblah)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3g-n7-3hq">
-                                                        <rect key="frame" x="0.0" y="1701.5" width="355" height="42.5"/>
+                                                        <rect key="frame" x="0.0" y="1752.5" width="355" height="42.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete the ingredients to get the Nova group on food processing" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Pu-ZIL">
-                                                        <rect key="frame" x="0.0" y="1754" width="355" height="38"/>
+                                                        <rect key="frame" x="0.0" y="1805" width="355" height="38"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -437,13 +437,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ocr read at YYY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHf-6C-3Uw">
-                                                        <rect key="frame" x="0.0" y="1802" width="355" height="16"/>
+                                                        <rect key="frame" x="0.0" y="1853" width="355" height="16"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                         <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a2Q-1A-yHa">
-                                                        <rect key="frame" x="0.0" y="1828" width="355" height="128"/>
+                                                        <rect key="frame" x="0.0" y="1879" width="355" height="128"/>
                                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="COT-4e-6H6"/>
@@ -454,7 +454,7 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c4K-nu-JBz">
-                                                        <rect key="frame" x="0.0" y="1966" width="355" height="30"/>
+                                                        <rect key="frame" x="0.0" y="2017" width="355" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pY-0H-yqD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
@@ -477,7 +477,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="saved at YYY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkq-ii-6Wh">
-                                                        <rect key="frame" x="0.0" y="2006" width="355" height="16"/>
+                                                        <rect key="frame" x="0.0" y="2057" width="355" height="16"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -577,7 +577,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="PictureTableViewController" id="aa7-Yb-Tnr" customClass="PictureTableViewController" customModule="OpenFoodFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dZI-hr-PVt">
-                        <rect key="frame" x="0.0" y="0.0" width="355" height="153"/>
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="204"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>

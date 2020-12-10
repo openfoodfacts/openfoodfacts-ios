@@ -539,6 +539,8 @@ class PersistenceManager: PersistenceManagerProtocol {
                     item.ingredientsImage = productImage
                 case .nutrition:
                     item.nutritionImage = productImage
+                case .packaging:
+                    item.packagingImage = productImage
                 default:
                     break
                 }

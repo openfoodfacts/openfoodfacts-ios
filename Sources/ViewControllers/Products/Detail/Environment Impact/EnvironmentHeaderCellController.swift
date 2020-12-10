@@ -106,7 +106,7 @@ class EnvironmentHeaderCellController: TakePictureViewController {
         guard let progress = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadFractionDouble] as? Double else { return }
         guard let imageTypeString = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
         guard ImageType(imageTypeString) == .packaging else { return }
-        if product.ingredientsImageUrl != nil {
+        if product.packagingImageUrl != nil {
             replacementImageIsUploading = true
             takePictureButtonView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
             setupViews()

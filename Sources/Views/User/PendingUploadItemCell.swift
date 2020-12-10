@@ -12,6 +12,7 @@ class PendingUploadItemCell: UITableViewCell {
     @IBOutlet weak var frontImage: UIImageView!
     @IBOutlet weak var ingredientsImage: UIImageView!
     @IBOutlet weak var nutritionImage: UIImageView!
+    @IBOutlet weak var packagingImage: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var brandLabel: UILabel!
     @IBOutlet weak var separatorLabel: UILabel!
@@ -44,5 +45,6 @@ class PendingUploadItemCell: UITableViewCell {
         frontImage.image = item.frontImage?.image
         ingredientsImage.image = item.ingredientsImage?.image
         nutritionImage.image = item.nutritionImage?.image
+        packagingImage.image = item.packagingImage?.image
     }
 }
