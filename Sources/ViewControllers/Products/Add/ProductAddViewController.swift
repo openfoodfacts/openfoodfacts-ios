@@ -538,7 +538,36 @@ class ProductAddViewController: TakePictureViewController {
                 if nutrimentName == "energy-kcal" {
                     nutrimentName = "nutrition.energy.kcal".localized
                 }
-
+                if nutrimentName == "energy-kj" {
+                    nutrimentName = "nutrition.energy.kj".localized
+                }
+                if nutrimentName == "fat" {
+                    nutrimentName = "nutrition.fat".localized
+                }
+                if nutrimentName == "saturated-fat" {
+                    nutrimentName = "nutrition.saturated-fat".localized
+                }
+                if nutrimentName == "carbohydrates" {
+                    nutrimentName = "nutrition.carbohydrates".localized
+                }
+                if nutrimentName == "sugars" {
+                    nutrimentName = "nutrition.sugars".localized
+                }
+                if nutrimentName == "fibers" {
+                    nutrimentName = "nutrition.fibers".localized
+                }
+                if nutrimentName == "proteins" {
+                    nutrimentName = "nutrition.proteins".localized
+                }
+                if nutrimentName == "salt" {
+                    nutrimentName = "nutrition.salt".localized
+                }
+                if nutrimentName == "sodium" {
+                    nutrimentName = "nutrition.sodium".localized
+                }
+                if nutrimentName == "alcohol" {
+                    nutrimentName = "nutrition.alcohol".localized
+                }
                 view.nutrimentCode = element
                 view.titleLabel.text = nutrimentName
                 view.inputTextField.placeholder = nutrimentName
