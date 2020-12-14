@@ -542,19 +542,19 @@ class ProductAddViewController: TakePictureViewController {
                     nutrimentName = "nutrition.energy.kj".localized
                 }
                 if nutrimentName == "fat" {
-                    nutrimentName = "nutrition.fat".localized
+                    nutrimentName = "nutrition.fats".localized
                 }
                 if nutrimentName == "saturated-fat" {
-                    nutrimentName = "nutrition.saturated-fat".localized
+                    nutrimentName = "nutrition.fats.saturated-fat".localized
                 }
                 if nutrimentName == "carbohydrates" {
-                    nutrimentName = "nutrition.carbohydrates".localized
+                    nutrimentName = "nutrition.carbohydrate".localized
                 }
                 if nutrimentName == "sugars" {
-                    nutrimentName = "nutrition.sugars".localized
+                    nutrimentName = "nutrition.carbohydrate.sugars".localized
                 }
                 if nutrimentName == "fibers" {
-                    nutrimentName = "nutrition.fibers".localized
+                    nutrimentName = "nutrition.fiber".localized
                 }
                 if nutrimentName == "proteins" {
                     nutrimentName = "nutrition.proteins".localized
