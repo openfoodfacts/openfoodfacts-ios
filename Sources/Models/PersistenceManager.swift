@@ -307,7 +307,14 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     func nutriment(forCode code: String) -> Nutriment? {
-        return getRealm().object(ofType: Nutriment.self, forPrimaryKey: code)
+        var newCode = code
+        // These are stopgaps, beacuse the json-code and the taxonomy-codes are different.
+        if code == "carbohydrates" {
+            newCode = "carbohydrate"
+        } else if code == "fiber" {
+            newCode = "dietary-fiber"
+        }
+        return getRealm().object(ofType: Nutriment.self, forPrimaryKey: "en:" + newCode)
     }
 
     var nutrimentsIsEmpty: Bool {
