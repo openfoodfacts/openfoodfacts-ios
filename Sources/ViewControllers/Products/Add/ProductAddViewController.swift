@@ -56,6 +56,12 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
     @IBOutlet weak var brandsField: UITextField!
+    @IBOutlet weak var brandsExampleLabel: UILabel! {
+        didSet {
+            brandsExampleLabel?.text = "product-add.label.brand-example".localized
+        }
+    }
+
     @IBOutlet weak var quantityTitleLabel: UILabel! {
         didSet {
             quantityTitleLabel?.text = "product-add.label.quantity".localized
@@ -69,10 +75,22 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var quantityField: UITextField!
     @IBOutlet weak var packagingTitleLabel: UILabel!
     @IBOutlet weak var packagingField: UITextField!
+    @IBOutlet weak var packagingExampleLabel: UILabel! {
+        didSet {
+            packagingExampleLabel?.text = "product-add.label.packaging-example".localized
+        }
+    }
+
     @IBOutlet weak var languageTitleLabel: UILabel!
     @IBOutlet weak var languageField: UITextField!
     @IBOutlet weak var labelsTitleLabel: UILabel!
     @IBOutlet weak var labelsField: UITextField!
+    @IBOutlet weak var labelsExampleLabel: UILabel! {
+        didSet {
+            labelsExampleLabel?.text = "product-add.label.labels-example".localized
+        }
+    }
+
     @IBOutlet weak var productTextSection: UIView!
     @IBOutlet weak var saveProductInfosButton: UIButton!
     @IBOutlet var productInformationsTextFields: [UITextField]!
