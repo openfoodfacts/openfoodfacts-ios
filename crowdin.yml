@@ -2,6 +2,7 @@ files:
 
   - source: /Sources/Localization/en.lproj/Localizable.strings
     translation: /Sources/Localization/%two_letters_code%.lproj/Localizable.strings
+    ignore: ["/Sources/Localization/ber.lproj","/Sources/Localization/me.lproj","/Sources/Localization/ry.lproj","/Sources/Localization/son.lproj","/Sources/Localization/tzl.lproj"],
     languages_mapping:
       two_letters_code:
         pt-BR: pt-BR
@@ -13,10 +14,3 @@ files:
         zh-CN: zh-Hans
         zh-TW: zh-Hant
         zh-HK: zh-HK
-    ignore: [       
-       "/Sources/Localization/ber.lproj",
-       "/Sources/Localization/me.lproj",
-       "/Sources/Localization/ry.lproj",
-       "/Sources/Localization/son.lproj",
-       "/Sources/Localization/tzl.lproj"
-       ],
