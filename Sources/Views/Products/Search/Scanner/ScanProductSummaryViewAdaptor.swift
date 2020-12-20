@@ -28,7 +28,8 @@ struct ScanProductSummaryViewAdaptorFactory {
                                              brands: getBrands(from: product),
                                              nutriScore: getNutriScore(from: product),
                                              novaGroup: getNovaGroup(from: product),
-                                             environmentalImage: getEcoscoreImage(from: product),
+                                             //environmentalImage: getEcoscoreImage(from: product),
+                                             environmentalImage: nil,
                                              delegate: delegate)
     }
 
@@ -39,7 +40,8 @@ struct ScanProductSummaryViewAdaptorFactory {
                                              brands: getBrands(from: product),
                                              nutriScore: getNutriScore(from: product),
                                              novaGroup: getNovaGroup(from: product),
-                                             environmentalImage: getEcoscoreImage(from: product),
+                                             environmentalImage: nil,
+            //environmentalImage: getEcoscoreImage(from: product),
                                              delegate: delegate)
     }
 }
