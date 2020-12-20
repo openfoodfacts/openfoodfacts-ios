@@ -19,3 +19,80 @@ files:
         zh-CN: zh-Hans
         zh-TW: zh-Hant
         zh-HK: zh-HK
+
+  - source: Sources/Localization/PhotoLibrary.strings
+    translation: /Sources/Localization/%two_letters_code%.lproj/PhotoLibrary.strings
+    ignore:
+          - "/Sources/Localization/ber.lproj"
+          - "/Sources/Localization/me.lproj"
+          - "/Sources/Localization/ry.lproj"
+          - "/Sources/Localization/son.lproj"
+          - "/Sources/Localization/tzl.lproj"
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+  - source: Sources/Localization/CameraUI.strings
+    translation: /Sources/Localization/%two_letters_code%.lproj/CameraUI.strings
+    ignore:
+          - "/Sources/Localization/ber.lproj"
+          - "/Sources/Localization/me.lproj"
+          - "/Sources/Localization/ry.lproj"
+          - "/Sources/Localization/son.lproj"
+          - "/Sources/Localization/tzl.lproj"
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+  - source: Sources/Localization/PhotoLibraryServices.strings
+    translation: /Sources/Localization/%two_letters_code%.lproj/PhotoLibraryServices.strings
+    ignore:
+          - "/Sources/Localization/ber.lproj"
+          - "/Sources/Localization/me.lproj"
+          - "/Sources/Localization/ry.lproj"
+          - "/Sources/Localization/son.lproj"
+          - "/Sources/Localization/tzl.lproj"
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
+  - source: Sources/Localization/PhotosUI.strings
+    translation: /Sources/Localization/%two_letters_code%.lproj/PhotosUI.strings
+    ignore:
+          - "/Sources/Localization/ber.lproj"
+          - "/Sources/Localization/me.lproj"
+          - "/Sources/Localization/ry.lproj"
+          - "/Sources/Localization/son.lproj"
+          - "/Sources/Localization/tzl.lproj"
+    languages_mapping:
+      two_letters_code:
+        pt-BR: pt-BR
+        pt-PT: pt-PT
+        nl-BE: nl-BE
+        nl: nl
+        sr-CS: sr_Latn
+        sr: sr_Cyrl
+        zh-CN: zh-Hans
+        zh-TW: zh-Hant
+        zh-HK: zh-HK
