@@ -378,7 +378,13 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         if let validStates = product.states,
             validStates.contains("en:nutrition-facts-completed") {
-            createNutritionTableWebViewRow(rows: &rows)
+            if let noNutritionData = product.noNutritionData,
+                noNutritionData != "on" {
+                createNutritionTableWebViewRow(rows: &rows)
+            } else {
+                createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+                createFormRow(with: &rows, item: "product-detail.nutrition-table.noNutritionData".localized, label: InfoRowKey.nutritionalTableHeader.localizedString, isCopiable: true)
+            }
             //createNutritionTableRows(rows: &rows)
         } else {
             createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
