@@ -91,6 +91,22 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
 
+    @IBOutlet weak var originsTitleLabel: UILabel! {
+        didSet {
+            originsTitleLabel?.text = "product-add.label.origins".localized
+        }
+    }
+    @IBOutlet weak var originsField: UITextField! {
+        didSet {
+            originsField?.placeholder = "product-add.field.origins-placeholder".localized
+        }
+    }
+    @IBOutlet weak var originsExampleLabel: UILabel! {
+           didSet {
+               originsExampleLabel?.text = "product-add.label.origins-example".localized
+           }
+       }
+
     @IBOutlet weak var productTextSection: UIView!
     @IBOutlet weak var saveProductInfosButton: UIButton!
     @IBOutlet var productInformationsTextFields: [UITextField]!
@@ -321,6 +337,8 @@ class ProductAddViewController: TakePictureViewController {
             let array = validLabelsText.split(separator: ",")
             product.labels = array.compactMap {String($0)}
         }
+
+        product.origins = originsField.text
 
     }
 
@@ -610,6 +628,7 @@ class ProductAddViewController: TakePictureViewController {
         packagingField?.delegate = self
         languageField?.delegate = self
         labelsField?.delegate = self
+        originsField?.delegate = self
 
         portionSizeInputView?.displayedUnit = .none
         portionSizeInputView?.inputTextField.delegate = self
@@ -681,7 +700,7 @@ class ProductAddViewController: TakePictureViewController {
         quantityField?.text = product.quantity
         packagingField?.text = product.packaging?.compactMap {$0}.joined(separator: ", ")
         labelsField?.text = product.labels?.compactMap {$0}.joined(separator: ", ")
-
+        originsField?.text = product.origins
         ingredientsTextField.text = product.ingredientsList
         ingredientsOCRExplanationLabel.isHidden = product.ingredientsList != nil && !product.ingredientsList!.isEmpty
         noNutritionDataSwitch.isOn = product.noNutritionData == "on"
@@ -752,6 +771,10 @@ class ProductAddViewController: TakePictureViewController {
 
         if let labels = pendingUploadItem.labels {
             labelsField.text = labels
+        }
+
+        if let origins = pendingUploadItem.origins {
+            labelsField.text = origins
         }
 
         if let ingredientsList = pendingUploadItem.ingredientsList {
