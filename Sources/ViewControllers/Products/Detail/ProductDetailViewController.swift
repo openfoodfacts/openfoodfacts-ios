@@ -205,7 +205,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.genericName, label: InfoRowKey.genericName.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
-        createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
         createFormRow(with: &rows, item: product.categoriesTags?.map({ (categoryTag: String) -> NSAttributedString in
             if let category = dataManager.category(forTag: categoryTag) {
@@ -404,6 +403,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         rows.append(FormRow(value: product as Any, cellType: HostedViewCell.self))
 
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
+        
+        createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
         // Info rows
         if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
