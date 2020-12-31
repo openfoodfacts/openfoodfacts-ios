@@ -32,10 +32,10 @@ class EnvironmentHeaderCellController: TakePictureViewController {
 
     @IBOutlet weak var ecoscoreImageView: EcoscoreImageView! {
         didSet {
-            ecoscoreImageView.isHidden = true
+            ecoscoreImageView.isHidden = false
         }
     }
-    
+
     @IBOutlet weak var ecoscoreExplanationLabel: UILabel! {
         didSet {
             ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.incite".localized
@@ -155,14 +155,14 @@ class EnvironmentHeaderCellController: TakePictureViewController {
                 callToActionView.addGestureRecognizer( UITapGestureRecognizer( target: self, action: #selector(didTapTakePictureButton(_:))))
             }
         }
-        /*
+
         if let ecoscoreValue = product.ecoscore,
             let ecoscore = EcoscoreImageView.Ecoscore(rawValue: "\(ecoscoreValue)") {
             setEcoscore(ecoscore: ecoscore)
         } else {
             setEcoscore(ecoscore: .unknown)
         }
- */
+
     }
 
     private func setEcoscore(ecoscore: EcoscoreImageView.Ecoscore?) {

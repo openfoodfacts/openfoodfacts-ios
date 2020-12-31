@@ -332,7 +332,7 @@ struct OFFJson {
         return [
             OFFJson.BrandsKey,
             OFFJson.CodeKey,
-            //OFFJson.EcoscoreAlphaKey,
+            OFFJson.EcoscoreAlphaKey,
             OFFJson.EcoscoreGradeKey,
             OFFJson.EnvironmentImpactLevelTagsKey,
             OFFJson.ImageFrontUrlKey,
@@ -365,7 +365,7 @@ struct OFFJson {
             // OFFJson.CreatedTKey,
             // OFFJson.CreatorKey,
             // OFFJson.CustomerServiceKey,
-            //OFFJson.EcoscoreAlphaKey,
+            OFFJson.EcoscoreAlphaKey,
             OFFJson.EcoscoreGradeKey,
             // OFFJson.EditorsTagsKey,
             OFFJson.EmbCodesTagsKey,

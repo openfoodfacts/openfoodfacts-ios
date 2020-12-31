@@ -28,8 +28,7 @@ struct ScanProductSummaryViewAdaptorFactory {
                                              brands: getBrands(from: product),
                                              nutriScore: getNutriScore(from: product),
                                              novaGroup: getNovaGroup(from: product),
-                                             //environmentalImage: getEcoscoreImage(from: product),
-                                             environmentalImage: nil,
+                                             environmentalImage: getEcoscoreImage(from: product),
                                              delegate: delegate)
     }
 
@@ -40,8 +39,7 @@ struct ScanProductSummaryViewAdaptorFactory {
                                              brands: getBrands(from: product),
                                              nutriScore: getNutriScore(from: product),
                                              novaGroup: getNovaGroup(from: product),
-                                             environmentalImage: nil,
-            //environmentalImage: getEcoscoreImage(from: product),
+                                             environmentalImage: getEcoscoreImage(from: product),
                                              delegate: delegate)
     }
 }
@@ -98,18 +96,7 @@ private func getEcoscoreImage(from product: Any) -> UIImage? {
     imageView.ecoScore = EcoscoreImageView.Ecoscore(rawValue: ecoscore) ?? .unknown
     return imageView.image
 }
-/*
-private func getEcoscoreImage(from product: RealmOfflineProduct) -> UIImage? {
-    //guard let co2Impact = product.environmentImpactLevelTags?.first else {
-    guard let ecoscore = product.ecoscore else {
-        return nil
-    }
 
-    let imageView = EcoscoreImageView(frame: CGRect(origin: .zero, size: CGSize(width: 118, height: 64)))
-    imageView.ecoScore = EcoscoreImageView.Ecoscore(rawValue: ecoscore) ?? .unknown
-    return imageView.image
-}
-*/
 // MARK: - OfflineProduct
 private func getBrands(from product: RealmOfflineProduct) -> String? {
     guard let brands = product.brands,
