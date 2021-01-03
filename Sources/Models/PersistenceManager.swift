@@ -139,6 +139,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 item.imageUrl = product.imageUrl
                 item.nutriscore = product.nutriscore
                 item.novaGroup.value = product.novaGroup
+                item.ecoscore = product.ecoscore
                 item.timestamp = Date()
 
                 if let brands = product.brands, !brands.isEmpty {
