@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="136"/>
+                <rect key="frame" x="0.0" y="0.0" width="293" height="136"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-add-button" translatesAutoresizingMaskIntoConstraints="NO" id="dDx-EI-TGK">
@@ -23,68 +23,76 @@
                             <constraint firstAttribute="width" constant="60" id="Uyv-ci-yLE"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" verticalCompressionResistancePriority="752" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21I-9E-8yS">
-                        <rect key="frame" x="83.999999999999986" y="4" width="208.66666666666663" height="80"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" verticalCompressionResistancePriority="752" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21I-9E-8yS">
+                        <rect key="frame" x="84" y="4" width="209" height="20.333333333333332"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZB2-kz-iXs">
-                        <rect key="frame" x="84" y="85.666666666666671" width="40.666666666666657" height="18"/>
+                        <rect key="frame" x="84" y="26.333333333333329" width="40.666666666666657" height="18"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWF-hp-Sdp">
-                        <rect key="frame" x="84" y="110" width="58.333333333333343" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWF-hp-Sdp">
+                        <rect key="frame" x="132.66666666666663" y="26.333333333333329" width="160.33333333333337" height="18"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleAspectFit" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="Ydv-QR-r0a" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
+                        <rect key="frame" x="79.333333333333314" y="86" width="92.666666666666686" height="50"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="KQw-fh-uzj"/>
+                            <constraint firstAttribute="width" secondItem="Ydv-QR-r0a" secondAttribute="height" multiplier="389:210" id="u1u-J5-8RO"/>
+                        </constraints>
+                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nova-group-1" translatesAutoresizingMaskIntoConstraints="NO" id="Guz-4U-Jvf" customClass="NovaGroupView" customModule="OpenFoodFacts" customModuleProvider="target">
-                        <rect key="frame" x="275.33333333333331" y="91.333333333333329" width="17.333333333333314" height="29.333333333333329"/>
+                        <rect key="frame" x="180" y="86" width="29.666666666666657" height="50"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Guz-4U-Jvf" secondAttribute="height" multiplier="131:220" id="FDp-Bc-bWc"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleAspectFit" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="Ydv-QR-r0a" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
-                        <rect key="frame" x="186" y="84" width="81.333333333333314" height="44"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aza-bW-pTX" customClass="EcoscoreImageView" customModule="OpenFoodFacts" customModuleProvider="target">
+                        <rect key="frame" x="217.66666666666666" y="93" width="75.333333333333343" height="36"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="44" id="KQw-fh-uzj"/>
-                            <constraint firstAttribute="width" secondItem="Ydv-QR-r0a" secondAttribute="height" multiplier="389:210" id="u1u-J5-8RO"/>
+                            <constraint firstAttribute="width" secondItem="aza-bW-pTX" secondAttribute="height" multiplier="274:130" id="OWs-c5-opt"/>
                         </constraints>
-                    </view>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
-                    <constraint firstItem="Ydv-QR-r0a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZB2-kz-iXs" secondAttribute="trailing" constant="8" id="6OI-K9-fmT"/>
+                    <constraint firstItem="Guz-4U-Jvf" firstAttribute="height" secondItem="aza-bW-pTX" secondAttribute="height" multiplier="1.4" id="4LG-gi-ZaT"/>
                     <constraint firstAttribute="trailing" secondItem="21I-9E-8yS" secondAttribute="trailing" id="7un-i3-tyA"/>
-                    <constraint firstItem="Guz-4U-Jvf" firstAttribute="height" secondItem="Ydv-QR-r0a" secondAttribute="height" multiplier="0.66" id="8Wx-pR-7GE"/>
+                    <constraint firstItem="Guz-4U-Jvf" firstAttribute="height" secondItem="Ydv-QR-r0a" secondAttribute="height" id="8Wx-pR-7GE"/>
+                    <constraint firstItem="ZB2-kz-iXs" firstAttribute="centerY" secondItem="fWF-hp-Sdp" secondAttribute="centerY" id="9yl-24-8UP"/>
                     <constraint firstAttribute="bottom" secondItem="dDx-EI-TGK" secondAttribute="bottom" constant="1.6666666666666572" id="Cam-VF-xHe"/>
+                    <constraint firstAttribute="bottom" secondItem="Ydv-QR-r0a" secondAttribute="bottom" id="DZH-eT-NKA"/>
                     <constraint firstItem="dDx-EI-TGK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="J68-mJ-CLO"/>
-                    <constraint firstAttribute="trailing" secondItem="Guz-4U-Jvf" secondAttribute="trailing" id="JK7-3z-J2T"/>
-                    <constraint firstItem="Ydv-QR-r0a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fWF-hp-Sdp" secondAttribute="trailing" constant="8" id="LGR-Hb-fif"/>
+                    <constraint firstItem="Guz-4U-Jvf" firstAttribute="trailing" secondItem="aza-bW-pTX" secondAttribute="leading" constant="-8" id="P4y-Iu-UON"/>
                     <constraint firstItem="21I-9E-8yS" firstAttribute="top" secondItem="dDx-EI-TGK" secondAttribute="top" id="T9V-Lr-78A"/>
-                    <constraint firstAttribute="bottom" secondItem="fWF-hp-Sdp" secondAttribute="bottom" constant="8" id="UCx-Ep-TcZ"/>
+                    <constraint firstItem="fWF-hp-Sdp" firstAttribute="leading" secondItem="ZB2-kz-iXs" secondAttribute="trailing" constant="7.9999999999999716" id="Upq-Lr-M5I"/>
+                    <constraint firstAttribute="trailing" secondItem="fWF-hp-Sdp" secondAttribute="trailing" id="V6o-16-Zw6"/>
                     <constraint firstItem="dDx-EI-TGK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Vmq-r9-Ebz"/>
-                    <constraint firstItem="fWF-hp-Sdp" firstAttribute="leading" secondItem="ZB2-kz-iXs" secondAttribute="leading" id="WHJ-OM-AeE"/>
                     <constraint firstItem="Guz-4U-Jvf" firstAttribute="centerY" secondItem="Ydv-QR-r0a" secondAttribute="centerY" id="Z9Q-xZ-X3C"/>
-                    <constraint firstItem="fWF-hp-Sdp" firstAttribute="top" secondItem="ZB2-kz-iXs" secondAttribute="bottom" constant="6.3333333333333428" id="a8I-2Z-zsg"/>
                     <constraint firstItem="Guz-4U-Jvf" firstAttribute="leading" secondItem="Ydv-QR-r0a" secondAttribute="trailing" constant="8" id="cn3-cj-t9r"/>
-                    <constraint firstItem="Ydv-QR-r0a" firstAttribute="bottom" secondItem="fWF-hp-Sdp" secondAttribute="bottom" id="gBv-1A-kLU"/>
                     <constraint firstItem="21I-9E-8yS" firstAttribute="leading" secondItem="dDx-EI-TGK" secondAttribute="trailing" constant="8" id="gPs-6z-gNn"/>
-                    <constraint firstItem="ZB2-kz-iXs" firstAttribute="top" secondItem="21I-9E-8yS" secondAttribute="bottom" constant="1.6666666666666679" id="qGc-qQ-VZy"/>
+                    <constraint firstAttribute="trailing" secondItem="aza-bW-pTX" secondAttribute="trailing" id="mD3-0d-DPc"/>
+                    <constraint firstItem="Guz-4U-Jvf" firstAttribute="centerY" secondItem="aza-bW-pTX" secondAttribute="centerY" id="mg6-Y9-Mdn"/>
+                    <constraint firstItem="ZB2-kz-iXs" firstAttribute="top" secondItem="21I-9E-8yS" secondAttribute="bottom" constant="2" id="qGc-qQ-VZy"/>
                     <constraint firstItem="ZB2-kz-iXs" firstAttribute="leading" secondItem="21I-9E-8yS" secondAttribute="leading" id="t8V-Me-Ozi"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <connections>
                 <outlet property="brandLabel" destination="ZB2-kz-iXs" id="nBr-gY-YgB"/>
+                <outlet property="ecoScoreView" destination="aza-bW-pTX" id="WXy-Et-Fmc"/>
                 <outlet property="name" destination="21I-9E-8yS" id="536-t6-Lm0"/>
                 <outlet property="novaGroupView" destination="Guz-4U-Jvf" id="VAI-ll-jZ4"/>
                 <outlet property="nutriscoreView" destination="Ydv-QR-r0a" id="Bdc-7O-SwJ"/>
