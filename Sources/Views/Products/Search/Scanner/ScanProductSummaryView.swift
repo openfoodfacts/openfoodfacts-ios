@@ -103,9 +103,8 @@ final class ScanProductSummaryView: UIView {
     private func setNovaGroup(novaGroup: NovaGroupView.NovaGroup?) {
         if let novaGroup = novaGroup {
             novaGroupView.novaGroup = novaGroup
-            novaGroupView.isHidden = false
         } else {
-            novaGroupView.isHidden = true
+            novaGroupView.novaGroup = .unknown
         }
     }
 

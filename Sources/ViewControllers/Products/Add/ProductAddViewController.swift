@@ -501,10 +501,9 @@ class ProductAddViewController: TakePictureViewController {
                     if let novaGroupString = distantProduct.novaGroup,
                         let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
                         self?.novaGroupView.novaGroup = novaGroup
-                        self?.novaGroupStackView.isHidden = false
                         self?.ingredientsNovaExplanationLabel.isHidden = true
                     } else {
-                        self?.novaGroupStackView.isHidden = true
+                        self?.novaGroupView.novaGroup = .unknown
                         self?.ingredientsNovaExplanationLabel.isHidden = false
                     }
                 }

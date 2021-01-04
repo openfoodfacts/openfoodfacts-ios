@@ -44,7 +44,7 @@ class ProductTableViewCell: UITableViewCell {
             let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
             novaGroupView.novaGroup = novaGroup
         } else {
-            novaGroupView.isHidden = true
+            novaGroupView.novaGroup = .unknown
         }
 
         if let ecoscoreValue = product.ecoscore,
@@ -90,10 +90,9 @@ class ProductTableViewCell: UITableViewCell {
 
         if let novaGroupValue = historyItem.novaGroup.value,
             let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
-            novaGroupView.isHidden = false
             novaGroupView.novaGroup = novaGroup
         } else {
-            novaGroupView.isHidden = true
+            novaGroupView.novaGroup = .unknown
         }
 
         if let ecoscore = historyItem.ecoscore,
