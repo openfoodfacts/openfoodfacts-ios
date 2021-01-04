@@ -44,7 +44,7 @@ class ProductTableViewCell: UITableViewCell {
             let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
             novaGroupView.novaGroup = novaGroup
         } else {
-            novaGroupView.isHidden = true
+            novaGroupView.novaGroup = .unknown
         }
 
         if let ecoscoreValue = product.ecoscore,
@@ -85,15 +85,14 @@ class ProductTableViewCell: UITableViewCell {
         if let nutriscoreValue = historyItem.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue) {
             nutriscoreView.currentScore = score
         } else {
-            nutriscoreView.isHidden = true
+            nutriscoreView.currentScore = .unknown
         }
 
         if let novaGroupValue = historyItem.novaGroup.value,
             let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
-            novaGroupView.isHidden = false
             novaGroupView.novaGroup = novaGroup
         } else {
-            novaGroupView.isHidden = true
+            novaGroupView.novaGroup = .unknown
         }
 
         if let ecoscore = historyItem.ecoscore,
@@ -115,11 +114,10 @@ class ProductTableViewCell: UITableViewCell {
     }
 
     private func setEcoscore(ecoscore: EcoscoreImageView.Ecoscore?) {
-            if let validEcoscore = ecoscore {
-                ecoScoreView?.ecoScore = validEcoscore
-                ecoScoreView?.isHidden = false
+        if let validEcoscore = ecoscore {
+            ecoScoreView?.ecoScore = validEcoscore
         } else {
-            ecoScoreView?.isHidden = true
+            ecoScoreView?.ecoScore = .unknown
         }
     }
 

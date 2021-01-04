@@ -94,18 +94,16 @@ final class ScanProductSummaryView: UIView {
     private func setNutriScore(nutriscore: NutriScoreView.Score?) {
         if let score = nutriscore {
             nutriScoreView.currentScore = score
-            nutriScoreView.isHidden = false
         } else {
-            nutriScoreView.isHidden = true
+            nutriScoreView.currentScore = .unknown
         }
     }
 
     private func setNovaGroup(novaGroup: NovaGroupView.NovaGroup?) {
         if let novaGroup = novaGroup {
             novaGroupView.novaGroup = novaGroup
-            novaGroupView.isHidden = false
         } else {
-            novaGroupView.isHidden = true
+            novaGroupView.novaGroup = .unknown
         }
     }
 
