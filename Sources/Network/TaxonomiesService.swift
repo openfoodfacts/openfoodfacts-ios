@@ -382,7 +382,7 @@ class TaxonomiesService: TaxonomiesApi {
     // swiftlint:disable identifier_name
 
     /// increment last number each time you want to force a refresh. Useful if you add a new refresh method or a new field
-    static fileprivate let USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD = "USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD__15"
+    static fileprivate let USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD = "USER_DEFAULT_LAST_TAXONOMIES_DOWNLOAD__16"
     static fileprivate let LAST_DOWNLOAD_DELAY: Double = 60 * 60 * 24 * 31 // 1 month
 
     // swiftlint:enable identifier_name
