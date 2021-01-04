@@ -14,7 +14,7 @@
 "generic.search" = "Поиск";
 "generic.cancel" = "Отмена";
 "generic.save" = "Сохранить";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Отмена";
 "generic.ok" = "Ок";
 "generic.close" = "Закрыть";
 
@@ -97,11 +97,11 @@
 "product-add.title" = "Новый продукт";
 "product-add.title-edit" = "Редактировать продукт";
 "product-add.titles.barcode" = "Штрих-код";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
+"product-add.titles.top-explainations" = "Отлично! Этого продукта еще нет в Open Food Facts. Можете ли вы сделать несколько снимков продукта, списка ингредиентов и пищевой ценности, чтобы добавить их в Open Food Facts? \n\nЗаранее благодарим.";
 "product-add.titles.license-explaination" = "Примечание: отправленные фото публикуются под свободной лицензией Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.titles.product-info" = "Информация о продукте";
+"product-add.label.brand-example" = "Примеры: Coca-Cola, Nestle, и т.д.…";
 "product-add.label.product-name" = "Название";
 "product-add.label.category" = "Категория";
 "product-add.label.quantity" = "Количество";
@@ -110,8 +110,11 @@
 "product-add.details.category" = "Необходим для вычисления Nutri-Score";
 "product-add.label.quantity-example" = "25 г, 10 унций, 5 мл…";
 "product-add.label.language" = "Языки";
-"product-add.label.labels" = "Labels";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.labels" = "Маркировки";
+"product-add.label.labels-example" = "Примеры: Без глютена и т.д.";
+"product-add.label.origins" = "Происхождение ингредиентов";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Пример: Масло от Франции и т.д.";
 
 "product-add.description.nutritive" = "Для оценки питательности продукта (Nutri-Score), укажите его категорию и данные по пищевой и энергетической ценности";
 "product-add.titles.nutritive" = "Пищевая ценность";
@@ -173,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Переработанные кулинарные ингредиенты";
 "product-detail.ingredients.nova.3" = "Переработанные пищевые продукты";
 "product-detail.ingredients.nova.4" = "Ультра-обработанные продукты питания и напитки";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Добавить ингредиенты и/или категории для расчета NOVA.";
 "product-detail.ingredients.ingredients-list" = "Список ингредиентов";
 "product-detail.ingredients.allergens-list" = "Вещества или продукты, вызывающие аллергию или непереносимость";
@@ -209,8 +213,8 @@
 "product-detail.environment.ecoscore.c" = "Eco-score C";
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.unknown" = "Эко-оценка неизвестна";
+"product-detail.environment.ecoscore.incite" = "Добавьте информацию об упаковке, чтобы мы могли рассчитать эко-оценку";
 
 // Nutrition levels
 "nutrition-level.title" = "Пищевая ценность на 100 г/100 мл";
@@ -314,7 +318,7 @@
 
 // Call to action
 "call-to-action.summary" = "Сделайте общее фото";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "Сфотографируйте инструкции по переработке";
 "call-to-action.ingredients" = "Сделайте фото состава";
 "call-to-action.nutrition" = "Сделайте фото энерг. ценности";
 "call-to-action.edit" = "Complete the product to get it scored";
@@ -328,7 +332,7 @@
 "product.images.take-picture.front" = "Фото лицевой стороны";
 "product.images.take-picture.ingredients" = "Фото ингредиентов";
 "product.images.take-picture.nutrition" = "Фото таблицы пищевой и энергетической ценности";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.packaging" = "Фотография информации о переработке";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -346,7 +350,7 @@
 "settings.user-profile" = "Ваш аккаунт участника";
 "settings.credits.title" = "Благодарности";
 "settings.scan-on-launch.title" = "Запуск сканирования при запуске приложения";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Откройте новое";
 "settings.contribute.how-to-contribute" = "Как принять участие";
 "settings.contribute.support-open-food-facts" = "Поддержать Open Food Facts Support";
 "settings.contribute.translate-open-food-facts" = "Перевести Open Food Facts";
@@ -402,12 +406,12 @@
 // Camera localization API
 "API_CANCEL_TITLE" = "Отмена";
 "USE_PHOTO" = "Использовать фото";
-"PHOTO" = "PHOTO";
-"AEAF_LOCK_TEXT" = "AE/AF LOCK";
-"HDR_AUTO" = "Auto";
-"HDR_ON" = "On";
-"HDR_OFF" = "Off";
-"TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
-"RETAKE" = "Retake";
+"PHOTO" = "ФОТО";
+"AEAF_LOCK_TEXT" = "БЛОКИРОВКА AE/AF";
+"HDR_AUTO" = "Авто";
+"HDR_ON" = "Вкл.";
+"HDR_OFF" = "Выкл.";
+"TIMER_OFF_TEXT" = "Выкл.";
+"PHOTOS" = "Фотографии";
+"CANCEL" = "Отмена";
+"RETAKE" = "Переснять";

@@ -14,7 +14,7 @@
 "generic.search" = "Søg";
 "generic.cancel" = "Annullér";
 "generic.save" = "Gem";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Annullér";
 "generic.ok" = "OK";
 "generic.close" = "Luk";
 
@@ -101,7 +101,7 @@
 "product-add.titles.license-explaination" = "Bemærk: Fotoene, du indsender, offentliggjøres under den gratis licens Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Produktoplysninger";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Eks.: Coca-Cola, Nestle, mv.…";
 "product-add.label.product-name" = "Navn";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Kvantitet";
@@ -110,8 +110,11 @@
 "product-add.details.category" = "Nødvendig til beregning af Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Sprog";
-"product-add.label.labels" = "Labels";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.labels" = "Etiketter";
+"product-add.label.labels-example" = "Eks.: Glutenfri mv.";
+"product-add.label.origins" = "Ingrediensoprindelse";
+"product-add.field.origins-placeholder" = "Kræves for beregning af Øko-score";
+"product-add.label.origins-example" = "Eks.: Smør fra Danmark mv.";
 
 "product-add.description.nutritive" = "Færdiggør ernæringsfakta og produktkategorien for at få Nutri-Score";
 "product-add.titles.nutritive" = "Ernæringsfakta";
@@ -173,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Forarbejdede kulinariske ingredienser";
 "product-detail.ingredients.nova.3" = "Forarbejdede fødevarer";
 "product-detail.ingredients.nova.4" = "Ultraforarbejdede føde- og drikkevarer";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Tilføj ingredienser og/eller kategorier til beregning af NOVA.";
 "product-detail.ingredients.ingredients-list" = "Ingrediensoversigt";
 "product-detail.ingredients.allergens-list" = "Stoffer, eller produkter, som forårsager allergi eller overfølsomhed";
@@ -196,7 +200,7 @@
 "product-detail.nutrition-table.nutritional-table-header" = "Ernæringsfakta";
 "product-detail.nutrition-table.for-100g" = "Pr. 100 g";
 "product-detail.nutrition-table.for-serving" = "Pr. portion";
-"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.100g" = "100 g";
 "product-detail.nutrition-table.serving" = "servering";
 "product-detail.nutrition-table.missing" = "Ingen næringsstoffer opsat.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Advarsel: Mængden af ​​fiber er ikke specificeret. Deres mulige positive bidrag til kvaliteten kunne ikke tages i betragtning.";
@@ -204,13 +208,13 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Advarsel: Mængden af ​​frugt, grøntsager og nødder er ikke specificeret på etiketten, men er estimeret baseret på ingredienslisten: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Advarsel: Mængden af ​​frugt, grøntsager og nødder er ikke specificeret på etiketten, men er estimeret baseret på kategorien (%s) for produktet: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.a" = "Øko-score A";
+"product-detail.environment.ecoscore.b" = "Øko-score B";
+"product-detail.environment.ecoscore.c" = "Øko-score C";
+"product-detail.environment.ecoscore.d" = "Øko-score D";
+"product-detail.environment.ecoscore.e" = "Øko-score E";
+"product-detail.environment.ecoscore.unknown" = "Øko-score ukendt";
+"product-detail.environment.ecoscore.incite" = "Tilføj emballageoplysninger, så Øko-scoren kan beregnes";
 
 // Nutrition levels
 "nutrition-level.title" = "Næringsstofniveauer pr. 100 g /100 ml";
@@ -273,18 +277,18 @@
 "nutrition.sodium" = "Natrium";
 "nutrition.alcohol" = "Alkohol";
 "nutrition.vitamins" = "Vitaminer";
-"nutrition.vitamins.a" = "Vitamin A";
+"nutrition.vitamins.a" = "A-vitamin";
 "nutrition.vitamins.beta-carotene" = "Betakaroten";
 "nutrition.vitamins.d" = "D-vitamin";
 "nutrition.vitamins.e" = "E-vitamin";
-"nutrition.vitamins.k" = "Vitamin K";
+"nutrition.vitamins.k" = "K-vitamin";
 "nutrition.vitamins.c" = "C-vitamin";
-"nutrition.vitamins.b1" = "Vitamin B1";
-"nutrition.vitamins.b2" = "Vitamin B2";
+"nutrition.vitamins.b1" = "B1-vitamin";
+"nutrition.vitamins.b2" = "B2-vitamin";
 "nutrition.vitamins.pp" = "Vitamin PP";
-"nutrition.vitamins.b6" = "Vitamin B6";
-"nutrition.vitamins.b9" = "Vitamin B9";
-"nutrition.vitamins.b12" = "Vitamin B12";
+"nutrition.vitamins.b6" = "B6-vitamin";
+"nutrition.vitamins.b9" = "B9-vitamin";
+"nutrition.vitamins.b12" = "B12-vitamin";
 "nutrition.vitamins.biotin" = "Biotin";
 "nutrition.vitamins.pantothenic-acid" = "Pantothensyre";
 "nutrition.minerals" = "Mineraler";
@@ -292,7 +296,7 @@
 "nutrition.minerals.bicarbonate" = "Bikarbonat";
 "nutrition.minerals.potassium" = "Kalium";
 "nutrition.minerals.chloride" = "Chlorid";
-"nutrition.minerals.calcium" = "Calcium";
+"nutrition.minerals.calcium" = "Kalcium";
 "nutrition.minerals.phosphorus" = "Fosfor";
 "nutrition.minerals.iron" = "Jern";
 "nutrition.minerals.magnesium" = "Magnesium";
@@ -339,14 +343,14 @@
 "settings.allergies.title" = "Allergenadvarsler";
 "settings.allergies.description" = "Føj allergener til denne liste for at blive notificeret, når du skanner et produkt med dette indehold. \nBemærk, at oplysninger om dine allergier aldrig vil blive tilsendt Open Food Facts-serveren. Vær også opmærksom på, at dataene ikke er 100% aålidelige, og at detektionen måske ikke er 100% korrekt. Husk derfor selv at tjekke det!";
 "settings.allergies.add-button" = "Tilføj allergener";
-"settings.sections.information" = "Information";
+"settings.sections.information" = "Oplysninger";
 "settings.sections.discover" = "Opdag";
 "settings.sections.contribute" = "Bidrag";
 "settings.sections.about" = "Om";
 "settings.user-profile" = "Din bidragsyderkonto";
 "settings.credits.title" = "Krediteringer";
 "settings.scan-on-launch.title" = "Vis Scan På App Launch";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Opdag";
 "settings.contribute.how-to-contribute" = "Hvordan Man Bidrager";
 "settings.contribute.support-open-food-facts" = "Støt Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Oversæt Open Food Facts";
@@ -408,6 +412,6 @@
 "HDR_ON" = "Til";
 "HDR_OFF" = "Fra";
 "TIMER_OFF_TEXT" = "Fra";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
-"RETAKE" = "Retake";
+"PHOTOS" = "Fotos";
+"CANCEL" = "Annullér";
+"RETAKE" = "Tag igen";
