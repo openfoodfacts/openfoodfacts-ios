@@ -100,14 +100,21 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "產品資料";
+"product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "名稱";
 "product-add.label.category" = "分類";
 "product-add.label.quantity" = "分量";
 "product-add.label.packaging" = "包装";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25克、10安士、5毫升……";
 "product-add.label.language" = "語言";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "營養標籤";
@@ -200,6 +207,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "警告：包裝沒有註明水果、蔬菜和堅果的數量，顯示的數量基於成分估算：%d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "警告：包裝沒有註明水果、蔬菜和堅果的數量，顯示的數量基於分類%s估算：%d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "低量";
@@ -207,6 +222,7 @@
 "nutrition-level.high" = "大量";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "成分分析";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "拍攝產品正面";
+"call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "Take a photo of the ingredients";
 "call-to-action.nutrition" = "Take a photo of the nutrition facts";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,8 +331,12 @@
 "product.images.take-picture.front" = "產品正面照片";
 "product.images.take-picture.ingredients" = "成分照片";
 "product.images.take-picture.nutrition" = "營養素表照片";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "掃描器";
+"history.tab-bar.item" = "查看紀錄";
 "settings.tab-bar.item" = "設定";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "過敏原警告";
@@ -327,7 +349,7 @@
 "settings.user-profile" = "您的貢獻者賬號";
 "settings.credits.title" = "鳴謝";
 "settings.scan-on-launch.title" = "應用程式啟動時顯示掃描器";
-"settings.sections.discover" = "探索";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "如何貢獻";
 "settings.contribute.support-open-food-facts" = "支持Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "翻譯Open Food Facts";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "幾個月前";
 "history.section-titles.longTime" = "很久以前";
 "history.first-scan.button.title" = "掃描您的第一個產品";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "編輯";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Cancel";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Cancel";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "編輯";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

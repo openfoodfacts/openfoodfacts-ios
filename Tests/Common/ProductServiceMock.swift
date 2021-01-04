@@ -103,10 +103,8 @@ class ProductServiceMock: ProductApi {
     }
 
     func getLatestRobotoffQuestions(forBarcode barcode: String, onSuccess: @escaping ([RobotoffQuestion]) -> Void, onError: @escaping (Error) -> Void) {
-        // TODO: implement
     }
 
     func postRobotoffAnswer(forInsightId insightId: String, withAnnotation: Int, onDone: @escaping () -> Void) {
-        // TODO: implement
     }
 }

@@ -100,14 +100,21 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Product information";
+"product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Pangalan";
 "product-add.label.category" = "Kategorya";
 "product-add.label.quantity" = "Kandidad";
 "product-add.label.packaging" = "Balot";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Languages";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Nutrition Facts";
@@ -200,6 +207,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Babala: ang halaga ng prutas, gulay at mani ay hindi tinukoy sa tanda, ito ay tinatantya mula sa listahan ng mga sangkap: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Babala: Ang halaga ng mga prutas, gulay at mani ay hindi tinukoy sa tanda, ito ay tinatantya mula sa kategorya (%s) ng produkto: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "sa kakaunti";
@@ -207,6 +222,7 @@
 "nutrition-level.high" = "sa marami";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Pagsusuri ng sangkap";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "Take a photo of the front";
+"call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "Take a photo of the ingredients";
 "call-to-action.nutrition" = "Take a photo of the nutrition facts";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,8 +331,12 @@
 "product.images.take-picture.front" = "Photo of the front";
 "product.images.take-picture.ingredients" = "Photo of the ingredients";
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Scanner";
+"history.tab-bar.item" = "Kasaysayan";
 "settings.tab-bar.item" = "Mga Setting";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Allergens alerts";
@@ -327,7 +349,7 @@
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Mga kredito";
 "settings.scan-on-launch.title" = "Ipakita ang mga Scan sa pabukas ng App";
-"settings.sections.discover" = "Tuklasin";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Paano mag-ambag";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
 "history.first-scan.button.title" = "Scan First Product";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edit";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Cancel";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Cancel";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edit";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

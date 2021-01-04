@@ -14,9 +14,9 @@
 "generic.search" = "Zoeken";
 "generic.cancel" = "Annuleer";
 "generic.save" = "Bewaar";
-"generic.cancel" = "Annuleer";
+"generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
-"generic.close" = "Close";
+"generic.close" = "Sluit";
 
 // Product Search
 
@@ -100,14 +100,21 @@
 "product-add.titles.top-explainations" = "Goed gedaan ! Dit product is nog niet in Open Food Facts. Kun je wat foto's maken van het product, de ingrediëntenlijst en voedingswaarden om aan Open Food Facts toe te voegen?\n\nBij voorbaat dank.";
 "product-add.titles.license-explaination" = "Nb: de foto's die je upload, worden gepubliceerd onder de vrije licentie Creative Commons Attribution and ShareAlike.";
 
-"product-add.titles.product-info" = "Productinformatie";
+"product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Bijvoorbeeld: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Naam:";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Hoeveelheid";
 "product-add.label.packaging" = "Verpakking";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Nodig om de Nutri-Score te berekenen";
 "product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
 "product-add.label.language" = "Talen";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Bijvoorbeeld: Glutenvrij, Vegan, etc.";
+"product-add.label.origins" = "Oorsprong van de ingrediënten";
+"product-add.field.origins-placeholder" = "Noodzakelijk voor de berekening van de Eco-Score";
+"product-add.label.origins-example" = "Bijvoorbeeld: Roomboter uit Nederland, etc.";
 
 "product-add.description.nutritive" = "Completeer de voedingswaarden en de productcategorie om de Nutri-Score te verkrijgen";
 "product-add.titles.nutritive" = "Voedingswaarden";
@@ -177,7 +184,7 @@
 "product-detail.ingredients.allergens-list.offline-product" = "Dit product heeft nog geen ingrediëntenlijst en daardoor konden geen allergenen gedetecteerd worden.";
 "product-detail.ingredients.traces-list" = "Sporen";
 "product-detail.ingredients.additives-list" = "Additieven";
-"product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
+"product-detail.ingredients.palm-oil-ingredients" = "Ingrediënten uit palmolie";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredienten die mogelijk palmolie bevatten";
 "product-detail.ingredients.vitamins-list" = "Vitaminen";
 "product-detail.ingredients.minerals-list" = "Mineralen";
@@ -189,16 +196,24 @@
 "product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2-uitstoot";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutritional-table-header" = "Voedigswaarden";
+"product-detail.nutrition-table.nutritional-table-header" = "Voedingswaarden";
 "product-detail.nutrition-table.for-100g" = "Per 100g";
 "product-detail.nutrition-table.for-serving" = "Per portie";
-"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.100g" = "100 g";
 "product-detail.nutrition-table.serving" = "portie";
 "product-detail.nutrition-table.missing" = "Er zijn geen voedingsstoffen vastgesteld.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Waarschuwing: de hoeveelheid vezels is niet gespecificeerd, hun mogelijke positieve bijdrage aan de klasse kan niet in aanmerking worden genomen.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Waarschuwing: de hoeveelheid fruit, groente en noten is niet gespecificeerd, er kon geen rekening worden gehouden met hun mogelijke positieve bijdrage aan het cijfer.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Waarschuwing: de hoeveelheid fruit, groenten en noten staat niet op het etiket, maar werd geschat op basis van de ingrediëntenlijst: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Waarschuwing: de hoeveelheid fruit, groenten en noten staat niet op het etiket, deze is geschat op basis van de categorie (%s) van het product:%d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Voedingswaarden per 100 g";
@@ -207,6 +222,7 @@
 "nutrition-level.high" = "grote hoeveelheid";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Ingrediënten Analyse";
 "ingredients-analysis.ingredients_in_this_product" = "Ingrediënten in dit product die %@s zijn:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingrediënten in dit product zijn %@s.";
 "ingredients-analysis.unknown_status" = "We konden de status van het product niet beoordelen.";
@@ -233,7 +249,7 @@
 // Nutrition
 "nutrition.energy" = "Calorieën";
 "nutrition.energy.kj" = "Energie (kJ)";
-"nutrition.energy.kcal" = "Energy (kcal)";
+"nutrition.energy.kcal" = "Energie (kcal)";
 "nutrition.fats" = "Vetten";
 "nutrition.fats.saturated-fat" = "Verzadigd vet";
 "nutrition.fats.mono-unsaturated-fat" = "Enkelvoudige onverzadigde vetzuren";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "Maak een foto van de voorkant";
+"call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "Maak een foto van de ingrediënten";
 "call-to-action.nutrition" = "Neem een foto van de voedingswaardentabel";
+"call-to-action.edit" = "Voltooi het product om het gescoord te krijgen";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,8 +331,12 @@
 "product.images.take-picture.front" = "Foto van de voorkant";
 "product.images.take-picture.ingredients" = "Foto van de ingrediënten";
 "product.images.take-picture.nutrition" = "Foto van de voedingswaardentabel";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Scanner";
+"history.tab-bar.item" = "Geschiedenis";
 "settings.tab-bar.item" = "Instellingen";
 "settings.ingredientsAnalysis.title" = "Ingrediënten analyse waarschuwingen";
 "settings.allergies.title" = "Allergenen waarschuwing";
@@ -327,7 +349,7 @@
 "settings.user-profile" = "Je account";
 "settings.credits.title" = "Credits";
 "settings.scan-on-launch.title" = "Scan Op App Launch Weergeven";
-"settings.sections.discover" = "Ontdek";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Hoe kan je bijdragen";
 "settings.contribute.support-open-food-facts" = "Ondersteun Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Vertaal Open Food Facts";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "Een paar maanden geleden";
 "history.section-titles.longTime" = "Lang geleden";
 "history.first-scan.button.title" = "Scan je eerste product";
-"API_CANCEL_TITLE" = "Annuleer";
-"USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Annuleer";
+
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Bewerken";
+
+// Camera localization API
+"API_CANCEL_TITLE" = "Annuleer";
+"USE_PHOTO" = "Gebruik Foto";
+"PHOTO" = "FOTO";
+"AEAF_LOCK_TEXT" = "AE / AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "Aan";
+"HDR_OFF" = "Uit";
+"TIMER_OFF_TEXT" = "Uit";
+"PHOTOS" = "Foto's";
+"CANCEL" = "Annuleer";
+"RETAKE" = "Opnieuw";

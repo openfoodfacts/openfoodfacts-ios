@@ -17,27 +17,30 @@ struct ScanProductSummaryViewAdaptor {
     let nutriScore: NutriScoreView.Score? // NutriScore should be outside of NutriScoreView namespace/ scope???
     let novaGroup: NovaGroupView.NovaGroup? // NovaGroup should be outside of NovaGroupView namespace/scope???
     let environmentalImage: UIImage?
+    weak var delegate: ScanProductSummaryViewProtocol?
 }
 
 struct ScanProductSummaryViewAdaptorFactory {
-    static func makeAdaptor(from product: RealmOfflineProduct) -> ScanProductSummaryViewAdaptor {
+    static func makeAdaptor(from product: RealmOfflineProduct, delegate: ScanProductSummaryViewProtocol?) -> ScanProductSummaryViewAdaptor {
         return ScanProductSummaryViewAdaptor(title: product.name,
                                              quantityText: getQuantity(from: product),
                                              productImageURL: nil,
                                              brands: getBrands(from: product),
                                              nutriScore: getNutriScore(from: product),
                                              novaGroup: getNovaGroup(from: product),
-                                             environmentalImage: nil)
+                                             environmentalImage: getEcoscoreImage(from: product),
+                                             delegate: delegate)
     }
 
-    static func makeAdaptor(from product: Product) -> ScanProductSummaryViewAdaptor {
+    static func makeAdaptor(from product: Product, delegate: ScanProductSummaryViewProtocol?) -> ScanProductSummaryViewAdaptor {
         return ScanProductSummaryViewAdaptor(title: product.name,
                                              quantityText: getQuantity(from: product),
                                              productImageURL: getImageURL(from: product),
                                              brands: getBrands(from: product),
                                              nutriScore: getNutriScore(from: product),
                                              novaGroup: getNovaGroup(from: product),
-                                             environmentalImage: getEnvironmentalImpaceImage(from: product))
+                                             environmentalImage: getEcoscoreImage(from: product),
+                                             delegate: delegate)
     }
 }
 
@@ -82,11 +85,16 @@ private func getNovaGroup(from product: Product) -> NovaGroupView.NovaGroup? {
     return novaGroup
 }
 
-private func getEnvironmentalImpaceImage(from product: Product) -> UIImage? {
-    guard let co2Impact = product.environmentImpactLevelTags?.first else {
+private func getEcoscoreImage(from product: Any) -> UIImage? {
+    //Do we want to show the co2Impact as backup?
+    //guard let co2Impact = product.environmentImpactLevelTags?.first else {
+    guard let ecoscore = (product as? Product)?.ecoscore
+            ?? (product as? RealmOfflineProduct)?.ecoscore else {
         return nil
     }
-    return co2Impact.image
+    let imageView = EcoscoreImageView(frame: CGRect(origin: .zero, size: CGSize(width: 118, height: 64)))
+    imageView.ecoScore = EcoscoreImageView.Ecoscore(rawValue: ecoscore) ?? .unknown
+    return imageView.image
 }
 
 // MARK: - OfflineProduct
@@ -122,3 +130,5 @@ private func getNovaGroup(from product: RealmOfflineProduct) -> NovaGroupView.No
     }
     return novaGroup
 }
+
+

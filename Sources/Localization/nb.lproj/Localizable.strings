@@ -12,7 +12,7 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Tilbake";
 "generic.search" = "Søk";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Avbryt";
 "generic.save" = "Lagre";
 "generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
@@ -25,7 +25,7 @@
 "product-search.no-results" = "No Results";
 "product-search.error-view.title" = "Noe gikk galt";
 "product-search.error-view.subtitle" = "Vennligst prøv igjen";
-"product-search.initial-view.slogan" = "the free food products database";
+"product-search.initial-view.slogan" = "den gratis matproduktdatabasen";
 "product-search.initial-view.offline.title-loading" = "Lagrer produkter i frakoblet modus: %d%%";
 "product-search.initial-view.offline.subtitle" = "Mer enn %d produkter er tilgjengelige for øyeblikkelig skanning";
 
@@ -75,7 +75,7 @@
 "product-add.save-nutriments.error" = "Næringsstoffer ble ikke lagret";
 "product-add.save-nutriments.saving" = "Lagrer næringsstoffer…";
 "product-add.save-nutriments.not-yet" = "Næringsstoffer er ikke lagret ennå";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.no-nutrition" = "Ernæringsinnhold er ikke spesifisert på produktet";
 
 "product-add.ocr-ingredients.success" = "Ingredienser lest fra bildet kl";
 "product-add.ocr-ingredients.error" = "Kunne ikke trekke ut ingredienser fra bildet";
@@ -100,21 +100,28 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Merk: Bildene du sender, blir publisert under gratislisensen Creative Commons Attribution og Sharealike.";
 
-"product-add.titles.product-info" = "Produktinformasjon";
+"product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Navn";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Mengde";
 "product-add.label.packaging" = "Emballasje";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Nødvendig for å beregne Nutri-Score";
 "product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
 "product-add.label.language" = "Språk";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
-"product-add.titles.nutritive" = "Nutrition Facts";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
+"product-add.titles.nutritive" = "Ernæringsinnhold";
+"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 1dl";
 "product-add.nutritive.choice.per-portion" = "per porsjon";
 "product-add.nutritive.add-nutriment" = "Legg til et næringsstoff";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Mer enn 100 g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
 "product-add.titles.ingredients" = "Ingredienser";
@@ -147,7 +154,7 @@
 "product-detail.page-title.ingredients" = "Ingredienser";
 "product-detail.page-title.nutrition" = "Ernæring";
 "product-detail.page-title.nutrition-table" = "Næringsliste";
-"product-detail.page-title.environment-impact" = "Environment";
+"product-detail.page-title.environment-impact" = "Miljø";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Strekkode";
@@ -200,6 +207,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "Næringsstoffer per 100 g/100 mL";
 "nutrition-level.low" = "i liten mengde";
@@ -207,6 +222,7 @@
 "nutrition-level.high" = "i høy mengde";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Analyse av ingredienser:";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
@@ -222,11 +238,11 @@
 // Robotoff
 "robotoff.yes" = "Ja";
 "robotoff.no" = "Nei";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "Jeg er ikke sikker";
 "robotoff.contribute-incentive.title" = "Bidra";
 "robotoff.settings.display-questions" = "Display questions";
 "robotoff.contribute-incentive.login" = "Username";
-"robotoff.contribute-incentive.not-now" = "Not now";
+"robotoff.contribute-incentive.not-now" = "Ikke nå";
 "robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
 "robotoff.answer-saved" = "Answer saved, thanks!";
 
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "Ta et bilde av forsiden";
+"call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "Ta et bilde av ingrediensene";
 "call-to-action.nutrition" = "Ta et bilde av næringslisten";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,34 +331,38 @@
 "product.images.take-picture.front" = "Bilde av framsiden";
 "product.images.take-picture.ingredients" = "Bilde av ingrediensene";
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Skanner";
+"history.tab-bar.item" = "Historikk";
 "settings.tab-bar.item" = "Innstillinger";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Allergenvarsler";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
 "settings.allergies.add-button" = "Legg til allergener";
 "settings.sections.information" = "Informasjon";
-"settings.sections.discover" = "Utforsk";
+"settings.sections.discover" = "Oppdag";
 "settings.sections.contribute" = "Bidra";
 "settings.sections.about" = "Om";
 "settings.user-profile" = "Bidragsyterkontoen din";
 "settings.credits.title" = "Medvirkende";
 "settings.scan-on-launch.title" = "Vis skanneren ved appstart";
-"settings.sections.discover" = "Utforsk";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Hvordan bidra";
 "settings.contribute.support-open-food-facts" = "Støtt Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Oversett Open Food Facts";
 "settings.about.contact" = "Kontakt";
-"settings.about.frequently-asked-questions" = "Frequently Asked Questions";
-"settings.promotion.open-beauty-facts" = "Open Beauty Facts";
+"settings.about.frequently-asked-questions" = "Ofte stilte spørsmål";
+"settings.promotion.open-beauty-facts" = "Åpne skjønnhetsfakta";
 "settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
 
 // User view
 /* Tab bar item */
 "user.tab-bar.item" = "Bruker";
 "user.log-in" = "Logg inn";
-"user.logging-in" = "Logging in";
+"user.logging-in" = "Logger inn";
 "user.log-out" = "Logg ut";
 "user.username" = "Brukernavn";
 "user.password" = "Passord";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "For noen måneder siden";
 "history.section-titles.longTime" = "For lenge siden";
 "history.first-scan.button.title" = "Scan First Product";
-"API_CANCEL_TITLE" = "Cancel";
-"USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Cancel";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edit";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Rediger ";
+
+// Camera localization API
+"API_CANCEL_TITLE" = "Avbryt";
+"USE_PHOTO" = "Bruk foto";
+"PHOTO" = "FOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "På";
+"HDR_OFF" = "Av";
+"TIMER_OFF_TEXT" = "Av";
+"PHOTOS" = "Bilder";
+"CANCEL" = "Avbryt";
+"RETAKE" = "Retake";

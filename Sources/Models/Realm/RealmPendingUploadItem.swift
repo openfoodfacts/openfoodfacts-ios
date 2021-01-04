@@ -25,10 +25,12 @@ internal class RealmPendingUploadItem: Object {
     @objc dynamic var brand: String?
     @objc dynamic var quantity: String?
     @objc dynamic var packaging: String?
+    @objc dynamic var labels: String?
     @objc dynamic var language = "en"
     @objc dynamic var frontImageName: String?
     @objc dynamic var ingredientsImageName: String?
     @objc dynamic var nutritionImageName: String?
+    @objc dynamic var packagingImageName: String?
     @objc dynamic var ingredientsList: String?
     let categories = List<String>()
 
@@ -51,10 +53,12 @@ internal class RealmPendingUploadItem: Object {
         self.brand = pendingUploadItem.brand
         self.quantity = pendingUploadItem.quantity
         self.packaging = pendingUploadItem.packaging
+        self.labels = pendingUploadItem.labels
         self.language = pendingUploadItem.language
         self.frontImageName = pendingUploadItem.frontImage?.fileName
         self.ingredientsImageName = pendingUploadItem.ingredientsImage?.fileName
         self.nutritionImageName = pendingUploadItem.nutritionImage?.fileName
+        self.packagingImageName = pendingUploadItem.packagingImage?.fileName
         self.ingredientsList = pendingUploadItem.ingredientsList
         self.categories.removeAll()
         if let categories = pendingUploadItem.categories {
@@ -77,6 +81,7 @@ internal class RealmPendingUploadItem: Object {
         pendingUploadItem.brand = self.brand
         pendingUploadItem.quantity = self.quantity
         pendingUploadItem.packaging = self.packaging
+        pendingUploadItem.labels = self.labels
         pendingUploadItem.language = self.language
         pendingUploadItem.categories = self.categories.map { $0 }
         pendingUploadItem.ingredientsList = self.ingredientsList
@@ -97,6 +102,10 @@ internal class RealmPendingUploadItem: Object {
 
         if let imageName = self.nutritionImageName {
             pendingUploadItem.nutritionImage = ProductImage(barcode: barcode, fileName: imageName, type: .nutrition, languageCode: self.language)
+        }
+
+        if let imageName = self.packagingImageName {
+            pendingUploadItem.packagingImage = ProductImage(barcode: barcode, fileName: imageName, type: .packaging, languageCode: self.language)
         }
 
         return pendingUploadItem

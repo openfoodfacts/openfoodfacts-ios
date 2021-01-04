@@ -135,9 +135,11 @@ class PersistenceManager: PersistenceManagerProtocol {
                 item.productName = product.name
                 item.quantity = product.quantity
                 item.packaging = product.packaging?.compactMap {$0}.joined(separator: ", ")
+                item.labels = product.labels?.compactMap {$0}.joined(separator: ", ")
                 item.imageUrl = product.imageUrl
                 item.nutriscore = product.nutriscore
                 item.novaGroup.value = product.novaGroup
+                item.ecoscore = product.ecoscore
                 item.timestamp = Date()
 
                 if let brands = product.brands, !brands.isEmpty {
@@ -306,7 +308,14 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     func nutriment(forCode code: String) -> Nutriment? {
-        return getRealm().object(ofType: Nutriment.self, forPrimaryKey: code)
+        var newCode = code
+        // These are stopgaps, beacuse the json-code and the taxonomy-codes are different.
+        if code == "carbohydrates" {
+            newCode = "carbohydrate"
+        } else if code == "fiber" {
+            newCode = "dietary-fiber"
+        }
+        return getRealm().object(ofType: Nutriment.self, forPrimaryKey: "en:" + newCode)
     }
 
     var nutrimentsIsEmpty: Bool {
@@ -479,6 +488,9 @@ class PersistenceManager: PersistenceManagerProtocol {
         if let packaging = product.packaging {
             item.packaging = packaging.compactMap {$0}.joined(separator: ", ")
         }
+        if let labels = product.labels {
+            item.labels = labels.compactMap {$0}.joined(separator: ", ")
+        }
         if let categories = product.categories {
             item.categories = categories
         }
@@ -535,6 +547,8 @@ class PersistenceManager: PersistenceManagerProtocol {
                     item.ingredientsImage = productImage
                 case .nutrition:
                     item.nutritionImage = productImage
+                case .packaging:
+                    item.packagingImage = productImage
                 default:
                     break
                 }

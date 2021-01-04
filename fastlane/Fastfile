@@ -6,6 +6,10 @@ fastlane_version "1.109.0"
 
 default_platform :ios
 
+before_all do
+  xcversion(version: "~> 11.7.0")
+end
+
 desc "Run all the tests"
 lane :test do
   carthage(command: "bootstrap", platform: "iOS", cache_builds: true, use_binaries: false)
@@ -31,12 +35,12 @@ end
 
 desc "Build and send the beta to TestFlight. The script will perform the following actions: \n"\
       "- Fetch the latest version and build_number from AppStoreConnect\n"\
-      "- set the project version to either 'editVersion' or 'liveVersion + 0.0.1'\n"\
+      "- set the project version to 'release/{version}'\n"\
       "- set the build number to build_number + 1\n"\
       "- build and upload to AppStoreConnect\n"\
       "- commit new version, tag and push\n"\
       "- create a new release in sentry corresponding to the release we just uploaded\n"\
-      "\nIf you want a specific version number (for example if you want to bump a major instead of patch by default), set it in the xcode project. It will be taken if it is greater than the version from the appstore. Same goes for the build number."
+      "\nIf you want a specific version number (for example if you want to bump a major instead of patch by default), set it in the xcode project. It will be taken if it is greater than the version from the current branch. Same goes for the build number."
 lane :beta do
   APP_IDENTIFIER = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 
@@ -46,13 +50,11 @@ lane :beta do
   # if the version set in the project is higher than the one in live or edit, then it is chosen
   VERSION_FROM_PROJECT = get_version_number(xcodeproj: "OpenFoodFacts.xcodeproj")
 
-  version = app_store_version_to_upload_to(
-    projectVersion: VERSION_FROM_PROJECT
-  )
+  version = version_to_use_from_git_branch(gitBranch: git_branch, projectVersion: VERSION_FROM_PROJECT)
 
   # get the latest build number from the app store, and bump it
   BUILD_NUMBER_FROM_PROJECT = get_build_number(xcodeproj: "OpenFoodFacts.xcodeproj")
-  build_number = app_store_build_number(initial_build_number: 1, live: false).to_f.ceil + 1
+  build_number = app_store_build_number_with_connect_api().to_f.ceil + 1
   build_number = BUILD_NUMBER_FROM_PROJECT.to_f > build_number ? BUILD_NUMBER_FROM_PROJECT : build_number.to_s
 
   UI.important "Releasing #{APP_IDENTIFIER} v#{version} \##{build_number}"
@@ -87,7 +89,7 @@ lane :beta do
   )
 
   # Upload to test flight
-  upload_to_testflight(
+  pilot(
     skip_submission: true,
     skip_waiting_for_build_processing: true,
   )
@@ -133,10 +135,14 @@ lane :finalize_sentry_release do
     sentry_finalize_release(
         org_slug: 'openfoodfacts',
         project_slug: 'openfoodfacts-ios',
-        version: 'openfoodfacts-ios@'+liveVersion.to_s+'.'+build_number.to_s,
+        version: 'openfoodfacts-ios@' + liveVersion.to_s + '.' + build_number.to_s,
         app_identifier: APP_IDENTIFIER
     )
     download_dsyms(min_version: liveVersion, output_directory: './ios/dSYMs') # Download dSYM files from iTC
+    sentry_upload_dsym(
+      org_slug: 'openfoodfacts',
+      project_slug: 'openfoodfacts-ios',
+    )
   end
 end
 

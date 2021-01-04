@@ -49,12 +49,19 @@ class ProductAddViewController: TakePictureViewController {
             productCategoryField?.placeholder = "product-add.label.category".localized
         }
     }
+    @IBOutlet weak var productCategoryNutriScoreExplanationLabel: UILabel!
     @IBOutlet weak var brandsTitleLabel: UILabel! {
         didSet {
             brandsTitleLabel?.text = "product-add.placeholder.brand".localized
         }
     }
     @IBOutlet weak var brandsField: UITextField!
+    @IBOutlet weak var brandsExampleLabel: UILabel! {
+        didSet {
+            brandsExampleLabel?.text = "product-add.label.brand-example".localized
+        }
+    }
+
     @IBOutlet weak var quantityTitleLabel: UILabel! {
         didSet {
             quantityTitleLabel?.text = "product-add.label.quantity".localized
@@ -68,14 +75,45 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var quantityField: UITextField!
     @IBOutlet weak var packagingTitleLabel: UILabel!
     @IBOutlet weak var packagingField: UITextField!
+    @IBOutlet weak var packagingExampleLabel: UILabel! {
+        didSet {
+            packagingExampleLabel?.text = "product-add.label.packaging-example".localized
+        }
+    }
+
     @IBOutlet weak var languageTitleLabel: UILabel!
     @IBOutlet weak var languageField: UITextField!
+    @IBOutlet weak var labelsTitleLabel: UILabel!
+    @IBOutlet weak var labelsField: UITextField!
+    @IBOutlet weak var labelsExampleLabel: UILabel! {
+        didSet {
+            labelsExampleLabel?.text = "product-add.label.labels-example".localized
+        }
+    }
+
+    @IBOutlet weak var originsTitleLabel: UILabel! {
+        didSet {
+            originsTitleLabel?.text = "product-add.label.origins".localized
+        }
+    }
+    @IBOutlet weak var originsField: UITextField! {
+        didSet {
+            originsField?.placeholder = "product-add.field.origins-placeholder".localized
+        }
+    }
+    @IBOutlet weak var originsExampleLabel: UILabel! {
+           didSet {
+               originsExampleLabel?.text = "product-add.label.origins-example".localized
+           }
+       }
+
     @IBOutlet weak var productTextSection: UIView!
     @IBOutlet weak var saveProductInfosButton: UIButton!
     @IBOutlet var productInformationsTextFields: [UITextField]!
     @IBOutlet weak var lastSavedProductInfosLabel: UILabel!
 
     @IBOutlet weak var noNutritionDataSwitch: UISwitch!
+    @IBOutlet weak var nutritiveNutriScoreEXplanationLabel: UILabel!
     @IBOutlet weak var nutritiveSectionTitle: UILabel! {
         didSet {
             nutritiveSectionTitle?.text = "product-add.titles.nutritive".localized
@@ -101,11 +139,12 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
     @IBOutlet weak var novaGroupView: NovaGroupView!
-    @IBOutlet weak var ingredientsExplainationLabel: UILabel! {
+    @IBOutlet weak var ingredientsOCRExplanationLabel: UILabel! {
         didSet {
-            ingredientsExplainationLabel?.text = "product-add.ingredients.explaination".localized
+            ingredientsOCRExplanationLabel?.text = "product-add.ingredients.explaination".localized
         }
     }
+    @IBOutlet weak var ingredientsNovaExplanationLabel: UILabel!
     @IBOutlet weak var ingredientsTextField: UITextView! {
         didSet {
             ingredientsTextField?.text = ""
@@ -293,6 +332,14 @@ class ProductAddViewController: TakePictureViewController {
             let array = validPackingText.split(separator: ",")
             product.packaging = array.compactMap {String($0)}
         }
+
+        if let validLabelsText = labelsField.text {
+            let array = validLabelsText.split(separator: ",")
+            product.labels = array.compactMap {String($0)}
+        }
+
+        product.origins = originsField.text
+
     }
 
     fileprivate func fillProductFromNutriments() -> [RealmPendingUploadNutrimentItem] {
@@ -436,18 +483,27 @@ class ProductAddViewController: TakePictureViewController {
         dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: true, onSuccess: { [weak self] (distantProduct: Product?) in
             DispatchQueue.main.async {
                 if let distantProduct = distantProduct {
-                    if let nutriscoreString = distantProduct.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreString) {
+                    if let nutriscoreString = distantProduct.nutriscore,
+                        let score = NutriScoreView.Score(rawValue: nutriscoreString) {
                         self?.nutriScoreView.currentScore = score
-                        self?.nutriscoreStackView.isHidden = false
+                        self?.productCategoryNutriScoreExplanationLabel.text = ""
+                        self?.productCategoryNutriScoreExplanationLabel.isHidden = true
+                        self?.nutritiveNutriScoreEXplanationLabel.isHidden = true
                     } else {
-                        self?.nutriscoreStackView.isHidden = true
+                        self?.nutriScoreView.currentScore = .unknown
+                        self?.productCategoryNutriScoreExplanationLabel.text = "product-add.details.category".localized
+                        self?.productCategoryNutriScoreExplanationLabel.isHidden = false
+                        self?.nutritiveNutriScoreEXplanationLabel.isHidden = false
+
                     }
 
-                    if let novaGroupString = distantProduct.novaGroup, let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
+                    if let novaGroupString = distantProduct.novaGroup,
+                        let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
                         self?.novaGroupView.novaGroup = novaGroup
-                        self?.novaGroupStackView.isHidden = false
+                        self?.ingredientsNovaExplanationLabel.isHidden = true
                     } else {
-                        self?.novaGroupStackView.isHidden = true
+                        self?.novaGroupView.novaGroup = .unknown
+                        self?.ingredientsNovaExplanationLabel.isHidden = false
                     }
                 }
             }
@@ -583,6 +639,8 @@ class ProductAddViewController: TakePictureViewController {
         quantityField?.delegate = self
         packagingField?.delegate = self
         languageField?.delegate = self
+        labelsField?.delegate = self
+        originsField?.delegate = self
 
         portionSizeInputView?.displayedUnit = .none
         portionSizeInputView?.inputTextField.delegate = self
@@ -653,8 +711,10 @@ class ProductAddViewController: TakePictureViewController {
 
         quantityField?.text = product.quantity
         packagingField?.text = product.packaging?.compactMap {$0}.joined(separator: ", ")
+        labelsField?.text = product.labels?.compactMap {$0}.joined(separator: ", ")
+        originsField?.text = product.origins
         ingredientsTextField.text = product.ingredientsList
-
+        ingredientsOCRExplanationLabel.isHidden = product.ingredientsList != nil && !product.ingredientsList!.isEmpty
         noNutritionDataSwitch.isOn = product.noNutritionData == "on"
         updateNoNutritionDataSwitchVisibility(animated: false)
 
@@ -722,6 +782,14 @@ class ProductAddViewController: TakePictureViewController {
 
         if let packaging = pendingUploadItem.packaging {
             packagingField.text = packaging
+        }
+
+        if let labels = pendingUploadItem.labels {
+            labelsField.text = labels
+        }
+
+        if let origins = pendingUploadItem.origins {
+            labelsField.text = origins
         }
 
         if let ingredientsList = pendingUploadItem.ingredientsList {

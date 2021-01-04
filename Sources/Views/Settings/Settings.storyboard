@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q1p-BW-0CD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q1p-BW-0CD">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -622,7 +622,7 @@
                                             <rect key="frame" x="16" y="11" width="343" height="53"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E6V-g2-pDK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="136" height="53"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="184" height="53"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLy-mO-d66">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="53"/>
@@ -675,10 +675,28 @@
                                                                 <constraint firstItem="Thw-QD-khL" firstAttribute="leading" secondItem="8Wu-TT-lK2" secondAttribute="leading" id="NQD-lQ-qNK"/>
                                                             </constraints>
                                                         </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZO-4j-9fz">
+                                                            <rect key="frame" x="144" y="0.0" width="40" height="53"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bi1-l1-YfI">
+                                                                    <rect key="frame" x="0.0" y="6.5" width="40" height="40"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="SK7-7O-jov"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="mn2-f4-hCf"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="Bi1-l1-YfI" secondAttribute="trailing" id="9yl-sM-rFq"/>
+                                                                <constraint firstItem="Bi1-l1-YfI" firstAttribute="leading" secondItem="XZO-4j-9fz" secondAttribute="leading" id="AWe-eT-CMt"/>
+                                                                <constraint firstItem="Bi1-l1-YfI" firstAttribute="centerY" secondItem="XZO-4j-9fz" secondAttribute="centerY" id="ZAG-7f-KyS"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nxl-3c-b22">
-                                                    <rect key="frame" x="144" y="0.0" width="199" height="53"/>
+                                                    <rect key="frame" x="192" y="0.0" width="151" height="53"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGQ-jI-wmL">
                                                             <rect key="frame" x="0.0" y="0.0" width="107.5" height="24.5"/>
@@ -727,6 +745,7 @@
                                     <outlet property="frontImage" destination="3KV-XT-Sfx" id="ma6-Vb-iR7"/>
                                     <outlet property="ingredientsImage" destination="dEO-bQ-ZYZ" id="Ch7-pd-SBY"/>
                                     <outlet property="nutritionImage" destination="Thw-QD-khL" id="kMY-Ih-vtF"/>
+                                    <outlet property="packagingImage" destination="Bi1-l1-YfI" id="eAT-vH-d1b"/>
                                     <outlet property="productNameLabel" destination="iGQ-jI-wmL" id="Tdc-ga-MNi"/>
                                     <outlet property="quantityLabel" destination="Rev-1b-PJI" id="phR-D5-jvT"/>
                                     <outlet property="separatorLabel" destination="LS5-fE-Ily" id="LIJ-IW-Aac"/>

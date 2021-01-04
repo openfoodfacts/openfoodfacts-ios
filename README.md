@@ -8,6 +8,7 @@ Note: Xcode's limited Markdown support means this file is best viewed on GitHub.
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/openfoodfacts/openfoodfacts-ios.svg)](https://isitmaintained.com/project/openfoodfacts/openfoodfacts-ios "Average time to resolve an issue")
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/openfoodfacts/openfoodfacts-ios.svg)](https://isitmaintained.com/project/openfoodfacts/openfoodfacts-ios "Percentage of issues still open")
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/openfoodfacts/localized.svg)](https://crowdin.com/project/openfoodfacts)
+![TestFlight release](https://github.com/openfoodfacts/openfoodfacts-ios/workflows/TestFlight%20release/badge.svg)
 
 <a href="https://apps.apple.com/app/open-food-facts/id588797948"><img height="75" src="https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png" align="left" hspace="1" vspace="1"></a>
 
@@ -17,10 +18,11 @@ Note: Xcode's limited Markdown support means this file is best viewed on GitHub.
 Open Food Facts on iPhone and iPad has 0,5M users and 1M products. Each contribution you make will have a large impact on food transparency worldwide. Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the #android channel before you start work, and to document what you intend to code.
 
 ### Priority roadmap
-- [ ] Display food labels (already assigned)
-- [ ] Show additives evaluation on cards (already ready server side and on Android) [#173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
-- [ ] Add a mode to compare 2 or more products [#153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
-- [ ] Add a basic product lists system (to buy, eaten…)  
+- [ ] [Show additives evaluation on cards #173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
+- [ ] [Add a mode to compare 2 or more products #153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
+- [ ] Add a basic product lists system (shopping list, nutritional intake…)
+- [ ] [Add a prompt to extract Ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171)
+
 ### Secondary roadmap
 - [ ] Cache viewed products on-device so that they load fast and regardless of network
 - [ ] Add a food category browser

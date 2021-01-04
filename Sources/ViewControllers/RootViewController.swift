@@ -20,7 +20,7 @@ class RootViewController: UIViewController {
 
     init() {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        guard let tabBarVC = storyboard.instantiateInitialViewController() as? UITabBarController else { fatalError("Initial VC is required") }
+        guard let tabBarVC = storyboard.instantiateInitialViewController() as? UITabBarController else { fatalError("RootViewController: Initial VC is required") }
         self.tabBarVC = tabBarVC
         self.tabBarNotificationController = TabBarNotificationController(tabBarController: tabBarVC)
 
@@ -59,7 +59,7 @@ class RootViewController: UIViewController {
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("RootViewController: init(coder:) has not been implemented")
     }
 
     /// Inject dependencies into tab view controllers

@@ -14,7 +14,7 @@
 "generic.search" = "Vyhledat";
 "generic.cancel" = "Zrušit";
 "generic.save" = "Uložit";
-"generic.cancel" = "Zrušit";
+"generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 "generic.close" = "Zavřít";
 
@@ -100,58 +100,65 @@
 "product-add.titles.top-explainations" = "Dobrá práce! Tento produkt ještě není v Open Food Facts. Umíte si pořídit některé obrázky produktu, seznam složek a výživová fakta a přidat je na Open Food Facts? \n\nPředem děkuji.";
 "product-add.titles.license-explaination" = "Poznámka: Obrázky, které odesíláte jsou zveřejňovány pod svobodnou licencí Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Product information";
+"product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Jméno";
 "product-add.label.category" = "Kategorie";
 "product-add.label.quantity" = "Množství";
 "product-add.label.packaging" = "Obal";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
+"product-add.details.category" = "Nutné pro výpočet Nutri-skóre";
+"product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
+"product-add.label.language" = "Jazyky";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.description.nutritive" = "Vyplňte nutriční údaje a kategorii produktů a získejte Nutri-Score";
 "product-add.titles.nutritive" = "Nutriční hodnoty";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.choice.per-hundred-grams" = "na 100 g / 100 ml";
+"product-add.nutritive.choice.per-portion" = "na porci";
 "product-add.nutritive.add-nutriment" = "Add a nutrient";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Více než 100 g?";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "Doplňte ingredience a získejte skupinu NOVA v oblasti zpracování potravin";
 "product-add.titles.ingredients" = "Složení";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
-"product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.explaination" = "Vyfoťte seznam přísad a automaticky rozbalte přísady. Zkontrolujte jej pečlivě a nezapomeňte ho uložit.";
+"product-add.ingredients.button-delete" = "Příliš špatné, Ignorujte to";
+"product-add.ingredients.button-save" = "Vypadá dobře, Uložte to";
 
 // Select Category
 "select-category.title" = "Kategorie";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Hledat kategorii";
 
 // Select nutrition
 "select-nutriment.title" = "Nutriční hodnoty";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Hledat živinu";
 
 // Select allergen
 "select-allergen.title" = "Alergen";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "Hledat alergen";
 
 // Product Detail
-"product-detail.header.add-new-picture" = "Add a new picture";
-"product-detail.edit" = "Edit this product";
+"product-detail.header.add-new-picture" = "Přidat nový obrázek";
+"product-detail.edit" = "Upravit tento produkt";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.title" = "Remember to save your changes";
+"product-detail.edit-alert.title" = "Nezapomeňte uložit změny";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
+"product-detail.edit-alert.subtitle" = "Přejděte dolů na tlačítko „Uložit“";
 
 // Product detail page titles
 "product-detail.page-title.summary" = "Shrnutí";
 "product-detail.page-title.ingredients" = "Složení";
 "product-detail.page-title.nutrition" = "Nutriční hodnoty";
-"product-detail.page-title.nutrition-table" = "Nutrition table";
+"product-detail.page-title.nutrition-table" = "Výživové tabulky";
 "product-detail.page-title.environment-impact" = "Prostředí";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Čárový kód";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Obecný název";
 "product-detail.summary.quantity" = "Množství";
 "product-detail.summary.packaging" = "Obal";
 "product-detail.summary.brands" = "Značky";
@@ -161,20 +168,20 @@
 "product-detail.summary.labels" = "Etikety, certifikáty, ocenění";
 "product-detail.summary.citiesTags" = "Město, stát a země nákupu";
 "product-detail.summary.stores" = "Prodejny";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "Kód balírny";
 "product-detail.summary.countries" = "Země prodeje";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Čerstvé nebo minimálně zpracované potraviny";
 "product-detail.ingredients.nova.2" = "Běžně zpracované kuchyňské přísady";
 "product-detail.ingredients.nova.3" = "Běžně zpracované potraviny";
-"product-detail.ingredients.nova.4" = "Průmyslově vysoce zpracované potraviny a nápoje";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
-"product-detail.ingredients.ingredients-list" = "List of ingredients";
+"product-detail.ingredients.nova.4" = "Ultrazpracované potraviny a nápoje";
+"product-detail.ingredients.nova.incite" = "Přidejte přísady nebo kategorie pro výpočet NOVA.";
+"product-detail.ingredients.ingredients-list" = "Složení";
 "product-detail.ingredients.allergens-list" = "Látky nebo produkty vyvolávající alergie nebo nesnášenlivost";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-alert.title" = "Obsahuje alergeny!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Tento produkt ještě nemá seznam přísad, a proto nelze detekci alergenu dokončit.";
+"product-detail.ingredients.allergens-list.offline-product" = "Tento produkt byl načten z offline databáze, a proto nebylo možné provést detekci alergenu.";
 "product-detail.ingredients.traces-list" = "Stopy";
 "product-detail.ingredients.additives-list" = "Přísady";
 "product-detail.ingredients.palm-oil-ingredients" = "Suroviny z palmového oleje";
@@ -182,7 +189,7 @@
 "product-detail.ingredients.vitamins-list" = "Vitamíny";
 "product-detail.ingredients.minerals-list" = "Minerály";
 "product-detail.ingredients.nucleotides-list" = "Nukleotidy";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Další výživné látky";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Velikost porce";
@@ -192,49 +199,58 @@
 "product-detail.nutrition-table.nutritional-table-header" = "Nutriční hodnoty";
 "product-detail.nutrition-table.for-100g" = "Ve 100g";
 "product-detail.nutrition-table.for-serving" = "V jedné porci";
-"product-detail.nutrition-table.100g" = "100g";
-"product-detail.nutrition-table.serving" = "serving";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.100g" = "100 g";
+"product-detail.nutrition-table.serving" = "porce";
+"product-detail.nutrition-table.missing" = "Nebyly stanoveny žádné živiny.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Varování: U výrobku není uvedeno množství vlákniny, proto její případný vliv na posun do lepší skupiny nemůže být započítán.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Upozornění: množství ovoce, zeleniny a ořechů není specifikováno, jejich možný pozitivní přínos k hodnocení nelze zohlednit.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Upozornění: množství ovoce, zeleniny a ořechů není uvedeno na etiketě, bylo tedy odhadnuto ze složení: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
+"nutrition-level.title" = "Obsah živin na 100 g/100 ml";
 "nutrition-level.low" = "v malém množství";
 "nutrition-level.moderate" = "v mírném množství";
 "nutrition-level.high" = "ve velkém množství";
 
 // Ingredients Analysis
-"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
-"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
-"ingredients-analysis.display" = "Display %@ status";
-"ingredients-analysis.missing-ingredients.title" = "Fill in the missing ingredients";
-"ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
-"ingredients-analysis.help-translate.title" = "Help translate the ingredients in your language";
-"ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
-"ingredients-analysis.help-translate.button" = "Help translate ingredients";
-"ingredients-analysis.back-to-scan" = "Back to scan";
+"ingredients-analysis.title" = "Analýza složení";
+"ingredients-analysis.ingredients_in_this_product" = "Složky v tomto produktu, které jsou %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Složky v tomto produktu jsou %@s.";
+"ingredients-analysis.unknown_status" = "Nemohli jsme posoudit stav produktu.";
+"ingredients-analysis.ambiguous" = "Nejednoznačné přísady: %@";
+"ingredients-analysis.display" = "Zobrazit stav %@";
+"ingredients-analysis.missing-ingredients.title" = "Doplňte chybějící přísady";
+"ingredients-analysis.missing-ingredients.description" = "Pro tento produkt zatím nemáme ingredience. Můžete mi pomoci je doplnit?";
+"ingredients-analysis.help-translate.title" = "Pomozte přeložit ingredience do vašeho jazyka";
+"ingredients-analysis.help-translate.description" = "Pomozte přeložit ingredience do vašeho jazyka pro umožnění analýzy ingrediencí";
+"ingredients-analysis.help-translate.button" = "Pomozte přeložit ingredience";
+"ingredients-analysis.back-to-scan" = "Zpět ke skenování";
 
 // Robotoff
 "robotoff.yes" = "Ano";
 "robotoff.no" = "Ne";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "Nejsem si jistý";
 "robotoff.contribute-incentive.title" = "Přispět";
-"robotoff.settings.display-questions" = "Display questions";
+"robotoff.settings.display-questions" = "Zobrazit otázky";
 "robotoff.contribute-incentive.login" = "Uživatelské jméno";
-"robotoff.contribute-incentive.not-now" = "Not now";
-"robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
-"robotoff.answer-saved" = "Answer saved, thanks!";
+"robotoff.contribute-incentive.not-now" = "Nyní ne";
+"robotoff.contribute-incentive.description" = "Odpovězte na jednoduché otázky a zajistěte transparentnost potravin!";
+"robotoff.answer-saved" = "Odpověď uložena, děkuji!";
 
 // Nutrition
 "nutrition.energy" = "Energie";
 "nutrition.energy.kj" = "Energie (kJ)";
 "nutrition.energy.kcal" = "Energie (kcal)";
-"nutrition.fats" = "Fats";
+"nutrition.fats" = "Tuky";
 "nutrition.fats.saturated-fat" = "Nasycené tuky";
 "nutrition.fats.mono-unsaturated-fat" = "Mononenasycený tuk";
 "nutrition.fats.poly-unsaturated-fat" = "Poly nenasycený tuk";
@@ -261,7 +277,7 @@
 "nutrition.alcohol" = "Alkohol";
 "nutrition.vitamins" = "Vitamíny";
 "nutrition.vitamins.a" = "Vitamín A";
-"nutrition.vitamins.beta-carotene" = "Beta carotene";
+"nutrition.vitamins.beta-carotene" = "Beta-karoten";
 "nutrition.vitamins.d" = "Vitamín D";
 "nutrition.vitamins.e" = "Vitamín E";
 "nutrition.vitamins.k" = "Vitamín K";
@@ -273,7 +289,7 @@
 "nutrition.vitamins.b9" = "Vitamín B9";
 "nutrition.vitamins.b12" = "Vitamín B12";
 "nutrition.vitamins.biotin" = "Biotin";
-"nutrition.vitamins.pantothenic-acid" = "Kyselina pantothenová";
+"nutrition.vitamins.pantothenic-acid" = "Vitamín B5";
 "nutrition.minerals" = "Minerály";
 "nutrition.minerals.silica" = "Oxid křemičitý";
 "nutrition.minerals.bicarbonate" = "Jedlá soda";
@@ -301,36 +317,42 @@
 
 // Call to action
 "call-to-action.summary" = "Vyfoťte přední stranu výrobku";
-"call-to-action.ingredients" = "Take a photo of the ingredients";
-"call-to-action.nutrition" = "Take a photo of the nutrition facts";
+"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.ingredients" = "Vyfoťte složení";
+"call-to-action.nutrition" = "Vyfoťte výživové údaje";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.took-picture.front" = "Photo of the front ✅";
-"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.front" = "Fotografie přední strany ✅";
+"product.images.took-picture.ingredients" = "Fotografie složení ✅";
+"product.images.took-picture.nutrition" = "Fotografie výživové tabulky ✅";
 
-"product.images.take-picture.front" = "Photo of the front";
-"product.images.take-picture.ingredients" = "Photo of the ingredients";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.front" = "Fotografie přední strany";
+"product.images.take-picture.ingredients" = "Fotografie složení";
+"product.images.take-picture.nutrition" = "Fotografie výživové tabulky";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Skener";
+"history.tab-bar.item" = "Historie";
 "settings.tab-bar.item" = "Nastavení";
-"settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
-"settings.allergies.title" = "Allergens alerts";
+"settings.ingredientsAnalysis.title" = "Upozornění na analýzu složek";
+"settings.allergies.title" = "Upozornění na alergeny";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
+"settings.allergies.add-button" = "Přidejte alergeny";
 "settings.sections.information" = "Informace";
-"settings.sections.discover" = "Zjistit víc";
-"settings.sections.contribute" = "Přispět";
+"settings.sections.discover" = "Objevit";
+"settings.sections.contribute" = "Zapojte se";
 "settings.sections.about" = "O aplikaci";
-"settings.user-profile" = "Your contributor account";
-"settings.credits.title" = "Credits";
-"settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "Zjistit víc";
-"settings.contribute.how-to-contribute" = "How To Contribute";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.user-profile" = "Váš účet přispěvatele";
+"settings.credits.title" = "Autoři";
+"settings.scan-on-launch.title" = "Skenovat ihned při spuštění";
+"settings.sections.discover" = "Discover";
+"settings.contribute.how-to-contribute" = "Jak přispět";
+"settings.contribute.support-open-food-facts" = "Podpořte Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Překládejte Open Food Facts";
 "settings.about.contact" = "Kontakt";
 "settings.about.frequently-asked-questions" = "Často Kladené Otázky";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
@@ -339,45 +361,56 @@
 // User view
 /* Tab bar item */
 "user.tab-bar.item" = "Uživatel";
-"user.log-in" = "Log In";
-"user.logging-in" = "Logging in";
-"user.log-out" = "Log Out";
+"user.log-in" = "Přihlásit se";
+"user.logging-in" = "Přihlašování";
+"user.log-out" = "Odhlásit se";
 "user.username" = "Uživatelské jméno";
 "user.password" = "Heslo";
-"user.logged-in.label" = "%@, you are logged in";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
-"user.not-logged-in" = "Not logged in";
-"user.forgot-password" = "Forgot Password?";
-"user.check-your-contributions.button" = "View all your contributions";
-"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
-"user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
-"user.create-account.text" = "If you don't have an account, click the link below to create one.";
-"user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
-"user.alert.wrong-credentials.title" = "Unable to log in";
-"user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
-"user.alert.generic-error.title" = "There was an error logging in";
-"user.alert.generic-error.subtitle" = "Please try again in a few moments";
-"user.alert.logout-confirmation.title" = "Potvrdit odhlášení";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
-"user.alert.username-missing" = "Username is required";
-"user.alert.password-missing" = "Password is required";
+"user.logged-in.label" = "%@ přihlášen/a";
+"user.logged-in-explanation.label" = "Za všechny produkty, které přidáte, a fotografie produktů, které nahrajete, bude připsáno uznání na váš účet";
+"user.not-logged-in" = "Nepřihlášen/a";
+"user.forgot-password" = "Zapomněli jste heslo?";
+"user.check-your-contributions.button" = "Zobrazit všechny vaše příspěvky";
+"user.products-pending-upload.button" = "Produkty čekající na nahrání do Open Food Facts";
+"user.products-pending-upload-none.button" = "Produkty čekající na nahrání do Open Food Facts (žádné)";
+"user.create-account.text" = "Pokud nemáte účet, klikněte na odkaz níže pro jeho vytvoření.";
+"user.create-account.button" = "Vytvořit účet";
+"user.why-log-in.text" = "Přihlášení pomocí vašeho účtu vám připíše uznání za všechny vaše příspěvky k transparentnosti potravin.";
+"user.alert.wrong-credentials.title" = "Nelze se přihlásit";
+"user.alert.wrong-credentials.subtitle" = "Zkontrolujte, zda je vaše uživatelské jméno a heslo správné";
+"user.alert.generic-error.title" = "Při přihlašování došlo k chybě";
+"user.alert.generic-error.subtitle" = "Zkuste to prosím znovu za chvíli";
+"user.alert.logout-confirmation.title" = "Potvrzení odhlášení";
+"user.alert.logout-confirmation.subtitle" = "Opravdu se chcete odhlásit?";
+"user.alert.username-missing" = "Uživatelské jméno je povinná položka";
+"user.alert.password-missing" = "Heslo je povinná položka";
 "pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"pending-upload.hud.status" = "Nahrávání…";
 
 // Search history
-"history.title" = "Search history";
-"history.cell.privacy" = "Your search history is only stored on your device";
+"history.title" = "Historie vyhledávání";
+"history.cell.privacy" = "Vaše historie vyhledávání je uložena pouze ve vašem zařízení";
 "history.button.clear" = "Vymazat";
-"history.clear.confirmation-title" = "Clear your history ?";
-"history.clear.confirmation-message" = "All your history will be deleted";
-"history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
-"history.first-scan.button.title" = "Skenovat první produkt";
-"API_CANCEL_TITLE" = "Zrušit";
-"USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Zrušit";
+"history.clear.confirmation-title" = "Vymazat historii?";
+"history.clear.confirmation-message" = "Celá vaše historie bude smazána";
+"history.section-titles.last24h" = "Posledních 24 hodin";
+"history.section-titles.fewDays" = "Před pár dny";
+"history.section-titles.fewWeeks" = "Před několika týdny";
+"history.section-titles.fewMonths" = "Před několika měsíci";
+"history.section-titles.longTime" = "Dávno";
+"history.first-scan.button.title" = "Naskenujte svůj první produkt";
+
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Upravit";
+
+// Camera localization API
+"API_CANCEL_TITLE" = "Zrušit";
+"USE_PHOTO" = "Použít fotografii";
+"PHOTO" = "FOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Fotky";
+"CANCEL" = "Zrušit";
+"RETAKE" = "Pořídit znovu";

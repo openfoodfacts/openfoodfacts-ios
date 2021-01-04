@@ -14,8 +14,6 @@ import SafariServices
 
 // These tests are commented because apparently the LoginViewController was commented out in https://github.com/openfoodfacts/openfoodfacts-ios/pull/479
 
-//// swiftlint:disable force_cast
-//// swiftlint:disable weak_delegate
 //class LoginViewControllerTests: XCTestCase {
 //    var viewController: LoginViewController!
 //    var delegate: UserViewControllerDelegateMock!

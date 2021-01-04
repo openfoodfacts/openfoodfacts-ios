@@ -49,6 +49,11 @@ class ScannerViewController: UIViewController, DataManagerClient {
     fileprivate let floatingTopContainer = UIStackView()
     fileprivate let ingredientsAnalysisFloatingContainer = UIStackView()
 
+    /// System button displayed next to the ingredients analysis icon (if any), which points to the settings of the ingredient analysis.
+    var ingredientAnalysisSettingsButton: UIButton?
+
+// MARK: - initialisers
+
     init(dataManager: DataManagerProtocol) {
         self.dataManager = dataManager
         super.init(nibName: nil, bundle: nil)
@@ -110,7 +115,6 @@ class ScannerViewController: UIViewController, DataManagerClient {
         // set the useragent for the scan URL calls from this app
         setUserAgent()
 
-
         floatingTopContainer.distribution = .fillProportionally
         floatingTopContainer.axis = .vertical
         floatingTopContainer.addArrangedSubview(floatingLabelContainer)
@@ -118,12 +122,22 @@ class ScannerViewController: UIViewController, DataManagerClient {
 
         self.view.addSubview(floatingTopContainer)
         floatingTopContainer.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: floatingTopContainer, attribute: .bottom, relatedBy: .equal, toItem: floatingPanelController.surfaceView, attribute: .top, multiplier: 1, constant: -16),
             NSLayoutConstraint(item: floatingTopContainer, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 16),
             NSLayoutConstraint(item: floatingTopContainer, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: -16)
         ])
+
+        ingredientsAnalysisFloatingContainer.spacing = CGFloat(2.0)
+
+        if #available(iOS 13.0, *) {
+            let configuration = UIImage.SymbolConfiguration(pointSize: 35)
+            if let image = UIImage.init(systemName: "square.and.pencil", withConfiguration: configuration ) {
+                ingredientAnalysisSettingsButton = UIButton.systemButton(with: image, target: self, action: #selector(self.showIngredientsSettings))
+            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -175,6 +189,12 @@ class ScannerViewController: UIViewController, DataManagerClient {
             self.videoPreviewLayer?.connection?.videoOrientation = self.transformOrientation()
             self.videoPreviewLayer?.frame = self.view.bounds
         }, completion: nil)
+    }
+
+    @objc func showIngredientsSettings() {
+        let alertsVC = IngredientsAnalysisSettingsTableViewController()
+        alertsVC.dataManager = dataManager
+        self.navigationController?.pushViewController(alertsVC, animated: true)
     }
 
     fileprivate func transformOrientation() -> AVCaptureVideoOrientation {
@@ -553,6 +573,10 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     analysisView.configureGestureRecognizer()
                     self.ingredientsAnalysisFloatingContainer.addArrangedSubview(analysisView)
                 }
+                // add a button, which points to the ingredient analysis settings.
+                if let button = ingredientAnalysisSettingsButton {
+                    self.ingredientsAnalysisFloatingContainer.addArrangedSubview(button)
+                }
                 self.ingredientsAnalysisFloatingContainer.addArrangedSubview(UIView())
                 self.ingredientsAnalysisFloatingContainer.isHidden = false
             } else {
@@ -755,6 +779,7 @@ extension ScannerViewController {
 }
 
 // MARK: - FloatingPanel delegate
+
 extension ScannerViewController: FloatingPanelControllerDelegate {
 
     func floatingPanel(_ viewController: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {

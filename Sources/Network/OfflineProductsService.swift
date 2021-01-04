@@ -44,7 +44,7 @@ class OfflineProductsService: OfflineProductsApi {
     // swiftlint:disable identifier_name
 
     /// increment last number each time you want to force a refresh. Useful if you add a new refresh method or a new field
-    static fileprivate let USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD = "USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD__13"
+    static fileprivate let USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD = "USER_DEFAULT_LAST_OFFLINE_PRODUCTS_DOWNLOAD__14"
     static fileprivate let LAST_DOWNLOAD_DELAY: Double = 60 * 60 * 24 * 31 // 1 month
 
     // swiftlint:enable identifier_name
@@ -106,9 +106,11 @@ class OfflineProductsService: OfflineProductsApi {
                                             product.name = raw["product_name"]
                                             product.quantity = raw["quantity"]
                                             product.packaging = raw["packaging"]
+                                            product.labels = raw["labels"]
                                             product.brands = raw["brands"]
                                             product.nutritionGrade = raw["nutrition_grade_fr"]
                                             product.novaGroup = raw["nova_group"]
+                                            product.ecoscore = raw["ecoscore"]
 
                                             return product
                                         }, treatBatch: { (products: [RealmOfflineProduct]) in
@@ -161,7 +163,7 @@ class OfflineProductsService: OfflineProductsApi {
                 UIApplication.shared.endBackgroundTask(backgroundTaskId)
             }
         } else {
-            log.debug("Do not download offline products, we already have them !")
+            log.debug("[Offline_products] Do not download, we already have them !")
         }
     }
 }

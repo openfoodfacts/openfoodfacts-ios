@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="brandsLabel" destination="ACG-cp-2nn" id="8q2-qu-Vel"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="UHb-AH-vmc"/>
+                <outlet property="editButton" destination="Es1-im-WHn" id="qXD-QU-csx"/>
                 <outlet property="environmentImpactImageView" destination="FhV-GO-eCK" id="nFf-V3-zS6"/>
                 <outlet property="novaGroupView" destination="gHh-dz-dcC" id="0MP-PD-sB4"/>
                 <outlet property="nutriScoreView" destination="BJo-zp-gKS" id="VX4-e5-Td2"/>
@@ -44,21 +45,21 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="754" text="Naturalia 125g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACG-cp-2nn">
-                            <rect key="frame" x="64.5" y="43" width="61.5" height="18"/>
+                            <rect key="frame" x="64.5" y="43" width="26.5" height="18"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="754" text="125g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BWs-qe-xhF">
-                            <rect key="frame" x="64.5" y="65" width="61.5" height="18"/>
+                            <rect key="frame" x="64.5" y="65" width="26.5" height="18"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BfV-Kj-iW8">
-                            <rect key="frame" x="134" y="28.5" width="143" height="54.5"/>
+                            <rect key="frame" x="99" y="28.5" width="178" height="54.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="BJo-zp-gKS" customClass="NutriScoreView" customModule="OpenFoodFacts" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="72.5" height="54.5"/>
@@ -75,9 +76,9 @@
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="co2-high" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-GO-eCK">
-                                    <rect key="frame" x="112.5" y="0.0" width="24" height="54.5"/>
+                                    <rect key="frame" x="112.5" y="0.0" width="65.5" height="54.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
- n                                    <constraints>
+                                    <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="HxD-kB-PoB"/>
                                     </constraints>
                                 </imageView>
@@ -85,15 +86,27 @@
                             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="gHh-dz-dcC" firstAttribute="width" secondItem="BJo-zp-gKS" secondAttribute="width" multiplier="0.33" id="Emr-qn-Qjz"/>
-                                <constraint firstItem="FhV-GO-eCK" firstAttribute="width" secondItem="gHh-dz-dcC" secondAttribute="width" id="Zt6-g9-M0h"/>
+                                <constraint firstItem="FhV-GO-eCK" firstAttribute="width" secondItem="BJo-zp-gKS" secondAttribute="width" multiplier="0.9" id="Zt6-g9-M0h"/>
                             </constraints>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Es1-im-WHn">
+                            <rect key="frame" x="254.5" y="14.5" width="22.5" height="22.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Es1-im-WHn" secondAttribute="height" multiplier="1:1" id="PBj-sb-Nt3"/>
+                            </constraints>
+                            <state key="normal" image="edit-icon"/>
+                            <connections>
+                                <action selector="editButtonTapped:" destination="-1" eventType="touchUpInside" id="44c-AN-MEC"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="ACG-cp-2nn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XTn-1C-s9c" secondAttribute="bottom" constant="8" id="87t-wR-uvT"/>
                         <constraint firstAttribute="trailing" secondItem="BfV-Kj-iW8" secondAttribute="trailing" constant="8" id="BUm-GS-5lk"/>
+                        <constraint firstItem="Es1-im-WHn" firstAttribute="centerY" secondItem="Sx2-GJ-Tca" secondAttribute="centerY" constant="-20" id="G6D-0j-FcJ"/>
+                        <constraint firstItem="Es1-im-WHn" firstAttribute="height" secondItem="Sx2-GJ-Tca" secondAttribute="height" multiplier="0.3" id="JDG-fY-Nij"/>
                         <constraint firstItem="XTn-1C-s9c" firstAttribute="top" secondItem="Sx2-GJ-Tca" secondAttribute="top" id="Nud-o8-gXp"/>
                         <constraint firstItem="XTn-1C-s9c" firstAttribute="leading" secondItem="Sx2-GJ-Tca" secondAttribute="trailing" constant="8" id="OjS-aw-fKO"/>
                         <constraint firstAttribute="trailing" secondItem="XTn-1C-s9c" secondAttribute="trailing" id="R96-zU-flv"/>
@@ -102,6 +115,7 @@
                         <constraint firstAttribute="bottom" secondItem="Sx2-GJ-Tca" secondAttribute="bottom" constant="8" id="XVo-KN-du3"/>
                         <constraint firstAttribute="bottom" secondItem="BfV-Kj-iW8" secondAttribute="bottom" constant="8" id="alm-9j-5Vo"/>
                         <constraint firstItem="BWs-qe-xhF" firstAttribute="bottom" secondItem="Sx2-GJ-Tca" secondAttribute="bottom" id="f25-cC-E15"/>
+                        <constraint firstAttribute="trailing" secondItem="Es1-im-WHn" secondAttribute="trailing" constant="8" id="fgb-Cj-wL9"/>
                         <constraint firstItem="BWs-qe-xhF" firstAttribute="trailing" secondItem="ACG-cp-2nn" secondAttribute="trailing" id="het-Xd-Jb1"/>
                         <constraint firstItem="BfV-Kj-iW8" firstAttribute="leading" secondItem="ACG-cp-2nn" secondAttribute="trailing" constant="8" id="kgm-Pa-Fwc"/>
                         <constraint firstItem="BWs-qe-xhF" firstAttribute="leading" secondItem="ACG-cp-2nn" secondAttribute="leading" id="lJK-6F-LWC"/>
@@ -125,6 +139,7 @@
     </objects>
     <resources>
         <image name="co2-high" width="106" height="106"/>
+        <image name="edit-icon" width="100" height="100"/>
         <image name="nova-group-1" width="131" height="220"/>
     </resources>
 </document>

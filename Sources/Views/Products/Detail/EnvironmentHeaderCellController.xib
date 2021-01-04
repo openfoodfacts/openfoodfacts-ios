@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EnvironmentHeaderCellController" customModule="OpenFoodFacts" customModuleProvider="target">
+            <connections>
+                <outlet property="callToActionView" destination="HRE-MM-vHf" id="f6e-nQ-XU1"/>
+                <outlet property="ecoscoreExplanationLabel" destination="1WI-4o-m5E" id="lRD-xf-cH8"/>
+                <outlet property="ecoscoreImageView" destination="xrB-i8-UnA" id="LDk-A3-pj6"/>
+                <outlet property="ecoscoreInfoButton" destination="kyo-S7-Mve" id="rlY-Ir-gVc"/>
+                <outlet property="packaging" destination="ba3-qr-Kd4" id="dlU-KS-hYc"/>
+                <outlet property="takePictureButtonView" destination="uNw-US-iub" id="tDg-hm-VEJ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="rqn-BT-cvg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0te-AA-QEc" userLabel="Top Vertical Stack View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdI-QO-m74" userLabel="Horizontal Stack View ">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ba3-qr-Kd4">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="58"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="OHF-hf-NaZ"/>
+                                        <constraint firstAttribute="height" relation="lessThanOrEqual" priority="999" constant="130" id="Puj-zm-cCM"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRE-MM-vHf" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="ba3-qr-Kd4" firstAttribute="leading" secondItem="HRE-MM-vHf" secondAttribute="leading" id="HME-4u-8hd"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNw-US-iub" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="58" width="320" height="44"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="mKw-sy-4N5"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgb-66-yaW">
+                            <rect key="frame" x="0.0" y="102" width="320" height="80"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrB-i8-UnA" customClass="EcoscoreImageView" customModule="OpenFoodFacts" customModuleProvider="target">
+                                    <rect key="frame" x="-1.5" y="0.0" width="147.5" height="80"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="xrB-i8-UnA" secondAttribute="height" multiplier="118:64" id="V8m-3q-gyE"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WI-4o-m5E">
+                                    <rect key="frame" x="140" y="28" width="140" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="140" id="jvi-C3-fug"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyo-S7-Mve">
+                                    <rect key="frame" x="278" y="28" width="24" height="24"/>
+                                    <state key="normal" image="circle-info"/>
+                                    <connections>
+                                        <action selector="ecoscoreInfoButtonTapped:" destination="-1" eventType="touchUpInside" id="daw-6g-9Oe"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="3Kd-9E-A7T"/>
+                                <constraint firstItem="1WI-4o-m5E" firstAttribute="trailing" secondItem="kyo-S7-Mve" secondAttribute="leading" constant="2" id="3xh-1u-dLi"/>
+                                <constraint firstItem="1WI-4o-m5E" firstAttribute="centerX" secondItem="Sgb-66-yaW" secondAttribute="centerX" constant="50" id="AnT-cf-lro"/>
+                                <constraint firstItem="xrB-i8-UnA" firstAttribute="height" secondItem="Sgb-66-yaW" secondAttribute="height" id="CZe-mq-fDz"/>
+                                <constraint firstItem="kyo-S7-Mve" firstAttribute="height" secondItem="1WI-4o-m5E" secondAttribute="height" id="aVO-ai-kUd"/>
+                                <constraint firstItem="kyo-S7-Mve" firstAttribute="centerY" secondItem="1WI-4o-m5E" secondAttribute="centerY" id="cdJ-Wa-V8f"/>
+                                <constraint firstItem="1WI-4o-m5E" firstAttribute="centerY" secondItem="xrB-i8-UnA" secondAttribute="centerY" id="hd0-nh-qDb"/>
+                                <constraint firstItem="xrB-i8-UnA" firstAttribute="trailing" secondItem="1WI-4o-m5E" secondAttribute="leading" constant="6" id="t8Z-Ic-PAe"/>
+                                <constraint firstItem="1WI-4o-m5E" firstAttribute="centerY" secondItem="Sgb-66-yaW" secondAttribute="centerY" id="wtX-Ap-9xJ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="uNw-US-iub" firstAttribute="top" secondItem="ZdI-QO-m74" secondAttribute="bottom" constant="11" id="gQX-GV-0pf"/>
+                        <constraint firstAttribute="bottom" secondItem="ZdI-QO-m74" secondAttribute="bottom" constant="126" id="hzd-Fl-ncC"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="hzd-Fl-ncC"/>
+                            <exclude reference="gQX-GV-0pf"/>
+                        </mask>
+                    </variation>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="0te-AA-QEc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="38W-5f-Euw"/>
+                <constraint firstAttribute="bottom" secondItem="0te-AA-QEc" secondAttribute="bottom" id="eC3-x5-DvJ"/>
+                <constraint firstAttribute="trailing" secondItem="0te-AA-QEc" secondAttribute="trailing" id="kCH-f1-DPz"/>
+                <constraint firstItem="0te-AA-QEc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m5k-6y-x9j"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="356.52173913043481" y="93.75"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle-info" width="24" height="24"/>
+    </resources>
+</document>

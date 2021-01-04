@@ -74,4 +74,24 @@ extension UIColor {
             return String(format: "%02lX%02lX%02lX", lroundf(red * 255), lroundf(green * 255), lroundf(blue * 255))
         }
     }
+
+    // This could be merged with toHex. That does not handle two component colors.
+    var hexString: String {
+        let colorComponents = self.cgColor.components ?? []
+        if self.cgColor.numberOfComponents == 4 {
+            let red = colorComponents[0] * 255
+            let green = colorComponents[1] * 255
+            let blue = colorComponents[2] * 255
+
+            let hexString = NSString(format: "%02X%02X%02X", Int(red), Int(green), Int(blue)) as String
+            return hexString
+        } else if self.cgColor.numberOfComponents == 2 {
+            let white = colorComponents[0] * 255
+
+            return NSString(format: "%02X%02X%02X", Int(white), Int(white), Int(white)) as String
+        } else {
+            return "UIColor:hexString:Color format not supported"
+        }
+    }
+
 }

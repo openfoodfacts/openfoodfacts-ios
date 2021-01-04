@@ -5,7 +5,10 @@
 
 import UIKit
 
-class ScanProductSummaryView: UIView {
+protocol ScanProductSummaryViewProtocol: class {
+    func scanProductSummaryViewButtonTapped(_ sender: ScanProductSummaryView, button: UIButton)
+}
+final class ScanProductSummaryView: UIView {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -15,6 +18,16 @@ class ScanProductSummaryView: UIView {
     @IBOutlet weak var novaGroupView: NovaGroupView!
     @IBOutlet weak var environmentImpactImageView: UIImageView!
     @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var editButton: UIButton! {
+        didSet {
+            editButton?.isHidden = true
+        }
+    }
+    @IBAction func editButtonTapped(_ sender: UIButton) {
+        delegate?.scanProductSummaryViewButtonTapped(self, button: sender)
+    }
+
+    weak var delegate: ScanProductSummaryViewProtocol?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,6 +55,15 @@ class ScanProductSummaryView: UIView {
         setNutriScore(nutriscore: adaptor.nutriScore)
         setNovaGroup(novaGroup: adaptor.novaGroup)
         setEnvironmentImpactImageView(image: adaptor.environmentalImage)
+        delegate = adaptor.delegate
+        if adaptor.title == nil &&
+            adaptor.quantityText == nil &&
+            adaptor.brands == nil &&
+            adaptor.nutriScore == nil &&
+            adaptor.novaGroup == nil {
+            editButton.isHidden = false
+            titleLabel.text = "call-to-action.edit".localized
+        }
     }
 
     private func setEnvironmentImpactImageView(image: UIImage?) {
@@ -72,18 +94,16 @@ class ScanProductSummaryView: UIView {
     private func setNutriScore(nutriscore: NutriScoreView.Score?) {
         if let score = nutriscore {
             nutriScoreView.currentScore = score
-            nutriScoreView.isHidden = false
         } else {
-            nutriScoreView.isHidden = true
+            nutriScoreView.currentScore = .unknown
         }
     }
 
     private func setNovaGroup(novaGroup: NovaGroupView.NovaGroup?) {
         if let novaGroup = novaGroup {
             novaGroupView.novaGroup = novaGroup
-            novaGroupView.isHidden = false
         } else {
-            novaGroupView.isHidden = true
+            novaGroupView.novaGroup = .unknown
         }
     }
 

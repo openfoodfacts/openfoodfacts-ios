@@ -14,7 +14,7 @@
 "generic.search" = "Iskanje";
 "generic.cancel" = "Prekliči";
 "generic.save" = "Shrani";
-"generic.cancel" = "Prekliči";
+"generic.cancel" = "Cancel";
 "generic.ok" = "V redu";
 "generic.close" = "Zapri";
 
@@ -27,7 +27,7 @@
 "product-search.error-view.subtitle" = "Prosimo, poskusite znova";
 "product-search.initial-view.slogan" = "brezplačna zbirka podatkov o prehranskih izdelkih";
 "product-search.initial-view.offline.title-loading" = "Shranjevanje izdelkov brez povezave: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.offline.subtitle" = "Za takojšnje skeniranje je na voljo več kot %d izdelkov";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skenirajte črtno kodo izdelka";
@@ -101,13 +101,20 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Informacije o izdelku";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Ime";
 "product-add.label.category" = "Kategorijo";
 "product-add.label.quantity" = "Količina";
 "product-add.label.packaging" = "Pakiranje";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Potrebno za izračun Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Jeziki";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Dejstva o hranilni vrednosti";
@@ -193,12 +200,20 @@
 "product-detail.nutrition-table.for-100g" = "Za 100g";
 "product-detail.nutrition-table.for-serving" = "Na porcijo";
 "product-detail.nutrition-table.100g" = "100g";
-"product-detail.nutrition-table.serving" = "serving";
+"product-detail.nutrition-table.serving" = "porcija";
 "product-detail.nutrition-table.missing" = "Hranila niso bila nastavljena.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Opozorilo: količina vlaknin ni določena, njenega možnega pozitivnega učinka k razredu ni mogoče upoštevati.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Opozorilo: količina sadja, zelenjave in oreščkov ni določena, njihovega možnega pozitivnega prispevka k razredu ni mogoče upoštevati.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Opozorilo: količina sadja, zelenjave in oreščkov ni navedena na etiketi, ocenjena je bila s seznama sestavin: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Opozorilo: količina sadja, zelenjave in oreščkov ni navedena na etiketi, ocenjena je bila iz kategorije (%s) izdelka: %d%";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score neznana";
+"product-detail.environment.ecoscore.incite" = "Prosim, dodajte podatke o embalaži, da bomo lahko izračunali Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Vsebnost hranil na 100 g /100 ml";
@@ -207,6 +222,7 @@
 "nutrition-level.high" = "v veliki količini";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Analiza sestavin";
 "ingredients-analysis.ingredients_in_this_product" = "Sestavine tega izdelka, ki so %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Sestavine tega izdelka so %@s.";
 "ingredients-analysis.unknown_status" = "Stanja izdelka ni bilo mogoče oceniti.";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "Naredi sliko spredaj";
+"call-to-action.environment" = "Fotografirajte navodila za recikliranje";
 "call-to-action.ingredients" = "Fotografiraj sestavine";
 "call-to-action.nutrition" = "Naredi posnetek iz tabele sestavin";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,8 +331,12 @@
 "product.images.take-picture.front" = "Fotografija spredaj";
 "product.images.take-picture.ingredients" = "Fotografija sestavin";
 "product.images.take-picture.nutrition" = "Fotografija prehranske tabele";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Skener";
+"history.tab-bar.item" = "Zgodovina";
 "settings.tab-bar.item" = "Nastavitve";
 "settings.ingredientsAnalysis.title" = "Opozorila o analizi sestavin";
 "settings.allergies.title" = "Opozorilo na alergene";
@@ -327,7 +349,7 @@
 "settings.user-profile" = "Vaš račun sodelavca";
 "settings.credits.title" = "Zasluge";
 "settings.scan-on-launch.title" = "Pokaži skeniranje pri zagonu aplikacije";
-"settings.sections.discover" = "Odkritje";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Kako prispevati";
 "settings.contribute.support-open-food-facts" = "Podprite Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Prevedi Open Products Facts";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "Pred nekaj meseci";
 "history.section-titles.longTime" = "Dolgo časa nazaj";
 "history.first-scan.button.title" = "Skenirajte prvi izdelek";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Uredi";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Prekliči";
 "USE_PHOTO" = "Uporabi fotografijo";
-"API_CANCEL_TITLE" = "Prekliči";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Uredi";
+"PHOTO" = "FOTOGRAFIJA";
+"AEAF_LOCK_TEXT" = "AE/AF zapora";
+"HDR_AUTO" = "Avtomatsko";
+"HDR_ON" = "Vklopljeno";
+"HDR_OFF" = "Izklopljeno";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Ponovi";

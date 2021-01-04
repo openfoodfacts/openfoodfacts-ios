@@ -54,6 +54,9 @@ class TakePictureViewController: UIViewController {
         } else if let vcs = self as? NutritionTableHeaderCellController {
             cameraController.imageType = .nutrition
             cameraController.languageCode = vcs.product.lang
+        } else if let vcs = self as? EnvironmentHeaderCellController {
+            cameraController.imageType = .packaging
+            cameraController.languageCode = vcs.product.lang
         } else {
             cameraController.imageType = self.imageType
         }

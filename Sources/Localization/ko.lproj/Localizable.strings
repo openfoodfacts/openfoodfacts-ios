@@ -14,7 +14,7 @@
 "generic.search" = "수색";
 "generic.cancel" = "취소";
 "generic.save" = "저장";
-"generic.cancel" = "취소";
+"generic.cancel" = "Cancel";
 "generic.ok" = "확인";
 "generic.close" = "닫기";
 
@@ -100,14 +100,21 @@
 "product-add.titles.top-explainations" = "좋습니다! 이 제품은 아직 Open Food Facts에 없습니다. Open Food Facts에 이 제품을 추가하기 위해 제품과, 성분목록, 영양 성분에 대한 사진을 찍어주실 수 있나요?\n\n감사합니다.";
 "product-add.titles.license-explaination" = "참고: 보내신 사진들은 모두 무료 라이센스인 Creative Commons Attribution and ShareAlike에 따라 게시됩니다.";
 
-"product-add.titles.product-info" = "상품 정보";
+"product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "이름";
 "product-add.label.category" = "카테고리";
 "product-add.label.quantity" = "양";
 "product-add.label.packaging" = "포장";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Nutri-Score 계산에 필요";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "언어";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "영양 사실과 상품 카테고리를 완성하여 Nutri-Score를 얻는다.";
 "product-add.titles.nutritive" = "영양 성분 정보";
@@ -200,6 +207,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "경고: 라벨에 과일, 야채 및 견과류의 양이 명시되지 않았으며, 재료 목록에서 다음과 같이 추정되었습니다.:%d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "경고: 라벨에 과일, 야채 및 견과류의 양이 명시되지 않았으며, 제품의 범주(%s)에서 추정되었습니다:%d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "100 g/100 mL당 영양 수준";
 "nutrition-level.low" = "소량일시";
@@ -207,6 +222,7 @@
 "nutrition-level.high" = "대량일시";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "성분 분석";
 "ingredients-analysis.ingredients_in_this_product" = "이 제품의 %@s 성분:";
 "ingredients-analysis.ingredients_in_this_product_are" = "이 제품의 성분은 %@s입니다.";
 "ingredients-analysis.unknown_status" = "제품 상태를 평가할 수 없습니다.";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "정면 사진 찍기";
+"call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "성분의 사진을 촬영";
 "call-to-action.nutrition" = "영양 사실의 사진을 찍으십시오";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,8 +331,12 @@
 "product.images.take-picture.front" = "정면의 사진";
 "product.images.take-picture.ingredients" = "성분의 사진";
 "product.images.take-picture.nutrition" = "영양 표 사진";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "스캐너";
+"history.tab-bar.item" = "최근 기록";
 "settings.tab-bar.item" = "설정";
 "settings.ingredientsAnalysis.title" = "성분 분석 알림";
 "settings.allergies.title" = "알러지 경고";
@@ -327,7 +349,7 @@
 "settings.user-profile" = "기여자 계정";
 "settings.credits.title" = "제작진";
 "settings.scan-on-launch.title" = "스캔시 앱 실행 표시";
-"settings.sections.discover" = "둘러보기";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "기여 방법";
 "settings.contribute.support-open-food-facts" = "Open Food Facts 지원하기";
 "settings.contribute.translate-open-food-facts" = "Open Food Facts 번역하기";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "몇 개월 전에";
 "history.section-titles.longTime" = "오래 전";
 "history.first-scan.button.title" = "Scan First Product";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "수정";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "취소";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "취소";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "수정";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

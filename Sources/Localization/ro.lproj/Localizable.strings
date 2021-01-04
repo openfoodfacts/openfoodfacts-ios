@@ -14,7 +14,7 @@
 "generic.search" = "Caută";
 "generic.cancel" = "Anulare";
 "generic.save" = "Salvează";
-"generic.cancel" = "Anulare";
+"generic.cancel" = "Cancel";
 "generic.ok" = "OK";
 "generic.close" = "Închidere";
 
@@ -100,14 +100,21 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Notă: fotografiile trimise sunt publicate sub o licență liberă Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Informații produs";
+"product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Nume";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Cantitate";
 "product-add.label.packaging" = "Ambalare";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Necesar pentru calcularea Nutri-Score-ului";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Limbi";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Completați informațiile nutriționale și categoria produsului pentru a obține Nutri-Score-ul";
 "product-add.titles.nutritive" = "Valori nutriționale";
@@ -169,7 +176,7 @@
 "product-detail.ingredients.nova.2" = "Ingrediente culinare prelucrate";
 "product-detail.ingredients.nova.3" = "Hrană procesată";
 "product-detail.ingredients.nova.4" = "Produse ultra-procesate pentru alimente și băuturi";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.incite" = "Adăugați ingrediente și / sau categorii pentru a calcula NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Substanțe sau produse care cauzează alergii sau intoleranțe";
 "product-detail.ingredients.allergens-alert.title" = "Conține alergeni!";
@@ -200,6 +207,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "Informații nutriționale pentru 100g";
 "nutrition-level.low" = "în cantitate mică";
@@ -207,7 +222,8 @@
 "nutrition-level.high" = "în cantitate ridicată";
 
 // Ingredients Analysis
-"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
+"ingredients-analysis.title" = "Analiza ingredientelor";
+"ingredients-analysis.ingredients_in_this_product" = "Ce faci";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
 "ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "Faceți o poză frontală produsului";
+"call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "Faceți o poză ingredientelor";
 "call-to-action.nutrition" = "Faceți o poză tabelului cu informații nutriționale";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,8 +331,12 @@
 "product.images.take-picture.front" = "Fotografia din față";
 "product.images.take-picture.ingredients" = "Fotografia listei de ingrediente";
 "product.images.take-picture.nutrition" = "Fotografia tabelului nutrițional";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Scaner";
+"history.tab-bar.item" = "Istoric";
 "settings.tab-bar.item" = "Configurări";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Alerte de alergeni";
@@ -327,7 +349,7 @@
 "settings.user-profile" = "Contul dvs. de contribuitor";
 "settings.credits.title" = "Contribuţii";
 "settings.scan-on-launch.title" = "Afișare scanner la lansarea aplicației";
-"settings.sections.discover" = "Descoperiți";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Cum să contribuiţi";
 "settings.contribute.support-open-food-facts" = "Susțineți Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Traduceți Open Food Facts";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "Acum câteva luni";
 "history.section-titles.longTime" = "Acum mult timp";
 "history.first-scan.button.title" = "Scanați primul produs";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Modificare";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Anulare";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Anulare";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Modificare";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

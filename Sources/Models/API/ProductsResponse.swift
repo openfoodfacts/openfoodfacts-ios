@@ -16,6 +16,7 @@ class ProductsResponse: Mappable {
     var pageSize = "0"
     var products = [Product]()
     var product: Product?
+    var productAttributes: ProductAttributes?
 
     required init?(map: Map) {
     }
@@ -26,5 +27,6 @@ class ProductsResponse: Mappable {
         pageSize <- map[OFFJson.PageSizeKey]
         products <- map[OFFJson.ProductsKey]
         product <- map[OFFJson.ProductKey]
+        productAttributes = ProductAttributes(map: map)
     }
 }

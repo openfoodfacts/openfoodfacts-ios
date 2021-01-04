@@ -23,9 +23,11 @@ class HistoryItem: Object {
     @objc dynamic var brand: String?
     @objc dynamic var quantity: String?
     @objc dynamic var packaging: String?
+    @objc dynamic var labels: String?
     @objc dynamic var imageUrl: String?
     @objc dynamic var timestamp = Date()
     @objc dynamic var nutriscore: String?
+    @objc dynamic var ecoscore: String?
     let novaGroup = RealmOptional<Int>()
 
     var age: Age {
@@ -63,9 +65,11 @@ extension HistoryItem: StringRepresentable {
         returnValue += brand != nil ? "\"\(brand!)\"" + "," : ","
         returnValue += quantity != nil ? "\"\(quantity!)\"" + "," : ","
         returnValue += packaging != nil ? "\"\(packaging!)\"" + "," : ","
+        returnValue += labels != nil ? "\"\(labels!)\"" + "," : ","
         returnValue += imageUrl != nil ? "\"\(imageUrl!)\"" + "," : ","
         returnValue += "\"\(timestamp)\"" + ","
         returnValue += nutriscore != nil ? "\"\(nutriscore!)\"" + "," : ","
+        returnValue += ecoscore != nil ? "\"\(ecoscore!)\"" + "," : ","
         returnValue += "\"\(novaGroupString)\""
         //returnValue += "\( ?? ""),\( ?? ""),\( ?? ""),\( ?? ""),\(),\( ?? ""),\()"
         print(returnValue)

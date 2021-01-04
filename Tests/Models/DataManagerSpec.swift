@@ -298,6 +298,7 @@ class DataManagerSpec: QuickSpec {
                     item1.frontImage = ProductImage(barcode: barcode, image: TestHelper.sharedInstance.getTestImage(), type: .front)!
                     item1.ingredientsImage = ProductImage(barcode: barcode, image: TestHelper.sharedInstance.getTestImage(), type: .ingredients)!
                     item1.nutritionImage = ProductImage(barcode: barcode, image: TestHelper.sharedInstance.getTestImage(), type: .nutrition)!
+                    item1.packagingImage = ProductImage(barcode: barcode, image: TestHelper.sharedInstance.getTestImage(), type: .packaging)!
 
                     persistenceManager.itemsPendingUpload = [item1]
                 }

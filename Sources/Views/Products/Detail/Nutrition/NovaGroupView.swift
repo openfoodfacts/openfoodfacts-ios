@@ -15,6 +15,7 @@ class NovaGroupView: UIImageView {
         case two = "2"
         case three = "3"
         case four = "4"
+        case unknown = "unknown"
     }
 
     /// return the currently displayed nova group

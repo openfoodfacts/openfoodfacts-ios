@@ -14,7 +14,7 @@
 "generic.search" = "Ara";
 "generic.cancel" = "İptal";
 "generic.save" = "Kaydet";
-"generic.cancel" = "İptal";
+"generic.cancel" = "Cancel";
 "generic.ok" = "Tamam";
 "generic.close" = "Kapat";
 
@@ -100,14 +100,21 @@
 "product-add.titles.top-explainations" = "Aferin! Bu ürün henüz Open Food Facts'te yok. Open Food Facts'e eklemek için ürünün, içindekiler listesinin ve besin değerlerinin fotoğraflarını çekebilir misiniz? \n\nŞimdiden teşekkürler.";
 "product-add.titles.license-explaination" = "Not: gönderdiğiniz resimler özgür bir lisans olan Creative Commons Attribution & ShareAlike kapsamında yayınlanmaktadır.";
 
-"product-add.titles.product-info" = "Ürün bilgisi";
+"product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "İsim";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Miktar";
 "product-add.label.packaging" = "Ambalaj";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Nutri-Score'u hesaplamak için gerekli";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Diller";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Nutri-Score'u öğrenmek için besin değerlerini ve ürün kategorisini tamamlayın";
 "product-add.titles.nutritive" = "Besin Değerleri";
@@ -196,9 +203,17 @@
 "product-detail.nutrition-table.serving" = "porsiyon";
 "product-detail.nutrition-table.missing" = "Herhangi bir besin ögesi ayarlanmadı.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Uyarı: lif miktarı belirtilmediği için, olası olumlu katkı notuna dahil edilemedi.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Uyarı: Meyve, sebze ve sert kabuklu yemişlerin miktarı belirtilmemiştir, sınıfa olası olumlu katkıları dikkate alınmamıştır.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Uyarı: Meyve, sebze ve fındık miktarı etiket üzerinde belirtilmemiş, içerikler listesinden hesaplanmıştır: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Uyarı: Meyve, sebze ve fındık miktarı etiket üzerinde belirtilmemiş, (%s) kategorisinden %d% ürününe göre hesaplanmıştır";
+
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "100 g/100mL için besin ögeleri seviyeleri";
@@ -207,6 +222,7 @@
 "nutrition-level.high" = "yüksek miktarda";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Malzeme analizi";
 "ingredients-analysis.ingredients_in_this_product" = "Bu ürünün içindeki %@s olan malzemeler:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Bu ürünün içindeki malzemeler %@s.";
 "ingredients-analysis.unknown_status" = "Ürünün durumunu değerlendiremedik.";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "Ön fotoğrafını çekin";
+"call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "Malzemelerin fotoğrafını çekin";
 "call-to-action.nutrition" = "Beslenme tablosunun resmini çekin";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,8 +331,12 @@
 "product.images.take-picture.front" = "Ön tarafın fotoğrafı";
 "product.images.take-picture.ingredients" = "İçindekilerin fotoğrafı";
 "product.images.take-picture.nutrition" = "Besin değerleri tablosunun fotoğrafı";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Tarayıcı";
+"history.tab-bar.item" = "Geçmiş";
 "settings.tab-bar.item" = "Ayarlar";
 "settings.ingredientsAnalysis.title" = "İçerik analizi uyarıları";
 "settings.allergies.title" = "Alerjen uyarıları";
@@ -327,7 +349,7 @@
 "settings.user-profile" = "Katkıda bulunan kişi hesabınız";
 "settings.credits.title" = "Katkıda Bulunanlar";
 "settings.scan-on-launch.title" = "Uygulamayı Başlatma sırasında Tarama'yı Göster";
-"settings.sections.discover" = "Keşfet";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Katkıda bulunabilirsiniz";
 "settings.contribute.support-open-food-facts" = "Open Food Facts için destek";
 "settings.contribute.translate-open-food-facts" = "Open Food Facts'in çevirisine yardımcı olabilirsin";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "Birkaç ay önce";
 "history.section-titles.longTime" = "Uzun zaman önce";
 "history.first-scan.button.title" = "İlk Ürünü Tara";
-"API_CANCEL_TITLE" = "İptal";
-"USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "İptal";
+
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Düzenle";
+
+// Camera localization API
+"API_CANCEL_TITLE" = "İptal";
+"USE_PHOTO" = "Fotoğraf kullan";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

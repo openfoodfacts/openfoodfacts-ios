@@ -20,6 +20,15 @@ extension String {
         return !matches.isEmpty
     }
 
+    var localLanguageCodeRemoved: String {
+        let split = self.split(separator: ":")
+        if split.count == 2,
+            split[0] == Locale.current.languageCode! {
+            return String(split[1])
+        }
+        return self
+    }
+
     var htmlDecoded: String {
         let decoded: String? = nil
             //try? NSAttributedString(data: Data(utf8), options: [

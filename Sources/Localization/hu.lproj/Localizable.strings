@@ -14,7 +14,7 @@
 "generic.search" = "Keres";
 "generic.cancel" = "Mégse";
 "generic.save" = "Mentés";
-"generic.cancel" = "Mégse";
+"generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 "generic.close" = "Bezár";
 
@@ -64,8 +64,8 @@
 "product-add.save-error.title" = "Hiba történt a termék mentése közben";
 "product-add.save-error.message" = "Kérem próbálkozzon később";
 "product-add.save-info.success" = "Információ elmentve a";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
+"product-add.save-info.error" = "Információ nincs mentve";
+"product-add.save-info.saving" = "Termék információ mentése…";
 "product-add.save-info.not-yet" = "Az adatok még nem lettek mentve";
 "product-add.save-ingredients.success" = "Összetevők mentve";
 "product-add.save-ingredients.error" = "Az összetevők nincsenek mentve";
@@ -77,10 +77,10 @@
 "product-add.save-nutriments.not-yet" = "A tápanyagtáblázat nincs mentve";
 "product-add.no-nutrition" = "Nincsenek megadva tápértékadatok a terméken";
 
-"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.success" = "Összetevők listája a képen";
+"product-add.ocr-ingredients.error" = "Az összetevők listája nem olvasható a képről";
+"product-add.ocr-ingredients.saving" = "Összetevők listázása a képről…";
+"product-add.ocr-ingredients.not-yet" = "Várunk az összetevők képének analizálása";
 
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
 "product-add.novagroup-explaination" = "A NOVA csoport épp most lett kiszámítva az összetevőlista alapján";
@@ -100,14 +100,21 @@
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Termékinformációk";
+"product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Név";
 "product-add.label.category" = "Kategória";
 "product-add.label.quantity" = "Mennyiség";
 "product-add.label.packaging" = "Csomagolás";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
+"product-add.details.category" = "Szükséges a Nutri-Score kiszámításához";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Nyelvek";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Tápértékadatok";
@@ -200,6 +207,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Figyelmeztetés: a gyümölcsök, zöldségek és diófélék mennyisége nincs megadva a címkén, ezért az összetevők alapján becsült értékük: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Figyelmeztetés: a gyümölcsök, zöldségek és diófélék mennyisége nincs megadva a címkén, ezért a(z) (%s) kategória alapján a termékben a becsült értékük: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
 "nutrition-level.low" = "kis mennyiségben";
@@ -207,8 +222,9 @@
 "nutrition-level.high" = "nagy mennyiségben";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Összetevők elemzése";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
+"ingredients-analysis.ingredients_in_this_product_are" = "A termék összetevői %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
 "ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
 "ingredients-analysis.display" = "Display %@ status";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "Készíts egy képet az elejéről";
+"call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "Take a photo of the ingredients";
 "call-to-action.nutrition" = "Take a photo of the nutrition facts";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,8 +331,12 @@
 "product.images.take-picture.front" = "Photo of the front";
 "product.images.take-picture.ingredients" = "Photo of the ingredients";
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Szkenner";
+"history.tab-bar.item" = "Előzmények";
 "settings.tab-bar.item" = "Beállítások";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Allergének riasztása";
@@ -327,7 +349,7 @@
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Köszönet";
 "settings.scan-on-launch.title" = "Mutassa a beolvasást az alkalmazás indításakor";
-"settings.sections.discover" = "Felfedezés";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Hogyan járulhat hozzá";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
 "history.first-scan.button.title" = "Első termék beolvasása";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Szerkesztés";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Mégse";
 "USE_PHOTO" = "Use Photo";
-"API_CANCEL_TITLE" = "Mégse";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Szerkesztés";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";

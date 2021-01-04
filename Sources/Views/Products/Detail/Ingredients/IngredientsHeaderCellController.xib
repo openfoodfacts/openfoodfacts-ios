@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,14 +24,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MWo-ER-ApE">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MWo-ER-ApE" userLabel="Top Vertical Stack View">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuw-2U-tN7">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuw-2U-tN7">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-UT-33y">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-UT-33y">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Ymd-Ux-gcL"/>
@@ -39,59 +39,67 @@
                                     </constraints>
                                 </imageView>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0H-vx-8QQ" customClass="PictureCallToActionView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="55.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstItem="Rqb-UT-33y" firstAttribute="height" secondItem="cuw-2U-tN7" secondAttribute="height" id="gOB-RJ-3is"/>
+                                <constraint firstItem="Rqb-UT-33y" firstAttribute="leading" secondItem="p0H-vx-8QQ" secondAttribute="leading" id="F5O-at-T4O"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="gOB-RJ-3is"/>
-                                </mask>
-                            </variation>
                         </stackView>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-S9-0pp" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="97" width="320" height="50"/>
+                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-S9-0pp" customClass="IconButtonView" customModule="OpenFoodFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="66.5" width="320" height="44"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="22" id="kV1-Ct-FR1"/>
+                                <constraint firstAttribute="height" constant="44" id="kV1-Ct-FR1"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="kV1-Ct-FR1"/>
-                                </mask>
-                            </variation>
                         </view>
-                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dY2-j0-Cye">
-                            <rect key="frame" x="0.0" y="155" width="320" height="27"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POW-1n-FnV">
+                            <rect key="frame" x="0.0" y="121.5" width="320" height="60.5"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbX-TQ-FYc" customClass="NovaGroupView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="27"/>
+                                <view contentMode="scaleToFill" horizontalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="fbX-TQ-FYc" customClass="NovaGroupView" customModule="OpenFoodFacts" customModuleProvider="target">
+                                    <rect key="frame" x="32.5" y="-9.5" width="47.5" height="80"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="aP4-VA-fJ0"/>
+                                        <constraint firstAttribute="height" constant="80" id="MDO-fd-HuQ"/>
+                                        <constraint firstAttribute="width" secondItem="fbX-TQ-FYc" secondAttribute="height" multiplier="131:220" id="Yce-8V-dwm"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLO-G9-z26">
-                                    <rect key="frame" x="106.5" y="0.0" width="107" height="27"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLO-G9-z26">
+                                    <rect key="frame" x="80" y="18.5" width="160" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="160" id="yzO-Kq-ysD"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f61-gC-kYe">
-                                    <rect key="frame" x="213.5" y="0.0" width="106.5" height="27"/>
+                                    <rect key="frame" x="242" y="18.5" width="24" height="24"/>
                                     <state key="normal" image="circle-info"/>
                                     <connections>
                                         <action selector="novagroupInfoButtonTapped:" destination="-1" eventType="touchUpInside" id="umr-Od-Yxj"/>
                                     </connections>
                                 </button>
                             </subviews>
-                        </stackView>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="yLO-G9-z26" firstAttribute="height" secondItem="f61-gC-kYe" secondAttribute="height" id="HFv-Vs-fFw"/>
+                                <constraint firstItem="yLO-G9-z26" firstAttribute="centerX" secondItem="POW-1n-FnV" secondAttribute="centerX" id="NfH-Gz-TFU"/>
+                                <constraint firstItem="yLO-G9-z26" firstAttribute="leading" secondItem="fbX-TQ-FYc" secondAttribute="trailingMargin" constant="8" id="WIn-ep-hyL"/>
+                                <constraint firstItem="yLO-G9-z26" firstAttribute="centerY" secondItem="POW-1n-FnV" secondAttribute="centerY" id="YtF-3u-7cp"/>
+                                <constraint firstItem="fbX-TQ-FYc" firstAttribute="centerY" secondItem="yLO-G9-z26" secondAttribute="centerY" id="cE7-2V-jG4"/>
+                                <constraint firstItem="f61-gC-kYe" firstAttribute="centerY" secondItem="yLO-G9-z26" secondAttribute="centerY" id="eMy-pF-H90"/>
+                                <constraint firstItem="f61-gC-kYe" firstAttribute="leading" secondItem="yLO-G9-z26" secondAttribute="trailing" constant="2" id="s7c-9h-d2a"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="cuw-2U-tN7" secondAttribute="bottom" constant="126.5" id="T9g-iW-9Lc"/>
+                        <constraint firstItem="cfn-S9-0pp" firstAttribute="top" secondItem="cuw-2U-tN7" secondAttribute="bottom" constant="11" id="wgQ-LW-g9w"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

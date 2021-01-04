@@ -100,14 +100,21 @@
 "product-add.titles.top-explainations" = "כל הכבוד! המוצר הזה עדיין לא מתועד ב־Open Food Facts. אפשר לבקש ממך לצלם מספר תמונות של המוצר, רשימת הרכיבים וטבלת הערכים התזונתיים שלו ולהוסיף אותן ל־Open Food Facts?\n\nתודה מראש.";
 "product-add.titles.license-explaination" = "לתשומת לבך: התמונות שנשלחות מפורסמות תחת תנאי הרישיון Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "פרטי מוצר";
+"product-add.titles.product-info" = "מידע על המוצר";
+"product-add.label.brand-example" = "למשל: קוקה קולה, תנובה וכו׳…";
 "product-add.label.product-name" = "שם";
 "product-add.label.category" = "קטגוריה";
 "product-add.label.quantity" = "כמות";
 "product-add.label.packaging" = "אריזה";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "נדרש לטובת חישוב Nutri-Score";
 "product-add.label.quantity-example" = "25 ג׳, 10oz,‏ 5 מ״ל…";
 "product-add.label.language" = "שפות";
+"product-add.label.labels" = "תוויות";
+"product-add.label.labels-example" = "למשל: נטול גלוטן וכו׳.";
+"product-add.label.origins" = "מקור הרכיבים";
+"product-add.field.origins-placeholder" = "נדרש לחישוב ה־Eco-Score";
+"product-add.label.origins-example" = "לדוגמה: חמאה מצרפת וכו׳.";
 
 "product-add.description.nutritive" = "יש להשלים את הערכים התזונתיים ואת קטגוריית המוצר כדי לקבל Nutri-Score";
 "product-add.titles.nutritive" = "מפרט תזונתי";
@@ -200,13 +207,22 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "אזהרה: כמות הפירות, הירקות והאגוזים לא צוינה, התבצעה הערכה על בסיס רשימת הרכיבים: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "אזהרה: כמות הפירות, הירקות והאגוזים לא צוינה, התבצעה הערכה על בסיס הקטגוריה (%s) של המוצר: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score לא ידוע";
+"product-detail.environment.ecoscore.incite" = "נא להוסיף פרטי האריזה כדי שנוכל לחשב את ה־Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "רמות המרכיבים התזונתיים ל־100 גרם/100 מ״ל";
 "nutrition-level.low" = "בכמות נמוכה";
 "nutrition-level.moderate" = "בכמות מתונה";
-"nutrition-level.high" = "בכמות גדולה";
+"nutrition-level.high" = "בכמות גבוהה";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "ניתוח מרכיבים";
 "ingredients-analysis.ingredients_in_this_product" = "הרכיבים במוצר הזה שהם %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "רכיבים במוצר הזה הם %@s.";
 "ingredients-analysis.unknown_status" = "לא הצלחנו להעריך את מצב המוצר.";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "צילום תמונה של החזית";
+"call-to-action.environment" = "נא לצלם תמונה של הנחיות המיחזור";
 "call-to-action.ingredients" = "צילום תמונה של הרכיבים";
 "call-to-action.nutrition" = "צילום העובדות התזונתיות";
+"call-to-action.edit" = "יש להשלים את המוצר כדי לקבל עליו ניקוד";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,21 +331,25 @@
 "product.images.take-picture.front" = "תמונה של החזית";
 "product.images.take-picture.ingredients" = "תמונה של הרכיבים";
 "product.images.take-picture.nutrition" = "תמונה של הטבלה התזונתית";
+"product.images.take-picture.packaging" = "תמונה של פרטי המיחזור";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "סורק";
+"history.tab-bar.item" = "היסטוריה";
 "settings.tab-bar.item" = "הגדרות";
 "settings.ingredientsAnalysis.title" = "התראות ניתוח מרכיבים";
 "settings.allergies.title" = "אזהרות אלרגנים";
 "settings.allergies.description" = "ניתן להוסיף אלרגנים לרשימה זו כדי לקבל הודעה בעת סריקת מוצר שמכיל אותם.\nנא לשים לב שפירוט האלרגיות שלך לעולם לא יישלח אל השרת של Open Food Facts. כמו כן, כדאי להיזהר כיוון שהנתונים האלה אינן אמינים ב־100% והזיהוי עשוי להיות לקוי או חלקי. כדאי לבדוק עצמאית בנוסף!";
 "settings.allergies.add-button" = "הוספת אלרגנים";
 "settings.sections.information" = "פרטים";
-"settings.sections.discover" = "לגלות";
+"settings.sections.discover" = "לחקור";
 "settings.sections.contribute" = "לתרום";
 "settings.sections.about" = "על אודות";
 "settings.user-profile" = "חשבון התרומה שלך";
 "settings.credits.title" = "תודות";
 "settings.scan-on-launch.title" = "מעבר לסריקה עם הפעלת היישומון";
-"settings.sections.discover" = "לגלות";
+"settings.sections.discover" = "לחקור";
 "settings.contribute.how-to-contribute" = "כיצד לתרום";
 "settings.contribute.support-open-food-facts" = "תמיכה ב־Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "תרגום Open Food Facts";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "לפני מספר חודשים";
 "history.section-titles.longTime" = "לפני זמן רב";
 "history.first-scan.button.title" = "סריקת המוצר הראשון שלך";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "עריכה";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "ביטול";
 "USE_PHOTO" = "להשתמש בתמונה";
-"API_CANCEL_TITLE" = "ביטול";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "עריכה";
+"PHOTO" = "תמונה";
+"AEAF_LOCK_TEXT" = "נעילת חשיפה/מיקוד אוטומטיים";
+"HDR_AUTO" = "אוטומטית";
+"HDR_ON" = "פעילה";
+"HDR_OFF" = "כבויה";
+"TIMER_OFF_TEXT" = "כבוי";
+"PHOTOS" = "תמונות";
+"CANCEL" = "ביטול";
+"RETAKE" = "לצלם מחדש";

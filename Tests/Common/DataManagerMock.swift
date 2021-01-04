@@ -271,11 +271,9 @@ class DataManagerMock: DataManagerProtocol {
     }
 
     func getLatestRobotoffQuestions(forBarcode: String, onSuccess: @escaping ([RobotoffQuestion]) -> Void) {
-        // TODO: implement
     }
 
     func postRobotoffAnswer(forInsightId: String, withAnnotation: Int, onDone: @escaping () -> Void) {
-        // TODO: implement
     }
 
 }

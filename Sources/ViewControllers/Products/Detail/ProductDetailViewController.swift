@@ -29,7 +29,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             settings.style.selectedBarBackgroundColor = .white
         }
         buttonBarView.selectedBar.backgroundColor = self.view.tintColor
-
+        addEditButton()
         if let tbc = tabBarController {
             if let items = tbc.tabBar.items {
                 for (index, item) in items.enumerated() {
@@ -155,12 +155,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     }
 
     fileprivate func getEnvironmentImpactVC() -> UIViewController? {
-        if product.environmentImpactLevelTags?.isEmpty == false, let infoCard = product.environmentInfoCard, infoCard.isEmpty == false {
-            let environmentImpactFormTableVC = EnvironmentImpactTableFormTableViewController()
-            environmentImpactFormTableVC.product = product
-            return environmentImpactFormTableVC
-        }
-        return nil
+        guard let form = createEnvironmentForm() else { return nil }
+        let environmentFormTableVC = EnvironmentFormTableViewController(with: form, dataManager: dataManager)
+        environmentFormTableVC.delegate = self
+        return environmentFormTableVC
     }
 
     // MARK: - Form creation methods
@@ -180,10 +178,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 case 2:
                     vc0.form = createNutritionForm()
                     vc0.view.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailNutritionView
+                case 3:
+                    vc0.form = createEnvironmentForm()
+                    vc0.view.accessibilityIdentifier = AccessibilityIdentifiers.Product.detailNutritionView
                 default: break
                 }
-            } else if let vc1 = viewController as? EnvironmentImpactTableFormTableViewController {
-                vc1.product = product
             }
         }
     }
@@ -205,9 +204,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         // Rows
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.genericName, label: InfoRowKey.genericName.localizedString, isCopiable: true)
-        createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
-        createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
         createFormRow(with: &rows, item: product.categoriesTags?.map({ (categoryTag: String) -> NSAttributedString in
             if let category = dataManager.category(forTag: categoryTag) {
@@ -215,16 +212,19 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forCategory: category)])
                 }
             }
-            return NSAttributedString(string: categoryTag)
+            return NSAttributedString(string: categoryTag.localLanguageCodeRemoved, attributes: [NSAttributedString.Key.obliqueness: 0.2])
         }), label: InfoRowKey.categories.localizedString)
 
         createFormRow(with: &rows, item: product.labelsTags?.map({ (labelTag: String) -> NSAttributedString in
             if let label = dataManager.label(forTag: labelTag) {
                 if let name = Tag.choose(inTags: Array(label.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link : OFFUrlsHelper.url(forLabel: label)])
+                    return NSAttributedString(string: name.value,
+                                              attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forLabel: label)])
                 }
             }
-            return NSAttributedString(string: labelTag)
+            // We should use Textstyle body, but that does not exist in italic
+            //let attributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 17.0)]
+            return NSAttributedString(string: labelTag.localLanguageCodeRemoved, attributes: [NSAttributedString.Key.obliqueness: 0.2])
         }), label: InfoRowKey.labels.localizedString)
 
         createFormRow(with: &rows, item: product.embCodesTags?.map({ (tag: String) -> NSAttributedString in
@@ -391,6 +391,29 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         return Form(title: "product-detail.page-title.nutrition".localized, rows: rows)
     }
 
+    private func createEnvironmentForm() -> Form? {
+        var rows = [FormRow]()
+        // Header
+        rows.append(FormRow(value: product as Any, cellType: HostedViewCell.self))
+
+        createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
+        
+        createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
+
+        // Info rows
+        if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {
+            createFormRow(with: &rows, item: "\(carbonFootprint) \(unit)", label: InfoRowKey.carbonFootprint.localizedString)
+        }
+
+        createEnvironmentTableWebViewRow(rows: &rows)
+
+        if rows.isEmpty {
+            return nil
+        }
+
+        return Form(title: "product-detail.page-title.environment-impact".localized, rows: rows)
+    }
+
     fileprivate func createIngredientsAnalysisRows(rows: inout [FormRow]) {
         let analysisDetails = self.dataManager.ingredientsAnalysis(forProduct: product)
         if !analysisDetails.isEmpty {
@@ -501,11 +524,67 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
     }
 
+    fileprivate func createEnvironmentTableWebViewRow(rows: inout [FormRow]) {
+        guard let html = product.environmentInfoCard else {
+            return
+        }
+        //createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+        createFormRow(with: &rows, item: html, label: nil, cellType: ProductDetailWebViewTableViewCell.self, isCopiable: false)
+    }
+
     // MARK: - Nav bar button
 
     @objc func didTapShareButton(_ sender: UIBarButtonItem) {
         SharingManager.shared.shareLink(name: product.name, string: URLs.urlForProduct(with: product.barcode), sender: sender, presenter: self)
     }
+
+    // MARK: - edit button functions
+
+    func addEditButton() {
+         let editButton: UIBarButtonItem = .init(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+         navigationItem.rightBarButtonItem = editButton
+     }
+
+    @objc func edit() {
+         if CredentialsController.shared.getUsername() == nil {
+             guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
+                 return }
+             loginVC.dataManager = dataManager
+             //loginVC.delegate = self
+
+             let navVC = UINavigationController(rootViewController: loginVC)
+             loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ProductDetailViewController.dismissVC))
+             loginVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(ProductDetailViewController.dismissVC))
+
+             self.present(navVC, animated: true)
+
+             return
+         }
+
+         if let product = self.product {
+             let storyboard = UIStoryboard(name: String(describing: ProductAddViewController.self), bundle: nil)
+             if let addProductVC = storyboard.instantiateInitialViewController() as? ProductAddViewController {
+                 addProductVC.productToEdit = product
+                 addProductVC.dataManager = dataManager
+
+                 let navVC = UINavigationController(rootViewController: addProductVC)
+                 if self.responds(to: #selector(ProductDetailViewController.dismissVC)) {
+                     addProductVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ProductDetailViewController.dismissVC))
+                 }
+                 if addProductVC.responds(to: #selector(ProductAddViewController.saveAll)) {
+                     addProductVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: addProductVC, action: #selector(ProductAddViewController.saveAll))
+                 }
+                 navVC.modalPresentationStyle = .fullScreen
+
+                 self.present(navVC, animated: true)
+             }
+         }
+    }
+
+    @objc func dismissVC() {
+        dismiss(animated: true, completion: nil)
+    }
+
 }
 
 // MARK: - Refresh delegate

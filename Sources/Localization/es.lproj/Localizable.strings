@@ -15,7 +15,7 @@
 "generic.cancel" = "Cancelar";
 "generic.save" = "Guardar";
 "generic.cancel" = "Cancelar";
-"generic.ok" = "Ok";
+"generic.ok" = "Aceptar";
 "generic.close" = "Cerrar";
 
 // Product Search
@@ -85,7 +85,7 @@
 "product-add.nutriscore-explaination" = "El Nutri-Score se acaba de calcular a partir de la tabla de nutrición";
 "product-add.novagroup-explaination" = "El grupo NOVA se acaba de calcular basándose en la lista de ingredientes";
 
-"alert.action.ok" = "Ok";
+"alert.action.ok" = "Aceptar";
 "product-add.language.toolbar-title" = "Seleccione un Idioma";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Nombre del producto";
@@ -101,13 +101,20 @@
 "product-add.titles.license-explaination" = "Nota: las imagenes que envías son publicadas bajo la licencia libre Creative Commons Attribution y ShareAlike.";
 
 "product-add.titles.product-info" = "Información del producto";
+"product-add.label.brand-example" = "Ejemplos: Coca-Cola, Nestlé, etc…";
 "product-add.label.product-name" = "Nombre";
 "product-add.label.category" = "Categoría";
 "product-add.label.quantity" = "Cantidad";
 "product-add.label.packaging" = "Envases";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Necesario para calcular el Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Idiomas";
+"product-add.label.labels" = "Etiquetas";
+"product-add.label.labels-example" = "Ejemplos: sin gluten, etc.";
+"product-add.label.origins" = "Origen de los ingredientes";
+"product-add.field.origins-placeholder" = "Requerido para el cálculo del Eco-Score";
+"product-add.label.origins-example" = "Ejemplo: mantequilla de Francia, etc.";
 
 "product-add.description.nutritive" = "Completa los datos nutricionales y la categoría de producto para obtener el Nutri-Score";
 "product-add.titles.nutritive" = "Información nutricional";
@@ -200,6 +207,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Advertencia: la cantidad de frutas, verduras y nueces no se especifica en la etiqueta, se ha calculado en base a la lista de ingredientes: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Advertencia: la cantidad de frutas, verduras y nueces no se especifica en la etiqueta, se ha calculado en base a la categoría (%s) del producto: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score desconocido";
+"product-detail.environment.ecoscore.incite" = "Por favor, añade información del envase, para que podamos calcular el Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "Niveles nutricionales por 100g/100mL";
 "nutrition-level.low" = "En bajas cantidades";
@@ -207,6 +222,7 @@
 "nutrition-level.high" = "En altas cantidades";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Análisis de los ingredientes";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredientes en este producto que son %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Los ingredientes en este producto son %@s.";
 "ingredients-analysis.unknown_status" = "No pudimos evaluar el estado del producto.";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "Toma una foto de la parte frontal";
+"call-to-action.environment" = "Haz una foto de las instrucciones de reciclaje";
 "call-to-action.ingredients" = "Toma una foto de los ingredientes";
 "call-to-action.nutrition" = "Haz una foto de los datos nutricionales";
+"call-to-action.edit" = "Completa el producto para obtener puntuación";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,12 +331,16 @@
 "product.images.take-picture.front" = "Foto del frente";
 "product.images.take-picture.ingredients" = "Foto de los ingredientes";
 "product.images.take-picture.nutrition" = "Foto de la tabla nutricional";
+"product.images.take-picture.packaging" = "Foto de la información de reciclaje";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Escáner";
+"history.tab-bar.item" = "Historial";
 "settings.tab-bar.item" = "Configuración";
 "settings.ingredientsAnalysis.title" = "Alertas de análisis de ingredientes";
 "settings.allergies.title" = "Alerta de alérgenos";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.description" = "Añade alérgenos a esta lista para recibir una notificación cuando escanees un producto que lo contiene. \nTen en cuenta que la información sobre tus alergias NUNCA se enviará al servidor de Open Food Facts. Además, ten en cuenta que los datos pueden no ser fiables al 100%, ni la detección precisa al 100%. ¡Asegúrate de comprobarlo también tú mismo!";
 "settings.allergies.add-button" = "Añadir un alérgeno";
 "settings.sections.information" = "Información";
 "settings.sections.discover" = "Descubrir";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "Hace unos meses";
 "history.section-titles.longTime" = "Hace mucho tiempo";
 "history.first-scan.button.title" = "Escanea tu primer producto";
+
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Editar";
+
+// Camera localization API
 "API_CANCEL_TITLE" = "Cancelar";
 "USE_PHOTO" = "Usar foto";
-"API_CANCEL_TITLE" = "Cancelar";
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Editar";
+"PHOTO" = "FOTO";
+"AEAF_LOCK_TEXT" = "BLOQUEO AE / AF";
+"HDR_AUTO" = "Automático";
+"HDR_ON" = "Activado";
+"HDR_OFF" = "Desactivado";
+"TIMER_OFF_TEXT" = "Apagado";
+"PHOTOS" = "Fotos";
+"CANCEL" = "Cancelar";
+"RETAKE" = "Repetir foto";

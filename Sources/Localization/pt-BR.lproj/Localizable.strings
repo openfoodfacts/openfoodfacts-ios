@@ -14,7 +14,7 @@
 "generic.search" = "Procurar";
 "generic.cancel" = "Cancelar";
 "generic.save" = "Guardar";
-"generic.cancel" = "Cancelar";
+"generic.cancel" = "Cancel";
 "generic.ok" = "OK";
 "generic.close" = "Fechar";
 
@@ -100,14 +100,21 @@
 "product-add.titles.top-explainations" = "Muito bem! Este produto ainda não está no Open Food Facts. Você pode tirar algumas fotos do produto, lista de ingredientes e fatos nutricionais para adicioná-lo ao Open Food Facts? \n\nObrigado com antecedência.";
 "product-add.titles.license-explaination" = "Nota: as imagens que você envia são publicadas sob a licença libra Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Informação do produto";
+"product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Nome";
 "product-add.label.category" = "Categoria";
 "product-add.label.quantity" = "Quantidade";
 "product-add.label.packaging" = "Embalagem";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Necessário para calcular o Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Línguas";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete os fatos nutricionais e a categoria do produto para obter o Nutri-Score";
 "product-add.titles.nutritive" = "Fatos Nutricionais";
@@ -200,6 +207,14 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Atenção: a quantidade de frutas, legumes e nozes não é especificada no rótulo, foi estimado da lista de ingredientes: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Atenção: a quantidade de frutas, legumes e nozes não é especificada no rótulo, foi estimado da categoria (%s) do produto: %d%";
 
+"product-detail.environment.ecoscore.a" = "Eco-score A";
+"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.c" = "Eco-score C";
+"product-detail.environment.ecoscore.d" = "Eco-score D";
+"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
+"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+
 // Nutrition levels
 "nutrition-level.title" = "Valores nutricionais por 100 gr/100 ml";
 "nutrition-level.low" = "em quantidade baixa";
@@ -207,6 +222,7 @@
 "nutrition-level.high" = "em quantidade elevada";
 
 // Ingredients Analysis
+"ingredients-analysis.title" = "Análise de ingredientes";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredientes neste produto que são %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Os ingredientes deste produto são %@.";
 "ingredients-analysis.unknown_status" = "Não foi possível avaliar o status do produto.";
@@ -301,8 +317,10 @@
 
 // Call to action
 "call-to-action.summary" = "Tirar foto frontal";
+"call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "Tirar foto aos ingredientes";
 "call-to-action.nutrition" = "Tirar foto à tabela nutricional";
+"call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -313,8 +331,12 @@
 "product.images.take-picture.front" = "Foto da frente";
 "product.images.take-picture.ingredients" = "Foto dos ingredientes";
 "product.images.take-picture.nutrition" = "Foto da tabela nutricional";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
+//"search.tab-bar.item" = "Search"; is "product-search.title"
+"scanner.tab-bar.item" = "Digitalizador";
+"history.tab-bar.item" = "Histórico";
 "settings.tab-bar.item" = "Definições";
 "settings.ingredientsAnalysis.title" = "Alertas de análise de ingredientes";
 "settings.allergies.title" = "Alertas de alérgenos";
@@ -327,7 +349,7 @@
 "settings.user-profile" = "Sua conta de contribuidor";
 "settings.credits.title" = "Créditos";
 "settings.scan-on-launch.title" = "Mostrar varredura no lançamento da aplicação";
-"settings.sections.discover" = "Descubra";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Como contribuir";
 "settings.contribute.support-open-food-facts" = "Apoie o Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Traduzir Open Food Facts";
@@ -377,7 +399,18 @@
 "history.section-titles.fewMonths" = "Uns meses atrás";
 "history.section-titles.longTime" = "A muito tempo atrás";
 "history.first-scan.button.title" = "Escanear o primeiro produto";
-"API_CANCEL_TITLE" = "Cancele";
-"USE_PHOTO" = "Use Foto";
-"API_CANCEL_TITLE" = "Cancelar";
+
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edite";
+
+// Camera localization API
+"API_CANCEL_TITLE" = "Cancelar";
+"USE_PHOTO" = "Use Foto";
+"PHOTO" = "PHOTO";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"HDR_AUTO" = "Auto";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"PHOTOS" = "Photos";
+"CANCEL" = "Cancel";
+"RETAKE" = "Retake";
