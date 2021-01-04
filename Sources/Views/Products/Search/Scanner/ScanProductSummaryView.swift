@@ -94,9 +94,8 @@ final class ScanProductSummaryView: UIView {
     private func setNutriScore(nutriscore: NutriScoreView.Score?) {
         if let score = nutriscore {
             nutriScoreView.currentScore = score
-            nutriScoreView.isHidden = false
         } else {
-            nutriScoreView.isHidden = true
+            nutriScoreView.currentScore = .unknown
         }
     }
 

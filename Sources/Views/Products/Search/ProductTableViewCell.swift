@@ -85,7 +85,7 @@ class ProductTableViewCell: UITableViewCell {
         if let nutriscoreValue = historyItem.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue) {
             nutriscoreView.currentScore = score
         } else {
-            nutriscoreView.isHidden = true
+            nutriscoreView.currentScore = .unknown
         }
 
         if let novaGroupValue = historyItem.novaGroup.value,

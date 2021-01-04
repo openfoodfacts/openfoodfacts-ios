@@ -30,6 +30,7 @@ import UIKit
         case c
         case d
         case e
+        case unknown
     }
     // swiftlint:enable identifier_name
 
