@@ -115,11 +115,10 @@ class ProductTableViewCell: UITableViewCell {
     }
 
     private func setEcoscore(ecoscore: EcoscoreImageView.Ecoscore?) {
-            if let validEcoscore = ecoscore {
-                ecoScoreView?.ecoScore = validEcoscore
-                ecoScoreView?.isHidden = false
+        if let validEcoscore = ecoscore {
+            ecoScoreView?.ecoScore = validEcoscore
         } else {
-            ecoScoreView?.isHidden = true
+            ecoScoreView?.ecoScore = .unknown
         }
     }
 
