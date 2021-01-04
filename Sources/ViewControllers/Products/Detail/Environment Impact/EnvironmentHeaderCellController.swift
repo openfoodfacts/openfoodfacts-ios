@@ -182,10 +182,9 @@ class EnvironmentHeaderCellController: TakePictureViewController {
                 case .unknown:
                     ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.unknown".localized
                 }
-                ecoscoreImageView?.isHidden = false
         } else {
+                ecoscoreImageView?.ecoScore = .unknown
             ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.incite".localized
-            ecoscoreImageView?.isHidden = true
         }
     }
 

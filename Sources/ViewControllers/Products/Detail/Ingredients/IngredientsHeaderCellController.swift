@@ -166,11 +166,12 @@ class IngredientsHeaderCellController: TakePictureViewController {
                 novagroupExplanationLabel?.text = "product-detail.ingredients.nova.3".localized
             case .four:
                 novagroupExplanationLabel?.text = "product-detail.ingredients.nova.4".localized
+            case .unknown:
+                novagroupExplanationLabel?.text = "product-detail.ingredients.nova.unknown".localized
             }
-            novagroupView?.isHidden = false
         } else {
+            novagroupView?.novaGroup = .unknown
             novagroupExplanationLabel?.text = "product-detail.ingredients.nova.incite".localized
-            novagroupView?.isHidden = true
         }
     }
 

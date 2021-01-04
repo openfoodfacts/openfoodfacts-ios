@@ -486,12 +486,11 @@ class ProductAddViewController: TakePictureViewController {
                     if let nutriscoreString = distantProduct.nutriscore,
                         let score = NutriScoreView.Score(rawValue: nutriscoreString) {
                         self?.nutriScoreView.currentScore = score
-                        self?.nutriscoreStackView.isHidden = false
                         self?.productCategoryNutriScoreExplanationLabel.text = ""
                         self?.productCategoryNutriScoreExplanationLabel.isHidden = true
                         self?.nutritiveNutriScoreEXplanationLabel.isHidden = true
                     } else {
-                        self?.nutriscoreStackView.isHidden = true
+                        self?.nutriScoreView.currentScore = .unknown
                         self?.productCategoryNutriScoreExplanationLabel.text = "product-add.details.category".localized
                         self?.productCategoryNutriScoreExplanationLabel.isHidden = false
                         self?.nutritiveNutriScoreEXplanationLabel.isHidden = false
@@ -501,10 +500,9 @@ class ProductAddViewController: TakePictureViewController {
                     if let novaGroupString = distantProduct.novaGroup,
                         let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
                         self?.novaGroupView.novaGroup = novaGroup
-                        self?.novaGroupStackView.isHidden = false
                         self?.ingredientsNovaExplanationLabel.isHidden = true
                     } else {
-                        self?.novaGroupStackView.isHidden = true
+                        self?.novaGroupView.novaGroup = .unknown
                         self?.ingredientsNovaExplanationLabel.isHidden = false
                     }
                 }

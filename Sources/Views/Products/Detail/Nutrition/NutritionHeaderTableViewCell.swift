@@ -35,12 +35,11 @@ class NutritionHeaderTableViewCell: ProductDetailBaseCell {
 
         if let nutriscore = nutriscoreTableRow.nutriscore,
             let score = NutriScoreView.Score(rawValue: nutriscore) {
-            nutriscoreView.isHidden = false
             nutriscoreView.currentScore = score
             nutriscoreView.noFiberWarning = nutriscoreTableRow.noFiberWarning
             nutriscoreView.noFruitsVegetablesNutsWarning = nutriscoreTableRow.noFruitsVegetablesNutsWarning
         } else {
-            nutriscoreView.isHidden = true
+            nutriscoreView.currentScore = .unknown
         }
         self.delegate = nutriscoreTableRow.delegate
     }
