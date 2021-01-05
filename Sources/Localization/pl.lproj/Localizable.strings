@@ -14,7 +14,7 @@
 "generic.search" = "Wyszukiwanie";
 "generic.cancel" = "Anuluj";
 "generic.save" = "Zapisz";
-"generic.cancel" = "Anuluj";
+"generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 "generic.close" = "Zamknij";
 
@@ -112,6 +112,9 @@
 "product-add.label.language" = "Języki";
 "product-add.label.labels" = "Labels";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Aby poznać wartość Nutri-Score należy uzupełnić informacje o wartości odżywczej i kategorię produktu";
 "product-add.titles.nutritive" = "Wartość odżywcza";
@@ -173,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Przetworzone składniki kulinarne";
 "product-detail.ingredients.nova.3" = "Żywność przetworzona";
 "product-detail.ingredients.nova.4" = "Bardzo przetworzone produkty spożywcze i napoje";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Dodaj składniki i / lub kategorie, aby obliczyć NOVA.";
 "product-detail.ingredients.ingredients-list" = "Lista składników";
 "product-detail.ingredients.allergens-list" = "Substancje lub produkty powodujące alergie lub reakcje nietolerancji";
@@ -346,7 +350,7 @@
 "settings.user-profile" = "Mój profil";
 "settings.credits.title" = "Twórcy";
 "settings.scan-on-launch.title" = "Natychmiast po uruchomieniu aplikacji zainicjuj skanowanie";
-"settings.sections.discover" = "Odkryj";
+"settings.sections.discover" = "Discover";
 "settings.contribute.how-to-contribute" = "Jak wnieść swój wkład";
 "settings.contribute.support-open-food-facts" = "Wspomóż Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Przetłumacz Open Food Facts";
