@@ -1,7 +1,11 @@
+### To be released
+
+### Current stable: released Jan 7th 2021
+
 * Eco-Score in scan card, search
 * Grey scores if the score is unknown
 
-
+### To Complete
 (VERSIONS TO COMPLETE)
 
 ### 1.0-19 @Tovkal 2 Jan 2018 
