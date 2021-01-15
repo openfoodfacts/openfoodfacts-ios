@@ -51,3 +51,7 @@
 * Add HUD when a barcode is detected while scanning
 * Improve picture UX when adding a product
 * Fix several bugs
+
+
+### 2012 - 2017 - Cordova App
+The official app was based on Cordova during this time.
