@@ -14,7 +14,7 @@
 "generic.search" = "Caută";
 "generic.cancel" = "Anulare";
 "generic.save" = "Salvează";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Anulare";
 "generic.ok" = "OK";
 "generic.close" = "Închidere";
 
@@ -101,7 +101,7 @@
 "product-add.titles.license-explaination" = "Notă: fotografiile trimise sunt publicate sub o licență liberă Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: CocaCola, Nestle, etc…";
 "product-add.label.product-name" = "Nume";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Cantitate";
@@ -110,9 +110,9 @@
 "product-add.details.category" = "Necesar pentru calcularea Nutri-Score-ului";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Limbi";
-"product-add.label.labels" = "Labels";
+"product-add.label.labels" = "Etichete";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
-"product-add.label.origins" = "Origin of ingredients";
+"product-add.label.origins" = "Originea ingredientelor";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
 "product-add.label.origins-example" = "Example: Butter from France, etc.";
 
@@ -203,10 +203,11 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "Niciun nutrient nu a fost stabilit.";
-"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Avertisment: cantitatea de fructe, legume și nuci nu este specificată, contribuția lor pozitivă nu a putut fi luată în considerare.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Avertisment: cantitatea de fructe, legume și nuci nu este specificată, contribuția lor pozitivă nu a putut fi luată în considerare.";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Avertisment: cantitatea de fructe, legume și nuci nu este specificată pe etichetă, a fost estimată din lista ingredientelor: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Avertisment: cantitatea de fructe, legume și nuci nu este specificată pe etichetă, a fost estimată din lista ingredientelor: %d%";
 
 "product-detail.environment.ecoscore.a" = "Eco-score A";
 "product-detail.environment.ecoscore.b" = "Eco-score B";
@@ -225,21 +226,21 @@
 // Ingredients Analysis
 "ingredients-analysis.title" = "Analiza ingredientelor";
 "ingredients-analysis.ingredients_in_this_product" = "Ce faci";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
+"ingredients-analysis.ingredients_in_this_product_are" = "Ingredientele produsului sunt %@s.";
 "ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
 "ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
 "ingredients-analysis.display" = "Display %@ status";
-"ingredients-analysis.missing-ingredients.title" = "Fill in the missing ingredients";
-"ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
-"ingredients-analysis.help-translate.title" = "Help translate the ingredients in your language";
+"ingredients-analysis.missing-ingredients.title" = "Adaugă ingredientele lipsă";
+"ingredients-analysis.missing-ingredients.description" = "Nu avem încă ingredientele pentru acest produs. Puteți ajuta la completarea lor?";
+"ingredients-analysis.help-translate.title" = "Ajută la traducerea ingredientelor în limba ta";
 "ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
-"ingredients-analysis.help-translate.button" = "Help translate ingredients";
-"ingredients-analysis.back-to-scan" = "Back to scan";
+"ingredients-analysis.help-translate.button" = "Ajută la traducerea ingredientelor";
+"ingredients-analysis.back-to-scan" = "Înapoi la scanare";
 
 // Robotoff
 "robotoff.yes" = "Da";
 "robotoff.no" = "Nu";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "Nu sunt sigur";
 "robotoff.contribute-incentive.title" = "Contribuiți";
 "robotoff.settings.display-questions" = "Display questions";
 "robotoff.contribute-incentive.login" = "Nume de utilizator";
@@ -350,7 +351,7 @@
 "settings.user-profile" = "Contul dvs. de contribuitor";
 "settings.credits.title" = "Contribuţii";
 "settings.scan-on-launch.title" = "Afișare scanner la lansarea aplicației";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Descoperiți";
 "settings.contribute.how-to-contribute" = "Cum să contribuiţi";
 "settings.contribute.support-open-food-facts" = "Susțineți Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Traduceți Open Food Facts";
@@ -412,6 +413,6 @@
 "HDR_ON" = "On";
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
+"PHOTOS" = "Imagini";
+"CANCEL" = "Anulare";
 "RETAKE" = "Retake";

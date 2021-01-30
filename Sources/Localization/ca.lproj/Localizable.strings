@@ -7,14 +7,14 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Escanejar codi";
+"shortcuts.scan" = "Escaneja codi de barres";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Enrere";
 "generic.search" = "Cerca";
 "generic.cancel" = "Cancel·la";
 "generic.save" = "Desa";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Cancel·lar";
 "generic.ok" = "D'acord";
 "generic.close" = "Tanca";
 
@@ -100,8 +100,8 @@
 "product-add.titles.top-explainations" = "Ben fet! Aquest producte encara no es troba a Open Food Facts. Pots prendre algunes fotografies del producte, de la llista ingredients i de la taula nutricional per afegir-les a Open Food Facts?.\n\nMoltes gràcies per endavant.";
 "product-add.titles.license-explaination" = "Nota: les imatges que envieu són distribuïdes sota la llicència lliure Creative Commons Atribució i Compartir Igual.";
 
-"product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.titles.product-info" = "Informació del producte";
+"product-add.label.brand-example" = "Exemples: Coca-Cola, Nestlé, etc.…";
 "product-add.label.product-name" = "Nom";
 "product-add.label.category" = "Categoria";
 "product-add.label.quantity" = "Quantitat";
@@ -110,11 +110,11 @@
 "product-add.details.category" = "Necessari per calcular el Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Llengües";
-"product-add.label.labels" = "Labels";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
-"product-add.label.origins" = "Origin of ingredients";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Example: Butter from France, etc.";
+"product-add.label.labels" = "Etiquetes";
+"product-add.label.labels-example" = "Exemples: sense gluten, etc.";
+"product-add.label.origins" = "Origen dels ingredients";
+"product-add.field.origins-placeholder" = "Obligatori per al càlcul de la puntuació ecològica";
+"product-add.label.origins-example" = "Exemple: Mantega de França, etc.";
 
 "product-add.description.nutritive" = "Completeu les dades nutricionals i la categoria del producte per obtenir el Nutri Score";
 "product-add.titles.nutritive" = "Informació nutricional";
@@ -176,7 +176,7 @@
 "product-detail.ingredients.nova.2" = "Ingredients culinaris processats";
 "product-detail.ingredients.nova.3" = "Aliments processats";
 "product-detail.ingredients.nova.4" = "Productes alimentaris i begudes ultraprocessades";
-"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
+"product-detail.ingredients.nova.unknown" = "No s'ha pogut calcular el nivell NOVA de processament d'aliments";
 "product-detail.ingredients.nova.incite" = "Afegiu ingredients i/o categories per calcular NOVA.";
 "product-detail.ingredients.ingredients-list" = "Llistat d'ingredients";
 "product-detail.ingredients.allergens-list" = "Productes o substancies que causen intoleràncies o al·lèrgies";
@@ -190,7 +190,7 @@
 "product-detail.ingredients.vitamins-list" = "Vitamines";
 "product-detail.ingredients.minerals-list" = "Minerals";
 "product-detail.ingredients.nucleotides-list" = "Nucleòtids";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Altres substàncies nutricionals";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Mida de la porció";
@@ -198,23 +198,24 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Informació nutricional";
-"product-detail.nutrition-table.for-100g" = "Per 100 g";
+"product-detail.nutrition-table.for-100g" = "Per cada 100 g";
 "product-detail.nutrition-table.for-serving" = "Per ració";
-"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.100g" = "100 gr";
 "product-detail.nutrition-table.serving" = "porció";
 "product-detail.nutrition-table.missing" = "No s'ha establert cap nutrient.";
+"product-detail.nutrition-table.noNutritionData" = "Aquest producte no té cap taula de valors nutricionals.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Atenció: la quantitat de fibra no s'especifica, no es tindrà en compte la seva possible contribució positiva en la qualificació.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Atenció: no s'ha especificat la quantitat de fruites, verdures i fruits secs, no es té en compte la seva possible contribució positiva en la qualificació.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Atenció: la quantitat de fruita, verdura i fruits secs no s'especifica a l'etiqueta però s'ha fet una estimació a partir de la llista d'ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Atenció: la quantitat de fruita, verdura i fruits secs no s'especifica a l'etiqueta, s'ha fet una estimació per la categoria (%s) del producte: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.a" = "Impacte molt feble sobre el medi ambient";
+"product-detail.environment.ecoscore.b" = "Impacte feble sobre el medi ambient";
+"product-detail.environment.ecoscore.c" = "Alguns impactes sobre el medi ambient";
+"product-detail.environment.ecoscore.d" = "Fort impacte sobre el medi ambient";
+"product-detail.environment.ecoscore.e" = "Impacte molt fort sobre el medi ambient";
+"product-detail.environment.ecoscore.unknown" = "Puntuació ecològica desconeguda";
+"product-detail.environment.ecoscore.incite" = "Afegiu informació d’embalatge per poder calcular la puntuació ecològica";
 
 // Nutrition levels
 "nutrition-level.title" = "Nivells de nutrient per 100 g/100 ml";
@@ -300,7 +301,7 @@
 "nutrition.minerals.phosphorus" = "Fòsfor";
 "nutrition.minerals.iron" = "Ferro";
 "nutrition.minerals.magnesium" = "Magnesi";
-"nutrition.minerals.zinc" = "Zinc";
+"nutrition.minerals.zinc" = "Zenc";
 "nutrition.minerals.copper" = "Coure";
 "nutrition.minerals.manganese" = "Manganès";
 "nutrition.minerals.fluoride" = "Fluorur";
@@ -318,10 +319,10 @@
 
 // Call to action
 "call-to-action.summary" = "Feu una foto del davant";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "Feu una foto de les instruccions de reciclatge";
 "call-to-action.ingredients" = "Feu una foto dels ingredients";
 "call-to-action.nutrition" = "Feu una foto de les dades nutricionals";
-"call-to-action.edit" = "Complete the product to get it scored";
+"call-to-action.edit" = "Completeu el producte per obtenir-ne la puntuació";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -332,7 +333,7 @@
 "product.images.take-picture.front" = "Foto del davant";
 "product.images.take-picture.ingredients" = "Foto dels ingredients";
 "product.images.take-picture.nutrition" = "Foto de la taula nutricional";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.packaging" = "Foto de la informació sobre reciclatge";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -350,7 +351,7 @@
 "settings.user-profile" = "El vostre compte de col·laborador";
 "settings.credits.title" = "Crèdits";
 "settings.scan-on-launch.title" = "Mostra l'escànner en obrir l'App";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Descobriu";
 "settings.contribute.how-to-contribute" = "Com contribuir";
 "settings.contribute.support-open-food-facts" = "Doneu suport a Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Traduïu Open Food Facts";
@@ -406,12 +407,12 @@
 // Camera localization API
 "API_CANCEL_TITLE" = "Cancel·la";
 "USE_PHOTO" = "Utilitzeu la foto";
-"PHOTO" = "PHOTO";
-"AEAF_LOCK_TEXT" = "AE/AF LOCK";
-"HDR_AUTO" = "Auto";
-"HDR_ON" = "On";
-"HDR_OFF" = "Off";
-"TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
-"RETAKE" = "Retake";
+"PHOTO" = "FOTO";
+"AEAF_LOCK_TEXT" = "Bloqueig AE / AF";
+"HDR_AUTO" = "Automàtic";
+"HDR_ON" = "Activat";
+"HDR_OFF" = "Desactivat";
+"TIMER_OFF_TEXT" = "Desactivat";
+"PHOTOS" = "Fotos";
+"CANCEL" = "Cancel·lar";
+"RETAKE" = "Torna a fer";
