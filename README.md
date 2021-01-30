@@ -1,5 +1,5 @@
 <img height='175' src="https://raw.githubusercontent.com/openfoodfacts/openfoodfacts-server/af910644fa356e30e22be876100e785cd8a9903f/html/images/misc/openfoodfacts-logo-en.svg" align="left" hspace="1" vspace="1">
-
+<a href="https://apps.apple.com/app/open-food-facts/id588797948"><img height="75" src="https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png" align="right" hspace="1" vspace="1"></a>
 # Open Food Facts iPhone and iPad app
 
 [![Build Status](https://travis-ci.org/openfoodfacts/openfoodfacts-ios.svg?branch=master)](https://travis-ci.org/openfoodfacts/openfoodfacts-ios)
@@ -10,7 +10,7 @@
 ![TestFlight release](https://github.com/openfoodfacts/openfoodfacts-ios/workflows/TestFlight%20release/badge.svg)
 <br>
 <a href="https://apps.apple.com/app/open-food-facts/id588797948"><img height="275" src="https://static.openfoodfacts.org/images/ecoscore/ecoscore_iphone_lasagne.png" align="center" hspace="1" vspace="1"></a>
-<a href="https://apps.apple.com/app/open-food-facts/id588797948"><img height="75" src="https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png" align="left" hspace="1" vspace="1"></a>
+
 
 
 
