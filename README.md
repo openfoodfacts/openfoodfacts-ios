@@ -1,5 +1,6 @@
 <img height='175' src="https://raw.githubusercontent.com/openfoodfacts/openfoodfacts-server/af910644fa356e30e22be876100e785cd8a9903f/html/images/misc/openfoodfacts-logo-en.svg" align="left" hspace="1" vspace="1">
 <a href="https://apps.apple.com/app/open-food-facts/id588797948"><img height="275" src="https://static.openfoodfacts.org/images/ecoscore/ecoscore_iphone_lasagne.png" align="right" hspace="1" vspace="1"></a>
+
 # Open Food Facts iPhone and iPad app
 
 [![Build Status](https://travis-ci.org/openfoodfacts/openfoodfacts-ios.svg?branch=master)](https://travis-ci.org/openfoodfacts/openfoodfacts-ios)
