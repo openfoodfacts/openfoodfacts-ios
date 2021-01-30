@@ -19,13 +19,13 @@
 Open Food Facts on iPhone and iPad has 0,5M users and 1,6M products. Each contribution you make will have a large impact on food transparency worldwide. Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the #android channel before you start work, and to document what you intend to code.
 
 ### Features you can work on
-- [ ] [Show additives evaluation on cards #173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
-- [ ] [Add a mode to compare 2 or more products #153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
-- [ ] Add a Lists system (shopping list, nutritional intake, scan history…)
+- [ ] [Show additives evaluation on cards](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
+- [ ] [Add a mode to compare 2 (or more) products](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
+- [ ] Add a [Lists system (shopping list, nutritional intake, scan history…)]((https://github.com/openfoodfacts/openfoodfacts-ios/issues/881)
 - [ ] [Add a prompt to extract ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171) so that we can have a simple way to NOVA, vegetarian, vegan, additive status
-- [ ] Finish the new product page revamp based on the Attributes API
+- [ ] Finish the [new product page revamp based on the Attributes API](https://github.com/openfoodfacts/openfoodfacts-ios/pull/780)
 - [ ] Add support for cosmetics (Open Beauty Facts) and other products [#687](https://github.com/openfoodfacts/openfoodfacts-ios/issues/687) and [#160](https://github.com/openfoodfacts/openfoodfacts-ios/issues/160)
-- [ ] Cache viewed products on-device so that they load fast and regardless of network conditions
+- [ ] [Cache viewed products on-device so that they load fast and regardless of network conditions](https://github.com/openfoodfacts/openfoodfacts-ios/issues/882)
 
 ## Join the team !
 
