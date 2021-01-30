@@ -17,10 +17,10 @@
 [Open Food Facts](https://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.
 Open Food Facts on iPhone and iPad has 0,5M users and 1,6M products. Each contribution you make will have a large impact on food transparency worldwide. Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the #android channel before you start work, and to document what you intend to code.
 
-### Provide more value to end-users
+### Features you can work on
 - [ ] [Show additives evaluation on cards #173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
 - [ ] [Add a mode to compare 2 or more products #153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
-- [ ] Add a basic product lists system (shopping list, nutritional intake…)
+- [ ] Add a Lists system (shopping list, nutritional intake, scan history…)
 - [ ] [Add a prompt to extract ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171) so that we can have a simple way to NOVA, vegetarian, vegan, additive status
 - [ ] Finish the new product page revamp based on the Attributes API
 - [ ] Add support for cosmetics (Open Beauty Facts) and other products [#687](https://github.com/openfoodfacts/openfoodfacts-ios/issues/687) and [#160](https://github.com/openfoodfacts/openfoodfacts-ios/issues/160)
