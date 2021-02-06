@@ -1,18 +1,16 @@
-<img height='175' src="https://static.openfoodfacts.org/images/svg/openfoodfacts-logo-en.svg" align="left" hspace="1" vspace="1">
+<img height='175' src="https://raw.githubusercontent.com/openfoodfacts/openfoodfacts-server/af910644fa356e30e22be876100e785cd8a9903f/html/images/misc/openfoodfacts-logo-en.svg" align="left" hspace="1" vspace="1">
+<a href="https://apps.apple.com/app/open-food-facts/id588797948"><img height="275" src="https://static.openfoodfacts.org/images/ecoscore/ecoscore_iphone_lasagne.png" align="right" hspace="1" vspace="1"></a>
 
-# Open Food Facts iOS app
-Note: Xcode's limited Markdown support means this file is best viewed on GitHub. Not seeing this as a formatted file in Xcode? Check out [the Build section](https://github.com/openfoodfacts/openfoodfacts-ios/wiki/Build) of the project wiki on GitHub for troubleshooting tips.
+# Open Food Facts iPhone and iPad app
 
 [![Build Status](https://travis-ci.org/openfoodfacts/openfoodfacts-ios.svg?branch=master)](https://travis-ci.org/openfoodfacts/openfoodfacts-ios)
 [![Project Status](http://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
-[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/openfoodfacts/openfoodfacts-ios.svg)](https://isitmaintained.com/project/openfoodfacts/openfoodfacts-ios "Average time to resolve an issue")
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/openfoodfacts/openfoodfacts-ios.svg)](https://isitmaintained.com/project/openfoodfacts/openfoodfacts-ios "Percentage of issues still open")
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/openfoodfacts/localized.svg)](https://crowdin.com/project/openfoodfacts)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/openfoodfacts/localized.svg)](https://translate.openfoodfacts.org)
 ![TestFlight release](https://github.com/openfoodfacts/openfoodfacts-ios/workflows/TestFlight%20release/badge.svg)
 <br>
-<a href="https://apps.apple.com/app/open-food-facts/id588797948"><img height="275" src="https://static.openfoodfacts.org/images/ecoscore/ecoscore_iphone_lasagne.png" align="center" hspace="1" vspace="1"></a>
-<a href="https://apps.apple.com/app/open-food-facts/id588797948"><img height="75" src="https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png" align="left" hspace="1" vspace="1"></a>
 
+
+<img height="75" src="https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png" align="right" hspace="1" vspace="1">
 
 
 ## What is Open Food Facts? What can I work on ?
@@ -20,14 +18,14 @@ Note: Xcode's limited Markdown support means this file is best viewed on GitHub.
 [Open Food Facts](https://world.openfoodfacts.org/) is a food products database made by everyone, for everyone.
 Open Food Facts on iPhone and iPad has 0,5M users and 1,6M products. Each contribution you make will have a large impact on food transparency worldwide. Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the #android channel before you start work, and to document what you intend to code.
 
-### Provide more value to end-users
-- [ ] [Show additives evaluation on cards #173](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
-- [ ] [Add a mode to compare 2 or more products #153](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
-- [ ] Add a basic product lists system (shopping list, nutritional intake…)
+### Features you can work on
+- [ ] [Show additives evaluation on cards](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
+- [ ] [Add a mode to compare 2 (or more) products](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
+- [ ] Add a [Lists system (shopping list, nutritional intake, scan history…)]((https://github.com/openfoodfacts/openfoodfacts-ios/issues/881)
 - [ ] [Add a prompt to extract ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171) so that we can have a simple way to NOVA, vegetarian, vegan, additive status
-- [ ] Finish the new product page revamp based on the Attributes API
+- [ ] Finish the [new product page revamp based on the Attributes API](https://github.com/openfoodfacts/openfoodfacts-ios/pull/780)
 - [ ] Add support for cosmetics (Open Beauty Facts) and other products [#687](https://github.com/openfoodfacts/openfoodfacts-ios/issues/687) and [#160](https://github.com/openfoodfacts/openfoodfacts-ios/issues/160)
-- [ ] Cache viewed products on-device so that they load fast and regardless of network conditions
+- [ ] [Cache viewed products on-device so that they load fast and regardless of network conditions](https://github.com/openfoodfacts/openfoodfacts-ios/issues/882)
 
 ## Join the team !
 
