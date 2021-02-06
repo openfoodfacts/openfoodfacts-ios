@@ -7,15 +7,15 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "பார்கோடினை படமெடு";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "பின்செல்";
 "generic.search" = "தேடுக";
 "generic.cancel" = "Cancel";
-"generic.save" = "Save";
+"generic.save" = "சேமி";
 "generic.cancel" = "Cancel";
-"generic.ok" = "Ok";
+"generic.ok" = "சரி";
 "generic.close" = "மூடுக‌";
 
 // Product Search
@@ -23,9 +23,9 @@
 "product-search.title" = "தேடுக";
 "product-search.search-placeholder" = "Search for a product by name or barcode";
 "product-search.no-results" = "No Results";
-"product-search.error-view.title" = "Something went wrong";
-"product-search.error-view.subtitle" = "Please try again";
-"product-search.initial-view.slogan" = "the free food products database";
+"product-search.error-view.title" = "எதிர் பாராத பிழை ஏற்பட்டு விட்டது";
+"product-search.error-view.subtitle" = "மீண்டும் முயற்சி செய்யுங்கள்";
+"product-search.initial-view.slogan" = "இலவச உணவுப்பொருட்களின் தரவுத்தளம்";
 "product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
 "product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
@@ -52,7 +52,7 @@
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Uploading image...";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "எதிர் பாராத பிழை ஏற்பட்டு விட்டது";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
@@ -85,7 +85,7 @@
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
 
-"alert.action.ok" = "Ok";
+"alert.action.ok" = "சரி";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Product name";
@@ -203,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
@@ -337,7 +338,7 @@
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
 "scanner.tab-bar.item" = "Scanner";
-"history.tab-bar.item" = "History";
+"history.tab-bar.item" = "வரலாறு";
 "settings.tab-bar.item" = "அமைப்புகள்";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
 "settings.allergies.title" = "Allergens alerts";
@@ -412,6 +413,6 @@
 "HDR_ON" = "On";
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
+"PHOTOS" = "புகைப்படங்கள்";
 "CANCEL" = "Cancel";
 "RETAKE" = "Retake";

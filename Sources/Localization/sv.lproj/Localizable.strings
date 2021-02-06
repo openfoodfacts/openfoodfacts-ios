@@ -14,7 +14,7 @@
 "generic.search" = "Sök";
 "generic.cancel" = "Annulera";
 "generic.save" = "Spara";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Annulera";
 "generic.ok" = "Ok";
 "generic.close" = "Stäng";
 
@@ -100,8 +100,8 @@
 "product-add.titles.top-explainations" = "Bra gjort ! Den här produkten finns ännu inte i Open Food Facts. Kan du ta några bilder på produkten, ingredienslistan och näringsfaktan för att lägga till den i Open Food Facts? \n\nTack i förväg.";
 "product-add.titles.license-explaination" = "Obs: de bilder du skickar publiceras under den fria licensen Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.titles.product-info" = "Produktinformation";
+"product-add.label.brand-example" = "Exempel: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Namn";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Kvantitet";
@@ -110,9 +110,9 @@
 "product-add.details.category" = "Behövs för att beräkna Nutri-Score";
 "product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
 "product-add.label.language" = "Språk";
-"product-add.label.labels" = "Labels";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
-"product-add.label.origins" = "Origin of ingredients";
+"product-add.label.labels" = "Etiketter";
+"product-add.label.labels-example" = "Exempel: Glutenfri etc.";
+"product-add.label.origins" = "Ingredients ursprung";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
 "product-add.label.origins-example" = "Example: Butter from France, etc.";
 
@@ -180,9 +180,9 @@
 "product-detail.ingredients.nova.incite" = "Lägg till ingredienser och/eller kategorier för att beräkna NOVA.";
 "product-detail.ingredients.ingredients-list" = "Lista över ingredienser";
 "product-detail.ingredients.allergens-list" = "ämnen eller produkter som orsakar allergi eller intolerans";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-alert.title" = "Innehåller allergener!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Denna produkt har inte en ingredienslista än, på grund av detta kunde detektering av allergen inte slutföras.";
+"product-detail.ingredients.allergens-list.offline-product" = "Den här produkten har laddats från offline-databasen och på grund av detta kunde detektering av allergen inte slutföras.";
 "product-detail.ingredients.traces-list" = "Spår";
 "product-detail.ingredients.additives-list" = "Tillsatser";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredienser från palmolja";
@@ -203,21 +203,22 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "Inga näringsämnen har ställts in.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Varning: mängden fibrer är inte angiven, eventuella positiv inverkan på betyget kunde inte beaktas.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Varning: mängden frukt, grönsaker och nötter anges inte, deras eventuella positiva bidrag till betyget kunde inte beaktas.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Varning: mängden frukt, grönsaker och nötter anges inte på etiketten, den uppskattades från ingrediensförteckningen: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Varning: mängden frukt, grönsaker och nötter anges inte på etiketten, det uppskattades från produktkategorin (%s): %d%";
 
 "product-detail.environment.ecoscore.a" = "Eco-score A";
 "product-detail.environment.ecoscore.b" = "Eco-score B";
 "product-detail.environment.ecoscore.c" = "Eco-score C";
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.unknown" = "Miljöpoäng okänd";
+"product-detail.environment.ecoscore.incite" = "Lägg till förpackningsinformation så att vi kan beräkna Miljöpoängen";
 
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
+"nutrition-level.title" = "Näringsämnen per 100 g / 100 ml";
 "nutrition-level.low" = "i låg kvantitet";
 "nutrition-level.moderate" = "i måttlig mängd";
 "nutrition-level.high" = "i hög kvantitet";
@@ -227,14 +228,14 @@
 "ingredients-analysis.ingredients_in_this_product" = "Ingredienser i denna produkt som är %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredienser i denna produkt är %@s.";
 "ingredients-analysis.unknown_status" = "Vi kunde inte bedöma produktens status.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
+"ingredients-analysis.ambiguous" = "Tvetydiga ingredienser: %@";
 "ingredients-analysis.display" = "Visa %@ status";
 "ingredients-analysis.missing-ingredients.title" = "Fyll i de saknade ingredienserna";
 "ingredients-analysis.missing-ingredients.description" = "Vi har inte ingredienserna för denna produkt ännu. Kan du hjälpa till att slutföra dem?";
 "ingredients-analysis.help-translate.title" = "Hjälp till att översätta ingredienserna på ditt språk";
 "ingredients-analysis.help-translate.description" = "Hjälp till att översätta ingredienser på ditt språk för att möjliggöra analys av ingredienser";
 "ingredients-analysis.help-translate.button" = "Hjälp till att översätta ingredienser";
-"ingredients-analysis.back-to-scan" = "Back to scan";
+"ingredients-analysis.back-to-scan" = "Tillbaka för att skanna";
 
 // Robotoff
 "robotoff.yes" = "Ja";
@@ -244,8 +245,8 @@
 "robotoff.settings.display-questions" = "Visa frågor";
 "robotoff.contribute-incentive.login" = "Användarnamn";
 "robotoff.contribute-incentive.not-now" = "Inte nu";
-"robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
-"robotoff.answer-saved" = "Answer saved, thanks!";
+"robotoff.contribute-incentive.description" = "Svara på enkla frågor, få matinsyn att hända!";
+"robotoff.answer-saved" = "Svaret sparat, tack!";
 
 // Nutrition
 "nutrition.energy" = "Energi";
@@ -318,42 +319,42 @@
 
 // Call to action
 "call-to-action.summary" = "Ta en bild på framsidan";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "Ta ett foto av återvinningsanvisningarna";
 "call-to-action.ingredients" = "Ta en bild av ingredienserna";
 "call-to-action.nutrition" = "Ta en bild av näringstabellen";
-"call-to-action.edit" = "Complete the product to get it scored";
+"call-to-action.edit" = "Slutför produkten för att få den poängsatt";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.took-picture.front" = "Photo of the front ✅";
-"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.front" = "Foto på framsidan ✅";
+"product.images.took-picture.ingredients" = "Foto av ingredienserna ✅";
+"product.images.took-picture.nutrition" = "Foto av näringstabellen ✅";
 
-"product.images.take-picture.front" = "Photo of the front";
-"product.images.take-picture.ingredients" = "Photo of the ingredients";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.front" = "Foto på framsidan";
+"product.images.take-picture.ingredients" = "Foto av ingredienserna";
+"product.images.take-picture.nutrition" = "Foto av näringstabellen";
+"product.images.take-picture.packaging" = "Foto av återvinningsinformationen";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
 "scanner.tab-bar.item" = "Skanner";
 "history.tab-bar.item" = "Historik";
 "settings.tab-bar.item" = "Inställningar";
-"settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
-"settings.allergies.title" = "Allergens alerts";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
+"settings.ingredientsAnalysis.title" = "Varningar om ingrediensanalys";
+"settings.allergies.title" = "Allergenvarningar";
+"settings.allergies.description" = "Lägg till allergener i den här listan för att få ett meddelande när du skannar en produkt som innehåller den. \nObservera att information om dina allergier ALDRIG kommer att skickas till Open Food Facts server. Var också försiktig då uppgifterna kanske inte är 100% tillförlitliga och att detekteringen kanske inte är 100% korrekt. Var noga med att kolla själv också!";
+"settings.allergies.add-button" = "Lägg till allergener";
 "settings.sections.information" = "Information";
 "settings.sections.discover" = "Upptäck";
 "settings.sections.contribute" = "Bidra";
 "settings.sections.about" = "Om";
-"settings.user-profile" = "Your contributor account";
+"settings.user-profile" = "Ditt bidragsgivarkonto";
 "settings.credits.title" = "Medverkande";
 "settings.scan-on-launch.title" = "Visa streckkodsscanner vid start";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Upptäck";
 "settings.contribute.how-to-contribute" = "Hur man bidrar";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.contribute.support-open-food-facts" = "Stöd Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Översätt Open Food Facts";
 "settings.about.contact" = "Kontakt";
 "settings.about.frequently-asked-questions" = "Vanliga frågor (FAQ)";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
@@ -373,8 +374,8 @@
 "user.forgot-password" = "Glömt lösenordet?";
 "user.check-your-contributions.button" = "Check Your Contributions";
 "user.products-pending-upload.button" = "Products pending upload";
-"user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
-"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.products-pending-upload-none.button" = "Produkter som väntar på uppladdning till Open Food Fakta (inga)";
+"user.create-account.text" = "Om du inte har ett konto klickar du på länken nedan för att skapa ett.";
 "user.create-account.button" = "Skapa ett konto";
 "user.why-log-in.text" = "Om du loggar in med ditt konto kommer du att få kredit för alla dina bidrag till matöppenhet.";
 "user.alert.wrong-credentials.title" = "Inloggning misslyckades";
@@ -382,20 +383,20 @@
 "user.alert.generic-error.title" = "Det gick inte att logga in";
 "user.alert.generic-error.subtitle" = "Var god och försök igen om en stund";
 "user.alert.logout-confirmation.title" = "Bekräfta utloggning";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
+"user.alert.logout-confirmation.subtitle" = "Vill du verkligen logga ut?";
 "user.alert.username-missing" = "Användarnamn krävs";
 "user.alert.password-missing" = "Lösenord krävs";
 "pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
 "pending-upload.hud.status" = "Laddar upp";
 
 // Search history
-"history.title" = "Search history";
-"history.cell.privacy" = "Your search history is only stored on your device";
+"history.title" = "Sökhistorik";
+"history.cell.privacy" = "Din sökhistorik lagras endast på din enhet";
 "history.button.clear" = "Rensa";
 "history.clear.confirmation-title" = "Rensa din historik ?";
-"history.clear.confirmation-message" = "All your history will be deleted";
+"history.clear.confirmation-message" = "All din historik raderas";
 "history.section-titles.last24h" = "Senaste 24 timmarna";
-"history.section-titles.fewDays" = "A few days ago";
+"history.section-titles.fewDays" = "För några dagar sedan";
 "history.section-titles.fewWeeks" = "För några veckor sedan";
 "history.section-titles.fewMonths" = "För några månader sedan";
 "history.section-titles.longTime" = "För länge sedan";
@@ -406,12 +407,12 @@
 // Camera localization API
 "API_CANCEL_TITLE" = "Annulera";
 "USE_PHOTO" = "Använd foto";
-"PHOTO" = "PHOTO";
-"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"PHOTO" = "FOTO";
+"AEAF_LOCK_TEXT" = "AE / AF-LÅS";
 "HDR_AUTO" = "Auto";
-"HDR_ON" = "On";
-"HDR_OFF" = "Off";
-"TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
-"RETAKE" = "Retake";
+"HDR_ON" = "På";
+"HDR_OFF" = "Av";
+"TIMER_OFF_TEXT" = "Av";
+"PHOTOS" = "Foton";
+"CANCEL" = "Annulera";
+"RETAKE" = "Ta om";
