@@ -35,6 +35,7 @@ jobs:
 
       - name: Run Fastlane beta lane
         run: bundle exec fastlane screenshots
+        env:  
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
