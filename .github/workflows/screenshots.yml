@@ -23,7 +23,8 @@ jobs:
         with:
           path: ~/Carthage
           key: ${{ runner.os }}-carthage-${{ hashFiles('Cartfile.resolved') }}
-
+        env: 
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install sentry-cli
         run: curl -sL https://sentry.io/get-cli/ | bash
 
@@ -32,8 +33,10 @@ jobs:
 
       - name: Prepare xcodeproj
         run: sh scripts/setup.sh
+        env: 
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Run Fastlane beta lane
+      - name: Run Fastlane snapshot
         run: bundle exec fastlane snapshot
         env:  
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
