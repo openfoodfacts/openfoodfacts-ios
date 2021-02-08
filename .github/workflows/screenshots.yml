@@ -2,7 +2,8 @@ name: Screenshot automation
 on:
   push:
     branches:
-      - 'release/*'
+      #- 'release/*'
+      - '*'
 
 jobs:
   screenshot-automation:
