@@ -3,7 +3,7 @@ name: Screenshot automation
   #push:
     #branches:
       #- 'release/*'
-on: [push]
+on: [push, pull_request]
 
 jobs:
   screenshot-automation:
