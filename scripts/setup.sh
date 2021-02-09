@@ -24,12 +24,12 @@ fi
 echo "✨ Installing mint dependencies"
 mint bootstrap -l
 
-#if [ "$CI" = true ] ; then
-#    echo "✨ Skipping carthage dependencies as CI=true"
-#else
-echo "✨ Installing carthage dependencies"
-carthage bootstrap --platform iOS --cache-builds
-#fi
+if [ "$CI" = true ] ; then
+  echo "✨ Skipping carthage dependencies as CI=true"
+else
+  echo "✨ Installing carthage dependencies"
+  carthage bootstrap --platform iOS --cache-builds
+fi
 
 echo "✨ Generating project"
 . $SCRIPTS_DIR/create-project.sh
