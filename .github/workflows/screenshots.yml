@@ -1,9 +1,8 @@
 name: Screenshot automation
-#on:
-  #push:
-    #branches:
-      #- 'release/*'
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - 'screenshots/*'
 
 jobs:
   screenshot-automation:
