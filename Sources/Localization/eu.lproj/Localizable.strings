@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Eskaneatu produktuaren barra kodea";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Ezin aurkitu barra-kodea.\nJarri barra-kodea pantailaren erdian.\nZiurtatu barra kodea ondo argiztatuta dagoela.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Eskaner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -97,10 +97,10 @@
 "product-add.title" = "Produktu berria";
 "product-add.title-edit" = "Editatu produktua";
 "product-add.titles.barcode" = "Barra-kodea";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
+"product-add.titles.top-explainations" = "Ongi egina ! Produktu hau oraindik ez dago Open Food Facts datu basean. Atera al ditzakezu produktuaren, osagaien zerrendaren eta elikaduraren inguruko argazki batzuk Open Food Facts datu basean gehitzeko?\n\nAldez aurretik eskerrik asko.";
 "product-add.titles.license-explaination" = "Oharra: bidaltzen dituzun argazkiak Creative Commons Attribution & ShareAlike lizentzia librearekin argitaratzen dira.";
 
-"product-add.titles.product-info" = "Product Information";
+"product-add.titles.product-info" = "Produktuaren informazioa";
 "product-add.label.brand-example" = "Examples: CocaCola, Nestle, etc…";
 "product-add.label.product-name" = "Izena";
 "product-add.label.category" = "Kategoria";
@@ -111,7 +111,7 @@
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Hizkuntzak";
 "product-add.label.labels" = "Etiketak";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.labels-example" = "Adibidez: glutenik gabe, eta abar.";
 "product-add.label.origins" = "Origin of ingredients";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
 "product-add.label.origins-example" = "Example: Butter from France, etc.";
@@ -214,8 +214,8 @@
 "product-detail.environment.ecoscore.c" = "Eco-score C";
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.unknown" = "Puntuazio ekologiko ezezaguna";
+"product-detail.environment.ecoscore.incite" = "Mesedez, gehitu ontzikiaren informazioa, puntuazio ekologikoa kalkula dezagun";
 
 // Nutrition levels
 "nutrition-level.title" = "Mantenugai mailak 100 g / 100 ml bakoitzeko";
@@ -322,7 +322,7 @@
 "call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "Atera osagaien argazkia";
 "call-to-action.nutrition" = "Atera elikagai-taularen argazki bat";
-"call-to-action.edit" = "Complete the product to get it scored";
+"call-to-action.edit" = "Osatu produktua puntuazioa lortzeko";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -333,7 +333,7 @@
 "product.images.take-picture.front" = "Aurrealdeko argazkia";
 "product.images.take-picture.ingredients" = "Osagaien argazkia";
 "product.images.take-picture.nutrition" = "Elikadura-taularen argazkia";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.packaging" = "Birziklatze informazioaren argazkia";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -342,7 +342,7 @@
 "settings.tab-bar.item" = "Ezarpenak";
 "settings.ingredientsAnalysis.title" = "Osagaien azterketen alertak";
 "settings.allergies.title" = "Alergenoen alertak";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.description" = "Gehitu alergenoak zerrenda honi, produktu bat eskaneatzen duzunean jakinarazteko. \nKontuan izan zure alergiei buruzko informazioa INOIZ ez dela bidaliko Open Food Facts zerbitzarira. Era berean, kontuz ibili datuak ez baitira %100ean fidagarriak ezta detekzioa %100ekoa ere. Ziurtatu zeure zeure aldetik ere!";
 "settings.allergies.add-button" = "Alergenoak gehitu";
 "settings.sections.information" = "Informazioa";
 "settings.sections.discover" = "Ohartu";
@@ -410,9 +410,9 @@
 "PHOTO" = "PHOTO";
 "AEAF_LOCK_TEXT" = "AE/AF LOCK";
 "HDR_AUTO" = "Auto";
-"HDR_ON" = "On";
-"HDR_OFF" = "Off";
-"TIMER_OFF_TEXT" = "Off";
+"HDR_ON" = "Piztu";
+"HDR_OFF" = "Itzali";
+"TIMER_OFF_TEXT" = "Itzali";
 "PHOTOS" = "Argazkiak";
 "CANCEL" = "Utzi";
 "RETAKE" = "Retake";
