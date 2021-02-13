@@ -14,7 +14,7 @@
 "generic.search" = "Ara";
 "generic.cancel" = "İptal";
 "generic.save" = "Kaydet";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "İptal";
 "generic.ok" = "Tamam";
 "generic.close" = "Kapat";
 
@@ -100,8 +100,8 @@
 "product-add.titles.top-explainations" = "Aferin! Bu ürün henüz Open Food Facts'te yok. Open Food Facts'e eklemek için ürünün, içindekiler listesinin ve besin değerlerinin fotoğraflarını çekebilir misiniz? \n\nŞimdiden teşekkürler.";
 "product-add.titles.license-explaination" = "Not: gönderdiğiniz resimler özgür bir lisans olan Creative Commons Attribution & ShareAlike kapsamında yayınlanmaktadır.";
 
-"product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.titles.product-info" = "Ürün Bilgisi";
+"product-add.label.brand-example" = "Örnekler: Coca-Cola, Nestle vb…";
 "product-add.label.product-name" = "İsim";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Miktar";
@@ -110,9 +110,9 @@
 "product-add.details.category" = "Nutri-Score'u hesaplamak için gerekli";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Diller";
-"product-add.label.labels" = "Labels";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
-"product-add.label.origins" = "Origin of ingredients";
+"product-add.label.labels" = "Etiketler";
+"product-add.label.labels-example" = "Örnekler: Glütensiz vb.";
+"product-add.label.origins" = "Malzemelerin menşei";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
 "product-add.label.origins-example" = "Example: Butter from France, etc.";
 
@@ -203,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "porsiyon";
 "product-detail.nutrition-table.missing" = "Herhangi bir besin ögesi ayarlanmadı.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Uyarı: lif miktarı belirtilmediği için, olası olumlu katkı notuna dahil edilemedi.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Uyarı: Meyve, sebze ve sert kabuklu yemişlerin miktarı belirtilmemiştir, sınıfa olası olumlu katkıları dikkate alınmamıştır.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Uyarı: Meyve, sebze ve fındık miktarı etiket üzerinde belirtilmemiş, içerikler listesinden hesaplanmıştır: %d%";
@@ -318,10 +319,10 @@
 
 // Call to action
 "call-to-action.summary" = "Ön fotoğrafını çekin";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "Geri dönüşüm yönergelerinin resmini çekin";
 "call-to-action.ingredients" = "Malzemelerin fotoğrafını çekin";
 "call-to-action.nutrition" = "Beslenme tablosunun resmini çekin";
-"call-to-action.edit" = "Complete the product to get it scored";
+"call-to-action.edit" = "Puanlanması için ürün bilgilerinin tamamlayın";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -332,7 +333,7 @@
 "product.images.take-picture.front" = "Ön tarafın fotoğrafı";
 "product.images.take-picture.ingredients" = "İçindekilerin fotoğrafı";
 "product.images.take-picture.nutrition" = "Besin değerleri tablosunun fotoğrafı";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.packaging" = "Geri dönüşüm bilgisinin fotoğrafı";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -350,7 +351,7 @@
 "settings.user-profile" = "Katkıda bulunan kişi hesabınız";
 "settings.credits.title" = "Katkıda Bulunanlar";
 "settings.scan-on-launch.title" = "Uygulamayı Başlatma sırasında Tarama'yı Göster";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Keşfet";
 "settings.contribute.how-to-contribute" = "Katkıda bulunabilirsiniz";
 "settings.contribute.support-open-food-facts" = "Open Food Facts için destek";
 "settings.contribute.translate-open-food-facts" = "Open Food Facts'in çevirisine yardımcı olabilirsin";
@@ -408,10 +409,10 @@
 "USE_PHOTO" = "Fotoğraf kullan";
 "PHOTO" = "PHOTO";
 "AEAF_LOCK_TEXT" = "AE/AF LOCK";
-"HDR_AUTO" = "Auto";
-"HDR_ON" = "On";
-"HDR_OFF" = "Off";
-"TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
+"HDR_AUTO" = "Otomatik";
+"HDR_ON" = "Açık";
+"HDR_OFF" = "Kapalı";
+"TIMER_OFF_TEXT" = "Kapalı";
+"PHOTOS" = "Fotoğraflar";
+"CANCEL" = "İptal";
 "RETAKE" = "Retake";
