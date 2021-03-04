@@ -12,6 +12,7 @@ import RealmSwift
 import UIKit
 
 class DataManagerMock: DataManagerProtocol {
+    
     // Search
     var query: String?
     var page: Int?
@@ -121,6 +122,10 @@ class DataManagerMock: DataManagerProtocol {
     }
 
     func allergen(forTag: Tag) -> Allergen? {
+        return nil
+    }
+    
+    func label(forTag: String) -> Label? {
         return nil
     }
 

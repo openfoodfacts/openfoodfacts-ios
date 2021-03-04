@@ -150,3 +150,9 @@ desc "Upload metadata"
 lane :metadata do
   deliver(skip_binary_upload: true)
 end
+
+lane :perform_snapshots do
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
+
+  snapshot
+end
