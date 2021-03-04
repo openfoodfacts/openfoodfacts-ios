@@ -205,7 +205,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         createFormRow(with: &rows, item: product.barcode, label: InfoRowKey.barcode.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.genericName, label: InfoRowKey.genericName.localizedString, isCopiable: true)
         createFormRow(with: &rows, item: product.manufacturingPlaces, label: InfoRowKey.manufacturingPlaces.localizedString)
-        createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
         createFormRow(with: &rows, item: product.categoriesTags?.map({ (categoryTag: String) -> NSAttributedString in
             if let category = dataManager.category(forTag: categoryTag) {
@@ -213,16 +212,19 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                     return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forCategory: category)])
                 }
             }
-            return NSAttributedString(string: categoryTag)
+            return NSAttributedString(string: categoryTag.localLanguageCodeRemoved, attributes: [NSAttributedString.Key.obliqueness: 0.2])
         }), label: InfoRowKey.categories.localizedString)
 
         createFormRow(with: &rows, item: product.labelsTags?.map({ (labelTag: String) -> NSAttributedString in
             if let label = dataManager.label(forTag: labelTag) {
                 if let name = Tag.choose(inTags: Array(label.names)) {
-                    return NSAttributedString(string: name.value, attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forLabel: label)])
+                    return NSAttributedString(string: name.value,
+                                              attributes: [NSAttributedString.Key.link: OFFUrlsHelper.url(forLabel: label)])
                 }
             }
-            return NSAttributedString(string: labelTag)
+            // We should use Textstyle body, but that does not exist in italic
+            //let attributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 17.0)]
+            return NSAttributedString(string: labelTag.localLanguageCodeRemoved, attributes: [NSAttributedString.Key.obliqueness: 0.2])
         }), label: InfoRowKey.labels.localizedString)
 
         createFormRow(with: &rows, item: product.embCodesTags?.map({ (tag: String) -> NSAttributedString in
@@ -375,7 +377,13 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
         if let validStates = product.states,
             validStates.contains("en:nutrition-facts-completed") {
-            createNutritionTableWebViewRow(rows: &rows)
+            if let noNutritionData = product.noNutritionData,
+                noNutritionData != "on" {
+                createNutritionTableWebViewRow(rows: &rows)
+            } else {
+                createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+                createFormRow(with: &rows, item: "product-detail.nutrition-table.noNutritionData".localized, label: InfoRowKey.nutritionalTableHeader.localizedString, isCopiable: true)
+            }
             //createNutritionTableRows(rows: &rows)
         } else {
             createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
@@ -395,6 +403,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         rows.append(FormRow(value: product as Any, cellType: HostedViewCell.self))
 
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
+        
+        createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
         // Info rows
         if let carbonFootprint = product.nutriments?.carbonFootprint, let unit = product.nutriments?.carbonFootprintUnit {

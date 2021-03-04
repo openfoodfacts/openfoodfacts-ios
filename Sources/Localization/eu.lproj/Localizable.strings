@@ -14,7 +14,7 @@
 "generic.search" = "Bilatu";
 "generic.cancel" = "Utzi";
 "generic.save" = "Gorde";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Utzi";
 "generic.ok" = "Ados";
 "generic.close" = "Itxi";
 
@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Eskaneatu produktuaren barra kodea";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Ezin aurkitu barra-kodea.\nJarri barra-kodea pantailaren erdian.\nZiurtatu barra kodea ondo argiztatuta dagoela.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Eskaner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -40,126 +40,133 @@
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts-ek kamera baimenak behar ditu";
 "product-scanner.permissions.noPermissions.message" = "Mesedez, eman baimena kameraren barrakak kodetzeko";
-"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+"product-scanner.permissions.noPermissions.action.title" = "Ezarpenak ireki";
 
-"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
-"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+"product-scanner.permissions.failed.title" = "Ezin da barrakodeen eskaneatzea hasi.";
+"product-scanner.permissions.failed.message" = "Ziurtatu Pribatutasun Ezarpenetan Open Food Facts-ek kamera erabiltzeko baimena duela";
+"product-scanner.permissions.failed.action.title" = "Utzi barra kodeak eskaneatzeari";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Produktua kargatzen…";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image…";
+"product-add.uploading-image-banner.title" = "Irudia kargatzen…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Zerbait ez da ondo atera";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+"product-add.image-upload-error-banner.subtitle" = "Saiatu berriro argazkia ateratzen";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-upload-success-banner.title" = "Irudia behar bezala kargatu da";
+"product-add.image-save-success-banner.title" = "Irudia linean dagoenean kargatuko da";
 /* Displayed when a product was successfully added to the products database */
-"product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
-"product-add.uploaded-image" = "Image uploaded, thanks!";
-"product-add.save-error.title" = "Error while saving product";
-"product-add.save-error.message" = "Please try again later";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
-"product-add.save-ingredients.success" = "Ingredients saved at";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.product-add-success-banner.title" = "Produktua ondo gehitu da. Eskerrik asko!";
+"product-add.uploaded-image" = "Irudia kargatu da, eskerrik asko!";
+"product-add.save-error.title" = "Errorea produktua gordetzean";
+"product-add.save-error.message" = "Mesedez, beranduago saiatu";
+"product-add.save-info.success" = "Hemen gordetako informazioa:";
+"product-add.save-info.error" = "Informazioa ez da gorde";
+"product-add.save-info.saving" = "Produktuaren informazioa gordetzen…";
+"product-add.save-info.not-yet" = "Informazioa oraindik ez da gorde";
+"product-add.save-ingredients.success" = "Osagaiak hemen gorde dira:";
+"product-add.save-ingredients.error" = "Osagaiak ez dira gorde";
+"product-add.save-ingredients.saving" = "Osagaiak gordetzen…";
+"product-add.save-ingredients.not-yet" = "Osagaiak oraindik gorde gabe";
+"product-add.save-nutriments.success" = "Mantenugaiak hemen gorde dira:";
+"product-add.save-nutriments.error" = "Mantenugaiak ez dira gorde";
+"product-add.save-nutriments.saving" = "Mantenugaiak gordetzen…";
+"product-add.save-nutriments.not-yet" = "Mantenugaiak oraindik gorde gabe";
+"product-add.no-nutrition" = "Nutrizio datuak ez dira produktuan agertzen";
 
-"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.success" = "Osagaiak iruditik irakurritakoak, hemen:";
+"product-add.ocr-ingredients.error" = "Ezin izan dira iruditik osagaiak atera";
+"product-add.ocr-ingredients.saving" = "Iruditik osagaiak ateratzen…";
+"product-add.ocr-ingredients.not-yet" = "Aztertu ahal izateko osagaien irudiren baten zain";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "Nutri-Score nutrizio taulatik kalkulatu berri da";
+"product-add.novagroup-explaination" = "NOVA taldea osagai zerrendan oinarrituta kalkulatu berri da";
 
 "alert.action.ok" = "Ados";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Hizkuntza aukeratu";
 /* Product Add name text field */
-"product-add.placeholder.name" = "Product name";
+"product-add.placeholder.name" = "Produktuaren izena";
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Marka";
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Kopurua";
 
-"product-add.title" = "New product";
+"product-add.title" = "Produktu berria";
 "product-add.title-edit" = "Editatu produktua";
 "product-add.titles.barcode" = "Barra-kodea";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.top-explainations" = "Ongi egina ! Produktu hau oraindik ez dago Open Food Facts datu basean. Atera al ditzakezu produktuaren, osagaien zerrendaren eta elikaduraren inguruko argazki batzuk Open Food Facts datu basean gehitzeko?\n\nAldez aurretik eskerrik asko.";
+"product-add.titles.license-explaination" = "Oharra: bidaltzen dituzun argazkiak Creative Commons Attribution & ShareAlike lizentzia librearekin argitaratzen dira.";
 
-"product-add.titles.product-info" = "Product Information";
+"product-add.titles.product-info" = "Produktuaren informazioa";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Izena";
 "product-add.label.category" = "Kategoria";
 "product-add.label.quantity" = "Kopurua";
 "product-add.label.packaging" = "Ontziratzea";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
+"product-add.details.category" = "Nutri-Score kalkulatzea beharrezkoa da";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.label.language" = "Hizkuntzak";
+"product-add.label.labels" = "Etiketak";
+"product-add.label.labels-example" = "Adibidez: glutenik gabe, eta abar.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
-"product-add.titles.nutritive" = "Nutrition Facts";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
-"product-add.nutritive.add-nutriment" = "Add a nutrient";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.description.nutritive" = "Osatu datu nutrizionalak eta produktuen kategoria Nutri-Scorea kalkulatzeko";
+"product-add.titles.nutritive" = "Elikadura datuak";
+"product-add.nutritive.choice.per-hundred-grams" = "100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "errazio bakoitzeko";
+"product-add.nutritive.add-nutriment" = "Gehitu mantenugai bat";
+"product-add.nutritive.too-much" = "100g baino gehiago?";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "Bete osagaiak elikagaien prozesamenduari buruzko NOVA taldea lortzeko";
 "product-add.titles.ingredients" = "Osagaiak";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
-"product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.explaination" = "Osagai zerrendaren argazkia atera osagaiak automatikoki erauzteko. Begiratu arretaz eta ez ahaztu gordetzea.";
+"product-add.ingredients.button-delete" = "Oso txarra, ez ikusia egin";
+"product-add.ingredients.button-save" = "Itxura ona du, gorde";
 
 // Select Category
 "select-category.title" = "Kategoria";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Bilatu kategoria bat";
 
 // Select nutrition
 "select-nutriment.title" = "Elikadura";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Bilatu mantenugai bat";
 
 // Select allergen
 "select-allergen.title" = "Alergenoak";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "Bilatu alergeno bat";
 
 // Product Detail
-"product-detail.header.add-new-picture" = "Add a new picture";
-"product-detail.edit" = "Edit this product";
+"product-detail.header.add-new-picture" = "Gehitu irudi berria";
+"product-detail.edit" = "Editatu produktu hau";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.title" = "Remember to save your changes";
+"product-detail.edit-alert.title" = "Gogoratu aldaketak gordetzea";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
+"product-detail.edit-alert.subtitle" = "Joan behera 'Gorde' botoira";
 
 // Product detail page titles
 "product-detail.page-title.summary" = "Laburpena";
 "product-detail.page-title.ingredients" = "Osagaiak";
 "product-detail.page-title.nutrition" = "Elikadura";
-"product-detail.page-title.nutrition-table" = "Nutrition table";
+"product-detail.page-title.nutrition-table" = "Elikadura taula";
 "product-detail.page-title.environment-impact" = "Ingurumena";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Barra-kodea";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Izen generikoa";
 "product-detail.summary.quantity" = "Kopurua";
 "product-detail.summary.packaging" = "Packaging";
 "product-detail.summary.brands" = "Markak";
 "product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
 "product-detail.summary.origins" = "Origin of ingredients";
 "product-detail.summary.categories" = "Kategoriak";
-"product-detail.summary.labels" = "Labels, certifications, awards";
-"product-detail.summary.citiesTags" = "City, state and country where purchased";
+"product-detail.summary.labels" = "Etiketak, ziurtagiriak, sariak";
+"product-detail.summary.citiesTags" = "Erositako hiria, estatua eta herrialdea";
 "product-detail.summary.stores" = "Dendak";
 "product-detail.summary.embCodes" = "Packager code";
 "product-detail.summary.countries" = "Countries where sold";
@@ -169,81 +176,83 @@
 "product-detail.ingredients.nova.2" = "Sukaldaritzako osagaiak prozesatu";
 "product-detail.ingredients.nova.3" = "Prozesatutako jakiak";
 "product-detail.ingredients.nova.4" = "Ultra-prozesatutako jakiak eta edariak";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
+"product-detail.ingredients.nova.incite" = "Gehitu osagaiak eta / edo kategoriak NOVA kalkulatzeko.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Alergiak edo intolerantziak eragiten dituzten substantziak edo produktuak";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-alert.title" = "Alergenoak ditu!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Produktu honek oraindik ez du osagai zerrendarik eta, ondorioz, alergenoen detekzioa ezin izan da amaitu.";
+"product-detail.ingredients.allergens-list.offline-product" = "Produktu hau lineaz kanpoko datu basetik kargatu da eta, ondorioz, alergenoen detekzioa ezin izan da amaitu.";
 "product-detail.ingredients.traces-list" = "Aztarnak";
-"product-detail.ingredients.additives-list" = "Additives";
-"product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
-"product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients that may be from palm oil";
+"product-detail.ingredients.additives-list" = "Gehigarriak";
+"product-detail.ingredients.palm-oil-ingredients" = "Palma olioaren osagaiak";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Palma olioarenak izan daitezkeen osagaiak";
 "product-detail.ingredients.vitamins-list" = "Bitaminak";
 "product-detail.ingredients.minerals-list" = "Mineralak";
-"product-detail.ingredients.nucleotides-list" = "Nucleotides";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.nucleotides-list" = "Nukleotidoak";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Beste nutrizio-osagai batzuk";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Serving size";
-"product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2 emissions";
+"product-detail.nutrition.carbon-footprint" = "Aztarna ekologikoa / CO2 emisioak";
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
 "product-detail.nutrition-table.for-100g" = "100 g-ko";
-"product-detail.nutrition-table.for-serving" = "Per serving";
+"product-detail.nutrition-table.for-serving" = "Errazio bakoitzeko";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "Ez da nutrienterik ezarri.";
-"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Abisua: zuntz kopurua ez dago zehaztuta, ezin izan dute kontuan izan kalifikaziorako izan dezaketen ekarpen positiboa.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Abisua: fruta, barazki eta fruitu lehorren kopurua ez dago zehaztuta, notan izan dezaketen ekarpen positiboa ezin da kontuan hartu.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Abisua: fruta, barazki eta fruitu lehorren kopurua ez dago etiketan zehaztuta, osagai zerrendatik kalkulatu da:% %d";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Oharra: fruta, barazki eta fruitu lehorren kopurua ez dago etiketan zehaztuta, produktuaren (%s) kategorian kalkulatu da:% %d";
 
 "product-detail.environment.ecoscore.a" = "Eco-score A";
 "product-detail.environment.ecoscore.b" = "Eco-score B";
 "product-detail.environment.ecoscore.c" = "Eco-score C";
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.unknown" = "Eco-score ezezaguna";
+"product-detail.environment.ecoscore.incite" = "Mesedez, gehitu ontzikiaren informazioa, Eco-score kalkula dezagun";
 
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
+"nutrition-level.title" = "Mantenugai mailak 100 g / 100 ml bakoitzeko";
 "nutrition-level.low" = "kopuru txikian";
 "nutrition-level.moderate" = "kopuru moderatuan";
 "nutrition-level.high" = "kopuru handian";
 
 // Ingredients Analysis
 "ingredients-analysis.title" = "Ingredients analysis";
-"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
-"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
-"ingredients-analysis.display" = "Display %@ status";
-"ingredients-analysis.missing-ingredients.title" = "Fill in the missing ingredients";
-"ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
-"ingredients-analysis.help-translate.title" = "Help translate the ingredients in your language";
-"ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
-"ingredients-analysis.help-translate.button" = "Help translate ingredients";
-"ingredients-analysis.back-to-scan" = "Back to scan";
+"ingredients-analysis.ingredients_in_this_product" = "Produktu honetan %@k diren osagaiak:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Produktu honen osagaiak %@k dira.";
+"ingredients-analysis.unknown_status" = "Ezin izan dugu produktuaren egoera ebaluatu.";
+"ingredients-analysis.ambiguous" = "Osagai anbiguoak: %@";
+"ingredients-analysis.display" = "Bistaratu %@ egoera";
+"ingredients-analysis.missing-ingredients.title" = "Bete falta diren osagaiak";
+"ingredients-analysis.missing-ingredients.description" = "Produktu honen osagaiak ez ditugu oraindik. Lagundu ahal duzu horiek osatzen?";
+"ingredients-analysis.help-translate.title" = "Lagundu osagaiak zure hizkuntzara itzultzen";
+"ingredients-analysis.help-translate.description" = "Lagundu osagaiak zure hizkuntzara itzultzen osagaien analisia posible izan dadin";
+"ingredients-analysis.help-translate.button" = "Lagundu osagaiak itzultzen";
+"ingredients-analysis.back-to-scan" = "Itzuli eskaneatzera";
 
 // Robotoff
 "robotoff.yes" = "Bai";
 "robotoff.no" = "Ez";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "Ez nago ziur";
 "robotoff.contribute-incentive.title" = "Contribute";
-"robotoff.settings.display-questions" = "Display questions";
+"robotoff.settings.display-questions" = "Erakutsi galderak";
 "robotoff.contribute-incentive.login" = "Erabiltzaile-izena";
-"robotoff.contribute-incentive.not-now" = "Not now";
-"robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
-"robotoff.answer-saved" = "Answer saved, thanks!";
+"robotoff.contribute-incentive.not-now" = "Orain ez";
+"robotoff.contribute-incentive.description" = "Erantzun galdera sinple batzuei, elikagaien gardentasuna bultzatzeko!";
+"robotoff.answer-saved" = "Erantzuna gordeta, eskerrik asko!";
 
 // Nutrition
 "nutrition.energy" = "Energia";
 "nutrition.energy.kj" = "Energia (kJ)";
 "nutrition.energy.kcal" = "Energia (kcal)";
-"nutrition.fats" = "Fats";
+"nutrition.fats" = "Gantzak";
 "nutrition.fats.saturated-fat" = "Gantz saturatua";
 "nutrition.fats.mono-unsaturated-fat" = "Gantz mono insaturatua";
 "nutrition.fats.poly-unsaturated-fat" = "Gantz poli insaturatua";
@@ -259,18 +268,18 @@
 "nutrition.carbohydrate.fructose" = "Fruktosa";
 "nutrition.carbohydrate.lactose" = "Laktosa";
 "nutrition.carbohydrate.maltose" = "Maltosa";
-"nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
+"nutrition.carbohydrate.maltodextrins" = "Maltodextrinak";
 "nutrition.fiber" = "Zuntz dietetikoa";
 "nutrition.proteins" = "Proteinak";
 "nutrition.proteins.casein" = "Kaseina";
-"nutrition.proteins.serum-proteins" = "Serum Proteins";
-"nutrition.proteins.nucleotides" = "Nucleotides";
+"nutrition.proteins.serum-proteins" = "Serum proteinak";
+"nutrition.proteins.nucleotides" = "Nukleotidoak";
 "nutrition.salt" = "Gatza";
 "nutrition.sodium" = "Sodioa";
 "nutrition.alcohol" = "Alkohola";
 "nutrition.vitamins" = "Bitaminak";
 "nutrition.vitamins.a" = "A bitamina";
-"nutrition.vitamins.beta-carotene" = "Beta carotene";
+"nutrition.vitamins.beta-carotene" = "Beta karotenoa";
 "nutrition.vitamins.d" = "D bitamina";
 "nutrition.vitamins.e" = "E bitamina";
 "nutrition.vitamins.k" = "K bitamina";
@@ -287,7 +296,7 @@
 "nutrition.minerals.silica" = "Silizea";
 "nutrition.minerals.bicarbonate" = "Bikarbonatoa";
 "nutrition.minerals.potassium" = "Potasioa";
-"nutrition.minerals.chloride" = "Chloride";
+"nutrition.minerals.chloride" = "Kloruroa";
 "nutrition.minerals.calcium" = "Kaltzioa";
 "nutrition.minerals.phosphorus" = "Fosforoa";
 "nutrition.minerals.iron" = "Burdina";
@@ -295,9 +304,9 @@
 "nutrition.minerals.zinc" = "Zink";
 "nutrition.minerals.copper" = "Kobrea";
 "nutrition.minerals.manganese" = "Manganesoa";
-"nutrition.minerals.fluoride" = "Fluoride";
-"nutrition.minerals.selenium" = "Selenium";
-"nutrition.minerals.chromium" = "Chromium";
+"nutrition.minerals.fluoride" = "Fluoruroa";
+"nutrition.minerals.selenium" = "Selenioa";
+"nutrition.minerals.chromium" = "Kromoa";
 "nutrition.minerals.molybdenum" = "Molibdenoa";
 "nutrition.minerals.iodine" = "Iodoa";
 "nutrition.minerals.caffeine" = "Kafeina";
@@ -309,42 +318,43 @@
 "nutrition.minerals.chlorophyl" = "Klorofila";
 
 // Call to action
-"call-to-action.summary" = "Take a photo of the front";
+"call-to-action.summary" = "Atera produktuaren aurrealdeko argazkia";
 "call-to-action.environment" = "Take a photo of the recycling instructions";
-"call-to-action.ingredients" = "Take a photo of the ingredients";
-"call-to-action.nutrition" = "Take a photo of the nutrition facts";
-"call-to-action.edit" = "Complete the product to get it scored";
+"call-to-action.ingredients" = "Atera osagaien argazkia";
+"call-to-action.nutrition" = "Atera elikagai-taularen argazki bat";
+"call-to-action.edit" = "Osatu produktua puntuazioa lortzeko";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.took-picture.front" = "Photo of the front ✅";
-"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.front" = "Aurreko argazkia ✅";
+"product.images.took-picture.ingredients" = "Osagaien argazkia ✅";
+"product.images.took-picture.nutrition" = "Elikadura-taularen argazkia ✅";
 
-"product.images.take-picture.front" = "Photo of the front";
-"product.images.take-picture.ingredients" = "Photo of the ingredients";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.front" = "Aurrealdeko argazkia";
+"product.images.take-picture.ingredients" = "Osagaien argazkia";
+"product.images.take-picture.nutrition" = "Elikadura-taularen argazkia";
+"product.images.take-picture.packaging" = "Birziklatze informazioaren argazkia";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
 "scanner.tab-bar.item" = "Eskaner";
 "history.tab-bar.item" = "Historiala";
 "settings.tab-bar.item" = "Ezarpenak";
-"settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
-"settings.allergies.title" = "Allergens alerts";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
+"settings.ingredientsAnalysis.title" = "Osagaien azterketen alertak";
+"settings.allergies.title" = "Alergenoen alertak";
+"settings.allergies.description" = "Gehitu alergenoak zerrenda honi, produktu bat eskaneatzen duzunean jakinarazteko. \nKontuan izan zure alergiei buruzko informazioa INOIZ ez dela bidaliko Open Food Facts zerbitzarira. Era berean, kontuz ibili datuak ez baitira %100ean fidagarriak ezta detekzioa %100ekoa ere. Ziurtatu zeure zeure aldetik ere!";
+"settings.allergies.add-button" = "Alergenoak gehitu";
 "settings.sections.information" = "Informazioa";
 "settings.sections.discover" = "Ohartu";
 "settings.sections.contribute" = "Contribute";
 "settings.sections.about" = "Honi buruz";
-"settings.user-profile" = "Your contributor account";
+"settings.user-profile" = "Zure laguntzaile kontua";
 "settings.credits.title" = "Kredituak";
-"settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "Discover";
+"settings.scan-on-launch.title" = "Erakutsi Eskanerra aplikazioa abiaraztean";
+"settings.sections.discover" = "Ohartu";
 "settings.contribute.how-to-contribute" = "Nola lagundu";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.contribute.support-open-food-facts" = "Open Food Facts lagundu";
+"settings.contribute.translate-open-food-facts" = "Open Food Facts itzuli";
 "settings.about.contact" = "Kontaktua";
 "settings.about.frequently-asked-questions" = "Ohiko galderak";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
@@ -358,51 +368,51 @@
 "user.log-out" = "Amaitu Saioa";
 "user.username" = "Erabiltzaile-izena";
 "user.password" = "Pasahitza";
-"user.logged-in.label" = "%@, you are logged in";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
+"user.logged-in.label" = "%@, saioa hasi duzu";
+"user.logged-in-explanation.label" = "Gehitzen dituzun produktu guztiak eta kargatzen dituzun produktuen argazkiak zure kontura atxikituko dira";
 "user.not-logged-in" = "Saioa hasi gabe";
-"user.forgot-password" = "Forgot Password?";
-"user.check-your-contributions.button" = "View all your contributions";
-"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
+"user.forgot-password" = "Pasahitza ahaztu duzu?";
+"user.check-your-contributions.button" = "Ikusi zure ekarpen guztiak";
+"user.products-pending-upload.button" = "Open Food Facts-era kargatzeko zain dauden produktuak";
 "user.products-pending-upload-none.button" = "Open Food Facts-era igotzeko zain dauden produktuak (bat ere ez)";
-"user.create-account.text" = "If you don't have an account, click the link below to create one.";
-"user.create-account.button" = "Create an account";
+"user.create-account.text" = "Konturik ez baduzu, egin klik beheko estekan bat sortzeko.";
+"user.create-account.button" = "Kontu bat sortu";
 "user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
-"user.alert.wrong-credentials.title" = "Unable to log in";
-"user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
-"user.alert.generic-error.title" = "There was an error logging in";
-"user.alert.generic-error.subtitle" = "Please try again in a few moments";
+"user.alert.wrong-credentials.title" = "Ezin da saioa hasi";
+"user.alert.wrong-credentials.subtitle" = "Egiaztatu zure erabiltzaile izena eta pasahitza zuzenak direla";
+"user.alert.generic-error.title" = "Errore bat gertatu da saioa hastean";
+"user.alert.generic-error.subtitle" = "Saiatu berriro beranduago";
 "user.alert.logout-confirmation.title" = "Berretsi saioa amaitzeko";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
-"user.alert.username-missing" = "Username is required";
-"user.alert.password-missing" = "Password is required";
+"user.alert.logout-confirmation.subtitle" = "Ziur zaude saioa amaitu nahi duzula?";
+"user.alert.username-missing" = "Erabiltzaile izena beharrezkoa da";
+"user.alert.password-missing" = "Pasahitza beharrezkoa da";
 "pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"pending-upload.hud.status" = "Kargatzen";
 
 // Search history
-"history.title" = "Search history";
-"history.cell.privacy" = "Your search history is only stored on your device";
+"history.title" = "Bilaketa-historia";
+"history.cell.privacy" = "Bilaketa-historia zure gailuan soilik gordetzen da";
 "history.button.clear" = "Garbitu";
-"history.clear.confirmation-title" = "Clear your history ?";
-"history.clear.confirmation-message" = "All your history will be deleted";
-"history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
+"history.clear.confirmation-title" = "Zure historia garbitu nahi duzu?";
+"history.clear.confirmation-message" = "Zure historia guztia ezabatuko da";
+"history.section-titles.last24h" = "Azken 24 orduak";
+"history.section-titles.fewDays" = "Duela egun batzuk";
+"history.section-titles.fewWeeks" = "Duela aste batzuk";
+"history.section-titles.fewMonths" = "Duela hilabete batzuk";
+"history.section-titles.longTime" = "Aspaldi";
 "history.first-scan.button.title" = "Eskaneatu lehen produktua";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Editatu";
 
 // Camera localization API
 "API_CANCEL_TITLE" = "Utzi";
-"USE_PHOTO" = "Use Photo";
+"USE_PHOTO" = "Argazkia erabili";
 "PHOTO" = "PHOTO";
 "AEAF_LOCK_TEXT" = "AE/AF LOCK";
 "HDR_AUTO" = "Auto";
-"HDR_ON" = "On";
-"HDR_OFF" = "Off";
-"TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
+"HDR_ON" = "Piztu";
+"HDR_OFF" = "Itzali";
+"TIMER_OFF_TEXT" = "Itzali";
+"PHOTOS" = "Argazkiak";
+"CANCEL" = "Utzi";
 "RETAKE" = "Retake";

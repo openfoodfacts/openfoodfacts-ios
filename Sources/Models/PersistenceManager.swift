@@ -139,6 +139,7 @@ class PersistenceManager: PersistenceManagerProtocol {
                 item.imageUrl = product.imageUrl
                 item.nutriscore = product.nutriscore
                 item.novaGroup.value = product.novaGroup
+                item.ecoscore = product.ecoscore
                 item.timestamp = Date()
 
                 if let brands = product.brands, !brands.isEmpty {
@@ -307,7 +308,14 @@ class PersistenceManager: PersistenceManagerProtocol {
     }
 
     func nutriment(forCode code: String) -> Nutriment? {
-        return getRealm().object(ofType: Nutriment.self, forPrimaryKey: code)
+        var newCode = code
+        // These are stopgaps, beacuse the json-code and the taxonomy-codes are different.
+        if code == "carbohydrates" {
+            newCode = "carbohydrate"
+        } else if code == "fiber" {
+            newCode = "dietary-fiber"
+        }
+        return getRealm().object(ofType: Nutriment.self, forPrimaryKey: "en:" + newCode)
     }
 
     var nutrimentsIsEmpty: Bool {
@@ -539,6 +547,8 @@ class PersistenceManager: PersistenceManagerProtocol {
                     item.ingredientsImage = productImage
                 case .nutrition:
                     item.nutritionImage = productImage
+                case .packaging:
+                    item.packagingImage = productImage
                 default:
                     break
                 }

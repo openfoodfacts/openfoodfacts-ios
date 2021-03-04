@@ -57,23 +57,23 @@
                             <rect key="frame" x="0.0" y="102" width="320" height="80"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrB-i8-UnA" customClass="EcoscoreImageView" customModule="OpenFoodFacts" customModuleProvider="target">
-                                    <rect key="frame" x="14.5" y="0.0" width="147.5" height="80"/>
+                                    <rect key="frame" x="-1.5" y="0.0" width="147.5" height="80"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="xrB-i8-UnA" secondAttribute="height" multiplier="118:64" id="V8m-3q-gyE"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WI-4o-m5E">
-                                    <rect key="frame" x="160" y="28" width="100" height="24"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WI-4o-m5E">
+                                    <rect key="frame" x="140" y="28" width="140" height="24"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="100" id="jvi-C3-fug"/>
+                                        <constraint firstAttribute="width" constant="140" id="jvi-C3-fug"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyo-S7-Mve">
-                                    <rect key="frame" x="258" y="28" width="24" height="24"/>
+                                    <rect key="frame" x="278" y="28" width="24" height="24"/>
                                     <state key="normal" image="circle-info"/>
                                     <connections>
                                         <action selector="ecoscoreInfoButtonTapped:" destination="-1" eventType="touchUpInside" id="daw-6g-9Oe"/>
@@ -89,7 +89,7 @@
                                 <constraint firstItem="kyo-S7-Mve" firstAttribute="height" secondItem="1WI-4o-m5E" secondAttribute="height" id="aVO-ai-kUd"/>
                                 <constraint firstItem="kyo-S7-Mve" firstAttribute="centerY" secondItem="1WI-4o-m5E" secondAttribute="centerY" id="cdJ-Wa-V8f"/>
                                 <constraint firstItem="1WI-4o-m5E" firstAttribute="centerY" secondItem="xrB-i8-UnA" secondAttribute="centerY" id="hd0-nh-qDb"/>
-                                <constraint firstItem="xrB-i8-UnA" firstAttribute="trailing" secondItem="1WI-4o-m5E" secondAttribute="leading" constant="2" id="t8Z-Ic-PAe"/>
+                                <constraint firstItem="xrB-i8-UnA" firstAttribute="trailing" secondItem="1WI-4o-m5E" secondAttribute="leading" constant="6" id="t8Z-Ic-PAe"/>
                                 <constraint firstItem="1WI-4o-m5E" firstAttribute="centerY" secondItem="Sgb-66-yaW" secondAttribute="centerY" id="wtX-Ap-9xJ"/>
                             </constraints>
                         </view>

@@ -12,9 +12,9 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Назад";
 "generic.search" = "Пошук";
-"generic.cancel" = "Скасувати";
+"generic.cancel" = "Відмінити";
 "generic.save" = "Зберегти";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Скасувати";
 "generic.ok" = "Гаразд";
 "generic.close" = "Закрити";
 
@@ -23,144 +23,151 @@
 "product-search.title" = "Пошук";
 "product-search.search-placeholder" = "Search for a product by name or barcode";
 "product-search.no-results" = "No Results";
-"product-search.error-view.title" = "Something went wrong";
-"product-search.error-view.subtitle" = "Please try again";
-"product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.error-view.title" = "Сталась помилка";
+"product-search.error-view.subtitle" = "Будь ласка, повторіть спробу";
+"product-search.initial-view.slogan" = "вільна база даних продуктів харчування";
+"product-search.initial-view.offline.title-loading" = "Збереження продуктів оффлайн: %d%%";
+"product-search.initial-view.offline.subtitle" = "Більше ніж %d продуктів доступні для миттевого сканування";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
+"product-scanner.overlay.user-help" = "Відскануйте штрихкод продукту";
 "product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Сканер";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode.error" = "Помилка сканування штрих-коду. Будь ласка, спробуйте ще раз через кілька хвилин.";
+"product-scanner.barcode-notfound.manual-enter" = "Штрих-код не знайдено. Ви можете ввести його вручну:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
+"product-scanner.permissions.noPermissions.title" = "Для Open Food Facts необхідні дозволи камери";
 "product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Open Settings";
 
 "product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
-"product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
+"product-scanner.permissions.failed.action.title" = "Надати сканування штрих-коду";
 
-"product-scanner.search.status" = "Loading product...";
+"product-scanner.search.status" = "Завантаження продукту…";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Uploading image...";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "Щось пішло не так";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+"product-add.image-upload-error-banner.subtitle" = "Будь ласка, спробуйте зробити фото ще раз";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-upload-success-banner.title" = "Зображення успішно завантажено";
+"product-add.image-save-success-banner.title" = "Зображення буде завантажене при підключенні";
 /* Displayed when a product was successfully added to the products database */
-"product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
-"product-add.uploaded-image" = "Image uploaded, thanks!";
-"product-add.save-error.title" = "Error while saving product";
+"product-add.product-add-success-banner.title" = "Товар успішно додано. Дякуємо!";
+"product-add.uploaded-image" = "Зображення завантажено, дякуємо!";
+"product-add.save-error.title" = "Помилка при збереженні товару";
 "product-add.save-error.message" = "Try again later";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
-"product-add.save-ingredients.success" = "Ingredients saved at";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.save-info.success" = "Інформація збережена";
+"product-add.save-info.error" = "Інформацію не збережено";
+"product-add.save-info.saving" = "Збереження інформації про товар…";
+"product-add.save-info.not-yet" = "Інформацію ще не збережено";
+"product-add.save-ingredients.success" = "Інгредієнти збережені в";
+"product-add.save-ingredients.error" = "Інгредієнти не збережено";
+"product-add.save-ingredients.saving" = "Збереження інгредієнтів…";
+"product-add.save-ingredients.not-yet" = "Інгредієнти ще не збережено";
+"product-add.save-nutriments.success" = "Поживні речовини збережені в";
+"product-add.save-nutriments.error" = "Поживні речовини не збережено";
+"product-add.save-nutriments.saving" = "Збереження поживних речовин…";
+"product-add.save-nutriments.not-yet" = "Поживні речовини ще не збережено";
+"product-add.no-nutrition" = "Дані про харчування не відображаються на товарі";
 
-"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.success" = "Інгредієнти, прочитані з обгортки";
+"product-add.ocr-ingredients.error" = "Не вдалося отримати інгредієнти із зображення";
+"product-add.ocr-ingredients.saving" = "Отримання інгредієнтів із зображення…";
+"product-add.ocr-ingredients.not-yet" = "Очікування аналізу інгредієнта зображення";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "Nutri-Score щойно було обчислено з таблиці харчування";
+"product-add.novagroup-explaination" = "Група NOVA щойно була підрахована на основі списку інгредієнтів";
 
 "alert.action.ok" = "Гаразд";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Оберіть мову";
 /* Product Add name text field */
-"product-add.placeholder.name" = "Product name";
+"product-add.placeholder.name" = "Назва товару";
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Виробник";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity" = "Quantity";
+"product-add.placeholder.quantity" = "Кількість";
 
-"product-add.title" = "New product";
+"product-add.title" = "Новинка";
 "product-add.title-edit" = "Редагувати товар";
 "product-add.titles.barcode" = "Код товару";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.license-explaination" = "Примітка: зображення, які ви надсилаєте, публікуються під вільною ліцензією \"Creative Commons Attribution & ShareAlike\".";
 
 "product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Приклади: Coca-Cola, Nestle, тощо…";
 "product-add.label.product-name" = "Ім’я";
 "product-add.label.category" = "Категорія";
-"product-add.label.quantity" = "Quantity";
-"product-add.label.packaging" = "Packaging";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
+"product-add.label.quantity" = "Кількість";
+"product-add.label.packaging" = "Упаковка";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
+"product-add.details.category" = "Необхідно підрахувати Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
+"product-add.label.language" = "Мови";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Походження інгредієнтів";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
-"product-add.titles.nutritive" = "Nutrition Facts";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
-"product-add.nutritive.add-nutriment" = "Add a nutrient";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.description.nutritive" = "Завершуйте факти харчування та категорії товару для отримання Nutri-Score";
+"product-add.titles.nutritive" = "Детальна харчова цінність";
+"product-add.nutritive.choice.per-hundred-grams" = "для 100гр / 100 мл";
+"product-add.nutritive.choice.per-portion" = "за порцію";
+"product-add.nutritive.add-nutriment" = "Додати поживну речовину";
+"product-add.nutritive.too-much" = "Більше ніж 100г?";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "Зробіть досконалими інгредієнти, для того щоб отримати NOVA групу в харчовій обробці";
 "product-add.titles.ingredients" = "Інгредієнти";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
-"product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.explaination" = "Зробити фото списку інгредієнтів для автоматичного отримання інгредієнтів. Перегляньте його та не забудьте зберегти його.";
+"product-add.ingredients.button-delete" = "Шкода, ігнорувати";
+"product-add.ingredients.button-save" = "Добре, зберегти";
 
 // Select Category
 "select-category.title" = "Категорія";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Пошук за категорією";
 
 // Select nutrition
 "select-nutriment.title" = "Харчова цінність";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Шукати поживні речовини";
 
 // Select allergen
 "select-allergen.title" = "Алерген";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "Шукати алергени";
 
 // Product Detail
-"product-detail.header.add-new-picture" = "Add a new picture";
-"product-detail.edit" = "Edit this product";
+"product-detail.header.add-new-picture" = "Додати нове зображення";
+"product-detail.edit" = "Редагувати цей товар";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.title" = "Remember to save your changes";
+"product-detail.edit-alert.title" = "Не забудьте зберегти зміни";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
+"product-detail.edit-alert.subtitle" = "Прокрутіть вниз до кнопки \"Зберегти\"";
 
 // Product detail page titles
 "product-detail.page-title.summary" = "Загальна інформація";
 "product-detail.page-title.ingredients" = "Інгредієнти";
 "product-detail.page-title.nutrition" = "Харчова цінність";
-"product-detail.page-title.nutrition-table" = "Nutrition table";
+"product-detail.page-title.nutrition-table" = "Харчова таблиця";
 "product-detail.page-title.environment-impact" = "Середовище";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Код товару";
-"product-detail.summary.generic-name" = "Generic name";
-"product-detail.summary.quantity" = "Quantity";
-"product-detail.summary.packaging" = "Packaging";
-"product-detail.summary.brands" = "Brands";
-"product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
-"product-detail.summary.origins" = "Origin of ingredients";
+"product-detail.summary.generic-name" = "Родова назва";
+"product-detail.summary.quantity" = "Кількість";
+"product-detail.summary.packaging" = "Упаковка";
+"product-detail.summary.brands" = "Виробники";
+"product-detail.summary.manufacturing-places" = "Місця виробництва чи обробки";
+"product-detail.summary.origins" = "Походження інгредієнтів";
 "product-detail.summary.categories" = "Категорії";
-"product-detail.summary.labels" = "Labels, certifications, awards";
-"product-detail.summary.citiesTags" = "City, state and country where purchased";
-"product-detail.summary.stores" = "Stores";
+"product-detail.summary.labels" = "Мітка, сертифікати, нагороди";
+"product-detail.summary.citiesTags" = "Країна, область та місто, де було придбано";
+"product-detail.summary.stores" = "Магазини";
 "product-detail.summary.embCodes" = "Packager code";
 "product-detail.summary.countries" = "Countries where sold";
 
@@ -169,36 +176,38 @@
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
 "product-detail.ingredients.nova.3" = "Processed foods";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
+"product-detail.ingredients.nova.incite" = "Додати інгредієнти та/або категорії, щоб бути придатним для  NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Речовини або продукти, які викликають (спричиняють, призводять до...) аллергічні реакціі або ідіосинкразію (непереносимість)";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.traces-list" = "Traces";
-"product-detail.ingredients.additives-list" = "Additives";
-"product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
-"product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients that may be from palm oil";
+"product-detail.ingredients.allergens-alert.title" = "Містить алергени!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Цей продукт не має складного списку, і, як наслідок, виявлення алергену не може бути остаточним.";
+"product-detail.ingredients.allergens-list.offline-product" = "Цей продукт був завантажений з автономної бази даних, і, як наслідок, виявлення алергену не може бути тоочним.";
+"product-detail.ingredients.traces-list" = "Сліди";
+"product-detail.ingredients.additives-list" = "Добавки";
+"product-detail.ingredients.palm-oil-ingredients" = "Інгредієнти з пальмової олії";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Інгредієнти, які можуть бути з пальмової олії";
 "product-detail.ingredients.vitamins-list" = "Вітаміни";
 "product-detail.ingredients.minerals-list" = "Мінерали";
 "product-detail.ingredients.nucleotides-list" = "Нуклеотиди";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Інші нейтралізуючі речовини";
 
 // Product detail nutrition info row labels
-"product-detail.nutrition.serving-size" = "Serving size";
+"product-detail.nutrition.serving-size" = "Розмір порції";
 "product-detail.nutrition.carbon-footprint" = "Викиди вуглецю / CO2";
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Харчова цінність";
 "product-detail.nutrition-table.for-100g" = "У 100г";
 "product-detail.nutrition-table.for-serving" = "В одній порції";
-"product-detail.nutrition-table.100g" = "100g";
+"product-detail.nutrition-table.100g" = "100г";
 "product-detail.nutrition-table.serving" = "порцію";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
-"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+"product-detail.nutrition-table.missing" = "Жодних поживних речовин не знайдено.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Попередження: кількість клітковини не вказано, їх можливий позитивний внесок у сорт не може бути врахований.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Увага: кількість фруктів, овочів і горіхів не вказана, їх можливий позитивний внесок у сорт не може бути врахований.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Попередження: кількість фруктів, овочів та горіхів не зазначена на етикетці, вона оцінюється зі списку інгредієнтів: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Попередження: кількість фруктів, овочів та горіхів не зазначена на етикетці, вона оцінюється зі списку інгредієнтів: %d%";
 
 "product-detail.environment.ecoscore.a" = "Eco-score A";
 "product-detail.environment.ecoscore.b" = "Eco-score B";
@@ -209,35 +218,35 @@
 "product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
+"nutrition-level.title" = "Харчова цінність 100 г/100 мл";
 "nutrition-level.low" = "мала кількість";
 "nutrition-level.moderate" = "помірна кількість";
 "nutrition-level.high" = "велика кількість";
 
 // Ingredients Analysis
 "ingredients-analysis.title" = "Ingredients analysis";
-"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
-"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
-"ingredients-analysis.display" = "Display %@ status";
-"ingredients-analysis.missing-ingredients.title" = "Fill in the missing ingredients";
-"ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
-"ingredients-analysis.help-translate.title" = "Help translate the ingredients in your language";
-"ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
-"ingredients-analysis.help-translate.button" = "Help translate ingredients";
-"ingredients-analysis.back-to-scan" = "Back to scan";
+"ingredients-analysis.ingredients_in_this_product" = "Інгредієнти даного товару %@:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Інгредієнти цього продукту - %@с.";
+"ingredients-analysis.unknown_status" = "Ми не змогли оцінити статус товару.";
+"ingredients-analysis.ambiguous" = "Неоднозначні інгредієнти: %@";
+"ingredients-analysis.display" = "Відобразити  стан";
+"ingredients-analysis.missing-ingredients.title" = "Заповніть відсутні інгредієнти";
+"ingredients-analysis.missing-ingredients.description" = "У нас ще немає інгредієнтів для цього товару. Ви можете допомогти укомплектувати їх?";
+"ingredients-analysis.help-translate.title" = "Допоможіть перекласти інгредієнти вашою мовою";
+"ingredients-analysis.help-translate.description" = "Допоможіть перекласти інгредієнти вашою мовою, щоб зробити аналіз інгредієнтів можливим";
+"ingredients-analysis.help-translate.button" = "Допоможіть перекласти інгредієнти";
+"ingredients-analysis.back-to-scan" = "Повернутись назад до сканування";
 
 // Robotoff
 "robotoff.yes" = "Так";
 "robotoff.no" = "Ні";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "Я не впевнений";
 "robotoff.contribute-incentive.title" = "Contribute";
-"robotoff.settings.display-questions" = "Display questions";
+"robotoff.settings.display-questions" = "Показувати питання";
 "robotoff.contribute-incentive.login" = "Ім'я користувача";
-"robotoff.contribute-incentive.not-now" = "Not now";
-"robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
-"robotoff.answer-saved" = "Answer saved, thanks!";
+"robotoff.contribute-incentive.not-now" = "Не зараз";
+"robotoff.contribute-incentive.description" = "Відповідайте на прості питання, зробіть їжу доступною!";
+"robotoff.answer-saved" = "Відповідь збережена, дякуємо!";
 
 // Nutrition
 "nutrition.energy" = "Енергетична цінність";
@@ -270,7 +279,7 @@
 "nutrition.alcohol" = "Алкоголь";
 "nutrition.vitamins" = "Вітаміни";
 "nutrition.vitamins.a" = "Вітамін А";
-"nutrition.vitamins.beta-carotene" = "Beta carotene";
+"nutrition.vitamins.beta-carotene" = "Бета-каротин";
 "nutrition.vitamins.d" = "Вітамін D";
 "nutrition.vitamins.e" = "Вітамін E";
 "nutrition.vitamins.k" = "Вітамін K";
@@ -310,41 +319,42 @@
 
 // Call to action
 "call-to-action.summary" = "Зробити фото товару";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "Сфотографуйте інструкції з переробки";
 "call-to-action.ingredients" = "Зробити фото інгредієнтів";
 "call-to-action.nutrition" = "Зробити фото складу";
 "call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.took-picture.front" = "Photo of the front ✅";
-"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.front" = "Фото спереду ✅";
+"product.images.took-picture.ingredients" = "Фото інгредієнтів ✅";
+"product.images.took-picture.nutrition" = "Фото таблиці харчування ✅";
 
-"product.images.take-picture.front" = "Photo of the front";
-"product.images.take-picture.ingredients" = "Photo of the ingredients";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.front" = "Фото спереду ✅";
+"product.images.take-picture.ingredients" = "Фото інгредієнтів ✅";
+"product.images.take-picture.nutrition" = "Фото таблиці харчування ✅";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
-"scanner.tab-bar.item" = "Scanner";
+"scanner.tab-bar.item" = "Сканер";
 "history.tab-bar.item" = "Історія";
 "settings.tab-bar.item" = "Налаштування";
-"settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
-"settings.allergies.title" = "Allergens alerts";
+"settings.ingredientsAnalysis.title" = "Оповіщення про аналіз інгредієнтів";
+"settings.allergies.title" = "Попередження щодо алергії";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
+"settings.allergies.add-button" = "Додати алергени";
 "settings.sections.information" = "Інформація";
 "settings.sections.discover" = "Дізнатись більше";
 "settings.sections.contribute" = "Contribute";
 "settings.sections.about" = "Про додаток";
-"settings.user-profile" = "Your contributor account";
-"settings.credits.title" = "Credits";
-"settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "Discover";
-"settings.contribute.how-to-contribute" = "How To Contribute";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.user-profile" = "Ваш обліковий запис учасника";
+"settings.credits.title" = "Подяки";
+"settings.scan-on-launch.title" = "Показувати cканування при запуску програми";
+"settings.sections.discover" = "Дізнатись більше";
+"settings.contribute.how-to-contribute" = "Як внести свій вклад";
+"settings.contribute.support-open-food-facts" = "Підтримка Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Перекласти Open Food Facts";
 "settings.about.contact" = "Зв'язатися";
 "settings.about.frequently-asked-questions" = "Часті Питання";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
@@ -353,56 +363,56 @@
 // User view
 /* Tab bar item */
 "user.tab-bar.item" = "Користувач";
-"user.log-in" = "Log In";
-"user.logging-in" = "Logging in";
-"user.log-out" = "Log Out";
+"user.log-in" = "Увійти";
+"user.logging-in" = "Вхід до системи";
+"user.log-out" = "Вийти з системи";
 "user.username" = "Ім'я користувача";
 "user.password" = "Пароль";
-"user.logged-in.label" = "%@, you are logged in";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
-"user.not-logged-in" = "Not logged in";
-"user.forgot-password" = "Forgot Password?";
+"user.logged-in.label" = "%@, ви ввійшли в систему";
+"user.logged-in-explanation.label" = "Всі товари, які ви додаєте, та фотографії продукції будуть зараховані на ваш рахунок";
+"user.not-logged-in" = "Вхід не виконано";
+"user.forgot-password" = "Забули пароль?";
 "user.check-your-contributions.button" = "Check Your Contributions";
 "user.products-pending-upload.button" = "Products pending upload";
-"user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
-"user.create-account.text" = "If you don't have an account, click the link below to create one.";
+"user.products-pending-upload-none.button" = "Товари, що очікують вивантаження на Open Food Facts (немає)";
+"user.create-account.text" = "Якщо у вас немає облікового запису, перейдіть за посиланням нижче, аби створити його.";
 "user.create-account.button" = "Create An Account";
 "user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
-"user.alert.wrong-credentials.title" = "Unable to log in";
-"user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
-"user.alert.generic-error.title" = "There was an error logging in";
-"user.alert.generic-error.subtitle" = "Please try again in a few moments";
+"user.alert.wrong-credentials.title" = "Не вдалося увійти";
+"user.alert.wrong-credentials.subtitle" = "Перевірте ваш логін та пароль";
+"user.alert.generic-error.title" = "Сталася помилка при вході в систему";
+"user.alert.generic-error.subtitle" = "Будь ласка, спробуйте знову за декілька хвилин";
 "user.alert.logout-confirmation.title" = "Підтвердити вихід";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
-"user.alert.username-missing" = "Username is required";
-"user.alert.password-missing" = "Password is required";
+"user.alert.logout-confirmation.subtitle" = "Ви дійсно бажаєте вийти з системи?";
+"user.alert.username-missing" = "Ім'я користувача є обов'язковим";
+"user.alert.password-missing" = "Необхідно вказати пароль";
 "pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"pending-upload.hud.status" = "Завантаження";
 
 // Search history
-"history.title" = "Search history";
-"history.cell.privacy" = "Your search history is only stored on your device";
+"history.title" = "Історія пошуку";
+"history.cell.privacy" = "Історія пошуку зберігається лише на вашому пристрої";
 "history.button.clear" = "Очистити";
-"history.clear.confirmation-title" = "Clear your history ?";
-"history.clear.confirmation-message" = "All your history will be deleted";
-"history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
+"history.clear.confirmation-title" = "Очистити вашу історію?";
+"history.clear.confirmation-message" = "Історію браузера буде видалено";
+"history.section-titles.last24h" = "За минулі 24 години";
+"history.section-titles.fewDays" = "Кілька днів тому";
+"history.section-titles.fewWeeks" = "Кілька тижнів тому";
+"history.section-titles.fewMonths" = "Кілька місяців тому";
+"history.section-titles.longTime" = "Давним-давно";
 "history.first-scan.button.title" = "Проскануй перший товар";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Редагувати";
 
 // Camera localization API
 "API_CANCEL_TITLE" = "Скасувати";
-"USE_PHOTO" = "Use Photo";
+"USE_PHOTO" = "Використати Фото";
 "PHOTO" = "PHOTO";
 "AEAF_LOCK_TEXT" = "AE/AF LOCK";
 "HDR_AUTO" = "Auto";
 "HDR_ON" = "On";
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
+"PHOTOS" = "Світлини";
+"CANCEL" = "Скасувати";
 "RETAKE" = "Retake";

@@ -30,7 +30,12 @@ class EnvironmentHeaderCellController: TakePictureViewController {
         }
     }
 
-    @IBOutlet weak var ecoscoreImageView: EcoscoreImageView!
+    @IBOutlet weak var ecoscoreImageView: EcoscoreImageView! {
+        didSet {
+            ecoscoreImageView.isHidden = false
+        }
+    }
+
     @IBOutlet weak var ecoscoreExplanationLabel: UILabel! {
         didSet {
             ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.incite".localized
@@ -106,7 +111,7 @@ class EnvironmentHeaderCellController: TakePictureViewController {
         guard let progress = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadFractionDouble] as? Double else { return }
         guard let imageTypeString = notification.userInfo?[ProductService.NotificationUserInfoKey.ImageUploadTypeString] as? String else { return }
         guard ImageType(imageTypeString) == .packaging else { return }
-        if product.ingredientsImageUrl != nil {
+        if product.packagingImageUrl != nil {
             replacementImageIsUploading = true
             takePictureButtonView?.circularProgressBar?.setProgress(to: progress, withAnimation: false)
             setupViews()
@@ -150,12 +155,14 @@ class EnvironmentHeaderCellController: TakePictureViewController {
                 callToActionView.addGestureRecognizer( UITapGestureRecognizer( target: self, action: #selector(didTapTakePictureButton(_:))))
             }
         }
+
         if let ecoscoreValue = product.ecoscore,
             let ecoscore = EcoscoreImageView.Ecoscore(rawValue: "\(ecoscoreValue)") {
             setEcoscore(ecoscore: ecoscore)
         } else {
             setEcoscore(ecoscore: .unknown)
         }
+
     }
 
     private func setEcoscore(ecoscore: EcoscoreImageView.Ecoscore?) {
@@ -175,10 +182,9 @@ class EnvironmentHeaderCellController: TakePictureViewController {
                 case .unknown:
                     ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.unknown".localized
                 }
-                ecoscoreImageView?.isHidden = false
         } else {
+                ecoscoreImageView?.ecoScore = .unknown
             ecoscoreExplanationLabel?.text = "product-detail.environment.ecoscore.incite".localized
-            ecoscoreImageView?.isHidden = true
         }
     }
 

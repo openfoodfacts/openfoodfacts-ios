@@ -92,6 +92,7 @@ struct Product: Mappable {
     private var frontImageSmallUrlDecoded: String?
     var barcode: String?
     var packaging: [String]?
+    var packagingTags: [String]?
     var categories: [String]?
     var categoriesTags: [String]?
     var nutriscore: String?
@@ -376,6 +377,7 @@ struct Product: Mappable {
         origins <- map[OFFJson.OriginsKey]
         otherNutrients <- (map[OFFJson.OtherNutritionalSubstancesTagsKey], TagTransform())
         packaging <- (map[OFFJson.PackagingKey], ArrayTransform())
+        packagingTags <- (map[OFFJson.PackagingTagsKey], ArrayTransform())
         packagingImageUrlDecoded <- map[OFFJson.ImagePackagingUrlKey]
         palmOilIngredients <- map[OFFJson.IngredientsFromPalmOilTagsKey]
         possiblePalmOilIngredients <- map[OFFJson.IngredientsThatMayBeFromPalmOilTagsKey]

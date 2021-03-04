@@ -27,7 +27,7 @@
 "product-search.error-view.subtitle" = "Yritä uudelleen";
 "product-search.initial-view.slogan" = "vapaa elintarviketietokanta";
 "product-search.initial-view.offline.title-loading" = "Tallennetaan tuotteita offline-tilassa: %d%%";
-"product-search.initial-view.offline.subtitle" = "Yli %d tuotetta saatavana välittömään lukemiseen";
+"product-search.initial-view.offline.subtitle" = "Yli %d tuotetta saatavilla välittömään lukemiseen";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Lue tuotteen viivakoodi";
@@ -101,13 +101,20 @@
 "product-add.titles.license-explaination" = "Huomaa: lähettämäsi kuvat julkaistaan Creative Commons Attribution and ShareAlike -lisenssillä.";
 
 "product-add.titles.product-info" = "Tuotetiedot";
+"product-add.label.brand-example" = "Esimerkkejä: Coca-Cola, Nestle jne…";
 "product-add.label.product-name" = "Nimi";
 "product-add.label.category" = "Tuoteluokka";
 "product-add.label.quantity" = "Määrä";
 "product-add.label.packaging" = "Pakkaus";
+"product-add.label.packaging-example" = "Esimerkkejä: muovilaatikko, lasipullo";
 "product-add.details.category" = "Tarvitaan Nutri-Scoren laskemiseen";
-"product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
+"product-add.label.quantity-example" = "Esimerkkejä: 25g, 10oz, 5ml…";
 "product-add.label.language" = "Kielet";
+"product-add.label.labels" = "Merkit";
+"product-add.label.labels-example" = "Esimerkkejä: Gluteeniton jne.";
+"product-add.label.origins" = "Ainesosien alkuperä";
+"product-add.field.origins-placeholder" = "Vaaditaan Eco-Scoren laskemiseksi";
+"product-add.label.origins-example" = "Esimerkki: Voi Ranskasta jne.";
 
 "product-add.description.nutritive" = "Täydennä ravintosisältö ja tuoteluokka saadaksesi Nutri-Scoren";
 "product-add.titles.nutritive" = "Ravintosisältö";
@@ -132,7 +139,7 @@
 
 // Select allergen
 "select-allergen.title" = "Allergeeni";
-"select-allergen.search-placeholder" = "Etsi allergeenejä";
+"select-allergen.search-placeholder" = "Etsi allergeenia";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Lisää uusi kuva";
@@ -155,20 +162,21 @@
 "product-detail.summary.quantity" = "Määrä";
 "product-detail.summary.packaging" = "Pakkaus";
 "product-detail.summary.brands" = "Tuotemerkit";
-"product-detail.summary.manufacturing-places" = "Valmistus- tai jalostuspaikat";
+"product-detail.summary.manufacturing-places" = "Valmistus- tai käsittelypaikat";
 "product-detail.summary.origins" = "Ainesosien alkuperä";
 "product-detail.summary.categories" = "Tuoteluokat";
 "product-detail.summary.labels" = "Merkit, sertifikaatit, palkinnot";
 "product-detail.summary.citiesTags" = "Kaupunki, osavaltio ja maa, jossa ostettu";
 "product-detail.summary.stores" = "Myymälät";
-"product-detail.summary.embCodes" = "Pakkaajan koodi";
+"product-detail.summary.embCodes" = "Jäljitettävyyskoodi";
 "product-detail.summary.countries" = "Maa";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Jalostamattomat tai vähän jalostetut ruoat";
 "product-detail.ingredients.nova.2" = "Jalostetut ruoanvalmistusaineet";
-"product-detail.ingredients.nova.3" = "Jalostetut elintarvikkeet";
+"product-detail.ingredients.nova.3" = "Jalostetut ruoat";
 "product-detail.ingredients.nova.4" = "Ultrajalostetut ruoka- ja juomatuotteet";
+"product-detail.ingredients.nova.unknown" = "Ruoan jalostuksen NOVA-tasoa ei voitu laskea";
 "product-detail.ingredients.nova.incite" = "Lisää ainesosat ja/tai tuoteluokat NOVA-ryhmän laskemiseksi.";
 "product-detail.ingredients.ingredients-list" = "Ainesosaluettelo";
 "product-detail.ingredients.allergens-list" = "Allergioita tai intoleransseja aiheuttavat aineet ja tuotteet";
@@ -179,7 +187,7 @@
 "product-detail.ingredients.additives-list" = "Lisäaineet";
 "product-detail.ingredients.palm-oil-ingredients" = "Palmuöljyperäiset ainesosat";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ainesosat, jotka voivat olla peräisin palmuöljystä";
-"product-detail.ingredients.vitamins-list" = "Vitamiinit";
+"product-detail.ingredients.vitamins-list" = "Vitamiinit ja kivennäis- ja hivenaineet";
 "product-detail.ingredients.minerals-list" = "Kivennäis- ja hivenaineet";
 "product-detail.ingredients.nucleotides-list" = "Nukleotidit";
 "product-detail.ingredients.otherNutritionalSubstances-list" = "Muut ravintoaineet";
@@ -195,16 +203,17 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "annos";
 "product-detail.nutrition-table.missing" = "Ravintoaineita ei ole asetettu.";
+"product-detail.nutrition-table.noNutritionData" = "Tällä tuotteella ei ole ravintoarvotaulukkoa.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Varoitus: kuidun määrää ei ole määritelty, joten kuitujen mahdollista positiivista vaikutusta arvosanaan ei voitu ottaa huomioon.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Varoitus: hedelmien, vihannesten ja pähkinöiden määrää ei ole määritelty, niiden mahdollista positiivista vaikutusta arvosanaan ei voitu ottaa huomioon.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Varoitus: hedelmien, vihannesten ja pähkinöiden määrää ei ole määritelty, joten niiden mahdollista positiivista vaikutusta arvosanaan ei voitu ottaa huomioon.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Varoitus: hedelmien, vihannesten ja pähkinöiden määrää ei ole ilmoitettu etiketissä, vaan se arvioitiin ainesosaluettelosta: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Varoitus: hedelmien, vihannesten ja pähkinöiden määrää ei ole ilmoitettu etiketissä, vaan se arvioitiin luokasta (%s) johon tuote %d% kuuluu";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Erittäin heikko vaikutus ympäristöön";
+"product-detail.environment.ecoscore.b" = "Heikko vaikutus ympäristöön";
+"product-detail.environment.ecoscore.c" = "Joitakin vaikutuksia ympäristöön";
+"product-detail.environment.ecoscore.d" = "Voimakas vaikutus ympäristöön";
+"product-detail.environment.ecoscore.e" = "Erittäin voimakas vaikutus ympäristöön";
 "product-detail.environment.ecoscore.unknown" = "Tuntematon Eco-score";
 "product-detail.environment.ecoscore.incite" = "Lisää pakkaustiedot, jotta voimme laskea Eco-scoren";
 
@@ -222,10 +231,10 @@
 "ingredients-analysis.ambiguous" = "Monitulkinnaiset ainesosat: %@";
 "ingredients-analysis.display" = "Näytä %@ -tila";
 "ingredients-analysis.missing-ingredients.title" = "Täytä puuttuvat ainesosat";
-"ingredients-analysis.missing-ingredients.description" = "Meillä ei ole ainesosia tälle tuotteelle vielä. Voitko auttaa täydentämään ne?";
+"ingredients-analysis.missing-ingredients.description" = "Meillä ei ole vielä tämän tuotteen ainesosia. Voitko auttaa täydentämään niitä?";
 "ingredients-analysis.help-translate.title" = "Auta kääntämään ainesosat kielellesi";
 "ingredients-analysis.help-translate.description" = "Auta kääntämään ainesosia kielellesi ainesosa-analyysin mahdollistamiseksi";
-"ingredients-analysis.help-translate.button" = "Auta kääntämään ainesosat";
+"ingredients-analysis.help-translate.button" = "Auta kääntämään ainesosia";
 "ingredients-analysis.back-to-scan" = "Takaisin lukemiseen";
 
 // Robotoff
@@ -252,7 +261,7 @@
 "nutrition.fats.omega9" = "Omega-9";
 "nutrition.fats.trans-fat" = "Transrasva";
 "nutrition.fats.cholesterol" = "Kolesteroli";
-"nutrition.carbohydrate" = "Hiilihydraatti";
+"nutrition.carbohydrate" = "Hiilihydraatit";
 "nutrition.carbohydrate.sugars" = "Sokeri";
 "nutrition.carbohydrate.sucrose" = "Sakkaroosi";
 "nutrition.carbohydrate.glucose" = "Glukoosi";
@@ -304,13 +313,13 @@
 "nutrition.minerals.taurine" = "Tauriini";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Hedelmät, vihannekset, pähkinät";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Kollageenin ja proteiinin välinen suhdeluku";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Kollageeni/liha-proteiinisuhde";
 "nutrition.minerals.cocoa" = "Kaakao";
 "nutrition.minerals.chlorophyl" = "Lehtivihreä";
 
 // Call to action
 "call-to-action.summary" = "Ota kuva edestä";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "Ota kuva kierrätysohjeista";
 "call-to-action.ingredients" = "Ota kuva ainesosista";
 "call-to-action.nutrition" = "Ota kuva ravintosisällöstä";
 "call-to-action.edit" = "Täytä tuote saadaksesi sen pisteytetyksi";
@@ -324,6 +333,7 @@
 "product.images.take-picture.front" = "Etukuva";
 "product.images.take-picture.ingredients" = "Kuva ainesosista";
 "product.images.take-picture.nutrition" = "Kuva ravintosisällöstä";
+"product.images.take-picture.packaging" = "Kuva kierrätystiedoista";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -332,7 +342,7 @@
 "settings.tab-bar.item" = "Asetukset";
 "settings.ingredientsAnalysis.title" = "Ainesosa-analyysivaroitukset";
 "settings.allergies.title" = "Allergeenivaroitukset";
-"settings.allergies.description" = "Lisää allergeenit tähän luetteloon, jotta saat ilmoituksen, kun luet sitä sisältävän tuotteen. \nHuomaa, että allergioitasi koskevaa tietoa ei KOSKAAN lähetetä Open Food Facts -palvelimelle. Huomioi, että tiedot eivät välttämättä ole 100% aotettavia, ja että havaitseminen ei välttämättä ole 100%:n tarkka. Varmista myös itse!";
+"settings.allergies.description" = "Lisää allergeenit tähän luetteloon saadaksesi ilmoituksen, kun luet sitä sisältävän tuotteen. \nHuomaa, että allergiatietojasi EI KOSKAAN lähetetä Open Food Facts -palvelimelle. Ole myös varovainen, koska tiedot eivät välttämättä ole 100% luotettavia ja tunnistus ei välttämättä ole 100% tarkka. Varmista myös itse!";
 "settings.allergies.add-button" = "Lisää allergeeneja";
 "settings.sections.information" = "Tietoja";
 "settings.sections.discover" = "Tutustu";
@@ -364,10 +374,10 @@
 "user.forgot-password" = "Salasana unohtunut?";
 "user.check-your-contributions.button" = "Tarkastele kaikkia osallistumisiasi";
 "user.products-pending-upload.button" = "Tuotteita, jotka odottavat lähetystä Open Food Factsiin";
-"user.products-pending-upload-none.button" = "Tuotteet, jotka odottavat lähetystä Open Food Factsiin (ei yhtään)";
+"user.products-pending-upload-none.button" = "Tuotteet, jotka odottavat lähetystä Open Food Factsiin (ei mitään)";
 "user.create-account.text" = "Jos sinulla ei ole tiliä, voit luoda sen napsauttamalla alla olevaa linkkiä.";
 "user.create-account.button" = "Luo tili";
-"user.why-log-in.text" = "Kirjaudu sisään osallistujatilillesi, saadaksesi tunnustuksen osallistumisistasi Open Food Factsiin.";
+"user.why-log-in.text" = "Kirjautumalla sisään tililläsi saat tunnustuksen kaikista osallistumisistasi ruoan läpinäkyvyyteen.";
 "user.alert.wrong-credentials.title" = "Kirjautuminen epäonnistui";
 "user.alert.wrong-credentials.subtitle" = "Tarkista käyttäjätunnuksesi ja salasanasi";
 "user.alert.generic-error.title" = "Virhe sisäänkirjautumisessa";

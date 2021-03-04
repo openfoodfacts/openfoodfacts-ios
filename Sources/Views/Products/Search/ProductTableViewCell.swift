@@ -17,6 +17,7 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var novaGroupView: NovaGroupView!
     @IBOutlet weak var nutriscoreView: NutriScoreView!
+    @IBOutlet weak var ecoScoreView: EcoscoreImageView!
 
     func configure(withProduct product: Product) {
         name.text = product.name ?? product.barcode
@@ -43,7 +44,14 @@ class ProductTableViewCell: UITableViewCell {
             let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
             novaGroupView.novaGroup = novaGroup
         } else {
-            novaGroupView.isHidden = true
+            novaGroupView.novaGroup = .unknown
+        }
+
+        if let ecoscoreValue = product.ecoscore,
+            let ecoscore = EcoscoreImageView.Ecoscore(rawValue: "\(ecoscoreValue)") {
+            setEcoscore(ecoscore: ecoscore)
+        } else {
+            setEcoscore(ecoscore: .unknown)
         }
 
         if let imageUrl = product.frontImageUrl ?? product.imageUrl, let url = URL(string: imageUrl) {
@@ -77,16 +85,23 @@ class ProductTableViewCell: UITableViewCell {
         if let nutriscoreValue = historyItem.nutriscore, let score = NutriScoreView.Score(rawValue: nutriscoreValue) {
             nutriscoreView.currentScore = score
         } else {
-            nutriscoreView.isHidden = true
+            nutriscoreView.currentScore = .unknown
         }
 
         if let novaGroupValue = historyItem.novaGroup.value,
             let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupValue)") {
-            novaGroupView.isHidden = false
             novaGroupView.novaGroup = novaGroup
         } else {
-            novaGroupView.isHidden = true
+            novaGroupView.novaGroup = .unknown
         }
+
+        if let ecoscore = historyItem.ecoscore,
+            let ecoscoreValue = EcoscoreImageView.Ecoscore(rawValue: ecoscore) {
+            setEcoscore(ecoscore: ecoscoreValue)
+        } else {
+            setEcoscore(ecoscore: .unknown)
+        }
+
     }
 
     override func prepareForReuse() {
@@ -97,4 +112,13 @@ class ProductTableViewCell: UITableViewCell {
         photo.kf.cancelDownloadTask()
         photo.image = #imageLiteral(resourceName: "image-add-button")
     }
+
+    private func setEcoscore(ecoscore: EcoscoreImageView.Ecoscore?) {
+        if let validEcoscore = ecoscore {
+            ecoScoreView?.ecoScore = validEcoscore
+        } else {
+            ecoScoreView?.ecoScore = .unknown
+        }
+    }
+
 }

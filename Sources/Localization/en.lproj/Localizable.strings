@@ -101,13 +101,20 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Name";
 "product-add.label.category" = "Category";
 "product-add.label.quantity" = "Quantity";
 "product-add.label.packaging" = "Packaging";
+"product-add.label.packaging-example" = "Examples: plastic tray, glass bottle";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.quantity-example" = "Examples: 25g, 10oz, 5ml…";
 "product-add.label.language" = "Languages";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origin of ingredients";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Nutrition Facts";
@@ -161,7 +168,7 @@
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "Traceability code";
 "product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
@@ -169,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
 "product-detail.ingredients.nova.3" = "Processed foods";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Substances or products causing allergies or intolerances";
@@ -195,16 +203,17 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
+"product-detail.environment.ecoscore.c" = "Some impact on the environment";
+"product-detail.environment.ecoscore.d" = "Strong impact on the environment";
+"product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
 "product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
 
@@ -261,7 +270,7 @@
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
 "nutrition.fiber" = "Fiber";
-"nutrition.proteins" = "Proteins";
+"nutrition.proteins" = "Protein content";
 "nutrition.proteins.casein" = "Casein";
 "nutrition.proteins.serum-proteins" = "Serum Proteins";
 "nutrition.proteins.nucleotides" = "Nucleotides";
@@ -324,6 +333,7 @@
 "product.images.take-picture.front" = "Photo of the front";
 "product.images.take-picture.ingredients" = "Photo of the ingredients";
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"

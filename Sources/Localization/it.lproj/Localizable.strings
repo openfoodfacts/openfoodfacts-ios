@@ -100,14 +100,21 @@
 "product-add.titles.top-explainations" = "Ben fatto ! Questo prodotto non è ancora in Open Food Facts. Potresti fare alcune foto del prodotto, della lista degli ingredienti e dei dati nutrizionali per aggiungerlo su Open Food Facts? \n\nGrazie in anticipo.";
 "product-add.titles.license-explaination" = "Nota: le foto che invii sono pubblicate sotto licenza libera Creative Commons Attribuzione e Condividi allo stesso modo.";
 
-"product-add.titles.product-info" = "Product Information";
+"product-add.titles.product-info" = "Informazioni del Prodotto";
+"product-add.label.brand-example" = "Esempi: Coca Cola, Nestlé, etc…";
 "product-add.label.product-name" = "Nome";
 "product-add.label.category" = "Categoria";
 "product-add.label.quantity" = "Quantità";
 "product-add.label.packaging" = "Confezionamento";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Necessario per calcolare il punteggio-Nutri";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Lingue";
+"product-add.label.labels" = "Etichette";
+"product-add.label.labels-example" = "Esempi: Senza Glutine, etc.";
+"product-add.label.origins" = "Origine degli ingredienti";
+"product-add.field.origins-placeholder" = "Richiesto per il calcolo dell'Eco-Score";
+"product-add.label.origins-example" = "Esempio: Burro dalla Francia, etc.";
 
 "product-add.description.nutritive" = "Informazioni nutrizionali complete e la categoria di prodotto per ottenere il punteggio di nutrimento";
 "product-add.titles.nutritive" = "Informazioni nutrizionali";
@@ -169,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Ingredienti culinari elaborati";
 "product-detail.ingredients.nova.3" = "Alimenti trasformati";
 "product-detail.ingredients.nova.4" = "Prodotti alimentari e bevande ultra-elaborati";
+"product-detail.ingredients.nova.unknown" = "Impossibile calcolare il livello NOVA di trasformazione alimentare";
 "product-detail.ingredients.nova.incite" = "Aggiungi ingredienti e/o categorie per calcolare il NOVA.";
 "product-detail.ingredients.ingredients-list" = "Lista degli ingredienti";
 "product-detail.ingredients.allergens-list" = "Sostanze o prodotti che provocano allergie o intolleranze";
@@ -195,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "porzione";
 "product-detail.nutrition-table.missing" = "Non è stato selezionato nessun nutriente.";
+"product-detail.nutrition-table.noNutritionData" = "Questo prodotto non ha alcuna tabella di valori nutrizionali.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Attenzione: la quantità di fibre non è specificata, il loro possibile contributo positivo al grado non può essere preso in considerazione.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Attenzione: la quantità di frutta, verdura e noci non è specificata. Il loro possibile contributo positivo al punteggio non può essere preso in considerazione.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Attenzione: la quantità di frutta, verdura e noci non è specificata sull'etichetta, è stata stimata dalla lista degli ingredienti: %d%";
@@ -205,8 +214,8 @@
 "product-detail.environment.ecoscore.c" = "Eco-score C";
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.unknown" = "Eco-score sconosciuto";
+"product-detail.environment.ecoscore.incite" = "Sei pregato di aggiungere le informazioni di imballaggio, così che possiamo calcolare l'Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Livelli di nutrienti per 100 g/100 mL";
@@ -261,7 +270,7 @@
 "nutrition.carbohydrate.maltose" = "Maltosio";
 "nutrition.carbohydrate.maltodextrins" = "Maltodestrine";
 "nutrition.fiber" = "Fibra dietetica";
-"nutrition.proteins" = "Proteine";
+"nutrition.proteins" = "Contenuto di proteine";
 "nutrition.proteins.casein" = "Caseina";
 "nutrition.proteins.serum-proteins" = "Proteine del siero";
 "nutrition.proteins.nucleotides" = "Nucleotidi";
@@ -310,7 +319,7 @@
 
 // Call to action
 "call-to-action.summary" = "Scatta una foto della parte anteriore";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "Scatta una foto delle istruzioni per il riciclaggio";
 "call-to-action.ingredients" = "Scatta una foto degli ingredienti";
 "call-to-action.nutrition" = "Scatta una foto dei dati nutrizionali";
 "call-to-action.edit" = "Completa il prodotto per conteggiarlo nel punteggio";
@@ -324,6 +333,7 @@
 "product.images.take-picture.front" = "Foto del fronte";
 "product.images.take-picture.ingredients" = "Foto degli ingredienti";
 "product.images.take-picture.nutrition" = "Foto della tabella nutrizionale";
+"product.images.take-picture.packaging" = "Foto delle informazioni di riciclaggio";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"

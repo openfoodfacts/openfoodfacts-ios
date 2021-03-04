@@ -56,6 +56,12 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
     @IBOutlet weak var brandsField: UITextField!
+    @IBOutlet weak var brandsExampleLabel: UILabel! {
+        didSet {
+            brandsExampleLabel?.text = "product-add.label.brand-example".localized
+        }
+    }
+
     @IBOutlet weak var quantityTitleLabel: UILabel! {
         didSet {
             quantityTitleLabel?.text = "product-add.label.quantity".localized
@@ -69,10 +75,38 @@ class ProductAddViewController: TakePictureViewController {
     @IBOutlet weak var quantityField: UITextField!
     @IBOutlet weak var packagingTitleLabel: UILabel!
     @IBOutlet weak var packagingField: UITextField!
+    @IBOutlet weak var packagingExampleLabel: UILabel! {
+        didSet {
+            packagingExampleLabel?.text = "product-add.label.packaging-example".localized
+        }
+    }
+
     @IBOutlet weak var languageTitleLabel: UILabel!
     @IBOutlet weak var languageField: UITextField!
     @IBOutlet weak var labelsTitleLabel: UILabel!
     @IBOutlet weak var labelsField: UITextField!
+    @IBOutlet weak var labelsExampleLabel: UILabel! {
+        didSet {
+            labelsExampleLabel?.text = "product-add.label.labels-example".localized
+        }
+    }
+
+    @IBOutlet weak var originsTitleLabel: UILabel! {
+        didSet {
+            originsTitleLabel?.text = "product-add.label.origins".localized
+        }
+    }
+    @IBOutlet weak var originsField: UITextField! {
+        didSet {
+            originsField?.placeholder = "product-add.field.origins-placeholder".localized
+        }
+    }
+    @IBOutlet weak var originsExampleLabel: UILabel! {
+           didSet {
+               originsExampleLabel?.text = "product-add.label.origins-example".localized
+           }
+       }
+
     @IBOutlet weak var productTextSection: UIView!
     @IBOutlet weak var saveProductInfosButton: UIButton!
     @IBOutlet var productInformationsTextFields: [UITextField]!
@@ -304,6 +338,8 @@ class ProductAddViewController: TakePictureViewController {
             product.labels = array.compactMap {String($0)}
         }
 
+        product.origins = originsField.text
+
     }
 
     fileprivate func fillProductFromNutriments() -> [RealmPendingUploadNutrimentItem] {
@@ -450,12 +486,11 @@ class ProductAddViewController: TakePictureViewController {
                     if let nutriscoreString = distantProduct.nutriscore,
                         let score = NutriScoreView.Score(rawValue: nutriscoreString) {
                         self?.nutriScoreView.currentScore = score
-                        self?.nutriscoreStackView.isHidden = false
                         self?.productCategoryNutriScoreExplanationLabel.text = ""
                         self?.productCategoryNutriScoreExplanationLabel.isHidden = true
                         self?.nutritiveNutriScoreEXplanationLabel.isHidden = true
                     } else {
-                        self?.nutriscoreStackView.isHidden = true
+                        self?.nutriScoreView.currentScore = .unknown
                         self?.productCategoryNutriScoreExplanationLabel.text = "product-add.details.category".localized
                         self?.productCategoryNutriScoreExplanationLabel.isHidden = false
                         self?.nutritiveNutriScoreEXplanationLabel.isHidden = false
@@ -465,10 +500,9 @@ class ProductAddViewController: TakePictureViewController {
                     if let novaGroupString = distantProduct.novaGroup,
                         let novaGroup = NovaGroupView.NovaGroup(rawValue: "\(novaGroupString)") {
                         self?.novaGroupView.novaGroup = novaGroup
-                        self?.novaGroupStackView.isHidden = false
                         self?.ingredientsNovaExplanationLabel.isHidden = true
                     } else {
-                        self?.novaGroupStackView.isHidden = true
+                        self?.novaGroupView.novaGroup = .unknown
                         self?.ingredientsNovaExplanationLabel.isHidden = false
                     }
                 }
@@ -592,6 +626,7 @@ class ProductAddViewController: TakePictureViewController {
         packagingField?.delegate = self
         languageField?.delegate = self
         labelsField?.delegate = self
+        originsField?.delegate = self
 
         portionSizeInputView?.displayedUnit = .none
         portionSizeInputView?.inputTextField.delegate = self
@@ -663,7 +698,7 @@ class ProductAddViewController: TakePictureViewController {
         quantityField?.text = product.quantity
         packagingField?.text = product.packaging?.compactMap {$0}.joined(separator: ", ")
         labelsField?.text = product.labels?.compactMap {$0}.joined(separator: ", ")
-
+        originsField?.text = product.origins
         ingredientsTextField.text = product.ingredientsList
         ingredientsOCRExplanationLabel.isHidden = product.ingredientsList != nil && !product.ingredientsList!.isEmpty
         noNutritionDataSwitch.isOn = product.noNutritionData == "on"
@@ -734,6 +769,10 @@ class ProductAddViewController: TakePictureViewController {
 
         if let labels = pendingUploadItem.labels {
             labelsField.text = labels
+        }
+
+        if let origins = pendingUploadItem.origins {
+            labelsField.text = origins
         }
 
         if let ingredientsList = pendingUploadItem.ingredientsList {

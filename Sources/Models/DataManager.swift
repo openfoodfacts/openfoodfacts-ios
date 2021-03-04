@@ -445,21 +445,27 @@ class DataManager: DataManagerProtocol {
             var frontImageSuccess = false
             var ingredientsImageSuccess = false
             var nutritionTableImageSuccess = false
+            var packagingImageSuccess = false
 
             self.uploadProduct(productToUpload, nutritionTable: nutrimentsToUpload, group: mergeTasks) { success in productSuccess = success }
             self.uploadImage(item.frontImage, mergeTasks) { success in frontImageSuccess = success }
             self.uploadImage(item.ingredientsImage, mergeTasks) { success in ingredientsImageSuccess = success }
             self.uploadImage(item.nutritionImage, mergeTasks) { success in nutritionTableImageSuccess = success }
+            self.uploadImage(item.packagingImage, mergeTasks) { success in packagingImageSuccess = success }
 
             // Wait for the four tasks to finish
             mergeTasks.wait()
 
             log.debug("""
                 All PendingUploadItem should be uploaded. ProductInfo success? \(productSuccess), Front Image success? \(frontImageSuccess),
-                Ingredients Image success? \(ingredientsImageSuccess), NutritionTable Image success? \(nutritionTableImageSuccess)
+                Ingredients Image success? \(ingredientsImageSuccess), NutritionTable Image success? \(nutritionTableImageSuccess), Packaging Image success? \(packagingImageSuccess)
                 """)
 
-            if productSuccess && frontImageSuccess && ingredientsImageSuccess && nutritionTableImageSuccess {
+            if productSuccess
+                && frontImageSuccess
+                && ingredientsImageSuccess
+                && nutritionTableImageSuccess
+                && packagingImageSuccess {
                 self.persistenceManager.deletePendingUploadItem(item)
             } else {
                 if productSuccess {
@@ -483,6 +489,10 @@ class DataManager: DataManagerProtocol {
 
                 if nutritionTableImageSuccess {
                     item.nutritionImage = nil
+                }
+
+                if packagingImageSuccess {
+                    item.packagingImage = nil
                 }
 
                 log.debug("Some info did not upload successfully, updating PendingUploadItem")

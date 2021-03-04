@@ -6,6 +6,10 @@ fastlane_version "1.109.0"
 
 default_platform :ios
 
+before_all do
+  xcversion(version: "~> 11.7.0")
+end
+
 desc "Run all the tests"
 lane :test do
   carthage(command: "bootstrap", platform: "iOS", cache_builds: true, use_binaries: false)
@@ -131,14 +135,24 @@ lane :finalize_sentry_release do
     sentry_finalize_release(
         org_slug: 'openfoodfacts',
         project_slug: 'openfoodfacts-ios',
-        version: 'openfoodfacts-ios@'+liveVersion.to_s+'.'+build_number.to_s,
+        version: 'openfoodfacts-ios@' + liveVersion.to_s + '.' + build_number.to_s,
         app_identifier: APP_IDENTIFIER
     )
     download_dsyms(min_version: liveVersion, output_directory: './ios/dSYMs') # Download dSYM files from iTC
+    sentry_upload_dsym(
+      org_slug: 'openfoodfacts',
+      project_slug: 'openfoodfacts-ios',
+    )
   end
 end
 
 desc "Upload metadata"
 lane :metadata do
   deliver(skip_binary_upload: true)
+end
+
+lane :perform_snapshots do
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
+
+  snapshot
 end

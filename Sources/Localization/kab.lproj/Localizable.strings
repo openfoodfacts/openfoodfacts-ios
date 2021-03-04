@@ -7,14 +7,14 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Freḍ tangalt n ufeggag";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Tuɣalin";
 "generic.search" = "Nadi";
-"generic.cancel" = "Ssefex";
-"generic.save" = "Sekles";
 "generic.cancel" = "Sefsex";
+"generic.save" = "Sekles";
+"generic.cancel" = "Ssefex";
 "generic.ok" = "IH";
 "generic.close" = "Mdel";
 
@@ -30,10 +30,10 @@
 "product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
+"product-scanner.overlay.user-help" = "Freḍ tangalt n ufeggag n ufaris";
 "product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Anafraḍ";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
 "product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
@@ -101,13 +101,20 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Isem";
 "product-add.label.category" = "Taggayt";
 "product-add.label.quantity" = "Tasmekta";
 "product-add.label.packaging" = "Asekrud";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Tutlayin";
+"product-add.label.labels" = "Tibzimin";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Cetla n isufar";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Nutrition Facts";
@@ -169,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
 "product-detail.ingredients.nova.3" = "Processed foods";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Substances or products causing allergies or intolerances";
@@ -195,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
@@ -226,7 +235,7 @@
 "ingredients-analysis.help-translate.title" = "Help translate the ingredients in your language";
 "ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
 "ingredients-analysis.help-translate.button" = "Help translate ingredients";
-"ingredients-analysis.back-to-scan" = "Back to scan";
+"ingredients-analysis.back-to-scan" = "Uɣal ɣer ufraḍ";
 
 // Robotoff
 "robotoff.yes" = "Ih";
@@ -324,10 +333,11 @@
 "product.images.take-picture.front" = "Photo of the front";
 "product.images.take-picture.ingredients" = "Photo of the ingredients";
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
-"scanner.tab-bar.item" = "Scanner";
+"scanner.tab-bar.item" = "Anafraḍ";
 "history.tab-bar.item" = "Amazray";
 "settings.tab-bar.item" = "Iɣewwaren";
 "settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
@@ -341,7 +351,7 @@
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Ismaden";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Wali";
 "settings.contribute.how-to-contribute" = "How To Contribute";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -403,6 +413,6 @@
 "HDR_ON" = "On";
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
+"PHOTOS" = "Tugniwin";
+"CANCEL" = "Ssefex";
 "RETAKE" = "Retake";

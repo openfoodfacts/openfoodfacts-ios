@@ -14,7 +14,7 @@
 "generic.search" = "Procurar";
 "generic.cancel" = "Cancelar";
 "generic.save" = "Guardar";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Cancelar";
 "generic.ok" = "OK";
 "generic.close" = "Fechar";
 
@@ -101,13 +101,20 @@
 "product-add.titles.license-explaination" = "Nota: as imagens que você envia são publicadas sob a licença libra Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Exemplos: Coca-Cola, Nestlé, etc…";
 "product-add.label.product-name" = "Nome";
 "product-add.label.category" = "Categoria";
 "product-add.label.quantity" = "Quantidade";
 "product-add.label.packaging" = "Embalagem";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Necessário para calcular o Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Línguas";
+"product-add.label.labels" = "Rótulos";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "Origem dos ingredientes";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete os fatos nutricionais e a categoria do produto para obter o Nutri-Score";
 "product-add.titles.nutritive" = "Fatos Nutricionais";
@@ -169,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Ingredientes culinários processados";
 "product-detail.ingredients.nova.3" = "Comidas Processadas";
 "product-detail.ingredients.nova.4" = "Produtos ultra-processados e bebidas";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Adicione ingredientes e / ou categorias para calcular o NOVA.";
 "product-detail.ingredients.ingredients-list" = "Lista de ingredientes";
 "product-detail.ingredients.allergens-list" = "Produtos ou substâncias que provocam alergias ou intolerâncias";
@@ -195,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "dose";
 "product-detail.nutrition-table.missing" = "Nenhum nutriente foi definido.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Atenção: a quantidade de fibra não está especificada, a sua eventual contribuição positiva não pôde ser considerada para a classificação.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Aviso: a quantidade de frutas, vegetais e nozes não está especificada, sua possível contribuição positiva para a classe não podê ser levada em consideração.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Atenção: a quantidade de frutas, legumes e nozes não é especificada no rótulo, foi estimado da lista de ingredientes: %d%";
@@ -310,7 +319,7 @@
 
 // Call to action
 "call-to-action.summary" = "Tirar foto frontal";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "Tire uma foto das instruções de reciclagem";
 "call-to-action.ingredients" = "Tirar foto aos ingredientes";
 "call-to-action.nutrition" = "Tirar foto à tabela nutricional";
 "call-to-action.edit" = "Complete the product to get it scored";
@@ -324,6 +333,7 @@
 "product.images.take-picture.front" = "Foto da frente";
 "product.images.take-picture.ingredients" = "Foto dos ingredientes";
 "product.images.take-picture.nutrition" = "Foto da tabela nutricional";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -341,7 +351,7 @@
 "settings.user-profile" = "Sua conta de contribuidor";
 "settings.credits.title" = "Créditos";
 "settings.scan-on-launch.title" = "Mostrar varredura no lançamento da aplicação";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Descubra";
 "settings.contribute.how-to-contribute" = "Como contribuir";
 "settings.contribute.support-open-food-facts" = "Apoie o Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Traduzir Open Food Facts";
@@ -403,6 +413,6 @@
 "HDR_ON" = "On";
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
+"PHOTOS" = "Fotos";
+"CANCEL" = "Cancelar";
 "RETAKE" = "Retake";

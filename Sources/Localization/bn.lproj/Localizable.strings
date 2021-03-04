@@ -101,13 +101,20 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "নাম";
 "product-add.label.category" = "বিভাগ";
 "product-add.label.quantity" = "পরিমান";
 "product-add.label.packaging" = "Packaging";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Languages";
+"product-add.label.labels" = "Labels";
+"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.origins" = "প্রধান উপাদানসমূহ";
+"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Nutrition Facts";
@@ -169,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
 "product-detail.ingredients.nova.3" = "Processed foods";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "পদার্থ বা পণ্য যা বিরূপ বা অসহনীয় প্রতিক্রিয়ার সৃষ্টি করে";
@@ -195,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
@@ -232,7 +241,7 @@
 "robotoff.yes" = "হ্যাঁ";
 "robotoff.no" = "না";
 "robotoff.not-sure" = "I'm not sure";
-"robotoff.contribute-incentive.title" = "Contribute";
+"robotoff.contribute-incentive.title" = "সহযগীতা";
 "robotoff.settings.display-questions" = "Display questions";
 "robotoff.contribute-incentive.login" = "Username";
 "robotoff.contribute-incentive.not-now" = "Not now";
@@ -324,6 +333,7 @@
 "product.images.take-picture.front" = "Photo of the front";
 "product.images.take-picture.ingredients" = "Photo of the ingredients";
 "product.images.take-picture.nutrition" = "Photo of the nutrition table";
+"product.images.take-picture.packaging" = "Photo of the recycling info";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -336,12 +346,12 @@
 "settings.allergies.add-button" = "Add allergens";
 "settings.sections.information" = "তথ্য";
 "settings.sections.discover" = "খুঁজুন";
-"settings.sections.contribute" = "Contribute";
+"settings.sections.contribute" = "সহযগীতা";
 "settings.sections.about" = "সম্পর্কে";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "খুঁজুন";
 "settings.contribute.how-to-contribute" = "How To Contribute";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";

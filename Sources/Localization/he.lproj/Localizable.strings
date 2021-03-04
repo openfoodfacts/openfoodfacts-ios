@@ -101,13 +101,20 @@
 "product-add.titles.license-explaination" = "לתשומת לבך: התמונות שנשלחות מפורסמות תחת תנאי הרישיון Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "מידע על המוצר";
+"product-add.label.brand-example" = "למשל: קוקה קולה, תנובה וכו׳…";
 "product-add.label.product-name" = "שם";
 "product-add.label.category" = "קטגוריה";
 "product-add.label.quantity" = "כמות";
 "product-add.label.packaging" = "אריזה";
+"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "נדרש לטובת חישוב Nutri-Score";
 "product-add.label.quantity-example" = "25 ג׳, 10oz,‏ 5 מ״ל…";
 "product-add.label.language" = "שפות";
+"product-add.label.labels" = "תוויות";
+"product-add.label.labels-example" = "למשל: נטול גלוטן וכו׳.";
+"product-add.label.origins" = "מקור הרכיבים";
+"product-add.field.origins-placeholder" = "נדרש לחישוב ה־Eco-Score";
+"product-add.label.origins-example" = "לדוגמה: חמאה מצרפת וכו׳.";
 
 "product-add.description.nutritive" = "יש להשלים את הערכים התזונתיים ואת קטגוריית המוצר כדי לקבל Nutri-Score";
 "product-add.titles.nutritive" = "מפרט תזונתי";
@@ -169,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "רכיבים קולינריים מעובדים";
 "product-detail.ingredients.nova.3" = "מזון מעובד";
 "product-detail.ingredients.nova.4" = "מוצרי מזון ושתייה מעובדים ביותר";
+"product-detail.ingredients.nova.unknown" = "לא ניתן לחשב את רמת ה־NOVA לעיבוד מזון";
 "product-detail.ingredients.nova.incite" = "יש להוסיף מרכיבים ו/או קטגוריות כדי לחשב NOVA.";
 "product-detail.ingredients.ingredients-list" = "רשימת מרכיבים";
 "product-detail.ingredients.allergens-list" = "חומרים או מוצרים שגורמים לאלרגיות או לרגישויות";
@@ -195,16 +203,17 @@
 "product-detail.nutrition-table.100g" = "100 גרם";
 "product-detail.nutrition-table.serving" = "מנה";
 "product-detail.nutrition-table.missing" = "לא הוגדרו חומרים מזינים.";
+"product-detail.nutrition-table.noNutritionData" = "למוצר זה אין טבלת ערכים תזונתיים.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "אזהרה: כמות הסיבים לא צוינה, התרומה החיובית שלהם לציון לא ניתנת לחישוב.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "אזהרה: כמות הפירות, הירקות והאגוזים לא צוינה, התרומה החיובית שלהם לציון לא ניתנת לחישוב.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "אזהרה: כמות הפירות, הירקות והאגוזים לא צוינה, התבצעה הערכה על בסיס רשימת הרכיבים: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "אזהרה: כמות הפירות, הירקות והאגוזים לא צוינה, התבצעה הערכה על בסיס הקטגוריה (%s) של המוצר: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "השפעה זניחה על איכות הסביבה";
+"product-detail.environment.ecoscore.b" = "השפעה מועטה על איכות הסביבה";
+"product-detail.environment.ecoscore.c" = "השפעה מסוימת על איכות הסביבה";
+"product-detail.environment.ecoscore.d" = "השפעה ניכרת על איכות הסביבה";
+"product-detail.environment.ecoscore.e" = "השפעה הרסנית על איכות הסביבה";
 "product-detail.environment.ecoscore.unknown" = "Eco-score לא ידוע";
 "product-detail.environment.ecoscore.incite" = "נא להוסיף פרטי האריזה כדי שנוכל לחשב את ה־Eco-score";
 
@@ -261,7 +270,7 @@
 "nutrition.carbohydrate.maltose" = "מלטוז";
 "nutrition.carbohydrate.maltodextrins" = "מלטודקסטרין";
 "nutrition.fiber" = "סיבים תזונתיים";
-"nutrition.proteins" = "חלבון";
+"nutrition.proteins" = "תכולת חלבון";
 "nutrition.proteins.casein" = "קזאין";
 "nutrition.proteins.serum-proteins" = "חלבון בסרום";
 "nutrition.proteins.nucleotides" = "נוקלאוטידים";
@@ -324,6 +333,7 @@
 "product.images.take-picture.front" = "תמונה של החזית";
 "product.images.take-picture.ingredients" = "תמונה של הרכיבים";
 "product.images.take-picture.nutrition" = "תמונה של הטבלה התזונתית";
+"product.images.take-picture.packaging" = "תמונה של פרטי המיחזור";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"

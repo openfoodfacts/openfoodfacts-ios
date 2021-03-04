@@ -17,11 +17,13 @@ class PendingUploadItem {
     var quantity: String?
     var packaging: String?
     var labels: String?
+    var origins: String?
     var ingredientsList: String?
     var language = "en"
     var frontImage: ProductImage?
     var ingredientsImage: ProductImage?
     var nutritionImage: ProductImage?
+    var packagingImage: ProductImage?
     var categories: [String]?
 
     var noNutritionData: String?
@@ -41,6 +43,7 @@ class PendingUploadItem {
         product.quantity = quantity
         product.packaging = packaging?.split(separator: ",").compactMap {String($0)}
         product.labels = labels?.split(separator: ",").compactMap {String($0)}
+        product.origins = origins
         product.lang = language
         product.categories = categories
         product.ingredientsList = ingredientsList
