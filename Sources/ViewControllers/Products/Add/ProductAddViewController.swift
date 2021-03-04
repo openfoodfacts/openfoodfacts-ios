@@ -403,7 +403,7 @@ class ProductAddViewController: TakePictureViewController {
         saveNutriments()
 
         AnalyticsManager.shared.track(event: Events.Products.edited(barcode: self.barcode))
-        
+
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -521,7 +521,7 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     @IBAction func addNutrimentButtonTapped(_ sender: Any) {
-        //open select nutriment
+        // open select nutriment
         let selectNutrimentViewController = SelectNutrimentViewController(nibName: "SelectNutrimentViewController", bundle: nil)
         selectNutrimentViewController.dataManager = self.dataManager
         selectNutrimentViewController.delegate = self
@@ -678,13 +678,13 @@ class ProductAddViewController: TakePictureViewController {
     }
 
     private func refreshProductTranslatedValuesFromLang() {
-        //if let lang = product.lang {
-            //productNameField.text = product.names[lang]
-            //ingredientsTextField.text = product.ingredients[lang]
-        //} else {
+        // if let lang = product.lang {
+            // productNameField.text = product.names[lang]
+            // ingredientsTextField.text = product.ingredients[lang]
+        // } else {
             productNameField.text = product.name
             ingredientsTextField.text = product.ingredientsList
-        //}
+        // }
 
     }
 
@@ -866,7 +866,7 @@ extension ProductAddViewController {
 extension ProductAddViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == productCategoryField {
-            //open select category
+            // open select category
             let selectCategoryViewController = SelectCategoryViewController(nibName: "SelectCategoryViewController", bundle: nil)
             selectCategoryViewController.dataManager = self.dataManager
             selectCategoryViewController.delegate = self
@@ -948,7 +948,7 @@ extension ProductAddViewController: UITextFieldDelegate {
             if let editNutritiveView = textField.superviewOfClassType(EditNutritiveValueView.self) as? EditNutritiveValueView {
                 if let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) {
                     if updatedString.matches(for: "^[<>~]{0,1}[0-9]*[.,]{0,1}[0-9]*$").isEmpty {
-                        //do not allow input of non authorized chars
+                        // do not allow input of non authorized chars
                         return false
                     }
                     if let inputValue = editNutritiveView.getInputValue(fromString: updatedString) {
