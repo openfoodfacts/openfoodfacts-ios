@@ -16,7 +16,7 @@ class AnalyticsManager {
     //TODO: config
     let sharedMatomoTracker: MatomoTracker = MatomoTracker(
         siteId: "1",
-        baseURL: URL(string: "https://example.com/piwik.php")!
+        baseURL: URL(string: "https://analytics.openfoodfacts.org/")!
     )
 
     // as sentry cannot be enabled or disabled at runtime, we store the enabled status at startup. Changing the value requires an app restart to be taken into account
