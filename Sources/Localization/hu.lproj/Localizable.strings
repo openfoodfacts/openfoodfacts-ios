@@ -14,7 +14,7 @@
 "generic.search" = "Keres";
 "generic.cancel" = "Mégse";
 "generic.save" = "Mentés";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Mégse";
 "generic.ok" = "Ok";
 "generic.close" = "Bezár";
 
@@ -101,7 +101,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: CocaCola, Nestle, etc…";
 "product-add.label.product-name" = "Név";
 "product-add.label.category" = "Kategória";
 "product-add.label.quantity" = "Mennyiség";
@@ -110,9 +110,9 @@
 "product-add.details.category" = "Szükséges a Nutri-Score kiszámításához";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Nyelvek";
-"product-add.label.labels" = "Labels";
+"product-add.label.labels" = "Címkék";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
-"product-add.label.origins" = "Origin of ingredients";
+"product-add.label.origins" = "Összetevők eredete";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
 "product-add.label.origins-example" = "Example: Butter from France, etc.";
 
@@ -176,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Feldolgozott összetevők";
 "product-detail.ingredients.nova.3" = "Feldolgozott élelmiszerek";
 "product-detail.ingredients.nova.4" = "Többszörösen feldolgozott élelmiszer- és italtermékek";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Adjon hozzá összetevőket és/vagy kategóriákat a NOVA kiszámításához.";
 "product-detail.ingredients.ingredients-list" = "Összetevők listája";
 "product-detail.ingredients.allergens-list" = "Allergiás vagy intoleranciás reakciót okozó anyagok, termékek";
@@ -202,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Figyelmeztetés: a rost mennyisége nincs megadva, ezért a lehetséges kedvező hozzájárulása az osztályzathoz nem vehető figyelembe.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Figyelmeztetés: a gyümölcsök, zöldségek és diófélék mennyisége nincs megadva a címkén, ezért az összetevők alapján becsült értékük: %d%";
@@ -349,7 +351,7 @@
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Köszönet";
 "settings.scan-on-launch.title" = "Mutassa a beolvasást az alkalmazás indításakor";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Felfedezés";
 "settings.contribute.how-to-contribute" = "Hogyan járulhat hozzá";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -411,6 +413,6 @@
 "HDR_ON" = "On";
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
+"PHOTOS" = "Fényképek";
+"CANCEL" = "Mégse";
 "RETAKE" = "Retake";

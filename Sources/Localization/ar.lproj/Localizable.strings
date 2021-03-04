@@ -98,7 +98,7 @@
 "product-add.title-edit" = "تحرير المنتج";
 "product-add.titles.barcode" = "الرمز الشريطي";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.license-explaination" = "ملاحظة: يتم نشر الصور التي ترسلها تحت الترخيص المجاني \"العموم الإبداعي\" وإسناد و \"المساهمة\".";
 
 "product-add.titles.product-info" = "Product Information";
 "product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
@@ -110,40 +110,40 @@
 "product-add.details.category" = "بحاجة الى حساب نقاط التغذية";
 "product-add.label.quantity-example" = "٢٥ جم، ١٠ أوقية، ٥ مل…";
 "product-add.label.language" = "اللغات";
-"product-add.label.labels" = "Labels";
+"product-add.label.labels" = "علامات";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
-"product-add.label.origins" = "Origin of ingredients";
+"product-add.label.origins" = "أصل المكونات";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
 "product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "أكمل حقائق التغذية وفئة المنتج للحصول على نقاط التغذية";
 "product-add.titles.nutritive" = "حقائق غذائية";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.choice.per-hundred-grams" = "ل 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "لكل جزء";
 "product-add.nutritive.add-nutriment" = "إضافة مادة غذائية";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "أكثر من 100 غرام؟";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "أكمل المكونات لتحصل على مجموعة NOVA على معالجة الطعام";
 "product-add.titles.ingredients" = "المكونات";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
+"product-add.ingredients.explaination" = "التقط صورة لقائمة المكونات لاستخراج المكونات تلقائياً. تحقق منها بعناية ولا تنسى حفظها.";
 "product-add.ingredients.button-delete" = "Too bad, Ignore";
 "product-add.ingredients.button-save" = "Looks good, Save";
 
 // Select Category
 "select-category.title" = "Atassnifate";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "البحث عن تصنيف";
 
 // Select nutrition
 "select-nutriment.title" = "التغذية";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Rechercher un nutriment";
 
 // Select allergen
 "select-allergen.title" = "Allergen";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "البحث عن حساسية";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "إضافة صورة جديدة";
-"product-detail.edit" = "Edit this product";
+"product-detail.edit" = "إضافة منتج";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "تذكر أن تقوم بحفظ التغييرات الخاصة بك";
 /* Keep this text as short as possible */
@@ -158,7 +158,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "الرمز الشريطي";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "اسم عام";
 "product-detail.summary.quantity" = "كمية";
 "product-detail.summary.packaging" = "التعبئة والتغليف";
 "product-detail.summary.brands" = "العلامات التجارية";
@@ -176,10 +176,11 @@
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
 "product-detail.ingredients.nova.3" = "Processed foods";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "قائمة المكونات";
 "product-detail.ingredients.allergens-list" = "مستأرج";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-alert.title" = "احترس: يحتوي على مسببات للحساسية!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "آثار";
@@ -202,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "تحذير: لم يتم تحديد كمية الألياف ، ولا يمكن أخذ مساهمتها الإيجابية المحتملة في التقدير.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "تحذير: كمية الفواكه والخضروات والمكسرات غير محددة على الملصق ، فقد قدرت من قائمة المكونات: %d%";
@@ -349,7 +351,7 @@
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "إعتمادات";
 "settings.scan-on-launch.title" = "إظهار الماسح عند تشغيل التطبيق";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "إكتشف";
 "settings.contribute.how-to-contribute" = "كيفية المساهمة";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -411,6 +413,6 @@
 "HDR_ON" = "تشغيل";
 "HDR_OFF" = "إيقاف";
 "TIMER_OFF_TEXT" = "إيقاف";
-"PHOTOS" = "Photos";
+"PHOTOS" = "صور";
 "CANCEL" = "إلغاء";
 "RETAKE" = "الإعادة";

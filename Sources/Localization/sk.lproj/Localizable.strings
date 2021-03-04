@@ -14,7 +14,7 @@
 "generic.search" = "Vyhľadať";
 "generic.cancel" = "Zrušiť";
 "generic.save" = "Uložiť";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Zrušiť";
 "generic.ok" = "Ok";
 "generic.close" = "Zatvoriť";
 
@@ -92,7 +92,7 @@
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Značka";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity" = "Quantity";
+"product-add.placeholder.quantity" = "Množstvo";
 
 "product-add.title" = "New product";
 "product-add.title-edit" = "Upraviť výrobok";
@@ -104,15 +104,15 @@
 "product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Názov";
 "product-add.label.category" = "Kategória";
-"product-add.label.quantity" = "Quantity";
-"product-add.label.packaging" = "Packaging";
+"product-add.label.quantity" = "Množstvo";
+"product-add.label.packaging" = "Balenie";
 "product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Languages";
-"product-add.label.labels" = "Labels";
+"product-add.label.labels" = "Štítky";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
-"product-add.label.origins" = "Origin of ingredients";
+"product-add.label.origins" = "Pôvod surovín";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
 "product-add.label.origins-example" = "Example: Butter from France, etc.";
 
@@ -159,12 +159,12 @@
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Čiarový kód";
 "product-detail.summary.generic-name" = "Generic name";
-"product-detail.summary.quantity" = "Quantity";
-"product-detail.summary.packaging" = "Packaging";
-"product-detail.summary.brands" = "Brands";
-"product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
-"product-detail.summary.origins" = "Origin of ingredients";
-"product-detail.summary.categories" = "Categories";
+"product-detail.summary.quantity" = "Množstvo";
+"product-detail.summary.packaging" = "Balenie";
+"product-detail.summary.brands" = "Značky";
+"product-detail.summary.manufacturing-places" = "Výrobné alebo spracovateľské miesta";
+"product-detail.summary.origins" = "Pôvod surovín";
+"product-detail.summary.categories" = "Kategórie";
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
@@ -176,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
 "product-detail.ingredients.nova.3" = "Processed foods";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Látky alebo výrobky spôsobujúce alergie alebo neznášanlivosť";
@@ -202,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
@@ -349,7 +351,7 @@
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Objaviť";
 "settings.contribute.how-to-contribute" = "How To Contribute";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -412,5 +414,5 @@
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
 "PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
+"CANCEL" = "Zrušiť";
 "RETAKE" = "Retake";

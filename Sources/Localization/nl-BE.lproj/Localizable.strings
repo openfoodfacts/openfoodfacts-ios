@@ -14,7 +14,7 @@
 "generic.search" = "Zoeken";
 "generic.cancel" = "Annuleer";
 "generic.save" = "Bewaar";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Annuleer";
 "generic.ok" = "Ok";
 "generic.close" = "Sluit";
 
@@ -100,7 +100,7 @@
 "product-add.titles.top-explainations" = "Goed gedaan ! Dit product is nog niet in Open Food Facts. Kun je wat foto's maken van het product, de ingrediëntenlijst en voedingswaarden om aan Open Food Facts toe te voegen?\n\nBij voorbaat dank.";
 "product-add.titles.license-explaination" = "Nb: de foto's die je upload, worden gepubliceerd onder de vrije licentie Creative Commons Attribution and ShareAlike.";
 
-"product-add.titles.product-info" = "Product Information";
+"product-add.titles.product-info" = "Productinformatie";
 "product-add.label.brand-example" = "Bijvoorbeeld: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Naam:";
 "product-add.label.category" = "Categorie";
@@ -110,7 +110,7 @@
 "product-add.details.category" = "Nodig om de Nutri-Score te berekenen";
 "product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
 "product-add.label.language" = "Talen";
-"product-add.label.labels" = "Labels";
+"product-add.label.labels" = "Keurmerken";
 "product-add.label.labels-example" = "Bijvoorbeeld: Glutenvrij, Vegan, etc.";
 "product-add.label.origins" = "Oorsprong van de ingrediënten";
 "product-add.field.origins-placeholder" = "Noodzakelijk voor de berekening van de Eco-Score";
@@ -176,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Berwerkte ingrediënten";
 "product-detail.ingredients.nova.3" = "Bewerkte levensmiddelen";
 "product-detail.ingredients.nova.4" = "Ultra-bewerkte levensmiddelen en dranken";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Voeg ingrediënten en / of categorieën toe om NOVA te berekenen.";
 "product-detail.ingredients.ingredients-list" = "Lijst van ingrediënten";
 "product-detail.ingredients.allergens-list" = "Stoffen of producten die allergieën of intoleranties veroorzaken";
@@ -202,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100 g";
 "product-detail.nutrition-table.serving" = "portie";
 "product-detail.nutrition-table.missing" = "Er zijn geen voedingsstoffen vastgesteld.";
+"product-detail.nutrition-table.noNutritionData" = "Dit product heeft geen voedingswaardentabel.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Waarschuwing: de hoeveelheid vezels is niet gespecificeerd, hun mogelijke positieve bijdrage aan de klasse kan niet in aanmerking worden genomen.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Waarschuwing: de hoeveelheid fruit, groente en noten is niet gespecificeerd, er kon geen rekening worden gehouden met hun mogelijke positieve bijdrage aan het cijfer.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Waarschuwing: de hoeveelheid fruit, groenten en noten staat niet op het etiket, maar werd geschat op basis van de ingrediëntenlijst: %d%";
@@ -317,7 +319,7 @@
 
 // Call to action
 "call-to-action.summary" = "Maak een foto van de voorkant";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "Maak een foto van de recyclinginstructies";
 "call-to-action.ingredients" = "Maak een foto van de ingrediënten";
 "call-to-action.nutrition" = "Neem een foto van de voedingswaardentabel";
 "call-to-action.edit" = "Voltooi het product om het gescoord te krijgen";
@@ -331,7 +333,7 @@
 "product.images.take-picture.front" = "Foto van de voorkant";
 "product.images.take-picture.ingredients" = "Foto van de ingrediënten";
 "product.images.take-picture.nutrition" = "Foto van de voedingswaardentabel";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.packaging" = "Foto van de recycleerinfo";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -349,7 +351,7 @@
 "settings.user-profile" = "Je account";
 "settings.credits.title" = "Credits";
 "settings.scan-on-launch.title" = "Scan Op App Launch Weergeven";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Ontdek";
 "settings.contribute.how-to-contribute" = "Hoe kan je bijdragen";
 "settings.contribute.support-open-food-facts" = "Ondersteun Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Vertaal Open Food Facts";

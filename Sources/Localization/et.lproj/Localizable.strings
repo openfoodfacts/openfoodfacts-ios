@@ -7,13 +7,13 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Skanni triipkood";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Tagasi";
 "generic.search" = "Otsi";
 "generic.cancel" = "Cancel";
-"generic.save" = "Save";
+"generic.save" = "Salvesta";
 "generic.cancel" = "Cancel";
 "generic.ok" = "Ok";
 "generic.close" = "Sulge";
@@ -25,25 +25,25 @@
 "product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Midagi läks valesti";
 "product-search.error-view.subtitle" = "Palun proovi uuesti";
-"product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.slogan" = "tasuta toidukaupade andmebaas";
+"product-search.initial-view.offline.title-loading" = "Toodete salvestamine ilma võrguühenduseta: %d%%";
+"product-search.initial-view.offline.subtitle" = "Koheseks skannimiseks on saadaval rohkem kui %d toodet";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
+"product-scanner.overlay.user-help" = "Skannige toote triipkood";
 "product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Skänner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode.error" = "Viga vöötkoodi skannimisel. Proovige mõne hetke pärast uuesti.";
+"product-scanner.barcode-notfound.manual-enter" = "Vöötkoodi ei leitud. Saate selle käsitsi tippida:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts vajab kaamera lube";
+"product-scanner.permissions.noPermissions.message" = "Andke luba kaameral triipkoode skannida";
 "product-scanner.permissions.noPermissions.action.title" = "Ava seaded";
 
-"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.title" = "Triipkoodi skannimist ei õnnestunud käivitada.";
+"product-scanner.permissions.failed.message" = "Veenduge, et privaatsusseadetes oleks Open Food Factsil luba kaamera kasutamiseks";
 "product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
 
 "product-scanner.search.status" = "Toote laadimine…";
@@ -54,22 +54,22 @@
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Midagi läks valesti";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Please try to take the picture again";
+"product-add.image-upload-error-banner.subtitle" = "Palun proovige uuesti pilti teha";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "Image was uploaded successfully";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-upload-success-banner.title" = "Pildi üleslaadimine õnnestus";
+"product-add.image-save-success-banner.title" = "Pilt laaditakse üles võrgus olles";
 /* Displayed when a product was successfully added to the products database */
-"product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
+"product-add.product-add-success-banner.title" = "Toode lisati edukalt. Aitäh!";
 "product-add.uploaded-image" = "Pilt üles laaditud, aitäh!";
 "product-add.save-error.title" = "Viga toote salvestamisel";
 "product-add.save-error.message" = "Palun proovi hiljem uuesti";
 "product-add.save-info.success" = "Informatsioon salvestatud";
 "product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
+"product-add.save-info.saving" = "Tooteinfo salvestamine…";
+"product-add.save-info.not-yet" = "Teavet pole veel salvestatud";
 "product-add.save-ingredients.success" = "Koostisosad salvestatud";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
+"product-add.save-ingredients.error" = "Koostisosad pole salvestunud";
+"product-add.save-ingredients.saving" = "Koostisosade salvestamine…";
 "product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
 "product-add.save-nutriments.success" = "Nutriments saved at";
 "product-add.save-nutriments.error" = "Nutriments not saved";
@@ -176,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
 "product-detail.ingredients.nova.3" = "Processed foods";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Allergiat või talumatust tekitavad ained või tooted";
@@ -202,6 +203,7 @@
 "product-detail.nutrition-table.100g" = "100 g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "No nutrients have been set.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";

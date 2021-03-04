@@ -13,7 +13,7 @@
 "generic.back" = "Back";
 "generic.search" = "Search";
 "generic.cancel" = "Cancel";
-"generic.save" = "Save";
+"generic.save" = "Nyimpen";
 "generic.cancel" = "Cancel";
 "generic.ok" = "Oke";
 "generic.close" = "Close";
@@ -88,7 +88,7 @@
 "alert.action.ok" = "Oke";
 "product-add.language.toolbar-title" = "Pilih basa";
 /* Product Add name text field */
-"product-add.placeholder.name" = "Product name";
+"product-add.placeholder.name" = "Jeneng produk";
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Merek";
 /* Product Add quantity text field */
@@ -96,13 +96,13 @@
 
 "product-add.title" = "Produk anyar";
 "product-add.title-edit" = "Ngedit produk";
-"product-add.titles.barcode" = "Barcode";
+"product-add.titles.barcode" = "Barkod";
 "product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
 "product-add.titles.license-explaination" = "Cathetan: gambar sing sampeyan kirimke diterbitake miturut lisensi gratis Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
 "product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
-"product-add.label.product-name" = "Name";
+"product-add.label.product-name" = "Jeneng";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Quantity";
 "product-add.label.packaging" = "Packaging";
@@ -120,7 +120,7 @@
 "product-add.titles.nutritive" = "Kasunyatan nutrisi";
 "product-add.nutritive.choice.per-hundred-grams" = "kanggo 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "saben porsi";
-"product-add.nutritive.add-nutriment" = "Add a nutrient";
+"product-add.nutritive.add-nutriment" = "Nambah nutrisi";
 "product-add.nutritive.too-much" = "Luwih saka 100g?";
 
 "product-add.description.ingredients" = "Lengkapi bahan supaya entuk grup NOVA ing pangolahan panganan";
@@ -157,7 +157,7 @@
 "product-detail.page-title.environment-impact" = "Lingkungan";
 
 // Product detail summary info rows labels
-"product-detail.summary.barcode" = "Barcode";
+"product-detail.summary.barcode" = "Barkod";
 "product-detail.summary.generic-name" = "Nama umum";
 "product-detail.summary.quantity" = "Quantity";
 "product-detail.summary.packaging" = "Packaging";
@@ -165,8 +165,8 @@
 "product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
 "product-detail.summary.origins" = "Origin of ingredients";
 "product-detail.summary.categories" = "Categories";
-"product-detail.summary.labels" = "Labels, certifications, awards";
-"product-detail.summary.citiesTags" = "City, state and country where purchased";
+"product-detail.summary.labels" = "Label, sertifikasi, penghargaan";
+"product-detail.summary.citiesTags" = "Kutha, wilayah lan negara engkang bade tumbas";
 "product-detail.summary.stores" = "Stores";
 "product-detail.summary.embCodes" = "Kode paket";
 "product-detail.summary.countries" = "Countries where sold";
@@ -176,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
 "product-detail.ingredients.nova.3" = "Processed foods";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "Nambah bahan lan / utawa kategori kangge ngetang NOVA.";
 "product-detail.ingredients.ingredients-list" = "List of ingredients";
 "product-detail.ingredients.allergens-list" = "Substances or products causing allergies or intolerances";
@@ -202,10 +203,11 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
 "product-detail.nutrition-table.missing" = "Mboten enten nutrisi sampun ditetepaken.";
-"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Pènget: jumlah serat mboten ditemtokaken, bisa uga kontribusi ingkang positif marang kelas sing mboten bisa dianggep.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Pènget: jumlah woh-wohan, sayur-sayuran lan kacang-kacangan mboten ditemtokaken, saged uga menehi kontribusi ingkang positif marang kelas sing ora bisa dingerteni.";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Pènget: jumlah woh-wohan, sayur-sayuran lan kacang-kacangan mboten ditemtokaken ing label, sampun diestimasi saking dhaptar bahan: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Pènget: jumlah woh-wohan, sayuran lan kacang-kacangan mboten ditetepaken ing label kasebut, sampun diestimasi saking kategori (%s) produk: %d%";
 
 "product-detail.environment.ecoscore.a" = "Eco-score A";
 "product-detail.environment.ecoscore.b" = "Eco-score B";
@@ -236,8 +238,8 @@
 "ingredients-analysis.back-to-scan" = "Bali menyang pindai";
 
 // Robotoff
-"robotoff.yes" = "Yes";
-"robotoff.no" = "No";
+"robotoff.yes" = "Nggih";
+"robotoff.no" = "Mboten";
 "robotoff.not-sure" = "Kula mboten yakin";
 "robotoff.contribute-incentive.title" = "Contribute";
 "robotoff.settings.display-questions" = "Tampilake pitakon";
@@ -365,7 +367,7 @@
 "user.logging-in" = "Mlebet";
 "user.log-out" = "Medal";
 "user.username" = "Nami pangguna";
-"user.password" = "Password";
+"user.password" = "Sandi";
 "user.logged-in.label" = "%@, sampeyan mlebet";
 "user.logged-in-explanation.label" = "Sedanten produk ingkang sampeyan tambah lan foto produk ingkang sampeyan unggah bade dilebetaken wonten akun sampeyan";
 "user.not-logged-in" = "Mboten mlebet";

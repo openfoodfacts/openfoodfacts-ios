@@ -112,7 +112,7 @@
 "product-add.label.language" = "ภาษา";
 "product-add.label.labels" = "Labels";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
-"product-add.label.origins" = "Origin of ingredients";
+"product-add.label.origins" = "แหล่งที่มาของวัตถุดิบ";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
 "product-add.label.origins-example" = "Example: Butter from France, etc.";
 
@@ -176,6 +176,7 @@
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
 "product-detail.ingredients.nova.3" = "Processed foods";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
+"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
 "product-detail.ingredients.nova.incite" = "เพิ่มส่วนผสมและ / หรือหมวดหมู่เพื่อคำนวณ NOVA";
 "product-detail.ingredients.ingredients-list" = "รายชื่อส่วนผสม";
 "product-detail.ingredients.allergens-list" = "สารหรือผลิตภัณฑ์ที่ก่อให้เกิดอาการแพ้หรือแพ้";
@@ -202,10 +203,12 @@
 "product-detail.nutrition-table.100g" = "100 กรัม";
 "product-detail.nutrition-table.serving" = "หน่วยบริโภค";
 "product-detail.nutrition-table.missing" = "ไม่มีการตั้งค่าสารอาหาร";
-"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "คำเตือน: ไม่ได้ระบุปริมาณของเส้นใยไม่สามารถนำผลบวกที่เป็นไปได้มาสู่เกรด";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "คำเตือน: ไม่ได้ระบุปริมาณของเส้นใยไม่สามารถนำผลบวกที่เป็นไปได้มาสู่เกรด";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "คำเตือน: ปริมาณของผลไม้ผักและถั่วไม่ได้ระบุไว้บนฉลากโดยประมาณจากรายการส่วนผสม: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "คำเตือน: ปริมาณของผลไม้ผักและถั่วไม่ได้ระบุไว้บนฉลากโดยประมาณจากรายการส่วนผสม: %d
+";
 
 "product-detail.environment.ecoscore.a" = "Eco-score A";
 "product-detail.environment.ecoscore.b" = "Eco-score B";
@@ -349,7 +352,7 @@
 "settings.user-profile" = "บัญชีผู้สนับสนุนของคุณ";
 "settings.credits.title" = "เครดิต";
 "settings.scan-on-launch.title" = "แสดงการสแกนเมื่อเปิดตัวแอป";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "ค้นพบ";
 "settings.contribute.how-to-contribute" = "วิธีการมีส่วนร่วม";
 "settings.contribute.support-open-food-facts" = "สนับสนุนข้อเท็จจริงอาหารเปิด";
 "settings.contribute.translate-open-food-facts" = "แปลข้อมูลอาหารเปิด";
