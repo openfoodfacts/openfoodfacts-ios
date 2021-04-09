@@ -11,10 +11,10 @@ options:
 
 settingGroups:
   testing-endpoints:
-    GET_ENDPOINT: "http:/$()/localhost:8080"
-    POST_ENDPOINT: "http:/$()/localhost:8080"
-    LOGIN_ENDPOINT: "http:/$()/localhost:8080/cgi/session.pl"
-    ROBOTOFF_ENDPOINT: "https:/$()/localhost:8080"
+    GET_ENDPOINT: "https:/$()/ssl-api.openfoodfacts.org"
+    POST_ENDPOINT: "https:/$()/ssl-api.openfoodfacts.org"
+    LOGIN_ENDPOINT: "https:/$()/world.openfoodfacts.org/cgi/session.pl"
+    ROBOTOFF_ENDPOINT: "https:/$()/robotoff.openfoodfacts.org"
   release-endpoints:
     GET_ENDPOINT: "https:/$()/ssl-api.openfoodfacts.org"
     POST_ENDPOINT: "https:/$()/ssl-api.openfoodfacts.org"
