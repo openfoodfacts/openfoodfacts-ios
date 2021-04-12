@@ -48,6 +48,11 @@ Mark the current live version on the app store as "finalized" on Sentry. This la
 fastlane metadata
 ```
 Upload metadata
+### perform_snapshots
+```
+fastlane perform_snapshots
+```
+
 
 ----
 
