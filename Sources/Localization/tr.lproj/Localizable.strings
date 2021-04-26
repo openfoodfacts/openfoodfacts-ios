@@ -112,9 +112,9 @@
 "product-add.label.language" = "Diller";
 "product-add.label.labels" = "Etiketler";
 "product-add.label.labels-example" = "Örnekler: Glütensiz vb.";
-"product-add.label.origins" = "Malzemelerin menşei";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Example: Butter from France, etc.";
+"product-add.label.origins" = "Malzemelerin kaynağı";
+"product-add.field.origins-placeholder" = "Eco-Score'u hesaplamak için gerekli";
+"product-add.label.origins-example" = "Örnek: Fransa'dan tereyağı vb.";
 
 "product-add.description.nutritive" = "Nutri-Score'u öğrenmek için besin değerlerini ve ürün kategorisini tamamlayın";
 "product-add.titles.nutritive" = "Besin Değerleri";
@@ -176,7 +176,7 @@
 "product-detail.ingredients.nova.2" = "İşlenmiş yemek malzemeleri";
 "product-detail.ingredients.nova.3" = "İşlenmiş gıdalar";
 "product-detail.ingredients.nova.4" = "Aşırı işlenmiş yiyecek ve içecek ürünleri";
-"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
+"product-detail.ingredients.nova.unknown" = "Gıda işlemenin NOVA seviyesi hesaplanamadı";
 "product-detail.ingredients.nova.incite" = "NOVA'yı hesaplamak için içindekileri ve/veya kategoriler ekleyin.";
 "product-detail.ingredients.ingredients-list" = "Malzemelerin listesi";
 "product-detail.ingredients.allergens-list" = "Alerjiye veya toleranssızlığa neden olan maddeler veya ürünler";
@@ -203,7 +203,7 @@
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "porsiyon";
 "product-detail.nutrition-table.missing" = "Herhangi bir besin ögesi ayarlanmadı.";
-"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.noNutritionData" = "Bu ürünün besin değerleri tablosu yoktur.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Uyarı: lif miktarı belirtilmediği için, olası olumlu katkı notuna dahil edilemedi.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Uyarı: Meyve, sebze ve sert kabuklu yemişlerin miktarı belirtilmemiştir, sınıfa olası olumlu katkıları dikkate alınmamıştır.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Uyarı: Meyve, sebze ve fındık miktarı etiket üzerinde belirtilmemiş, içerikler listesinden hesaplanmıştır: %d%";
@@ -214,8 +214,8 @@
 "product-detail.environment.ecoscore.c" = "Eco-score C";
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.unknown" = "Eco-score bilinmiyor";
+"product-detail.environment.ecoscore.incite" = "Eco-score hesaplayabilmemiz için lütfen paketleme bilgilerini ekleyin";
 
 // Nutrition levels
 "nutrition-level.title" = "100 g/100mL için besin ögeleri seviyeleri";
@@ -407,12 +407,12 @@
 // Camera localization API
 "API_CANCEL_TITLE" = "İptal";
 "USE_PHOTO" = "Fotoğraf kullan";
-"PHOTO" = "PHOTO";
-"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"PHOTO" = "FOTOĞRAF";
+"AEAF_LOCK_TEXT" = "AE/AF KİLİDİ";
 "HDR_AUTO" = "Otomatik";
 "HDR_ON" = "Açık";
 "HDR_OFF" = "Kapalı";
 "TIMER_OFF_TEXT" = "Kapalı";
 "PHOTOS" = "Fotoğraflar";
 "CANCEL" = "İptal";
-"RETAKE" = "Retake";
+"RETAKE" = "Yeniden çek";
