@@ -36,19 +36,14 @@ import Cartography
     }
 
     func setIconImageView(imageURL: String?) {
-        guard let icon = imageURL, let attribute = attribute,
-            let url = URL(string: "https://static.openfoodfacts.org/images/icons/\(attribute.id!.contains("organic") ? "vegan-status-unknown" :  "nutrient-level-salt-medium").png")
-            // FIXME: DEBUG STAND IN VALUES, should be "icon" from attribute's imageURL
-        else {
+        guard let iconURL = imageURL, let attribute = attribute else {
             iconImageView.isHidden = false
             return
         }
-        iconImageView.kf.indicatorType = .activity
-        iconImageView.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil) { [weak self] _ in
-//            if let aspectRatioConstraint = self?.getIconAspectConstraint() {
-//                self?.addConstraint(aspectRatioConstraint)
-//            }
+        let url = URL(string: "https://static.openfoodfacts.org/images/icons/\(attribute.id!.contains("organic") ? "vegan-status-unknown" :  "nutrient-level-salt-medium").png")
+        // FIXME: DEBUG STAND IN VALUES, should be "icon" from attribute's imageURL
 
+        iconImageView.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil) { [weak self] _ in
             // wrap text around the image
             self?.layoutIfNeeded()
             let exclusionPathFrame = self?.convert((self?.iconImageView.frame)!, to: self?.descriptionShort)
@@ -57,18 +52,6 @@ import Cartography
             self?.layoutSubviews()
         }
         iconImageView.isHidden = false
-    }
-
-    func getIconAspectConstraint() -> NSLayoutConstraint? {
-        guard let imageView = iconImageView, let image = imageView.image else { return nil }
-        let height = image.size.width
-        let width = image.size.height
-
-        let aspectRatio = width / height
-
-        let aspectConstraint = NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: imageView, attribute: .height, multiplier: aspectRatio, constant: 0)
-
-        return aspectConstraint
     }
 }
 
