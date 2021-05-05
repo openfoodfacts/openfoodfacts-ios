@@ -23,4 +23,9 @@ class StringTests: XCTestCase {
     func testIsNumberReturnsFalseWhenStringIsNotNumber() {
         XCTAssertFalse("a".isNumber())
     }
+
+    func testAttributeGetWidthHeightFromSVG_HTML() {
+        let attribute = AttributeView(frame: CGRect())
+        XCTAssertNotNil(attribute.getSVGdimensions(from: "Test"))
+    }
 }

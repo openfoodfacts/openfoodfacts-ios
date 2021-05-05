@@ -15,5 +15,6 @@ struct Errors {
     enum codes: Int {
         case generic = 1
         case wrongCredentials = 2
+        case regexSearchStringError = 3
     }
 }

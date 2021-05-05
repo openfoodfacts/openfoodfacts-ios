@@ -22,20 +22,22 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                 </textView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ngw-Ux-P6K">
-                    <rect key="frame" x="11" y="14" width="60" height="60"/>
+                <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGQ-ib-cU1">
+                    <rect key="frame" x="8" y="11" width="50" height="50"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="Ngw-Ux-P6K" secondAttribute="height" multiplier="1:1" id="FCV-bV-VWq"/>
-                        <constraint firstAttribute="height" constant="60" id="wu1-dg-P77"/>
+                        <constraint firstAttribute="width" constant="50" id="ar0-Pe-ea5"/>
+                        <constraint firstAttribute="height" constant="50" id="deA-Kg-R47"/>
                     </constraints>
-                </imageView>
+                    <dataDetectorType key="dataDetectorTypes"/>
+                </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Xda-Qh-YCj" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="8ny-AB-rDO"/>
-                <constraint firstItem="Ngw-Ux-P6K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="11" id="IRk-HK-GuK"/>
+                <constraint firstItem="sGQ-ib-cU1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="J3E-pd-Rg3"/>
+                <constraint firstItem="sGQ-ib-cU1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="PXC-ch-6NZ"/>
                 <constraint firstAttribute="trailing" secondItem="Xda-Qh-YCj" secondAttribute="trailing" constant="5" id="fOX-tf-eHN"/>
-                <constraint firstItem="Ngw-Ux-P6K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="lnm-1O-2GG"/>
                 <constraint firstItem="Xda-Qh-YCj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="pFd-l9-eHA"/>
                 <constraint firstItem="Xda-Qh-YCj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yvr-9m-1xp"/>
             </constraints>
@@ -43,9 +45,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="descriptionShort" destination="Xda-Qh-YCj" id="cJA-i6-Fwu"/>
-                <outlet property="iconImageView" destination="Ngw-Ux-P6K" id="Yet-3a-gHr"/>
+                <outlet property="iconWebView" destination="sGQ-ib-cU1" id="WX5-pM-yeF"/>
             </connections>
-            <point key="canvasLocation" x="-56.5" y="-226.5"/>
+            <point key="canvasLocation" x="-57.600000000000001" y="-226.6866566716642"/>
         </view>
     </objects>
 </document>

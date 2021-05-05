@@ -12,7 +12,7 @@ import Cartography
 
 @IBDesignable class AttributeView: UIView {
 
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var iconWebView: UIWebView!
     @IBOutlet weak var descriptionShort: UITextView!
 
     var attribute: Attribute?
@@ -21,7 +21,9 @@ import Cartography
         self.layer.cornerRadius = 5
         self.attribute = attribute
 
-        setIconImageView(imageURL: attribute.iconUrl)
+        iconWebView.delegate = self
+        setIconWebView(imageURL: attribute.iconUrl)
+
         if let label = attribute.name, let description = attribute.descriptionShort ?? attribute.title {
             let text = AttributedStringFormatter.formatAttributedText(label: label, description1: description)
             descriptionShort.attributedText = text
@@ -35,23 +37,87 @@ import Cartography
         return view
     }
 
-    func setIconImageView(imageURL: String?) {
-        guard let iconURL = imageURL, let attribute = attribute else {
-            iconImageView.isHidden = false
+    func setIconWebView(imageURL: String?) {
+        guard let iconURL = imageURL else {
+            iconWebView.isHidden = true
+            iconWebView.removeFromSuperview()
             return
         }
-        let url = URL(string: "https://static.openfoodfacts.org/images/icons/\(attribute.id!.contains("organic") ? "vegan-status-unknown" :  "nutrient-level-salt-medium").png")
-        // FIXME: DEBUG STAND IN VALUES, should be "icon" from attribute's imageURL
 
-        iconImageView.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil) { [weak self] _ in
-            // wrap text around the image
-            self?.layoutIfNeeded()
-            let exclusionPathFrame = self?.convert((self?.iconImageView.frame)!, to: self?.descriptionShort)
-            let iconImagePath = UIBezierPath(rect: exclusionPathFrame!)
-            self?.descriptionShort.textContainer.exclusionPaths.append(iconImagePath)
-            self?.layoutSubviews()
+        if let url = URL(string: iconURL) {
+            let imageRequest = URLRequest(url: url)
+            iconWebView.loadRequest(imageRequest)
         }
-        iconImageView.isHidden = false
+
+        iconWebView.isHidden = false
+    }
+
+    private func scaleWebViewForSVGcontent(_ webView: UIWebView) {
+        let contentSize = webView.scrollView.contentSize
+        let webViewSize = webView.frame.size
+        print(webViewSize)//debug
+        let scaleFactor = webViewSize.width / contentSize.width
+
+        webView.scrollView.minimumZoomScale = scaleFactor
+        webView.scrollView.maximumZoomScale = scaleFactor
+        webView.scrollView.zoomScale = scaleFactor
+
+        webView.scalesPageToFit = false
+    }
+
+    private func wrapText(around webview: UIWebView) {
+        layoutIfNeeded()
+        let exclusionPathFrame = convert(webview.frame, to: descriptionShort)
+        let iconImagePath = UIBezierPath(rect: exclusionPathFrame)
+        descriptionShort.textContainer.exclusionPaths.append(iconImagePath)
+        layoutSubviews()
+    }
+
+    private func getHTMLfrom(webView: UIWebView) -> String? {
+        return webView.stringByEvaluatingJavaScript(from: "document.documentElement.outerHTML")
+    }
+
+    public func getSVGdimensions(from html: String?) -> CGSize? {
+        var contentSize: CGSize?
+        let searchString = """
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M14 20c-3.864 1.035-6.876-1.464-7-3 2.898-.776 6.224.102 7 3z" fill="#fff"/>
+                            """
+        let regexpA = "width=\""
+        let regexpB = "width=\"\\d*"
+        let regexpC = "height=\""
+        let regexpD = "height=\"\\d*"
+        do {
+            var width: CGFloat = 0
+            var height: CGFloat = 0
+            if let widthString = try searchString.searchBetweenRegexes(from: regexpA, to: regexpB) {
+                if let widthFloat = Float(widthString) {
+                    width = CGFloat(widthFloat)
+                }
+            }
+
+            if let heightString = try searchString.searchBetweenRegexes(from: regexpC, to: regexpD) {
+                if let heightFloat = Float(heightString) {
+                    height = CGFloat(heightFloat)
+                }
+            }
+
+            if width > 0 && height > 0 {
+                contentSize = CGSize(width: width, height: height)
+                return contentSize
+            }
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+
+        return nil
+    }
+}
+
+extension AttributeView: UIWebViewDelegate {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        wrapText(around: webView)
+        scaleWebViewForSVGcontent(webView)
     }
 }
 
