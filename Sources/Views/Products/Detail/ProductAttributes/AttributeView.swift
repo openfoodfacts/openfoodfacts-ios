@@ -53,24 +53,27 @@ import Cartography
     }
 
     private func scaleWebViewForSVGcontent(_ webView: UIWebView) {
-        let contentSize = webView.scrollView.contentSize
-        let webViewSize = webView.frame.size
-        print(webViewSize)//debug
-        let scaleFactor = webViewSize.width / contentSize.width
+        if let contentSize = getSVGdimensions(from: getHTMLfrom(webView: webView)) {
+            let webViewSize = webView.frame.size
+            print("webviewsize \(webViewSize)")//DEBUG
+            print("webview bounds \(webView.bounds.size)")//DEBUG
+            webView.scrollView.contentOffset = CGPoint(x: 0.0, y: 0.0)
+            let scaleFactor = webViewSize.width / contentSize.width
 
-        webView.scrollView.minimumZoomScale = scaleFactor
-        webView.scrollView.maximumZoomScale = scaleFactor
-        webView.scrollView.zoomScale = scaleFactor
+            webView.scrollView.minimumZoomScale = scaleFactor
+            webView.scrollView.maximumZoomScale = scaleFactor
+            webView.scrollView.zoomScale = scaleFactor
 
-        webView.scalesPageToFit = false
+            webView.scalesPageToFit = false
+        }
     }
 
     private func wrapText(around webview: UIWebView) {
-        layoutIfNeeded()
+//        layoutIfNeeded()
         let exclusionPathFrame = convert(webview.frame, to: descriptionShort)
         let iconImagePath = UIBezierPath(rect: exclusionPathFrame)
         descriptionShort.textContainer.exclusionPaths.append(iconImagePath)
-        layoutSubviews()
+//        layoutSubviews()
     }
 
     private func getHTMLfrom(webView: UIWebView) -> String? {
@@ -79,9 +82,7 @@ import Cartography
 
     public func getSVGdimensions(from html: String?) -> CGSize? {
         var contentSize: CGSize?
-        let searchString = """
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M14 20c-3.864 1.035-6.876-1.464-7-3 2.898-.776 6.224.102 7 3z" fill="#fff"/>
-                            """
+        guard let searchString = html else { return nil }
         let regexpA = "width=\""
         let regexpB = "width=\"\\d*"
         let regexpC = "height=\""
