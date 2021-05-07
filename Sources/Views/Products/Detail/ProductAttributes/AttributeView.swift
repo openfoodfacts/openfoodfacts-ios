@@ -14,6 +14,7 @@ import Cartography
 
     @IBOutlet weak var iconWebView: UIWebView!
     @IBOutlet weak var descriptionShort: UITextView!
+    @IBOutlet weak var activitySpinnerForIcon: UIActivityIndicatorView!
 
     var attribute: Attribute?
 
@@ -45,19 +46,18 @@ import Cartography
         }
 
         if let url = URL(string: iconURL) {
+            iconWebView.isHidden = false
+            wrapText(around: iconWebView)
+            activitySpinnerForIcon.startAnimating()
+            activitySpinnerForIcon.isHidden = false
             let imageRequest = URLRequest(url: url)
             iconWebView.loadRequest(imageRequest)
         }
-
-        iconWebView.isHidden = false
     }
 
     private func scaleWebViewForSVGcontent(_ webView: UIWebView) {
         if let contentSize = getSVGdimensions(from: getHTMLfrom(webView: webView)) {
             let webViewSize = webView.frame.size
-            print("webviewsize \(webViewSize)")//DEBUG
-            print("webview bounds \(webView.bounds.size)")//DEBUG
-            webView.scrollView.contentOffset = CGPoint(x: 0.0, y: 0.0)
             let scaleFactor = webViewSize.width / contentSize.width
 
             webView.scrollView.minimumZoomScale = scaleFactor
@@ -69,11 +69,9 @@ import Cartography
     }
 
     private func wrapText(around webview: UIWebView) {
-//        layoutIfNeeded()
         let exclusionPathFrame = convert(webview.frame, to: descriptionShort)
         let iconImagePath = UIBezierPath(rect: exclusionPathFrame)
         descriptionShort.textContainer.exclusionPaths.append(iconImagePath)
-//        layoutSubviews()
     }
 
     private func getHTMLfrom(webView: UIWebView) -> String? {
@@ -117,24 +115,23 @@ import Cartography
 
 extension AttributeView: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        wrapText(around: webView)
+        activitySpinnerForIcon.stopAnimating()
         scaleWebViewForSVGcontent(webView)
     }
 }
 
-protocol formatAttributedString {
+protocol FormatAttributedString {
     static var boldWordsPattern: String {get}
 
-    static func formatAttributedText(label: String, description1: String) -> NSMutableAttributedString?
+    static func formatAttributedText(label: String, description: String) -> NSMutableAttributedString?
     static func makeWordsBold(for originalText: NSAttributedString) -> NSAttributedString
 }
 
-class AttributedStringFormatter: formatAttributedString {
+class AttributedStringFormatter: FormatAttributedString {
     static var boldWordsPattern: String { return "(_\\w+_)" }
 
-    static func formatAttributedText(label: String, description1: String) -> NSMutableAttributedString? {
-        // TODO: change description1 parameter back to description and remove below temp var 'description'
-        var description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    static func formatAttributedText(label: String, description: String) -> NSMutableAttributedString? {
+
         let headline = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.headline), size: UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize)
         var bold: [NSAttributedString.Key: Any] = [:]
         if #available(iOS 13.0, *) {

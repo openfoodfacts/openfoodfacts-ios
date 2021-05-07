@@ -17,7 +17,6 @@ class ProductAttributeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .red// FIXME: coloring for UI DEBUG
         stackView.isHidden = true
 
         view.addSubview(stackView)
@@ -50,14 +49,12 @@ class ProductAttributeViewController: UIViewController {
         stackView.addArrangedSubview(attributeView)
         descriptionLabel = UILabel()
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.textAlignment = .center
+        descriptionLabel.textAlignment = .left
         descriptionLabel.font = UIFont.boldSystemFont(ofSize: 17)
-
         descriptionLabel.text = attribute.descriptionLong ?? attribute.descriptionShort ?? "empty description"
         stackView.addArrangedSubview(descriptionLabel)
         stackView.isHidden = false
         for subView in stackView.arrangedSubviews {
-            subView.backgroundColor = .green// FIXME: coloring for UI DEBUG
             subView.isHidden = false
         }
 

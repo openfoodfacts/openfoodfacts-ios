@@ -23,7 +23,7 @@
                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                 </textView>
                 <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGQ-ib-cU1">
-                    <rect key="frame" x="8" y="11" width="50" height="50"/>
+                    <rect key="frame" x="8" y="15" width="50" height="50"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="ar0-Pe-ea5"/>
@@ -31,19 +31,26 @@
                     </constraints>
                     <dataDetectorType key="dataDetectorTypes"/>
                 </webView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="y6D-i8-FYu">
+                    <rect key="frame" x="23" y="30" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Xda-Qh-YCj" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="8ny-AB-rDO"/>
-                <constraint firstItem="sGQ-ib-cU1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="J3E-pd-Rg3"/>
+                <constraint firstItem="sGQ-ib-cU1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="J3E-pd-Rg3"/>
                 <constraint firstItem="sGQ-ib-cU1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="PXC-ch-6NZ"/>
+                <constraint firstItem="y6D-i8-FYu" firstAttribute="centerY" secondItem="sGQ-ib-cU1" secondAttribute="centerY" id="bOP-BG-Y6a"/>
                 <constraint firstAttribute="trailing" secondItem="Xda-Qh-YCj" secondAttribute="trailing" constant="5" id="fOX-tf-eHN"/>
+                <constraint firstItem="y6D-i8-FYu" firstAttribute="centerX" secondItem="sGQ-ib-cU1" secondAttribute="centerX" id="jnY-wb-naj"/>
                 <constraint firstItem="Xda-Qh-YCj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="pFd-l9-eHA"/>
                 <constraint firstItem="Xda-Qh-YCj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yvr-9m-1xp"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="activitySpinnerForIcon" destination="y6D-i8-FYu" id="saB-Rj-b4u"/>
                 <outlet property="descriptionShort" destination="Xda-Qh-YCj" id="cJA-i6-Fwu"/>
                 <outlet property="iconWebView" destination="sGQ-ib-cU1" id="WX5-pM-yeF"/>
             </connections>
