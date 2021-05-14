@@ -31,7 +31,7 @@ extension ProductDetailViewController {
 
         floatingPanelController.set(contentViewController: productAttributeController)
 
-        floatingPanelController.surfaceView.backgroundColor = .clear
+        floatingPanelController.surfaceView.backgroundColor = .white
         floatingPanelController.surfaceView.cornerRadius = 9.0
         floatingPanelController.surfaceView.shadowHidden = false
         // Add a gesture to hide the floating panel

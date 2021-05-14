@@ -26,7 +26,7 @@ import Cartography
         setIconWebView(imageURL: attribute.iconUrl)
 
         if let label = attribute.name, let description = attribute.descriptionShort ?? attribute.title {
-            let text = AttributedStringFormatter.formatAttributedText(label: label, description1: description)
+            let text = AttributedStringFormatter.formatAttributedText(label: label, description: description)
             descriptionShort.attributedText = text
         }
     }

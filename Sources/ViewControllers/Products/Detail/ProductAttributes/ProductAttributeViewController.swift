@@ -22,8 +22,8 @@ class ProductAttributeViewController: UIViewController {
         view.addSubview(stackView)
         // constraints
         stackView.axis  = NSLayoutConstraint.Axis.vertical
-        stackView.distribution  = UIStackView.Distribution.equalSpacing
-        stackView.alignment = UIStackView.Alignment.center
+        stackView.distribution  = UIStackView.Distribution.fill
+        stackView.alignment = UIStackView.Alignment.fill
         stackView.spacing   = 8.0
 
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -46,8 +46,11 @@ class ProductAttributeViewController: UIViewController {
         resetView()
         guard let attributeView = attributeView,
               let attribute = attributeView.attribute else { return }
+        attributeView.setContentHuggingPriority(.init(rawValue: 250), for: .vertical)
         stackView.addArrangedSubview(attributeView)
+
         descriptionLabel = UILabel()
+        descriptionLabel.setContentHuggingPriority(.init(rawValue: 251), for: .vertical)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .left
         descriptionLabel.font = UIFont.boldSystemFont(ofSize: 17)
