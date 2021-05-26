@@ -44,8 +44,8 @@ extension String {
             throw NSError(domain: "RegexB must contain RegexA to find the difference between them", code: Errors.codes.regexSearchStringError.rawValue)
         }
 
-        let startIndex = self.range(of:endOfRegexA, options: .regularExpression)?.upperBound
-        let endIndex = self.range(of:endOfRegexB, options: .regularExpression)?.upperBound
+        let startIndex = self.range(of: endOfRegexA, options: .regularExpression)?.upperBound
+        let endIndex = self.range(of: endOfRegexB, options: .regularExpression)?.upperBound
         if let start = startIndex, let end = endIndex {
             let result = self[start..<end]
             return String(result)

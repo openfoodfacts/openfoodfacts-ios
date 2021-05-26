@@ -416,7 +416,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         rows.append(FormRow(value: product as Any, cellType: HostedViewCell.self))
 
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
-        
+
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
         // Info rows

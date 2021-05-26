@@ -23,7 +23,7 @@ class SummaryFormTableViewController: FormTableViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        //dismiss floating panel
+        // dismiss floating panel
         if let productDetailVC = delegate as? ProductDetailViewController {
             productDetailVC.hideFloatingPanel()
         }
