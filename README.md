@@ -85,7 +85,11 @@ New to Carthage? Others have found the following resources helpful:
 Before opening the project in Xcode, run 
 `
 brew install carthage
-carthage bootstrap --platform iOS --cache-builds` .
+`
+
+`
+carthage bootstrap --platform iOS --cache-builds
+`
 
 To generate the Xcode project run `sh scripts/create-project.sh`.
 In order to generate the Xcode project we use [XcodeGen](https://www.github.com/yonaskolb/XcodeGen).
