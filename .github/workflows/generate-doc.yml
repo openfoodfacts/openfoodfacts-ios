@@ -13,3 +13,4 @@ jobs:
       with:
         personal_access_token: ${{ secrets.ACCESS_TOKEN }}
         config: .jazzy.yaml
+        branch: gh-pages
