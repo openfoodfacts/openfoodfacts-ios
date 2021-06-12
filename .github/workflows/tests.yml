@@ -7,9 +7,9 @@ on:
 
 jobs:
   Test:
+    runs-on: macos-latest
     env:
       GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    runs-on: macos-latest
     steps:
       - name: Setup Xcode Version
       - uses: maxim-lobanov/setup-xcode@v1
