@@ -3,7 +3,7 @@ name: TestFlight release
 on:
   push:
     branches:
-      - 'release/*'
+      - '*'
 
 jobs:
   testflight-release:
