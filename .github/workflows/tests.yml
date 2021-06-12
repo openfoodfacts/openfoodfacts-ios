@@ -29,7 +29,7 @@ jobs:
           key: ${{ runner.os }}-carthage-${{ hashFiles('Cartfile.resolved') }}
       - name: Prepare xcodeproj
         run: sh scripts/setup.sh
-      - name: Testing Swift package
-        run: exec scripts/test_swift_package.sh
+      #- name: Testing Swift package
+     #   run: exec scripts/test_swift_package.sh
       - name: Testing iOS app
         run: exec scripts/test_app.sh
