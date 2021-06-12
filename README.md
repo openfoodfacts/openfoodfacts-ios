@@ -85,7 +85,11 @@ New to Carthage? Others have found the following resources helpful:
 Before opening the project in Xcode, run 
 `
 brew install carthage
-carthage bootstrap --platform iOS --cache-builds` .
+`
+
+`
+carthage bootstrap --platform iOS --cache-builds
+`
 
 To generate the Xcode project run `sh scripts/create-project.sh`.
 In order to generate the Xcode project we use [XcodeGen](https://www.github.com/yonaskolb/XcodeGen).
@@ -112,6 +116,8 @@ fastlane snapshot
 - [ ]  fixing Chinese screenshot generation
 - [ ]  Ensure we can generate for 1 of (iPhone 11 Pro Max, iPhone 11, iPhone XS Max, iPhone XR), 1 of (iPhone 6s Plus, iPhone 7 Plus, iPhone 8 Plus), 1 of (3rd generation iPad Pro)
 - [ ]  Extra: For debugging purposes, it would be great to have other screen resolutions (iPhone 11 Pro, iPhone X, iPhone XS) (iPhone 6, iPhone 6s, iPhone 7, iPhone 8) (iPhone SE) (iPhone 4s)
+
+Configuration: https://github.com/openfoodfacts/openfoodfacts-ios/blob/01ea37e5247978a52d491181bb7dd2fb384214af/Snapshots/SnapshotConfiguration.swift
 
 ### Style and conventions - SwiftLint
 
