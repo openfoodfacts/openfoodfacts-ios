@@ -1,9 +1,6 @@
 name: TestFlight release
 
-on:
-  push:
-    branches:
-      - '*'
+on: [push, pull_request]
 
 jobs:
   testflight-release:
