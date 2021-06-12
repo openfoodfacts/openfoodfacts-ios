@@ -17,6 +17,10 @@ jobs:
           xcode-version: '11.7.0'
       - name: Checkout sources
         uses: actions/checkout@v2
+      - name: Fix permissions 1
+        run: git update-index --chmod=+x ./.github/scripts/test_app.sh
+      - name: Fix permissions 2
+        run: git update-index --chmod=+x ./.github/scripts/test_swift_package.sh
       - name: Carthage cache
         uses: actions/cache@v2
         id: cache-carthage
