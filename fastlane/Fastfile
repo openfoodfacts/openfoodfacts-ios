@@ -7,7 +7,7 @@ fastlane_version "1.109.0"
 default_platform :ios
 
 before_all do
-  xcversion(version: "~> 11.7.0")
+  xcversion(version: "~> 12.3")
 end
 
 desc "Run all the tests"
