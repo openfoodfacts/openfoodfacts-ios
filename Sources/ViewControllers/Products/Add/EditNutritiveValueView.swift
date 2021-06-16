@@ -16,7 +16,7 @@ enum NutritiveUnits {
     case alcohol
     case none
 
-    func unitsValues() -> [String] {
+    public var unitsValues: [String] {
         switch self {
         case .kcal:
             return [
@@ -105,7 +105,7 @@ class EditNutritiveValueView: UIView {
         singleUnitLabel.isHidden = true
         unitButton.isHidden = true
 
-        let values = displayedUnit.unitsValues()
+        let values = displayedUnit.unitsValues
         selectedUnit = selectedValue ?? values.first
 
         if values.count == 1 {
@@ -137,7 +137,7 @@ class EditNutritiveValueView: UIView {
     }
 
     @IBAction func unitButtonTapped(_ sender: Any) {
-        let values = displayedUnit.unitsValues()
+        let values = displayedUnit.unitsValues
 
         if values.count < 2 {
             // button should not be visible anyway ?
