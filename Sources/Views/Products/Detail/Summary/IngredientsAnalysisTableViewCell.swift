@@ -12,7 +12,7 @@ class IngredientsAnalysisTableViewCell: ProductDetailBaseCell {
 
     @IBOutlet weak var stackView: UIStackView!
 
-    var viewController: FormTableViewController?
+    weak var viewController: FormTableViewController?
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let product = formRow.value as? Product else { return }
