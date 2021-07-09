@@ -7,12 +7,12 @@ fastlane_version "1.109.0"
 default_platform :ios
 
 before_all do
-  xcversion(version: "~> 11.7.0")
+  xcversion(version: "~> 12.0")
 end
 
 desc "Run all the tests"
 lane :test do
-  carthage(command: "bootstrap", platform: "iOS", cache_builds: true, use_binaries: false)
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true, use_binaries: false, use_xcframeworks: true)
   if !is_ci
     sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool no")
   end
@@ -44,7 +44,7 @@ desc "Build and send the beta to TestFlight. The script will perform the followi
 lane :beta do
   APP_IDENTIFIER = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 
-  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true, use_xcframeworks: true)
 
   # get the version to upload to from the app store (editing version if any, or live + 1)
   # if the version set in the project is higher than the one in live or edit, then it is chosen
