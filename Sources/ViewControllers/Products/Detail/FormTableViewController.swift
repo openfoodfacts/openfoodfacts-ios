@@ -85,9 +85,11 @@ class FormTableViewController: UITableViewController {
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
     }
 
-    func showLogin() {
+    func showLogin(forIncentive: UserViewController.LoginIncentive? = nil) {
         guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
             return }
+
+        loginVC.incentive = forIncentive
         loginVC.dataManager = dataManager
 
         let navVC = UINavigationController(rootViewController: loginVC)

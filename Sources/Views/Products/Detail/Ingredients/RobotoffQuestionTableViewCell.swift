@@ -143,7 +143,7 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
 
             page.actionHandler = { item in
                 item.manager?.dismissBulletin()
-                self.viewController?.showLogin()
+                self.viewController?.showLogin(forIncentive: .robotoff)
             }
             page.alternativeHandler = { item in
                 item.manager?.dismissBulletin()
@@ -151,6 +151,8 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
 
             bulletinManager = BLTNItemManager(rootItem: page)
             bulletinManager.showBulletin(in: UIApplication.shared)
+
+            AnalyticsManager.shared.track(event: Events.UserAccount.robotoffLoginPrompt())
 
             return
         }

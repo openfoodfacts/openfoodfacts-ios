@@ -75,7 +75,7 @@ class InfoRowTableViewCell: ProductDetailBaseCell {
             }
         } catch let error {
             let userInfo = ["bold_words_pattern": boldWordsPattern, "original_text": originalText.string]
-            AnalyticsManager.record(error: error, withAdditionalUserInfo: userInfo)
+            AnalyticsManager.shared.record(error: error, withAdditionalUserInfo: userInfo)
         }
 
         return highlightedText

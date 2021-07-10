@@ -132,7 +132,7 @@ class OfflineProductsService: OfflineProductsApi {
                                 OfflineProductsService.deleteFile(atURL: unzipedFolderPath)
                             } catch let error {
                                 log.error("[Offline_products] Error listing unzipped files! \(error)")
-                                AnalyticsManager.record(error: error)
+                                AnalyticsManager.shared.record(error: error)
                                 success = false
                             }
                             OfflineProductsService.deleteFile(atURL: localFilePath)

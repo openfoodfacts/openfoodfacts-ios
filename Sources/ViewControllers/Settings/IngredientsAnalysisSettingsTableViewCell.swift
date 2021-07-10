@@ -27,7 +27,7 @@ class IngredientsAnalysisSettingsTableViewCell: UITableViewCell {
 
     @objc func changeSwitch(sender: UISwitch) {
         if let detailType = detailType {
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detailType))
+            IngredientsAnalysis.setDisplayIngredientAnalysisStatus(disabled: !sender.isOn, forDetailsType: detailType)
         }
     }
 }

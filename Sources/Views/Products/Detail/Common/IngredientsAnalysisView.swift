@@ -256,7 +256,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
 
     @objc func changeSwitch(sender: UISwitch) {
         if let detail = detail {
-            UserDefaults.standard.set(!sender.isOn, forKey: UserDefaultsConstants.disableDisplayIngredientAnalysisStatus(detail.type))
+            IngredientsAnalysis.setDisplayIngredientAnalysisStatus(disabled: !sender.isOn, forDetailsType: detail.type)
         }
     }
 

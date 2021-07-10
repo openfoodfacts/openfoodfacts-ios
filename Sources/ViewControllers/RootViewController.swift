@@ -58,6 +58,12 @@ class RootViewController: UIViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        AnalyticsManager.shared.showAnalyticsBulletinBoardIfNeeded(above: self)
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("RootViewController: init(coder:) has not been implemented")
     }
