@@ -24,7 +24,7 @@ fi
 echo "✨ Installing mint dependencies"
 mint bootstrap -l
 
-if [ "$CI" = true ] ; then
+if [ "${CI:-}" = true ] ; then
   echo "✨ Skipping carthage dependencies as CI=true"
 else
   echo "✨ Installing carthage dependencies"
