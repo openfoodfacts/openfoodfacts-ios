@@ -51,30 +51,30 @@ targets:
     dependencies:
       - sdk: MobileCoreServices.framework
       - sdk: AVFoundation.framework
-      - carthage: Alamofire
-      - carthage: AlamofireImage
-      - carthage: AlamofireObjectMapper
-      - carthage: BLTNBoard
-      - carthage: Cartography
-      - carthage: FloatingPanel
-      - carthage: IBLocalizable
-      - carthage: ImageViewer
-      - carthage: IQKeyboardManagerSwift
-      - carthage: KeychainAccess
-      - carthage: Kingfisher
-      - carthage: MarqueeLabel
-      - carthage: NotificationBanner
-      - carthage: ObjcExceptionBridging
-      - carthage: ObjectMapper
-      - carthage: Realm
-      - carthage: RealmSwift
-      - carthage: Sentry
-      - carthage: SnapKit
-      - carthage: SVProgressHUD
-      - carthage: TOCropViewController
-      - carthage: XCGLogger
-      - carthage: XLPagerTabStrip
-      - carthage: Zip
+      - framework: Carthage/Build/Alamofire.xcframework
+      - framework: Carthage/Build/AlamofireImage.xcframework
+      - framework: Carthage/Build/AlamofireObjectMapper.xcframework
+      - framework: Carthage/Build/BLTNBoard.xcframework
+      - framework: Carthage/Build/Cartography.xcframework
+      - framework: Carthage/Build/FloatingPanel.xcframework
+      - framework: Carthage/Build/IBLocalizable.xcframework
+      - framework: Carthage/Build/ImageViewer.xcframework
+      - framework: Carthage/Build/IQKeyboardManagerSwift.xcframework
+      - framework: Carthage/Build/KeychainAccess.xcframework
+      - framework: Carthage/Build/Kingfisher.xcframework
+      - framework: Carthage/Build/MarqueeLabel.xcframework
+      - framework: Carthage/Build/NotificationBanner.xcframework
+      - framework: Carthage/Build/ObjcExceptionBridging.xcframework
+      - framework: Carthage/Build/ObjectMapper.xcframework
+      - framework: Carthage/Build/Realm.xcframework
+      - framework: Carthage/Build/RealmSwift.xcframework
+      - framework: Carthage/Build/Sentry.xcframework
+      - framework: Carthage/Build/SnapKit.xcframework
+      - framework: Carthage/Build/SVProgressHUD.xcframework
+      - framework: Carthage/Build/TOCropViewController.xcframework
+      - framework: Carthage/Build/XCGLogger.xcframework
+      - framework: Carthage/Build/XLPagerTabStrip.xcframework
+      - framework: Carthage/Build/Zip.xcframework
 
     preBuildScripts:
       - script: |
@@ -93,9 +93,9 @@ targets:
       - path: TestResources
     dependencies:
       - target: OpenFoodFacts
-      - carthage: Nimble
-      - carthage: Quick
-      - carthage: OHHTTPStubs
+      - framework: Carthage/Build/Nimble.xcframework
+      - framework: Carthage/Build/Quick.xcframework
+      - framework: Carthage/Build/OHHTTPStubs.xcframework
   
   OpenFoodFactsUITests:
     type: bundle.ui-testing
@@ -106,7 +106,7 @@ targets:
       - path: Sources/Helpers/AccessibilityIdentifiers.swift
     dependencies:
       - target: OpenFoodFacts
-      - carthage: Swifter
+      - framework: Carthage/Build/Swifter.xcframework
 
   OpenFoodFactsSnapshots:
     type: bundle.ui-testing
