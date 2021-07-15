@@ -32,6 +32,12 @@ jobs:
 
       - name: Prepare xcodeproj
         run: sh scripts/setup.sh
+        
+     # - name: Custom Carthage for Xcode12
+        #run: sh scripts/carthage-build.sh build --platform iOS --no-use-binaries libPhoneNumber-iOS
+        #and I generated the framework with all the architectures that I need
+        #lipo -info Carthage/Build/iOS/libPhoneNumberiOS.framework/libPhoneNumberiOS
+        #architectures in the fat file: Carthage/Build/iOS/libPhoneNumberiOS.framework/libPhoneNumberiOS are: armv7 i386 x86_64 arm64
 
       - name: Run Fastlane beta lane
         run: bundle exec fastlane beta
