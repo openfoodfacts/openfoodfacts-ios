@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import FloatingPanel
 
 class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient {
 
@@ -16,6 +17,11 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     var latestRobotoffQuestions: [RobotoffQuestion] = []
     var dataManager: DataManagerProtocol!
     private var notificationCentertoken: NotificationCenterToken?
+
+    // for Product Attribute detail display
+    var floatingPanelController: FloatingPanelController!
+    var productAttributeFloatingPanelLayout = ProductAttributeFloatingPanelLayout()
+    var productAttributeController: ProductAttributeViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +48,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
         }
+
+        // set up floatingPanel for ProductAttributes UI
+        configureFloatingPanel()
+
         setUserAgent()
 
         notificationCentertoken = NotificationCenter.default.observe(
@@ -61,8 +71,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        //TODO: Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
-
         if let parentVc = parent as? UINavigationController {
 
             parentVc.navigationBar.isTranslucent = false
@@ -74,6 +82,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
 
         self.refreshLatestRobotoffQuestion()
+
+        // floatingPanel
+        self.floatingPanelController.move(to: .hidden, animated: false)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -242,6 +253,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: tag)
         }), label: InfoRowKey.countries.localizedString)
 
+        createProductAttributeRows(rows: &rows)
+        
         // Footer
         rows.append(FormRow(value: product as Any, cellType: SummaryFooterCell.self))
 
@@ -403,7 +416,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         rows.append(FormRow(value: product as Any, cellType: HostedViewCell.self))
 
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
-        
+
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
         // Info rows
@@ -506,6 +519,23 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             for item in minerals {
                 if let nutritionTableRow = item.nutritionTableRow {
                     createFormRow(with: &rows, item: nutritionTableRow, cellType: NutritionTableRowTableViewCell.self)
+                }
+            }
+        }
+    }
+
+    private func createProductAttributeRows(rows: inout [FormRow]) {
+        if let attributeGroups = product.productAttributes?.attributeGroups {
+            for attrGroup in attributeGroups where attrGroup.id == "labels" {
+                if let attributes = attrGroup.attributes {
+                    for attribute in attributes {
+                        if let desc = attribute.descriptionShort ?? attribute.title,
+                            desc != "", let name = attribute.name, name != "" {
+                            createFormRow(with: &rows, item: AttributeTableRow(self, attribute: attribute), label: attribute.name, cellType: AttributeTableViewCell.self)
+                        } else {
+                            continue
+                        }
+                    }
                 }
             }
         }
