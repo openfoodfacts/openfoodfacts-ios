@@ -4,7 +4,7 @@
 # Open Food Facts iPhone and iPad app
 
 [![Build Status](https://travis-ci.org/openfoodfacts/openfoodfacts-ios.svg?branch=master)](https://travis-ci.org/openfoodfacts/openfoodfacts-ios)
-[![Project Status](http://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
+[![Project Status](https://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/openfoodfacts/localized.svg)](https://translate.openfoodfacts.org)
 ![TestFlight release](https://github.com/openfoodfacts/openfoodfacts-ios/workflows/TestFlight%20release/badge.svg)
 <br>
@@ -85,7 +85,11 @@ New to Carthage? Others have found the following resources helpful:
 Before opening the project in Xcode, run 
 `
 brew install carthage
-carthage bootstrap --platform iOS --cache-builds` .
+`
+
+`
+carthage bootstrap --platform iOS --cache-builds
+`
 
 To generate the Xcode project run `sh scripts/create-project.sh`.
 In order to generate the Xcode project we use [XcodeGen](https://www.github.com/yonaskolb/XcodeGen).
