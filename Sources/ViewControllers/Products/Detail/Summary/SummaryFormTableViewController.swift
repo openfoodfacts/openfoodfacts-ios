@@ -22,6 +22,13 @@ class SummaryFormTableViewController: FormTableViewController {
         super.init(coder: aDecoder)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        // dismiss floating panel
+        if let productDetailVC = delegate as? ProductDetailViewController {
+            productDetailVC.hideFloatingPanel()
+        }
+    }
+
     override func getCell(for formRow: FormRow) -> UITableViewCell {
         if formRow.cellType is SummaryHeaderCell.Type, let product = formRow.value as? Product {
             let cell = tableView.dequeueReusableCell(withIdentifier: formRow.cellType.identifier) as! HostedViewCell // swiftlint:disable:this force_cast
