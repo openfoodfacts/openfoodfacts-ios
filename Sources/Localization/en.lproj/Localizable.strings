@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scan the barcode of the product";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -101,7 +101,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Name";
 "product-add.label.category" = "Category";
 "product-add.label.quantity" = "Quantity";
@@ -215,7 +215,7 @@
 "product-detail.environment.ecoscore.d" = "Strong impact on the environment";
 "product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
