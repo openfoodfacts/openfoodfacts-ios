@@ -4,7 +4,7 @@
 # Open Food Facts iPhone and iPad app
 
 [![Build Status](https://travis-ci.org/openfoodfacts/openfoodfacts-ios.svg?branch=master)](https://travis-ci.org/openfoodfacts/openfoodfacts-ios)
-[![Project Status](http://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
+[![Project Status](https://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/openfoodfacts/localized.svg)](https://translate.openfoodfacts.org)
 ![TestFlight release](https://github.com/openfoodfacts/openfoodfacts-ios/workflows/TestFlight%20release/badge.svg)
 <br>
