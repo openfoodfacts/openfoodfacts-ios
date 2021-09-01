@@ -19,13 +19,7 @@
 Open Food Facts on iPhone and iPad has 0,5M users and 1,6M products. Each contribution you make will have a large impact on food transparency worldwide. Finding the right issue or feature will help you have even more more impact. Feel free to ask for feedback on the #android channel before you start work, and to document what you intend to code.
 
 ### Features you can work on
-- [ ] [Show additives evaluation on cards](https://github.com/openfoodfacts/openfoodfacts-ios/issues/173)
-- [ ] [Add a mode to compare 2 (or more) products](https://github.com/openfoodfacts/openfoodfacts-ios/issues/153)
-- [ ] Add a [Lists system (shopping list, nutritional intake, scan history…)]((https://github.com/openfoodfacts/openfoodfacts-ios/issues/881)
-- [ ] [Add a prompt to extract ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171) so that we can have a simple way to NOVA, vegetarian, vegan, additive status
-- [ ] Finish the [new product page revamp based on the Attributes API](https://github.com/openfoodfacts/openfoodfacts-ios/pull/780)
-- [ ] Add support for cosmetics (Open Beauty Facts) and other products [#687](https://github.com/openfoodfacts/openfoodfacts-ios/issues/687) and [#160](https://github.com/openfoodfacts/openfoodfacts-ios/issues/160)
-- [ ] [Cache viewed products on-device so that they load fast and regardless of network conditions](https://github.com/openfoodfacts/openfoodfacts-ios/issues/882)
+- [ ] [What can I work on ?](https://github.com/openfoodfacts/openfoodfacts-ios/issues/912)
 
 ## Join the team !
 
@@ -43,32 +37,6 @@ OpenFoodFacts [has a Slack chat room where we discuss and support each other](ht
 - [x] Product addition & editing (incl. on-the-fly OCR of ingredients and labels, plus integration of the OFF AI)
 - [x] Image upload
 - [x] Night mode
-
-### Issues
-Here are issues and feature requests you can work on:
-
-#### Search issues
-- [ ]  [Disable search as you type: it does not work and causes performance issues on the server P1 bug search](https://github.com/openfoodfacts/openfoodfacts-ios/issues/553)
-
-#### Scan issues
-- [ ]  [Card is completely blank if no name/brand/quantity/image is selected](https://github.com/openfoodfacts/openfoodfacts-ios/issues/180)
-
-#### History issues
-- [ ]  [Offline scans are not added to your history](https://github.com/openfoodfacts/openfoodfacts-ios/issues/267)
-- [ ]  [Allow to export the product history](https://github.com/openfoodfacts/openfoodfacts-ios/issues/53)
-
-#### Product editing issues
-- [ ]  [Add a prompt to extract Ingredients when photo is already present](https://github.com/openfoodfacts/openfoodfacts-ios/issues/171)
-
-#### Refactoring issues
-- [ ]  [Storyboardify app](https://github.com/openfoodfacts/openfoodfacts-ios/issues/403)
-- [ ]  [Try to support iOS 9 again](https://github.com/openfoodfacts/openfoodfacts-ios/issues/115)
-
-#### Onboarding new users
-- [ ]  [Add a dynamic changelog](https://github.com/openfoodfacts/openfoodfacts-ios/issues/335)
-
-#### Viewing products
-- [ ]  [Traces are not translated](https://github.com/openfoodfacts/openfoodfacts-ios/issues/245)
 
 ## Building
 
@@ -108,16 +76,8 @@ brew cask install fastlane
 fastlane snapshot 
 ```
 ##### Roadmap on automatic screenshot generation:
-- [ ]  Create a GitHub Action to run screenshot generation and upload the output to the OFF server (or somewhere else)
-- [ ]  fixing the Scan screenshot generation, and adding a way to set the background of the barcode scanner with an arbitrary image, per country
-- [ ]  fixing History screenshot population with products
-- [ ]  Adding the proposed fix to clean the top bar with 100% battery, and a fixed time
-- [ ]  Adding `fastlane frameit` to the Fastlane file, so that we can get versions wrapped in physical devices
-- [ ]  fixing Chinese screenshot generation
-- [ ]  Ensure we can generate for 1 of (iPhone 11 Pro Max, iPhone 11, iPhone XS Max, iPhone XR), 1 of (iPhone 6s Plus, iPhone 7 Plus, iPhone 8 Plus), 1 of (3rd generation iPad Pro)
-- [ ]  Extra: For debugging purposes, it would be great to have other screen resolutions (iPhone 11 Pro, iPhone X, iPhone XS) (iPhone 6, iPhone 6s, iPhone 7, iPhone 8) (iPhone SE) (iPhone 4s)
-
-Configuration: https://github.com/openfoodfacts/openfoodfacts-ios/blob/01ea37e5247978a52d491181bb7dd2fb384214af/Snapshots/SnapshotConfiguration.swift
+* [Our priorities](https://github.com/openfoodfacts/openfoodfacts-ios/issues/913)
+* [Configuration file](https://github.com/openfoodfacts/openfoodfacts-ios/blob/01ea37e5247978a52d491181bb7dd2fb384214af/Snapshots/SnapshotConfiguration.swift)
 
 ### Style and conventions - SwiftLint
 

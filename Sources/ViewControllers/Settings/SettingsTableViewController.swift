@@ -34,12 +34,14 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
     @IBOutlet weak var creditsCell: UITableViewCell!
     @IBOutlet weak var contactCell: UITableViewCell!
+    @IBOutlet weak var bottomLink: UIButton!
 
     var dataManager: DataManagerProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "settings.tab-bar.item".localized
+        configureForDynamicType()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -147,5 +149,13 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+private extension SettingsTableViewController {
+    func configureForDynamicType() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200
+        bottomLink.titleLabel?.adjustsFontForContentSizeCategory = true
     }
 }
