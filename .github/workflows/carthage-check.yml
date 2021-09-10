@@ -2,7 +2,7 @@ name: Check Package
 
 on:
   push:
-    branches: *
+    branches: '*'
 jobs:
   carthage:
     runs-on: macOS-latest
