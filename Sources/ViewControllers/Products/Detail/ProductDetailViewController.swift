@@ -625,7 +625,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
 // MARK: - Refresh delegate
 
-protocol ProductDetailRefreshDelegate: class {
+protocol ProductDetailRefreshDelegate: AnyObject {
     func refreshProduct(completion: () -> Void)
 }
 

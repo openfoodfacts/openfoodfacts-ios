@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-protocol FormTableViewControllerDelegate: class {
+protocol FormTableViewControllerDelegate: AnyObject {
     func cellSizeDidChange()
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-protocol SearchViewControllerDelegate: class {
+protocol SearchViewControllerDelegate: AnyObject {
     func showProductDetails(product: Product)
 }
 

@@ -299,7 +299,7 @@ class ProductServiceTests: XCTestCase {
 
         productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
-        expect(resultSuccessful).toEventually(beTrue(), timeout: 10)
+        expect(resultSuccessful).toEventually(beTrue(), timeout: .seconds(10))
     }
 
     func testLoginShouldReturnErrorWhenCredentialsAreWrong() {
@@ -317,7 +317,7 @@ class ProductServiceTests: XCTestCase {
 
         productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
-        expect((result as NSError?)?.code).toEventually(equal(Errors.codes.wrongCredentials.rawValue), timeout: 10)
+        expect((result as NSError?)?.code).toEventually(equal(Errors.codes.wrongCredentials.rawValue), timeout: .seconds(10))
     }
 
     func testLoginShouldReturnErrorWhenServerReturnsError() {
@@ -333,6 +333,6 @@ class ProductServiceTests: XCTestCase {
 
         productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
-        expect((result as NSError?)?.code).toEventually(equal(networkDownErrorCode), timeout: 10)
+        expect((result as NSError?)?.code).toEventually(equal(networkDownErrorCode), timeout: .seconds(10))
     }
 }

@@ -49,7 +49,7 @@ targets:
         CURRENT_PROJECT_VERSION: 44
         DEVELOPMENT_TEAM: ZC9CYWD334
     dependencies:
-      - sdk: MobileCoreServices.framework
+      - sdk: CoreServices.framework
       - sdk: AVFoundation.framework
       - framework: Carthage/Build/Alamofire.xcframework
       - framework: Carthage/Build/AlamofireImage.xcframework

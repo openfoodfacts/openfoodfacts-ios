@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-protocol SelectAllergenDelegate: class {
+protocol SelectAllergenDelegate: AnyObject {
     func didSelect(allergen: Allergen)
 }
 
