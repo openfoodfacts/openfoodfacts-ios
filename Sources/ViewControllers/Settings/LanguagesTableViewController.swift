@@ -14,7 +14,7 @@ extension Notification.Name {
 
 class LanguagesTableViewController: UITableViewController {
     private let languages = Bundle.main.appLocalizations()
-    private let currentLocalization = Bundle().currentLocalization
+    private let currentLocalization = Bundle.main.currentLocalization
     private let cellReuseIdentifier = "languageCell"
 
     init() {

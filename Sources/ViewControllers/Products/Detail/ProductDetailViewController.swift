@@ -10,7 +10,7 @@ import UIKit
 import XLPagerTabStrip
 import FloatingPanel
 
-class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient {
+class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient { // swiftlint:disable:this type_body_length
 
     var hideSummary: Bool = false
     var product: Product!
@@ -234,7 +234,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
             // We should use Textstyle body, but that does not exist in italic
-            //let attributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 17.0)]
+//            let attributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 17.0)]
             return NSAttributedString(string: labelTag.localLanguageCodeRemoved, attributes: [NSAttributedString.Key.obliqueness: 0.2])
         }), label: InfoRowKey.labels.localizedString)
 
@@ -264,7 +264,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     }
 
     // swiftlint:disable function_body_length
-    private func createIngredientsForm() -> Form {
+    private func createIngredientsForm() -> Form { // swiftlint:disable:this cyclomatic_complexity
         var rows = [FormRow]()
 
         // Header
@@ -335,7 +335,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: other.value.capitalized)
         }), label: InfoRowKey.otherNutritionalSubstances.localizedString)
 
-        //createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
+//        createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
 
         createAdditivesRows(with: &rows, product: product)
 
@@ -353,7 +353,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
 
         var items: [Any] = []
-        items.append(NSAttributedString(string: " "))    //to have the first carriage return from the join with separator
+        items.append(NSAttributedString(string: " ")) // to have the first carriage return from the join with separator
         items.append(contentsOf: additives.map({ (additive: Tag) -> NSAttributedString in
             if let additive = dataManager.additive(forTag: additive) {
                 if let name = Tag.choose(inTags: Array(additive.names)) {
@@ -397,7 +397,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
                 createFormRow(with: &rows, item: "product-detail.nutrition-table.noNutritionData".localized, label: InfoRowKey.nutritionalTableHeader.localizedString, isCopiable: true)
             }
-            //createNutritionTableRows(rows: &rows)
+//            createNutritionTableRows(rows: &rows)
         } else {
             createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
             createFormRow(with: &rows, item: "product-detail.nutrition-table.missing".localized, label: InfoRowKey.nutritionalTableHeader.localizedString, isCopiable: true)
@@ -564,7 +564,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         guard let html = product.environmentInfoCard else {
             return
         }
-        //createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+//        createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
         createFormRow(with: &rows, item: html, label: nil, cellType: ProductDetailWebViewTableViewCell.self, isCopiable: false)
     }
 
@@ -586,7 +586,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
              guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
                  return }
              loginVC.dataManager = dataManager
-             //loginVC.delegate = self
+//             loginVC.delegate = self
 
              let navVC = UINavigationController(rootViewController: loginVC)
              loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ProductDetailViewController.dismissVC))
@@ -651,7 +651,7 @@ extension ProductDetailViewController: ProductDetailRefreshDelegate {
 extension ProductDetailViewController: NutritionHeaderTableViewCellDelegate {
 
     // function to let the delegate know that the switch changed
-    //func tagListViewAddImageTableViewCell(_ sender: TagListViewAddImageTableViewCell, receivedDoubleTapOn tagListView:TagListView)
+//    func tagListViewAddImageTableViewCell(_ sender: TagListViewAddImageTableViewCell, receivedDoubleTapOn tagListView:TagListView)
     public func nutritionHeaderTableViewCellDelegate(_ sender: NutritionHeaderTableViewCell, receivedTapOn button: UIButton) {
 
         if let url = URL(string: URLs.NutriScore) {
@@ -663,3 +663,4 @@ extension ProductDetailViewController: NutritionHeaderTableViewCellDelegate {
     }
 
 }
+// swiftlint:disable:this file_length
