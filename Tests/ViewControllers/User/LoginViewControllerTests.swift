@@ -68,7 +68,7 @@ import SafariServices
 //
 //        viewController.didTapLoginButton(UIButton())
 //
-//        expect(self.dataManager.didLogIn).toEventually(beTrue(), timeout: 10)
+//        expect(self.dataManager.didLogIn).toEventually(beTrue(), timeout: .seconds(10))
 //        expect(self.delegate.dismissCalled).to(beTrue())
 //    }
 //
@@ -78,11 +78,11 @@ import SafariServices
 //        viewController.usernameField.text = username
 //        viewController.passwordField.text = password
 //        viewController.usernameField.becomeFirstResponder()
-//        expect(self.viewController.usernameField.isFirstResponder).toEventually(beTrue(), timeout: 10)
+//        expect(self.viewController.usernameField.isFirstResponder).toEventually(beTrue(), timeout: .seconds(10))
 //
 //        viewController.didTapLoginButton(UIButton())
 //
-//        expect(self.viewController.usernameField.isFirstResponder).toEventually(beFalse(), timeout: 10)
+//        expect(self.viewController.usernameField.isFirstResponder).toEventually(beFalse(), timeout: .seconds(10))
 //    }
 //
 //    func testDidTapLoginButtonShouldResignPasswordFieldAsFirstResponder() {
@@ -91,11 +91,11 @@ import SafariServices
 //        viewController.usernameField.text = username
 //        viewController.passwordField.text = password
 //        viewController.passwordField.becomeFirstResponder()
-//        expect(self.viewController.passwordField.isFirstResponder).toEventually(beTrue(), timeout: 10)
+//        expect(self.viewController.passwordField.isFirstResponder).toEventually(beTrue(), timeout: .seconds(10))
 //
 //        viewController.didTapLoginButton(UIButton())
 //
-//        expect(self.viewController.passwordField.isFirstResponder).toEventually(beFalse(), timeout: 10)
+//        expect(self.viewController.passwordField.isFirstResponder).toEventually(beFalse(), timeout: .seconds(10))
 //    }
 //
 //    func testDidTapLoginButtonShouldShowErrorBannerWhenApiReturnsWrongCredentialsError() {
@@ -106,9 +106,9 @@ import SafariServices
 //
 //        viewController.didTapLoginButton(UIButton())
 //
-//        expect(self.viewController.errorBanner.titleLabel?.text).toEventually(equal("user.alert.wrong-credentials.title".localized), timeout: 10)
-//        expect(self.viewController.errorBanner.subtitleLabel?.text).toEventually(equal("user.alert.wrong-credentials.subtitle".localized), timeout: 10)
-//        expect(self.viewController.errorBanner.isDisplaying).toEventually(beTrue(), timeout: 10)
+//        expect(self.viewController.errorBanner.titleLabel?.text).toEventually(equal("user.alert.wrong-credentials.title".localized), timeout: .seconds(10))
+//        expect(self.viewController.errorBanner.subtitleLabel?.text).toEventually(equal("user.alert.wrong-credentials.subtitle".localized), timeout: .seconds(10))
+//        expect(self.viewController.errorBanner.isDisplaying).toEventually(beTrue(), timeout: .seconds(10))
 //    }
 //
 //    func skiptestDidTapLoginButtonShouldShowErrorBannerWhenApiReturnsGenericError() {
@@ -117,14 +117,14 @@ import SafariServices
 //        viewController.usernameField.text = username
 //        viewController.passwordField.text = password
 //        viewController.usernameField.becomeFirstResponder()
-//        expect(self.viewController.usernameField.isFirstResponder).toEventually(beTrue(), timeout: 10)
+//        expect(self.viewController.usernameField.isFirstResponder).toEventually(beTrue(), timeout: .seconds(10))
 //
 //        viewController.didTapLoginButton(UIButton())
 //
-//        expect(self.viewController.usernameField.isFirstResponder).toEventually(beFalse(), timeout: 10)
-//        expect(self.viewController.errorBanner.titleLabel?.text).toEventually(equal("user.alert.generic-error.title".localized), timeout: 10)
-//        expect(self.viewController.errorBanner.subtitleLabel?.text).toEventually(equal("user.alert.generic-error.subtitle".localized), timeout: 10)
-//        expect(self.viewController.errorBanner.isDisplaying).toEventually(beTrue(), timeout: 10)
+//        expect(self.viewController.usernameField.isFirstResponder).toEventually(beFalse(), timeout: .seconds(10))
+//        expect(self.viewController.errorBanner.titleLabel?.text).toEventually(equal("user.alert.generic-error.title".localized), timeout: .seconds(10))
+//        expect(self.viewController.errorBanner.subtitleLabel?.text).toEventually(equal("user.alert.generic-error.subtitle".localized), timeout: .seconds(10))
+//        expect(self.viewController.errorBanner.isDisplaying).toEventually(beTrue(), timeout: .seconds(10))
 //    }
 //
 //    func skiptestDidTapLoginButtonShowAlertWhenUsernameNotPresent() {
@@ -141,7 +141,7 @@ import SafariServices
 //
 //        viewController.didTapLoginButton(UIButton())
 //
-//        expect(self.viewController.presentedViewController is UIAlertController).toEventually(beTrue(), timeout: 10)
+//        expect(self.viewController.presentedViewController is UIAlertController).toEventually(beTrue(), timeout: .seconds(10))
 //        let alertController = self.viewController.presentedViewController as! UIAlertController
 //        expect(alertController.title).to(equal("user.alert.password-missing".localized))
 //        expect(alertController.actions[0].title).to(equal("alert.action.ok".localized))

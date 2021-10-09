@@ -70,7 +70,7 @@ class ProductService: ProductApi {
 
         AnalyticsManager.log(searchType, forKey: "product_search_type")
         AnalyticsManager.log("\(page)", forKey: "product_search_page")
-        //Answers.logSearch(withQuery: query, customAttributes: ["file": String(describing: ProductService.self), "search_type": searchType])
+//        Answers.logSearch(withQuery: query, customAttributes: ["file": String(describing: ProductService.self), "search_type": searchType])
 
         let request = Alamofire.SessionManager.default.request(url)
         // following getProduct api call's debug mode authentication values
@@ -98,7 +98,7 @@ class ProductService: ProductApi {
 
         var url: String
 
-        // In debug mode we post products to the test environment (.net), so we use the post endpoint to get a product by barcode (when scanning it) 
+        // In debug mode we post products to the test environment (.net), so we use the post endpoint to get a product by barcode (when scanning it)
         // so we get the product as a result for this get
         #if DEBUG
             if isScanning {
@@ -125,11 +125,11 @@ class ProductService: ProductApi {
             // and it seems the server does not handle that, and does not return any field
             // so we just append our fields directly to the url
 
-            //var languageFields = [""]
-            //for code in Locale.preferredLanguageCodes {
-            //    languageFields.append(OFFJson.ProductNameKey + OFFJson.KeySeparator + code)
-            //}
-            //url.append(contentsOf: "?fields=" + summaryFields.joined(separator: OFFJson.FieldsSeparator) + OFFJson.FieldsSeparator + languageFields.joined(separator: OFFJson.FieldsSeparator))
+//            var languageFields = [""]
+//            for code in Locale.preferredLanguageCodes {
+//                languageFields.append(OFFJson.ProductNameKey + OFFJson.KeySeparator + code)
+//            }
+//            url.append(contentsOf: "?fields=" + summaryFields.joined(separator: OFFJson.FieldsSeparator) + OFFJson.FieldsSeparator + languageFields.joined(separator: OFFJson.FieldsSeparator))
             url.append(contentsOf: "?fields=" + OFFJson.summaryFields.joined(separator: OFFJson.FieldsSeparator))
         } else {
             let allFieldsWithAttributeGroups = OFFJson.allFields + [ProductAttributesJson.attributeGroupsLang()]

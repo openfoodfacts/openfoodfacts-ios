@@ -59,7 +59,7 @@ protocol TaxonomiesApi {
     func refreshTaxonomiesFromServerIfNeeded()
 }
 
-class TaxonomiesService: TaxonomiesApi {
+class TaxonomiesService: TaxonomiesApi { // swiftlint:disable:this type_body_length
     var persistenceManager: PersistenceManagerProtocol!
     private let taxonomiesParser: TaxonomiesParserProtocol
 
@@ -411,7 +411,7 @@ class TaxonomiesService: TaxonomiesApi {
         }
     }
 
-    private func downloadTaxonomies() {
+    private func downloadTaxonomies() { // swiftlint:disable:this function_body_length
         DispatchQueue.global(qos: .utility).async {
             let group = DispatchGroup()
             var allSuccess = true
@@ -499,3 +499,4 @@ class TaxonomiesService: TaxonomiesApi {
         }
     }
 }
+// swiftlint:disable:this file_length

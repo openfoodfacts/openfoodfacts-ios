@@ -11,7 +11,7 @@ import UIKit
 class InfoRowTableViewCell: ProductDetailBaseCell {
 
     @IBOutlet weak var textView: UITextView!
-    //private static let textSize: CGFloat = 17
+//    private static let textSize: CGFloat = 17
     private let boldWordsPattern = "(_\\w+_)"
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
