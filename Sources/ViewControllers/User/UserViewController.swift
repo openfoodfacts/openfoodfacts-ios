@@ -178,7 +178,7 @@ class UserViewController: UIViewController, DataManagerClient {
 // MARK: Log out variables and functions
 
     private func setupLogout() {
-        //create a logout alertviewcontroller
+        // create a logout alertviewcontroller
         let logoutAlert = UIAlertController(title: "user.alert.logout-confirmation.title".localized, message: "user.alert.logout-confirmation.subtitle".localized, preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "generic.ok".localized, style: .default) { (_) in
             CredentialsController.shared.clearCredentials()

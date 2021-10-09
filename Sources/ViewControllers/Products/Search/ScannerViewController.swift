@@ -63,7 +63,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
         super.init(coder: aDecoder)
     }
 
-    override func viewDidLoad() {
+    override func viewDidLoad() { // swiftlint:disable:this function_body_length
         super.viewDidLoad()
 
         self.title = "product-scanner.view-title".localized
@@ -254,7 +254,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
         // Unclear why this works at all
         if let previewLayerConnection = self.videoPreviewLayer?.connection, previewLayerConnection.isVideoOrientationSupported {
             previewLayerConnection.videoOrientation = transformOrientation()
-            //self.videoPreviewLayer?.frame = self.view.layer.bounds
+//            self.videoPreviewLayer?.frame = self.view.layer.bounds
         }
     }
 
@@ -666,7 +666,7 @@ extension ScannerViewController {
             guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
                 return }
             loginVC.dataManager = dataManager
-            //loginVC.delegate = self
+//            loginVC.delegate = self
 
             let navVC = UINavigationController(rootViewController: loginVC)
             loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ScannerViewController.dismissModalVC))
@@ -856,3 +856,4 @@ extension ScannerViewController {
     }
 
 }
+// swiftlint:disable:this file_length

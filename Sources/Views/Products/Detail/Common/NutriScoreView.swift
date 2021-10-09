@@ -35,7 +35,7 @@ import UIKit
     // swiftlint:enable identifier_name
 
 /// The NutriScore of the product.
-    public var currentScore: Score? = nil {
+    public var currentScore: Score? {
         didSet {
             if let currentScore = currentScore {
                 imageView.image = UIImage(named: "nutriscore-\(currentScore)")
