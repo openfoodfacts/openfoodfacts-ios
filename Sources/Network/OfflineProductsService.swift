@@ -77,7 +77,7 @@ class OfflineProductsService: OfflineProductsApi {
 
                 Alamofire.download(url, to: destination)
                     .downloadProgress(closure: { (progress) in
-                        //progress closure
+//                        progress closure
                         log.debug("[Offline_products] download zip progress = \(progress.fractionCompleted)")
                     }).response(completionHandler: { (result: DefaultDownloadResponse) in
 

@@ -13,7 +13,7 @@
 //import Nimble
 //import SafariServices
 //
-// swiftlint:disable weak_delegate
+// swiftlint:disable weak_delegate superfluous_disable_command
 //class LoggedInViewControllerTests: XCTestCase {
 //    var viewController: LoggedInViewController!
 //    var delegate: UserViewControllerDelegateMock!
