@@ -38,6 +38,9 @@ OpenFoodFacts [has a Slack chat room where we discuss and support each other](ht
 - [x] Image upload
 - [x] Night mode
 
+## Code documentation
+[Automatically generated code documentation on the wiki](https://github.com/openfoodfacts/openfoodfacts-ios/wiki/)
+
 ## Building
 
 ### Quick & automatic setup

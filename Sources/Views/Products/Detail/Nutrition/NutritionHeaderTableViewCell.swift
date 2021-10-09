@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NutritionHeaderTableViewCellDelegate: class {
+protocol NutritionHeaderTableViewCellDelegate: AnyObject {
     func nutritionHeaderTableViewCellDelegate(_ sender: NutritionHeaderTableViewCell, receivedTapOn button: UIButton)
 }
 

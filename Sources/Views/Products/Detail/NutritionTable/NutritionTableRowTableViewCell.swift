@@ -14,7 +14,7 @@ class NutritionTableRowTableViewCell: ProductDetailBaseCell {
     @IBOutlet weak var valuePer100g: UILabel!
     @IBOutlet weak var valuePerServing: UILabel!
 
-    //fileprivate let fontSize: CGFloat = 16
+//    fileprivate let fontSize: CGFloat = 16
 
     override func configure(with formRow: FormRow, in viewController: FormTableViewController) {
         guard let nutritionTableRow = formRow.value as? NutritionTableRow else { return }

@@ -49,9 +49,9 @@ class SummaryHeaderCellControllerTests: XCTestCase {
 
         viewController.viewDidLoad()
 
-//        expect(self.viewController.productImage.image).toNotEventually(beNil(), timeout: 10)
-//        expect(self.viewController.productImage.isUserInteractionEnabled).toEventually(beTrue(), timeout: 10)
-//        expect(self.viewController.productImage.gestureRecognizers![0] is UITapGestureRecognizer).toEventually(beTrue(), timeout: 10)
+//        expect(self.viewController.productImage.image).toNotEventually(beNil(), timeout: .seconds(10))
+//        expect(self.viewController.productImage.isUserInteractionEnabled).toEventually(beTrue(), timeout: .seconds(10))
+//        expect(self.viewController.productImage.gestureRecognizers![0] is UITapGestureRecognizer).toEventually(beTrue(), timeout: .seconds(10))
 //        expect(self.viewController.callToActionView.isHidden).to(beTrue())
 //        expect(self.viewController.nutriscore.currentScore).to(equal(NutriScoreView.Score.a))
 //        expect(self.viewController.productName.text).to(equal(productName))

@@ -96,7 +96,8 @@ struct Product: Mappable {
     var categories: [String]?
     var categoriesTags: [String]?
     var nutriscore: String?
-    private var nutriscoreWarningNoFruitsVegetablesNutsAsInt: Int?
+    private var nutriscoreWarningNoFruitsVegetablesNutsAsInt: Int? // swiftlint:disable:this identifier_name
+
     private var nutriscoreWarningNoFiberAsInt: Int?
 
     var nutriscoreWarningNoFruitsVegetablesNuts: Bool {
@@ -167,7 +168,7 @@ struct Product: Mappable {
     var otherNutrients: [Tag]?
     private var _productAttributes: ProductAttributes?
     var productAttributes: ProductAttributes? {
-        //validate barcode before retrieving
+        // validate barcode before retrieving
         get {
             if _productAttributes?.barcode == barcode {
                 return _productAttributes
@@ -176,7 +177,7 @@ struct Product: Mappable {
             }
         }
 
-        //validate barcode before setting
+        // validate barcode before setting
         set {
             if let productAttr = newValue, productAttr.barcode == self.barcode {
                 self._productAttributes = productAttr

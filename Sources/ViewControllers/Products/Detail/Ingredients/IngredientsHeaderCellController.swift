@@ -120,7 +120,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
 
         if let imageUrl = product.ingredientsImageUrl, let url = URL(string: imageUrl) {
             ingredients.kf.indicatorType = .activity
-            ingredients.kf.setImage(with: url, options: nil) { result in
+            ingredients.kf.setImage(with: url, options: nil, completionHandler: { result in
                 switch result {
                 case .success(let value):
                     // When the image is not cached in memory, call delegate method to handle the cell's size change
@@ -130,7 +130,7 @@ class IngredientsHeaderCellController: TakePictureViewController {
                 case .failure(let error):
                     print("Error: \(error)")
                 }
-            }
+            })
 
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             ingredients.addGestureRecognizer(tap)

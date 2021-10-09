@@ -69,7 +69,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { // swiftlint:disable:this cyclomatic_complexity
         var url: URL?
         var urlsupport: URL?
 

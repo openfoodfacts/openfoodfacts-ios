@@ -22,6 +22,7 @@ class EcoscoreImageView: UIImageView {
     public var ecoScore: Ecoscore = .unknown {
         didSet {
             self.image = UIImage(named: "ecoscore-\(ecoScore.rawValue)")
+            setupAccessibility()
         }
     }
 
@@ -37,5 +38,19 @@ class EcoscoreImageView: UIImageView {
 
     private func commonInit() {
         self.contentMode = .scaleAspectFit
+    }
+}
+
+// MARK: - Accessibility
+private extension EcoscoreImageView {
+    func setupAccessibility() {
+        guard ecoScore != .unknown else {
+            isAccessibilityElement = false
+            accessibilityLabel = nil
+            return
+        }
+        isAccessibilityElement = true
+        let key = String(format: "product-detail.environment.ecoscore.%1$@", ecoScore.rawValue)
+        accessibilityLabel = key.localized
     }
 }

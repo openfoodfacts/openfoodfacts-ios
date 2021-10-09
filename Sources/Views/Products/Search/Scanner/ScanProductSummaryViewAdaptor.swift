@@ -86,8 +86,8 @@ private func getNovaGroup(from product: Product) -> NovaGroupView.NovaGroup? {
 }
 
 private func getEcoscoreImage(from product: Any) -> UIImage? {
-    //Do we want to show the co2Impact as backup?
-    //guard let co2Impact = product.environmentImpactLevelTags?.first else {
+    // Do we want to show the co2Impact as backup?
+//    guard let co2Impact = product.environmentImpactLevelTags?.first else {
     guard let ecoscore = (product as? Product)?.ecoscore
             ?? (product as? RealmOfflineProduct)?.ecoscore else {
         return nil
@@ -130,5 +130,3 @@ private func getNovaGroup(from product: RealmOfflineProduct) -> NovaGroupView.No
     }
     return novaGroup
 }
-
-

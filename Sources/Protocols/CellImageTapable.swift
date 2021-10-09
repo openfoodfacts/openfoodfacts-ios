@@ -9,7 +9,7 @@
 import UIKit
 
 /// Protocol for UITableViewCells with an image that can be tapped to display fullscreen
-protocol CellImageTapable: class {
+protocol CellImageTapable: AnyObject {
 
     /// Image tap action handler
     ///
