@@ -129,7 +129,7 @@ class EnvironmentHeaderCellController: TakePictureViewController {
 
         if let imageUrl = product.packagingImageUrl, let url = URL(string: imageUrl) {
             packaging.kf.indicatorType = .activity
-            packaging.kf.setImage(with: url, options: nil) { result in
+            packaging.kf.setImage(with: url, options: nil, completionHandler: { result in
                 switch result {
                 case .success(let value):
                     // When the image is not cached in memory, call delegate method to handle the cell's size change
@@ -139,7 +139,7 @@ class EnvironmentHeaderCellController: TakePictureViewController {
                 case .failure(let error):
                     print("Error: \(error)")
                 }
-            }
+            })
 
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             packaging.addGestureRecognizer(tap)

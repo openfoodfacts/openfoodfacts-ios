@@ -5,7 +5,7 @@
 
 import UIKit
 
-protocol ScanProductSummaryViewProtocol: class {
+protocol ScanProductSummaryViewProtocol: AnyObject {
     func scanProductSummaryViewButtonTapped(_ sender: ScanProductSummaryView, button: UIButton)
 }
 final class ScanProductSummaryView: UIView {

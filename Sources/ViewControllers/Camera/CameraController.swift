@@ -18,7 +18,7 @@ protocol CameraController {
     func show()
 }
 
-protocol CameraControllerDelegate: class {
+protocol CameraControllerDelegate: AnyObject {
     func didGetImage(image: UIImage, forImageType imageType: ImageType?, languageCode: String?)
 }
 

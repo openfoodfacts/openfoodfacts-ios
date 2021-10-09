@@ -101,7 +101,7 @@ class NutritionTableHeaderCellController: TakePictureViewController {
         if let imageUrl = product.nutritionTableImage, let url = URL(string: imageUrl) {
             nutritionTableImage.kf.indicatorType = .activity
 
-            nutritionTableImage.kf.setImage(with: url, options: nil) { result in
+            nutritionTableImage.kf.setImage(with: url, options: nil, completionHandler: { result in
                 switch result {
                 case .success(let value):
                     self.imageHeightConstraint?.constant = min(value.image.size.height, 130)
@@ -112,7 +112,7 @@ class NutritionTableHeaderCellController: TakePictureViewController {
                 case .failure(let error):
                     print("Error: \(error)")
                 }
-            }
+            })
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProductImage))
             nutritionTableImage.addGestureRecognizer(tap)
             nutritionTableImage.isUserInteractionEnabled = true
