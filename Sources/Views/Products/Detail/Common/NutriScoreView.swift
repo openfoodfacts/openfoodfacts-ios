@@ -43,6 +43,7 @@ import UIKit
             } else {
                 imageView.isHidden = true
             }
+            setupAccessibility()
         }
     }
 
@@ -62,6 +63,7 @@ import UIKit
             self.noFiberDisclaimerLabel?.isHidden = true
             self.noFiberDisclaimerLabel?.text = nil
         }
+        setupAccessibility()
     }
 
 /// The product has no fruits/vegetables/nuts ratio specified. The calculated NutriScore might be incorrect.
@@ -80,6 +82,7 @@ import UIKit
             self.noFruitsVegetablesNutsDisclaimerLabel?.text = nil
         }
         self.noFruitsVegetablesNutsDisclaimerLabel?.preferredMaxLayoutWidth = self.bounds.size.width
+        setupAccessibility()
     }
 
     //
@@ -113,5 +116,28 @@ import UIKit
         let nib = UINib(nibName: "NutriScoreView", bundle: bundle)
         // swiftlint:disable:next force_cast
         return nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+    }
+}
+
+// MARK: - Accessibility
+private extension NutriScoreView {
+    func setupAccessibility() {
+        guard let score = currentScore,
+              score != .unknown else {
+            isAccessibilityElement = false
+            accessibilityLabel = nil
+            accessibilityValue = nil
+            return
+        }
+        isAccessibilityElement = true
+        accessibilityLabel = String(format: "product-detail.nutrition-table.nutrition-grade.accessibility".localized, score.rawValue)
+
+        let value = [
+            noFiberDisclaimerLabel.text,
+            noFruitsVegetablesNutsDisclaimerLabel.text
+        ]
+        .compactMap({ $0 })
+        .joined(separator: "; ")
+        accessibilityValue = value
     }
 }
