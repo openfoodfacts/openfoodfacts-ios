@@ -8,14 +8,20 @@
 
 import UIKit
 import XLPagerTabStrip
+import FloatingPanel
 
-class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient {
+class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataManagerClient { // swiftlint:disable:this type_body_length
 
     var hideSummary: Bool = false
     var product: Product!
     var latestRobotoffQuestions: [RobotoffQuestion] = []
     var dataManager: DataManagerProtocol!
     private var notificationCentertoken: NotificationCenterToken?
+
+    // for Product Attribute detail display
+    var floatingPanelController: FloatingPanelController!
+    var productAttributeFloatingPanelLayout = ProductAttributeFloatingPanelLayout()
+    var productAttributeController: ProductAttributeViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +48,10 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
         }
+
+        // set up floatingPanel for ProductAttributes UI
+        configureFloatingPanel()
+
         setUserAgent()
 
         notificationCentertoken = NotificationCenter.default.observe(
@@ -61,8 +71,6 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        //TODO: Answers.logContentView(withName: "Product's detail", contentType: "product_detail", contentId: product.barcode, customAttributes: ["product_name": product.name ?? ""])
-
         if let parentVc = parent as? UINavigationController {
 
             parentVc.navigationBar.isTranslucent = false
@@ -74,6 +82,9 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
 
         self.refreshLatestRobotoffQuestion()
+
+        // floatingPanel
+        self.floatingPanelController.move(to: .hidden, animated: false)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -223,7 +234,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 }
             }
             // We should use Textstyle body, but that does not exist in italic
-            //let attributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 17.0)]
+//            let attributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 17.0)]
             return NSAttributedString(string: labelTag.localLanguageCodeRemoved, attributes: [NSAttributedString.Key.obliqueness: 0.2])
         }), label: InfoRowKey.labels.localizedString)
 
@@ -242,6 +253,8 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: tag)
         }), label: InfoRowKey.countries.localizedString)
 
+        createProductAttributeRows(rows: &rows)
+        
         // Footer
         rows.append(FormRow(value: product as Any, cellType: SummaryFooterCell.self))
 
@@ -251,7 +264,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
     }
 
     // swiftlint:disable function_body_length
-    private func createIngredientsForm() -> Form {
+    private func createIngredientsForm() -> Form { // swiftlint:disable:this cyclomatic_complexity
         var rows = [FormRow]()
 
         // Header
@@ -322,7 +335,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
             return NSAttributedString(string: other.value.capitalized)
         }), label: InfoRowKey.otherNutritionalSubstances.localizedString)
 
-        //createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
+//        createFormRow(with: &rows, item: product.traces, label: InfoRowKey.traces.localizedString)
 
         createAdditivesRows(with: &rows, product: product)
 
@@ -340,7 +353,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
 
         var items: [Any] = []
-        items.append(NSAttributedString(string: " "))    //to have the first carriage return from the join with separator
+        items.append(NSAttributedString(string: " ")) // to have the first carriage return from the join with separator
         items.append(contentsOf: additives.map({ (additive: Tag) -> NSAttributedString in
             if let additive = dataManager.additive(forTag: additive) {
                 if let name = Tag.choose(inTags: Array(additive.names)) {
@@ -384,7 +397,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
                 createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
                 createFormRow(with: &rows, item: "product-detail.nutrition-table.noNutritionData".localized, label: InfoRowKey.nutritionalTableHeader.localizedString, isCopiable: true)
             }
-            //createNutritionTableRows(rows: &rows)
+//            createNutritionTableRows(rows: &rows)
         } else {
             createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
             createFormRow(with: &rows, item: "product-detail.nutrition-table.missing".localized, label: InfoRowKey.nutritionalTableHeader.localizedString, isCopiable: true)
@@ -403,7 +416,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         rows.append(FormRow(value: product as Any, cellType: HostedViewCell.self))
 
         createFormRow(with: &rows, item: product.packaging, label: InfoRowKey.packaging.localizedString)
-        
+
         createFormRow(with: &rows, item: product.origins, label: InfoRowKey.origins.localizedString)
 
         // Info rows
@@ -511,6 +524,23 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         }
     }
 
+    private func createProductAttributeRows(rows: inout [FormRow]) {
+        if let attributeGroups = product.productAttributes?.attributeGroups {
+            for attrGroup in attributeGroups where attrGroup.id == "labels" {
+                if let attributes = attrGroup.attributes {
+                    for attribute in attributes {
+                        if let desc = attribute.descriptionShort ?? attribute.title,
+                            desc != "", let name = attribute.name, name != "" {
+                            createFormRow(with: &rows, item: AttributeTableRow(self, attribute: attribute), label: attribute.name, cellType: AttributeTableViewCell.self)
+                        } else {
+                            continue
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     private func createFormRow(with array: inout [FormRow], item: Any?, label: String? = nil, cellType: ProductDetailBaseCell.Type = InfoRowTableViewCell.self, isCopiable: Bool = false, separator: String = ", ") {
         // Check item has a value, if so add to the array of rows.
         switch item {
@@ -534,7 +564,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
         guard let html = product.environmentInfoCard else {
             return
         }
-        //createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
+//        createFormRow(with: &rows, item: product, cellType: HostedViewCell.self)
         createFormRow(with: &rows, item: html, label: nil, cellType: ProductDetailWebViewTableViewCell.self, isCopiable: false)
     }
 
@@ -556,7 +586,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
              guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
                  return }
              loginVC.dataManager = dataManager
-             //loginVC.delegate = self
+//             loginVC.delegate = self
 
              let navVC = UINavigationController(rootViewController: loginVC)
              loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(ProductDetailViewController.dismissVC))
@@ -595,7 +625,7 @@ class ProductDetailViewController: ButtonBarPagerTabStripViewController, DataMan
 
 // MARK: - Refresh delegate
 
-protocol ProductDetailRefreshDelegate: class {
+protocol ProductDetailRefreshDelegate: AnyObject {
     func refreshProduct(completion: () -> Void)
 }
 
@@ -621,7 +651,7 @@ extension ProductDetailViewController: ProductDetailRefreshDelegate {
 extension ProductDetailViewController: NutritionHeaderTableViewCellDelegate {
 
     // function to let the delegate know that the switch changed
-    //func tagListViewAddImageTableViewCell(_ sender: TagListViewAddImageTableViewCell, receivedDoubleTapOn tagListView:TagListView)
+//    func tagListViewAddImageTableViewCell(_ sender: TagListViewAddImageTableViewCell, receivedDoubleTapOn tagListView:TagListView)
     public func nutritionHeaderTableViewCellDelegate(_ sender: NutritionHeaderTableViewCell, receivedTapOn button: UIButton) {
 
         if let url = URL(string: URLs.NutriScore) {
@@ -633,3 +663,4 @@ extension ProductDetailViewController: NutritionHeaderTableViewCellDelegate {
     }
 
 }
+// swiftlint:disable:this file_length

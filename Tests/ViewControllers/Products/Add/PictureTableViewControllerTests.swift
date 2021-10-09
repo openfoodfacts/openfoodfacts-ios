@@ -39,12 +39,12 @@ class PictureTableViewControllerTests: XCTestCase {
         viewController.viewDidLoad()
 
         expect(self.viewController.tableView.isScrollEnabled).to(beFalse())
-        expect(self.viewController.pictures.count).to(equal(3))
+        expect(self.viewController.pictures.count).to(equal(4))
     }
 
     // MARK: - didTapCellTakePictureButton
     func testDidTapCellTakePictureButton() {
-        expect(self.viewController.tableView.visibleCells.count).toEventuallyNot(equal(0), timeout: 10)
+        expect(self.viewController.tableView.visibleCells.count).toEventuallyNot(equal(0), timeout: .seconds(10))
         let cell = viewController.tableView.visibleCells[0] as! PictureTableViewCell
         let cellButton = cell.pictureButton!
 
@@ -91,7 +91,7 @@ class PictureTableViewControllerTests: XCTestCase {
 
         let result = viewController.tableView(viewController.tableView, numberOfRowsInSection: section)
 
-        expect(result).to(equal(3))
+        expect(result).to(equal(4))
     }
 
     // MARK: - cellForRowAt

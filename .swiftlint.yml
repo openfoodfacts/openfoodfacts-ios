@@ -17,6 +17,8 @@ file_length:
 type_name:
   min_length: 3
   max_length: 50
+trailing_whitespace:
+  ignores_empty_lines: true
 identifier_name:
   excluded:
     - id

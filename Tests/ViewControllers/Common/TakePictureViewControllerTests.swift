@@ -48,7 +48,7 @@ class TakePictureViewControllerTests: XCTestCase {
         viewController.didGetImage(image: testImage, forImageType: nil, languageCode: nil)
 
         expect(self.notificationBannerEventMap[uploadingBannerTitle]).toEventually(contain([.willAppear, .didAppear, .willDisappear, .didDisappear]))
-        expect(self.notificationBannerEventMap[imageUploadSuccessBannerTitle]).toEventually(contain([.willAppear, .didAppear]), timeout: 10, pollInterval: 0.2)
+        expect(self.notificationBannerEventMap[imageUploadSuccessBannerTitle]).toEventually(contain([.willAppear, .didAppear]), timeout: .seconds(10), pollInterval: .milliseconds(200))
         XCTAssertNotNil(mockDataManager.productImage)
     }
 
@@ -60,8 +60,8 @@ class TakePictureViewControllerTests: XCTestCase {
 
         viewController.didGetImage(image: testImage, forImageType: nil, languageCode: nil)
 
-        expect(self.notificationBannerEventMap[uploadingBannerTitle]).toEventually(contain([.willAppear, .didAppear, .willDisappear, .didDisappear]), timeout: 10)
-        expect(self.notificationBannerEventMap[imageUploadErrorBannerTitle]).toEventually(contain([.willAppear, .didAppear]), timeout: 10)
+        expect(self.notificationBannerEventMap[uploadingBannerTitle]).toEventually(contain([.willAppear, .didAppear, .willDisappear, .didDisappear]), timeout: .seconds(10))
+        expect(self.notificationBannerEventMap[imageUploadErrorBannerTitle]).toEventually(contain([.willAppear, .didAppear]), timeout: .seconds(10))
         XCTAssertNotNil(mockDataManager.productImage)
     }
 

@@ -31,12 +31,27 @@ extension String {
 
     var htmlDecoded: String {
         let decoded: String? = nil
-            //try? NSAttributedString(data: Data(utf8), options: [
-            //.documentType: NSAttributedString.DocumentType.html,
-            //.characterEncoding: String.Encoding.utf8.rawValue
-        //], documentAttributes: nil).string
+//        try? NSAttributedString(data: Data(utf8), options: [
+//            .documentType: NSAttributedString.DocumentType.html,
+//            .characterEncoding: String.Encoding.utf8.rawValue
+//        ], documentAttributes: nil).string
 
         return decoded ?? self
+    }
+
+    func searchBetweenRegexes(from endOfRegexA: String, to endOfRegexB: String) throws -> String? {
+        guard endOfRegexB.contains(endOfRegexA) else {
+            throw NSError(domain: "RegexB must contain RegexA to find the difference between them", code: Errors.codes.regexSearchStringError.rawValue)
+        }
+
+        let startIndex = self.range(of: endOfRegexA, options: .regularExpression)?.upperBound
+        let endIndex = self.range(of: endOfRegexB, options: .regularExpression)?.upperBound
+        if let start = startIndex, let end = endIndex {
+            let result = self[start..<end]
+            return String(result)
+        }
+
+        return nil
     }
 
 }

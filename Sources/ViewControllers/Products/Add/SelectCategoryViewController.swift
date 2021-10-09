@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-protocol SelectCategoryDelegate: class {
+protocol SelectCategoryDelegate: AnyObject {
     func didSelect(category: Category)
     func didSelect(customCategory: String)
 }

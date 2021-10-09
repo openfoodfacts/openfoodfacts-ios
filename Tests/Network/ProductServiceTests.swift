@@ -82,7 +82,7 @@ class ProductServiceTests: XCTestCase {
         // given
         let query = "1234"
         let page = 1
-        let success: (ProductsResponse) -> Void = { response in XCTFail("Expecting a failing result") }
+        let success: (ProductsResponse) -> Void = { _ in XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/code/1234xxxxxxxxx.json")) { _ in
             let notConnectedError = NSError(domain: NSURLErrorDomain, code: networkDownErrorCode, userInfo: nil)
@@ -125,7 +125,7 @@ class ProductServiceTests: XCTestCase {
 
         // given
         let barcode = "5449000011527"
-        let success: (Product?) -> Void = { response in XCTFail("Expecting a failing result") }
+        let success: (Product?) -> Void = { _ in XCTFail("Expecting a failing result") }
         let error: (Error) -> Void = { error in result = error as NSError }
         stub(condition: isPath("/api/v0/product/5449000011527.json")) { _ in
             let notConnectedError = NSError(domain: NSURLErrorDomain, code: networkDownErrorCode, userInfo: nil)
@@ -299,7 +299,7 @@ class ProductServiceTests: XCTestCase {
 
         productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
-        expect(resultSuccessful).toEventually(beTrue(), timeout: 10)
+        expect(resultSuccessful).toEventually(beTrue(), timeout: .seconds(10))
     }
 
     func testLoginShouldReturnErrorWhenCredentialsAreWrong() {
@@ -317,7 +317,7 @@ class ProductServiceTests: XCTestCase {
 
         productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
-        expect((result as NSError?)?.code).toEventually(equal(Errors.codes.wrongCredentials.rawValue), timeout: 10)
+        expect((result as NSError?)?.code).toEventually(equal(Errors.codes.wrongCredentials.rawValue), timeout: .seconds(10))
     }
 
     func testLoginShouldReturnErrorWhenServerReturnsError() {
@@ -333,6 +333,6 @@ class ProductServiceTests: XCTestCase {
 
         productApi.logIn(username: username, password: password, onSuccess: success, onError: error)
 
-        expect((result as NSError?)?.code).toEventually(equal(networkDownErrorCode), timeout: 10)
+        expect((result as NSError?)?.code).toEventually(equal(networkDownErrorCode), timeout: .seconds(10))
     }
 }
