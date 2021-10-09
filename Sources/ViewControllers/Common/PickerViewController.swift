@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PickerViewDelegate: class {
+protocol PickerViewDelegate: AnyObject {
     func didGetSelection(value: Pickable)
     func didDismiss()
 }

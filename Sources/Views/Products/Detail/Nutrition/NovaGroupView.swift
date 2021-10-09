@@ -22,6 +22,7 @@ class NovaGroupView: UIImageView {
     var novaGroup: NovaGroup = .one {
         didSet {
             self.image = UIImage(named: "nova-group-\(novaGroup.rawValue)")
+            setupAccessibility()
         }
     }
 
@@ -37,5 +38,19 @@ class NovaGroupView: UIImageView {
 
     private func commonInit() {
         self.contentMode = .scaleAspectFit
+    }
+}
+
+// MARK: - Accessibility
+private extension NovaGroupView {
+    func setupAccessibility() {
+        guard novaGroup != .unknown else {
+            isAccessibilityElement = false
+            accessibilityLabel = nil
+            return
+        }
+        isAccessibilityElement = true
+        let key = String(format: "product-detail.ingredients.nova.%1$@", novaGroup.rawValue)
+        accessibilityLabel = key.localized
     }
 }

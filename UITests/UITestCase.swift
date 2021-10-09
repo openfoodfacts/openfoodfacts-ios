@@ -37,7 +37,7 @@ class UITestCase: XCTestCase {
         waitForExpectations(timeout: 10) { (error) -> Void in
             if (error != nil) {
                 let message = "Failed to find \(element) after 5 seconds."
-                self.recordFailure(withDescription: message, inFile: file, atLine: Int(line), expected: true)
+                self.record(.init(type: .assertionFailure, compactDescription: message, detailedDescription: nil, sourceCodeContext: .init(location: .init(filePath: file, lineNumber: Int(line))), associatedError: nil, attachments: []))
             }
         }
     }

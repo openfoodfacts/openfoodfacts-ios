@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-protocol SelectNutrimentDelegate: class {
+protocol SelectNutrimentDelegate: AnyObject {
     func didSelect(nutriment: Nutriment)
 }
 

@@ -18,7 +18,7 @@ protocol CameraController {
     func show()
 }
 
-protocol CameraControllerDelegate: class {
+protocol CameraControllerDelegate: AnyObject {
     func didGetImage(image: UIImage, forImageType imageType: ImageType?, languageCode: String?)
 }
 
@@ -46,15 +46,15 @@ class CameraControllerImpl: NSObject, CameraController {
 extension CameraControllerImpl: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            //if imageType == .ingredients {
-            //    dismiss()
-            //    let cropViewController = TOCropViewController(image: image)
-            //    cropViewController.delegate = self
-            //    self.presentingViewController.present(cropViewController, animated: true, completion: nil)
-            //} else {
+//            if imageType == .ingredients {
+//                dismiss()
+//                let cropViewController = TOCropViewController(image: image)
+//                cropViewController.delegate = self
+//                self.presentingViewController.present(cropViewController, animated: true, completion: nil)
+//            } else {
                 delegate?.didGetImage(image: image, forImageType: imageType, languageCode: languageCode ?? "yy")
                 dismiss()
-            //}
+//            }
         }
     }
 

@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import Cartography
 
-protocol AttributeTableViewCellDelegate: class {
+protocol AttributeTableViewCellDelegate: AnyObject {
     func attributeTableViewCellTapped(_ sender: AttributeTableViewCell, _ attributeView: AttributeView)
 }
 

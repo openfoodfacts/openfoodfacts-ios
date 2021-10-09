@@ -2,7 +2,7 @@ name: Crowdin Action
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ crowdin-trigger ]
 
 jobs:
   synchronize-with-crowdin:
@@ -14,9 +14,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: crowdin action
-      uses: crowdin/github-action@1.1.2
+      uses: crowdin/github-action@1.4.0
       with:
-        upload_translations: true # default is false
+        upload_translations: false # default is false
         # Use this option to upload translations for a single specified language
         download_translations: true
         # Upload sources to Crowdin

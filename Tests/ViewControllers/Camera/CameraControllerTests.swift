@@ -31,7 +31,7 @@ class CameraControllerTests: XCTestCase {
     func skiptestShowPresentsImagePicker() {
         cameraController.show()
 
-        expect(self.presentingViewController.presentedViewController).toEventually(beAnInstanceOf(UIImagePickerController.self), timeout: 10)
+        expect(self.presentingViewController.presentedViewController).toEventually(beAnInstanceOf(UIImagePickerController.self), timeout: .seconds(10))
     }
 
     func skip_testImagePickerControllerDidFinishPickingMediaWithInfo() {
@@ -47,11 +47,11 @@ class CameraControllerTests: XCTestCase {
     func skiptestImagePickerControllerDidCancelDismissesImagePicker() {
         let imagePicker = UIImagePickerController()
         presentingViewController.present(imagePicker, animated: false, completion: nil)
-        expect(self.presentingViewController.presentedViewController).toEventually(equal(imagePicker), timeout: 10)
+        expect(self.presentingViewController.presentedViewController).toEventually(equal(imagePicker), timeout: .seconds(10))
 
         cameraController.imagePickerControllerDidCancel(imagePicker)
 
-        expect(self.presentingViewController.presentedViewController).toEventually(beNil(), timeout: 10)
+        expect(self.presentingViewController.presentedViewController).toEventually(beNil(), timeout: .seconds(10))
     }
 }
 
