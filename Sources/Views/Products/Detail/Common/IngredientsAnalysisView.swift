@@ -63,7 +63,7 @@ import Cartography
         }
     }
 
-    @objc func didTap(_ sender: UITapGestureRecognizer) {
+    @objc func didTap(_ sender: UITapGestureRecognizer) { // swiftlint:disable:this function_body_length
         guard let detail = detail else {
             return
         }
@@ -163,7 +163,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
     var iconImageBackgroundColor: UIColor?
     var iconImage: UIImage?
 
-    override func makeViewsUnderTitle(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? {
+    override func makeViewsUnderTitle(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? { // swiftlint:disable:this function_body_length
 
         let ivv = UIImageView()
         ivv.image = iconImage
@@ -245,7 +245,7 @@ class AnalysisIconBLTPageItem: BLTNPageItem {
             if detail.tag.contains("unknown") && !maybeIngredients.isEmpty {
                 let maybeIngredientsDescriptionLabel = UILabel()
                 maybeIngredientsDescriptionLabel.numberOfLines = 0
-                //maybeIngredientsDescriptionLabel.font = UIFont.systemFont(ofSize: 15)
+//                maybeIngredientsDescriptionLabel.font = UIFont.systemFont(ofSize: 15)
                 maybeIngredientsDescriptionLabel.text = String(format: "ingredients-analysis.ambiguous".localized, maybeIngredients.map { $0.text ?? "" }.joined(separator: ", "))
                 views.append(maybeIngredientsDescriptionLabel)
             }
