@@ -128,10 +128,8 @@ enum InfoRowKey: LocalizedString, CaseIterable {
 
     // Convert the save key to the enum
     static func nutriment(for code: String) -> InfoRowKey? {
-        for value in self.allCases {
-            if value.key == code {
-                return value
-            }
+        for value in self.allCases where value.key == code {
+            return value
         }
         return nil
     }

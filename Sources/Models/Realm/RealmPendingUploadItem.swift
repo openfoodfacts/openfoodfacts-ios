@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 // Realm class, cloned from PendingUploadItem.
-//Outside of PersistanceManager PendingUploadItem will be used for easier work across threads.
+// Outside of PersistanceManager PendingUploadItem will be used for easier work across threads.
 
 internal class RealmPendingUploadNutrimentItem: Object {
     @objc dynamic var code: String = ""

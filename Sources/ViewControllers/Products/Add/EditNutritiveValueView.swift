@@ -48,7 +48,7 @@ enum NutritiveUnits {
     }
 }
 
-protocol EditNutritiveValueViewDelegate: class {
+protocol EditNutritiveValueViewDelegate: AnyObject {
     func didChangeUnit(view: EditNutritiveValueView)
 }
 

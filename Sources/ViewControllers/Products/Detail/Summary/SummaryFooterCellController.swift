@@ -45,7 +45,7 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
             guard let loginVC = UserViewController.loadFromStoryboard(named: .settings) as? UserViewController else {
                 return }
             loginVC.dataManager = dataManager
-            //loginVC.delegate = self
+//            loginVC.delegate = self
 
             let navVC = UINavigationController(rootViewController: loginVC)
             loginVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(SummaryFooterCellController.dismissVC))
@@ -80,9 +80,9 @@ class SummaryFooterCellController: UIViewController, IconButtonViewDelegate {
         dismiss(animated: true, completion: nil)
     }
 }
-//
-//extension SummaryFooterCellController: UserViewControllerDelegate {
-//    func dismiss() {
-//        setupInterface()
-//    }
-//}
+
+// extension SummaryFooterCellController: UserViewControllerDelegate {
+//     func dismiss() {
+//         setupInterface()
+//     }
+// }

@@ -604,3 +604,4 @@ class DataManager: DataManagerProtocol {
         })
     }
 }
+// swiftlint:disable:this file_length

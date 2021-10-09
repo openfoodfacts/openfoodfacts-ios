@@ -5,7 +5,7 @@
 
 import UIKit
 
-protocol ManualBarcodeInputDelegate: class {
+protocol ManualBarcodeInputDelegate: AnyObject {
     func didStartEditing()
     func didEndEditing()
     func didTapSearch()

@@ -33,8 +33,8 @@ import Nimble
 //                // Force viewDidLoad call
 //                expect(viewController.view).notTo(beNil())
 //
-//                expect(viewController.childViewControllers[0] is LoginViewController).toEventually(beTrue(), timeout: 10)
-//                expect(viewController.view.subviews[2]).toEventually(equal(viewController.childViewControllers[0].view), timeout: 10)
+//                expect(viewController.childViewControllers[0] is LoginViewController).toEventually(beTrue(), timeout: .seconds(10))
+//                expect(viewController.view.subviews[2]).toEventually(equal(viewController.childViewControllers[0].view), timeout: .seconds(10))
 //            }
 //
 //            it("transitions to logged in vc when credentials are present") {
@@ -43,7 +43,7 @@ import Nimble
 //                // Force viewDidLoad call
 //                expect(viewController.view).notTo(beNil())
 //
-//                expect(viewController.childViewControllers[0] is UINavigationController).toEventually(beTrue(), timeout: 10)
+//                expect(viewController.childViewControllers[0] is UINavigationController).toEventually(beTrue(), timeout: .seconds(10))
 //                let nav = viewController.childViewControllers[0] as! UINavigationController
 //                expect(nav.childViewControllers[0] is LoggedInViewController).to(beTrue())
 //            }
@@ -60,8 +60,8 @@ import Nimble
 //
 //                viewController.dismiss()
 //
-//                expect(viewController.childViewControllers[0] is LoginViewController).toEventually(beTrue(), timeout: 10)
-//                expect(viewController.view.subviews[2]).toEventually(equal(viewController.childViewControllers[0].view), timeout: 10)
+//                expect(viewController.childViewControllers[0] is LoginViewController).toEventually(beTrue(), timeout: .seconds(10))
+//                expect(viewController.view.subviews[2]).toEventually(equal(viewController.childViewControllers[0].view), timeout: .seconds(10))
 //            }
 //        }
 //
