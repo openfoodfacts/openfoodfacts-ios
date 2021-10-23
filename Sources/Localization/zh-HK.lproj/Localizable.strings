@@ -48,6 +48,11 @@
 
 "product-scanner.search.status" = "正載入產品……";
 
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "上載圖片中……";
@@ -197,6 +202,7 @@
 "product-detail.nutrition.carbon-footprint" = "碳足跡 / CO2 排放量︰";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "營養素表";
 "product-detail.nutrition-table.for-100g" = "每100克";
 "product-detail.nutrition-table.for-serving" = "每份";

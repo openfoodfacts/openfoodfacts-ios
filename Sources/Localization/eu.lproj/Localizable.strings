@@ -48,6 +48,11 @@
 
 "product-scanner.search.status" = "Produktua kargatzen…";
 
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Irudia kargatzen…";
@@ -198,6 +203,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.for-100g" = "100 g-ko";
 "product-detail.nutrition-table.for-serving" = "Errazio bakoitzeko";
 "product-detail.nutrition-table.100g" = "100g";

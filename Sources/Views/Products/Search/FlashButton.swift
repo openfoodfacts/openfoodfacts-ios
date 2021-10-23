@@ -28,6 +28,7 @@ enum FlashStatus {
             case .on:
                 flashImageView.image = UIImage(named: flashOnImageName)
             }
+            configureAccessibility()
         }
     }
 
@@ -37,6 +38,7 @@ enum FlashStatus {
         super.init(frame: .zero)
         configureView()
         configureFlashImageView()
+        configureAccessibility()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -65,6 +67,12 @@ enum FlashStatus {
             self.bottomAnchor.constraint(equalTo: flashImageView.bottomAnchor, constant: 7),
             flashImageView.widthAnchor.constraint(equalToConstant: image.size.width),
             flashImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0)])
+    }
+    
+    private func configureAccessibility() {
+        isAccessibilityElement = true
+        accessibilityLabel = state == .off ? "product-scanner.flash.off.accessibility.label".localized : "product-scanner.flash.on.accessibility.label".localized
+        accessibilityTraits.insert(.button)
     }
 
     override func willMove(toSuperview newSuperview: UIView?) {

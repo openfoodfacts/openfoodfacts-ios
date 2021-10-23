@@ -48,6 +48,11 @@
 
 "product-scanner.search.status" = "Loading product…";
 
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Uploading image…";
@@ -164,7 +169,7 @@
 "product-detail.summary.brands" = "Brands";
 "product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
 "product-detail.summary.origins" = "Origin of ingredients";
-"product-detail.summary.categories" = "Categories";
+"product-detail.summary.categories" = "വിഭാഗങ്ങൾ";
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
@@ -198,6 +203,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Per serving";
 "product-detail.nutrition-table.100g" = "100g";

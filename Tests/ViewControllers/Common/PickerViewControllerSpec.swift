@@ -80,7 +80,7 @@ class PickerViewControllerSpec: QuickSpec {
             describe("viewDidLoad") {
                 it("sets the default value") {
                     let picker = viewController.view as! UIPickerView
-                    expect(picker.selectedRow(inComponent: 0)).toEventually(equal(defaultValue), timeout: 10)
+                    expect(picker.selectedRow(inComponent: 0)).toEventually(equal(defaultValue), timeout: .seconds(10))
                 }
             }
         }

@@ -102,6 +102,7 @@ class ProductTableViewCell: UITableViewCell {
             setEcoscore(ecoscore: .unknown)
         }
 
+        setupAccessibility()
     }
 
     override func prepareForReuse() {
@@ -119,6 +120,29 @@ class ProductTableViewCell: UITableViewCell {
         } else {
             ecoScoreView?.ecoScore = .unknown
         }
+        setupAccessibility()
     }
 
+}
+
+// MARK: - Accessibility
+private extension ProductTableViewCell {
+    func setupAccessibility() {
+        accessibilityLabel = [
+            name.text,
+            brandLabel.text,
+            quantityLabel.text,
+            nutriscoreView.accessibilityLabel,
+            novaGroupView.accessibilityLabel,
+            ecoScoreView.accessibilityLabel
+        ]
+        .compactMap({ $0 })
+        .joined(separator: "; ")
+        
+        // We disable the score's accessibility,
+        // to avoid adding them to the user's focus journey.
+        nutriscoreView.isAccessibilityElement = false
+        novaGroupView.isAccessibilityElement = false
+        ecoScoreView.isAccessibilityElement = false
+    }
 }

@@ -89,7 +89,7 @@ protocol PersistenceManagerProtocol {
     func updatePendingUploadItem(_ item: PendingUploadItem)
 }
 
-class PersistenceManager: PersistenceManagerProtocol {
+class PersistenceManager: PersistenceManagerProtocol { // swiftlint:disable:this type_body_length
 
     func removeHistroyItem(_ item: HistoryItem) {
         let realm = self.getRealm()
@@ -475,7 +475,7 @@ class PersistenceManager: PersistenceManagerProtocol {
 
     // MARK: - Products pending upload
 
-    func addPendingUploadItem(_ product: Product, withNutritionTable nutriments: [RealmPendingUploadNutrimentItem]?) {
+    func addPendingUploadItem(_ product: Product, withNutritionTable nutriments: [RealmPendingUploadNutrimentItem]?) { // swiftlint:disable:this cyclomatic_complexity
         guard let barcode = product.barcode else { return }
 
         let item = getPendingUploadItem(forBarcode: barcode) ?? PendingUploadItem(barcode: barcode)
@@ -618,3 +618,4 @@ class PersistenceManager: PersistenceManagerProtocol {
         fatalError("Could not get Realm instance")
     }
 }
+// swiftlint:disable:this file_length

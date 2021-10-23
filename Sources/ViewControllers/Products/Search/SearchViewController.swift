@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-protocol SearchViewControllerDelegate: class {
+protocol SearchViewControllerDelegate: AnyObject {
     func showProductDetails(product: Product)
 }
 
@@ -40,7 +40,7 @@ extension SearchViewController: SearchViewControllerDelegate {
 
     func showProductDetails(product: Product) {
         guard let barcode = product.barcode else { return }
-        //fetching full product to have all needed data
+        // fetching full product to have all needed data
         SVProgressHUD.show()
         dataManager.getProduct(byBarcode: barcode, isScanning: false, isSummary: false, onSuccess: { fetchedProduct in
             if let product = fetchedProduct {

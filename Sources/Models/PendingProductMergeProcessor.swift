@@ -19,7 +19,8 @@ protocol ProductMergeProcessor {
 }
 
 struct PendingProductMergeProcessor: ProductMergeProcessor {
-    func merge(_ source: PendingUploadItem, _ target: Product) -> (product: Product?, nutriments: [RealmPendingUploadNutrimentItem]?) {
+    func merge(_ source: PendingUploadItem, _ target: Product) -> (product: Product?, nutriments: [RealmPendingUploadNutrimentItem]?) { // swiftlint:disable:this cyclomatic_complexity function_body_length
+
         var result = Product()
         var modified = false
 

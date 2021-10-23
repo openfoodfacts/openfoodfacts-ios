@@ -48,6 +48,11 @@
 
 "product-scanner.search.status" = "Caricamento del prodotto…";
 
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Caricamento dell'immagine…";
@@ -197,13 +202,14 @@
 "product-detail.nutrition.carbon-footprint" = "Emissioni di CO2 (impronta climatica)";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Valori nutrizionali";
 "product-detail.nutrition-table.for-100g" = "Per 100g";
 "product-detail.nutrition-table.for-serving" = "Per porzione";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "porzione";
 "product-detail.nutrition-table.missing" = "Non è stato selezionato nessun nutriente.";
-"product-detail.nutrition-table.noNutritionData" = "Questo prodotto non ha alcuna tabella di valori nutrizionali.";
+"product-detail.nutrition-table.noNutritionData" = "Questo prodotto non ha una tabella di valori nutrizionali.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Attenzione: la quantità di fibre non è specificata, il loro possibile contributo positivo al punteggio non può essere preso in considerazione.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Attenzione: la quantità di frutta, verdura e noci non è specificata. Il loro possibile contributo positivo al punteggio non può essere preso in considerazione.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Attenzione: la quantità di frutta, verdura e noci non è specificata sull'etichetta, è stata stimata dalla lista degli ingredienti: %d%";

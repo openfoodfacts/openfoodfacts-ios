@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         for _ in components.queryItems ?? [] {
             // can I go directly to the barcode? and present the corresponding product?
-            //searchBarcodeAndPresent(barcode)
+//            searchBarcodeAndPresent(barcode)
             return true
         }
         // should I open the url in the browser if previous fails?

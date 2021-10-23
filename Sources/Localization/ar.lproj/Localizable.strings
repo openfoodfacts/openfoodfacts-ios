@@ -48,6 +48,11 @@
 
 "product-scanner.search.status" = "يتم تحميل المنتجات…";
 
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "تحميل الصورة…";
@@ -197,6 +202,7 @@
 "product-detail.nutrition.carbon-footprint" = "انبعاثات الكربون / انبعاثات ثاني أكسيد الكربون";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "حقائق غذائية";
 "product-detail.nutrition-table.for-100g" = "ل 100 غرام";
 "product-detail.nutrition-table.for-serving" = "لكل وجبة";

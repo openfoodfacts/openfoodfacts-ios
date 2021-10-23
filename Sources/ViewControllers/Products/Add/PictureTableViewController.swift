@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PictureTableViewControllerDelegate: class {
+protocol PictureTableViewControllerDelegate: AnyObject {
     func didPostIngredientImage()
 }
 

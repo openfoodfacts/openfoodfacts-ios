@@ -8,12 +8,12 @@
 
 import UIKit
 
-//@objc protocol Instantiable: class {
-//    static var storyboardName: String { get }
-//}
+// @objc protocol Instantiable: class {
+//     static var storyboardName: String { get }
+// }
 //
-//extension UIViewController: Instantiable {
-//    class var storyboardName: String {
-//        return "Main"
-//    }
-//}
+// extension UIViewController: Instantiable {
+//     class var storyboardName: String {
+//         return "Main"
+//     }
+// }

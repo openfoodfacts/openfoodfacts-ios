@@ -145,8 +145,8 @@ class SearchTableViewControllerTests: XCTestCase {
 
         viewController.updateSearchResults(for: viewController.searchController)
 
-        expect(self.dataManager.query).toEventually(equal(query), timeout: 5)
-        expect(self.dataManager.page).toEventually(equal(1), timeout: 5)
+        expect(self.dataManager.query).toEventually(equal(query), timeout: .seconds(5))
+        expect(self.dataManager.page).toEventually(equal(1), timeout: .seconds(5))
     }
 
     // MARK: - UISearchBarDelegate

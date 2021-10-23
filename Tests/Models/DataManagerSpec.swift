@@ -273,7 +273,7 @@ class DataManagerSpec: QuickSpec {
                     }
 
                     it("does not call post product") {
-                       //x expect(productApi.postProductCalled).toEventually(beFalse())
+                       // expect(productApi.postProductCalled).toEventually(beFalse())
                     }
 
                     it("does not call post image") {
