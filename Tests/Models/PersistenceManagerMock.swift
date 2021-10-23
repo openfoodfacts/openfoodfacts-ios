@@ -12,10 +12,6 @@ import RealmSwift
 class PersistenceManagerMock: PersistenceManagerProtocol {
     var labelsIsEmpty: Bool = false
     
-    // =======------------------======= //
-    // TODO: implement code below if needed (for now only add the function/propety signatures, so it builds)
-    // =======------------------======= //
-
     var categoriesIsEmpty: Bool = false
 
     func country(forCode: String) -> Country? {
