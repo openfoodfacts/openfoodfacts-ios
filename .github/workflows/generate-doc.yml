@@ -18,6 +18,8 @@ jobs:
           inputs: Sources/
           module-name: OpenFoodFacts
           output: Documentation/
+      - name: Update Permissions
+        run: 'sudo chown --recursive $USER Documentation'
       - name: Deploy API documentation to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
