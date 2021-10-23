@@ -15,18 +15,12 @@ jobs:
       - name: Generate Documentation
         uses: SwiftDocOrg/swift-doc@master
         with:
-          inputs: "Sources"
+          inputs: Sources/
           module-name: OpenFoodFacts
-          output: "Documentation"
-      #- name: Upload Documentation to Wiki
-     #   uses: SwiftDocOrg/github-wiki-publish-action@v1
-     #   with:
-      #    path: "Documentation"
-     #   env:
-    #      GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          output: Documentation/
       - name: Deploy API documentation to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: "gh-pages"
-          folder: Documentation
+          branch: gh-pages
+          folder: Documentation/
