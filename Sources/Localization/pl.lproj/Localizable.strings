@@ -46,7 +46,12 @@
 "product-scanner.permissions.failed.message" = "Upewnij się w ustawieniach prywatności, że Open Food Facts ma pozwolenie na korzystanie z aparatu";
 "product-scanner.permissions.failed.action.title" = "Wyjdź ze skanowania kodów kreskowych";
 
-"product-scanner.search.status" = "Ładowanie produktu...";
+"product-scanner.search.status" = "Ładowanie produktów…";
+
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -111,10 +116,10 @@
 "product-add.label.quantity-example" = "25 g, 10 oz, 5 ml…";
 "product-add.label.language" = "Języki";
 "product-add.label.labels" = "Etykieta";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.labels-example" = "Przykłady: bez glutenu, itp.";
 "product-add.label.origins" = "Pochodzenie składników";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Example: Butter from France, etc.";
+"product-add.field.origins-placeholder" = "Wymagane do obliczenia Eco-Score";
+"product-add.label.origins-example" = "Przykład: masło z Francji itp.";
 
 "product-add.description.nutritive" = "Aby poznać wartość Nutri-Score należy uzupełnić informacje o wartości odżywczej i kategorię produktu";
 "product-add.titles.nutritive" = "Wartość odżywcza";
@@ -176,7 +181,7 @@
 "product-detail.ingredients.nova.2" = "Przetworzone składniki kulinarne";
 "product-detail.ingredients.nova.3" = "Żywność przetworzona";
 "product-detail.ingredients.nova.4" = "Bardzo przetworzone produkty spożywcze i napoje";
-"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
+"product-detail.ingredients.nova.unknown" = "Nie można obliczyć poziomu NOVA dla przetworzonej żywności";
 "product-detail.ingredients.nova.incite" = "Dodaj składniki i / lub kategorie, aby obliczyć NOVA.";
 "product-detail.ingredients.ingredients-list" = "Lista składników";
 "product-detail.ingredients.allergens-list" = "Substancje lub produkty powodujące alergie lub reakcje nietolerancji";
@@ -197,13 +202,14 @@
 "product-detail.nutrition.carbon-footprint" = "Ślad węglowy / emisje CO2";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Wartości odżywcze";
 "product-detail.nutrition-table.for-100g" = "W 100 g";
 "product-detail.nutrition-table.for-serving" = "W porcji";
 "product-detail.nutrition-table.100g" = "100 g";
 "product-detail.nutrition-table.serving" = "porcja";
 "product-detail.nutrition-table.missing" = "Nie wprowadno składników odżywczych.";
-"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.noNutritionData" = "Produkt nie posiada tabeli wartości odżywczych.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Ostrzeżenie: ilość błonnika jest nieoznaczona, nie można brać pod uwagę jego pozytywnego wpływu na stopień.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Uwaga: Ilosc owoców warzyw i orzechow nie jest ściśle okreslona, ich pozytywny sposób działania nie moze byc uwzgledniony w ogolnym rezultacie.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Uwaga: ilość owoców, warzyw i orzechów nie jest podana na etykiecie, została oszacowana na podstawie listy składników: %d%";
@@ -333,7 +339,7 @@
 "product.images.take-picture.front" = "Główne zdjęcie produktu";
 "product.images.take-picture.ingredients" = "Zdjęcie listy składników";
 "product.images.take-picture.nutrition" = "Zdjęcie informacji o wartości odżywczej";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.packaging" = "Zdjęcie informacji o recyklingu";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"

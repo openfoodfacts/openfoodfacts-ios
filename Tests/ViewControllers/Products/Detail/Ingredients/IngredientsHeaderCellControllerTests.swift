@@ -49,10 +49,10 @@ class IngredientsHeaderCellControllerTests: XCTestCase {
 
         viewController.viewDidLoad()
 
-        expect(delegate.didCellSizeChange).toEventually(beTrue(), timeout: 10)
-        expect(self.viewController.ingredients.image).toNotEventually(beNil(), timeout: 10)
-        expect(self.viewController.ingredients.isUserInteractionEnabled).toEventually(beTrue(), timeout: 10)
-        expect(self.viewController.ingredients.gestureRecognizers![0] is UITapGestureRecognizer).toEventually(beTrue(), timeout: 10)
+        expect(delegate.didCellSizeChange).toEventually(beTrue(), timeout: .seconds(10))
+        expect(self.viewController.ingredients.image).toNotEventually(beNil(), timeout: .seconds(10))
+        expect(self.viewController.ingredients.isUserInteractionEnabled).toEventually(beTrue(), timeout: .seconds(10))
+        expect(self.viewController.ingredients.gestureRecognizers![0] is UITapGestureRecognizer).toEventually(beTrue(), timeout: .seconds(10))
         expect(self.viewController.callToActionView.isHidden).to(beTrue())
         //expect(self.viewController.addNewPictureButton.isHidden).to(beFalse())
     }

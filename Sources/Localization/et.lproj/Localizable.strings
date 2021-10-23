@@ -48,6 +48,11 @@
 
 "product-scanner.search.status" = "Toote laadimine…";
 
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Pildi üleslaadimine…";
@@ -70,7 +75,7 @@
 "product-add.save-ingredients.success" = "Koostisosad salvestatud";
 "product-add.save-ingredients.error" = "Koostisosad pole salvestunud";
 "product-add.save-ingredients.saving" = "Koostisosade salvestamine…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
+"product-add.save-ingredients.not-yet" = "Koostisosad pole veel salvestatud";
 "product-add.save-nutriments.success" = "Nutriments saved at";
 "product-add.save-nutriments.error" = "Nutriments not saved";
 "product-add.save-nutriments.saving" = "Saving nutriments…";
@@ -92,7 +97,7 @@
 /* Product Add brand text field */
 "product-add.placeholder.brand" = "Brand";
 /* Product Add quantity text field */
-"product-add.placeholder.quantity" = "Quantity";
+"product-add.placeholder.quantity" = "Kogus";
 
 "product-add.title" = "New product";
 "product-add.title-edit" = "Edit product";
@@ -103,14 +108,14 @@
 "product-add.titles.product-info" = "Product Information";
 "product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Name";
-"product-add.label.category" = "Category";
-"product-add.label.quantity" = "Quantity";
+"product-add.label.category" = "Kategooria";
+"product-add.label.quantity" = "Kogus";
 "product-add.label.packaging" = "Packaging";
 "product-add.label.packaging-example" = "Examples: plastic, paper, glass";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Keeled";
-"product-add.label.labels" = "Labels";
+"product-add.label.labels" = "Sildid";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
 "product-add.label.origins" = "Origin of ingredients";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
@@ -124,17 +129,17 @@
 "product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
-"product-add.titles.ingredients" = "Ingredients";
+"product-add.titles.ingredients" = "Koostisosad";
 "product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
 "product-add.ingredients.button-delete" = "Too bad, Ignore";
 "product-add.ingredients.button-save" = "Looks good, Save";
 
 // Select Category
-"select-category.title" = "Category";
+"select-category.title" = "Kategooria";
 "select-category.search-placeholder" = "Otsi kategooriat";
 
 // Select nutrition
-"select-nutriment.title" = "Nutrition";
+"select-nutriment.title" = "Toitained";
 "select-nutriment.search-placeholder" = "Search for a nutrient";
 
 // Select allergen
@@ -151,17 +156,17 @@
 
 // Product detail page titles
 "product-detail.page-title.summary" = "Summary";
-"product-detail.page-title.ingredients" = "Ingredients";
-"product-detail.page-title.nutrition" = "Nutrition";
+"product-detail.page-title.ingredients" = "Koostisosad";
+"product-detail.page-title.nutrition" = "Toitained";
 "product-detail.page-title.nutrition-table" = "Nutrition table";
 "product-detail.page-title.environment-impact" = "Keskkond";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Triipkood";
 "product-detail.summary.generic-name" = "Generic name";
-"product-detail.summary.quantity" = "Quantity";
+"product-detail.summary.quantity" = "Kogus";
 "product-detail.summary.packaging" = "Packaging";
-"product-detail.summary.brands" = "Brändid";
+"product-detail.summary.brands" = "Kaubamärgid";
 "product-detail.summary.manufacturing-places" = "Manufacturing or processing places";
 "product-detail.summary.origins" = "Origin of ingredients";
 "product-detail.summary.categories" = "Kategooriad";
@@ -198,6 +203,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Portsjoni kohta";
 "product-detail.nutrition-table.100g" = "100 g";
@@ -238,8 +244,8 @@
 "ingredients-analysis.back-to-scan" = "Back to scan";
 
 // Robotoff
-"robotoff.yes" = "Yes";
-"robotoff.no" = "No";
+"robotoff.yes" = "Jah";
+"robotoff.no" = "Ei";
 "robotoff.not-sure" = "I'm not sure";
 "robotoff.contribute-incentive.title" = "Contribute";
 "robotoff.settings.display-questions" = "Display questions";
@@ -252,17 +258,17 @@
 "nutrition.energy" = "Energy";
 "nutrition.energy.kj" = "Energy (kJ)";
 "nutrition.energy.kcal" = "Energy (kcal)";
-"nutrition.fats" = "Fats";
-"nutrition.fats.saturated-fat" = "Saturated fat";
+"nutrition.fats" = "Rasvad";
+"nutrition.fats.saturated-fat" = "Küllastunud rasva";
 "nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated fat";
 "nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
-"nutrition.fats.trans-fat" = "Trans fat";
+"nutrition.fats.trans-fat" = "Trans-rasva";
 "nutrition.fats.cholesterol" = "Kolesterool";
 "nutrition.carbohydrate" = "Carbohydrate";
-"nutrition.carbohydrate.sugars" = "Sugars";
+"nutrition.carbohydrate.sugars" = "Suhkruid";
 "nutrition.carbohydrate.sucrose" = "Sahharoos";
 "nutrition.carbohydrate.glucose" = "Glükoos";
 "nutrition.carbohydrate.fructose" = "Fruktoos";
@@ -274,7 +280,7 @@
 "nutrition.proteins.casein" = "Kaseiin";
 "nutrition.proteins.serum-proteins" = "Serum Proteins";
 "nutrition.proteins.nucleotides" = "Nucleotides";
-"nutrition.salt" = "Salt";
+"nutrition.salt" = "Soola";
 "nutrition.sodium" = "Sodium";
 "nutrition.alcohol" = "Alcohol";
 "nutrition.vitamins" = "Vitamins";
@@ -345,13 +351,13 @@
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
 "settings.allergies.add-button" = "Add allergens";
 "settings.sections.information" = "Informatsioon";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Avasta";
 "settings.sections.contribute" = "Contribute";
 "settings.sections.about" = "Info";
 "settings.user-profile" = "Your contributor account";
 "settings.credits.title" = "Credits";
 "settings.scan-on-launch.title" = "Show Scan On App Launch";
-"settings.sections.discover" = "Discover";
+"settings.sections.discover" = "Avasta";
 "settings.contribute.how-to-contribute" = "How To Contribute";
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
@@ -402,7 +408,7 @@
 "history.section-titles.longTime" = "A long time ago";
 "history.first-scan.button.title" = "Scan First Product";
 
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edit";
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Muuda";
 
 // Camera localization API
 "API_CANCEL_TITLE" = "Cancel";

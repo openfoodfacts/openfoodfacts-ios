@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AllergensAddTableViewCellDelegate: class {
+protocol AllergensAddTableViewCellDelegate: AnyObject {
     func didTapAddButton()
 }
 

@@ -12,7 +12,7 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Enrere";
 "generic.search" = "Cerca";
-"generic.cancel" = "Cancel·la";
+"generic.cancel" = "Cancel·lar";
 "generic.save" = "Desa";
 "generic.cancel" = "Cancel·lar";
 "generic.ok" = "D'acord";
@@ -47,6 +47,11 @@
 "product-scanner.permissions.failed.action.title" = "Deixar d'escannejar codis de barres";
 
 "product-scanner.search.status" = "Carregant el producte…";
+
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -197,6 +202,7 @@
 "product-detail.nutrition.carbon-footprint" = "Empremta de carboni / emissions de CO₂";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Informació nutricional";
 "product-detail.nutrition-table.for-100g" = "Per cada 100 g";
 "product-detail.nutrition-table.for-serving" = "Per ració";

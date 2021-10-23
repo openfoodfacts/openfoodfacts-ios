@@ -48,6 +48,11 @@
 
 "product-scanner.search.status" = "Loading product…";
 
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Uploading image…";
@@ -117,10 +122,10 @@
 "product-add.label.origins-example" = "Example: Butter from France, etc.";
 
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
-"product-add.titles.nutritive" = "Nutrition Facts";
+"product-add.titles.nutritive" = "Uztura fakti";
 "product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "per portion";
-"product-add.nutritive.add-nutriment" = "Add a nutrient";
+"product-add.nutritive.add-nutriment" = "Pievienojiet uzturvielu";
 "product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
@@ -154,7 +159,7 @@
 "product-detail.page-title.ingredients" = "Sastāvdaļas";
 "product-detail.page-title.nutrition" = "Uzturs";
 "product-detail.page-title.nutrition-table" = "Nutrition table";
-"product-detail.page-title.environment-impact" = "Environment";
+"product-detail.page-title.environment-impact" = "Vide";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Svītrkods";
@@ -169,7 +174,7 @@
 "product-detail.summary.citiesTags" = "Pilsēta, valsts un valsts, kur tas tiek nopirkts";
 "product-detail.summary.stores" = "Stores";
 "product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Country";
+"product-detail.summary.countries" = "Valsts";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -197,6 +202,7 @@
 "product-detail.nutrition.carbon-footprint" = "Oglekļa dioksīda emisijas / CO2 emisijas";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Uztura fakti";
 "product-detail.nutrition-table.for-100g" = "100 g";
 "product-detail.nutrition-table.for-serving" = "Uz porciju";
@@ -232,7 +238,7 @@
 "ingredients-analysis.display" = "Display %@ status";
 "ingredients-analysis.missing-ingredients.title" = "Fill in the missing ingredients";
 "ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
-"ingredients-analysis.help-translate.title" = "Help translate the ingredients in your language";
+"ingredients-analysis.help-translate.title" = "Palīdziet tulkot sastāvdaļas jūsu valodā";
 "ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
 "ingredients-analysis.help-translate.button" = "Help translate ingredients";
 "ingredients-analysis.back-to-scan" = "Back to scan";
@@ -280,9 +286,9 @@
 "nutrition.vitamins" = "Vitamīni";
 "nutrition.vitamins.a" = "Vitamīns A";
 "nutrition.vitamins.beta-carotene" = "Beta carotene";
-"nutrition.vitamins.d" = "Vitamin D";
-"nutrition.vitamins.e" = "Vitamin E";
-"nutrition.vitamins.k" = "Vitamin K";
+"nutrition.vitamins.d" = "D vitamīns";
+"nutrition.vitamins.e" = "E vitamīns";
+"nutrition.vitamins.k" = "K vitamīns";
 "nutrition.vitamins.c" = "C vitamīns";
 "nutrition.vitamins.b1" = "Vitamīns B1";
 "nutrition.vitamins.b2" = "B2 vitamīns";
@@ -318,7 +324,7 @@
 "nutrition.minerals.chlorophyl" = "Hlorofils";
 
 // Call to action
-"call-to-action.summary" = "Take a photo of the front";
+"call-to-action.summary" = "Nofotografējiet priekšpusi";
 "call-to-action.environment" = "Nofotografējiet pārstrādes instrukcijas";
 "call-to-action.ingredients" = "Take a photo of the ingredients";
 "call-to-action.nutrition" = "Take a photo of the nutrition facts";

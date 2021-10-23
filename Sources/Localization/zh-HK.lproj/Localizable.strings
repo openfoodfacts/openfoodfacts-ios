@@ -14,7 +14,7 @@
 "generic.search" = "搜尋";
 "generic.cancel" = "取消";
 "generic.save" = "儲存";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "取消";
 "generic.ok" = "確定";
 "generic.close" = "關閉";
 
@@ -47,6 +47,11 @@
 "product-scanner.permissions.failed.action.title" = "離開條碼掃描";
 
 "product-scanner.search.status" = "正載入產品……";
+
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -112,7 +117,7 @@
 "product-add.label.language" = "語言";
 "product-add.label.labels" = "標籤";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
-"product-add.label.origins" = "成分来源";
+"product-add.label.origins" = "成分來源";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
 "product-add.label.origins-example" = "Example: Butter from France, etc.";
 
@@ -197,6 +202,7 @@
 "product-detail.nutrition.carbon-footprint" = "碳足跡 / CO2 排放量︰";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "營養素表";
 "product-detail.nutrition-table.for-100g" = "每100克";
 "product-detail.nutrition-table.for-serving" = "每份";
@@ -405,7 +411,7 @@
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "編輯";
 
 // Camera localization API
-"API_CANCEL_TITLE" = "Cancel";
+"API_CANCEL_TITLE" = "取消";
 "USE_PHOTO" = "Use Photo";
 "PHOTO" = "PHOTO";
 "AEAF_LOCK_TEXT" = "AE/AF LOCK";
@@ -414,5 +420,5 @@
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
 "PHOTOS" = "相片";
-"CANCEL" = "Cancel";
+"CANCEL" = "取消";
 "RETAKE" = "Retake";

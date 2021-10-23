@@ -48,6 +48,11 @@
 
 "product-scanner.search.status" = "המוצר נטען…";
 
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "התמונה נשלחת…";
@@ -175,7 +180,7 @@
 "product-detail.ingredients.nova.1" = "מזון עם עיבוד מזערי או נטול";
 "product-detail.ingredients.nova.2" = "רכיבים קולינריים מעובדים";
 "product-detail.ingredients.nova.3" = "מזון מעובד";
-"product-detail.ingredients.nova.4" = "מוצרי מזון ושתייה מעובדים ביותר";
+"product-detail.ingredients.nova.4" = "מוצרי מזון ושתייה אולטרה מעובדים";
 "product-detail.ingredients.nova.unknown" = "לא ניתן לחשב את רמת ה־NOVA לעיבוד מזון";
 "product-detail.ingredients.nova.incite" = "יש להוסיף מרכיבים ו/או קטגוריות כדי לחשב NOVA.";
 "product-detail.ingredients.ingredients-list" = "רשימת מרכיבים";
@@ -197,6 +202,7 @@
 "product-detail.nutrition.carbon-footprint" = "טביעת רגל פחמנית / פליטות פחמן דו־חמצני";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "מפרט תזונתי";
 "product-detail.nutrition-table.for-100g" = "ל־100 ג׳";
 "product-detail.nutrition-table.for-serving" = "להגשה";

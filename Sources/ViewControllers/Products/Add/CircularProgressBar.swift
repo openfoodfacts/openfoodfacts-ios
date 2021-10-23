@@ -169,7 +169,7 @@ class CircularProgressBar: UIView {
         self.addSubview(label)
     }
 
-    //Layout Sublayers
+    // Layout Sublayers
 
     private var layoutDone = false
     override func layoutSublayers(of layer: CALayer) {

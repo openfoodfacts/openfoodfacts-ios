@@ -14,7 +14,7 @@
 "generic.search" = "Tafuta";
 "generic.cancel" = "Ghairi";
 "generic.save" = "Hifadhi";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "Ghairi";
 "generic.ok" = "Sawa";
 "generic.close" = "Funga";
 
@@ -47,6 +47,11 @@
 "product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
 
 "product-scanner.search.status" = "Loading product…";
+
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -198,6 +203,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Per serving";
 "product-detail.nutrition-table.100g" = "100g";
@@ -414,5 +420,5 @@
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
 "PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
+"CANCEL" = "Ghairi";
 "RETAKE" = "Retake";

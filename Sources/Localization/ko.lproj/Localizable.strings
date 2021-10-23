@@ -11,7 +11,7 @@
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "돌아가기";
-"generic.search" = "수색";
+"generic.search" = "검색";
 "generic.cancel" = "취소";
 "generic.save" = "저장";
 "generic.cancel" = "취소";
@@ -25,7 +25,7 @@
 "product-search.no-results" = "결과를 찾을 수 없습니다. 제품을 스캔하여 Open Food Facts에 제품을 추가하세요.";
 "product-search.error-view.title" = "문제가 발생했습니다";
 "product-search.error-view.subtitle" = "다시 시도해 주세요";
-"product-search.initial-view.slogan" = "무료 식제품 데이터베이스";
+"product-search.initial-view.slogan" = "자유 식품 데이터베이스";
 "product-search.initial-view.offline.title-loading" = "오프라인으로 제품 저장 : %d%%";
 "product-search.initial-view.offline.subtitle" = "즉석 스캔에 사용할 수있는 %d 개 이상의 제품";
 
@@ -47,6 +47,11 @@
 "product-scanner.permissions.failed.action.title" = "바코드 스캔 남기기";
 
 "product-scanner.search.status" = "상품 불러오는 중...";
+
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -100,8 +105,8 @@
 "product-add.titles.top-explainations" = "좋습니다! 이 제품은 아직 Open Food Facts에 없습니다. Open Food Facts에 이 제품을 추가하기 위해 제품과, 성분목록, 영양 성분에 대한 사진을 찍어주실 수 있나요?\n\n감사합니다.";
 "product-add.titles.license-explaination" = "참고: 보내신 사진들은 모두 무료 라이센스인 Creative Commons Attribution and ShareAlike에 따라 게시됩니다.";
 
-"product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.titles.product-info" = "상품 정보";
+"product-add.label.brand-example" = "예시: 코카콜라, 네슬레 등";
 "product-add.label.product-name" = "이름";
 "product-add.label.category" = "카테고리";
 "product-add.label.quantity" = "양";
@@ -111,10 +116,10 @@
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "언어";
 "product-add.label.labels" = "라벨";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.labels-example" = "예시: 글루텐 프리 등";
 "product-add.label.origins" = "성분의 유래";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Example: Butter from France, etc.";
+"product-add.field.origins-placeholder" = "Eco-Score 계산에 필요";
+"product-add.label.origins-example" = "예시: 프랑스산 버터 등";
 
 "product-add.description.nutritive" = "영양 사실과 상품 카테고리를 완성하여 Nutri-Score를 얻는다.";
 "product-add.titles.nutritive" = "영양 성분 정보";
@@ -176,7 +181,7 @@
 "product-detail.ingredients.nova.2" = "가공 식품 재료";
 "product-detail.ingredients.nova.3" = "가공 식품";
 "product-detail.ingredients.nova.4" = "초가공 식품 및 음료 제품";
-"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
+"product-detail.ingredients.nova.unknown" = "식품 가공의 NOVA 레벨을 계산할 수 없습니다";
 "product-detail.ingredients.nova.incite" = "성분 및 / 또는 카테고리를 추가하여 NOVA를 계산하세요.";
 "product-detail.ingredients.ingredients-list" = "성분 목록";
 "product-detail.ingredients.allergens-list" = "알레르기 또는 과민 반응을 일으키는 물질 또는 제품입니다.";
@@ -197,15 +202,16 @@
 "product-detail.nutrition.carbon-footprint" = "탄소 발자국 / CO2 배출량";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "영양 성분 표시";
 "product-detail.nutrition-table.for-100g" = "100 g";
 "product-detail.nutrition-table.for-serving" = "인분";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "1인당";
 "product-detail.nutrition-table.missing" = "영양분이 설정되지 않았습니다.";
-"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.noNutritionData" = "이 상품에는 영양성분표가 없습니다.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "경고: 섬유질의 양이 명시되지 않았으며 등급에 대한 잠재적 기여도는 고려되지 않았다.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "경고: 과일, 채소 및 견과류의 양이 명시되지 않았으며 등급에 대한 잠재적 기여도가 고려되지 않았습니다.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "경고: 라벨에 과일, 야채 및 견과류의 양이 명시되지 않았으며, 재료 목록에서 다음과 같이 추정되었습니다.:%d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "경고: 라벨에 과일, 야채 및 견과류의 양이 명시되지 않았으며, 제품의 범주(%s)에서 추정되었습니다:%d%";
 
@@ -214,8 +220,8 @@
 "product-detail.environment.ecoscore.c" = "Eco-score C";
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.unknown" = "Eco-score 알 수 없음";
+"product-detail.environment.ecoscore.incite" = "Eco-score를 계산할 수 있도록 포장 정보를 추가해주십시오.";
 
 // Nutrition levels
 "nutrition-level.title" = "100 g/100 mL당 영양 수준";
@@ -319,10 +325,10 @@
 
 // Call to action
 "call-to-action.summary" = "정면 사진 찍기";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "재활용 지침 사진 촬영";
 "call-to-action.ingredients" = "성분의 사진을 촬영";
 "call-to-action.nutrition" = "영양 사실의 사진을 찍으십시오";
-"call-to-action.edit" = "Complete the product to get it scored";
+"call-to-action.edit" = "상품의 점수를 매기려면 정보를 완성해주세요";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -333,7 +339,7 @@
 "product.images.take-picture.front" = "정면의 사진";
 "product.images.take-picture.ingredients" = "성분의 사진";
 "product.images.take-picture.nutrition" = "영양 표 사진";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.packaging" = "재활용 정보 사진";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -406,13 +412,13 @@
 
 // Camera localization API
 "API_CANCEL_TITLE" = "취소";
-"USE_PHOTO" = "Use Photo";
-"PHOTO" = "PHOTO";
-"AEAF_LOCK_TEXT" = "AE/AF LOCK";
-"HDR_AUTO" = "Auto";
-"HDR_ON" = "On";
-"HDR_OFF" = "Off";
-"TIMER_OFF_TEXT" = "Off";
+"USE_PHOTO" = "사진 사용";
+"PHOTO" = "사진";
+"AEAF_LOCK_TEXT" = "AE/AF 잠금";
+"HDR_AUTO" = "자동";
+"HDR_ON" = "켬";
+"HDR_OFF" = "끔";
+"TIMER_OFF_TEXT" = "끔";
 "PHOTOS" = "사진";
 "CANCEL" = "취소";
-"RETAKE" = "Retake";
+"RETAKE" = "재촬영";

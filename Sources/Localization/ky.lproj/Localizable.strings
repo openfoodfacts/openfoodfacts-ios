@@ -13,7 +13,7 @@
 "generic.back" = "Артка";
 "generic.search" = "Издөө";
 "generic.cancel" = "Cancel";
-"generic.save" = "Save";
+"generic.save" = "Сактоо";
 "generic.cancel" = "Cancel";
 "generic.ok" = "Макул";
 "generic.close" = "Жабуу";
@@ -47,6 +47,11 @@
 "product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
 
 "product-scanner.search.status" = "Loading product…";
+
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -88,9 +93,9 @@
 "alert.action.ok" = "Макул";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
-"product-add.placeholder.name" = "Product name";
+"product-add.placeholder.name" = "Продукциянын аталышы";
 /* Product Add brand text field */
-"product-add.placeholder.brand" = "Brand";
+"product-add.placeholder.brand" = "Бренд";
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Quantity";
 
@@ -103,7 +108,7 @@
 "product-add.titles.product-info" = "Product Information";
 "product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
 "product-add.label.product-name" = "Name";
-"product-add.label.category" = "Category";
+"product-add.label.category" = "Категория";
 "product-add.label.quantity" = "Quantity";
 "product-add.label.packaging" = "Packaging";
 "product-add.label.packaging-example" = "Examples: plastic, paper, glass";
@@ -120,7 +125,7 @@
 "product-add.titles.nutritive" = "Nutrition Facts";
 "product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "per portion";
-"product-add.nutritive.add-nutriment" = "Add a nutrient";
+"product-add.nutritive.add-nutriment" = "Аш болумдуу зат кошуңуз";
 "product-add.nutritive.too-much" = "More than 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
@@ -130,11 +135,11 @@
 "product-add.ingredients.button-save" = "Looks good, Save";
 
 // Select Category
-"select-category.title" = "Category";
+"select-category.title" = "Категория";
 "select-category.search-placeholder" = "Search for a category";
 
 // Select nutrition
-"select-nutriment.title" = "Nutrition";
+"select-nutriment.title" = "Тамактануу";
 "select-nutriment.search-placeholder" = "Search for a nutrient";
 
 // Select allergen
@@ -152,9 +157,9 @@
 // Product detail page titles
 "product-detail.page-title.summary" = "Summary";
 "product-detail.page-title.ingredients" = "Ingredients";
-"product-detail.page-title.nutrition" = "Nutrition";
+"product-detail.page-title.nutrition" = "Тамактануу";
 "product-detail.page-title.nutrition-table" = "Nutrition table";
-"product-detail.page-title.environment-impact" = "Environment";
+"product-detail.page-title.environment-impact" = "Айлана чөйрө";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Barcode";
@@ -169,7 +174,7 @@
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
 "product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Country";
+"product-detail.summary.countries" = "Мамлекет";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -188,7 +193,7 @@
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients that may be from palm oil";
 "product-detail.ingredients.vitamins-list" = "Vitamins";
-"product-detail.ingredients.minerals-list" = "Minerals";
+"product-detail.ingredients.minerals-list" = "Минералдар";
 "product-detail.ingredients.nucleotides-list" = "Nucleotides";
 "product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
@@ -198,6 +203,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Per serving";
 "product-detail.nutrition-table.100g" = "100g";
@@ -256,9 +262,9 @@
 "nutrition.fats.saturated-fat" = "Saturated fat";
 "nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated fat";
 "nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
-"nutrition.fats.omega3" = "Omega 3";
-"nutrition.fats.omega6" = "Omega 6";
-"nutrition.fats.omega9" = "Omega 9";
+"nutrition.fats.omega3" = "Омега 3";
+"nutrition.fats.omega6" = "Омега 6";
+"nutrition.fats.omega9" = "Омега 9";
 "nutrition.fats.trans-fat" = "Trans fat";
 "nutrition.fats.cholesterol" = "Cholesterol";
 "nutrition.carbohydrate" = "Carbohydrate";
@@ -276,32 +282,32 @@
 "nutrition.proteins.nucleotides" = "Nucleotides";
 "nutrition.salt" = "Salt";
 "nutrition.sodium" = "Sodium";
-"nutrition.alcohol" = "Alcohol";
+"nutrition.alcohol" = "Ичимдик";
 "nutrition.vitamins" = "Vitamins";
 "nutrition.vitamins.a" = "Vitamin A";
 "nutrition.vitamins.beta-carotene" = "Beta carotene";
-"nutrition.vitamins.d" = "Vitamin D";
-"nutrition.vitamins.e" = "Vitamin E";
-"nutrition.vitamins.k" = "Vitamin K";
-"nutrition.vitamins.c" = "Vitamin C";
-"nutrition.vitamins.b1" = "Vitamin B1";
-"nutrition.vitamins.b2" = "Vitamin B2";
+"nutrition.vitamins.d" = "D витамини";
+"nutrition.vitamins.e" = "Е витамини";
+"nutrition.vitamins.k" = "К витамини";
+"nutrition.vitamins.c" = "С витамини";
+"nutrition.vitamins.b1" = "В1 витамини";
+"nutrition.vitamins.b2" = "В2 витамини";
 "nutrition.vitamins.pp" = "Vitamin B3";
-"nutrition.vitamins.b6" = "Vitamin B6";
-"nutrition.vitamins.b9" = "Vitamin B9";
-"nutrition.vitamins.b12" = "Vitamin B12";
+"nutrition.vitamins.b6" = "В6 витамини";
+"nutrition.vitamins.b9" = "В9 витамини";
+"nutrition.vitamins.b12" = "В12 витамини";
 "nutrition.vitamins.biotin" = "Biotin";
 "nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
-"nutrition.minerals" = "Minerals";
+"nutrition.minerals" = "Минералдар";
 "nutrition.minerals.silica" = "Silica";
 "nutrition.minerals.bicarbonate" = "Bicarbonate";
 "nutrition.minerals.potassium" = "Potassium";
 "nutrition.minerals.chloride" = "Chloride";
-"nutrition.minerals.calcium" = "Calcium";
+"nutrition.minerals.calcium" = "Кальций";
 "nutrition.minerals.phosphorus" = "Phosphorus";
 "nutrition.minerals.iron" = "Iron";
 "nutrition.minerals.magnesium" = "Magnesium";
-"nutrition.minerals.zinc" = "Zinc";
+"nutrition.minerals.zinc" = "Цинк";
 "nutrition.minerals.copper" = "Copper";
 "nutrition.minerals.manganese" = "Manganese";
 "nutrition.minerals.fluoride" = "Fluoride";
@@ -309,7 +315,7 @@
 "nutrition.minerals.chromium" = "Chromium";
 "nutrition.minerals.molybdenum" = "Molybdenum";
 "nutrition.minerals.iodine" = "Iodine";
-"nutrition.minerals.caffeine" = "Caffeine";
+"nutrition.minerals.caffeine" = "Кофеин";
 "nutrition.minerals.taurine" = "Taurine";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Fruits, vegetables, nuts";
@@ -344,7 +350,7 @@
 "settings.allergies.title" = "Allergens alerts";
 "settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
 "settings.allergies.add-button" = "Add allergens";
-"settings.sections.information" = "Information";
+"settings.sections.information" = "Маалымат";
 "settings.sections.discover" = "Discover";
 "settings.sections.contribute" = "Contribute";
 "settings.sections.about" = "About";
@@ -362,7 +368,7 @@
 
 // User view
 /* Tab bar item */
-"user.tab-bar.item" = "User";
+"user.tab-bar.item" = "Колдонуучу";
 "user.log-in" = "Log In";
 "user.logging-in" = "Logging in";
 "user.log-out" = "Log Out";
@@ -402,7 +408,7 @@
 "history.section-titles.longTime" = "A long time ago";
 "history.first-scan.button.title" = "Scan First Product";
 
-"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edit";
+"SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Оңдоо";
 
 // Camera localization API
 "API_CANCEL_TITLE" = "Cancel";

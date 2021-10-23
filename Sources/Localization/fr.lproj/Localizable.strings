@@ -15,7 +15,7 @@
 "generic.cancel" = "Annuler";
 "generic.save" = "Enregistrer";
 "generic.cancel" = "Annuler";
-"generic.ok" = "Ok";
+"generic.ok" = "OK";
 "generic.close" = "Fermer";
 
 // Product Search
@@ -44,23 +44,28 @@
 
 "product-scanner.permissions.failed.title" = "La lecture du codes-barres n'a pas pu être lancée.";
 "product-scanner.permissions.failed.message" = "Assurez-vous que, dans les paramètres de confidentialité, Open Food Facts est autorisé à utiliser l'appareil photo.";
-"product-scanner.permissions.failed.action.title" = "Quitter le scan du code-barre";
+"product-scanner.permissions.failed.action.title" = "Quitter le scan du code-barres";
 
 "product-scanner.search.status" = "Chargement du produit…";
 
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Envoi de l'image…";
+"product-add.uploading-image-banner.title" = "Téléversement de l'image…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Une erreur s'est produite";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.subtitle" = "Veuillez essayer de reprendre la photo";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "L'image a été envoyée avec succès";
+"product-add.image-upload-success-banner.title" = "L'image a été téléversée avec succès";
 "product-add.image-save-success-banner.title" = "L'image sera envoyée une fois en ligne";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "Produit ajouté avec succès. Merci!";
-"product-add.uploaded-image" = "Image envoyée, merci!";
+"product-add.uploaded-image" = "Image téléversée, merci !";
 "product-add.save-error.title" = "Erreur lors de la sauvegarde du produit";
 "product-add.save-error.message" = "Veuillez réessayer ultérieurement";
 "product-add.save-info.success" = "Informations sauvegardées à";
@@ -96,8 +101,8 @@
 
 "product-add.title" = "Nouveau produit";
 "product-add.title-edit" = "Modifier le produit";
-"product-add.titles.barcode" = "Code barre";
-"product-add.titles.top-explainations" = "Bien joué ! Ce produit n'est pas encore dans la base de données Open Food Facts. Pourriez-vous prendre quelques photos du produit, de son code-barre, de la liste des ingrédients et des informations nutritionnelles afin de l'ajouter à la base ?\n\nMerci par avance.";
+"product-add.titles.barcode" = "Code-barres";
+"product-add.titles.top-explainations" = "Bien joué ! Ce produit n'est pas encore dans la base de données Open Food Facts. Pourriez-vous prendre quelques photos du produit, de son code-barres, de la liste des ingrédients et des informations nutritionnelles afin de l'ajouter à la base ?\n\nMerci par avance.";
 "product-add.titles.license-explaination" = "Note : les photos que vous envoyées sont publiées sous la license libre Creative Commons Attribution and ShareAlike.";
 
 "product-add.titles.product-info" = "Information produit";
@@ -126,8 +131,8 @@
 "product-add.description.ingredients" = "Complétez les ingrédients pour obtenir le Groupe Nova sur la transformation des aliments";
 "product-add.titles.ingredients" = "Ingrédients";
 "product-add.ingredients.explaination" = "Prenez une photo de la liste des ingrédients (deuxième image plus haut), et la liste des ingrédients sera pré-remplie. Corrigez la si nécessaire, puis enregistrez !";
-"product-add.ingredients.button-delete" = "Trop mauvais, ignorer.";
-"product-add.ingredients.button-save" = "Cela semble tout bon, valider.";
+"product-add.ingredients.button-delete" = "Trop mauvais, ignorer";
+"product-add.ingredients.button-save" = "Ça semble bien, valider";
 
 // Select Category
 "select-category.title" = "Catégorie";
@@ -180,7 +185,7 @@
 "product-detail.ingredients.nova.incite" = "Ajoutez des ingrédients et / ou des catégories pour calculer le score NOVA.";
 "product-detail.ingredients.ingredients-list" = "Liste des ingrédients";
 "product-detail.ingredients.allergens-list" = "Substances ou produits provoquant des allergies ou intolérances";
-"product-detail.ingredients.allergens-alert.title" = "Attention: allergènes :";
+"product-detail.ingredients.allergens-alert.title" = "Contient des allergènes !";
 "product-detail.ingredients.allergens-list.missing-infos" = "Ce produit n'est pas complet. En conséquence, nous n'avons pas pu évaluer la présence d'allergènes.";
 "product-detail.ingredients.allergens-list.offline-product" = "Ce produit provient de la base de donnée hors-ligne. En conséquence, nous n'avons pas pu évaluer la présence d'allergènes.";
 "product-detail.ingredients.traces-list" = "Traces éventuelles";
@@ -197,6 +202,7 @@
 "product-detail.nutrition.carbon-footprint" = "Empreinte carbone / émissions de CO2";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Tableau nutritionnel";
 "product-detail.nutrition-table.for-100g" = "Pour 100 g";
 "product-detail.nutrition-table.for-serving" = "Par portion";
@@ -225,7 +231,7 @@
 
 // Ingredients Analysis
 "ingredients-analysis.title" = "Analyse des ingrédients";
-"ingredients-analysis.ingredients_in_this_product" = "Ingrédients de ce produit qui sont %@s:";
+"ingredients-analysis.ingredients_in_this_product" = "Ingrédients de ce produit qui sont %@s :";
 "ingredients-analysis.ingredients_in_this_product_are" = "Les ingrédients de ce produit sont %@s.";
 "ingredients-analysis.unknown_status" = "Nous n'avons pas pu évaluer les caractéristiques du produit.";
 "ingredients-analysis.ambiguous" = "Ingrédients ambigus : %@";
@@ -342,7 +348,7 @@
 "settings.tab-bar.item" = "Paramètres";
 "settings.ingredientsAnalysis.title" = "Analyse des ingrédients";
 "settings.allergies.title" = "Alertes allergènes";
-"settings.allergies.description" = "Ajoutez des allergènes à cette liste pour être avertis lorsque vous scannerez un produit en contenant.\n\nAttention: les informations relatives à vos allergies ne seront jamais envoyées aux serveurs d’Open Food Facts. Par ailleurs, soyez vigilant sur le fait que ces données ne sont pas fiables à 100%, et que la détection peut ne pas être précise à 100%. Veillez à vérifier également par vous-même !";
+"settings.allergies.description" = "Ajoutez des allergènes à cette liste pour être avertis lorsque vous scannerez un produit en contenant.\n\nAttention : les informations relatives à vos allergies ne seront jamais envoyées aux serveurs d’Open Food Facts. Par ailleurs, soyez vigilant sur le fait que ces données ne sont pas fiables à 100 %, et que la détection peut ne pas être précise à 100 %. Veillez à vérifier également par vous-même !";
 "settings.allergies.add-button" = "Ajouter un allergène";
 "settings.sections.information" = "Information";
 "settings.sections.discover" = "Découvrir";

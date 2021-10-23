@@ -14,7 +14,7 @@
 "generic.search" = "ค้นหา";
 "generic.cancel" = "ยกเลิก";
 "generic.save" = "บันทึก";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "ยกเลิก";
 "generic.ok" = "ตกลง";
 "generic.close" = "ปิด";
 
@@ -47,6 +47,11 @@
 "product-scanner.permissions.failed.action.title" = "ออกจากการสแกนบาร์โค้ด";
 
 "product-scanner.search.status" = "กำลังโหลดผลิตภัณฑ์ ...";
+
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -197,6 +202,7 @@
 "product-detail.nutrition.carbon-footprint" = "การปล่อยคาร์บอนไดออกไซด์";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "ข้อมูลโภชนาการ";
 "product-detail.nutrition-table.for-100g" = "ต่อ 100 กรัม";
 "product-detail.nutrition-table.for-serving" = "ต่อหน่วยบริโภค";
@@ -406,7 +412,7 @@
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "แก้ไข";
 
 // Camera localization API
-"API_CANCEL_TITLE" = "Cancel";
+"API_CANCEL_TITLE" = "ยกเลิก";
 "USE_PHOTO" = "Use Photo";
 "PHOTO" = "PHOTO";
 "AEAF_LOCK_TEXT" = "AE/AF LOCK";
@@ -415,5 +421,5 @@
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
 "PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
+"CANCEL" = "ยกเลิก";
 "RETAKE" = "Retake";

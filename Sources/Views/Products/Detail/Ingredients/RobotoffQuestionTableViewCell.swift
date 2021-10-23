@@ -122,7 +122,7 @@ class RobotoffQuestionTableViewCell: ProductDetailBaseCell {
         yesImageView.image = UIImage(named: "robotoff_yes" + (forAnnotation == 1 ? "_selected" : ""))
         yesButton.setTitleColor(forAnnotation == 1 ? .green : .blue, for: .normal)
 
-        //yesButton.titleLabel?.textColor = (forAnnotation == 1 ? .green : .blue)
+//        yesButton.titleLabel?.textColor = (forAnnotation == 1 ? .green : .blue)
 
         noImageView.image = UIImage(named: "robotoff_no" + (forAnnotation == -1 ? "_selected" : ""))
         yesButton.setTitleColor(forAnnotation == 1 ? .green : .blue, for: .normal)

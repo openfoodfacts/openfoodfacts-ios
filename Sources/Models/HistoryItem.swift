@@ -71,7 +71,7 @@ extension HistoryItem: StringRepresentable {
         returnValue += nutriscore != nil ? "\"\(nutriscore!)\"" + "," : ","
         returnValue += ecoscore != nil ? "\"\(ecoscore!)\"" + "," : ","
         returnValue += "\"\(novaGroupString)\""
-        //returnValue += "\( ?? ""),\( ?? ""),\( ?? ""),\( ?? ""),\(),\( ?? ""),\()"
+//        returnValue += "\( ?? ""),\( ?? ""),\( ?? ""),\( ?? ""),\(),\( ?? ""),\()"
         print(returnValue)
         return returnValue
     }

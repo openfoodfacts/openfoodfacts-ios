@@ -1,0 +1,35 @@
+name: Testing
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  Test:
+    runs-on: macos-latest
+    env:
+      GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Setup Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '12.5.1'
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      #- name: Fix permissions 1
+       # run: git update-index --chmod=+x scripts/test_app.sh
+     # - name: Fix permissions 2
+      #  run: git update-index --chmod=+x scripts/test_swift_package.sh
+      - name: Carthage cache
+        uses: actions/cache@v2
+        id: cache-carthage
+        with:
+          path: ~/Carthage
+          key: ${{ runner.os }}-carthage-${{ hashFiles('Cartfile.resolved') }}
+      - name: Prepare xcodeproj
+        run: sh scripts/setup.sh
+      #- name: Testing Swift package
+     #   run: exec scripts/test_swift_package.sh
+      - name: Testing iOS app
+        run: exec scripts/test_app.sh

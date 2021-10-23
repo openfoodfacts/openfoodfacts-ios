@@ -14,7 +14,7 @@
 "generic.search" = "بحث";
 "generic.cancel" = "إلغاء";
 "generic.save" = "حفظ";
-"generic.cancel" = "Cancel";
+"generic.cancel" = "إلغاء";
 "generic.ok" = "تم";
 "generic.close" = "إغلق";
 
@@ -47,6 +47,11 @@
 "product-scanner.permissions.failed.action.title" = "اترك مسح الباركود";
 
 "product-scanner.search.status" = "يتم تحميل المنتجات…";
+
+/* Accessibility label indicating the action when the flash is currently off. */
+"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+/* Accessibility label indicating the action when the flash is currently on. */
+"product-scanner.flash.on.accessibility.label" = "Turn flash off";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -197,6 +202,7 @@
 "product-detail.nutrition.carbon-footprint" = "انبعاثات الكربون / انبعاثات ثاني أكسيد الكربون";
 
 // Product detail nutrition table labels
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "حقائق غذائية";
 "product-detail.nutrition-table.for-100g" = "ل 100 غرام";
 "product-detail.nutrition-table.for-serving" = "لكل وجبة";
@@ -232,7 +238,7 @@
 "ingredients-analysis.display" = "Display %@ status";
 "ingredients-analysis.missing-ingredients.title" = "Fill in the missing ingredients";
 "ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
-"ingredients-analysis.help-translate.title" = "Help translate the ingredients in your language";
+"ingredients-analysis.help-translate.title" = "ساعد في ترجمة المكونات بلغتك";
 "ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
 "ingredients-analysis.help-translate.button" = "Help translate ingredients";
 "ingredients-analysis.back-to-scan" = "Back to scan";
