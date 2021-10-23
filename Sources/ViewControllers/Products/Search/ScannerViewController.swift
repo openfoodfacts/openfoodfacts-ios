@@ -333,6 +333,7 @@ class ScannerViewController: UIViewController, DataManagerClient {
                 self?.scannerResultController.status = .manualBarcode
                 self?.floatingPanelController.move(to: .tip, animated: true)
                 self?.showIngredientsAnalysisFloatingIfNeeded()
+                UIAccessibility.post(notification: .layoutChanged, argument: self?.overlay)
             } else {
                 self?.showScanHelpInstructions()
             }
