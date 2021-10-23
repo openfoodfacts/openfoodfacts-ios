@@ -43,5 +43,10 @@ import UIKit
         UIView.transition(with: textLabel, duration: 0.25, options: .transitionCrossDissolve, animations: { [weak self] in
             self?.textLabel.text = text
             }, completion: nil)
+        configureAccessibility()
+    }
+    
+    private func configureAccessibility() {
+        textLabel.accessibilityTraits.insert(.header)
     }
 }
