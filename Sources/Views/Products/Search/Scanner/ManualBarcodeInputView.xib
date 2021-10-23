@@ -69,13 +69,13 @@
                 </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="f8L-4U-sdJ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Bp3-WL-cEt"/>
                 <constraint firstItem="f8L-4U-sdJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZR2-KH-gi6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="f8L-4U-sdJ" secondAttribute="trailing" id="gOZ-GM-o43"/>
+                <constraint firstItem="f8L-4U-sdJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="nBP-gF-jkj"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="128.80000000000001" y="385.45727136431788"/>
         </view>
     </objects>
