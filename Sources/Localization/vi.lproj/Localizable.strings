@@ -21,8 +21,8 @@
 // Product Search
 
 "product-search.title" = "Tìm kiếm";
-"product-search.search-placeholder" = "Search for a product by name or barcode";
-"product-search.no-results" = "No Results";
+"product-search.search-placeholder" = "Search by name or barcode";
+"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Đã xảy ra lỗi";
 "product-search.error-view.subtitle" = "Vui lòng thử lại";
 "product-search.initial-view.slogan" = "the free food products database";
@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Quét mã vạch của sản phẩm";
-"product-scanner.overlay.extended-user-help" = "Không thể tìm thấy mã vạch.\nCăn chỉnh mã vạch vào giữa màn hình.\nĐảm bảo mã vạch rõ nét, đủ ánh sáng.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,14 +39,14 @@
 "product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
+"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Open Settings";
 
-"product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
+"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Rời khỏi chức năng quét mã vạch";
 
-"product-scanner.search.status" = "Loading product...";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -55,7 +55,7 @@
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image...";
+"product-add.uploading-image-banner.title" = "Uploading image…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Đã xảy ra lỗi";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Tên";
 "product-add.label.category" = "Danh mục";
 "product-add.label.quantity" = "Số lượng";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Nhãn, chứng nhận, giải thưởng";
 "product-detail.summary.citiesTags" = "Thành phố, tiểu bang và quốc gia mua hàng";
 "product-detail.summary.stores" = "Cửa hàng";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Các quốc gia bán";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -188,7 +188,7 @@
 "product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.traces-list" = "Trace";
+"product-detail.ingredients.traces-list" = "Traces";
 "product-detail.ingredients.additives-list" = "Chất phụ gia";
 "product-detail.ingredients.palm-oil-ingredients" = "Thành phần từ dầu cọ";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Thành phần có thể có nguồn gốc từ dầu cọ";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Lượng khí thải carbon / lượng khí thải CO2";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Giá trị dinh dưỡng";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Mỗi khẩu";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Mức dinh dưỡng trên 100 g / 100mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Đường sữa";
 "nutrition.carbohydrate.maltose" = "Mạch nha";
 "nutrition.carbohydrate.maltodextrins" = "Bột tinh";
-"nutrition.fiber" = "Dietary fiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Chất đạm";
 "nutrition.proteins.casein" = "Casein";
 "nutrition.proteins.serum-proteins" = "Protein huyết thanh";

@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skann strekkoden til produktet";
-"product-scanner.overlay.extended-user-help" = "Finner ingen strekkode.\nSentrer strekkoden på skjermen.\nForsikre deg om at strekkoden er godt opplyst.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Skanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,14 +39,14 @@
 "product-scanner.barcode-notfound.manual-enter" = "Ingen strekkode funnet. Du kan skrive den inn manuelt:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts trenger kameratillatelser";
-"product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
+"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Open Settings";
 
-"product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
+"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Forlat strekkodeskanning";
 
-"product-scanner.search.status" = "Loading product...";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -55,7 +55,7 @@
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image...";
+"product-add.uploading-image-banner.title" = "Uploading image…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Noe gikk galt";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Merk: Bildene du sender, blir publisert under gratislisensen Creative Commons Attribution og Sharealike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Navn";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Mengde";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Etiketter, sertifiseringer, priser";
 "product-detail.summary.citiesTags" = "By, region eller land der produktet ble kjøpt";
 "product-detail.summary.stores" = "Butikker";
-"product-detail.summary.embCodes" = "Pakkekode";
-"product-detail.summary.countries" = "Land hvor produktet selges";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Karbonutslipp / CO2-utslipp";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Ernæringsinnhold";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Per porsjon";
 "product-detail.nutrition-table.100g" = "100 g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Næringsstoffer per 100 g/100 mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Laktose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodekstrin";
-"nutrition.fiber" = "Kostfiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Protein";
 "nutrition.proteins.casein" = "Kasein";
 "nutrition.proteins.serum-proteins" = "Serumproteiner";
@@ -364,7 +364,7 @@
 "settings.about.contact" = "Kontakt";
 "settings.about.frequently-asked-questions" = "Ofte stilte spørsmål";
 "settings.promotion.open-beauty-facts" = "Åpne skjønnhetsfakta";
-"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
@@ -406,7 +406,7 @@
 "history.section-titles.fewWeeks" = "For noen uker siden";
 "history.section-titles.fewMonths" = "For noen måneder siden";
 "history.section-titles.longTime" = "For lenge siden";
-"history.first-scan.button.title" = "Scan First Product";
+"history.first-scan.button.title" = "Scan your first product";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Rediger ";
 

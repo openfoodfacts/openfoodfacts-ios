@@ -22,7 +22,7 @@
 
 "product-search.title" = "Поиск";
 "product-search.search-placeholder" = "Поиск по названию или штрихкоду";
-"product-search.no-results" = "Ничего не найдено";
+"product-search.no-results" = "Ничего не найдено. Вы можете добавить продукт в Open Food Facts, просканировав его.";
 "product-search.error-view.title" = "Упс... что-то пошло не так";
 "product-search.error-view.subtitle" = "Попробуйте еще раз";
 "product-search.initial-view.slogan" = "бесплатная база данных продуктов";
@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Сканирование штрих-кода продукта";
-"product-scanner.overlay.extended-user-help" = "Не удается найти штрих-код.\nОтцентрируйте штрих-код на экране.\nУбедитесь, что штрих-код хорошо освещен.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Сканер";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,14 +39,14 @@
 "product-scanner.barcode-notfound.manual-enter" = "Штрих-код не найден. Вы можете ввести его вручную:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts требуется разрешения на использование камеры";
-"product-scanner.permissions.noPermissions.message" = "Предоставьте разрешение разрешение на использование камеры для сканирования штрих-кодов";
+"product-scanner.permissions.noPermissions.message" = "Пожалуйста, разрешите использование камеры для сканирования штрих-кодов";
 "product-scanner.permissions.noPermissions.action.title" = "Открыть настройки";
 
-"product-scanner.permissions.failed.title" = "Не удалось настроить сканирование штрих-кодов";
+"product-scanner.permissions.failed.title" = "Не удалось запустить сканирование штрих-кодов.";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Выйти из сканирования штрих-кодов";
 
-"product-scanner.search.status" = "Загрузка продукта...";
+"product-scanner.search.status" = "Загрузка продуктов…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -55,17 +55,17 @@
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Загрузка изображения...";
+"product-add.uploading-image-banner.title" = "Отправка изображения…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Упс... что-то пошло не так";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Попробуйте снова сделать снимок";
+"product-add.image-upload-error-banner.subtitle" = "Попробуйте сделать снимок снова";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
-"product-add.image-upload-success-banner.title" = "Изображение загружено успешно";
-"product-add.image-save-success-banner.title" = "Изображение будет загружено при подключении к сети";
+"product-add.image-upload-success-banner.title" = "Изображение успешно отправлено";
+"product-add.image-save-success-banner.title" = "Изображение будет отправлено при подключении к сети";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "Продукт успешно добавлен. Спасибо!";
-"product-add.uploaded-image" = "Изображение загружено, спасибо!";
+"product-add.uploaded-image" = "Изображение отправлено, спасибо!";
 "product-add.save-error.title" = "Ошибка при сохранении продукта";
 "product-add.save-error.message" = "Повторите попытку позже";
 "product-add.save-info.success" = "Информация сохранена в";
@@ -105,34 +105,34 @@
 "product-add.titles.top-explainations" = "Отлично! Этого продукта еще нет в Open Food Facts. Можете ли вы сделать несколько снимков продукта, списка ингредиентов и пищевой ценности, чтобы добавить их в Open Food Facts? \n\nЗаранее благодарим.";
 "product-add.titles.license-explaination" = "Примечание: отправленные фото публикуются под свободной лицензией Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Информация о продукте";
-"product-add.label.brand-example" = "Примеры: Coca-Cola, Nestle, и т.д.…";
+"product-add.titles.product-info" = "Информация о Продукте";
+"product-add.label.brand-example" = "Примеры: Coca-Cola, Nestle, и т.д.";
 "product-add.label.product-name" = "Название";
 "product-add.label.category" = "Категория";
 "product-add.label.quantity" = "Количество";
 "product-add.label.packaging" = "Упаковка";
 "product-add.label.packaging-example" = "Examples: plastic, paper, glass";
-"product-add.details.category" = "Необходим для вычисления Nutri-Score";
+"product-add.details.category" = "Необходимо для вычисления Nutri-Score";
 "product-add.label.quantity-example" = "25 г, 10 унций, 5 мл…";
 "product-add.label.language" = "Языки";
 "product-add.label.labels" = "Маркировки";
 "product-add.label.labels-example" = "Примеры: Без глютена и т.д.";
 "product-add.label.origins" = "Происхождение ингредиентов";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Пример: Масло от Франции и т.д.";
+"product-add.field.origins-placeholder" = "Требуется для расчета Eco-Score";
+"product-add.label.origins-example" = "Пример: Масло из России и т.д.";
 
 "product-add.description.nutritive" = "Для оценки питательности продукта (Nutri-Score), укажите его категорию и данные по пищевой и энергетической ценности";
 "product-add.titles.nutritive" = "Пищевая ценность";
-"product-add.nutritive.choice.per-hundred-grams" = "в 100 г/100 мл";
+"product-add.nutritive.choice.per-hundred-grams" = "в 100г / 100мл";
 "product-add.nutritive.choice.per-portion" = "на порцию";
 "product-add.nutritive.add-nutriment" = "Добавить питательное вещество";
-"product-add.nutritive.too-much" = "Более 100 г?";
+"product-add.nutritive.too-much" = "Более 100г?";
 
 "product-add.description.ingredients" = "Для определения степени обработки продукта по классификации NOVA, укажите состав продукта";
 "product-add.titles.ingredients" = "Ингредиенты";
 "product-add.ingredients.explaination" = "Чтобы автоматически заполнить данные по ингредиентам, сфотографируйте список ингредиентов. Внимательно проверьте список и не забудьте сохранить.";
 "product-add.ingredients.button-delete" = "Слишком плохо, игнорировать";
-"product-add.ingredients.button-save" = "Выглядит хорошо, сохранить";
+"product-add.ingredients.button-save" = "Всё хорошо, сохранить";
 
 // Select Category
 "select-category.title" = "Категория";
@@ -166,20 +166,20 @@
 "product-detail.summary.generic-name" = "Обычное название";
 "product-detail.summary.quantity" = "Количество";
 "product-detail.summary.packaging" = "Упаковка";
-"product-detail.summary.brands" = "Бренды";
+"product-detail.summary.brands" = "Марки";
 "product-detail.summary.manufacturing-places" = "Места производства или переработки";
 "product-detail.summary.origins" = "Происхождение ингредиентов";
 "product-detail.summary.categories" = "Категории";
 "product-detail.summary.labels" = "Маркировка, сертификаты, награды";
 "product-detail.summary.citiesTags" = "Город, область и страна покупки";
 "product-detail.summary.stores" = "Магазины";
-"product-detail.summary.embCodes" = "Код упаковщика";
-"product-detail.summary.countries" = "Страны продажи";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Необработанные или минимально обработанные пищевые продукты";
-"product-detail.ingredients.nova.2" = "Переработанные кулинарные ингредиенты";
-"product-detail.ingredients.nova.3" = "Переработанные пищевые продукты";
+"product-detail.ingredients.nova.2" = "Обработанные кулинарные ингредиенты";
+"product-detail.ingredients.nova.3" = "Обработанные пищевые продукты";
 "product-detail.ingredients.nova.4" = "Ультра-обработанные продукты питания и напитки";
 "product-detail.ingredients.nova.unknown" = "Не удалось рассчитать степень переработки пищевых продуктов NOVA";
 "product-detail.ingredients.nova.incite" = "Добавить ингредиенты и/или категории для расчета NOVA.";
@@ -192,23 +192,23 @@
 "product-detail.ingredients.additives-list" = "Добавки";
 "product-detail.ingredients.palm-oil-ingredients" = "Ингредиенты из пальмового масла";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ингредиенты, которые могут быть выработаны из пальмового масла";
-"product-detail.ingredients.vitamins-list" = "Витамины";
+"product-detail.ingredients.vitamins-list" = "Витамины и Минералы";
 "product-detail.ingredients.minerals-list" = "Минералы";
 "product-detail.ingredients.nucleotides-list" = "Нуклеотиды";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Другие питательные вещества";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Другие Питательные Вещества";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Размер порции";
 "product-detail.nutrition.carbon-footprint" = "Углеродный след / выбросы CO2";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Пищевая и энергетическая ценность";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "На 100 г";
 "product-detail.nutrition-table.for-serving" = "На порцию";
 "product-detail.nutrition-table.100g" = "100г";
 "product-detail.nutrition-table.serving" = "порция";
-"product-detail.nutrition-table.missing" = "Питательные вещества не были установлены.";
+"product-detail.nutrition-table.missing" = "Питательные вещества не были заданы.";
 "product-detail.nutrition-table.noNutritionData" = "Для этого продукта нет таблицы пищевой ценности.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Предупреждение: количество питательных волокон не указано, их возможный положительный вклад в оценку не может быть учтен.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Предупреждение: количество фруктов, овощей и орехов не указано, их возможный положительный вклад в оценку не может быть учтен.";
@@ -220,8 +220,8 @@
 "product-detail.environment.ecoscore.c" = "Некоторое воздействие на окружающую среду";
 "product-detail.environment.ecoscore.d" = "Сильное воздействие на окружающую среду";
 "product-detail.environment.ecoscore.e" = "Очень сильное воздействие на окружающую среду";
-"product-detail.environment.ecoscore.unknown" = "Эко-оценка неизвестна";
-"product-detail.environment.ecoscore.incite" = "Добавьте информацию об упаковке, чтобы мы могли рассчитать эко-оценку";
+"product-detail.environment.ecoscore.unknown" = "Eco-score неизвестна";
+"product-detail.environment.ecoscore.incite" = "Добавьте информацию об упаковке, чтобы мы могли рассчитать Eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Пищевая ценность на 100 г/100 мл";
@@ -237,7 +237,7 @@
 "ingredients-analysis.ambiguous" = "Неоднозначные ингредиенты: %@";
 "ingredients-analysis.display" = "Отображение статуса %@";
 "ingredients-analysis.missing-ingredients.title" = "Заполните недостающие ингредиенты";
-"ingredients-analysis.missing-ingredients.description" = "У нас пока нет ингредиентов для этого продукта. Можете ли вы помочь завершить их?";
+"ingredients-analysis.missing-ingredients.description" = "У нас пока нет ингредиентов для этого продукта. Могли бы вы помочь заполнить их?";
 "ingredients-analysis.help-translate.title" = "Помогите перевести ингредиенты на ваш язык";
 "ingredients-analysis.help-translate.description" = "Помогите перевести ингредиенты на ваш язык, чтобы сделать анализ ингредиентов возможным";
 "ingredients-analysis.help-translate.button" = "Помогите перевести ингредиенты";
@@ -256,8 +256,8 @@
 
 // Nutrition
 "nutrition.energy" = "Энергетическая ценность";
-"nutrition.energy.kj" = "Энергия (кДж)";
-"nutrition.energy.kcal" = "Энергетическая ценность (kcal)";
+"nutrition.energy.kj" = "Энергетическая ценность (кДж)";
+"nutrition.energy.kcal" = "Энергетическая ценность (ккал)";
 "nutrition.fats" = "Жиры";
 "nutrition.fats.saturated-fat" = "Насыщенные жиры";
 "nutrition.fats.mono-unsaturated-fat" = "Мононенасыщенные жирные кислоты";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Лактоза";
 "nutrition.carbohydrate.maltose" = "Мальтоза";
 "nutrition.carbohydrate.maltodextrins" = "Мальтодекстрин";
-"nutrition.fiber" = "Пищевые волокна";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Содержание белка";
 "nutrition.proteins.casein" = "Казеин";
 "nutrition.proteins.serum-proteins" = "Сывороточный протеин";
@@ -324,22 +324,22 @@
 "nutrition.minerals.chlorophyl" = "Хлорофилл";
 
 // Call to action
-"call-to-action.summary" = "Сделайте общее фото";
+"call-to-action.summary" = "Сделайте фото лицевой стороны";
 "call-to-action.environment" = "Сфотографируйте инструкции по переработке";
 "call-to-action.ingredients" = "Сделайте фото состава";
 "call-to-action.nutrition" = "Сделайте фото энерг. ценности";
-"call-to-action.edit" = "Завершите продукт, чтобы получить его оценку";
+"call-to-action.edit" = "Заполните информацию о продукте, чтобы получить его оценку";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.took-picture.front" = "Фото лицевой стороны";
-"product.images.took-picture.ingredients" = "Фото ингредиентов ✅";
-"product.images.took-picture.nutrition" = "Фото таблицы пищевой и энергетической ценности";
+"product.images.took-picture.front" = "Фото лицевой стороны ✅";
+"product.images.took-picture.ingredients" = "Фото состава продукта ✅";
+"product.images.took-picture.nutrition" = "Фото таблицы пищевой и энергетической ценности ✅";
 
 "product.images.take-picture.front" = "Фото лицевой стороны";
-"product.images.take-picture.ingredients" = "Фото ингредиентов";
+"product.images.take-picture.ingredients" = "Фото состава продукта";
 "product.images.take-picture.nutrition" = "Фото таблицы пищевой и энергетической ценности";
-"product.images.take-picture.packaging" = "Фотография информации о переработке";
+"product.images.take-picture.packaging" = "Фото информации о переработке";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -356,10 +356,10 @@
 "settings.sections.about" = "О приложении";
 "settings.user-profile" = "Ваш аккаунт участника";
 "settings.credits.title" = "Благодарности";
-"settings.scan-on-launch.title" = "Запуск сканирования при запуске приложения";
+"settings.scan-on-launch.title" = "Запуск Сканера При Открытии Приложения";
 "settings.sections.discover" = "Откройте новое";
-"settings.contribute.how-to-contribute" = "Как принять участие";
-"settings.contribute.support-open-food-facts" = "Поддержать Open Food Facts Support";
+"settings.contribute.how-to-contribute" = "Как Помочь Проекту";
+"settings.contribute.support-open-food-facts" = "Поддержать Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Перевести Open Food Facts";
 "settings.about.contact" = "Связаться с нами";
 "settings.about.frequently-asked-questions" = "Часто задаваемые вопросы";
@@ -370,20 +370,20 @@
 /* Tab bar item */
 "user.tab-bar.item" = "Пользователь";
 "user.log-in" = "Войти";
-"user.logging-in" = "Происходит вход в систему";
+"user.logging-in" = "Входим в систему";
 "user.log-out" = "Выйти";
 "user.username" = "Имя пользователя";
 "user.password" = "Пароль";
-"user.logged-in.label" = "%@, вы вошли в систему";
-"user.logged-in-explanation.label" = "Все добавленные вами товары и загруженные вами фотографии будут зачислены на ваш счет";
+"user.logged-in.label" = "%@, Вы вошли в систему";
+"user.logged-in-explanation.label" = "Все добавленные Вами продукты и загруженные Вами фотографии будут привязаны к Вашей учетной записи";
 "user.not-logged-in" = "Не авторизован";
 "user.forgot-password" = "Забыли пароль?";
 "user.check-your-contributions.button" = "Проверить ваш вклад";
-"user.products-pending-upload.button" = "Продукты, ожидающие загрузку в Open Food Facts";
-"user.products-pending-upload-none.button" = "Продукты в ожидании загрузки в Open Food Facts (нет)";
-"user.create-account.text" = "Если у вас нет учетной записи, нажмите ссылку ниже, чтобы создать ее.";
+"user.products-pending-upload.button" = "Продукты, ожидающие загрузки в Open Food Facts";
+"user.products-pending-upload-none.button" = "Продукты, ожидающие загрузки в Open Food Facts (нет)";
+"user.create-account.text" = "Если у Вас нет учетной записи, нажмите ссылку ниже, чтобы создать ее.";
 "user.create-account.button" = "Создать учетную запись";
-"user.why-log-in.text" = "Войдите в свою учетную запись чтобы ассоциировать ваш вклад с вашей учетной записью.";
+"user.why-log-in.text" = "Войдите в свою учетную запись чтобы связать Ваш вклад с Вашей учетной записью.";
 "user.alert.wrong-credentials.title" = "Не удалось авторизоваться";
 "user.alert.wrong-credentials.subtitle" = "Проверьте имя пользователя и пароль";
 "user.alert.generic-error.title" = "Ошибка при входе в систему";
@@ -392,15 +392,15 @@
 "user.alert.logout-confirmation.subtitle" = "Вы уверены, что хотите выйти?";
 "user.alert.username-missing" = "Требуется имя пользователя";
 "user.alert.password-missing" = "Требуется пароль";
-"pending-upload.info.text" = "Это продукты, которые вы добавили в оффлайн-режиме.\n\nПриложение попытается загрузить их автоматически, когда появится доступ к сети, либо вы можете вручную загрузить их, нажав на кнопку в правом верхнем углу.";
-"pending-upload.hud.status" = "Загрузка";
+"pending-upload.info.text" = "Это продукты, которые Вы добавили в автономном режиме.\n\nПриложение попытается отправить их автоматически, когда появится доступ к сети, либо Вы можете вручную отправить их, нажав на кнопку в правом верхнем углу.";
+"pending-upload.hud.status" = "Отправка";
 
 // Search history
 "history.title" = "История поиска";
-"history.cell.privacy" = "История поиска хранится только на вашем устройстве";
+"history.cell.privacy" = "История поиска хранится только на Вашем устройстве";
 "history.button.clear" = "Очистить";
 "history.clear.confirmation-title" = "Очистить историю?";
-"history.clear.confirmation-message" = "Вся ваша история будет удалена";
+"history.clear.confirmation-message" = "Вся Ваша история будет удалена";
 "history.section-titles.last24h" = "За последние 24 часа";
 "history.section-titles.fewDays" = "Несколько дней назад";
 "history.section-titles.fewWeeks" = "Несколько недель назад";

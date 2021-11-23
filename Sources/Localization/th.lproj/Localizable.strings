@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "สแกนบาร์โค้ดของผลิตภัณฑ์";
-"product-scanner.overlay.extended-user-help" = "ไม่พบบาร์โค้ด\nจัดให้บาร์โค้ดอยู่กึ่งกลางหน้าจอ\nดึงให้ตึง บิดให้น้อยที่สุดเพื่อให้อ่านได้ง่าย";
+"product-scanner.overlay.extended-user-help" = "ไม่พบบาร์โค้ด \nวางบาร์โค้ดไว้ตรงกลางหน้าจอ\nตรวจสอบให้แน่ใจว่าบาร์โค้ดมีแสงสว่างเพียงพอ";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "ตรวจสอบให้แน่ใจว่า Open Food Facts ได้รับอนุญาตให้ใช้กล้อง";
 "product-scanner.permissions.failed.action.title" = "ออกจากการสแกนบาร์โค้ด";
 
-"product-scanner.search.status" = "กำลังโหลดผลิตภัณฑ์ ...";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "หมายเหตุ: รูปภาพที่คุณส่งจะได้รับการเผยแพร่ภายใต้สัญญาอนุญาต Creative Commons Attribution และ ShareAlike ที่ให้สิทธิ์ใช้งานฟรี";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "ตัวอย่าง: โคคา-โคล่า, เนสท์เล่ เป็นต้น";
 "product-add.label.product-name" = "ชื่อ";
 "product-add.label.category" = "หมวดหมู่:";
 "product-add.label.quantity" = "ปริมาณ";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "ฉลากต่างๆ การรับรอง และรางวัล";
 "product-detail.summary.citiesTags" = "เมืองรัฐและประเทศที่ซื้อ";
 "product-detail.summary.stores" = "ร้านค้า";
-"product-detail.summary.embCodes" = "รหัสแพ็คเกจ";
-"product-detail.summary.countries" = "ประเทศที่ขาย";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "การปล่อยคาร์บอนไดออกไซด์";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "ข้อมูลโภชนาการ";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "ต่อ 100 กรัม";
 "product-detail.nutrition-table.for-serving" = "ต่อหน่วยบริโภค";
 "product-detail.nutrition-table.100g" = "100 กรัม";
@@ -222,7 +222,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "โปรดเพิ่มข้อมูลบรรจุภัณฑ์เพื่อให้สามารถคำนวณ Eco-score ได้";
 
 // Nutrition levels
 "nutrition-level.title" = "ปริมาณสารอาหารต่อ 100 กรัม / 100 มล";
@@ -276,7 +276,7 @@
 "nutrition.carbohydrate.lactose" = "แลคโตส";
 "nutrition.carbohydrate.maltose" = "มอลโตส";
 "nutrition.carbohydrate.maltodextrins" = "มอลโตเดกทรินซ์";
-"nutrition.fiber" = "ใยอาหาร";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "โปรตีน";
 "nutrition.proteins.casein" = "เคซิอิน";
 "nutrition.proteins.serum-proteins" = "โปรตีนในซีรัม";
@@ -407,7 +407,7 @@
 "history.section-titles.fewWeeks" = "A few weeks ago";
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
-"history.first-scan.button.title" = "Scan First Product";
+"history.first-scan.button.title" = "Scan your first product";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "แก้ไข";
 

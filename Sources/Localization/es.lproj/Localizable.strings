@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Escanee código de barras del producto";
-"product-scanner.overlay.extended-user-help" = "No se puede encontrar código de barras. \nCentre el código de barras en la pantalla. \nAsegúrese de que el código de barras esté bien iluminado.";
+"product-scanner.overlay.extended-user-help" = "No se detectó el código de barras. \nCentra el código de barras en la pantalla.\nAsegúrate de que el código de barras está bien iluminado.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Escáner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Asegúrese de que en los ajustes de privacidad Open Food Facts tenga permiso para usar la cámara";
 "product-scanner.permissions.failed.action.title" = "Dejar escaneo de código de barras";
 
-"product-scanner.search.status" = "Cargando producto…";
+"product-scanner.search.status" = "Cargando productos…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Nota: las imagenes que envías son publicadas bajo la licencia libre Creative Commons Attribution y ShareAlike.";
 
 "product-add.titles.product-info" = "Información del producto";
-"product-add.label.brand-example" = "Ejemplos: Coca-Cola, Nestlé, etc…";
+"product-add.label.brand-example" = "Ejemplos: Coca-Cola, Nestlé, etc.";
 "product-add.label.product-name" = "Nombre";
 "product-add.label.category" = "Categoría";
 "product-add.label.quantity" = "Cantidad";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Etiquetas, certificaciones, premios";
 "product-detail.summary.citiesTags" = "Sitios donde compra";
 "product-detail.summary.stores" = "Tiendas";
-"product-detail.summary.embCodes" = "Código de envasador";
-"product-detail.summary.countries" = "Países de venta";
+"product-detail.summary.embCodes" = "Código de trazabilidad";
+"product-detail.summary.countries" = "País";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Alimentos no procesados ​​o mínimamente procesados";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Huella de carbono / Emisiones de CO2";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Información nutricional";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "Por cada 100 g";
 "product-detail.nutrition-table.for-serving" = "Por porción";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score desconocido";
-"product-detail.environment.ecoscore.incite" = "Por favor, añade información del envase, para que podamos calcular el Eco-score";
+"product-detail.environment.ecoscore.incite" = "Por favor, añade la información del envase para que se pueda calcular el eco-score";
 
 // Nutrition levels
 "nutrition-level.title" = "Niveles nutricionales por 100g/100mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Lactosa";
 "nutrition.carbohydrate.maltose" = "Maltosa";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrínas";
-"nutrition.fiber" = "Fibra dietética";
+"nutrition.fiber" = "Fibra";
 "nutrition.proteins" = "Proteínas";
 "nutrition.proteins.casein" = "Caseína";
 "nutrition.proteins.serum-proteins" = "Proteínas Séricas";

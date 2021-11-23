@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scan de barcode van het product";
-"product-scanner.overlay.extended-user-help" = "Kan streepjescode niet vinden.\nCentreer de streepjescode op het scherm.\nZorg ervoor dat de streepjescode goed verlicht is.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Zorg ervoor dat in Privacy-instellingen Open Food Facts toestemming heeft om de camera te gebruiken";
 "product-scanner.permissions.failed.action.title" = "Laat barcode scannen";
 
-"product-scanner.search.status" = "Product wordt geladen...";
+"product-scanner.search.status" = "Producten laden…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Nb: de foto's die je upload, worden gepubliceerd onder de vrije licentie Creative Commons Attribution and ShareAlike.";
 
 "product-add.titles.product-info" = "Productinformatie";
-"product-add.label.brand-example" = "Bijvoorbeeld: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Naam:";
 "product-add.label.category" = "Categorie";
 "product-add.label.quantity" = "Hoeveelheid";
@@ -173,7 +173,7 @@
 "product-detail.summary.labels" = "Keurmerken, certificaten, prijzen";
 "product-detail.summary.citiesTags" = "Stad en land van aankoop";
 "product-detail.summary.stores" = "Winkels";
-"product-detail.summary.embCodes" = "Verpakkerscode";
+"product-detail.summary.embCodes" = "Traceability code";
 "product-detail.summary.countries" = "Land";
 
 // Product detail ingredients info row labels
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2-uitstoot";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Voedingswaarden";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "Per 100g";
 "product-detail.nutrition-table.for-serving" = "Per portie";
 "product-detail.nutrition-table.100g" = "100 g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score onbekend";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Voedingswaarden per 100 g";

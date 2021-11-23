@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "उत्पाद के बारकोड को स्कैन करें";
-"product-scanner.overlay.extended-user-help" = "बारकोड नहीं मिल रहा। बारकोड स्क्रीन के केंद्र में रखे। सुनिश्चित करें कि बारकोड अच्छी तरह से ज्योतिर्मय है।";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "बारकोड स्कैनिंग छोड़ें";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "नाम";
 "product-add.label.category" = "श्रेणी";
 "product-add.label.quantity" = "मात्रा";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "लेबल, प्रमाणपत्र, पुरस्कार";
 "product-detail.summary.citiesTags" = "शहर, राज्य और देश जहाँ इसे खरीदा गया";
 "product-detail.summary.stores" = "दुकाने";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "जिन देशों में बिकता है";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "कार्बन पदचिह्न / कार्बन डाईऑक्साइड उत्सर्जन";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "पोषण तथ्य";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "१०० g के लिए";
 "product-detail.nutrition-table.for-serving" = "प्रत्येक हिस्सा";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "लैक्टोज";
 "nutrition.carbohydrate.maltose" = "माल्टोज़";
 "nutrition.carbohydrate.maltodextrins" = "माल्टोडेक्सट्रिन्स";
-"nutrition.fiber" = "फाइबर आहार";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "प्रोटीन";
 "nutrition.proteins.casein" = "कैसिइन";
 "nutrition.proteins.serum-proteins" = "सीरम प्रोटीन";

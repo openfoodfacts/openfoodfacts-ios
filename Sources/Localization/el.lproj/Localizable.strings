@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Σάρωσε τον γραμμικό κωδικός του προϊόντος";
-"product-scanner.overlay.extended-user-help" = "Δεν είναι δυνατή η εύρεση ενός γραμμωτού κώδικα.\nΚεντράρετε τον γραμμωτό κώδικα στην οθόνη.\nΒεβαιωθείτε ότι ο γραμμωτός κώδικας είναι καλά φωτισμένος.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Σαρωτής";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Βεβαιωθείτε ότι στις Ρυθμίσεις απορρήτου ότι το Open Food Facts έχει άδεια χρήσης της κάμερας";
 "product-scanner.permissions.failed.action.title" = "Αφήστε τη σάρωση γραμμωτού κώδικα";
 
-"product-scanner.search.status" = "Φόρτωση προϊόντος…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -85,7 +85,7 @@
 "product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
 "product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
 "product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.not-yet" = "Αναμονή για ανάλυση μιας εικόνας συστατικών";
 
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: CocaCola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Όνομα";
 "product-add.label.category" = "Κατηγορία";
 "product-add.label.quantity" = "Ποσότητα";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Ετικέτες, πιστοποιητικά, βραβεία";
 "product-detail.summary.citiesTags" = "Πόλη και κράτος αγοράς";
 "product-detail.summary.stores" = "Καταστήματα";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Χώρες όπου πωλείται";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2 emissions";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Διατροφικά στοιχεία";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "Ανά 100 γρ";
 "product-detail.nutrition-table.for-serving" = "Ανά μερίδα";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Λακτόζη";
 "nutrition.carbohydrate.maltose" = "Μαλτόζη";
 "nutrition.carbohydrate.maltodextrins" = "Μαλτοδεξτρίνες";
-"nutrition.fiber" = "Φυτικές ίνες";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Πρωτεΐνες";
 "nutrition.proteins.casein" = "Καζεΐνη";
 "nutrition.proteins.serum-proteins" = "Πρωτεΐνες ορού";
@@ -406,7 +406,7 @@
 "history.section-titles.fewWeeks" = "A few weeks ago";
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
-"history.first-scan.button.title" = "Scan First Product";
+"history.first-scan.button.title" = "Scan your first product";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Επεξεργασία";
 

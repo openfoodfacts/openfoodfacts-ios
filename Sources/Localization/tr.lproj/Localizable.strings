@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Ürünün barkodunu tara";
-"product-scanner.overlay.extended-user-help" = "Barkod bulunamıyor. \nBarkodu ekrana ortalayın. \nBarkodun iyi aydınlatıldığından emin olun.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Tarayıcı";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Barkod taramaya bırak";
 
-"product-scanner.search.status" = "Ürün yükleniyor...";
+"product-scanner.search.status" = "Ürünler yükleniyor…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Not: gönderdiğiniz resimler özgür bir lisans olan Creative Commons Attribution & ShareAlike kapsamında yayınlanmaktadır.";
 
 "product-add.titles.product-info" = "Ürün Bilgisi";
-"product-add.label.brand-example" = "Örnekler: Coca-Cola, Nestle vb…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "İsim";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Miktar";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Etiketler, sertifikalar, ödüller";
 "product-detail.summary.citiesTags" = "Satın alınan şehir, eyalet ve ülke";
 "product-detail.summary.stores" = "Mağazalar";
-"product-detail.summary.embCodes" = "Paketleyici kodu";
-"product-detail.summary.countries" = "Satılan ülkeler";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "İşlenmemiş veya az işlenmiş gıdalar";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Karbon ayak izi / CO2 emisyonu";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Beslenme gerçekleri";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "100 gr için";
 "product-detail.nutrition-table.for-serving" = "Porsiyon başına";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score bilinmiyor";
-"product-detail.environment.ecoscore.incite" = "Eco-score hesaplayabilmemiz için lütfen paketleme bilgilerini ekleyin";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "100 g/100mL için besin ögeleri seviyeleri";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Laktoz";
 "nutrition.carbohydrate.maltose" = "Maltoz";
 "nutrition.carbohydrate.maltodextrins" = "Maltodekstrinler";
-"nutrition.fiber" = "Diyet lifi";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Proteinler";
 "nutrition.proteins.casein" = "Kazein";
 "nutrition.proteins.serum-proteins" = "Serum proteinleri";

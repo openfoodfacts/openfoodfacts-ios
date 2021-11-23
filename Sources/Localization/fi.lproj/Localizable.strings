@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Lue tuotteen viivakoodi";
-"product-scanner.overlay.extended-user-help" = "Viivakoodia ei löydy.\nKeskitä viivakoodi näyttöön.\nVarmista, että viivakoodi on hyvin valaistu.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Lukija";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Varmista tietosuoja-asetuksissa, että Open Food Factsilla on lupa käyttää kameraa";
 "product-scanner.permissions.failed.action.title" = "Poistu viivakoodin lukemisesta";
 
-"product-scanner.search.status" = "Ladataan tuotetta…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Huomaa: lähettämäsi kuvat julkaistaan Creative Commons Attribution and ShareAlike -lisenssillä.";
 
 "product-add.titles.product-info" = "Tuotetiedot";
-"product-add.label.brand-example" = "Esimerkkejä: Coca-Cola, Nestle jne…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Nimi";
 "product-add.label.category" = "Tuoteluokka";
 "product-add.label.quantity" = "Määrä";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Merkit, sertifikaatit, palkinnot";
 "product-detail.summary.citiesTags" = "Kaupunki, osavaltio ja maa, jossa ostettu";
 "product-detail.summary.stores" = "Myymälät";
-"product-detail.summary.embCodes" = "Jäljitettävyyskoodi";
-"product-detail.summary.countries" = "Maa";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Jalostamattomat tai vähän jalostetut ruoat";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Hiilijalanjälki / CO2-päästöt";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Ravintosisältö";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "/ 100 g";
 "product-detail.nutrition-table.for-serving" = "Annosta kohti";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Voimakas vaikutus ympäristöön";
 "product-detail.environment.ecoscore.e" = "Erittäin voimakas vaikutus ympäristöön";
 "product-detail.environment.ecoscore.unknown" = "Tuntematon Eco-score";
-"product-detail.environment.ecoscore.incite" = "Lisää pakkaustiedot, jotta voimme laskea Eco-scoren";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Ravintoarvot per 100 g / 100 ml";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Laktoosi";
 "nutrition.carbohydrate.maltose" = "Maltoosi";
 "nutrition.carbohydrate.maltodextrins" = "Maltodekstriinit";
-"nutrition.fiber" = "Ravintokuitu";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Proteiinit";
 "nutrition.proteins.casein" = "Kaseiini";
 "nutrition.proteins.serum-proteins" = "Plasmaproteiinit";

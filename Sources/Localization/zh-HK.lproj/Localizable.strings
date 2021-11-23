@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "掃描產品的條碼";
-"product-scanner.overlay.extended-user-help" = "找不到條碼。將條碼居中顯示在螢幕上。確保條碼的光照良好。";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "掃描器";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "離開條碼掃描";
 
-"product-scanner.search.status" = "正載入產品……";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "名稱";
 "product-add.label.category" = "分類";
 "product-add.label.quantity" = "分量";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "標籤、認證、獎項";
 "product-detail.summary.citiesTags" = "購買產品的城市、州及國家";
 "product-detail.summary.stores" = "商店";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "國家";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "未加工或經少量加工食品";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "碳足跡 / CO2 排放量︰";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "營養素表";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "每100克";
 "product-detail.nutrition-table.for-serving" = "每份";
 "product-detail.nutrition-table.100g" = "100克";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "乳糖";
 "nutrition.carbohydrate.maltose" = "麥芽糖";
 "nutrition.carbohydrate.maltodextrins" = "麥芽糊精";
-"nutrition.fiber" = "膳食纖維";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "蛋白質";
 "nutrition.proteins.casein" = "酪蛋白";
 "nutrition.proteins.serum-proteins" = "血清蛋白";
