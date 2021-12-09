@@ -22,21 +22,21 @@
 
 "product-search.title" = "Търсене";
 "product-search.search-placeholder" = "Търсене по име или баркод";
-"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
-"product-search.error-view.title" = "Something went wrong";
+"product-search.no-results" = "Няма резултати. Можеш да добавиш продукт към Open Food Facts, като го сканираш.";
+"product-search.error-view.title" = "Нещо се обърка";
 "product-search.error-view.subtitle" = "Моля, опитайте отново";
-"product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.slogan" = "безплатната хранителна база данни";
+"product-search.initial-view.offline.title-loading" = "Запазване на продукти офлайн: %d%%";
+"product-search.initial-view.offline.subtitle" = "Над %d продукта налични за незабавно сканиране";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Scan the barcode of the product";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.user-help" = "Сканирай баркода на продукта";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Скенер";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "Error scanning barcode. Please try again in a few moments.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "Няма намерен баркод. Можеш да го въведеш ръчно:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
 "product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Продуктите се зареждат…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -57,7 +57,7 @@
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
 "product-add.uploading-image-banner.title" = "Изображението се качва…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.title" = "Something went wrong";
+"product-add.image-upload-error-banner.title" = "Нещо се обърка";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.subtitle" = "Моля, опитайте да снимате отново";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
@@ -70,7 +70,7 @@
 "product-add.save-error.message" = "Моля, опитайте отново по-късно";
 "product-add.save-info.success" = "Information saved at";
 "product-add.save-info.error" = "Информацията не е запазена";
-"product-add.save-info.saving" = "Saving product information…";
+"product-add.save-info.saving" = "Запазване на информация за продукта…";
 "product-add.save-info.not-yet" = "Информацията все още не е запазена";
 "product-add.save-ingredients.success" = "Ingredients saved at";
 "product-add.save-ingredients.error" = "Съставките не са запазени";
@@ -136,18 +136,18 @@
 
 // Select Category
 "select-category.title" = "Категория";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Търсене на категория";
 
 // Select nutrition
 "select-nutriment.title" = "Хранене";
 "select-nutriment.search-placeholder" = "Search for a nutrient";
 
 // Select allergen
-"select-allergen.title" = "Allergen";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.title" = "Алерген";
+"select-allergen.search-placeholder" = "Търсене на алерген";
 
 // Product Detail
-"product-detail.header.add-new-picture" = "Add a new picture";
+"product-detail.header.add-new-picture" = "Добавяне на нова снимка";
 "product-detail.edit" = "Редактирайте този продукт";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "Remember to save your changes";
@@ -173,7 +173,7 @@
 "product-detail.summary.labels" = "Етикети, сертификати, награди";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Магазини";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "Traceability code";
 "product-detail.summary.countries" = "Държава";
 
 // Product detail ingredients info row labels
@@ -185,7 +185,7 @@
 "product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
 "product-detail.ingredients.ingredients-list" = "Списък на съставките";
 "product-detail.ingredients.allergens-list" = "вещества или продукти, причиняващи алергии или непоносимост";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
+"product-detail.ingredients.allergens-alert.title" = "Съдържа алергени!";
 "product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
 "product-detail.ingredients.traces-list" = "Следи";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Въглероден отпечатък / емисии на CO2";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Хранителни факти";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "На 100g";
 "product-detail.nutrition-table.for-serving" = "На порция";
 "product-detail.nutrition-table.100g" = "100g";
@@ -220,8 +220,8 @@
 "product-detail.environment.ecoscore.c" = "Eco-score C";
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.unknown" = "Еко-оценка неизвестна";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Лактоза";
 "nutrition.carbohydrate.maltose" = "Малтоза";
 "nutrition.carbohydrate.maltodextrins" = "Малтодекстрини";
-"nutrition.fiber" = "Хранителните влакнини";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Протеини";
 "nutrition.proteins.casein" = "Казеин";
 "nutrition.proteins.serum-proteins" = "Серумни протеини";

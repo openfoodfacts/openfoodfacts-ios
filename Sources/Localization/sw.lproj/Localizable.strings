@@ -22,7 +22,7 @@
 
 "product-search.title" = "Tafuta";
 "product-search.search-placeholder" = "Search by name or barcode";
-"product-search.no-results" = "No Results";
+"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Kuna kitu ilienda mrama";
 "product-search.error-view.subtitle" = "Tafadhali jaribu tena";
 "product-search.initial-view.slogan" = "orodha ya bidhaa za chakula za bure";
@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skani barcode ya bidhaa";
-"product-scanner.overlay.extended-user-help" = "Huwezi kupata barcode.\nWeka barcode katikati ya skrini.\nHakikisha stima imemulika barcode.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Skana";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Name";
 "product-add.label.category" = "Category";
 "product-add.label.quantity" = "Quantity";
@@ -173,7 +173,7 @@
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "Traceability code";
 "product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
@@ -203,7 +203,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Per serving";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -260,7 +260,7 @@
 "nutrition.energy.kcal" = "Energy (kcal)";
 "nutrition.fats" = "Fats";
 "nutrition.fats.saturated-fat" = "Saturated fat";
-"nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated fat";
+"nutrition.fats.mono-unsaturated-fat" = "Monounsaturated fat";
 "nutrition.fats.poly-unsaturated-fat" = "Polyunsaturated fat";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Lactose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
-"nutrition.fiber" = "Dietary fiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Proteins";
 "nutrition.proteins.casein" = "Casein";
 "nutrition.proteins.serum-proteins" = "Serum Proteins";
@@ -364,7 +364,7 @@
 "settings.about.contact" = "Contact";
 "settings.about.frequently-asked-questions" = "Frequently Asked Questions";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
@@ -406,7 +406,7 @@
 "history.section-titles.fewWeeks" = "A few weeks ago";
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
-"history.first-scan.button.title" = "Scan First Product";
+"history.first-scan.button.title" = "Scan your first product";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Hariri";
 

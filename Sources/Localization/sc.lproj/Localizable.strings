@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scan the barcode of the product";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Name";
 "product-add.label.category" = "Category";
 "product-add.label.quantity" = "Quantity";
@@ -173,7 +173,7 @@
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "Traceability code";
 "product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
@@ -203,7 +203,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Per serving";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -260,8 +260,8 @@
 "nutrition.energy.kcal" = "Energy (kcal)";
 "nutrition.fats" = "Fats";
 "nutrition.fats.saturated-fat" = "Saturated fat";
-"nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated fat";
-"nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
+"nutrition.fats.mono-unsaturated-fat" = "Monounsaturated fat";
+"nutrition.fats.poly-unsaturated-fat" = "Polyunsaturated fat";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Lactose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
-"nutrition.fiber" = "Dietary fiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Proteins";
 "nutrition.proteins.casein" = "Casein";
 "nutrition.proteins.serum-proteins" = "Serum Proteins";
@@ -406,7 +406,7 @@
 "history.section-titles.fewWeeks" = "A few weeks ago";
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
-"history.first-scan.button.title" = "Scan First Product";
+"history.first-scan.button.title" = "Scan your first product";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edit";
 

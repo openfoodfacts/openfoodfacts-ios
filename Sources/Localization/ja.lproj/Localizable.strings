@@ -15,7 +15,7 @@
 "generic.cancel" = "取消";
 "generic.save" = "保存";
 "generic.cancel" = "取消";
-"generic.ok" = "OK";
+"generic.ok" = "Ok";
 "generic.close" = "閉じる";
 
 // Product Search
@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "製品のバーコードをスキャンします";
-"product-scanner.overlay.extended-user-help" = "バーコードが見つかりません。\nバーコードを画面の中央に配置してください。\nバーコードがはっきり写っていることを確認してください。";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "スキャナー";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "バーコードのスキャンをやめる";
 
-"product-scanner.search.status" = "製品を読み込み中…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -90,7 +90,7 @@
 "product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
 "product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
 
-"alert.action.ok" = "OK";
+"alert.action.ok" = "Ok";
 "product-add.language.toolbar-title" = "Select a language";
 /* Product Add name text field */
 "product-add.placeholder.name" = "製品名";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "名前";
 "product-add.label.category" = "カテゴリー";
 "product-add.label.quantity" = "数量";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "ラベル、認証、表彰";
 "product-detail.summary.citiesTags" = "市、州、購入した国";
 "product-detail.summary.stores" = "店舗";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "販売の国";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "カーボンフットプリント / CO2 排出量";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "栄養成分表";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "100 g 当たり";
 "product-detail.nutrition-table.for-serving" = "一食当たり";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "乳糖";
 "nutrition.carbohydrate.maltose" = "麦芽糖";
 "nutrition.carbohydrate.maltodextrins" = "マルトデキストリン";
-"nutrition.fiber" = "食物繊維";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "タンパク質";
 "nutrition.proteins.casein" = "カゼイン";
 "nutrition.proteins.serum-proteins" = "血清タンパク質";
@@ -292,7 +292,7 @@
 "nutrition.vitamins.c" = "ビタミン C";
 "nutrition.vitamins.b1" = "ビタミン B1";
 "nutrition.vitamins.b2" = "ビタミン B2";
-"nutrition.vitamins.pp" = "ビタミン PP";
+"nutrition.vitamins.pp" = "Vitamin B3";
 "nutrition.vitamins.b6" = "ビタミン B6";
 "nutrition.vitamins.b9" = "ビタミン B9";
 "nutrition.vitamins.b12" = "ビタミン B12";

@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scannez le code-barres du produit";
-"product-scanner.overlay.extended-user-help" = "Code-barre non trouvé.\nPlacez-le au centre de l'écran.\nVeillez à ce qu'il soit bien éclairé.";
+"product-scanner.overlay.extended-user-help" = "Code-barres non détecté.\nPlacez-le au centre de l'écran.\nVeillez à ce qu'il soit bien éclairé.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Assurez-vous que, dans les paramètres de confidentialité, Open Food Facts est autorisé à utiliser l'appareil photo.";
 "product-scanner.permissions.failed.action.title" = "Quitter le scan du code-barres";
 
-"product-scanner.search.status" = "Chargement du produit…";
+"product-scanner.search.status" = "Chargement des produits…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note : les photos que vous envoyées sont publiées sous la license libre Creative Commons Attribution and ShareAlike.";
 
 "product-add.titles.product-info" = "Information produit";
-"product-add.label.brand-example" = "Exemples: Coca-Cola, Nestle…";
+"product-add.label.brand-example" = "Exemples : Coca-Cola, Nestlé, etc.";
 "product-add.label.product-name" = "Nom";
 "product-add.label.category" = "Catégorie";
 "product-add.label.quantity" = "Quantité";
@@ -122,7 +122,7 @@
 "product-add.label.origins-example" = "Exemple : beurre de France, etc.";
 
 "product-add.description.nutritive" = "Complétez les informations nutritionnelles et la catégorie pour calculer le Nutri-Score";
-"product-add.titles.nutritive" = "Composition nutritionnelle";
+"product-add.titles.nutritive" = "Valeurs nutritives";
 "product-add.nutritive.choice.per-hundred-grams" = "pour 100g / 100ml";
 "product-add.nutritive.choice.per-portion" = "par portion";
 "product-add.nutritive.add-nutriment" = "Ajouter un nutriment";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Labels, certifications, récompenses";
 "product-detail.summary.citiesTags" = "Ville et pays d'achat";
 "product-detail.summary.stores" = "Magasins";
-"product-detail.summary.embCodes" = "Code emballeur";
-"product-detail.summary.countries" = "Pays de vente";
+"product-detail.summary.embCodes" = "Code de traçabilité";
+"product-detail.summary.countries" = "Pays";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Aliments non transformés ou minimalement transformés";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Empreinte carbone / émissions de CO2";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Tableau nutritionnel";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "Pour 100 g";
 "product-detail.nutrition-table.for-serving" = "Par portion";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Fort impact sur l'environnement";
 "product-detail.environment.ecoscore.e" = "Très fort impact sur l'environnement";
 "product-detail.environment.ecoscore.unknown" = "Éco-score inconnu";
-"product-detail.environment.ecoscore.incite" = "Veuillez ajouter les informations d'emballage, afin que nous puissions calculer l'Éco-score";
+"product-detail.environment.ecoscore.incite" = "Veuillez ajouter des informations sur l'emballage afin que l'Eco-Score puisse être calculé";
 
 // Nutrition levels
 "nutrition-level.title" = "Repères nutritionnels pour 100 g/100 mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Lactose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrine";
-"nutrition.fiber" = "Fibres alimentaires";
+"nutrition.fiber" = "Fibre";
 "nutrition.proteins" = "Protéines";
 "nutrition.proteins.casein" = "Caséine";
 "nutrition.proteins.serum-proteins" = "Protéines du sérum";
