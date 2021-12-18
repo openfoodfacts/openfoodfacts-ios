@@ -111,7 +111,7 @@
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Quantity";
 "product-add.label.packaging" = "Packaging";
-"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
+"product-add.label.packaging-example" = "Examples: plastic tray, glass bottle";
 "product-add.details.category" = "Perlu kanggo ngitungake Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10ons, 5ml…";
 "product-add.label.language" = "Basa";
@@ -204,7 +204,7 @@
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
 "product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
-"product-detail.nutrition-table.for-100g" = "For 100 g";
+"product-detail.nutrition-table.for-100g" = "Per 100 g";
 "product-detail.nutrition-table.for-serving" = "Saben porsi";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
@@ -215,11 +215,11 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Pènget: jumlah woh-wohan, sayur-sayuran lan kacang-kacangan mboten ditemtokaken ing label, sampun diestimasi saking dhaptar bahan: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Pènget: jumlah woh-wohan, sayuran lan kacang-kacangan mboten ditetepaken ing label kasebut, sampun diestimasi saking kategori (%s) produk: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
+"product-detail.environment.ecoscore.c" = "Some impact on the environment";
+"product-detail.environment.ecoscore.d" = "Strong impact on the environment";
+"product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
 "product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
@@ -249,7 +249,7 @@
 "robotoff.not-sure" = "Kula mboten yakin";
 "robotoff.contribute-incentive.title" = "Contribute";
 "robotoff.settings.display-questions" = "Tampilake pitakon";
-"robotoff.contribute-incentive.login" = "Username";
+"robotoff.contribute-incentive.login" = "Login";
 "robotoff.contribute-incentive.not-now" = "Mboten sak niki";
 "robotoff.contribute-incentive.description" = "Wangsulan pitakon sing gampil, damel transparansi panganan kelakon!";
 "robotoff.answer-saved" = "Wangsulan disimpen, matur nuwun!";
@@ -296,8 +296,8 @@
 "nutrition.vitamins.b6" = "Vitamin B6";
 "nutrition.vitamins.b9" = "Vitamin B9";
 "nutrition.vitamins.b12" = "Vitamin B12";
-"nutrition.vitamins.biotin" = "Biotin";
-"nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
+"nutrition.vitamins.biotin" = "Vitamin B7";
+"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
 "nutrition.minerals" = "Mineral";
 "nutrition.minerals.silica" = "Silika";
 "nutrition.minerals.bicarbonate" = "Bikarbonat";
@@ -319,7 +319,7 @@
 "nutrition.minerals.taurine" = "Taurin";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Woh-wohan, sayuran, kacang-kacangan";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen/Meat Protein Ratio";
 "nutrition.minerals.cocoa" = "Kakao";
 "nutrition.minerals.chlorophyl" = "Chlorophyl";
 
@@ -383,7 +383,7 @@
 "user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
+"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
 "user.alert.wrong-credentials.title" = "Unable to log in";
 "user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
 "user.alert.generic-error.title" = "There was an error logging in";

@@ -21,7 +21,7 @@
 // Product Search
 
 "product-search.title" = "Search";
-"product-search.search-placeholder" = "Search for a product by name or barcode";
+"product-search.search-placeholder" = "Search by name or barcode";
 "product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Something went wrong";
 "product-search.error-view.subtitle" = "Please try again";
@@ -39,11 +39,11 @@
 "product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
-"product-scanner.permissions.noPermissions.action.title" = "Open Settings";
+"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
+"product-scanner.permissions.noPermissions.action.title" = "Open settings";
 
 "product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
-"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
 
 "product-scanner.search.status" = "Loading products…";
@@ -67,7 +67,7 @@
 "product-add.product-add-success-banner.title" = "Product added successfully. Thank you!";
 "product-add.uploaded-image" = "Image uploaded, thanks!";
 "product-add.save-error.title" = "Error while saving product";
-"product-add.save-error.message" = "Try again later";
+"product-add.save-error.message" = "Please try again later";
 "product-add.save-info.success" = "Information saved at";
 "product-add.save-info.error" = "Information not saved";
 "product-add.save-info.saving" = "Saving product information…";
@@ -111,9 +111,9 @@
 "product-add.label.category" = "Category";
 "product-add.label.quantity" = "Quantity";
 "product-add.label.packaging" = "Packaging";
-"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
+"product-add.label.packaging-example" = "Examples: plastic tray, glass bottle";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.quantity-example" = "Examples: 25g, 10oz, 5ml…";
 "product-add.label.language" = "Languages";
 "product-add.label.labels" = "Labels";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
@@ -155,7 +155,7 @@
 "product-detail.edit-alert.subtitle" = "Scroll down to the 'Save' button";
 
 // Product detail page titles
-"product-detail.page-title.summary" = "Summary";
+"product-detail.page-title.summary" = "Overview";
 "product-detail.page-title.ingredients" = "Ingredients";
 "product-detail.page-title.nutrition" = "Nutrition";
 "product-detail.page-title.nutrition-table" = "Nutrition table";
@@ -192,7 +192,7 @@
 "product-detail.ingredients.additives-list" = "Additives";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredients from palm oil";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients that may be from palm oil";
-"product-detail.ingredients.vitamins-list" = "Vitamins";
+"product-detail.ingredients.vitamins-list" = "Vitamins and Minerals";
 "product-detail.ingredients.minerals-list" = "Minerals";
 "product-detail.ingredients.nucleotides-list" = "Nucleotides";
 "product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
@@ -204,7 +204,7 @@
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
 "product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
-"product-detail.nutrition-table.for-100g" = "For 100 g";
+"product-detail.nutrition-table.for-100g" = "Per 100 g";
 "product-detail.nutrition-table.for-serving" = "Per serving";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
@@ -215,11 +215,11 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
+"product-detail.environment.ecoscore.c" = "Some impact on the environment";
+"product-detail.environment.ecoscore.d" = "Strong impact on the environment";
+"product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
 "product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
@@ -249,26 +249,26 @@
 "robotoff.not-sure" = "I'm not sure";
 "robotoff.contribute-incentive.title" = "Contribute";
 "robotoff.settings.display-questions" = "Display questions";
-"robotoff.contribute-incentive.login" = "Username";
+"robotoff.contribute-incentive.login" = "Login";
 "robotoff.contribute-incentive.not-now" = "Not now";
 "robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
 "robotoff.answer-saved" = "Answer saved, thanks!";
 
 // Nutrition
-"nutrition.energy" = "Energy";
+"nutrition.energy" = "Calories";
 "nutrition.energy.kj" = "Energy (kJ)";
 "nutrition.energy.kcal" = "Energy (kcal)";
 "nutrition.fats" = "Fats";
 "nutrition.fats.saturated-fat" = "Saturated fat";
 "nutrition.fats.mono-unsaturated-fat" = "Monounsaturated fat";
-"nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
+"nutrition.fats.poly-unsaturated-fat" = "Polyunsaturated fat";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
 "nutrition.fats.trans-fat" = "Trans fat";
 "nutrition.fats.cholesterol" = "Cholesterol";
-"nutrition.carbohydrate" = "Carbohydrate";
-"nutrition.carbohydrate.sugars" = "Sugars";
+"nutrition.carbohydrate" = "Carbohydrates";
+"nutrition.carbohydrate.sugars" = "Sugar";
 "nutrition.carbohydrate.sucrose" = "Sucrose";
 "nutrition.carbohydrate.glucose" = "Glucose";
 "nutrition.carbohydrate.fructose" = "Fructose";
@@ -276,7 +276,7 @@
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
 "nutrition.fiber" = "Fiber";
-"nutrition.proteins" = "Proteins";
+"nutrition.proteins" = "Protein content";
 "nutrition.proteins.casein" = "Casein";
 "nutrition.proteins.serum-proteins" = "Serum Proteins";
 "nutrition.proteins.nucleotides" = "Nucleotides";
@@ -296,8 +296,8 @@
 "nutrition.vitamins.b6" = "Vitamin B6";
 "nutrition.vitamins.b9" = "Vitamin B9";
 "nutrition.vitamins.b12" = "Vitamin B12";
-"nutrition.vitamins.biotin" = "Biotin";
-"nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
+"nutrition.vitamins.biotin" = "Vitamin B7";
+"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
 "nutrition.minerals" = "Minerals";
 "nutrition.minerals.silica" = "Silica";
 "nutrition.minerals.bicarbonate" = "Bicarbonate";
@@ -319,15 +319,15 @@
 "nutrition.minerals.taurine" = "Taurine";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Fruits, vegetables, nuts";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen/Meat Protein Ratio";
 "nutrition.minerals.cocoa" = "Cocoa";
-"nutrition.minerals.chlorophyl" = "Chlorophyl";
+"nutrition.minerals.chlorophyl" = "Chlorophyll";
 
 // Call to action
-"call-to-action.summary" = "Take a picture of the front";
+"call-to-action.summary" = "Take a photo of the front";
 "call-to-action.environment" = "Take a photo of the recycling instructions";
-"call-to-action.ingredients" = "Take a picture of the ingredients";
-"call-to-action.nutrition" = "Take a picture of the nutrition table";
+"call-to-action.ingredients" = "Take a photo of the ingredients";
+"call-to-action.nutrition" = "Take a photo of the nutrition facts";
 "call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
@@ -378,12 +378,12 @@
 "user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.not-logged-in" = "Not logged in";
 "user.forgot-password" = "Forgot Password?";
-"user.check-your-contributions.button" = "Check Your Contributions";
-"user.products-pending-upload.button" = "Products pending upload";
+"user.check-your-contributions.button" = "View all your contributions";
+"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
 "user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
-"user.create-account.button" = "Create An Account";
-"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
+"user.create-account.button" = "Create an account";
+"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
 "user.alert.wrong-credentials.title" = "Unable to log in";
 "user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
 "user.alert.generic-error.title" = "There was an error logging in";
@@ -392,7 +392,7 @@
 "user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
 "user.alert.username-missing" = "Username is required";
 "user.alert.password-missing" = "Password is required";
-"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
 "pending-upload.hud.status" = "Uploading";
 
 // Search history
