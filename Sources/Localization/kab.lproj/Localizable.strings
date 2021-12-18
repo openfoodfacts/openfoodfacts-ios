@@ -111,9 +111,9 @@
 "product-add.label.category" = "Taggayt";
 "product-add.label.quantity" = "Tasmekta";
 "product-add.label.packaging" = "Asekrud";
-"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
+"product-add.label.packaging-example" = "Examples: plastic tray, glass bottle";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.quantity-example" = "Examples: 25g, 10oz, 5ml…";
 "product-add.label.language" = "Tutlayin";
 "product-add.label.labels" = "Tibzimin";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
@@ -215,11 +215,11 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
+"product-detail.environment.ecoscore.c" = "Some impact on the environment";
+"product-detail.environment.ecoscore.d" = "Strong impact on the environment";
+"product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
 "product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
@@ -260,8 +260,8 @@
 "nutrition.energy.kcal" = "Energy (kcal)";
 "nutrition.fats" = "Fats";
 "nutrition.fats.saturated-fat" = "Iččuṛ d tassemt";
-"nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated fat";
-"nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
+"nutrition.fats.mono-unsaturated-fat" = "Monounsaturated fat";
+"nutrition.fats.poly-unsaturated-fat" = "Polyunsaturated fat";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
@@ -319,7 +319,7 @@
 "nutrition.minerals.taurine" = "Taurine";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Lfakeyya, lxeḍra, tijujtin";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen/Meat Protein Ratio";
 "nutrition.minerals.cocoa" = "Cocoa";
 "nutrition.minerals.chlorophyl" = "Chlorophyl";
 
@@ -383,7 +383,7 @@
 "user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Snulfud amiḍan";
-"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
+"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
 "user.alert.wrong-credentials.title" = "Unable to log in";
 "user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
 "user.alert.generic-error.title" = "There was an error logging in";

@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Відскануйте бар-код";
+"shortcuts.scan" = "Відскануйте штрих-код";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Назад";
@@ -49,9 +49,9 @@
 "product-scanner.search.status" = "Завантаження продуктів…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
-"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+"product-scanner.flash.off.accessibility.label" = "Ввімкнути спалах";
 /* Accessibility label indicating the action when the flash is currently on. */
-"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+"product-scanner.flash.on.accessibility.label" = "Вимкнути спалах";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -116,9 +116,9 @@
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Мови";
 "product-add.label.labels" = "Етикетки";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.labels-example" = "Приклади: безглютеновий, і т.д.";
 "product-add.label.origins" = "Походження інгредієнтів";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
+"product-add.field.origins-placeholder" = "Необхідний для розрахунку Eco-Score";
 "product-add.label.origins-example" = "Приклад: Вершкове масло з Франції тощо.";
 
 "product-add.description.nutritive" = "Завершуйте факти харчування та категорії товару для отримання Nutri-Score";
@@ -178,10 +178,10 @@
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Необроблені або мінімально оброблені продукти";
-"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
-"product-detail.ingredients.nova.3" = "Processed foods";
-"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
-"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
+"product-detail.ingredients.nova.2" = "Оброблені кулінарні інгредієнти";
+"product-detail.ingredients.nova.3" = "Напівфабрикати";
+"product-detail.ingredients.nova.4" = "Ультраоброблені продукти харчування та напої";
+"product-detail.ingredients.nova.unknown" = "Не вдалося розрахувати рівень обробки NOVA харчових продуктів";
 "product-detail.ingredients.nova.incite" = "Додати інгредієнти та/або категорії, щоб бути придатним для  NOVA.";
 "product-detail.ingredients.ingredients-list" = "Список інгредієнтів";
 "product-detail.ingredients.allergens-list" = "Речовини або продукти, які викликають (спричиняють, призводять до...) аллергічні реакціі або ідіосинкразію (непереносимість)";
@@ -209,7 +209,7 @@
 "product-detail.nutrition-table.100g" = "100г";
 "product-detail.nutrition-table.serving" = "порцію";
 "product-detail.nutrition-table.missing" = "Жодних поживних речовин не знайдено.";
-"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.noNutritionData" = "Цей продукт не має таблиці харчових цінностей.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Попередження: кількість клітковини не вказано, їх можливий позитивний внесок у сорт не може бути врахований.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Увага: кількість фруктів, овочів і горіхів не вказана, їх можливий позитивний внесок у сорт не може бути врахований.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Попередження: кількість фруктів, овочів та горіхів не зазначена на етикетці, вона оцінюється зі списку інгредієнтів: %d%";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Еко-оцінка невідома";
-"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
+"product-detail.environment.ecoscore.incite" = "Будь ласка, додайте інформацію про упакування, для того щоб розрахувати екологічний бал";
 
 // Nutrition levels
 "nutrition-level.title" = "Харчова цінність 100 г/100 мл";
@@ -230,7 +230,7 @@
 "nutrition-level.high" = "велика кількість";
 
 // Ingredients Analysis
-"ingredients-analysis.title" = "Ingredients analysis";
+"ingredients-analysis.title" = "Аналіз інгредієнтів";
 "ingredients-analysis.ingredients_in_this_product" = "Інгредієнти даного товару %@:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Інгредієнти цього продукту - %@с.";
 "ingredients-analysis.unknown_status" = "Ми не змогли оцінити статус товару.";
@@ -247,7 +247,7 @@
 "robotoff.yes" = "Так";
 "robotoff.no" = "Ні";
 "robotoff.not-sure" = "Я не впевнений";
-"robotoff.contribute-incentive.title" = "Contribute";
+"robotoff.contribute-incentive.title" = "Зробіть свій внесок";
 "robotoff.settings.display-questions" = "Показувати питання";
 "robotoff.contribute-incentive.login" = "Ім'я користувача";
 "robotoff.contribute-incentive.not-now" = "Не зараз";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Лактоза";
 "nutrition.carbohydrate.maltose" = "Мальтоза";
 "nutrition.carbohydrate.maltodextrins" = "Мальтодекстрини";
-"nutrition.fiber" = "Fiber";
+"nutrition.fiber" = "Клітковина";
 "nutrition.proteins" = "Білки";
 "nutrition.proteins.casein" = "Казеїн";
 "nutrition.proteins.serum-proteins" = "Сироваткові білки";
@@ -352,7 +352,7 @@
 "settings.allergies.add-button" = "Додати алергени";
 "settings.sections.information" = "Інформація";
 "settings.sections.discover" = "Дізнатись більше";
-"settings.sections.contribute" = "Contribute";
+"settings.sections.contribute" = "Зробіть свій внесок";
 "settings.sections.about" = "Про додаток";
 "settings.user-profile" = "Ваш обліковий запис учасника";
 "settings.credits.title" = "Подяки";
@@ -364,7 +364,7 @@
 "settings.about.contact" = "Зв'язатися";
 "settings.about.frequently-asked-questions" = "Часті Питання";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
+"settings.credits.text" = "Наш додаток реалізувався завдяки волонтерам Open Food Facts, учасникам а також багатьом іншим, які вирішили створювати і реалізовувати свою роботу за ліцензіями libre. \n\nПід Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n \"Сканування штрих-коду\", \"Налаштування\" і \"Flash\" розроблені Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Зробити знімок\" створений Picol (http://www.flaticon.com/authors/picol)\n\"Профіль\" створений Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" створений Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Історія пошуку\" створений Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
