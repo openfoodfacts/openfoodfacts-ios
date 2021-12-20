@@ -2,7 +2,7 @@
  on:
    push:
      branches:
-       - develop
+       - disable-develop
  jobs:
    release-please:
      runs-on: ubuntu-latest

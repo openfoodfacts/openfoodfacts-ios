@@ -1,7 +1,7 @@
 name: Testing
 
 on:
-  pull_request:
+  push:
     branches:
       - '*'
 
@@ -16,7 +16,7 @@ jobs:
         with:
           xcode-version: '12.5.1'
       - name: Checkout sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.4.0
       #- name: Fix permissions 1
        # run: git update-index --chmod=+x scripts/test_app.sh
      # - name: Fix permissions 2
