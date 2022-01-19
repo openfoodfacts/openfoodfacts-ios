@@ -41,12 +41,13 @@ class UserViewController: UIViewController, DataManagerClient {
     }
 
     private func setupInterface() {
+        // if username is succusfully fetched from credentials, show logged in username and enable logout button
         if let username = CredentialsController.shared.getUsername() {
             hideLogInViews(true)
             title = username
             loggedInUserNameLabel.text = String(format: "user.logged-in.label".localized, username)
             loginOrOutButton.isEnabled = true
-        } else {
+        } else { // otherwise, hide loggin info
             hideLogInViews(false)
             title = "user.not-logged-in".localized
             loginOrOutButton.isEnabled = loginDataIsAvalaible
@@ -68,11 +69,7 @@ class UserViewController: UIViewController, DataManagerClient {
     }
 
     @IBAction func didTapSignOut(_ sender: UIButton) {
-        if isLoggedIn {
-            setupLogout()
-        } else {
-            setupLogin()
-        }
+        isLoggedIn == true ? setupLogout() : setupLogin()
     }
 
 // MARK: Log in variables / and unctions
@@ -90,9 +87,11 @@ class UserViewController: UIViewController, DataManagerClient {
        }
 
     private var loginDataIsAvalaible: Bool {
-        guard let username = usernameField?.text else { return false }
-        guard let password = passwordField?.text else { return false }
-        return !username.isEmpty && !password.isEmpty
+        if let username = usernameField?.text, let password = passwordField?.text {
+            return !username.isEmpty && !password.isEmpty
+        } else {
+            return false
+        }
     }
 
     var contentInsetsBeforeKeyboard = UIEdgeInsets.zero
