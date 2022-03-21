@@ -22,7 +22,7 @@ jobs:
      # - name: Fix permissions 2
       #  run: git update-index --chmod=+x scripts/test_swift_package.sh
       - name: Carthage cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-carthage
         with:
           path: ~/Carthage
