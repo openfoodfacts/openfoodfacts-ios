@@ -17,7 +17,7 @@ jobs:
         env:
           AUTH_KEY_FILE_DECRYPTKEY: ${{ secrets.AUTH_KEY_FILE_DECRYPTKEY }}
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: cache-carthage
         with:
           path: ~/Carthage
