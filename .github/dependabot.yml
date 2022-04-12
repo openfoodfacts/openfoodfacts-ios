@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "bundler"
-    directory: "/fastlane" # Location of package manifests
+    directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
     commit-message:
