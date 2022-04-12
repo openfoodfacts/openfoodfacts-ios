@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "bundler"
-    directory: "/" # Location of package manifests
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
