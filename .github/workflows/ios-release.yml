@@ -11,14 +11,14 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
 
       - name: Decrypt AuthKey file
         run: cd ./fastlane/envfiles && ./decrypt_secrets.sh
         env:
           AUTH_KEY_FILE_DECRYPTKEY: ${{ secrets.AUTH_KEY_FILE_DECRYPTKEY }}
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: cache-carthage
         with:
           path: ~/Carthage

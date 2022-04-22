@@ -1,0 +1,28 @@
+# .github/workflows/documentation.yml
+name: Documentation
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Generate Documentation
+        uses: SwiftDocOrg/swift-doc@master
+        with:
+          inputs: Sources/
+          module-name: OpenFoodFacts
+          output: Documentation/
+      - name: Update Permissions
+        run: 'sudo chown --recursive $USER Documentation'
+      - name: Deploy API documentation to Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: Documentation/

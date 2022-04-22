@@ -1,10 +1,17 @@
 version: 2
 updates:
-- package-ecosystem: bundler
-  directory: "/"
-  schedule:
-    interval: daily
-- package-ecosystem: github-actions
-  directory: "/"
-  schedule:
-    interval: daily
+  - package-ecosystem: "bundler"
+    directory: "/" 
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
