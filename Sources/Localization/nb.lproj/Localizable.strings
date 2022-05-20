@@ -39,23 +39,23 @@
 "product-scanner.barcode-notfound.manual-enter" = "Ingen strekkode funnet. Du kan skrive den inn manuelt:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts trenger kameratillatelser";
-"product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
+"product-scanner.permissions.noPermissions.message" = "Vennligst gi tillatelse til å la kameraet skanne strekkoder";
 "product-scanner.permissions.noPermissions.action.title" = "Open Settings";
 
-"product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
+"product-scanner.permissions.failed.title" = "Strekkodeskanning kunne ikke startes.";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Forlat strekkodeskanning";
 
-"product-scanner.search.status" = "Loading product...";
+"product-scanner.search.status" = "Laster produkter…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
-"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+"product-scanner.flash.off.accessibility.label" = "Skru på blits";
 /* Accessibility label indicating the action when the flash is currently on. */
-"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+"product-scanner.flash.on.accessibility.label" = "Skru av blits";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image...";
+"product-add.uploading-image-banner.title" = "Laster opp bilde…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Noe gikk galt";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
@@ -87,8 +87,8 @@
 "product-add.ocr-ingredients.saving" = "Trekker ut ingredienser fra bildet…";
 "product-add.ocr-ingredients.not-yet" = "Venter på at et bilde av ingrediensene skal analyseres";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "Nutri-scoren har nettopp blitt beregnet fra ernæringstabellen";
+"product-add.novagroup-explaination" = "NOVA-gruppen er nettopp beregnet basert på ingredienslisten";
 
 "alert.action.ok" = "Ok";
 "product-add.language.toolbar-title" = "Velg språk";
@@ -102,11 +102,11 @@
 "product-add.title" = "Nytt produkt";
 "product-add.title-edit" = "Rediger produkt";
 "product-add.titles.barcode" = "Strekkode";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
+"product-add.titles.top-explainations" = "Bra ut! Dette produktet er ikke i Open Food Facts. Kan du ta noen bilder av produktet, ingredienslisten og næringslisten for å legge den til på Open Food Facts? \n\nPå forhånd takk.";
 "product-add.titles.license-explaination" = "Merk: Bildene du sender, blir publisert under gratislisensen Creative Commons Attribution og Sharealike.";
 
-"product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.titles.product-info" = "Produktinformasjon";
+"product-add.label.brand-example" = "Eksempler: Coca-Cola, Nestle, osv.";
 "product-add.label.product-name" = "Navn";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Mengde";
@@ -118,17 +118,17 @@
 "product-add.label.labels" = "Stempler";
 "product-add.label.labels-example" = "Eksempler: glutenfri, osv.";
 "product-add.label.origins" = "Ingrediensopprinnelse";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Example: Butter from France, etc.";
+"product-add.field.origins-placeholder" = "Nødvendig for beregning av Eco-score";
+"product-add.label.origins-example" = "Eksempel: Smør fra Frankrike, osv.";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.description.nutritive" = "Fullfør ernæringsinnholdet og produktkategorien for å få Nutri-Score";
 "product-add.titles.nutritive" = "Ernæringsinnhold";
 "product-add.nutritive.choice.per-hundred-grams" = "for 100g / 1dl";
 "product-add.nutritive.choice.per-portion" = "per porsjon";
 "product-add.nutritive.add-nutriment" = "Legg til et næringsstoff";
 "product-add.nutritive.too-much" = "Mer enn 100 g?";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "Fyll ut ingrediensene for å få NOVA-gruppen på matforedling";
 "product-add.titles.ingredients" = "Ingredienser";
 "product-add.ingredients.explaination" = "Ta et bilde av ingredienslisten for automatisk å trekke ut ingrediensene. Sjekk den nøye, og ikke glem å lagre den.";
 "product-add.ingredients.button-delete" = "For dårlig, ignorer";
@@ -163,7 +163,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Strekkode";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Generisk navn";
 "product-detail.summary.quantity" = "Mengde";
 "product-detail.summary.packaging" = "Emballasje";
 "product-detail.summary.brands" = "Merker";
@@ -173,21 +173,21 @@
 "product-detail.summary.labels" = "Etiketter, sertifiseringer, priser";
 "product-detail.summary.citiesTags" = "By, region eller land der produktet ble kjøpt";
 "product-detail.summary.stores" = "Butikker";
-"product-detail.summary.embCodes" = "Pakkekode";
-"product-detail.summary.countries" = "Land hvor produktet selges";
+"product-detail.summary.embCodes" = "Sporbarhetskode";
+"product-detail.summary.countries" = "Land";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
+"product-detail.ingredients.nova.1" = "Ubearbeidet eller minimalt bearbeidet mat";
 "product-detail.ingredients.nova.2" = "Bearbeidede kulinariske ingredienser";
 "product-detail.ingredients.nova.3" = "Bearbeidet mat";
 "product-detail.ingredients.nova.4" = "Ultrabearbeidet mat- og drikkeprodukter";
-"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.unknown" = "NOVA-nivået for matbearbeiding kunne ikke beregnes";
+"product-detail.ingredients.nova.incite" = "Legg til ingredienser og/eller kategorier for å beregne NOVA.";
 "product-detail.ingredients.ingredients-list" = "Ingrediensliste";
 "product-detail.ingredients.allergens-list" = "Stoffer eller produkter som forårsaker allergi eller intoleranse";
 "product-detail.ingredients.allergens-alert.title" = "Inneholder allergener!";
 "product-detail.ingredients.allergens-list.missing-infos" = "Dette produktet har ikke en ingrediensliste ennå, og som et resultat kunne ikke allergendeteksjon fullføres.";
-"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-list.offline-product" = "Dette produktet har blitt lastet fra frakoblet database, og som et resultat kunne ikke allergenoppdagelsen fullføres.";
 "product-detail.ingredients.traces-list" = "Kan inneholde";
 "product-detail.ingredients.additives-list" = "Tilsetningsstoffer";
 "product-detail.ingredients.palm-oil-ingredients" = "Ingredienser som er tilknyttet palmeolje";
@@ -195,24 +195,24 @@
 "product-detail.ingredients.vitamins-list" = "Vitaminer";
 "product-detail.ingredients.minerals-list" = "Mineraler";
 "product-detail.ingredients.nucleotides-list" = "Nukleotider";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Andre næringsstoffer";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "Porsjonstørrelse";
 "product-detail.nutrition.carbon-footprint" = "Karbonutslipp / CO2-utslipp";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Ernæringsinnhold";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Per porsjon";
 "product-detail.nutrition-table.100g" = "100 g";
-"product-detail.nutrition-table.serving" = "serving";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
-"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
-"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Warning: the amount of fiber is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
+"product-detail.nutrition-table.serving" = "porsjon";
+"product-detail.nutrition-table.missing" = "Ingen næringsstoffer er registrert.";
+"product-detail.nutrition-table.noNutritionData" = "Dette produktet har ingen næringsverditabell.";
+"product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Advarsel: mengden fiberer ikke spesifisert, deres mulige positive bidrag til karakteren kunne ikke tas med i betraktningen.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Advarsel: mengden frukt, grønnsaker og nøtter er ikke spesifisert, deres mulige positive bidrag til karakteren kunne ikke tas med i betraktningen.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Advarsel: mengden frukt, grønnsaker og nøtter er ikke spesifisert på etiketten, det ble anslått fra ingredienslisten: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
 "product-detail.environment.ecoscore.a" = "Eco-score A";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Næringsstoffer per 100 g/100 mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Laktose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodekstrin";
-"nutrition.fiber" = "Kostfiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Protein";
 "nutrition.proteins.casein" = "Kasein";
 "nutrition.proteins.serum-proteins" = "Serumproteiner";
@@ -364,7 +364,7 @@
 "settings.about.contact" = "Kontakt";
 "settings.about.frequently-asked-questions" = "Ofte stilte spørsmål";
 "settings.promotion.open-beauty-facts" = "Åpne skjønnhetsfakta";
-"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
@@ -406,7 +406,7 @@
 "history.section-titles.fewWeeks" = "For noen uker siden";
 "history.section-titles.fewMonths" = "For noen måneder siden";
 "history.section-titles.longTime" = "For lenge siden";
-"history.first-scan.button.title" = "Scan First Product";
+"history.first-scan.button.title" = "Scan your first product";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Rediger ";
 

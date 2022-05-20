@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Eskaneatu produktuaren barra kodea";
-"product-scanner.overlay.extended-user-help" = "Ezin aurkitu barra-kodea.\nJarri barra-kodea pantailaren erdian.\nZiurtatu barra kodea ondo argiztatuta dagoela.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Eskaner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Ziurtatu Pribatutasun Ezarpenetan Open Food Facts-ek kamera erabiltzeko baimena duela";
 "product-scanner.permissions.failed.action.title" = "Utzi barra kodeak eskaneatzeari";
 
-"product-scanner.search.status" = "Produktua kargatzen…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Oharra: bidaltzen dituzun argazkiak Creative Commons Attribution & ShareAlike lizentzia librearekin argitaratzen dira.";
 
 "product-add.titles.product-info" = "Produktuaren informazioa";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Izena";
 "product-add.label.category" = "Kategoria";
 "product-add.label.quantity" = "Kopurua";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Etiketak, ziurtagiriak, sariak";
 "product-detail.summary.citiesTags" = "Erositako hiria, estatua eta herrialdea";
 "product-detail.summary.stores" = "Dendak";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Countries where sold";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Prozesatu gabeko edo ahalik eta gutxien prozesatutako elikagaiak";
@@ -203,7 +203,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "100 g-ko";
 "product-detail.nutrition-table.for-serving" = "Errazio bakoitzeko";
 "product-detail.nutrition-table.100g" = "100g";
@@ -215,13 +215,13 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Abisua: fruta, barazki eta fruitu lehorren kopurua ez dago etiketan zehaztuta, osagai zerrendatik kalkulatu da:% %d";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Oharra: fruta, barazki eta fruitu lehorren kopurua ez dago etiketan zehaztuta, produktuaren (%s) kategorian kalkulatu da:% %d";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
+"product-detail.environment.ecoscore.c" = "Some impact on the environment";
+"product-detail.environment.ecoscore.d" = "Strong impact on the environment";
+"product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score ezezaguna";
-"product-detail.environment.ecoscore.incite" = "Mesedez, gehitu ontzikiaren informazioa, Eco-score kalkula dezagun";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Mantenugai mailak 100 g / 100 ml bakoitzeko";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Laktosa";
 "nutrition.carbohydrate.maltose" = "Maltosa";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrinak";
-"nutrition.fiber" = "Zuntz dietetikoa";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Proteinak";
 "nutrition.proteins.casein" = "Kaseina";
 "nutrition.proteins.serum-proteins" = "Serum proteinak";
@@ -292,12 +292,12 @@
 "nutrition.vitamins.c" = "C bitamina";
 "nutrition.vitamins.b1" = "B1 bitamina";
 "nutrition.vitamins.b2" = "B2 bitamina";
-"nutrition.vitamins.pp" = "PP bitamina";
+"nutrition.vitamins.pp" = "Vitamin B3";
 "nutrition.vitamins.b6" = "B6 bitamina";
 "nutrition.vitamins.b9" = "B9 bitamina";
 "nutrition.vitamins.b12" = "B12 bitamina";
 "nutrition.vitamins.biotin" = "Biotin";
-"nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
+"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
 "nutrition.minerals" = "Mineralak";
 "nutrition.minerals.silica" = "Silizea";
 "nutrition.minerals.bicarbonate" = "Bikarbonatoa";

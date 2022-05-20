@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scan the barcode of the product";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Piemēri: Coca-Cola, Nestle utt…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Nosaukums";
 "product-add.label.category" = "Kategorija";
 "product-add.label.quantity" = "Daudzums";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Etiķetes, sertifikāti, apbalvojumi";
 "product-detail.summary.citiesTags" = "Pilsēta, valsts un valsts, kur tas tiek nopirkts";
 "product-detail.summary.stores" = "Stores";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Valsts";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Oglekļa dioksīda emisijas / CO2 emisijas";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Uztura fakti";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "100 g";
 "product-detail.nutrition-table.for-serving" = "Uz porciju";
 "product-detail.nutrition-table.100g" = "100g";
@@ -215,13 +215,13 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Brīdinājums: uz etiķetes nav norādīts augļu, dārzeņu un riekstu daudzums, tika novērtēts no sastāvdaļu saraksta: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Brīdinājums: uz etiķetes nav norādīts augļu, dārzeņu un riekstu daudzums, tika novērtēts no produkta kategorijas (%s): %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
+"product-detail.environment.ecoscore.c" = "Some impact on the environment";
+"product-detail.environment.ecoscore.d" = "Strong impact on the environment";
+"product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -249,7 +249,7 @@
 "robotoff.not-sure" = "I'm not sure";
 "robotoff.contribute-incentive.title" = "Veicināt / atbalstīt";
 "robotoff.settings.display-questions" = "Display questions";
-"robotoff.contribute-incentive.login" = "Username";
+"robotoff.contribute-incentive.login" = "Login";
 "robotoff.contribute-incentive.not-now" = "Not now";
 "robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
 "robotoff.answer-saved" = "Answer saved, thanks!";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Laktoze";
 "nutrition.carbohydrate.maltose" = "Maltoze";
 "nutrition.carbohydrate.maltodextrins" = "Maltodekstrīni";
-"nutrition.fiber" = "Šķiedrvielas";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Olbaltumvielas";
 "nutrition.proteins.casein" = "Kazeīns";
 "nutrition.proteins.serum-proteins" = "Seruma proteīni";
@@ -292,7 +292,7 @@
 "nutrition.vitamins.c" = "C vitamīns";
 "nutrition.vitamins.b1" = "Vitamīns B1";
 "nutrition.vitamins.b2" = "B2 vitamīns";
-"nutrition.vitamins.pp" = "Vitamīns PP";
+"nutrition.vitamins.pp" = "Vitamin B3";
 "nutrition.vitamins.b6" = "Vitamīns B6";
 "nutrition.vitamins.b9" = "Vitamīns B9";
 "nutrition.vitamins.b12" = "Vitamīns B12";

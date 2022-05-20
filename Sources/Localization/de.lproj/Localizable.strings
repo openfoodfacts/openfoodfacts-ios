@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Strichcode des Produkts einlesen";
-"product-scanner.overlay.extended-user-help" = "• Strichcode konnte nicht gefunden werden.\n• Zentrieren Sie den Streifencode auf dem Bildschirm.\n• Stellen Sie sicher, dass der Strichcode gut beleuchtet ist.";
+"product-scanner.overlay.extended-user-help" = "Barcode nicht erkannt. \nZentrieren Sie den Barcode auf dem Bildschirm.\nStellen Sie sicher, dass der Barcode gut beleuchtet ist.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,12 +46,12 @@
 "product-scanner.permissions.failed.message" = "Stellen Sie in den Datenschutzeinstellungen sicher, dass Open Food Facts die Berechtigung hat, die Kamera verwenden zu dürfen";
 "product-scanner.permissions.failed.action.title" = "Einlesen von Strichcodes beenden";
 
-"product-scanner.search.status" = "Produkt wird geladen …";
+"product-scanner.search.status" = "Produkte werden geladen …";
 
 /* Accessibility label indicating the action when the flash is currently off. */
-"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+"product-scanner.flash.off.accessibility.label" = "Taschenlampe einschalten";
 /* Accessibility label indicating the action when the flash is currently on. */
-"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+"product-scanner.flash.on.accessibility.label" = "Taschenlampe ausschalten";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Hinweis: die von Ihnen eingesandten Fotos werden unter der freien Lizenz „Creative Commons Attribution und ShareAlike” veröffentlicht.";
 
 "product-add.titles.product-info" = "Produktinformation";
-"product-add.label.brand-example" = "Beispiele: Coca-Cola, Nestle usw. …";
+"product-add.label.brand-example" = "Beispiele: Coca-Cola, Nestlé usw.";
 "product-add.label.product-name" = "Name";
 "product-add.label.category" = "Kategorie";
 "product-add.label.quantity" = "Mengenangabe";
@@ -118,7 +118,7 @@
 "product-add.label.labels" = "Labels";
 "product-add.label.labels-example" = "Beispiele: Glutenfrei, usw.";
 "product-add.label.origins" = "Herkunft der Zutaten";
-"product-add.field.origins-placeholder" = "Erforderlich für die Berechnung der Eco-score";
+"product-add.field.origins-placeholder" = "Erforderlich für die Berechnung der Ökobilanz";
 "product-add.label.origins-example" = "Beispiel: Butter aus Frankreich, usw.";
 
 "product-add.description.nutritive" = "Vervollständigen Sie die Nährwertangaben und die Produktkategorie, um den Nutri-Score zu erhalten";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Kennzeichnungen, Zertifizierungen, Preise";
 "product-detail.summary.citiesTags" = "Stadt, Bundesland und Land des Kaufs";
 "product-detail.summary.stores" = "Läden";
-"product-detail.summary.embCodes" = "Identitätskennzeichen";
-"product-detail.summary.countries" = "Vertriebsländer";
+"product-detail.summary.embCodes" = "Produzentenschlüssel";
+"product-detail.summary.countries" = "Land";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unverarbeitete oder minimal verarbeitete Lebensmittel";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Ökologischer Fußabdruck / CO₂-Emissionen";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Nährwertangaben";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "Pro 100 g";
 "product-detail.nutrition-table.for-serving" = "Pro Portion";
 "product-detail.nutrition-table.100g" = "100 g";
@@ -220,8 +220,8 @@
 "product-detail.environment.ecoscore.c" = "Einige Auswirkungen auf die Umwelt";
 "product-detail.environment.ecoscore.d" = "Starke Auswirkungen auf die Umwelt";
 "product-detail.environment.ecoscore.e" = "Sehr starke Auswirkungen auf die Umwelt";
-"product-detail.environment.ecoscore.unknown" = "Eco-Score unbekannt";
-"product-detail.environment.ecoscore.incite" = "Bitte fügen Sie Verpackungsinformationen hinzu, damit wir die Eco-score berechnen können";
+"product-detail.environment.ecoscore.unknown" = "Ökobilanz unbekannt";
+"product-detail.environment.ecoscore.incite" = "Bitte fügen Sie Verpackungsinformationen hinzu, damit der Eco-score berechnet werden kann";
 
 // Nutrition levels
 "nutrition-level.title" = "Nährstoffgehalt je 100g/100ml";

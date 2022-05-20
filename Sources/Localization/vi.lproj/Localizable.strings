@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Quét mã vạch";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Quay lại";
@@ -21,12 +21,12 @@
 // Product Search
 
 "product-search.title" = "Tìm kiếm";
-"product-search.search-placeholder" = "Search for a product by name or barcode";
-"product-search.no-results" = "No Results";
+"product-search.search-placeholder" = "Tìm kiếm theo tên hoặc mã vạch";
+"product-search.no-results" = "Không có kết quả. Bạn có thể thêm một sản phẩm vào Open Food Facts bằng cách quét nó.";
 "product-search.error-view.title" = "Đã xảy ra lỗi";
 "product-search.error-view.subtitle" = "Vui lòng thử lại";
-"product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
+"product-search.initial-view.slogan" = "cơ sở dữ liệu về sản phẩm đồ ăn miễn phí.";
+"product-search.initial-view.offline.title-loading" = "Đang lưu sản phẩm ngoại tuyến: %d%%";
 "product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
 
 // Product Scanner
@@ -39,14 +39,14 @@
 "product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
-"product-scanner.permissions.noPermissions.action.title" = "Open Settings";
+"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
+"product-scanner.permissions.noPermissions.action.title" = "Open settings";
 
-"product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
-"product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
+"product-scanner.permissions.failed.message" = "Đảm bảo trong Cài đặt quyền riêng tư rằng Open Food Facts có quyền sử dụng máy ảnh";
 "product-scanner.permissions.failed.action.title" = "Rời khỏi chức năng quét mã vạch";
 
-"product-scanner.search.status" = "Loading product...";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -55,7 +55,7 @@
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image...";
+"product-add.uploading-image-banner.title" = "Uploading image…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Đã xảy ra lỗi";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
@@ -106,14 +106,14 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Tên";
 "product-add.label.category" = "Danh mục";
 "product-add.label.quantity" = "Số lượng";
 "product-add.label.packaging" = "Bao bì";
-"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
+"product-add.label.packaging-example" = "Examples: plastic tray, glass bottle";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.quantity-example" = "Examples: 25g, 10oz, 5ml…";
 "product-add.label.language" = "Languages";
 "product-add.label.labels" = "Labels";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
@@ -124,31 +124,31 @@
 "product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
 "product-add.titles.nutritive" = "Giá trị dinh dưỡng";
 "product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.choice.per-portion" = "mỗi phần";
 "product-add.nutritive.add-nutriment" = "Thêm chất dinh dưỡng";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Nhiều hơn 100g?";
 
 "product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
 "product-add.titles.ingredients" = "Thành phần";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
-"product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.explaination" = "Chụp ảnh danh sách thành phần để có thể tự độc trích xuất các thành phần. Kiểm tra cẩn thận và đừng quên nhấn lưu.";
+"product-add.ingredients.button-delete" = "Quá tệ, bỏ qua";
+"product-add.ingredients.button-save" = "Có vẻ ổn, Lưu";
 
 // Select Category
 "select-category.title" = "Danh mục";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Tìm danh mục";
 
 // Select nutrition
 "select-nutriment.title" = "Dinh dưỡng";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Tìm chất dinh dưỡng";
 
 // Select allergen
-"select-allergen.title" = "Allergen";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.title" = "Chất gây dị ứng";
+"select-allergen.search-placeholder" = "Tìm chất gây dị ứng";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Thêm một hình ảnh";
-"product-detail.edit" = "Edit this product";
+"product-detail.edit" = "Chỉnh sửa sản phẩm này";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "Hãy nhớ lưu các thay đổi của bạn";
 /* Keep this text as short as possible */
@@ -159,11 +159,11 @@
 "product-detail.page-title.ingredients" = "Thành phần";
 "product-detail.page-title.nutrition" = "Dinh dưỡng";
 "product-detail.page-title.nutrition-table" = "Bảng giá trị Dinh dưỡng";
-"product-detail.page-title.environment-impact" = "Environment";
+"product-detail.page-title.environment-impact" = "Môi trường";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "Mã vạch";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Tên chung";
 "product-detail.summary.quantity" = "Số lượng";
 "product-detail.summary.packaging" = "Bao bì";
 "product-detail.summary.brands" = "Thương hiệu";
@@ -173,22 +173,22 @@
 "product-detail.summary.labels" = "Nhãn, chứng nhận, giải thưởng";
 "product-detail.summary.citiesTags" = "Thành phố, tiểu bang và quốc gia mua hàng";
 "product-detail.summary.stores" = "Cửa hàng";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Các quốc gia bán";
+"product-detail.summary.embCodes" = "Mã xác định nguồn gốc";
+"product-detail.summary.countries" = "Quốc gia";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
+"product-detail.ingredients.nova.1" = "Thực phẩm chưa qua chế biến hoặc chế biến sơ";
 "product-detail.ingredients.nova.2" = "Processed culinary ingredients";
-"product-detail.ingredients.nova.3" = "Processed foods";
+"product-detail.ingredients.nova.3" = "Thực phẩm đã qua chế biến";
 "product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
 "product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.incite" = "Thêm thành phần và/hoặc danh mục để tính NOVA.";
 "product-detail.ingredients.ingredients-list" = "Danh sách các thành phần";
 "product-detail.ingredients.allergens-list" = "Các chất hoặc sản phẩm gây dị ứng hoặc không dung nạp";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-alert.title" = "Có chứa chất gây dị ứng!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Sản phẩm này chưa có danh sách thành phần, do đó, việc xác định chất gây dị ứng không thể thực hiện.";
 "product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.traces-list" = "Trace";
+"product-detail.ingredients.traces-list" = "Traces";
 "product-detail.ingredients.additives-list" = "Chất phụ gia";
 "product-detail.ingredients.palm-oil-ingredients" = "Thành phần từ dầu cọ";
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Thành phần có thể có nguồn gốc từ dầu cọ";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Lượng khí thải carbon / lượng khí thải CO2";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Giá trị dinh dưỡng";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Mỗi khẩu";
 "product-detail.nutrition-table.100g" = "100g";
@@ -215,13 +215,13 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Cảnh báo: lượng trái cây, rau và quả hạch không được ghi trên nhãn, được ước tính từ danh sách các thành phần: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Cảnh báo: số lượng trái cây, rau và quả hạch không được ghi trên nhãn, được ước tính từ loại (%s) của sản phẩm: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
 "product-detail.environment.ecoscore.c" = "Eco-score C";
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Mức dinh dưỡng trên 100 g / 100mL";
@@ -246,7 +246,7 @@
 // Robotoff
 "robotoff.yes" = "Có";
 "robotoff.no" = "Không";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "Tôi không chắc";
 "robotoff.contribute-incentive.title" = "Góp phần";
 "robotoff.settings.display-questions" = "Display questions";
 "robotoff.contribute-incentive.login" = "Tên người dùng";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Đường sữa";
 "nutrition.carbohydrate.maltose" = "Mạch nha";
 "nutrition.carbohydrate.maltodextrins" = "Bột tinh";
-"nutrition.fiber" = "Dietary fiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Chất đạm";
 "nutrition.proteins.casein" = "Casein";
 "nutrition.proteins.serum-proteins" = "Protein huyết thanh";
@@ -297,7 +297,7 @@
 "nutrition.vitamins.b9" = "Vitamin B9";
 "nutrition.vitamins.b12" = "Vitamin B12";
 "nutrition.vitamins.biotin" = "Biotin";
-"nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
+"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
 "nutrition.minerals" = "Khoáng chất";
 "nutrition.minerals.silica" = "Silic dioxit";
 "nutrition.minerals.bicarbonate" = "Muối cacbonat";
@@ -324,10 +324,10 @@
 "nutrition.minerals.chlorophyl" = "Chlorophyl";
 
 // Call to action
-"call-to-action.summary" = "Take a picture of the front";
+"call-to-action.summary" = "Take a photo of the front";
 "call-to-action.environment" = "Take a photo of the recycling instructions";
-"call-to-action.ingredients" = "Take a picture of the ingredients";
-"call-to-action.nutrition" = "Take a picture of the nutrition table";
+"call-to-action.ingredients" = "Take a photo of the ingredients";
+"call-to-action.nutrition" = "Take a photo of the nutrition facts";
 "call-to-action.edit" = "Complete the product to get it scored";
 
 // Product images
@@ -362,9 +362,9 @@
 "settings.contribute.support-open-food-facts" = "Support Open Food Facts";
 "settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
 "settings.about.contact" = "Contact";
-"settings.about.frequently-asked-questions" = "Frequently Asked Questions";
+"settings.about.frequently-asked-questions" = "Câu hỏi thường gặp";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
@@ -378,21 +378,21 @@
 "user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
 "user.not-logged-in" = "Not logged in";
 "user.forgot-password" = "Forgot Password?";
-"user.check-your-contributions.button" = "Check Your Contributions";
-"user.products-pending-upload.button" = "Products pending upload";
+"user.check-your-contributions.button" = "View all your contributions";
+"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
 "user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
-"user.create-account.button" = "Create An Account";
-"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
+"user.create-account.button" = "Create an account";
+"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
 "user.alert.wrong-credentials.title" = "Không thể đăng nhập";
 "user.alert.wrong-credentials.subtitle" = "Kiểm tra lại tên người dùng và mật khẩu";
 "user.alert.generic-error.title" = "Đã có lỗi khi đăng nhập";
 "user.alert.generic-error.subtitle" = "Xin vui lòng thử lại sau";
 "user.alert.logout-confirmation.title" = "Confirm Logout";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
+"user.alert.logout-confirmation.subtitle" = "Bạn có chắc chắn muốn đăng xuất?";
 "user.alert.username-missing" = "Yêu cầu có tên đăng nhập";
 "user.alert.password-missing" = "Bạn cần nhập mật khẩu";
-"pending-upload.info.text" = "These are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
+"pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
 "pending-upload.hud.status" = "Uploading";
 
 // Search history

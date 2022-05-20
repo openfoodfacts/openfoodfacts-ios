@@ -21,8 +21,8 @@
 // Product Search
 
 "product-search.title" = "Vyhľadať";
-"product-search.search-placeholder" = "Search for a product by name or barcode";
-"product-search.no-results" = "No Results";
+"product-search.search-placeholder" = "Search by name or barcode";
+"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
 "product-search.error-view.title" = "Niečo sa pokazilo";
 "product-search.error-view.subtitle" = "Prosím, skúste znova";
 "product-search.initial-view.slogan" = "bezplatná databáza potravín";
@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Naskenujte čiarový kód produktu";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Skener";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,14 +39,14 @@
 "product-scanner.barcode-notfound.manual-enter" = "Čiarový kód sa nenašiel. Môžete ho zadať ručne:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts vyžaduje povolenie použiť kameru";
-"product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
+"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Open Settings";
 
-"product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
+"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Ukončiť skenovanie čiarových kódov";
 
-"product-scanner.search.status" = "Loading product...";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -55,7 +55,7 @@
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image...";
+"product-add.uploading-image-banner.title" = "Uploading image…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Niečo sa pokazilo";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Názov";
 "product-add.label.category" = "Kategória";
 "product-add.label.quantity" = "Množstvo";
@@ -173,7 +173,7 @@
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
-"product-detail.summary.embCodes" = "Packager code";
+"product-detail.summary.embCodes" = "Traceability code";
 "product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
@@ -194,7 +194,7 @@
 "product-detail.ingredients.possible-palm-oil-ingredients" = "Ingredients that may be from palm oil";
 "product-detail.ingredients.vitamins-list" = "Vitamíny";
 "product-detail.ingredients.minerals-list" = "Minerálne látky";
-"product-detail.ingredients.nucleotides-list" = "Nukleotidy";
+"product-detail.ingredients.nucleotides-list" = "Nucleotides";
 "product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
 
 // Product detail nutrition info row labels
@@ -203,7 +203,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Na jednu porciu";
 "product-detail.nutrition-table.100g" = "100g";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -249,7 +249,7 @@
 "robotoff.not-sure" = "I'm not sure";
 "robotoff.contribute-incentive.title" = "Contribute";
 "robotoff.settings.display-questions" = "Display questions";
-"robotoff.contribute-incentive.login" = "Username";
+"robotoff.contribute-incentive.login" = "Login";
 "robotoff.contribute-incentive.not-now" = "Not now";
 "robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
 "robotoff.answer-saved" = "Answer saved, thanks!";
@@ -260,8 +260,8 @@
 "nutrition.energy.kcal" = "Energy (kcal)";
 "nutrition.fats" = "Fats";
 "nutrition.fats.saturated-fat" = "Nasýtený tuk";
-"nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated fat";
-"nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
+"nutrition.fats.mono-unsaturated-fat" = "Monounsaturated fat";
+"nutrition.fats.poly-unsaturated-fat" = "Polyunsaturated fat";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Laktóza";
 "nutrition.carbohydrate.maltose" = "Maltóza";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextríny";
-"nutrition.fiber" = "Dietary fiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Bielkoviny";
 "nutrition.proteins.casein" = "Kazeín";
 "nutrition.proteins.serum-proteins" = "Sérové ​​proteíny";
@@ -292,12 +292,12 @@
 "nutrition.vitamins.c" = "Vitamín C";
 "nutrition.vitamins.b1" = "Vitamín B1";
 "nutrition.vitamins.b2" = "Vitamín B2";
-"nutrition.vitamins.pp" = "Vitamin PP";
+"nutrition.vitamins.pp" = "Vitamin B3";
 "nutrition.vitamins.b6" = "Vitamín B6";
 "nutrition.vitamins.b9" = "Vitamín B9";
 "nutrition.vitamins.b12" = "Vitamín B12";
 "nutrition.vitamins.biotin" = "Biotin";
-"nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
+"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
 "nutrition.minerals" = "Minerálne látky";
 "nutrition.minerals.silica" = "Kremeň";
 "nutrition.minerals.bicarbonate" = "Bikarbonát";
@@ -324,7 +324,7 @@
 "nutrition.minerals.chlorophyl" = "Chlorophyl";
 
 // Call to action
-"call-to-action.summary" = "Take a picture of the front";
+"call-to-action.summary" = "Take a photo of the front";
 "call-to-action.environment" = "Take a photo of the recycling instructions";
 "call-to-action.ingredients" = "Take a picture of the ingredients";
 "call-to-action.nutrition" = "Take a picture of the nutrition table";
@@ -364,7 +364,7 @@
 "settings.about.contact" = "Kontakt";
 "settings.about.frequently-asked-questions" = "Frequently Asked Questions";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
@@ -406,7 +406,7 @@
 "history.section-titles.fewWeeks" = "A few weeks ago";
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
-"history.first-scan.button.title" = "Scan First Product";
+"history.first-scan.button.title" = "Scan your first product";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Upraviť";
 

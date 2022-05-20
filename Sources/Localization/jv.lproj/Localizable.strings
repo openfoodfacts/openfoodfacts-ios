@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Nyeken barkod produk";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Penyeken";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Priksa manawa ing Setelan Privasi Open Food Facts gadah ijin nggunakake kamera";
 "product-scanner.permissions.failed.action.title" = "Ninggalake sken barkod";
 
-"product-scanner.search.status" = "Muat produk…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,12 +106,12 @@
 "product-add.titles.license-explaination" = "Cathetan: gambar sing sampeyan kirimke diterbitake miturut lisensi gratis Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Jeneng";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Quantity";
 "product-add.label.packaging" = "Packaging";
-"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
+"product-add.label.packaging-example" = "Examples: plastic tray, glass bottle";
 "product-add.details.category" = "Perlu kanggo ngitungake Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10ons, 5ml…";
 "product-add.label.language" = "Basa";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Label, sertifikasi, penghargaan";
 "product-detail.summary.citiesTags" = "Kutha, wilayah lan negara engkang bade tumbas";
 "product-detail.summary.stores" = "Stores";
-"product-detail.summary.embCodes" = "Kode paket";
-"product-detail.summary.countries" = "Countries where sold";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -203,8 +203,8 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
-"product-detail.nutrition-table.for-100g" = "For 100 g";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
+"product-detail.nutrition-table.for-100g" = "Per 100 g";
 "product-detail.nutrition-table.for-serving" = "Saben porsi";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
@@ -215,13 +215,13 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Pènget: jumlah woh-wohan, sayur-sayuran lan kacang-kacangan mboten ditemtokaken ing label, sampun diestimasi saking dhaptar bahan: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Pènget: jumlah woh-wohan, sayuran lan kacang-kacangan mboten ditetepaken ing label kasebut, sampun diestimasi saking kategori (%s) produk: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
+"product-detail.environment.ecoscore.c" = "Some impact on the environment";
+"product-detail.environment.ecoscore.d" = "Strong impact on the environment";
+"product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Tingkat nutrisi saben 100 g / 100mL";
@@ -249,7 +249,7 @@
 "robotoff.not-sure" = "Kula mboten yakin";
 "robotoff.contribute-incentive.title" = "Contribute";
 "robotoff.settings.display-questions" = "Tampilake pitakon";
-"robotoff.contribute-incentive.login" = "Username";
+"robotoff.contribute-incentive.login" = "Login";
 "robotoff.contribute-incentive.not-now" = "Mboten sak niki";
 "robotoff.contribute-incentive.description" = "Wangsulan pitakon sing gampil, damel transparansi panganan kelakon!";
 "robotoff.answer-saved" = "Wangsulan disimpen, matur nuwun!";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Laktosa";
 "nutrition.carbohydrate.maltose" = "Maltosa";
 "nutrition.carbohydrate.maltodextrins" = "Maltodekstrin";
-"nutrition.fiber" = "Dietary fiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Proteins";
 "nutrition.proteins.casein" = "Kasein";
 "nutrition.proteins.serum-proteins" = "Serum Protein";
@@ -296,8 +296,8 @@
 "nutrition.vitamins.b6" = "Vitamin B6";
 "nutrition.vitamins.b9" = "Vitamin B9";
 "nutrition.vitamins.b12" = "Vitamin B12";
-"nutrition.vitamins.biotin" = "Biotin";
-"nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
+"nutrition.vitamins.biotin" = "Vitamin B7";
+"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
 "nutrition.minerals" = "Mineral";
 "nutrition.minerals.silica" = "Silika";
 "nutrition.minerals.bicarbonate" = "Bikarbonat";
@@ -319,7 +319,7 @@
 "nutrition.minerals.taurine" = "Taurin";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Woh-wohan, sayuran, kacang-kacangan";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen/Meat Protein Ratio";
 "nutrition.minerals.cocoa" = "Kakao";
 "nutrition.minerals.chlorophyl" = "Chlorophyl";
 
@@ -383,7 +383,7 @@
 "user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
+"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
 "user.alert.wrong-credentials.title" = "Unable to log in";
 "user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
 "user.alert.generic-error.title" = "There was an error logging in";
@@ -406,7 +406,7 @@
 "history.section-titles.fewWeeks" = "A few weeks ago";
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
-"history.first-scan.button.title" = "Scan First Product";
+"history.first-scan.button.title" = "Scan your first product";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Edit";
 
