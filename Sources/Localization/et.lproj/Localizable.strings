@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skannige toote triipkood";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Skänner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Veenduge, et privaatsusseadetes oleks Open Food Factsil luba kaamera kasutamiseks";
 "product-scanner.permissions.failed.action.title" = "Leave barcode scanning";
 
-"product-scanner.search.status" = "Toote laadimine…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,14 +106,14 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Name";
 "product-add.label.category" = "Kategooria";
 "product-add.label.quantity" = "Kogus";
 "product-add.label.packaging" = "Packaging";
-"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
+"product-add.label.packaging-example" = "Examples: plastic tray, glass bottle";
 "product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.quantity-example" = "Examples: 25g, 10oz, 5ml…";
 "product-add.label.language" = "Keeled";
 "product-add.label.labels" = "Sildid";
 "product-add.label.labels-example" = "Examples: Gluten-free, etc.";
@@ -173,7 +173,7 @@
 "product-detail.summary.labels" = "Labels, certifications, awards";
 "product-detail.summary.citiesTags" = "City, state and country where purchased";
 "product-detail.summary.stores" = "Stores";
-"product-detail.summary.embCodes" = "Pakendaja kood";
+"product-detail.summary.embCodes" = "Traceability code";
 "product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
@@ -203,7 +203,7 @@
 
 // Product detail nutrition table labels
 "product-detail.nutrition-table.nutritional-table-header" = "Nutrition facts";
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "For 100 g";
 "product-detail.nutrition-table.for-serving" = "Portsjoni kohta";
 "product-detail.nutrition-table.100g" = "100 g";
@@ -215,13 +215,13 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the list of ingredients: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Warning: the amount of fruits, vegetables and nuts is not specified on the label, it was estimated from the category (%s) of the product: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
+"product-detail.environment.ecoscore.c" = "Some impact on the environment";
+"product-detail.environment.ecoscore.d" = "Strong impact on the environment";
+"product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "100 g/100mL toitainete sisaldus";
@@ -249,25 +249,25 @@
 "robotoff.not-sure" = "I'm not sure";
 "robotoff.contribute-incentive.title" = "Contribute";
 "robotoff.settings.display-questions" = "Display questions";
-"robotoff.contribute-incentive.login" = "Username";
+"robotoff.contribute-incentive.login" = "Login";
 "robotoff.contribute-incentive.not-now" = "Not now";
 "robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
 "robotoff.answer-saved" = "Answer saved, thanks!";
 
 // Nutrition
-"nutrition.energy" = "Energy";
+"nutrition.energy" = "Calories";
 "nutrition.energy.kj" = "Energy (kJ)";
 "nutrition.energy.kcal" = "Energy (kcal)";
 "nutrition.fats" = "Rasvad";
 "nutrition.fats.saturated-fat" = "Küllastunud rasva";
-"nutrition.fats.mono-unsaturated-fat" = "Mono unsaturated fat";
-"nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
+"nutrition.fats.mono-unsaturated-fat" = "Monoküllastumata rasva";
+"nutrition.fats.poly-unsaturated-fat" = "Polüküllastumata rasva";
 "nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
 "nutrition.fats.omega9" = "Omega 9";
 "nutrition.fats.trans-fat" = "Trans-rasva";
 "nutrition.fats.cholesterol" = "Kolesterool";
-"nutrition.carbohydrate" = "Carbohydrate";
+"nutrition.carbohydrate" = "Carbohydrates";
 "nutrition.carbohydrate.sugars" = "Suhkruid";
 "nutrition.carbohydrate.sucrose" = "Sahharoos";
 "nutrition.carbohydrate.glucose" = "Glükoos";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Lactose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
-"nutrition.fiber" = "Dietary fiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Proteins";
 "nutrition.proteins.casein" = "Kaseiin";
 "nutrition.proteins.serum-proteins" = "Serum Proteins";
@@ -297,7 +297,7 @@
 "nutrition.vitamins.b9" = "B9-vitamiin";
 "nutrition.vitamins.b12" = "B12-vitamiin";
 "nutrition.vitamins.biotin" = "Biotin";
-"nutrition.vitamins.pantothenic-acid" = "Pantothenic acid";
+"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
 "nutrition.minerals" = "Mineraalid";
 "nutrition.minerals.silica" = "Silica";
 "nutrition.minerals.bicarbonate" = "Bikarbonaat";
@@ -319,9 +319,9 @@
 "nutrition.minerals.taurine" = "Tauriin";
 "nutrition.minerals.ph" = "pH";
 "nutrition.minerals.fruits-vegetables-nuts" = "Puuviljad, köögiviljad, pähklid";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen meat protein ratio";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Collagen/Meat Protein Ratio";
 "nutrition.minerals.cocoa" = "Kakao";
-"nutrition.minerals.chlorophyl" = "Chlorophyl";
+"nutrition.minerals.chlorophyl" = "Chlorophyll";
 
 // Call to action
 "call-to-action.summary" = "Take a photo of the front";
@@ -383,7 +383,7 @@
 "user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
 "user.create-account.text" = "If you don't have an account, click the link below to create one.";
 "user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
+"user.why-log-in.text" = "Logging in with your account will give you credit for all your contributions to food transparency.";
 "user.alert.wrong-credentials.title" = "Unable to log in";
 "user.alert.wrong-credentials.subtitle" = "Check your username and password are correct";
 "user.alert.generic-error.title" = "There was an error logging in";
@@ -406,7 +406,7 @@
 "history.section-titles.fewWeeks" = "A few weeks ago";
 "history.section-titles.fewMonths" = "A few months ago";
 "history.section-titles.longTime" = "A long time ago";
-"history.first-scan.button.title" = "Scan First Product";
+"history.first-scan.button.title" = "Scan your first product";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Muuda";
 

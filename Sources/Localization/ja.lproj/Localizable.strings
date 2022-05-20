@@ -15,19 +15,19 @@
 "generic.cancel" = "取消";
 "generic.save" = "保存";
 "generic.cancel" = "取消";
-"generic.ok" = "OK";
+"generic.ok" = "Ok";
 "generic.close" = "閉じる";
 
 // Product Search
 
 "product-search.title" = "検索";
 "product-search.search-placeholder" = "商品名またはバーコードから探す";
-"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
+"product-search.no-results" = "結果はありません。スキャンすることで、Open Food Factsに製品を追加できます。";
 "product-search.error-view.title" = "問題が発生しました";
 "product-search.error-view.subtitle" = "もう一度やり直してください";
 "product-search.initial-view.slogan" = "無料の食品データベース";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.offline.title-loading" = "製品をオフラインで保存しています: %d%%";
+"product-search.initial-view.offline.subtitle" = "%d 以上の製品がインスタントスキャンに利用できます";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "製品のバーコードをスキャンします";
@@ -39,19 +39,19 @@
 "product-scanner.barcode-notfound.manual-enter" = "バーコードが見つかりませんでした。手動で入力してください。";
 
 "product-scanner.permissions.noPermissions.title" = "OpenFoodFacts は、カメラアクセス許可が必要です";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
+"product-scanner.permissions.noPermissions.message" = "カメラにバーコードをスキャンさせる許可を与えてください";
 "product-scanner.permissions.noPermissions.action.title" = "設定を開く";
 
 "product-scanner.permissions.failed.title" = "バーコードスキャンを開始できませんでした。";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
+"product-scanner.permissions.failed.message" = "プライバシー設定で、OpenFoodFactsにカメラの使用許可があることを確認してください";
 "product-scanner.permissions.failed.action.title" = "バーコードのスキャンをやめる";
 
 "product-scanner.search.status" = "製品を読み込み中…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
-"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+"product-scanner.flash.off.accessibility.label" = "フラッシュをオンにする";
 /* Accessibility label indicating the action when the flash is currently on. */
-"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+"product-scanner.flash.on.accessibility.label" = "フラッシュをオフにする";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -72,26 +72,26 @@
 "product-add.save-info.error" = "情報は保存されていません";
 "product-add.save-info.saving" = "商品情報を保存しています…";
 "product-add.save-info.not-yet" = "情報はまだ保存されていません";
-"product-add.save-ingredients.success" = "Ingredients saved at";
+"product-add.save-ingredients.success" = "成分の保存先";
 "product-add.save-ingredients.error" = "材料が保存されていません";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.save-ingredients.saving" = "成分を保存中…";
+"product-add.save-ingredients.not-yet" = "成分はまだ保存されていません";
+"product-add.save-nutriments.success" = "栄養成分の保存先";
+"product-add.save-nutriments.error" = "栄養成分は保存されていません";
+"product-add.save-nutriments.saving" = "栄養素を保存中…";
+"product-add.save-nutriments.not-yet" = "栄養成分はまだ保存されていません";
+"product-add.no-nutrition" = "栄養成分データが製品に表示されていません";
 
-"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
+"product-add.ocr-ingredients.success" = "次の写真から読み込んだ栄養成分";
 "product-add.ocr-ingredients.error" = "画像から原材料の読み込みできませんでした";
 "product-add.ocr-ingredients.saving" = "画像から原材料読み込み中";
 "product-add.ocr-ingredients.not-yet" = "原材料が読み込める画像はありません";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "栄養成分表からNutri-Score(栄養スコア)が計算されました";
+"product-add.novagroup-explaination" = "NOVAグループは成分リストに基づいて計算されました";
 
-"alert.action.ok" = "OK";
-"product-add.language.toolbar-title" = "Select a language";
+"alert.action.ok" = "Ok";
+"product-add.language.toolbar-title" = "言語を選択";
 /* Product Add name text field */
 "product-add.placeholder.name" = "製品名";
 /* Product Add brand text field */
@@ -99,56 +99,56 @@
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "数量";
 
-"product-add.title" = "New product";
+"product-add.title" = "新しい製品";
 "product-add.title-edit" = "製品を編集";
 "product-add.titles.barcode" = "バーコード";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.top-explainations" = "よくできました！この製品はまだOpen Food Factsにはありません。 製品、原材料リスト、栄養成分表のいくつかの写真を撮ってOpen Food Factsに追加してもらえませんか? \n\n予め感謝いたします。";
+"product-add.titles.license-explaination" = "注：送信する写真は、クリエイティブ・コモンズ表示&継承のフリーなライセンスの下で公開されます。";
 
-"product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.titles.product-info" = "製品情報";
+"product-add.label.brand-example" = "例：コカコーラ、ネスレなど。";
 "product-add.label.product-name" = "名前";
 "product-add.label.category" = "カテゴリー";
 "product-add.label.quantity" = "数量";
 "product-add.label.packaging" = "パッケージング";
-"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
+"product-add.label.packaging-example" = "例：プラスチックトレイ、ガラス瓶";
+"product-add.details.category" = "Nutir-Score(栄養スコア)の計算に必要です";
+"product-add.label.quantity-example" = "例：25g、10oz、5ml…";
 "product-add.label.language" = "言語";
 "product-add.label.labels" = "ラベル";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.labels-example" = "例：グルテンフリーなど。";
 "product-add.label.origins" = "成分の起源";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Example: Butter from France, etc.";
+"product-add.field.origins-placeholder" = "エコスコアの計算に必須";
+"product-add.label.origins-example" = "例：フランス産バターなど";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
+"product-add.description.nutritive" = "Nutri-Score(栄養スコア)を取得できるよう、栄養成分表と製品カテゴリーを完成させましょう";
 "product-add.titles.nutritive" = "栄養成分表";
 "product-add.nutritive.choice.per-hundred-grams" = "100g / 100ml 当たり";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.nutritive.choice.per-portion" = "品目当たり";
 "product-add.nutritive.add-nutriment" = "栄養成分を追加";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "100g以上？";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "食品加工に関するNOVAグループを取得するために、材料を完成させましょう";
 "product-add.titles.ingredients" = "原材料";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
-"product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.explaination" = "原材料を自動的に抽出するために、原材料リストの写真を撮ります。慎重に確認し、保存することを忘れないでください。";
+"product-add.ingredients.button-delete" = "ひどすぎる、無視";
+"product-add.ingredients.button-save" = "よさそう、保存";
 
 // Select Category
 "select-category.title" = "カテゴリー";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "カテゴリを検索";
 
 // Select nutrition
 "select-nutriment.title" = "栄養";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "栄養素を検索";
 
 // Select allergen
 "select-allergen.title" = "アレルゲン";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.search-placeholder" = "アレルゲンを検索";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "新しい写真を追加";
-"product-detail.edit" = "Edit this product";
+"product-detail.edit" = "この製品を編集";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "変更内容を保存してください";
 /* Keep this text as short as possible */
@@ -163,7 +163,7 @@
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "バーコード";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "一般名";
 "product-detail.summary.quantity" = "数量";
 "product-detail.summary.packaging" = "パッケージング";
 "product-detail.summary.brands" = "ブランド";
@@ -173,21 +173,21 @@
 "product-detail.summary.labels" = "ラベル、認証、表彰";
 "product-detail.summary.citiesTags" = "市、州、購入した国";
 "product-detail.summary.stores" = "店舗";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "販売の国";
+"product-detail.summary.embCodes" = "トレーサビリティコード";
+"product-detail.summary.countries" = "国";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
-"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
-"product-detail.ingredients.nova.3" = "Processed foods";
-"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
-"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
+"product-detail.ingredients.nova.1" = "未加工または最小加工食品";
+"product-detail.ingredients.nova.2" = "加工された料理の材料";
+"product-detail.ingredients.nova.3" = "加工食品";
+"product-detail.ingredients.nova.4" = "超加工食品・飲料製品";
+"product-detail.ingredients.nova.unknown" = "食品加工のNOVAレベルは計算できませんでした";
+"product-detail.ingredients.nova.incite" = "NOVAを計算するために成分および/またはカテゴリを追加します。";
 "product-detail.ingredients.ingredients-list" = "原材料の一覧";
 "product-detail.ingredients.allergens-list" = "食餌性アレルゲン";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
+"product-detail.ingredients.allergens-alert.title" = "アレルゲンが入っています!";
+"product-detail.ingredients.allergens-list.missing-infos" = "この製品には原材料リストがありませんので、アレルゲン検出が完了できませんでした。";
+"product-detail.ingredients.allergens-list.offline-product" = "この製品はオフラインのデータベースから読み込まれ、その結果アレルゲン検出が完了できませんでした。";
 "product-detail.ingredients.traces-list" = "形跡";
 "product-detail.ingredients.additives-list" = "添加物";
 "product-detail.ingredients.palm-oil-ingredients" = "パーム油由来の原材料";
@@ -195,36 +195,36 @@
 "product-detail.ingredients.vitamins-list" = "ビタミン";
 "product-detail.ingredients.minerals-list" = "ミネラル";
 "product-detail.ingredients.nucleotides-list" = "ヌクレオチド";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "その他の栄養成分";
 
 // Product detail nutrition info row labels
 "product-detail.nutrition.serving-size" = "一人前の分量";
 "product-detail.nutrition.carbon-footprint" = "カーボンフットプリント / CO2 排出量";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "栄養成分表";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score(栄養スコア) %1$@";
 "product-detail.nutrition-table.for-100g" = "100 g 当たり";
 "product-detail.nutrition-table.for-serving" = "一食当たり";
 "product-detail.nutrition-table.100g" = "100g";
 "product-detail.nutrition-table.serving" = "serving";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
-"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.missing" = "栄養素は設定されていません。";
+"product-detail.nutrition-table.noNutritionData" = "この製品には栄養価表がありません。";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "警告: 食物繊維の量が指定されていません。グレードへの肯定的な貢献の可能性は考慮されませんでした。";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Warning: the amount of fruits, vegetable and nuts is not specified, their possible positive contribution to the grade could not be taken into account.";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "警告：食物繊維、果物、野菜、ナッツ類の量が明記されていないため、成績へプラスに貢献する可能性は考慮されていません。";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "警告: 果物、野菜、ナッツの量はラベルに明記されていません。原材料のリストから推定されました: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "警告: 果物、野菜、ナッツの量はラベルに明記されていません。製品のカテゴリー (%s) から推定されました: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.a" = "環境への影響が非常に小さい";
+"product-detail.environment.ecoscore.b" = "環境への弱い影響";
+"product-detail.environment.ecoscore.c" = "環境への何らかの影響";
+"product-detail.environment.ecoscore.d" = "環境への強い影響";
+"product-detail.environment.ecoscore.e" = "環境への非常に強い影響";
+"product-detail.environment.ecoscore.unknown" = "エコスコア不明";
+"product-detail.environment.ecoscore.incite" = "エコスコアを計算できるように、パッケージ情報を追加してください";
 
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
+"nutrition-level.title" = "100g/100mLあたりの栄養素レベル";
 "nutrition-level.low" = "少量";
 "nutrition-level.moderate" = "適量";
 "nutrition-level.high" = "多量";
@@ -233,14 +233,14 @@
 "ingredients-analysis.title" = "原材料分析";
 "ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
-"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
-"ingredients-analysis.display" = "Display %@ status";
+"ingredients-analysis.unknown_status" = "製品の状態を評価できませんでした。";
+"ingredients-analysis.ambiguous" = "あいまいな成分： %@";
+"ingredients-analysis.display" = "%@ 状態を表示";
 "ingredients-analysis.missing-ingredients.title" = "不足している材料を記入してください";
-"ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
+"ingredients-analysis.missing-ingredients.description" = "この製品の原材料がまだありません。完成させるのを手伝ってもらえませんか？";
 "ingredients-analysis.help-translate.title" = "原材料をあなたの言語への翻訳を手伝ってください";
-"ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
-"ingredients-analysis.help-translate.button" = "Help translate ingredients";
+"ingredients-analysis.help-translate.description" = "材料分析を可能にするためにあなたの言語で材料を翻訳するのを手伝ってください";
+"ingredients-analysis.help-translate.button" = "原材料の翻訳を支援";
 "ingredients-analysis.back-to-scan" = "スキャンに戻る";
 
 // Robotoff
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "乳糖";
 "nutrition.carbohydrate.maltose" = "麦芽糖";
 "nutrition.carbohydrate.maltodextrins" = "マルトデキストリン";
-"nutrition.fiber" = "食物繊維";
+"nutrition.fiber" = "繊維";
 "nutrition.proteins" = "タンパク質";
 "nutrition.proteins.casein" = "カゼイン";
 "nutrition.proteins.serum-proteins" = "血清タンパク質";
@@ -292,7 +292,7 @@
 "nutrition.vitamins.c" = "ビタミン C";
 "nutrition.vitamins.b1" = "ビタミン B1";
 "nutrition.vitamins.b2" = "ビタミン B2";
-"nutrition.vitamins.pp" = "ビタミン PP";
+"nutrition.vitamins.pp" = "ビタミンB3";
 "nutrition.vitamins.b6" = "ビタミン B6";
 "nutrition.vitamins.b9" = "ビタミン B9";
 "nutrition.vitamins.b12" = "ビタミン B12";
@@ -325,10 +325,10 @@
 
 // Call to action
 "call-to-action.summary" = "正面の写真を撮る";
-"call-to-action.environment" = "Take a photo of the recycling instructions";
+"call-to-action.environment" = "リサイクル手順の写真を撮る";
 "call-to-action.ingredients" = "原材料の写真を撮ってください";
 "call-to-action.nutrition" = "栄養成分表の写真を撮ってください";
-"call-to-action.edit" = "Complete the product to get it scored";
+"call-to-action.edit" = "製品を完成させてスコア付けできるようにします";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -339,86 +339,86 @@
 "product.images.take-picture.front" = "正面写真";
 "product.images.take-picture.ingredients" = "原材料の写真";
 "product.images.take-picture.nutrition" = "栄養表の写真";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.packaging" = "リサイクル情報の写真";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
 "scanner.tab-bar.item" = "スキャナー";
 "history.tab-bar.item" = "履歴";
 "settings.tab-bar.item" = "設定";
-"settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
-"settings.allergies.title" = "Allergens alerts";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
+"settings.ingredientsAnalysis.title" = "原材料分析アラート";
+"settings.allergies.title" = "アレルゲンアラート";
+"settings.allergies.description" = "このリストにアレルゲンを追加して、アレルゲンを含む製品をスキャンしたときに通知を受け取ります。 \nアレルギーに関する情報がOpenFoodFactsサーバーに送信されることは決してないことに注意してください。また、データの信頼性が100％でなく、検出が100％正確でない可能性があることに注意してください。自分でもチェックしてください！";
+"settings.allergies.add-button" = "アレルゲンを追加";
 "settings.sections.information" = "情報";
 "settings.sections.discover" = "見つける";
 "settings.sections.contribute" = "貢献する";
 "settings.sections.about" = "アプリについて";
-"settings.user-profile" = "Your contributor account";
+"settings.user-profile" = "あなたの投稿者アカウント";
 "settings.credits.title" = "クレジット";
 "settings.scan-on-launch.title" = "アプリ起動時にスキャンを表示";
 "settings.sections.discover" = "見つける";
 "settings.contribute.how-to-contribute" = "貢献するには";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.contribute.support-open-food-facts" = "Open Food Facts をサポート";
+"settings.contribute.translate-open-food-facts" = "OpenFoodFactsを翻訳";
 "settings.about.contact" = "お問い合わせ";
 "settings.about.frequently-asked-questions" = "よく寄せられる質問";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
+"settings.credits.text" = "私たちのアプリは、Open Food Factsのボランティア、寄稿者、そして自由なライセンスの下で作品を作成してリリースすることを選択した他の多くの人々によって可能になりました。\n\nCreative Commons By 3.0（https://creativecommons.org/licenses/by/3.0/）の下で：\n\nMadebyoliver（https：//www。 flaticon.com/authors/madebyoliver）\nPicolがデザインした「写真を撮る」アイコン（http://www.flaticon.com/authors/picol）\nSmashiconsがデザインした「プロフィール」アイコン（https://www.flaticon.com / authors / smashicons）\n\nSmashiconsがデザインした「GregorCresnar」アイコン（https://www.flaticon.com/authors/gregor-cresnar）Hadrienがデザインした「検索履歴」アイコン（https://www.flaticon.com / authors / hadrien）";
 
 // User view
 /* Tab bar item */
 "user.tab-bar.item" = "ユーザー";
 "user.log-in" = "ログイン";
-"user.logging-in" = "Logging in";
+"user.logging-in" = "ログイン中";
 "user.log-out" = "ログアウト";
 "user.username" = "ユーザー名";
 "user.password" = "パスワード";
-"user.logged-in.label" = "%@, you are logged in";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
-"user.not-logged-in" = "Not logged in";
-"user.forgot-password" = "Forgot Password?";
-"user.check-your-contributions.button" = "View all your contributions";
-"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
-"user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
-"user.create-account.text" = "If you don't have an account, click the link below to create one.";
-"user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
+"user.logged-in.label" = "%@ さん、あなたは既にログインしています";
+"user.logged-in-explanation.label" = "追加した製品とアップロードした製品の写真にはすべてあなたのアカウントがクレジット表記されます";
+"user.not-logged-in" = "ログインしていません";
+"user.forgot-password" = "パスワードを忘れましたか？";
+"user.check-your-contributions.button" = "すべての投稿を表示";
+"user.products-pending-upload.button" = "Open Food Facts へのアップロード待ちの製品";
+"user.products-pending-upload-none.button" = "Open Food Facts へのアップロード待ちの製品 (なし)";
+"user.create-account.text" = "アカウントをお持ちでない場合は、以下のリンクをクリックしてアカウントを作成してください。";
+"user.create-account.button" = "アカウントを新規作成";
+"user.why-log-in.text" = "アカウントでログインすると、食品の透明性に対するすべての貢献が評価されます。";
 "user.alert.wrong-credentials.title" = "ログインできません";
 "user.alert.wrong-credentials.subtitle" = "ユーザー名とパスワードが正しいことを確認してください";
 "user.alert.generic-error.title" = "ログイン中にエラーが発生しました";
 "user.alert.generic-error.subtitle" = "しばらくしてからもう一度やり直してください";
 "user.alert.logout-confirmation.title" = "ログアウトの確認";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
+"user.alert.logout-confirmation.subtitle" = "本当にログアウトしてよろしいですか？";
 "user.alert.username-missing" = "ユーザー名が必要です";
 "user.alert.password-missing" = "パスワードが必要です";
-"pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"pending-upload.info.text" = "オフライン中に追加した製品です。\n\nオンラインに戻った時にアプリが自動的にアップロードしようとするか、右上隅のボタンをタップして手動でアップロードしてみることができます。";
+"pending-upload.hud.status" = "アップロード中";
 
 // Search history
-"history.title" = "Search history";
-"history.cell.privacy" = "Your search history is only stored on your device";
+"history.title" = "履歴を検索";
+"history.cell.privacy" = "検索履歴はあなたの端末にのみ保存されています";
 "history.button.clear" = "クリア";
-"history.clear.confirmation-title" = "Clear your history ?";
-"history.clear.confirmation-message" = "All your history will be deleted";
-"history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
+"history.clear.confirmation-title" = "履歴を消去しますか?";
+"history.clear.confirmation-message" = "全ての検索履歴がクリアされます";
+"history.section-titles.last24h" = "過去 24 時間";
+"history.section-titles.fewDays" = "数日前";
+"history.section-titles.fewWeeks" = "数週間前";
+"history.section-titles.fewMonths" = "数ヶ月前";
+"history.section-titles.longTime" = "かなり前";
 "history.first-scan.button.title" = "最初の製品をスキャンします";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "編集";
 
 // Camera localization API
 "API_CANCEL_TITLE" = "取消";
-"USE_PHOTO" = "Use Photo";
-"PHOTO" = "PHOTO";
-"AEAF_LOCK_TEXT" = "AE/AF LOCK";
-"HDR_AUTO" = "Auto";
+"USE_PHOTO" = "写真を使用";
+"PHOTO" = "写真";
+"AEAF_LOCK_TEXT" = "AE/AF ロック";
+"HDR_AUTO" = "自動";
 "HDR_ON" = "On";
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
 "PHOTOS" = "写真";
 "CANCEL" = "取消";
-"RETAKE" = "Retake";
+"RETAKE" = "撮り直し";

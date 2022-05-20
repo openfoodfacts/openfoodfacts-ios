@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skanna streckkoden på produkten";
-"product-scanner.overlay.extended-user-help" = "Det går inte att hitta en streckkod.\nCentrera streckkoden på skärmen.\nKontrollera att streckkoden är väl synlig.";
+"product-scanner.overlay.extended-user-help" = "Streckkoden hittades inte. \nCentrera streckkoden på skärmen.\nSe till att streckkoden är väl upplyst.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Skanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,12 +46,12 @@
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Lämna streckkodsskanning";
 
-"product-scanner.search.status" = "Laddar produkt...";
+"product-scanner.search.status" = "Laddar produkter…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
-"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+"product-scanner.flash.off.accessibility.label" = "Slå på blixten";
 /* Accessibility label indicating the action when the flash is currently on. */
-"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+"product-scanner.flash.on.accessibility.label" = "Stäng av blixten";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Obs: de bilder du skickar publiceras under den fria licensen Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Produktinformation";
-"product-add.label.brand-example" = "Exempel: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Exempel: Coca-Cola, Nestlé, etc.";
 "product-add.label.product-name" = "Namn";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Kvantitet";
@@ -118,8 +118,8 @@
 "product-add.label.labels" = "Etiketter";
 "product-add.label.labels-example" = "Exempel: Glutenfri etc.";
 "product-add.label.origins" = "Ingredients ursprung";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Example: Butter from France, etc.";
+"product-add.field.origins-placeholder" = "Krävs för beräkning av Eco-Score";
+"product-add.label.origins-example" = "Exempel: Smör från Frankrike osv.";
 
 "product-add.description.nutritive" = "Slutför näringsfakta och produktkategori för att få Nutri-Score";
 "product-add.titles.nutritive" = "Näringsfakta";
@@ -173,15 +173,15 @@
 "product-detail.summary.labels" = "Etiketter, certifieringar, utmärkelser";
 "product-detail.summary.citiesTags" = "Stad, Län och Land där produkten köptes";
 "product-detail.summary.stores" = "Butiker";
-"product-detail.summary.embCodes" = "Förpackningskod";
-"product-detail.summary.countries" = "Länder där såld";
+"product-detail.summary.embCodes" = "Spårbarhetskod";
+"product-detail.summary.countries" = "Land";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Obearbetade eller minimalt bearbetade livsmedel";
 "product-detail.ingredients.nova.2" = "Bearbetade kulinariska ingredienser";
 "product-detail.ingredients.nova.3" = "Halvfabrikat";
 "product-detail.ingredients.nova.4" = "Ultrabehandlade mat- och dryckesprodukter";
-"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
+"product-detail.ingredients.nova.unknown" = "NOVA-nivån för livsmedelsbearbetning kunde inte beräknas";
 "product-detail.ingredients.nova.incite" = "Lägg till ingredienser och/eller kategorier för att beräkna NOVA.";
 "product-detail.ingredients.ingredients-list" = "Lista över ingredienser";
 "product-detail.ingredients.allergens-list" = "ämnen eller produkter som orsakar allergi eller intolerans";
@@ -202,14 +202,14 @@
 "product-detail.nutrition.carbon-footprint" = "Koldioxidutsläpp";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Näringsfakta";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "För 100 g";
 "product-detail.nutrition-table.for-serving" = "Per portion";
 "product-detail.nutrition-table.100g" = "100 g";
-"product-detail.nutrition-table.serving" = "serving";
+"product-detail.nutrition-table.serving" = "portion";
 "product-detail.nutrition-table.missing" = "Inga näringsämnen har ställts in.";
-"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.noNutritionData" = "Denna produkt har ingen näringsvärdestabell.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Varning: mängden fibrer är inte angiven, eventuella positiv inverkan på betyget kunde inte beaktas.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Varning: mängden frukt, grönsaker och nötter anges inte, deras eventuella positiva bidrag till betyget kunde inte beaktas.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Varning: mängden frukt, grönsaker och nötter anges inte på etiketten, den uppskattades från ingrediensförteckningen: %d%";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
 "product-detail.environment.ecoscore.unknown" = "Miljöpoäng okänd";
-"product-detail.environment.ecoscore.incite" = "Lägg till förpackningsinformation så att vi kan beräkna Miljöpoängen";
+"product-detail.environment.ecoscore.incite" = "Vänligen lägg till förpackningsinformation så att Eco-Score kan beräknas";
 
 // Nutrition levels
 "nutrition-level.title" = "Näringsvärde per 100 g / 100 ml";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Laktos";
 "nutrition.carbohydrate.maltose" = "Maltos";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextriner";
-"nutrition.fiber" = "Kostfiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Proteiner";
 "nutrition.proteins.casein" = "Kasein";
 "nutrition.proteins.serum-proteins" = "Serumproteiner";
@@ -292,7 +292,7 @@
 "nutrition.vitamins.c" = "Vitamin C";
 "nutrition.vitamins.b1" = "Vitamin B1";
 "nutrition.vitamins.b2" = "Vitamin B2";
-"nutrition.vitamins.pp" = "Vitamin PP";
+"nutrition.vitamins.pp" = "Vitamin B3";
 "nutrition.vitamins.b6" = "Vitamin B6";
 "nutrition.vitamins.b9" = "Vitamin B9";
 "nutrition.vitamins.b12" = "Vitamin B12";
@@ -364,7 +364,7 @@
 "settings.about.contact" = "Kontakt";
 "settings.about.frequently-asked-questions" = "Vanliga frågor (FAQ)";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+"settings.credits.text" = "Vår app möjliggörs av Open Food Facts volontärer, bidragsgivare och även många andra som väljer att skapa och släppa sitt arbete under bibliotekslicenser.\n\nUnder Creative Commons av 3. (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Inställningar\" och \"Flash\" ikoner designade av Madebyoliver (https://www.flaticon. om/authors/madebyoliver)\n\"Ta bild\" ikonen designad av Picol (http://www.flaticon.com/authors/picol)\n\"Profil\" ikonen designad av Smashicons (https://www.flaticon. om/authors/smashicons)\nikonen \"Gregor Cresnar\" designad av Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Sökhistorik\" ikonen designad av Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */

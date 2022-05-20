@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Відскануйте бар-код";
+"shortcuts.scan" = "Відскануйте штрих-код";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Назад";
@@ -22,7 +22,7 @@
 
 "product-search.title" = "Пошук";
 "product-search.search-placeholder" = "Search for a product by name or barcode";
-"product-search.no-results" = "No Results";
+"product-search.no-results" = "Результати відсутні. Ви можете додати продукт до бібліотеки Open Food Facts, зісканувавши його код.";
 "product-search.error-view.title" = "Сталась помилка";
 "product-search.error-view.subtitle" = "Будь ласка, повторіть спробу";
 "product-search.initial-view.slogan" = "вільна база даних продуктів харчування";
@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Відскануйте штрихкод продукту";
-"product-scanner.overlay.extended-user-help" = "Can't find a barcode.\nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Штрих-код не виявлено. \nРозмістить штрих-код у центрі екрану. \nПереконайтесь, що штрих-код добре видно.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Сканер";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -42,20 +42,20 @@
 "product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Open Settings";
 
-"product-scanner.permissions.failed.title" = "Could not setup barcode scanning";
+"product-scanner.permissions.failed.title" = "Не вдалося запустити сканування штрих-коду.";
 "product-scanner.permissions.failed.message" = "Check in Privacy Settings if Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Надати сканування штрих-коду";
 
-"product-scanner.search.status" = "Завантаження продукту…";
+"product-scanner.search.status" = "Завантаження продуктів…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
-"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+"product-scanner.flash.off.accessibility.label" = "Ввімкнути спалах";
 /* Accessibility label indicating the action when the flash is currently on. */
-"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+"product-scanner.flash.on.accessibility.label" = "Вимкнути спалах";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image...";
+"product-add.uploading-image-banner.title" = "Завантаження зображення…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Сталась помилка";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
@@ -102,11 +102,11 @@
 "product-add.title" = "Новинка";
 "product-add.title-edit" = "Редагувати товар";
 "product-add.titles.barcode" = "Код товару";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
+"product-add.titles.top-explainations" = "Гарна робота! Цього продукту ще немає у Open Food Facts. Чи можете ви зробити кілька фотографій продукту, списку інгредієнтів та фактів про поживність, щоб додати їх у Open Food Facts? \n\nДякуємо заздалегідь.";
 "product-add.titles.license-explaination" = "Примітка: зображення, які ви надсилаєте, публікуються під вільною ліцензією \"Creative Commons Attribution & ShareAlike\".";
 
-"product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Приклади: Coca-Cola, Nestle, тощо…";
+"product-add.titles.product-info" = "Інформація про продукт";
+"product-add.label.brand-example" = "Приклади: Coca-Cola, Nestle тощо.";
 "product-add.label.product-name" = "Ім’я";
 "product-add.label.category" = "Категорія";
 "product-add.label.quantity" = "Кількість";
@@ -115,11 +115,11 @@
 "product-add.details.category" = "Необхідно підрахувати Nutri-Score";
 "product-add.label.quantity-example" = "25g, 10oz, 5ml…";
 "product-add.label.language" = "Мови";
-"product-add.label.labels" = "Labels";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.labels" = "Етикетки";
+"product-add.label.labels-example" = "Приклади: безглютеновий, і т.д.";
 "product-add.label.origins" = "Походження інгредієнтів";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Example: Butter from France, etc.";
+"product-add.field.origins-placeholder" = "Необхідний для розрахунку Eco-Score";
+"product-add.label.origins-example" = "Приклад: Вершкове масло з Франції тощо.";
 
 "product-add.description.nutritive" = "Завершуйте факти харчування та категорії товару для отримання Nutri-Score";
 "product-add.titles.nutritive" = "Детальна харчова цінність";
@@ -173,17 +173,17 @@
 "product-detail.summary.labels" = "Мітка, сертифікати, нагороди";
 "product-detail.summary.citiesTags" = "Країна, область та місто, де було придбано";
 "product-detail.summary.stores" = "Магазини";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Countries where sold";
+"product-detail.summary.embCodes" = "Код відстеження";
+"product-detail.summary.countries" = "Країна";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
-"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
-"product-detail.ingredients.nova.3" = "Processed foods";
-"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
-"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
+"product-detail.ingredients.nova.1" = "Необроблені або мінімально оброблені продукти";
+"product-detail.ingredients.nova.2" = "Оброблені кулінарні інгредієнти";
+"product-detail.ingredients.nova.3" = "Напівфабрикати";
+"product-detail.ingredients.nova.4" = "Ультраоброблені продукти харчування та напої";
+"product-detail.ingredients.nova.unknown" = "Не вдалося розрахувати рівень обробки NOVA харчових продуктів";
 "product-detail.ingredients.nova.incite" = "Додати інгредієнти та/або категорії, щоб бути придатним для  NOVA.";
-"product-detail.ingredients.ingredients-list" = "List of ingredients";
+"product-detail.ingredients.ingredients-list" = "Список інгредієнтів";
 "product-detail.ingredients.allergens-list" = "Речовини або продукти, які викликають (спричиняють, призводять до...) аллергічні реакціі або ідіосинкразію (непереносимість)";
 "product-detail.ingredients.allergens-alert.title" = "Містить алергени!";
 "product-detail.ingredients.allergens-list.missing-infos" = "Цей продукт не має складного списку, і, як наслідок, виявлення алергену не може бути остаточним.";
@@ -202,14 +202,14 @@
 "product-detail.nutrition.carbon-footprint" = "Викиди вуглецю / CO2";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Харчова цінність";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "У 100г";
 "product-detail.nutrition-table.for-serving" = "В одній порції";
 "product-detail.nutrition-table.100g" = "100г";
 "product-detail.nutrition-table.serving" = "порцію";
 "product-detail.nutrition-table.missing" = "Жодних поживних речовин не знайдено.";
-"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.noNutritionData" = "Цей продукт не має таблиці харчових цінностей.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Попередження: кількість клітковини не вказано, їх можливий позитивний внесок у сорт не може бути врахований.";
 "product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Увага: кількість фруктів, овочів і горіхів не вказана, їх можливий позитивний внесок у сорт не може бути врахований.";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Попередження: кількість фруктів, овочів та горіхів не зазначена на етикетці, вона оцінюється зі списку інгредієнтів: %d%";
@@ -220,8 +220,8 @@
 "product-detail.environment.ecoscore.c" = "Eco-score C";
 "product-detail.environment.ecoscore.d" = "Eco-score D";
 "product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.unknown" = "Еко-оцінка невідома";
+"product-detail.environment.ecoscore.incite" = "Будь ласка, додайте інформацію про упакування, для того щоб розрахувати екологічний бал";
 
 // Nutrition levels
 "nutrition-level.title" = "Харчова цінність 100 г/100 мл";
@@ -230,7 +230,7 @@
 "nutrition-level.high" = "велика кількість";
 
 // Ingredients Analysis
-"ingredients-analysis.title" = "Ingredients analysis";
+"ingredients-analysis.title" = "Аналіз інгредієнтів";
 "ingredients-analysis.ingredients_in_this_product" = "Інгредієнти даного товару %@:";
 "ingredients-analysis.ingredients_in_this_product_are" = "Інгредієнти цього продукту - %@с.";
 "ingredients-analysis.unknown_status" = "Ми не змогли оцінити статус товару.";
@@ -247,7 +247,7 @@
 "robotoff.yes" = "Так";
 "robotoff.no" = "Ні";
 "robotoff.not-sure" = "Я не впевнений";
-"robotoff.contribute-incentive.title" = "Contribute";
+"robotoff.contribute-incentive.title" = "Зробіть свій внесок";
 "robotoff.settings.display-questions" = "Показувати питання";
 "robotoff.contribute-incentive.login" = "Ім'я користувача";
 "robotoff.contribute-incentive.not-now" = "Не зараз";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Лактоза";
 "nutrition.carbohydrate.maltose" = "Мальтоза";
 "nutrition.carbohydrate.maltodextrins" = "Мальтодекстрини";
-"nutrition.fiber" = "Харчові волокна";
+"nutrition.fiber" = "Клітковина";
 "nutrition.proteins" = "Білки";
 "nutrition.proteins.casein" = "Казеїн";
 "nutrition.proteins.serum-proteins" = "Сироваткові білки";
@@ -328,7 +328,7 @@
 "call-to-action.environment" = "Сфотографуйте інструкції з переробки";
 "call-to-action.ingredients" = "Зробити фото інгредієнтів";
 "call-to-action.nutrition" = "Зробити фото складу";
-"call-to-action.edit" = "Complete the product to get it scored";
+"call-to-action.edit" = "Доповніть продукт, щоб отримати оцінку";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
@@ -339,7 +339,7 @@
 "product.images.take-picture.front" = "Фото спереду ✅";
 "product.images.take-picture.ingredients" = "Фото інгредієнтів ✅";
 "product.images.take-picture.nutrition" = "Фото таблиці харчування ✅";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.packaging" = "Фото інформації про переробку";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
@@ -348,11 +348,11 @@
 "settings.tab-bar.item" = "Налаштування";
 "settings.ingredientsAnalysis.title" = "Оповіщення про аналіз інгредієнтів";
 "settings.allergies.title" = "Попередження щодо алергії";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
+"settings.allergies.description" = "Додайте алергени до цього списку, щоб отримувати сповіщення при скануванні продукту, який їх містить. \n Зверніть увагу, що інформація про вашу алергію НІКОЛИ не надсилатиметься на сервер додатку Open Food Facts. Крім того, будьте обережні, що дані можуть бути не на 100% надійними, а розпізнавання продукту може бути не на 100% точним. Обов’язково перевірте самостійно!";
 "settings.allergies.add-button" = "Додати алергени";
 "settings.sections.information" = "Інформація";
 "settings.sections.discover" = "Дізнатись більше";
-"settings.sections.contribute" = "Contribute";
+"settings.sections.contribute" = "Зробіть свій внесок";
 "settings.sections.about" = "Про додаток";
 "settings.user-profile" = "Ваш обліковий запис учасника";
 "settings.credits.title" = "Подяки";
@@ -364,7 +364,7 @@
 "settings.about.contact" = "Зв'язатися";
 "settings.about.frequently-asked-questions" = "Часті Питання";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "\"Barcode scan\" button icon, \"Settings\" icon and \"Flash\" icon made by Madebyoliver (https://www.flaticon.com/authors/madebyoliver) is licensed by CC 3.0 BY (http://creativecommons.org/licenses/by/3.0/)\n\"Take picture\" icon made by Picol (http://www.flaticon.com/authors/picol) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Profile\" icon made by Smashicons (https://www.flaticon.com/authors/smashicons) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Gregor Cresnar\" icon made by Smashicons (https://www.flaticon.com/authors/gregor-cresnar) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)\n\"Search history\" icon made by Hadrien (https://www.flaticon.com/authors/hadrien) is licensed by CC 3.0 BY (https://creativecommons.org/licenses/by/3.0/)";
+"settings.credits.text" = "Наш додаток реалізувався завдяки волонтерам Open Food Facts, учасникам а також багатьом іншим, які вирішили створювати і реалізовувати свою роботу за ліцензіями libre. \n\nПід Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n \"Сканування штрих-коду\", \"Налаштування\" і \"Flash\" розроблені Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Зробити знімок\" створений Picol (http://www.flaticon.com/authors/picol)\n\"Профіль\" створений Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" створений Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Історія пошуку\" створений Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
@@ -413,7 +413,7 @@
 // Camera localization API
 "API_CANCEL_TITLE" = "Скасувати";
 "USE_PHOTO" = "Використати Фото";
-"PHOTO" = "PHOTO";
+"PHOTO" = "ФОТО";
 "AEAF_LOCK_TEXT" = "AE/AF LOCK";
 "HDR_AUTO" = "Auto";
 "HDR_ON" = "On";
@@ -421,4 +421,4 @@
 "TIMER_OFF_TEXT" = "Off";
 "PHOTOS" = "Світлини";
 "CANCEL" = "Відмінити";
-"RETAKE" = "Retake";
+"RETAKE" = "Перезняти";

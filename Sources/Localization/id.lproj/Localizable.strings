@@ -7,91 +7,91 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Scan barcode";
+"shortcuts.scan" = "Pindah kode batang";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "Kembali";
-"generic.search" = "mencari ";
-"generic.cancel" = "Cancel";
+"generic.search" = "Cari";
+"generic.cancel" = "Batalkan";
 "generic.save" = "menyimpan ";
-"generic.cancel" = "Cancel";
-"generic.ok" = "Baik";
+"generic.cancel" = "Batalkan";
+"generic.ok" = "Ok";
 "generic.close" = "Tutup";
 
 // Product Search
 
 "product-search.title" = "mencari ";
-"product-search.search-placeholder" = "Search by name or barcode";
-"product-search.no-results" = "No results. You can add a product to Open Food Facts by scanning it.";
+"product-search.search-placeholder" = "Cari berdasarkan nama atau kode batang";
+"product-search.no-results" = "Tidak ada hasil. Anda bisa menambahkan produk ke Open Food Facts dengan memindainya.";
 "product-search.error-view.title" = "Ada yang salah";
 "product-search.error-view.subtitle" = "Silahkan coba lagi";
-"product-search.initial-view.slogan" = "the free food products database";
-"product-search.initial-view.offline.title-loading" = "Saving products offline: %d%%";
-"product-search.initial-view.offline.subtitle" = "More than %d products available for instant scan";
+"product-search.initial-view.slogan" = "basis data produk - produk makanan gratis";
+"product-search.initial-view.offline.title-loading" = "Menyimpan produk - produk luring: %d%%";
+"product-search.initial-view.offline.subtitle" = "Lebih dari %d produk tersedia untuk pemindaian instan";
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Pindai kode batang produk";
-"product-scanner.overlay.extended-user-help" = "Tidak dapat menemukan kode batang. Pusatkan kode batang di layar. Pastikan kode batangnya menyala dengan baik.";
+"product-scanner.overlay.extended-user-help" = "Kode batang tidak terdeteksi. \nTengahkan kode batang di layar.\nPastikan kode batang menyala dengan baik.";
 /* Title of the view controller in which user can scan. Keep it short. */
-"product-scanner.view-title" = "Scanner";
+"product-scanner.view-title" = "Pemindai";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
-"product-scanner.barcode.error" = "Kesalahan memindai kode batang Silakan coba lagi dalam beberapa saat.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode.error" = "Kesalahan memindai kode batang Silakan coba lagi setelah beberapa saat.";
+"product-scanner.barcode-notfound.manual-enter" = "Tidak ditemukan kode batang. Anda bisa mengetiknya secara manual:";
 
-"product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
-"product-scanner.permissions.noPermissions.action.title" = "Open settings";
+"product-scanner.permissions.noPermissions.title" = "Open Food Facts membutuhkan izin kamera";
+"product-scanner.permissions.noPermissions.message" = "Harap memberi izin untuk memungkinkan kamera memindai kode batang";
+"product-scanner.permissions.noPermissions.action.title" = "Buka pengaturan";
 
-"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
-"product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
-"product-scanner.permissions.failed.action.title" = "Biarkan pemindaian kode batang";
+"product-scanner.permissions.failed.title" = "Pemindaian kode batang tidak dapat dimulai.";
+"product-scanner.permissions.failed.message" = "Pastikan di Pengaturan Privasi bahwa Open Food Facts memiliki izin untuk menggunakan kamera";
+"product-scanner.permissions.failed.action.title" = "Tinggalkan pemindaian kode batang";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Memuat produk - produk…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
-"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+"product-scanner.flash.off.accessibility.label" = "Nyalakan lampu kilat";
 /* Accessibility label indicating the action when the flash is currently on. */
-"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+"product-scanner.flash.on.accessibility.label" = "Matikan lampu kilat";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
-"product-add.uploading-image-banner.title" = "Uploading image…";
+"product-add.uploading-image-banner.title" = "Mengunggah gambar…";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
 "product-add.image-upload-error-banner.title" = "Ada yang salah";
 /* Displayed when an image taken by the user during the product creation process fails to upload */
-"product-add.image-upload-error-banner.subtitle" = "Silakan coba ambil gambarnya lagi";
+"product-add.image-upload-error-banner.subtitle" = "Silakan mengambil gambarnya lagi";
 /* Displayed when an image taken by the user during the product creation process uploads successfully */
 "product-add.image-upload-success-banner.title" = "Gambar berhasil diupload";
-"product-add.image-save-success-banner.title" = "Image will be uploaded when online";
+"product-add.image-save-success-banner.title" = "Gambar akan diunggah saat daring";
 /* Displayed when a product was successfully added to the products database */
 "product-add.product-add-success-banner.title" = "Produk berhasil ditambahkan. Terima kasih!";
 "product-add.uploaded-image" = "Gambar diunggah, terima kasih!";
 "product-add.save-error.title" = "Kesalahan saat menyimpan produk";
-"product-add.save-error.message" = "Please try again later";
-"product-add.save-info.success" = "Information saved at";
-"product-add.save-info.error" = "Information not saved";
-"product-add.save-info.saving" = "Saving product information…";
-"product-add.save-info.not-yet" = "Information not saved yet";
-"product-add.save-ingredients.success" = "Ingredients saved at";
-"product-add.save-ingredients.error" = "Ingredients not saved";
-"product-add.save-ingredients.saving" = "Saving ingredients…";
-"product-add.save-ingredients.not-yet" = "Ingredients not saved yet";
-"product-add.save-nutriments.success" = "Nutriments saved at";
-"product-add.save-nutriments.error" = "Nutriments not saved";
-"product-add.save-nutriments.saving" = "Saving nutriments…";
-"product-add.save-nutriments.not-yet" = "Nutriments not saved yet";
-"product-add.no-nutrition" = "Nutrition data are not displayed on the product";
+"product-add.save-error.message" = "Silahkan coba lagi nanti";
+"product-add.save-info.success" = "Informasi tersimpan di";
+"product-add.save-info.error" = "Informasi tidak tersimpan";
+"product-add.save-info.saving" = "Menyimpan informasi produk…";
+"product-add.save-info.not-yet" = "Informasi belum tersimpan";
+"product-add.save-ingredients.success" = "Kandungan bahan tersimpan di";
+"product-add.save-ingredients.error" = "Kandungan bahan tidak tersimpan";
+"product-add.save-ingredients.saving" = "Menyimpan kandungan bahan…";
+"product-add.save-ingredients.not-yet" = "Kandungan bahan belum tersimpan";
+"product-add.save-nutriments.success" = "Nutrisi tersimpan di";
+"product-add.save-nutriments.error" = "Nutrisi tidak tersimpan";
+"product-add.save-nutriments.saving" = "Menyimpan nutrisi…";
+"product-add.save-nutriments.not-yet" = "Nutrisi belum tersimpan";
+"product-add.no-nutrition" = "Data nilai gizi tidak ditampilkan pada produk";
 
-"product-add.ocr-ingredients.success" = "Ingredients read from the picture at";
-"product-add.ocr-ingredients.error" = "Could not extract ingredients from the picture";
-"product-add.ocr-ingredients.saving" = "Extracting ingredients from the picture…";
-"product-add.ocr-ingredients.not-yet" = "Waiting for an ingredient picture to analyze";
+"product-add.ocr-ingredients.success" = "Kandungan bahan yang dibaca dari gambar pada";
+"product-add.ocr-ingredients.error" = "Tidak dapat mengekstrak kandungan bahan dari gambar";
+"product-add.ocr-ingredients.saving" = "Mengekstrak kandungan bahan dari gambar…";
+"product-add.ocr-ingredients.not-yet" = "Menunggu gambar kandungan bahan dianalisa";
 
-"product-add.nutriscore-explaination" = "The Nutri-Score has just been computed from the nutrition table";
-"product-add.novagroup-explaination" = "The NOVA group has just been computed based on the ingredients list";
+"product-add.nutriscore-explaination" = "Nutri-Score baru saja dihitung dari tabel nutrisi";
+"product-add.novagroup-explaination" = "Grup NOVA baru saja dihitung berdasarkan daftar kandungan bahan";
 
 "alert.action.ok" = "Baik";
-"product-add.language.toolbar-title" = "Select a language";
+"product-add.language.toolbar-title" = "Pilih bahasa";
 /* Product Add name text field */
 "product-add.placeholder.name" = "Nama Produk";
 /* Product Add brand text field */
@@ -99,188 +99,188 @@
 /* Product Add quantity text field */
 "product-add.placeholder.quantity" = "Kuantitas";
 
-"product-add.title" = "New product";
-"product-add.title-edit" = "Ubah produk";
+"product-add.title" = "Produk baru";
+"product-add.title-edit" = "Sunting produk";
 "product-add.titles.barcode" = "kode batang";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
-"product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
+"product-add.titles.top-explainations" = "Selamat ! Produk ini belum ada di Open Food Facts. Bisakan Anda mengambil beberapa gambar produk, daftar kandungan bahan dan informasi nilai gizinya untuk ditambahkan ke Open Food Facts? \n\nTerima kasih sebelumnya.";
+"product-add.titles.license-explaination" = "Catatan: gambar - gambar yang Anda kirim dipublikasikan di bawah lisensi gratis Creative Commons Attribution & ShareAlike.";
 
-"product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
-"product-add.label.product-name" = "nama";
+"product-add.titles.product-info" = "Informasi produk";
+"product-add.label.brand-example" = "Contoh: Coca-Cola, Nestle, dll.";
+"product-add.label.product-name" = "Nama";
 "product-add.label.category" = "Kategori";
 "product-add.label.quantity" = "Kuantitas";
-"product-add.label.packaging" = "Pengemasan";
-"product-add.label.packaging-example" = "Examples: plastic, paper, glass";
-"product-add.details.category" = "Needed to compute the Nutri-Score";
-"product-add.label.quantity-example" = "25g, 10oz, 5ml…";
-"product-add.label.language" = "Languages";
-"product-add.label.labels" = "Labels";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
-"product-add.label.origins" = "Asal bahan";
-"product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Example: Butter from France, etc.";
+"product-add.label.packaging" = "Kemasan";
+"product-add.label.packaging-example" = "Contoh: baki plastik, botol kaca";
+"product-add.details.category" = "Diperlukan untuk menghitung Nutri-Score";
+"product-add.label.quantity-example" = "Contoh: 25g, 10oz, 5ml…";
+"product-add.label.language" = "Bahasa";
+"product-add.label.labels" = "Label - label";
+"product-add.label.labels-example" = "Contoh: Bebas gluten, dll.";
+"product-add.label.origins" = "Asal usul bahan";
+"product-add.field.origins-placeholder" = "Diperlukan untuk penghitungan Eco-Score";
+"product-add.label.origins-example" = "Contoh: Mentega dari Perancis, dll.";
 
-"product-add.description.nutritive" = "Complete nutrition facts and the product category to get the Nutri-Score";
-"product-add.titles.nutritive" = "Nutrition Facts";
-"product-add.nutritive.choice.per-hundred-grams" = "for 100g / 100ml";
-"product-add.nutritive.choice.per-portion" = "per portion";
+"product-add.description.nutritive" = "Lengkapi informasi nilai gizi dan kategori produk untuk mendapatkan Nutri-Score";
+"product-add.titles.nutritive" = "Informasi nilai gizi";
+"product-add.nutritive.choice.per-hundred-grams" = "untuk 100g / 100ml";
+"product-add.nutritive.choice.per-portion" = "per porsi";
 "product-add.nutritive.add-nutriment" = "Tambahkan nutrisi";
-"product-add.nutritive.too-much" = "More than 100g?";
+"product-add.nutritive.too-much" = "Lebih dari 100g?";
 
-"product-add.description.ingredients" = "Complete the ingredients to get the NOVA group on food processing";
+"product-add.description.ingredients" = "Lengkapi kandungan bahan untuk mengetahui grup NOVA yang melakukan pemrosesan makanan";
 "product-add.titles.ingredients" = "bahan";
-"product-add.ingredients.explaination" = "Take a picture of the ingredients list to automatically extract the ingredients. Check it carefully and don't forget to save it.";
-"product-add.ingredients.button-delete" = "Too bad, Ignore";
-"product-add.ingredients.button-save" = "Looks good, Save";
+"product-add.ingredients.explaination" = "Ambil gambar daftar kandungan bahan untuk secara otomatis mengekstrak kandungan bahannya. Periksa dengan teliti dan jangan lupa untuk menyimpannya.";
+"product-add.ingredients.button-delete" = "Terlalu buruk, Abaikan";
+"product-add.ingredients.button-save" = "Terlihat bagus, Simpan";
 
 // Select Category
 "select-category.title" = "Kategori";
-"select-category.search-placeholder" = "Search for a category";
+"select-category.search-placeholder" = "Cari kategori";
 
 // Select nutrition
 "select-nutriment.title" = "kandungan nutrisi";
-"select-nutriment.search-placeholder" = "Search for a nutrient";
+"select-nutriment.search-placeholder" = "Cari nutrisi";
 
 // Select allergen
-"select-allergen.title" = "Allergen";
-"select-allergen.search-placeholder" = "Search for an allergen";
+"select-allergen.title" = "Alergen";
+"select-allergen.search-placeholder" = "Cari alergen";
 
 // Product Detail
 "product-detail.header.add-new-picture" = "Tambahkan gambar baru";
-"product-detail.edit" = "Edit this product";
+"product-detail.edit" = "Sunting produk ini";
 /* Keep this text as short as possible */
 "product-detail.edit-alert.title" = "Ingatlah untuk menyimpan perubahan Anda";
 /* Keep this text as short as possible */
-"product-detail.edit-alert.subtitle" = "Gulir ke bawah ke tombol 'Save'";
+"product-detail.edit-alert.subtitle" = "Gulir ke bawah ke tombol 'Simpan'";
 
 // Product detail page titles
-"product-detail.page-title.summary" = "meringkas";
+"product-detail.page-title.summary" = "Ringkasan";
 "product-detail.page-title.ingredients" = "bahan";
 "product-detail.page-title.nutrition" = "kandungan nutrisi";
-"product-detail.page-title.nutrition-table" = "Tabel gizi";
+"product-detail.page-title.nutrition-table" = "Tabel nutrisi";
 "product-detail.page-title.environment-impact" = "Lingkungan";
 
 // Product detail summary info rows labels
 "product-detail.summary.barcode" = "kode batang";
-"product-detail.summary.generic-name" = "Generic name";
+"product-detail.summary.generic-name" = "Nama umum";
 "product-detail.summary.quantity" = "Kuantitas";
 "product-detail.summary.packaging" = "Pengemasan";
-"product-detail.summary.brands" = "Merek";
-"product-detail.summary.manufacturing-places" = "Manufaktur atau tempat pengolahan";
-"product-detail.summary.origins" = "Asal bahan";
+"product-detail.summary.brands" = "Merek - merek";
+"product-detail.summary.manufacturing-places" = "Tempat pembuatan atau pemrosesan";
+"product-detail.summary.origins" = "Asal usul bahan";
 "product-detail.summary.categories" = "Kategori";
 "product-detail.summary.labels" = "Label, sertifikasi, penghargaan";
-"product-detail.summary.citiesTags" = "Kota, negara bagian dan negara tempat dibeli";
+"product-detail.summary.citiesTags" = "Kota, negara bagian dan negara tempat produk dibeli";
 "product-detail.summary.stores" = "Toko";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Negara tempat dijual";
+"product-detail.summary.embCodes" = "Kode keterlacakan";
+"product-detail.summary.countries" = "Negara";
 
 // Product detail ingredients info row labels
-"product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
-"product-detail.ingredients.nova.2" = "Processed culinary ingredients";
-"product-detail.ingredients.nova.3" = "Processed foods";
-"product-detail.ingredients.nova.4" = "Ultra-processed food and drink products";
-"product-detail.ingredients.nova.unknown" = "The NOVA level of food processing could not be calculated";
-"product-detail.ingredients.nova.incite" = "Add ingredients and/or categories to calculate NOVA.";
-"product-detail.ingredients.ingredients-list" = "Daftar bahan";
-"product-detail.ingredients.allergens-list" = "Zat atau produk yang menyebabkan alergi atau intoleransi";
-"product-detail.ingredients.allergens-alert.title" = "Contains allergens!";
-"product-detail.ingredients.allergens-list.missing-infos" = "This product doesn't have an ingredient list yet, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.allergens-list.offline-product" = "This product has been loaded from the offline database, and as a result, allergen detection could not be completed.";
-"product-detail.ingredients.traces-list" = "Jejak";
-"product-detail.ingredients.additives-list" = "Aditif";
-"product-detail.ingredients.palm-oil-ingredients" = "Bahan dari minyak kelapa sawit";
-"product-detail.ingredients.possible-palm-oil-ingredients" = "Bahan yang mungkin berasal dari minyak sawit";
-"product-detail.ingredients.vitamins-list" = "banyak vitamin";
+"product-detail.ingredients.nova.1" = "Makanan - makanan yang tidak diproses atau sedikit diproses";
+"product-detail.ingredients.nova.2" = "Bahan - bahan kuliner olahan";
+"product-detail.ingredients.nova.3" = "Makanan - makanan olahan";
+"product-detail.ingredients.nova.4" = "Produk - produk makanan dan minuman ultra proses";
+"product-detail.ingredients.nova.unknown" = "Tingkat pemrosesan makanan NOVA tidak dapat dihitung";
+"product-detail.ingredients.nova.incite" = "Tambahkan kandungan bahan dan/atau kategori untuk menghitung NOVA.";
+"product-detail.ingredients.ingredients-list" = "Daftar kandungan bahan";
+"product-detail.ingredients.allergens-list" = "Zat - zat atau produk - produk yang menyebabkan alergi atau intoleransi";
+"product-detail.ingredients.allergens-alert.title" = "Mengandung alergen!";
+"product-detail.ingredients.allergens-list.missing-infos" = "Produk ini belum memiliki daftar kandungan bahan, dan akibatnya, deteksi alergen tidak dapat diselesaikan.";
+"product-detail.ingredients.allergens-list.offline-product" = "Produk ini telah dimuat dari basis data luring, dan akibatnya, deteksi alergen tidak bisa diselesaikan.";
+"product-detail.ingredients.traces-list" = "Jejak - jejak";
+"product-detail.ingredients.additives-list" = "Zat - zat aditif";
+"product-detail.ingredients.palm-oil-ingredients" = "Kandungan bahan dari minyak kelapa sawit";
+"product-detail.ingredients.possible-palm-oil-ingredients" = "Kandungan bahan yang mungkin berasal dari minyak sawit";
+"product-detail.ingredients.vitamins-list" = "Vitamin dan Mineral";
 "product-detail.ingredients.minerals-list" = "Mineral";
-"product-detail.ingredients.nucleotides-list" = "Nukleotidaa";
-"product-detail.ingredients.otherNutritionalSubstances-list" = "Other Nutritional Substances";
+"product-detail.ingredients.nucleotides-list" = "Nukleotida";
+"product-detail.ingredients.otherNutritionalSubstances-list" = "Zat - zat nutrisi lainnya";
 
 // Product detail nutrition info row labels
-"product-detail.nutrition.serving-size" = "Melayani ukuran";
+"product-detail.nutrition.serving-size" = "Takaran saji";
 "product-detail.nutrition.carbon-footprint" = "Jejak karbon / emisi CO2";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
-"product-detail.nutrition-table.nutritional-table-header" = "tabel nutrisi";
-"product-detail.nutrition-table.for-100g" = "untuk100g";
-"product-detail.nutrition-table.for-serving" = "porsi";
+"product-detail.nutrition-table.nutritional-table-header" = "Informasi nilai gizi";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-skor %1$@";
+"product-detail.nutrition-table.for-100g" = "Per 100g";
+"product-detail.nutrition-table.for-serving" = "Per porsi";
 "product-detail.nutrition-table.100g" = "100g";
-"product-detail.nutrition-table.serving" = "serving";
-"product-detail.nutrition-table.missing" = "No nutrients have been set.";
-"product-detail.nutrition-table.noNutritionData" = "This product has no nutritional values table.";
+"product-detail.nutrition-table.serving" = "penyajian";
+"product-detail.nutrition-table.missing" = "Tidak ada nutrisi yang ditetapkan.";
+"product-detail.nutrition-table.noNutritionData" = "Produk ini tidak memiliki tabel nilai gizi.";
 "product-detail.nutrition-table.nutrition_grade_fr_fiber_warning" = "Peringatan: jumlah serat tidak ditentukan, kemungkinan kontribusi positif terhadap nilai gizi tidak dapat diperhitungkan.";
-"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Peringatan: jumlah buah, sayuran, dan kacang-kacangan tidak ditentukan, dan kontribusi positif terhadap nilai gizi tidak bisa dihitung.";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Peringatan: jumlah buah, sayuran, dan kacang-kacangan tidak ditentukan pada dari daftar bahan perkiraan: %d%";
-"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Peringatan: jumlah buah, sayuran, dan kacang-kacangan tidak ditentukan pada label kategori (%s) produk: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_no_fruits_vegetables_nuts_warning" = "Peringatan: jumlah buah - buahan, sayur - sayuran, dan kacang-kacangan tidak ditentukan, kontribusi positif terhadap nilai gizi tidak bisa dihitung.";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Peringatan: jumlah buah - buahan, sayur - sayuran, dan kacang-kacangan tidak ditentukan pada label, ini diperkirakan dari daftar kandungan bahan: %d%";
+"product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Peringatan: jumlah buah - buahan, sayur - sayuran, dan kacang-kacangan tidak ditentukan pada label, ini diperkirakan dari kategori (%s) produk: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
-"product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.a" = "Dampak terhadap lingkungan sangat lemah";
+"product-detail.environment.ecoscore.b" = "Dampak terhadap lingkungan lemah";
+"product-detail.environment.ecoscore.c" = "Beberapa dampak terhadap lingkungan";
+"product-detail.environment.ecoscore.d" = "Dampak terhadap lingkungan kuat";
+"product-detail.environment.ecoscore.e" = "Dampak terhadap lingkungan sangat kuat";
+"product-detail.environment.ecoscore.unknown" = "Eco-score tidak diketahui";
+"product-detail.environment.ecoscore.incite" = "Harap tambahkan informasi kemasan sehingga Eco-score dapat dihitung";
 
 // Nutrition levels
-"nutrition-level.title" = "Nutrient levels per 100 g/100mL";
-"nutrition-level.low" = "kualitas jumlah rendah";
-"nutrition-level.moderate" = "dalam jumlah sedang";
-"nutrition-level.high" = "kualitas hasil rendah";
+"nutrition-level.title" = "Tingkat kandungan gizi per 100g/100mL";
+"nutrition-level.low" = "dalam kuantitas rendah";
+"nutrition-level.moderate" = "dalam kuantitas sedang";
+"nutrition-level.high" = "dalam kuantitas tinggi";
 
 // Ingredients Analysis
-"ingredients-analysis.title" = "Analisis bahan";
-"ingredients-analysis.ingredients_in_this_product" = "Ingredients in this product that are %@s:";
-"ingredients-analysis.ingredients_in_this_product_are" = "Ingredients in this product are %@s.";
-"ingredients-analysis.unknown_status" = "We couldn't assess the status of the product.";
-"ingredients-analysis.ambiguous" = "Ambiguous ingredients: %@";
-"ingredients-analysis.display" = "Display %@ status";
-"ingredients-analysis.missing-ingredients.title" = "Fill in the missing ingredients";
-"ingredients-analysis.missing-ingredients.description" = "We don't have the ingredients for this product yet. Can you help complete them ?";
-"ingredients-analysis.help-translate.title" = "Help translate the ingredients in your language";
-"ingredients-analysis.help-translate.description" = "Help translate ingredients in your language to make ingredients analysis possible";
-"ingredients-analysis.help-translate.button" = "Help translate ingredients";
-"ingredients-analysis.back-to-scan" = "Back to scan";
+"ingredients-analysis.title" = "Analisis kandungan bahan";
+"ingredients-analysis.ingredients_in_this_product" = "Kandungan bahan dalam produk ini yaitu %@s:";
+"ingredients-analysis.ingredients_in_this_product_are" = "Kandungan bahan dalam produk ini yaitu %@s.";
+"ingredients-analysis.unknown_status" = "Kami tidak dapat menilai status produk.";
+"ingredients-analysis.ambiguous" = "Kandungan bahan membingungkan: %@";
+"ingredients-analysis.display" = "Tampilkan %@status";
+"ingredients-analysis.missing-ingredients.title" = "Isi kandungan bahan yang hilang";
+"ingredients-analysis.missing-ingredients.description" = "Kami belum memiliki kandungan bahan untuk produk ini. Bisakah Anda membantu melengkapinya?";
+"ingredients-analysis.help-translate.title" = "Bantu terjemahkan kandungan bahannya dalam bahasa Anda";
+"ingredients-analysis.help-translate.description" = "Bantu terjemahkan kandungan bahan dalam bahasa Anda untuk memungkinkan analisis kandungan bahan";
+"ingredients-analysis.help-translate.button" = "Bantu terjemahkan kandungan bahan";
+"ingredients-analysis.back-to-scan" = "Kembali untuk memindai";
 
 // Robotoff
 "robotoff.yes" = "Ya";
 "robotoff.no" = "Tidak";
-"robotoff.not-sure" = "I'm not sure";
+"robotoff.not-sure" = "Saya tidak yakin";
 "robotoff.contribute-incentive.title" = "Menyumbang";
-"robotoff.settings.display-questions" = "Display questions";
-"robotoff.contribute-incentive.login" = "Nama pengguna";
-"robotoff.contribute-incentive.not-now" = "Not now";
-"robotoff.contribute-incentive.description" = "Answer simple questions, make food transparency happen!";
-"robotoff.answer-saved" = "Answer saved, thanks!";
+"robotoff.settings.display-questions" = "Tampilkan pertanyaan";
+"robotoff.contribute-incentive.login" = "Masuk";
+"robotoff.contribute-incentive.not-now" = "Tidak sekarang";
+"robotoff.contribute-incentive.description" = "Jawab pertanyaan - pertanyaan sederhana, wujudkan transparansi makanan!";
+"robotoff.answer-saved" = "Jawaban tersimpan, terima kasih!";
 
 // Nutrition
-"nutrition.energy" = "Energi";
+"nutrition.energy" = "Kalori";
 "nutrition.energy.kj" = "Energi (kJ)";
-"nutrition.energy.kcal" = "Energi (kcal)";
+"nutrition.energy.kcal" = "Energi (kkal)";
 "nutrition.fats" = "Lemak";
 "nutrition.fats.saturated-fat" = "Lemak jenuh";
-"nutrition.fats.mono-unsaturated-fat" = "Lemak tak jenuh Mono";
-"nutrition.fats.poly-unsaturated-fat" = "Poly unsaturated fat";
-"nutrition.fats.omega3" = "Omega3";
+"nutrition.fats.mono-unsaturated-fat" = "Lemak tak jenuh tunggal";
+"nutrition.fats.poly-unsaturated-fat" = "Lemak tak jenuh ganda";
+"nutrition.fats.omega3" = "Omega 3";
 "nutrition.fats.omega6" = "Omega 6";
-"nutrition.fats.omega9" = "Omega9";
+"nutrition.fats.omega9" = "Omega 9";
 "nutrition.fats.trans-fat" = "Lemak trans";
 "nutrition.fats.cholesterol" = "Kolesterol";
 "nutrition.carbohydrate" = "Karbohidrat";
 "nutrition.carbohydrate.sugars" = "Gula";
 "nutrition.carbohydrate.sucrose" = "Sukrosa";
-"nutrition.carbohydrate.glucose" = "Glukosa,,";
+"nutrition.carbohydrate.glucose" = "Glukosa";
 "nutrition.carbohydrate.fructose" = "Fruktosa";
-"nutrition.carbohydrate.lactose" = "laxtosa";
-"nutrition.carbohydrate.maltose" = "Maltose";
+"nutrition.carbohydrate.lactose" = "Laktosa";
+"nutrition.carbohydrate.maltose" = "Maltosa";
 "nutrition.carbohydrate.maltodextrins" = "Maltodekstrin";
-"nutrition.fiber" = "Serat makanan";
-"nutrition.proteins" = "Protein:";
+"nutrition.fiber" = "Serat";
+"nutrition.proteins" = "Kandungan protein";
 "nutrition.proteins.casein" = "kasen";
-"nutrition.proteins.serum-proteins" = "protein serum";
+"nutrition.proteins.serum-proteins" = "Protein Serum";
 "nutrition.proteins.nucleotides" = "Nukleotidaa";
-"nutrition.salt" = "garam";
+"nutrition.salt" = "Garam";
 "nutrition.sodium" = "Sodium";
 "nutrition.alcohol" = "Alkohol";
 "nutrition.vitamins" = "banyak vitamin";
@@ -289,136 +289,136 @@
 "nutrition.vitamins.d" = "Vitamin D";
 "nutrition.vitamins.e" = "Vitamin E";
 "nutrition.vitamins.k" = "Vitamin K";
-"nutrition.vitamins.c" = "Vitaminc";
-"nutrition.vitamins.b1" = "Vitamin .B1";
-"nutrition.vitamins.b2" = "Vitamin.B2";
-"nutrition.vitamins.pp" = "Vitamin ,PP";
-"nutrition.vitamins.b6" = "Vitamin,B6";
-"nutrition.vitamins.b9" = "Vitamin,B9";
-"nutrition.vitamins.b12" = "Vitamin.B12";
-"nutrition.vitamins.biotin" = "Biotiin";
-"nutrition.vitamins.pantothenic-acid" = "Asem pantotenat";
+"nutrition.vitamins.c" = "Vitamin C";
+"nutrition.vitamins.b1" = "Vitamin B1";
+"nutrition.vitamins.b2" = "Vitamin B2";
+"nutrition.vitamins.pp" = "Vitamin B3";
+"nutrition.vitamins.b6" = "Vitamin B6";
+"nutrition.vitamins.b9" = "Vitamin B9";
+"nutrition.vitamins.b12" = "Vitamin B12";
+"nutrition.vitamins.biotin" = "Vitamin B7";
+"nutrition.vitamins.pantothenic-acid" = "Vitamin B5";
 "nutrition.minerals" = "Mineral";
-"nutrition.minerals.silica" = "silikaa";
+"nutrition.minerals.silica" = "Silika";
 "nutrition.minerals.bicarbonate" = "Bikarbonat";
-"nutrition.minerals.potassium" = "poKaliium";
-"nutrition.minerals.chloride" = "Khlorida";
+"nutrition.minerals.potassium" = "Potasium";
+"nutrition.minerals.chloride" = "Klorida";
 "nutrition.minerals.calcium" = "Kalsium";
 "nutrition.minerals.phosphorus" = "Fosfor";
-"nutrition.minerals.iron" = "Besi";
-"nutrition.minerals.magnesium" = "magnesium";
-"nutrition.minerals.zinc" = "zat";
+"nutrition.minerals.iron" = "Zat Besi";
+"nutrition.minerals.magnesium" = "Magnesium";
+"nutrition.minerals.zinc" = "Zinc";
 "nutrition.minerals.copper" = "Tembaga";
 "nutrition.minerals.manganese" = "Mangan";
-"nutrition.minerals.fluoride" = "Fluor";
-"nutrition.minerals.selenium" = "senium";
+"nutrition.minerals.fluoride" = "Fluorida";
+"nutrition.minerals.selenium" = "Selenium";
 "nutrition.minerals.chromium" = "Kromium";
 "nutrition.minerals.molybdenum" = "Molibdenum";
-"nutrition.minerals.iodine" = "Yodium";
+"nutrition.minerals.iodine" = "Iodin";
 "nutrition.minerals.caffeine" = "Kafein";
-"nutrition.minerals.taurine" = "taurin";
+"nutrition.minerals.taurine" = "Taurina";
 "nutrition.minerals.ph" = "pH";
-"nutrition.minerals.fruits-vegetables-nuts" = "Buah-buahan, sayuran, kacang-kacangan";
-"nutrition.minerals.collagen-meat-protein-ratio" = "Rasio protein daging kolagen";
+"nutrition.minerals.fruits-vegetables-nuts" = "Buah-buahan, sayur - sayuran, kacang-kacangan";
+"nutrition.minerals.collagen-meat-protein-ratio" = "Rasio Kolagen/Protein Daging";
 "nutrition.minerals.cocoa" = "Biji cokelat";
 "nutrition.minerals.chlorophyl" = "Klorofil";
 
 // Call to action
 "call-to-action.summary" = "Ambil foto dari depan";
 "call-to-action.environment" = "Ambil foto instruksi daur ulang";
-"call-to-action.ingredients" = "Take a photo of the ingredients";
-"call-to-action.nutrition" = "Take a photo of the nutrition facts";
-"call-to-action.edit" = "Complete the product to get it scored";
+"call-to-action.ingredients" = "Ambil foto kandungan bahan";
+"call-to-action.nutrition" = "Ambil foto informasi nilai gizi";
+"call-to-action.edit" = "Lengkapi informasi produk untuk mendapatkan skornya";
 
 // Product images
 /* To be used with another string, like 'Take a picture of the product's ingredients` */
-"product.images.took-picture.front" = "Photo of the front ✅";
-"product.images.took-picture.ingredients" = "Photo of the ingredients ✅";
-"product.images.took-picture.nutrition" = "Photo of the nutrition table ✅";
+"product.images.took-picture.front" = "Foto bagian depan ✅";
+"product.images.took-picture.ingredients" = "Foto kandungan bahan ✅";
+"product.images.took-picture.nutrition" = "Foto tabel nutrisi ✅";
 
-"product.images.take-picture.front" = "Photo of the front";
-"product.images.take-picture.ingredients" = "Photo of the ingredients";
-"product.images.take-picture.nutrition" = "Photo of the nutrition table";
-"product.images.take-picture.packaging" = "Photo of the recycling info";
+"product.images.take-picture.front" = "Foto bagian depan";
+"product.images.take-picture.ingredients" = "Foto kandungan bahan";
+"product.images.take-picture.nutrition" = "Foto tabel nutrisi";
+"product.images.take-picture.packaging" = "Foto infrormasi daur ulang";
 
 // Settings storyboard
 //"search.tab-bar.item" = "Search"; is "product-search.title"
-"scanner.tab-bar.item" = "Scanner";
-"history.tab-bar.item" = "riwayat/kenangan";
+"scanner.tab-bar.item" = "Pemindai";
+"history.tab-bar.item" = "Riwayat";
 "settings.tab-bar.item" = "Pengaturan";
-"settings.ingredientsAnalysis.title" = "Ingredients analysis alerts";
-"settings.allergies.title" = "Allergens alerts";
-"settings.allergies.description" = "Add allergens to this list to be notified when you scan a product containing it. \nPlease note that information about your allergies will NEVER be sent to Open Food Facts server. Also, be careful that the data may not be 100% reliable, and that detection may not be 100% accurate. Be sure to check for yourself too !";
-"settings.allergies.add-button" = "Add allergens";
-"settings.sections.information" = "informasi";
+"settings.ingredientsAnalysis.title" = "Peringatan analisis kandungan bahan";
+"settings.allergies.title" = "Peringatan alergen";
+"settings.allergies.description" = "Tambahkan alergen dalam daftar ini untuk diberitahukan saat Anda memindai produk yang mengandungnya. \nHarap perhatikan bahwa informasi tentang alergi Anda TIDAK AKAN PERNAH dikirimkan ke server Open Food Facts. Juga, berhati - hatilah bahwa data mungkin tidak 100% dapat diandalkan, dan deteksi tersebut mungkin tidak 100% akurat. Pastikan untuk juga memeriksanya sendiri!";
+"settings.allergies.add-button" = "Tambahkan alergen";
+"settings.sections.information" = "Informasi";
 "settings.sections.discover" = "Jelajahi";
 "settings.sections.contribute" = "Menyumbang";
-"settings.sections.about" = "Tentang,";
-"settings.user-profile" = "Your contributor account";
+"settings.sections.about" = "Tentang";
+"settings.user-profile" = "Akun kontributor Anda";
 "settings.credits.title" = "Kredit";
 "settings.scan-on-launch.title" = "Tampilkan Scan On App Launch";
-"settings.sections.discover" = "Jelajahi";
+"settings.sections.discover" = "Temukan";
 "settings.contribute.how-to-contribute" = "Cara Berkontribusi";
-"settings.contribute.support-open-food-facts" = "Support Open Food Facts";
-"settings.contribute.translate-open-food-facts" = "Translate Open Food Facts";
+"settings.contribute.support-open-food-facts" = "Dukung Open Food Facts";
+"settings.contribute.translate-open-food-facts" = "Terjemahkan Open Food Facts";
 "settings.about.contact" = "Kontak";
 "settings.about.frequently-asked-questions" = "Pertanyaan Umum";
 "settings.promotion.open-beauty-facts" = "Open Beauty Facts";
-"settings.credits.text" = "Our app is made possible by the Open Food Facts volunteers, contributors and also many others who choose to create and release their work under libre licences.\n\nUnder the Creative Commons By 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\n\"Barcode scan\" , \"Settings\" and \"Flash\" icons designed by Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\n\"Take picture\" icon designed by Picol (http://www.flaticon.com/authors/picol)\n\"Profile\" icon designed by Smashicons (https://www.flaticon.com/authors/smashicons)\n\"Gregor Cresnar\" icon designed by Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\n\"Search history\" icon designed by Hadrien (https://www.flaticon.com/authors/hadrien)";
+"settings.credits.text" = "Aplikasi kami dimungkinkan oleh para relawan, kontributor Open Food Facts, dan juga banyak pihak lainnya yang memilih membuat dan merilis karya mereka di bawah lisensi gratis.\n\nDi bawah Creative Commons Oleh 3.0 (https://creativecommons.org/licenses/by/3.0/):\n\nIkon \"Pemindaian kode batang\", \"Pengaturan\" dan \"Kedipkan\" dirancang oleh Madebyoliver (https://www.flaticon.com/authors/madebyoliver)\nIkon \"Ambil Gambar\" dirancang oleh Picol (http://www.flaticon.com/authors/picol)\nIkon \"Profil\" dirancang oleh Smashicons (https://www.flaticon.com/authors/smashicons)\nIkon \"Gregnor Cresnar\" dirancang oleh Smashicons (https://www.flaticon.com/authors/gregor-cresnar)\nIkon \"Riwayat pencarian\" dirancang oleh Hadrien (https://www.flaticon.com/authors/hadrien)";
 
 // User view
 /* Tab bar item */
-"user.tab-bar.item" = "pengguna";
+"user.tab-bar.item" = "Pengguna";
 "user.log-in" = "Masuk";
-"user.logging-in" = "Logging in";
+"user.logging-in" = "Sedang masuk";
 "user.log-out" = "Keluar";
 "user.username" = "Nama pengguna";
-"user.password" = "kata sandi anda";
-"user.logged-in.label" = "%@, you are logged in";
-"user.logged-in-explanation.label" = "All the products you add and the product photos you upload will be credited to your account";
-"user.not-logged-in" = "Not logged in";
-"user.forgot-password" = "Forgot Password?";
-"user.check-your-contributions.button" = "View all your contributions";
-"user.products-pending-upload.button" = "Products pending upload to Open Food Facts";
-"user.products-pending-upload-none.button" = "Products pending upload to Open Food Facts (none)";
-"user.create-account.text" = "If you don't have an account, click the link below to create one.";
-"user.create-account.button" = "Create an account";
-"user.why-log-in.text" = "To get credit for your contributions to Open Food Facts, make sure to log in with your contributor account.";
+"user.password" = "Kata sandi";
+"user.logged-in.label" = "%@, Anda sudah masuk";
+"user.logged-in-explanation.label" = "Semua produk yang Anda tambahkan dan foto - foto produk yang Anda unggah akan dikreditkan ke akun Anda";
+"user.not-logged-in" = "Belum masuk";
+"user.forgot-password" = "Lupa Kata Sandi?";
+"user.check-your-contributions.button" = "Lihat semua kontribusi Anda";
+"user.products-pending-upload.button" = "Produk - produk yang menunggu diunggah ke Open Food Facts";
+"user.products-pending-upload-none.button" = "Produk - produk yang menunggu diunggah ke Open Food Facts (tidak ada)";
+"user.create-account.text" = "Jika Anda belum memiliki akun, klik tautan di bawah untuk membuatnya.";
+"user.create-account.button" = "Buat akun";
+"user.why-log-in.text" = "Masuk dengan akun Anda akan memberi kredit untuk semua kontribusi Anda terhadap transparansi makanan.";
 "user.alert.wrong-credentials.title" = "Tidak dapat masuk";
-"user.alert.wrong-credentials.subtitle" = "Periksa username dan password anda sudah benar";
+"user.alert.wrong-credentials.subtitle" = "Pastikan nama pengguna dan kata sandi Anda sudah benar";
 "user.alert.generic-error.title" = "Terjadi kesalahan saat masuk";
-"user.alert.generic-error.subtitle" = "Silakan coba lagi dalam beberapa saat";
+"user.alert.generic-error.subtitle" = "Silakan coba lagi setelah beberapa saat";
 "user.alert.logout-confirmation.title" = "Konfirmasi keluar";
-"user.alert.logout-confirmation.subtitle" = "Are you sure you want to log out ?";
-"user.alert.username-missing" = "Username diperlukan";
-"user.alert.password-missing" = "katakunci dibutuhkan";
-"pending-upload.info.text" = "Those are products you added while offline.\n\nThe app will try to upload them automatically when you are back online or you can manually try to upload them tapping the button in the upper right corner.";
-"pending-upload.hud.status" = "Uploading";
+"user.alert.logout-confirmation.subtitle" = "Apakah Anda yakin ingin keluar?";
+"user.alert.username-missing" = "Nama pengguna diperlukan";
+"user.alert.password-missing" = "Kata sandi dibutuhkan";
+"pending-upload.info.text" = "Itu adalah produk - produk yang Anda tambahkan saat luring.\n\nAplikasi akan mencoba menggunggah mereka secara otomatis saat Anda kembali daring atau Anda dapat secara manual mencoba mengunggah mereka dengan mengetuk tombol di sudut kanan atas.";
+"pending-upload.hud.status" = "Mengunggah";
 
 // Search history
-"history.title" = "Search history";
-"history.cell.privacy" = "Your search history is only stored on your device";
-"history.button.clear" = "hapus";
-"history.clear.confirmation-title" = "Clear your history ?";
-"history.clear.confirmation-message" = "All your history will be deleted";
-"history.section-titles.last24h" = "Last 24 hours";
-"history.section-titles.fewDays" = "A few days ago";
-"history.section-titles.fewWeeks" = "A few weeks ago";
-"history.section-titles.fewMonths" = "A few months ago";
-"history.section-titles.longTime" = "A long time ago";
-"history.first-scan.button.title" = "Pindai produk pertama";
+"history.title" = "Riwayat pencarian";
+"history.cell.privacy" = "Riwayat pencarian Anda hanya tersimpan di perangkat Anda";
+"history.button.clear" = "Hapus";
+"history.clear.confirmation-title" = "Hapus riwayat?";
+"history.clear.confirmation-message" = "Semua riwayat akan dihapus";
+"history.section-titles.last24h" = "24 jam terakhir";
+"history.section-titles.fewDays" = "Beberapa hari lalu";
+"history.section-titles.fewWeeks" = "Beberapa minggu lalu";
+"history.section-titles.fewMonths" = "Beberapa bulan lalu";
+"history.section-titles.longTime" = "Waktu lampau";
+"history.first-scan.button.title" = "Pindai produk pertama Anda";
 
 "SHARE_SHEET_EDIT_ACTIONS_BUTTON_TITLE" = "Sunting";
 
 // Camera localization API
 "API_CANCEL_TITLE" = "Batalkan";
 "USE_PHOTO" = "Gunakan Foto";
-"PHOTO" = "PHOTO";
-"AEAF_LOCK_TEXT" = "AE/AF LOCK";
-"HDR_AUTO" = "Auto";
+"PHOTO" = "FOTO";
+"AEAF_LOCK_TEXT" = "LOCK AE/AF";
+"HDR_AUTO" = "Otomatis";
 "HDR_ON" = "On";
 "HDR_OFF" = "Off";
 "TIMER_OFF_TEXT" = "Off";
-"PHOTOS" = "Photos";
-"CANCEL" = "Cancel";
-"RETAKE" = "Retake";
+"PHOTOS" = "Foto - foto";
+"CANCEL" = "Batalkan";
+"RETAKE" = "Ambil ulang";

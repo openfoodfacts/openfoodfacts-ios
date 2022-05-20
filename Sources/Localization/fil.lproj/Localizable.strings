@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "I-scan ang barcode ng produkto";
-"product-scanner.overlay.extended-user-help" = "Hindi mahanap ang isang barcode. I-sentro ang barcode sa screen. Siguraduhin na ang barcode ay mahusay na naiilawan.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,7 +46,7 @@
 "product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "Iwanan ang pag-scan ng barcode";
 
-"product-scanner.search.status" = "Loading product…";
+"product-scanner.search.status" = "Loading products…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
 "product-scanner.flash.off.accessibility.label" = "Turn flash on";
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "Note: the pictures you send are published under the free licence Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "Pangalan";
 "product-add.label.category" = "Kategorya";
 "product-add.label.quantity" = "Dami";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "Mga label, mga sertipiko, mga parangal";
 "product-detail.summary.citiesTags" = "Lungsod, estado at bansa kung saan binili";
 "product-detail.summary.stores" = "Mga Tindahan";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "Mga bansa kung saan ibinebenta";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "Carbon footprint / CO2 emissions";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "Talahanayan ng nutrisyon";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "Para sa 100 g";
 "product-detail.nutrition-table.for-serving" = "Bawat serving";
 "product-detail.nutrition-table.100g" = "100g";
@@ -215,13 +215,13 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "Babala: ang halaga ng prutas, gulay at mani ay hindi tinukoy sa tanda, ito ay tinatantya mula sa listahan ng mga sangkap: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "Babala: Ang halaga ng mga prutas, gulay at mani ay hindi tinukoy sa tanda, ito ay tinatantya mula sa kategorya (%s) ng produkto: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
+"product-detail.environment.ecoscore.c" = "Some impact on the environment";
+"product-detail.environment.ecoscore.d" = "Strong impact on the environment";
+"product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "Lactose";
 "nutrition.carbohydrate.maltose" = "Maltose";
 "nutrition.carbohydrate.maltodextrins" = "Maltodextrins";
-"nutrition.fiber" = "Dietary fiber";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "Mga protina";
 "nutrition.proteins.casein" = "Casein";
 "nutrition.proteins.serum-proteins" = "Serum Proteins";
@@ -292,7 +292,7 @@
 "nutrition.vitamins.c" = "Bitamina C";
 "nutrition.vitamins.b1" = "Bitamina B1";
 "nutrition.vitamins.b2" = "Bitamina B2";
-"nutrition.vitamins.pp" = "Bitamina PP";
+"nutrition.vitamins.pp" = "Vitamin B3";
 "nutrition.vitamins.b6" = "Bitamina B6";
 "nutrition.vitamins.b9" = "Bitamina B9";
 "nutrition.vitamins.b12" = "Bitamina B12";

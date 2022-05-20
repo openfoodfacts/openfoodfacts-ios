@@ -7,7 +7,7 @@
  */
 // App Shortcuts
 
-"shortcuts.scan" = "Ar";
+"shortcuts.scan" = "مسح ضوئي للرمز الشريطي";
 
 // Generic strings that could be useful anywhere.
 "generic.back" = "عودة";
@@ -31,27 +31,27 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "مسح باركود المنتج";
-"product-scanner.overlay.extended-user-help" = "لا يمكن العثور على الباركود.\nتوسيط الباركود في الشاشة.\nتأكد من إضاءة الباركود جيدًا.";
+"product-scanner.overlay.extended-user-help" = "لم يتم الكشف عن الرمز الشريطي. \nبتوسيط الرمز الشريطي في الشاشة.\nتأكد من إضاءة الكود الشريطي جيدًا.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
 "product-scanner.barcode.error" = "خطأ في مسح الباركود. لحظات و اعد المحاولة مرة أخرى.";
-"product-scanner.barcode-notfound.manual-enter" = "No barcode found. You can type it manually:";
+"product-scanner.barcode-notfound.manual-enter" = "لم يتم العثور على الباركود. يمكنك كتابته يدوياً:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "Please grant the permission to let the camera scan barcodes";
+"product-scanner.permissions.noPermissions.message" = "يرجى منح الإذن للسماح للكاميرا بفحص الباركود";
 "product-scanner.permissions.noPermissions.action.title" = "Open settings";
 
-"product-scanner.permissions.failed.title" = "Barcode scanning could not be started.";
+"product-scanner.permissions.failed.title" = "تعذر بدء مسح الباركود.";
 "product-scanner.permissions.failed.message" = "Make sure in Privacy Settings that Open Food Facts has permission to use the camera";
 "product-scanner.permissions.failed.action.title" = "اترك مسح الباركود";
 
-"product-scanner.search.status" = "يتم تحميل المنتجات…";
+"product-scanner.search.status" = "تحميل المنتجات…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
-"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+"product-scanner.flash.off.accessibility.label" = "تشغيل الفلاش";
 /* Accessibility label indicating the action when the flash is currently on. */
-"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+"product-scanner.flash.on.accessibility.label" = "تشغيل الفلاش";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -102,13 +102,13 @@
 "product-add.title" = "منتج جديد";
 "product-add.title-edit" = "تحرير المنتج";
 "product-add.titles.barcode" = "الرمز الشريطي";
-"product-add.titles.top-explainations" = "Well done ! This product is not yet in Open Food Facts. Can you take some pictures of the product, ingredients list and nutrition facts to add it on Open Food Facts? \n\nThanks in advance.";
+"product-add.titles.top-explainations" = "أحسنت ! هذا المنتج ليس بعد في Open Food Facts. هل يمكنك التقاط بعض الصور للمنتج وقائمة المكونات وحقائق التغذية لإضافتها إلى Open Food Facts؟ \n\nشكرا مقدما.";
 "product-add.titles.license-explaination" = "ملاحظة: يتم نشر الصور التي ترسلها تحت الترخيص المجاني \"العموم الإبداعي\" وإسناد و \"المساهمة\".";
 
-"product-add.titles.product-info" = "Product Information";
-"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc…";
+"product-add.titles.product-info" = "معلومات المنتج";
+"product-add.label.brand-example" = "Examples: Coca-Cola, Nestle, etc.";
 "product-add.label.product-name" = "اﻹسم";
-"product-add.label.category" = "Atassnifate";
+"product-add.label.category" = "فئة";
 "product-add.label.quantity" = "كمية";
 "product-add.label.packaging" = "التعبئة والتغليف";
 "product-add.label.packaging-example" = "Examples: plastic, paper, glass";
@@ -116,10 +116,10 @@
 "product-add.label.quantity-example" = "٢٥ جم، ١٠ أوقية، ٥ مل…";
 "product-add.label.language" = "اللغات";
 "product-add.label.labels" = "علامات";
-"product-add.label.labels-example" = "Examples: Gluten-free, etc.";
+"product-add.label.labels-example" = "أمثلة: خالٍ من الغلوتين ، إلخ.";
 "product-add.label.origins" = "أصل المكونات";
 "product-add.field.origins-placeholder" = "Required for calculation of the Eco-Score";
-"product-add.label.origins-example" = "Example: Butter from France, etc.";
+"product-add.label.origins-example" = "مثال: زبدة من فرنسا ، إلخ.";
 
 "product-add.description.nutritive" = "أكمل حقائق التغذية وفئة المنتج للحصول على نقاط التغذية";
 "product-add.titles.nutritive" = "حقائق غذائية";
@@ -135,15 +135,15 @@
 "product-add.ingredients.button-save" = "Looks good, Save";
 
 // Select Category
-"select-category.title" = "Atassnifate";
+"select-category.title" = "فئة";
 "select-category.search-placeholder" = "البحث عن تصنيف";
 
 // Select nutrition
 "select-nutriment.title" = "التغذية";
-"select-nutriment.search-placeholder" = "Rechercher un nutriment";
+"select-nutriment.search-placeholder" = "Search for a nutrient";
 
 // Select allergen
-"select-allergen.title" = "Allergen";
+"select-allergen.title" = "مسببات الحساسية";
 "select-allergen.search-placeholder" = "البحث عن حساسية";
 
 // Product Detail
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "التسميات، الشهادات، الجوائز";
 "product-detail.summary.citiesTags" = "المدينة والولاية وبلد الشراء";
 "product-detail.summary.stores" = "المتاجر";
-"product-detail.summary.embCodes" = "Packager code";
-"product-detail.summary.countries" = "بلدان بيع";
+"product-detail.summary.embCodes" = "Traceability code";
+"product-detail.summary.countries" = "Country";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "Unprocessed or minimally processed foods";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "انبعاثات الكربون / انبعاثات ثاني أكسيد الكربون";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "حقائق غذائية";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "ل 100 غرام";
 "product-detail.nutrition-table.for-serving" = "لكل وجبة";
 "product-detail.nutrition-table.100g" = "100g";
@@ -215,13 +215,13 @@
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_estimate_warning" = "تحذير: كمية الفواكه والخضروات والمكسرات غير محددة على الملصق ، فقد قدرت من قائمة المكونات: %d%";
 "product-detail.nutrition-table.nutrition_grade_fr_fruits_vegetables_nuts_from_category_warning" = "تحذير: كمية الفواكه والخضروات والمكسرات غير محددة على الملصق ، تم تقديرها من فئة (%s) من المنتج: %d%";
 
-"product-detail.environment.ecoscore.a" = "Eco-score A";
-"product-detail.environment.ecoscore.b" = "Eco-score B";
-"product-detail.environment.ecoscore.c" = "Eco-score C";
-"product-detail.environment.ecoscore.d" = "Eco-score D";
-"product-detail.environment.ecoscore.e" = "Eco-score E";
+"product-detail.environment.ecoscore.a" = "Very weak impact on the environment";
+"product-detail.environment.ecoscore.b" = "Weak impact on the environment";
+"product-detail.environment.ecoscore.c" = "Some impact on the environment";
+"product-detail.environment.ecoscore.d" = "Strong impact on the environment";
+"product-detail.environment.ecoscore.e" = "Very strong impact on the environment";
 "product-detail.environment.ecoscore.unknown" = "Eco-score unknown";
-"product-detail.environment.ecoscore.incite" = "Please add packaging info, so we can calculate the Eco-score";
+"product-detail.environment.ecoscore.incite" = "Please add packaging information so that the Eco-score can be calculated";
 
 // Nutrition levels
 "nutrition-level.title" = "Nutrient levels per 100 g/100mL";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "اللاكتوز";
 "nutrition.carbohydrate.maltose" = "مالتوس";
 "nutrition.carbohydrate.maltodextrins" = "مالتوديكسترينس";
-"nutrition.fiber" = "الألياف الغذائية";
+"nutrition.fiber" = "Fiber";
 "nutrition.proteins" = "البروتينات";
 "nutrition.proteins.casein" = "الكازين";
 "nutrition.proteins.serum-proteins" = "بروتينات المصل";

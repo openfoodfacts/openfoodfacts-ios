@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "יש לסרוק את הברקוד של המוצר";
-"product-scanner.overlay.extended-user-help" = "לא ניתן למצוא ברקוד.\nיש להציב את הברקוד במרכז המסך.\nנא לוודא שהברקוד מואר כראוי.";
+"product-scanner.overlay.extended-user-help" = "לא זוהה ברקוד.\nיש להציב את הברקוד במרכז המסך.\nנא לוודא שהברקוד מואר כראוי.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "סורק";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -46,12 +46,12 @@
 "product-scanner.permissions.failed.message" = "נא לוודא אם בהגדרות הפרטיות יש ל־Open Food Facts הרשאה להשתמש במצלמה";
 "product-scanner.permissions.failed.action.title" = "יציאה מסריקת הברקוד";
 
-"product-scanner.search.status" = "המוצר נטען…";
+"product-scanner.search.status" = "המוצרים נטענים…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
-"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+"product-scanner.flash.off.accessibility.label" = "הפעלת מבזק";
 /* Accessibility label indicating the action when the flash is currently on. */
-"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+"product-scanner.flash.on.accessibility.label" = "כיבוי מבזק";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -106,7 +106,7 @@
 "product-add.titles.license-explaination" = "לתשומת לבך: התמונות שנשלחות מפורסמות תחת תנאי הרישיון Creative Commons Attribution & ShareAlike.";
 
 "product-add.titles.product-info" = "מידע על המוצר";
-"product-add.label.brand-example" = "למשל: קוקה קולה, תנובה וכו׳…";
+"product-add.label.brand-example" = "דוגמאות: קוקה קולה,‏ נסטלה וכו׳…";
 "product-add.label.product-name" = "שם";
 "product-add.label.category" = "קטגוריה";
 "product-add.label.quantity" = "כמות";
@@ -173,8 +173,8 @@
 "product-detail.summary.labels" = "תוויות, אישורים, פרסים";
 "product-detail.summary.citiesTags" = "עיר/מושב/קיבוץ/כפר בהם נרכש המוצר";
 "product-detail.summary.stores" = "חנויות";
-"product-detail.summary.embCodes" = "קוד מפעל אריזה";
-"product-detail.summary.countries" = "ארצות בהן נמכר";
+"product-detail.summary.embCodes" = "קוד למעקב";
+"product-detail.summary.countries" = "מדינה";
 
 // Product detail ingredients info row labels
 "product-detail.ingredients.nova.1" = "מזון עם עיבוד מזערי או נטול";
@@ -202,8 +202,8 @@
 "product-detail.nutrition.carbon-footprint" = "טביעת רגל פחמנית / פליטות פחמן דו־חמצני";
 
 // Product detail nutrition table labels
-"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-score %1$@";
 "product-detail.nutrition-table.nutritional-table-header" = "מפרט תזונתי";
+"product-detail.nutrition-table.nutrition-grade.accessibility" = "Nutri-Score %1$@";
 "product-detail.nutrition-table.for-100g" = "ל־100 ג׳";
 "product-detail.nutrition-table.for-serving" = "להגשה";
 "product-detail.nutrition-table.100g" = "100 גרם";
@@ -221,7 +221,7 @@
 "product-detail.environment.ecoscore.d" = "השפעה ניכרת על איכות הסביבה";
 "product-detail.environment.ecoscore.e" = "השפעה הרסנית על איכות הסביבה";
 "product-detail.environment.ecoscore.unknown" = "Eco-score לא ידוע";
-"product-detail.environment.ecoscore.incite" = "נא להוסיף פרטי האריזה כדי שנוכל לחשב את ה־Eco-score";
+"product-detail.environment.ecoscore.incite" = "נא להוסיף פרטי אריזה כדי שניתן יהיה לחשב Eco-Score";
 
 // Nutrition levels
 "nutrition-level.title" = "רמות המרכיבים התזונתיים ל־100 גרם/100 מ״ל";
@@ -275,7 +275,7 @@
 "nutrition.carbohydrate.lactose" = "לקטוז";
 "nutrition.carbohydrate.maltose" = "מלטוז";
 "nutrition.carbohydrate.maltodextrins" = "מלטודקסטרין";
-"nutrition.fiber" = "סיבים תזונתיים";
+"nutrition.fiber" = "סיבים";
 "nutrition.proteins" = "תכולת חלבון";
 "nutrition.proteins.casein" = "קזאין";
 "nutrition.proteins.serum-proteins" = "חלבון בסרום";
@@ -373,11 +373,11 @@
 "user.logging-in" = "נכנסים למערכת";
 "user.log-out" = "יציאה";
 "user.username" = "שם משתמש";
-"user.password" = "ססמה";
+"user.password" = "סיסמה";
 "user.logged-in.label" = "%@, נכנסת למערכת";
 "user.logged-in-explanation.label" = "כל המוצרים שיתווספו על ידיך ותמונות המוצרים שיועלו על ידיך יתועדו לטובת חשבונך";
 "user.not-logged-in" = "לא נכנסת לחשבון";
-"user.forgot-password" = "שכחת ססמה?";
+"user.forgot-password" = "שכחת סיסמה?";
 "user.check-your-contributions.button" = "הצגת כל התרומות שלך";
 "user.products-pending-upload.button" = "מוצרים שממתינים להעלאה אל Open Food Facts";
 "user.products-pending-upload-none.button" = "מוצרים שממתינים להעלאה אל Open Food Facts (אין)";
@@ -385,13 +385,13 @@
 "user.create-account.button" = "יצירת חשבון";
 "user.why-log-in.text" = "כניסה עם חשבון משלך תזכה אותך בעבור כל התרומות שלך לשקיפות המזון.";
 "user.alert.wrong-credentials.title" = "לא ניתן להיכנס";
-"user.alert.wrong-credentials.subtitle" = "יש לוודא ששם המשתמש והססמה שלך נכונים";
+"user.alert.wrong-credentials.subtitle" = "יש לוודא ששם המשתמש והסיסמה שלך נכונים";
 "user.alert.generic-error.title" = "אירעה שגיאה בכניסה";
 "user.alert.generic-error.subtitle" = "נא לנסות שוב בעוד מספר רגעים";
 "user.alert.logout-confirmation.title" = "אימות יציאה";
 "user.alert.logout-confirmation.subtitle" = "לצאת?";
 "user.alert.username-missing" = "נדרש שם משתמש";
-"user.alert.password-missing" = "נדרשת ססמה";
+"user.alert.password-missing" = "נדרשת סיסמה";
 "pending-upload.info.text" = "אלו מוצרים שהוספת בזמן שלא היה לך חיבור לאינטרנט.\n\nהיישומון ינסה להעלות אותם אוטומטית עם חידוש החיבור או שבאפשרותך לנסות להעלות אותם ידנית באמצעות הכפתור שבפינה השמאלית העליונה.";
 "pending-upload.hud.status" = "מתבצעת העלאה";
 
