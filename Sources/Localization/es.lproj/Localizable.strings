@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Escanea el código de barras del producto";
-"product-scanner.overlay.extended-user-help" = "No se ha detectado el código de barras. \nCentra el código de barras en la pantalla.\nAsegúrate de que el código de barras está bien iluminado.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Escáner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "No se ha encontrado el código de barras. Puedes añadirlo manualmente:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts necesita permisos de cámara";
-"product-scanner.permissions.noPermissions.message" = "Por favor, concede el permiso para que la cámara pueda escanear los códigos de barras";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Abrir configuración";
 
 "product-scanner.permissions.failed.title" = "No se ha podido iniciar el escaneo del código de barras.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Ingredientes no guardados";
 "product-add.save-ingredients.saving" = "Guardando ingredientes…";
 "product-add.save-ingredients.not-yet" = "Ingredientes aún no guardados";
-"product-add.save-nutriments.success" = "Información nutricional guardada en";
-"product-add.save-nutriments.error" = "Información nutricional no guardados";
-"product-add.save-nutriments.saving" = "Guardando información nutricional…";
-"product-add.save-nutriments.not-yet" = "Información nutricional no guardada todavía";
-"product-add.no-nutrition" = "El producto no tiene información nutricional";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Ingredientes extraídos de la imagen en";
-"product-add.ocr-ingredients.error" = "No se han podido extraer los ingredientes de la imagen";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Extrayendo los ingredientes de la imagen…";
 "product-add.ocr-ingredients.not-yet" = "A la espera de imagen con ingredientes para analizar";
 

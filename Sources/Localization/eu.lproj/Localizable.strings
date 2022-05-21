@@ -12,9 +12,9 @@
 // Generic strings that could be useful anywhere.
 "generic.back" = "Atzera";
 "generic.search" = "Bilatu";
-"generic.cancel" = "Utzi";
+"generic.cancel" = "Ezeztatu";
 "generic.save" = "Gorde";
-"generic.cancel" = "Utzi";
+"generic.cancel" = "Ezeztatu";
 "generic.ok" = "Ados";
 "generic.close" = "Itxi";
 
@@ -22,16 +22,16 @@
 
 "product-search.title" = "Bilatu";
 "product-search.search-placeholder" = "Bilatu izenaren edo barra-kodearen arabera";
-"product-search.no-results" = "Ez da aurkitu. Produktua eskaneatuta Open Food Factd-era gehitu dezakezu.";
+"product-search.no-results" = "Emaitzik gabe. Eskaneatu produktua Open Food Facts-era gehitzeko.";
 "product-search.error-view.title" = "Zerbait ez da ondo atera";
-"product-search.error-view.subtitle" = "Saiatu berriro";
+"product-search.error-view.subtitle" = "Mesedez, saiatu berriro";
 "product-search.initial-view.slogan" = "Doako elikagai datu-basea";
-"product-search.initial-view.offline.title-loading" = "Produktuak lineaz kanpo gordetzea: %d%%";
-"product-search.initial-view.offline.subtitle" = "%d produktu baino gehiago eskura daitezke berehalako azterketarako";
+"product-search.initial-view.offline.title-loading" = "Produktuak lineaz kanpo gordetzen: %d%%";
+"product-search.initial-view.offline.subtitle" = "%d produktu baino gehiago eskura daude eskaneatzeko";
 
 // Product Scanner
-"product-scanner.overlay.user-help" = "Eskaneatu produktuaren barra kodea";
-"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.user-help" = "Eskaneatu produktuaren barra-kodea";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Eskaner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,19 +39,19 @@
 "product-scanner.barcode-notfound.manual-enter" = "Ez da barra-kodea aurkitu. Eskuz idatz dezakezu:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts-ek kamera baimenak behar ditu";
-"product-scanner.permissions.noPermissions.message" = "Mesedez, eman baimena kameraren barrakak kodetzeko";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Ezarpenak ireki";
 
 "product-scanner.permissions.failed.title" = "Ezin da barrakodeen eskaneatzea hasi.";
 "product-scanner.permissions.failed.message" = "Ziurtatu Pribatutasun Ezarpenetan Open Food Facts-ek kamera erabiltzeko baimena duela";
 "product-scanner.permissions.failed.action.title" = "Utzi barra kodeak eskaneatzeari";
 
-"product-scanner.search.status" = "Loading products…";
+"product-scanner.search.status" = "Produktuak kargatzen…";
 
 /* Accessibility label indicating the action when the flash is currently off. */
-"product-scanner.flash.off.accessibility.label" = "Turn flash on";
+"product-scanner.flash.off.accessibility.label" = "Piztu flasha";
 /* Accessibility label indicating the action when the flash is currently on. */
-"product-scanner.flash.on.accessibility.label" = "Turn flash off";
+"product-scanner.flash.on.accessibility.label" = "Itzali flasha";
 
 // Product Add
 /* Displayed when an image taken by the user is being uploaded to the server during the product creation process */
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Osagaiak ez dira gorde";
 "product-add.save-ingredients.saving" = "Osagaiak gordetzen…";
 "product-add.save-ingredients.not-yet" = "Osagaiak oraindik gorde gabe";
-"product-add.save-nutriments.success" = "Mantenugaiak hemen gorde dira:";
-"product-add.save-nutriments.error" = "Mantenugaiak ez dira gorde";
-"product-add.save-nutriments.saving" = "Mantenugaiak gordetzen…";
-"product-add.save-nutriments.not-yet" = "Mantenugaiak oraindik gorde gabe";
-"product-add.no-nutrition" = "Nutrizio datuak ez dira produktuan agertzen";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Osagaiak iruditik irakurritakoak, hemen:";
-"product-add.ocr-ingredients.error" = "Ezin izan dira iruditik osagaiak atera";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Iruditik osagaiak ateratzen…";
 "product-add.ocr-ingredients.not-yet" = "Aztertu ahal izateko osagaien irudiren baten zain";
 
@@ -420,5 +420,5 @@
 "HDR_OFF" = "Itzali";
 "TIMER_OFF_TEXT" = "Itzali";
 "PHOTOS" = "Argazkiak";
-"CANCEL" = "Utzi";
+"CANCEL" = "Ezeztatu";
 "RETAKE" = "Retake";

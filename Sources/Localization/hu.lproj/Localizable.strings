@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "A termék vonalkódjának beolvasása";
-"product-scanner.overlay.extended-user-help" = "Vonalkód nem található.\nHelyezze a vonalkódot a képernyő középére.\nGyőződjön meg róla, hogy a vonalkód jól megvilágított.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Szkenner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "Vonalkód nem található. Beírhatja kézzel:";
 
 "product-scanner.permissions.noPermissions.title" = "Az Open Food Facts alkalmazáshoz kameraengedélyek szükségesek";
-"product-scanner.permissions.noPermissions.message" = "Kérem adjon engedélyt, hogy a kamera beolvashassa a vonalkódokat";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Beállítások megnyitása";
 
 "product-scanner.permissions.failed.title" = "A vonalkód beolvasást nem lehet elindítani.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Az összetevők nincsenek mentve";
 "product-add.save-ingredients.saving" = "Összetevők mentése…";
 "product-add.save-ingredients.not-yet" = "Az összetevők még nincsenek mentve";
-"product-add.save-nutriments.success" = "Tápanyagtáblázat mentve";
-"product-add.save-nutriments.error" = "A tápanyagtáblázat nincs mentve";
-"product-add.save-nutriments.saving" = "Tápanyagok mentése…";
-"product-add.save-nutriments.not-yet" = "A tápanyagtáblázat nincs mentve";
-"product-add.no-nutrition" = "Nincsenek megadva tápértékadatok a terméken";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Összetevők listája a képen";
-"product-add.ocr-ingredients.error" = "Az összetevők listája nem olvasható a képről";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Összetevők listázása a képről…";
 "product-add.ocr-ingredients.not-yet" = "Várunk az összetevők képének analizálása";
 

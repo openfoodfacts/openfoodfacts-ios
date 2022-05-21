@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Сканирай баркода на продукта";
-"product-scanner.overlay.extended-user-help" = "Баркодът не е открит. \nЦентрирай баркода на екрана.\nУвери се, че баркодът е добре осветен.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Скенер";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "Няма намерен баркод. Можеш да го въведеш ръчно:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts има нужда да използва камерата за да сканира";
-"product-scanner.permissions.noPermissions.message" = "Моля, дай разрешение за използване на камерата, за да можеш да сканираш баркодове";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Отвори настройките";
 
 "product-scanner.permissions.failed.title" = "Сканирането на баркод не можа да започне.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Съставките не са запазени";
 "product-add.save-ingredients.saving" = "Съставките се запазват…";
 "product-add.save-ingredients.not-yet" = "Съставките все още не са запазени";
-"product-add.save-nutriments.success" = "Хранителни вещества запазени в";
-"product-add.save-nutriments.error" = "Хранителни вещества не са запазени";
-"product-add.save-nutriments.saving" = "Хранителните стойности се запазват…";
-"product-add.save-nutriments.not-yet" = "Хранителните стойности все още не са запазени";
-"product-add.no-nutrition" = "Хранителните стойности не са споменати на продукта";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Съставките, прочетени от снимката в";
-"product-add.ocr-ingredients.error" = "Не може да се извлекат съставките от снимката";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Извличане на съставките от снимката…";
 "product-add.ocr-ingredients.not-yet" = "В изчакване на снимка на съставките за анализ";
 

@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Pindai kode batang produk";
-"product-scanner.overlay.extended-user-help" = "Kode batang tidak terdeteksi. \nTengahkan kode batang di layar.\nPastikan kode batang menyala dengan baik.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Pemindai";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "Tidak ditemukan kode batang. Anda bisa mengetiknya secara manual:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts membutuhkan izin kamera";
-"product-scanner.permissions.noPermissions.message" = "Harap memberi izin untuk memungkinkan kamera memindai kode batang";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Buka pengaturan";
 
 "product-scanner.permissions.failed.title" = "Pemindaian kode batang tidak dapat dimulai.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Kandungan bahan tidak tersimpan";
 "product-add.save-ingredients.saving" = "Menyimpan kandungan bahan…";
 "product-add.save-ingredients.not-yet" = "Kandungan bahan belum tersimpan";
-"product-add.save-nutriments.success" = "Nutrisi tersimpan di";
-"product-add.save-nutriments.error" = "Nutrisi tidak tersimpan";
-"product-add.save-nutriments.saving" = "Menyimpan nutrisi…";
-"product-add.save-nutriments.not-yet" = "Nutrisi belum tersimpan";
-"product-add.no-nutrition" = "Data nilai gizi tidak ditampilkan pada produk";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Kandungan bahan yang dibaca dari gambar pada";
-"product-add.ocr-ingredients.error" = "Tidak dapat mengekstrak kandungan bahan dari gambar";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Mengekstrak kandungan bahan dari gambar…";
 "product-add.ocr-ingredients.not-yet" = "Menunggu gambar kandungan bahan dianalisa";
 

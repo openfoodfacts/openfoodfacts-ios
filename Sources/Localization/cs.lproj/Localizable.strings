@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Naskenujte čárový kód produktu";
-"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Skener";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "Nebyl nalezen čárový kód. Můžete jej zadat ručně:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts vyžaduje oprávnění k fotoaparátu";
-"product-scanner.permissions.noPermissions.message" = "Udělte prosím oprávnění pro skenování fotoaparátu";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Otevřít nastavení";
 
 "product-scanner.permissions.failed.title" = "Nelze spustit skenování čárových kódů.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Ingredience nebyly uloženy";
 "product-add.save-ingredients.saving" = "Ukládání ingrediencí…";
 "product-add.save-ingredients.not-yet" = "Ingredience dosud nebyly uloženy";
-"product-add.save-nutriments.success" = "Nutriční hodnoty byly uloženy v";
-"product-add.save-nutriments.error" = "Nutriční hodnoty nebyly uloženy";
-"product-add.save-nutriments.saving" = "Ukládání výživy…";
-"product-add.save-nutriments.not-yet" = "Nutriční hodnoty dosud nebyly uloženy";
-"product-add.no-nutrition" = "Výživové hodnoty nejsou zobrazeny na produktu";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Ingredience přečtené z obrázku na";
-"product-add.ocr-ingredients.error" = "Nelze extrahovat ingredience z obrázku";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Extrahování ingrediencí z obrázku…";
 "product-add.ocr-ingredients.not-yet" = "Čekání na obrázek s ingrediencemi k analýze";
 

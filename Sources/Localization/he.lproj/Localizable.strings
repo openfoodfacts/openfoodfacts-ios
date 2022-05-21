@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "יש לסרוק את הברקוד של המוצר";
-"product-scanner.overlay.extended-user-help" = "לא זוהה ברקוד.\nיש להציב את הברקוד במרכז המסך.\nנא לוודא שהברקוד מואר כראוי.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "סורק";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "לא נמצא ברקוד. ניתן להקליד אותו ידנית:";
 
 "product-scanner.permissions.noPermissions.title" = "ל־Open Food Facts נדרשות הרשאות למצלמה";
-"product-scanner.permissions.noPermissions.message" = "נא להעניק הרשאות לגשת למצלמה כדי לאפשר למצלמה לסרוק ברקודים";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "פתיחת הגדרות";
 
 "product-scanner.permissions.failed.title" = "לא ניתן להפעיל סריקת ברקוד.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "הרכיבים לא נשמרו";
 "product-add.save-ingredients.saving" = "הרכיבים נשמרים…";
 "product-add.save-ingredients.not-yet" = "הרכיבים לא נשמרו עדיין";
-"product-add.save-nutriments.success" = "רכיבי ההזנה נשמרו תחת";
-"product-add.save-nutriments.error" = "רכיבי ההזנה לא נשמרו";
-"product-add.save-nutriments.saving" = "רכיבי ההזנה נשמרים…";
-"product-add.save-nutriments.not-yet" = "הרכיבים לא נשמרו עדיין";
-"product-add.no-nutrition" = "המפרט התזונתי אינו מופיע על המוצר";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "רכיבים נקראו מהתמונה שב־";
-"product-add.ocr-ingredients.error" = "לא ניתן לחלץ רכיבים מהתמונה";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "הרכיבים מחולצים מהתמונה…";
 "product-add.ocr-ingredients.not-yet" = "בהמתנה לניתוח תמונת הרכיבים";
 

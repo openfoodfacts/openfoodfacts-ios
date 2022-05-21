@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Lue tuotteen viivakoodi";
-"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Lukija";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "Viivakoodia ei löytynyt. Voit kirjoittaa sen manuaalisesti:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts tarvitsee kameran käyttöoikeuden";
-"product-scanner.permissions.noPermissions.message" = "Anna lupa kameran käyttöön lukeaksesi viivakoodeja";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Avaa asetukset";
 
 "product-scanner.permissions.failed.title" = "Viivakoodin lukemista ei voitu käynnistää.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Ainesosia ei tallennettu";
 "product-add.save-ingredients.saving" = "Tallennetaan ainesosia…";
 "product-add.save-ingredients.not-yet" = "Ainesosia ei ole vielä tallennettu";
-"product-add.save-nutriments.success" = "Ravintoaineet tallennettu";
-"product-add.save-nutriments.error" = "Ravintoaineita ei tallennettu";
-"product-add.save-nutriments.saving" = "Tallennetaan ravintoaineita…";
-"product-add.save-nutriments.not-yet" = "Ravintoaineita ei tallennettu vielä";
-"product-add.no-nutrition" = "Ravintosisältöä ei ole määritelty tuotteessa";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Ainesosat luettu kuvasta";
-"product-add.ocr-ingredients.error" = "Ainesosia ei voitu poimia kuvasta";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Poimitaan ainesosia kuvasta…";
 "product-add.ocr-ingredients.not-yet" = "Odotetaan ainesosakuvaa analysoitavaksi";
 

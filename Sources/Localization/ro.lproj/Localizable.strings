@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Scanați codul de bare al produsului";
-"product-scanner.overlay.extended-user-help" = "Codul de bare nu a fost detectat. \nCentrați codul de bare pe ecran.\nAsigurați-vă că codul de bare este bine iluminat.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scaner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "Codul de bare nu a putut fi identificat. Îl puteți tasta manual:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts necesită permisiuni pentru acces la camera foto";
-"product-scanner.permissions.noPermissions.message" = "Vă rugăm să acordați permisiunea de a permite camerei să scaneze coduri de bare";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Open Settings";
 
 "product-scanner.permissions.failed.title" = "Scanarea codurilor de bare nu a putut fi pornită.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Ingredientele nu au fost înregistrate";
 "product-add.save-ingredients.saving" = "Înregistrarea ingredientelor…";
 "product-add.save-ingredients.not-yet" = "Ingredientele nu au fost încă înregistrate";
-"product-add.save-nutriments.success" = "Informații nutriționale înregistrate la";
-"product-add.save-nutriments.error" = "Informațiile nutriționale nu au fost înregistrate";
-"product-add.save-nutriments.saving" = "Înregistrarea informațiilor nutriționale…";
-"product-add.save-nutriments.not-yet" = "Informațiile nutriționale nu au fost înregistrate încă";
-"product-add.no-nutrition" = "Informațiile nutriționale nu sunt afișate pe produs";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Ingredientele au fost citite de pe imagine la";
-"product-add.ocr-ingredients.error" = "Nu s-au putut extrage ingredientele din imagine";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Se extrag ingredientele din imagine…";
 "product-add.ocr-ingredients.not-yet" = "Se așteaptă o imagine a ingredientelor pentru analiză";
 

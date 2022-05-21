@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Nyeken barkod produk";
-"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Penyeken";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "Mboten nemokake barkod. Sampeyan saged ngetik kanthi manual:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts mbutuhake ijin kamera";
-"product-scanner.permissions.noPermissions.message" = "Tulung wenehi iji supaya kamera nyeken barkod";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Mbuka setelan";
 
 "product-scanner.permissions.failed.title" = "Sken barkod mboten saged diwiwiti.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Bahan mboten kesimpen";
 "product-add.save-ingredients.saving" = "Nyimpen bahan…";
 "product-add.save-ingredients.not-yet" = "Bahan durung kesimpen";
-"product-add.save-nutriments.success" = "Nutrisi disimpen ing";
-"product-add.save-nutriments.error" = "Nutrisi mboten kesimpen";
-"product-add.save-nutriments.saving" = "Nyimpen nutrisi…";
-"product-add.save-nutriments.not-yet" = "Nutrisi durung kesimpen";
-"product-add.no-nutrition" = "Data nutrisi mboten katampil ing produk kasebut";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Bahan bacaan saka gambar ing";
-"product-add.ocr-ingredients.error" = "Mboten saged ngekstrak bahan saking gambar kasebut";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Ekstrak bahan saka gambar…";
 "product-add.ocr-ingredients.not-yet" = "Nunggu gambar bahan kanggo dianalisis";
 

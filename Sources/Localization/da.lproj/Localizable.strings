@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Skan produktstregkoden";
-"product-scanner.overlay.extended-user-help" = "Stregkode ikke detekteret.\nCentrér stregkoden på skærmen.\nSørg for, at stregkoden er veloplyst.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Skanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "Ingen stregkode fundet. Du kan angive den manuelt:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts behøver kamerarettighed";
-"product-scanner.permissions.noPermissions.message" = "Tildel rettigheden, for at lade kameraet skanne stregkoder";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Åbn indstillinger";
 
 "product-scanner.permissions.failed.title" = "Stregkodeskanning kunne ikke startes.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Ingredienser ikke gemt";
 "product-add.save-ingredients.saving" = "Gemme ingredienser…";
 "product-add.save-ingredients.not-yet" = "Ingredienser ikke gemt endnu";
-"product-add.save-nutriments.success" = "Næringsstoffer gemt på";
-"product-add.save-nutriments.error" = "Næringsstoffer ikke gemt";
-"product-add.save-nutriments.saving" = "Gemmer næringsstoffer…";
-"product-add.save-nutriments.not-yet" = "Næringsstoffer ikke gemt endnu";
-"product-add.no-nutrition" = "Ernæringsdata ikke specificeret på produktet";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Ingredienser læst fra fotoet på";
-"product-add.ocr-ingredients.error" = "Kunne ikke udtrække ingredienser fra fotoet";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Udtrækker ingredienser fra fotoet…";
 "product-add.ocr-ingredients.not-yet" = "Afventer et ingrediensfoto til analyse";
 

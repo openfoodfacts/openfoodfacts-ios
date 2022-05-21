@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "製品のバーコードをスキャンします";
-"product-scanner.overlay.extended-user-help" = "バーコードが見つかりません。\nバーコードを画面の中央に配置してください。\nバーコードがはっきり写っていることを確認してください。";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "スキャナー";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "バーコードが見つかりませんでした。手動で入力してください。";
 
 "product-scanner.permissions.noPermissions.title" = "OpenFoodFacts は、カメラアクセス許可が必要です";
-"product-scanner.permissions.noPermissions.message" = "カメラにバーコードをスキャンさせる許可を与えてください";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "設定を開く";
 
 "product-scanner.permissions.failed.title" = "バーコードスキャンを開始できませんでした。";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "材料が保存されていません";
 "product-add.save-ingredients.saving" = "成分を保存中…";
 "product-add.save-ingredients.not-yet" = "成分はまだ保存されていません";
-"product-add.save-nutriments.success" = "栄養成分の保存先";
-"product-add.save-nutriments.error" = "栄養成分は保存されていません";
-"product-add.save-nutriments.saving" = "栄養素を保存中…";
-"product-add.save-nutriments.not-yet" = "栄養成分はまだ保存されていません";
-"product-add.no-nutrition" = "栄養成分データが製品に表示されていません";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "次の写真から読み込んだ栄養成分";
-"product-add.ocr-ingredients.error" = "画像から原材料の読み込みできませんでした";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "画像から原材料読み込み中";
 "product-add.ocr-ingredients.not-yet" = "原材料が読み込める画像はありません";
 

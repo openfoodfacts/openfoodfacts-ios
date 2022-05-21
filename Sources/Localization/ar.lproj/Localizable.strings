@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "مسح باركود المنتج";
-"product-scanner.overlay.extended-user-help" = "لم يتم الكشف عن الرمز الشريطي. \nبتوسيط الرمز الشريطي في الشاشة.\nتأكد من إضاءة الكود الشريطي جيدًا.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "لم يتم العثور على الباركود. يمكنك كتابته يدوياً:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts needs camera permissions";
-"product-scanner.permissions.noPermissions.message" = "يرجى منح الإذن للسماح للكاميرا بفحص الباركود";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Open settings";
 
 "product-scanner.permissions.failed.title" = "تعذر بدء مسح الباركود.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "المكونات لم يتم حفظها";
 "product-add.save-ingredients.saving" = "جارٍ حفظ المكونات…";
 "product-add.save-ingredients.not-yet" = "المكونات لم يتم حفظها بعد";
-"product-add.save-nutriments.success" = "حفظت العناصر الغذائية في";
-"product-add.save-nutriments.error" = "لم يتم حفظ العناصر الغذائية";
-"product-add.save-nutriments.saving" = "حفظ المغذيات…";
-"product-add.save-nutriments.not-yet" = "لم يتم حفظ العناصر الغذائية بعد";
-"product-add.no-nutrition" = "لم يتم تحديد الحقائق الغذائية على المنتج";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "المكونات المقروءة من الصورة في";
-"product-add.ocr-ingredients.error" = "لا يمكن استخراج المكونات من الصورة";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "استخراج المكونات من الصورة…";
 "product-add.ocr-ingredients.not-yet" = "في انتظار تحليل صورة المكون";
 

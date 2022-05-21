@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "제품의 바코드 스캔";
-"product-scanner.overlay.extended-user-help" = "바코드를 찾을 수 없습니다.\n바코드를 화면 중앙에 놓아주세요.\n바코드가 켜져 있는지 확인해주세요.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "스캐너";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "바코드를 찾을 수 없습니다. 바코드를 직접 입력할 수 있습니다.";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts 는 카메라 권한이 필요합니다";
-"product-scanner.permissions.noPermissions.message" = "카메라 권한을 승인하여 바코드를 스캔하세요";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "설정 열기";
 
 "product-scanner.permissions.failed.title" = "바코드 스캔을 시작할 수 없습니다.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "재료가 저장되지 않았습니다";
 "product-add.save-ingredients.saving" = "재료 저장중...";
 "product-add.save-ingredients.not-yet" = "재료가 아직 저장되지 않았습니다";
-"product-add.save-nutriments.success" = "저장된 영양소";
-"product-add.save-nutriments.error" = "영양소가 저장되지 않았습니다";
-"product-add.save-nutriments.saving" = "영양소 저장중...";
-"product-add.save-nutriments.not-yet" = "영양소가 아직 저장되지 않았습니다";
-"product-add.no-nutrition" = "영양 정보가 제품에 명시되어 있지 않습니다";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "사진에서 읽어 온 재료";
-"product-add.ocr-ingredients.error" = "사진에서 성분을 추출 할 수 없습니다";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "사진에서 성분을 추출중...";
 "product-add.ocr-ingredients.not-yet" = "성분 사진이 분석되기를 기다리는 중";
 

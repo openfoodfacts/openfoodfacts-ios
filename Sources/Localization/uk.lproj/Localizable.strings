@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Відскануйте штрихкод продукту";
-"product-scanner.overlay.extended-user-help" = "Штрих-код не виявлено. \nРозмістить штрих-код у центрі екрану. \nПереконайтесь, що штрих-код добре видно.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Сканер";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "Штрих-код не знайдено. Ви можете ввести його вручну:";
 
 "product-scanner.permissions.noPermissions.title" = "Для Open Food Facts необхідні дозволи камери";
-"product-scanner.permissions.noPermissions.message" = "Please grant permission to use the camera to be able to scan barcodes";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Open Settings";
 
 "product-scanner.permissions.failed.title" = "Не вдалося запустити сканування штрих-коду.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Інгредієнти не збережено";
 "product-add.save-ingredients.saving" = "Збереження інгредієнтів…";
 "product-add.save-ingredients.not-yet" = "Інгредієнти ще не збережено";
-"product-add.save-nutriments.success" = "Поживні речовини збережені в";
-"product-add.save-nutriments.error" = "Поживні речовини не збережено";
-"product-add.save-nutriments.saving" = "Збереження поживних речовин…";
-"product-add.save-nutriments.not-yet" = "Поживні речовини ще не збережено";
-"product-add.no-nutrition" = "Дані про харчування не відображаються на товарі";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Інгредієнти, прочитані з обгортки";
-"product-add.ocr-ingredients.error" = "Не вдалося отримати інгредієнти із зображення";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Отримання інгредієнтів із зображення…";
 "product-add.ocr-ingredients.not-yet" = "Очікування аналізу інгредієнта зображення";
 

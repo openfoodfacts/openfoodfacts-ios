@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "สแกนบาร์โค้ดของผลิตภัณฑ์";
-"product-scanner.overlay.extended-user-help" = "ไม่พบบาร์โค้ด \nวางบาร์โค้ดไว้ตรงกลางหน้าจอ\nตรวจสอบให้แน่ใจว่าบาร์โค้ดมีแสงสว่างเพียงพอ";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Scanner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "ไม่พบบาร์โค้ด คุณสามารถพิมพ์ได้ด้วยตนเอง:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts ต้องได้รับอนุญาตใช้งานกล้อง";
-"product-scanner.permissions.noPermissions.message" = "โปรดอนุญาติให้ใช้กล้อง เพื่อให้สามารถสแกนบาร์โค้ดได้";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "ตั้งค่า";
 
 "product-scanner.permissions.failed.title" = "ไม่สามารถใช้งานสแกนบาร์โค้ดได้";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "ไม่ได้บันทึกข้อมูลส่วนผสม";
 "product-add.save-ingredients.saving" = "กำลังบันทึกข้อมูลส่วนผสม";
 "product-add.save-ingredients.not-yet" = "ยังไม่ได้บันทึกส่วนผสม";
-"product-add.save-nutriments.success" = "บันทึกส่วนผสมแล้วตอน";
-"product-add.save-nutriments.error" = "ไม่ได้บันทึกสารอาหาร";
-"product-add.save-nutriments.saving" = "การประหยัดสารอาหาร…";
-"product-add.save-nutriments.not-yet" = "ไม่ได้บันทึกข้อมูลส่วนผสม";
-"product-add.no-nutrition" = "ข้อมูลโภชนาการไม่แสดงบนผลิตภัณฑ์";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "ส่วนผสมที่อ่านจากภาพตอน";
-"product-add.ocr-ingredients.error" = "ไม่สามารถแยกส่วนผสมออกจากรูปภาพได้";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "กำลังอ่านข้อมูลส่วนผสมจากรูปภาพ";
 "product-add.ocr-ingredients.not-yet" = "รอภาพส่วนผสมเพื่อทำการวิเคราะห์";
 

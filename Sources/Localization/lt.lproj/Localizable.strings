@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Nuskaitykite gaminio brūkšninį kodą";
-"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Skaitytuvas";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "Nerastas brūkšninis kodas. Galite įvesti rankiniu būdu:";
 
 "product-scanner.permissions.noPermissions.title" = "„Open Food Facts“ reikia kameros leidimo";
-"product-scanner.permissions.noPermissions.message" = "Suteikite leidimą leisti fotoaparatui nuskaityti brūkšninius kodus";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Atidaryti nustatymus";
 
 "product-scanner.permissions.failed.title" = "Nepavyko pradėti brūkšninių kodų nuskaitymo.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Sudėtis neišsaugota";
 "product-add.save-ingredients.saving" = "Saugoma sudėtis…";
 "product-add.save-ingredients.not-yet" = "Sudėtis dar neišsaugota";
-"product-add.save-nutriments.success" = "Maistingumas išsaugotas";
-"product-add.save-nutriments.error" = "Maistingumas dar neišsaugotas";
-"product-add.save-nutriments.saving" = "Įkeliame maistingumą…";
-"product-add.save-nutriments.not-yet" = "Maistingumas dar neišsaugotas";
-"product-add.no-nutrition" = "Produkto maistingumas nenurodytas";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Ingredientai, skaitomi iš paveikslėlio, esančio";
-"product-add.ocr-ingredients.error" = "Nepavyko išgauti ingredientų iš paveikslėlio";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Ingredientų išgavimas iš paveikslėlio…";
 "product-add.ocr-ingredients.not-yet" = "Laukiama ingredientų nuotraukos analizei";
 

@@ -31,7 +31,7 @@
 
 // Product Scanner
 "product-scanner.overlay.user-help" = "Escanegeu el codi de barres del producte";
-"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode in the screen.\nMake sure the barcode is well lit.";
+"product-scanner.overlay.extended-user-help" = "Barcode not detected. \nCenter the barcode on screen.\nMake sure the barcode is well-lighted.";
 /* Title of the view controller in which user can scan. Keep it short. */
 "product-scanner.view-title" = "Escàner";
 /* Banner message shown to the user when the server returned an error while trying to fetch a product given its barcode */
@@ -39,7 +39,7 @@
 "product-scanner.barcode-notfound.manual-enter" = "No s’ha trobat cap codi de barres. Podeu introduïr-lo manualment:";
 
 "product-scanner.permissions.noPermissions.title" = "Open Food Facts necessita permís per utilitzar la càmera";
-"product-scanner.permissions.noPermissions.message" = "Si us plau, concediu el permís per permetre que la càmera digitalitzi codis de barres";
+"product-scanner.permissions.noPermissions.message" = "Please grant camera permission to scan barcodes";
 "product-scanner.permissions.noPermissions.action.title" = "Obre la configuració";
 
 "product-scanner.permissions.failed.title" = "No s’ha pogut iniciar l’escaneig de codis de barres.";
@@ -76,14 +76,14 @@
 "product-add.save-ingredients.error" = "Ingredients no desats";
 "product-add.save-ingredients.saving" = "Desant ingredients…";
 "product-add.save-ingredients.not-yet" = "Encara no s'han desat els ingredients";
-"product-add.save-nutriments.success" = "Nutrients desats a";
-"product-add.save-nutriments.error" = "Nutrients no desats";
-"product-add.save-nutriments.saving" = "Desant nutrients…";
-"product-add.save-nutriments.not-yet" = "Els nutrients encara no s'han desat";
-"product-add.no-nutrition" = "El producte no conté les dades nutricionals";
+"product-add.save-nutriments.success" = "Nutrients saved in";
+"product-add.save-nutriments.error" = "Nutrients not saved";
+"product-add.save-nutriments.saving" = "Saving nutrients…";
+"product-add.save-nutriments.not-yet" = "Nutrients not saved yet";
+"product-add.no-nutrition" = "Nutrition facts are not displayed on the product";
 
-"product-add.ocr-ingredients.success" = "Els ingredients s'han llegit des de la imatge a";
-"product-add.ocr-ingredients.error" = "No s'han pogut extreure els ingredients de la imatge";
+"product-add.ocr-ingredients.success" = "Materials for the elaboration";
+"product-add.ocr-ingredients.error" = "No se pudieron extraer los ingredientes de la imagen";
 "product-add.ocr-ingredients.saving" = "Extraient els ingredients des de la imatge…";
 "product-add.ocr-ingredients.not-yet" = "Esperant una imatge dels ingredients per analitzar-la";
 
