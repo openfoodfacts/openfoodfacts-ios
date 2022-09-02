@@ -30,7 +30,7 @@ jobs:
         run: gem install bundler && bundle install
 
       - name: Run Fastlane finalize_sentry lane
-        run: bundle exec fastlane finalize_sentry
+        run: bundle exec fastlane finalize_sentry_release
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SPACESHIP_CONNECT_API_KEY_FILEPATH: envfiles/AuthKey_KDAUTTM76R.p8
