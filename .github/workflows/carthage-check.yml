@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: MeilCli/carthage-update-check-action@v3
       id: outdated
-    - uses: 8398a7/action-slack@v2
+    - uses: 8398a7/action-slack@v3
       if: steps.outdated.outputs.has_carthage_update != 'false'
       with:
         status: ${{ job.status }}
