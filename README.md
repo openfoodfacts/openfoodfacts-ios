@@ -3,7 +3,7 @@
 
 # (Old) Open Food Facts iPhone and iPad app
 
-The new app is located at https://github.com/openfoodfacts/smooth-app
+The new app is located at https://github.com/openfoodfacts/smooth-app. We would like to use some part of this [to create a Swift SDK for Open Food Facts](https://github.com/openfoodfacts/openfoodfacts-swift). Will you help us ?
 
 [![Build Status](https://travis-ci.org/openfoodfacts/openfoodfacts-ios.svg?branch=master)](https://travis-ci.org/openfoodfacts/openfoodfacts-ios)
 [![Project Status](https://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
