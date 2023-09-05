@@ -16,7 +16,7 @@ jobs:
         with:
           xcode-version: '12.5.1'
       - name: Checkout sources
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       #- name: Fix permissions 1
        # run: git update-index --chmod=+x scripts/test_app.sh
      # - name: Fix permissions 2

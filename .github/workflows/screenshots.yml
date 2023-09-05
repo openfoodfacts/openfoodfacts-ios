@@ -10,7 +10,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Decrypt AuthKey file
         run: cd ./fastlane/envfiles && ./decrypt_secrets.sh
