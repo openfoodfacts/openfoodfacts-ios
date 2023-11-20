@@ -8,6 +8,13 @@
 ### To Complete
 (VERSIONS TO COMPLETE)
 
+## [3.5.0](https://github.com/openfoodfacts/openfoodfacts-ios/compare/3.4.4...v3.5.0) (2023-09-05)
+
+
+### Features
+
+* Generate and publish an automated documentation of the app ([#898](https://github.com/openfoodfacts/openfoodfacts-ios/issues/898)) ([62dc048](https://github.com/openfoodfacts/openfoodfacts-ios/commit/62dc048123e860190c6cab750adbf717f8b37725))
+
 ### 1.0-19 @Tovkal 2 Jan 2018 
 
 * Implement pull to refresh in Product Detail
