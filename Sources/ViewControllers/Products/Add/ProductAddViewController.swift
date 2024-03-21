@@ -593,6 +593,20 @@ class ProductAddViewController: TakePictureViewController {
         }
     }
 
+    private func unit(for nutriment: String) -> NutritiveUnits {
+        switch nutriment {
+        case OFFJson.EnergyKey:
+            return .kJoule
+        case OFFJson.EnergyKcalKey:
+            return .kcal
+        case OFFJson.AlcoholKey:
+            return .alcohol
+        case OFFJson.PhKey:
+            return .none
+        default: return .units
+        }
+    }
+    
     private func configureLanguageField() {
         let languages = dataManager.getLanguages()
 
@@ -723,7 +737,10 @@ class ProductAddViewController: TakePictureViewController {
                     } else {
                         view.inputTextField.text = nil
                     }
-                    view.selectedUnit = nutriment.unit
+                    // do not use the nutriment values as provided by the json,
+                    // these are the original input values
+                    // Use the standard values coresponding to the Nutriment.
+                    view.selectedUnit = unit(for: nutriment.nameKey).unitsValues.first
                 }
             }
         }
